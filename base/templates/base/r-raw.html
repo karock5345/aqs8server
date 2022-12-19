@@ -1,0 +1,86 @@
+{% extends 'main.html' %}
+{% load tz %}
+
+{% block content %}
+<style>
+    #table-style {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    #table-style td, #table-style th {
+    border: 1px groove #04AA6D;
+    padding: 1px;
+    }
+
+    #table-style tr:nth-child(even){background-color: #202020;}
+
+    /* #table-style tr:hover {background-color: #ddd;} */
+
+    #table-style th {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+    }
+</style>
+
+
+<h1>{{result}}<br></h1>
+{% if table.count > 0 %}
+    <table id="table-style">
+        <thead>
+            <tr>
+                <th>Ticket</th>
+                <th>Branch</th>
+                <th>Counter Type</th>
+                <th>Step</th>
+                <th>Start Time</th>
+                <th>Start by</th>
+                <th>Call Time</th>
+                <th>Call by</th>               
+                <th>Process Time</th>
+                <th>Process by</th>               
+                <th>Done Time</th>
+                <th>Done by</th>     
+                <th>No Show Time</th>
+                <th>No Show by</th>
+                <th>Void Time</th>
+                <th>Void by</th>
+                <th>Waiting time (s)</th>
+                <th>Walking time (s)</th>
+                <th>Process time (s)</th>
+                <th>Total time (s)</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for data in table %}
+        <tr>
+            <td>{{ data.ticket.tickettype }}{{ data.ticket.ticketnumber }}</td>                   
+            <td>{{ data.branch.bcode }}</td>
+            <td>{{ data.countertype.name }}</td>
+            <td>{{ data.step }}</td>
+            <td>{{ data.starttime|timezone:localtimezone }}</td>
+            <td>{{ data.startuser }}</td>
+            <td>{{ data.calltime|timezone:localtimezone }}</td>
+            <td>{{ data.calluser }}</td>
+            <td>{{ data.processtime|timezone:localtimezone }}</td>
+            <td>{{ data.processuser }}</td>
+            <td>{{ data.donetime|timezone:localtimezone }}</td>
+            <td>{{ data.doneuser }}</td>
+            <td>{{ data.misstime|timezone:localtimezone }}</td>
+            <td>{{ data.missuser }}</td>
+            <td>{{ data.voidtime|timezone:localtimezone }}</td>
+            <td>{{ data.voiduser }}</td>
+            <td>{{ data.waitingperiod }}</td>
+            <td>{{ data.walkingperiod }}</td>
+            <td>{{ data.processingperiod }}</td>
+            <td>{{ data.totalperiod }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+{% endblock content %}

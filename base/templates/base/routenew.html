@@ -1,0 +1,82 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <main class="update-account layout">
+        <div class="container">
+            <div class="layout__box">
+                <div class="layout__boxHeader">
+                    <div class="layout__boxTitle">
+                        <a href="{% url 'routesummary' %}">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 32 32">
+                                <title>Cancel</title>
+                                <path
+                                    d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                                </path>
+                            </svg>
+                        </a>
+                        <h3>New Ticket Route</h3>
+                    </div>
+                </div>
+                <div class="layout__body">
+                    <form class="form" action="" method="POST" prefix="profileform">
+                        {% csrf_token %}
+                        {% for field in form %}
+                        <div class="form__group">
+                            <!-- {% if field.label == "Enabled" %}
+                                <label for="profile_pic">Ticket Format Enabled : {{field}}</label>                         
+                            {% elif field.label == "Ttype" %}
+                                <label for="profile_pic">Ticket Type : {{field}}</label>
+                            {% elif field.label == "Branch" %}
+                                <label for="profile_pic">Branch : {{field}}</label>
+                            {% elif field.label == "Tformat" %}
+                                <label for="profile_pic">Ticket Format : {{field}}</label>
+                            {% else %}
+                                <label for="profile_pic">{{field.label}} : {{field}}</label>                            
+                            {% endif %} -->
+                            <label for="profile_pic">{{field.label}} : {{field}}</label>    
+                        </div>
+                        {% endfor %}
+                        <!-- <div>
+                          <label for="profile_pic">
+                            <span class="helptext">
+                              <ul>
+                                <li>Your password can’t be too similar to your other personal information.</li>
+                                <li>Your password must contain at least 8 characters.</li>
+                                <li>Your password can’t be a commonly used password.</li>
+                                <li>Your password can’t be entirely numeric.</li>
+                              </ul>
+                            </span>                       
+                          </label>
+                          <br>
+                        </div> -->
+                                             
+                                                  
+
+                        <button class="btn btn--main" type="submit">
+                            <svg
+                              version="1.1"
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="32"
+                              height="32"
+                              viewBox="0 0 32 32"
+                            >
+                              <title>lock</title>
+                              <path
+                                d="M27 12h-1v-2c0-5.514-4.486-10-10-10s-10 4.486-10 10v2h-1c-0.553 0-1 0.447-1 1v18c0 0.553 0.447 1 1 1h22c0.553 0 1-0.447 1-1v-18c0-0.553-0.447-1-1-1zM8 10c0-4.411 3.589-8 8-8s8 3.589 8 8v2h-16v-2zM26 30h-20v-16h20v16z"
+                              ></path>
+                              <path
+                                d="M15 21.694v4.306h2v-4.306c0.587-0.348 1-0.961 1-1.694 0-1.105-0.895-2-2-2s-2 0.895-2 2c0 0.732 0.413 1.345 1 1.694z"
+                              ></path>
+                            </svg>
+            
+                            New Ticket Route
+                          </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </main>
+    {% endblock content %}

@@ -1,0 +1,179 @@
+{% extends 'main.html' %}
+{% load tz %}
+
+
+{% block content %}
+<style>
+    .home-container{
+        display: grid;
+        grid-template-columns: 4fr 6fr 5fr 5fr;
+    }    
+    
+    #table-style {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    #table-style td, #table-style th {
+    border: 1px groove #04AA6D;
+    padding: 1px;
+    }
+
+    #table-style tr:nth-child(even){background-color: #202020;}
+
+    /* #table-style tr:hover {background-color: #ddd;} */
+
+    #table-style th {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+    }
+
+</style>
+<h1>Branch : {{branch.name}}({{branch.bcode}}) --- Last update: {{now|timezone:localtimezone}}</h1>
+
+<div class="home-container">
+    <div>
+        <h3>Ticket Printer Status:</h3>
+        <table id="table-style">
+            <thead>
+                <tr>
+                    <th>Printer</th>
+                    <th>Paper status</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for printer in printerstatuslist %}
+            <tr>
+                <td>{{printer.printernumber}}</td>                   
+                <td>{{printer.status}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <h3>Waiting Ticket: </h3>
+        {% for table in qlist %}
+        {% if table.count > 0 %}
+        
+            <h3>Counter: {{table.0.countertype}}</h3>
+            <table id="table-style">
+                <thead>
+                    <tr>
+                        <th>Ticket</th>
+                        <th>Ticket Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for ticket in table %}
+                <tr>
+                    <td>{{ticket.tickettype}}{{ticket.ticketnumber}}</td>                   
+                    <td>{{ ticket.tickettime|timezone:localtimezone }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <div>
+        <h3>Counter Status: </h3>
+       
+       
+            <table id="table-style">
+                <thead>
+                    <tr>
+                        <th>Counter Type</th>
+                        <th>Number</th>
+                        <th>Enabled</th>                        
+                        <th>Status</th>
+                        <th>Ticket</th>
+                        <th>Login</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                {% for table in counterstatus %}
+                {% for counter in table %}
+                <tr>
+                    <td>{{ counter.countertype }}</td>                   
+                    <td>{{ counter.counternumber }}</td>
+                    <td>{{ counter.enabled }}</td>                    
+                    <td>{{ counter.status }}</td>
+                    {% if counter.tickettemp == None %}
+                        <td>---</td>
+                    {% else %}
+                        <td>{{ counter.tickettemp }}</td>
+                    {% endif %}
+                    {% if counter.user == None %}
+                        <td>---</td>
+                    {% else %}
+                        <td>{{ counter.user }}</td>
+                    {% endif %}                    
+                    
+                </tr>
+                {% endfor %}
+                {% endfor %}
+                </tbody>
+            </table>       
+    </div>
+
+    <div>
+        <h3>Completed Ticket: </h3>
+        <table id="table-style">
+            <thead>
+                <tr>
+                    <th>Ticket</th>
+                    <th>Ticket Time</th>
+                    <th>User</td>
+                </tr>
+            </thead>
+            <tbody>
+            {% for ticket in donelist %}
+            <tr>
+                <td>{{ticket.tickettype}}{{ticket.ticketnumber}}</td>                   
+                <td>{{ ticket.tickettime|timezone:localtimezone }}</td>
+                <td>{{ ticket.user }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h3>No Show Ticket: </h3>
+        <table id="table-style">
+            <thead>
+                <tr>
+                    <th>Ticket</th>
+                    <th>Ticket Time</th>
+                    <th>User</td>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for ticket in misslist %}
+            <tr>
+                <td>{{ticket.tickettype}}{{ticket.ticketnumber}}</td>                   
+                <td>{{ ticket.tickettime|timezone:localtimezone }}</td>
+                <td>{{ ticket.user }}</td>
+                <td>{{ ticket.status }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>
+{% endblock content %}

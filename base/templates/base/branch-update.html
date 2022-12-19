@@ -1,0 +1,82 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<body>
+    <form action="savebranch">
+        
+        Branch Code : {{branchcode}}<br>
+
+        Branch enabled :         
+        {% if branchenabled == True %}
+            <input type="checkbox" name="branchenabled" checked ><br>
+        {% elif branchenabled == False %}
+            <input type="checkbox" name="branchenabled"><br>
+        {% endif %}
+        
+        Branch Name : <input type="text" name="branchname" value="{{branchname}}" size="50" ><br>        
+        Branch timezone (e.g. : Asia/Hong_Kong) : <input type="text" name="timezone" value={{timezone}} size="20" ><br>
+        Branch Address : <input type="text" name="address" value="{{branch.address}}" size="50" ><br>
+        Branch GPS : <input type="text" name="gps" value="{{branch.gps}}" size="50" ><br>
+        Office hour start time (Local time) : <input type="time" name="officehourstart" value={{officehourstart}} step="1"><br>
+        Office hour end time (Local time) : <input type="time" name="officehourend" value={{officehourend}} step="1"><br>
+        Ticket start time (Local time) : <input type="time" name="tickettimestart" value={{tickettimestart}} step="1"><br>
+        Ticket end time (Local time) : <input type="time" name="tickettimeend" value={{tickettimeend}} step="1"><br>
+        
+
+        Queue priority:
+        <select name="queuepriority" id="id_queuepriority">
+        {% for list in branch.PRIORITY %}
+            {% if list.0 == queuepriority %}
+                <option value={{list.0}} selected>{{list.1}}</option>                
+            {% else %}
+                <option value={{list.0}}>{{list.1}}</option>
+                {{list}}<br>
+            {% endif %}               
+        {% endfor %}
+        </select><br>
+
+        Queue mask : <input type="text" name="queuemask" value="{{branch.queuemask}}" maxlength="26"><br>
+        Ticket maximum no. (1-{{branch.ticketmax}}): <input type="text" name="ticketmax" value="{{branch.ticketmax}}" maxlength="10"><br>
+        Ticket number format : <input type="text" name="ticketnoformat" value="{{branch.ticketnoformat}}" maxlength="10"><br> 
+
+        Repeat ticket number :         
+        {% if branch.ticketrepeatnumber == True %}
+            <input type="checkbox" name="ticketrepeatnumber" checked ><br>
+        {% else %}
+            <input type="checkbox" name="ticketrepeatnumber"><br>
+        {% endif %}
+
+        Display enabled :         
+        {% if branch.displayenabled == True %}
+            <input type="checkbox" name="displayenabled" checked ><br>
+        {% else %}
+            <input type="checkbox" name="displayenabled"><br>
+        {% endif %}
+
+        Display flash time (1-50): <input type="text" name="displayflashtime" value="{{branch.displayflashtime}}" maxlength="3"><br>
+
+        Voice enabled :         
+        {% if branch.voiceenabled == True %}
+            <input type="checkbox" name="voiceenabled" checked ><br>
+        {% else %}
+            <input type="checkbox" name="voiceenabled"><br>
+        {% endif %}
+
+        Language 1 [Cantonese] (0-4, set 0 is disabled): <input type="text" name="language1" value="{{branch.language1}}" maxlength="3"><br>
+        Language 2 [English] (0-4, set 0 is disabled): <input type="text" name="language2" value="{{branch.language2}}" maxlength="3"><br>
+        Language 3 [Mandarin] (0-4, set 0 is disabled): <input type="text" name="language3" value="{{branch.language3}}" maxlength="3"><br>
+        Language 4 [Portuguese] (0-4, set 0 is disabled): <input type="text" name="language4" value="{{branch.language4}}" maxlength="3"><br>
+
+        User single login (Counter only) :         
+        {% if branch.usersinglelogin == True %}
+            <input type="checkbox" name="usersinglelogin" checked ><br>
+        {% else %}
+            <input type="checkbox" name="usersinglelogin"><br>
+        {% endif %}
+
+
+        <input type="submit" value="Save" >
+    </form>
+</body>    
+{% endblock content %}

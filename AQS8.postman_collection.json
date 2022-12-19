@@ -1,0 +1,1285 @@
+{
+	"info": {
+		"_postman_id": "68242f88-5408-4cb9-9612-2a550cfd0bef",
+		"name": "AQS8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/?app=web&version=test",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						""
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg",
+							"disabled": true
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "test"
+						}
+					]
+				},
+				"description": "Print Key"
+			},
+			"response": []
+		},
+		{
+			"name": "Ticket Key",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/ticketkey/?username=userapi&password=asdf2206&branchcode=KB&tickettype=A&printernumber=<pno>p1</pno>&remark=test&app=web&version=8",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ticketkey",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "userapi"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg",
+							"disabled": true
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "tickettype",
+							"value": "A"
+						},
+						{
+							"key": "printernumber",
+							"value": "<pno>p1</pno>"
+						},
+						{
+							"key": "remark",
+							"value": "test"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						}
+					]
+				},
+				"description": "Print Key"
+			},
+			"response": []
+		},
+		{
+			"name": "First print",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/firstprint/?username=userapi&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&branchcode=KB&app=web&version=8",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"firstprint",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "userapi"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Printed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/printed/?username=userapi&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&app=web&version=8&branchcode=KB&tickettype=A&ticketnumber=740&tickettime=2022-06-16T09:23:28.221967Z",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"printed",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "userapi"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "tickettype",
+							"value": "A"
+						},
+						{
+							"key": "ticketnumber",
+							"value": "740"
+						},
+						{
+							"key": "tickettime",
+							"value": "2022-06-16T09:23:28.221967Z"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Printer Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/printerstatus/?username=mary&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&app=web&version=8&branchcode=KB",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"printerstatus",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "mary"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Update printer status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/updateprinter/?username=userapi&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&app=web&version=8&branchcode=KB&printernumber=p1&status=status is good2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"updateprinter",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "userapi"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "printernumber",
+							"value": "p1"
+						},
+						{
+							"key": "status",
+							"value": "status is good2"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Counter Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/counterlogin/?username=elton&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&app=web&version=8&branchcode=KB&countername=Reception&counternumber=3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"counterlogin",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "elton"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "countername",
+							"value": "Reception"
+						},
+						{
+							"key": "counternumber",
+							"value": "3"
+						},
+						{
+							"key": "tickettype",
+							"value": "A",
+							"disabled": true
+						},
+						{
+							"key": "ticketnumber",
+							"value": "709",
+							"disabled": true
+						},
+						{
+							"key": "tickettime",
+							"value": "2022-06-06T03:14:02.562445Z",
+							"disabled": true
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Counter Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/counterlogout/?username=mary&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&app=web&version=8&branchcode=KB&countername=Reception&counternumber=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"counterlogout",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "mary"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "countername",
+							"value": "Reception"
+						},
+						{
+							"key": "counternumber",
+							"value": "2"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Counter Waiting List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/waiting/?username=elton&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&app=web&version=8&branchcode=KB&countername=Reception&counternumber=3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"waiting",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "elton"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "countername",
+							"value": "Reception"
+						},
+						{
+							"key": "counternumber",
+							"value": "3"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Call ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/call/?username=elton&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&app=web&version=8&branchcode=KB&countername=Reception&counternumber=3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"call",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "elton"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "countername",
+							"value": "Reception"
+						},
+						{
+							"key": "counternumber",
+							"value": "3"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Recall ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/recall/?username=elton&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&app=web&version=8&branchcode=KB&countername=Reception&counternumber=2&tickettype=A&ticketnumber=712&tickettime=2022-06-10T10:28:42.479023Z",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"recall",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "elton"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "countername",
+							"value": "Reception"
+						},
+						{
+							"key": "counternumber",
+							"value": "2"
+						},
+						{
+							"key": "tickettype",
+							"value": "A"
+						},
+						{
+							"key": "ticketnumber",
+							"value": "712"
+						},
+						{
+							"key": "tickettime",
+							"value": "2022-06-10T10:28:42.479023Z"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Miss ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/miss/?username=elton&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&app=web&version=8&branchcode=KB&countername=Reception&counternumber=3&tickettype=A&ticketnumber=002&tickettime=2022-07-18T07:07:07.701749Z",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"miss",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "elton"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "countername",
+							"value": "Reception"
+						},
+						{
+							"key": "counternumber",
+							"value": "3"
+						},
+						{
+							"key": "tickettype",
+							"value": "A"
+						},
+						{
+							"key": "ticketnumber",
+							"value": "002"
+						},
+						{
+							"key": "tickettime",
+							"value": "2022-07-18T07:07:07.701749Z"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Void ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/void/?username=elton&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&app=web&version=8&branchcode=KB&countername=Reception&counternumber=3&tickettype=A&ticketnumber=713&tickettime=2022-06-10T10:31:10.734752Z",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"void",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "elton"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "countername",
+							"value": "Reception"
+						},
+						{
+							"key": "counternumber",
+							"value": "3"
+						},
+						{
+							"key": "tickettype",
+							"value": "A"
+						},
+						{
+							"key": "ticketnumber",
+							"value": "713"
+						},
+						{
+							"key": "tickettime",
+							"value": "2022-06-10T10:31:10.734752Z"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Process ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/process/?username=elton&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&app=web&version=8&branchcode=KB&countername=Reception&counternumber=3&tickettype=B&ticketnumber=001&tickettime=2022-07-18T10:41:29.463543Z",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"process",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "elton"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "countername",
+							"value": "Reception"
+						},
+						{
+							"key": "counternumber",
+							"value": "3"
+						},
+						{
+							"key": "tickettype",
+							"value": "B"
+						},
+						{
+							"key": "ticketnumber",
+							"value": "001"
+						},
+						{
+							"key": "tickettime",
+							"value": "2022-07-18T10:41:29.463543Z"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Done ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/done/?username=elton&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&app=web&version=8&branchcode=KB&countername=Reception&counternumber=3&tickettype=B&ticketnumber=001&tickettime=2022-07-18T10:41:29.463543Z",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"done",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "elton"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "countername",
+							"value": "Reception"
+						},
+						{
+							"key": "counternumber",
+							"value": "3"
+						},
+						{
+							"key": "tickettype",
+							"value": "B"
+						},
+						{
+							"key": "ticketnumber",
+							"value": "001"
+						},
+						{
+							"key": "tickettime",
+							"value": "2022-07-18T10:41:29.463543Z"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Get ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/get/?username=kate&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&app=web&version=8&branchcode=KB&countername=PaymentCounter&counternumber=1&tickettype=A&ticketnumber=010",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"get",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "kate"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "countername",
+							"value": "PaymentCounter"
+						},
+						{
+							"key": "counternumber",
+							"value": "1"
+						},
+						{
+							"key": "tickettype",
+							"value": "A"
+						},
+						{
+							"key": "ticketnumber",
+							"value": "010"
+						},
+						{
+							"key": "tickettime",
+							"value": "2022-06-10T10:31:10.734752Z",
+							"disabled": true
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Display",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/display/?username=userapi&password=asdf2206&branchcode=KB&app=web&version=8&branchcode=KB&countername=Reception",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"display",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "userapi"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg",
+							"disabled": true
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "countername",
+							"value": "Reception"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Display Last",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/displaylast/?username=userapi&password=asdf2206&branchcode=KB&app=web&version=8&branchcode=KB&countername=Reception",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"displaylast",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "userapi"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg",
+							"disabled": true
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "countername",
+							"value": "Reception"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Display no. of waiting on queue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/displaywait/?username=userapi&password=asdf2206&branchcode=KB&app=web&version=8&branchcode=KB&countername=Reception",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"displaywait",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "userapi"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg",
+							"disabled": true
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "countername",
+							"value": "Reception"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Voice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/voice/?username=userapi&password=asdf2206&branchcode=KB&app=web&version=8&branchcode=KB&countername=Reception",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"voice",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "userapi"
+						},
+						{
+							"key": "password",
+							"value": "asdf2206"
+						},
+						{
+							"key": "token",
+							"value": "jgd764Pf607qjK2NJFqbh96seg",
+							"disabled": true
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "app",
+							"value": "web"
+						},
+						{
+							"key": "version",
+							"value": "8"
+						},
+						{
+							"key": "branchcode",
+							"value": "KB"
+						},
+						{
+							"key": "countername",
+							"value": "Reception"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		},
+		{
+			"name": "Sch Test",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/sch/test/?time=2022-07-05T15:15:00Z",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"sch",
+						"test",
+						""
+					],
+					"query": [
+						{
+							"key": "time",
+							"value": "2022-07-05T15:15:00Z"
+						}
+					]
+				},
+				"description": "First print"
+			},
+			"response": []
+		}
+	]
+}

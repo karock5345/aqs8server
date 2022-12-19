@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" wtx-context="09728656-8D5D-490C-859F-AA96B861844B">
+    <head>
+    <meta charset="utf-8">
+    <title>TSVD Ticketing System</title>
+    <base href=".">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" /> 
+    <link rel="stylesheet" href="{% static 'styles/styletv.css' %}" >
+    <style>
+    @font-face{font-family:NotoSansTCRegular;src:url("{% static 'fonts/NotoSansTC-Regular.tv.otf' %}")}
+    @font-face{font-family:NotoSansTCBold;src:url("{% static 'fonts/NotoSansTC-Bold.tv.otf' %}")}
+
+    .cd-popup[_ngcontent-csb-c0]
+    {font-family:NotoSans;position:fixed;left:0;top:0;height:100%;width:100%;background-color:rgba(0,0,0,.7);opacity:0;visibility:hidden;transition:opacity .3s 0s,visibility 0s .3s;z-index:2000}
+    .cd-popup.is-visible[_ngcontent-csb-c0]
+    {opacity:1;visibility:visible;transition:opacity .3s 0s,visibility 0s 0s;-webkit-transition:opacity .3s,visibility;-moz-transition:opacity .3s,visibility}
+    .cd-popup-container[_ngcontent-csb-c0]
+    {position:absolute;width:90vw;top:50%;left:50%;transform:translate(-50%,-90%);background:#fff;border-radius:30px;text-align:center;box-shadow:0 0 20px rgba(0,0,0,.2);transition-property:transform;transition-duration:.3s}
+    .cd-popup-container[_ngcontent-csb-c0]   #alert-popup-body[_ngcontent-csb-c0]   
+    span[_ngcontent-csb-c0]{font-size:18px;color:#4a4a4a}.cd-popup-container[_ngcontent-csb-c0] > 
+    div[_ngcontent-csb-c0]{padding:3em 1em}.cd-popup-container[_ngcontent-csb-c0]   
+    .cd-buttons[_ngcontent-csb-c0]{list-style-type:none;width:100%;padding:0;margin:0 auto;display:block}
+    .cd-popup-container[_ngcontent-csb-c0]   .cd-buttons[_ngcontent-csb-c0]   
+    .button[_ngcontent-csb-c0]
+    {background-color:#383838;border-radius:29.5px;color:#fff;display:inline-block;margin:1em;padding:0 3em;line-height:59px;height:59px;border-color:transparent;font-family:NotoSansBold;font-size:15px;font-weight:900;cursor:pointer}
+    .cd-popup-container[_ngcontent-csb-c0]   .cd-buttons[_ngcontent-csb-c0]   .primary[_ngcontent-csb-c0]
+    {background-color:#999999}
+    .cd-popup-container[_ngcontent-csb-c0]   .cd-buttons[_ngcontent-csb-c0]   .default[_ngcontent-csb-c0]
+    {background-color:#383838}
+    .cd-popup-container[_ngcontent-csb-c0]   .cd-popup-close[_ngcontent-csb-c0]
+    {position:absolute;top:8px;right:8px;width:30px;height:30px}.cd-popup-container[_ngcontent-csb-c0]   
+    .cd-popup-close[_ngcontent-csb-c0]::after, .cd-popup-container[_ngcontent-csb-c0]   .cd-popup-close[_ngcontent-csb-c0]::before
+    {content:"";position:absolute;top:12px;width:14px;height:3px;background-color:#8f9cb5}
+    .cd-popup-container[_ngcontent-csb-c0]   .cd-popup-close[_ngcontent-csb-c0]::before
+    {transform:rotate(45deg);left:8px}.cd-popup-container[_ngcontent-csb-c0]   .cd-popup-close[_ngcontent-csb-c0]::after
+    {transform:rotate(-45deg);right:8px}.is-visible[_ngcontent-csb-c0]   .cd-popup-container[_ngcontent-csb-c0]
+    {transform:translate(-50%,-50%)}body[_ngcontent-csb-c0]
+    {background-color:#fffdf3}.loading-overlay[_ngcontent-csb-c0]
+    {position:fixed;top:0;bottom:0;left:0;right:0;z-index:999;display:none}
+    .bg-green[_ngcontent-csb-c0]
+
+    {background-color:#e4e4e4}.loading-overlay.active[_ngcontent-csb-c0]
+
+    {display:block}
+
+    .title[_ngcontent-csb-c0]
+    {width:100%;color:rgb(65, 46, 46);bottom:13px;font-size:16px;text-align:center;font-weight:700;line-height:22px}
+    
+    @-webkit-keyframes rotating{0%{-webkit-transform:rotate(0)}100%{-webkit-transform:rotate(360deg)}}
+    @keyframes rotating{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.reload[_ngcontent-csb-c0]{right:15px;width:25px}
+    .reload.loading[_ngcontent-csb-c0]
+
+    {-webkit-animation:1s ease-in-out infinite rotating;animation:1s ease-in-out infinite rotating}
+    .header[_ngcontent-csb-c0]
+    
+    {position:fixed;left:0;top:0;height:92px;width:100%;background-color:#7c0001;z-index:2}
+
+    .header[_ngcontent-csb-c0]   .container-fluid[_ngcontent-csb-c0]{max-width:1080px}h2[_ngcontent-csb-c0]
+    {font-family:NotoSansTCBold;color:#303030;font-size:16px;line-height:22px;margin:0;padding-top:28px}
+    
+    .line[_ngcontent-csb-c0]{width:100%;height:2px;background-color:#eaeaea}
+    
+    .hint-text[_ngcontent-csb-c0]
+    {font-size:12px;color:#949494;text-align:center}
+    .navbar-break[_ngcontent-csb-c0]{height:92px}
+    .datetime[_ngcontent-csb-c0]
+    {color:#949494;font-size:10px;font-family:NotoSansTCRegular;font-weight:700}
+
+    .center-container[_ngcontent-csb-c0]
+    {width:100%;overflow-x:scroll;display:inline-flex;padding:20px 40px 30px 20px;align-content:center}
+    .center-container[_ngcontent-csb-c0]   .center[_ngcontent-csb-c0]
+    {position:relative;box-shadow:-7px 7px 13px 0 rgba(0,0,0,.08),7px -7px 11px 0 rgba(255,255,255,.7);border-radius:7px;height:58px;line-height:58px;text-align:center;margin:0 10px;min-width:45%;font-weight:700;color:#676767;font-size:16px}
+    .center-container[_ngcontent-csb-c0]   .center[_ngcontent-csb-c0]   .tick[_ngcontent-csb-c0]{display:none}.center-container[_ngcontent-csb-c0]   .center.selected[_ngcontent-csb-c0]
+    {box-shadow:2px 2px 6px 2px rgba(0,0,0,.08) inset,-2px -2px 6px 2px rgba(0,0,0,.08) inset}
+    .center-container[_ngcontent-csb-c0]   .center.selected[_ngcontent-csb-c0]   .tick[_ngcontent-csb-c0]
+    {display:block;position:absolute;top:-10px;right:-10px;width:28px;height:28px}
+    .form-control[_ngcontent-csb-c0]{max-width:300px}.location[_ngcontent-csb-c0]
+    {padding-top:20px;font-size:20px;color:#949494;font-family:NotoSansTCBold}
+    .location[_ngcontent-csb-c0]   img[_ngcontent-csb-c0]
+    {padding-top:0;height:13px;margin:0 8px 0 0;vertical-align:middle}
+    .queue[_ngcontent-csb-c0]
+
+    {width:100%;background-color:rgb(255, 255, 255);box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.132);border-radius:20px 20px 20px 20px;margin:5px 0px;padding:8px 13px 10px 13px;display:block;position:relative}
+
+    .queue[_ngcontent-csb-c0]   .circle[_ngcontent-csb-c0]
+    {width:22px;height:22px;border-radius:50%;background-color:#00a758;right:0;top:0;position:absolute;color:#fff;line-height:23px;font-size:11px;text-align:center;font-family:NotoSansTCBold}
+    .queue[_ngcontent-csb-c0]   .queue-info[_ngcontent-csb-c0]
+    {width:80vw;font-family:NotoSansTCBold;display:table-cell;vertical-align:middle;font-weight: 900;}
+    .queue[_ngcontent-csb-c0]   .queue-info[_ngcontent-csb-c0]   .name[_ngcontent-csb-c0]
+    
+    {display:block;font-size:40px;line-height:50px}
+    
+    .queue[_ngcontent-csb-c0]       .queue-info[_ngcontent-csb-c0]   .subtitle[_ngcontent-csb-c0]
+    {color:#a6a6a6;line-height:20px;font-size:10px}
+    .queue[_ngcontent-csb-c0]   .last-calling[_ngcontent-csb-c0]
+    {display:table-cell;vertical-align:middle;width:20%}
+    
+    .queue[_ngcontent-csb-c0]   .last-calling.counter-no[_ngcontent-csb-c0]
+    {width:15%;min-width:120px;padding-right:10px}
+
+    .queue[_ngcontent-csb-c0]   .last-calling[_ngcontent-csb-c0]   .title[_ngcontent-csb-c0]
+    {font-family:NotoSansTCBold;font-size:16px;line-height:16px;text-align:center;color:#262626}
+    .queue[_ngcontent-csb-c0]   .last-calling[_ngcontent-csb-c0]   .number[_ngcontent-csb-c0]
+    {font-family:NotoSansTCBold;font-size:32px;line-height:32px;text-align:center;color:#262626}
+
+    #body {
+    width: 100%;
+    height: 100%;
+    }
+    </style>
+    </head>
+
+
+    <body>
+        <div id="body">
+
+            <script type="text/javascript">
+
+                let url = `ws://${window.location.host}/ws/socket-server/`;
+                const chatSocket = new WebSocket(url);
+
+                chatSocket.onmessage = function(e){
+                    let data = JSON.parse(e.data);
+                    console.log('Data:', data);
+
+                    lastupdate_data.innerHTML = `- ${data.lastupdate} -`;
+
+                    countertext1.innerHTML = '';
+                    counterno1.innerHTML = '';
+                    ticketno1.innerHTML = '';
+                    countertext2.innerHTML = '';
+                    counterno2.innerHTML = '';
+                    ticketno2.innerHTML = '';
+                    countertext3.innerHTML = '';
+                    counterno3.innerHTML = '';
+                    ticketno3.innerHTML = '';
+                    countertext4.innerHTML = '';
+                    counterno4.innerHTML = '';
+                    ticketno4.innerHTML = '';
+                    countertext5.innerHTML = '';
+                    counterno5.innerHTML = '';
+                    ticketno5.innerHTML = '';
+
+
+                    let tlist = data.ticketlist;
+                    if (tlist.length > 0) {
+                        for (let i = 0; i<tlist.length; i++) {
+                            let txt1 = '櫃枱 Counter';
+                            let txt2 = `${tlist[i].counternumber}`;
+                            let txt3 = `${tlist[i].tickettype}${tlist[i].ticketnumber}`;
+                            if (i == 0) {
+                                countertext1.innerHTML  = txt1;
+                                counterno1.innerHTML = txt2;
+                                ticketno1.innerHTML = txt3;
+                            }
+                            if (i == 1) {
+                                countertext2.innerHTML  = txt1;
+                                counterno2.innerHTML = txt2;
+                                ticketno2.innerHTML = txt3;
+                            }
+                            if (i == 2) {
+                                countertext3.innerHTML  = txt1;
+                                counterno3.innerHTML = txt2;
+                                ticketno3.innerHTML = txt3;
+                            }
+                            if (i == 3) {
+                                countertext4.innerHTML  = txt1;
+                                counterno4.innerHTML = txt2;
+                                ticketno4.innerHTML = txt3;
+                            }
+                            if (i == 4) {
+                                countertext5.innerHTML  = txt1;
+                                counterno5.innerHTML = txt2;
+                                ticketno5.innerHTML = txt3;
+                            }
+                        }
+
+                    }
+                    
+
+            
+
+
+                    }
+            </script>
+
+
+
+
+            <div _ngcontent-csb-c0="" class="loading-overlay ld-over">
+                <div class="ld ld-ring ld-spin"></div>
+            </div>
+            <div _ngcontent-csb-c0="" class="header">
+                <div _ngcontent-csb-c0="" class="container-fluid bg-green p-2">
+                    
+
+                    <div _ngcontent-csb-c0="" class="row">
+                        <div _ngcontent-csb-c0="" class="col">
+                            <div _ngcontent-csb-c0="" class="float-start">                            
+                                <img _ngcontent-csb-c0="" style='height: 41px; object-fit: row' src="{% static 'images/ts-logo.png' %}">
+                            </div>
+                            <!-- <div _ngcontent-csb-c0="" class="float-end">
+                                <button _ngcontent-csb-c0="" class="btn btn-light" type="button">English</button>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div _ngcontent-csb-c0="" class="row justify-content-md-center mt-1">
+                        <div _ngcontent-csb-c0="" class="col-md-4 col-3"></div>
+                        <div _ngcontent-csb-c0="" class="col-md-4 col-6">
+                            <div _ngcontent-csb-c0="" class="float-center">
+                                <div _ngcontent-csb-c0="" class="title">輪候狀況 Queue Status</div>
+                            </div>
+                        </div>
+                        <div _ngcontent-csb-c0="" class="col-md-4 col-3">
+                            <div _ngcontent-csb-c0="" class="float-end">
+                                <img _ngcontent-csb-c0="" alt="Reload" class="reload" onClick="window.location.href=window.location.href" src="{% static 'images/reload.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-csb-c0="" class="navbar-break"></div>
+            <!---->
+            <!-- <div _ngcontent-csb-c0="" class="row">
+                <div _ngcontent-csb-c0="" class="col">
+                    <div _ngcontent-csb-c0="" class="float-end mt-1 me-2">
+                        <div _ngcontent-csb-c0=""  class="datetime" id="lastupdate_data"></div>
+                    </div>
+                </div>
+            </div> -->
+            <div _ngcontent-csb-c0=""  class="datetime" id="lastupdate_data" style="text-align:right;"></div>
+            <!---->
+            <div _ngcontent-csb-c0="" class="container">
+
+            <div _ngcontent-csb-c0="" class="line"></div> 
+
+            <div _ngcontent-csb-c0="" class="container" >
+                <div _ngcontent-csb-c0="" class="queue" >
+                    <div _ngcontent-csb-c0="" class="queue-info">
+                        <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);" id="ticketno1"></div>
+                    </div>
+                    <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                        <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);" id="countertext1"></div>
+                        <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);" id="counterno1"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div _ngcontent-csb-c0="" class="container">
+                <div _ngcontent-csb-c0="" class="queue">
+                    <div _ngcontent-csb-c0="" class="queue-info">
+                        <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);" id="ticketno2"></div>
+                    </div>
+                    <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                        <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);" id="countertext2"></div>
+                        <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);" id="counterno2"></div>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-csb-c0="" class="container">
+                <div _ngcontent-csb-c0="" class="queue">
+                    <div _ngcontent-csb-c0="" class="queue-info">
+                        <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);" id="ticketno3"></div>
+                    </div>
+                    <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                        <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);" id="countertext3"></div>
+                        <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);" id="counterno3"></div>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-csb-c0="" class="container">
+                <div _ngcontent-csb-c0="" class="queue">
+                    <div _ngcontent-csb-c0="" class="queue-info">
+                        <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);" id="ticketno4"></div>
+                    </div>
+                    <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                        <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);" id="countertext4"></div>
+                        <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);" id="counterno4"></div>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-csb-c0="" class="container" >
+                <div _ngcontent-csb-c0="" class="queue" >
+                    <div _ngcontent-csb-c0="" class="queue-info">
+                        <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);" id="ticketno5"></div>
+                    </div>
+                    <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                        <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);" id="countertext5"></div>
+                        <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);" id="counterno5"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div   style="color:#949494;font-size:10px;font-family:NotoSansTCRegular;font-weight:700;text-align: center;">Powered by tsvd.com.hk</div>
+
+        </div>
+
+    </body></html>
