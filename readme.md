@@ -595,7 +595,7 @@ cd aqs
 git add .
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/karock5345/rvd.git
+git remote add origin https://github.com/karock5345/aqs8server.git
 git push -u origin main
 # ! [rejected]        main -> main (fetch first)
 # error: failed to push some refs to 'https://github.com/karock5345/djchannels4.git'
