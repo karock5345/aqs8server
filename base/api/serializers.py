@@ -34,6 +34,13 @@ class ticketlistSerivalizer(ModelSerializer):
         model = TicketTemp
         fields = ('tickettype', 'ticketnumber', 'bcode', 'tickettime' , 'tickettext', 'printernumber')
 
+class rocheticketlistSerivalizer(ModelSerializer):
+    # bcode = serializers.CharField(source='branch.bcode')
+
+    class Meta:
+        model = TicketTemp
+        fields = ('tickettype', 'ticketnumber', 'tickettime')
+
 class printerstatusSerivalizer(ModelSerializer):
     # bcode = serializers.CharField(source='branch.bcode')
 

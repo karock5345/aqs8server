@@ -10,7 +10,7 @@ Windows add PATH for exe
 Right click on My Computer ->Properties ->Advanced System setting ->Environment Variable ->New
 
 ### <span style="color:orange;">**New Django project with Virtual Env setup:**</span>
-```bash
+```dos
 pip install virtualenv
 # New virtual Env:
 cd '\Projects\'
@@ -571,7 +571,7 @@ Remark :
 
 Open the web browser login github.com
 
-New the repo named e.g. rvd
+New the repo named e.g. aqs8server
 ### <span style="color:orange;">**Local source code prepare**</span>
 
 Download and install git: https://git-scm.com/downloads
@@ -587,7 +587,7 @@ git config --global user.password "xxx"
 
 ```bash
 # Create local Git repo:
-cd \Projects\RVD2022\AQS8.0\server\
+cd \Projects\AQS8.0\server\
 git init aqs [proj folder]
 # if folder not exist, it will create new folder
 # and hidden folder aqs\.git will be created

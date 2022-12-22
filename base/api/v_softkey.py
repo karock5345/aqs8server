@@ -1876,6 +1876,8 @@ def postCounterLogin(request):
 #         "ticketnoformat": "000"
 #     }
 # }
+# "tickettype", "ticketnumber", "tickettime", "ticketnoformat" is from counterstatus
+
     status = dict({})
     msg = dict({})
     context = dict({})
@@ -1965,13 +1967,15 @@ def postCounterLogin(request):
                 status = dict({'status': 'Error'})
                 msg =  dict({'msg':'Counter is disabled'})  
 
-    userp = None
-    obj_userp =UserProfile.objects.filter(user__exact=user)
-    if obj_userp.count() == 1 :
-        userp = obj_userp[0]
-    if userp == None :
-        status = dict({'status': 'Error'})
-        msg =  dict({'msg':'user profile not found or more then one'})       
+    # get user profiles
+    if status == dict({}) :
+        userp = None
+        obj_userp =UserProfile.objects.filter(user__exact=user)
+        if obj_userp.count() == 1 :
+            userp = obj_userp[0]
+        if userp == None :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'user profile not found or more then one'})       
 
     # check the user is already login 
     if status == dict({}) :

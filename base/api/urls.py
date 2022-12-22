@@ -4,6 +4,7 @@ from base.api import v_display
 from . import views
 from . import v_ticket
 from . import v_softkey
+from . import v_roche
 
 urlpatterns = [
     path('', views.getRoutes),
@@ -29,6 +30,10 @@ urlpatterns = [
     path('displaylast/', v_display.getLastDisplay), 
 
     path('voice/', v_display.getVoice), 
+
+    path('applogin/', v_roche.postRocheLogin),
+    path('applist/', v_roche.getRocheFirstPrint),
+    path('applisttest/', v_roche.getRocheFirstPrintTest),
 ]
 
 
