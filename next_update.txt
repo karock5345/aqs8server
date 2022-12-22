@@ -1,7 +1,7 @@
 OK      New DB table (TicketArchive) to backup the table Ticket data, and keep table Ticket small size
         Softkey chat
 OK      admin supervisior add printer status
-        admin can edit TV scrolling text
+OK      admin can edit TV scrolling text
 OK      ticket add source : touch panel / web / api / app
         report add ticket details : ticketing -> calling -> recall -> process -> done -> next route ...
         support 24 hours non-stop service

@@ -572,6 +572,8 @@ def Branch_Save(request, pk):
     else:
         new_usersinglelogin  = False    
 
+
+
     if result == '' :
         branch.enabled = new_branchenabled
         branch.name = new_branchname
@@ -597,8 +599,15 @@ def Branch_Save(request, pk):
         branch.usersinglelogin = new_usersinglelogin
 
     if result == '' :
-        result = 'Save success'
         branch.save()
+
+        countertypes = CounterType.objects.filter(Q(branch=branch))
+        for ct in countertypes:
+            ct.displayscrollingtext = request.GET[branch.bcode + '-' + ct.name]
+            ct.save()
+
+        result = 'Save success'
+        
 
     context = {'result':result}
     return render(request, 'base/branchresult.html', context)
@@ -606,8 +615,8 @@ def Branch_Save(request, pk):
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
 def BranchUpdateView(request, pk):
-    branch = Branch.objects.get(id=pk)    
-    
+    branch = Branch.objects.get(id=pk)
+
     branchcode = branch.bcode
     branchname = branch.name
     branchenabled = branch.enabled
@@ -631,6 +640,7 @@ def BranchUpdateView(request, pk):
 
     queuepriority = branch.queuepriority
 
+    countertypes = CounterType.objects.filter(Q(branch=branch))
 
     context = {
     'branch':branch,
@@ -639,6 +649,7 @@ def BranchUpdateView(request, pk):
     'officehourstart':sofficehourstart, 'officehourend':sofficehourend,
     'tickettimestart':stickettimestart, 'tickettimeend':stickettimeend,
     'queuepriority':queuepriority,
+    'countertypes':countertypes,
     }
 
     return render(request, 'base/branch-update.html', context)

@@ -75,6 +75,10 @@
             <input type="checkbox" name="usersinglelogin"><br>
         {% endif %}
 
+        TV Scrolling text : <br>
+        {% for ct in countertypes %}
+            Counter Type - {{ ct.name }} : <input type="text" name="{{ct.branch.bcode}}-{{ct.name}}" value="{{ct.displayscrollingtext}}" maxlength="200"><br>
+        {% endfor %}
 
         <input type="submit" value="Save" >
     </form>
