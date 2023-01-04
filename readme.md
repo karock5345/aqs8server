@@ -1,3 +1,14 @@
+# AQS version 8
+### <span style="color:orange;">**Version 8.0.0**</span>
+- First Django version for Queuing Server
+### <span style="color:orange;">**Version 8.0.1**</span>
+- Admin can edit TV scrolling text
+- New 3 APIs for Roche
+- Admin Supervise add Printer Status with color
+- WebTV support multi-branch and multi-counter
+- WebTV add counter type text (2 languages)
+
+
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
 install python for all users
@@ -69,6 +80,23 @@ sudo nano /etc/netplan/xxx.yaml
 # (01-netcfg.yaml, 50-cloud-init.yaml, or NN_interfaceName.yaml)
 ```
 edit: 
+```nano
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    enxf01e3411f0f8:
+      dhcp4: no
+      addresses:
+        - 192.168.1.222/24
+      routes:
+        - to: default
+          via: 192.168.1.1
+      nameservers:
+        addresses: [8.8.8.8, 1.1.1.1]
+  version: 2
+```
+OR
+
 ```
 network:
   version: 2
@@ -99,8 +127,7 @@ PuTTY -> Data -> Auto-login username (ubuntu) -> Session -> Save
 
 ```bash
 sudo timedatectl set-timezone Asia/Hong_Kong
-sudo apt-get update
-sudo apt-get upgrade -y
+sudo apt-get update ; sudo apt-get upgrade -y
 sudo apt-get install -y python3 python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx git 
 sudo nano ~/.bashrc
 ```
@@ -155,14 +182,123 @@ deactivate
 ```
 
 
-# INIT AND SETUP the AQS8
+# SETUP DB (PostgreSQL)
+```bash
+sudo systemctl reload postgresql.service
+sudo su -l postgres
+psql
+```
+PostgreSQL command:
+```psql
+CREATE DATABASE aqsdb8;
+CREATE USER aqsdbuser WITH PASSWORD 'dbpassword';
+ALTER ROLE aqsdbuser SET client_encoding TO 'utf8';
+ALTER ROLE aqsdbuser SET default_transaction_isolation TO 'read committed';
+SHOW TIMEZONE;
+SET TIMEZONE='UTC';
+SHOW TIMEZONE;
+ALTER ROLE aqsdbuser SET timezone TO 'UTC';
+GRANT ALL PRIVILEGES ON DATABASE aqsdb8 TO aqsdbuser;
+\q
+```
+```bash
+exit
+sudo systemctl reload postgresql.service
+```
+Edit settings.py
+```bash
+sudo nano ~/aqs8server/aqs/settings.py
+```
+```
+DEBUG = False
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'aqsdb8',
+        'USER': 'aqsdbuser',
+        'PASSWORD': 'dbpassword',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+```
+
 ```bash
 source env/bin/activate
 python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 ```
-Superuser: tim /// asdf
+tim /// asdf
+
+Test the Postgres DB:
+```bash
+python manage.py runserver 0.0.0.0:8000
+```
+
+# SECRET KEY
+
+
+
+### <span style="color:orange;">**Django secret key**</span>
+
+
+
+
+
+
+Save the SECRET_KEY from settings.py to text file (e.g. : django-insecure-9e^jTw&jk-@-^5u45=*m^el@@$$!7#gav!y=8r8e*&l64^@*v#):
+```bash
+sudo touch /etc/secret_key.txt
+sudo nano /etc/secret_key.txt
+```
+
+Remove SECRET_KEY in settings.py and change to load file
+```
+with open('/etc/secret_key.txt') as f:
+    SECRET_KEY = f.read().strip()
+```
+### <span style="color:orange;">**ReCaptcha secret key**</span>
+
+Save the RECAPTCHA_PRIVATE_KEY to text file (6LflOq0iAAAAAFAKsEWvj1ZY_JFKihRaxUR_vlqG):
+```bash
+sudo touch /etc/recaptcha_key.txt
+sudo nano /etc/recaptcha_key.txt
+```
+Remove RECAPTCHA_PRIVATE_KEY in settings.py and change to load file
+```
+with open('/etc/recaptcha_key.txt') as f:
+    RECAPTCHA_PRIVATE_KEY = f.read().strip()
+```
+close and save
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# INIT AND SETUP the AQS8
 
 ### <span style="color:orange;">**Please note that, new version is skip this:**</span>
 ~~If use sql lite should disable 'SCH' function:~~
@@ -173,15 +309,12 @@ Superuser: tim /// asdf
 ```
 
 ### <span style="color:orange;">**Change the token_api at base/api/views.py**</span>
-
 ```bash
 sudo nano base/api/views.py 
 token_api = 'WrE-1t7IdrU2iB3a0e'
 ```
-Test the Postgres DB:
-```bash
-python manage.py runserver 0.0.0.0:8000
-```
+
+
 ### <span style="color:orange;">**SETUP nginx + gunicorn**</span>
 
 ```bash
@@ -242,14 +375,14 @@ After=network.target
 [Service]
 Type=notify
 # the specific user that our service will run as
-User=ubuntu
+User=**ubuntu
 # Group=someuser
 # another option for an even more restricted service is
 # DynamicUser=yes
 # see http://0pointer.net/blog/dynamic-users-with-systemd.html
 RuntimeDirectory=gunicorn
-WorkingDirectory=/home/ubuntu/aqs8server
-ExecStart=/home/ubuntu/aqs8server/env/bin/gunicorn aqs.wsgi
+WorkingDirectory=/home/**ubuntu/aqs8server
+ExecStart=/home/**ubuntu/aqs8server/env/bin/gunicorn aqs.wsgi
 ExecReload=/bin/kill -s HUP $MAINPID
 KillMode=mixed
 TimeoutStopSec=5
@@ -258,6 +391,7 @@ PrivateTmp=true
 [Install]
 WantedBy=multi-user.target
 ```
+****ubuntu should be changed you user**
 ```bash
 sudo systemctl start gunicorn.socket
 sudo systemctl enable gunicorn.socket
@@ -295,7 +429,7 @@ server {
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
         autoindex on;
-        alias /home/ubuntu/aqs8server/static/;
+        alias /home/**ubuntu/aqs8server/static/;
     }
 
     location / {
@@ -304,6 +438,7 @@ server {
     }
 }
 ```
+****ubuntu should be changed you user**
 ```bash
 sudo ln -s /etc/nginx/sites-available/aqs8server /etc/nginx/sites-enabled
 # Test the Nginx configuration for syntax errors by using the following command
@@ -345,9 +480,9 @@ create settings : Name=global, Branch=---, disabled API log
 
 create user groups : api admin report counter
 
-create user : userapi /// FEsp3froXaZid_NlrocH
+create user : userapi /// asdf2206
 
-create branch (bcode='RVD15')
+create branch (bcode='KB')
 
 create counter type (Counter)
 
@@ -610,3 +745,24 @@ git push -u origin main
 ### <span style="color:orange;">**Commit new version to github**</span>
 
 Open vscode -> open the project -> Source Control (Crtl + Shift + G) -> add some text on "Message" e.g. fixed bug xxx -> ... -> commit -> commit all
+
+# Setup zsh (Oh My Zsh)
+```bash
+sudo apt install zsh fonts-powerline -y
+chsh -s /usr/bin/zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+nano ~/.zshrc
+```
+Edit
+```bash
+ZSH_THEME="agnoster"
+```
+
+### <span style="color:orange;">**Setup Putty**</span>
+Download and install font on your Windows:
+https://github.com/powerline/fonts/tree/master/DejaVuSansMono
+
+Setup Putty 'Saved Sessions'
+Window -> Appearance -> Change font -> Deja...Powerline
+Window -> Color -> Default Blue -> Red 44 Green 123 Blue 201

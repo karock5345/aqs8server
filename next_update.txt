@@ -3,7 +3,7 @@ OK      New DB table (TicketArchive) to backup the table Ticket data, and keep t
 OK      admin supervisior add printer status
 OK      admin can edit TV scrolling text
 OK      ticket add source : touch panel / web / api / app
-        report add ticket details : ticketing -> calling -> recall -> process -> done -> next route ...
+        report add ticket all history e.g. ticketing -> calling -> recall -> process -> done -> next route ...
         support 24 hours non-stop service
         add more api user for 3rd party (add call-api counter, limit number of call api)
 OK      online view ticket status for everyone (TV disp web version)
@@ -11,5 +11,6 @@ OK      online view ticket status for everyone (TV disp web version)
         online get ticket
         support channels to save data traffic        
         paper roll count total number of ticket per roll 
+        base/sch/views.py -> function job_shutdown change to async
         
         new Django for TV disp web (Q. server is local, TV / get ticket function is web version)

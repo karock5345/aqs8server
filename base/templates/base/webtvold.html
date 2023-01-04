@@ -13,7 +13,11 @@
     <style>
         @font-face{font-family:NotoSansTCRegular;src:url("{% static 'fonts/NotoSansTC-Regular.tv.otf' %}")}
         @font-face{font-family:NotoSansTCBold;src:url("{% static 'fonts/NotoSansTC-Bold.tv.otf' %}")}
-    
+
+        .panel {position: fixed;background-color:rgba(94, 204, 255, 0.7);    bottom:  0px;    Left: 0px;    width: 100%;    height:auto;    z-index:50000;}
+        .queue2[_ngcontent-csb-c0]
+        {width:100%;background-color:rgb(255, 238, 0);box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.132);border-radius:0px 20px 20px 20px;margin:5px 0px;padding:8px 13px 10px 13px;display:block;position:relative}
+
         .cd-popup[_ngcontent-csb-c0]
         {font-family:NotoSans;position:fixed;left:0;top:0;height:100%;width:100%;background-color:rgba(0,0,0,.7);opacity:0;visibility:hidden;transition:opacity .3s 0s,visibility 0s .3s;z-index:2000}
         .cd-popup.is-visible[_ngcontent-csb-c0]
@@ -57,7 +61,7 @@
         {-webkit-animation:1s ease-in-out infinite rotating;animation:1s ease-in-out infinite rotating}
         .header[_ngcontent-csb-c0]
         
-        {position:fixed;left:0;top:0;height:92px;width:100%;background-color:#7c0001;z-index:2}
+        {position:fixed;left:0;top:0;height:92px;width:100%;background-color:#c57000;z-index:2}
     
         .header[_ngcontent-csb-c0]   .container-fluid[_ngcontent-csb-c0]{max-width:1080px}h2[_ngcontent-csb-c0]
         {font-family:NotoSansTCBold;color:#303030;font-size:16px;line-height:22px;margin:0;padding-top:28px}
@@ -100,7 +104,7 @@
         {display:table-cell;vertical-align:middle;width:20%}
         
         .queue[_ngcontent-csb-c0]   .last-calling.counter-no[_ngcontent-csb-c0]
-        {width:15%;min-width:120px;padding-right:10px}
+        {width:50%;min-width:120px;padding-right:10px}
     
         .queue[_ngcontent-csb-c0]   .last-calling[_ngcontent-csb-c0]   .title[_ngcontent-csb-c0]
         {font-family:NotoSansTCBold;font-size:16px;line-height:16px;text-align:center;color:#262626}
@@ -111,7 +115,8 @@
         width: 100%;
         height: 100%;
         }
-        </style>
+
+    </style>
     </head>
 
 
@@ -133,7 +138,7 @@
                     <div _ngcontent-csb-c0="" class="row">
                         <div _ngcontent-csb-c0="" class="col">
                             <div _ngcontent-csb-c0="" class="float-start">                            
-                                <img _ngcontent-csb-c0="" style='height: 41px;  object-fit: row' src="{% static 'images/ts-logo.png' %}">
+                                <img _ngcontent-csb-c0="" style='height: 41px;  object-fit: row' src="{% static logofile %}">
                             </div>
                             <!-- <div _ngcontent-csb-c0="" class="float-end">
                                 <button _ngcontent-csb-c0="" class="btn btn-light" type="button">English</button>
@@ -171,8 +176,36 @@
             <div _ngcontent-csb-c0="" class="line"></div> 
 
           
-
+            
             {% for ticketrow in ticketlist %}
+                <div _ngcontent-csb-c0="" class="container" >
+                    <div _ngcontent-csb-c0="" class="queue" >
+                        <div _ngcontent-csb-c0="" class="queue-info">
+                            <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                        </div>
+                        <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                            <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);">{{ticketrow.countertype.lang1}} {{ticketrow.countertype.lang2}}</div>
+                            <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+
+
+
+            <!-- <div _ngcontent-csb-c0="" class="container" >
+                <div _ngcontent-csb-c0="" class="queue" >
+                    <div _ngcontent-csb-c0="" class="queue-info">
+                        <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                        <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
             <div _ngcontent-csb-c0="" class="container" >
                 <div _ngcontent-csb-c0="" class="queue" >
                     <div _ngcontent-csb-c0="" class="queue-info">
@@ -184,9 +217,105 @@
                     </div>
                 </div>
             </div>
-            {% endfor %}
+            <div _ngcontent-csb-c0="" class="container" >
+                <div _ngcontent-csb-c0="" class="queue" >
+                    <div _ngcontent-csb-c0="" class="queue-info">
+                        <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                        <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-csb-c0="" class="container" >
+                <div _ngcontent-csb-c0="" class="queue" >
+                    <div _ngcontent-csb-c0="" class="queue-info">
+                        <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                        <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-csb-c0="" class="container" >
+                <div _ngcontent-csb-c0="" class="queue" >
+                    <div _ngcontent-csb-c0="" class="queue-info">
+                        <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                        <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-csb-c0="" class="container" >
+                <div _ngcontent-csb-c0="" class="queue" >
+                    <div _ngcontent-csb-c0="" class="queue-info">
+                        <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                        <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-csb-c0="" class="container" >
+                <div _ngcontent-csb-c0="" class="queue" >
+                    <div _ngcontent-csb-c0="" class="queue-info">
+                        <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                        <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-csb-c0="" class="container" >
+                <div _ngcontent-csb-c0="" class="queue" >
+                    <div _ngcontent-csb-c0="" class="queue-info">
+                        <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                        <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-csb-c0="" class="container" >
+                <div _ngcontent-csb-c0="" class="queue" >
+                    <div _ngcontent-csb-c0="" class="queue-info">
+                        <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);">AAA</div>
+                    </div>
+                    <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                        <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);">22</div>
+                    </div>
+                </div>
+            </div> -->
 
 
+
+
+
+
+
+
+
+            <!-- <div _ngcontent-csb-c0="" class="panel">
+                <div _ngcontent-csb-c0="" class="container" >
+                    <div _ngcontent-csb-c0="" class="queue" >
+                        <div _ngcontent-csb-c0="" class="queue-info">
+                            <div _ngcontent-csb-c0="" class="name" style="color: rgb(43, 48, 70);">A999</div>
+                        </div>
+                        <div _ngcontent-csb-c0="" class="last-calling counter-no">
+                            <div _ngcontent-csb-c0="" class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                            <div _ngcontent-csb-c0="" class="number" style="color: rgb(80, 80, 80);">22</div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
 
             <div   style="color:#949494;font-size:10px;font-family:NotoSansTCRegular;font-weight:700;text-align: center;">Powered by tsvd.com.hk</div>
 

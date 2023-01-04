@@ -48,8 +48,18 @@
             <tbody>
             {% for printer in printerstatuslist %}
             <tr>
-                <td>{{printer.printernumber}}</td>                   
-                <td>{{printer.status}}</td>
+                <td>{{printer.printernumber}}</td>
+                {% if printer.status == "<P_FINE>" %}
+                    <td style="color:lightgreen" >{{printer.statustext}}</td>
+                {% elif printer.status == "<P_NEAREND>" %}
+                    <td style="color:yellow" >{{printer.statustext}}</td>
+                {% elif printer.status == "<P_END>" %}
+                    <td style="color:red" >{{printer.statustext}}</td>
+                {% elif printer.status == "<OPEN>" %}
+                    <td style="color:orange" >{{printer.statustext}}</td> 
+                {% else %}
+                    <td>{{printer.statustext}}</td> 
+                {% endif %}
             </tr>
             {% endfor %}
             </tbody>

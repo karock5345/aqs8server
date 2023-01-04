@@ -494,8 +494,12 @@ def postUpdatePrinter(request):
     version = request.GET.get('version') if request.GET.get('version') != None else ''
     bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
     rxprinternumber = request.GET.get('printernumber') if request.GET.get('printernumber') != None else ''
-    rxpstatus = request.GET.get('status') if request.GET.get('status') != None else ''    
+    rxpstatus = request.GET.get('status') if request.GET.get('status') != None else ''
+    rxpstatustext = request.GET.get('statustext') if request.GET.get('statustext') != None else '' 
     
+    # print(rxpstatus)
+    # print (rxpstatustext)
+
     rxprinternumber = rxprinternumber.upper()
     #datetime_now = datetime.utcnow()
     datetime_now =timezone.now()
@@ -549,16 +553,18 @@ def postUpdatePrinter(request):
         # update db
     
         objps = PrinterStatus.objects.filter(Q(branch=branch) & Q(printernumber=rxprinternumber))
-        if objps.count() == 0 :
+        if objps.count() < 1 :
             # create new 
             PrinterStatus.objects.create(
                 branch = branch,
                 printernumber=rxprinternumber,
                 status = rxpstatus ,
+                statustext = rxpstatustext,
             )            
         else:
             pss = objps[0]
             pss.status = rxpstatus
+            pss.statustext = rxpstatustext
             pss.save()
         status = dict({'status': 'OK'})
         # msg =  dict({'msg':'Everything will be OK.'}) 

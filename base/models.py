@@ -67,7 +67,8 @@ class Branch(models.Model):
     language4 = models.IntegerField(default=0)
 
     usersinglelogin = models.BooleanField(default=False)    
-
+    webtvlogolink = models.TextField(default='images/ts-logo.png')
+    
     # branch status
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
@@ -143,7 +144,9 @@ class TicketFormat(models.Model):
 class CounterType(models.Model):
     enabled = models.BooleanField(default=True)
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
-    name = models.CharField(max_length=200, null=False)    
+    name = models.CharField(max_length=200, null=False)
+    lang1 = models.CharField(max_length=200, null=True)
+    lang2 = models.CharField(max_length=200, null=True)    
     displayscrollingtext = models.TextField(null=False, blank=False, default='Testing 123...') 
 
     updated = models.DateTimeField(auto_now=True)
@@ -300,7 +303,8 @@ class CounterLoginLog(models.Model) :
 class PrinterStatus(models.Model):       
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)  # if name='global' branch should be null
     printernumber = models.TextField(null=True, blank=True)
-    status = models.TextField(null=True, blank=True)    
+    status = models.TextField(null=True, blank=True) # 1
+    statustext = models.TextField(null=True, blank=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
 

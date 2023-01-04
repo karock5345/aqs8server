@@ -15,17 +15,17 @@ class UserProfileView(admin.ModelAdmin):
         
 
 class BranchProfileView(admin.ModelAdmin):
-    list_display =( 'enabled', 'bcode', 'name', 'address' )
+    list_display =(  'bcode', 'name', 'address', 'enabled', )
     ordering = ('-updated', '-created')
 
 class TicketFormatView(admin.ModelAdmin):
-    list_display =('enabled', 'branch', 'ttype' )
+    list_display =( 'branch', 'ttype' ,'enabled')
     ordering=('branch', 'ttype')
 
 
 
 class CounterTypeView(admin.ModelAdmin):
-    list_display =('enabled', 'branch', 'name')
+    list_display =( 'branch', 'name', 'lang1', 'lang2', 'enabled',)
 
 
 
