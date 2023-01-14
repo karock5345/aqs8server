@@ -21,6 +21,20 @@ from django.utils import timezone
 
 # Create your views here.
 
+def myticket(request):
+    ticket = ''
+    tickettime=''
+    timezone=''
+    counterstatus=''
+
+    context = {
+        'ticket':ticket,
+        'tickettime':tickettime,
+        'timezone':timezone,
+        'counterstatus':counterstatus,
+        }
+    return render(request , 'base/webtvold.html', context)
+
 
 def webtv_old_school(request):
     
@@ -83,7 +97,7 @@ def webtv_old_school(request):
         context = {
         'lastupdate' : 'Error: ' + error + ' ',
         }
-    return render(request , 'base/webtvold.html', context)
+    return render(request , 'base/webtvold2.html', context)
 
 
 def disptvView(request):

@@ -9,6 +9,102 @@ from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus
 from .serializers import printerstatusSerivalizer, ticketlistSerivalizer
 from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal
 from .v_display import wssendwebtv
+import random
+def gensecuritycode():
+    sc = ''
+  
+    for i in range(3):
+        sc = sc + random.choice("abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+
+    return sc
+
+def newticket(branch, ttype, ticketformat, datetime_now, route, pno, user, remark, app, version):
+   
+    # create ticket - get next ticket number
+    if branch.ticketrepeatnumber == True :
+        ticketno = ticketformat.ticketnext
+        ticketformat.ticketnext = ticketformat.ticketnext + 1
+        if ticketformat.ticketnext > branch.ticketmax :
+            ticketformat.ticketnext = 1
+        ticketformat.save()
+    else:
+        ticketno = branch.ticketnext
+        branch.ticketnext = branch.ticketnext + 1
+        if branch.ticketnext > branch.ticketmax :
+            branch.ticketnext = 1
+        branch.save()
+    ticketnoformat = branch.ticketnoformat
+    ticketno_str = str(ticketno)
+    ticketno_str = ticketno_str.zfill(len(ticketnoformat))
+
+    # ticket text
+    tickettext = ticketformat.tformat
+    tickettext = tickettext.replace('<TICKET>','<TEXT>'+ ttype+ticketno_str)                        
+    localtime = funUTCtoLocal(datetime_now, branch.timezone)
+    localtime_str = localtime.strftime('%H:%M:%S %d-%m-%Y')
+    tickettext = tickettext.replace('<DATETIME>', '<TEXT>' + localtime_str)
+
+
+    countertype = route.countertype            
+    # -if user is not None:
+    # -    return Response(user.username) 
+    # add DB -> Ticket, TicketLog, TicketData
+    # data : tickettext, datetime_now, ttype, ticketno_str
+    ticket = Ticket.objects.create(
+        tickettype=ttype, 
+        ticketnumber=ticketno_str, 
+        branch=branch, 
+        step=1,
+        countertype=countertype,
+        status=lcounterstatus[0] ,
+        tickettime=datetime_now, 
+        tickettext=tickettext,
+        printernumber=pno ,
+        printedtimes = 0 ,
+        user=user,
+        remark=remark,
+    )
+    sc = gensecuritycode()
+    tickettemp = TicketTemp.objects.create(
+        tickettype=ttype, 
+        ticketnumber=ticketno_str, 
+        branch=branch, 
+        step=1,
+        countertype=countertype,
+        status=lcounterstatus[0] ,
+        tickettime=datetime_now, 
+        tickettext=tickettext,
+        printernumber=pno ,
+        printedtimes = 0 ,
+        user=user,
+        remark=remark,
+        ticket=ticket,
+        securitycode=sc,
+    )
+
+    TicketData.objects.create(
+        tickettemp=tickettemp,
+        branch = branch,
+        countertype=countertype,
+        step=ticket.step,
+        starttime = datetime_now,
+        startuser=user,
+    )
+    TicketLog.objects.create(
+        ticket=ticket,
+        tickettemp=tickettemp,
+        logtime=datetime_now,
+        app = app,
+        version = version,
+        logtext='TicketKey API ticket created : '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pno ,
+        user=user,
+    )
+    
+    route.waiting = route.waiting + 1
+    route.save()
+
+
+    return ticketno_str, countertype
 
 @api_view(['POST'])
 def postTicket(request):
@@ -122,86 +218,9 @@ def postTicket(request):
         else:
             route = routeobj[0]             
     if status == dict({}) :
-        # create ticket - get next ticket number
-        if branch.ticketrepeatnumber == True :
-            ticketno = ticketformat.ticketnext
-            ticketformat.ticketnext = ticketformat.ticketnext + 1
-            if ticketformat.ticketnext > branch.ticketmax :
-                ticketformat.ticketnext = 1
-            ticketformat.save()
-        else:
-            ticketno = branch.ticketnext
-            branch.ticketnext = branch.ticketnext + 1
-            if branch.ticketnext > branch.ticketmax :
-                branch.ticketnext = 1
-            branch.save()
-        ticketnoformat = branch.ticketnoformat
-        ticketno_str = str(ticketno)
-        ticketno_str = ticketno_str.zfill(len(ticketnoformat))
-
-        # ticket text
-        tickettext = ticketformat.tformat
-        tickettext = tickettext.replace('<TICKET>','<TEXT>'+ ttype+ticketno_str)                        
-        localtime = funUTCtoLocal(datetime_now, branch.timezone)
-        localtime_str = localtime.strftime('%H:%M:%S %d-%m-%Y')
-        tickettext = tickettext.replace('<DATETIME>', '<TEXT>' + localtime_str)
-
-
-        countertype = route.countertype            
-        # -if user is not None:
-        # -    return Response(user.username) 
-        # add DB -> Ticket, TicketLog, TicketData
-        # data : tickettext, datetime_now, ttype, ticketno_str
-        ticket = Ticket.objects.create(
-            tickettype=ttype, 
-            ticketnumber=ticketno_str, 
-            branch=branch, 
-            step=1,
-            countertype=countertype,
-            status=lcounterstatus[0] ,
-            tickettime=datetime_now, 
-            tickettext=tickettext,
-            printernumber=pno ,
-            printedtimes = 0 ,
-            user=user,
-            remark=remark,
-        )
-        tickettemp = TicketTemp.objects.create(
-            tickettype=ttype, 
-            ticketnumber=ticketno_str, 
-            branch=branch, 
-            step=1,
-            countertype=countertype,
-            status=lcounterstatus[0] ,
-            tickettime=datetime_now, 
-            tickettext=tickettext,
-            printernumber=pno ,
-            printedtimes = 0 ,
-            user=user,
-            remark=remark,
-            ticket=ticket,
-        )
-
-        TicketData.objects.create(
-            tickettemp=tickettemp,
-            branch = branch,
-            countertype=countertype,
-            step=ticket.step,
-            starttime = datetime_now,
-            startuser=user,
-        )
-        TicketLog.objects.create(
-            ticket=ticket,
-            tickettemp=tickettemp,
-            logtime=datetime_now,
-            app = app,
-            version = version,
-            logtext='TicketKey API ticket created : '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pno ,
-            user=user,
-        )
         
-        route.waiting = route.waiting + 1
-        route.save()
+        ticketno_str, countertype = newticket(branch, ttype, ticketformat, datetime_now, route, pno, user, remark, app, version)
+
 
         test = lcounterstatus[0]
         i = lcounterstatus.index(test)
@@ -214,63 +233,6 @@ def postTicket(request):
 
 
 
-
-
-
-
-
-
-
-
-
-
-        # testdata = json.dumps({
-        #         'lastupdate':'from api ticket'
-        #             })
-
-        # bcode = 'KB'
-        # countername = 'Reception'
-        # branch = None
-        # branchobj = Branch.objects.filter( Q(bcode=bcode) )
-        # if branchobj.count() != 1:
-        #     # branch not found
-        #     status = dict({'status': 'Error'})
-        #     msg =  dict({'msg':'Branch not found'})   
-        # else:
-        #     branch = branchobj[0]   
-
-        # countertype = None
-        # # get the Counter type
-        # ctypeobj = CounterType.objects.filter( Q(branch=branch) & Q(name=countername) )
-        # if not(ctypeobj.count() > 0) :
-        #     status = dict({'status': 'Error'})
-        #     msg =  dict({'msg':'Counter Type not found'}) 
-        # else:
-        #     countertype = ctypeobj[0]
-        
-        # if branch != None and countertype != None :
-        #     displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')
-        #     serializers  = webdisplaylistSerivalizer(displaylist, many=True)
-        #     context = dict({'ticketlist':serializers.data})
-
-        #     datetime_now =timezone.now()
-        #     datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
-        #     lastupdate=dict({
-        #         'lastupdate':datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
-        #     })
-
-        #     output = lastupdate | context
-        #     output = json.dumps(output)
-            
-        # channel_layer = get_channel_layer() 
-        # async_to_sync(channel_layer.group_send)(
-        #     'g_webtv', {
-        #     'type':'send_webtv',
-        #     'bcode':branch.bcode,
-        #     'countertype':countertype.name
-        #     }
-        # )
-       
         wssendwebtv(bcode, countertype.name)
       
 

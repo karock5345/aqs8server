@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+{% load static %}
+{% block content %}
+<html lang="en" wtx-context="09728656-8D5D-490C-859F-AA96B861844B">
+    <head>
+    <meta http-equiv="refresh" content="5" >
+    <meta charset="utf-8">
+    <title>TSVD Ticketing System</title>
+    <base href=".">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" /> 
+    <link rel="stylesheet" href="{% static 'styles/styletv2.css' %}" >
+
+
+
+    </head>
+
+
+    <body>
+        <div id="body">
+
+            <header>
+                <img class="logo" src="{% static logofile %}">
+                <div class="status">輪候狀況 Queue Status</div>
+                <img  alt="Reload" class="reload" onClick="window.location.href=window.location.href" src="{% static 'images/reload.png' %}">
+
+               
+            </header>
+            <div  class="navbar-break"></div>
+            <!---->
+            <!-- <div  class="row">
+                <div  class="col">
+                    <div  class="float-end mt-1 me-2">
+                        <div   class="datetime" id="lastupdate_data"></div>
+                    </div>
+                </div>
+            </div> -->
+            <div   class="datetime"  style="text-align:right;">{{lastupdate}}</div>
+            <!---->
+            <div  class="container">
+
+            <div  class="line"></div> 
+
+          
+            
+            {% for ticketrow in ticketlist %}
+                <div  class="container" >
+                    <div  class="queue" >
+                        <div  class="queue-info">
+                            <div  class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                        </div>
+                        <div  class="last-calling counter-no">
+                            <div  class="title" style="color: rgb(80, 80, 80);">{{ticketrow.countertype.lang1}} {{ticketrow.countertype.lang2}}</div>
+                            <div  class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+
+
+
+
+            <!-- <div  class="container" >
+                <div  class="queue" >
+                    <div  class="queue-info">
+                        <div  class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div  class="last-calling counter-no">
+                        <div  class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div  class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div  class="container" >
+                <div  class="queue" >
+                    <div  class="queue-info">
+                        <div  class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div  class="last-calling counter-no">
+                        <div  class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div  class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div  class="container" >
+                <div  class="queue" >
+                    <div  class="queue-info">
+                        <div  class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div  class="last-calling counter-no">
+                        <div  class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div  class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div  class="container" >
+                <div  class="queue" >
+                    <div  class="queue-info">
+                        <div  class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div  class="last-calling counter-no">
+                        <div  class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div  class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div  class="container" >
+                <div  class="queue" >
+                    <div  class="queue-info">
+                        <div  class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div  class="last-calling counter-no">
+                        <div  class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div  class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div  class="container" >
+                <div  class="queue" >
+                    <div  class="queue-info">
+                        <div  class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div  class="last-calling counter-no">
+                        <div  class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div  class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div  class="container" >
+                <div  class="queue" >
+                    <div  class="queue-info">
+                        <div  class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div  class="last-calling counter-no">
+                        <div  class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div  class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div  class="container" >
+                <div  class="queue" >
+                    <div  class="queue-info">
+                        <div  class="name" style="color: rgb(43, 48, 70);">{{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}</div>
+                    </div>
+                    <div  class="last-calling counter-no">
+                        <div  class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div  class="number" style="color: rgb(80, 80, 80);">{{ticketrow.counternumber}}</div>
+                    </div>
+                </div>
+            </div>
+            <div  class="container" >
+                <div  class="queue" >
+                    <div  class="queue-info">
+                        <div  class="name" style="color: rgb(43, 48, 70);">AAA</div>
+                    </div>
+                    <div  class="last-calling counter-no">
+                        <div  class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                        <div  class="number" style="color: rgb(80, 80, 80);">22</div>
+                    </div>
+                </div>
+            </div> -->
+
+
+
+
+
+
+
+
+
+            <!-- <div  class="panel">
+                <div  class="container" >
+                    <div  class="queue" >
+                        <div  class="queue-info">
+                            <div  class="name" style="color: rgb(43, 48, 70);">A999</div>
+                        </div>
+                        <div  class="last-calling counter-no">
+                            <div  class="title" style="color: rgb(80, 80, 80);">櫃台 Counter</div>
+                            <div  class="number" style="color: rgb(80, 80, 80);">22</div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div   style="color:#949494;font-size:10px;font-family:NotoSansTCRegular;font-weight:700;text-align: center;">Powered by tsvd.com.hk</div>
+
+        </div>
+
+    </body></html>
+
+    {% endblock content %}

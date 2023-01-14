@@ -204,6 +204,8 @@ class TicketTemp(models.Model):
 
     remark = models.TextField(default='', blank=True, null=True)
 
+    securitycode = models.CharField(max_length=10, default='', blank=True, null=True)
+
     ticket = models.ForeignKey(Ticket, on_delete=models.SET_NULL, blank=True, null=True)
     def __str__(self):
         return self.tickettype + self.ticketnumber
