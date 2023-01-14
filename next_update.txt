@@ -12,5 +12,6 @@ OK      online view ticket status for everyone (TV disp web version)
         support channels to save data traffic        
         paper roll count total number of ticket per roll 
         base/sch/views.py -> function job_shutdown change to async
+OK      auto logout for web 
         
         new Django for TV disp web (Q. server is local, TV / get ticket function is web version)

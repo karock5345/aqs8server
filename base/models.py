@@ -67,7 +67,7 @@ class Branch(models.Model):
     language4 = models.IntegerField(default=0)
 
     usersinglelogin = models.BooleanField(default=False)    
-    webtvlogolink = models.TextField(default='images/ts-logo.png')
+    webtvlogolink = models.TextField(default='images/logo_ts.png')
     
     # branch status
     updated = models.DateTimeField(auto_now=True)

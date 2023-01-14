@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     
     'django_apscheduler',
     'captcha',
+
 ]
 
 ASGI_APPLICATION = 'aqs.asgi.application'
@@ -72,6 +73,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_auto_logout.middleware.auto_logout', # Django auto logout (1)
+
 ]
 
 ROOT_URLCONF = 'aqs.urls'
@@ -89,6 +92,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django_auto_logout.context_processors.auto_logout_client', # Django auto logout (2)
             ],
         },
     },
@@ -165,3 +169,10 @@ REST_FRAMEWORK = {
 RECAPTCHA_PUBLIC_KEY = '6Lff1ZsiAAAAAESuPub5qJCSN8Fo1cmhtjd8bdB8'
 RECAPTCHA_PRIVATE_KEY = '6Lff1ZsiAAAAAMbsSNu5KyIGWOxmjTOFHANffcAo'
 RECAPTCHA_REQUIRED_SCORE = 0.85
+
+AUTO_LOGOUT = {
+                'IDLE_TIME': 3600, 
+                'REDIRECT_TO_LOGIN_IMMEDIATELY': True,
+                }  # logout after 1 hour of downtime # Django auto logout (3)
+
+# main.html add {{ redirect_to_login_immediately }}  # Django auto logout (4)
