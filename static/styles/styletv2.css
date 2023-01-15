@@ -1,38 +1,166 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
 
+:root {
+  --merlot: #000080;   /* blue (navy) */
+  --crimson: #0047ab;  /* blue (cobalt) */
+  --color_header_background:#e4e4e4;
+  --color_status_background: rgb(44, 44, 44);
+  --color_calling_background: rgb(241, 241, 241);
+}
 * {
     box-sizing : border-box;
     margin:0;
     padding: 0;
     background-color: #f7f7f7;
+
+  
 }
 
 header {
     display: flex ;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-items: center;
-    padding: 0px 0px;
-    background-color: rgb(116, 116, 116);
+    height: 50px;
+    padding: 30px 10%;
+    background-color: var(--color_header_background);
 }
 
 .logo {
-    height: 41px;
-    object-fit: row;
+    height: 50px;
+    margin-right: auto;
+    /* background-color: var(--color_header_background); */
+    background: none;
+}
 
+
+
+.reload {
+    width:30px;
+    margin-left: auto;
+    padding: 5px 0px 0px 0px;
+    /* background-color: var(--color_header_background); */
+    background: none;
+    cursor:pointer;
 }
 
 .status {
-    font-family: "NotoSansTC", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color:#ff9900;
-    background-color: rgb(88, 88, 88);
+    display: flex ;
+    justify-content: space-evenly;
+    height: 30px;
+    position: relative;
+    color:#f1f1f1;
+    background-color:var(--color_status_background);
+    
+
     /* text-decoration: none; */
-    text-align: center;
+    /* text-align: center; */
+
 }
 
-.reload {
-    height: 41px;
-    margin-left: auto;
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%); 
+    transform: translateY(-50%);
 
+    background: none;
+
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+
+.updatetime {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+    text-align:right;
+    padding: 10px 0px 0px 0px;
+    color:grey;
+    /* background-color: var(--color_header_background); */
+    background: none;
+}
+
+.col1 {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    /* justify-content: flex-end; */
+    align-items: right;
+    background-color: var(--color_header_background);
+  }
+  
+.container_calling {
+    height:58px;
+    /* line-height:58px; */
+    width:90% ;
+    /* display:inline-flex; */
+    margin: 10px 0px 10px 5%;
+    /* min-width:45%; */
+    /* max-width: 500px; */
+    /* align-content:center; */
+    /* position:relative; */
+    background-color: var(--color_calling_background);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.132);
+    border-radius:20px 20px 20px 20px;
+    /* padding:8px 13px 10px 13px; */
+    display:flex;
+    /* border-style:ridge;
+    border-color: black; */
+    align-items: center;
+    justify-content:space-between;
+    padding: 10px 10% ;
+  }
+
+.ticketno {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 1000;
+    font-size: 46px;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(56, 61, 82);
+    /* background-color: var(--color_calling_background); */
+    background: none;
+    margin-top: -7px;
+}
+
+.counter {
+    background: none;
+    margin-top: 5px;
+}
+.countertype {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(80, 80, 80);
+    /* background-color: var(--color_calling_background); */
+    background: none;
+    /* margin-top: -5px; */
+    margin-bottom: -10px;
+}
+.counternumber {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 1000;
+    font-size: 36px;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(80, 80, 80);
+    /* background-color: var(--color_calling_background); */
+    background: none;
+    margin-top: -5px;
+}
+
+.powered {
+    color:#949494;
+    font-size:10px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight:400;
+    text-align: center;
+    margin: -5px 0px 10px 0px;
 }
