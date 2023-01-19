@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 from pathlib import Path
+from django.contrib.messages import constants as messages
 import re
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -176,3 +177,8 @@ AUTO_LOGOUT = {
                 }  # logout after 1 hour of downtime # Django auto logout (3)
 
 # main.html add {{ redirect_to_login_immediately }}  # Django auto logout (4)
+
+MESSAGE_TAGS = {
+    messages.SUCCESS: 'msgsuccess',
+    messages.ERROR: 'msgerror',
+  }

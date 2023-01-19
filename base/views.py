@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.shortcuts import render, redirect, HttpResponse
+from django.urls import reverse
+from urllib.parse import urlencode
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -20,20 +21,141 @@ from .api.serializers import webdisplaylistSerivalizer
 from django.utils import timezone
 
 # Create your views here.
+def CancelTicketView(request, pk, sc):
+    error = ''
+    print('pk:' + pk)
+    print('sc:' + sc)
 
-def myticket(request):
-    ticket = ''
-    tickettime=''
-    timezone=''
-    counterstatus=''
+    try:
+        tt = TicketTemp.objects.get(id=pk)
+    except:
+        error = 'Ticket not found.'
 
-    context = {
-        'ticket':ticket,
-        'tickettime':tickettime,
-        'timezone':timezone,
-        'counterstatus':counterstatus,
-        }
-    return render(request , 'base/webtvold.html', context)
+    if error == '' :
+        if tt.securitycode != sc :
+            error = 'Ticket not found. (security code)'
+    if error == '' :
+        if request.method =='POST':
+            # process cancel ticket (void)
+            print('tapped CONFIRM')
+
+
+
+
+
+
+
+
+
+
+
+            # back to : http://127.0.0.1:8000/my/?tt=A&no=003&bc=KB&sc=vVL
+            base_url = reverse('myticket')
+            query_string =  urlencode({
+                                        'tt':tt.tickettype , 
+                                        'no':tt.ticketnumber, 
+                                        'bc':tt.branch.bcode, 
+                                        'sc':tt.securitycode,
+                                        }) 
+            url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
+            print ('{0}://{1}'.format(request.scheme, request.get_host()) +   url)
+            return redirect(url)    
+    else:
+        print (error)
+        # messages.error(request, error)
+        return HttpResponse(error)
+    return render(request, 'base/cancelticket.html')
+
+def webmyticket_old_school(request):
+    # 127.0.0.1:8000/my?tt=A&no=001&bc=KB&sc=123
+    context = None
+    error = ''
+    bcode = ''
+    try:
+        bcode = request.GET['bc']
+    except:
+        bcode = ''
+        error = 'Branch code is blank.'
+
+    ttype = ''
+    tno = ''
+    try:
+        ttype = request.GET['tt']
+        ticket = ttype + tno
+    except:
+        ttype = ''
+        error = 'Ticket type is blank.'  
+    try:
+        tno = request.GET['no']
+        ticket = ttype + tno
+    except:
+        tno = ''
+        error = 'Ticket number is blank.'  
+
+    securitycode = ''
+    try:
+        securitycode = request.GET['sc']
+    except:
+        securitycode = ''
+        error = 'Security code is blank.'  
+
+    branch = None
+    logofile = None
+    datetime_now_local = None
+    if error == '' :        
+        branchobj = Branch.objects.filter( Q(bcode=bcode) )
+        if branchobj.count() == 1:
+            branch = branchobj[0]
+            logofile = branch.webtvlogolink
+            datetime_now = timezone.now()
+            datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+        else :
+            error = 'Branch not found.'
+    
+    countertype = None
+    if error == '' :        
+        ttobj = TicketTemp.objects.filter(  
+                                            Q(branch=branch) & 
+                                            Q(tickettype=ttype) &
+                                            Q(ticketnumber=tno) & 
+                                            Q(securitycode=securitycode)
+                                            )
+        if ttobj.count() == 1:
+            tickettemp = ttobj[0]
+
+            tickettime = tickettemp.tickettime
+            counterstatus = tickettemp.status
+            countertype = tickettemp.countertype
+
+            tickettime = funUTCtoLocal(tickettime, branch.timezone)
+        else :
+            error = 'Ticket not found.'
+
+    counter='---'
+    if error == '':
+        csobj = CounterStatus.objects.filter(
+            Q(tickettemp = tickettemp)
+        )
+        if csobj.count() == 1:
+            counter = csobj[0].counternumber
+    if error == '':
+        context = {
+            'ticket':ticket,
+            'tickettime':tickettime,
+            'counterstatus':counterstatus,
+            'logofile':logofile,
+            'lastupdate':datetime_now_local.strftime('%Y-%m-%d %H:%M:%S'),            
+            'counter':counter,
+            'countertype':countertype,
+            'tickettemp':tickettemp,
+            'errormsg':'',
+            }
+    else:
+        context = {
+            'logofile':logofile,
+            'errormsg':error,
+            }
+    return render(request , 'base/webmyticketold.html', context)
 
 
 def webtv_old_school(request):
@@ -285,6 +407,7 @@ def TicketRouteNewView(request):
 
             try:
                 newroute.save()
+                messages.success(request, 'Created new Ticket Route.')
             except:
                 messages.error(request,' An error occurcd during registration: ' )
                    
@@ -302,7 +425,8 @@ def TicketRouteDelView(request, pk):
     route = TicketRoute.objects.get(id=pk)
   
     if request.method =='POST':
-        route.delete()        
+        route.delete()
+        messages.success(request, 'Ticket Route was successfully Deleted!')
         return redirect('routesummary')    
     return render(request, 'base/delete.html', {'obj':route})
 
@@ -319,7 +443,7 @@ def TicketRouteUpdateView(request, pk):
             new = trform.save(commit=False)          
             new.tickettype  = new.tickettype.upper()
             new.save()
-            
+            messages.success(request, 'Ticket Route was successfully changed!')
             return redirect('routesummary')
     else:
         trform = trForm(instance=route, prefix='trform')
@@ -370,7 +494,8 @@ def TicketFormatDelView(request, pk):
     ticketformat = TicketFormat.objects.get(id=pk)
   
     if request.method =='POST':
-        ticketformat.delete()        
+        ticketformat.delete()       
+        messages.success(request, 'Ticket Format was successfully deleted!') 
         return redirect('tfsummary')    
     return render(request, 'base/delete.html', {'obj':ticketformat})
 
@@ -384,7 +509,8 @@ def TicketFormatUpdateView(request, pk):
         
         
         if  (tfform.is_valid()):
-            tfform.save()            
+            tfform.save()
+            messages.success(request, 'Ticket Format was successfully updated!')        
             return redirect('tfsummary')
     else:
         tfform = TicketFormatForm(instance=ticketformat, prefix='tfform')        
@@ -653,12 +779,14 @@ def Branch_Save(request, pk):
         for ct in countertypes:
             ct.displayscrollingtext = request.GET[branch.bcode + '-' + ct.name]
             ct.save()
-
-        result = 'Save success'
-        
-
-    context = {'result':result}
-    return render(request, 'base/branchresult.html', context)
+        messages.success(request, 'Branch settings was successfully changed!')
+        result = ''
+    else :
+        messages.error(request, result)
+    
+    # context = {'result':result}
+    return redirect('branchsummary')
+    # return render(request, 'base/branchresult.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
@@ -810,6 +938,7 @@ def UserUpdateView(request, pk):
             # profileform_temp.branchs = profileform.branchs
             
             # profileform_temp.save()
+            messages.success(request, 'Profile was successfully updated!')
             return redirect('usersummary')
     else:
         userform = UserForm(instance=user, prefix='uform')
@@ -866,11 +995,14 @@ def UserDelView(request, pk):
     userp =UserProfile.objects.get(user__exact=user)
 
     if request.user == user :
-        return HttpResponse('You can not kill yourself!')
+        #  return HttpResponse('You can not kill yourself!')
+        messages.error(request, 'You can not kill yourself!')
+        return redirect('usersummary')   
 
     if request.method =='POST':
         userp.delete()
         user.delete()
+        messages.success(request, 'User successfully deleted.')
         return redirect('usersummary')    
     return render(request, 'base/delete.html', {'obj':user})
 

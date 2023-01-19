@@ -36,4 +36,6 @@ urlpatterns = [
 
     # path('webtv/', views.disptvView ),
     path('webtv/', views.webtv_old_school),
+    path('my/', views.webmyticket_old_school, name='myticket'),
+    path('cancel/<str:pk>/<str:sc>/', views.CancelTicketView,  name='cancelticket'),
 ]

@@ -7,7 +7,10 @@
 - Admin Supervise add Printer Status with color
 - WebTV support multi-branch and multi-counter
 - WebTV add counter type text (2 languages)
-
+- Web auto logout
+- New webTV HTML layout
+- New web my ticket function
+- Add Cancel Ticket to web my ticket
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
@@ -478,9 +481,11 @@ Open web browser http://[ip address]/admin
 
 create settings : Name=global, Branch=---, disabled API log
 
-create user groups : api admin report counter
+create user groups : api admin report counter web
 
-create user : userapi /// asdf2206
+create user : userapi /// asdf2206 (group:api)
+
+create user : userweb /// asdf2206 (group:web, set:in-active)
 
 create branch (bcode='KB')
 

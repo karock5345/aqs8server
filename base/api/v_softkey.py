@@ -401,7 +401,7 @@ def postCounterVoid(request):
                 status = dict({'status': 'Error'})
                 msg =  dict({'msg':'Ticket time format not correct. Should be : 2022-05-19T23:59:59.123456Z'}) 
 
-    ticket = None
+    tickett = None
     if status == dict({}) :
         obj_t = TicketTemp.objects.filter(
             tickettype=rx_ticketype,
@@ -411,8 +411,8 @@ def postCounterVoid(request):
             status='waiting',
             locked=False)
         if obj_t.count() == 1 :
-            ticket = obj_t[0]
-        if ticket == None:
+            tickett = obj_t[0]
+        if tickett == None:
             status = dict({'status': 'Error'})
             msg =  dict({'msg':'Ticket not found'}) 
 
@@ -423,9 +423,9 @@ def postCounterVoid(request):
         # update ticketdata db
         td = None
         obj_td = TicketData.objects.filter(
-            tickettemp=ticket,
+            tickettemp=tickett,
             countertype=countertype,
-            step=ticket.step,
+            step=tickett.step,
             branch=branch,
         )
         if obj_td.count() != 1 :
@@ -451,18 +451,18 @@ def postCounterVoid(request):
         # counterstatus.save()
 
         # update ticket 
-        ticket.user = user
-        ticket.status = 'void'
-        ticket.save()
+        tickett.user = user
+        tickett.status = 'void'
+        tickett.save()
         
 
         # add ticketlog
         TicketLog.objects.create(
-            tickettemp=ticket,
+            tickettemp=tickett,
             logtime=datetime_now,
             app = rx_app,
             version = rx_version,
-            logtext='Ticket Void API : '  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+            logtext='Ticket Void API : '  + branch.bcode + '_' + tickett.tickettype + '_'+ tickett.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
             user=user,
         )
 

@@ -9,7 +9,7 @@
         <base href=".">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" /> 
-        <link rel="stylesheet" href="{% static 'styles/styletv2.css' %}" >
+        <link rel="stylesheet" href="{% static 'styles/stylerepair.css' %}" >
     </head>
 
 
@@ -22,31 +22,38 @@
                        {{lastupdate}} 
                     </div>
                     <img class="reload" alt="Reload" onClick="window.location.href=window.location.href" src="{% static 'images/reload.png' %}">
-                </div>                
+                </div>
+                
             </header>
 
 
 
 
-            <div class="status">
-                <div class="vertical-center">
-                    輪候狀況 Queue Status
+
+            <!-- my ticket -->
+            <div class="container_myticket_main">
+                <div class="status">
+                    <div class="vertical-center">
+                        我的維修單號 My Repair note:
+                    </div>                    
                 </div>
-                
+                <div  class="container_myticket" >
+                    <div class="ticketno">
+                        R002301
+                    </div>
+                    <div  class="container_status">
+                        <div  class="statustype" >Status :</div>
+                        <div  class="statustext">維修中 Repairing</div>
+                        <!-- <div  class="statustext">維修完成 <p></p>Repair completed</div> -->
+                    </div>
+                </div>
+                <div class="status">
+                    <div class="vertical-center">
+                        請隨時回來取貨 Please come back for pickup
+                    </div>                    
+                </div>
             </div>
 
-
-            {% for ticketrow in ticketlist %}            
-                <div  class="container_calling" >
-                    <div class="ticketno">
-                        {{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}
-                    </div>
-                    <div class="counter">
-                        <div class="countertype" >{{ticketrow.countertype.lang1}} {{ticketrow.countertype.lang2}}</div>
-                        <div class="counternumber">{{ticketrow.counternumber}}</div>
-                    </div>
-                </div>    
-            {% endfor %}
 
 
 
