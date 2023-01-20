@@ -111,7 +111,7 @@ header {
     border-color: black; */
     align-items: center;
     justify-content:space-between;
-    padding: 10px 10% ;
+    padding: 5px 10% 5px;
   }
 
 .ticketno {
@@ -160,7 +160,8 @@ header {
     font-family: 'Noto Sans TC', sans-serif;
     font-weight:400;
     text-align: center;
-    margin: -5px 0px 10px 0px;
+    /* margin: -5px 0px 10px 0px; */
+     margin: 5px 0px 10px 0px;
 }
 
 .container_myticket_main {
