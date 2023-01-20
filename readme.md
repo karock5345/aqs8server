@@ -24,7 +24,7 @@ Windows add PATH for exe
 Right click on My Computer ->Properties ->Advanced System setting ->Environment Variable ->New
 
 ### <span style="color:orange;">**New Django project with Virtual Env setup:**</span>
-```dos
+```sh
 pip install virtualenv
 # New virtual Env:
 cd '\Projects\'
@@ -37,8 +37,12 @@ python -m virtualenv env
 pip install django
 # or
 python -m pip install django
+# or
+pip install -r requirements.txt
 # new project: 
 django-admin startproject newproj
+# [update package] 
+pip install django -U
 #deactivate virtual env:
 .\env\scripts\deactivate
 ```
@@ -83,7 +87,7 @@ sudo nano /etc/netplan/xxx.yaml
 # (01-netcfg.yaml, 50-cloud-init.yaml, or NN_interfaceName.yaml)
 ```
 edit: 
-```nano
+```sh
 # This is the network config written by 'subiquity'
 network:
   ethernets:
@@ -100,7 +104,7 @@ network:
 ```
 OR
 
-```
+```sh
 network:
   version: 2
   renderer: networkd
@@ -114,7 +118,7 @@ network:
           addresses: [8.8.8.8, 1.1.1.1]
 ```
 exit and save
-```
+```sh
 sudo netplan apply
 ```
 
@@ -128,7 +132,7 @@ Open PuTTY -> Host Name (rvd.tsvd.com.hk or IP) -> Saved Sessions (RVD) -> Categ
 
 PuTTY -> Data -> Auto-login username (ubuntu) -> Session -> Save
 
-```bash
+```sh
 sudo timedatectl set-timezone Asia/Hong_Kong
 sudo apt-get update ; sudo apt-get upgrade -y
 sudo apt-get install -y python3 python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx git 
@@ -192,7 +196,7 @@ sudo su -l postgres
 psql
 ```
 PostgreSQL command:
-```psql
+```sql
 CREATE DATABASE aqsdb8;
 CREATE USER aqsdbuser WITH PASSWORD 'dbpassword';
 ALTER ROLE aqsdbuser SET client_encoding TO 'utf8';
