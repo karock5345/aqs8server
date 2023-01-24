@@ -1,6 +1,8 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.utils import timezone
+from django.urls import reverse
+from urllib.parse import urlencode
 from django.db.models import Q
 from datetime import datetime
 
@@ -10,6 +12,7 @@ from .serializers import printerstatusSerivalizer, ticketlistSerivalizer
 from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal
 from .v_display import wssendwebtv
 import random
+
 def gensecuritycode():
     sc = ''
   
@@ -18,8 +21,9 @@ def gensecuritycode():
 
     return sc
 
-def newticket(branch, ttype, ticketformat, datetime_now, route, pno, user, remark, app, version):
-   
+def newticket(request, branch, ttype, ticketformat, datetime_now, route, pno, user, remark, app, version):
+
+
     # create ticket - get next ticket number
     if branch.ticketrepeatnumber == True :
         ticketno = ticketformat.ticketnext
@@ -36,14 +40,26 @@ def newticket(branch, ttype, ticketformat, datetime_now, route, pno, user, remar
     ticketnoformat = branch.ticketnoformat
     ticketno_str = str(ticketno)
     ticketno_str = ticketno_str.zfill(len(ticketnoformat))
+    sc = gensecuritycode()
 
+    base_url = reverse('myticket')
+    query_string =  urlencode({
+                                'tt':ttype, 
+                                'no':ticketno_str, 
+                                'bc':branch.bcode, 
+                                'sc':sc,
+                                }) 
+    url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
+    myticketlink =  ('{0}://{1}'.format(request.scheme, request.get_host()) +   url)
+
+    
     # ticket text
     tickettext = ticketformat.tformat
     tickettext = tickettext.replace('<TICKET>','<TEXT>'+ ttype+ticketno_str)                        
     localtime = funUTCtoLocal(datetime_now, branch.timezone)
     localtime_str = localtime.strftime('%H:%M:%S %d-%m-%Y')
     tickettext = tickettext.replace('<DATETIME>', '<TEXT>' + localtime_str)
-
+    tickettext = tickettext.replace('<MYTICKET>', myticketlink)
 
     countertype = route.countertype            
     # -if user is not None:
@@ -64,7 +80,9 @@ def newticket(branch, ttype, ticketformat, datetime_now, route, pno, user, remar
         user=user,
         remark=remark,
     )
-    sc = gensecuritycode()
+
+
+    
     tickettemp = TicketTemp.objects.create(
         tickettype=ttype, 
         ticketnumber=ticketno_str, 
@@ -80,6 +98,7 @@ def newticket(branch, ttype, ticketformat, datetime_now, route, pno, user, remar
         remark=remark,
         ticket=ticket,
         securitycode=sc,
+        myticketlink=myticketlink,
     )
 
     TicketData.objects.create(
@@ -104,7 +123,7 @@ def newticket(branch, ttype, ticketformat, datetime_now, route, pno, user, remar
     route.save()
 
 
-    return ticketno_str, countertype
+    return ticketno_str, countertype, tickettemp
 
 @api_view(['POST'])
 def postTicket(request):
@@ -219,13 +238,13 @@ def postTicket(request):
             route = routeobj[0]             
     if status == dict({}) :
         
-        ticketno_str, countertype = newticket(branch, ttype, ticketformat, datetime_now, route, pno, user, remark, app, version)
+        ticketno_str, countertype, tickettemp = newticket(request, branch, ttype, ticketformat, datetime_now, route, pno, user, remark, app, version)
 
 
         test = lcounterstatus[0]
         i = lcounterstatus.index(test)
         status = dict({'status': 'OK'})                     
-        context = {'ticket': ttype+ticketno_str , 'tickettime': datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') , 'counterstatus': test + '[' + str(i) +']' , 'timezone': branch.timezone }
+        context = {'ticket': ttype+ticketno_str , 'tickettime': datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') , 'counterstatus': test + '[' + str(i) +']' , 'timezone': branch.timezone , 'mylink': tickettemp.myticketlink}
         context = dict({'data':context})
 
 

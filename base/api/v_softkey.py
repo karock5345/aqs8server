@@ -419,8 +419,6 @@ def postCounterVoid(request):
       
         
     if status == dict({}) :
-
-        # update ticketdata db
         td = None
         obj_td = TicketData.objects.filter(
             tickettemp=tickett,
@@ -436,25 +434,23 @@ def postCounterVoid(request):
             if td.starttime == None:
                 status = dict({'status': 'Error'})
                 msg =  dict({'msg':'Ticket time is NONE' })
-            else :
-                td.voidtime = datetime_now
-                td.voiduser = user
-                time_diff = datetime_now - td.starttime
-                tsecs = int(time_diff.total_seconds())
-                td.waitingperiod = tsecs
-                td.save()
+
 
     if status == dict({}) :
-        # # update counterstatus db 
-        # counterstatus.tickettemp = None
-        # counterstatus.status = lcounterstatus[0]
-        # counterstatus.save()
+        funVoid(user, tickett, td, datetime_now)
+        # # update ticket 
+        # tickett.user = user
+        # tickett.status = 'void'
+        # tickett.save()
 
-        # update ticket 
-        tickett.user = user
-        tickett.status = 'void'
-        tickett.save()
-        
+        # # update ticketdata db
+        # td.voidtime = datetime_now
+        # td.voiduser = user
+        # time_diff = datetime_now - td.starttime
+        # tsecs = int(time_diff.total_seconds())
+        # td.waitingperiod = tsecs
+        # td.save()
+
 
         # add ticketlog
         TicketLog.objects.create(
@@ -478,6 +474,19 @@ def postCounterVoid(request):
     output = status | msg | context
     return Response(output)
 
+def funVoid(user, tickett, td, datetime_now):
+    # update ticket 
+    tickett.user = user
+    tickett.status = 'void'
+    tickett.save()
+
+    # update ticketdata db
+    td.voidtime = datetime_now
+    td.voiduser = user
+    time_diff = datetime_now - td.starttime
+    tsecs = int(time_diff.total_seconds())
+    td.waitingperiod = tsecs
+    td.save()
 
 
 @api_view(['POST'])

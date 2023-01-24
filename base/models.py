@@ -206,6 +206,8 @@ class TicketTemp(models.Model):
 
     securitycode = models.CharField(max_length=10, default='', blank=True, null=True)
 
+    myticketlink = models.CharField(max_length=1000, default='', blank=True, null=True)
+
     ticket = models.ForeignKey(Ticket, on_delete=models.SET_NULL, blank=True, null=True)
     def __str__(self):
         return self.tickettype + self.ticketnumber

@@ -12,22 +12,25 @@ from base.decorators import *
 # from django.contrib.auth.views import PasswordChangeView
 # from django.urls import reverse_lazy
 
-from .models import CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus
+from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus
 from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, CaptchaForm
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
 from .api.serializers import webdisplaylistSerivalizer
 from django.utils import timezone
+from .api.v_softkey import funVoid
 
 # Create your views here.
 def CancelTicketView(request, pk, sc):
     error = ''
+    logofile = ''
     print('pk:' + pk)
     print('sc:' + sc)
-
+   
     try:
         tt = TicketTemp.objects.get(id=pk)
+        logofile = tt.branch.webtvlogolink
     except:
         error = 'Ticket not found.'
 
@@ -39,32 +42,53 @@ def CancelTicketView(request, pk, sc):
             # process cancel ticket (void)
             print('tapped CONFIRM')
 
+            user = None
+            try:
+                user = User.objects.get(username='userweb')
+            except:
+                error = 'userweb not found.'
+            
+            tdobj = TicketData.objects.filter(tickettemp=tt)
+            if tdobj.count() == 1 :
+                td = tdobj[0]
+            else:
+                error = 'TicketData not found.'
 
+            if error == '' :  
+                datetime_now =timezone.now()
+                funVoid(user, tt, td, datetime_now)
 
+                # add ticketlog
+                TicketLog.objects.create(
+                    tickettemp=tt,
+                    logtime=datetime_now,
+                    app = 'Web',
+                    version = '8',
+                    logtext='Ticket Void by web : '  + tt.branch.bcode + '_' + tt.tickettype + '_'+ tt.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+                    user=user,
+                )
 
-
-
-
-
-
-
-
-            # back to : http://127.0.0.1:8000/my/?tt=A&no=003&bc=KB&sc=vVL
-            base_url = reverse('myticket')
-            query_string =  urlencode({
-                                        'tt':tt.tickettype , 
-                                        'no':tt.ticketnumber, 
-                                        'bc':tt.branch.bcode, 
-                                        'sc':tt.securitycode,
-                                        }) 
-            url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
-            print ('{0}://{1}'.format(request.scheme, request.get_host()) +   url)
-            return redirect(url)    
-    else:
+                # back to : http://127.0.0.1:8000/my/?tt=A&no=003&bc=KB&sc=vVL
+                base_url = reverse('myticket')
+                query_string =  urlencode({
+                                            'tt':tt.tickettype , 
+                                            'no':tt.ticketnumber, 
+                                            'bc':tt.branch.bcode, 
+                                            'sc':tt.securitycode,
+                                            }) 
+                url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
+                print ('{0}://{1}'.format(request.scheme, request.get_host()) +   url)
+                return redirect(url)               
+    if error != '' :
         print (error)
-        # messages.error(request, error)
-        return HttpResponse(error)
-    return render(request, 'base/cancelticket.html')
+        messages.error(request, error)
+        # return HttpResponse(error)
+
+    context = {
+    'logofile':logofile,
+    'errormsg':error,
+    }
+    return render(request, 'base/webmyticket_cancel.html', context)
 
 def webmyticket_old_school(request):
     # 127.0.0.1:8000/my?tt=A&no=001&bc=KB&sc=123
@@ -130,7 +154,11 @@ def webmyticket_old_school(request):
             tickettime = funUTCtoLocal(tickettime, branch.timezone)
         else :
             error = 'Ticket not found.'
-
+    
+    displaylist = None 
+    if error == '' :
+        displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
+    
     counter='---'
     if error == '':
         csobj = CounterStatus.objects.filter(
@@ -148,6 +176,7 @@ def webmyticket_old_school(request):
             'counter':counter,
             'countertype':countertype,
             'tickettemp':tickettemp,
+            'ticketlist':displaylist,
             'errormsg':'',
             }
     else:
@@ -155,7 +184,8 @@ def webmyticket_old_school(request):
             'logofile':logofile,
             'errormsg':error,
             }
-    return render(request , 'base/webmyticketold.html', context)
+        messages.error(request, error)
+    return render(request , 'base/webmyticketold2.html', context)
 
 
 def webtv_old_school(request):
@@ -218,8 +248,10 @@ def webtv_old_school(request):
     else :
         context = {
         'lastupdate' : 'Error: ' + error + ' ',
+        'errormsg' : error,
         }
-    return render(request , 'base/webtvold2.html', context)
+        messages.error(request, error)
+    return render(request , 'base/webtvold3.html', context)
 
 
 def disptvView(request):

@@ -6,6 +6,9 @@
   --color_header_background:#e4e4e4;
   --color_status_background: rgb(0, 55, 100);
   --color_calling_background: rgb(241, 241, 241);
+  --color_cancel_background: lemonchiffon;
+  --color_cancel_back_background: rgb(56, 61, 82);
+ 
 }
 * {
     box-sizing : border-box;
@@ -231,10 +234,134 @@ header {
     border-radius:6px;
     text-align: center;
     /* margin-top: 10px; */
-    padding: 6px;
+    padding: 8px 0 0 ;
     text-decoration: none;
 
 }
 .buttoncancel:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+.msgerror {
+    height:auto;
+    /* min-height: 30px; */
+    color:rgb(255, 0, 0);
+    background-color: rgb(43, 62, 71);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+.msgsuccess {
+    height:auto;
+    /* min-height: 30px; */
+    color: rgb(0, 255, 50);
+    background-color: rgb(43, 62, 71);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.cancel_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    height:400px;
+    /* line-height:58px; */
+    width:90% ;
+    /* display:inline-flex; */
+    margin: 10px 0px 10px 5%;
+    /* min-width:45%; */
+    /* max-width: 500px; */
+    /* align-content:center; */
+    /* position:relative; */
+    background-color: var(--color_cancel_background);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.132);
+    /* border-radius:20px 20px 20px 20px; */
+    /* padding:8px 13px 10px 13px; */
+    /* padding: 0px; */
+    border-style:ridge;
+    border-color: black; 
+    border-width: 1px;
+    /* align-items: center; */
+    /* justify-content:space-between; */
+    /* padding: 10px 10% ; */
+    
+
+  }
+.cancel_back_container {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+
+    /* justify-content: flex-end; */
+    align-items: right;
+    height:32px;
+    color:rgb(255, 255, 255);
+    background-color: var(--color_cancel_back_background);
+    width: 100%;
+}
+.cancel_back {
+    height:32px;
+    width: 32px;
+    color:rgb(255, 255, 255);
+    background-color:var(--color_cancel_back_background);
+    /* margin-right: auto; */
+
+
+    /* align-items: ; */
+
+}
+.cancel_back2 {
+    height:32px;
+    color:rgb(255, 255, 255);
+    background-color:var(--color_cancel_back_background);
+    width: auto;
+    padding: 0px 0px 0px 10px;
+    /* margin: 10px 10px; */
+    
+    text-decoration: none;
+    text-align:left;
+
+
+
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    /* align-items: ; */
+
+}
+.cancel_block{
+    padding: 0px 0px 0px 20px;
+    background: none;
+    height:368px;
+    width: 100%;
+}
+
+.cancel_title {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    background: none;
+    height: 80%;
+    padding: 60px 0px 0px;
+    /* margin-top: auto; */
+    
+}
+.buttonconfirm  {
+    width: 150px;
+    height: 40px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    cursor:pointer;
+    color: rgb(255, 255, 255);
+    background-color: crimson;
+    border-radius:6px;
+    text-align: center;
+    /* margin-top: 10px; */
+    padding: 6px;
+    text-decoration: none;
+    
+    
+}
+.buttonconfirm:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   }

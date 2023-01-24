@@ -1,0 +1,36 @@
+{% extends 'base/webtv_header.html'%}
+{% block content %}
+    {% if errormsg == '' %}
+    <head>
+        <meta http-equiv="refresh" content="10" >
+    </head>
+    {% endif %}
+
+    <div class="status">
+        <div class="vertical-center">
+            輪候狀況 Queue Status
+        </div>
+        
+    </div>
+
+
+    {% for ticketrow in ticketlist %}            
+        <div  class="container_calling" >
+            <div class="ticketno">
+                {{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}
+            </div>
+            <div class="counter">
+                <div class="countertype" >{{ticketrow.countertype.lang1}} {{ticketrow.countertype.lang2}}</div>
+                <div class="counternumber">{{ticketrow.counternumber}}</div>
+            </div>
+        </div>    
+    {% endfor %}
+
+
+
+    <div class="powered">Powered by tsvd.com.hk</div>
+
+
+
+
+{% endblock content %}
