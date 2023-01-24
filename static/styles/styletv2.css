@@ -128,7 +128,17 @@ header {
     background: none;
     margin-top: -7px;
 }
-
+.tickettime {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    text-align:center;
+    /* padding: 0px 0px 0px 0px; */
+    margin: -8px;
+    color:grey;
+    /* background-color:aqua; */
+    background: none;
+}
 .counter {
     background: none;
     margin-top: 5px;

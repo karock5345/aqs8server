@@ -25,12 +25,28 @@ from .api.v_softkey import funVoid
 def CancelTicketView(request, pk, sc):
     error = ''
     logofile = ''
+    url = ''
+    backurl = ''
+
     print('pk:' + pk)
     print('sc:' + sc)
-   
+    
     try:
         tt = TicketTemp.objects.get(id=pk)
         logofile = tt.branch.webtvlogolink
+
+        # back to : http://127.0.0.1:8000/my/?tt=A&no=003&bc=KB&sc=vVL
+        base_url = reverse('myticket')
+        query_string =  urlencode({
+                                    'tt':tt.tickettype , 
+                                    'no':tt.ticketnumber, 
+                                    'bc':tt.branch.bcode, 
+                                    'sc':tt.securitycode,
+                                    }) 
+        url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
+        backurl = '{0}://{1}'.format(request.scheme, request.get_host()) +   url
+        print (backurl)   
+
     except:
         error = 'Ticket not found.'
 
@@ -54,6 +70,10 @@ def CancelTicketView(request, pk, sc):
             else:
                 error = 'TicketData not found.'
 
+            if error == '' :
+                if tt.status != 'waiting':
+                    error = 'Status is not correct.'
+
             if error == '' :  
                 datetime_now =timezone.now()
                 funVoid(user, tt, td, datetime_now)
@@ -68,25 +88,18 @@ def CancelTicketView(request, pk, sc):
                     user=user,
                 )
 
-                # back to : http://127.0.0.1:8000/my/?tt=A&no=003&bc=KB&sc=vVL
-                base_url = reverse('myticket')
-                query_string =  urlencode({
-                                            'tt':tt.tickettype , 
-                                            'no':tt.ticketnumber, 
-                                            'bc':tt.branch.bcode, 
-                                            'sc':tt.securitycode,
-                                            }) 
-                url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
-                print ('{0}://{1}'.format(request.scheme, request.get_host()) +   url)
-                return redirect(url)               
+
+                return redirect(url)
     if error != '' :
         print (error)
         messages.error(request, error)
-        # return HttpResponse(error)
+        if url != '':
+            return redirect(url)
 
     context = {
     'logofile':logofile,
     'errormsg':error,
+    'backurl':backurl,
     }
     return render(request, 'base/webmyticket_cancel.html', context)
 
@@ -169,7 +182,7 @@ def webmyticket_old_school(request):
     if error == '':
         context = {
             'ticket':ticket,
-            'tickettime':tickettime,
+            'tickettime':tickettime.strftime('%Y-%m-%d %H:%M:%S'),
             'counterstatus':counterstatus,
             'logofile':logofile,
             'lastupdate':datetime_now_local.strftime('%Y-%m-%d %H:%M:%S'),            
