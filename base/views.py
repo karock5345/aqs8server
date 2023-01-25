@@ -22,6 +22,39 @@ from django.utils import timezone
 from .api.v_softkey import funVoid
 
 # Create your views here.
+def webtouchView(request):
+    # 127.0.0.1:8000/touch?bc=KB&t=01
+    # t=kiosk01 is Touch Name
+    context = None
+    error = ''
+    bcode = ''
+    touchname = ''
+    try:
+        bcode = request.GET['bc']
+    except:
+        bcode = ''
+        error = 'Branch code is blank.'
+    try:
+        touchname = request.GET['t']
+    except:
+        touchname = ''
+        error = 'Touch Name is blank.'   
+    print ('bcode:' + bcode)
+    print ('TouchName:' + touchname)
+    print ('error:' + error)
+
+    if error == '' :
+        if request.method =='POST':
+            if 'A' in request.POST:
+                print('Ticket A')
+            if 'B' in request.POST:
+                print('Ticket B')
+            if 'C' in request.POST:
+                print('Ticket C')
+    else:
+        return HttpResponse(error)
+    return render(request, 'base/webtouch.html')
+
 def CancelTicketView(request, pk, sc):
     error = ''
     logofile = ''

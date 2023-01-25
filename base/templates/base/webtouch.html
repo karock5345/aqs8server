@@ -1,0 +1,31 @@
+{% extends 'base/webtv_header.html'%}
+{% block content %}
+    {% if errormsg == '' %}
+    <head>
+        <meta http-equiv="refresh" content="10" >
+    </head>
+    {% endif %}
+
+    <div class="status">
+        <div class="vertical-center">
+            Please choose service:
+        </div>
+        
+    </div>
+
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        <button type="submit" name="A">Ticket A</button>
+        <button type="submit" name="B">Ticket B</button>
+        <button type="submit" name="C">Ticket C</button>
+    </form>
+
+
+
+    <div class="powered">Powered by tsvd.com.hk</div>
+
+
+
+
+{% endblock content %}

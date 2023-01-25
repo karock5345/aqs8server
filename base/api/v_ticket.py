@@ -168,7 +168,10 @@ def postTicket(request):
                 status = dict({'status': 'Error'})
                 msg =  dict({'msg':'Branch not found'})   
             else:
-                branch = branchobj[0]    
+                branch = branchobj[0]
+                if branch.enabled == False :
+                    status = dict({'status': 'Error'})
+                    msg =  dict({'msg':'Branch disabled'})
 
     if status == dict({}) :    
         if pno == '' :
@@ -202,13 +205,13 @@ def postTicket(request):
         ticketobj = TicketFormat.objects.filter( Q(branch=branch) & Q(ttype=ttype) )
         if not(ticketobj.count() > 0) :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':'TicketFormat not found'})  
+            msg =  dict({'msg':'TicketFormat not found'})
     if status == dict({}) :
         ticketformat = ticketobj[0]
 
-        if branch.enabled == False :
+        if ticketformat.enabled == False :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':'Branch disabled'})  
+            msg =  dict({'msg':'Ticket disabled'})  
 
     if status == dict({}) :
         # check ticket time
