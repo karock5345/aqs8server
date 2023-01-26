@@ -1,24 +1,25 @@
 {% extends 'base/webtv_header.html'%}
 {% block content %}
-    {% if errormsg == '' %}
-    <head>
-        <meta http-equiv="refresh" content="10" >
-    </head>
-    {% endif %}
 
+    <div class="status">
+        <div class="vertical-center">
+            請選擇服務:
+        </div>
+    </div>
     <div class="status">
         <div class="vertical-center">
             Please choose service:
         </div>
-        
     </div>
 
     
     <form action="" method="POST">
         {% csrf_token %}
-        <button type="submit" name="A">Ticket A</button>
-        <button type="submit" name="B">Ticket B</button>
-        <button type="submit" name="C">Ticket C</button>
+        {% for key in touchkeylist %}
+            <div class="container_touchkey">
+                <button class="buttontouchkey" type="submit" name={{key.ttype}}>{{key.touchkey_lang1}}<br>{{key.touchkey_lang2}}</button>
+            </div>
+        {% endfor %}
     </form>
 
 

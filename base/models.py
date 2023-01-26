@@ -131,7 +131,11 @@ class TicketFormat(models.Model):
     # description3 = models.TextField()
     tformat = models.TextField(null=False, blank=False, default=tformat_default) 
     ticketnext = models.IntegerField(default=1)  # only for Branch.ticketrepeatnumber is True
-
+    touchkey_lang1 = models.CharField(max_length=100, null=True, blank=True, default='') 
+    touchkey_lang2 = models.CharField(max_length=100, null=True, blank=True, default='') 
+    touchkey_lang3 = models.CharField(max_length=100, null=True, blank=True, default='') 
+    touchkey_lang4 = models.CharField(max_length=100, null=True, blank=True, default='') 
+    
     
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
@@ -139,7 +143,8 @@ class TicketFormat(models.Model):
     #     ordering = ['branch', 'ttype']
     class Meta:
         unique_together = ('ttype', 'branch',)  
-
+    def __str__(self):
+        return self.branch.bcode + '-' + self.ttype
 
 class CounterType(models.Model):
     enabled = models.BooleanField(default=True)
@@ -179,6 +184,9 @@ class Ticket(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
 
     remark = models.TextField(default='', blank=True, null=True)
+
+    createdby = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, default=None, related_name='createdby')
+
     def __str__(self):
         return self.tickettype + self.ticketnumber
 
@@ -207,7 +215,9 @@ class TicketTemp(models.Model):
     securitycode = models.CharField(max_length=10, default='', blank=True, null=True)
 
     myticketlink = models.CharField(max_length=1000, default='', blank=True, null=True)
-
+    
+    createdby = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, default=None, related_name='createdbytemp')
+    
     ticket = models.ForeignKey(Ticket, on_delete=models.SET_NULL, blank=True, null=True)
     def __str__(self):
         return self.tickettype + self.ticketnumber
@@ -329,6 +339,18 @@ class DisplayAndVoice(models.Model):
     
     class Meta:
             ordering = ['displaytime']
+
+class WebTouch(models.Model):
+    name = models.CharField(max_length=200, null=True)
+    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    enabled = models.BooleanField(default=True)
+    touchkey = models.ManyToManyField(TicketFormat)
+
+
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+    class Meta:
+        unique_together = ('name', 'branch',)  
 
 
 # class Room(models.Model):

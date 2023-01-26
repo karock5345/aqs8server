@@ -12,6 +12,7 @@
 - New web my ticket function
 - Add Cancel Ticket to web my ticket
 - Add My e-Ticket link QR code for print ticket
+- Add Web Touch function for new ticket
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>

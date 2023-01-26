@@ -12,7 +12,7 @@ from base.decorators import *
 # from django.contrib.auth.views import PasswordChangeView
 # from django.urls import reverse_lazy
 
-from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus
+from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch
 from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, CaptchaForm
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 from django.utils.timezone import localtime, get_current_timezone
@@ -20,6 +20,14 @@ import pytz
 from .api.serializers import webdisplaylistSerivalizer
 from django.utils import timezone
 from .api.v_softkey import funVoid
+from .api.v_ticket import newticket
+
+
+userweb = None
+try:
+    userweb = User.objects.get(username='userweb')
+except:
+    print('userweb not found.')
 
 # Create your views here.
 def webtouchView(request):
@@ -29,6 +37,8 @@ def webtouchView(request):
     error = ''
     bcode = ''
     touchname = ''
+    logofile = ''
+    touchkeylist= []
     try:
         bcode = request.GET['bc']
     except:
@@ -44,16 +54,70 @@ def webtouchView(request):
     print ('error:' + error)
 
     if error == '' :
+        branchobj = Branch.objects.filter( Q(bcode=bcode) )
+        if branchobj.count() == 1:
+            branch = branchobj[0]
+            logofile = branch.webtvlogolink
+            datetime_now = timezone.now()
+            datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+        else :
+            error = 'Branch not found.'
+    if error == '' :
+        wtobj = WebTouch.objects.filter( Q(branch=branch) & Q(name=touchname)  )
+        if wtobj.count() == 1:
+            wt = wtobj[0]
+            touchkeylist = wt.touchkey.all()
+            # print(touchkeylist.count())
+        else :
+            error = 'Web Touch not found.'
+    if error == '' :
+        if wt.enabled == False :
+            error = 'Web Touch Disabled.'
+    if error == '' :
         if request.method =='POST':
-            if 'A' in request.POST:
-                print('Ticket A')
-            if 'B' in request.POST:
-                print('Ticket B')
-            if 'C' in request.POST:
-                print('Ticket C')
+            for key in touchkeylist:
+                if key.ttype in request.POST:
+                    print('Ticket ' + key.ttype)
+
+                    ticketno_str, countertype, tickettemp, error = newticket(branch, key.ttype, '','', datetime_now, userweb, 'web', '8')
+                    if error == '' :
+                        # add ticketlog
+                        TicketLog.objects.create(
+                            tickettemp=tickettemp,
+                            logtime=datetime_now,
+                            app = 'web',
+                            version = '8',
+                            logtext='New Ticket by Web Touch: '  + tickettemp.branch.bcode + '_' + tickettemp.tickettype + '_'+ tickettemp.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+                            user=userweb,
+                        )
+                        # rediect to e-ticket
+                        base_url = reverse('myticket')
+                        query_string =  urlencode({
+                                    'tt':tickettemp.tickettype , 
+                                    'no':tickettemp.ticketnumber, 
+                                    'bc':tickettemp.branch.bcode, 
+                                    'sc':tickettemp.securitycode,
+                                    }) 
+                        url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
+                        backurl = '{0}://{1}'.format(request.scheme, request.get_host()) +   url
+                        print (backurl)
+                        if url != '':
+                            return redirect(url)
+                        
+            # if 'A' in request.POST:
+            #     print('Ticket A')
+            # if 'B' in request.POST:
+            #     print('Ticket B')
+            # if 'C' in request.POST:
+            #     print('Ticket C')
     else:
-        return HttpResponse(error)
-    return render(request, 'base/webtouch.html')
+        messages.error(request, error)
+    context = {
+        'touchkeylist':touchkeylist,
+        'logofile':logofile,
+        'errormsg':error,
+        }        
+    return render(request, 'base/webtouch.html', context)
 
 def CancelTicketView(request, pk, sc):
     error = ''
@@ -77,9 +141,8 @@ def CancelTicketView(request, pk, sc):
                                     'sc':tt.securitycode,
                                     }) 
         url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
-        backurl = '{0}://{1}'.format(request.scheme, request.get_host()) +   url
-        print (backurl)   
-
+        backurl = '{0}://{1}'.format(request.scheme, request.get_host()) + url
+        print (backurl)
     except:
         error = 'Ticket not found.'
 
@@ -91,11 +154,7 @@ def CancelTicketView(request, pk, sc):
             # process cancel ticket (void)
             print('tapped CONFIRM')
 
-            user = None
-            try:
-                user = User.objects.get(username='userweb')
-            except:
-                error = 'userweb not found.'
+            user = userweb
             
             tdobj = TicketData.objects.filter(tickettemp=tt)
             if tdobj.count() == 1 :
