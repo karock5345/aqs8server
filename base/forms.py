@@ -25,7 +25,7 @@ class UserForm(ModelForm):
         fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
     def __init__(self, *args,**kwargs):
         super (UserForm,self ).__init__(*args,**kwargs)
-        self.fields['groups'].queryset = Group.objects.exclude(name='api')   # Q(groups__name='api')
+        self.fields['groups'].queryset = Group.objects.filter(~Q(name='api'), ~Q(name='web'))   # Q(groups__name='api')
 
 class UserFormAdmin(ModelForm):
 # admin can not change himself group and cannot set is_active

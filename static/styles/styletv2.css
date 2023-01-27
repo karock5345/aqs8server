@@ -3,6 +3,7 @@
 :root {
   --merlot: #000080;   /* blue (navy) */
   --crimson: #0047ab;  /* blue (cobalt) */
+
   /* --color_header_background:#e4e4e4; */
   --color_header_background:#ffffff;
   --color_status_background: rgb(0, 55, 100);
@@ -30,7 +31,10 @@ header {
     padding: 30px 10%;
     background-color: var(--color_header_background);
 }
-
+body {
+    display:grid;
+    align-items: center;
+}
 .logo {
     height: 50px;
     margin-right: auto;
@@ -187,6 +191,7 @@ header {
     border-color: rgb(238, 226, 120);
     border-width: 3px;
     margin: 0 0 10px ;
+
 }
 .container_myticket {
     height:80px;
@@ -203,6 +208,7 @@ header {
     /* border-radius:20px 20px 20px 20px; */
     /* padding:8px 13px 10px 13px; */
     display:flex;
+
     
     align-items: center;
     justify-content:space-between;
@@ -320,11 +326,9 @@ header {
     color:rgb(255, 255, 255);
     background-color:var(--color_cancel_back_background);
     /* margin-right: auto; */
-
-
     /* align-items: ; */
-
 }
+
 .cancel_back2 {
     height:32px;
     color:rgb(255, 255, 255);
@@ -336,13 +340,10 @@ header {
     text-decoration: none;
     text-align:left;
 
-
-
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 400;
     font-size: 20px;
     /* align-items: ; */
-
 }
 .cancel_block{
     padding: 0px 0px 0px 20px;

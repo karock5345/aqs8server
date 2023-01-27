@@ -66,7 +66,8 @@ def webtouchView(request):
         wtobj = WebTouch.objects.filter( Q(branch=branch) & Q(name=touchname)  )
         if wtobj.count() == 1:
             wt = wtobj[0]
-            touchkeylist = wt.touchkey.all()
+            touchkeylist = wt.touchkey.filter(Q(branch=branch))
+            # touchkeylist = touchkeylistall.filter(Q(branch=branch))
             # print(touchkeylist.count())
         else :
             error = 'Web Touch not found.'
@@ -75,6 +76,7 @@ def webtouchView(request):
             error = 'Web Touch Disabled.'
     if error == '' :
         if request.method =='POST':
+            
             for key in touchkeylist:
                 if key.ttype in request.POST:
                     print('Ticket ' + key.ttype)
@@ -110,7 +112,8 @@ def webtouchView(request):
             #     print('Ticket B')
             # if 'C' in request.POST:
             #     print('Ticket C')
-    else:
+    if error != '' :
+        touchkeylist= []
         messages.error(request, error)
     context = {
         'touchkeylist':touchkeylist,
