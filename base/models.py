@@ -234,6 +234,8 @@ class TicketRoute(models.Model):
     displastticketnumber = models.CharField(max_length=200, default=' ')
     displastcounter = models.CharField(max_length=200, default=' ')
     waiting = models.IntegerField(default=0)
+    def __str__(self):
+        return self.branch.bcode + '-' + self.tickettype + ' Step : ' + str(self.step)
     
 class TicketLog(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.SET_NULL, blank=True, null=True)

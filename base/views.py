@@ -29,6 +29,8 @@ try:
 except:
     print('userweb not found.')
 
+
+
 # Create your views here.
 def webtouchView(request):
     # 127.0.0.1:8000/touch?bc=KB&t=01
@@ -455,23 +457,23 @@ def Report_RAW_Result(request):
 @unauth_user
 @allowed_users(allowed_roles=['admin', 'report'])
 def Report_RAW_q(request):
-    
-    users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
-    branchs = Branch.objects.all()
-    ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
-    routes = TicketRoute.objects.all().order_by('branch','tickettype','step')
-    countertypes = CounterType.objects.all()
+
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))    
+    # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
+    # routes = TicketRoute.objects.all().order_by('branch','tickettype','step')
+    # countertypes = CounterType.objects.all()
 
     now_l = datetime.now()
     snow_l = now_l.strftime('%Y-%m-%dT%H:%M:%S')
 
     context = {
     'now':snow_l,
-    'users':users,
-    'branchs':branchs,  
-    'ticketformats':ticketformats, 
-    'routes':routes,
-    'countertypes':countertypes,
+    'users':auth_userlist,
+    'branchs':auth_branchs,  
+    'ticketformats':auth_ticketformats, 
+    'routes':auth_routes,
+    'countertypes':auth_countertype,
     }
     return render(request, 'base/r-rawq.html', context)
 
@@ -521,38 +523,50 @@ def SuperVisorView(request, pk):
 @unauth_user
 @allowed_users(allowed_roles=['admin', 'report'])
 def SuperVisorListView(request):  
-    
-    users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+ 
+    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
     #users = User.objects.exclude( Q(is_superuser=True) )
-    profiles = UserProfile.objects.all()
-    branchs = Branch.objects.all()    
-    ticketformats = TicketFormat.objects.all()
-    routes = TicketRoute.objects.all()
+    # profiles = UserProfile.objects.all()
+    # branchs = Branch.objects.all()    
+    # ticketformats = TicketFormat.objects.all()
+    # routes = TicketRoute.objects.all()
     # profiles = UserProfile.objects.filter(Q(user=users.user))
     #profiles = users.userprofile_set.all()
     
-    context = {'users':users, 'profiles':profiles, 'branchs':branchs, 'ticketformats':ticketformats, 'routes':routes}
+    context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
     return render(request, 'base/supervisors.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
 def TicketRouteNewView(request):
-    #page = 'register'
-    form = trForm()
+    if request.user.is_superuser == True :
+        auth_branchs = Branch.objects.all()
+    else :
+        auth_userp = UserProfile.objects.get(user__exact=request.user)
+        auth_branchs = auth_userp.branchs.all()
+    form = trForm(auth_branchs=auth_branchs)
     if request.method == 'POST':
-        form = trForm(request.POST)
+        form = trForm(request.POST, auth_branchs=auth_branchs)
         if form.is_valid():
             newroute = form.save(commit=False)
             newroute.tickettype  = newroute.tickettype.upper()
 
-            try:
-                newroute.save()
-                messages.success(request, 'Created new Ticket Route.')
-            except:
-                messages.error(request,' An error occurcd during registration: ' )
-                   
-            
-            return redirect('routesummary')
+            error = False
+            if newroute.branch == None :
+                messages.error(request,' An error occurcd : Branch is blank ' )
+                error = True
+            if newroute.countertype == None :
+                messages.error(request,' An error occurcd : Counter Type is blank ' )
+                error = True
+
+            if error == False:
+                try:
+                    newroute.save()
+                    messages.success(request, 'Created new Ticket Route.')
+                except:
+                    messages.error(request,' An error occurcd during registration: ' )
+                return redirect('routesummary')
         else:
             messages.error(request,' An error occurcd during registration: '+ str(form.errors) )
     #context = {'page':page}
@@ -573,20 +587,35 @@ def TicketRouteDelView(request, pk):
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
 def TicketRouteUpdateView(request, pk):
+    if request.user.is_superuser == True :
+        auth_branchs = Branch.objects.all()
+    else :
+        auth_userp = UserProfile.objects.get(user__exact=request.user)
+        auth_branchs = auth_userp.branchs.all()
     route = TicketRoute.objects.get(id=pk)    
     if request.method == 'POST':
     
-        trform = trForm(request.POST, instance=route, prefix='trform')
+        trform = trForm(request.POST, instance=route, prefix='trform', auth_branchs=auth_branchs)
           
                 
         if trform.is_valid():  
             new = trform.save(commit=False)          
             new.tickettype  = new.tickettype.upper()
-            new.save()
-            messages.success(request, 'Ticket Route was successfully changed!')
-            return redirect('routesummary')
+            error = False
+            if new.branch == None :
+                # Error branch is None
+                messages.error(request,' Error Branch is blank: ' )
+                error = True
+            if new.countertype == None :
+                # Error Counter type is None
+                messages.error(request,' Error Counter Type is blank: ' )
+                error = True
+            if error == False :
+                new.save()
+                messages.success(request, 'Ticket Route was successfully changed!')
+                return redirect('routesummary')
     else:
-        trform = trForm(instance=route, prefix='trform')
+        trform = trForm(instance=route, prefix='trform', auth_branchs=auth_branchs)
        
     context =  {'route':route, 'trform':trform }
     return render(request, 'base/route-update.html', context)
@@ -595,33 +624,40 @@ def TicketRouteUpdateView(request, pk):
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
 def TicketRouteSummaryView(request):  
-    users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
-    branchs = Branch.objects.all()
-    ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
-    routes = TicketRoute.objects.all().order_by('branch','tickettype','step')
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+ 
+    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
+    # branchs = Branch.objects.all()
+    # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
+    # routes = TicketRoute.objects.all().order_by('branch','tickettype','step')
 
-    context = {'users':users, 'branchs':branchs, 'ticketformats':ticketformats, 'routes':routes}
+    context = {'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
 
     return render(request, 'base/routes.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
 def TicketFormatNewView(request):
-    #page = 'register'
-    form = TicketFormatForm()
+    if request.user.is_superuser == True :
+        auth_branchs = Branch.objects.all()
+    else :
+        auth_userp = UserProfile.objects.get(user__exact=request.user)
+        auth_branchs = auth_userp.branchs.all()
+    form = TicketFormatForm(auth_branchs=auth_branchs)
     if request.method == 'POST':
-        form = TicketFormatForm(request.POST)
+        form = TicketFormatForm(request.POST, auth_branchs=auth_branchs)
         if form.is_valid():
             tf = form.save(commit=False)
             tf.ttype = tf.ttype.upper()
-
-            try:
-                tf.save()
-            except:
-                messages.error(request,' An error occurcd during registration: ' )
-                   
-            
-            return redirect('tfsummary')
+            if tf.branch == None :
+                # Error branch is None
+                messages.error(request,' Error Branch is blank: ' )
+            else :
+                try:
+                    tf.save()
+                except:
+                    messages.error(request,' An error occurcd during registration: ' )
+                return redirect('tfsummary')
         else:
             messages.error(request,' An error occurcd during registration: '+ str(form.errors) )
     #context = {'page':page}
@@ -643,28 +679,40 @@ def TicketFormatDelView(request, pk):
 @allowed_users(allowed_roles=['admin'])
 def TicketFormatUpdateView(request, pk):
     ticketformat = TicketFormat.objects.get(id=pk)    
+    if request.user.is_superuser == True :
+        auth_branchs = Branch.objects.all()
+    else :
+        auth_userp = UserProfile.objects.get(user__exact=request.user)
+        auth_branchs = auth_userp.branchs.all()
+
     if request.method == 'POST':
     
-        tfform = TicketFormatForm(request.POST, instance=ticketformat, prefix='tfform')
-        
+        tfform = TicketFormatForm(request.POST, instance=ticketformat, prefix='tfform',  auth_branchs=auth_branchs)
         
         if  (tfform.is_valid()):
-            tfform.save()
-            messages.success(request, 'Ticket Format was successfully updated!')        
-            return redirect('tfsummary')
+            tf = tfform.save(commit=False)
+            if tf.branch == None :
+                # Error branch is None
+                messages.error(request,' Error Branch is blank: ' )
+            else :
+                tf.save()
+                messages.success(request, 'Ticket Format was successfully updated!')        
+                return redirect('tfsummary')
     else:
-        tfform = TicketFormatForm(instance=ticketformat, prefix='tfform')        
+        tfform = TicketFormatForm(instance=ticketformat, prefix='tfform', auth_branchs=auth_branchs)        
     context =  {'tfform':tfform, 'ticketformat':ticketformat, }
     return render(request, 'base/tf-update.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
-def TicketFormatSummaryView(request):  
-    users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
-    branchs = Branch.objects.all()
-    ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
-    routes = TicketRoute.objects.all()
-    context = {'users':users, 'branchs':branchs, 'ticketformats':ticketformats, 'routes':routes}
+def TicketFormatSummaryView(request):
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+  
+    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
+    # branchs = Branch.objects.all()
+    # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
+    # routes = TicketRoute.objects.all()
+    context = {'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
     return render(request, 'base/tfs.html', context)
 
 @unauth_user
@@ -973,41 +1021,71 @@ def BranchUpdateView(request, pk):
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
 def BranchSummaryView(request):  
-    users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
+    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
     #users = User.objects.exclude( Q(is_superuser=True) )
-    profiles = UserProfile.objects.all()
-    branchs = Branch.objects.all()    
-    ticketformats = TicketFormat.objects.all()
-    routes = TicketRoute.objects.all()
+    # profiles = UserProfile.objects.all()
+    # branchs = Branch.objects.all()    
+    # ticketformats = TicketFormat.objects.all()
+    # routes = TicketRoute.objects.all()
     # profiles = UserProfile.objects.filter(Q(user=users.user))
     #profiles = users.userprofile_set.all()
-    
-    context = {'users':users, 'profiles':profiles, 'branchs':branchs, 'ticketformats':ticketformats, 'routes':routes}
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+
+
+    context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
     return render(request, 'base/branch.html', context)
 
 @unauth_user
-def homeView(request):  
-    users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
-    branchs = Branch.objects.all()
-    ticketformats = TicketFormat.objects.all()
-    routes = TicketRoute.objects.all()
+def homeView(request):
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+
+    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
+    # branchs = Branch.objects.all()
+    # ticketformats = TicketFormat.objects.all()
+    # routes = TicketRoute.objects.all()
     # users = User.objects.exclude(is_superuser=True)
-    context =  {'users':users , 'branchs':branchs, 'ticketformats':ticketformats, 'routes':routes}
+    context =  {'users':auth_userlist , 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
     return render(request, 'base/home.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
 def UserSummaryView(request):  
-    users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
+    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
+    
     #users = User.objects.exclude( Q(is_superuser=True) )
-    profiles = UserProfile.objects.all()
-    branchs = Branch.objects.all()
-    ticketformats = TicketFormat.objects.all()
-    routes = TicketRoute.objects.all()
+    # profiles = UserProfile.objects.all()
+
+
+
+    # auth_branchs = UserProfile.objects.get(user=request.user).branchs.all()
+
+    # auth_profilelist = []
+    # auth_userlist = []
+    # for prof in profiles :
+    #     not_auth = False
+    #     print(prof.user)
+    #     for b in prof.branchs.all():
+    #         print('   ' + b.bcode)
+    #         if (b in auth_branchs) == True :
+    #             pass                
+    #         else :
+    #             not_auth = True
+    #     print(not_auth)
+    #     if not_auth == False :
+    #         if prof.user.is_superuser == False :
+    #             if ('api' in prof.user.groups.all()) == False :
+    #                 auth_profilelist.append(prof)
+    #                 auth_userlist.append(prof.user)
+
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+
+    # branchs = Branch.objects.all()
+    # ticketformats = TicketFormat.objects.all()
+    # routes = TicketRoute.objects.all()
     # profiles = UserProfile.objects.filter(Q(user=users.user))
     #profiles = users.userprofile_set.all()
     
-    context = {'users':users, 'profiles':profiles, 'branchs':branchs, 'ticketformats':ticketformats, 'routes':routes}
+    context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
     return render(request, 'base/user.html', context)
 
 def UserLogoutView(request):   
@@ -1017,6 +1095,7 @@ def UserLogoutView(request):
 @unauth_user_login
 def UserLoginView(request):
     page = 'login'
+    enable_captcha = False
     # if request.user.is_authenticated:
     #     return redirect('home')
 
@@ -1025,14 +1104,13 @@ def UserLoginView(request):
         password = request.POST.get('password')
         human = True
 
-        captchaform = CaptchaForm(request.POST)
-        if captchaform.is_valid():
-            human = True
-            # print ('Is human.')
-        else:
-            # print('Is NOT human.')
-            messages.error(request, 'User is NOT human.')
-            return redirect('home')
+        if enable_captcha == True :
+            captchaform = CaptchaForm(request.POST)
+            if captchaform.is_valid():
+                human = True
+            else:
+                messages.error(request, 'User is NOT human.')
+                return redirect('home')
         
         if human == True:
             try:
@@ -1047,25 +1125,32 @@ def UserLoginView(request):
             else:
                 messages.error(request, 'Username or password does not exist')
     else:
-        captchaform = CaptchaForm()
+        if enable_captcha == True :
+            captchaform = CaptchaForm()
         pass
 
     context = {'page':page} 
-    context = context | {'captcha_form':captchaform} 
+    if enable_captcha == True :
+        context = context | {'captcha_form':captchaform} 
     return render(request, 'base/login_register.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
 def UserUpdateView(request, pk):
     user = User.objects.get(id=pk)
-    userp =UserProfile.objects.get(user__exact=user)
+    userp = UserProfile.objects.get(user__exact=user)
+    if request.user.is_superuser == True :
+        auth_branchs = Branch.objects.all()
+    else :
+        auth_userp = UserProfile.objects.get(user__exact=request.user)
+        auth_branchs = auth_userp.branchs.all()
     if request.method == 'POST':
     
         userform = UserForm(request.POST, instance=user, prefix='uform')
         if user == request.user:
             userform = UserFormAdmin(request.POST, instance=user, prefix='uform')        
-            
-        profileform = UserProfileForm(request.POST, instance=userp, prefix='pform')
+        
+        profileform = UserProfileForm(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
         
         if  (userform.is_valid() & profileform.is_valid()):
             userform.save()
@@ -1084,7 +1169,7 @@ def UserUpdateView(request, pk):
         userform = UserForm(instance=user, prefix='uform')
         if user == request.user:
             userform = UserFormAdmin(instance=user, prefix='uform')  
-        profileform = UserProfileForm(instance=userp, prefix='pform')
+        profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
     context =  {'userform':userform , 'profileform':profileform, 'user':user}
     return render(request, 'base/user-update.html', context)
 
@@ -1167,3 +1252,44 @@ def MenuView(request):
 
     context = {'users':users, 'branchs':branchs, 'ticketformats':ticketformats, 'routes':routes, 'admin':adminuser, 'report':reportuser}
     return render (request, 'base/m-menu.html', context)
+
+def auth_data(user):
+
+    if user.is_superuser == True :
+        auth_profilelist = UserProfile.objects.all()
+        auth_userlist = User.objects.exclude( Q(groups__name='api') | Q(groups__name='web'))
+        auth_branchs = Branch.objects.all()
+        auth_ticketformats = TicketFormat.objects.all()
+        auth_routes = TicketRoute.objects.all()
+        auth_countertype = CounterType.objects.all()
+    else :
+        profiles = UserProfile.objects.all()
+        auth_branchs = UserProfile.objects.get(user=user).branchs.all()
+
+        profid_list = []
+        userid_list = []
+        # auth_userlist = []
+        for prof in profiles :
+            not_auth = False
+            # print(prof.user)
+            for b in prof.branchs.all():
+                # print('   ' + b.bcode)
+                if (b in auth_branchs) == True :
+                    pass                
+                else :
+                    not_auth = True
+            # print(not_auth)
+            if not_auth == False :
+                if prof.user.is_superuser == False :
+                    if ('api' in prof.user.groups.all()) == False :
+                        if ('web' in prof.user.groups.all()) == False :
+                            profid_list.append(prof.id)
+                            userid_list.append(prof.user.id)
+                        
+        auth_userlist = User.objects.filter(id__in=userid_list)
+        auth_profilelist = UserProfile.objects.filter(id__in=profid_list)
+        auth_ticketformats = TicketFormat.objects.filter(branch__in=auth_branchs)
+        auth_routes = TicketRoute.objects.filter(branch__in=auth_branchs)
+        auth_countertype = CounterType.objects.filter(branch__in=auth_branchs)
+        # print(((auth_userlist.count)))
+    return(auth_branchs, auth_userlist, auth_profilelist, auth_ticketformats, auth_routes, auth_countertype)

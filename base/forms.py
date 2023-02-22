@@ -3,7 +3,7 @@
 from django.forms import ModelForm, forms
 from django.contrib.auth.models import User, Group
 from django.db.models import Q
-from base.models import TicketFormat, TicketRoute, UserProfile
+from base.models import TicketFormat, TicketRoute, UserProfile, Branch, CounterType
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
 
@@ -37,13 +37,29 @@ class UserProfileForm(ModelForm):
     class Meta:
         model = UserProfile
         fields = ['tickettype', 'queuepriority', 'branchs', 'staffnumber']
+    def __init__(self, *args,**kwargs):
+        self.auth_branchs = kwargs.pop('auth_branchs')
+        super().__init__(*args,**kwargs)
+        # print(self.auth_branchs)
+        self.fields['branchs'].queryset = Branch.objects.filter(id__in=self.auth_branchs)   # Q(groups__name='api')
 
 class TicketFormatForm(ModelForm):
+    def __init__(self, *args,**kwargs):
+        self.auth_branchs = kwargs.pop('auth_branchs')
+        super().__init__(*args,**kwargs)
+        # print(self.auth_branchs)
+        self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs) 
     class Meta:
         model = TicketFormat
         fields = ['enabled', 'ttype', 'branch', 'tformat']
 
 class trForm(ModelForm):
+    def __init__(self, *args,**kwargs):
+        self.auth_branchs = kwargs.pop('auth_branchs')
+        super().__init__(*args,**kwargs)
+        # print(self.auth_branchs)
+        self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs)
+        self.fields['countertype'].queryset = CounterType.objects.filter(branch__in=self.auth_branchs)
     class Meta:
         model = TicketRoute 
         fields = ['enabled', 'branch', 'tickettype', 'step', 'countertype']
