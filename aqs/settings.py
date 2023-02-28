@@ -33,7 +33,7 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 50000 # higher than the count of fields (default
 # Application definition
 
 INSTALLED_APPS = [
-    'channels',
+    'daphne',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -55,8 +55,10 @@ ASGI_APPLICATION = 'aqs.asgi.application'
 CHANNEL_LAYERS = {
     'default':{
         'BACKEND':'channels_redis.core.RedisChannelLayer',
+        # 'BACKEND':'channels_redis.pubsub.RedisPubSubChannelLayer',
         'CONFIG': {
-            'hosts':[('127.0.0.1', '6379')],
+            # 'hosts':[('127.0.0.1', '6379')],
+            'hosts':[('192.168.107.128', '6379')],
         # "channel_capacity": {
         #         "http.request": 200,
         #         "http.response!*": 10,
@@ -99,7 +101,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'aqs.wsgi.application'
+# WSGI_APPLICATION = 'aqs.wsgi.application'
 
 
 # Database

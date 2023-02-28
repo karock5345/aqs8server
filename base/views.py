@@ -23,6 +23,11 @@ from .api.v_softkey import funVoid
 from .api.v_ticket import newticket
 
 
+
+from asgiref.sync import async_to_sync
+from channels.layers import get_channel_layer
+
+
 userweb = None
 try:
     userweb = User.objects.get(username='userweb')
@@ -364,8 +369,14 @@ def webtv_old_school(request):
     return render(request , 'base/webtvold3.html', context)
 
 
-def disptvView(request):
-    return render(request, 'base/webtv.html')
+def webtv(request, bcode, ct):
+ 
+    context = {
+        'bcode' :  bcode ,
+        'ct' : ct,
+        }
+    return render(request , 'base/webtv.html', context)
+
 
 @unauth_user
 @allowed_users(allowed_roles=['admin', 'report'])
@@ -1044,6 +1055,11 @@ def homeView(request):
     # ticketformats = TicketFormat.objects.all()
     # routes = TicketRoute.objects.all()
     # users = User.objects.exclude(is_superuser=True)
+
+
+
+
+
     context =  {'users':auth_userlist , 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
     return render(request, 'base/home.html', context)
 
@@ -1096,8 +1112,8 @@ def UserLogoutView(request):
 def UserLoginView(request):
     page = 'login'
     enable_captcha = False
-    # if request.user.is_authenticated:
-    #     return redirect('home')
+    if request.user.is_authenticated:
+        return redirect('home')
 
     if request.method == 'POST':
         username = request.POST.get('username').lower()
@@ -1133,7 +1149,7 @@ def UserLoginView(request):
     if enable_captcha == True :
         context = context | {'captcha_form':captchaform} 
     return render(request, 'base/login_register.html', context)
-
+    
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
 def UserUpdateView(request, pk):
@@ -1215,7 +1231,13 @@ def UserChangePWView(request):
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
 def UserDelView(request, pk):
- 
+    # channel_layer = get_channel_layer()
+    # channel_group_name = "webtv_KB_Reception"
+    # print('channel_group_name:' + channel_group_name)
+    # async_to_sync (channel_layer.group_send)(channel_group_name, {"type": "broadcast_message",'lastupdate':'from api "New ticket"'})
+
+    # return render(request, 'base/delete.html')
+
     user = User.objects.get(id=pk)
     userp =UserProfile.objects.get(user__exact=user)
 

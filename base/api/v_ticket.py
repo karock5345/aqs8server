@@ -13,6 +13,9 @@ from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCto
 from .v_display import wssendwebtv
 import random
 from django.contrib.auth.models import User, Group
+from asgiref.sync import async_to_sync
+from channels.layers import get_channel_layer
+
 
 def gensecuritycode():
     sc = ''
@@ -170,106 +173,123 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
 
 @api_view(['POST'])
 def postTicket(request):
-# {
-#    "status":"OK/Error",
-#    "msg":"Ticket route not found",
-#    "data":[
-#         {"ticket":"A001","tickettime":"2022-11-30","i":"1"}   
-#    ]
-# }
-    status = dict({})
-    msg = dict({})
-    context = dict({})
+    print('Sending data via ws')
+    # wssendwebtv(bcode, countertype.name)
+    
+    channel_layer = get_channel_layer()
+    channel_group_name = "webtv_KB_Reception"
+    print('channel_group_name:' + channel_group_name)
+    async_to_sync (channel_layer.group_send)(channel_group_name, {"type": "broadcast_message",'lastupdate':'from api "New ticket"'})
 
-    username = request.GET.get('username') if request.GET.get('username') != None else ''
-    password = request.GET.get('password') if request.GET.get('password') != None else ''
-    token = request.GET.get('token') if request.GET.get('token') != None else ''
-    app = request.GET.get('app') if request.GET.get('app') != None else ''
-    version = request.GET.get('version') if request.GET.get('version') != None else ''
-    bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
-    ttype = request.GET.get('tickettype') if request.GET.get('tickettype') != None else ''
-    pno = request.GET.get('printernumber') if request.GET.get('printernumber') != None else ''
-    remark = request.GET.get('remark') if request.GET.get('remark') != None else ''
+    return Response('hi') 
 
-    #datetime_now = datetime.utcnow()
-    datetime_now =timezone.now()
+
+
+
+    # {
+    #    "status":"OK/Error",
+    #    "msg":"Ticket route not found",
+    #    "data":[
+    #         {"ticket":"A001","tickettime":"2022-11-30","i":"1"}   
+    #    ]
+    # }
+    # status = dict({})
+    # msg = dict({})
+    # context = dict({})
+
+    # username = request.GET.get('username') if request.GET.get('username') != None else ''
+    # password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # app = request.GET.get('app') if request.GET.get('app') != None else ''
+    # version = request.GET.get('version') if request.GET.get('version') != None else ''
+    # bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
+    # ttype = request.GET.get('tickettype') if request.GET.get('tickettype') != None else ''
+    # pno = request.GET.get('printernumber') if request.GET.get('printernumber') != None else ''
+    # remark = request.GET.get('remark') if request.GET.get('remark') != None else ''
+
+    # #datetime_now = datetime.utcnow()
+    # datetime_now =timezone.now()
 
  
 
-    # check input
+    # # check input
    
-    branch = None
-    if status == dict({}) :        
-        if bcode == '' :
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'No branch code'})
-        else :
-            # check branch        
-            branchobj = Branch.objects.filter( Q(bcode=bcode) )
-            if branchobj.count() != 1:
-                # branch not found
-                status = dict({'status': 'Error'})
-                msg =  dict({'msg':'Branch not found'})   
-            else:
-                branch = branchobj[0]
-                if branch.enabled == False :
-                    status = dict({'status': 'Error'})
-                    msg =  dict({'msg':'Branch disabled'})
+    # branch = None
+    # if status == dict({}) :        
+    #     if bcode == '' :
+    #         status = dict({'status': 'Error'})
+    #         msg =  dict({'msg':'No branch code'})
+    #     else :
+    #         # check branch        
+    #         branchobj = Branch.objects.filter( Q(bcode=bcode) )
+    #         if branchobj.count() != 1:
+    #             # branch not found
+    #             status = dict({'status': 'Error'})
+    #             msg =  dict({'msg':'Branch not found'})   
+    #         else:
+    #             branch = branchobj[0]
+    #             if branch.enabled == False :
+    #                 status = dict({'status': 'Error'})
+    #                 msg =  dict({'msg':'Branch disabled'})
 
-    if status == dict({}) :    
-        if pno == '' :
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'No printer number'})  
-    if status == dict({}) :
-        if ttype == '' :
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'No ticket type'})   
+    # if status == dict({}) :    
+    #     if pno == '' :
+    #         status = dict({'status': 'Error'})
+    #         msg =  dict({'msg':'No printer number'})  
+    # if status == dict({}) :
+    #     if ttype == '' :
+    #         status = dict({'status': 'Error'})
+    #         msg =  dict({'msg':'No ticket type'})   
 
-     # Save Api Log
-    if setting_APIlogEnabled(branch) == True :
-        APILog.objects.create(
-            logtime=datetime_now,
-            requeststr = request.build_absolute_uri() ,
-            ip = visitor_ip_address(request),
-            app = app,
-            version = version,
-            logtext = 'API call : Ticket Key',
-        ) 
+    #  # Save Api Log
+    # if setting_APIlogEnabled(branch) == True :
+    #     APILog.objects.create(
+    #         logtime=datetime_now,
+    #         requeststr = request.build_absolute_uri() ,
+    #         ip = visitor_ip_address(request),
+    #         app = app,
+    #         version = version,
+    #         logtext = 'API call : Ticket Key',
+    #     ) 
 
-    if status == dict({}) :
+    # if status == dict({}) :
         
-        loginreply, user = loginapi(request , username, password, token, None)
+    #     loginreply, user = loginapi(request , username, password, token, None)
 
-        if loginreply != 'OK':
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})   
+    #     if loginreply != 'OK':
+    #         status = dict({'status': 'Error'})
+    #         msg =  dict({'msg':loginreply})   
          
-    if status == dict({}) :
+    # if status == dict({}) :
         
-        ticketno_str, countertype, tickettemp, error = newticket(branch, ttype, pno, remark, datetime_now, user, app, version)
+    #     ticketno_str, countertype, tickettemp, error = newticket(branch, ttype, pno, remark, datetime_now, user, app, version)
 
-        if error != '':
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':error})
+    #     if error != '':
+    #         status = dict({'status': 'Error'})
+    #         msg =  dict({'msg':error})
         
-    if status == dict({}) :
+    # if status == dict({}) :
 
-        test = lcounterstatus[0]
-        i = lcounterstatus.index(test)
-        status = dict({'status': 'OK'})                     
-        context = {'ticket': ttype+ticketno_str , 'tickettime': datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') , 'counterstatus': test + '[' + str(i) +']' , 'timezone': branch.timezone , 'mylink': tickettemp.myticketlink}
-        context = dict({'data':context})
-
-
+    #     test = lcounterstatus[0]
+    #     i = lcounterstatus.index(test)
+    #     status = dict({'status': 'OK'})                     
+    #     context = {'ticket': ttype+ticketno_str , 'tickettime': datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') , 'counterstatus': test + '[' + str(i) +']' , 'timezone': branch.timezone , 'mylink': tickettemp.myticketlink}
+    #     context = dict({'data':context})
 
 
 
 
-        wssendwebtv(bcode, countertype.name)
+
+    #     print('Sending data via ws')
+    #     # wssendwebtv(bcode, countertype.name)
       
+    #     channel_layer = get_channel_layer()
+    #     channel_group_name = "webtv_KB_Reception"
+    #     print('channel_group_name:' + channel_group_name)
+    #     async_to_sync (channel_layer.group_send)(channel_group_name, {"type": "broadcast_message",'lastupdate':'from api "New ticket"'})
 
-    output = status | msg | context
-    return Response(output)  
+    # # output = status | msg | context
+    # return Response(output)  
 
 
 

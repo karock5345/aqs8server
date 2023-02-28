@@ -8,39 +8,90 @@ from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCto
 
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
 from .serializers import displaylistSerivalizer, displaywaitlistSerivalizer, voicelistSerivalizer, lastDisplaySerivalizer, webdisplaylistSerivalizer
-# from channels.layers import get_channel_layer
-# from asgiref.sync import async_to_sync
+from channels.layers import get_channel_layer
+from asgiref.sync import async_to_sync
+import asyncio
 
 # displaylist only show within x mins, details : the Displaylist is too long, can not give full list to display app.
 displaylist_x_mins = 3
 # default_bcode = 'RVD15'
 # default_countername = 'Counter'
-default_bcode = 'KB'
-default_countername = 'Reception'
+# default_bcode = 'KB'
+# default_countername = 'Reception'
 
-
+# async def send_message_to_group(group_name, data):
+#     channel_layer = get_channel_layer()
+#     await async_to_sync(channel_layer.group_send)(
+#         group_name,
+#         data
+#     )
        
 def wssendwebtv(bcode, countertypename):
-    pass
-    # if bcode == None:
-    #     bcode = default_bcode 
-    # if countertypename == None:
-    #     countertypename = default_countername
+    print (bcode)
+    context = None
+    error = ''
 
+    branch = None
+    if error == '' :        
+        branchobj = Branch.objects.filter( Q(bcode=bcode) )
+        if branchobj.count() == 1:
+            branch = branchobj[0]
+            logofile = branch.webtvlogolink
+        else :
+            error = 'Branch not found.'
 
+    # get the Counter type
+    countertype = None
+    if error == '' :    
+        if countertypename == '' :
+            ctypeobj = CounterType.objects.filter( Q(branch=branch) )
+        else:
+            ctypeobj = CounterType.objects.filter( Q(branch=branch) & Q(name=countertypename) )
+        if (ctypeobj.count() > 0) :
+            countertype = ctypeobj[0]
+        else :
+            error = 'Counter Type not found.' 
 
-    # data ={
-    #                 'bcode':bcode,
-    #                 'countertype':countertypename
-    #     }
-    # data = json.dumps(data)
-    # channel_layer = get_channel_layer() 
-    # async_to_sync(channel_layer.group_send)(
-    #     'g_webtv', {
-    #     'type':'send_webtv',
-    #     'value': data
-    #     }
-    # )
+    if error == '' : 
+        if countertype == None :
+            displaylist = DisplayAndVoice.objects.filter (branch=branch).order_by('-displaytime')[:5]
+        else:
+            displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
+        serializers  = webdisplaylistSerivalizer(displaylist, many=True)
+        context = ({'ticketlist':serializers.data})
+
+        datetime_now = timezone.now()
+        datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+
+        context = {
+        'type':'broadcast_message',
+        'lastupdate':datetime_now_local.strftime('%Y-%m-%d %H:%M:%S'),
+        # 'ticketlist':displaylist,
+        'logofile':logofile,
+        'message':'from index'
+        }
+
+    else :
+        context = {
+        'type':'broadcast_message',
+        'lastupdate' : 'Error: ' + error + ' ',
+        'errormsg' : error,
+        'message':'from index'
+        }
+
+    
+    channel_layer = get_channel_layer()
+    channel_group_name = 'webtv_' + bcode + '_' + countertypename
+    print('channel_group_name:' + channel_group_name)
+    async_to_sync (channel_layer.group_send)(channel_group_name, context)
+    
+    # loop = asyncio.new_event_loop()
+    # asyncio.set_event_loop(loop)
+    # loop.run_until_complete(send_message_to_group(channel_group_name, context))
+    # loop.close()
+
+    print(context)
+    
 
 def newdisplayvoice(branch, countertype, counternumber, tickettemp, displaytime, user):
     # find number of waiting
