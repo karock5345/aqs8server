@@ -1,4 +1,5 @@
 import json
+from django.core import serializers
 from datetime import datetime, timedelta
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -27,7 +28,6 @@ displaylist_x_mins = 3
 #     )
        
 def wssendwebtv(bcode, countertypename):
-    print (bcode)
     context = None
     error = ''
 
@@ -57,8 +57,12 @@ def wssendwebtv(bcode, countertypename):
             displaylist = DisplayAndVoice.objects.filter (branch=branch).order_by('-displaytime')[:5]
         else:
             displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
-        serializers  = webdisplaylistSerivalizer(displaylist, many=True)
-        context = ({'ticketlist':serializers.data})
+        webserialize  = webdisplaylistSerivalizer(displaylist, many=True)
+        qs_json = webserialize.data[:]
+        # qs_json = serializers.serialize('json', webserialize)
+        print(qs_json)
+        # context = ({'ticketlist':serializers.data})
+
 
         datetime_now = timezone.now()
         datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
@@ -66,9 +70,8 @@ def wssendwebtv(bcode, countertypename):
         context = {
         'type':'broadcast_message',
         'lastupdate':datetime_now_local.strftime('%Y-%m-%d %H:%M:%S'),
-        # 'ticketlist':displaylist,
+        'ticketlist':qs_json,
         'logofile':logofile,
-        'message':'from index'
         }
 
     else :
@@ -76,21 +79,14 @@ def wssendwebtv(bcode, countertypename):
         'type':'broadcast_message',
         'lastupdate' : 'Error: ' + error + ' ',
         'errormsg' : error,
-        'message':'from index'
         }
 
     
     channel_layer = get_channel_layer()
     channel_group_name = 'webtv_' + bcode + '_' + countertypename
-    print('channel_group_name:' + channel_group_name)
+    print('channel_group_name:' + channel_group_name + ' sending data...')
     async_to_sync (channel_layer.group_send)(channel_group_name, context)
     
-    # loop = asyncio.new_event_loop()
-    # asyncio.set_event_loop(loop)
-    # loop.run_until_complete(send_message_to_group(channel_group_name, context))
-    # loop.close()
-
-    print(context)
     
 
 def newdisplayvoice(branch, countertype, counternumber, tickettemp, displaytime, user):

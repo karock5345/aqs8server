@@ -33,7 +33,7 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 50000 # higher than the count of fields (default
 # Application definition
 
 INSTALLED_APPS = [
-    'daphne',
+    'channels',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,23 +50,7 @@ INSTALLED_APPS = [
 
 ]
 
-ASGI_APPLICATION = 'aqs.asgi.application'
 
-CHANNEL_LAYERS = {
-    'default':{
-        'BACKEND':'channels_redis.core.RedisChannelLayer',
-        # 'BACKEND':'channels_redis.pubsub.RedisPubSubChannelLayer',
-        'CONFIG': {
-            # 'hosts':[('127.0.0.1', '6379')],
-            'hosts':[('192.168.107.128', '6379')],
-        # "channel_capacity": {
-        #         "http.request": 200,
-        #         "http.response!*": 10,
-        #         re.compile(r"^websocket.send\!.+"): 20,
-        #     },
-        },
-    }
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -184,3 +168,23 @@ MESSAGE_TAGS = {
     messages.SUCCESS: 'msgsuccess',
     messages.ERROR: 'msgerror',
   }
+
+
+
+ASGI_APPLICATION = 'aqs.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default':{
+        'BACKEND':'channels_redis.core.RedisChannelLayer',
+        # 'BACKEND':'channels_redis.pubsub.RedisPubSubChannelLayer',
+        'CONFIG': {
+            # 'hosts':[('127.0.0.1', '6379')],
+            'hosts':[('192.168.107.128', '6379')],
+        # "channel_capacity": {
+        #         "http.request": 200,
+        #         "http.response!*": 10,
+        #         re.compile(r"^websocket.send\!.+"): 20,
+        #     },
+        },
+    }
+}

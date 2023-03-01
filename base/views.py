@@ -370,11 +370,69 @@ def webtv_old_school(request):
 
 
 def webtv(request, bcode, ct):
- 
+    context = None
+    error = ''
+
+    countertypename = ct
+       
+    
+    branch = None
+    if error == '' :        
+        branchobj = Branch.objects.filter( Q(bcode=bcode) )
+        if branchobj.count() == 1:
+            branch = branchobj[0]
+            logofile = branch.webtvlogolink
+        else :
+            error = 'Branch not found.'
+
+    # get the Counter type
+    countertype = None
+    if error == '' :    
+        if countertypename == '' :
+            ctypeobj = CounterType.objects.filter( Q(branch=branch) )
+        else:
+            ctypeobj = CounterType.objects.filter( Q(branch=branch) & Q(name=countertypename) )
+        if (ctypeobj.count() > 0) :
+            countertype = ctypeobj[0]
+        else :
+            error = 'Counter Type not found.' 
+
+
+
+    if error == '' : 
+        if countertype == None :
+            displaylist = DisplayAndVoice.objects.filter (branch=branch).order_by('-displaytime')[:5]
+        else:
+            displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
+        # serializers  = webdisplaylistSerivalizer(displaylist, many=True)
+        # context = ({'ticketlist':serializers.data})
+
+        datetime_now = timezone.now()
+        datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+
+        context = {
+
+        'lastupdate':datetime_now_local.strftime('%Y-%m-%d %H:%M:%S'),
+        'ticketlist':displaylist,
+        'logofile':logofile,
+        }
+        print (displaylist[0].wait)
+    else :
+        context = {
+        'lastupdate' : 'Error: ' + error + ' ',
+        'errormsg' : error,
+        }
+        messages.error(request, error)
+
+
+
+
     context = {
         'bcode' :  bcode ,
         'ct' : ct,
-        }
+        } | context
+    
+
     return render(request , 'base/webtv.html', context)
 
 

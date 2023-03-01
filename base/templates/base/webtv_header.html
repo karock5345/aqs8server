@@ -16,10 +16,10 @@
 
     
         <header>
-            {{lastupdate}} 
+             
             <img class="logo" src="{% static logofile %}">
             <div class="col1">
-                <div class="updatetime" ></div>
+                <div id="ws-lastupdate" class="updatetime">{{lastupdate}}</div>
                 <img class="reload" alt="Reload" onClick="window.location.href=window.location.href" src="{% static 'images/reload_o.png' %}">
             </div>                
         </header>

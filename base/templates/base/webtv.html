@@ -10,7 +10,7 @@
 
    
     
-    {% for ticketrow in ticketlist %}            
+    <!-- {% for ticketrow in ticketlist %}            
         <div  class="container_calling" >
             <div class="ticketno">
                 {{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}
@@ -20,13 +20,61 @@
                 <div class="counternumber">{{ticketrow.counternumber}}</div>
             </div>
         </div>    
-    {% endfor %}
-
+    {% endfor %} -->
+    <div id="cc1" class="container_calling" >
+        <div id="cc1_no" class="ticketno">
+            {{ticketlist.0.tickettemp.tickettype}}{{ticketlist.0.tickettemp.ticketnumber}}
+        </div>
+        <div class="counter">
+            <div id="cc1_ct" class="countertype" >{{ticketlist.0.countertype.lang1}} {{ticketlist.0.countertype.lang2}}</div>
+            <div id="cc1_cno" class="counternumber">{{ticketlist.0.counternumber}}</div>            
+        </div>
+        <!-- 
+        <div>
+            <div class="countertype">Waiting list</div>
+            <div id="cc1_wait" class="counternumber">{{ticketlist.0.wait}}</div>
+        </div>
+        -->
+    </div>
+    <div id="cc2" class="container_calling" >
+        <div id="cc2_no" class="ticketno">
+            {{ticketlist.1.tickettemp.tickettype}}{{ticketlist.1.tickettemp.ticketnumber}}
+        </div>
+        <div class="counter">
+            <div id="cc2_ct" class="countertype" >{{ticketlist.1.countertype.lang1}} {{ticketlist.1.countertype.lang2}}</div>
+            <div id="cc2_cno" class="counternumber">{{ticketlist.1.counternumber}}</div>            
+        </div>
+    </div>
+    <div id="cc3" class="container_calling" >
+        <div id="cc3_no" class="ticketno">
+            {{ticketlist.2.tickettemp.tickettype}}{{ticketlist.2.tickettemp.ticketnumber}}
+        </div>
+        <div class="counter">
+            <div id="cc3_ct" class="countertype" >{{ticketlist.2.countertype.lang1}} {{ticketlist.2.countertype.lang2}}</div>
+            <div id="cc3_cno" class="counternumber">{{ticketlist.2.counternumber}}</div>            
+        </div>
+    </div>
+    <div id="cc4" class="container_calling" >
+        <div id="cc4_no" class="ticketno">
+            {{ticketlist.3.tickettemp.tickettype}}{{ticketlist.3.tickettemp.ticketnumber}}
+        </div>
+        <div class="counter">
+            <div id="cc4_ct" class="countertype" >{{ticketlist.3.countertype.lang1}} {{ticketlist.3.countertype.lang2}}</div>
+            <div id="cc4_cno" class="counternumber">{{ticketlist.3.counternumber}}</div>            
+        </div>
+    </div>
+    <div id="cc5" class="container_calling" >
+        <div id="cc5_no" class="ticketno">
+            {{ticketlist.4.tickettemp.tickettype}}{{ticketlist.4.tickettemp.ticketnumber}}
+        </div>
+        <div class="counter">
+            <div id="cc5_ct" class="countertype" >{{ticketlist.4.countertype.lang1}} {{ticketlist.4.countertype.lang2}}</div>
+            <div id="cc5_cno" class="counternumber">{{ticketlist.4.counternumber}}</div>            
+        </div>
+    </div>
 
 
     <div class="powered">Powered by tsvd.com.hk</div>
-    
-    <textarea id="chat-log" cols="50" rows="10"></textarea>
 
     {{ bcode|json_script:"js-bcode" }}
     {{ ct|json_script:"js-ct" }}
@@ -46,7 +94,7 @@
 
         chatSocket.onmessage = function(e) {
             const data = JSON.parse(e.data);
-            document.querySelector('#chat-log').value += (data.lastupdate+ '\n');
+            document.querySelector('#ws-lastupdate').innerHTML = (data.lastupdate);
             // document.querySelector('#chat-log').value += ('testing' + '\n');
         };
 

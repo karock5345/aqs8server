@@ -12,10 +12,11 @@ from .api.serializers import webdisplaylistSerivalizer
 class ChatConsumer(AsyncWebsocketConsumer):
 
 
-    async def connect(self):
+    async def connect(self):        
         self.bcode = self.scope['url_route']['kwargs']['bcode']
         self.ct = self.scope['url_route']['kwargs']['ct']
-
+        
+        # check bcode and ct (countertype) is not exit do not accept connection
         self.room_group_name = 'webtv_' + self.bcode + '_' + self.ct
         print('connecting:' + self.room_group_name )
         await self.channel_layer.group_add(
