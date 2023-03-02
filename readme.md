@@ -163,7 +163,7 @@ sudo ufw allow 8000
 Before install packages (python -m pip freeze > requirements.txt) 
 
 ```bash
-git clone https://github.com/karock5345/rvd.git
+git clone https://github.com/karock5345/aqs8server.git
 sudo apt-get install -y virtualenv
 cd to project folder
 virtualenv env
