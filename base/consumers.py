@@ -29,10 +29,11 @@ class ChatConsumer(AsyncWebsocketConsumer):
 
     # Receive message from room group
     async def broadcast_message(self, event):
-        lastupdate = event["lastupdate"]
+        lastupdate = event['lastupdate']
+        ticketlist = event['ticketlist']
 
         # Send message to WebSocket
-        await self.send(text_data=json.dumps({"lastupdate": lastupdate}))
+        await self.send(text_data=json.dumps({'lastupdate': lastupdate, 'ticketlist':ticketlist}))
 
     async def disconnect(self, close_code):
         # Leave room group

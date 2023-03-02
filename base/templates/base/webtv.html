@@ -10,7 +10,7 @@
 
    
     
-    <!-- {% for ticketrow in ticketlist %}            
+    {% for ticketrow in ticketlist %}            
         <div  class="container_calling" >
             <div class="ticketno">
                 {{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}
@@ -19,8 +19,14 @@
                 <div class="countertype" >{{ticketrow.countertype.lang1}} {{ticketrow.countertype.lang2}}</div>
                 <div class="counternumber">{{ticketrow.counternumber}}</div>
             </div>
+            <!-- 
+            <div>
+                <div class="countertype">Waiting list</div>
+                <div id="cc1_wait" class="counternumber">{{ticketlist.0.wait}}</div>
+            </div>
+            -->
         </div>    
-    {% endfor %} -->
+    {% endfor %}
     <div id="cc1" class="container_calling" >
         <div id="cc1_no" class="ticketno">
             {{ticketlist.0.tickettemp.tickettype}}{{ticketlist.0.tickettemp.ticketnumber}}
@@ -79,6 +85,7 @@
     {{ bcode|json_script:"js-bcode" }}
     {{ ct|json_script:"js-ct" }}
     <script>
+        var ticketlist = [];
         const c_bcode = JSON.parse(document.getElementById('js-bcode').textContent);
         const c_ct = JSON.parse(document.getElementById('js-ct').textContent);
 
@@ -93,8 +100,23 @@
         );
 
         chatSocket.onmessage = function(e) {
+            console.log('Received data:', e.data);
             const data = JSON.parse(e.data);
-            document.querySelector('#ws-lastupdate').innerHTML = (data.lastupdate);
+            console.log('Parsed data:', data);
+
+            document.querySelector('#ws-lastupdate').innerHTML = data.lastupdate;
+
+            ticketlist = JSON.parse(data.ticketlist);
+            console.log(data.ticketlist);
+            for (var i = 0; i < ticketlist.length; i++) {
+                var obj = ticketlist[i];
+                console.log("Ticket Type: " + obj.tickettype);
+                console.log("Ticket Number: " + obj.ticketnumber);
+                console.log("Language 1: " + obj.lang1);
+                console.log("Language 2: " + obj.lang2);
+                console.log("Counter Number: " + obj.counternumber);
+                console.log("Wait Time: " + obj.wait);
+            }
             // document.querySelector('#chat-log').value += ('testing' + '\n');
         };
 

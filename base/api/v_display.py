@@ -36,7 +36,6 @@ def wssendwebtv(bcode, countertypename):
         branchobj = Branch.objects.filter( Q(bcode=bcode) )
         if branchobj.count() == 1:
             branch = branchobj[0]
-            logofile = branch.webtvlogolink
         else :
             error = 'Branch not found.'
 
@@ -57,12 +56,8 @@ def wssendwebtv(bcode, countertypename):
             displaylist = DisplayAndVoice.objects.filter (branch=branch).order_by('-displaytime')[:5]
         else:
             displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
-        webserialize  = webdisplaylistSerivalizer(displaylist, many=True)
-        qs_json = webserialize.data[:]
-        # qs_json = serializers.serialize('json', webserialize)
-        print(qs_json)
-        # context = ({'ticketlist':serializers.data})
-
+        webserialize  = webdisplaylistSerivalizer(displaylist, many=True).data
+        qs_json = json.dumps(webserialize)
 
         datetime_now = timezone.now()
         datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
@@ -71,7 +66,6 @@ def wssendwebtv(bcode, countertypename):
         'type':'broadcast_message',
         'lastupdate':datetime_now_local.strftime('%Y-%m-%d %H:%M:%S'),
         'ticketlist':qs_json,
-        'logofile':logofile,
         }
 
     else :

@@ -7,10 +7,11 @@ from base.models import Branch, DisplayAndVoice, PrinterStatus, Ticket, TicketRo
 class webdisplaylistSerivalizer(ModelSerializer):
     tickettype = serializers.CharField(source='tickettemp.tickettype')
     ticketnumber = serializers.CharField(source='tickettemp.ticketnumber')
-    
+    lang1 = serializers.CharField(source='countertype.lang1')
+    lang2 = serializers.CharField(source='countertype.lang2')
     class Meta:
         model = DisplayAndVoice
-        fields = ('tickettype', 'ticketnumber',  'counternumber', 'wait')
+        fields = ('tickettype', 'ticketnumber', 'lang1', 'lang2', 'counternumber', 'wait')
 
 
 class waitinglistSerivalizer(ModelSerializer):
