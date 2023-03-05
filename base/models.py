@@ -293,10 +293,12 @@ class TicketData(models.Model):
     totalperiod = models.IntegerField(null=True, blank=True)
 
 class Setting(models.Model):
-    name = models.CharField(max_length=200, unique=True, null=False) # if name='global' is for all branchs
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)  # if name='global' branch should be null
-    API_Log_Enabled = models.BooleanField(default=True) 
-
+    # if name='global' is for all branchs
+    name = models.CharField(max_length=200, unique=True, null=False)
+    # if name='global' branch should be null
+    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)  
+    API_Log_Enabled = models.BooleanField(default=True)
+    
 
 class CounterStatus(models.Model):
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True) 
