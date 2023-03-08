@@ -308,6 +308,8 @@ def webtv_old_school(request):
     context = None
     error = ''
     bcode = ''
+    str_now = '---'
+
     try:
         bcode = request.GET['bcode']
     except:
@@ -327,6 +329,10 @@ def webtv_old_school(request):
         if branchobj.count() == 1:
             branch = branchobj[0]
             logofile = branch.webtvlogolink
+            datetime_now = timezone.now()
+            datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+            str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
+
         else :
             error = 'Branch not found.'
 
@@ -352,17 +358,14 @@ def webtv_old_school(request):
         # serializers  = webdisplaylistSerivalizer(displaylist, many=True)
         # context = ({'ticketlist':serializers.data})
 
-        datetime_now = timezone.now()
-        datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
-
         context = {
-        'lastupdate':datetime_now_local.strftime('%Y-%m-%d %H:%M:%S'),
-        'ticketlist':displaylist,
-        'logofile':logofile,
+        'lastupdate' : str_now,
+        'ticketlist' : displaylist,
+        'logofile' : logofile,
         }
     else :
         context = {
-        'lastupdate' : 'Error: ' + error + ' ',
+        'lastupdate' : str_now,
         'errormsg' : error,
         }
         messages.error(request, error)
@@ -372,6 +375,7 @@ def webtv_old_school(request):
 def webtv(request, bcode, ct):
     context = None
     error = ''
+    str_now = '---'
 
     countertypename = ct
        
@@ -382,6 +386,9 @@ def webtv(request, bcode, ct):
         if branchobj.count() == 1:
             branch = branchobj[0]
             logofile = branch.webtvlogolink
+            datetime_now = timezone.now()
+            datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+            str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
         else :
             error = 'Branch not found.'
 
@@ -412,14 +419,14 @@ def webtv(request, bcode, ct):
 
         context = {
 
-        'lastupdate':datetime_now_local.strftime('%Y-%m-%d %H:%M:%S'),
-        'ticketlist':displaylist,
-        'logofile':logofile,
+        'lastupdate' : str_now,
+        'ticketlist' : displaylist,
+        'logofile' : logofile,
         }
         print (displaylist[0].wait)
     else :
         context = {
-        'lastupdate' : 'Error: ' + error + ' ',
+        'lastupdate' : str_now,
         'errormsg' : error,
         }
         messages.error(request, error)

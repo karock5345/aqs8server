@@ -168,7 +168,7 @@ def getRocheFirstPrint(request):
     if status == dict({}) :
         starttime = datetime_now + timedelta(minutes=-rochelist_x_mins)
 
-        ticketlist = Ticket.objects.filter( Q(branch=branch) & Q(tickettime__range=[starttime, datetime_now]) & Q(locked=False))[:5]
+        ticketlist = Ticket.objects.filter( Q(branch=branch) & Q(tickettime__range=[starttime, datetime_now]) & Q(locked=False))
         serializers  = rocheticketlistSerivalizer(ticketlist, many=True)
         context = dict({'data':serializers.data})
         status = dict({'status': 'OK'})

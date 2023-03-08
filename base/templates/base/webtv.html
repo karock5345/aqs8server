@@ -11,7 +11,7 @@
    
     <div id="calling_area">
     {% for ticketrow in ticketlist %}            
-        <div class="container_calling" >
+        <div class="container_calling">
             <div class="ticketno">
                 {{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}
             </div>
@@ -39,14 +39,14 @@
         const c_bcode = JSON.parse(document.getElementById('js-bcode').textContent);
         const c_ct = JSON.parse(document.getElementById('js-ct').textContent);
 
-
+        // document.getElementsByClassName('status').innerHTML[0] = `window.location.host`;
+        
         // const containers = document.getElementsByClassName("container_calling");
         // const numContainers = containers.length;
         // console.log(numContainers); // Output: 3
 
         // var cc1 = document.getElementsByClassName('container_calling')[0].innerHTML;
         // console.log(cc1);
-
 
         const chatSocket = new WebSocket(
             'ws://'
@@ -62,6 +62,7 @@
             // console.log('Received data:', e.data);
             const data = JSON.parse(e.data);
             // console.log('Parsed data:', data);
+            
 
             document.querySelector('#ws-lastupdate').innerHTML = data.lastupdate;
             document.querySelector('#calling_area').innerHTML = ``;
@@ -79,12 +80,12 @@
 
                 document.querySelector('#calling_area').innerHTML = 
                 document.querySelector('#calling_area').innerHTML +
-                `<div class="container_calling" >
+                `<div class="container_calling">
                     <div class="ticketno">` + 
                         obj.tickettype + obj.ticketnumber +
                     `</div>
                     <div class="counter">
-                        <div class="countertype" >` +
+                        <div class="countertype">` +
                             obj.lang1 + ` ` + obj.lang2 + 
                         `</div>
                         <div class="counternumber">`
