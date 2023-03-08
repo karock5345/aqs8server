@@ -38,8 +38,8 @@
         var ticketlist = [];
         const c_bcode = JSON.parse(document.getElementById('js-bcode').textContent);
         const c_ct = JSON.parse(document.getElementById('js-ct').textContent);
-
-        // document.getElementsByClassName('status').innerHTML[0] = `window.location.host`;
+        
+        document.querySelectorAll(".status > .vertical-center")[0].innerHTML = window.location.host;
         
         // const containers = document.getElementsByClassName("container_calling");
         // const numContainers = containers.length;
