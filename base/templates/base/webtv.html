@@ -11,7 +11,7 @@
    
     <div id="calling_area">
     {% for ticketrow in ticketlist %}            
-        <div class="container_calling" >
+        <div class="container_calling">
             <div class="ticketno">
                 {{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}
             </div>
@@ -38,8 +38,9 @@
         var ticketlist = [];
         const c_bcode = JSON.parse(document.getElementById('js-bcode').textContent);
         const c_ct = JSON.parse(document.getElementById('js-ct').textContent);
-
-
+        
+        document.querySelectorAll(".status > .vertical-center")[0].innerHTML = window.location.host;
+        
         // const containers = document.getElementsByClassName("container_calling");
         // const numContainers = containers.length;
         // console.log(numContainers); // Output: 3
@@ -79,12 +80,12 @@
 
                 document.querySelector('#calling_area').innerHTML = 
                 document.querySelector('#calling_area').innerHTML +
-                `<div class="container_calling" >
+                `<div class="container_calling">
                     <div class="ticketno">` + 
                         obj.tickettype + obj.ticketnumber +
                     `</div>
                     <div class="counter">
-                        <div class="countertype" >` +
+                        <div class="countertype">` +
                             obj.lang1 + ` ` + obj.lang2 + 
                         `</div>
                         <div class="counternumber">`
