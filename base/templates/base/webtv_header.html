@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" /> 
         <link rel="stylesheet" href="{% static 'styles/styletv2.css' %}" >
+        <link rel="stylesheet" href="{% static 'icofont/icofont.min.css' %}">
     </head>
 
 
@@ -20,7 +21,8 @@
             <img class="logo" src="{% static logofile %}">
             <div class="col1">
                 <div id="ws-lastupdate" class="updatetime">{{lastupdate}}</div>
-                <img class="reload" alt="Reload" onClick="window.location.href=window.location.href" src="{% static 'images/reload_o.png' %}">
+                <!-- <img class="reload" alt="Reload" onClick="window.location.href=window.location.href" src="{% static 'images/reload_o.png' %}"> -->
+                <i class="reload icofont-refresh icofont-2x" alt="Reload" onClick="window.location.href=window.location.href"></i>
             </div>                
         </header>
 

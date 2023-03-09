@@ -47,7 +47,6 @@
         // var cc1 = document.getElementsByClassName('container_calling')[0].innerHTML;
         // console.log(cc1);
 
-
         const chatSocket = new WebSocket(
             'ws://'
             + window.location.host
@@ -62,7 +61,8 @@
             // console.log('Received data:', e.data);
             const data = JSON.parse(e.data);
             // console.log('Parsed data:', data);
-
+            document.querySelectorAll(".status > .vertical-center")[0].innerHTML = data.lastupdate;
+            
             document.querySelector('#ws-lastupdate').innerHTML = data.lastupdate;
             document.querySelector('#calling_area').innerHTML = ``;
 

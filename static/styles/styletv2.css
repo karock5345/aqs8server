@@ -51,6 +51,7 @@ body {
     /* background-color: var(--color_header_background); */
     background: none;
     cursor:pointer;
+    color:var(--color_touchkey_text);
 }
 
 .status {
