@@ -134,9 +134,11 @@ def job_shutdown(branch):
     branch.save()
 
     # reset to ticketformat.ticketnext 1    
+    # number of waiting on queue reset to 0
     tfobj = TicketFormat.objects.filter( Q(branch=branch)  )
     for tf in tfobj:
         tf.ticketnext = 1
+        tf.waiting = 0
         tf.save()
 
     # reset ticketroute waiting = 0
@@ -160,6 +162,7 @@ def job_shutdown(branch):
         ticket.branch = tt.branch        
         ticket.step = tt.step
         ticket.countertype = tt.countertype
+        ticket.ticketformat = tt.ticketformat
         ticket.status = tt.status        
         ticket.locked = tt.locked
         ticket.tickettime = tt.tickettime

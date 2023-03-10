@@ -373,13 +373,14 @@ def webtv_old_school(request):
 
 
 def webtv(request, bcode, ct):
+    # WebSocket version
+    # http://127.0.0.1:8000/webtv/KB/Reception/
     context = None
     error = ''
     str_now = '---'
 
     countertypename = ct
-       
-    
+
     branch = None
     if error == '' :        
         branchobj = Branch.objects.filter( Q(bcode=bcode) )

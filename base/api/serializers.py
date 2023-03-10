@@ -9,6 +9,7 @@ class webdisplaylistSerivalizer(ModelSerializer):
     ticketnumber = serializers.CharField(source='tickettemp.ticketnumber')
     lang1 = serializers.CharField(source='countertype.lang1')
     lang2 = serializers.CharField(source='countertype.lang2')
+    wait = serializers.CharField(source='tickettemp.ticketroute.waiting')
     class Meta:
         model = DisplayAndVoice
         fields = ('tickettype', 'ticketnumber', 'lang1', 'lang2', 'counternumber', 'wait')

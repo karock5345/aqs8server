@@ -68,6 +68,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
             route = routeobj[0]             
 
     if error == '' :
+
         # create ticket - get next ticket number
         if branch.ticketrepeatnumber == True :
             ticketno = ticketformat.ticketnext
@@ -105,7 +106,11 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
         tickettext = tickettext.replace('<DATETIME>', '<TEXT>' + localtime_str)
         tickettext = tickettext.replace('<MYTICKET>', myticketlink)
 
-        countertype = route.countertype            
+        countertype = route.countertype
+        # waiting on queue +1
+        route.waiting = route.waiting + 1
+        route.save()
+        
         # -if user is not None:
         # -    return Response(user.username) 
         # add DB -> Ticket, TicketLog, TicketData
@@ -116,6 +121,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
             branch=branch, 
             step=1,
             countertype=countertype,
+            ticketroute=route,
             status=lcounterstatus[0] ,
             tickettime=datetime_now, 
             tickettext=tickettext,
@@ -134,6 +140,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
             branch=branch, 
             step=1,
             countertype=countertype,
+            ticketroute=route,
             status=lcounterstatus[0] ,
             tickettime=datetime_now, 
             tickettext=tickettext,
@@ -165,8 +172,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
             user=user,
         )
         
-        route.waiting = route.waiting + 1
-        route.save()
+
 
 
     return ticketno_str, countertype, tickettemp, error

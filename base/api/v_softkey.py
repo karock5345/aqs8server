@@ -216,6 +216,10 @@ def postCounterGet(request):
         counterstatus.save()
 
         # update ticket 
+        
+        # waiting on queue
+        if ticket.status == 'waiting':
+            ticket.ticketroute.waiting = ticket.ticketroute.waiting + 1
         ticket.user = user
         ticket.status = 'calling'
         ticket.save()
@@ -1627,6 +1631,7 @@ def postCounterCall(request):
                 # update ticket 
                 ticket.user = user
                 ticket.status = lcounterstatus[1]
+                ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
                 ticket.save()
 
                 # add ticketlog

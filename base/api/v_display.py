@@ -88,9 +88,7 @@ def wssendwebtv(bcode, countertypename):
 
 def newdisplayvoice(branch, countertype, counternumber, tickettemp, displaytime, user):
     # find number of waiting
-    ticketobj = TicketTemp.objects.filter(Q(branch=branch) & Q(tickettype=tickettemp.tickettype) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False))    
-
-    waiting = ticketobj.count()
+    # ticketobj = TicketTemp.objects.filter(Q(branch=branch) & Q(tickettype=tickettemp.tickettype) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False))    
     
     DisplayAndVoice.objects.create(
         branch = branch,
@@ -100,13 +98,12 @@ def newdisplayvoice(branch, countertype, counternumber, tickettemp, displaytime,
         displaytime = displaytime,
         user = user,
         flashtime = branch.displayflashtime,
-        wait = waiting ,
     )
 
     tr_obj = TicketRoute.objects.filter(branch=branch, tickettype=tickettemp.tickettype, countertype=countertype)
     if tr_obj.count() == 1 :
         tr = tr_obj[0]
-        tr.waiting = waiting
+        tr.waiting = tr.waiting +1
         tr.displasttickettype = tickettemp.tickettype  
         tr.displastticketnumber = tickettemp.ticketnumber
         tr.displastcounter = counternumber

@@ -163,12 +163,26 @@ class CounterType(models.Model):
         ordering = ['branch']
         unique_together = ('branch', 'name',)
 
+class TicketRoute(models.Model):
+    enabled = models.BooleanField(default=True) 
+    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    tickettype = models.CharField(max_length=200)
+    step = models.IntegerField(default=1)
+    countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True)
+    displasttickettype = models.CharField(max_length=200, default=' ')
+    displastticketnumber = models.CharField(max_length=200, default=' ')
+    displastcounter = models.CharField(max_length=200, default=' ')
+    waiting = models.IntegerField(default=0)
+    def __str__(self):
+        return  'Route-Step[' + str(self.step) + ']'
+ 
 class Ticket(models.Model):
     tickettype = models.CharField(max_length=200)
     ticketnumber = models.CharField(max_length=200)
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
     step = models.IntegerField(default=1)
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True)
+    ticketroute= models.ForeignKey(TicketRoute, on_delete=models.SET_NULL, blank=True, null=True)
     status = models.TextField(default=lcounterstatus[0])
     locked = models.BooleanField(default=False)
 
@@ -196,6 +210,7 @@ class TicketTemp(models.Model):
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
     step = models.IntegerField(default=1)
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True)
+    ticketroute= models.ForeignKey(TicketRoute, on_delete=models.SET_NULL, blank=True, null=True)
     status = models.TextField(default=lcounterstatus[0])
     locked = models.BooleanField(default=False)
 
@@ -224,19 +239,7 @@ class TicketTemp(models.Model):
         
 
 
-class TicketRoute(models.Model):
-    enabled = models.BooleanField(default=True) 
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
-    tickettype = models.CharField(max_length=200)
-    step = models.IntegerField(default=1)
-    countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True)
-    displasttickettype = models.CharField(max_length=200, default=' ')
-    displastticketnumber = models.CharField(max_length=200, default=' ')
-    displastcounter = models.CharField(max_length=200, default=' ')
-    waiting = models.IntegerField(default=0)
-    def __str__(self):
-        return self.branch.bcode + '-' + self.tickettype + ' Step : ' + str(self.step)
-    
+   
 class TicketLog(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.SET_NULL, blank=True, null=True)
     tickettemp = models.ForeignKey(TicketTemp, on_delete=models.SET_NULL, blank=True, null=True)
@@ -335,8 +338,7 @@ class DisplayAndVoice(models.Model):
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True) 
     counternumber = models.CharField(max_length=200, null=True)
-    tickettemp = models.ForeignKey(TicketTemp, on_delete=models.SET_NULL, blank=True, null=True)    
-    wait = models.CharField(max_length=200, null=True) 
+    tickettemp = models.ForeignKey(TicketTemp, on_delete=models.SET_NULL, blank=True, null=True)
     flashtime = models.CharField(max_length=200, null=True)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
     displaytime = models.DateTimeField(null=True, blank=True)     
