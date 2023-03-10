@@ -13,16 +13,16 @@
     {% for ticketrow in ticketlist %}            
         <div class="container_calling">
             <div class="ticketno">
-                {{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}
+                {{ticketrow.tickettype}}{{ticketrow.ticketnumber}}
             </div>
             <div class="counter">
-                <div class="countertype" >{{ticketrow.countertype.lang1}} {{ticketrow.countertype.lang2}}</div>
+                <div class="countertype" >{{ticketrow.lang1}} {{ticketrow.lang2}}</div>
                 <div class="counternumber">{{ticketrow.counternumber}}</div>
             </div>
             
             <div class="card-body">
                 <div class="numberCircle">
-                    {{ticketlist.0.wait}}
+                    {{ticketrow.wait}}
                     <!-- <div class="vertical-center"> -->
                         <!-- <div  style="align-self: center;background: none;">
                             
@@ -30,7 +30,7 @@
                            
                     <!-- </div> -->
                  
-                    </div>
+                </div>
                 
                 <!-- <div class="countertype">Waiting list</div>
                 <div id="cc1_wait" class="counternumber">{{ticketlist.0.wait}}</div> -->
@@ -79,8 +79,9 @@
             document.querySelector('#ws-lastupdate').innerHTML = data.lastupdate;
             document.querySelector('#calling_area').innerHTML = ``;
 
-            ticketlist = JSON.parse(data.ticketlist);
-            // console.log(data.ticketlist);
+            // ticketlist = JSON.parse(data.ticketlist);
+            ticketlist = data.ticketlist;
+            // console.log(ticketlist);
             for (var i = 0; i < ticketlist.length; i++) {
                 var obj = ticketlist[i];
                 // console.log("Ticket Type: " + obj.tickettype);
@@ -104,8 +105,12 @@
                             + obj.counternumber +
                         `</div>
                     </div>
+                    <div class="card-body">
+                        <div class="numberCircle">` +
+                            obj.wait +
+                        `</div>
+                    </div>
                 </div>`;
-
 
             }
             // document.querySelector('#chat-log').value += ('testing' + '\n');

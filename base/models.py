@@ -174,7 +174,7 @@ class TicketRoute(models.Model):
     displastcounter = models.CharField(max_length=200, default=' ')
     waiting = models.IntegerField(default=0)
     def __str__(self):
-        return  'Route-Step[' + str(self.step) + ']'
+        return self.branch.bcode + '-' + self.tickettype + '[' + str(self.step) + ']'
  
 class Ticket(models.Model):
     tickettype = models.CharField(max_length=200)

@@ -412,8 +412,8 @@ def webtv(request, bcode, ct):
             displaylist = DisplayAndVoice.objects.filter (branch=branch).order_by('-displaytime')[:5]
         else:
             displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
-        # serializers  = webdisplaylistSerivalizer(displaylist, many=True)
-        # context = ({'ticketlist':serializers.data})
+        wdserializers  = webdisplaylistSerivalizer(displaylist, many=True)
+        # displaylist = ({'ticketlist':wdserializers.data})
 
         datetime_now = timezone.now()
         datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
@@ -421,10 +421,10 @@ def webtv(request, bcode, ct):
         context = {
 
         'lastupdate' : str_now,
-        'ticketlist' : displaylist,
+        'ticketlist' : wdserializers.data,
         'logofile' : logofile,
         }
-        print (displaylist[0].wait)
+        # print (wdserializers.data[0].wait)
     else :
         context = {
         'lastupdate' : str_now,

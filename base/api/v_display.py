@@ -60,15 +60,12 @@ def wssendwebtv(bcode, countertypename):
             displaylist = DisplayAndVoice.objects.filter (branch=branch).order_by('-displaytime')[:5]
         else:
             displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
-        webserialize  = webdisplaylistSerivalizer(displaylist, many=True).data
-        qs_json = json.dumps(webserialize)
-
-
+        wdserializers  = webdisplaylistSerivalizer(displaylist, many=True)
 
         context = {
         'type':'broadcast_message',
         'lastupdate' : str_now,
-        'ticketlist' : qs_json,
+        'ticketlist' : wdserializers.data,
         }
 
     else :

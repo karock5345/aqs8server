@@ -219,7 +219,7 @@ def postCounterGet(request):
         
         # waiting on queue
         if ticket.status == 'waiting':
-            ticket.ticketroute.waiting = ticket.ticketroute.waiting + 1
+            ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
         ticket.user = user
         ticket.status = 'calling'
         ticket.save()
@@ -480,6 +480,9 @@ def postCounterVoid(request):
 
 def funVoid(user, tickett, td, datetime_now):
     # update ticket 
+    # waiting on queue
+    if tickett.status == 'waiting':
+        tickett.ticketroute.waiting = tickett.ticketroute.waiting - 1
     tickett.user = user
     tickett.status = 'void'
     tickett.save()
@@ -726,6 +729,7 @@ def postCounterDone(request):
             route = routeobj[0] 
             countertype = route.countertype
             ticket.countertype = countertype
+            ticket.ticketroute = routeobj[0]
             ticket.status = lcounterstatus[0]
             ticket.step = nextstep
             ticket.save()
