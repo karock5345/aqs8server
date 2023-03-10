@@ -14,6 +14,7 @@
 - Add My e-Ticket link QR code for print ticket
 - Add Web Touch function for new ticket
 - Change user branch authority (Admin, Report) : User in group Admin or Report. For example, if user mary is Admin Group and Branch 1,2. Mary only add / edit / del user which is Branch 1 or 2 or 1,2. If the user_A is branch 1,2,3. Mary do not have access to user_A.
+- fixed waiting on queue (TicketRoute) show on TV / WebTV
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
