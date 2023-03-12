@@ -161,7 +161,7 @@ def job_shutdown(branch):
         ticket.branch = tt.branch        
         ticket.step = tt.step
         ticket.countertype = tt.countertype
-        ticket.ticketformat = tt.ticketformat
+        ticket.ticketroute = tt.ticketroute
         ticket.status = tt.status        
         ticket.locked = tt.locked
         ticket.tickettime = tt.tickettime

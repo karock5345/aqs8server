@@ -78,8 +78,13 @@ def wssendwebtv(bcode, countertypename):
     
     channel_layer = get_channel_layer()
     channel_group_name = 'webtv_' + bcode + '_' + countertypename
-    print('channel_group_name:' + channel_group_name + ' sending data...')
-    async_to_sync (channel_layer.group_send)(channel_group_name, context)
+    print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+    try:
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        print('...Done')
+    except:
+        print('...ERROR:Redis Server is down!')
+    
     
     
 

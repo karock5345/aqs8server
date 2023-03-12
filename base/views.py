@@ -27,6 +27,7 @@ from .api.v_ticket import newticket
 from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
 
+enable_captcha = False
 
 userweb = None
 try:
@@ -1177,7 +1178,6 @@ def UserLogoutView(request):
 @unauth_user_login
 def UserLoginView(request):
     page = 'login'
-    enable_captcha = False
     if request.user.is_authenticated:
         return redirect('home')
 

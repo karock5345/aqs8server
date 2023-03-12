@@ -15,6 +15,8 @@
 - Add Web Touch function for new ticket
 - Change user branch authority (Admin, Report) : User in group Admin or Report. For example, if user mary is Admin Group and Branch 1,2. Mary only add / edit / del user which is Branch 1 or 2 or 1,2. If the user_A is branch 1,2,3. Mary do not have access to user_A.
 - fixed waiting on queue (TicketRoute) show on TV / WebTV
+- Deploy to Production Server with Websocket + SSL is work
+- WebTV (HTML) is support WS
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
@@ -154,9 +156,10 @@ python -V
 # CHECK Firewall:
 sudo ufw status verbose
 # Create an exception for port 8000. So, we can test that django setup is installed properly.
-sudo ufw allow 8000
-# (no need, when the firewall is disabled)
 ```
+~~sudo ufw allow 8000~~
+>(no need, use AWS firewall so Ubuntu firewall can be disabled)
+
 
 # SETUP SOURCE CODE
 ### <span style="color:orange;">**Copy / git source code to home dir**</span>
@@ -283,31 +286,11 @@ with open('/etc/recaptcha_key.txt') as f:
 ```
 close and save
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+> Disable Recaptcha for debug / test
+```bash
+nano ~/aqs8server/base/views.py    
+ ```   
+>enable_captcha = False
 
 # INIT AND SETUP the AQS8
 
@@ -433,7 +416,7 @@ sudo touch /etc/nginx/sites-available/aqs8server
 sudo nano /etc/nginx/sites-available/aqs8server
 ```
 edit:
-```bash
+```python
 server {
     server_name localhost 127.0.0.1 rvd.tsvd.com.hk www.rvd.tsvd.com.hk;
 
@@ -643,8 +626,185 @@ sudo service postgresql restart
 sudo service postgresql stop
 ```
 
+# Setup Redis Server (Websocket)
+### <span style="color:orange;">**Change Redis server IP**</span>
+> edit settings.py
+```bash
+nano ~/aqs8server/aqs/settings.py
+```
+```python
+CHANNEL_LAYERS = {
+    'default':{
+        'BACKEND':'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts':[('127.0.0.1', '6379')],
+            },
+     }
+}
+```
+sudo nano /etc/nginx/sites-available/aqs8server
+```nginx
+server {
+    listen 80;
+    server_name localhost 127.0.0.1 34.207.57.210 test.tsvd.com.hk www.test.tsvd.com.hk;
 
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        autoindex on;
+        alias /home/**ubuntu/aqs8server/static/;
+    }
 
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+	location /ws/ {
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_redirect off;
+        proxy_pass http://127.0.0.1:8001;
+    }
+}
+```
+****ubuntu should be changed you user**
+
+Restart nginx and allow the changes to take place
+```bash
+sudo systemctl restart nginx
+```
+Test your Nginx configuration for syntax errors by typing
+```bash
+sudo nginx -t
+```
+
+### <span style="color:orange;">**Install Redis Server**</span>
+```bash
+sudo apt install redis-server -y
+```
+```bash
+sudo nano /etc/redis/redis.conf
+```
+
+CTRL+W to find 'supervised no' and replace with ‘supervised systemd’ and SAVE .
+```bash
+sudo systemctl restart redis.service
+sudo systemctl status redis
+```
+Press CTRL+C to exit.
+
+Confirm Redis is running at 127.0.0.1. Port should be 6379 by default.
+```bash
+sudo apt install net-tools -y
+sudo netstat -lnp | grep redis
+sudo systemctl restart redis.service
+```
+```bash
+nano ~/aqs8server/aqs/asgi.py
+```
+Add:
+```python
+import django
+django.setup()
+```
+Install Daphne 
+```bash
+sudo apt install daphne -y
+# And install it in your project virtual enviroment.
+source ~/aqs8server/env/bin/activate
+pip3 install daphne
+deactivate
+sudo nano /etc/systemd/system/daphne.service
+```
+```nano
+[Unit]
+Description=Daphne service
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/**ubuntu/aqs8server
+ExecStart=/home/**ubuntu/aqs8server/env/bin/python /home/**ubuntu/aqs8server/env/bin/daphne -b 0.0.0.0 -p 8001 aqs.asgi:application
+Restart=always
+StartLimitBurst=2
+
+#StartLimitInterval=600
+# Restart, but not more than once every 30s (for testing purposes)
+StartLimitInterval=30
+
+[Install]
+WantedBy=multi-user.target
+```
+****ubuntu should be changed you user**
+
+After we need to start daphne.service .
+```bash
+sudo systemctl daemon-reload
+
+sudo systemctl start daphne.service
+#If you want to check status of daphne then use.
+
+sudo systemctl status daphne.service
+```
+### <span style="color:orange;">**Starting the daphne Service when Server boots**</span>
+```
+sudo systemctl enable daphne.service
+```
+> if "systemctl enable" is work skip below:
+
+With gunicorn and the WSGI application, we created a gunicorn.socket file that tells gunicorn to start when the server boots (at least this is my understanding). I couldn't figure out how to get this to work for daphne so instead I wrote a bash script that will run when the server boots.
+
+If you want to learn script the click here.
+
+```bash
+$ sudo nano /root/boot.sh
+```
+and copy and paste.
+```nano
+#!/bin/sh
+sudo systemctl start daphne.service
+```
+
+Might have to enable it to be run as a script permission for read and update 
+```bash
+sudo chmod u+x /root/boot.sh
+```
+Tell systemd to run the bash script when the server boots
+
+```bash
+$ sudo nano /etc/systemd/system/on_boot.service
+```
+copy and paste
+```nano
+[Service]
+ExecStart=/root/boot.sh
+
+[Install]
+WantedBy=default.target
+```
+
+Save and close.
+```bash
+sudo systemctl daemon-reload
+
+# Start it
+
+sudo systemctl start on_boot
+
+# Enable it to run at boot
+
+sudo systemctl enable on_boot
+
+# Restart the server
+
+sudo reboot
+
+# Check the status of on_boot.service
+
+sudo systemctl status on_boot.service
+```
+Should see this. If not, check logs: sudo journalctl -u on_boot.service
 
 # SSL
 Before setup SSL, server must have domain name
@@ -659,7 +819,17 @@ sudo certbot --nginx
 [n]
 [enter]
 ```
+cerboot will auto config Nginx
+
 Refer to : https://www.youtube.com/watch?v=dYdv6pkCufk
+
+>**Update source code all HTML from ws:// to wss://**
+
+Reboot the server
+```bash
+sudo reboot
+```
+
 
 # Setup google reCaptcha
 ### <span style="color:orange;">**Use reCaptcha**</span>
