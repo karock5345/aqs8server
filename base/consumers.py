@@ -9,7 +9,7 @@ from .models import Branch, CounterType, DisplayAndVoice
 from .api.v_display import wssendwebtv
 from .api.serializers import webdisplaylistSerivalizer
 
-class ChatConsumer(AsyncWebsocketConsumer):
+class WebTVConsumer(AsyncWebsocketConsumer):
 
 
     async def connect(self):        
@@ -31,9 +31,10 @@ class ChatConsumer(AsyncWebsocketConsumer):
     async def broadcast_message(self, event):
         lastupdate = event['lastupdate']
         ticketlist = event['ticketlist']
+        scroll = event['scroll']
 
         # Send message to WebSocket
-        await self.send(text_data=json.dumps({'lastupdate': lastupdate, 'ticketlist':ticketlist}))
+        await self.send(text_data=json.dumps({'lastupdate': lastupdate, 'ticketlist':ticketlist, 'scroll':scroll}))
 
     async def disconnect(self, close_code):
         # Leave room group

@@ -1,41 +1,34 @@
 {% extends 'base/webtv_header.html'%}
 {% block content %}
 
+
+    <div class="scroll">
+        <marquee class="vertical-center" behavior="scroll" direction="left">{{scroll}}</marquee>
+    </div>
     <div class="status">
-        <div class="vertical-center">
+         <div class="vertical-center">
             輪候狀況 Queue Status
         </div>
-        
     </div>
 
    
     <div id="calling_area">
-    {% for ticketrow in ticketlist %}            
+    {% for ticketrow in ticketlist %}     
+   
         <div class="container_calling">
             <div class="ticketno">
                 {{ticketrow.tickettype}}{{ticketrow.ticketnumber}}
             </div>
+          
+                <!-- <div class="countertype" >testing 123 testing 123 </div> -->
             <div class="counter">
                 <div class="countertype" >{{ticketrow.lang1}} {{ticketrow.lang2}}</div>
                 <div class="counternumber">{{ticketrow.counternumber}}</div>
             </div>
             
-            <div class="card-body">
-                <div class="numberCircle">
-                    {{ticketrow.wait}}
-                    <!-- <div class="vertical-center"> -->
-                        <!-- <div  style="align-self: center;background: none;">
-                            
-                        </div> -->
-                           
-                    <!-- </div> -->
-                 
-                </div>
-                
-                <!-- <div class="countertype">Waiting list</div>
-                <div id="cc1_wait" class="counternumber">{{ticketlist.0.wait}}</div> -->
-            </div>
-           
+            <div class="numberCircle">
+                {{ticketrow.wait}}
+            </div>  
         </div>
 
     {% endfor %}
@@ -51,8 +44,8 @@
         const c_bcode = JSON.parse(document.getElementById('js-bcode').textContent);
         const c_ct = JSON.parse(document.getElementById('js-ct').textContent);
         
-        document.querySelectorAll(".status > .vertical-center")[0].innerHTML = window.location.host;
-        
+        // document.querySelectorAll(".status > .vertical-center")[0].innerHTML =window.location.host ;
+        //document.querySelectorAll(".status")[0].innerHTML =<marquee behavior="scroll" direction="left">window.location.host</marquee> ;
         // const containers = document.getElementsByClassName("container_calling");
         // const numContainers = containers.length;
         // console.log(numContainers); // Output: 3
@@ -74,8 +67,9 @@
             // console.log('Received data:', e.data);
             const data = JSON.parse(e.data);
             // console.log('Parsed data:', data);
-            document.querySelectorAll(".status > .vertical-center")[0].innerHTML = data.lastupdate;
-            
+            // document.querySelectorAll(".status > .vertical-center")[0].innerHTML = data.lastupdate;
+            document.querySelectorAll(".scroll > .vertical-center")[0].innerHTML = data.scroll;
+
             document.querySelector('#ws-lastupdate').innerHTML = data.lastupdate;
             document.querySelector('#calling_area').innerHTML = ``;
 
@@ -105,11 +99,9 @@
                             + obj.counternumber +
                         `</div>
                     </div>
-                    <div class="card-body">
-                        <div class="numberCircle">` +
-                            obj.wait +
-                        `</div>
-                    </div>
+                    <div class="numberCircle">` +
+                        obj.wait +
+                    `</div>
                 </div>`;
 
             }

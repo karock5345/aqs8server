@@ -220,6 +220,7 @@ def postCounterGet(request):
         # waiting on queue
         if ticket.status == 'waiting':
             ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
+            ticket.ticketroute.save()
         ticket.user = user
         ticket.status = 'calling'
         ticket.save()
@@ -483,6 +484,7 @@ def funVoid(user, tickett, td, datetime_now):
     # waiting on queue
     if tickett.status == 'waiting':
         tickett.ticketroute.waiting = tickett.ticketroute.waiting - 1
+        tickett.ticketroute.save()
     tickett.user = user
     tickett.status = 'void'
     tickett.save()
@@ -1636,6 +1638,7 @@ def postCounterCall(request):
                 ticket.user = user
                 ticket.status = lcounterstatus[1]
                 ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
+                ticket.ticketroute.save()
                 ticket.save()
 
                 # add ticketlog

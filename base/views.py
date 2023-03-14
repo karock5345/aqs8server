@@ -363,6 +363,7 @@ def webtv_old_school(request):
         'lastupdate' : str_now,
         'ticketlist' : displaylist,
         'logofile' : logofile,
+        'scroll':countertype.displayscrollingtext,
         }
     else :
         context = {
@@ -409,10 +410,7 @@ def webtv(request, bcode, ct):
 
 
     if error == '' : 
-        if countertype == None :
-            displaylist = DisplayAndVoice.objects.filter (branch=branch).order_by('-displaytime')[:5]
-        else:
-            displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
+        displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
         wdserializers  = webdisplaylistSerivalizer(displaylist, many=True)
         # displaylist = ({'ticketlist':wdserializers.data})
 
@@ -424,6 +422,7 @@ def webtv(request, bcode, ct):
         'lastupdate' : str_now,
         'ticketlist' : wdserializers.data,
         'logofile' : logofile,
+        'scroll':countertype.displayscrollingtext,
         }
         # print (wdserializers.data[0].wait)
     else :

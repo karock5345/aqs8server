@@ -56,16 +56,16 @@ def wssendwebtv(bcode, countertypename):
             error = 'Counter Type not found.' 
 
     if error == '' : 
-        if countertype == None :
-            displaylist = DisplayAndVoice.objects.filter (branch=branch).order_by('-displaytime')[:5]
-        else:
-            displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
+
+        displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
+            
         wdserializers  = webdisplaylistSerivalizer(displaylist, many=True)
 
         context = {
         'type':'broadcast_message',
         'lastupdate' : str_now,
         'ticketlist' : wdserializers.data,
+        'scroll' : countertype.displayscrollingtext,
         }
 
     else :
@@ -105,7 +105,6 @@ def newdisplayvoice(branch, countertype, counternumber, tickettemp, displaytime,
     tr_obj = TicketRoute.objects.filter(branch=branch, tickettype=tickettemp.tickettype, countertype=countertype)
     if tr_obj.count() == 1 :
         tr = tr_obj[0]
-        tr.waiting = tr.waiting +1
         tr.displasttickettype = tickettemp.tickettype  
         tr.displastticketnumber = tickettemp.ticketnumber
         tr.displastcounter = counternumber
