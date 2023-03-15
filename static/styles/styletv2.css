@@ -12,11 +12,11 @@
   --color_countertype_text: #ffffff;
   --color_myticket_background: lemonchiffon;
   --color_cancel_background: lemonchiffon;
-  --color_cancel_back_background: rgb(56, 61, 82);
+  --color_cancel_back_background: #383D52;
   --color_touchkey_background: #001F4A;
   --color_touchkey_text: #FD5F00;
-  --color_scroll: rgb(255, 255, 255);
-  --color_scroll_background: rgb(56, 61, 82);
+  --color_scroll:#FFFFFF;
+  --color_scroll_background: #383D52;
 }
 * {
     box-sizing : border-box;
