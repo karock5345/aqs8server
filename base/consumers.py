@@ -8,24 +8,74 @@ from .views import  funUTCtoLocal
 from .models import Branch, CounterType, DisplayAndVoice
 from .api.v_display import wssendwebtv
 from .api.serializers import webdisplaylistSerivalizer
+from asgiref.sync import sync_to_async
 
 class WebTVConsumer(AsyncWebsocketConsumer):
 
 
-    async def connect(self):        
+    async def connect(self):
+        @sync_to_async
+        def check_branch(bcode):
+            error = ''
+            branch = None
+            # branchobj = await sync_to_async(Branch.objects.filter, thread_sensitive=True)( Q(bcode=self.bcode) )
+            branchobj = Branch.objects.filter(Q(bcode=bcode))
+
+            if branchobj.count() == 1:
+                branch = branchobj[0]
+                pass
+            else :
+                error = 'Branch not found.'
+            return error, branch
+        
+        @sync_to_async
+        def check_ct(branch, ct_name):
+            error = ''
+            # ct = None
+            ctobj = CounterType.objects.filter( Q(branch=branch) & Q(name=ct_name) )
+            if ctobj.count() == 1:
+                # ct = ctobj[0]
+                pass
+            else :
+                error = 'CounterType not found.'
+
+            return error
+        error = ''
         self.bcode = self.scope['url_route']['kwargs']['bcode']
         self.ct = self.scope['url_route']['kwargs']['ct']
-        
-        # check bcode and ct (countertype) is not exit do not accept connection
         self.room_group_name = 'webtv_' + self.bcode + '_' + self.ct
         print('connecting:' + self.room_group_name )
-        await self.channel_layer.group_add(
-            self.room_group_name,
-            self.channel_name
-        )
+        
+        # await self.channel_layer.group_add(
+        #     self.room_group_name,
+        #     self.channel_name
+        # )        
+        # await self.disconnect('error')
+        # await self.channel_layer.group_add(
+        #     self.room_group_name,
+        #     self.channel_name
+        # )
+        # await self.accept()
 
-        await self.accept()
 
+        # check bcode and ct (countertype) is not exit do not accept connection
+        branch = None
+        if error == '':
+            error, branch = await check_branch(self.bcode)
+        if error == '':
+            error = await check_ct(branch, self.ct)          
+
+        if error == '':
+            self.room_group_name = 'webtv_' + self.bcode + '_' + self.ct            
+            await self.channel_layer.group_add(
+                self.room_group_name,
+                self.channel_name
+            )
+
+            await self.accept()
+        else :
+            print('Error:' + error )
+            
 
     # Receive message from room group
     async def broadcast_message(self, event):

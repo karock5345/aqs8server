@@ -19,10 +19,15 @@
             <div class="ticketno">
                 {{ticketrow.tickettype}}{{ticketrow.ticketnumber}}
             </div>
+
+            <i class="arrow icofont-circled-right icofont-3x"></i>
           
-                <!-- <div class="countertype" >testing 123 testing 123 </div> -->
+  
             <div class="counter">
-                <div class="countertype" >{{ticketrow.lang1}} {{ticketrow.lang2}}</div>
+                <div class="countertype" >
+                    <div class="countertext">{{ticketrow.ct_lang1}}</div>
+                    <div class="countertext">{{ticketrow.ct_lang2}}</div>
+                </div>
                 <div class="counternumber">{{ticketrow.counternumber}}</div>
             </div>
             
@@ -91,14 +96,24 @@
                     <div class="ticketno">` + 
                         obj.tickettype + obj.ticketnumber +
                     `</div>
+
+                    <i class="arrow icofont-circled-right icofont-3x"></i>
+
                     <div class="counter">
-                        <div class="countertype">` +
-                            obj.lang1 + ` ` + obj.lang2 + 
-                        `</div>
+                        <div class="countertype" >
+                            <div class="countertext">`
+                                + obj.ct_lang1 +
+                            `</div> 
+                            <div class="countertext">`
+                                + obj.ct_lang2 +
+                            `</div>
+                        </div>
                         <div class="counternumber">`
                             + obj.counternumber +
                         `</div>
                     </div>
+            
+        
                     <div class="numberCircle">` +
                         obj.wait +
                     `</div>

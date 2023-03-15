@@ -7,13 +7,18 @@ from base.models import Branch, DisplayAndVoice, PrinterStatus, Ticket, TicketRo
 class webdisplaylistSerivalizer(ModelSerializer):
     tickettype = serializers.CharField(source='tickettemp.tickettype')
     ticketnumber = serializers.CharField(source='tickettemp.ticketnumber')
-    lang1 = serializers.CharField(source='countertype.lang1')
-    lang2 = serializers.CharField(source='countertype.lang2')
+    ct_lang1 = serializers.CharField(source='countertype.lang1')
+    ct_lang2 = serializers.CharField(source='countertype.lang2')
+    ct_lang3 = serializers.CharField(source='countertype.lang3')
+    ct_lang4 = serializers.CharField(source='countertype.lang4')
     wait = serializers.CharField(source='tickettemp.ticketroute.waiting')
-
+    t_lang1 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang1')
+    t_lang2 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang2')
+    t_lang3 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang3')
+    t_lang4 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang4')
     class Meta:
         model = DisplayAndVoice
-        fields = ('tickettype', 'ticketnumber', 'lang1', 'lang2', 'counternumber', 'wait')
+        fields = ('tickettype', 'ticketnumber', 'ct_lang1', 'ct_lang2', 'ct_lang3', 'ct_lang4', 'counternumber', 'wait', 't_lang1', 't_lang2', 't_lang3', 't_lang4',)
 
 
 class waitinglistSerivalizer(ModelSerializer):

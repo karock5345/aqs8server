@@ -3,11 +3,13 @@
 :root {
   --merlot: #000080;   /* blue (navy) */
   --crimson: #0047ab;  /* blue (cobalt) */
-
-  /* --color_header_background:#e4e4e4; */
-  --color_header_background:#ececec;
-  --color_status_background: rgb(0, 55, 100);
-  --color_calling_background: rgb(230, 230, 230);
+  
+  --color_background:#BED7EB;
+  --color_header_background:#96C8C3;
+  --color_status_background: #0A3755;
+  --color_calling_text: #FF6A00;
+  --color_calling_background: #0A3755;
+  --color_countertype_text: #ffffff;
   --color_myticket_background: lemonchiffon;
   --color_cancel_background: lemonchiffon;
   --color_cancel_back_background: rgb(56, 61, 82);
@@ -20,7 +22,7 @@
     box-sizing : border-box;
     margin:0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color:var(--color_background);
     /* background-color:#D9FDFE; */
 }
 
@@ -130,23 +132,23 @@ body {
 .container_calling {
     height:58px;
     /* line-height:58px; */
-    width:90%;
+    width:100%;
     /* display:inline-flex; */
-    margin: 10px 0px 10px 5%;
+    margin: 5px 0px 5px 0;
     /* min-width:45%; */
     /* max-width: 500px; */
     /* align-content:center; */
     /* position:relative; */
     background-color: var(--color_calling_background);
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.132);
-    border-radius:20px 20px 20px 20px;
+    /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.132);
+    border-radius:20px 20px 20px 20px; */
     /* display:flex; */
-    border-style:solid;
+    /* border-style:solid;
     border-color: var(--color_touchkey_background);
-    border-width: 1px;
+    border-width: 1px; */
     /* align-items: center; */
     justify-content:space-between;
-    padding: 5px 10% 5px;
+    padding: 5px 10% 0px;
 
     /* display:grid; */
     display: flex;
@@ -159,17 +161,18 @@ body {
     font-size: 46px;
     text-decoration: none;
     text-align: center;
-    color: rgb(56, 61, 82);
+    color:var(--color_calling_text);
     /* background-color: var(--color_calling_background); */
     background: none;
     margin-top: -13px;
+    margin-left: -5%;
     /* display:table-cell; */
     /* vertical-align:middle; */
     
     vertical-align:middle;
     /* width:50%;
     min-width:150px;  */
-    padding-left:10px;
+    /* padding-left:10px; */
     /* padding-bottom: 50px; */
 
 }
@@ -184,42 +187,61 @@ body {
     /* background-color:aqua; */
     background: none;
 }
+
+.arrow {
+    width:30px;
+    margin-top: 1px;
+    padding: 0px 0px 0px 0px;
+    /* background-color: var(--color_header_background); */
+    background: none;
+    color:var(--color_touchkey_text);
+}
+
 .counter {
     background: none;
-    margin-top: -5px;
+    margin-top: -2px;
     /* vertical-align:middle; */
     /* width:50%;
     min-width:300px; */
     /* max-width: 500px; */
     padding-right:5px;
+    justify-content:space-between;
+    display: flex;
+    position:relative;
 }
 .countertype {
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     text-decoration: none;
     text-align: center;
-    color: rgb(80, 80, 80);
+    color:var(--color_countertype_text);
     /* background-color: var(--color_calling_background); */
     background: none;
-    margin-top: 0px;
+    margin-top: 6px;
+    margin-right: 6px;
+
     /* margin-bottom: -10px; */
+}
+.countertext {
+    color:var(--color_countertype_text);
+    background: none;
 }
 .counternumber {
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 1000;
-    font-size: 36px;
+    font-size: 46px;
     text-decoration: none;
     text-align: center;
-    color: rgb(80, 80, 80);
+    color: var(--color_calling_text);
     /* background-color: var(--color_calling_background); */
     background: none;
     margin-top: -10px;
 }
 .numberCircle {
     font-family: 'Noto Sans TC', sans-serif;
-    width: 32px;
-    height: 32px;
+    width: 26px;
+    height: 26px;
     border-radius: 32%;
     text-align: center;
     
@@ -231,9 +253,9 @@ body {
     background:var(--color_touchkey_text);
     position: absolute;
     margin: auto;
-    top:  0px;
-    right: 0;
-    padding: 3px 0px 0px 0px; 
+    top: 1px;
+    right: 4px;
+    padding: 0px 0px 0px 0px; 
     /* margin: auto ; */
 }
 .powered {

@@ -146,12 +146,15 @@ class TicketFormat(models.Model):
     def __str__(self):
         return self.branch.bcode + '-' + self.ttype
 
+
 class CounterType(models.Model):
     enabled = models.BooleanField(default=True)
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
     name = models.CharField(max_length=200, null=False)
     lang1 = models.CharField(max_length=200, null=True)
-    lang2 = models.CharField(max_length=200, null=True)    
+    lang2 = models.CharField(max_length=200, null=True)
+    lang3 = models.CharField(max_length=200, null=True)    
+    lang4 = models.CharField(max_length=200, null=True)    
     displayscrollingtext = models.TextField(null=False, blank=False, default='Testing 123...') 
 
     updated = models.DateTimeField(auto_now=True)
@@ -183,6 +186,7 @@ class Ticket(models.Model):
     step = models.IntegerField(default=1)
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True)
     ticketroute= models.ForeignKey(TicketRoute, on_delete=models.SET_NULL, blank=True, null=True)
+    ticketformat= models.ForeignKey(TicketFormat, on_delete=models.SET_NULL, blank=True, null=True)
     status = models.TextField(default=lcounterstatus[0])
     locked = models.BooleanField(default=False)
 
@@ -211,6 +215,7 @@ class TicketTemp(models.Model):
     step = models.IntegerField(default=1)
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True)
     ticketroute= models.ForeignKey(TicketRoute, on_delete=models.SET_NULL, blank=True, null=True)
+    ticketformat= models.ForeignKey(TicketFormat, on_delete=models.SET_NULL, blank=True, null=True)
     status = models.TextField(default=lcounterstatus[0])
     locked = models.BooleanField(default=False)
 
