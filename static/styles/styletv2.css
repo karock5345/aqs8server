@@ -16,7 +16,7 @@
   --color_touchkey_background: #001F4A;
   --color_touchkey_text: #FD5F00;
   --color_scroll:#FFFFFF;
-  --color_scroll_background: #383D52;
+  --color_scroll_background: #808080;
 }
 * {
     box-sizing : border-box;
