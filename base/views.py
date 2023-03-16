@@ -21,7 +21,7 @@ from .api.serializers import webdisplaylistSerivalizer
 from django.utils import timezone
 from .api.v_softkey import funVoid
 from .api.v_ticket import newticket
-
+from base.ws import wsHypertext
 
 
 from asgiref.sync import async_to_sync
@@ -389,6 +389,7 @@ def webtv(request, bcode, ct):
         if branchobj.count() == 1:
             branch = branchobj[0]
             logofile = branch.webtvlogolink
+            css = branch.webtvcsslink
             datetime_now = timezone.now()
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
@@ -418,10 +419,11 @@ def webtv(request, bcode, ct):
         datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
 
         context = {
-
+        'wsh' : wsHypertext,
         'lastupdate' : str_now,
         'ticketlist' : wdserializers.data,
         'logofile' : logofile,
+        'css' : css,
         'scroll':countertype.displayscrollingtext,
         }
         # print (wdserializers.data[0].wait)

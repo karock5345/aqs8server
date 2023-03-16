@@ -10,7 +10,7 @@ from base.models import APILog, Branch, PrinterStatus,  TicketFormat, Ticket, Ti
 from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus
 from .serializers import printerstatusSerivalizer, ticketlistSerivalizer
 from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal
-from .v_display import wssendwebtv
+from base.ws import wssendwebtv, wssendql
 import random
 from django.contrib.auth.models import User, Group
 from asgiref.sync import async_to_sync
@@ -173,6 +173,9 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
             logtext='TicketKey API ticket created : '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pno ,
             user=user,
         )
+
+        wssendwebtv(branch.bcode, countertype.name)
+        wssendql(branch.bcode, countertype.name,tickettemp,'add')
         
 
 
@@ -271,7 +274,7 @@ def postTicket(request):
         context = {'ticket': ttype+ticketno_str , 'tickettime': datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') , 'counterstatus': test + '[' + str(i) +']' , 'timezone': branch.timezone , 'mylink': tickettemp.myticketlink}
         context = dict({'data':context})
         
-        wssendwebtv(bcode, countertype.name)
+
       
     output = status | msg | context
     return Response(output)  

@@ -7,7 +7,7 @@ from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCto
 from .v_display import newdisplayvoice
 from base.models import APILog, Branch, CounterStatus, CounterType, Ticket, DisplayAndVoice, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
 from .serializers import rocheticketlistSerivalizer, ticketlistSerivalizer
-from .v_display import wssendwebtv
+# from .v_display import wssendwebtv
 from .v_softkey import logcounterlogin, logcounterlogout
 import random
 

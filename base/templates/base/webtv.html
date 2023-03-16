@@ -42,13 +42,14 @@
 
     <div class="powered">Powered by tsvd.com.hk</div>
 
+    {{ wsh|json_script:"js-wsh" }}
     {{ bcode|json_script:"js-bcode" }}
     {{ ct|json_script:"js-ct" }}
     <script>
         var ticketlist = [];
+        const c_wsh = JSON.parse(document.getElementById('js-wsh').textContent);
         const c_bcode = JSON.parse(document.getElementById('js-bcode').textContent);
         const c_ct = JSON.parse(document.getElementById('js-ct').textContent);
-        
         // document.querySelectorAll(".status > .vertical-center")[0].innerHTML =window.location.host ;
         //document.querySelectorAll(".status")[0].innerHTML =<marquee behavior="scroll" direction="left">window.location.host</marquee> ;
         // const containers = document.getElementsByClassName("container_calling");
@@ -59,7 +60,7 @@
         // console.log(cc1);
 
         const chatSocket = new WebSocket(
-            'ws://'
+            c_wsh
             + window.location.host
             + '/ws/webtv/'
             + c_bcode

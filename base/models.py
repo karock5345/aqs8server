@@ -66,7 +66,8 @@ class Branch(models.Model):
     language3 = models.IntegerField(default=0)
     language4 = models.IntegerField(default=0)
 
-    usersinglelogin = models.BooleanField(default=False)    
+    usersinglelogin = models.BooleanField(default=False)
+    webtvcsslink = models.TextField(default='styles/styletv.css')
     webtvlogolink = models.TextField(default='images/logo_ts.png')
     
     # branch status

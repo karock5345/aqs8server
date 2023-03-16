@@ -8,7 +8,7 @@ import pytz
 from django.utils import timezone
 from apscheduler.schedulers.background import BackgroundScheduler
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, funLocaltoUTC, funLocaltoUTCtime, funUTCtoLocaltime
-from base.api.v_display import wssendwebtv
+from base.ws import wssendwebtv
 
 datetime_now =timezone.now()
 system_inited = False

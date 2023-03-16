@@ -8,7 +8,7 @@ from django.db.models import Q
 from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, counteractive
 
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
-from .serializers import displaylistSerivalizer, displaywaitlistSerivalizer, voicelistSerivalizer, lastDisplaySerivalizer, webdisplaylistSerivalizer
+from .serializers import displaylistSerivalizer, displaywaitlistSerivalizer, voicelistSerivalizer, lastDisplaySerivalizer
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 import asyncio
@@ -27,64 +27,7 @@ displaylist_x_mins = 3
 #         data
 #     )
        
-def wssendwebtv(bcode, countertypename):
-    context = None
-    error = ''
-    str_now = '---'
-
-    branch = None
-    if error == '' :        
-        branchobj = Branch.objects.filter( Q(bcode=bcode) )
-        if branchobj.count() == 1:
-            branch = branchobj[0]
-            datetime_now = timezone.now()
-            datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
-            str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
-        else :
-            error = 'Branch not found.'
-
-    # get the Counter type
-    countertype = None
-    if error == '' :    
-        if countertypename == '' :
-            ctypeobj = CounterType.objects.filter( Q(branch=branch) )
-        else:
-            ctypeobj = CounterType.objects.filter( Q(branch=branch) & Q(name=countertypename) )
-        if (ctypeobj.count() > 0) :
-            countertype = ctypeobj[0]
-        else :
-            error = 'Counter Type not found.' 
-
-    if error == '' : 
-
-        displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
-            
-        wdserializers  = webdisplaylistSerivalizer(displaylist, many=True)
-
-        context = {
-        'type':'broadcast_message',
-        'lastupdate' : str_now,
-        'ticketlist' : wdserializers.data,
-        'scroll' : countertype.displayscrollingtext,
-        }
-
-    else :
-        context = {
-        'type':'broadcast_message',
-        'lastupdate' : str_now,
-        'errormsg' : error,
-        }
-
-    
-    channel_layer = get_channel_layer()
-    channel_group_name = 'webtv_' + bcode + '_' + countertypename
-    print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
-    try:
-        async_to_sync (channel_layer.group_send)(channel_group_name, context)
-        print('...Done')
-    except:
-        print('...ERROR:Redis Server is down!')
-    
+  
     
     
 
