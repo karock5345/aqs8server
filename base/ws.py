@@ -6,13 +6,48 @@ from rest_framework.response import Response
 from django.utils import timezone
 from django.db.models import Q
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, counteractive
-from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
-from base.api.serializers import webdisplaylistSerivalizer
+from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, PrinterStatus, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
+from base.api.serializers import webdisplaylistSerivalizer, printerstatusSerivalizer
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 import asyncio
 
 wsHypertext = 'ws://'
+
+def wssendprinterstatus(bcode):
+    error = ''
+    branch = None
+
+    if error == '' :
+        if bcode == '':
+            error = 'No branch code'
+
+    if error == '' :
+        branchobj = Branch.objects.filter( Q(bcode=bcode) )
+        if branchobj.count() == 1:
+            branch = branchobj[0]
+        else :
+            error = 'Branch not found.'
+
+    if error == '' :
+        printerstatuslist = PrinterStatus.objects.filter( Q(branch=branch) ).order_by('-updated')
+        serializers  = printerstatusSerivalizer(printerstatuslist, many=True)
+        data = dict({'data':serializers.data})
+        
+        channel_layer = get_channel_layer()
+        channel_group_name = 'printerstatus_' + bcode 
+        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        try:
+            async_to_sync (channel_layer.group_send)(channel_group_name, data)
+            print('...Done')
+        except:
+            print('...ERROR:Redis Server is down!')
+
+    if error != '':
+        print ('WS send printer status Error:' & error)
+
+    
+
 
 def wssendql(bcode, countertypename, ticket, cmd):
     # cmd 'add' or 'del'
@@ -69,24 +104,22 @@ def wssendql(bcode, countertypename, ticket, cmd):
         }
         context = {
         'type':'broadcast_message',
-        'ticket': data,
+        'data': data,
         }
+        channel_layer = get_channel_layer()
+        channel_group_name = 'ql_' + bcode + '_' + countertypename
+        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        try:
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            print('...Done')
+        except:
+            print('...ERROR:Redis Server is down!')
 
-    else :
-        context = {
-        'type':'broadcast_message',
-        'errormsg' : error,
-        }
+    if error != '':
+        print ('WS send queue list Error:' & error)
 
     
-    channel_layer = get_channel_layer()
-    channel_group_name = 'ql_' + bcode + '_' + countertypename
-    print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
-    try:
-        async_to_sync (channel_layer.group_send)(channel_group_name, context)
-        print('...Done')
-    except:
-        print('...ERROR:Redis Server is down!')
+
 
 def wssendwebtv(bcode, countertypename):
     context = None
@@ -124,25 +157,23 @@ def wssendwebtv(bcode, countertypename):
 
         context = {
         'type':'broadcast_message',
-        'lastupdate' : str_now,
-        'ticketlist' : wdserializers.data,
-        'scroll' : countertype.displayscrollingtext,
+        'data': {
+                'lastupdate' : str_now,
+                'ticketlist' : wdserializers.data,
+                'scroll' : countertype.displayscrollingtext,
+                }
         }
-
-    else :
-        context = {
-        'type':'broadcast_message',
-        'lastupdate' : str_now,
-        'errormsg' : error,
-        }
+        channel_layer = get_channel_layer()
+        channel_group_name = 'webtv_' + bcode + '_' + countertypename
+        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        try:
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            print('...Done')
+        except:
+            print('...ERROR:Redis Server is down!')
+    if error != '' :
+        print ('WS send webtv Error:' & error)
 
     
-    channel_layer = get_channel_layer()
-    channel_group_name = 'webtv_' + bcode + '_' + countertypename
-    print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
-    try:
-        async_to_sync (channel_layer.group_send)(channel_group_name, context)
-        print('...Done')
-    except:
-        print('...ERROR:Redis Server is down!')
+
   

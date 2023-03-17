@@ -7,7 +7,7 @@ from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCto
 from .v_display import newdisplayvoice
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
 from .serializers import waitinglistSerivalizer
-from base.ws import wssendwebtv
+from base.ws import wssendwebtv, wssendql
 
 @api_view(['POST'])
 def postCounterGet(request):
@@ -221,6 +221,8 @@ def postCounterGet(request):
         if ticket.status == 'waiting':
             ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
             ticket.ticketroute.save()
+            # websocket to softkey (update Queue List)
+            wssendql(branch.bcode, countertype.name, ticket, 'del')
         ticket.user = user
         ticket.status = 'calling'
         ticket.save()
@@ -443,6 +445,9 @@ def postCounterVoid(request):
 
     if status == dict({}) :
         funVoid(user, tickett, td, datetime_now)
+        # websocket to softkey (update Queue List)
+        wssendql(branch.bcode, countertype.name, tickett, 'del')
+        
         # # update ticket 
         # tickett.user = user
         # tickett.status = 'void'
@@ -735,6 +740,9 @@ def postCounterDone(request):
             ticket.status = lcounterstatus[0]
             ticket.step = nextstep
             ticket.save()
+
+            # websocket to softkey (update Queue List)
+            wssendql(branch.bcode, countertype.name, ticket, 'add')
 
             # new ticket data
             TicketData.objects.create(
@@ -1651,11 +1659,13 @@ def postCounterCall(request):
                     user=user,
                 )
 
-            # do display and voice temp db
-            newdisplayvoice(branch, countertype, rx_counternumber, ticket, datetime_now, user)
+                # do display and voice temp db
+                newdisplayvoice(branch, countertype, rx_counternumber, ticket, datetime_now, user)
 
-            # websocket to web tv
-            wssendwebtv(rx_bcode,countertype.name)
+                # websocket to web tv
+                wssendwebtv(rx_bcode,countertype.name)
+                # websocket to softkey (update Queue List)
+                wssendql(branch.bcode, countertype.name, ticket, 'del')
 
 
         context = dict({'data':context})

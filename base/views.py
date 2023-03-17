@@ -89,11 +89,12 @@ def webtouchView(request):
                 if key.ttype in request.POST:
                     print('Ticket ' + key.ttype)
 
-                    ticketno_str, countertype, tickettemp, error = newticket(branch, key.ttype, '','', datetime_now, userweb, 'web', '8')
+                    ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, key.ttype, '','', datetime_now, userweb, 'web', '8')
                     if error == '' :
                         # add ticketlog
                         TicketLog.objects.create(
                             tickettemp=tickettemp,
+                            ticket=ticket,
                             logtime=datetime_now,
                             app = 'web',
                             version = '8',

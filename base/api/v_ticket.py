@@ -10,7 +10,7 @@ from base.models import APILog, Branch, PrinterStatus,  TicketFormat, Ticket, Ti
 from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus
 from .serializers import printerstatusSerivalizer, ticketlistSerivalizer
 from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal
-from base.ws import wssendwebtv, wssendql
+from base.ws import wssendwebtv, wssendql, wssendprinterstatus
 import random
 from django.contrib.auth.models import User, Group
 from asgiref.sync import async_to_sync
@@ -29,6 +29,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
     ticketno_str = ''
     countertype = None
     tickettemp = None 
+    ticket = None
     error = ''
 
     if error == '' :
@@ -132,9 +133,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
             createdby=user,
             remark=remark,
         )
-
-
-        
+       
         tickettemp = TicketTemp.objects.create(
             tickettype=ttype, 
             ticketnumber=ticketno_str, 
@@ -165,14 +164,14 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
             startuser=user,
         )
         TicketLog.objects.create(
-            ticket=ticket,
-            tickettemp=tickettemp,
-            logtime=datetime_now,
-            app = app,
-            version = version,
-            logtext='TicketKey API ticket created : '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pno ,
-            user=user,
-        )
+                ticket=ticket,
+                tickettemp=tickettemp,
+                logtime=datetime_now,
+                app = app,
+                version = version,
+                logtext='TicketKey API ticket created : '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pno ,
+                user=user,
+            )
 
         wssendwebtv(branch.bcode, countertype.name)
         wssendql(branch.bcode, countertype.name,tickettemp,'add')
@@ -180,7 +179,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
 
 
 
-    return ticketno_str, countertype, tickettemp, error
+    return ticketno_str, countertype, tickettemp, ticket, error
 
 @api_view(['POST'])
 def postTicket(request):
@@ -260,9 +259,19 @@ def postTicket(request):
          
     if status == dict({}) :
         
-        ticketno_str, countertype, tickettemp, error = newticket(branch, ttype, pno, remark, datetime_now, user, app, version)
+        ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, ttype, pno, remark, datetime_now, user, app, version)
 
-        if error != '':
+        if error == '' :
+            TicketLog.objects.create(
+                ticket=ticket,
+                tickettemp=tickettemp,
+                logtime=datetime_now,
+                app = app,
+                version = version,
+                logtext='TicketKey API ticket created : '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pno ,
+                user=user,
+            )
+        else :
             status = dict({'status': 'Error'})
             msg =  dict({'msg':error})
         
@@ -635,6 +644,9 @@ def getPrinterStatus(request):
         serializers  = printerstatusSerivalizer(printerstatuslist, many=True)
         context = dict({'data':serializers.data})
         status = dict({'status': 'OK'})
+
+        # Websocket send Printer status
+        wssendprinterstatus(branch.bcode)
         # msg =  dict({'msg':'Everything will be OK.'})
     
     output = status | msg | context
