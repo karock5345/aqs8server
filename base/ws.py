@@ -33,12 +33,15 @@ def wssendprinterstatus(bcode):
         printerstatuslist = PrinterStatus.objects.filter( Q(branch=branch) ).order_by('-updated')
         serializers  = printerstatusSerivalizer(printerstatuslist, many=True)
         data = dict({'data':serializers.data})
-        
+        context = {
+        'type':'broadcast_message',
+        'data': data,
+        }
         channel_layer = get_channel_layer()
         channel_group_name = 'printerstatus_' + bcode 
         print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
-            async_to_sync (channel_layer.group_send)(channel_group_name, data)
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
             print('...Done')
         except:
             print('...ERROR:Redis Server is down!')

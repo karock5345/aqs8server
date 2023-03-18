@@ -580,6 +580,8 @@ def postUpdatePrinter(request):
             pss.statustext = rxpstatustext
             pss.save()
         status = dict({'status': 'OK'})
+        # Websocket send Printer status
+        wssendprinterstatus(branch.bcode)
         # msg =  dict({'msg':'Everything will be OK.'}) 
     
     output = status | msg | context
@@ -645,8 +647,6 @@ def getPrinterStatus(request):
         context = dict({'data':serializers.data})
         status = dict({'status': 'OK'})
 
-        # Websocket send Printer status
-        wssendprinterstatus(branch.bcode)
         # msg =  dict({'msg':'Everything will be OK.'})
     
     output = status | msg | context
