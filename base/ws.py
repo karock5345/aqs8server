@@ -53,7 +53,13 @@ def wssendprinterstatus(bcode):
 
 
 def wssendql(bcode, countertypename, ticket, cmd):
-    # cmd 'add' or 'del'
+    # {“add“:
+    #     {
+    #     "tickettype": "A", 
+    #     "ticketnumber": "012",
+    #     "tickettime": "2023-03-17T15:06:53.337639Z"
+    #     }
+    # }
     context = None
     error = ''
     str_now = '---'
@@ -99,24 +105,27 @@ def wssendql(bcode, countertypename, ticket, cmd):
             except:
                 stickettime = 'error'
 
-        data = {
-            'cmd':cmd,
+        data = {'cmd': cmd,
+            'data': {
             'tickettype' : ticket.tickettype,
             'ticketnumber' : ticket.ticketnumber,
             'tickettime' : stickettime,
+            }
         }
         context = {
         'type':'broadcast_message',
         'data': data,
         }
+        # print (json.dumps(context))
         channel_layer = get_channel_layer()
         channel_group_name = 'ql_' + bcode + '_' + countertypename
         print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
             print('...Done')
-        except:
-            print('...ERROR:Redis Server is down!')
+        except Exception as e:
+            print('...Error:'),
+            print(e)
 
     if error != '':
         print ('WS send queue list Error:' & error)

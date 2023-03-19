@@ -823,7 +823,15 @@ cerboot will auto config Nginx
 
 Refer to : https://www.youtube.com/watch?v=dYdv6pkCufk
 
+
 >**Update source code all HTML from ws:// to wss://**
+```bash
+nano ~/aqs8server/base/ws.py
+# change :
+wsHypertext = 'ws://'
+# to :
+wsHypertext = 'wss://'
+````
 
 Reboot the server
 ```bash
