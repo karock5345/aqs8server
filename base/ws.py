@@ -15,6 +15,21 @@ import asyncio
 wsHypertext = 'ws://'
 
 def wssendprinterstatus(bcode):
+    # {
+    #    "cmd":"ps",
+    #    "data":[
+    #       {
+    #          "printernumber":"P1",
+    #          "statustext":"good",
+    #          "status":"<P_FINE>"
+    #       },
+    #       {
+    #          "printernumber":"P2",
+    #          "statustext":"Paper out",
+    #          "status":"<P_FINE>"
+    #       }
+    #    ]
+    # }
     error = ''
     branch = None
 
@@ -31,12 +46,21 @@ def wssendprinterstatus(bcode):
 
     if error == '' :
         printerstatuslist = PrinterStatus.objects.filter( Q(branch=branch) ).order_by('-updated')
-        serializers  = printerstatusSerivalizer(printerstatuslist, many=True)
-        data = dict({'data':serializers.data})
+        PSserializers  = printerstatusSerivalizer(printerstatuslist, many=True)
+        jsontx = {
+            "cmd":"ps",
+            "data": "<printerstatus>"
+            }
+        str_tx = json.dumps(jsontx)
+        # print(str_tx)             
+        str_tx = str_tx.replace('"<printerstatus>"', json.dumps(PSserializers.data))
+        # print(str_tx)
+
         context = {
         'type':'broadcast_message',
-        'data': data,
+        'tx':str_tx
         }
+
         channel_layer = get_channel_layer()
         channel_group_name = 'printerstatus_' + bcode 
         print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
@@ -53,8 +77,9 @@ def wssendprinterstatus(bcode):
 
 
 def wssendql(bcode, countertypename, ticket, cmd):
-    # {“add“:
-    #     {
+    # {"cmd":"add",
+    #  "data":
+    #    {
     #     "tickettype": "A", 
     #     "ticketnumber": "012",
     #     "tickettime": "2023-03-17T15:06:53.337639Z"
@@ -105,18 +130,20 @@ def wssendql(bcode, countertypename, ticket, cmd):
             except:
                 stickettime = 'error'
 
-        data = {'cmd': cmd,
+        json_tx = {'cmd': cmd,
             'data': {
             'tickettype' : ticket.tickettype,
             'ticketnumber' : ticket.ticketnumber,
             'tickettime' : stickettime,
             }
         }
+        str_tx = json.dumps(json_tx)
+
         context = {
         'type':'broadcast_message',
-        'data': data,
+        'tx': str_tx,
         }
-        # print (json.dumps(context))
+        
         channel_layer = get_channel_layer()
         channel_group_name = 'ql_' + bcode + '_' + countertypename
         print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
@@ -165,15 +192,23 @@ def wssendwebtv(bcode, countertypename):
 
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
             
-        wdserializers  = webdisplaylistSerivalizer(displaylist, many=True)
+        wdserializers = webdisplaylistSerivalizer(displaylist, many=True)
+        jsontx = {
+            "cmd":"list5",
+            "data": {
+                "lastupdate": str_now,
+                "ticketlist": "<ticketlist>",
+                "scroll": countertype.displayscrollingtext,
+                }
+            }
+        str_tx = json.dumps(jsontx)
+        # print(str_tx)             
+        str_tx = str_tx.replace('"<ticketlist>"', json.dumps(wdserializers.data))
+        # print(str_tx)
 
         context = {
         'type':'broadcast_message',
-        'data': {
-                'lastupdate' : str_now,
-                'ticketlist' : wdserializers.data,
-                'scroll' : countertype.displayscrollingtext,
-                }
+        'tx':str_tx
         }
         channel_layer = get_channel_layer()
         channel_group_name = 'webtv_' + bcode + '_' + countertypename

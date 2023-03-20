@@ -50,6 +50,7 @@
         const c_wsh = JSON.parse(document.getElementById('js-wsh').textContent);
         const c_bcode = JSON.parse(document.getElementById('js-bcode').textContent);
         const c_ct = JSON.parse(document.getElementById('js-ct').textContent);
+        var cmd = "";
         // document.querySelectorAll(".status > .vertical-center")[0].innerHTML =window.location.host ;
         //document.querySelectorAll(".status")[0].innerHTML =<marquee behavior="scroll" direction="left">window.location.host</marquee> ;
         // const containers = document.getElementsByClassName("container_calling");
@@ -71,57 +72,62 @@
 
         chatSocket.onmessage = function(e) {
             // console.log('Received data:', e.data);
-            const data = JSON.parse(e.data);
+            const rxdata = JSON.parse(e.data);
             // console.log('Parsed data:', data);
             // document.querySelectorAll(".status > .vertical-center")[0].innerHTML = data.lastupdate;
-            document.querySelectorAll(".scroll > .vertical-center")[0].innerHTML = data.scroll;
+            cmd = rxdata.cmd;
+            if (cmd == 'list5') {
+                const data = rxdata.data;
 
-            document.querySelector('#ws-lastupdate').innerHTML = data.lastupdate;
-            document.querySelector('#calling_area').innerHTML = ``;
+                document.querySelectorAll(".scroll > .vertical-center")[0].innerHTML = data.scroll;
+                document.querySelector('#ws-lastupdate').innerHTML = data.lastupdate;
+                document.querySelector('#calling_area').innerHTML = ``;
 
-            // ticketlist = JSON.parse(data.ticketlist);
-            ticketlist = data.ticketlist;
-            // console.log(ticketlist);
-            for (var i = 0; i < ticketlist.length; i++) {
-                var obj = ticketlist[i];
-                // console.log("Ticket Type: " + obj.tickettype);
-                // console.log("Ticket Number: " + obj.ticketnumber);
-                // console.log("Language 1: " + obj.lang1);
-                // console.log("Language 2: " + obj.lang2);
-                // console.log("Counter Number: " + obj.counternumber);
-                // console.log("Wait Time: " + obj.wait);
+                // ticketlist = JSON.parse(data.ticketlist);
+                ticketlist = data.ticketlist;
+                // console.log(ticketlist);
+                for (var i = 0; i < ticketlist.length; i++) {
+                    var obj = ticketlist[i];
+                    // console.log("Ticket Type: " + obj.tickettype);
+                    // console.log("Ticket Number: " + obj.ticketnumber);
+                    // console.log("Language 1: " + obj.lang1);
+                    // console.log("Language 2: " + obj.lang2);
+                    // console.log("Counter Number: " + obj.counternumber);
+                    // console.log("Wait Time: " + obj.wait);
 
-                document.querySelector('#calling_area').innerHTML = 
-                document.querySelector('#calling_area').innerHTML +
-                `<div class="container_calling">
-                    <div class="ticketno">` + 
-                        obj.tickettype + obj.ticketnumber +
-                    `</div>
+                    document.querySelector('#calling_area').innerHTML = 
+                    document.querySelector('#calling_area').innerHTML +
+                    `<div class="container_calling">
+                        <div class="ticketno">` + 
+                            obj.tickettype + obj.ticketnumber +
+                        `</div>
 
-                    <i class="arrow icofont-circled-right icofont-3x"></i>
+                        <i class="arrow icofont-circled-right icofont-3x"></i>
 
-                    <div class="counter">
-                        <div class="countertype" >
-                            <div class="countertext">`
-                                + obj.ct_lang1 +
-                            `</div> 
-                            <div class="countertext">`
-                                + obj.ct_lang2 +
+                        <div class="counter">
+                            <div class="countertype" >
+                                <div class="countertext">`
+                                    + obj.ct_lang1 +
+                                `</div> 
+                                <div class="countertext">`
+                                    + obj.ct_lang2 +
+                                `</div>
+                            </div>
+                            <div class="counternumber">`
+                                + obj.counternumber +
                             `</div>
                         </div>
-                        <div class="counternumber">`
-                            + obj.counternumber +
-                        `</div>
-                    </div>
-            
-        
-                    <div class="numberCircle">` +
-                        obj.wait +
-                    `</div>
-                </div>`;
 
+
+                        <div class="numberCircle">` +
+                            obj.wait +
+                        `</div>
+                    </div>`;
+
+                }
+                // document.querySelector('#chat-log').value += ('testing' + '\n');
             }
-            // document.querySelector('#chat-log').value += ('testing' + '\n');
+            
         };
 
         chatSocket.onclose = function(e) {

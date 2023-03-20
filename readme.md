@@ -164,6 +164,8 @@ sudo ufw status verbose
 # SETUP SOURCE CODE
 ### <span style="color:orange;">**Copy / git source code to home dir**</span>
 
+> Remove folder : sudo rm -r aqs8server/
+
 Before install packages (python -m pip freeze > requirements.txt) 
 
 ```bash

@@ -44,10 +44,10 @@ class PrinterStatusConsumer(AsyncWebsocketConsumer):
 
     # Receive message from room group
     async def broadcast_message(self, event):
-        data = event['data']
+        str_tx = event['tx']
 
         # Send message to WebSocket
-        await self.send(text_data=json.dumps(data))
+        await self.send(text_data=str_tx)
 
     async def disconnect(self, close_code):
         # Leave room group
@@ -102,10 +102,10 @@ class QLConsumer(AsyncWebsocketConsumer):
 
     # Receive message from room group
     async def broadcast_message(self, event):
-        data = event['data']
+        str_tx = event['tx']
 
         # Send message to WebSocket
-        await self.send(text_data=json.dumps(data))
+        await self.send(text_data=str_tx)
 
     async def disconnect(self, close_code):
         # Leave room group
@@ -160,10 +160,10 @@ class WebTVConsumer(AsyncWebsocketConsumer):
 
     # Receive message from room group
     async def broadcast_message(self, event):
-        data = event['data']
+        str_tx = event['tx']
 
         # Send message to WebSocket
-        await self.send(text_data=json.dumps(data))
+        await self.send(text_data=str_tx)
 
     async def disconnect(self, close_code):
         # Leave room group
