@@ -14,6 +14,90 @@ import asyncio
 
 wsHypertext = 'ws://'
 
+def wsSendPrintTicket(bcode, tickettype, ticketnumber, tickettime, tickettext, printernumber):
+    # {
+    #     "cmd": "prt",
+    #     "data": 
+    #         {
+    #             "tickettype": "A",
+    #             "ticketnumber": "001",
+    #             "bcode": "KB",
+    #             "tickettime": "2023-03-20T09:26:20Z",
+    #             "tickettext": "<CEN>\r\n<LOGO>\r\n<TEXT>歡迎光臨，請稍候<LINE>\r\n<TEXT>Welcome, please wait to be served<LINE>\r\n<LINE>\r\n<B_FONT>\r\n<TEXT>票 號<LINE>\r\n<TEXT>Ticket number<LINE>\r\n<D_FONT><TEXT>A001<LINE>\r\n<N_FONT>\r\n<TEXT>17:26:20 20-03-2023\r\n<QR>http://192.168.1.22:8000/my/?tt=A&no=001&bc=KB&sc=EwC<LINE>\r\n<TEXT>Scan QR code for your e-ticket<LINE>\r\n<TEXT>掃描QR查看您的網上飛仔<LINE>\r\n<CUT>",
+    #             "printernumber": "<pno>P1</pno>"
+    #         }
+    # }
+    error = ''
+    branch = None
+
+    if error == '' :
+        if bcode == '':
+            error = 'No branch code'
+    if error == '' :
+        if tickettype == '':
+            error = 'No ticket type'
+    if error == '' :
+        if ticketnumber== '':
+            error = 'No ticket number'
+    if error == '' :
+        if tickettime== '':
+            error = 'No ticket time'
+    if error == '':
+        stickettime = '' 
+        try:
+            stickettime = tickettime.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+        except:
+            stickettime = ''
+        if stickettime == '' :
+            try :
+                stickettime = tickettime.strftime('%Y-%m-%dT%H:%M:%SZ')
+            except:
+                stickettime = ''
+                error =  'Ticket time format not correct. Should be : 2022-05-19T23:59:59.123456Z'
+    if error == '' :
+        if tickettext== '':
+            error = 'No ticket text'                        
+    if error == '' :
+        branchobj = Branch.objects.filter( Q(bcode=bcode) )
+        if branchobj.count() == 1:
+            branch = branchobj[0]
+        else :
+            error = 'Branch not found.'
+    if error == '':
+        jsontx = {
+            "cmd":"prt",
+            "data": 
+                {
+                    "tickettype": tickettype,
+                    "ticketnumber": ticketnumber,
+                    "bcode": bcode,
+                    "tickettime": stickettime,
+                    "tickettext": tickettext,
+                    "printernumber": printernumber,
+                },
+        }
+        str_tx = json.dumps(jsontx)
+        # print(str_tx)             
+       
+
+        context = {
+        'type':'broadcast_message',
+        'tx':str_tx
+        }
+
+        channel_layer = get_channel_layer()
+        channel_group_name = 'print_' + bcode 
+        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        try:
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            print('...Done')
+        except:
+            print('...ERROR:Redis Server is down!')
+
+    if error != '':
+        print ('WS send print Error:'),
+        print (error)
+
 def wssendprinterstatus(bcode):
     # {
     #    "cmd":"ps",
