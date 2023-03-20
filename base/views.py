@@ -143,6 +143,7 @@ def CancelTicketView(request, pk, sc):
     try:
         tt = TicketTemp.objects.get(id=pk)
         logofile = tt.branch.webtvlogolink
+        css = tt.branch.webtvcsslink
 
         # back to : http://127.0.0.1:8000/my/?tt=A&no=003&bc=KB&sc=vVL
         base_url = reverse('myticket')
@@ -204,6 +205,7 @@ def CancelTicketView(request, pk, sc):
     'logofile':logofile,
     'errormsg':error,
     'backurl':backurl,
+    'css':css,
     }
     return render(request, 'base/webmyticket_cancel.html', context)
 
@@ -212,6 +214,7 @@ def webmyticket_old_school(request):
     context = None
     error = ''
     bcode = ''
+    css = ''
     try:
         bcode = request.GET['bc']
     except:
@@ -250,6 +253,7 @@ def webmyticket_old_school(request):
             logofile = branch.webtvlogolink
             datetime_now = timezone.now()
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+            css = branch.webtvcsslink
         else :
             error = 'Branch not found.'
     
@@ -274,7 +278,9 @@ def webmyticket_old_school(request):
     
     displaylist = None 
     if error == '' :
+        # displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
+        wdserializers  = webdisplaylistSerivalizer(displaylist, many=True)
     
     counter='---'
     if error == '':
@@ -289,12 +295,14 @@ def webmyticket_old_school(request):
             'tickettime':tickettime.strftime('%Y-%m-%d %H:%M:%S'),
             'counterstatus':counterstatus,
             'logofile':logofile,
+            'css' : css,
             'lastupdate':datetime_now_local.strftime('%Y-%m-%d %H:%M:%S'),            
             'counter':counter,
             'countertype':countertype,
             'tickettemp':tickettemp,
-            'ticketlist':displaylist,
+            'ticketlist':wdserializers.data,
             'errormsg':'',
+            'scroll':countertype.displayscrollingtext,
             }
     else:
         context = {

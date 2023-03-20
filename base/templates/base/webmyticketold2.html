@@ -14,7 +14,7 @@
             </div>
             <div  class="container_myticket" >
                 
-                <div class="ticketno">
+                <div class="ticketno_myticket">
                     {{ticket}}
                     <div class="tickettime">
                         {{tickettime}}
@@ -38,16 +38,22 @@
                         <div class="statustext">取消了<br>Cancelled</div>
                     {% endif %}
                 </div>
-
+                
                 {% if tickettemp.status != "waiting" %}
+                   
+
                     <div class="counter">
-                        <div class="countertype" >{{tickettemp.countertype.lang2}}<br>{{tickettemp.countertype.lang1}}</div>
+                        <div class="countertype" >
+                            <div class="countertext_myticket">{{tickettemp.countertype.lang1}}</div>
+                            <div class="countertext_myticket">{{tickettemp.countertype.lang2}}</div>
+                        </div>
                         <div class="counternumber">{{counter}}</div>
                     </div>
+             
                 {% endif %}
                 {% if tickettemp.status == "waiting" %}
                         
-                    <a class="buttoncancel" href="{% url 'cancelticket' tickettemp.id tickettemp.securitycode  %}">取消 Cancel
+                    <a class="buttoncancel" href="{% url 'cancelticket' tickettemp.id tickettemp.securitycode %}">取消 Cancel
 
                     </a> 
                     
@@ -88,7 +94,9 @@
     {% endif %}
 
 
-
+    <div class="scroll">
+        <marquee class="vertical-center" behavior="scroll" direction="left">{{scroll}}</marquee>
+    </div>
 
     <div class="status">
         <div class="vertical-center">
@@ -98,29 +106,32 @@
     </div>
 
 
-    {% for ticketrow in ticketlist %}            
-        <div  class="container_calling" >
+    {% for ticketrow in ticketlist %}      
+    
+        <div class="container_calling">
             <div class="ticketno">
-                {{ticketrow.tickettemp.tickettype}}{{ticketrow.tickettemp.ticketnumber}}
+                {{ticketrow.tickettype}}{{ticketrow.ticketnumber}}
             </div>
+
+            <i class="arrow icofont-circled-right icofont-3x"></i>
+        
+
             <div class="counter">
-                <div class="countertype" >{{ticketrow.countertype.lang1}} {{ticketrow.countertype.lang2}}</div>
+                <div class="countertype" >
+                    <div class="countertext">{{ticketrow.ct_lang1}}</div>
+                    <div class="countertext">{{ticketrow.ct_lang2}}</div>
+                </div>
                 <div class="counternumber">{{ticketrow.counternumber}}</div>
             </div>
-        </div>    
+            
+            <div class="numberCircle">
+                {{ticketrow.wait}}
+            </div>  
+        </div>
+
     {% endfor %}
 
 
-    
-    <!-- <div  class="container_calling" >
-        <div class="ticketno">
-            A999
-        </div>
-        <div  class="counter">
-            <div  class="countertype" >Counter 櫃台</div>
-            <div  class="counternumber">9</div>
-        </div>
-    </div>  -->
 
     <div class="powered">Powered by tsvd.com.hk</div>
 
