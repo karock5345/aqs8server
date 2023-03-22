@@ -7,7 +7,7 @@ from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCto
 from .v_display import newdisplayvoice
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
 from .serializers import waitinglistSerivalizer
-from base.ws import wssendwebtv, wssendql
+from base.ws import wssendwebtv, wssendql, wsSendTicketStatus
 
 @api_view(['POST'])
 def postCounterGet(request):
@@ -240,7 +240,8 @@ def postCounterGet(request):
 
         # do display and voice temp db
         newdisplayvoice(branch, countertype, rx_counternumber, ticket, datetime_now, user)
-
+        # websocket to web my ticket
+        wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
 
 
         context = {'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
@@ -445,8 +446,7 @@ def postCounterVoid(request):
 
     if status == dict({}) :
         funVoid(user, tickett, td, datetime_now)
-        # websocket to softkey (update Queue List)
-        wssendql(branch.bcode, countertype.name, tickett, 'del')
+
         
         # # update ticket 
         # tickett.user = user
@@ -472,8 +472,7 @@ def postCounterVoid(request):
             user=user,
         )
 
-        # websocket to web tv
-        wssendwebtv(rx_bcode,countertype.name)
+
 
         status = dict({'status': 'OK'})
         msg =  dict({'msg':'Ticket voided.'})  
@@ -502,6 +501,12 @@ def funVoid(user, tickett, td, datetime_now):
     td.waitingperiod = tsecs
     td.save()
 
+    # websocket to softkey (update Queue List)
+    wssendql(tickett.branch.bcode , tickett.countertype.name, tickett, 'del')
+    # websocket to web tv
+    wssendwebtv(tickett.branch.bcode, tickett.countertype.name)
+    # websocket to web my ticket
+    wsSendTicketStatus(tickett.branch.bcode, tickett.tickettype, tickett.ticketnumber, tickett.securitycode)
 
 @api_view(['POST'])
 def postCounterDone(request):
@@ -763,7 +768,9 @@ def postCounterDone(request):
                 logtext='Ticket Done API (next step): '  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
                 user=user,
             )
-        
+        # websocket to web my ticket
+        wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
+
         status = dict({'status': 'OK'})
         msg =  dict({'msg':'Ticket done.'})  
 
@@ -993,6 +1000,8 @@ def postCounterMiss(request):
             user=user,
         )
 
+        # websocket to web my ticket
+        wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
 
         status = dict({'status': 'OK'})
         msg =  dict({'msg':'Ticket no show.'})  
@@ -1666,7 +1675,8 @@ def postCounterCall(request):
                 wssendwebtv(rx_bcode,countertype.name)
                 # websocket to softkey (update Queue List)
                 wssendql(branch.bcode, countertype.name, ticket, 'del')
-
+                # websocket to web my ticket
+                wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
 
         context = dict({'data':context})
         status = dict({'status': 'OK'})

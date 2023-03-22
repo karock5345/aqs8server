@@ -368,10 +368,29 @@ body {
     background: none;
     margin-top: 5px;
 }
+.buttoncancel_main  {
+    /* width: 100px;*/
+    /* height: 100%; */
+   /* font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    cursor:pointer; */
+    color: rgb(255, 255, 255);
+    background-color: var(--color_myticket_background);
+    /* border-radius:6px;*/
+    /* text-align: center; */
+    /* margin-top: 10px; */
+    /*padding: 8px 0 0 ; */
+    text-decoration: none;
+    width: 120px;
+    height: 40px;
+    justify-content:space-between ;
+    margin-top: 14px;
 
+}
 
 .buttoncancel  {
-    width: 100px;
+    width: 120px;
     height: 40px;
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 400;
@@ -381,9 +400,13 @@ body {
     background-color: crimson;
     border-radius:6px;
     text-align: center;
-    /* margin-top: 10px; */
-    padding: 8px 0 0 ;
+    
+    padding: 8px;
     text-decoration: none;
+    /* margin-left: 10px; */
+
+
+   
 
 }
 .buttoncancel:hover {

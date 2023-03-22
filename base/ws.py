@@ -14,6 +14,82 @@ import asyncio
 
 wsHypertext = 'ws://'
 
+def wsSendTicketStatus(bcode, tickettype, ticketnumber, sc):
+    # {
+    #     "cmd": "tstatus",
+    #     "data": 
+    #         {
+    #             "status": "waiting",
+    #             "counternumber": "1",
+    #             "counterlang1": "Counter",
+    #             "counterlang2": "櫃台",
+    #         }
+    # }  
+    error = ''
+    branch = None
+    counterno = '---'
+
+    if error == '' :
+        if bcode == '':
+            error = 'No branch code'
+    if error == '' :
+        if tickettype == '':
+            error = 'No ticket type'
+    if error == '' :
+        if ticketnumber == '':
+            error = 'No ticket number'       
+    if error == '' :
+        if sc == '':
+            error = 'No Securitycode'
+    if error == '' :
+        branchobj = Branch.objects.filter( Q(bcode=bcode) )
+        if branchobj.count() == 1:
+            branch = branchobj[0]
+        else :
+            error = 'Branch not found.'
+    if error == '':
+        tobj = TicketTemp.objects.filter(Q(branch=branch) & Q(tickettype=tickettype) & Q(ticketnumber=ticketnumber) & Q(securitycode=sc))
+        if tobj.count() == 1 :
+            ticket = tobj[0]
+        else:
+            error = 'Ticket not found.'
+    if error == '':
+        csobj = CounterStatus.objects.filter(Q(tickettemp=ticket)) 
+        if csobj.count() == 1:
+            counterstatus = csobj[0]
+            counterno = counterstatus.counternumber
+
+    if error == '':
+        json_tx = {'cmd': 'tstatus',
+            'data': {
+                "status": ticket.status,
+                "counternumber": counterno,
+                "counterlang1": ticket.countertype.lang1,
+                "counterlang2": ticket.countertype.lang2,
+            }
+        }
+        str_tx = json.dumps(json_tx)
+
+        context = {
+        'type':'broadcast_message',
+        'tx': str_tx,
+        }
+        
+        channel_layer = get_channel_layer()
+        channel_group_name = 'ticketstatus_' + bcode + '_' + tickettype + ticketnumber + '_' + sc
+        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        try:
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            print('...Done')
+        except Exception as e:
+            print('...Error:'),
+            print(e)
+
+    if error != '':
+        print ('WS send ticket status Error:' & error)            
+
+    pass
+
 def wsSendPrintTicket(bcode, tickettype, ticketnumber, tickettime, tickettext, printernumber):
     # {
     #     "cmd": "prt",

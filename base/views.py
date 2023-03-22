@@ -35,7 +35,94 @@ try:
 except:
     print('userweb not found.')
 
+def webmyticket(request, bcode, ttype, tno, sc):
+    # ttype is ticket type
+    # tno is ticket number
+    # sc is ticket Security code
+    # 127.0.0.1:8000/my/KB/A/001/123
+    context = None
+    error = ''
+    str_now = '---'
+    css = ''
+    scroll = ''
 
+    ticket = ttype + tno
+    securitycode = sc
+
+    branch = None
+    logofile = None
+    datetime_now_local = None
+    if error == '' :        
+        branchobj = Branch.objects.filter( Q(bcode=bcode) )
+        if branchobj.count() == 1:
+            branch = branchobj[0]
+            logofile = branch.webtvlogolink
+            datetime_now = timezone.now()
+            datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+            str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
+            css = branch.webtvcsslink
+        else :
+            error = 'Branch not found.'
+    
+    countertype = None
+    if error == '' :        
+        ttobj = TicketTemp.objects.filter(  
+                                            Q(branch=branch) & 
+                                            Q(tickettype=ttype) &
+                                            Q(ticketnumber=tno) & 
+                                            Q(securitycode=securitycode)
+                                            )
+        if ttobj.count() == 1:
+            tickettemp = ttobj[0]
+
+            tickettime = tickettemp.tickettime
+            counterstatus = tickettemp.status
+            countertype = tickettemp.countertype
+            scroll = countertype.displayscrollingtext
+            tickettime = funUTCtoLocal(tickettime, branch.timezone)
+        else :
+            error = 'Ticket not found.'
+    
+    displaylist = None 
+    if error == '' :
+        # displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
+        displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
+        wdserializers  = webdisplaylistSerivalizer(displaylist, many=True)
+    
+    counter='---'
+    if error == '':
+        csobj = CounterStatus.objects.filter(
+            Q(tickettemp = tickettemp)
+        )
+        if csobj.count() == 1:
+            counter = csobj[0].counternumber
+    if error == '':
+        context = {
+            'wsh' : wsHypertext,
+            'ticket':ticket,
+            'tickettime':tickettime.strftime('%Y-%m-%d %H:%M:%S'),
+            'bcode':branch.bcode,
+            'counterstatus':counterstatus,
+            'logofile':logofile,
+            'css' : css,
+            'lastupdate':str_now,            
+            'counter':counter,
+            'countertype':countertype,
+            'tickettemp':tickettemp,
+            'ticketlist':wdserializers.data,
+            'errormsg':'',
+            'scroll':scroll,
+            }
+    else:
+        context = {
+            'lastupdate':str_now, 
+            'logofile':logofile,
+            'errormsg':error,
+            'scroll':scroll,
+            'css' : css,
+            }
+        messages.error(request, error)
+    return render(request , 'base/webmyticket.html', context)
 
 # Create your views here.
 def webtouchView(request):
@@ -146,14 +233,17 @@ def CancelTicketView(request, pk, sc):
         css = tt.branch.webtvcsslink
 
         # back to : http://127.0.0.1:8000/my/?tt=A&no=003&bc=KB&sc=vVL
-        base_url = reverse('myticket')
-        query_string =  urlencode({
-                                    'tt':tt.tickettype , 
-                                    'no':tt.ticketnumber, 
-                                    'bc':tt.branch.bcode, 
-                                    'sc':tt.securitycode,
-                                    }) 
-        url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
+        # base_url = reverse('myticket')
+        # query_string =  urlencode({
+        #                             'tt':tt.tickettype , 
+        #                             'no':tt.ticketnumber, 
+        #                             'bc':tt.branch.bcode, 
+        #                             'sc':tt.securitycode,
+        #                             }) 
+        # url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
+
+        base_url = '/my'
+        url = base_url + '/' + tt.branch.bcode + '/' + tt.tickettype +'/' + tt.ticketnumber + '/' + tt.securitycode + '/'
         backurl = '{0}://{1}'.format(request.scheme, request.get_host()) + url
         print (backurl)
     except:
@@ -389,6 +479,7 @@ def webtv(request, bcode, ct):
     context = None
     error = ''
     str_now = '---'
+    logofile = ''
 
     countertypename = ct
 
@@ -440,6 +531,7 @@ def webtv(request, bcode, ct):
         context = {
         'lastupdate' : str_now,
         'errormsg' : error,
+        'logofile' : logofile,
         }
         messages.error(request, error)
 

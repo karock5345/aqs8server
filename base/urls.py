@@ -36,7 +36,8 @@ urlpatterns = [
 
     path('webtv/<str:bcode>/<str:ct>/', views.webtv ),
     # path('webtv/', views.webtv_old_school),
-    path('my/', views.webmyticket_old_school, name='myticket'),
+    # path('my/', views.webmyticket_old_school, name='myticket'),
+    path('my/<str:bcode>/<str:ttype>/<str:tno>/<str:sc>/', views.webmyticket, name='myticket'),
     path('cancel/<str:pk>/<str:sc>/', views.CancelTicketView,  name='cancelticket'),
     path('touch/', views.webtouchView),
 ]

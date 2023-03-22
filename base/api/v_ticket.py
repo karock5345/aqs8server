@@ -88,14 +88,18 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
         ticketno_str = ticketno_str.zfill(len(ticketnoformat))
         sc = gensecuritycode()
 
-        base_url = reverse('myticket')
-        query_string =  urlencode({
-                                    'tt':ttype, 
-                                    'no':ticketno_str, 
-                                    'bc':branch.bcode, 
-                                    'sc':sc,
-                                    }) 
-        url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
+        # for myTicket old school
+        # base_url = reverse('myticket')
+        # query_string =  urlencode({
+        #                             'tt':ttype, 
+        #                             'no':ticketno_str, 
+        #                             'bc':branch.bcode, 
+        #                             'sc':sc,
+        #                             }) 
+        # url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
+
+        url = '/my/' + branch.bcode + '/' + ttype +'/' + ticketno_str + '/' + sc + '/'
+        # print(url)
         # myticketlink =  ('{0}://{1}'.format(request.scheme, request.get_host()) +   url)
         myticketlink = url
         

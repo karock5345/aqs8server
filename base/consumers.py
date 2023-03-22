@@ -4,8 +4,68 @@ from channels.generic.websocket import AsyncWebsocketConsumer, WebsocketConsumer
 from django.db.models import Q
 from django.utils import timezone
 from .views import  funUTCtoLocal
-from .models import Branch, CounterType
+from .models import Branch, CounterType, TicketTemp
 from asgiref.sync import sync_to_async
+
+
+class TicketStatusConsumer(AsyncWebsocketConsumer):
+    # ws://127.0.0.1:8000/ws/tstatus/KB/A/123/sc/
+    async def connect(self):
+        @sync_to_async
+        def check_input():
+            error = ''
+            branch = None
+            branchobj = Branch.objects.filter(Q(bcode=self.bcode))
+
+            if branchobj.count() == 1:
+                branch = branchobj[0]
+                pass
+            else :
+                error = 'Branch not found.'
+            if error == '':
+                # find ticket
+                tobj = TicketTemp.objects.filter(Q(branch=branch) & Q(tickettype=self.ttype) & Q(ticketnumber=self.tno) & Q(securitycode=self.sc))
+                if tobj.count() == 1 :
+                    ticket = tobj[0]
+                else:
+                    error = 'Ticket not found.'
+            return error
+                
+        error = ''
+        self.bcode = self.scope['url_route']['kwargs']['bcode']
+        self.ttype = self.scope['url_route']['kwargs']['ttype']
+        self.tno = self.scope['url_route']['kwargs']['tno']
+        self.sc = self.scope['url_route']['kwargs']['sc']
+
+        self.room_group_name = 'ticketstatus_' + self.bcode + '_' + self.ttype + self.tno + '_' + self.sc
+        print('connecting:' + self.room_group_name )
+        
+        # check bcode and ct (countertype) is not exit do not accept connection
+        error = await check_input()       
+
+        if error == '':          
+            await self.channel_layer.group_add(
+                self.room_group_name,
+                self.channel_name
+            )
+            await self.accept()
+        else :
+            print('Error:' + error )
+            
+
+    # Receive message from room group
+    async def broadcast_message(self, event):
+        str_tx = event['tx']
+
+        # Send message to WebSocket
+        await self.send(text_data=str_tx)
+
+    async def disconnect(self, close_code):
+        # Leave room group
+        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
+
+
+
 
 class PrintConsumer(AsyncWebsocketConsumer):
     async def connect(self):

@@ -111,7 +111,7 @@ class UserProfile(models.Model):
 
 class TicketFormat(models.Model):
     tformat_default = '''<CEN>
-<LOGO>
+<LOGO>1
 <TEXT>歡迎光臨，請稍候<LINE>
 <TEXT>Welcome, please wait to be served<LINE>
 <LINE>
@@ -120,7 +120,10 @@ class TicketFormat(models.Model):
 <TEXT>Ticket number<LINE>
 <D_FONT><TICKET><LINE>
 <N_FONT>
-<DATETIME>
+<DATETIME><LINE>
+<QR>http://192.168.1.22:8000<MYTICKET><LINE>
+<TEXT>掃描QR查看您的網上飛仔<LINE>
+<TEXT>Scan QR code for your e-ticket<LINE>
 <CUT>'''
 
     enabled = models.BooleanField(default=True) 
