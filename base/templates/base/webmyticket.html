@@ -270,8 +270,9 @@
                 document.querySelectorAll(".counter > .counternumber")[0].innerHTML = data.counternumber;
 
                 if (status=='waiting') {
-                    statustext = '等待中<br>Waiting';
-                    document.getElementById("id_counter_area").innerHTML = cancelhtml;
+                    // statustext = '等待中<br>Waiting';
+                    // document.getElementById("id_counter_area").innerHTML = cancelhtml;
+                    location.reload();
                 }else if (status == 'calling') {
                     statustext = '到你了<br>Calling you';
                 }else if (status == 'processing') {

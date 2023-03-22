@@ -434,13 +434,13 @@ def getLastDisplay(request):
         starttime = datetime_now + timedelta(minutes=-displaylist_x_mins)
 
         servertime = dict({'servertime': datetime_now})
-        scrollingtext = dict({'scrollingtext' : countertype.displayscrollingtext})
+        scrollingtext = dict({'scroll' : countertype.displayscrollingtext})
 
         msg = servertime | scrollingtext
 
         displaylist = TicketRoute.objects.filter (branch=branch, countertype=countertype )
         serializers  = lastDisplaySerivalizer(displaylist, many=True)
-        context = dict({'data':serializers.data})
+        context = dict({'ticketlist':serializers.data})
         status = dict({'status': 'OK'})
 
     

@@ -17,7 +17,7 @@ from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,tr
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
-from .api.serializers import webdisplaylistSerivalizer
+from .api.serializers import displaylistSerivalizer
 from django.utils import timezone
 from .api.v_softkey import funVoid
 from .api.v_ticket import newticket
@@ -87,7 +87,7 @@ def webmyticket(request, bcode, ttype, tno, sc):
     if error == '' :
         # displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
-        wdserializers  = webdisplaylistSerivalizer(displaylist, many=True)
+        wdserializers  = displaylistSerivalizer(displaylist, many=True)
     
     counter='---'
     if error == '':
@@ -370,7 +370,7 @@ def webmyticket_old_school(request):
     if error == '' :
         # displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
-        wdserializers  = webdisplaylistSerivalizer(displaylist, many=True)
+        wdserializers  = displaylistSerivalizer(displaylist, many=True)
     
     counter='---'
     if error == '':
@@ -512,7 +512,7 @@ def webtv(request, bcode, ct):
 
     if error == '' : 
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
-        wdserializers  = webdisplaylistSerivalizer(displaylist, many=True)
+        wdserializers  = displaylistSerivalizer(displaylist, many=True)
         # displaylist = ({'ticketlist':wdserializers.data})
 
         datetime_now = timezone.now()

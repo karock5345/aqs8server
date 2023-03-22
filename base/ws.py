@@ -7,12 +7,74 @@ from django.utils import timezone
 from django.db.models import Q
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, counteractive
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, PrinterStatus, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
-from base.api.serializers import webdisplaylistSerivalizer, printerstatusSerivalizer
+from base.api.serializers import displaylistSerivalizer, printerstatusSerivalizer
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 import asyncio
 
 wsHypertext = 'ws://'
+
+def wssendvoice(bcode, countertypename, ttype, tno, cno):
+    # {"cmd":"voice",
+    #  "data":
+    #    {
+    #     "tickettype": "A", 
+    #     "ticketnumber": "012",
+    #     "counterno": "1"
+    #     }
+    # }
+    context = None
+    error = ''
+
+    branch = None
+    if error == '' :        
+        branchobj = Branch.objects.filter( Q(bcode=bcode) )
+        if branchobj.count() == 1:
+            branch = branchobj[0]
+        else :
+            error = 'Branch not found.'
+
+    # get the Counter type
+    countertype = None
+    if error == '' :    
+        if countertypename == '' :
+            ctypeobj = CounterType.objects.filter( Q(branch=branch) )
+        else:
+            ctypeobj = CounterType.objects.filter( Q(branch=branch) & Q(name=countertypename) )
+        if (ctypeobj.count() > 0) :
+            countertype = ctypeobj[0]
+        else :
+            error = 'Counter Type not found.' 
+
+    if error == '' : 
+        json_tx = {'cmd': 'voice',
+            'data': {
+            'tickettype' : ttype,
+            'ticketnumber' : tno,
+            'counternumber' : cno,
+            }
+        }
+        str_tx = json.dumps(json_tx)
+
+        context = {
+        'type':'broadcast_message',
+        'tx': str_tx,
+        }
+        
+        channel_layer = get_channel_layer()
+        channel_group_name = 'voice_' + bcode + '_' + countertypename
+        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        try:
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            print('...Done')
+        except Exception as e:
+            print('...Error:'),
+            print(e)
+
+    if error != '':
+        print ('WS send voice Error:' & error)
+
+
 
 def wsSendTicketStatus(bcode, tickettype, ticketnumber, sc):
     # {
@@ -352,7 +414,7 @@ def wssendwebtv(bcode, countertypename):
 
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
             
-        wdserializers = webdisplaylistSerivalizer(displaylist, many=True)
+        wdserializers = displaylistSerivalizer(displaylist, many=True)
         jsontx = {
             "cmd":"list5",
             "data": {
@@ -364,7 +426,7 @@ def wssendwebtv(bcode, countertypename):
         str_tx = json.dumps(jsontx)
         # print(str_tx)             
         str_tx = str_tx.replace('"<ticketlist>"', json.dumps(wdserializers.data))
-        # print(str_tx)
+        print(str_tx)
 
         context = {
         'type':'broadcast_message',

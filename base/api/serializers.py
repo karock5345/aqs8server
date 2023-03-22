@@ -4,21 +4,21 @@ from base.models import Branch, DisplayAndVoice, PrinterStatus, Ticket, TicketRo
 # from .views import funUTCtoLocal
 # from django.contrib.auth.models import User
 
-class webdisplaylistSerivalizer(ModelSerializer):
-    tickettype = serializers.CharField(source='tickettemp.tickettype')
-    ticketnumber = serializers.CharField(source='tickettemp.ticketnumber')
-    ct_lang1 = serializers.CharField(source='countertype.lang1')
-    ct_lang2 = serializers.CharField(source='countertype.lang2')
-    ct_lang3 = serializers.CharField(source='countertype.lang3')
-    ct_lang4 = serializers.CharField(source='countertype.lang4')
-    wait = serializers.CharField(source='tickettemp.ticketroute.waiting')
-    t_lang1 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang1')
-    t_lang2 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang2')
-    t_lang3 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang3')
-    t_lang4 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang4')
-    class Meta:
-        model = DisplayAndVoice
-        fields = ('tickettype', 'ticketnumber', 'ct_lang1', 'ct_lang2', 'ct_lang3', 'ct_lang4', 'counternumber', 'wait', 't_lang1', 't_lang2', 't_lang3', 't_lang4',)
+# class webdisplaylistSerivalizer(ModelSerializer):
+#     tickettype = serializers.CharField(source='tickettemp.tickettype')
+#     ticketnumber = serializers.CharField(source='tickettemp.ticketnumber')
+#     ct_lang1 = serializers.CharField(source='countertype.lang1')
+#     ct_lang2 = serializers.CharField(source='countertype.lang2')
+#     ct_lang3 = serializers.CharField(source='countertype.lang3')
+#     ct_lang4 = serializers.CharField(source='countertype.lang4')
+#     wait = serializers.CharField(source='tickettemp.ticketroute.waiting')
+#     t_lang1 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang1')
+#     t_lang2 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang2')
+#     t_lang3 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang3')
+#     t_lang4 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang4')
+#     class Meta:
+#         model = DisplayAndVoice
+#         fields = ('tickettype', 'ticketnumber', 'ct_lang1', 'ct_lang2', 'ct_lang3', 'ct_lang4', 'counternumber', 'wait', 't_lang1', 't_lang2', 't_lang3', 't_lang4',)
 
 
 class waitinglistSerivalizer(ModelSerializer):
@@ -57,15 +57,24 @@ class printerstatusSerivalizer(ModelSerializer):
         fields = ('printernumber', 'statustext', 'status')
 
 class displaylistSerivalizer(ModelSerializer):
-    bcode = serializers.CharField(source='branch.bcode')
-    countertype = serializers.CharField(source='countertype.name')
+    # bcode = serializers.CharField(source='branch.bcode')
+    # countertype = serializers.CharField(source='countertype.name')
     tickettype = serializers.CharField(source='tickettemp.tickettype')
     ticketnumber = serializers.CharField(source='tickettemp.ticketnumber')
     tickettime = serializers.DateTimeField(source='tickettemp.tickettime')
-    
+    ct_lang1 = serializers.CharField(source='countertype.lang1')
+    ct_lang2 = serializers.CharField(source='countertype.lang2')
+    ct_lang3 = serializers.CharField(source='countertype.lang3')
+    ct_lang4 = serializers.CharField(source='countertype.lang4')
+    wait = serializers.CharField(source='tickettemp.ticketroute.waiting')
+    t_lang1 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang1')
+    t_lang2 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang2')
+    t_lang3 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang3')
+    t_lang4 = serializers.CharField(source='tickettemp.ticketformat.touchkey_lang4')
+
     class Meta:
         model = DisplayAndVoice
-        fields = ('bcode', 'countertype', 'tickettype', 'ticketnumber',  'tickettime', 'displaytime', 'counternumber', 'wait', 'flashtime')
+        fields = ('tickettype', 'ticketnumber',  'tickettime', 'displaytime', 'counternumber', 'wait', 'flashtime', 'ct_lang1', 'ct_lang2', 'ct_lang3', 'ct_lang4', 't_lang1', 't_lang2', 't_lang3', 't_lang4',)
 
 
 
