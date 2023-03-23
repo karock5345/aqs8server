@@ -19,7 +19,6 @@ class testingModel(models.Model):
     des = models.TextField(null=True, blank=True)
 
 
-
 class Branch(models.Model):
     BYTIME = 'time'
     BYUSER = 'user'
@@ -32,7 +31,10 @@ class Branch(models.Model):
 
     # General settings
     bcode = models.CharField(max_length=200,unique=True, null=False, blank=False) # branch code
-    enabled = models.BooleanField(default=True)    
+    enabled = models.BooleanField(default=True)
+    subscribe = models.BooleanField(default=False)
+    substart = models.DateTimeField()
+    subend = models.DateTimeField()
     name = models.TextField() 
     address = models.TextField(null=True, blank=True) 
     gps = models.TextField(null=True, blank=True) 
@@ -365,8 +367,21 @@ class WebTouch(models.Model):
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
     class Meta:
-        unique_together = ('name', 'branch',)  
+        unique_together = ('name', 'branch',)
 
+
+class SubscribeOrder(models.Model):
+    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    days = models.IntegerField(blank=False, null=False)
+    startdate = models.DateTimeField(blank=False, null=False)
+    enddate = models.DateTimeField(blank=False, null=False)
+    amount = models.FloatField()
+    invoice = models.CharField(max_length=200, null=True)
+    remark  = models.CharField(max_length=1000, null=True)
+
+    createdby = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
 
 # class Room(models.Model):
 #     host =models.ForeignKey(User, on_delete=models.SET_NULL, null=True)

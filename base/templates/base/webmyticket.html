@@ -1,8 +1,25 @@
 {% extends 'base/webtv_header.html'%}
 {% block content %}
 
+
+
     <!-- my ticket -->
     {% if errormsg == '' %}
+        <div id="id_hidden" hidden>
+            <div id="id_counter">
+                <div class="counter">
+                    <div class="countertype" >
+                        <div class="countertext_myticket">---</div>
+                        <div class="countertext_myticket">---</div>
+                    </div>
+                    <div class="counternumber">-</div>
+                </div>
+            </div>
+            <div id="id_buttoncancel">                    
+                <a class="buttoncancel" href="{% url 'cancelticket' tickettemp.id tickettemp.securitycode %}">取消 Cancel</a>                     
+            </div>
+        </div>
+
         <div class="container_myticket_main">
             <div class="status">
                 <div class="vertical-center">
@@ -35,24 +52,6 @@
                         <div class="statustext">取消了<br>Cancelled</div>
                     {% endif %}
                 </div>
-                
-                <div id="id_hidden" hidden>
-                    <div id="id_counter">
-                        <div class="counter">
-                            <div class="countertype" >
-                                <div class="countertext_myticket">---</div>
-                                <div class="countertext_myticket">---</div>
-                            </div>
-                            <div class="counternumber">-</div>
-                        </div>
-                    </div>
-                    <div id="id_buttoncancel">                    
-                        <a class="buttoncancel" href="{% url 'cancelticket' tickettemp.id tickettemp.securitycode %}">取消 Cancel</a>                     
-                    </div>
-                </div>
-
-
-
 
                 <div id="id_counter_area" class="counter">                
                     {% if tickettemp.status != "waiting" %}
@@ -73,8 +72,6 @@
                     {% endif %}
                 </div>
             </div>
-           
-
         </div>
     {% else %}
         <div class="container_myticket_main">
@@ -100,7 +97,7 @@
                         </div>
                         <div class="counternumber">--</div>
                     </div>
-                </div>>
+                </div>
                 <!-- <button class="button buttoncancel">取消 Cancel</button> -->
             </div>
         </div>

@@ -232,6 +232,13 @@ def postTicket(request):
                 if branch.enabled == False :
                     status = dict({'status': 'Error'})
                     msg =  dict({'msg':'Branch disabled'})
+    if status == dict({}) :
+        # check subscribe
+        if branch.subscribe == True :
+            if datetime_now > branch.subend :
+                status = dict({'status': 'Error'})
+                msg =  dict({'msg':'Branch Subscribe'})
+        pass
 
     if status == dict({}) :    
         if pno == '' :
