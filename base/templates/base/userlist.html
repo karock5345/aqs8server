@@ -9,7 +9,11 @@
                 <div class="avatar avatar--small">
                     <img src="{% static 'images/avatar.svg' %}" />
                 </div>
-                <span>{{user.username}}</span>
+                {% if user.is_active == True %}
+                    <span>{{user.username}}</span>
+                {% else %}
+                    <span>{{user.username}} (User disabled)</span>
+                {% endif %}
             </a>
             <div class="roomListRoom__actions">
                 <span>Ticket types: {{prof.tickettype}}</span>

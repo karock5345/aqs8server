@@ -9,10 +9,35 @@ from base.models import APILog, Branch, CounterStatus, CounterType, Ticket, Disp
 from .serializers import rocheticketlistSerivalizer, ticketlistSerivalizer
 # from .v_display import wssendwebtv
 from .v_softkey import logcounterlogin, logcounterlogout
+from base.ws import wsrochesms
 import random
 
 # list only show within x mins, details : the Ticket table list is too long, can not give full list to roche ios app.
 rochelist_x_mins = 3
+
+def rocheSMS(branch, tticket):
+    error = ''
+    if error == '':
+        if branch.enabledsms == False:
+            error = 'SMS disabled'
+    if error == '':
+        if branch.smsmsg == None or branch.smsmsg == '' :
+            error = 'SMS message is blank'
+    
+    if error == '':
+        ttype = tticket.tickettype
+        objpuser = UserProfile.objects.filter(branchs=branch, tickettype__contains=ttype).exclude(mobilephone=None).exclude(mobilephone='')
+        for puser in objpuser:
+            if puser.user.is_active == True:
+                smsmsg = branch.smsmsg.replace('<TICKET>', tticket.tickettype + tticket.ticketnumber)
+                print('Send SMS to ' + puser.user.username + ' mPhone:' + puser.mobilephone + ' Message:' + smsmsg)
+                wsrochesms(branch.bcode, puser.mobilephone, smsmsg)
+
+                pass
+    else:
+        print(error)
+    pass
+
 
 @api_view(['POST'])
 def postRocheLogin(request):
