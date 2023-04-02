@@ -71,6 +71,8 @@ class Branch(models.Model):
     usersinglelogin = models.BooleanField(default=False)
     webtvcsslink = models.TextField(default='styles/styletv.css')
     webtvlogolink = models.TextField(default='images/logo_ts.png')
+    enabledsms = models.BooleanField(default=False)
+    smsmsg = models.TextField(max_length=70, null=True, blank=True)
     
     # branch status
     updated = models.DateTimeField(auto_now=True)
@@ -103,6 +105,7 @@ class UserProfile(models.Model):
     #enabled = models.BooleanField(default=True)  
     # room = models.ForeignKey(Room, on_delete=models.CASCADE)
     # body = models.TextField()
+    mobilephone = models.CharField(max_length=20, null=True, blank=True, )
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
 

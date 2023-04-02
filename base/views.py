@@ -35,6 +35,62 @@ try:
 except:
     print('userweb not found.')
 
+
+def repair(request):
+    # 127.0.0.1:8000/repair?bc=KB&note=R000123
+    context = None
+    error = ''
+    bcode = ''
+    note = ''
+    str_now = '---'
+    logofile = ''
+
+    try:
+        bcode = request.GET['bc']
+    except:
+        bcode = ''
+        error = 'Branch code is blank.'
+
+    try:
+        note = request.GET['note']
+    except:
+        note = ''
+        error = 'Repair note is blank.'  
+
+
+    branch = None
+    if error == '' :        
+        branchobj = Branch.objects.filter( Q(bcode=bcode) )
+        if branchobj.count() == 1:
+            branch = branchobj[0]
+            logofile = branch.webtvlogolink
+            datetime_now = timezone.now()
+            datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+            str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
+        else :
+            error = 'Branch not found.'
+    if error == '':
+        if note == 'R002301':
+            counterstatus = 'done'
+        else :
+            counterstatus = 'error'
+        context = {
+            'ticket':note,
+            'bcode':branch.bcode,
+            'counterstatus':counterstatus,
+            'logofile':logofile,
+            'lastupdate':str_now,            
+            'errormsg':'',
+            }
+    else:
+        context = {
+            'lastupdate':str_now, 
+            'logofile':logofile,
+            'errormsg':error,
+            }
+        messages.error(request, error)
+    return render(request , 'base/repair.html', context)
+
 def webmyticket(request, bcode, ttype, tno, sc):
     # ttype is ticket type
     # tno is ticket number
@@ -1114,8 +1170,17 @@ def Branch_Save(request, pk):
     else:
         new_usersinglelogin  = False    
 
+    s_smsenabled = 'off'
+    try:
+        s_smsenabled = request.GET['enabledsms']
+    except:
+        s_smsenabled = 'off'   
+    if s_smsenabled == 'on':
+        new_smsenabled = True
+    else:
+        new_smsenabled  = False  
 
-
+    new_smsmsg = request.GET['smsmsg']
     if result == '' :
         branch.enabled = new_branchenabled
         branch.name = new_branchname
@@ -1139,7 +1204,9 @@ def Branch_Save(request, pk):
         branch.language3 = new_language3
         branch.language4 = new_language4
         branch.usersinglelogin = new_usersinglelogin
-
+        branch.enabledsms = new_smsenabled
+        branch.smsmsg = new_smsmsg
+        
     if result == '' :
         branch.save()
 
@@ -1186,6 +1253,9 @@ def BranchUpdateView(request, pk):
 
     countertypes = CounterType.objects.filter(Q(branch=branch))
 
+    enabledsms = branch.enabledsms
+    smsmsg = branch.smsmsg
+
     context = {
     'branch':branch,
     'branchcode':branchcode, 'branchname':branchname, 'branchenabled':branchenabled,
@@ -1194,6 +1264,8 @@ def BranchUpdateView(request, pk):
     'tickettimestart':stickettimestart, 'tickettimeend':stickettimeend,
     'queuepriority':queuepriority,
     'countertypes':countertypes,
+    'enabledsms':enabledsms,
+    'smsmsg':smsmsg,
     }
 
     return render(request, 'base/branch-update.html', context)
@@ -1323,6 +1395,7 @@ def UserLoginView(request):
 def UserUpdateView(request, pk):
     user = User.objects.get(id=pk)
     userp = UserProfile.objects.get(user__exact=user)
+    error = ''
     if request.user.is_superuser == True :
         auth_branchs = Branch.objects.all()
     else :
@@ -1336,10 +1409,25 @@ def UserUpdateView(request, pk):
         
         profileform = UserProfileForm(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
         
-        if  (userform.is_valid() & profileform.is_valid()):
+        # check moblie phone format
+        # inttel = profileform.mobilephone
+        # if inttel != '+852':
+        #     profileform.is_valid = False
+        #     messages.error(request, 'Mobile phone number should include country code. E.g. "+852"')
+
+        if (userform.is_valid() & profileform.is_valid()):
+            profileform_temp = profileform.save(commit=False)
+
+            if profileform_temp.mobilephone != None:
+                inttel = profileform_temp.mobilephone[0:4]
+                if inttel != '+852':
+                    error = 'Mobile phone number should include HK country code. E.g. "+852"'
+                if len(profileform_temp.mobilephone) != 12 :
+                    error = 'Mobile phone number should 12-digit including country code.'
+
+        if error == '':
             userform.save()
             profileform.save()
-            profileform_temp = profileform.save(commit=False)
             profileform_temp.tickettype = profileform_temp.tickettype.upper()
             profileform_temp.save()
             # profileform_temp = profileform.save(commit=False)
@@ -1349,6 +1437,8 @@ def UserUpdateView(request, pk):
             # profileform_temp.save()
             messages.success(request, 'Profile was successfully updated!')
             return redirect('usersummary')
+        else:
+            messages.error(request, error)
     else:
         userform = UserForm(instance=user, prefix='uform')
         if user == request.user:

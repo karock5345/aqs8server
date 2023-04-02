@@ -327,6 +327,8 @@ STATIC_ROOT = BASE_DIR / 'static'
 exit and save
 ```bash
 python3 manage.py collectstatic
+# for upload new files to static/
+# python3 manage.py collectstatic --clear
 ```
 
 Try Gunicorn. The only difference is we are not doing startserver command from Django, instead Gunicorn will take care of that.
@@ -753,60 +755,6 @@ sudo systemctl status daphne.service
 ```
 sudo systemctl enable daphne.service
 ```
-> if "systemctl enable" is work skip below:
-
-With gunicorn and the WSGI application, we created a gunicorn.socket file that tells gunicorn to start when the server boots (at least this is my understanding). I couldn't figure out how to get this to work for daphne so instead I wrote a bash script that will run when the server boots.
-
-If you want to learn script the click here.
-
-```bash
-$ sudo nano /root/boot.sh
-```
-and copy and paste.
-```nano
-#!/bin/sh
-sudo systemctl start daphne.service
-```
-
-Might have to enable it to be run as a script permission for read and update 
-```bash
-sudo chmod u+x /root/boot.sh
-```
-Tell systemd to run the bash script when the server boots
-
-```bash
-$ sudo nano /etc/systemd/system/on_boot.service
-```
-copy and paste
-```nano
-[Service]
-ExecStart=/root/boot.sh
-
-[Install]
-WantedBy=default.target
-```
-
-Save and close.
-```bash
-sudo systemctl daemon-reload
-
-# Start it
-
-sudo systemctl start on_boot
-
-# Enable it to run at boot
-
-sudo systemctl enable on_boot
-
-# Restart the server
-
-sudo reboot
-
-# Check the status of on_boot.service
-
-sudo systemctl status on_boot.service
-```
-Should see this. If not, check logs: sudo journalctl -u on_boot.service
 
 # SSL
 Before setup SSL, server must have domain name

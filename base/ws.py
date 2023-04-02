@@ -14,6 +14,55 @@ import asyncio
 
 wsHypertext = 'ws://'
 
+def wsrochesms(bcode, tel, msg):
+    # {"cmd":"sms",
+    #  "data":
+    #    {
+    #     "tel": "+85263555345", 
+    #     "msg": "testing123",
+    #     }
+    # }
+    context = None
+    error = ''
+
+    branch = None
+    if error == '' :        
+        branchobj = Branch.objects.filter( Q(bcode=bcode) )
+        if branchobj.count() == 1:
+            branch = branchobj[0]
+        else :
+            error = 'Branch not found.'
+
+
+
+    if error == '' : 
+        json_tx = {'cmd': 'sms',
+            'data': {
+            'tel' : tel,
+            'msg' : msg,            
+            }
+        }
+        str_tx = json.dumps(json_tx)
+
+        context = {
+        'type':'broadcast_message',
+        'tx': str_tx,
+        }
+        
+        channel_layer = get_channel_layer()
+        channel_group_name = 'sms_' + bcode 
+        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        try:
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            print('...Done')
+        except Exception as e:
+            print('...Error:'),
+            print(e)
+
+    if error != '':
+        print ('WS send SMS Error:' & error)
+
+
 def wssendvoice(bcode, countertypename, ttype, tno, cno):
     # {"cmd":"voice",
     #  "data":

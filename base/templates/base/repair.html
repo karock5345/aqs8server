@@ -1,0 +1,55 @@
+{% extends 'base/repair_header.html'%}
+{% block content %}
+    <!-- my repair note -->
+    {% if errormsg == '' %}
+        <div class="container_myticket_main">
+            <div class="status">
+                <div class="vertical-center">
+                    我的維修單號 My Repair note:
+                </div>                    
+            </div>
+            <div  class="container_myticket" >
+                
+                <div class="ticketno_myticket">
+                    {{ticket}}
+                </div>
+
+                <div  class="container_status">
+                    <div  class="statustype" >Status :</div>
+                    {% if counterstatus == "done" %}
+                        <div class="statustext">維修完成<br>Repair completed</div>
+
+                    {% else %}
+                        <div class="statustext">---<br>---</div>                        
+
+                    {% endif %}
+                </div>
+            </div>
+
+            {% if counterstatus == "done" %}
+                <div class="status">
+                    <div class="vertical-center">
+                        請隨時回來取貨 Please come back for pickup
+                    </div>        
+                </div>
+            {% else %}
+                <div class="status">
+                    <div class="vertical-center">
+                        找不到單號 Note not found
+                    </div>        
+                </div>
+            {% endif %}
+        </div>
+                
+    {% endif %}
+
+
+
+
+
+    <div class="powered">Powered by tsvd.com.hk</div>
+
+    
+
+
+{% endblock content %}

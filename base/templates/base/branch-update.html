@@ -80,6 +80,16 @@
             Counter Type - {{ ct.name }} : <input type="text" name="{{ct.branch.bcode}}-{{ct.name}}" value="{{ct.displayscrollingtext}}" maxlength="200"><br>
         {% endfor %}
 
+        SMS enabled :         
+        {% if branch.enabledsms == True %}
+            <input type="checkbox" name="enabledsms" checked ><br>
+        {% else %}
+            <input type="checkbox" name="enabledsms"><br>
+        {% endif %}
+        
+        SMS message (&lt;TICKET&gt; will replaced by ticket number): <br>
+        <input type="text" name="smsmsg" value="{{smsmsg}}" maxlength="70" size="70" ><br>
+
         <input type="submit" value="Save" >
     </form>
 </body>    

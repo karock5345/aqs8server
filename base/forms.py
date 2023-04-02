@@ -36,7 +36,7 @@ class UserFormAdmin(ModelForm):
 class UserProfileForm(ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['tickettype', 'queuepriority', 'branchs', 'staffnumber']
+        fields = ['tickettype', 'queuepriority', 'branchs', 'staffnumber', 'mobilephone']
     def __init__(self, *args,**kwargs):
         self.auth_branchs = kwargs.pop('auth_branchs')
         super().__init__(*args,**kwargs)
