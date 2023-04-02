@@ -957,16 +957,16 @@ def Branch_Save(request, pk):
     branch = Branch.objects.get(id=pk) 
     result = ''
 
-    
-    s_branchenabled = 'off'
-    try:
-        s_branchenabled = request.GET['branchenabled']
-    except:
-        s_branchenabled = 'off'
-    if s_branchenabled == 'on':
-        new_branchenabled = True
-    else:
-        new_branchenabled = False
+    # User do not touch Branch Enabled
+    # s_branchenabled = 'off'
+    # try:
+    #     s_branchenabled = request.GET['branchenabled']
+    # except:
+    #     s_branchenabled = 'off'
+    # if s_branchenabled == 'on':
+    #     new_branchenabled = True
+    # else:
+    #     new_branchenabled = False
 
 
 
@@ -1182,7 +1182,7 @@ def Branch_Save(request, pk):
 
     new_smsmsg = request.GET['smsmsg']
     if result == '' :
-        branch.enabled = new_branchenabled
+        # branch.enabled = new_branchenabled
         branch.name = new_branchname
         branch.address = new_address
         branch.gps = new_gps
