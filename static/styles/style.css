@@ -441,11 +441,11 @@ a {
 }
 
 .layout--2 > .container > div:first-child {
-  flex-basis: 72%;
+  flex-basis: 25%;
 }
 
 .layout--2 > .container > div:last-child {
-  flex-basis: 25%;
+  flex-basis: 72%;
 }
 /*========== Layout Box ==========*/
 

@@ -7,6 +7,54 @@ from .views import  funUTCtoLocal
 from .models import Branch, CounterType, TicketTemp
 from asgiref.sync import sync_to_async
 
+class SMSConsumer(AsyncWebsocketConsumer):
+    async def connect(self):
+        @sync_to_async
+        def check_input():
+            error = ''
+            branch = None
+            # branchobj = await sync_to_async(Branch.objects.filter, thread_sensitive=True)( Q(bcode=self.bcode) )
+            branchobj = Branch.objects.filter(Q(bcode=self.bcode))
+
+            if branchobj.count() == 1:
+                branch = branchobj[0]
+                pass
+            else :
+                error = 'Branch not found.'
+
+
+            return error
+                
+        error = ''
+        self.bcode = self.scope['url_route']['kwargs']['bcode']
+        self.room_group_name = 'sms_' + self.bcode 
+        print('connecting:' + self.room_group_name )
+        
+        # check bcode and ct (countertype) is not exit do not accept connection
+        error = await check_input()       
+
+        if error == '':          
+            await self.channel_layer.group_add(
+                self.room_group_name,
+                self.channel_name
+            )
+
+            await self.accept()
+        else :
+            print('Error:' + error )
+            
+
+    # Receive message from room group
+    async def broadcast_message(self, event):
+        str_tx = event['tx']
+
+        # Send message to WebSocket
+        await self.send(text_data=str_tx)
+
+    async def disconnect(self, close_code):
+        # Leave room group
+        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
+
 class VoiceConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         @sync_to_async
