@@ -1,33 +1,35 @@
 <ul class="topics__list">
+  <li>
+    <a href="{% url 'softkeycounter' %}" class="active">Softkey</a>   
+  </li>
 
-
-    {% if request.user.groups.all.0.name == 'admin' or request.user.is_superuser == True %}
-      <li>
-        <a href="{% url 'usersummary' %}" class="active">Edit user <span>{{ users.count }}</span></a>   
-      </li>
-      <li>
-        <a href="{% url 'branchsummary' %}" class="active">Branch settings <span>{{ branchs.count }}</span></a>
-      </li>        
-      <li>
-        <a href="{% url 'tfsummary' %}" class="active">Ticket Format <span>{{ ticketformats.count }}</span></a>
-      </li>
-      <li>
-        <a href="{% url 'routesummary' %}" class="active">Ticket Routes <span>{{ routes.count }}</span></a>
-      </li>        
-      <li>
-        <a href="{% url 'supersummary' %}" class="active">Supervisor <span>{{ branchs.count }}</span></a>
-      </li>
-      <li>
-        <a href="{% url 'reportrawq' %}" class="active">Data log <span>1</span></a>
-      </li>      
-    {% elif request.user.groups.all.0.name == 'report' %}      
-      <li>
-        <a href="{% url 'supersummary' %}" class="active">Supervisor <span>{{ branchs.count }}</span></a>
-      </li>
-      <li>
-        <a href="{% url 'reportrawq' %}" class="active">Data log <span>1</span></a>
-      </li>         
-    {% endif %}
+  {% if request.user.groups.all.0.name == 'admin' or request.user.is_superuser == True %}
+    <li>
+      <a href="{% url 'usersummary' %}" class="active">Edit user <span>{{ users.count }}</span></a>   
+    </li>
+    <li>
+      <a href="{% url 'branchsummary' %}" class="active">Branch settings <span>{{ branchs.count }}</span></a>
+    </li>        
+    <li>
+      <a href="{% url 'tfsummary' %}" class="active">Ticket Format <span>{{ ticketformats.count }}</span></a>
+    </li>
+    <li>
+      <a href="{% url 'routesummary' %}" class="active">Ticket Routes <span>{{ routes.count }}</span></a>
+    </li>        
+    <li>
+      <a href="{% url 'supersummary' %}" class="active">Supervisor <span>{{ branchs.count }}</span></a>
+    </li>
+    <li>
+      <a href="{% url 'reportrawq' %}" class="active">Data log <span>1</span></a>
+    </li>      
+  {% elif request.user.groups.all.0.name == 'report' %}      
+    <li>
+      <a href="{% url 'supersummary' %}" class="active">Supervisor <span>{{ branchs.count }}</span></a>
+    </li>
+    <li>
+      <a href="{% url 'reportrawq' %}" class="active">Data log <span>1</span></a>
+    </li>         
+  {% endif %}
 
   
   

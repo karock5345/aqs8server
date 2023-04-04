@@ -1,63 +1,18 @@
 {% extends 'main.html' %}
 {% load tz %}
-
+{% load static %}
 
 {% block content %}
-<style>
-    .home-container{
-        display: grid;
-        grid-template-columns: 4fr 6fr 5fr 5fr;
-        column-gap: 2px;
-    }    
-    
-    #table-style {
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    }
 
-    #table-style td, #table-style th {
-    border: 1px groove #04AA6D;
-    padding: 1px;
-    }
-
-    #table-style tr:nth-child(even){background-color: #202020;}
-
-    /* #table-style tr:hover {background-color: #ddd;} */
-
-    #table-style th {
-    padding-top: 3px;
-    padding-bottom: 3px;
-    text-align: left;
-    background-color:#04AA6D;
-    color: white;
-    }
-    .header_super {
-        display:grid;
-        grid-template-columns: 1fr 1fr;
-        /* width: 100%; */
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 18px;
-        color:#71c6dd;
-    }
-    .header_last {
-        text-align: right;
-        /* margin-right: 4px; */
-        font-size: 14px;
-        margin-top: 4px;
-        color:darkgray;
-    }
-
-</style>
-<h1 class="header_super">
+<h1 class="header_superv">
     <div class="">Branch : {{branch.name}}({{branch.bcode}})</div>
-    <div class="header_last">Last update: {{now|timezone:localtimezone}}</div>
+    <div class="header_superv_last">Last update: {{now|timezone:localtimezone}}</div>
 </h1>
 
-<div class="home-container">
+<div class="superv-container">
     <div>
         <h3>Ticket Printer Status:</h3>
-        <table id="table-style">
+        <table class="table-style">
             <thead>
                 <tr>
                     <th>Printer</th>
@@ -89,7 +44,7 @@
         {% if table.count > 0 %}
         
             <h3>Counter: {{table.0.countertype.lang1}}</h3>
-            <table id="table-style">
+            <table class="table-style">
                 <thead>
                     <tr>
                         <th>Ticket</th>
@@ -113,7 +68,7 @@
         <h3>Counter Status: </h3>
        
        
-            <table id="table-style">
+            <table class="table-style">
                 <thead>
                     <tr>
                         <th>Counter Type</th>
@@ -121,7 +76,7 @@
                         <th>Enabled</th>                        
                         <th>Status</th>
                         <th>Ticket</th>
-                        <th>Login</th>                        
+                        <th>Staff</th>                        
                     </tr>
                 </thead>
                 <tbody>
@@ -152,7 +107,7 @@
 
     <div>
         <h3>Completed Ticket: </h3>
-        <table id="table-style">
+        <table class="table-style">
             <thead>
                 <tr>
                     <th>Ticket</th>
@@ -174,7 +129,7 @@
 
     <div>
         <h3>No Show Ticket: </h3>
-        <table id="table-style">
+        <table class="table-style">
             <thead>
                 <tr>
                     <th>Ticket</th>

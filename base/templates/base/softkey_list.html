@@ -1,0 +1,46 @@
+{% load static %}
+
+
+<div>
+    <h3>Choice counter to login: </h3>
+
+        <table class="table-style">
+            <thead>
+                <tr>
+                    <th>Branch</th>
+                    <th>Counter Type</th>
+                    <th>Number</th>
+                    <!-- <th>Enabled</th> -->
+                    <th>Status</th>
+                    <th>Ticket</th>
+                    <th>Staff</th>
+                                        
+                </tr>
+            </thead>
+            <tbody>
+            {% for table in counterstatus %}
+            {% for counter in table %}
+            <tr>
+                <td>{{ counter.countertype.branch.name }}</td>
+                <td>{{ counter.countertype.lang1 }}</td>                   
+                <td>{{ counter.counternumber }}</td>
+                <!-- <td>{-{ counter.enabled }}</td>                     -->
+                <td>{{ counter.status }}</td>
+                {% if counter.tickettemp == None %}
+                    <td>---</td>
+                {% else %}
+                    <td>{{ counter.tickettemp }}</td>
+                {% endif %}
+                {% if counter.user == None %}
+                    <td>---</td>
+                {% else %}
+                    <td>{{ counter.user }}</td>
+                {% endif %}                    
+                <td style="border: 0;background-color:var(--color-bg)"><button class="btn btn--main" onclick="">Login</button></td>
+                <!-- <td><button class="btn btn-primary" onclick="window.location.href='{~% url 'base:softkey' counter.id %}'">Login</button></td> -->
+            </tr>
+            {% endfor %}
+            {% endfor %}
+            </tbody>
+        </table>       
+</div>

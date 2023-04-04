@@ -35,7 +35,36 @@ try:
 except:
     print('userweb not found.')
 
+@unauth_user
+def SoftkeyCounterView(request):
+    error = ''
+    context = {}
 
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+
+    user = request.user
+    # get user auth branchs
+    userpobj = UserProfile.objects.filter(user=user)
+    if userpobj.count() == 1 :
+        userp = userpobj[0]
+        # print (userp.user.username)
+    else :
+        error = 'UserProfile not find'
+    if error == '':
+        branchs = userp.branchs.all()
+        counterstatus =[[],[]]        
+        for branch in branchs :
+            countertypes = CounterType.objects.filter(Q(branch=branch))
+            for ct in countertypes :
+                cs = CounterStatus.objects.filter(Q(countertype=ct)).order_by('countertype', 'counternumber',).exclude(enabled=False)
+                counterstatus.append(cs)
+        context = {
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes,
+        'counterstatus':counterstatus,
+        }
+        return render(request, 'base/softkey_main.html', context)
+    else :
+        return HttpResponse(error)
 def repair(request):
     # 127.0.0.1:8000/repair?bc=KB&note=R000123
     context = None
