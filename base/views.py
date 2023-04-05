@@ -36,7 +36,39 @@ except:
     print('userweb not found.')
 
 @unauth_user
-def SoftkeyCounterView(request):
+def SoftkeyView(request, pk):
+    context = {}
+    error = ''
+    counterstatus = None
+
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    context = {
+    'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
+    }
+
+    try:
+        counterstatus = CounterStatus.objects.get(id=pk)
+    except:
+        error = 'CounterStatus not found.'
+    if counterstatus == None:
+        error = 'CounterStatus not found.'
+
+
+
+    if error == '':
+        # add counterstatus to context
+        context['counterstatus'] = counterstatus
+        return render(request, 'base/softkey.html', context)
+        # pass
+    else:
+        messages.error(request, error)
+        # Redirect to last page
+        return redirect('softkeylogin')
+    
+    
+    
+@unauth_user
+def SoftkeyLoginView(request):
     error = ''
     context = {}
 

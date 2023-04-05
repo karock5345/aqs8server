@@ -42,8 +42,9 @@ urlpatterns = [
     path('cancel/<str:pk>/<str:sc>/', views.CancelTicketView,  name='cancelticket'),
     path('touch/', views.webtouchView),
 
-    path('softkey_counter/', views.SoftkeyCounterView,  name='softkeycounter'),
-
+    path('softkey_login/', views.SoftkeyLoginView,  name='softkeylogin'),
+    path('softkey/<str:pk>/', views.SoftkeyView, name='softkey'),
+    
     # for Hypic
     path('repair/', views.repair ),
 ]

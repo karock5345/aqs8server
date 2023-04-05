@@ -36,8 +36,9 @@
                 {% else %}
                     <td>{{ counter.user }}</td>
                 {% endif %}                    
-                <td style="border: 0;background-color:var(--color-bg)"><button class="btn btn--main" onclick="">Login</button></td>
-                <!-- <td><button class="btn btn-primary" onclick="window.location.href='{~% url 'base:softkey' counter.id %}'">Login</button></td> -->
+                <!-- <td style="border: 0;background-color:var(--color-bg)"><button class="btn btn--main" onclick="">Login</button></td> -->
+                <!-- Button for click link to url 'softkey' and with counter.id -->
+                <td style="border: 0;background-color:var(--color-bg)"><a class="btn btn--main" href="{% url 'softkey' counter.id %}">Login</a></td>
             </tr>
             {% endfor %}
             {% endfor %}

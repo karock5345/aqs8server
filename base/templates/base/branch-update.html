@@ -7,12 +7,12 @@
         
         Branch Code : {{branchcode}}<br>
 
-        Branch enabled :         
-        {% if branchenabled == True %}
+        Branch enabled : {{ branchenabled }}<br>
+        <!-- {-% if branchenabled == True %}
             <input type="checkbox" name="branchenabled" checked ><br>
-        {% elif branchenabled == False %}
+        {-% elif branchenabled == False %}
             <input type="checkbox" name="branchenabled"><br>
-        {% endif %}
+        {-% endif %} -->
         
         Branch Name : <input type="text" name="branchname" value="{{branchname}}" size="50" ><br>        
         Branch timezone (e.g. : Asia/Hong_Kong) : <input type="text" name="timezone" value={{timezone}} size="20" ><br>
