@@ -17,6 +17,10 @@
 - fixed waiting on queue (TicketRoute) show on TV / WebTV
 - Deploy to Production Server with Websocket + SSL is work
 - WebTV (HTML) is support WS
+### <span style="color:orange;">**Version 8.0.2**</span>
+- Support SMS Module
+- Softkey web version
+- fixed Print replaced by Django Log for debug on server
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
@@ -81,6 +85,7 @@ network:
 
 show ip address :
 ```bash
+sudo apt install net-tools -y
 sudo ifconfig -a
 sudo ip link
 # output:
@@ -137,6 +142,8 @@ Open PuTTYgen -> Type of key to generate -> choose **RSA** or **SSH-2 RSA** -> L
 Open PuTTY -> Host Name (rvd.tsvd.com.hk or IP) -> Saved Sessions (RVD) -> Category -> Connection -> SSH -> Auth -> Browse (your gen private key)
 
 PuTTY -> Data -> Auto-login username (ubuntu) -> Session -> Save
+
+### <span style="color:orange;">**Basic server settings :**</span>
 
 ```sh
 sudo timedatectl set-timezone Asia/Hong_Kong
@@ -496,7 +503,7 @@ create admin, apiuser user for our customer
 
 
 
-# Troubleshooting
+# Troubleshooting and Debug
 check the logs for additional details:
 ```bash
 sudo nano /var/log/nginx/error.log
@@ -806,42 +813,13 @@ with open('/etc/recaptcha_key.txt') as f:
     RECAPTCHA_PRIVATE_KEY = f.read().strip()
 RECAPTCHA_REQUIRED_SCORE = 0.85
 ```
-### <span style="color:orange;">**Disable reCaptcha**</span>
+### <span style="color:orange;">**Enable / Disable reCaptcha**</span>
 
-Edit base\login_register.html
+nano ~\aqs8server\aqs\views.py
 
-del / remark :
-```html
-  <!-- {% for field in captcha_form %}
-  <div class="form__group">
-      {% if field.label == "Captcha" %}
-          <label for="profile_pic">{{field}}</label>                         
-      {% else %}
-          <label for="profile_pic">{{field.label}} : {{field}}</label>                    
-      {% endif %}
-  </div>
-  {% endfor %} -->
-```
+> enable_captcha = False
 
-Edit base\views.py -> function UserLoginView()
 
-Remark :
-```python
-  # captchaform = CaptchaForm(request.POST)
-  # if captchaform.is_valid():
-  #     human = True
-  #     # print ('Is human.')
-  # else:
-  #     # print('Is NOT human.')
-  #     messages.error(request, 'User is NOT human.')
-  #     return redirect('home')
-```
-```python
-  # captchaform = CaptchaForm()
-```
-```python
-  # context = context | {'captcha_form':captchaform} 
-```
 # Setup new git repo
 ### <span style="color:orange;">**Create new repo on [github.com](http://github.com)**</span>
 
