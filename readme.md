@@ -1,3 +1,11 @@
+# For Project Roche
+- Change Server IP : 
+- 1. sudo nano /etc/netplan/00-installer-config.yaml
+- 2. sudo nano /etc/nginx/sites-available/aqs8server
+- User : supertim /// QusP9k-z5345 , tim /// asdf2206 , rocheadmin /// edAgipa4
+- Linux server IP : 192.168.1.81
+- Linux server su: ubuntu /// asdf2206
+
 # AQS version 8
 ### <span style="color:orange;">**Version 8.0.0**</span>
 - First Django version for Queuing Server
@@ -74,13 +82,15 @@ try http://127.0.0.1:8000/
 
 
 
-# Linux server setup
+# Linux server setup - Roche use localhost
 ### <span style="color:orange;">**AWS vm**</span>
 AWS EC2 : AQS8_Server_RVD, key=aws_rvd_server_key, Security Group = aqs_security
 
 AWS Route53 : add sub domain rvd.tsvd.com.hk, www.rvd.tsvd.com.hk
 
 ### <span style="color:orange;">**Ubuntu Linux server**</span>
+Server superuser : ubuntu /// asdf2206
+
 network:
 
 show ip address :
@@ -102,7 +112,7 @@ edit:
 # This is the network config written by 'subiquity'
 network:
   ethernets:
-    enxf01e3411f0f8:
+    enp1s0:
       dhcp4: no
       addresses:
         - 192.168.1.222/24
@@ -113,21 +123,7 @@ network:
         addresses: [8.8.8.8, 1.1.1.1]
   version: 2
 ```
-OR
 
-```sh
-network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    ens3:
-      dhcp4: no
-      addresses:
-        - 192.168.121.221/24
-      gateway4: 192.168.121.1
-      nameservers:
-          addresses: [8.8.8.8, 1.1.1.1]
-```
 exit and save
 ```sh
 sudo netplan apply
@@ -176,7 +172,7 @@ sudo ufw status verbose
 Before install packages (python -m pip freeze > requirements.txt) 
 
 ```bash
-git clone https://github.com/karock5345/aqs8server.git
+git clone --branch roche https://github.com/karock5345/aqs8server.git
 sudo apt-get install -y virtualenv
 cd to project folder
 virtualenv env
@@ -252,7 +248,7 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 ```
-tim /// asdf
+supertim /// QusP9k-z5345
 
 Test the Postgres DB:
 ```bash
@@ -261,27 +257,21 @@ python manage.py runserver 0.0.0.0:8000
 
 # SECRET KEY
 
-
-
 ### <span style="color:orange;">**Django secret key**</span>
 
-
-
-
-
-
-Save the SECRET_KEY from settings.py to text file (e.g. : django-insecure-9e^jTw&jk-@-^5u45=*m^el@@$$!7#gav!y=8r8e*&l64^@*v#):
+Save the SECRET_KEY from settings.py to text file (e.g. : django-insecure-9e^jTw&jk-@-^5u45=*m^el@@$$!7#s6ls0lmlWRawRoyoM0tI):
 ```bash
 sudo touch /etc/secret_key.txt
 sudo nano /etc/secret_key.txt
 ```
 
 Remove SECRET_KEY in settings.py and change to load file
+> sudo nano ~/aqs8server/aqs/settings.py
 ```
 with open('/etc/secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
 ```
-### <span style="color:orange;">**ReCaptcha secret key**</span>
+### <span style="color:orange;">**ReCaptcha secret key (Roche no need)**</span>
 
 Save the RECAPTCHA_PRIVATE_KEY to text file (6LflOq0iAAAAAFAKsEWvj1ZY_JFKihRaxUR_vlqG):
 ```bash
@@ -321,20 +311,20 @@ token_api = 'WrE-1t7IdrU2iB3a0e'
 ### <span style="color:orange;">**SETUP nginx + gunicorn**</span>
 
 ```bash
-nano ./aqs/settings.py
+sudo nano ~/aqs8server/aqs/settings.py
 ```
 Edit:
 ```bash
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
-# STATICFILES_DIRS =[
-#     BASE_DIR / 'static'
-# ]
+STATIC_ROOT = BASE_DIR / 'static_deploy'
+STATICFILES_DIRS =[
+    BASE_DIR / 'static'
+]
 ```
 exit and save
 ```bash
 python3 manage.py collectstatic
-# for upload new files to static/
+# for upload new files to static_deploy/
 # python3 manage.py collectstatic --clear
 ```
 
@@ -380,14 +370,14 @@ After=network.target
 [Service]
 Type=notify
 # the specific user that our service will run as
-User=**ubuntu
+User=ubuntu
 # Group=someuser
 # another option for an even more restricted service is
 # DynamicUser=yes
 # see http://0pointer.net/blog/dynamic-users-with-systemd.html
 RuntimeDirectory=gunicorn
-WorkingDirectory=/home/**ubuntu/aqs8server
-ExecStart=/home/**ubuntu/aqs8server/env/bin/gunicorn aqs.wsgi
+WorkingDirectory=/home/ubuntu/aqs8server
+ExecStart=/home/ubuntu/aqs8server/env/bin/gunicorn aqs.wsgi
 ExecReload=/bin/kill -s HUP $MAINPID
 KillMode=mixed
 TimeoutStopSec=5
@@ -429,12 +419,12 @@ sudo nano /etc/nginx/sites-available/aqs8server
 edit:
 ```python
 server {
-    server_name localhost 127.0.0.1 rvd.tsvd.com.hk www.rvd.tsvd.com.hk;
+    server_name localhost 127.0.0.1 192.168.1.81;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
         autoindex on;
-        alias /home/**ubuntu/aqs8server/static/;
+        alias /home/ubuntu/aqs8server/static_deploy/;
     }
 
     location / {
@@ -464,20 +454,16 @@ then it will fail (as does the stat command in your log). Make sure the www-data
 
 cd all the way to the /username/test/static. You can confirm that the stat will fail or succeed by running
 
->sudo -u www-data stat /home/tim/aqs8server/static will fail
+>sudo -u www-data stat /home/ubuntu/aqs8server/static_deploy will fail
 ```bash
 sudo gpasswd -a www-data ubuntu
-sudo chmod g+x /home/ubuntu && chmod g+x /home/ubuntu/aqs8server/ && chmod g+x /home/ubuntu/aqs8server/static
+sudo chmod g+x /home/ubuntu && chmod g+x /home/ubuntu/aqs8server/ && chmod g+x /home/ubuntu/aqs8server/static_deploy
 sudo nginx -s reload
 ```
 ### <span style="color:orange;">**Init the DB**</span>
 ```bash
 source env/bin/activate
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
 ```
-Superuser: tim /// asdf
 
 Open web browser http://[ip address]/admin
 
@@ -489,7 +475,7 @@ create user : userapi /// asdf2206 (group:api)
 
 create user : userweb /// asdf2206 (group:web, set:in-active)
 
-create branch (bcode='KB')
+create branch (bcode='R1')
 
 create counter type (Counter)
 
@@ -497,10 +483,13 @@ create counter (CounterStatus) 1-4
 
 create ticket type (TicketFormat)
 
+A-F
+
 create TicketRoute
 
 create admin, apiuser user for our customer
 
+admin : rocheadmin /// edAgipa4
 
 
 # Troubleshooting and Debug
@@ -657,12 +646,12 @@ sudo nano /etc/nginx/sites-available/aqs8server
 ```nginx
 server {
     listen 80;
-    server_name localhost 127.0.0.1 34.207.57.210 test.tsvd.com.hk www.test.tsvd.com.hk;
+    server_name localhost 127.0.0.1 192.168.1.81;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
         autoindex on;
-        alias /home/**ubuntu/aqs8server/static/;
+        alias /home/ubuntu/aqs8server/static_deploy/;
     }
 
     location / {
@@ -735,8 +724,8 @@ After=network.target
 [Service]
 Type=simple
 User=ubuntu
-WorkingDirectory=/home/**ubuntu/aqs8server
-ExecStart=/home/**ubuntu/aqs8server/env/bin/python /home/**ubuntu/aqs8server/env/bin/daphne -b 0.0.0.0 -p 8001 aqs.asgi:application
+WorkingDirectory=/home/ubuntu/aqs8server
+ExecStart=/home/ubuntu/aqs8server/env/bin/python /home/ubuntu/aqs8server/env/bin/daphne -b 0.0.0.0 -p 8001 aqs.asgi:application
 Restart=always
 StartLimitBurst=2
 
@@ -763,7 +752,7 @@ sudo systemctl status daphne.service
 sudo systemctl enable daphne.service
 ```
 
-# SSL
+# SSL (Roche no need)
 Before setup SSL, server must have domain name
 
 ```bash
@@ -796,7 +785,7 @@ sudo reboot
 ```
 
 
-# Setup google reCaptcha
+# Setup google reCaptcha (Roche no need)
 ### <span style="color:orange;">**Use reCaptcha**</span>
 Open new reCaptcha:
 Create new reCaptcha on [google.com/recaptcha](https://www.google.com/recaptcha)
