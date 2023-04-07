@@ -170,13 +170,20 @@ sudo ufw status verbose
 
 # SETUP SOURCE CODE
 ### <span style="color:orange;">**Copy / git source code to home dir**</span>
-
-> Remove folder : sudo rm -r aqs8server/
-
-Before install packages (python -m pip freeze > requirements.txt) 
+Preparation:
+- Backup previous version settings.py : cp ~/aqs8server/aqs/settings.py ~/settings.py.bak
+- Remove previous version : sudo rm -r ~/aqs8server/
+- Before install packages (python -m pip freeze > requirements.txt)
+- Set Github repo to public
 
 ```bash
 git clone https://github.com/karock5345/aqs8server.git
+# or
+git clone --branch roche https://github.com/karock5345/aqs8server.git
+# remove .git folder
+sudo rm -r ~/aqs8server/.git
+# remove readme.md (it stores password and other sensitive info)
+sudo rm ~/aqs8server/README.md
 sudo apt-get install -y virtualenv
 cd to project folder
 virtualenv env
@@ -261,14 +268,7 @@ python manage.py runserver 0.0.0.0:8000
 
 # SECRET KEY
 
-
-
 ### <span style="color:orange;">**Django secret key**</span>
-
-
-
-
-
 
 Save the SECRET_KEY from settings.py to text file (e.g. : django-insecure-9e^jTw&jk-@-^5u45=*m^el@@$$!7#gav!y=8r8e*&l64^@*v#):
 ```bash
@@ -326,15 +326,15 @@ nano ./aqs/settings.py
 Edit:
 ```bash
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
-# STATICFILES_DIRS =[
-#     BASE_DIR / 'static'
-# ]
+STATICFILES_DIRS =[
+    BASE_DIR / 'static'
+]
+STATIC_ROOT = BASE_DIR / 'static_deploy'
 ```
 exit and save
 ```bash
 python3 manage.py collectstatic
-# for upload new files to static/
+# for upload new files to static_deploy/
 # python3 manage.py collectstatic --clear
 ```
 
@@ -434,7 +434,7 @@ server {
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
         autoindex on;
-        alias /home/**ubuntu/aqs8server/static/;
+        alias /home/**ubuntu/aqs8server/static_deploy/;
     }
 
     location / {
@@ -464,10 +464,10 @@ then it will fail (as does the stat command in your log). Make sure the www-data
 
 cd all the way to the /username/test/static. You can confirm that the stat will fail or succeed by running
 
->sudo -u www-data stat /home/tim/aqs8server/static will fail
+>sudo -u www-data stat /home/ubuntu/aqs8server/static_deploy will fail
 ```bash
 sudo gpasswd -a www-data ubuntu
-sudo chmod g+x /home/ubuntu && chmod g+x /home/ubuntu/aqs8server/ && chmod g+x /home/ubuntu/aqs8server/static
+sudo chmod g+x /home/ubuntu && chmod g+x /home/ubuntu/aqs8server/ && chmod g+x /home/ubuntu/aqs8server/static_deploy
 sudo nginx -s reload
 ```
 ### <span style="color:orange;">**Init the DB**</span>
@@ -509,7 +509,7 @@ check the logs for additional details:
 sudo nano /var/log/nginx/error.log
 
 # check folder permissions
-ls -ltr ./static/
+ls -ltr ./static_deploy/
 # list all users
 cut -d: -f1 /etc/passwd
 # list all groups
@@ -662,7 +662,7 @@ server {
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
         autoindex on;
-        alias /home/**ubuntu/aqs8server/static/;
+        alias /home/**ubuntu/aqs8server/static_deploy;
     }
 
     location / {
@@ -713,7 +713,7 @@ sudo systemctl restart redis.service
 ```bash
 nano ~/aqs8server/aqs/asgi.py
 ```
-Add:
+Add under "import base.routing":
 ```python
 import django
 django.setup()
