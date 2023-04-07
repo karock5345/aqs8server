@@ -104,6 +104,31 @@ a {
   font-weight: 500;
 }
 
+.softkey_btn {
+  background-color: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  font-weight: 500;
+  font-size: 2.4rem;
+  min-width: 24rem;
+  /* the buttom text auto align center */
+  /* text-align: center; */
+  /* q:not work */
+  justify-content: center;
+}
+@media screen and (max-width: 600px) {
+  .softkey_btn{
+    margin-bottom: 1rem;
+  }
+}
+
 .btn--link {
   border-radius: 0;
   padding: 0;
@@ -513,6 +538,10 @@ a {
   .layout--3 > .container > div:nth-child(2) {
     flex-basis: 100%;
   }
+  
+  .layout--2 > .container > div:last-child {
+    flex-basis: 100%;
+  }
 }
 
 /*==============================
@@ -661,7 +690,9 @@ a {
 /*==============================
 =>  Room List
 ================================*/
-
+.roomList {
+  width: 100%;
+}
 .roomList__header {
   display: flex;
   justify-content: space-between;
@@ -1251,4 +1282,39 @@ color: white;
   font-size: 14px;
   margin-top: 4px;
   color:darkgray;
+}
+
+.softkey_login {
+  text-align: center;
+  width: 100%;
+  min-height: 3.2rem;
+  font-size: 2rem;
+  color: var(--color-light);
+  background-color: none;
+  border-width: 1px;
+  border-style: inset;
+  border-color: var(--color-main);
+  font-family: helvetica;
+}
+.softkey_status_text {
+  text-align: center;
+  width: 100%;
+  min-height: 3.2rem;
+  font-size: 2rem;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  font-family: helvetica;
+}
+.softkey_call_container{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+} 
+/* softkey_call_container when small screen will change items to vertical and center align */
+@media screen and (max-width: 600px) {
+  .softkey_call_container{
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -30,35 +30,45 @@
 
           <div class="roomList__header">
             <div>
-                <h2>Total</h2>
-                <p>{{users.count}} Users</p>
+                <h2>Softkey - Counter {{ data.counternumber }} ({{ data.countertype }})</h2>
+                <p>Branch : {{ data.branch }} </p>
               </div>
          
           </div>
-
-
+                     
+          <!-- <div>
+              Username : {{ request.user.username }}
+          </div>
           <div>
-            Softkey
-            </div>
-            
-            <div>
-            {{ counterstatus.countertype.name }}
-            </div>
-            <div>
-            {{ counterstatus.counternumber }}
-            </div>
-            <div>
-            {{ counterstatus.status}}
-            </div>
-            
-            <div>
-                {{ request.user.username }}
-            </div>
-            <div>
-                {{ request.user.first_name }} {{ request.user.last_name }}
-            </div>
-            
-            
+              Full name : {{ data.name }}
+          </div>  -->
+          <div class="softkey_login">
+            Login : {{ data.name }} 
+          </div>
+
+          <div class="softkey_status_text">
+            Status : {{ data.counterstatus }}
+          </div>
+
+          <!-- <div>
+            User Ticket type : {{ data.ttype }}
+          </div>
+          <div>
+            Ticket number : {{ data.tickettype }}{{ data.ticketnumber }}
+          </div> -->
+          <div class="softkey_call_container">
+            <button class="softkey_btn btn--main">Call</button>
+            <button class="softkey_btn btn--main">Get</button>
+            <a class="softkey_btn btn--del" href="{% url 'softkeylogout' pk %}">Logout</a>
+          </div>
+          <div class="softkey_call_container">
+            <button class="softkey_btn btn--main">Start process</button>
+            <button class="softkey_btn btn--main">No show</button>
+            <button class="softkey_btn btn--main">Recall</button>
+          </div>            
+          <div class="softkey_call_container">
+            <button class="softkey_btn btn--main">Complete</button>
+          </div>
 
         </div>
 

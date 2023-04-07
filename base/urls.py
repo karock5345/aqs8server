@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, reverse 
 # from django.contrib.auth import views as auth_views
 from . import views
 
@@ -44,6 +44,12 @@ urlpatterns = [
 
     path('softkey_login/', views.SoftkeyLoginView,  name='softkeylogin'),
     path('softkey/<str:pk>/', views.SoftkeyView, name='softkey'),
+    # path('softkey_logout/<str:pk>/', views.SoftkeyLogoutView,  name='softkeylogout'),
+    path('softkey_logout/', views.SoftkeyLogoutView,  name='softkeylogout'),
+    # error : django.urls.exceptions.NoReverseMatch: Reverse for 'softkeylogout' with arguments '('',)' not found. 1 pattern(s) tried: ['softkey_logout/\\Z']
+    # path('softkey_logout/', views.SoftkeyLogoutView,  name='softkeylogout'),
+    # error : django.urls.exceptions.NoReverseMatch: Reverse for 'softkeylogout' with arguments '('',)' not found. 1 pattern(s) tried: ['softkey_logout/\\Z']
+    path('softkey_logout/<str:pk>/', views.SoftkeyLogoutView,  name='softkeylogout'),
     
     # for Hypic
     path('repair/', views.repair ),

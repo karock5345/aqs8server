@@ -19,13 +19,15 @@ from django.utils.timezone import localtime, get_current_timezone
 import pytz
 from .api.serializers import displaylistSerivalizer
 from django.utils import timezone
-from .api.v_softkey import funVoid
+# from .api.v_softkey import funVoid
+from .api.softkey import *
 from .api.v_ticket import newticket
 from base.ws import wsHypertext
 
 
 from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
+
 
 enable_captcha = False
 
@@ -38,8 +40,10 @@ except:
 @unauth_user
 def SoftkeyView(request, pk):
     context = {}
+    context_counter = {}
     error = ''
-    counterstatus = None
+
+    datetime_now =timezone.now()
 
     auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
     context = {
@@ -53,11 +57,14 @@ def SoftkeyView(request, pk):
     if counterstatus == None:
         error = 'CounterStatus not found.'
 
-
+    if error == '':
+        status, msg, context_counter = funCounterLogin(datetime_now, request.user, counterstatus.countertype.branch, counterstatus, counterstatus.counternumber, counterstatus.countertype)
+        if status['status'] == 'Error':
+            error = msg['msg']
 
     if error == '':
         # add counterstatus to context
-        context['counterstatus'] = counterstatus
+        context = context | context_counter | {'pk':pk}
         return render(request, 'base/softkey.html', context)
         # pass
     else:
@@ -97,6 +104,38 @@ def SoftkeyLoginView(request):
         return render(request, 'base/softkey_main.html', context)
     else :
         return HttpResponse(error)
+    
+    
+@unauth_user
+def SoftkeyLogoutView(request, pk):
+    error = ''
+    context = {}
+    datetime_now =timezone.now()
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    context = {
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
+        }
+    try:
+        counterstatus = CounterStatus.objects.get(id=pk)
+    except:
+        error = 'CounterStatus not found.'
+    if counterstatus == None:
+        error = 'CounterStatus not found.'
+
+    if error == '':
+        status, msg= funCounterLogout(counterstatus, datetime_now)
+        if status['status'] == 'Error':
+            error = msg['msg']
+
+    if error == '':
+        messages.success(request, 'Logout success.')
+        return redirect('softkeylogin')
+        # pass
+    else:
+        messages.error(request, error)
+        # Redirect to last page
+        return redirect('home')
+        pass 
 def repair(request):
     # 127.0.0.1:8000/repair?bc=KB&note=R000123
     context = None

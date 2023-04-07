@@ -2,7 +2,7 @@
 
 
 <div>
-    <h3>Choice counter to login: </h3>
+    <h3>Choose counter to login: </h3>
 
         <table class="table-style">
             <thead>
@@ -34,10 +34,12 @@
                 {% if counter.user == None %}
                     <td>---</td>
                 {% else %}
-                    <td>{{ counter.user }}</td>
+                    <td>{{ counter.user.first_name}} {{counter.user.last_name}}</td>
                 {% endif %}                    
                 <!-- <td style="border: 0;background-color:var(--color-bg)"><button class="btn btn--main" onclick="">Login</button></td> -->
                 <!-- Button for click link to url 'softkey' and with counter.id -->
+                <!-- q:how to get url pk? -->
+                
                 <td style="border: 0;background-color:var(--color-bg)"><a class="btn btn--main" href="{% url 'softkey' counter.id %}">Login</a></td>
             </tr>
             {% endfor %}
