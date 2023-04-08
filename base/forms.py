@@ -1,6 +1,7 @@
 # from ast import Mod
 #from dataclasses import field
-from django.forms import ModelForm, forms
+from django.forms import ModelForm
+from django import forms
 from django.contrib.auth.models import User, Group
 from django.db.models import Q
 from base.models import TicketFormat, TicketRoute, UserProfile, Branch, CounterType
@@ -63,4 +64,7 @@ class trForm(ModelForm):
     class Meta:
         model = TicketRoute 
         fields = ['enabled', 'branch', 'tickettype', 'step', 'countertype']
-    
+
+class getForm(forms.Form):
+    ticketnumber = forms.CharField(label='Ticket Number', max_length=100)
+        

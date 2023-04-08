@@ -13,14 +13,14 @@ from base.decorators import *
 # from django.urls import reverse_lazy
 
 from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch
-from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, CaptchaForm
+from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, CaptchaForm, getForm
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
 from .api.serializers import displaylistSerivalizer
 from django.utils import timezone
 # from .api.v_softkey import funVoid
-from .api.softkey import *
+from .api.v_softkey_sub import *
 from .api.v_ticket import newticket
 from base.ws import wsHypertext
 
@@ -63,17 +63,36 @@ def SoftkeyView(request, pk):
             error = msg['msg']
 
     if error == '':
-        # add counterstatus to context
-        context = context | context_counter | {'pk':pk}
+        printerobj = PrinterStatus.objects.filter(Q(branch=counterstatus.countertype.branch))
+
+        if request.method == 'POST':
+            # add Get form to context
+            getform = getForm(request.POST)
+            getticket = getform['ticketnumber'].value()
+            gettt = getticket[0:1]
+            gettno = getticket[1:]
+            # change gettt to uppercase
+            gettt = gettt.upper()
+            # change gettno to "000" format and convert to string
+            tformat = counterstatus.countertype.branch.ticketnoformat 
+            gettno = tformat + str(gettno)
+            # get gettno string right 3 char
+            gettno = gettno[-len(tformat):]
+
+            status, msg, context_get = funCounterGet(gettt, gettno, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket :', 'Softkey-web', softkey_version, datetime_now)
+            if status['status'] == 'Error':
+                messages.error(request, msg['msg'] + ' ' + gettt + gettno)
+            context = context | context_counter | {'pk':pk} | context_get
+            return redirect('softkey', pk=pk)
+            # return render(request, 'base/softkey.html', context)
+        context = context | context_counter | {'pk':pk} | {'printerstatus': printerobj}
         return render(request, 'base/softkey.html', context)
         # pass
     else:
         messages.error(request, error)
         # Redirect to last page
         return redirect('softkeylogin')
-    
-    
-    
+
 @unauth_user
 def SoftkeyLoginView(request):
     error = ''
@@ -104,8 +123,7 @@ def SoftkeyLoginView(request):
         return render(request, 'base/softkey_main.html', context)
     else :
         return HttpResponse(error)
-    
-    
+  
 @unauth_user
 def SoftkeyLogoutView(request, pk):
     error = ''
@@ -136,6 +154,158 @@ def SoftkeyLogoutView(request, pk):
         # Redirect to last page
         return redirect('home')
         pass 
+
+@unauth_user
+def SoftkeyCallView(request, pk):
+    error = ''
+    context = {}
+    datetime_now =timezone.now()
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    context = {
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
+        }
+    try:
+        counterstatus = CounterStatus.objects.get(id=pk)
+    except:
+        error = 'CounterStatus not found.'
+    if counterstatus == None:
+        error = 'CounterStatus not found.'
+
+    if error == '':
+        status, msg, context = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket:', 'Softkey-web', softkey_version, datetime_now)
+        if status['status'] == 'Error':
+            error = msg['msg']
+
+    if error == '':
+        if context == {'data': {}} :
+            messages.success(request, 'No ticket.')
+    else:
+        messages.error(request, error)
+        # Redirect to last page
+    return redirect('softkey', pk)
+
+@unauth_user
+def SoftkeyProcessView(request, pk):
+    error = ''
+    context = {}
+    datetime_now =timezone.now()
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    context = {
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
+        }
+    try:
+        counterstatus = CounterStatus.objects.get(id=pk)
+    except:
+        error = 'CounterStatus not found.'
+    if counterstatus == None:
+        error = 'CounterStatus not found.'
+    if error == '':
+        if counterstatus.status != 'calling':
+            error = 'CounterStatus not in calling status.'
+    if error == '':
+        status, msg = funCounterProcess(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Process ticket:', 'Softkey-web', softkey_version, datetime_now)
+        if status['status'] == 'Error':
+            error = msg['msg']
+
+    if error != '':
+        messages.error(request, error)
+        # Redirect to last page
+    return redirect('softkey', pk)
+
+
+@unauth_user
+def SoftkeyMissView(request, pk):
+    error = ''
+    context = {}
+    datetime_now =timezone.now()
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    context = {
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
+        }
+    try:
+        counterstatus = CounterStatus.objects.get(id=pk)
+    except:
+        error = 'CounterStatus not found.'
+    if counterstatus == None:
+        error = 'CounterStatus not found.'
+    if error == '':
+        if counterstatus.status != 'calling':
+            error = 'CounterStatus not in calling status.'
+    if error == '':
+        status, msg = funCounterMiss(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Miss ticket:', 'Softkey-web', softkey_version, datetime_now)
+        if status['status'] == 'Error':
+            error = msg['msg']
+
+    if error != '':
+        messages.error(request, error)
+        # Redirect to last page
+    return redirect('softkey', pk)
+
+@unauth_user
+def SoftkeyRecallView(request, pk):
+    error = ''
+    context = {}
+    datetime_now =timezone.now()
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    context = {
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
+        }
+    try:
+        counterstatus = CounterStatus.objects.get(id=pk)
+    except:
+        error = 'CounterStatus not found.'
+    if counterstatus == None:
+        error = 'CounterStatus not found.'
+    if error == '':
+        if counterstatus.status != 'calling':
+            error = 'CounterStatus not in calling status.'
+    if error == '':
+        status, msg = funCounterRecall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Recall ticket:', 'Softkey-web', softkey_version, datetime_now)
+        if status['status'] == 'Error':
+            error = msg['msg']
+
+    if error != '':
+        messages.error(request, error)
+        # Redirect to last page
+    else:
+        messages.success(request, 'Recall success.')
+    return redirect('softkey', pk)
+
+@unauth_user
+def SoftkeyDoneView(request, pk):
+    error = ''
+    context = {}
+    datetime_now =timezone.now()
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    context = {
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
+        }
+    try:
+        counterstatus = CounterStatus.objects.get(id=pk)
+    except:
+        error = 'CounterStatus not found.'
+    if counterstatus == None:
+        error = 'CounterStatus not found.'
+    if error == '':
+        if counterstatus.status != 'processing':
+            error = 'CounterStatus not in processing status.'
+    if error == '':
+        status, msg = funCounterComplete(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Done ticket:', 'Softkey-web', softkey_version, datetime_now)
+        if status['status'] == 'Error':
+            error = msg['msg']
+
+    if error != '':
+        messages.error(request, error)
+        # Redirect to last page
+    return redirect('softkey', pk)
+
+
+
+
+
+
+
+
 def repair(request):
     # 127.0.0.1:8000/repair?bc=KB&note=R000123
     context = None

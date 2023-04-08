@@ -50,7 +50,13 @@ urlpatterns = [
     # path('softkey_logout/', views.SoftkeyLogoutView,  name='softkeylogout'),
     # error : django.urls.exceptions.NoReverseMatch: Reverse for 'softkeylogout' with arguments '('',)' not found. 1 pattern(s) tried: ['softkey_logout/\\Z']
     path('softkey_logout/<str:pk>/', views.SoftkeyLogoutView,  name='softkeylogout'),
+    path('softkey_call/<str:pk>/', views.SoftkeyCallView,  name='softkeycall'),
+    path('softkey_process/<str:pk>/', views.SoftkeyProcessView,  name='softkeyprocess'),
     
+    path('softkey_done/<str:pk>/', views.SoftkeyDoneView,  name='softkeydone'),
+    path('softkey_miss/<str:pk>/', views.SoftkeyMissView,  name='softkeymiss'),
+    path('softkey_recall/<str:pk>/', views.SoftkeyRecallView,  name='softkeyrecall'),
+
     # for Hypic
     path('repair/', views.repair ),
 ]

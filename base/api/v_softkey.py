@@ -8,7 +8,7 @@ from .v_display import newdisplayvoice
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
 from .serializers import waitinglistSerivalizer
 from base.ws import wssendwebtv, wssendql, wsSendTicketStatus, wssendvoice
-from .softkey import *
+from .v_softkey_sub import *
 
 @api_view(['POST'])
 def postCounterGet(request):
@@ -153,103 +153,8 @@ def postCounterGet(request):
     #             status = dict({'status': 'Error'})
     #             msg =  dict({'msg':'Ticket time format not correct. Should be : 2022-05-19T23:59:59.123456Z'}) 
 
-    ticket = None
     if status == dict({}) :
-        # find ticket in waiting list
-        objt = TicketTemp.objects.filter(
-            tickettype=rx_ticketype,
-            ticketnumber=rx_ticketnumber,
-            branch=branch,
-            status='waiting',
-            locked=False).order_by('-tickettime')
-        if objt.count() >= 1 :
-            ticket = objt[0]
-        else:
-            # find ticket in miss list
-            objt = TicketTemp.objects.filter(
-                tickettype=rx_ticketype,
-                ticketnumber=rx_ticketnumber,
-                branch=branch,
-                status='miss',
-                locked=False).order_by('-tickettime')
-            if objt.count() >= 1 :
-                ticket = objt[0]
-        if ticket == None:
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'Ticket not found'}) 
-
-      
-        
-    if status == dict({}) :
-
-        # update ticketdata db
-        objtd = TicketData.objects.filter(
-            tickettemp=ticket,
-            countertype=countertype,
-            step=ticket.step,
-            branch=branch,
-        )
-        td = None
-        if objtd.count() == 1 :
-            td = objtd[0]
-        else:
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'TicketData is multi ' })   
-        if td == None:                 
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'TicketData not found ' })
-        else:
-            if td.starttime == None:
-                status = dict({'status': 'Error'})
-                msg =  dict({'msg':'Ticket time is NONE' })
-            else :
-                td.calltime = datetime_now
-                td.calluser = user
-                time_diff = datetime_now - td.starttime
-                tsecs = int(time_diff.total_seconds())
-                td.waitingperiod = tsecs
-                td.save()
-
-    if status == dict({}) :
-        # update counterstatus db 
-        counterstatus.tickettemp = ticket
-        counterstatus.status = lcounterstatus[1]
-        counterstatus.save()
-
-        # update ticket 
-        
-        # waiting on queue
-        if ticket.status == 'waiting':
-            ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
-            ticket.ticketroute.save()
-            # websocket to softkey (update Queue List)
-            wssendql(branch.bcode, countertype.name, ticket, 'del')
-        ticket.user = user
-        ticket.status = 'calling'
-        ticket.save()
-        
-
-        # add ticketlog
-        TicketLog.objects.create(
-            tickettemp=ticket,
-            logtime=datetime_now,
-            app = rx_app,
-            version = rx_version,
-            logtext='Ticket Get API : '  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + ticket.tickettime.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
-            user=user,
-        )
-
-        # do display and voice temp db
-        newdisplayvoice(branch, countertype, rx_counternumber, ticket, datetime_now, user)
-        # websocket to web my ticket
-        wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
-        # websocket to voice com
-        wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, rx_counternumber)
-
-        context = {'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
-        context = dict({'data':context})
-        status = dict({'status': 'OK'})
-        msg =  dict({'msg':'Ticket Get.'})  
+        status, msg, context = funCounterGet(rx_ticketype, rx_ticketnumber, user, branch, countertype, counterstatus, 'Ticket Get API : ', rx_app, rx_version, datetime_now)
 
         # websocket to web tv
         wssendwebtv(rx_bcode,countertype.name)
@@ -655,107 +560,7 @@ def postCounterDone(request):
               })            
         
     if status == dict({}) :
-
-        ticket = counterstatus.tickettemp 
-
-        # update ticketdata db
-        td = None
-        obj_td = TicketData.objects.filter(
-            tickettemp=ticket,
-            countertype=countertype,
-            step=ticket.step,
-            branch=branch,
-        )
-        if obj_td.count() == 1 :
-            td = obj_td[0]
-        else:
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'TicketData is multi ' })   
-        if td == None:        
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'TicketData not found ' })            
-        elif td.calltime == None or td.walkingperiod == None or td.waitingperiod == None :
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'TicketData - data not correct'})
-
-
-    if status == dict({}) :
-        td.donetime = datetime_now
-        td.doneuser = user
-        time_diff = datetime_now - td.calltime
-        tsecs = int(time_diff.total_seconds())
-        td.processingperiod = tsecs
-        total = tsecs + td.walkingperiod + td.waitingperiod
-        td.totalperiod = total
-        td.save()
-
-        # update counterstatus db 
-        counterstatus.tickettemp = None
-        counterstatus.status = lcounterstatus[0]
-        counterstatus.save()
-
-        # check ticket next step
-        step = ticket.step
-        nextstep = step +1
-        routeobj = TicketRoute.objects.filter(branch=branch, step=nextstep, tickettype=rx_ticketype)       
-
-        if routeobj.count() != 1 :
-            # no next step
-            ticket.status = lcounterstatus[3]  #'done'
-            ticket.save()
-
-            # add ticketlog
-            TicketLog.objects.create(
-                tickettemp=ticket,
-                logtime=datetime_now,
-                app = rx_app,
-                version = rx_version,
-                logtext='Ticket Done API : '  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
-                user=user,
-            )
-
-        else:
-            # next step
-            route = routeobj[0] 
-            route.waiting = route.waiting + 1
-            route.save()
-
-            countertype = route.countertype
-            ticket.countertype = countertype
-            ticket.ticketroute = routeobj[0]
-            ticket.status = lcounterstatus[0]
-            ticket.step = nextstep
-            ticket.save()
-
-            # websocket to softkey (update Queue List)
-            wssendql(branch.bcode, countertype.name, ticket, 'add')
-            # websocket to webtv
-            wssendwebtv(branch.bcode, countertype.name)
-
-            # new ticket data
-            TicketData.objects.create(
-                tickettemp=ticket,
-                branch = branch,
-                countertype=countertype,
-                step=ticket.step,
-                starttime = datetime_now,
-                startuser=user,
-            )
-
-            # add ticketlog
-            TicketLog.objects.create(
-                tickettemp=ticket,
-                logtime=datetime_now,
-                app = rx_app,
-                version = rx_version,
-                logtext='Ticket Done API (next step): '  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
-                user=user,
-            )
-        # websocket to web my ticket
-        wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
-
-        status = dict({'status': 'OK'})
-        msg =  dict({'msg':'Ticket done.'})  
+        status, msg = funCounterComplete(user, branch, countertype, counterstatus, 'Ticket Done API : ', rx_app, rx_version, datetime_now)
 
     output = status | msg | context
     return Response(output)
@@ -929,69 +734,9 @@ def postCounterMiss(request):
             + str(ttime.microsecond)
             +'Z'
               })            
-        
     if status == dict({}) :
-
-        ticket = counterstatus.tickettemp 
-
-        # update ticketdata db
-        td = None
-        obj_td = TicketData.objects.filter(
-            tickettemp=ticket,
-            countertype=countertype,
-            step=ticket.step,
-            branch=branch,
-        )
-        if obj_td.count() == 1 :
-            td = obj_td[0]
-        else:
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'TicketData is multi ' })     
-        if td == None :
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'TicketData not found ' })            
-        elif td.calltime == None:
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'TicketData : call time is None'})  
-
-    if status == dict({}) :
-        td.misstime = datetime_now
-        td.missuser = user
-        time_diff = datetime_now - td.calltime
-        tsecs = int(time_diff.total_seconds())
-        td.walkingperiod = tsecs
-        td.save()
-
-        # update counterstatus db 
-        counterstatus.tickettemp = None
-        counterstatus.status = lcounterstatus[0]
-        counterstatus.save()
-
-        # update ticket 
-        ticket.user = user
-        ticket.status = 'miss'
-        ticket.save()
-        
-
-        # add ticketlog
-        TicketLog.objects.create(
-            tickettemp=ticket,
-            logtime=datetime_now,
-            app = rx_app,
-            version = rx_version,
-            logtext='Ticket No Show API : '  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
-            user=user,
-        )
-
-        # websocket to web my ticket
-        wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
-
-        status = dict({'status': 'OK'})
-        msg =  dict({'msg':'Ticket no show.'})  
-
-
-
-
+        status, msg = funCounterMiss(user, branch, countertype, counterstatus, 'Ticket No Show API : ', rx_app, rx_version, datetime_now)
+    
     output = status | msg | context
     return Response(output)
 
@@ -1163,61 +908,9 @@ def postCounterProcess(request):
             + str(ttime.microsecond)
             +'Z'
               })            
-        
     if status == dict({}) :
-
-        ticket = counterstatus.tickettemp 
-
-        # update ticketdata db
-        td = None
-        obj_td = TicketData.objects.filter(
-            tickettemp=ticket,            
-            countertype=countertype,
-            step=ticket.step,
-            branch=branch,
-        )
-        if obj_td.count() == 1 :
-            td = obj_td[0]
-        else:
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'TicketData is multi ' })  
-
-        if td == None :
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'TicketData not found ' })            
-        elif td.calltime == None:
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'TicketData: calltime not found'})  
-    if status == dict({}) :            
-        td.processtime = datetime_now
-        td.processuser = user        
-        time_diff = datetime_now - td.calltime
-        tsecs = int(time_diff.total_seconds())
-        td.walkingperiod = tsecs
-        td.save()
-
-        # update counterstatus db 
-        counterstatus.tickettemp = ticket
-        counterstatus.status = lcounterstatus[2]
-        counterstatus.save()
-
-        # update ticket 
-        ticket.user = user
-        ticket.status = lcounterstatus[2]
-        ticket.save()
-        
-        # add ticketlog
-        TicketLog.objects.create(
-            tickettemp=ticket,
-            logtime=datetime_now,
-            app = rx_app,
-            version = rx_version,
-            logtext='Process ticket API : '  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
-            user=user,
-        )
-
-        status = dict({'status': 'OK'})
-        msg =  dict({'msg':'Process ticket.'})
+        status, msg = funCounterProcess(user, branch, countertype, counterstatus, 'Process ticket API : ', rx_app, rx_version, datetime_now)
+    
 
     output = status | msg | context
     return Response(output)
@@ -1394,28 +1087,7 @@ def postCounterRecall(request):
               })            
         
     if status == dict({}) :
-
-
-        # add ticketlog
-        ticket = counterstatus.tickettemp 
-        TicketLog.objects.create(
-            tickettemp=ticket,
-            logtime=datetime_now,
-            app = rx_app,
-            version = rx_version,
-            logtext='Recalling ticket API : '  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
-            user=user,
-        )
-
-        # do display and voice temp db
-        newdisplayvoice(branch, countertype, rx_counternumber, ticket, datetime_now, user)
-        # websocket to web tv
-        wssendwebtv(rx_bcode,countertype.name)
-        # websocket to voice com
-        wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, rx_counternumber)
-
-        status = dict({'status': 'OK'})
-        msg =  dict({'msg':'Recall ticket.'})  
+        status, msg = funCounterRecall(user, branch, countertype, counterstatus, 'Recalling ticket API : ', rx_app, rx_version, datetime_now)
 
 
 
@@ -1503,61 +1175,13 @@ def postCounterCall(request):
             status = dict({'status': 'Error'})
             msg =  dict({'msg':loginreply})   
     
-    
-    
-    # check call priority
-    # if priority = 'time' / 'umask' user mask / 'bmask' branch mask
-    priority = ''
-    mask = ''
-    if status == dict({}) :
-        userp = None
-        obj_userp = UserProfile.objects.filter(user__exact=user)
-        if obj_userp.count() == 1 :
-            userp = obj_userp[0]            
-        if userp == None:
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'User profile not found'})  
-    if status == dict({}) :
-        qp = userp.queuepriority
-        if qp == 'time':
-            mask = userp.tickettype
-            priority = 'time'
-        if qp == 'user':            
-            mask = userp.tickettype
-            priority = 'umask'
-        if qp == 'mask':
-            # branch mask               
-            mask = branch.queuemask
-            priority = 'bmask'
-        if qp == 'branch':
-            qp = branch.queuepriority
-            if qp == 'time':
-                priority = 'time'
-                mask = userp.tickettype
-            if qp == 'mask':
-                priority = 'bmask'
-                mask = branch.queuemask 
-            if qp == 'user':
-                priority = 'umask'
-                mask = userp.tickettype 
-        if mask == '' or priority == '' :
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'Queue priority not found (qp:' + qp + ') '+ mask + '<-mask , priority->' + priority})   
-        if mask != '' and priority == 'bmask' :
-            new_mask=''
-            mask_b = mask            
-            for tt in mask_b:
-                if userp.tickettype.find(tt) != -1:
-                    new_mask = new_mask + tt
-            mask = new_mask
-        if priority == 'bmask' or priority == 'umask' :
-            priority = 'mask'
     if status == dict({}) :
         # get the Counter type
         ctypeobj = CounterType.objects.filter( Q(branch=branch) & Q(name=rx_countername) )
         if not(ctypeobj.count() > 0) :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':'Counter Type not found'})  
+            msg =  dict({'msg':'Counter Type not found'})    
+    
     if status == dict({}) :
         countertype = ctypeobj[0]
         cstatusobj = CounterStatus.objects.filter( Q(countertype=countertype) & Q(counternumber=rx_counternumber) & Q(user=user))
@@ -1578,97 +1202,12 @@ def postCounterCall(request):
             msg =  dict({'msg':'Counter still processing ticket:' + counterstatus.tickettemp.tickettype + counterstatus.tickettemp.ticketnumber})  
 
 
-
     if status == dict({}) :
-
-        ticket = None
-
-        if priority== 'time':
-            # found the waiting ticket by time
-            ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0])  & Q(locked=False)   ).order_by('tickettime')            
-            for ticket in ticketlist:
-                if mask.find(ticket.tickettype) != -1:
-                    # call this ticket
-                    context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
-                    break
-        elif priority == 'mask':
-            ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0])  & Q(locked=False)   ).order_by('tickettime')
-            for tt in mask:
-                for ticket in ticketlist:
-                    if tt == ticket.tickettype:
-                        # call this ticket
-                        context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
-                        break
-                if context != dict({}):
-                    break
-        if context != dict({}) and ticket != None :
-
-
-            # update ticketdata db
-            td = None
-            if status == dict({}) :
-                obj_td = TicketData.objects.filter(
-                    tickettemp=ticket,
-                    countertype=countertype,
-                    step=ticket.step,
-                    branch=branch,
-                )
-                if obj_td.count() == 1 :
-                    td = obj_td[0]
-                else:
-                    status = dict({'status': 'Error'})
-                    msg =  dict({'msg':'TicketData is multi ' })  
-                if td == None :
-                    status = dict({'status': 'Error'})
-                    msg =  dict({'msg':'TicketData not found ' }) 
-
-            if status == dict({}) :
-                td.calltime = datetime_now
-                td.calluser = user
-                time_diff = datetime_now - td.starttime
-                tsecs = int(time_diff.total_seconds())
-                td.waitingperiod = tsecs
-                td.save()
-
-                # update counterstatus db 
-                counterstatus.tickettemp = ticket
-                counterstatus.status = lcounterstatus[1]
-                counterstatus.save()
-
-                # update ticket 
-                ticket.user = user
-                ticket.status = lcounterstatus[1]
-                ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
-                ticket.ticketroute.save()
-                ticket.save()
-
-                # add ticketlog
-                TicketLog.objects.create(
-                    tickettemp=ticket,
-                    logtime=datetime_now,
-                    app = rx_app,
-                    version = rx_version,
-                    logtext='Calling ticket API : '  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
-                    user=user,
-                )
-
-                # do display and voice temp db
-                newdisplayvoice(branch, countertype, rx_counternumber, ticket, datetime_now, user)
-
-                # websocket to web tv
-                wssendwebtv(rx_bcode,countertype.name)
-                # websocket to softkey (update Queue List)
-                wssendql(branch.bcode, countertype.name, ticket, 'del')
-                # websocket to web my ticket
-                wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
-                # websocket to voice com
-                wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, rx_counternumber)
-
-        context = dict({'data':context})
-        status = dict({'status': 'OK'})
-        # msg =  dict({'msg':'Everything will be OK.'})        
-
+        # function call ticket
+        status, msg, context = funCounterCall(user, branch, countertype, counterstatus, 'Calling ticket API : ', rx_app, rx_version, datetime_now)
+    
     output = status | msg | context
+    print (output)
     return Response(output)
 
 

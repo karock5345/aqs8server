@@ -31,49 +31,148 @@
           <div class="roomList__header">
             <div>
                 <h2>Softkey - Counter {{ data.counternumber }} ({{ data.countertype }})</h2>
-                <p>Branch : {{ data.branch }} </p>
+                <h3>Branch : {{ data.branch }} </h3>
               </div>
-         
           </div>
                      
-          <!-- <div>
-              Username : {{ request.user.username }}
-          </div>
-          <div>
-              Full name : {{ data.name }}
-          </div>  -->
           <div class="softkey_login">
             Login : {{ data.name }} 
           </div>
 
-          <div class="softkey_status_text">
-            Status : {{ data.counterstatus }}
+          {% if data.counterstatus == 'waiting' %}
+            <div class="softkey_status_text">
+              Status : Waiting to call
+            </div>
+            <div class="softkey_call_container">
+              <a class="softkey_btn btn--main" href="{% url 'softkeycall' pk %}">Call</a>
+              <button id="get_btn" class="softkey_btn btn--main">Get</button>
+              <a class="softkey_btn btn--del" href="{% url 'softkeylogout' pk %}">Logout</a>
+            </div>
+          {% elif data.counterstatus == 'calling' %}
+            <div class="softkey_status_text">
+              Status : Calling {{ data.tickettype }}{{ data.ticketnumber }}
+            </div>
+            <div class="softkey_call_container">
+              <a class="softkey_btn btn--main" href="{% url 'softkeyprocess' pk %}">Start process</a>
+              <a class="softkey_btn btn--main" href="{% url 'softkeymiss' pk %}">No show</a>
+              <a class="softkey_btn btn--main" href="{% url 'softkeyrecall' pk %}">Recall</a>
+            </div>      
+          {% elif data.counterstatus == 'processing' %}
+            <div class="softkey_status_text">
+              Status : Processing {{ data.tickettype }}{{ data.ticketnumber }}
+            </div>
+            <div class="softkey_call_container">
+              <a class="softkey_btn btn--main" href="{% url 'softkeydone' pk %}">Complete</a>
+            </div>
+          {% else %}
+            <div class="softkey_status_text">
+              Status : {{ data.counterstatus }}
+            </div>
+          {% endif %}
+
+
+
+
+
+
+
+          <div id="get_area">
+            <div class="container">
+              <div class="layout__box">
+                  <div class="layout__boxHeader">
+                      <div class="layout__boxTitle">
+                          <a id="get_back" href="">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                <title>arrow-left</title>
+                                <path
+                                    d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                                </path>
+                            </svg>
+                          </a>
+                          <h3>Get a ticket</h3>
+                      </div>
+                  </div>
+                  
+                  <form class="form" action="" method="POST" prefix="profileform">
+                    {% csrf_token %}
+                    <div class="layout__body">
+                      <div class="form__group">
+                        <label for="ticketnumber">Input ticket number :</label>
+                        
+                          <input type="text" name="ticketnumber" name="ticketnumber" value="">
+                        
+                        </div>
+                      <div class="form__action">
+                        <button type="submit" class="softkey_btn btn--main" >Get</button>
+                      </div>
+                    </div>
+                  </form>
+
+              </div>
+            </div>
           </div>
 
-          <!-- <div>
-            User Ticket type : {{ data.ttype }}
+          <div id="paper_area">
+            {% for printer in printerstatus %}
+              <div id="Printer_{{ printer.printernumber }}">
+              {% if printer.status == "<P_FINE>" %}
+                <div></div>
+              {% elif printer.status == "<P_NEAREND>" %}
+                <div class="printer_nearend_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
+              {% elif printer.status == "<P_END>" %}
+                <div class="printer_end_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
+              {% elif printer.status == "<OPEN>" %}
+                <div class="printer_open_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
+              {% else %}
+                <div class="printer_ready_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
+              {% endif %}
+              </div> 
+            {% endfor%}
+
           </div>
-          <div>
-            Ticket number : {{ data.tickettype }}{{ data.ticketnumber }}
-          </div> -->
-          <div class="softkey_call_container">
-            <button class="softkey_btn btn--main">Call</button>
-            <button class="softkey_btn btn--main">Get</button>
-            <a class="softkey_btn btn--del" href="{% url 'softkeylogout' pk %}">Logout</a>
-          </div>
-          <div class="softkey_call_container">
-            <button class="softkey_btn btn--main">Start process</button>
-            <button class="softkey_btn btn--main">No show</button>
-            <button class="softkey_btn btn--main">Recall</button>
-          </div>            
-          <div class="softkey_call_container">
-            <button class="softkey_btn btn--main">Complete</button>
-          </div>
+
+
+
+        </div>
+        
+
+
+
+
 
         </div>
 
       </div>
 
+<!-- javascript Button "Get" show or hidden html id="get_area" -->
+      <script>
+        var btn = document.getElementById('get_btn');
+        var get_back = document.getElementById('get_back');
+        var get_area_html = document.getElementById('get_area').innerHTML;
+        var hidden = true;
+
+        document.getElementById('get_area').innerHTML = '';
+
+        btn.addEventListener('click', function() {
+          if (hidden) {
+            document.getElementById('get_area').innerHTML = get_area_html;
+            hidden = false;
+          } else {
+            document.getElementById('get_area').innerHTML = '';
+            hidden = true;
+          }
+        });
+
+        get_back.addEventListener('click', function() {
+          document.getElementById('get_area').innerHTML = '';
+          hidden = true;
+        });
+      </script>
+
+    </main>
+
+
+      
 {% endblock %}      
 
 
