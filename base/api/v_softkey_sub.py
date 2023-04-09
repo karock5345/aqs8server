@@ -7,7 +7,7 @@ from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCto
 from .v_display import newdisplayvoice
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
 from .serializers import waitinglistSerivalizer
-from base.ws import wssendwebtv, wssendql, wsSendTicketStatus, wssendvoice
+from base.ws import wssendwebtv, wssendql, wsSendTicketStatus, wssendvoice, wscounterstatus
 
 softkey_version = '8.0.2.0'
 
@@ -174,6 +174,8 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
                 wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
                 # websocket to voice com
                 wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+                # websocket to web softkey for update counter status
+                wscounterstatus(counterstatus)
 
         context = dict({'data':context})
         status = dict({'status': 'OK'})
@@ -236,6 +238,8 @@ def funCounterProcess(user, branch, countertype, counterstatus, logtext, rx_app,
             logtext= logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
             user=user,
         )
+        # websocket to web softkey for update counter status
+        wscounterstatus(counterstatus)
 
         status = dict({'status': 'OK'})
         msg =  dict({'msg':'Process ticket.'})
@@ -344,6 +348,8 @@ def funCounterComplete(user, branch, countertype, counterstatus, logtext, rx_app
             )
         # websocket to web my ticket
         wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
+        # websocket to web softkey for update counter status
+        wscounterstatus(counterstatus)
 
         status = dict({'status': 'OK'})
         msg =  dict({'msg':'Ticket done.'})
@@ -408,6 +414,8 @@ def funCounterMiss(user, branch, countertype, counterstatus, logtext, rx_app, rx
 
         # websocket to web my ticket
         wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
+        # websocket to web softkey for update counter status
+        wscounterstatus(counterstatus)
 
         status = dict({'status': 'OK'})
         msg =  dict({'msg':'Ticket no show.'})  
@@ -539,6 +547,8 @@ def funCounterGet(tickettype, ticketnumber, user, branch, countertype, counterst
         wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
         # websocket to voice com
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        # websocket to web softkey for update counter status
+        wscounterstatus(counterstatus)
 
         context = {'tickettype': ticket.tickettype, 
                    'ticketnumber': ticket.ticketnumber , 
@@ -676,7 +686,8 @@ def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber,
                     ttime = counterstatus.tickettemp.tickettime
 
     context = {
-        'branch':branch.name, 
+        'branch':branch.name,
+        'bcode':branch.bcode,
         'countertype':counterstatus.countertype.name, 
         'counternumber':counterstatus.counternumber,
         'name': user.first_name + ' ' + user.last_name , 
@@ -715,6 +726,7 @@ def funVoid(user, tickett, td, datetime_now):
     wssendwebtv(tickett.branch.bcode, tickett.countertype.name)
     # websocket to web my ticket
     wsSendTicketStatus(tickett.branch.bcode, tickett.tickettype, tickett.ticketnumber, tickett.securitycode)
+
 
 def logcounterlogout (user, countertype, counternumber, logintime, logouttime) -> str :
     sOut = 'Error'

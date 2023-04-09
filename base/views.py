@@ -22,7 +22,7 @@ from django.utils import timezone
 # from .api.v_softkey import funVoid
 from .api.v_softkey_sub import *
 from .api.v_ticket import newticket
-from base.ws import wsHypertext
+from base.ws import wsHypertext, wscounterstatus
 
 
 from asgiref.sync import async_to_sync
@@ -37,12 +37,14 @@ try:
 except:
     print('userweb not found.')
 
+context_login = {}
+
 @unauth_user
 def SoftkeyView(request, pk):
     context = {}
     context_counter = {}
     error = ''
-
+    str_now = '--:--'
     datetime_now =timezone.now()
 
     auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
@@ -52,6 +54,9 @@ def SoftkeyView(request, pk):
 
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
+        datetime_now_local = funUTCtoLocal(datetime_now, counterstatus.countertype.branch.timezone)
+        str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
+  
     except:
         error = 'CounterStatus not found.'
     if counterstatus == None:
@@ -66,26 +71,55 @@ def SoftkeyView(request, pk):
         printerobj = PrinterStatus.objects.filter(Q(branch=counterstatus.countertype.branch))
 
         if request.method == 'POST':
-            # add Get form to context
-            getform = getForm(request.POST)
-            getticket = getform['ticketnumber'].value()
-            gettt = getticket[0:1]
-            gettno = getticket[1:]
-            # change gettt to uppercase
-            gettt = gettt.upper()
-            # change gettno to "000" format and convert to string
-            tformat = counterstatus.countertype.branch.ticketnoformat 
-            gettno = tformat + str(gettno)
-            # get gettno string right 3 char
-            gettno = gettno[-len(tformat):]
+            action = request.POST.get('action')
+            if action == 'submit':
+                # add Get form to context
+                getform = getForm(request.POST)
+                getticket = getform['ticketnumber'].value()
+                gettt = getticket[0:1]
+                gettno = getticket[1:]
+                # change gettt to uppercase
+                gettt = gettt.upper()
+                # change gettno to "000" format and convert to string
+                tformat = counterstatus.countertype.branch.ticketnoformat 
+                gettno = tformat + str(gettno)
+                # get gettno string right 3 char
+                gettno = gettno[-len(tformat):]
 
-            status, msg, context_get = funCounterGet(gettt, gettno, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket :', 'Softkey-web', softkey_version, datetime_now)
-            if status['status'] == 'Error':
-                messages.error(request, msg['msg'] + ' ' + gettt + gettno)
-            context = context | context_counter | {'pk':pk} | context_get
+                status, msg, context_get = funCounterGet(gettt, gettno, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket :', 'Softkey-web', softkey_version, datetime_now)
+                if status['status'] == 'Error':
+                    messages.error(request, msg['msg'] + ' ' + gettt + gettno)
+                context = context | context_counter | {'pk':pk} | context_get
+                return redirect('softkey', pk=pk)
+                # return render(request, 'base/softkey.html', context)
+            elif action == 'call':
+                status, msg, context_call = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket :', 'Softkey-web', softkey_version, datetime_now)
+                if status['status'] == 'Error':
+                    messages.error(request, msg['msg'])
+                if status['status'] == 'OK' and context_call == {'data': {}} :
+                    messages.success(request, 'No ticket to call.')
+            elif action == 'recall':
+                status, msg = funCounterRecall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Recall ticket :', 'Softkey-web', softkey_version, datetime_now)
+                if status['status'] == 'OK' :
+                    messages.success(request, 'Recall ticket success.')
+            elif action == 'process':
+                status, msg = funCounterProcess(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Process ticket :', 'Softkey-web', softkey_version, datetime_now)
+            elif action == 'done':
+                status, msg = funCounterComplete(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Done ticket :', 'Softkey-web', softkey_version, datetime_now)
+            elif action == 'miss':
+                status, msg = funCounterMiss(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Miss ticket :', 'Softkey-web', softkey_version, datetime_now)
+            elif action == None :
+                pass
             return redirect('softkey', pk=pk)
-            # return render(request, 'base/softkey.html', context)
-        context = context | context_counter | {'pk':pk} | {'printerstatus': printerobj}
+            # q: how to return to same page after post and do not refresh page
+            # return render(request, 'base/softkey.html', context_login[pk] | context)
+        context = context | {'lastupdate': str_now}
+        context = context | context_counter 
+        context = context | {'pk':pk}
+        context = context | {'printerstatus': printerobj}
+        context = context | {'wsh' : wsHypertext}
+        context_login[pk] = context
+
         return render(request, 'base/softkey.html', context)
         # pass
     else:
@@ -120,6 +154,7 @@ def SoftkeyLoginView(request):
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes,
         'counterstatus':counterstatus,
         }
+
         return render(request, 'base/softkey_main.html', context)
     else :
         return HttpResponse(error)
@@ -183,6 +218,10 @@ def SoftkeyCallView(request, pk):
         messages.error(request, error)
         # Redirect to last page
     return redirect('softkey', pk)
+
+
+
+
 
 @unauth_user
 def SoftkeyProcessView(request, pk):
@@ -298,6 +337,7 @@ def SoftkeyDoneView(request, pk):
         messages.error(request, error)
         # Redirect to last page
     return redirect('softkey', pk)
+
 
 
 

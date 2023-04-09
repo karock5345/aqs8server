@@ -4,8 +4,56 @@ from channels.generic.websocket import AsyncWebsocketConsumer, WebsocketConsumer
 from django.db.models import Q
 from django.utils import timezone
 from .views import  funUTCtoLocal
-from .models import Branch, CounterType, TicketTemp
+from .models import Branch, CounterType, TicketTemp, CounterStatus
 from asgiref.sync import sync_to_async
+
+class CounterStatusConsumer(AsyncWebsocketConsumer):
+    # ws://127.0.0.1:8000/ws/cs/1/
+    async def connect(self):
+        @sync_to_async
+        def check_input():
+            error = ''
+            counterstatus = None
+            counterstatus = CounterStatus.objects.get(id=pk)
+            if counterstatus is None:
+                error = 'CounterStatus not found.'
+           
+            return error
+                
+        error = ''
+        self.pk = self.scope['url_route']['kwargs']['pk']
+
+        pk = int(self.pk)
+        
+
+        self.room_group_name = 'cs_' + self.pk
+        print('connecting:' + self.room_group_name )
+        
+        # check bcode and ct (countertype) is not exit do not accept connection
+        error = await check_input()       
+
+        if error == '':          
+            await self.channel_layer.group_add(
+                self.room_group_name,
+                self.channel_name
+            )
+            await self.accept()
+        else :
+            print('Error:' + error )
+            
+
+    # Receive message from room group
+    async def broadcast_message(self, event):
+        str_tx = event['tx']
+
+        # Send message to WebSocket
+        await self.send(text_data=str_tx)
+
+    async def disconnect(self, close_code):
+        # Leave room group
+        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
+
+
 
 class SMSConsumer(AsyncWebsocketConsumer):
     async def connect(self):
@@ -245,6 +293,7 @@ class PrinterStatusConsumer(AsyncWebsocketConsumer):
                 self.channel_name
             )
             await self.accept()
+
         else :
             print('Error:' + error )
             

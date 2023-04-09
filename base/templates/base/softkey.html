@@ -32,50 +32,58 @@
             <div>
                 <h2>Softkey - Counter {{ data.counternumber }} ({{ data.countertype }})</h2>
                 <h3>Branch : {{ data.branch }} </h3>
+                
               </div>
+              <p id="lastupdate">Last update : {{ lastupdate }}</p>
           </div>
                      
           <div class="softkey_login">
             Login : {{ data.name }} 
           </div>
 
-          {% if data.counterstatus == 'waiting' %}
-            <div class="softkey_status_text">
-              Status : Waiting to call
+          <div id="status_text" class="softkey_status_text">
+            Status : Waiting to call
+          </div>
+
+          <div id="key_area">
+
+            <div id="call_menu">
+              <div class="softkey_call_container">
+                <!-- form no style -->
+                <form  action="" method="POST">
+                  {% csrf_token %}
+                  <button type="submit" name="action" value="call" class="softkey_btn btn--main">Call</button>
+                </form>
+                <div>
+                  <button id="get_btn" class="softkey_btn btn--main">Get</button>
+                </div>
+                <div>
+                  <a class="softkey_btn btn--del" href="{% url 'softkeylogout' pk %}">Logout</a>
+                </div>  
+              </div>            
             </div>
-            <div class="softkey_call_container">
-              <a class="softkey_btn btn--main" href="{% url 'softkeycall' pk %}">Call</a>
-              <button id="get_btn" class="softkey_btn btn--main">Get</button>
-              <a class="softkey_btn btn--del" href="{% url 'softkeylogout' pk %}">Logout</a>
+
+            <div id="process_menu">
+              <!-- <div class="softkey_call_container"> -->
+                <form class="softkey_call_container" action="" method="POST">
+                  {% csrf_token %}
+                  <button type="submit" name="action" value="process" class="softkey_btn btn--main">Start process</button>
+                  <button type="submit" name="action" value="miss" class="softkey_btn btn--main">No show</button>
+                  <button type="submit" name="action" value="recall" class="softkey_btn btn--main">Recall</button>
+                </form> 
+              <!-- </div> -->
             </div>
-          {% elif data.counterstatus == 'calling' %}
-            <div class="softkey_status_text">
-              Status : Calling {{ data.tickettype }}{{ data.ticketnumber }}
+
+            <div id="done_menu">
+              <div class="softkey_call_container">
+                <form action="" method="POST">
+                  {% csrf_token %}
+                  <button type="submit" name="action" value="done" class="softkey_btn btn--main">Complete</button>
+                </form>
+              </div>
             </div>
-            <div class="softkey_call_container">
-              <a class="softkey_btn btn--main" href="{% url 'softkeyprocess' pk %}">Start process</a>
-              <a class="softkey_btn btn--main" href="{% url 'softkeymiss' pk %}">No show</a>
-              <a class="softkey_btn btn--main" href="{% url 'softkeyrecall' pk %}">Recall</a>
-            </div>      
-          {% elif data.counterstatus == 'processing' %}
-            <div class="softkey_status_text">
-              Status : Processing {{ data.tickettype }}{{ data.ticketnumber }}
-            </div>
-            <div class="softkey_call_container">
-              <a class="softkey_btn btn--main" href="{% url 'softkeydone' pk %}">Complete</a>
-            </div>
-          {% else %}
-            <div class="softkey_status_text">
-              Status : {{ data.counterstatus }}
-            </div>
-          {% endif %}
-
-
-
-
-
-
-
+          </div>
+        
           <div id="get_area">
             <div class="container">
               <div class="layout__box">
@@ -93,17 +101,15 @@
                       </div>
                   </div>
                   
-                  <form class="form" action="" method="POST" prefix="profileform">
+                  <form class="form" action="" method="POST" >
                     {% csrf_token %}
                     <div class="layout__body">
                       <div class="form__group">
                         <label for="ticketnumber">Input ticket number :</label>
-                        
-                          <input type="text" name="ticketnumber" name="ticketnumber" value="">
-                        
-                        </div>
+                        <input type="text" name="ticketnumber" name="ticketnumber" value="">
+                      </div>
                       <div class="form__action">
-                        <button type="submit" class="softkey_btn btn--main" >Get</button>
+                        <button type="submit" name="action" value="submit" class="softkey_btn softkey_btn--submit btn--main" >Get</button>
                       </div>
                     </div>
                   </form>
@@ -128,29 +134,62 @@
               {% endif %}
               </div> 
             {% endfor%}
-
           </div>
+
+          <div id="test" >
+            testing
+          </div>
+
 
 
 
         </div>
         
-
-
-
-
-
-        </div>
-
       </div>
 
-<!-- javascript Button "Get" show or hidden html id="get_area" -->
+      
+      {{ data.counterstatus|json_script:"js-counterstatus"}}
+      {{ wsh|json_script:"js-wsh" }}
+      {{ pk|json_script:"js-pk" }}
+      {{ data.bcode|json_script:"js-bcode" }}
+      {{ data.tickettype|json_script:"js-tickettype" }}
+      {{ data.ticketnumber|json_script:"js-ticketnumber" }}
       <script>
+        const c_wsh = JSON.parse(document.getElementById('js-wsh').textContent);
+        const c_pk = JSON.parse(document.getElementById('js-pk').textContent);
+        const c_bcode = JSON.parse(document.getElementById('js-bcode').textContent);
+        const c_counterstatus = JSON.parse(document.getElementById('js-counterstatus').textContent);
+        const c_ttype = JSON.parse(document.getElementById('js-tickettype').textContent);
+        const c_tno = JSON.parse(document.getElementById('js-ticketnumber').textContent);
         var btn = document.getElementById('get_btn');
         var get_back = document.getElementById('get_back');
         var get_area_html = document.getElementById('get_area').innerHTML;
         var hidden = true;
 
+        document.getElementById('test').hidden = true;
+        // new funcition to change the status (input status, ticket type, ticket number)
+        function changeStatus(status, ttype, tno) {
+          document.getElementById('call_menu').hidden = true;
+          document.getElementById('process_menu').hidden = true;
+          document.getElementById('done_menu').hidden = true;
+          if (status == 'waiting') {
+            document.getElementById('status_text').innerHTML = 'Status : Waiting to call';
+            document.getElementById('call_menu').hidden = false;
+          } else if (status == 'calling') {
+            document.getElementById('status_text').innerHTML = 'Status : Calling ' + ttype + tno;
+            document.getElementById('process_menu').hidden = false;
+          } else if (status == 'processing') {
+            document.getElementById('status_text').innerHTML = 'Status : Processing ' + ttype + tno;
+            document.getElementById('done_menu').hidden = false;
+          } else {
+            document.getElementById('status_text').innerHTML = 'Status : ' + status;
+          }
+        }
+
+        //  call function changeStatus
+        changeStatus(c_counterstatus, c_ttype, c_tno);
+
+        //  javascript Button "Get" show or hidden html id="get_area" 
         document.getElementById('get_area').innerHTML = '';
 
         btn.addEventListener('click', function() {
@@ -167,6 +206,108 @@
           document.getElementById('get_area').innerHTML = '';
           hidden = true;
         });
+
+        // websocket for printer status
+        const PrintStatusSocket = new WebSocket(
+            c_wsh
+            + window.location.host
+            + '/ws/pstatus/'
+            + c_bcode
+            + '/'
+        );
+        PrintStatusSocket.onmessage = function(e) {
+            // # {
+            // #    "cmd":"ps",
+            // #    "lastupdate":"2020-05-20 11:00:00",
+            // #    "data":[
+            // #       {
+            // #          "printernumber":"P1",
+            // #          "statustext":"good",
+            // #          "status":"<P_FINE>"
+            // #       },
+            // #       {
+            // #          "printernumber":"P2",
+            // #          "statustext":"Paper out",
+            // #          "status":"<P_FINE>"
+            // #       }
+            // #    ]
+            // # }
+            // console.log('Received data:', e.data);
+            const rxdata = JSON.parse(e.data);
+            // console.log('Parsed data:', data);
+            // document.querySelectorAll(".status > .vertical-center")[0].innerHTML = data.lastupdate;
+            var last = rxdata.lastupdate;
+            document.getElementById("lastupdate").innerHTML = 'Last update : ' + last;
+
+            var cmd = rxdata.cmd;
+            if (cmd == 'ps') {
+                const data = rxdata.data;
+
+                for (var i = 0; i < data.length; i++) {
+                    var obj = data[i];
+                    var pno = obj.printernumber;
+                    var statustext = obj.statustext;
+                    var status = obj.status;
+
+                    if (status == "<P_FINE>") {
+                        document.getElementById("Printer_" + pno).innerHTML = '';
+                    } else if (status == "<P_NEAREND>") {
+                        document.getElementById("Printer_" + pno).innerHTML = '<div class="printer_nearend_text typewriter">' + pno + ' : ' + statustext + '</div>';
+                    } else if (status == "<P_END>") {
+                        document.getElementById("Printer_" + pno).innerHTML = '<div class="printer_end_text typewriter">' + pno + ' : ' + statustext + '</div>';
+                    } else if (status == "<OPEN>") {
+                        document.getElementById("Printer_" + pno).innerHTML = '<div class="printer_open_text typewriter">' + pno + ' : ' + statustext + '</div>';
+                    } else {
+                        document.getElementById("Printer_" + pno).innerHTML = '<div class="printer_ready_text typewriter">' + pno + ' : ' + statustext + '</div>';
+                    }
+                }
+            }        
+        };
+        PrintStatusSocket.onclose = function(e) {
+            console.error('PrinterStatus socket closed unexpectedly');
+        };
+
+
+        // websocket for Counter status
+        const CounterStatusSocket = new WebSocket(
+            c_wsh
+            + window.location.host
+            + '/ws/cs/'
+            + c_pk
+            + '/'
+        );
+        CounterStatusSocket.onmessage = function(e) {
+            // # {
+            // #    "cmd":"cs",
+            // #    "lastupdate":"2020-05-20 11:00:00",
+            // #    "data":
+            // #    {
+            // #     "status": "waiting",", 
+            // #     "tickettype": "A",
+            // #     "ticketnumber": "012",
+            // #     }
+            // # }
+            // console.log('Received data:', e.data);
+            const rxdata = JSON.parse(e.data);
+            // console.log('Parsed data:', data);
+            // document.querySelectorAll(".status > .vertical-center")[0].innerHTML = data.lastupdate;
+            var last = rxdata.lastupdate;
+            document.getElementById("lastupdate").innerHTML = 'Last update : ' + last;
+
+            var cmd = rxdata.cmd;
+            if (cmd == 'cs') {
+                const data = rxdata.data;
+                var status = data.status;
+                var ttype = data.tickettype;
+                var tno = data.ticketnumber;
+
+                changeStatus(status, ttype, tno);
+            }        
+        };
+        CounterStatusSocket.onclose = function(e) {
+            console.error('CounterStatus socket closed unexpectedly');
+        };
+
       </script>
 
     </main>

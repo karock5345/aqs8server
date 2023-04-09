@@ -108,6 +108,7 @@ a {
 }
 
 .softkey_btn {
+  height: 5rem;
   background-color: transparent;
   border: none;
   display: inline-flex;
@@ -126,6 +127,12 @@ a {
   /* q:not work */
   justify-content: center;
 }
+.softkey_btn--submit {
+  /* position bottom of the form */
+  position: absolute;
+  bottom: 3rem;
+}
+
 @media screen and (max-width: 600px) {
   .softkey_btn{
     margin-top: 0.5rem;
@@ -1315,12 +1322,13 @@ color: white;
   color: var(--color-light);
   background-color: var(--color-dark);
   font-family: helvetica;
+
 }
 .softkey_call_container{
   display: flex;
   justify-content: space-between;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  /* padding-top: 0.5rem;
+  padding-bottom: 0.5rem; */
   background-color: none;
   border-width: 1px;
   border-style: inset;
@@ -1369,4 +1377,28 @@ color: white;
   color: var(--color-open);
   background-color: var(--color-dark);
   font-family: helvetica;
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter  {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  /* border-right: .15em solid orange; The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+ /* letter-spacing: .15em;  Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: transparent }
 }

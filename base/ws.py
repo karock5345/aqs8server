@@ -14,6 +14,59 @@ import asyncio
 
 wsHypertext = 'ws://'
 
+def wscounterstatus(counterstatus):
+    # {"cmd":"cs",
+    #  "lastupdate":now,
+    #  "data":
+    #    {
+    #     "status": "waiting",", 
+    #     "tickettype": "A",
+    #     "ticketnumber": "012",
+    #     }
+    # }
+    context = None
+    str_now = '--:--'
+    datetime_now =timezone.now()
+    datetime_now_local = funUTCtoLocal(datetime_now, counterstatus.countertype.branch.timezone)
+    str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
+    if counterstatus.tickettemp is None:
+        json_tx = {
+            'cmd': 'cs',
+            'lastupdate': str_now,
+            'data': {
+                'status' : counterstatus.status,
+                'tickettype' : '',
+                'ticketnumber' : '',            
+                }
+        }
+    else:
+        json_tx = {
+            'cmd': 'cs',
+            'lastupdate': str_now,
+            'data': {
+                'status' : counterstatus.status,
+                'tickettype' : counterstatus.tickettemp.tickettype,
+                'ticketnumber' : counterstatus.tickettemp.ticketnumber,            
+                }
+        }
+    str_tx = json.dumps(json_tx)
+
+    context = {
+    'type':'broadcast_message',
+    'tx': str_tx,
+    }
+    
+    channel_layer = get_channel_layer()
+    channel_group_name = 'cs_' + str(counterstatus.id)
+    print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+    try:
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        print('...Done')
+    except Exception as e:
+        print('...Error:'),
+        print(e)
+
+   
 def wsrochesms(bcode, tel, msg):
     # {"cmd":"sms",
     #  "data":
@@ -303,6 +356,7 @@ def wssendprinterstatus(bcode):
     # }
     error = ''
     branch = None
+    str_now = '--:--'
 
     if error == '' :
         if bcode == '':
@@ -312,6 +366,9 @@ def wssendprinterstatus(bcode):
         branchobj = Branch.objects.filter( Q(bcode=bcode) )
         if branchobj.count() == 1:
             branch = branchobj[0]
+            datetime_now = timezone.now()
+            datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+            str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
         else :
             error = 'Branch not found.'
 
@@ -319,6 +376,7 @@ def wssendprinterstatus(bcode):
         printerstatuslist = PrinterStatus.objects.filter( Q(branch=branch) ).order_by('-updated')
         PSserializers  = printerstatusSerivalizer(printerstatuslist, many=True)
         jsontx = {
+            "lastupdate":str_now,
             "cmd":"ps",
             "data": "<printerstatus>"
             }

@@ -9,4 +9,5 @@ websocket_urlpatterns = [
     re_path(r'ws/tstatus/(?P<bcode>\w+)/(?P<ttype>\w+)/(?P<tno>\w+)/(?P<sc>\w+)/$', consumers.TicketStatusConsumer.as_asgi()),
     re_path(r'ws/voice/(?P<bcode>\w+)/(?P<ct>\w+)/$', consumers.VoiceConsumer.as_asgi()),
     re_path(r'ws/sms/(?P<bcode>\w+)/$', consumers.SMSConsumer.as_asgi()),
+    re_path(r'ws/cs/(?P<pk>\w+)/$', consumers.CounterStatusConsumer.as_asgi()),
 ]
