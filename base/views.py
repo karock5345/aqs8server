@@ -66,6 +66,13 @@ def SoftkeyView(request, pk):
         status, msg, context_counter = funCounterLogin(datetime_now, request.user, counterstatus.countertype.branch, counterstatus, counterstatus.counternumber, counterstatus.countertype)
         if status['status'] == 'Error':
             error = msg['msg']
+    if error == '':
+        trobj = TicketRoute.objects.filter(Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype))
+        for tr in trobj:
+            context_tr = {
+                'tickettype' : tr.tickettype,
+            
+            }
 
     if error == '':
         printerobj = PrinterStatus.objects.filter(Q(branch=counterstatus.countertype.branch))
