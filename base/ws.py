@@ -407,6 +407,7 @@ def wssendprinterstatus(bcode):
 
 def wssendql(bcode, countertypename, ticket, cmd):
     # {"cmd":"add",
+    #  "lastupdate":now,
     #  "data":
     #    {
     #     "tickettype": "A", 
@@ -416,7 +417,9 @@ def wssendql(bcode, countertypename, ticket, cmd):
     # }
     context = None
     error = ''
-    str_now = '---'
+    str_now = '--:--'
+    datetime_now =timezone.now()
+
 
     branch = None
     if error == '' :        
@@ -438,6 +441,8 @@ def wssendql(bcode, countertypename, ticket, cmd):
             ctypeobj = CounterType.objects.filter( Q(branch=branch) & Q(name=countertypename) )
         if (ctypeobj.count() > 0) :
             countertype = ctypeobj[0]
+            datetime_now_local = funUTCtoLocal(datetime_now, countertype.branch.timezone)
+            str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
         else :
             error = 'Counter Type not found.' 
 
@@ -459,12 +464,14 @@ def wssendql(bcode, countertypename, ticket, cmd):
             except:
                 stickettime = 'error'
 
-        json_tx = {'cmd': cmd,
+        json_tx = {
+            'cmd': cmd,
+            'lastupdate': str_now,
             'data': {
-            'tickettype' : ticket.tickettype,
-            'ticketnumber' : ticket.ticketnumber,
-            'tickettime' : stickettime,
-            }
+                'tickettype' : ticket.tickettype,
+                'ticketnumber' : ticket.ticketnumber,
+                'tickettime' : stickettime,
+                }
         }
         str_tx = json.dumps(json_tx)
 

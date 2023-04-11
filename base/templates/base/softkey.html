@@ -137,14 +137,26 @@
           </div>
 
           <div class="subtotal_container" id="subtotal_area">
-            <div id="subtotal_A" class="subtotal_div">
-              <div class="subtotal_ttype">A</div>
-              <div class="subtotal_des">
-                <div class="subtotal_lang1">Enquiry</div>
-                <div class="subtotal_lang2">詢問</div>
+            {% for sub in subtotal %}
+              <div id="subtotal_{{sub.tickettype}}" class="subtotal_div">
+                <div class="subtotal_ttype">
+                  <div class="subtotal_ttype_text">
+                    {{sub.tickettype}}
+                  </div>
+                </div>
+                <div class="subtotal_des">
+                  <div class="subtotal_lang">{{sub.lang1}}</div>
+                  <div class="subtotal_lang">{{sub.lang2}}</div>
+                </div>
+                <div class="subtotal_total">
+                  <div class="subtotal_total_text">
+                    {{sub.wait}}
+                  </div>
+                </div>
               </div>
-              <div class="subtotal_total">9</div>
-            </div>
+            {% endfor %}
+
+
           </div>
 
 

@@ -67,12 +67,36 @@ def SoftkeyView(request, pk):
         if status['status'] == 'Error':
             error = msg['msg']
     if error == '':
+        context_tr = []
         trobj = TicketRoute.objects.filter(Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype))
+        print(trobj.count())
         for tr in trobj:
-            context_tr = {
-                'tickettype' : tr.tickettype,
+            lang1 = ''
+            lang2 = ''
+            try :
+                ticketformat = TicketFormat.objects.get(ttype=tr.tickettype , branch=counterstatus.countertype.branch)
+                lang1 = ticketformat.touchkey_lang1
+                lang2 = ticketformat.touchkey_lang2
+            except:
+                error = 'TicketFormat not found (in find TicketRoute.waiting).'
             
+            # dict add to list
+            newrow = {
+                'tickettype' : tr.tickettype,
+                'lang1' : lang1,
+                'lang2' : lang2,
+                'wait' : tr.waiting,                
             }
+            # context_tr = context_tr + {
+            #     'tickettype' : tr.tickettype,
+            #     'lang1' : lang1,
+            #     'lang2' : lang2,
+            #     'wait' : tr.waiting,                
+            # }
+            context_tr.append(newrow)
+
+
+            print (context_tr)
 
     if error == '':
         printerobj = PrinterStatus.objects.filter(Q(branch=counterstatus.countertype.branch))
@@ -125,8 +149,9 @@ def SoftkeyView(request, pk):
         context = context | {'pk':pk}
         context = context | {'printerstatus': printerobj}
         context = context | {'wsh' : wsHypertext}
+        context = context | {'subtotal' : context_tr}
         context_login[pk] = context
-
+        print(context_tr)
         return render(request, 'base/softkey.html', context)
         # pass
     else:
