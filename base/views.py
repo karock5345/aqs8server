@@ -13,7 +13,7 @@ from base.decorators import *
 # from django.urls import reverse_lazy
 
 from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch
-from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, CaptchaForm, getForm
+from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, CaptchaForm, getForm, voidForm
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
@@ -81,22 +81,23 @@ def SoftkeyView(request, pk):
                 error = 'TicketFormat not found (in find TicketRoute.waiting).'
             
             # dict add to list
+            userttype = False
+            if context_counter['data']['userttype'].find(tr.tickettype) != -1:
+                userttype = True
             newrow = {
                 'tickettype' : tr.tickettype,
                 'lang1' : lang1,
                 'lang2' : lang2,
-                'wait' : tr.waiting,                
+                'wait' : tr.waiting,
+                'userttype' : userttype,             
             }
-            # context_tr = context_tr + {
-            #     'tickettype' : tr.tickettype,
-            #     'lang1' : lang1,
-            #     'lang2' : lang2,
-            #     'wait' : tr.waiting,                
-            # }
             context_tr.append(newrow)
 
+    if error == '':
+        ticketlist = TicketTemp.objects.filter( Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) & Q(locked=False))
+        serializers  = waitinglistSerivalizer(ticketlist, many=True)
+        context_ql = serializers.data
 
-            print (context_tr)
 
     if error == '':
         printerobj = PrinterStatus.objects.filter(Q(branch=counterstatus.countertype.branch))
@@ -139,6 +140,22 @@ def SoftkeyView(request, pk):
                 status, msg = funCounterComplete(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Done ticket :', 'Softkey-web', softkey_version, datetime_now)
             elif action == 'miss':
                 status, msg = funCounterMiss(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Miss ticket :', 'Softkey-web', softkey_version, datetime_now)
+            elif action == 'void':
+                voidform = voidForm(request.POST)
+                voidttype = voidform['tickettype'].value()
+                voidtno = voidform['ticketnumber'].value()
+                voidttime = voidform['tickettime'].value()
+                try:
+                    tt = TicketTemp.objects.get(Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(tickettype=voidttype) & Q(ticketnumber=voidtno) & Q(tickettime=voidttime))
+                except:
+                    messages.error(request, 'TicketTemp not found.')
+                    return redirect('softkey', pk=pk)
+                try:
+                    td = TicketData.objects.get(Q(tickettemp=tt))
+                except:
+                    messages.error(request, 'TicketData not found.')
+                    return redirect('softkey', pk=pk)
+                funVoid(request.user,tt, td, datetime_now)
             elif action == None :
                 pass
             return redirect('softkey', pk=pk)
@@ -150,8 +167,9 @@ def SoftkeyView(request, pk):
         context = context | {'printerstatus': printerobj}
         context = context | {'wsh' : wsHypertext}
         context = context | {'subtotal' : context_tr}
-        context_login[pk] = context
-        print(context_tr)
+        context = context | {'qlist' : context_ql}
+        # context_login[pk] = context
+        # print(context_tr)
         return render(request, 'base/softkey.html', context)
         # pass
     else:

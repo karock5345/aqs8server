@@ -67,4 +67,8 @@ class trForm(ModelForm):
 
 class getForm(forms.Form):
     ticketnumber = forms.CharField(label='Ticket Number', max_length=100)
-        
+
+class voidForm(forms.Form):
+    tickettype = forms.CharField(label='Ticket Type', max_length=100)
+    ticketnumber = forms.CharField(label='Ticket Number', max_length=100)
+    tickettime = forms.DateField(label='Ticket Time')

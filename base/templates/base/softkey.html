@@ -4,13 +4,15 @@
     <main class="layout layout--2">
       <div class="container">
         <!-- Topics Start -->
+
         {% include 'base/menu.html' %}        
+        
         <!-- Topics End -->
 
         <!-- Room List Start -->
         <div class="roomList">
-          <div class="mobile-menu">
-            <form class="header__search" action="{% url 'home' %}" method="GET">
+          <div id="id_mobile-menu" class="mobile-menu">
+            <form class="mobile-header__search" action="{% url 'home' %}" method="GET" >
               <label>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                   <title>search</title>
@@ -31,12 +33,16 @@
           <div class="roomList__header">
             <div>
                 <h2>Softkey - Counter {{ data.counternumber }} ({{ data.countertype }})</h2>
-                <h3>Branch : {{ data.branch }} </h3>
-                
+                <h3>Branch : {{ data.branch }} </h3>                
+            </div>
+            <div class="lastupdate_div" >
+              <div class="max" >
+                <button id="btn_max" class="btn btn--main btn--pill ">Max</button>
               </div>
-              <p id="lastupdate">Last update : {{ lastupdate }}</p>
+              <p class="lastupdate" id="lastupdate">Last update : {{ lastupdate }}</p>   
+            </div>
           </div>
-                     
+              
           <div class="softkey_login">
             Login : {{ data.name }} 
           </div>
@@ -50,14 +56,14 @@
             <div id="call_menu">
               <div class="softkey_call_container">
                 <!-- form no style -->
-                <form  action="" method="POST">
+                <form class="softkey_form" action="" method="POST">
                   {% csrf_token %}
                   <button type="submit" name="action" value="call" class="softkey_btn btn--main">Call</button>
                 </form>
-                <div>
+                <div class="softkey_form">
                   <button id="get_btn" class="softkey_btn btn--main">Get</button>
                 </div>
-                <div>
+                <div class="softkey_form">
                   <a class="softkey_btn btn--del" href="{% url 'softkeylogout' pk %}">Logout</a>
                 </div>  
               </div>            
@@ -106,7 +112,7 @@
                     <div class="layout__body">
                       <div class="form__group">
                         <label for="ticketnumber">Input ticket number :</label>
-                        <input type="text" name="ticketnumber" name="ticketnumber" value="">
+                        <input type="text" name="ticketnumber" value="">
                       </div>
                       <div class="form__action">
                         <button type="submit" name="action" value="submit" class="softkey_btn softkey_btn--submit btn--main" >Get</button>
@@ -124,13 +130,13 @@
               {% if printer.status == "<P_FINE>" %}
                 <div></div>
               {% elif printer.status == "<P_NEAREND>" %}
-                <div class="printer_nearend_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
+                <div class="softkey_status_text printer_nearend_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
               {% elif printer.status == "<P_END>" %}
-                <div class="printer_end_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
+                <div class="softkey_status_text printer_end_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
               {% elif printer.status == "<OPEN>" %}
-                <div class="printer_open_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
+                <div class="softkey_status_text printer_open_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
               {% else %}
-                <div class="printer_ready_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
+                <div class="softkey_status_text printer_ready_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
               {% endif %}
               </div> 
             {% endfor%}
@@ -138,7 +144,7 @@
 
           <div class="subtotal_container" id="subtotal_area">
             {% for sub in subtotal %}
-              <div id="subtotal_{{sub.tickettype}}" class="subtotal_div">
+              <div class="subtotal_div">
                 <div class="subtotal_ttype">
                   <div class="subtotal_ttype_text">
                     {{sub.tickettype}}
@@ -148,18 +154,51 @@
                   <div class="subtotal_lang">{{sub.lang1}}</div>
                   <div class="subtotal_lang">{{sub.lang2}}</div>
                 </div>
-                <div class="subtotal_total">
-                  <div class="subtotal_total_text">
-                    {{sub.wait}}
+                {% if sub.userttype == True %}
+                  <div class="subtotal_total subtotal_total_green">
+                    <div id="subtotal_{{sub.tickettype}}" class="subtotal_total_text subtotal_total_text_green">
+                      {{sub.wait}}
+                    </div>
                   </div>
-                </div>
+                {% else %}
+                  <div class="subtotal_total">
+                    <div id="subtotal_{{sub.tickettype}}" class="subtotal_total_text">
+                      {{sub.wait}}
+                    </div>
+                  </div>
+                {% endif %}
               </div>
             {% endfor %}
-
-
           </div>
 
+          <div id="qlshow_header" class="qlist_item qlist_header">              
+            <button id="qlistshow_btn" class="btn btn--main btn--pill">Show list</button>
+          </div>
+          <div id="qlhide_header" class="qlist_item qlist_header">              
+            <button id="qlisthide_btn" class="btn btn--main btn--pill">Hide list</button>
+          </div>          
+          <div id="qlist_area" class="qlist_container">       
+            {% for ticket in qlist %}
+              <div id="ticket_{{ticket.tickettype}}{{ticket.ticketnumber}}{{ticket.tickettime}}" class="qlist_item">
+                <div class="qlist_ticketnumber">{{ticket.tickettype}}{{ticket.ticketnumber}}</div>
+                <div class="qlist_tickettime">{{ticket.tickettime}}</div>
 
+                <form class="form" action="" method="POST" >
+                  {% csrf_token %}
+                  <input type="hidden" name="tickettype" value={{ticket.tickettype}} >
+                  <input type="hidden" name="ticketnumber" value={{ticket.ticketnumber}} >
+                  <input type="hidden" name="tickettime" value={{ticket.tickettime}} >
+                  <div class="form__action">
+                    <button type="submit" name="action" value="void" class="btn btn--del">Void</button>
+                  </div>
+                </form>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="qlist_item qlist_footer">
+              
+          </div>
 
 
         </div>
@@ -171,20 +210,93 @@
       {{ wsh|json_script:"js-wsh" }}
       {{ pk|json_script:"js-pk" }}
       {{ data.bcode|json_script:"js-bcode" }}
+      {{ data.countertype|json_script:"js-countertype"}}
       {{ data.tickettype|json_script:"js-tickettype" }}
       {{ data.ticketnumber|json_script:"js-ticketnumber" }}
       <script>
         const c_wsh = JSON.parse(document.getElementById('js-wsh').textContent);
         const c_pk = JSON.parse(document.getElementById('js-pk').textContent);
         const c_bcode = JSON.parse(document.getElementById('js-bcode').textContent);
+        const c_ct = JSON.parse(document.getElementById('js-countertype').textContent);
         const c_counterstatus = JSON.parse(document.getElementById('js-counterstatus').textContent);
         const c_ttype = JSON.parse(document.getElementById('js-tickettype').textContent);
         const c_tno = JSON.parse(document.getElementById('js-ticketnumber').textContent);
-        var btn = document.getElementById('get_btn');
+        var btn_get = document.getElementById('get_btn');
         var get_back = document.getElementById('get_back');
         var get_area_html = document.getElementById('get_area').innerHTML;
         var hidden = true;
+        var listshow = null;
+        var btn_listshow = document.getElementById('qlistshow_btn');
+        var btn_listhide = document.getElementById('qlisthide_btn');
+        var btn_max = document.getElementById('btn_max');
+        var maxwin = null;
+        var html_m_menu = document.getElementById('id_mobile-menu').innerHTML;
+        var html_menu = document.getElementById('id_menu').innerHTML;
+        // 
+        maxwin = localStorage.getItem("key_maxwin");
+        if (maxwin == null) {
+          maxwin = "normal";
+        }
+        maxwinfunc();
 
+        function maxwinfunc(){
+          
+          if (maxwin == "max") {
+            btn_max.innerHTML = "Back";
+            document.getElementById('id_menu').setAttribute("hidden", "hidden")
+            document.getElementById('id_mobile-menu').innerHTML = "";
+            document.getElementById('id_navbar').style.display = "none";
+          } else {
+            btn_max.innerHTML = "Max";
+            document.getElementById('id_menu').removeAttribute("hidden")
+            document.getElementById('id_mobile-menu').innerHTML = html_m_menu;
+            document.getElementById('id_navbar').style.display = "block";
+          }
+          localStorage.setItem("key_maxwin", maxwin);
+        }
+
+        btn_max.addEventListener('click', function() {
+          maxwin = localStorage.getItem("key_maxwin");
+          if (maxwin == "normal") {
+            maxwin = "max";
+          } else {
+            maxwin = "normal";
+          }
+          maxwinfunc();
+        });
+
+
+
+        // var can hold data when refresh page
+        listshow = localStorage.getItem("key_listshow");
+        if (listshow == null) {
+          listshow = "show";
+        }
+        showorhideqlist();
+
+        btn_listhide.addEventListener('click', function() {
+          listshow = "hide";
+          showorhideqlist();
+        });
+        btn_listshow.addEventListener('click', function() {
+          listshow = "show";
+          showorhideqlist();
+        });
+  
+        function showorhideqlist(){
+          if (listshow == "hide") {
+            document.getElementById('qlist_area').style.display = "none";
+            document.getElementById('qlhide_header').style.display = "none";
+            document.getElementById('qlshow_header').style.display = "block";
+            // document.getElementById('qlshow_header').hidden = false; why not work?
+
+          } else {
+            document.getElementById('qlist_area').style.display = "block";
+            document.getElementById('qlhide_header').style.display = "block";
+            document.getElementById('qlshow_header').style.display = "none";
+          }
+          localStorage.setItem("key_listshow", listshow);
+        }
         // new funcition to change the status (input status, ticket type, ticket number)
         function changeStatus(status, ttype, tno) {
           document.getElementById('call_menu').hidden = true;
@@ -210,7 +322,7 @@
         //  javascript Button "Get" show or hidden html id="get_area" 
         document.getElementById('get_area').innerHTML = '';
 
-        btn.addEventListener('click', function() {
+        btn_get.addEventListener('click', function() {
           if (hidden) {
             document.getElementById('get_area').innerHTML = get_area_html;
             hidden = false;
@@ -270,13 +382,13 @@
                     if (status == "<P_FINE>") {
                         document.getElementById("Printer_" + pno).innerHTML = '';
                     } else if (status == "<P_NEAREND>") {
-                        document.getElementById("Printer_" + pno).innerHTML = '<div class="printer_nearend_text typewriter">' + pno + ' : ' + statustext + '</div>';
+                        document.getElementById("Printer_" + pno).innerHTML = '<div class="softkey_status_text printer_nearend_text typewriter">' + pno + ' : ' + statustext + '</div>';
                     } else if (status == "<P_END>") {
-                        document.getElementById("Printer_" + pno).innerHTML = '<div class="printer_end_text typewriter">' + pno + ' : ' + statustext + '</div>';
+                        document.getElementById("Printer_" + pno).innerHTML = '<div class="softkey_status_text printer_end_text typewriter">' + pno + ' : ' + statustext + '</div>';
                     } else if (status == "<OPEN>") {
-                        document.getElementById("Printer_" + pno).innerHTML = '<div class="printer_open_text typewriter">' + pno + ' : ' + statustext + '</div>';
+                        document.getElementById("Printer_" + pno).innerHTML = '<div class="softkey_status_text printer_open_text typewriter">' + pno + ' : ' + statustext + '</div>';
                     } else {
-                        document.getElementById("Printer_" + pno).innerHTML = '<div class="printer_ready_text typewriter">' + pno + ' : ' + statustext + '</div>';
+                        document.getElementById("Printer_" + pno).innerHTML = '<div class="softkey_status_text printer_ready_text typewriter">' + pno + ' : ' + statustext + '</div>';
                     }
                 }
             }        
@@ -326,6 +438,83 @@
             console.error('CounterStatus socket closed unexpectedly');
         };
 
+
+        // websocket for Q list
+        const QListSocket = new WebSocket(
+            c_wsh
+            + window.location.host
+            + '/ws/ql/'
+            + c_bcode
+            + '/'
+            + c_ct
+            + '/'
+        );
+        QListSocket.onmessage = function(e) {
+            // # {"cmd":"add",
+            // #  "lastupdate":now,
+            // #  "data":
+            // #    {
+            // #     "tickettype": "A", 
+            // #     "ticketnumber": "012",
+            // #     "tickettime": "2023-03-17T15:06:53.337639Z",
+            // #     }
+            // # }
+            // console.log('Received data:', e.data);
+            const rxdata = JSON.parse(e.data);
+            // console.log('Parsed data:', data);
+            // document.querySelectorAll(".status > .vertical-center")[0].innerHTML = data.lastupdate;
+            var last = rxdata.lastupdate;
+            document.getElementById("lastupdate").innerHTML = 'Last update : ' + last;
+
+            var cmd = rxdata.cmd;
+            if (cmd == 'add' || cmd == 'del'); {
+                const data = rxdata.data;                
+                var ttype = data.tickettype;
+                var tno = data.ticketnumber;
+                var ttime = data.tickettime;
+
+                // check cmd add or del
+                var subtotal = 0;
+                if (cmd == 'add') {
+                  // 
+                  subtotal = 1;
+                  // add to list
+                  document.getElementById("qlist_area").innerHTML = document.getElementById("qlist_area").innerHTML + 
+                  `
+                  <div id="ticket_` + ttype + tno + ttime + `" class="qlist_item">
+                    <div class="qlist_ticketnumber">` + ttype + tno + `</div>
+                    <div class="qlist_tickettime">` + ttime + `</div>`
+                    + `<form action="" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="tickettype" value="` + ttype + `">
+                        <input type="hidden" name="ticketnumber" value="` + tno + `">
+                        <input type="hidden" name="tickettime" value="` + ttime + `">
+                        <div class="form__action">
+                          <button type="submit" name="action" value="void" class="btn btn--del">Void</button>
+                        </div>
+                      </form>
+                  </div>
+                  `
+
+                } else if (cmd == 'del') {
+                  subtotal = -1;
+                  // remove from list
+                  document.getElementById("ticket_" + ttype + tno + ttime).outerHTML = '';
+                }
+                
+                // update subtotal
+                var s_sub = document.getElementById("subtotal_" + ttype).innerHTML;
+                var i_sub = parseInt(s_sub);
+                i_sub = i_sub + subtotal;
+                document.getElementById("subtotal_" + ttype).innerHTML = i_sub;
+              }
+            
+        };
+        QListSocket.onclose = function(e) {
+            console.error('Q List socket closed unexpectedly');
+        };
+
+
       </script>
 
     </main>
@@ -336,14 +525,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-  

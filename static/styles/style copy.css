@@ -320,12 +320,21 @@ a {
   gap: 1rem;
 }
 
-@media screen and (min-width: 900px) {
-  .mobile-menuItems {
+@media screen and (min-width: 500px) {
+  .mobile-menu {
     display: none;
   }
 }
-
+@media screen and (max-width: 500px) {
+  .layout--2 > .container > div:first-child {
+    flex-basis: 0%;
+  }
+  
+  .layout--2 > .container > div:last-child {
+    flex-basis: 100%;
+}
+  
+}
 /*==============================
 =>  Header Section
 ================================*/
@@ -358,8 +367,7 @@ a {
   color: var(--color-light);
 }
 
-.header__search > label, 
-.mobile-header__search > label {
+.header__search > label {
   background-color: var(--color-dark-medium);
   padding: 1.3rem 1rem;
   display: flex;
@@ -368,16 +376,14 @@ a {
   border-radius: 4px;
 }
 
-.header__search svg,
-.mobile-header__search svg {
+.header__search svg {
   fill: var(--color-gray);
   width: 2rem;
   height: 2rem;
   margin-left: 1rem;
 }
 
-.header__search input,
-.mobile-header__search input {
+.header__search input {
   width: 30rem;
   background: transparent;
   border: none;
@@ -402,20 +408,9 @@ a {
 }
 
 @media screen and (max-width: 500px) {
-  .mobile-header__search {
-    display: block;
-  }
-
   .header__search {
     display: none;
   }
-}
-@media screen and (min-width: 500px) {
-  .mobile-header__search {
-    display: none;
-  }
-
-
 }
 
 .header__menu {
@@ -498,6 +493,7 @@ a {
 .layout--2 > .container > div:last-child {
   flex-basis: 72%;
 }
+
 /*========== Layout Box ==========*/
 .layout__box {
   width: 90%;
@@ -706,13 +702,19 @@ a {
   display: block;
 }
 
-@media screen and (max-width: 500px) {
-  .mobile-menu .header__search {
+@media screen and (max-width: 900px) {
+  .mobile-menu {
     display: block;
     margin-bottom: 2.4rem;
   }
 }
 
+@media screen and (max-width: 500px) {
+  .header__search {
+    display: block;
+    margin-bottom: 2.4rem;
+  }
+}
 /*==============================
 =>  Room List
 ================================*/
@@ -724,7 +726,6 @@ a {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2.4rem;
-  /* margin-top: -4rem; */
 }
 
 .roomList__header h2 {
@@ -1337,7 +1338,6 @@ color: white;
   color: var(--color-light);
   background-color: var(--color-dark);
   font-family: helvetica;
-
 }
 .softkey_call_container{
   display: flex;
@@ -1356,44 +1356,32 @@ color: white;
     flex-direction: column;
     align-items: center;
   }
+  .softkey_call_container > .div {
+    padding: 1rem;
+    width: 100%;
+  }
 }
 .printer_ready_text {
-  text-align: center;
-  width: 100%;
-  min-height: 3.2rem;
-  font-size: 2rem;
   color: var(--color-ready);
-  background-color: var(--color-dark);
-  font-family: helvetica;
 }
 .printer_end_text {
-  text-align: center;
-  width: 100%;
-  min-height: 3.2rem;
-  font-size: 2rem;
   color: var(--color-error);
-  background-color: var(--color-dark);
-  font-family: helvetica;
 }
 .printer_nearend_text {
-  text-align: center;
-  width: 100%;
-  min-height: 3.2rem;
-  font-size: 2rem;
   color: var(--color-nearend);
-  background-color: var(--color-dark);
-  font-family: helvetica;
 }
 .printer_open_text {
+  color: var(--color-open);
+}
+/* .softkey_status_text {
   text-align: center;
   width: 100%;
   min-height: 3.2rem;
   font-size: 2rem;
-  color: var(--color-open);
+  color: var(--color-light);
   background-color: var(--color-dark);
   font-family: helvetica;
-}
-
+} */
 /* DEMO-SPECIFIC STYLES */
 .typewriter  {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -1576,8 +1564,5 @@ color: white;
 .lastupdate {
   /* align to right side */
   text-align: right;  
-}
 
-.softkey_form {
-  width: 100%;
 }

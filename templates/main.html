@@ -13,8 +13,10 @@
   </head>
 
   <body>
-
-    {% include 'navbar.html' %}
+    <div id="id_navbar">
+      {% include 'navbar.html' %}
+    </div>
+    
 
     {% if messages %}
     <ul class="messages">
@@ -34,3 +36,6 @@
   <!-- # Django auto logout (4) -->
   {{ redirect_to_login_immediately }}
 </html>
+
+
+

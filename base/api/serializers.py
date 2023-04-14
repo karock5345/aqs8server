@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
 from base.models import Branch, DisplayAndVoice, PrinterStatus, Ticket, TicketRoute, TicketTemp
-# from .views import funUTCtoLocal
+# from base.api.views import funUTCtoLocal
 # from django.contrib.auth.models import User
 
 # class webdisplaylistSerivalizer(ModelSerializer):
@@ -22,12 +22,13 @@ from base.models import Branch, DisplayAndVoice, PrinterStatus, Ticket, TicketRo
 
 
 class waitinglistSerivalizer(ModelSerializer):
-    bcode = serializers.CharField(source='branch.bcode')
+    # bcode = serializers.CharField(source='branch.bcode')
     # localt = serializers.DateTimeField(source='tickettime')
-    # localt = funUTCtoLocal(localt)
+    # tickettime_local = funUTCtoLocal(localt,'Asia/HongKong')
+    # tickettime_local = tickettime_local.strftime('%Y-%m-%d %H:%M:%S')
     class Meta:
         model = TicketTemp
-        fields = ('tickettype', 'ticketnumber', 'bcode', 'tickettime')
+        fields = ('tickettype', 'ticketnumber', 'tickettime', 'id')
         
 class branchSerivalizer(ModelSerializer):
     class Meta:
@@ -125,3 +126,7 @@ class lastDisplaySerivalizer(ModelSerializer):
 #         user = User.objects.create_user(validated_data['username'], validated_data['email'], validated_data['password'])
 
 #         return user        
+
+
+
+

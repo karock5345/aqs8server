@@ -1222,7 +1222,7 @@ def getCounterWaitingList(request):
 #    "msg":"Ticket route not found",
 #    "servertime": "2022-06-16T07:13:44.724232Z"
 #    "data":[
-#         {"ticket":"A001","tickettime":"2022-11-30","i":"1"}   
+#         { "tickettype": "A", "ticketnumber": "001", "tickettime":"2022-11-30","bcode":"KB"}   
 #    ]
 # }
     status = dict({})
