@@ -22,10 +22,7 @@ from base.models import Branch, DisplayAndVoice, PrinterStatus, Ticket, TicketRo
 
 
 class waitinglistSerivalizer(ModelSerializer):
-    # bcode = serializers.CharField(source='branch.bcode')
-    # localt = serializers.DateTimeField(source='tickettime')
-    # tickettime_local = funUTCtoLocal(localt,'Asia/HongKong')
-    # tickettime_local = tickettime_local.strftime('%Y-%m-%d %H:%M:%S')
+
     class Meta:
         model = TicketTemp
         fields = ('tickettype', 'ticketnumber', 'tickettime', 'id')

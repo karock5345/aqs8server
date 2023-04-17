@@ -40,6 +40,33 @@ except:
 context_login = {}
 
 @unauth_user
+def Softkey_VoidView(request, pk, ttid):
+    context = {}
+    datetime_now =timezone.now()
+    try:
+        tt = TicketTemp.objects.get(id=ttid)
+        datetime_now_local = funUTCtoLocal(datetime_now, tt.branch.timezone)
+        str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
+    except:
+        messages.error(request, 'TicketTemp not found.')
+        return redirect('softkey', pk=pk)
+    try:
+        td = TicketData.objects.get(Q(tickettemp=tt))
+    except:
+        messages.error(request, 'TicketData not found.')
+        return redirect('softkey', pk=pk)
+    context = {'tt':tt}
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        if action == 'confirm':           
+            funVoid(request.user, tt, td, datetime_now)
+            messages.success(request, 'Ticket ' + tt.tickettype + tt.ticketnumber + ' has been voided.')
+            return redirect('softkey', pk=pk)
+    return render(request , 'base/softkey_void.html', context)
+    
+
+
+@unauth_user
 def SoftkeyView(request, pk):
     context = {}
     context_counter = {}
@@ -94,10 +121,15 @@ def SoftkeyView(request, pk):
             context_tr.append(newrow)
 
     if error == '':
-        ticketlist = TicketTemp.objects.filter( Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) & Q(locked=False))
-        serializers  = waitinglistSerivalizer(ticketlist, many=True)
+        ticketlist = TicketTemp.objects.filter( Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) & Q(locked=False))       
+        serializers  = waitinglistSerivalizer(ticketlist, many=True)       
         context_ql = serializers.data
-
+        # add new column to context_ql (tickettime_local)
+        for i in range(len(context_ql)):
+            # convert string context_ql[i]['tickettime'] to datetime
+            utctt = datetime.strptime(context_ql[i]['tickettime'], '%Y-%m-%dT%H:%M:%S.%fZ')
+            context_ql[i]['tickettime_local'] = funUTCtoLocal(utctt, counterstatus.countertype.branch.timezone)
+            context_ql[i]['tickettime_local'] = context_ql[i]['tickettime_local'].strftime('%H:%M:%S %Y-%m-%d')
 
     if error == '':
         printerobj = PrinterStatus.objects.filter(Q(branch=counterstatus.countertype.branch))
@@ -140,22 +172,23 @@ def SoftkeyView(request, pk):
                 status, msg = funCounterComplete(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Done ticket :', 'Softkey-web', softkey_version, datetime_now)
             elif action == 'miss':
                 status, msg = funCounterMiss(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Miss ticket :', 'Softkey-web', softkey_version, datetime_now)
-            elif action == 'void':
-                voidform = voidForm(request.POST)
-                voidttype = voidform['tickettype'].value()
-                voidtno = voidform['ticketnumber'].value()
-                voidttime = voidform['tickettime'].value()
-                try:
-                    tt = TicketTemp.objects.get(Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(tickettype=voidttype) & Q(ticketnumber=voidtno) & Q(tickettime=voidttime))
-                except:
-                    messages.error(request, 'TicketTemp not found.')
-                    return redirect('softkey', pk=pk)
-                try:
-                    td = TicketData.objects.get(Q(tickettemp=tt))
-                except:
-                    messages.error(request, 'TicketData not found.')
-                    return redirect('softkey', pk=pk)
-                funVoid(request.user,tt, td, datetime_now)
+            # elif action == 'void':
+            #     voidform = voidForm(request.POST)
+            #     voidttype = voidform['tickettype'].value()
+            #     voidtno = voidform['ticketnumber'].value()
+            #     voidttime = voidform['tickettime'].value()
+            #     try:
+            #         tt = TicketTemp.objects.get(Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(tickettype=voidttype) & Q(ticketnumber=voidtno) & Q(tickettime=voidttime))
+            #     except:
+            #         messages.error(request, 'TicketTemp not found.')
+            #         return redirect('softkey', pk=pk)
+            #     try:
+            #         td = TicketData.objects.get(Q(tickettemp=tt))
+            #     except:
+            #         messages.error(request, 'TicketData not found.')
+            #         return redirect('softkey', pk=pk)
+            #     # funVoid(request.user,tt, td, datetime_now)
+            #     render(request, '')
             elif action == None :
                 pass
             return redirect('softkey', pk=pk)

@@ -56,7 +56,8 @@ urlpatterns = [
     path('softkey_done/<str:pk>/', views.SoftkeyDoneView,  name='softkeydone'),
     path('softkey_miss/<str:pk>/', views.SoftkeyMissView,  name='softkeymiss'),
     path('softkey_recall/<str:pk>/', views.SoftkeyRecallView,  name='softkeyrecall'),
-
+    path('softkey_void/<str:pk>/<str:ttid>/', views.Softkey_VoidView,  name='softkeyvoid'),
+    
     # for Hypic
     path('repair/', views.repair ),
 ]

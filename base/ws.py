@@ -412,7 +412,8 @@ def wssendql(bcode, countertypename, ticket, cmd):
     #    {
     #     "tickettype": "A", 
     #     "ticketnumber": "012",
-    #     "tickettime": "2023-03-17T15:06:53.337639Z"
+    #     "tickettime": "2023-03-17T15:06:53.337639Z",
+    #     "ttid": 1,
     #     }
     # }
     context = None
@@ -463,6 +464,8 @@ def wssendql(bcode, countertypename, ticket, cmd):
                 stickettime = ticket.tickettime.strftime('%Y-%m-%dT%H:%M:%SZ')
             except:
                 stickettime = 'error'
+        tickettime_local = funUTCtoLocal(ticket.tickettime, ticket.branch.timezone)
+        tickettime_local = tickettime_local.strftime('%H:%M:%S %Y-%m-%d')
 
         json_tx = {
             'cmd': cmd,
@@ -471,6 +474,8 @@ def wssendql(bcode, countertypename, ticket, cmd):
                 'tickettype' : ticket.tickettype,
                 'ticketnumber' : ticket.ticketnumber,
                 'tickettime' : stickettime,
+                'tickettime_local' : tickettime_local,
+                'ttid' : ticket.id,
                 }
         }
         str_tx = json.dumps(json_tx)

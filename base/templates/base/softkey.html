@@ -181,17 +181,8 @@
             {% for ticket in qlist %}
               <div id="ticket_{{ticket.tickettype}}{{ticket.ticketnumber}}{{ticket.tickettime}}" class="qlist_item">
                 <div class="qlist_ticketnumber">{{ticket.tickettype}}{{ticket.ticketnumber}}</div>
-                <div class="qlist_tickettime">{{ticket.tickettime}}</div>
-
-                <form class="form" action="" method="POST" >
-                  {% csrf_token %}
-                  <input type="hidden" name="tickettype" value={{ticket.tickettype}} >
-                  <input type="hidden" name="ticketnumber" value={{ticket.ticketnumber}} >
-                  <input type="hidden" name="tickettime" value={{ticket.tickettime}} >
-                  <div class="form__action">
-                    <button type="submit" name="action" value="void" class="btn btn--del">Void</button>
-                  </div>
-                </form>
+                <div class="qlist_tickettime">{{ticket.tickettime_local}}</div>
+                <a class="btn btn--del" href="{% url 'softkeyvoid' pk ticket.id %}">Void</a>
               </div>
             {% endfor %}
           </div>
@@ -457,6 +448,8 @@
             // #     "tickettype": "A", 
             // #     "ticketnumber": "012",
             // #     "tickettime": "2023-03-17T15:06:53.337639Z",
+            // #     "tickettime_local": "2023-03-17T15:06:53.337639Z",
+            // #     "ttid": 1,
             // #     }
             // # }
             // console.log('Received data:', e.data);
@@ -472,6 +465,8 @@
                 var ttype = data.tickettype;
                 var tno = data.ticketnumber;
                 var ttime = data.tickettime;
+                var ttime_local = data.tickettime_local;
+                var ttid = data.ttid;
 
                 // check cmd add or del
                 var subtotal = 0;
@@ -483,18 +478,16 @@
                   `
                   <div id="ticket_` + ttype + tno + ttime + `" class="qlist_item">
                     <div class="qlist_ticketnumber">` + ttype + tno + `</div>
-                    <div class="qlist_tickettime">` + ttime + `</div>`
-                    + `<form action="" method="POST">
-                        {% csrf_token %}
-                        <input type="hidden" name="tickettype" value="` + ttype + `">
-                        <input type="hidden" name="ticketnumber" value="` + tno + `">
-                        <input type="hidden" name="tickettime" value="` + ttime + `">
-                        <div class="form__action">
-                          <button type="submit" name="action" value="void" class="btn btn--del">Void</button>
-                        </div>
-                      </form>
+                    <div class="qlist_tickettime">` + ttime_local + `</div>
+                    <a class="btn btn--del" href=` + 
+                    `/softkey_void/` +
+                    c_pk + 
+                    `/` +
+                    ttid + `/` +
+                    `>Void</a>
                   </div>
                   `
+           
 
                 } else if (cmd == 'del') {
                   subtotal = -1;
