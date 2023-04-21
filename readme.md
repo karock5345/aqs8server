@@ -20,6 +20,7 @@
 ### <span style="color:orange;">**Version 8.0.2**</span>
 - Support SMS Module
 - Softkey web version
+### <span style="color:orange;">**Version 8.0.3**</span>
 - fixed Print replaced by Django Log for debug on server
 
 # Development env setup
