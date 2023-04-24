@@ -583,6 +583,8 @@ def webtouchView(request):
     touchname = ''
     logofile = ''
     touchkeylist= []
+    css = ''
+    
     try:
         bcode = request.GET['bc']
     except:
@@ -604,6 +606,7 @@ def webtouchView(request):
             logofile = branch.webtvlogolink
             datetime_now = timezone.now()
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+            css = branch.webtvcsslink
         else :
             error = 'Branch not found.'
     if error == '' :
@@ -664,6 +667,7 @@ def webtouchView(request):
         'touchkeylist':touchkeylist,
         'logofile':logofile,
         'errormsg':error,
+        'css' : css,
         }        
     return render(request, 'base/webtouch.html', context)
 

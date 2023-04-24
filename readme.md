@@ -886,3 +886,6 @@ https://github.com/powerline/fonts/tree/master/DejaVuSansMono
 Setup Putty 'Saved Sessions'
 Window -> Appearance -> Change font -> Deja...Powerline
 Window -> Color -> Default Blue -> Red 44 Green 123 Blue 201
+
+# Copy file from PC to Linux server
+pscp c:/music.mp3  ubuntu@192.168.1.222:/home/ubuntu/aqs8server/static_deploy/
