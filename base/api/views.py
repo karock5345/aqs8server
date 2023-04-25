@@ -165,8 +165,6 @@ def funUTCtoLocaltime(dInput, zone) -> datetime.time :
 
     newDateTime = utc.astimezone(local_zone)
     localtime = newDateTime.time()
-    # print('UTC input:' + dInput.strftime('%H:%M:%S'))
-    # print ('Local output:'+ localtime.strftime('%H:%M:%S'))
     return localtime
 
 
@@ -201,10 +199,7 @@ def funLocaltoUTCtime(dInput, zone) -> datetime.time :
     utcdt = localtime.astimezone(UTC_zone)
 
     utc = utcdt.time()
-    
-    # print('Local output:'+ dInput.strftime('%H:%M:%S'))
-    # print('UTC input:' + utc.strftime('%H:%M:%S'))
-    
+        
     return utc
 
 def visitor_ip_address(request):

@@ -3,10 +3,15 @@ from channels.generic.websocket import AsyncWebsocketConsumer, WebsocketConsumer
 # from asgiref.sync import async_to_sync
 from django.db.models import Q
 from django.utils import timezone
-from .views import  funUTCtoLocal
+from .views import funUTCtoLocal
 from .models import Branch, CounterType, TicketTemp, CounterStatus
 from asgiref.sync import sync_to_async
+import logging
+from django.core.serializers.json import DjangoJSONEncoder
 
+
+
+logger = logging.getLogger(__name__)
 class CounterStatusConsumer(AsyncWebsocketConsumer):
     # ws://127.0.0.1:8000/ws/cs/1/
     async def connect(self):
@@ -27,7 +32,7 @@ class CounterStatusConsumer(AsyncWebsocketConsumer):
         
 
         self.room_group_name = 'cs_' + self.pk
-        print('connecting:' + self.room_group_name )
+        logger.info('connecting:' + self.room_group_name )
         
         # check bcode and ct (countertype) is not exit do not accept connection
         error = await check_input()       
@@ -39,21 +44,33 @@ class CounterStatusConsumer(AsyncWebsocketConsumer):
             )
             await self.accept()
         else :
-            print('Error:' + error )
+            logger.info('Error:' + error )
             
 
     # Receive message from room group
     async def broadcast_message(self, event):
         str_tx = event['tx']
-
         # Send message to WebSocket
-        await self.send(text_data=str_tx)
-
+        try:
+            await self.send(text_data=str_tx)
+        except:
+            # If the channel layer is not available, send the data directly to all WebSocket connections in the group
+            for connection in await self.get_all_connections():
+                await connection.send_data_fallback(str_tx)
     async def disconnect(self, close_code):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
-
-
+    async def send_data_fallback(self, data):
+        # Send the data directly to the WebSocket connection
+        await self.send(json.dumps(data, cls=DjangoJSONEncoder))
+    async def get_all_connections(self):
+        # Get all WebSocket connections in the group
+        group_channels = await self.channel_layer.group_channels(self.room_group_name)
+        connections = []
+        for channel_name in group_channels:
+            connection = self.__class__.for_channel(channel_name)
+            connections.append(connection)
+        return connections
 
 class SMSConsumer(AsyncWebsocketConsumer):
     async def connect(self):
@@ -76,7 +93,7 @@ class SMSConsumer(AsyncWebsocketConsumer):
         error = ''
         self.bcode = self.scope['url_route']['kwargs']['bcode']
         self.room_group_name = 'sms_' + self.bcode 
-        print('connecting:' + self.room_group_name )
+        logger.info('connecting:' + self.room_group_name )
         
         # check bcode and ct (countertype) is not exit do not accept connection
         error = await check_input()       
@@ -89,7 +106,7 @@ class SMSConsumer(AsyncWebsocketConsumer):
 
             await self.accept()
         else :
-            print('Error:' + error )
+            logger.info('Error:' + error )
             
 
     # Receive message from room group
@@ -97,12 +114,26 @@ class SMSConsumer(AsyncWebsocketConsumer):
         str_tx = event['tx']
 
         # Send message to WebSocket
-        await self.send(text_data=str_tx)
-
+        try:
+            await self.send(text_data=str_tx)
+        except:
+            # If the channel layer is not available, send the data directly to all WebSocket connections in the group
+            for connection in await self.get_all_connections():
+                await connection.send_data_fallback(str_tx)
     async def disconnect(self, close_code):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
-
+    async def send_data_fallback(self, data):
+        # Send the data directly to the WebSocket connection
+        await self.send(json.dumps(data, cls=DjangoJSONEncoder))
+    async def get_all_connections(self):
+        # Get all WebSocket connections in the group
+        group_channels = await self.channel_layer.group_channels(self.room_group_name)
+        connections = []
+        for channel_name in group_channels:
+            connection = self.__class__.for_channel(channel_name)
+            connections.append(connection)
+        return connections
 class VoiceConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         @sync_to_async
@@ -132,7 +163,7 @@ class VoiceConsumer(AsyncWebsocketConsumer):
         self.bcode = self.scope['url_route']['kwargs']['bcode']
         self.ct = self.scope['url_route']['kwargs']['ct']
         self.room_group_name = 'voice_' + self.bcode + '_' + self.ct
-        print('connecting:' + self.room_group_name )
+        logger.info('connecting:' + self.room_group_name )
         
         # check bcode and ct (countertype) is not exit do not accept connection
         error = await check_input()       
@@ -145,7 +176,7 @@ class VoiceConsumer(AsyncWebsocketConsumer):
 
             await self.accept()
         else :
-            print('Error:' + error )
+            logger.info('Error:' + error )
             
 
     # Receive message from room group
@@ -153,11 +184,26 @@ class VoiceConsumer(AsyncWebsocketConsumer):
         str_tx = event['tx']
 
         # Send message to WebSocket
-        await self.send(text_data=str_tx)
-
+        try:
+            await self.send(text_data=str_tx)
+        except:
+            # If the channel layer is not available, send the data directly to all WebSocket connections in the group
+            for connection in await self.get_all_connections():
+                await connection.send_data_fallback(str_tx)
     async def disconnect(self, close_code):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
+    async def send_data_fallback(self, data):
+        # Send the data directly to the WebSocket connection
+        await self.send(json.dumps(data, cls=DjangoJSONEncoder))
+    async def get_all_connections(self):
+        # Get all WebSocket connections in the group
+        group_channels = await self.channel_layer.group_channels(self.room_group_name)
+        connections = []
+        for channel_name in group_channels:
+            connection = self.__class__.for_channel(channel_name)
+            connections.append(connection)
+        return connections
 
 class TicketStatusConsumer(AsyncWebsocketConsumer):
     # ws://127.0.0.1:8000/ws/tstatus/KB/A/123/sc/
@@ -189,7 +235,7 @@ class TicketStatusConsumer(AsyncWebsocketConsumer):
         self.sc = self.scope['url_route']['kwargs']['sc']
 
         self.room_group_name = 'ticketstatus_' + self.bcode + '_' + self.ttype + self.tno + '_' + self.sc
-        print('connecting:' + self.room_group_name )
+        logger.info('connecting:' + self.room_group_name )
         
         # check bcode and ct (countertype) is not exit do not accept connection
         error = await check_input()       
@@ -201,7 +247,7 @@ class TicketStatusConsumer(AsyncWebsocketConsumer):
             )
             await self.accept()
         else :
-            print('Error:' + error )
+            logger.info('Error:' + error )
             
 
     # Receive message from room group
@@ -209,12 +255,26 @@ class TicketStatusConsumer(AsyncWebsocketConsumer):
         str_tx = event['tx']
 
         # Send message to WebSocket
-        await self.send(text_data=str_tx)
-
+        try:
+            await self.send(text_data=str_tx)
+        except:
+            # If the channel layer is not available, send the data directly to all WebSocket connections in the group
+            for connection in await self.get_all_connections():
+                await connection.send_data_fallback(str_tx)
     async def disconnect(self, close_code):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
-
+    async def send_data_fallback(self, data):
+        # Send the data directly to the WebSocket connection
+        await self.send(json.dumps(data, cls=DjangoJSONEncoder))
+    async def get_all_connections(self):
+        # Get all WebSocket connections in the group
+        group_channels = await self.channel_layer.group_channels(self.room_group_name)
+        connections = []
+        for channel_name in group_channels:
+            connection = self.__class__.for_channel(channel_name)
+            connections.append(connection)
+        return connections
 
 
 
@@ -237,7 +297,7 @@ class PrintConsumer(AsyncWebsocketConsumer):
         error = ''
         self.bcode = self.scope['url_route']['kwargs']['bcode']
         self.room_group_name = 'print_' + self.bcode 
-        print('connecting:' + self.room_group_name )
+        logger.info('connecting:' + self.room_group_name)
         
         # check bcode and ct (countertype) is not exit do not accept connection
         error = await check_input()       
@@ -249,7 +309,7 @@ class PrintConsumer(AsyncWebsocketConsumer):
             )
             await self.accept()
         else :
-            print('Error:' + error )
+            logger.info('Error:' + error )
             
 
     # Receive message from room group
@@ -257,12 +317,26 @@ class PrintConsumer(AsyncWebsocketConsumer):
         str_tx = event['tx']
 
         # Send message to WebSocket
-        await self.send(text_data=str_tx)
-
+        try:
+            await self.send(text_data=str_tx)
+        except:
+            # If the channel layer is not available, send the data directly to all WebSocket connections in the group
+            for connection in await self.get_all_connections():
+                await connection.send_data_fallback(str_tx)
     async def disconnect(self, close_code):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
-
+    async def send_data_fallback(self, data):
+        # Send the data directly to the WebSocket connection
+        await self.send(json.dumps(data, cls=DjangoJSONEncoder))
+    async def get_all_connections(self):
+        # Get all WebSocket connections in the group
+        group_channels = await self.channel_layer.group_channels(self.room_group_name)
+        connections = []
+        for channel_name in group_channels:
+            connection = self.__class__.for_channel(channel_name)
+            connections.append(connection)
+        return connections
 class PrinterStatusConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         @sync_to_async
@@ -282,7 +356,7 @@ class PrinterStatusConsumer(AsyncWebsocketConsumer):
         error = ''
         self.bcode = self.scope['url_route']['kwargs']['bcode']
         self.room_group_name = 'printerstatus_' + self.bcode 
-        print('connecting:' + self.room_group_name )
+        logger.info('connecting:' + self.room_group_name )
         
         # check bcode and ct (countertype) is not exit do not accept connection
         error = await check_input()       
@@ -295,7 +369,7 @@ class PrinterStatusConsumer(AsyncWebsocketConsumer):
             await self.accept()
 
         else :
-            print('Error:' + error )
+            logger.info('Error:' + error )
             
 
     # Receive message from room group
@@ -303,12 +377,26 @@ class PrinterStatusConsumer(AsyncWebsocketConsumer):
         str_tx = event['tx']
 
         # Send message to WebSocket
-        await self.send(text_data=str_tx)
-
+        try:
+            await self.send(text_data=str_tx)
+        except:
+            # If the channel layer is not available, send the data directly to all WebSocket connections in the group
+            for connection in await self.get_all_connections():
+                await connection.send_data_fallback(str_tx)
     async def disconnect(self, close_code):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
-
+    async def send_data_fallback(self, data):
+        # Send the data directly to the WebSocket connection
+        await self.send(json.dumps(data, cls=DjangoJSONEncoder))
+    async def get_all_connections(self):
+        # Get all WebSocket connections in the group
+        group_channels = await self.channel_layer.group_channels(self.room_group_name)
+        connections = []
+        for channel_name in group_channels:
+            connection = self.__class__.for_channel(channel_name)
+            connections.append(connection)
+        return connections
 
 
 class QLConsumer(AsyncWebsocketConsumer):
@@ -340,7 +428,7 @@ class QLConsumer(AsyncWebsocketConsumer):
         self.bcode = self.scope['url_route']['kwargs']['bcode']
         self.ct = self.scope['url_route']['kwargs']['ct']
         self.room_group_name = 'ql_' + self.bcode + '_' + self.ct
-        print('connecting:' + self.room_group_name )
+        logger.info('connecting:' + self.room_group_name )
         
         # check bcode and ct (countertype) is not exit do not accept connection
         error = await check_input()       
@@ -353,7 +441,7 @@ class QLConsumer(AsyncWebsocketConsumer):
 
             await self.accept()
         else :
-            print('Error:' + error )
+            logger.info('Error:' + error )
             
 
     # Receive message from room group
@@ -361,13 +449,26 @@ class QLConsumer(AsyncWebsocketConsumer):
         str_tx = event['tx']
 
         # Send message to WebSocket
-        await self.send(text_data=str_tx)
-
+        try:
+            await self.send(text_data=str_tx)
+        except:
+            # If the channel layer is not available, send the data directly to all WebSocket connections in the group
+            for connection in await self.get_all_connections():
+                await connection.send_data_fallback(str_tx)
     async def disconnect(self, close_code):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
-
-
+    async def send_data_fallback(self, data):
+        # Send the data directly to the WebSocket connection
+        await self.send(json.dumps(data, cls=DjangoJSONEncoder))
+    async def get_all_connections(self):
+        # Get all WebSocket connections in the group
+        group_channels = await self.channel_layer.group_channels(self.room_group_name)
+        connections = []
+        for channel_name in group_channels:
+            connection = self.__class__.for_channel(channel_name)
+            connections.append(connection)
+        return connections
 
 class WebTVConsumer(AsyncWebsocketConsumer):
     async def connect(self):
@@ -398,7 +499,7 @@ class WebTVConsumer(AsyncWebsocketConsumer):
         self.bcode = self.scope['url_route']['kwargs']['bcode']
         self.ct = self.scope['url_route']['kwargs']['ct']
         self.room_group_name = 'webtv_' + self.bcode + '_' + self.ct
-        print('connecting:' + self.room_group_name )
+        logger.info('connecting:' + self.room_group_name )
         
         # check bcode and ct (countertype) is not exit do not accept connection
         error = await check_input()       
@@ -411,7 +512,7 @@ class WebTVConsumer(AsyncWebsocketConsumer):
 
             await self.accept()
         else :
-            print('Error:' + error )
+            logger.info('Error:' + error )
             
 
     # Receive message from room group
@@ -419,12 +520,26 @@ class WebTVConsumer(AsyncWebsocketConsumer):
         str_tx = event['tx']
 
         # Send message to WebSocket
-        await self.send(text_data=str_tx)
-
+        try:
+            await self.send(text_data=str_tx)
+        except:
+            # If the channel layer is not available, send the data directly to all WebSocket connections in the group
+            for connection in await self.get_all_connections():
+                await connection.send_data_fallback(str_tx)
     async def disconnect(self, close_code):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
-
+    async def send_data_fallback(self, data):
+        # Send the data directly to the WebSocket connection
+        await self.send(json.dumps(data, cls=DjangoJSONEncoder))
+    async def get_all_connections(self):
+        # Get all WebSocket connections in the group
+        group_channels = await self.channel_layer.group_channels(self.room_group_name)
+        connections = []
+        for channel_name in group_channels:
+            connection = self.__class__.for_channel(channel_name)
+            connections.append(connection)
+        return connections
 
         # await wssendwebtv(self.bcode, self.ct)
         # 

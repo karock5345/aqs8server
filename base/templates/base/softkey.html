@@ -47,7 +47,7 @@
             Login : {{ data.name }} 
           </div>
 
-          <div id="status_text" class="softkey_status_text">
+          <div id="status_text" class="softkey_status_text anibackcolor">
             Status : Waiting to call
           </div>
 
@@ -130,13 +130,13 @@
               {% if printer.status == "<P_FINE>" %}
                 <div></div>
               {% elif printer.status == "<P_NEAREND>" %}
-                <div class="softkey_status_text printer_nearend_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
+                <div class="softkey_status_text printer_nearend_text ">{{ printer.printernumber }} : {{printer.statustext}}</div>
               {% elif printer.status == "<P_END>" %}
-                <div class="softkey_status_text printer_end_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
+                <div class="softkey_status_text printer_end_text ">{{ printer.printernumber }} : {{printer.statustext}}</div>
               {% elif printer.status == "<OPEN>" %}
-                <div class="softkey_status_text printer_open_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
+                <div class="softkey_status_text printer_open_text ">{{ printer.printernumber }} : {{printer.statustext}}</div>
               {% else %}
-                <div class="softkey_status_text printer_ready_text">{{ printer.printernumber }} : {{printer.statustext}}</div>
+                <div class="softkey_status_text printer_ready_text ">{{ printer.printernumber }} : {{printer.statustext}}</div>
               {% endif %}
               </div> 
             {% endfor%}
@@ -373,13 +373,13 @@
                     if (status == "<P_FINE>") {
                         document.getElementById("Printer_" + pno).innerHTML = '';
                     } else if (status == "<P_NEAREND>") {
-                        document.getElementById("Printer_" + pno).innerHTML = '<div class="softkey_status_text printer_nearend_text typewriter">' + pno + ' : ' + statustext + '</div>';
+                        document.getElementById("Printer_" + pno).innerHTML = '<div class="softkey_status_text printer_nearend_text anibackcolorred">' + pno + ' : ' + statustext + '</div>';
                     } else if (status == "<P_END>") {
-                        document.getElementById("Printer_" + pno).innerHTML = '<div class="softkey_status_text printer_end_text typewriter">' + pno + ' : ' + statustext + '</div>';
+                        document.getElementById("Printer_" + pno).innerHTML = '<div class="softkey_status_text printer_end_text anibackcolorred">' + pno + ' : ' + statustext + '</div>';
                     } else if (status == "<OPEN>") {
-                        document.getElementById("Printer_" + pno).innerHTML = '<div class="softkey_status_text printer_open_text typewriter">' + pno + ' : ' + statustext + '</div>';
+                        document.getElementById("Printer_" + pno).innerHTML = '<div class="softkey_status_text printer_open_text anibackcolorred">' + pno + ' : ' + statustext + '</div>';
                     } else {
-                        document.getElementById("Printer_" + pno).innerHTML = '<div class="softkey_status_text printer_ready_text typewriter">' + pno + ' : ' + statustext + '</div>';
+                        document.getElementById("Printer_" + pno).innerHTML = '<div class="softkey_status_text printer_ready_text anibackcolorred">' + pno + ' : ' + statustext + '</div>';
                     }
                 }
             }        

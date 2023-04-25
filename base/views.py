@@ -37,7 +37,6 @@ userweb = None
 try:
     userweb = User.objects.get(username='userweb')
 except:
-    # print('userweb not found.')
     logger.error('userweb not found.')
     
 
@@ -100,7 +99,6 @@ def SoftkeyView(request, pk):
     if error == '':
         context_tr = []
         trobj = TicketRoute.objects.filter(Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype))
-        print(trobj.count())
         for tr in trobj:
             lang1 = ''
             lang2 = ''
@@ -206,7 +204,7 @@ def SoftkeyView(request, pk):
         context = context | {'subtotal' : context_tr}
         context = context | {'qlist' : context_ql}
         # context_login[pk] = context
-        # print(context_tr)
+
         return render(request, 'base/softkey.html', context)
         # pass
     else:
@@ -616,7 +614,6 @@ def webtouchView(request):
             wt = wtobj[0]
             touchkeylist = wt.touchkey.filter(Q(branch=branch))
             # touchkeylist = touchkeylistall.filter(Q(branch=branch))
-            # print(touchkeylist.count())
         else :
             error = 'Web Touch not found.'
     if error == '' :
@@ -654,12 +651,7 @@ def webtouchView(request):
                         if url != '':
                             return redirect(url)
                         
-            # if 'A' in request.POST:
-            #     print('Ticket A')
-            # if 'B' in request.POST:
-            #     print('Ticket B')
-            # if 'C' in request.POST:
-            #     print('Ticket C')
+
     if error != '' :
         touchkeylist= []
         messages.error(request, error)
@@ -1699,42 +1691,9 @@ def homeView(request):
 
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
-def UserSummaryView(request):  
-    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
-    
-    #users = User.objects.exclude( Q(is_superuser=True) )
-    # profiles = UserProfile.objects.all()
-
-
-
-    # auth_branchs = UserProfile.objects.get(user=request.user).branchs.all()
-
-    # auth_profilelist = []
-    # auth_userlist = []
-    # for prof in profiles :
-    #     not_auth = False
-    #     print(prof.user)
-    #     for b in prof.branchs.all():
-    #         print('   ' + b.bcode)
-    #         if (b in auth_branchs) == True :
-    #             pass                
-    #         else :
-    #             not_auth = True
-    #     print(not_auth)
-    #     if not_auth == False :
-    #         if prof.user.is_superuser == False :
-    #             if ('api' in prof.user.groups.all()) == False :
-    #                 auth_profilelist.append(prof)
-    #                 auth_userlist.append(prof.user)
-
+def UserSummaryView(request):     
     auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
-
-    # branchs = Branch.objects.all()
-    # ticketformats = TicketFormat.objects.all()
-    # routes = TicketRoute.objects.all()
-    # profiles = UserProfile.objects.filter(Q(user=users.user))
-    #profiles = users.userprofile_set.all()
-    
+ 
     context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
     return render(request, 'base/user.html', context)
 
@@ -1882,13 +1841,6 @@ def UserChangePWView(request):
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
 def UserDelView(request, pk):
-    # channel_layer = get_channel_layer()
-    # channel_group_name = "webtv_KB_Reception"
-    # print('channel_group_name:' + channel_group_name)
-    # async_to_sync (channel_layer.group_send)(channel_group_name, {"type": "broadcast_message",'lastupdate':'from api "New ticket"'})
-
-    # return render(request, 'base/delete.html')
-
     user = User.objects.get(id=pk)
     userp =UserProfile.objects.get(user__exact=user)
 
@@ -1941,17 +1893,13 @@ def auth_data(user):
 
         profid_list = []
         userid_list = []
-        # auth_userlist = []
         for prof in profiles :
             not_auth = False
-            # print(prof.user)
             for b in prof.branchs.all():
-                # print('   ' + b.bcode)
                 if (b in auth_branchs) == True :
                     pass                
                 else :
                     not_auth = True
-            # print(not_auth)
             if not_auth == False :
                 if prof.user.is_superuser == False :
                     if ('api' in prof.user.groups.all()) == False :
@@ -1964,5 +1912,4 @@ def auth_data(user):
         auth_ticketformats = TicketFormat.objects.filter(branch__in=auth_branchs)
         auth_routes = TicketRoute.objects.filter(branch__in=auth_branchs)
         auth_countertype = CounterType.objects.filter(branch__in=auth_branchs)
-        # print(((auth_userlist.count)))
     return(auth_branchs, auth_userlist, auth_profilelist, auth_ticketformats, auth_routes, auth_countertype)

@@ -1,5 +1,9 @@
 from datetime import datetime
 from apscheduler.schedulers.background import BackgroundScheduler
+import logging
+
+logger = logging.getLogger(__name__)
+
 # from .views import job_shutdown
 
 # sch = BackgroundScheduler()
@@ -32,6 +36,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 #     sch.remove_job(job)
 
 def job_stopall():
-    print('--- Stop all jobs ---')
+    logger.info('--- Stop all jobs ---')
+
     # sch.shutdown()
 

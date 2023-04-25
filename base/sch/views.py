@@ -23,12 +23,10 @@ try:
     system_inited = True
 except:
     system_inited = False
-# print('-SCH- Schedule INIT start @ base.sch.view.py -SCH-')
-logger.info('-SCH- Schedule INIT start @ base.sch.view.py -SCH-'
-            )
+
+logger.info('-SCH- Schedule INIT start @ base.sch.view.py -SCH-')
 now = timezone.now()
 snow = now.strftime("%m/%d/%Y, %H:%M:%S")
-# print('-SCH- Now:' + snow)
 logger.info('-SCH- Now:' + snow)
 sch = BackgroundScheduler(daemon=True)
 sch.start()
@@ -53,7 +51,6 @@ def getJobTesting(request):
 
 
     in_time_u = funLocaltoUTC(rx_tickettime, 8)
-    # print(in_time_u)
     logger.info(in_time_u)
     sch.add_job(job_test_trigger, 'date', run_date=in_time_u) 
 
@@ -64,7 +61,6 @@ def job_test_trigger():
     now_u = funLocaltoUTC(now, 8)
     snow = now_u.strftime("%Y/%m/%d %H:%M:%S")
     logger.info(snow + '!!! Job run !!!')
-    # print(snow + '!!! Job run !!!')
 
 
 def init_branch_reset():
@@ -85,13 +81,9 @@ def init_branch_reset():
     if branch_count > 0:
         for branch in branchobj:
             datetime_now =timezone.now()
-            localtime_now = funUTCtoLocaltime(datetime_now, branch.timezone )
-
-            # print(branch.officehourend, branch.timezone)        
+            localtime_now = funUTCtoLocaltime(datetime_now, branch.timezone )      
             localtime = funUTCtoLocaltime( branch.officehourend, branch.timezone )
             
-            # print('hello ' + str(type( branch.officehourend)  )) # <class 'datetime.time'>
-            # print('hello ' + str(type( localtime )  )) # <class 'datetime.time'>
             slocaltime = timezone.now().strftime('%Y-%m-%d ') + localtime.strftime('%H:%M:%S')
             localtime = datetime.strptime(slocaltime, '%Y-%m-%d %H:%M:%S')
             localtime = pytz.utc.localize(localtime)
@@ -103,10 +95,8 @@ def init_branch_reset():
             logtemp1 = '   -SCH- ' + nextreset.strftime('%Y-%m-%d %H:%M:%S') + ' > ' + now.strftime('%Y-%m-%d %H:%M:%S')            
             if nextreset > now :
                 logtemp1 = logtemp1 + ' [Yes]'
-                # print('reset is ' + snextreset)
                 pass                    
             else:
-                # print('reset is +24h of ' + snextreset)
                 nextreset  = nextreset + timedelta(hours=24)
                 logtemp1 = logtemp1 + ' [No]'
 
@@ -135,7 +125,7 @@ def job_shutdown(branch):
     localtime_now = funUTCtoLocaltime(datetime_now, branch.timezone )
     bcode = branch.bcode
 
-    print('   -SCH- Shutdown and reset branch :' , bcode, ' -SCH-')
+    logger.info('   -SCH- Shutdown and reset branch :' + bcode + ' -SCH-')
     if system_inited == True :
         SystemLog.objects.create(
             logtime = datetime_now,

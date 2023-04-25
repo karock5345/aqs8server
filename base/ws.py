@@ -10,9 +10,11 @@ from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVo
 from base.api.serializers import displaylistSerivalizer, printerstatusSerivalizer
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
-import asyncio
+import logging
 
 wsHypertext = 'ws://'
+logger = logging.getLogger(__name__)
+
 
 def wscounterstatus(counterstatus):
     # {"cmd":"cs",
@@ -58,13 +60,13 @@ def wscounterstatus(counterstatus):
     
     channel_layer = get_channel_layer()
     channel_group_name = 'cs_' + str(counterstatus.id)
-    print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+    logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
     try:
         async_to_sync (channel_layer.group_send)(channel_group_name, context)
-        print('...Done')
+        logger.info('...Done')
     except Exception as e:
-        print('...Error:'),
-        print(e)
+        error_e = 'Error: ' + str(e)
+        logger.info(error_e)
 
    
 def wsrochesms(bcode, tel, msg):
@@ -104,16 +106,17 @@ def wsrochesms(bcode, tel, msg):
         
         channel_layer = get_channel_layer()
         channel_group_name = 'sms_' + bcode 
-        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            print('...Done')
+            logger.info('...Done')
         except Exception as e:
-            print('...Error:'),
-            print(e)
+            error_e = 'Error: ' + str(e)
+            logger.info(error_e)
 
     if error != '':
-        print ('WS send SMS Error:' & error)
+        error_e = 'WS send SMS Error:'+ error
+        logger.info(error_e)
 
 
 def wssendvoice(bcode, countertypename, ttype, tno, cno):
@@ -165,16 +168,17 @@ def wssendvoice(bcode, countertypename, ttype, tno, cno):
         
         channel_layer = get_channel_layer()
         channel_group_name = 'voice_' + bcode + '_' + countertypename
-        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            print('...Done')
+            logger.info('...Done')
         except Exception as e:
-            print('...Error:'),
-            print(e)
+            error_e = 'WS send voice Error:' + str(e)
+            logger.info(error_e)
 
     if error != '':
-        print ('WS send voice Error:' & error)
+        error_e = 'WS send voice Error:' + error
+        logger.info(error_e)
 
 
 
@@ -241,16 +245,16 @@ def wsSendTicketStatus(bcode, tickettype, ticketnumber, sc):
         
         channel_layer = get_channel_layer()
         channel_group_name = 'ticketstatus_' + bcode + '_' + tickettype + ticketnumber + '_' + sc
-        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            print('...Done')
+            logger.info('...Done')
         except Exception as e:
-            print('...Error:'),
-            print(e)
+            serror = '...Error:' + str(e)
+            logger.info(serror)
 
-    if error != '':
-        print ('WS send ticket status Error:' & error)            
+    if error != '':    
+        logger.info('WS send ticket status Error:' + error)      
 
     pass
 
@@ -316,10 +320,8 @@ def wsSendPrintTicket(bcode, tickettype, ticketnumber, tickettime, tickettext, p
                     "printernumber": printernumber,
                 },
         }
-        str_tx = json.dumps(jsontx)
-        # print(str_tx)             
+        str_tx = json.dumps(jsontx)           
        
-
         context = {
         'type':'broadcast_message',
         'tx':str_tx
@@ -327,16 +329,15 @@ def wsSendPrintTicket(bcode, tickettype, ticketnumber, tickettime, tickettext, p
 
         channel_layer = get_channel_layer()
         channel_group_name = 'print_' + bcode 
-        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            print('...Done')
+            logger.info('...Done')
         except:
-            print('...ERROR:Redis Server is down!')
+            logger.info('...ERROR:Redis Server is down!')
 
     if error != '':
-        print ('WS send print Error:'),
-        print (error)
+        logger.info('WS send print Error:' + error)
 
 def wssendprinterstatus(bcode):
     # {
@@ -380,10 +381,8 @@ def wssendprinterstatus(bcode):
             "cmd":"ps",
             "data": "<printerstatus>"
             }
-        str_tx = json.dumps(jsontx)
-        # print(str_tx)             
+        str_tx = json.dumps(jsontx)           
         str_tx = str_tx.replace('"<printerstatus>"', json.dumps(PSserializers.data))
-        # print(str_tx)
 
         context = {
         'type':'broadcast_message',
@@ -392,15 +391,15 @@ def wssendprinterstatus(bcode):
 
         channel_layer = get_channel_layer()
         channel_group_name = 'printerstatus_' + bcode 
-        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            print('...Done')
+            logger.info('...Done')
         except:
-            print('...ERROR:Redis Server is down!')
+            logger.info('...ERROR:Redis Server is down!')
 
     if error != '':
-        print ('WS send printer status Error:' & error)
+        logger.info('WS send printer status Error:' & error)
 
     
 
@@ -487,16 +486,15 @@ def wssendql(bcode, countertypename, ticket, cmd):
         
         channel_layer = get_channel_layer()
         channel_group_name = 'ql_' + bcode + '_' + countertypename
-        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            print('...Done')
+            logger.info('...Done')
         except Exception as e:
-            print('...Error:'),
-            print(e)
+            logger.info('...Error:' + str(e))
 
     if error != '':
-        print ('WS send queue list Error:' & error)
+        logger.info('WS send queue list Error:' & error)
 
     
 
@@ -542,10 +540,8 @@ def wssendwebtv(bcode, countertypename):
                 "scroll": countertype.displayscrollingtext,
                 }
             }
-        str_tx = json.dumps(jsontx)
-        # print(str_tx)             
+        str_tx = json.dumps(jsontx)        
         str_tx = str_tx.replace('"<ticketlist>"', json.dumps(wdserializers.data))
-        print(str_tx)
 
         context = {
         'type':'broadcast_message',
@@ -553,14 +549,14 @@ def wssendwebtv(bcode, countertypename):
         }
         channel_layer = get_channel_layer()
         channel_group_name = 'webtv_' + bcode + '_' + countertypename
-        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            print('...Done')
+            logger.info('...Done')
         except:
-            print('...ERROR:Redis Server is down!')
+            logger.info('...ERROR:Redis Server is down!')
     if error != '' :
-        print ('WS send webtv Error:' & error)
+        logger.info('WS send webtv Error:' & error)
 
     
 

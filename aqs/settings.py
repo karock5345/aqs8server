@@ -180,8 +180,8 @@ CHANNEL_LAYERS = {
         # 'BACKEND':'channels_redis.pubsub.RedisPubSubChannelLayer',
         'CONFIG': {
             # 'hosts':[('127.0.0.1', '6379')],
-            # 'hosts':[('192.168.85.128', '6379')],      # laptop vm
-            'hosts':[('192.168.107.128', '6379')],    # office vm
+            'hosts':[('192.168.85.128', '6379')],      # laptop vm
+            # 'hosts':[('192.168.107.128', '6379')],    # office vm
         # "channel_capacity": {
         #         "http.request": 200,
         #         "http.response!*": 10,
@@ -202,11 +202,11 @@ LOGGING = {
             'propagate': True,
         },
         'aqs' : {
-            'handlers': ['console', 'logfile'],
+            'handlers': ['console_aqs', 'logfile_aqs'],
             'level': 'INFO',
         },
         'base' : {
-            'handlers': ['console', 'logfile'],
+            'handlers': ['console_base', 'logfile_base'],
             'level': 'INFO',
         },
 
@@ -214,6 +214,14 @@ LOGGING = {
     'formatters': {
         'simple': {
             'format': '{levelname} {asctime} {module}>{funcName} {message}',
+            'style': '{',
+        },
+        'simple_base': {
+            'format': '{levelname} {asctime} base>{module}>{funcName} {message}',
+            'style': '{',
+        },
+        'simple_aqs': {
+            'format': '{levelname} {asctime} aqs>{module}>{funcName} {message}',
             'style': '{',
         },
     },
@@ -228,6 +236,30 @@ LOGGING = {
             'mode': 'a',
             'encoding': 'utf-8',
             'formatter': 'simple',
+            'maxBytes': 1024*1024*5, # 5 MB
+        },
+        'console_base': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple_base',
+        },
+        'logfile_base': {
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': f'{BASE_DIR}/logs/aqs.log',
+            'mode': 'a',
+            'encoding': 'utf-8',
+            'formatter': 'simple_base',
+            'maxBytes': 1024*1024*5, # 5 MB
+        },
+        'console_aqs': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple_aqs',
+        },
+        'logfile_aqs': {
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': f'{BASE_DIR}/logs/aqs.log',
+            'mode': 'a',
+            'encoding': 'utf-8',
+            'formatter': 'simple_aqs',
             'maxBytes': 1024*1024*5, # 5 MB
         },
     },

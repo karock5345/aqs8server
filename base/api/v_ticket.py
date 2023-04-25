@@ -49,9 +49,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
         time_now = datetime_now.time()
 
         btickettime = False    
-        # print('ticket start time:' +  str(branch.tickettimestart))            
-        # print('ticket end time  :' +  str(branch.tickettimeend))           
-        # print('Now              :' +  str(time_now))     
+   
         if branch.tickettimestart < branch.tickettimeend :
             if (branch.tickettimestart <= time_now) & (time_now <= branch.tickettimeend) :
                 btickettime = True
@@ -100,7 +98,6 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
         # url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
 
         url = '/my/' + branch.bcode + '/' + ttype +'/' + ticketno_str + '/' + sc + '/'
-        # print(url)
         # myticketlink =  ('{0}://{1}'.format(request.scheme, request.get_host()) +   url)
         myticketlink = url
         
@@ -522,8 +519,7 @@ def postUpdatePrinter(request):
     rxpstatus = request.GET.get('status') if request.GET.get('status') != None else ''
     rxpstatustext = request.GET.get('statustext') if request.GET.get('statustext') != None else '' 
     
-    # print(rxpstatus)
-    # print (rxpstatustext)
+
 
     rxprinternumber = rxprinternumber.upper()
     #datetime_now = datetime.utcnow()

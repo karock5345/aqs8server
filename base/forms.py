@@ -41,14 +41,12 @@ class UserProfileForm(ModelForm):
     def __init__(self, *args,**kwargs):
         self.auth_branchs = kwargs.pop('auth_branchs')
         super().__init__(*args,**kwargs)
-        # print(self.auth_branchs)
         self.fields['branchs'].queryset = Branch.objects.filter(id__in=self.auth_branchs)   # Q(groups__name='api')
 
 class TicketFormatForm(ModelForm):
     def __init__(self, *args,**kwargs):
         self.auth_branchs = kwargs.pop('auth_branchs')
         super().__init__(*args,**kwargs)
-        # print(self.auth_branchs)
         self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs) 
     class Meta:
         model = TicketFormat
@@ -58,7 +56,6 @@ class trForm(ModelForm):
     def __init__(self, *args,**kwargs):
         self.auth_branchs = kwargs.pop('auth_branchs')
         super().__init__(*args,**kwargs)
-        # print(self.auth_branchs)
         self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs)
         self.fields['countertype'].queryset = CounterType.objects.filter(branch__in=self.auth_branchs)
     class Meta:

@@ -1585,3 +1585,28 @@ color: white;
 .softkey_form {
   min-width: 24rem;
 }
+
+/* The animation code */
+@keyframes anibackgreen {
+  0%  {background-color: var(--color-success)}
+  33% {background-color: var(--color-dark)}
+  66% {background-color: var(--color-success)}
+  100% {background-color: var(--color-dark)}
+
+}
+@keyframes anibackred {
+  0%  {background-color: var(--color-error)}
+  25% {background-color: var(--color-dark)}
+  50% {background-color: var(--color-error)}
+  75% {background-color: var(--color-dark)}
+  100% {background-color: var(--color-error)}
+}
+/* The element to apply the animation to */
+.anibackcolor {
+  animation-name: anibackgreen;
+  animation-duration: 2s;
+}
+.anibackcolorred {
+  animation-name: anibackred;
+  animation-duration: 2s;
+}

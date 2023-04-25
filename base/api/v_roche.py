@@ -11,10 +11,12 @@ from .serializers import rocheticketlistSerivalizer, ticketlistSerivalizer
 from .v_softkey import logcounterlogin, logcounterlogout
 from base.ws import wsrochesms
 import random
+import logging
 
 # list only show within x mins, details : the Ticket table list is too long, can not give full list to roche ios app.
 rochelist_x_mins = 3
 
+logger = logging.getLogger(__name__)
 def rocheSMS(branch, tticket):
     error = ''
     if error == '':
@@ -30,12 +32,12 @@ def rocheSMS(branch, tticket):
         for puser in objpuser:
             if puser.user.is_active == True:
                 smsmsg = branch.smsmsg.replace('<TICKET>', tticket.tickettype + tticket.ticketnumber)
-                print('Send SMS to ' + puser.user.username + ' mPhone:' + puser.mobilephone + ' Message:' + smsmsg)
                 wsrochesms(branch.bcode, puser.mobilephone, smsmsg)
 
                 pass
     else:
-        print(error)
+        logger.info(error)
+
     pass
 
 
