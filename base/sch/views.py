@@ -9,6 +9,9 @@ from django.utils import timezone
 from apscheduler.schedulers.background import BackgroundScheduler
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, funLocaltoUTC, funLocaltoUTCtime, funUTCtoLocaltime
 from base.ws import wssendwebtv
+import logging
+
+logger = logging.getLogger(__name__)
 
 datetime_now =timezone.now()
 system_inited = False
@@ -20,10 +23,13 @@ try:
     system_inited = True
 except:
     system_inited = False
-print('-SCH- Schedule INIT start @ base.sch.view.py -SCH-')
+# print('-SCH- Schedule INIT start @ base.sch.view.py -SCH-')
+logger.info('-SCH- Schedule INIT start @ base.sch.view.py -SCH-'
+            )
 now = timezone.now()
 snow = now.strftime("%m/%d/%Y, %H:%M:%S")
-print('-SCH- Now:' + snow)
+# print('-SCH- Now:' + snow)
+logger.info('-SCH- Now:' + snow)
 sch = BackgroundScheduler(daemon=True)
 sch.start()
 
@@ -47,7 +53,8 @@ def getJobTesting(request):
 
 
     in_time_u = funLocaltoUTC(rx_tickettime, 8)
-    print(in_time_u)
+    # print(in_time_u)
+    logger.info(in_time_u)
     sch.add_job(job_test_trigger, 'date', run_date=in_time_u) 
 
     return Response('Job testing')
@@ -56,7 +63,8 @@ def job_test_trigger():
     now = timezone.now()
     now_u = funLocaltoUTC(now, 8)
     snow = now_u.strftime("%Y/%m/%d %H:%M:%S")
-    print(snow + '!!! Job run !!!')
+    logger.info(snow + '!!! Job run !!!')
+    # print(snow + '!!! Job run !!!')
 
 
 def init_branch_reset():
@@ -107,9 +115,13 @@ def init_branch_reset():
             nextreset_local = funUTCtoLocal(nextreset, branch.timezone )
             logtemp3 = ' -SCH- Next reset [' + branch.bcode + ']: ' + nextreset.strftime('%Y-%m-%d %H:%M:%S') + ' Local:' + nextreset_local.strftime('%Y-%m-%d %H:%M:%S') 
             
-            print (logtemp3)
-            print (logtemp2)
-            print (logtemp1)
+            logger.info(logtemp3)
+            logger.info(logtemp2)
+            logger.info(logtemp1)
+
+            # print (logtemp3)
+            # print (logtemp2)
+            # print (logtemp1)
 
             if system_inited == True :
                 SystemLog.objects.create(
@@ -225,8 +237,8 @@ def job(text,text2):
     snow2 = now.strftime("%m/%d/%Y, %H:%M:%S")
     text_out = '   -SCH- Now:' + snow2 + ' Local time:' +  snow + ' Testing job - ' + text + text2 + '-SCH-'
 
-    print ( text_out )    
-   
+    # print ( text_out )    
+    logger.info(text_out)
 
 def job_testing(input, text, text2):
     txt_job = 'job_' + text

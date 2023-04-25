@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import re
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -188,4 +189,48 @@ CHANNEL_LAYERS = {
         #     },
         },
     }
+}
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,    
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'logfile'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'aqs' : {
+            'handlers': ['console', 'logfile'],
+            'level': 'INFO',
+        },
+        'base' : {
+            'handlers': ['console', 'logfile'],
+            'level': 'INFO',
+        },
+
+    },
+    'formatters': {
+        'simple': {
+            'format': '{levelname} {asctime} {module}>{funcName} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+        'logfile': {
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': f'{BASE_DIR}/logs/aqs.log',
+            'mode': 'a',
+            'encoding': 'utf-8',
+            'formatter': 'simple',
+            'maxBytes': 1024*1024*5, # 5 MB
+        },
+    },
+
+
 }

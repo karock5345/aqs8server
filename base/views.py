@@ -27,7 +27,9 @@ from base.ws import wsHypertext, wscounterstatus
 
 from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
+import logging
 
+logger = logging.getLogger(__name__)
 
 enable_captcha = False
 
@@ -35,7 +37,9 @@ userweb = None
 try:
     userweb = User.objects.get(username='userweb')
 except:
-    print('userweb not found.')
+    # print('userweb not found.')
+    logger.error('userweb not found.')
+    
 
 context_login = {}
 
@@ -595,9 +599,6 @@ def webtouchView(request):
     except:
         touchname = ''
         error = 'Touch Name is blank.'   
-    print ('bcode:' + bcode)
-    print ('TouchName:' + touchname)
-    print ('error:' + error)
 
     if error == '' :
         branchobj = Branch.objects.filter( Q(bcode=bcode) )
@@ -626,8 +627,7 @@ def webtouchView(request):
             
             for key in touchkeylist:
                 if key.ttype in request.POST:
-                    print('Ticket ' + key.ttype)
-
+      
                     ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, key.ttype, '','', datetime_now, userweb, 'web', '8')
                     if error == '' :
                         # add ticketlog
@@ -676,10 +676,7 @@ def CancelTicketView(request, pk, sc):
     logofile = ''
     url = ''
     backurl = ''
-
-    print('pk:' + pk)
-    print('sc:' + sc)
-    
+   
     try:
         tt = TicketTemp.objects.get(id=pk)
         logofile = tt.branch.webtvlogolink
@@ -708,7 +705,6 @@ def CancelTicketView(request, pk, sc):
     if error == '' :
         if request.method =='POST':
             # process cancel ticket (void)
-            print('tapped CONFIRM')
 
             user = userweb
             

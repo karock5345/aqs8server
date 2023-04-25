@@ -20,7 +20,8 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "aqs.settings")
 django_asgi_app = get_asgi_application()
 
 import base.routing
-
+import django
+django.setup()
 
 application = ProtocolTypeRouter({
     'http':django_asgi_app,
