@@ -2,12 +2,9 @@ from django.contrib import admin
 from django.db import models
 from django import forms
 from .models import TicketTemp, testingModel, Branch, CounterLoginLog, CounterStatus, DisplayAndVoice,  TicketFormat
-from .models import UserProfile, CounterType, Ticket, TicketLog, TicketRoute, TicketData, APILog, Setting, PrinterStatus, SystemLog, WebTouch, Log
+from .models import UserProfile, CounterType, Ticket, TicketLog, TicketRoute, TicketData, APILog, Setting, PrinterStatus, SystemLog, WebTouch
 # Register your models here.
 
-class LogView(admin.ModelAdmin):
-    model = Log
-    list_display =('timestamp', 'level', 'message')
 
 
 class testingView(admin.ModelAdmin):
@@ -136,4 +133,3 @@ admin.site.register(PrinterStatus, PrinterStatusView)
 admin.site.register(DisplayAndVoice, DispView)
 admin.site.register(SystemLog, SystemLogView)
 admin.site.register(WebTouch, WebTouchView)
-admin.site.register(Log, LogView)

@@ -386,11 +386,6 @@ class SubscribeOrder(models.Model):
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
 
-class Log(models.Model):
-    level = models.CharField(max_length=10)
-    message = models.TextField()
-    timestamp = models.DateTimeField(auto_now_add=True)
-
 
 # class Room(models.Model):
 #     host =models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
