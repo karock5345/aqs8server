@@ -24,6 +24,8 @@
 - fixed Print replaced by Django Log for debug on server
 ### <span style="color:orange;">**Version 8.1.0**</span>
 - API Support JWT
+- All API request.user should be user group 'api'
+
 
 
 # Development env setup
