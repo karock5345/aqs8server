@@ -22,6 +22,9 @@
 - Softkey web version
 ### <span style="color:orange;">**Version 8.0.3**</span>
 - fixed Print replaced by Django Log for debug on server
+### <span style="color:orange;">**Version 8.1.0**</span>
+- API Support JWT
+
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
@@ -71,10 +74,37 @@ python manage.py runserver
 ```
 try http://127.0.0.1:8000/
 
+### <span style="color:orange;">**Setup Linux VM for development**</span>
+>Windows install VMware
 
+>Download Ubuntu ISO and install on VMware
 
-
-
+>Install Docker:
+```bash
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg -y
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+```
+```bash
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+```bash
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+Verify that the Docker Engine installation is successful by running the hello-world image:
+```bash
+sudo docker run hello-world
+```
+Install Redis version 5
+```bash
+sudo docker run -p 6379:6379 -d redis:5
+```
 # Linux server setup
 ### <span style="color:orange;">**AWS vm**</span>
 AWS EC2 : AQS8_Server_RVD, key=aws_rvd_server_key, Security Group = aqs_security

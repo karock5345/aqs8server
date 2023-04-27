@@ -11,8 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 from pathlib import Path
 from django.contrib.messages import constants as messages
-import re
-import os
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
     
     'django_apscheduler',
     'captcha',
+    'rest_framework_simplejwt',
 
 ]
 
@@ -150,7 +150,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+
     )
 }
 
@@ -180,8 +182,8 @@ CHANNEL_LAYERS = {
         # 'BACKEND':'channels_redis.pubsub.RedisPubSubChannelLayer',
         'CONFIG': {
             # 'hosts':[('127.0.0.1', '6379')],
-            'hosts':[('192.168.85.128', '6379')],      # laptop vm
-            # 'hosts':[('192.168.107.128', '6379')],    # office vm
+            # 'hosts':[('192.168.85.128', '6379')],      # laptop vm
+            'hosts':[('192.168.107.128', '6379')],    # office vm
         # "channel_capacity": {
         #         "http.request": 200,
         #         "http.response!*": 10,
@@ -265,4 +267,22 @@ LOGGING = {
     },
 
 
+}
+
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "UPDATE_LAST_LOGIN": False,
+
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": SECRET_KEY,
+    "VERIFYING_KEY": None,
+    "AUDIENCE": None,
+    "ISSUER": None,
+   
+    "AUTH_HEADER_TYPES": ("Bearer",),
+   
 }

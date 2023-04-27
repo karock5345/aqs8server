@@ -44,7 +44,7 @@ class CounterStatusConsumer(AsyncWebsocketConsumer):
             )
             await self.accept()
         else :
-            logger.info('Error:' + error )
+            logger.error('Error:' + error )
             
 
     # Receive message from room group
@@ -441,7 +441,7 @@ class QLConsumer(AsyncWebsocketConsumer):
 
             await self.accept()
         else :
-            logger.info('Error:' + error )
+            logger.error('Error:' + error )
             
 
     # Receive message from room group

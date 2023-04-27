@@ -66,7 +66,7 @@ def wscounterstatus(counterstatus):
         logger.info('...Done')
     except Exception as e:
         error_e = 'Error: ' + str(e)
-        logger.info(error_e)
+        logger.error('...ERROR:Redis Server is down!')
 
    
 def wsrochesms(bcode, tel, msg):
@@ -111,12 +111,12 @@ def wsrochesms(bcode, tel, msg):
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
             logger.info('...Done')
         except Exception as e:
-            error_e = 'Error: ' + str(e)
-            logger.info(error_e)
+            # error_e = 'Error: ' + str(e)
+            logger.error('...ERROR:Redis Server is down!')
 
     if error != '':
         error_e = 'WS send SMS Error:'+ error
-        logger.info(error_e)
+        logger.error(error_e)
 
 
 def wssendvoice(bcode, countertypename, ttype, tno, cno):
@@ -173,12 +173,12 @@ def wssendvoice(bcode, countertypename, ttype, tno, cno):
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
             logger.info('...Done')
         except Exception as e:
-            error_e = 'WS send voice Error:' + str(e)
-            logger.info(error_e)
+            # error_e = 'WS send voice Error:' + str(e)
+            logger.error('...ERROR:Redis Server is down!')
 
     if error != '':
         error_e = 'WS send voice Error:' + error
-        logger.info(error_e)
+        logger.error(error_e)
 
 
 
@@ -250,11 +250,11 @@ def wsSendTicketStatus(bcode, tickettype, ticketnumber, sc):
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
             logger.info('...Done')
         except Exception as e:
-            serror = '...Error:' + str(e)
-            logger.info(serror)
+            # e_error = '...Error:' + str(e)
+            logger.error('...ERROR:Redis Server is down!')
 
     if error != '':    
-        logger.info('WS send ticket status Error:' + error)      
+        logger.error('WS send ticket status Error:' + error)      
 
     pass
 
@@ -334,10 +334,10 @@ def wsSendPrintTicket(bcode, tickettype, ticketnumber, tickettime, tickettext, p
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
             logger.info('...Done')
         except:
-            logger.info('...ERROR:Redis Server is down!')
+            logger.error('...ERROR:Redis Server is down!')
 
     if error != '':
-        logger.info('WS send print Error:' + error)
+        logger.error('WS send print Error:' + error)
 
 def wssendprinterstatus(bcode):
     # {
@@ -396,10 +396,10 @@ def wssendprinterstatus(bcode):
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
             logger.info('...Done')
         except:
-            logger.info('...ERROR:Redis Server is down!')
+            logger.error('...ERROR:Redis Server is down!')
 
     if error != '':
-        logger.info('WS send printer status Error:' & error)
+        logger.error('WS send printer status Error:' & error)
 
     
 
@@ -491,10 +491,10 @@ def wssendql(bcode, countertypename, ticket, cmd):
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
             logger.info('...Done')
         except Exception as e:
-            logger.info('...Error:' + str(e))
+            logger.error('...ERROR:Redis Server is down!')
 
     if error != '':
-        logger.info('WS send queue list Error:' & error)
+        logger.error('WS send queue list Error:' & error)
 
     
 
@@ -554,9 +554,9 @@ def wssendwebtv(bcode, countertypename):
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
             logger.info('...Done')
         except:
-            logger.info('...ERROR:Redis Server is down!')
+            logger.error('...ERROR:Redis Server is down!')
     if error != '' :
-        logger.info('WS send webtv Error:' & error)
+        logger.error('WS send webtv Error:' & error)
 
     
 
