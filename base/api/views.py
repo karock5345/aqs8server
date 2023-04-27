@@ -1,3 +1,4 @@
+from aqs.settings import aqs_version
 from datetime import datetime, timedelta, date
 import time
 from django.utils import timezone
@@ -55,9 +56,9 @@ def getRoutes(request):
         )
 
     routes = [
-        'GET /api/?app=xxx&version=xxx',
         'API is working.',
-    ]
+        'Version : ' + aqs_version,
+                ]
     return Response(routes)
 
 
