@@ -18,8 +18,64 @@ from base.models import APILog, Branch, Setting, TicketFormat, Ticket, TicketRou
 from .serializers import branchSerivalizer, ticketlistSerivalizer
 
 token_api = 'WrE-1t7IdrU2iB3a0e'
-# if the counter keep active > 3 minutes then auto logout and the counter replace the new user
-counteractive = 3
+# if the counter keep active > 6 minutes then auto logout and the counter replace the new user
+counteractive = 6
+
+def checkuser(user, branch, rx_username):
+    # check user group is api
+    isAPIuser = False
+    error = ''
+    user_out = None
+
+    if error == '' :
+        for group in user.groups.all():
+            if group.name == 'api':
+                isAPIuser = True
+                exit
+        if isAPIuser == False:
+            error = 'User group is not allow to call API'
+    
+    # check user is allow operate this branch
+    if error == '' :
+        b_found = False
+        userp = UserProfile.objects.get(user=user)
+        if userp == None :
+            error = 'User Profile not found'
+        else :
+            for branch in userp.branchs.all():
+                if branch == branch :
+                    b_found = True
+                    exit
+            if b_found == False :
+                error = 'User not authorized operate this branch'
+    # check rx_username is allow operate this branch
+    if error == '' :
+        user_out = user
+        if (rx_username == user.username) or (rx_username == '') or (rx_username == None) :
+            pass
+        else :
+            rx_user = User.objects.get(username=rx_username)
+            if rx_user == None :
+                error = 'Receiver user not found'
+            else :
+                user_out = rx_user
+                b_found = False
+                userp = UserProfile.objects.get(user=rx_user)
+                if userp == None :
+                    error = 'Receiver user Profile not found'
+                else :
+                    for branch in userp.branchs.all():
+                        if branch == branch :
+                            b_found = True
+                            exit
+                    if b_found == False :
+                        error = 'Receiver user not authorized operate this branch'
+    
+    if error == '' :
+        return 'OK', user_out
+    else :
+        return error, user_out
+    
 
 # api response json format :
 # {

@@ -1,5 +1,6 @@
 
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.utils import timezone
 from django.urls import reverse
@@ -10,7 +11,7 @@ from datetime import datetime
 from base.models import APILog, Branch, PrinterStatus,  TicketFormat, Ticket, TicketTemp
 from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus
 from .serializers import printerstatusSerivalizer, ticketlistSerivalizer
-from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal
+from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, checkuser
 from .v_roche import rocheSMS
 from base.ws import wssendwebtv, wssendql, wssendprinterstatus, wsSendPrintTicket
 import random
@@ -184,6 +185,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
     return ticketno_str, countertype, tickettemp, ticket, error
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def postTicket(request):
     # {
     #    "status":"OK/Error",
@@ -197,8 +199,8 @@ def postTicket(request):
     context = dict({})
 
     username = request.GET.get('username') if request.GET.get('username') != None else ''
-    password = request.GET.get('password') if request.GET.get('password') != None else ''
-    token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # token = request.GET.get('token') if request.GET.get('token') != None else ''
     app = request.GET.get('app') if request.GET.get('app') != None else ''
     version = request.GET.get('version') if request.GET.get('version') != None else ''
     bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -230,6 +232,13 @@ def postTicket(request):
                 if branch.enabled == False :
                     status = dict({'status': 'Error'})
                     msg =  dict({'msg':'Branch disabled'})
+    # check user
+    if status == dict({}) :
+        error, user = checkuser(request.user, branch, username)
+        if error !='OK' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':error})
+
     if status == dict({}) :
         # check subscribe
         if branch.subscribe == True :
@@ -258,13 +267,13 @@ def postTicket(request):
             logtext = 'API call : Ticket Key',
         ) 
 
-    if status == dict({}) :
+    # if status == dict({}) :
         
-        loginreply, user = loginapi(request , username, password, token, None)
+    #     loginreply, user = loginapi(request , username, password, token, None)
 
-        if loginreply != 'OK':
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})   
+    #     if loginreply != 'OK':
+    #         status = dict({'status': 'Error'})
+    #         msg =  dict({'msg':loginreply})   
          
     if status == dict({}) :
         
