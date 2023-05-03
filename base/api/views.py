@@ -21,50 +21,56 @@ token_api = 'WrE-1t7IdrU2iB3a0e'
 # if the counter keep active > 6 minutes then auto logout and the counter replace the new user
 counteractive = 6
 
-def checkuser(user, branch, rx_username):
+def checkuser(apiuser, branch, rx_username):
     # check user group is api
     isAPIuser = False
     error = ''
     user_out = None
+    userp = None
 
     if error == '' :
-        for group in user.groups.all():
+        for group in apiuser.groups.all():
             if group.name == 'api':
                 isAPIuser = True
                 exit
         if isAPIuser == False:
             error = 'User group is not allow to call API'
     
-    # check user is allow operate this branch
+    # check api user is allow operate this branch
     if error == '' :
         b_found = False
-        userp = UserProfile.objects.get(user=user)
-        if userp == None :
+        try :
+            userp = UserProfile.objects.get(user=apiuser)
+        except :
             error = 'User Profile not found'
-        else :
+        if userp != None :
             for branch in userp.branchs.all():
                 if branch == branch :
                     b_found = True
                     exit
             if b_found == False :
                 error = 'User not authorized operate this branch'
+
+            
     # check rx_username is allow operate this branch
     if error == '' :
-        user_out = user
-        if (rx_username == user.username) or (rx_username == '') or (rx_username == None) :
+        user_out = apiuser
+        if (rx_username == apiuser.username) or (rx_username == '') or (rx_username == None) :
             pass
         else :
-            rx_user = User.objects.get(username=rx_username)
-            if rx_user == None :
+            try :
+                rx_user = User.objects.get(username=rx_username)
+            except :
                 error = 'Receiver user not found'
-            else :
+            if error == '' :
                 user_out = rx_user
                 b_found = False
-                userp = UserProfile.objects.get(user=rx_user)
-                if userp == None :
+                try :
+                    rx_userp = UserProfile.objects.get(user=rx_user)
+                except :                
                     error = 'Receiver user Profile not found'
-                else :
-                    for branch in userp.branchs.all():
+                if error == '' :
+                    for branch in rx_userp.branchs.all():
                         if branch == branch :
                             b_found = True
                             exit

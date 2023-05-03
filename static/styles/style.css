@@ -1588,18 +1588,19 @@ color: white;
 
 /* The animation code */
 @keyframes anibackgreen {
-  0%  {background-color: var(--color-success)}
-  33% {background-color: var(--color-dark)}
-  66% {background-color: var(--color-success)}
+  0% {background-color: var(--color-dark)}
+  25% {background-color: var(--color-success)}
+  50% {background-color: var(--color-dark)}
+  75% {background-color: var(--color-success)}
   100% {background-color: var(--color-dark)}
 
 }
 @keyframes anibackred {
-  0%  {background-color: var(--color-error)}
-  25% {background-color: var(--color-dark)}
-  50% {background-color: var(--color-error)}
-  75% {background-color: var(--color-dark)}
-  100% {background-color: var(--color-error)}
+  0% {background-color: var(--color-dark)}
+  25% {background-color: var(--color-error)}
+  50% {background-color: var(--color-dark)}
+  75% {background-color: var(--color-error)}
+  100% {background-color: var(--color-dark)}
 }
 /* The element to apply the animation to */
 .anibackcolor {

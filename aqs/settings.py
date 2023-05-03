@@ -184,8 +184,8 @@ CHANNEL_LAYERS = {
         # 'BACKEND':'channels_redis.pubsub.RedisPubSubChannelLayer',
         'CONFIG': {
             # 'hosts':[('127.0.0.1', '6379')],
-            'hosts':[('192.168.85.128', '6379'), ('192.168.107.128', '6379')],      # laptop vm
-            # 'hosts':[('192.168.107.128', '6379')],    # office vm
+            # 'hosts':[('192.168.85.128', '6379')],      # laptop vm
+            'hosts':[('192.168.107.128', '6379')],    # office vm
         # "channel_capacity": {
         #         "http.request": 200,
         #         "http.response!*": 10,
@@ -274,7 +274,7 @@ LOGGING = {
 
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=1),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": False,
     "BLACKLIST_AFTER_ROTATION": False,

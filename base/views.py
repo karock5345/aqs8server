@@ -1882,7 +1882,7 @@ def auth_data(user):
 
     if user.is_superuser == True :
         auth_profilelist = UserProfile.objects.all()
-        auth_userlist = User.objects.exclude( Q(groups__name='api') | Q(groups__name='web'))
+        auth_userlist = User.objects.exclude(Q(groups__name='web'))
         auth_branchs = Branch.objects.all()
         auth_ticketformats = TicketFormat.objects.all()
         auth_routes = TicketRoute.objects.all()

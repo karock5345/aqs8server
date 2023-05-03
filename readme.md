@@ -113,6 +113,27 @@ AWS EC2 : AQS8_Server_RVD, key=aws_rvd_server_key, Security Group = aqs_security
 
 AWS Route53 : add sub domain rvd.tsvd.com.hk, www.rvd.tsvd.com.hk
 
+### AWS cost:
+RVD + Test + CF = $2.02 
+
+RVD $1.46   
+- t2.medium 
+- vCPUs-2	
+- HD-50G 
+- us-east-1b
+
+Test $0.28
+- t2.micro
+- vCPUs-1
+- HD-30G 
+- us-east-1e
+
+CF $0.28 (Install at 2023-5-2)
+- t2.micro
+- vCPUs-1
+- HD-24G 
+- us-east-1e
+
 ### <span style="color:orange;">**Ubuntu Linux server**</span>
 network:
 
@@ -921,3 +942,5 @@ Window -> Color -> Default Blue -> Red 44 Green 123 Blue 201
 
 # Copy file from PC to Linux server
 pscp c:/music.mp3  ubuntu@192.168.1.222:/home/ubuntu/aqs8server/static_deploy/
+
+# AWS 
