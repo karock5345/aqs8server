@@ -1,9 +1,41 @@
+# Upgrade server to version 2 (SMS + Softkey)
+> go to github change to public
+```bash
+cp ~/aqs8server/aqs/settings.py ~/
+sudo rm -r ~/aqs8server/
+git clone --branch roche_v2 https://github.com/karock5345/aqs8server.git
+cd aqs8server
+virtualenv env
+source env/bin/activate
+sudo nano requirements.txt
+# [del line :] twisted-iocpsupport=x.x.x
+
+pip install -r requirements.txt
+pip install gunicorn psycopg2
+pip install daphne
+
+cp ~/settings.py ~/aqs8server/aqs/
+nano ~/aqs8server/aqs/asgi.py
+
+# Add:
+import django
+django.setup()
+
+rm ./readme.md
+
+python3 manage.py collectstatic
+sudo gpasswd -a www-data ubuntu
+sudo chmod g+x /home/ubuntu && chmod g+x /home/ubuntu/aqs8server/ && chmod g+x /home/ubuntu/aqs8server/static_deploy
+sudo nginx -s reload
+sudo reboot
+```
+
 # For Project Roche
 - Change Server IP : 
 - 1. sudo nano /etc/netplan/00-installer-config.yaml
 - 2. sudo nano /etc/nginx/sites-available/aqs8server
 - User : supertim /// QusP9k-z5345 , tim /// asdf2206 , rocheadmin /// edAgipa4
-- Linux server IP : 192.168.1.81
+- Linux server IP : 162.132.82.162
 - Linux server su: ubuntu /// asdf2206
 
 # AQS version 8
@@ -115,12 +147,12 @@ network:
     enp1s0:
       dhcp4: no
       addresses:
-        - 192.168.1.222/24
+        - 162.132.82.162/24
       routes:
         - to: default
-          via: 192.168.1.1
+          via: 162.132.82.1
       nameservers:
-        addresses: [8.8.8.8, 1.1.1.1]
+        addresses: [8.8.8.8]
   version: 2
 ```
 
