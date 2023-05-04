@@ -454,6 +454,10 @@ def funCounterGet(tickettype, ticketnumber, user, branch, countertype, counterst
     context = dict({})
     rx_ticketype = tickettype
     rx_ticketnumber = ticketnumber
+
+    if rx_ticketype == '' or rx_ticketnumber == '' :
+        status = dict({'status': 'Error'})
+        msg =  dict({'msg':'Please input ticket'})
     
     ticket = None
     if status == dict({}) :

@@ -142,15 +142,18 @@ def SoftkeyView(request, pk):
                 # add Get form to context
                 getform = getForm(request.POST)
                 getticket = getform['ticketnumber'].value()
-                gettt = getticket[0:1]
-                gettno = getticket[1:]
-                # change gettt to uppercase
-                gettt = gettt.upper()
-                # change gettno to "000" format and convert to string
-                tformat = counterstatus.countertype.branch.ticketnoformat 
-                gettno = tformat + str(gettno)
-                # get gettno string right 3 char
-                gettno = gettno[-len(tformat):]
+                gettt = ''
+                gettno = ''
+                if getticket != '':
+                    gettt = getticket[0:1]
+                    gettno = getticket[1:]
+                    # change gettt to uppercase
+                    gettt = gettt.upper()
+                    # change gettno to "000" format and convert to string
+                    tformat = counterstatus.countertype.branch.ticketnoformat 
+                    gettno = tformat + str(gettno)
+                    # get gettno string right 3 char
+                    gettno = gettno[-len(tformat):]
 
                 status, msg, context_get = funCounterGet(gettt, gettno, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket :', 'Softkey-web', softkey_version, datetime_now)
                 if status['status'] == 'Error':
