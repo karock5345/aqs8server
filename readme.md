@@ -25,6 +25,9 @@
 ### <span style="color:orange;">**Version 8.1.0**</span>
 - API Support JWT
 - All API request.user should be user group 'api'
+- Separete Touch Panel API functions to new file : v_touch.py
+- Touch Panel v8.1 support API JWT
+
 
 
 
@@ -113,7 +116,7 @@ AWS EC2 : AQS8_Server_RVD, key=aws_rvd_server_key, Security Group = aqs_security
 
 AWS Route53 : add sub domain rvd.tsvd.com.hk, www.rvd.tsvd.com.hk
 
-### AWS cost:
+## AWS cost:
 RVD + Test + CF = $2.02 
 
 RVD $1.46   
@@ -134,7 +137,7 @@ CF $0.28 (Install at 2023-5-2)
 - HD-24G 
 - us-east-1e
 
-### <span style="color:orange;">**Ubuntu Linux server**</span>
+### <span style="color:orange;">**Local server (Ubuntu Linux server)**</span>
 network:
 
 show ip address :
@@ -186,6 +189,47 @@ exit and save
 ```sh
 sudo netplan apply
 ```
+## Local server startup
+1. Add user (htopuser) and password (asdf1234) for cmd htop
+```sh
+sudo adduser htopuser
+# set htopuser as sudoer
+# sudo usermod -aG sudo htopuser
+# change password
+sudo passwd htopuser
+```
+2. Install bashtop
+```sh
+sudo apt-get install -y bashtop btop
+```
+3. Setup auto login for user htopuser
+```sh
+sudo nano /etc/systemd/system/getty@tty1.service.d/override.conf
+# add lines:
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --autologin htopuser --noclear %I $TERM
+```
+
+4. Server startup autorun bashtop
+```sh
+sudo nano /home/htopuser/.bashrc
+# add line: bashtop / btop
+```
+5. Done, logout then auto login as htopuser
+```sh
+logout
+```
+
+>The server will auto login as htopuser and run bashtop after reboot. Even if logout, the server will auto login as htopuser and run bashtop again.
+
+>So if you want to login as other user, you need to change user by cmd: 
+
+>su - htopuser
+
+>or goto tty2
+
+> Ctrl+Alt+F2
 
 ### <span style="color:orange;">**Locate PuTTY setup (for AWS):**</span>
 

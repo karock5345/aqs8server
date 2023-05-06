@@ -2,6 +2,7 @@ from django.urls import path
 
 from base.api import v_display
 from . import views
+from . import v_touch
 from . import v_ticket
 from . import v_softkey
 from . import v_roche
@@ -9,7 +10,7 @@ from . import v_roche
 urlpatterns = [
     path('', views.getRoutes),
     path('branchs/', views.getBranchs),
-    path('ticketkey/', v_ticket.postTicket),  # http://127.0.0.1:8000/api/ticketkey/?username=userapi&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&branchcode=KB&tickettype=A&printernumber=<pno>1</pno>&remark=test&app=web&version=8
+    path('ticketkey/', v_touch.postTicket),  # http://127.0.0.1:8000/api/ticketkey/?username=userapi&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&branchcode=KB&tickettype=A&printernumber=<pno>1</pno>&remark=test&app=web&version=8
     path('firstprint/', v_ticket.getFirstPrint),  # http://127.0.0.1:8000/api/firstprint/?username=userapi&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&branchcode=KB&app=web&version=8
     path('printed/', v_ticket.postTicketPrinted),  # http://127.0.0.1:8000/api/printed/?username=userapi&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&app=web&version=8&branchcode=KB&tickettype=A&ticketnumber=074
     path('updateprinter/', v_ticket.postUpdatePrinter),
