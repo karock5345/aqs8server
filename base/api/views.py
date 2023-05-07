@@ -67,7 +67,7 @@ def checkuser(apiuser, branch, rx_username):
                 b_found = False
                 try :
                     rx_userp = UserProfile.objects.get(user=rx_user)
-                except :                
+                except :
                     error = 'Receiver user Profile not found'
                 if error == '' :
                     for branch in rx_userp.branchs.all():
@@ -101,7 +101,7 @@ def checkuser(apiuser, branch, rx_username):
 
 # first api is show all api you can call
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 def getRoutes(request):
     # check request user group is api
     user = request.user

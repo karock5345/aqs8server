@@ -190,7 +190,7 @@ def postTicket(request):
     status = dict({})
     msg = dict({})
     context = dict({})
-
+    # username is optional parameter. If not provided, it will be set to request.user
     username = request.GET.get('username') if request.GET.get('username') != None else ''
     # password = request.GET.get('password') if request.GET.get('password') != None else ''
     # token = request.GET.get('token') if request.GET.get('token') != None else ''

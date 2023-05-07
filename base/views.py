@@ -21,7 +21,7 @@ from .api.serializers import displaylistSerivalizer
 from django.utils import timezone
 # from .api.v_softkey import funVoid
 from .api.v_softkey_sub import *
-from .api.v_ticket import newticket
+from .api.v_touch import newticket
 from base.ws import wsHypertext, wscounterstatus
 
 
