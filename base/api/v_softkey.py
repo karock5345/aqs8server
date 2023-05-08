@@ -12,6 +12,7 @@ from .v_softkey_sub import *
 
 @api_view(['POST'])
 def postCounterGet(request):
+# Counter get ticket by ticket number
 # Request :
 # 'POST /api/get/?username=xxx&password=xxx&token=xxx&app=xxx&version=xxx&branchcode=xxx&countertype=xxx&counternumber=xxx&tickettype=x&ticketnumber=xxx'
 #

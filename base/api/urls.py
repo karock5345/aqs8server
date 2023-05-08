@@ -32,9 +32,9 @@ urlpatterns = [
 
     path('voice/', v_display.getVoice), 
 
-    path('applogin/', v_roche.postRocheLogin),
-    path('applist/', v_roche.getRocheFirstPrint),
-    path('applisttest/', v_roche.getRocheFirstPrintTest),
+    # path('applogin/', v_roche.postRocheLogin),
+    # path('applist/', v_roche.getRocheFirstPrint),
+    # path('applisttest/', v_roche.getRocheFirstPrintTest),
 ]
 
 

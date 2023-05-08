@@ -19,8 +19,9 @@ from django.contrib.auth.models import User, Group
 from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
 
-@permission_classes([IsAuthenticated])
+
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getFirstPrint(request):
 
     status = dict({})
@@ -82,19 +83,18 @@ def getFirstPrint(request):
     output = status | msg | context
     return Response(output)
 
-
-
-@permission_classes([IsAuthenticated])
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def postTicketPrinted(request):
 
     status = dict({})
     msg = dict({})
     context = dict({})
 
+    # username is optional
     username = request.GET.get('username') if request.GET.get('username') != None else ''
-    password = request.GET.get('password') if request.GET.get('password') != None else ''
-    token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # token = request.GET.get('token') if request.GET.get('token') != None else ''
     app = request.GET.get('app') if request.GET.get('app') != None else ''
     version = request.GET.get('version') if request.GET.get('version') != None else ''
     bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -163,13 +163,14 @@ def postTicketPrinted(request):
                 status = dict({'status': 'Error'})
                 msg =  dict({'msg':'Ticket time format not correct. Should be : 2022-05-19T23:59:59.123456Z'}) 
                         
-
-
+    # check user
     if status == dict({}) :
-        loginreply, user = loginapi(request , username, password, token, None)
-        if loginreply != 'OK':
+        error, user = checkuser(request.user, branch, '')
+        if error !='OK' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})            
+            msg =  dict({'msg':error})
+
+    
     if status == dict({}) :
         ticketobj = TicketTemp.objects.filter( Q(branch=branch) & Q(tickettype=ttype) &  Q(ticketnumber=tnumber) & Q(tickettime=tickettime) )
         if ticketobj.count() == 0 :
@@ -194,17 +195,15 @@ def postTicketPrinted(request):
     output = status | msg | context
     return Response(output)
 
-@permission_classes([IsAuthenticated])
+
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def postUpdatePrinter(request):
 
     status = dict({})
     msg = dict({})
     context = dict({})
 
-    username = request.GET.get('username') if request.GET.get('username') != None else ''
-    password = request.GET.get('password') if request.GET.get('password') != None else ''
-    token = request.GET.get('token') if request.GET.get('token') != None else ''
     app = request.GET.get('app') if request.GET.get('app') != None else ''
     version = request.GET.get('version') if request.GET.get('version') != None else ''
     bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -255,13 +254,12 @@ def postUpdatePrinter(request):
             status = dict({'status': 'Error'})
             msg =  dict({'msg':'No Printer status'})  
 
+    # check user
     if status == dict({}) :
-        
-        loginreply, user = loginapi(request , username, password, token, None)
-
-        if loginreply != 'OK':
+        error, user = checkuser(request.user, branch, '')
+        if error !='OK' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})    
+            msg =  dict({'msg':error})   
 
     if status == dict({}) :
         # update db
@@ -288,17 +286,17 @@ def postUpdatePrinter(request):
     output = status | msg | context
     return Response(output)
 
-@permission_classes([IsAuthenticated])
+
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getPrinterStatus(request):
 
     status = dict({})
     msg = dict({})
     context = dict({})
 
+    # username is optional
     username = request.GET.get('username') if request.GET.get('username') != None else ''
-    password = request.GET.get('password') if request.GET.get('password') != None else ''
-    token = request.GET.get('token') if request.GET.get('token') != None else ''
     app = request.GET.get('app') if request.GET.get('app') != None else ''
     version = request.GET.get('version') if request.GET.get('version') != None else ''
     bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -332,16 +330,12 @@ def getPrinterStatus(request):
             logtext = 'API call : First Print API',
         )
 
-
-
-
+    # check user
     if status == dict({}) :
-        
-        loginreply, user = loginapi(request , username, password, token, None)
-
-        if loginreply != 'OK':
+        error, user = checkuser(request.user, branch, '')
+        if error !='OK' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})    
+            msg =  dict({'msg':error})  
 
     if status == dict({}) :
         printerstatuslist = PrinterStatus.objects.filter( Q(branch=branch) ).order_by('-updated')

@@ -6022,3 +6022,1536 @@ INFO 2023-05-07 01:24:16,189 runserver>log_action WebSocket CONNECT /ws/cs/1/ [1
 INFO 2023-05-07 01:24:16,195 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:57812]
 INFO 2023-05-07 01:24:16,201 base>consumers>connect connecting:ql_KB_Reception
 INFO 2023-05-07 01:24:16,208 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:57812]
+INFO 2023-05-08 15:19:33,012 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 15:19:34,262 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 15:19:34,272 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 15:19:34,674 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 15:19:34,675 base>views><module> -SCH- Now:05/08/2023, 07:19:34
+INFO 2023-05-08 15:19:34,813 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 15:19:34,814 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 15:19:34,815 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 07:19:34 [Yes]
+INFO 2023-05-08 15:19:34,886 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 15:19:34,886 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 15:19:34,887 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 07:19:34 [Yes]
+INFO 2023-05-08 15:19:34,896 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 15:19:34,897 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 15:19:34,897 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 07:19:34 [Yes]
+INFO 2023-05-08 15:19:49,109 runserver>log_action [mHTTP POST /api/token/ 200 [0.28, 127.0.0.1:51124][0m
+INFO 2023-05-08 15:20:02,618 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.02, 127.0.0.1:51124][0m
+INFO 2023-05-08 15:20:11,571 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 15:20:26,069 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\aqs\settings.py changed, reloading.
+ERROR 2023-05-08 15:20:32,609 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:20:32,615 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:20:53,655 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:20:53,657 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:21:07,236 runserver>log_action [35;1mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.1 500 [0.52, 127.0.0.1:51193][0m
+ERROR 2023-05-08 15:21:14,718 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:21:14,723 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:21:35,756 base>ws>wsrochesms ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:21:35,758 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:21:56,813 base>ws>wsrochesms ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:21:58,302 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 15:21:58,311 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 15:21:58,426 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 15:21:58,427 base>views><module> -SCH- Now:05/08/2023, 07:21:58
+INFO 2023-05-08 15:21:58,553 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 15:21:58,553 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 15:21:58,554 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 07:21:58 [Yes]
+INFO 2023-05-08 15:21:58,622 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 15:21:58,623 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 15:21:58,623 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 07:21:58 [Yes]
+INFO 2023-05-08 15:21:58,630 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 15:21:58,631 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 15:21:58,631 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 07:21:58 [Yes]
+INFO 2023-05-08 15:22:28,966 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:51206][0m
+INFO 2023-05-08 15:22:39,116 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:23:00,138 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:23:00,142 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:23:21,177 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:23:21,180 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:23:42,222 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:23:42,226 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:24:03,272 base>ws>wsrochesms ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:24:03,275 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:24:24,322 base>ws>wsrochesms ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:24:24,332 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.1 200 [105.34, 127.0.0.1:51206][0m
+INFO 2023-05-08 15:31:09,242 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 15:31:10,486 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 15:31:10,500 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 15:31:10,648 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 15:31:10,649 base>views><module> -SCH- Now:05/08/2023, 07:31:10
+INFO 2023-05-08 15:31:10,788 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 15:31:10,789 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 15:31:10,789 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 07:31:10 [Yes]
+INFO 2023-05-08 15:31:10,870 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 15:31:10,871 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 15:31:10,872 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 07:31:10 [Yes]
+INFO 2023-05-08 15:31:10,882 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 15:31:10,882 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 15:31:10,883 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 07:31:10 [Yes]
+INFO 2023-05-08 15:31:39,194 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:32:00,225 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:32:00,230 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:32:21,270 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:32:21,272 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:32:42,316 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:32:42,321 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:33:03,370 base>ws>wsrochesms ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:33:03,373 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:33:24,423 base>ws>wsrochesms ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:33:24,436 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.1 200 [105.39, 127.0.0.1:51356][0m
+INFO 2023-05-08 15:42:03,415 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 15:42:24,379 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\aqs\settings.py changed, reloading.
+ERROR 2023-05-08 15:42:24,443 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:42:24,448 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:42:45,497 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:42:45,499 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:43:06,551 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:43:06,556 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:43:27,586 base>ws>wsrochesms ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:43:27,590 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-05-08 15:43:48,624 base>ws>wsrochesms ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:43:48,636 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.1 200 [105.31, 127.0.0.1:51574][0m
+INFO 2023-05-08 15:43:57,023 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 15:43:58,309 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 15:43:58,319 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 15:43:58,436 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 15:43:58,437 base>views><module> -SCH- Now:05/08/2023, 07:43:58
+INFO 2023-05-08 15:43:58,562 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 15:43:58,563 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 15:43:58,564 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 07:43:58 [Yes]
+INFO 2023-05-08 15:43:58,632 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 15:43:58,633 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 15:43:58,633 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 07:43:58 [Yes]
+INFO 2023-05-08 15:43:58,641 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 15:43:58,641 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 15:43:58,642 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 07:43:58 [Yes]
+INFO 2023-05-08 15:44:03,990 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.107.128', '6379')}])
+ERROR 2023-05-08 15:44:25,046 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:44:25,051 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.107.128', '6379')}])
+ERROR 2023-05-08 15:44:46,094 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:44:46,096 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.107.128', '6379')}])
+ERROR 2023-05-08 15:45:07,145 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:45:07,150 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.107.128', '6379')}])
+ERROR 2023-05-08 15:45:28,203 base>ws>wsrochesms ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:45:28,206 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.107.128', '6379')}])
+ERROR 2023-05-08 15:45:49,251 base>ws>wsrochesms ...ERROR:Redis Server is down!
+INFO 2023-05-08 15:45:49,263 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.1 200 [105.42, 127.0.0.1:51627][0m
+INFO 2023-05-08 15:49:01,731 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.107.128', '6379')}])
+INFO 2023-05-08 15:49:10,789 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\aqs\settings.py changed, reloading.
+INFO 2023-05-08 15:49:24,294 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 15:49:25,633 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 15:49:25,642 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 15:49:25,756 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 15:49:25,757 base>views><module> -SCH- Now:05/08/2023, 07:49:25
+INFO 2023-05-08 15:49:25,893 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 15:49:25,894 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 15:49:25,894 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 07:49:25 [Yes]
+INFO 2023-05-08 15:49:25,964 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 15:49:25,965 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 15:49:25,965 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 07:49:25 [Yes]
+INFO 2023-05-08 15:49:25,973 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 15:49:25,974 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 15:49:25,975 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 07:49:25 [Yes]
+INFO 2023-05-08 15:49:27,890 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 15:49:27,907 base>ws>wssendwebtv ...Done
+INFO 2023-05-08 15:49:27,912 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 15:49:27,914 base>ws>wssendql ...Done
+INFO 2023-05-08 15:49:27,917 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 15:49:27,919 base>ws>wsSendPrintTicket ...Done
+INFO 2023-05-08 15:49:27,924 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 15:49:27,926 base>ws>wsrochesms ...Done
+INFO 2023-05-08 15:49:27,929 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 15:49:27,930 base>ws>wsrochesms ...Done
+INFO 2023-05-08 15:49:27,942 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.1 200 [0.20, 127.0.0.1:51699][0m
+INFO 2023-05-08 15:53:09,133 runserver>log_action [32mHTTP GET / 302 [0.04, 192.168.1.22:51716][0m
+INFO 2023-05-08 15:53:09,202 runserver>log_action [mHTTP GET /login/ 200 [0.04, 192.168.1.22:51716][0m
+INFO 2023-05-08 15:53:09,335 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.08, 192.168.1.22:51716][0m
+INFO 2023-05-08 15:53:09,342 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.07, 192.168.1.22:51721][0m
+INFO 2023-05-08 15:53:09,349 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.07, 192.168.1.22:51722][0m
+INFO 2023-05-08 15:53:09,355 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 192.168.1.22:51716][0m
+INFO 2023-05-08 15:53:09,360 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 192.168.1.22:51724][0m
+INFO 2023-05-08 16:30:06,612 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 16:30:07,928 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 16:30:07,937 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 16:30:08,072 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 16:30:08,074 base>views><module> -SCH- Now:05/08/2023, 08:30:08
+INFO 2023-05-08 16:30:08,213 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 16:30:08,214 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 16:30:08,215 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 08:30:08 [Yes]
+INFO 2023-05-08 16:30:08,281 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 16:30:08,282 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 16:30:08,283 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 08:30:08 [Yes]
+INFO 2023-05-08 16:30:08,290 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 16:30:08,291 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 16:30:08,291 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 08:30:08 [Yes]
+INFO 2023-05-08 16:30:34,365 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:52284][0m
+INFO 2023-05-08 16:31:26,308 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:52294][0m
+INFO 2023-05-08 16:32:08,964 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:52302][0m
+INFO 2023-05-08 16:37:52,775 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:52332][0m
+INFO 2023-05-08 16:37:58,961 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.0 200 [0.02, 127.0.0.1:52338][0m
+INFO 2023-05-08 16:37:58,987 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:52341]
+INFO 2023-05-08 16:37:59,057 base>consumers>connect connecting:print_KB
+INFO 2023-05-08 16:37:59,066 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:52341]
+INFO 2023-05-08 16:38:04,041 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.0 200 [0.07, 127.0.0.1:52347][0m
+INFO 2023-05-08 16:38:04,355 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=B&ticketnumber=001&tickettime=2023-04-25T16:26:12.133259Z 200 [0.27, 127.0.0.1:52350][0m
+INFO 2023-05-08 16:38:04,583 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=011&tickettime=2023-04-27T09:28:24.515330Z 200 [0.43, 127.0.0.1:52368][0m
+INFO 2023-05-08 16:38:04,623 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=003&tickettime=2023-04-27T05:17:19.381893Z 200 [0.53, 127.0.0.1:52353][0m
+INFO 2023-05-08 16:38:04,792 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=017&tickettime=2023-04-27T10:32:07.515865Z 200 [0.59, 127.0.0.1:52380][0m
+INFO 2023-05-08 16:38:04,823 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=005&tickettime=2023-04-27T07:51:04.049760Z 200 [0.72, 127.0.0.1:52357][0m
+INFO 2023-05-08 16:38:04,913 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=022&tickettime=2023-04-27T10:44:06.405430Z 200 [0.67, 127.0.0.1:52390][0m
+INFO 2023-05-08 16:38:05,011 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=040&tickettime=2023-05-08T07:22:38.994299Z 200 [0.56, 127.0.0.1:52438][0m
+INFO 2023-05-08 16:38:05,085 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=019&tickettime=2023-04-27T10:36:37.616390Z 200 [0.86, 127.0.0.1:52384][0m
+INFO 2023-05-08 16:38:05,162 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=041&tickettime=2023-05-08T07:31:39.065039Z 200 [0.70, 127.0.0.1:52440][0m
+INFO 2023-05-08 16:38:05,251 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=015&tickettime=2023-04-27T10:20:54.804575Z 200 [1.07, 127.0.0.1:52377][0m
+INFO 2023-05-08 16:38:05,271 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=020&tickettime=2023-04-27T10:37:15.747996Z 200 [1.04, 127.0.0.1:52386][0m
+INFO 2023-05-08 16:38:05,307 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 16:38:05,312 base>ws>wssendprinterstatus ...Done
+INFO 2023-05-08 16:38:05,317 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.40, 127.0.0.1:52500][0m
+INFO 2023-05-08 16:38:05,363 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=C&ticketnumber=002&tickettime=2023-05-04T02:56:44.259275Z 200 [0.97, 127.0.0.1:52423][0m
+INFO 2023-05-08 16:38:05,396 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=008&tickettime=2023-04-27T08:16:34.048336Z 200 [1.27, 127.0.0.1:52360][0m
+INFO 2023-05-08 16:38:05,450 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=021&tickettime=2023-04-27T10:38:03.097677Z 200 [1.22, 127.0.0.1:52388][0m
+INFO 2023-05-08 16:38:05,472 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=043&tickettime=2023-05-08T07:44:03.868478Z 200 [1.00, 127.0.0.1:52447][0m
+INFO 2023-05-08 16:38:05,505 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=035&tickettime=2023-05-04T02:43:05.022714Z 200 [1.13, 127.0.0.1:52416][0m
+INFO 2023-05-08 16:38:05,546 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=039&tickettime=2023-05-08T07:20:11.312791Z 200 [1.11, 127.0.0.1:52436][0m
+INFO 2023-05-08 16:38:05,569 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=033&tickettime=2023-05-03T11:13:53.523712Z 200 [1.24, 127.0.0.1:52413][0m
+INFO 2023-05-08 16:38:05,615 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=028&tickettime=2023-04-27T10:47:33.508436Z 200 [1.33, 127.0.0.1:52404][0m
+INFO 2023-05-08 16:38:05,673 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=038&tickettime=2023-05-06T17:20:22.283318Z 200 [1.24, 127.0.0.1:52433][0m
+INFO 2023-05-08 16:38:05,718 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=024&tickettime=2023-04-27T10:45:01.795529Z 200 [1.46, 127.0.0.1:52393][0m
+INFO 2023-05-08 16:38:05,765 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=034&tickettime=2023-05-03T11:14:22.878215Z 200 [1.42, 127.0.0.1:52414][0m
+INFO 2023-05-08 16:38:05,798 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=023&tickettime=2023-04-27T10:44:35.429383Z 200 [1.55, 127.0.0.1:52392][0m
+INFO 2023-05-08 16:38:05,817 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=012&tickettime=2023-04-27T10:13:43.851957Z 200 [1.66, 127.0.0.1:52370][0m
+INFO 2023-05-08 16:38:05,846 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=002&tickettime=2023-04-27T05:16:02.637161Z 200 [1.75, 127.0.0.1:52352][0m
+INFO 2023-05-08 16:38:05,888 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=044&tickettime=2023-05-08T07:49:01.651355Z 200 [1.41, 127.0.0.1:52450][0m
+INFO 2023-05-08 16:38:05,921 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=045&tickettime=2023-05-08T07:49:27.759879Z 200 [1.44, 127.0.0.1:52452][0m
+INFO 2023-05-08 16:38:05,954 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=B&ticketnumber=002&tickettime=2023-05-04T02:43:11.036337Z 200 [1.57, 127.0.0.1:52418][0m
+INFO 2023-05-08 16:38:05,998 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=042&tickettime=2023-05-08T07:42:03.335552Z 200 [1.53, 127.0.0.1:52444][0m
+INFO 2023-05-08 16:38:06,047 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=031&tickettime=2023-05-03T10:46:18.698702Z 200 [1.73, 127.0.0.1:52411][0m
+INFO 2023-05-08 16:38:06,076 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=C&ticketnumber=001&tickettime=2023-05-04T02:43:15.421556Z 200 [1.69, 127.0.0.1:52420][0m
+INFO 2023-05-08 16:38:06,109 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=026&tickettime=2023-04-27T10:46:52.429524Z 200 [1.84, 127.0.0.1:52400][0m
+INFO 2023-05-08 16:38:06,150 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=018&tickettime=2023-04-27T10:33:12.178491Z 200 [1.94, 127.0.0.1:52382][0m
+INFO 2023-05-08 16:38:06,171 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=001&tickettime=2023-04-27T05:14:54.373702Z 200 [2.08, 127.0.0.1:52351][0m
+INFO 2023-05-08 16:38:06,213 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=004&tickettime=2023-04-27T05:17:22.094152Z 200 [2.11, 127.0.0.1:52354][0m
+INFO 2023-05-08 16:38:06,233 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=016&tickettime=2023-04-27T10:31:04.688557Z 200 [2.05, 127.0.0.1:52378][0m
+INFO 2023-05-08 16:38:06,294 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=B&ticketnumber=003&tickettime=2023-05-04T02:56:45.194880Z 200 [1.88, 127.0.0.1:52427][0m
+INFO 2023-05-08 16:38:06,328 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=013&tickettime=2023-04-27T10:14:34.448302Z 200 [2.17, 127.0.0.1:52372][0m
+INFO 2023-05-08 16:38:06,372 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=029&tickettime=2023-05-03T10:40:18.923821Z 200 [2.08, 127.0.0.1:52406][0m
+INFO 2023-05-08 16:38:06,420 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=037&tickettime=2023-05-06T17:18:55.788876Z 200 [1.99, 127.0.0.1:52432][0m
+INFO 2023-05-08 16:38:06,468 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=030&tickettime=2023-05-03T10:44:05.566009Z 200 [2.16, 127.0.0.1:52408][0m
+INFO 2023-05-08 16:38:06,512 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=010&tickettime=2023-04-27T09:27:01.209481Z 200 [2.37, 127.0.0.1:52366][0m
+INFO 2023-05-08 16:38:06,556 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=009&tickettime=2023-04-27T09:06:34.919187Z 200 [2.42, 127.0.0.1:52363][0m
+INFO 2023-05-08 16:38:06,590 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=025&tickettime=2023-04-27T10:45:59.073951Z 200 [2.33, 127.0.0.1:52397][0m
+INFO 2023-05-08 16:38:06,634 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=036&tickettime=2023-05-04T02:56:45.844872Z 200 [2.21, 127.0.0.1:52430][0m
+INFO 2023-05-08 16:38:06,669 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=032&tickettime=2023-05-03T10:46:25.850374Z 200 [2.35, 127.0.0.1:52412][0m
+INFO 2023-05-08 16:38:06,756 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=014&tickettime=2023-04-27T10:20:53.442682Z 200 [2.59, 127.0.0.1:52375][0m
+INFO 2023-05-08 16:38:06,788 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=007&tickettime=2023-04-27T08:16:28.094125Z 200 [2.67, 127.0.0.1:52359][0m
+INFO 2023-05-08 16:38:06,819 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=006&tickettime=2023-04-27T07:51:26.084028Z 200 [2.71, 127.0.0.1:52358][0m
+INFO 2023-05-08 16:38:06,916 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=027&tickettime=2023-04-27T10:47:20.849078Z 200 [2.64, 127.0.0.1:52402][0m
+INFO 2023-05-08 16:39:09,913 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:52341]
+INFO 2023-05-08 16:39:29,533 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 16:39:30,846 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 16:39:30,857 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 16:39:30,987 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 16:39:30,988 base>views><module> -SCH- Now:05/08/2023, 08:39:30
+INFO 2023-05-08 16:39:31,116 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 16:39:31,117 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 16:39:31,118 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 08:39:30 [Yes]
+INFO 2023-05-08 16:39:31,190 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 16:39:31,191 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 16:39:31,191 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 08:39:30 [Yes]
+INFO 2023-05-08 16:39:31,199 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 16:39:31,200 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 16:39:31,201 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 08:39:30 [Yes]
+INFO 2023-05-08 16:40:05,699 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:52530][0m
+INFO 2023-05-08 16:40:21,209 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:52539][0m
+INFO 2023-05-08 16:40:22,709 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.0 200 [0.02, 127.0.0.1:52542][0m
+INFO 2023-05-08 16:40:22,722 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:52545]
+INFO 2023-05-08 16:40:22,764 base>consumers>connect connecting:print_KB
+INFO 2023-05-08 16:40:22,772 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:52545]
+INFO 2023-05-08 16:40:27,737 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.0 200 [0.02, 127.0.0.1:52548][0m
+INFO 2023-05-08 16:40:28,581 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 16:40:28,586 base>ws>wssendprinterstatus ...Done
+INFO 2023-05-08 16:40:28,589 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:52551][0m
+INFO 2023-05-08 16:40:31,352 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 16:40:31,358 base>ws>wssendwebtv ...Done
+INFO 2023-05-08 16:40:31,364 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 16:40:31,367 base>ws>wssendql ...Done
+INFO 2023-05-08 16:40:31,370 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 16:40:31,375 base>ws>wsSendPrintTicket ...Done
+INFO 2023-05-08 16:40:31,381 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 16:40:31,384 base>ws>wsrochesms ...Done
+INFO 2023-05-08 16:40:31,387 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 16:40:31,389 base>ws>wsrochesms ...Done
+INFO 2023-05-08 16:40:31,403 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.1 200 [0.14, 127.0.0.1:52530][0m
+INFO 2023-05-08 16:40:31,524 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=046&tickettime=2023-05-08T08:40:31.267893Z 200 [0.04, 127.0.0.1:52559][0m
+INFO 2023-05-08 16:40:53,784 runserver>log_action [32mHTTP GET /softkey/1/ 302 [0.03, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:40:53,882 runserver>log_action [mHTTP GET /login/ 200 [0.03, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:40:54,602 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.01, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:40:54,606 runserver>log_action [36mHTTP GET /static/images/logo-q.svg 304 [0.01, 127.0.0.1:52574][0m
+INFO 2023-05-08 16:40:54,670 runserver>log_action [36mHTTP GET /static/js/script.js 304 [0.00, 127.0.0.1:52574][0m
+INFO 2023-05-08 16:40:54,705 runserver>log_action [36mHTTP GET /static/images/avatar.svg 304 [0.01, 127.0.0.1:52574][0m
+INFO 2023-05-08 16:40:57,066 runserver>log_action [mHTTP GET /webtv/KB/Reception/ 200 [0.04, 127.0.0.1:52574][0m
+INFO 2023-05-08 16:40:57,106 runserver>log_action [36mHTTP GET /static/styles/styletv.css 304 [0.00, 127.0.0.1:52574][0m
+INFO 2023-05-08 16:40:57,113 runserver>log_action [36mHTTP GET /static/icofont/icofont.min.css 304 [0.00, 127.0.0.1:52574][0m
+INFO 2023-05-08 16:40:57,157 runserver>log_action [36mHTTP GET /static/images/logo_ts.png 304 [0.00, 127.0.0.1:52574][0m
+INFO 2023-05-08 16:40:57,273 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:52602]
+INFO 2023-05-08 16:40:57,277 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-05-08 16:40:57,290 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:52602]
+INFO 2023-05-08 16:40:57,338 runserver>log_action [36mHTTP GET /static/icofont/fonts/icofont.woff2 304 [0.01, 127.0.0.1:52574][0m
+INFO 2023-05-08 16:40:57,514 runserver>log_action [32mHTTP GET /admin/base/userprofile/11/change/ 302 [0.06, 127.0.0.1:52574][0m
+INFO 2023-05-08 16:40:57,800 runserver>log_action [mHTTP GET /admin/login/?next=/admin/base/userprofile/11/change/ 200 [0.14, 127.0.0.1:52574][0m
+INFO 2023-05-08 16:40:58,442 runserver>log_action [36mHTTP GET /static/admin/css/base.css 304 [0.00, 127.0.0.1:52574][0m
+INFO 2023-05-08 16:40:58,457 runserver>log_action [36mHTTP GET /static/admin/css/dark_mode.css 304 [0.01, 127.0.0.1:52574][0m
+INFO 2023-05-08 16:40:58,461 runserver>log_action [36mHTTP GET /static/admin/css/nav_sidebar.css 304 [0.01, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:40:58,465 runserver>log_action [36mHTTP GET /static/admin/css/login.css 304 [0.01, 127.0.0.1:52613][0m
+INFO 2023-05-08 16:40:58,468 runserver>log_action [36mHTTP GET /static/admin/css/responsive.css 304 [0.01, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:40:58,511 runserver>log_action [36mHTTP GET /static/admin/js/nav_sidebar.js 304 [0.00, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:40:58,553 runserver>log_action [36mHTTP GET /static/admin/css/fonts.css 304 [0.00, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:40:58,652 runserver>log_action [36mHTTP GET /static/admin/fonts/Roboto-Regular-webfont.woff 304 [0.01, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:40:58,656 runserver>log_action [36mHTTP GET /static/admin/fonts/Roboto-Light-webfont.woff 304 [0.01, 127.0.0.1:52613][0m
+WARNING 2023-05-08 16:40:58,736 log>log_response Not Found: /favicon.ico
+WARNING 2023-05-08 16:40:58,738 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:52613][0m
+INFO 2023-05-08 16:40:59,750 runserver>log_action [mHTTP GET /touch/?bc=KB&t=t1 200 [0.02, 127.0.0.1:52613][0m
+INFO 2023-05-08 16:41:00,415 runserver>log_action [mHTTP GET /my/KB/A/215/y1y/ 200 [0.04, 127.0.0.1:52613][0m
+INFO 2023-05-08 16:41:01,293 runserver>log_action [32mHTTP GET /softkey/2/ 302 [0.00, 127.0.0.1:52613][0m
+INFO 2023-05-08 16:41:01,344 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:52613][0m
+INFO 2023-05-08 16:41:03,891 runserver>log_action [32mHTTP POST /login/ 302 [0.25, 127.0.0.1:52613][0m
+INFO 2023-05-08 16:41:03,953 runserver>log_action [mHTTP GET / 200 [0.06, 127.0.0.1:52613][0m
+INFO 2023-05-08 16:41:04,572 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:52613][0m
+INFO 2023-05-08 16:41:06,866 runserver>log_action [mHTTP GET /supervisors/ 200 [0.07, 127.0.0.1:52613][0m
+INFO 2023-05-08 16:41:10,361 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.43, 127.0.0.1:52614][0m
+WARNING 2023-05-08 16:41:22,539 log>log_response Forbidden (CSRF token from POST incorrect.): /admin/login/
+WARNING 2023-05-08 16:41:22,550 runserver>log_action [31;1mHTTP POST /admin/login/?next=/admin/base/userprofile/11/change/ 403 [0.02, 127.0.0.1:52614][0m
+WARNING 2023-05-08 16:41:24,381 log>log_response Forbidden (CSRF token from POST incorrect.): /admin/login/
+WARNING 2023-05-08 16:41:24,395 runserver>log_action [31;1mHTTP POST /admin/login/?next=/admin/base/userprofile/11/change/ 403 [0.02, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:41:29,088 runserver>log_action [32mHTTP GET /admin/ 302 [0.02, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:41:29,132 runserver>log_action [mHTTP GET /admin/login/?next=/admin/ 200 [0.03, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:41:29,320 runserver>log_action [mHTTP GET /static/admin/fonts/Roboto-Bold-webfont.woff 200 [0.09, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:41:33,838 runserver>log_action [32mHTTP POST /admin/login/?next=/admin/ 302 [0.24, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:41:33,942 runserver>log_action [mHTTP GET /admin/ 200 [0.10, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:41:33,978 runserver>log_action [mHTTP GET /static/admin/css/dashboard.css 200 [0.01, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:41:34,052 runserver>log_action [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.01, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:41:34,059 runserver>log_action [mHTTP GET /static/admin/img/icon-changelink.svg 200 [0.01, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:41:36,971 runserver>log_action [mHTTP GET /admin/base/printerstatus/ 200 [0.09, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:41:37,009 runserver>log_action [mHTTP GET /static/admin/css/changelists.css 200 [0.01, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:41:37,031 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.03, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:41:37,074 runserver>log_action [mHTTP GET /static/admin/js/vendor/jquery/jquery.js 200 [0.07, 127.0.0.1:52574][0m
+INFO 2023-05-08 16:41:37,087 runserver>log_action [mHTTP GET /static/admin/js/core.js 200 [0.08, 127.0.0.1:52663][0m
+INFO 2023-05-08 16:41:37,094 runserver>log_action [mHTTP GET /static/admin/js/jquery.init.js 200 [0.09, 127.0.0.1:52662][0m
+INFO 2023-05-08 16:41:37,104 runserver>log_action [mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 200 [0.10, 127.0.0.1:52664][0m
+INFO 2023-05-08 16:41:37,112 runserver>log_action [mHTTP GET /static/admin/js/actions.js 200 [0.10, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:41:37,123 runserver>log_action [mHTTP GET /static/admin/js/urlify.js 200 [0.09, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:41:37,132 runserver>log_action [mHTTP GET /static/admin/js/prepopulate.js 200 [0.05, 127.0.0.1:52574][0m
+INFO 2023-05-08 16:41:37,205 runserver>log_action [mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 200 [0.07, 127.0.0.1:52662][0m
+INFO 2023-05-08 16:41:37,213 runserver>log_action [mHTTP GET /static/admin/js/filters.js 200 [0.02, 127.0.0.1:52614][0m
+INFO 2023-05-08 16:41:37,290 runserver>log_action [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.01, 127.0.0.1:52662][0m
+INFO 2023-05-08 16:41:37,298 runserver>log_action [mHTTP GET /static/admin/img/sorting-icons.svg 200 [0.01, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:41:44,287 runserver>log_action [mHTTP POST /admin/base/printerstatus/ 200 [0.05, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:41:44,325 runserver>log_action [mHTTP GET /static/admin/js/cancel.js 200 [0.01, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:41:48,607 runserver>log_action [32mHTTP POST /admin/base/printerstatus/ 302 [0.05, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:41:48,649 runserver>log_action [mHTTP GET /admin/base/printerstatus/ 200 [0.04, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:41:48,700 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:41:48,766 runserver>log_action [mHTTP GET /static/admin/img/icon-yes.svg 200 [0.01, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:41:56,409 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.07, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:41:56,517 runserver>log_action [36mHTTP GET /static/images/favicon.ico 304 [0.00, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:41:59,716 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 16:41:59,720 base>ws>wssendprinterstatus ...Done
+INFO 2023-05-08 16:41:59,724 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.04, 127.0.0.1:52692][0m
+INFO 2023-05-08 16:42:02,259 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.08, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:42:03,763 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 16:42:03,768 base>ws>wssendprinterstatus ...Done
+INFO 2023-05-08 16:42:03,771 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:52711][0m
+INFO 2023-05-08 16:42:06,803 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 16:42:06,808 base>ws>wssendprinterstatus ...Done
+INFO 2023-05-08 16:42:06,812 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.04, 127.0.0.1:52727][0m
+INFO 2023-05-08 16:42:08,689 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.07, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:42:12,936 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.08, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:43:00,392 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:43:01,713 runserver>log_action [mHTTP GET /softkey_login/ 200 [0.06, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:43:05,791 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.08, 127.0.0.1:52570][0m
+INFO 2023-05-08 16:43:05,899 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52831]
+INFO 2023-05-08 16:43:05,906 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-08 16:43:05,912 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:52831]
+INFO 2023-05-08 16:43:05,929 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:52832]
+INFO 2023-05-08 16:43:05,938 base>consumers>connect connecting:cs_4
+INFO 2023-05-08 16:43:05,947 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:52832]
+INFO 2023-05-08 16:43:05,963 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52833]
+INFO 2023-05-08 16:43:05,971 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-08 16:43:05,983 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:52833]
+INFO 2023-05-08 16:43:09,896 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 16:43:09,903 base>ws>wssendprinterstatus ...Done
+INFO 2023-05-08 16:43:09,906 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.04, 127.0.0.1:52836][0m
+INFO 2023-05-08 16:43:29,974 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 16:43:29,980 base>ws>wssendprinterstatus ...Done
+INFO 2023-05-08 16:43:29,984 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:52840][0m
+INFO 2023-05-08 16:45:11,445 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:52847][0m
+INFO 2023-05-08 16:50:01,436 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:52892][0m
+INFO 2023-05-08 16:54:51,448 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:52967][0m
+INFO 2023-05-08 16:59:41,445 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:52987][0m
+INFO 2023-05-08 17:04:31,436 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53009][0m
+INFO 2023-05-08 17:09:21,449 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53025][0m
+INFO 2023-05-08 17:14:11,459 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:53069][0m
+INFO 2023-05-08 17:19:01,473 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53119][0m
+INFO 2023-05-08 17:23:51,476 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53139][0m
+INFO 2023-05-08 17:28:41,480 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53169][0m
+INFO 2023-05-08 17:30:09,288 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 17:30:11,189 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 17:30:11,200 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 17:30:11,355 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 17:30:11,356 base>views><module> -SCH- Now:05/08/2023, 09:30:11
+INFO 2023-05-08 17:30:11,488 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 17:30:11,489 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 17:30:11,490 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 09:30:11 [Yes]
+INFO 2023-05-08 17:30:11,566 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 17:30:11,567 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 17:30:11,568 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 09:30:11 [Yes]
+INFO 2023-05-08 17:30:11,576 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 17:30:11,577 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 17:30:11,577 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 09:30:11 [Yes]
+INFO 2023-05-08 17:30:12,281 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:53187]
+INFO 2023-05-08 17:30:12,334 base>consumers>connect connecting:print_KB
+INFO 2023-05-08 17:30:12,344 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:53187]
+INFO 2023-05-08 17:30:14,758 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.0 200 [0.04, 127.0.0.1:53197][0m
+INFO 2023-05-08 17:30:45,463 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 17:30:45,470 base>ws>wssendwebtv ...Done
+INFO 2023-05-08 17:30:45,476 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 17:30:45,480 base>ws>wssendql ...Done
+INFO 2023-05-08 17:30:45,482 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 17:30:45,486 base>ws>wsSendPrintTicket ...Done
+INFO 2023-05-08 17:30:45,491 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 17:30:45,494 base>ws>wsrochesms ...Done
+INFO 2023-05-08 17:30:45,498 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 17:30:45,502 base>ws>wsrochesms ...Done
+INFO 2023-05-08 17:30:45,514 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.1 200 [0.15, 127.0.0.1:53205][0m
+INFO 2023-05-08 17:30:49,753 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=047&tickettime=2023-05-08T09:30:45.373172Z 200 [0.04, 127.0.0.1:53213][0m
+INFO 2023-05-08 17:30:55,075 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 17:30:55,082 base>ws>wssendwebtv ...Done
+INFO 2023-05-08 17:30:55,090 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 17:30:55,095 base>ws>wssendql ...Done
+INFO 2023-05-08 17:30:55,098 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 17:30:55,104 base>ws>wsSendPrintTicket ...Done
+INFO 2023-05-08 17:30:55,112 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 17:30:55,115 base>ws>wsrochesms ...Done
+INFO 2023-05-08 17:30:55,120 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 17:30:55,123 base>ws>wsrochesms ...Done
+INFO 2023-05-08 17:30:55,137 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.1 200 [0.16, 127.0.0.1:53205][0m
+INFO 2023-05-08 17:30:55,230 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&tickettype=A&ticketnumber=048&tickettime=2023-05-08T09:30:54.987734Z 200 [0.04, 127.0.0.1:53219][0m
+INFO 2023-05-08 17:33:31,473 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53330][0m
+INFO 2023-05-08 17:38:21,478 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53383][0m
+INFO 2023-05-08 17:43:07,153 runserver>log_action [32mHTTP GET /softkey/4/ 302 [0.04, 127.0.0.1:53466][0m
+INFO 2023-05-08 17:43:07,180 runserver>log_action [mHTTP GET /login/ 200 [0.02, 127.0.0.1:53466][0m
+INFO 2023-05-08 17:43:11,469 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53473][0m
+INFO 2023-05-08 17:45:18,367 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:53187]
+INFO 2023-05-08 17:47:30,493 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:53561][0m
+INFO 2023-05-08 17:47:34,179 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.0 200 [0.02, 127.0.0.1:53564][0m
+INFO 2023-05-08 17:47:34,209 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:53567]
+INFO 2023-05-08 17:47:34,212 base>consumers>connect connecting:print_KB
+INFO 2023-05-08 17:47:34,221 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:53567]
+INFO 2023-05-08 17:47:39,210 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.0 200 [0.02, 127.0.0.1:53570][0m
+INFO 2023-05-08 17:47:40,063 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 17:47:40,070 base>ws>wssendprinterstatus ...Done
+INFO 2023-05-08 17:47:40,073 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:53573][0m
+INFO 2023-05-08 17:48:08,200 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:53567]
+WARNING 2023-05-08 17:50:49,408 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 17:50:49,410 runserver>log_action [31;1mHTTP GET /api/?app=Softkey&version=8.0.0.1 401 [0.01, 127.0.0.1:53638][0m
+WARNING 2023-05-08 17:50:54,466 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 17:50:54,468 runserver>log_action [31;1mHTTP GET /api/?app=Softkey&version=8.0.0.1 401 [0.01, 127.0.0.1:53638][0m
+WARNING 2023-05-08 17:50:59,486 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 17:50:59,488 runserver>log_action [31;1mHTTP GET /api/?app=Softkey&version=8.0.0.1 401 [0.01, 127.0.0.1:53638][0m
+WARNING 2023-05-08 17:51:04,498 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 17:51:04,499 runserver>log_action [31;1mHTTP GET /api/?app=Softkey&version=8.0.0.1 401 [0.01, 127.0.0.1:53638][0m
+WARNING 2023-05-08 17:51:09,521 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 17:51:09,522 runserver>log_action [31;1mHTTP GET /api/?app=Softkey&version=8.0.0.1 401 [0.01, 127.0.0.1:53638][0m
+WARNING 2023-05-08 17:51:14,540 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 17:51:14,541 runserver>log_action [31;1mHTTP GET /api/?app=Softkey&version=8.0.0.1 401 [0.01, 127.0.0.1:53638][0m
+INFO 2023-05-08 17:51:19,263 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 17:51:20,874 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 17:51:20,884 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 17:51:21,013 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 17:51:21,014 base>views><module> -SCH- Now:05/08/2023, 09:51:21
+INFO 2023-05-08 17:51:21,160 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 17:51:21,161 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 17:51:21,162 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 09:51:21 [Yes]
+INFO 2023-05-08 17:51:21,246 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 17:51:21,246 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 17:51:21,247 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 09:51:21 [Yes]
+INFO 2023-05-08 17:51:21,256 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 17:51:21,257 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 17:51:21,257 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 09:51:21 [Yes]
+INFO 2023-05-08 17:51:21,619 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.01, 127.0.0.1:53661][0m
+INFO 2023-05-08 17:51:21,651 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:53672]
+INFO 2023-05-08 17:51:21,654 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:53671]
+INFO 2023-05-08 17:51:21,702 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-08 17:51:21,704 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-08 17:51:21,714 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:53672]
+INFO 2023-05-08 17:51:21,716 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:53671]
+INFO 2023-05-08 17:51:29,163 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.27, 127.0.0.1:53661][0m
+INFO 2023-05-08 17:51:31,874 runserver>log_action [mHTTP GET /api/waiting/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.24, 127.0.0.1:53661][0m
+INFO 2023-05-08 17:51:35,635 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 200 [0.02, 127.0.0.1:53661][0m
+INFO 2023-05-08 17:51:42,664 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 200 [0.02, 127.0.0.1:53661][0m
+INFO 2023-05-08 17:51:49,686 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 200 [0.02, 127.0.0.1:53661][0m
+INFO 2023-05-08 17:51:56,703 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 200 [0.02, 127.0.0.1:53661][0m
+INFO 2023-05-08 17:52:03,728 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 200 [0.02, 127.0.0.1:53661][0m
+INFO 2023-05-08 17:52:10,748 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 200 [0.02, 127.0.0.1:53661][0m
+INFO 2023-05-08 17:52:17,766 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 200 [0.02, 127.0.0.1:53661][0m
+INFO 2023-05-08 17:52:20,819 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:53671]
+INFO 2023-05-08 17:52:20,820 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:53672]
+INFO 2023-05-08 17:53:07,462 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53718][0m
+INFO 2023-05-08 17:53:23,537 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=postman&version=8 200 [0.02, 127.0.0.1:53718][0m
+INFO 2023-05-08 17:53:42,316 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=postman&version=8 200 [0.02, 127.0.0.1:53718][0m
+INFO 2023-05-08 17:54:32,906 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=postman&version=8 200 [0.02, 127.0.0.1:53718][0m
+INFO 2023-05-08 17:54:38,015 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=postman&version=8 200 [0.02, 127.0.0.1:53718][0m
+INFO 2023-05-08 17:55:04,594 runserver>log_action [mHTTP GET /api/firstprint/?username=userapi&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&branchcode=KB&app=postman&version=8 200 [0.02, 127.0.0.1:53718][0m
+INFO 2023-05-08 17:56:56,068 runserver>log_action [mHTTP POST /api/printed/?username=userapi&app=postman&version=8.1&branchcode=KB&tickettype=A&ticketnumber=007&tickettime=2023-01-26T03:24:36.954260Z 200 [0.02, 127.0.0.1:53773][0m
+INFO 2023-05-08 17:57:02,858 runserver>log_action [mHTTP POST /api/printed/?username=userapi&app=postman&version=8.1&branchcode=KB&tickettype=A&ticketnumber=007&tickettime=2023-01-26T03:24:36.954260Z 200 [0.02, 127.0.0.1:53773][0m
+INFO 2023-05-08 17:57:33,205 runserver>log_action [mHTTP POST /api/printed/?username=userapi&app=postman&version=8.1&branchcode=KB&tickettype=A&ticketnumber=007&tickettime=2023-01-26T03:24:36.954260Z 200 [0.02, 127.0.0.1:53773][0m
+INFO 2023-05-08 17:57:38,245 runserver>log_action [mHTTP POST /api/printed/?username=userapi&app=postman&version=8.1&branchcode=KB&tickettype=A&ticketnumber=007&tickettime=2023-01-26T03:24:36.954260Z 200 [0.02, 127.0.0.1:53773][0m
+INFO 2023-05-08 17:57:42,535 runserver>log_action [mHTTP POST /api/printed/?username=userapi&app=postman&version=8.1&branchcode=KB&tickettype=A&ticketnumber=007&tickettime=2023-01-26T03:24:36.954260Z 200 [0.02, 127.0.0.1:53773][0m
+WARNING 2023-05-08 17:57:51,782 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 17:57:51,783 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.01, 127.0.0.1:53773][0m
+INFO 2023-05-08 17:59:00,328 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 17:59:01,584 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 17:59:01,594 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 17:59:01,712 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 17:59:01,713 base>views><module> -SCH- Now:05/08/2023, 09:59:01
+INFO 2023-05-08 17:59:01,839 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 17:59:01,840 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 17:59:01,841 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 09:59:01 [Yes]
+INFO 2023-05-08 17:59:01,907 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 17:59:01,907 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 17:59:01,908 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 09:59:01 [Yes]
+INFO 2023-05-08 17:59:01,917 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 17:59:01,918 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 17:59:01,918 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 09:59:01 [Yes]
+WARNING 2023-05-08 17:59:04,753 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 17:59:04,755 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.02, 127.0.0.1:53836][0m
+INFO 2023-05-08 18:00:22,806 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:00:24,384 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:00:24,394 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:00:24,532 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:00:24,533 base>views><module> -SCH- Now:05/08/2023, 10:00:24
+INFO 2023-05-08 18:00:24,669 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:00:24,670 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:00:24,670 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:00:24 [Yes]
+INFO 2023-05-08 18:00:24,736 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:00:24,737 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:00:24,738 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:00:24 [Yes]
+INFO 2023-05-08 18:00:24,747 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:00:24,748 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:00:24,749 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:00:24 [Yes]
+WARNING 2023-05-08 18:00:26,068 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:00:26,070 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.02, 127.0.0.1:53859][0m
+INFO 2023-05-08 18:01:39,225 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:01:40,741 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:01:40,751 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:01:40,874 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:01:40,875 base>views><module> -SCH- Now:05/08/2023, 10:01:40
+INFO 2023-05-08 18:01:41,014 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:01:41,015 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:01:41,016 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:01:40 [Yes]
+INFO 2023-05-08 18:01:41,085 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:01:41,085 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:01:41,086 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:01:40 [Yes]
+INFO 2023-05-08 18:01:41,094 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:01:41,095 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:01:41,095 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:01:40 [Yes]
+WARNING 2023-05-08 18:01:43,689 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:01:43,690 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.02, 127.0.0.1:53884][0m
+WARNING 2023-05-08 18:01:49,259 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:01:49,260 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.01, 127.0.0.1:53884][0m
+INFO 2023-05-08 18:02:50,236 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:02:51,505 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:02:51,515 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:02:51,630 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:02:51,631 base>views><module> -SCH- Now:05/08/2023, 10:02:51
+INFO 2023-05-08 18:02:51,760 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:02:51,761 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:02:51,762 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:02:51 [Yes]
+INFO 2023-05-08 18:02:51,832 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:02:51,833 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:02:51,834 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:02:51 [Yes]
+INFO 2023-05-08 18:02:51,842 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:02:51,843 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:02:51,844 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:02:51 [Yes]
+WARNING 2023-05-08 18:02:54,194 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:02:54,196 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.03, 127.0.0.1:53913][0m
+WARNING 2023-05-08 18:06:38,901 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:06:38,903 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.01, 127.0.0.1:53976][0m
+INFO 2023-05-08 18:06:45,942 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:53976][0m
+INFO 2023-05-08 18:06:49,658 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:53976][0m
+WARNING 2023-05-08 18:06:57,952 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:06:57,953 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.01, 127.0.0.1:53976][0m
+INFO 2023-05-08 18:07:03,443 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:53976][0m
+INFO 2023-05-08 18:07:04,687 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:53976][0m
+INFO 2023-05-08 18:07:10,233 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:07:11,720 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:07:11,729 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:07:11,857 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:07:11,858 base>views><module> -SCH- Now:05/08/2023, 10:07:11
+INFO 2023-05-08 18:07:11,986 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:07:11,987 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:07:11,988 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:07:11 [Yes]
+INFO 2023-05-08 18:07:12,058 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:07:12,059 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:07:12,059 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:07:11 [Yes]
+INFO 2023-05-08 18:07:12,068 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:07:12,068 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:07:12,070 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:07:11 [Yes]
+INFO 2023-05-08 18:07:13,532 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:54013][0m
+INFO 2023-05-08 18:07:14,672 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:54013][0m
+INFO 2023-05-08 18:07:15,567 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:54013][0m
+INFO 2023-05-08 18:07:16,433 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:54013][0m
+INFO 2023-05-08 18:07:17,960 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:54013][0m
+INFO 2023-05-08 18:07:53,555 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.00, 127.0.0.1:54013][0m
+INFO 2023-05-08 18:08:35,625 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:08:37,752 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:08:37,763 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:08:37,896 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:08:37,897 base>views><module> -SCH- Now:05/08/2023, 10:08:37
+INFO 2023-05-08 18:08:38,024 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:08:38,025 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:08:38,026 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:08:37 [Yes]
+INFO 2023-05-08 18:08:38,095 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:08:38,096 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:08:38,097 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:08:37 [Yes]
+INFO 2023-05-08 18:08:38,106 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:08:38,107 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:08:38,108 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:08:37 [Yes]
+INFO 2023-05-08 18:08:40,354 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:08:42,087 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:08:42,096 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:08:43,822 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:08:45,487 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:08:45,497 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:08:49,441 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:08:51,041 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:08:51,050 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:09:09,419 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:09:11,043 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:09:11,052 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:09:11,181 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:09:11,182 base>views><module> -SCH- Now:05/08/2023, 10:09:11
+INFO 2023-05-08 18:09:11,312 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:09:11,313 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:09:11,314 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:09:11 [Yes]
+INFO 2023-05-08 18:09:11,382 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:09:11,383 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:09:11,383 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:09:11 [Yes]
+INFO 2023-05-08 18:09:11,392 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:09:11,393 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:09:11,394 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:09:11 [Yes]
+WARNING 2023-05-08 18:09:12,228 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:09:12,229 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.02, 127.0.0.1:54099][0m
+INFO 2023-05-08 18:09:48,659 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:09:50,299 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:09:50,309 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:09:56,463 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:09:58,033 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:09:58,043 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:09:58,168 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:09:58,169 base>views><module> -SCH- Now:05/08/2023, 10:09:58
+INFO 2023-05-08 18:09:58,296 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:09:58,297 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:09:58,298 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:09:58 [Yes]
+INFO 2023-05-08 18:09:58,365 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:09:58,366 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:09:58,367 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:09:58 [Yes]
+INFO 2023-05-08 18:09:58,375 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:09:58,376 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:09:58,376 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:09:58 [Yes]
+INFO 2023-05-08 18:10:06,229 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:10:07,839 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:10:07,848 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:10:07,970 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:10:07,971 base>views><module> -SCH- Now:05/08/2023, 10:10:07
+INFO 2023-05-08 18:10:08,097 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:10:08,098 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:10:08,099 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:10:07 [Yes]
+INFO 2023-05-08 18:10:08,165 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:10:08,166 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:10:08,167 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:10:07 [Yes]
+INFO 2023-05-08 18:10:08,175 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:10:08,176 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:10:08,177 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:10:07 [Yes]
+INFO 2023-05-08 18:10:26,222 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:10:27,865 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:10:27,875 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:10:29,549 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:10:31,123 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:10:31,133 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:10:31,253 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:10:31,254 base>views><module> -SCH- Now:05/08/2023, 10:10:31
+INFO 2023-05-08 18:10:31,380 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:10:31,381 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:10:31,382 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:10:31 [Yes]
+INFO 2023-05-08 18:10:31,447 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:10:31,448 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:10:31,448 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:10:31 [Yes]
+INFO 2023-05-08 18:10:31,456 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:10:31,457 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:10:31,458 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:10:31 [Yes]
+INFO 2023-05-08 18:10:37,304 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:54154][0m
+INFO 2023-05-08 18:10:38,932 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.00, 127.0.0.1:54154][0m
+INFO 2023-05-08 18:10:53,410 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:10:55,083 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:10:55,092 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:10:55,217 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:10:55,218 base>views><module> -SCH- Now:05/08/2023, 10:10:55
+INFO 2023-05-08 18:10:55,346 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:10:55,347 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:10:55,348 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:10:55 [Yes]
+INFO 2023-05-08 18:10:55,416 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:10:55,417 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:10:55,417 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:10:55 [Yes]
+INFO 2023-05-08 18:10:55,426 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:10:55,427 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:10:55,428 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:10:55 [Yes]
+INFO 2023-05-08 18:10:56,456 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:54179][0m
+INFO 2023-05-08 18:10:58,323 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:54179][0m
+INFO 2023-05-08 18:10:59,587 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:54179][0m
+INFO 2023-05-08 18:11:01,024 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:54179][0m
+INFO 2023-05-08 18:11:19,225 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:11:20,974 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:11:20,984 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:11:21,119 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:11:21,120 base>views><module> -SCH- Now:05/08/2023, 10:11:21
+INFO 2023-05-08 18:11:21,245 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:11:21,245 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:11:21,246 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:11:21 [Yes]
+INFO 2023-05-08 18:11:21,323 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:11:21,324 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:11:21,324 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:11:21 [Yes]
+INFO 2023-05-08 18:11:21,333 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:11:21,334 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:11:21,334 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:11:21 [Yes]
+ERROR 2023-05-08 18:11:23,793 log>log_response Internal Server Error: /api/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\base.py", line 284, in _get_response_async
+    response = await sync_to_async(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type BasePermissionMetaclass is not JSON serializable
+ERROR 2023-05-08 18:11:23,807 runserver>log_action [35;1mHTTP GET /api/?app=postman&version=8.1 500 [0.12, 127.0.0.1:54203][0m
+ERROR 2023-05-08 18:11:29,292 log>log_response Internal Server Error: /api/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\base.py", line 284, in _get_response_async
+    response = await sync_to_async(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type BasePermissionMetaclass is not JSON serializable
+ERROR 2023-05-08 18:11:29,302 runserver>log_action [35;1mHTTP GET /api/?app=postman&version=8.1 500 [0.05, 127.0.0.1:54203][0m
+ERROR 2023-05-08 18:11:30,396 log>log_response Internal Server Error: /api/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\base.py", line 284, in _get_response_async
+    response = await sync_to_async(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type BasePermissionMetaclass is not JSON serializable
+ERROR 2023-05-08 18:11:30,407 runserver>log_action [35;1mHTTP GET /api/?app=postman&version=8.1 500 [0.05, 127.0.0.1:54203][0m
+INFO 2023-05-08 18:11:36,506 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:11:38,134 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:11:38,145 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:11:39,812 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:11:41,393 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:11:41,402 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:11:45,307 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:11:46,893 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:11:46,902 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:11:48,606 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:11:50,215 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:11:50,225 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:12:01,938 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:12:03,532 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:12:03,542 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:12:05,262 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:12:06,870 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:12:06,880 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:12:10,799 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:12:12,402 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:12:12,411 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:12:14,133 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:12:15,856 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:12:15,865 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:12:34,324 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:12:35,958 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:12:35,968 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:12:36,088 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:12:36,089 base>views><module> -SCH- Now:05/08/2023, 10:12:36
+INFO 2023-05-08 18:12:36,227 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:12:36,228 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:12:36,229 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:12:36 [Yes]
+INFO 2023-05-08 18:12:36,296 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:12:36,297 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:12:36,298 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:12:36 [Yes]
+INFO 2023-05-08 18:12:36,305 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:12:36,306 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:12:36,307 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:12:36 [Yes]
+ERROR 2023-05-08 18:12:38,676 log>log_response Internal Server Error: /api/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\base.py", line 284, in _get_response_async
+    response = await sync_to_async(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type BasePermissionMetaclass is not JSON serializable
+ERROR 2023-05-08 18:12:38,691 runserver>log_action [35;1mHTTP GET /api/?app=postman&version=8.1 500 [0.08, 127.0.0.1:54306][0m
+INFO 2023-05-08 18:14:44,817 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:14:46,456 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:14:46,466 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:14:50,372 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:14:51,960 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:14:51,969 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:14:58,131 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:14:59,690 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:14:59,700 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:15:12,493 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:15:14,091 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:15:14,100 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:15:14,218 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:15:14,219 base>views><module> -SCH- Now:05/08/2023, 10:15:14
+INFO 2023-05-08 18:15:14,353 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:15:14,354 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:15:14,354 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:15:14 [Yes]
+INFO 2023-05-08 18:15:14,420 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:15:14,421 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:15:14,421 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:15:14 [Yes]
+INFO 2023-05-08 18:15:14,429 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:15:14,430 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:15:14,431 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:15:14 [Yes]
+ERROR 2023-05-08 18:15:19,677 log>log_response Internal Server Error: /api/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\base.py", line 284, in _get_response_async
+    response = await sync_to_async(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type function is not JSON serializable
+ERROR 2023-05-08 18:15:19,691 runserver>log_action [35;1mHTTP GET /api/?app=postman&version=8.1 500 [0.07, 127.0.0.1:54484][0m
+INFO 2023-05-08 18:16:18,085 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:16:19,740 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:16:19,750 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:16:19,879 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:16:19,880 base>views><module> -SCH- Now:05/08/2023, 10:16:19
+INFO 2023-05-08 18:16:20,007 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:16:20,008 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:16:20,009 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:16:19 [Yes]
+INFO 2023-05-08 18:16:20,075 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:16:20,076 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:16:20,077 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:16:19 [Yes]
+INFO 2023-05-08 18:16:20,085 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:16:20,086 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:16:20,087 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:16:19 [Yes]
+INFO 2023-05-08 18:16:22,293 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:16:23,875 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:16:23,884 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:16:24,002 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:16:24,003 base>views><module> -SCH- Now:05/08/2023, 10:16:24
+INFO 2023-05-08 18:16:24,134 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:16:24,135 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:16:24,135 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:16:24 [Yes]
+INFO 2023-05-08 18:16:24,202 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:16:24,203 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:16:24,203 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:16:24 [Yes]
+INFO 2023-05-08 18:16:24,213 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:16:24,213 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:16:24,214 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:16:24 [Yes]
+INFO 2023-05-08 18:16:27,604 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:16:29,264 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:16:29,274 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:16:29,396 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:16:29,397 base>views><module> -SCH- Now:05/08/2023, 10:16:29
+INFO 2023-05-08 18:16:29,519 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:16:29,520 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:16:29,521 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:16:29 [Yes]
+INFO 2023-05-08 18:16:29,585 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:16:29,586 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:16:29,587 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:16:29 [Yes]
+INFO 2023-05-08 18:16:29,595 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:16:29,595 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:16:29,596 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:16:29 [Yes]
+WARNING 2023-05-08 18:16:35,366 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:16:35,367 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.01, 127.0.0.1:54531][0m
+WARNING 2023-05-08 18:16:37,705 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:16:37,707 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.01, 127.0.0.1:54531][0m
+INFO 2023-05-08 18:16:44,739 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:16:46,382 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:16:46,392 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:16:46,520 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:16:46,520 base>views><module> -SCH- Now:05/08/2023, 10:16:46
+INFO 2023-05-08 18:16:46,646 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:16:46,647 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:16:46,648 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:16:46 [Yes]
+INFO 2023-05-08 18:16:46,720 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:16:46,721 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:16:46,722 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:16:46 [Yes]
+INFO 2023-05-08 18:16:46,731 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:16:46,731 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:16:46,732 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:16:46 [Yes]
+INFO 2023-05-08 18:16:47,900 runserver>log_action [mHTTP GET /api/?app=postman&version=8.1 200 [0.01, 127.0.0.1:54546][0m
+INFO 2023-05-08 18:16:52,369 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:16:53,999 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:16:54,010 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:16:54,144 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:16:54,145 base>views><module> -SCH- Now:05/08/2023, 10:16:54
+INFO 2023-05-08 18:16:54,276 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:16:54,277 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:16:54,278 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:16:54 [Yes]
+INFO 2023-05-08 18:16:54,352 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:16:54,353 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:16:54,354 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:16:54 [Yes]
+INFO 2023-05-08 18:16:54,364 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:16:54,365 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:16:54,365 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:16:54 [Yes]
+WARNING 2023-05-08 18:16:55,659 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:16:55,661 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.01, 127.0.0.1:54559][0m
+WARNING 2023-05-08 18:16:57,005 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:16:57,006 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.01, 127.0.0.1:54559][0m
+WARNING 2023-05-08 18:17:01,099 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:17:01,100 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.02, 127.0.0.1:54559][0m
+WARNING 2023-05-08 18:17:04,822 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:17:04,823 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.01, 127.0.0.1:54559][0m
+WARNING 2023-05-08 18:17:07,828 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:17:07,830 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.01, 127.0.0.1:54559][0m
+WARNING 2023-05-08 18:17:10,607 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:17:10,609 runserver>log_action [31;1mHTTP GET /api/?app=postman&version=8.1 401 [0.01, 127.0.0.1:54559][0m
+INFO 2023-05-08 18:17:41,190 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:17:42,810 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:17:42,819 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:17:42,936 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:17:42,937 base>views><module> -SCH- Now:05/08/2023, 10:17:42
+INFO 2023-05-08 18:17:43,061 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:17:43,062 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:17:43,063 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:17:42 [Yes]
+INFO 2023-05-08 18:17:43,128 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:17:43,129 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:17:43,130 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:17:42 [Yes]
+INFO 2023-05-08 18:17:43,137 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:17:43,138 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:17:43,138 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:17:42 [Yes]
+INFO 2023-05-08 18:17:50,971 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:17:52,626 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:17:52,636 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:17:52,772 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:17:52,773 base>views><module> -SCH- Now:05/08/2023, 10:17:52
+INFO 2023-05-08 18:17:52,898 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:17:52,899 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:17:52,900 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:17:52 [Yes]
+INFO 2023-05-08 18:17:52,964 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:17:52,965 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:17:52,966 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:17:52 [Yes]
+INFO 2023-05-08 18:17:52,974 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:17:52,975 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:17:52,976 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:17:52 [Yes]
+INFO 2023-05-08 18:17:55,210 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:17:56,848 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:17:56,857 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:17:56,978 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:17:56,979 base>views><module> -SCH- Now:05/08/2023, 10:17:56
+INFO 2023-05-08 18:17:57,103 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:17:57,104 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:17:57,105 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:17:56 [Yes]
+INFO 2023-05-08 18:17:57,172 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:17:57,173 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:17:57,173 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:17:56 [Yes]
+INFO 2023-05-08 18:17:57,182 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:17:57,183 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:17:57,184 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:17:56 [Yes]
+INFO 2023-05-08 18:18:07,323 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_printer.py changed, reloading.
+INFO 2023-05-08 18:18:08,949 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:18:08,959 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:18:09,083 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:18:09,083 base>views><module> -SCH- Now:05/08/2023, 10:18:09
+INFO 2023-05-08 18:18:09,210 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:18:09,211 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:18:09,211 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:18:09 [Yes]
+INFO 2023-05-08 18:18:09,276 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:18:09,276 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:18:09,277 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:18:09 [Yes]
+INFO 2023-05-08 18:18:09,285 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:18:09,287 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:18:09,287 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:18:09 [Yes]
+INFO 2023-05-08 18:18:11,528 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_printer.py changed, reloading.
+INFO 2023-05-08 18:18:13,179 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:18:13,189 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:18:13,312 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:18:13,313 base>views><module> -SCH- Now:05/08/2023, 10:18:13
+INFO 2023-05-08 18:18:13,437 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:18:13,437 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:18:13,438 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:18:13 [Yes]
+INFO 2023-05-08 18:18:13,504 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:18:13,504 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:18:13,505 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:18:13 [Yes]
+INFO 2023-05-08 18:18:13,513 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:18:13,514 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:18:13,514 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:18:13 [Yes]
+INFO 2023-05-08 18:18:19,178 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_printer.py changed, reloading.
+INFO 2023-05-08 18:18:20,821 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:18:20,830 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:18:20,949 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:18:20,950 base>views><module> -SCH- Now:05/08/2023, 10:18:20
+INFO 2023-05-08 18:18:21,074 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:18:21,075 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:18:21,075 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:18:20 [Yes]
+INFO 2023-05-08 18:18:21,141 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:18:21,142 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:18:21,143 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:18:20 [Yes]
+INFO 2023-05-08 18:18:21,151 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:18:21,152 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:18:21,153 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:18:20 [Yes]
+INFO 2023-05-08 18:18:23,433 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_printer.py changed, reloading.
+INFO 2023-05-08 18:18:25,074 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:18:25,084 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:18:25,204 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:18:25,205 base>views><module> -SCH- Now:05/08/2023, 10:18:25
+INFO 2023-05-08 18:18:25,335 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:18:25,335 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:18:25,336 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:18:25 [Yes]
+INFO 2023-05-08 18:18:25,399 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:18:25,400 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:18:25,401 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:18:25 [Yes]
+INFO 2023-05-08 18:18:25,409 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:18:25,410 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:18:25,410 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:18:25 [Yes]
+INFO 2023-05-08 18:18:29,889 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_printer.py changed, reloading.
+INFO 2023-05-08 18:18:31,514 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:18:31,523 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:18:31,645 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:18:31,646 base>views><module> -SCH- Now:05/08/2023, 10:18:31
+INFO 2023-05-08 18:18:31,770 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:18:31,771 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:18:31,772 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:18:31 [Yes]
+INFO 2023-05-08 18:18:31,837 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:18:31,837 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:18:31,838 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:18:31 [Yes]
+INFO 2023-05-08 18:18:31,846 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:18:31,847 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:18:31,847 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:18:31 [Yes]
+INFO 2023-05-08 18:21:37,030 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_softkey.py changed, reloading.
+INFO 2023-05-08 18:21:39,275 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:21:39,285 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:21:39,418 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:21:39,419 base>views><module> -SCH- Now:05/08/2023, 10:21:39
+INFO 2023-05-08 18:21:39,543 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:21:39,543 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:21:39,544 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:21:39 [Yes]
+INFO 2023-05-08 18:21:39,609 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:21:39,610 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:21:39,610 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:21:39 [Yes]
+INFO 2023-05-08 18:21:39,618 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:21:39,618 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:21:39,619 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:21:39 [Yes]
+INFO 2023-05-08 18:21:44,171 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_softkey.py changed, reloading.
+INFO 2023-05-08 18:21:45,884 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:21:45,893 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:21:46,030 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:21:46,031 base>views><module> -SCH- Now:05/08/2023, 10:21:46
+INFO 2023-05-08 18:21:46,155 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:21:46,156 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:21:46,157 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:21:46 [Yes]
+INFO 2023-05-08 18:21:46,221 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:21:46,222 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:21:46,222 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:21:46 [Yes]
+INFO 2023-05-08 18:21:46,230 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:21:46,231 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:21:46,231 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:21:46 [Yes]
+INFO 2023-05-08 18:21:50,728 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_softkey.py changed, reloading.
+INFO 2023-05-08 18:21:52,386 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:21:52,396 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:21:52,542 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:21:52,543 base>views><module> -SCH- Now:05/08/2023, 10:21:52
+INFO 2023-05-08 18:21:52,667 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:21:52,668 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:21:52,668 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:21:52 [Yes]
+INFO 2023-05-08 18:21:52,740 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:21:52,741 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:21:52,742 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:21:52 [Yes]
+INFO 2023-05-08 18:21:52,750 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:21:52,751 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:21:52,751 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:21:52 [Yes]
+INFO 2023-05-08 18:21:56,130 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_softkey.py changed, reloading.
+INFO 2023-05-08 18:21:57,840 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:21:57,850 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:21:57,987 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:21:57,988 base>views><module> -SCH- Now:05/08/2023, 10:21:57
+INFO 2023-05-08 18:21:58,117 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:21:58,118 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:21:58,118 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:21:57 [Yes]
+INFO 2023-05-08 18:21:58,185 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:21:58,186 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:21:58,186 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:21:57 [Yes]
+INFO 2023-05-08 18:21:58,195 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:21:58,196 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:21:58,197 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:21:57 [Yes]
+INFO 2023-05-08 18:22:02,691 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_softkey.py changed, reloading.
+INFO 2023-05-08 18:22:04,272 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:22:04,282 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:22:04,410 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:22:04,410 base>views><module> -SCH- Now:05/08/2023, 10:22:04
+INFO 2023-05-08 18:22:04,535 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:22:04,536 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:22:04,536 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:22:04 [Yes]
+INFO 2023-05-08 18:22:04,603 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:22:04,603 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:22:04,604 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:22:04 [Yes]
+INFO 2023-05-08 18:22:04,612 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:22:04,613 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:22:04,614 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:22:04 [Yes]
+INFO 2023-05-08 18:38:11,158 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\urls.py changed, reloading.
+INFO 2023-05-08 18:38:13,202 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:38:13,213 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:38:13,338 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:38:13,339 base>views><module> -SCH- Now:05/08/2023, 10:38:13
+INFO 2023-05-08 18:38:13,465 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:38:13,467 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:38:13,467 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:38:13 [Yes]
+INFO 2023-05-08 18:38:13,533 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:38:13,534 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:38:13,534 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:38:13 [Yes]
+INFO 2023-05-08 18:38:13,543 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:38:13,543 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:38:13,544 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:38:13 [Yes]
+WARNING 2023-05-08 18:45:13,004 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:45:13,005 runserver>log_action [31;1mHTTP GET /api/?app=Softkey&version=8.0.0.1 401 [0.01, 127.0.0.1:55010][0m
+WARNING 2023-05-08 18:45:18,029 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:45:18,030 runserver>log_action [31;1mHTTP GET /api/?app=Softkey&version=8.0.0.1 401 [0.01, 127.0.0.1:55010][0m
+INFO 2023-05-08 18:45:20,739 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.27, 127.0.0.1:55010][0m
+WARNING 2023-05-08 18:45:23,053 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:45:23,055 runserver>log_action [31;1mHTTP GET /api/?app=Softkey&version=8.0.0.1 401 [0.01, 127.0.0.1:55010][0m
+WARNING 2023-05-08 18:45:28,073 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:45:28,075 runserver>log_action [31;1mHTTP GET /api/?app=Softkey&version=8.0.0.1 401 [0.01, 127.0.0.1:55010][0m
+WARNING 2023-05-08 18:45:33,092 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:45:33,093 runserver>log_action [31;1mHTTP GET /api/?app=Softkey&version=8.0.0.1 401 [0.01, 127.0.0.1:55010][0m
+WARNING 2023-05-08 18:45:38,111 log>log_response Unauthorized: /api/
+WARNING 2023-05-08 18:45:38,113 runserver>log_action [31;1mHTTP GET /api/?app=Softkey&version=8.0.0.1 401 [0.01, 127.0.0.1:55010][0m
+INFO 2023-05-08 18:46:00,362 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-08 18:46:02,158 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-08 18:46:02,168 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-08 18:46:02,304 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-08 18:46:02,306 base>views><module> -SCH- Now:05/08/2023, 10:46:02
+INFO 2023-05-08 18:46:02,433 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:46:02,433 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:46:02,434 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:46:02 [Yes]
+INFO 2023-05-08 18:46:02,515 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-08 15:59:59 Local:2023-05-08 23:59:59
+INFO 2023-05-08 18:46:02,516 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-08 18:46:02,516 base>views>init_branch_reset    -SCH- 2023-05-08 15:59:59 > 2023-05-08 10:46:02 [Yes]
+INFO 2023-05-08 18:46:02,527 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-08 18:00:00 Local:2023-05-09 02:00:00
+INFO 2023-05-08 18:46:02,528 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-08 18:46:02,528 base>views>init_branch_reset    -SCH- 2023-05-08 18:00:00 > 2023-05-08 10:46:02 [Yes]
+INFO 2023-05-08 18:46:03,194 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.01, 127.0.0.1:55044][0m
+INFO 2023-05-08 18:46:03,231 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55049]
+INFO 2023-05-08 18:46:03,234 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55048]
+INFO 2023-05-08 18:46:03,286 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-08 18:46:03,289 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-08 18:46:03,303 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55049]
+INFO 2023-05-08 18:46:03,306 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55048]
+INFO 2023-05-08 18:46:05,382 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:55044][0m
+INFO 2023-05-08 18:46:08,451 runserver>log_action [mHTTP GET /api/waiting/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:55044][0m
+WARNING 2023-05-08 18:46:10,211 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 18:46:10,212 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55044][0m
+WARNING 2023-05-08 18:46:17,230 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 18:46:17,232 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55044][0m
+INFO 2023-05-08 18:46:20,507 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:46:20,513 base>ws>wssendwebtv ...Done
+INFO 2023-05-08 18:46:20,519 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:46:20,523 base>ws>wssendql ...Done
+INFO 2023-05-08 18:46:20,529 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A037_k7R sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:46:20,532 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-08 18:46:20,535 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:46:20,537 base>ws>wssendvoice ...Done
+INFO 2023-05-08 18:46:20,541 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:46:20,543 base>ws>wscounterstatus ...Done
+INFO 2023-05-08 18:46:20,546 runserver>log_action [mHTTP POST /api/call/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.42, 127.0.0.1:55044][0m
+WARNING 2023-05-08 18:46:24,258 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 18:46:24,259 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55044][0m
+INFO 2023-05-08 18:46:25,642 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:46:25,647 base>ws>wscounterstatus ...Done
+INFO 2023-05-08 18:46:25,650 runserver>log_action [mHTTP POST /api/process/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=037&tickettime=2023-05-06T17:18:55.788876Z 200 [0.28, 127.0.0.1:55044][0m
+INFO 2023-05-08 18:46:26,862 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A037_k7R sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:46:26,866 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-08 18:46:26,869 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:46:26,872 base>ws>wscounterstatus ...Done
+INFO 2023-05-08 18:46:26,876 runserver>log_action [mHTTP POST /api/done/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=037&tickettime=2023-05-06T17:18:55.788876Z 200 [0.30, 127.0.0.1:55044][0m
+INFO 2023-05-08 18:46:28,457 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55048]
+INFO 2023-05-08 18:46:28,458 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55049]
+INFO 2023-05-08 18:47:11,946 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.01, 127.0.0.1:55078][0m
+INFO 2023-05-08 18:47:11,986 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55081]
+INFO 2023-05-08 18:47:11,988 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55082]
+INFO 2023-05-08 18:47:11,992 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-08 18:47:11,994 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-08 18:47:12,000 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55081]
+INFO 2023-05-08 18:47:12,004 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55082]
+INFO 2023-05-08 18:47:17,044 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:55078][0m
+INFO 2023-05-08 18:47:17,201 runserver>log_action [mHTTP GET /api/waiting/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:55085][0m
+WARNING 2023-05-08 18:47:18,957 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 18:47:18,958 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55078][0m
+INFO 2023-05-08 18:47:48,293 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55082]
+INFO 2023-05-08 18:47:48,294 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55081]
+INFO 2023-05-08 18:47:53,934 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.01, 127.0.0.1:55093][0m
+INFO 2023-05-08 18:47:53,972 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55096]
+INFO 2023-05-08 18:47:53,974 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55097]
+INFO 2023-05-08 18:47:53,977 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-08 18:47:53,979 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-08 18:47:53,986 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55096]
+INFO 2023-05-08 18:47:53,989 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55097]
+INFO 2023-05-08 18:48:02,685 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.24, 127.0.0.1:55093][0m
+INFO 2023-05-08 18:48:04,178 runserver>log_action [mHTTP GET /api/waiting/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:55093][0m
+WARNING 2023-05-08 18:48:24,203 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 18:48:24,205 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55093][0m
+WARNING 2023-05-08 18:49:14,945 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 18:49:14,947 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55093][0m
+WARNING 2023-05-08 18:49:37,125 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 18:49:37,126 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55093][0m
+INFO 2023-05-08 18:50:25,010 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55096]
+INFO 2023-05-08 18:50:25,011 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55097]
+INFO 2023-05-08 18:50:25,218 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55137]
+INFO 2023-05-08 18:50:25,221 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55138]
+INFO 2023-05-08 18:50:25,223 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-08 18:50:25,225 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-08 18:50:25,234 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55137]
+INFO 2023-05-08 18:50:25,236 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55138]
+INFO 2023-05-08 18:50:28,529 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55138]
+INFO 2023-05-08 18:50:28,530 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55137]
+INFO 2023-05-08 18:50:41,306 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.01, 127.0.0.1:55143][0m
+INFO 2023-05-08 18:50:43,040 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55147]
+INFO 2023-05-08 18:50:43,042 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55146]
+INFO 2023-05-08 18:50:43,045 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-08 18:50:43,046 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-08 18:50:43,053 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55147]
+INFO 2023-05-08 18:50:43,057 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55146]
+INFO 2023-05-08 18:50:55,440 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.26, 127.0.0.1:55143][0m
+INFO 2023-05-08 18:50:55,459 runserver>log_action [mHTTP GET /api/waiting/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.27, 127.0.0.1:55151][0m
+WARNING 2023-05-08 18:50:59,442 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 18:50:59,444 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55143][0m
+INFO 2023-05-08 18:51:30,546 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:51:30,552 base>ws>wssendwebtv ...Done
+INFO 2023-05-08 18:51:30,558 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:51:30,563 base>ws>wssendql ...Done
+INFO 2023-05-08 18:51:30,569 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A038_jQZ sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:51:30,573 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-08 18:51:30,577 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:51:30,579 base>ws>wssendvoice ...Done
+INFO 2023-05-08 18:51:30,581 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:51:30,583 base>ws>wscounterstatus ...Done
+INFO 2023-05-08 18:51:30,586 runserver>log_action [mHTTP POST /api/call/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.37, 127.0.0.1:55143][0m
+INFO 2023-05-08 18:51:36,476 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A038_jQZ sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:51:36,482 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-08 18:51:36,485 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-08 18:51:36,487 base>ws>wscounterstatus ...Done
+INFO 2023-05-08 18:51:36,490 runserver>log_action [mHTTP POST /api/miss/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=038&tickettime=2023-05-06T17:20:22.283318Z 200 [0.29, 127.0.0.1:55143][0m
+INFO 2023-05-08 18:52:03,005 runserver>log_action [mHTTP POST /api/counterlogout/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:55143][0m
+INFO 2023-05-08 18:52:07,319 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.26, 127.0.0.1:55143][0m
+INFO 2023-05-08 18:52:22,431 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55146]
+INFO 2023-05-08 18:52:22,432 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55147]
+INFO 2023-05-08 18:52:25,495 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.01, 127.0.0.1:55172][0m
+INFO 2023-05-08 18:52:25,523 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55175]
+INFO 2023-05-08 18:52:25,526 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55176]
+INFO 2023-05-08 18:52:25,529 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-08 18:52:25,531 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-08 18:52:25,537 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55175]
+INFO 2023-05-08 18:52:25,543 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55176]
+INFO 2023-05-08 18:52:29,759 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:55172][0m
+INFO 2023-05-08 18:52:30,738 runserver>log_action [mHTTP GET /api/waiting/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.24, 127.0.0.1:55172][0m
+WARNING 2023-05-08 18:52:35,509 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 18:52:35,510 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55172][0m
+INFO 2023-05-08 18:53:10,217 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55175]
+INFO 2023-05-08 18:53:10,217 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55176]
+INFO 2023-05-08 18:53:12,739 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.01, 127.0.0.1:55189][0m
+INFO 2023-05-08 18:53:12,772 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55192]
+INFO 2023-05-08 18:53:12,775 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55193]
+INFO 2023-05-08 18:53:12,778 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-08 18:53:12,780 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-08 18:53:12,786 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55192]
+INFO 2023-05-08 18:53:12,791 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55193]
+INFO 2023-05-08 18:53:16,836 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:55189][0m
+INFO 2023-05-08 18:53:17,988 runserver>log_action [mHTTP GET /api/waiting/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.24, 127.0.0.1:55189][0m
+WARNING 2023-05-08 18:53:33,356 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 18:53:33,357 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55189][0m
+INFO 2023-05-08 18:53:44,225 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55192]
+INFO 2023-05-08 18:53:44,226 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55193]
+INFO 2023-05-08 18:53:46,402 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.00, 127.0.0.1:55207][0m
+INFO 2023-05-08 18:53:46,489 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55210]
+INFO 2023-05-08 18:53:46,491 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55211]
+INFO 2023-05-08 18:53:46,493 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-08 18:53:46,495 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-08 18:53:46,501 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55210]
+INFO 2023-05-08 18:53:46,506 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55211]
+INFO 2023-05-08 18:53:53,987 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:55207][0m
+INFO 2023-05-08 18:53:56,643 runserver>log_action [mHTTP GET /api/waiting/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.24, 127.0.0.1:55207][0m
+WARNING 2023-05-08 18:54:06,201 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 18:54:06,202 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55207][0m
+INFO 2023-05-08 18:54:55,045 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55210]
+INFO 2023-05-08 18:54:55,046 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55211]
+INFO 2023-05-08 18:55:02,346 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.00, 127.0.0.1:55229][0m
+INFO 2023-05-08 18:55:02,380 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55232]
+INFO 2023-05-08 18:55:02,383 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55233]
+INFO 2023-05-08 18:55:02,386 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-08 18:55:02,388 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-08 18:55:02,395 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55232]
+INFO 2023-05-08 18:55:02,401 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55233]
+INFO 2023-05-08 18:55:06,788 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:55229][0m
+INFO 2023-05-08 18:55:07,602 runserver>log_action [mHTTP GET /api/waiting/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.24, 127.0.0.1:55229][0m
+WARNING 2023-05-08 18:55:09,364 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 18:55:09,366 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55229][0m
+WARNING 2023-05-08 18:55:19,954 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 18:55:19,955 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55229][0m
+INFO 2023-05-08 18:55:29,294 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55232]
+INFO 2023-05-08 18:55:29,295 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55233]
+INFO 2023-05-08 18:55:56,413 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.00, 127.0.0.1:55248][0m
+INFO 2023-05-08 18:55:56,444 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55251]
+INFO 2023-05-08 18:55:56,446 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55252]
+INFO 2023-05-08 18:55:56,449 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-08 18:55:56,451 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-08 18:55:56,460 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55251]
+INFO 2023-05-08 18:55:56,463 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55252]
+INFO 2023-05-08 18:56:00,433 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:55248][0m
+INFO 2023-05-08 18:56:01,663 runserver>log_action [mHTTP GET /api/waiting/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.24, 127.0.0.1:55248][0m
+WARNING 2023-05-08 18:56:03,419 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 18:56:03,421 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55248][0m
+INFO 2023-05-08 18:56:41,539 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55252]
+INFO 2023-05-08 18:56:41,540 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55251]
+INFO 2023-05-08 19:00:27,473 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.01, 127.0.0.1:55383][0m
+INFO 2023-05-08 19:00:27,563 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55387]
+INFO 2023-05-08 19:00:27,566 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55386]
+INFO 2023-05-08 19:00:27,568 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-08 19:00:27,570 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-08 19:00:27,579 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55387]
+INFO 2023-05-08 19:00:27,586 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55386]
+INFO 2023-05-08 19:00:31,926 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:55383][0m
+INFO 2023-05-08 19:00:32,739 runserver>log_action [mHTTP GET /api/waiting/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:55383][0m
+WARNING 2023-05-08 19:00:34,485 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 19:00:34,487 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55383][0m
+INFO 2023-05-08 19:01:19,014 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55387]
+INFO 2023-05-08 19:01:19,015 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55386]
+INFO 2023-05-08 19:09:40,352 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.01, 127.0.0.1:55565][0m
+INFO 2023-05-08 19:09:40,390 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55568]
+INFO 2023-05-08 19:09:40,393 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55569]
+INFO 2023-05-08 19:09:40,396 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-08 19:09:40,399 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-08 19:09:40,406 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55568]
+INFO 2023-05-08 19:09:40,410 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55569]
+INFO 2023-05-08 19:09:44,669 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.26, 127.0.0.1:55565][0m
+INFO 2023-05-08 19:09:45,603 runserver>log_action [mHTTP GET /api/waiting/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.24, 127.0.0.1:55565][0m
+WARNING 2023-05-08 19:09:47,372 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 19:09:47,374 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55565][0m
+WARNING 2023-05-08 19:09:59,390 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-05-08 19:09:59,391 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55565][0m
+INFO 2023-05-08 19:10:36,934 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55568]
+INFO 2023-05-08 19:10:36,935 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55569]
