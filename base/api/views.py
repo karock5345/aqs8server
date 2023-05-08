@@ -103,7 +103,7 @@ def checkuser(apiuser, branch, rx_username):
 
 
 @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 def getRoutes(request):
     # check request user group is api
     user = request.user

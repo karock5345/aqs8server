@@ -1,11 +1,12 @@
 import json
 from django.core import serializers
 from datetime import datetime, timedelta
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.utils import timezone
 from django.db.models import Q
-from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, counteractive
+from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, counteractive, checkuser
 
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
 from .serializers import displaylistSerivalizer, displaywaitlistSerivalizer, voicelistSerivalizer, lastDisplaySerivalizer
@@ -54,15 +55,16 @@ def newdisplayvoice(branch, countertype, counternumber, tickettemp, displaytime,
         tr.save()
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getVoice(request):
 
     status = dict({})
     msg = dict({})
     context = dict({})
 
-    rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
-    rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
-    rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
+    # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -122,14 +124,12 @@ def getVoice(request):
 
 
 
-
+    # check user
     if status == dict({}) :
-        
-        loginreply, user = loginapi(request , rx_username, rx_password, rx_token, None)
-
-        if loginreply != 'OK':
+        error, user = checkuser(request.user, branch, '')
+        if error !='OK' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})    
+            msg =  dict({'msg':error})   
 
     if status == dict({}) :
 
@@ -159,15 +159,16 @@ def getVoice(request):
 
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getWaiting(request):
 
     status = dict({})
     msg = dict({})
     context = dict({})
 
-    rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
-    rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
-    rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
+    # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -226,15 +227,14 @@ def getWaiting(request):
         )
 
 
-
-
+    # check user
     if status == dict({}) :
-        
-        loginreply, user = loginapi(request , rx_username, rx_password, rx_token, None)
-
-        if loginreply != 'OK':
+        error, user = checkuser(request.user, branch, '')
+        if error !='OK' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})    
+            msg =  dict({'msg':error})
+
+    
 
     if status == dict({}) :
 
@@ -254,15 +254,16 @@ def getWaiting(request):
     return Response(output)
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getDisplay(request):
 
     status = dict({})
     msg = dict({})
     context = dict({})
 
-    rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
-    rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
-    rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
+    # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -321,15 +322,12 @@ def getDisplay(request):
         )
 
 
-
-
+    # check user
     if status == dict({}) :
-        
-        loginreply, user = loginapi(request , rx_username, rx_password, rx_token, None)
-
-        if loginreply != 'OK':
+        error, user = checkuser(request.user, branch, '')
+        if error !='OK' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})    
+            msg =  dict({'msg':error})   
 
     if status == dict({}) :
 
@@ -352,15 +350,16 @@ def getDisplay(request):
 
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getLastDisplay(request):
 
     status = dict({})
     msg = dict({})
     context = dict({})
 
-    rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
-    rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
-    rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
+    # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -421,13 +420,14 @@ def getLastDisplay(request):
 
 
 
+    # check user
     if status == dict({}) :
-        
-        loginreply, user = loginapi(request , rx_username, rx_password, rx_token, None)
-
-        if loginreply != 'OK':
+        error, user = checkuser(request.user, branch, '')
+        if error !='OK' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})    
+            msg =  dict({'msg':error})
+
+
 
     if status == dict({}) :
 

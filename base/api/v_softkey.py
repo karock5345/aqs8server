@@ -1,9 +1,10 @@
 from datetime import datetime
 from django.utils import timezone
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.db.models import Q
-from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, counteractive
+from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, counteractive, checkuser
 from .v_display import newdisplayvoice
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
 from .serializers import waitinglistSerivalizer
@@ -11,6 +12,7 @@ from base.ws import wssendwebtv, wssendql, wsSendTicketStatus, wssendvoice
 from .v_softkey_sub import *
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def postCounterGet(request):
 # Counter get ticket by ticket number
 # Request :
@@ -26,7 +28,7 @@ def postCounterGet(request):
     context = dict({})
 
     rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
-    rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
     rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
@@ -89,17 +91,17 @@ def postCounterGet(request):
         )
 
 
-
+    # rx_username should be already login to counter
     if status == dict({}) :
-        
-        loginreply, user = loginapi(request , rx_username, rx_password, rx_token, branch)
-
-        if loginreply != 'OK':
+        if rx_username == '' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})   
-    
-    
-    
+            msg =  dict({'msg':'No username'})
+    # check user
+    if status == dict({}) :
+        error, user = checkuser(request.user, branch, rx_username)
+        if error !='OK' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':error})
 
     if status == dict({}) :
         userp = None
@@ -137,6 +139,7 @@ def postCounterGet(request):
 
 
 
+
     # if status == dict({}) :
 
     #     stickettime = ''        
@@ -168,6 +171,7 @@ def postCounterGet(request):
 
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def postCounterVoid(request):
 # Request :
 # 'POST /api/void/?username=xxx&password=xxx&token=xxx&app=xxx&version=xxx&branchcode=xxx&countertype=xxx&counternumber=xxx&tickettype=x&ticketnumber=xxx&tickettime=xxx'
@@ -182,7 +186,7 @@ def postCounterVoid(request):
     context = dict({})
 
     rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
-    rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
     rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
@@ -244,18 +248,19 @@ def postCounterVoid(request):
             logtext = 'API call : Void Ticket',
         )
 
-
-
+    # rx_username should be already login to counter
     if status == dict({}) :
-        
-        loginreply, user = loginapi(request , rx_username, rx_password, rx_token, branch)
-
-        if loginreply != 'OK':
+        if rx_username == '' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})   
-    
-    
-    
+            msg =  dict({'msg':'No username'})
+    # check user
+    if status == dict({}) :
+        error, user = checkuser(request.user, branch, rx_username)
+        if error !='OK' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':error})
+
+
 
     if status == dict({}) :
         userp = None
@@ -281,22 +286,6 @@ def postCounterVoid(request):
         counterstatus = cstatusobj[0]
         counterstatus.lastactive = datetime_now
         counterstatus.save()
-
-    #     # check counter status
-    #     if counterstatus.status != 'waiting' :
-    #         status = dict({'status': 'Error'})
-    #         msg =  dict({'msg':'Counter status is not WAITING'})  
-    #     elif counterstatus.tickettemp == None :
-    #         status = dict({'status': 'Error'})
-    #         msg =  dict({'msg':'Counter status - no ticket'})  
-    # if status == dict({}) :
-    #     if counterstatus.tickettemp.tickettype != rx_ticketype :
-    #         status = dict({'status': 'Error'})
-    #         msg =  dict({'msg':'Counter status - ticket is not same'})  
-    # if status == dict({}) :
-    #     if counterstatus.tickettemp.ticketnumber != rx_ticketnumber :
-    #         status = dict({'status': 'Error'})
-    #         msg =  dict({'msg':'Counter status - ticket is not same'})  
 
 
 
@@ -393,6 +382,7 @@ def postCounterVoid(request):
 
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def postCounterDone(request):
 # Request :
 # 'POST /api/done/?username=xxx&password=xxx&token=xxx&app=xxx&version=xxx&branchcode=xxx&countertype=xxx&counternumber=xxx&tickettype=x&ticketnumber=xxx&tickettime=xxx'
@@ -407,8 +397,8 @@ def postCounterDone(request):
     context = dict({})
 
     rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
-    rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
-    rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -471,13 +461,17 @@ def postCounterDone(request):
 
 
 
+    # rx_username should be already login to counter
     if status == dict({}) :
-        
-        loginreply, user = loginapi(request , rx_username, rx_password, rx_token, branch)
-
-        if loginreply != 'OK':
+        if rx_username == '' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})   
+            msg =  dict({'msg':'No username'})
+    # check user
+    if status == dict({}) :
+        error, user = checkuser(request.user, branch, rx_username)
+        if error !='OK' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':error})
     
     
     
@@ -569,6 +563,7 @@ def postCounterDone(request):
 
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def postCounterMiss(request):
 # Request :
 # 'POST /api/miss/?username=xxx&password=xxx&token=xxx&app=xxx&version=xxx&branchcode=xxx&countertype=xxx&counternumber=xxx&tickettype=x&ticketnumber=xxx&tickettime=xxx'
@@ -583,8 +578,8 @@ def postCounterMiss(request):
     context = dict({})
 
     rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
-    rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
-    rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -646,14 +641,17 @@ def postCounterMiss(request):
         )
 
 
-
+    # rx_username should be already login to counter
     if status == dict({}) :
-        
-        loginreply, user = loginapi(request , rx_username, rx_password, rx_token, branch)
-
-        if loginreply != 'OK':
+        if rx_username == '' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})   
+            msg =  dict({'msg':'No username'})
+    # check user
+    if status == dict({}) :
+        error, user = checkuser(request.user, branch, rx_username)
+        if error !='OK' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':error})
     
     
     
@@ -744,6 +742,7 @@ def postCounterMiss(request):
 
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def postCounterProcess(request):
 # Request :
 # 'POST /api/process/?username=xxx&password=xxx&token=xxx&app=xxx&version=xxx&branchcode=xxx&countertype=xxx&counternumber=xxx&tickettype=x&ticketnumber=xxx&tickettime=xxx'
@@ -758,8 +757,8 @@ def postCounterProcess(request):
     context = dict({})
 
     rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
-    rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
-    rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -822,14 +821,17 @@ def postCounterProcess(request):
 
 
 
+    # rx_username should be already login to counter
     if status == dict({}) :
-        
-        loginreply, user = loginapi(request , rx_username, rx_password, rx_token, branch)
-
-        if loginreply != 'OK':
+        if rx_username == '' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})   
-    
+            msg =  dict({'msg':'No username'})
+    # check user
+    if status == dict({}) :
+        error, user = checkuser(request.user, branch, rx_username)
+        if error !='OK' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':error})  
     
     
     if status == dict({}) :
@@ -920,6 +922,7 @@ def postCounterProcess(request):
 
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def postCounterRecall(request):
 # Request :
 # 'POST /api/recall/?username=xxx&password=xxx&token=xxx&app=xxx&version=xxx&branchcode=xxx&countertype=xxx&counternumber=xxx&tickettype=x&ticketnumber=xxx&tickettime=xxx'
@@ -934,8 +937,8 @@ def postCounterRecall(request):
     context = dict({})
 
     rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
-    rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
-    rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -998,14 +1001,17 @@ def postCounterRecall(request):
 
 
 
+    # rx_username should be already login to counter
     if status == dict({}) :
-        
-        loginreply, user = loginapi(request , rx_username, rx_password, rx_token, branch)
-
-        if loginreply != 'OK':
+        if rx_username == '' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})   
-    
+            msg =  dict({'msg':'No username'})
+    # check user
+    if status == dict({}) :
+        error, user = checkuser(request.user, branch, rx_username)
+        if error !='OK' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':error})
     
     
 
@@ -1099,6 +1105,7 @@ def postCounterRecall(request):
 
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def postCounterCall(request):
 # Request :
 # 'POST /api/call/?username=xxx&password=xxx&token=xxx&app=xxx&version=xxx&branchcode=xxx&countertype=xxx&counternumber=xxx'
@@ -1120,8 +1127,8 @@ def postCounterCall(request):
     context = dict({})
 
     rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
-    rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
-    rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -1168,13 +1175,19 @@ def postCounterCall(request):
 
 
 
+    # rx_username should be already login to counter
     if status == dict({}) :
-        
-        loginreply, user = loginapi(request , rx_username, rx_password, rx_token, branch)
-
-        if loginreply != 'OK':
+        if rx_username == '' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})   
+            msg =  dict({'msg':'No username'})
+    # check user
+    if status == dict({}) :
+        error, user = checkuser(request.user, branch, rx_username)
+        if error !='OK' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':error})
+
+            
     
     if status == dict({}) :
         # get the Counter type
@@ -1213,6 +1226,7 @@ def postCounterCall(request):
 
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getCounterWaitingList(request):
 # Request :
 # 'GET /api/waiting/?username=xxx&password=xxx&token=xxx&app=xxx&version=xxx&branchcode=xxx&countertype=xxx&counternumber=xxx'
@@ -1231,8 +1245,8 @@ def getCounterWaitingList(request):
     context = dict({})
 
     rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
-    rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
-    rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -1279,13 +1293,21 @@ def getCounterWaitingList(request):
 
 
 
-    if status == dict({}) :
-        
-        loginreply, user = loginapi(request , rx_username, rx_password, rx_token, branch)
 
-        if loginreply != 'OK':
+    # rx_username should be already login to counter
+    if status == dict({}) :
+        if rx_username == '' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})   
+            msg =  dict({'msg':'No username'})
+    # check user
+    if status == dict({}) :
+        error, user = checkuser(request.user, branch, rx_username)
+        if error !='OK' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':error})
+
+
+
         
     if status == dict({}) :
         # get the Counter type
@@ -1315,6 +1337,7 @@ def getCounterWaitingList(request):
 
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def postCounterLogout(request):
 # Request :
 # 'POST /api/counterlogout/?username=xxx&password=xxx&token=xxx&app=xxx&version=xxx&branchcode=xxx&countertype=xxx&counternumber=xxx'
@@ -1332,8 +1355,8 @@ def postCounterLogout(request):
     context = dict({})
 
     rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
-    rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
-    rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -1357,16 +1380,6 @@ def postCounterLogout(request):
             else:
                 branch = branchobj[0]        
 
-    # Save Api Log
-    if setting_APIlogEnabled(branch) == True :
-        APILog.objects.create(
-            logtime=datetime_now,
-            requeststr = request.build_absolute_uri() ,
-            ip = visitor_ip_address(request),
-            app = rx_app,
-            version = rx_version,
-            logtext = 'API call : Counter logout',
-        )
 
     # check input
     if status == dict({}) :    
@@ -1380,15 +1393,33 @@ def postCounterLogout(request):
    
 
 
+    # Save Api Log
+    if setting_APIlogEnabled(branch) == True :
+        APILog.objects.create(
+            logtime=datetime_now,
+            requeststr = request.build_absolute_uri() ,
+            ip = visitor_ip_address(request),
+            app = rx_app,
+            version = rx_version,
+            logtext = 'API call : Counter logout',
+        )
 
-
+    # rx_username should be already login to counter
     if status == dict({}) :
-        
-        loginreply, user = loginapi(request , rx_username, rx_password, rx_token, branch)
-
-        if loginreply != 'OK':
+        if rx_username == '' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':loginreply})   
+            msg =  dict({'msg':'No username'})
+    # check user
+    if status == dict({}) :
+        error, user = checkuser(request.user, branch, rx_username)
+        if error !='OK' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':error})
+
+
+
+
+
     if status == dict({}) :
         # get the Counter type
         ctypeobj = CounterType.objects.filter( Q(branch=branch) & Q(name=rx_countername) )
@@ -1408,6 +1439,7 @@ def postCounterLogout(request):
     return Response(output)
 
 @api_view(['POST'])
+@permission_classes([IsAuthenticated])
 def postCounterLogin(request):
 # Request :
 # 'POST /api/counterlogin/?username=xxx&password=xxx&token=xxx&app=xxx&version=xxx&branchcode=xxx&countertype=xxx&counternumber=xxx'
@@ -1459,6 +1491,17 @@ def postCounterLogin(request):
             else:
                 branch = branchobj[0]        
 
+    # check input
+    if status == dict({}) :    
+        if rx_countername == '' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'No counter name'})  
+    if status == dict({}) :
+        if rx_counternumber == '' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'No counter number'}) 
+
+
     # Save Api Log
     if setting_APIlogEnabled(branch) == True :
         APILog.objects.create(
@@ -1469,16 +1512,6 @@ def postCounterLogin(request):
             version = rx_version,
             logtext = 'API call : Counter login',
         )
-
-    # check input
-    if status == dict({}) :    
-        if rx_countername == '' :
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'No counter name'})  
-    if status == dict({}) :
-        if rx_counternumber == '' :
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'No counter number'}) 
 
 
     if status == dict({}) :
