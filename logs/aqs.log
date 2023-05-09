@@ -7555,3 +7555,761 @@ WARNING 2023-05-08 19:09:59,390 log>log_response Unauthorized: /api/printerstatu
 WARNING 2023-05-08 19:09:59,391 runserver>log_action [31;1mHTTP GET /api/printerstatus/?username=elton&password=asdf2206&token=WrE-1t7IdrU2iB3a0e&app=Softkey&version=8.0.0.1&branchcode=KB 401 [0.01, 127.0.0.1:55565][0m
 INFO 2023-05-08 19:10:36,934 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55568]
 INFO 2023-05-08 19:10:36,935 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55569]
+INFO 2023-05-09 12:31:22,053 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 12:31:23,339 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 12:31:23,348 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 12:31:23,603 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-09 12:31:23,604 base>views><module> -SCH- Now:05/09/2023, 04:31:23
+INFO 2023-05-09 12:31:23,732 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 12:31:23,733 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 12:31:23,733 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 04:31:23 [Yes]
+INFO 2023-05-09 12:31:23,799 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 12:31:23,800 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 12:31:23,800 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 04:31:23 [Yes]
+INFO 2023-05-09 12:31:23,809 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-09 18:00:00 Local:2023-05-10 02:00:00
+INFO 2023-05-09 12:31:23,810 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-09 12:31:23,810 base>views>init_branch_reset    -SCH- 2023-05-09 18:00:00 > 2023-05-09 04:31:23 [Yes]
+INFO 2023-05-09 12:40:00,725 runserver>log_action [mHTTP GET /login/ 200 [0.05, 127.0.0.1:52716][0m
+INFO 2023-05-09 12:40:01,584 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52716][0m
+INFO 2023-05-09 12:40:03,291 runserver>log_action [32mHTTP GET /admin/base/printerstatus/ 302 [0.04, 127.0.0.1:52721][0m
+INFO 2023-05-09 12:40:03,296 runserver>log_action [mHTTP GET /touch/?bc=KB&t=t1 200 [0.05, 127.0.0.1:52716][0m
+INFO 2023-05-09 12:40:03,334 runserver>log_action [mHTTP GET /admin/login/?next=/admin/base/printerstatus/ 200 [0.04, 127.0.0.1:52721][0m
+INFO 2023-05-09 12:40:04,492 runserver>log_action [mHTTP GET /my/KB/A/215/y1y/ 200 [0.03, 127.0.0.1:52721][0m
+WARNING 2023-05-09 12:40:04,501 log>log_response Not Found: /favicon.ico
+WARNING 2023-05-09 12:40:04,503 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:52716][0m
+INFO 2023-05-09 12:40:16,624 runserver>log_action [32mHTTP POST /login/ 302 [0.25, 127.0.0.1:52716][0m
+INFO 2023-05-09 12:40:16,656 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:52716][0m
+INFO 2023-05-09 12:40:21,068 runserver>log_action [mHTTP GET /supervisors/ 200 [0.04, 127.0.0.1:52716][0m
+INFO 2023-05-09 12:40:22,617 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.24, 127.0.0.1:52716][0m
+INFO 2023-05-09 12:45:47,978 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:52900][0m
+INFO 2023-05-09 12:45:48,306 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.02, 127.0.0.1:52903][0m
+INFO 2023-05-09 12:45:48,324 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52906]
+INFO 2023-05-09 12:45:48,327 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52907]
+INFO 2023-05-09 12:45:48,393 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 12:45:48,396 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 12:45:53,000 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52906]
+INFO 2023-05-09 12:45:53,001 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52907]
+INFO 2023-05-09 12:45:53,003 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52912]
+INFO 2023-05-09 12:45:53,005 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52913]
+INFO 2023-05-09 12:45:53,007 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 12:45:53,008 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 12:45:58,010 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52912]
+INFO 2023-05-09 12:45:58,012 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52913]
+INFO 2023-05-09 12:45:58,204 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52918]
+INFO 2023-05-09 12:45:58,207 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52919]
+INFO 2023-05-09 12:45:58,210 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 12:45:58,211 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 12:46:03,013 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52918]
+INFO 2023-05-09 12:46:03,014 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52919]
+INFO 2023-05-09 12:46:03,017 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52923]
+INFO 2023-05-09 12:46:03,020 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52924]
+INFO 2023-05-09 12:46:03,022 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 12:46:03,023 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 12:46:03,737 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52923]
+INFO 2023-05-09 12:46:03,738 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52924]
+INFO 2023-05-09 12:46:37,108 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:52933][0m
+INFO 2023-05-09 12:46:37,398 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.02, 127.0.0.1:52936][0m
+INFO 2023-05-09 12:46:37,414 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52939]
+INFO 2023-05-09 12:46:37,416 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52940]
+INFO 2023-05-09 12:46:37,418 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 12:46:37,420 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 12:46:39,816 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52939]
+INFO 2023-05-09 12:46:39,817 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52940]
+INFO 2023-05-09 12:46:46,281 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:52944][0m
+INFO 2023-05-09 12:46:46,548 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.02, 127.0.0.1:52947][0m
+INFO 2023-05-09 12:46:46,559 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52950]
+INFO 2023-05-09 12:46:46,561 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52951]
+INFO 2023-05-09 12:46:46,563 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 12:46:46,564 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 12:46:50,384 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52951]
+INFO 2023-05-09 12:46:50,385 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52950]
+INFO 2023-05-09 12:47:41,876 runserver>log_action [mHTTP POST /api/token/ 200 [0.21, 127.0.0.1:52959][0m
+INFO 2023-05-09 12:47:51,145 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.02, 127.0.0.1:52964][0m
+INFO 2023-05-09 12:47:51,161 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52967]
+INFO 2023-05-09 12:47:51,163 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52968]
+INFO 2023-05-09 12:47:51,166 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 12:47:51,168 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 12:47:56,015 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52967]
+INFO 2023-05-09 12:47:56,016 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52968]
+INFO 2023-05-09 12:47:56,019 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52972]
+INFO 2023-05-09 12:47:56,021 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52973]
+INFO 2023-05-09 12:47:56,023 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 12:47:56,025 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 12:47:56,330 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52973]
+INFO 2023-05-09 12:47:56,331 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52972]
+INFO 2023-05-09 12:48:06,708 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:52976][0m
+INFO 2023-05-09 12:48:24,037 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.01, 127.0.0.1:52981][0m
+INFO 2023-05-09 12:48:24,122 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52984]
+INFO 2023-05-09 12:48:24,125 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52985]
+INFO 2023-05-09 12:48:24,128 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 12:48:24,130 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 12:48:29,005 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52984]
+INFO 2023-05-09 12:48:29,006 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52985]
+INFO 2023-05-09 12:48:29,009 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52989]
+INFO 2023-05-09 12:48:29,011 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52990]
+INFO 2023-05-09 12:48:29,013 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 12:48:29,015 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 12:48:34,014 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52989]
+INFO 2023-05-09 12:48:34,015 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52990]
+INFO 2023-05-09 12:48:34,096 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52993]
+INFO 2023-05-09 12:48:34,098 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 12:48:34,125 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52995]
+INFO 2023-05-09 12:48:34,127 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 12:48:37,487 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52995]
+INFO 2023-05-09 12:48:37,488 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52993]
+INFO 2023-05-09 12:48:41,500 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:52998][0m
+INFO 2023-05-09 12:48:43,917 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.02, 127.0.0.1:53001][0m
+INFO 2023-05-09 12:48:43,930 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:53004]
+INFO 2023-05-09 12:48:43,932 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:53005]
+INFO 2023-05-09 12:48:43,934 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 12:48:43,936 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 12:48:48,003 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:53004]
+INFO 2023-05-09 12:48:48,004 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:53005]
+INFO 2023-05-09 12:48:48,007 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:53012]
+INFO 2023-05-09 12:48:48,009 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:53013]
+INFO 2023-05-09 12:48:48,011 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 12:48:48,012 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 12:48:53,005 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:53012]
+INFO 2023-05-09 12:48:53,006 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:53013]
+INFO 2023-05-09 12:48:53,121 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:53016]
+INFO 2023-05-09 12:48:53,124 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:53017]
+INFO 2023-05-09 12:48:53,126 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 12:48:53,127 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 12:48:56,498 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:53016]
+INFO 2023-05-09 12:48:56,499 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:53017]
+INFO 2023-05-09 12:49:05,708 runserver>log_action [mHTTP POST /api/token/ 200 [0.21, 127.0.0.1:53024][0m
+INFO 2023-05-09 12:52:51,016 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53036][0m
+INFO 2023-05-09 12:53:42,343 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53043][0m
+INFO 2023-05-09 12:54:52,623 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:53049][0m
+INFO 2023-05-09 12:55:58,949 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53056][0m
+INFO 2023-05-09 12:58:33,249 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:53106][0m
+INFO 2023-05-09 12:59:31,936 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:53113][0m
+INFO 2023-05-09 13:03:58,420 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53141][0m
+INFO 2023-05-09 13:07:58,157 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53167][0m
+INFO 2023-05-09 13:09:31,084 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.02, 127.0.0.1:53174][0m
+INFO 2023-05-09 13:09:31,098 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:53177]
+INFO 2023-05-09 13:09:31,100 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:53178]
+INFO 2023-05-09 13:09:31,103 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 13:09:31,107 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 13:09:31,119 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:53177]
+INFO 2023-05-09 13:09:31,121 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:53178]
+INFO 2023-05-09 13:09:45,110 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB 200 [0.02, 127.0.0.1:53185][0m
+INFO 2023-05-09 13:09:45,159 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.23, 127.0.0.1:53182][0m
+INFO 2023-05-09 13:10:28,481 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:53177]
+INFO 2023-05-09 13:10:28,482 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:53178]
+INFO 2023-05-09 13:12:20,035 runserver>log_action [mHTTP POST /api/token/ 200 [0.29, 127.0.0.1:53188][0m
+INFO 2023-05-09 13:12:25,251 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.01, 127.0.0.1:53193][0m
+INFO 2023-05-09 13:12:25,266 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:53197]
+INFO 2023-05-09 13:12:25,268 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:53196]
+INFO 2023-05-09 13:12:25,270 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 13:12:25,271 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 13:12:25,277 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:53197]
+INFO 2023-05-09 13:12:25,292 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:53196]
+INFO 2023-05-09 13:12:30,268 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.22, 127.0.0.1:53201][0m
+INFO 2023-05-09 13:12:30,313 runserver>log_action [mHTTP GET /api/waiting/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.05, 127.0.0.1:53204][0m
+INFO 2023-05-09 13:13:31,118 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:53196]
+INFO 2023-05-09 13:13:31,119 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:53197]
+INFO 2023-05-09 13:28:21,847 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.07, 127.0.0.1:53270][0m
+INFO 2023-05-09 14:28:23,238 runserver>log_action [32mHTTP GET /supervisor/1/ 302 [0.07, 127.0.0.1:53518][0m
+INFO 2023-05-09 14:28:23,248 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:53518][0m
+INFO 2023-05-09 15:27:07,395 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_softkey.py changed, reloading.
+INFO 2023-05-09 15:27:09,233 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:27:09,245 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:27:09,413 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-09 15:27:09,414 base>views><module> -SCH- Now:05/09/2023, 07:27:09
+INFO 2023-05-09 15:27:09,545 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:27:09,546 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:27:09,547 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:27:09 [Yes]
+INFO 2023-05-09 15:27:09,627 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:27:09,628 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:27:09,629 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:27:09 [Yes]
+INFO 2023-05-09 15:27:09,636 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-09 18:00:00 Local:2023-05-10 02:00:00
+INFO 2023-05-09 15:27:09,637 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-09 15:27:09,637 base>views>init_branch_reset    -SCH- 2023-05-09 18:00:00 > 2023-05-09 07:27:09 [Yes]
+INFO 2023-05-09 15:27:11,893 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_softkey.py changed, reloading.
+INFO 2023-05-09 15:27:13,360 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:27:13,369 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:27:13,504 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-09 15:27:13,505 base>views><module> -SCH- Now:05/09/2023, 07:27:13
+INFO 2023-05-09 15:27:13,630 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:27:13,631 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:27:13,632 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:27:13 [Yes]
+INFO 2023-05-09 15:27:13,700 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:27:13,701 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:27:13,702 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:27:13 [Yes]
+INFO 2023-05-09 15:27:13,710 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-09 18:00:00 Local:2023-05-10 02:00:00
+INFO 2023-05-09 15:27:13,711 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-09 15:27:13,711 base>views>init_branch_reset    -SCH- 2023-05-09 18:00:00 > 2023-05-09 07:27:13 [Yes]
+INFO 2023-05-09 15:27:30,639 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_softkey.py changed, reloading.
+INFO 2023-05-09 15:27:32,136 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:27:32,146 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:27:53,292 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-09 15:27:54,766 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:27:54,778 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:27:59,141 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-09 15:28:00,628 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:28:00,637 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:28:00,755 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-09 15:28:00,756 base>views><module> -SCH- Now:05/09/2023, 07:28:00
+INFO 2023-05-09 15:28:00,880 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:28:00,881 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:28:00,881 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:28:00 [Yes]
+INFO 2023-05-09 15:28:00,949 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:28:00,949 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:28:00,950 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:28:00 [Yes]
+INFO 2023-05-09 15:28:00,960 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-09 18:00:00 Local:2023-05-10 02:00:00
+INFO 2023-05-09 15:28:00,961 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-09 15:28:00,961 base>views>init_branch_reset    -SCH- 2023-05-09 18:00:00 > 2023-05-09 07:28:00 [Yes]
+INFO 2023-05-09 15:28:04,272 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-09 15:28:05,750 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:28:05,759 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:28:05,878 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-09 15:28:05,878 base>views><module> -SCH- Now:05/09/2023, 07:28:05
+INFO 2023-05-09 15:28:06,004 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:28:06,005 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:28:06,006 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:28:05 [Yes]
+INFO 2023-05-09 15:28:06,074 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:28:06,075 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:28:06,075 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:28:05 [Yes]
+INFO 2023-05-09 15:28:06,084 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-09 18:00:00 Local:2023-05-10 02:00:00
+INFO 2023-05-09 15:28:06,085 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-09 15:28:06,086 base>views>init_branch_reset    -SCH- 2023-05-09 18:00:00 > 2023-05-09 07:28:05 [Yes]
+INFO 2023-05-09 15:30:33,587 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-09 15:30:35,122 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:30:35,131 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:30:40,138 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-09 15:30:41,621 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:30:41,630 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:30:44,434 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-09 15:30:45,890 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:30:45,900 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:30:47,561 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-09 15:30:48,989 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:30:48,998 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:30:56,257 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-09 15:30:57,679 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:30:57,691 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:30:57,819 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-09 15:30:57,820 base>views><module> -SCH- Now:05/09/2023, 07:30:57
+INFO 2023-05-09 15:30:57,944 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:30:57,945 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:30:57,946 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:30:57 [Yes]
+INFO 2023-05-09 15:30:58,013 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:30:58,015 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:30:58,015 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:30:57 [Yes]
+INFO 2023-05-09 15:30:58,023 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-09 18:00:00 Local:2023-05-10 02:00:00
+INFO 2023-05-09 15:30:58,024 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-09 15:30:58,024 base>views>init_branch_reset    -SCH- 2023-05-09 18:00:00 > 2023-05-09 07:30:57 [Yes]
+INFO 2023-05-09 15:31:01,362 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-09 15:31:02,817 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:31:02,827 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:31:02,951 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-09 15:31:02,952 base>views><module> -SCH- Now:05/09/2023, 07:31:02
+INFO 2023-05-09 15:31:03,084 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:31:03,084 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:31:03,085 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:31:02 [Yes]
+INFO 2023-05-09 15:31:03,153 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:31:03,154 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:31:03,155 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:31:02 [Yes]
+INFO 2023-05-09 15:31:03,162 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-09 18:00:00 Local:2023-05-10 02:00:00
+INFO 2023-05-09 15:31:03,163 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-09 15:31:03,164 base>views>init_branch_reset    -SCH- 2023-05-09 18:00:00 > 2023-05-09 07:31:02 [Yes]
+INFO 2023-05-09 15:31:48,179 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-09 15:31:49,683 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:31:49,693 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:31:49,816 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-09 15:31:49,816 base>views><module> -SCH- Now:05/09/2023, 07:31:49
+INFO 2023-05-09 15:31:49,942 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:31:49,943 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:31:49,943 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:31:49 [Yes]
+INFO 2023-05-09 15:31:50,021 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:31:50,022 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:31:50,022 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:31:49 [Yes]
+INFO 2023-05-09 15:31:50,031 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-09 18:00:00 Local:2023-05-10 02:00:00
+INFO 2023-05-09 15:31:50,032 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-09 15:31:50,032 base>views>init_branch_reset    -SCH- 2023-05-09 18:00:00 > 2023-05-09 07:31:49 [Yes]
+INFO 2023-05-09 15:33:39,401 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-09 15:33:40,925 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:33:40,936 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:33:43,798 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\views.py changed, reloading.
+INFO 2023-05-09 15:33:45,223 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:33:45,233 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:33:45,354 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-09 15:33:45,354 base>views><module> -SCH- Now:05/09/2023, 07:33:45
+INFO 2023-05-09 15:33:45,480 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:33:45,481 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:33:45,481 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:33:45 [Yes]
+INFO 2023-05-09 15:33:45,545 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:33:45,546 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:33:45,546 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:33:45 [Yes]
+INFO 2023-05-09 15:33:45,554 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-09 18:00:00 Local:2023-05-10 02:00:00
+INFO 2023-05-09 15:33:45,555 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-09 15:33:45,555 base>views>init_branch_reset    -SCH- 2023-05-09 18:00:00 > 2023-05-09 07:33:45 [Yes]
+INFO 2023-05-09 15:34:10,199 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:53912][0m
+INFO 2023-05-09 15:34:10,496 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.0.0.1 200 [0.02, 127.0.0.1:53915][0m
+INFO 2023-05-09 15:34:10,510 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:53918]
+INFO 2023-05-09 15:34:10,514 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:53919]
+INFO 2023-05-09 15:34:10,556 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 15:34:10,557 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 15:34:10,570 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:53918]
+INFO 2023-05-09 15:34:10,572 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:53919]
+ERROR 2023-05-09 15:34:14,751 log>log_response Internal Server Error: /api/counterlogin/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\views\decorators\csrf.py", line 55, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\api\v_softkey.py", line 1519, in postCounterLogin
+    loginreply, user = loginapi_notoken(request , rx_username, rx_password, rx_token, branch)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: loginapi_notoken() takes 4 positional arguments but 5 were given
+ERROR 2023-05-09 15:34:14,767 runserver>log_action [35;1mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 500 [0.09, 127.0.0.1:53925][0m
+INFO 2023-05-09 15:35:00,596 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_softkey.py changed, reloading.
+INFO 2023-05-09 15:35:02,167 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:35:02,176 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:35:02,302 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-09 15:35:02,303 base>views><module> -SCH- Now:05/09/2023, 07:35:02
+INFO 2023-05-09 15:35:02,429 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:35:02,430 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:35:02,431 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:35:02 [Yes]
+INFO 2023-05-09 15:35:02,494 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:35:02,495 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:35:02,496 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:35:02 [Yes]
+INFO 2023-05-09 15:35:02,504 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-09 18:00:00 Local:2023-05-10 02:00:00
+INFO 2023-05-09 15:35:02,505 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-09 15:35:02,505 base>views>init_branch_reset    -SCH- 2023-05-09 18:00:00 > 2023-05-09 07:35:02 [Yes]
+INFO 2023-05-09 15:35:03,079 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:53960]
+INFO 2023-05-09 15:35:03,082 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:53961]
+INFO 2023-05-09 15:35:03,119 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 15:35:03,122 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 15:35:03,131 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:53960]
+INFO 2023-05-09 15:35:03,133 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:53961]
+INFO 2023-05-09 15:35:05,940 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\api\v_softkey.py changed, reloading.
+INFO 2023-05-09 15:35:07,485 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-09 15:35:07,494 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-09 15:35:07,626 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-09 15:35:07,627 base>views><module> -SCH- Now:05/09/2023, 07:35:07
+INFO 2023-05-09 15:35:07,768 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:35:07,769 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:35:07,770 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:35:07 [Yes]
+INFO 2023-05-09 15:35:07,838 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-09 15:59:59 Local:2023-05-09 23:59:59
+INFO 2023-05-09 15:35:07,839 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-09 15:35:07,839 base>views>init_branch_reset    -SCH- 2023-05-09 15:59:59 > 2023-05-09 07:35:07 [Yes]
+INFO 2023-05-09 15:35:07,848 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-09 18:00:00 Local:2023-05-10 02:00:00
+INFO 2023-05-09 15:35:07,849 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-09 15:35:07,850 base>views>init_branch_reset    -SCH- 2023-05-09 18:00:00 > 2023-05-09 07:35:07 [Yes]
+INFO 2023-05-09 15:35:10,468 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.27, 127.0.0.1:53978][0m
+INFO 2023-05-09 15:35:10,576 runserver>log_action [mHTTP GET /api/waiting/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.04, 127.0.0.1:53981][0m
+INFO 2023-05-09 15:35:11,064 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:53984]
+INFO 2023-05-09 15:35:11,068 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:53985]
+INFO 2023-05-09 15:35:11,104 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 15:35:11,106 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 15:35:11,114 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:53984]
+INFO 2023-05-09 15:35:11,115 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:53985]
+INFO 2023-05-09 15:35:13,529 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB 200 [0.02, 127.0.0.1:53989][0m
+INFO 2023-05-09 15:35:16,079 runserver>log_action [mHTTP GET /api/waiting/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.04, 127.0.0.1:53992][0m
+INFO 2023-05-09 15:35:18,058 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:18,064 base>ws>wssendwebtv ...Done
+INFO 2023-05-09 15:35:18,069 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:18,074 base>ws>wssendql ...Done
+INFO 2023-05-09 15:35:18,081 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A039_unh sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:18,084 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 15:35:18,089 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:18,091 base>ws>wssendvoice ...Done
+INFO 2023-05-09 15:35:18,094 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:18,097 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:35:18,100 runserver>log_action [mHTTP POST /api/call/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.17, 127.0.0.1:53995][0m
+INFO 2023-05-09 15:35:23,413 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:23,419 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:35:23,422 runserver>log_action [mHTTP POST /api/process/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=039&tickettime=2023-05-08T07:20:11.312791Z 200 [0.08, 127.0.0.1:53999][0m
+INFO 2023-05-09 15:35:24,384 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A039_unh sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:24,389 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 15:35:24,391 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:24,393 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:35:24,396 runserver>log_action [mHTTP POST /api/done/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=039&tickettime=2023-05-08T07:20:11.312791Z 200 [0.09, 127.0.0.1:54003][0m
+INFO 2023-05-09 15:35:27,000 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:27,005 base>ws>wssendwebtv ...Done
+INFO 2023-05-09 15:35:27,010 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:27,013 base>ws>wssendql ...Done
+INFO 2023-05-09 15:35:27,019 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A040_kG6 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:27,021 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 15:35:27,024 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:27,027 base>ws>wssendvoice ...Done
+INFO 2023-05-09 15:35:27,029 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:27,031 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:35:27,035 runserver>log_action [mHTTP POST /api/call/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.15, 127.0.0.1:54007][0m
+INFO 2023-05-09 15:35:29,279 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:29,285 base>ws>wssendwebtv ...Done
+INFO 2023-05-09 15:35:29,288 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:29,291 base>ws>wssendvoice ...Done
+INFO 2023-05-09 15:35:29,294 runserver>log_action [mHTTP POST /api/recall/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=040&tickettime=2023-05-08T07:22:38.994299Z 200 [0.09, 127.0.0.1:54011][0m
+INFO 2023-05-09 15:35:32,399 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A040_kG6 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:32,404 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 15:35:32,407 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:32,409 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:35:32,412 runserver>log_action [mHTTP POST /api/miss/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=040&tickettime=2023-05-08T07:22:38.994299Z 200 [0.08, 127.0.0.1:54015][0m
+INFO 2023-05-09 15:35:37,973 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:37,979 base>ws>wssendql ...Done
+INFO 2023-05-09 15:35:38,019 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A042_xve sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:38,022 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 15:35:38,025 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:38,027 base>ws>wssendvoice ...Done
+INFO 2023-05-09 15:35:38,029 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:38,032 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:35:38,049 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:38,052 base>ws>wssendwebtv ...Done
+INFO 2023-05-09 15:35:38,054 runserver>log_action [mHTTP POST /api/get/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=042 200 [0.15, 127.0.0.1:54020][0m
+INFO 2023-05-09 15:35:39,906 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:39,911 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:35:39,914 runserver>log_action [mHTTP POST /api/process/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=042&tickettime=2023-05-08T07:42:03.335552Z 200 [0.08, 127.0.0.1:54024][0m
+INFO 2023-05-09 15:35:40,735 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A042_xve sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:40,741 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 15:35:40,744 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:40,746 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:35:40,749 runserver>log_action [mHTTP POST /api/done/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=042&tickettime=2023-05-08T07:42:03.335552Z 200 [0.09, 127.0.0.1:54028][0m
+INFO 2023-05-09 15:35:46,087 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:46,094 base>ws>wssendql ...Done
+INFO 2023-05-09 15:35:46,115 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:46,117 base>ws>wssendwebtv ...Done
+INFO 2023-05-09 15:35:46,123 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A041_Kr9 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:46,125 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 15:35:46,136 runserver>log_action [mHTTP POST /api/void/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=041&tickettime=2023-05-08T07:31:39.065039Z 200 [0.11, 127.0.0.1:54032][0m
+INFO 2023-05-09 15:35:57,295 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:57,300 base>ws>wssendwebtv ...Done
+INFO 2023-05-09 15:35:57,307 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:57,311 base>ws>wssendql ...Done
+INFO 2023-05-09 15:35:57,319 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A043_e7o sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:57,321 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 15:35:57,325 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:57,327 base>ws>wssendvoice ...Done
+INFO 2023-05-09 15:35:57,329 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:57,332 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:35:57,335 runserver>log_action [mHTTP POST /api/call/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.16, 127.0.0.1:54036][0m
+INFO 2023-05-09 15:35:59,729 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:35:59,734 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:35:59,737 runserver>log_action [mHTTP POST /api/process/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=043&tickettime=2023-05-08T07:44:03.868478Z 200 [0.08, 127.0.0.1:54040][0m
+INFO 2023-05-09 15:36:00,974 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A043_e7o sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:36:00,978 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 15:36:00,981 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:36:00,983 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:36:00,987 runserver>log_action [mHTTP POST /api/done/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=043&tickettime=2023-05-08T07:44:03.868478Z 200 [0.08, 127.0.0.1:54044][0m
+INFO 2023-05-09 15:36:01,745 runserver>log_action [mHTTP POST /api/counterlogout/?username=elton&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.04, 127.0.0.1:54048][0m
+INFO 2023-05-09 15:36:12,464 runserver>log_action [32mHTTP POST /login/ 302 [0.26, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:12,507 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:14,373 runserver>log_action [mHTTP GET /supervisors/ 200 [0.04, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:15,553 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.19, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:23,440 runserver>log_action [mHTTP POST /api/counterlogin/?username=anya&password=asdf2206&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.26, 127.0.0.1:54075][0m
+INFO 2023-05-09 15:36:27,905 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.08, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:30,293 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:36:30,298 base>ws>wssendwebtv ...Done
+INFO 2023-05-09 15:36:30,304 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:36:30,308 base>ws>wssendql ...Done
+INFO 2023-05-09 15:36:30,314 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A044_BfY sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:36:30,316 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 15:36:30,319 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:36:30,322 base>ws>wssendvoice ...Done
+INFO 2023-05-09 15:36:30,325 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:36:30,327 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:36:30,330 runserver>log_action [mHTTP POST /api/call/?username=anya&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.15, 127.0.0.1:54080][0m
+INFO 2023-05-09 15:36:32,122 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.08, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:35,255 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:36,227 runserver>log_action [mHTTP GET /softkey_login/ 200 [0.05, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:37,932 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.07, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:37,965 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54092]
+INFO 2023-05-09 15:36:37,971 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 15:36:37,976 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54092]
+INFO 2023-05-09 15:36:37,990 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54093]
+INFO 2023-05-09 15:36:37,996 base>consumers>connect connecting:cs_4
+INFO 2023-05-09 15:36:38,000 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54093]
+INFO 2023-05-09 15:36:38,014 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54094]
+INFO 2023-05-09 15:36:38,018 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 15:36:38,026 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54094]
+INFO 2023-05-09 15:36:40,783 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A004_VS9 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:36:40,788 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 15:36:40,789 base>ws>wscounterstatus channel_group_name:cs_4 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:36:40,792 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:36:40,803 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.08, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:40,853 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:40,861 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:54093]
+INFO 2023-05-09 15:36:40,863 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54092]
+INFO 2023-05-09 15:36:40,864 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54094]
+INFO 2023-05-09 15:36:40,942 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54101]
+INFO 2023-05-09 15:36:40,948 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 15:36:40,953 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54101]
+INFO 2023-05-09 15:36:40,967 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54102]
+INFO 2023-05-09 15:36:40,976 base>consumers>connect connecting:cs_4
+INFO 2023-05-09 15:36:40,981 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54102]
+INFO 2023-05-09 15:36:40,995 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54103]
+INFO 2023-05-09 15:36:41,000 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 15:36:41,006 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54103]
+INFO 2023-05-09 15:36:48,002 runserver>log_action [mHTTP GET /supervisors/ 200 [0.04, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:48,046 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54101]
+INFO 2023-05-09 15:36:48,047 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:54102]
+INFO 2023-05-09 15:36:48,049 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54103]
+INFO 2023-05-09 15:36:49,342 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.08, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:53,309 runserver>log_action [mHTTP GET / 200 [0.02, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:54,527 runserver>log_action [mHTTP GET /softkey_login/ 200 [0.05, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:56,164 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:56,261 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54114]
+INFO 2023-05-09 15:36:56,272 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 15:36:56,281 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54114]
+INFO 2023-05-09 15:36:56,294 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54115]
+INFO 2023-05-09 15:36:56,299 base>consumers>connect connecting:cs_4
+INFO 2023-05-09 15:36:56,305 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54115]
+INFO 2023-05-09 15:36:56,319 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54116]
+INFO 2023-05-09 15:36:56,325 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 15:36:56,331 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54116]
+INFO 2023-05-09 15:36:57,049 runserver>log_action [32mHTTP GET /softkey_logout/4/ 302 [0.04, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:57,103 runserver>log_action [mHTTP GET /softkey_login/ 200 [0.05, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:36:57,147 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:54115]
+INFO 2023-05-09 15:36:57,148 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54114]
+INFO 2023-05-09 15:36:57,150 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54116]
+INFO 2023-05-09 15:36:58,291 runserver>log_action [mHTTP GET /softkey_login/ 200 [0.05, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:37:01,028 runserver>log_action [mHTTP GET /supervisors/ 200 [0.04, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:37:02,046 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.08, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:37:07,471 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:37:07,477 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:37:07,479 runserver>log_action [mHTTP POST /api/process/?username=anya&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=044&tickettime=2023-05-08T07:49:01.651355Z 200 [0.08, 127.0.0.1:54128][0m
+INFO 2023-05-09 15:37:08,710 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.08, 127.0.0.1:54064][0m
+INFO 2023-05-09 15:39:00,375 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:54147][0m
+INFO 2023-05-09 15:43:50,355 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:54193][0m
+INFO 2023-05-09 15:48:40,349 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:54286][0m
+INFO 2023-05-09 15:53:30,358 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:54345][0m
+INFO 2023-05-09 15:53:55,369 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A044_BfY sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:53:55,373 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 15:53:55,376 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 15:53:55,378 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 15:53:55,380 runserver>log_action [mHTTP POST /api/done/?username=anya&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=044&tickettime=2023-05-08T07:49:01.651355Z 200 [0.08, 127.0.0.1:54348][0m
+INFO 2023-05-09 15:53:56,554 runserver>log_action [mHTTP POST /api/counterlogout/?username=anya&app=Softkey&version=8.0.0.1&branchcode=KB&countername=Reception&counternumber=1 200 [0.04, 127.0.0.1:54352][0m
+INFO 2023-05-09 15:53:59,135 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:53985]
+INFO 2023-05-09 15:53:59,136 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:53984]
+INFO 2023-05-09 16:37:10,179 runserver>log_action [32mHTTP GET /supervisor/1/ 302 [0.02, 127.0.0.1:54677][0m
+INFO 2023-05-09 16:37:10,190 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:54677][0m
+INFO 2023-05-09 18:36:15,826 runserver>log_action [mHTTP POST /api/token/ 200 [0.29, 127.0.0.1:55494][0m
+INFO 2023-05-09 18:37:03,592 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:55502][0m
+INFO 2023-05-09 18:37:03,918 runserver>log_action [mHTTP GET /api/?app=Voice%20COMP&version=8.0.0.0 200 [0.02, 127.0.0.1:55505][0m
+INFO 2023-05-09 18:37:03,944 runserver>log_action WebSocket HANDSHAKING /ws/voice/KB/Reception/ [127.0.0.1:55508]
+INFO 2023-05-09 18:37:03,949 base>consumers>connect connecting:voice_KB_Reception
+INFO 2023-05-09 18:37:03,959 runserver>log_action WebSocket CONNECT /ws/voice/KB/Reception/ [127.0.0.1:55508]
+INFO 2023-05-09 18:37:08,960 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.0.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:55511][0m
+INFO 2023-05-09 18:37:25,464 runserver>log_action [32mHTTP POST /login/ 302 [0.25, 127.0.0.1:55519][0m
+INFO 2023-05-09 18:37:25,522 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:55519][0m
+INFO 2023-05-09 18:37:27,265 runserver>log_action [mHTTP GET /softkey_login/ 200 [0.07, 127.0.0.1:55519][0m
+INFO 2023-05-09 18:37:28,736 runserver>log_action [mHTTP GET /softkey/2/ 200 [0.09, 127.0.0.1:55519][0m
+INFO 2023-05-09 18:37:28,829 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55529]
+INFO 2023-05-09 18:37:28,836 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 18:37:28,845 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55529]
+INFO 2023-05-09 18:37:28,861 runserver>log_action WebSocket HANDSHAKING /ws/cs/2/ [127.0.0.1:55530]
+INFO 2023-05-09 18:37:28,870 base>consumers>connect connecting:cs_2
+INFO 2023-05-09 18:37:28,878 runserver>log_action WebSocket CONNECT /ws/cs/2/ [127.0.0.1:55530]
+INFO 2023-05-09 18:37:28,892 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55531]
+INFO 2023-05-09 18:37:28,900 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 18:37:28,908 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55531]
+INFO 2023-05-09 18:37:30,547 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 18:37:30,555 base>ws>wssendwebtv ...Done
+INFO 2023-05-09 18:37:30,560 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 18:37:30,568 base>ws>wssendql ...Done
+INFO 2023-05-09 18:37:30,577 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A045_ZbS sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 18:37:30,581 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 18:37:30,584 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 18:37:30,591 base>ws>wssendvoice ...Done
+INFO 2023-05-09 18:37:30,595 base>ws>wscounterstatus channel_group_name:cs_2 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 18:37:30,599 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 18:37:30,612 runserver>log_action [32mHTTP POST /softkey/2/ 302 [0.20, 127.0.0.1:55519][0m
+INFO 2023-05-09 18:37:30,681 runserver>log_action [mHTTP GET /softkey/2/ 200 [0.06, 127.0.0.1:55519][0m
+INFO 2023-05-09 18:37:30,689 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55529]
+INFO 2023-05-09 18:37:30,691 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55531]
+INFO 2023-05-09 18:37:30,692 runserver>log_action WebSocket DISCONNECT /ws/cs/2/ [127.0.0.1:55530]
+INFO 2023-05-09 18:37:30,784 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55538]
+INFO 2023-05-09 18:37:30,795 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 18:37:30,806 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55538]
+INFO 2023-05-09 18:37:30,821 runserver>log_action WebSocket HANDSHAKING /ws/cs/2/ [127.0.0.1:55539]
+INFO 2023-05-09 18:37:30,830 base>consumers>connect connecting:cs_2
+INFO 2023-05-09 18:37:30,837 runserver>log_action WebSocket CONNECT /ws/cs/2/ [127.0.0.1:55539]
+INFO 2023-05-09 18:37:30,854 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55540]
+INFO 2023-05-09 18:37:30,861 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 18:37:30,868 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55540]
+INFO 2023-05-09 18:37:41,534 runserver>log_action WebSocket DISCONNECT /ws/voice/KB/Reception/ [127.0.0.1:55508]
+INFO 2023-05-09 18:38:52,879 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:55545][0m
+INFO 2023-05-09 18:38:53,184 runserver>log_action [mHTTP GET /api/?app=Voice%20COMP&version=8.1.0.0 200 [0.02, 127.0.0.1:55548][0m
+INFO 2023-05-09 18:38:53,195 runserver>log_action WebSocket HANDSHAKING /ws/voice/KB/Reception/ [127.0.0.1:55551]
+INFO 2023-05-09 18:38:53,197 base>consumers>connect connecting:voice_KB_Reception
+INFO 2023-05-09 18:38:53,203 runserver>log_action WebSocket CONNECT /ws/voice/KB/Reception/ [127.0.0.1:55551]
+INFO 2023-05-09 18:38:58,235 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.04, 127.0.0.1:55554][0m
+INFO 2023-05-09 18:39:20,595 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A045_ZbS sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 18:39:20,599 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 18:39:20,600 base>ws>wscounterstatus channel_group_name:cs_2 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 18:39:20,604 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 18:39:20,617 runserver>log_action [32mHTTP POST /softkey/2/ 302 [0.12, 127.0.0.1:55557][0m
+INFO 2023-05-09 18:39:20,684 runserver>log_action [mHTTP GET /softkey/2/ 200 [0.06, 127.0.0.1:55557][0m
+INFO 2023-05-09 18:39:20,690 runserver>log_action WebSocket DISCONNECT /ws/cs/2/ [127.0.0.1:55539]
+INFO 2023-05-09 18:39:20,692 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55538]
+INFO 2023-05-09 18:39:20,693 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55540]
+INFO 2023-05-09 18:39:20,788 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55566]
+INFO 2023-05-09 18:39:20,799 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 18:39:20,807 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55566]
+INFO 2023-05-09 18:39:20,822 runserver>log_action WebSocket HANDSHAKING /ws/cs/2/ [127.0.0.1:55567]
+INFO 2023-05-09 18:39:20,829 base>consumers>connect connecting:cs_2
+INFO 2023-05-09 18:39:20,834 runserver>log_action WebSocket CONNECT /ws/cs/2/ [127.0.0.1:55567]
+INFO 2023-05-09 18:39:20,847 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55568]
+INFO 2023-05-09 18:39:20,852 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 18:39:20,858 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55568]
+INFO 2023-05-09 18:39:21,302 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 18:39:21,308 base>ws>wssendwebtv ...Done
+INFO 2023-05-09 18:39:21,314 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 18:39:21,318 base>ws>wssendql ...Done
+INFO 2023-05-09 18:39:21,327 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A046_JZK sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 18:39:21,329 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 18:39:21,333 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 18:39:21,336 base>ws>wssendvoice ...Done
+INFO 2023-05-09 18:39:21,339 base>ws>wscounterstatus channel_group_name:cs_2 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 18:39:21,344 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 18:39:21,355 runserver>log_action [32mHTTP POST /softkey/2/ 302 [0.36, 127.0.0.1:55557][0m
+INFO 2023-05-09 18:39:21,428 runserver>log_action [mHTTP GET /softkey/2/ 200 [0.07, 127.0.0.1:55557][0m
+INFO 2023-05-09 18:39:21,436 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55568]
+INFO 2023-05-09 18:39:21,437 runserver>log_action WebSocket DISCONNECT /ws/cs/2/ [127.0.0.1:55567]
+INFO 2023-05-09 18:39:21,439 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55566]
+INFO 2023-05-09 18:39:21,528 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55575]
+INFO 2023-05-09 18:39:21,535 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 18:39:21,542 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55575]
+INFO 2023-05-09 18:39:21,556 runserver>log_action WebSocket HANDSHAKING /ws/cs/2/ [127.0.0.1:55576]
+INFO 2023-05-09 18:39:21,562 base>consumers>connect connecting:cs_2
+INFO 2023-05-09 18:39:21,566 runserver>log_action WebSocket CONNECT /ws/cs/2/ [127.0.0.1:55576]
+INFO 2023-05-09 18:39:21,580 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55577]
+INFO 2023-05-09 18:39:21,584 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 18:39:21,590 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55577]
+INFO 2023-05-09 18:39:35,614 runserver>log_action WebSocket DISCONNECT /ws/voice/KB/Reception/ [127.0.0.1:55551]
+INFO 2023-05-09 19:21:57,526 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:56119][0m
+INFO 2023-05-09 19:22:06,264 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:06,269 base>ws>wssendwebtv ...Done
+INFO 2023-05-09 19:22:06,275 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:06,279 base>ws>wssendql ...Done
+INFO 2023-05-09 19:22:06,282 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:06,284 base>ws>wsSendPrintTicket ...Done
+INFO 2023-05-09 19:22:06,289 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:06,293 base>ws>wsrochesms ...Done
+INFO 2023-05-09 19:22:06,296 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:06,297 base>ws>wsrochesms ...Done
+INFO 2023-05-09 19:22:06,310 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3Ep1%3C/PNO%3E&app=Touch%20Panel&version=8.0.0.1 200 [0.14, 127.0.0.1:56126][0m
+INFO 2023-05-09 19:22:11,515 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:11,520 base>ws>wssendwebtv ...Done
+INFO 2023-05-09 19:22:11,526 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:11,531 base>ws>wssendql ...Done
+INFO 2023-05-09 19:22:11,535 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:11,538 base>ws>wsSendPrintTicket ...Done
+INFO 2023-05-09 19:22:11,543 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:11,546 base>ws>wsrochesms ...Done
+INFO 2023-05-09 19:22:11,549 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:11,552 base>ws>wsrochesms ...Done
+INFO 2023-05-09 19:22:11,565 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3Ep1%3C/PNO%3E&app=Touch%20Panel&version=8.0.0.1 200 [0.14, 127.0.0.1:56133][0m
+INFO 2023-05-09 19:22:21,997 runserver>log_action [mHTTP GET /softkey/2/ 200 [0.08, 127.0.0.1:56141][0m
+INFO 2023-05-09 19:22:22,006 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55577]
+INFO 2023-05-09 19:22:22,007 runserver>log_action WebSocket DISCONNECT /ws/cs/2/ [127.0.0.1:55576]
+INFO 2023-05-09 19:22:22,009 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55575]
+INFO 2023-05-09 19:22:22,073 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:56148]
+INFO 2023-05-09 19:22:22,083 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 19:22:22,094 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:56148]
+INFO 2023-05-09 19:22:22,109 runserver>log_action WebSocket HANDSHAKING /ws/cs/2/ [127.0.0.1:56149]
+INFO 2023-05-09 19:22:22,114 base>consumers>connect connecting:cs_2
+INFO 2023-05-09 19:22:22,118 runserver>log_action WebSocket CONNECT /ws/cs/2/ [127.0.0.1:56149]
+INFO 2023-05-09 19:22:22,132 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:56150]
+INFO 2023-05-09 19:22:22,138 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 19:22:22,146 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:56150]
+INFO 2023-05-09 19:22:24,715 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:24,720 base>ws>wssendwebtv ...Done
+INFO 2023-05-09 19:22:24,725 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:24,729 base>ws>wssendql ...Done
+INFO 2023-05-09 19:22:24,731 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:24,733 base>ws>wsSendPrintTicket ...Done
+INFO 2023-05-09 19:22:24,739 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:24,741 base>ws>wsrochesms ...Done
+INFO 2023-05-09 19:22:24,744 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:24,746 base>ws>wsrochesms ...Done
+INFO 2023-05-09 19:22:24,758 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3Ep1%3C/PNO%3E&app=Touch%20Panel&version=8.0.0.1 200 [0.13, 127.0.0.1:56151][0m
+INFO 2023-05-09 19:22:26,354 base>ws>wscounterstatus channel_group_name:cs_2 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:26,360 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 19:22:26,373 runserver>log_action [32mHTTP POST /softkey/2/ 302 [0.10, 127.0.0.1:56141][0m
+INFO 2023-05-09 19:22:26,446 runserver>log_action [mHTTP GET /softkey/2/ 200 [0.07, 127.0.0.1:56141][0m
+INFO 2023-05-09 19:22:26,452 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:56150]
+INFO 2023-05-09 19:22:26,453 runserver>log_action WebSocket DISCONNECT /ws/cs/2/ [127.0.0.1:56149]
+INFO 2023-05-09 19:22:26,455 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:56148]
+INFO 2023-05-09 19:22:26,477 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:56161]
+INFO 2023-05-09 19:22:26,483 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 19:22:26,490 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:56161]
+INFO 2023-05-09 19:22:26,504 runserver>log_action WebSocket HANDSHAKING /ws/cs/2/ [127.0.0.1:56162]
+INFO 2023-05-09 19:22:26,510 base>consumers>connect connecting:cs_2
+INFO 2023-05-09 19:22:26,514 runserver>log_action WebSocket CONNECT /ws/cs/2/ [127.0.0.1:56162]
+INFO 2023-05-09 19:22:26,527 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:56163]
+INFO 2023-05-09 19:22:26,532 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 19:22:26,537 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:56163]
+INFO 2023-05-09 19:22:27,314 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A046_JZK sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:27,319 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-09 19:22:27,320 base>ws>wscounterstatus channel_group_name:cs_2 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:27,324 base>ws>wscounterstatus ...Done
+INFO 2023-05-09 19:22:27,336 runserver>log_action [32mHTTP POST /softkey/2/ 302 [0.11, 127.0.0.1:56141][0m
+INFO 2023-05-09 19:22:27,406 runserver>log_action [mHTTP GET /softkey/2/ 200 [0.06, 127.0.0.1:56141][0m
+INFO 2023-05-09 19:22:27,412 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:56163]
+INFO 2023-05-09 19:22:27,413 runserver>log_action WebSocket DISCONNECT /ws/cs/2/ [127.0.0.1:56162]
+INFO 2023-05-09 19:22:27,414 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:56161]
+INFO 2023-05-09 19:22:27,510 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:56171]
+INFO 2023-05-09 19:22:27,518 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-09 19:22:27,527 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:56171]
+INFO 2023-05-09 19:22:27,542 runserver>log_action WebSocket HANDSHAKING /ws/cs/2/ [127.0.0.1:56172]
+INFO 2023-05-09 19:22:27,548 base>consumers>connect connecting:cs_2
+INFO 2023-05-09 19:22:27,551 runserver>log_action WebSocket CONNECT /ws/cs/2/ [127.0.0.1:56172]
+INFO 2023-05-09 19:22:27,565 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:56173]
+INFO 2023-05-09 19:22:27,571 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-09 19:22:27,577 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:56173]
+INFO 2023-05-09 19:22:31,325 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:31,331 base>ws>wssendwebtv ...Done
+INFO 2023-05-09 19:22:31,335 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:31,340 base>ws>wssendql ...Done
+INFO 2023-05-09 19:22:31,343 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:31,345 base>ws>wsSendPrintTicket ...Done
+INFO 2023-05-09 19:22:31,350 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:31,354 base>ws>wsrochesms ...Done
+INFO 2023-05-09 19:22:31,357 base>ws>wsrochesms channel_group_name:sms_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-09 19:22:31,360 base>ws>wsrochesms ...Done
+INFO 2023-05-09 19:22:31,370 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3Ep1%3C/PNO%3E&app=Touch%20Panel&version=8.0.0.1 200 [0.13, 127.0.0.1:56174][0m
+INFO 2023-05-09 20:22:29,236 runserver>log_action [32mHTTP GET /softkey/2/ 302 [0.06, 127.0.0.1:52222][0m
+INFO 2023-05-09 20:22:29,256 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:52222][0m
+INFO 2023-05-09 20:22:29,269 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:56171]
+INFO 2023-05-09 20:22:29,271 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:56173]
+INFO 2023-05-09 20:22:29,272 runserver>log_action WebSocket DISCONNECT /ws/cs/2/ [127.0.0.1:56172]

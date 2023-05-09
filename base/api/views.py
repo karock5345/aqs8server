@@ -165,7 +165,30 @@ def getBranchs(request):
 
 
 
+def loginapi_notoken(request, username, password, in_branch):
 
+    user = None
+    # loginresult = '"Error":"Method should be "POST",'
+    # if request.method == 'POST':
+    username = username.lower()
+    password = password
+    loginresult = 'OK'
+    
+
+    user =  authenticate(request, username=username, password=password)
+    if user is not None:
+        # check branch code
+        userp= UserProfile.objects.get(user=user)
+        for branch in userp.branchs.all():
+            if branch == in_branch :
+                b_found = True
+                exit
+        if b_found == False :
+            loginresult = 'User not authorized operate this branch'
+    else:
+        loginresult =  'Login error, username or password does not exist'
+
+    return loginresult, user
 
 
 def loginapi(request, username, password, token, in_branch):

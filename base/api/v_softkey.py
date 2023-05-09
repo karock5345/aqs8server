@@ -4,7 +4,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.db.models import Q
-from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, counteractive, checkuser
+from .views import setting_APIlogEnabled, visitor_ip_address, loginapi_notoken, funUTCtoLocal, counteractive, checkuser
 from .v_display import newdisplayvoice
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
 from .serializers import waitinglistSerivalizer
@@ -1467,7 +1467,7 @@ def postCounterLogin(request):
 
     rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
     rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
-    rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
@@ -1516,7 +1516,7 @@ def postCounterLogin(request):
 
     if status == dict({}) :
         
-        loginreply, user = loginapi(request , rx_username, rx_password, rx_token, branch)
+        loginreply, user = loginapi_notoken(request , rx_username, rx_password, branch)
 
         if loginreply != 'OK':
             status = dict({'status': 'Error'})
