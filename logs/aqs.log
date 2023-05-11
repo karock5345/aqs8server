@@ -8313,3 +8313,1461 @@ INFO 2023-05-09 20:22:29,256 runserver>log_action [mHTTP GET /login/ 200 [0.01,
 INFO 2023-05-09 20:22:29,269 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:56171]
 INFO 2023-05-09 20:22:29,271 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:56173]
 INFO 2023-05-09 20:22:29,272 runserver>log_action WebSocket DISCONNECT /ws/cs/2/ [127.0.0.1:56172]
+INFO 2023-05-10 18:27:00,630 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-10 18:27:02,040 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-10 18:27:02,051 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-10 18:27:02,231 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-10 18:27:02,232 base>views><module> -SCH- Now:05/10/2023, 10:27:02
+INFO 2023-05-10 18:27:02,380 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-10 15:59:59 Local:2023-05-10 23:59:59
+INFO 2023-05-10 18:27:02,381 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-10 18:27:02,382 base>views>init_branch_reset    -SCH- 2023-05-10 15:59:59 > 2023-05-10 10:27:02 [Yes]
+INFO 2023-05-10 18:27:02,461 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-10 15:59:59 Local:2023-05-10 23:59:59
+INFO 2023-05-10 18:27:02,462 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-10 18:27:02,463 base>views>init_branch_reset    -SCH- 2023-05-10 15:59:59 > 2023-05-10 10:27:02 [Yes]
+INFO 2023-05-10 18:27:02,472 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-10 18:00:00 Local:2023-05-11 02:00:00
+INFO 2023-05-10 18:27:02,472 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-10 18:27:02,473 base>views>init_branch_reset    -SCH- 2023-05-10 18:00:00 > 2023-05-10 10:27:02 [Yes]
+WARNING 2023-05-10 18:27:05,178 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:27:05,192 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.02, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:06,001 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:27:06,002 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:11,019 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:27:11,020 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:15,178 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:27:15,179 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:16,047 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:27:16,048 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:21,067 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:27:21,069 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.00, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:25,171 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:27:25,172 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:26,077 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:27:26,078 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:31,089 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:27:31,091 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:35,180 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:27:35,182 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:36,116 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:27:36,118 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:41,141 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:27:41,143 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:45,181 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:27:45,182 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:46,154 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:27:46,155 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:51,181 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:27:51,182 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:55,182 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:27:55,184 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:27:56,200 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:27:56,201 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:01,230 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:28:01,232 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:05,184 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:28:05,185 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:06,252 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:28:06,254 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:11,267 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:28:11,269 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:15,206 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:28:15,208 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:16,283 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:28:16,284 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:21,296 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:28:21,297 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:25,224 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:28:25,225 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:26,314 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:28:26,315 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:31,331 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:28:31,332 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:35,234 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:28:35,235 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:36,347 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:28:36,348 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:41,357 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:28:41,358 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:45,248 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:28:45,249 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:46,379 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:28:46,380 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:51,393 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:28:51,394 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:55,270 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:28:55,271 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:28:56,403 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:28:56,404 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:01,419 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:29:01,420 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:05,284 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:29:05,285 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:06,434 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:29:06,435 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:11,461 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:29:11,462 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:15,306 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:29:15,307 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:16,487 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:29:16,488 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.00, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:21,505 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:29:21,506 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:25,332 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:29:25,333 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:26,538 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:29:26,539 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:31,568 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:29:31,569 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:35,346 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:29:35,348 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:36,588 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:29:36,590 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:41,607 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:29:41,608 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:45,367 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:29:45,368 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:46,622 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:29:46,623 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:51,646 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:29:51,648 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:55,389 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:29:55,390 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:29:56,664 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:29:56,666 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:01,686 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:30:01,687 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:05,411 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:30:05,413 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:06,702 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:30:06,704 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:11,729 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:30:11,730 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:15,438 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:30:15,439 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:16,756 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:30:16,757 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:21,773 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:30:21,774 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:25,454 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:30:25,455 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:26,793 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:30:26,794 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:31,822 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:30:31,824 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:35,478 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:30:35,479 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:36,844 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:30:36,846 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:41,864 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:30:41,865 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:45,496 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:30:45,497 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:46,876 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:30:46,877 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:51,886 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:30:51,888 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:55,518 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:30:55,520 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:30:56,906 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:30:56,907 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:01,929 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:31:01,931 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:05,540 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:31:05,541 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:06,955 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:31:06,956 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:11,965 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:31:11,966 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:15,571 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:31:15,573 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:16,987 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:31:16,989 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:22,000 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:31:22,001 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:25,600 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:31:25,601 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:27,013 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:31:27,014 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:32,030 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:31:32,032 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:35,621 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:31:35,622 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:37,047 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:31:37,049 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:42,072 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:31:42,073 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:45,644 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:31:45,645 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:47,096 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:31:47,097 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:52,111 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:31:52,112 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:55,661 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:31:55,662 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:31:57,125 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:31:57,126 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:02,153 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:32:02,155 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:05,690 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:32:05,691 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:07,179 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:32:07,180 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:12,202 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:32:12,204 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:15,704 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:32:15,705 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:17,215 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:32:17,216 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:22,233 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:32:22,234 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:25,726 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:32:25,727 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:27,249 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:32:27,250 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.00, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:32,277 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:32:32,278 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:35,721 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:32:35,722 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:37,293 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:32:37,295 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:42,315 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:32:42,316 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:45,716 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:32:45,718 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:47,331 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:32:47,332 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:52,341 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:32:52,343 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:55,721 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:32:55,722 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:32:57,364 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:32:57,365 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:02,373 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:33:02,374 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:05,716 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:33:05,718 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:07,397 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:33:07,399 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:12,426 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:33:12,428 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:15,726 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:33:15,727 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:17,435 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:33:17,436 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:22,450 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:33:22,451 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:25,717 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:33:25,718 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:27,467 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:33:27,468 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:32,484 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:33:32,485 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:35,719 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:33:35,720 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:37,502 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:33:37,503 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:42,516 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:33:42,517 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:45,717 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:33:45,718 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:47,540 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:33:47,541 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:52,568 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:33:52,570 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:55,718 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:33:55,719 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.00, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:33:57,586 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:33:57,587 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:02,617 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:34:02,618 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:05,714 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:34:05,716 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:07,641 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:34:07,642 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:12,653 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:34:12,654 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:15,715 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:34:15,716 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:17,669 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:34:17,670 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:22,684 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:34:22,685 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:25,727 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:34:25,729 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:27,710 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:34:27,712 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:32,738 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:34:32,740 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:35,736 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:34:35,738 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:37,754 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:34:37,755 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:42,768 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:34:42,769 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:45,735 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:34:45,737 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:47,785 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:34:47,786 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:52,798 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:34:52,799 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:55,747 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:34:55,749 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:34:57,818 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:34:57,820 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:02,845 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:35:02,846 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:05,768 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:35:05,769 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:07,855 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:35:07,856 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:12,876 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:35:12,877 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:15,764 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:35:15,766 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:17,903 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:35:17,905 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:22,922 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:35:22,923 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:25,772 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:35:25,773 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:27,939 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:35:27,940 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:32,953 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:35:32,954 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:35,771 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:35:35,772 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:37,965 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:35:37,967 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:42,980 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:35:42,982 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:45,764 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:35:45,766 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:48,006 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:35:48,007 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:53,026 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:35:53,027 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:55,762 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:35:55,763 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:35:58,045 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:35:58,047 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:03,069 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:36:03,070 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:05,768 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:36:05,769 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:08,106 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:36:08,107 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:13,127 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:36:13,129 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:15,761 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:36:15,763 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:18,148 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:36:18,149 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:23,168 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:36:23,169 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:25,771 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:36:25,773 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:28,191 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:36:28,192 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:33,199 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:36:33,201 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:35,782 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:36:35,783 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:38,216 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:36:38,217 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:43,229 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:36:43,231 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:45,778 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:36:45,779 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:48,248 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:36:48,249 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:53,261 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:36:53,262 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:55,791 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:36:55,792 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:36:58,277 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:36:58,279 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:03,304 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:37:03,305 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:05,778 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:37:05,779 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:08,309 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:37:08,311 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:13,328 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:37:13,329 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:15,778 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:37:15,779 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:18,352 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:37:18,353 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:23,383 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:37:23,384 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:25,782 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:37:25,784 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:28,410 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:37:28,411 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:33,423 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:37:33,424 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:35,792 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:37:35,793 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.00, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:38,438 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:37:38,440 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:43,449 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:37:43,451 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:45,797 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:37:45,798 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:48,466 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:37:48,467 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:53,492 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:37:53,493 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:55,799 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:37:55,801 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:37:58,522 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:37:58,524 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:38:03,542 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:38:03,543 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:38:05,795 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:38:05,796 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:38:08,563 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:38:08,564 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:38:13,577 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:38:13,578 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:38:15,795 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:38:15,796 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:38:18,593 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:38:18,594 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:62576][0m
+WARNING 2023-05-10 18:38:23,610 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:38:23,611 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:38:25,798 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:38:25,799 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:38:28,627 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:38:28,628 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:38:33,643 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:38:33,644 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:38:35,793 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:38:35,794 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:38:38,658 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:38:38,659 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:38:43,674 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:38:43,675 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:38:45,799 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:38:45,800 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:38:48,687 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:38:48,688 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:38:53,704 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:38:53,706 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:38:55,806 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:38:55,808 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:38:58,723 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:38:58,724 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:39:03,736 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:39:03,737 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.00, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:39:05,811 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:39:05,812 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:39:08,749 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:39:08,750 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:39:13,765 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:39:13,767 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:39:15,835 log>log_response Unauthorized: /api/displaywait/
+WARNING 2023-05-10 18:39:15,837 runserver>log_action [31;1mHTTP GET /api/displaywait/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.2&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:63054][0m
+WARNING 2023-05-10 18:39:18,789 log>log_response Unauthorized: /api/
+WARNING 2023-05-10 18:39:18,790 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.2 401 [0.01, 127.0.0.1:63054][0m
+INFO 2023-05-11 16:27:04,620 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-11 16:27:05,972 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-11 16:27:05,983 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-11 16:27:06,139 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-11 16:27:06,140 base>views><module> -SCH- Now:05/11/2023, 08:27:06
+INFO 2023-05-11 16:27:06,269 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-11 15:59:59 Local:2023-05-11 23:59:59
+INFO 2023-05-11 16:27:06,271 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-11 16:27:06,271 base>views>init_branch_reset    -SCH- 2023-05-11 15:59:59 > 2023-05-11 08:27:06 [Yes]
+INFO 2023-05-11 16:27:06,338 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-11 15:59:59 Local:2023-05-11 23:59:59
+INFO 2023-05-11 16:27:06,339 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-11 16:27:06,339 base>views>init_branch_reset    -SCH- 2023-05-11 15:59:59 > 2023-05-11 08:27:06 [Yes]
+INFO 2023-05-11 16:27:06,350 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-11 18:00:00 Local:2023-05-12 02:00:00
+INFO 2023-05-11 16:27:06,351 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-11 16:27:06,351 base>views>init_branch_reset    -SCH- 2023-05-11 18:00:00 > 2023-05-11 08:27:06 [Yes]
+INFO 2023-05-11 16:28:00,570 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:52837][0m
+INFO 2023-05-11 16:28:07,644 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.04, 127.0.0.1:52840][0m
+INFO 2023-05-11 16:28:17,640 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52843][0m
+INFO 2023-05-11 16:28:27,675 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52846][0m
+INFO 2023-05-11 16:28:37,723 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.04, 127.0.0.1:52850][0m
+INFO 2023-05-11 16:28:47,763 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52854][0m
+INFO 2023-05-11 16:28:57,794 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52857][0m
+INFO 2023-05-11 16:29:07,824 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52860][0m
+INFO 2023-05-11 16:29:17,855 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52863][0m
+INFO 2023-05-11 16:29:27,882 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52866][0m
+INFO 2023-05-11 16:29:37,912 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52871][0m
+INFO 2023-05-11 16:29:47,952 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52875][0m
+INFO 2023-05-11 16:29:57,976 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52878][0m
+INFO 2023-05-11 16:30:08,007 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52891][0m
+INFO 2023-05-11 16:30:18,048 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52898][0m
+INFO 2023-05-11 16:30:28,082 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52901][0m
+INFO 2023-05-11 16:30:38,115 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52904][0m
+INFO 2023-05-11 16:30:48,119 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52908][0m
+INFO 2023-05-11 16:32:05,704 runserver>log_action [mHTTP POST /api/token/ 200 [0.26, 127.0.0.1:52913][0m
+INFO 2023-05-11 16:32:14,762 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:52916][0m
+INFO 2023-05-11 16:38:24,820 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-11 16:38:26,157 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-11 16:38:26,166 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-11 16:38:26,323 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-11 16:38:26,324 base>views><module> -SCH- Now:05/11/2023, 08:38:26
+INFO 2023-05-11 16:38:26,460 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-11 15:59:59 Local:2023-05-11 23:59:59
+INFO 2023-05-11 16:38:26,461 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-11 16:38:26,462 base>views>init_branch_reset    -SCH- 2023-05-11 15:59:59 > 2023-05-11 08:38:26 [Yes]
+INFO 2023-05-11 16:38:26,534 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-11 15:59:59 Local:2023-05-11 23:59:59
+INFO 2023-05-11 16:38:26,535 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-11 16:38:26,536 base>views>init_branch_reset    -SCH- 2023-05-11 15:59:59 > 2023-05-11 08:38:26 [Yes]
+INFO 2023-05-11 16:38:26,544 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-11 18:00:00 Local:2023-05-12 02:00:00
+INFO 2023-05-11 16:38:26,545 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-11 16:38:26,545 base>views>init_branch_reset    -SCH- 2023-05-11 18:00:00 > 2023-05-11 08:38:26 [Yes]
+INFO 2023-05-11 16:38:59,218 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:53118][0m
+INFO 2023-05-11 16:39:02,112 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.04, 127.0.0.1:53121][0m
+INFO 2023-05-11 16:39:12,171 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53124][0m
+INFO 2023-05-11 16:39:22,197 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53130][0m
+INFO 2023-05-11 16:39:32,225 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53134][0m
+INFO 2023-05-11 16:39:39,122 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:53137][0m
+INFO 2023-05-11 16:39:39,387 runserver>log_action [mHTTP GET /api/?app=Voice%20COMP&version=8.1.0.0 200 [0.02, 127.0.0.1:53140][0m
+INFO 2023-05-11 16:39:39,402 runserver>log_action WebSocket HANDSHAKING /ws/voice/KB/Reception/ [127.0.0.1:53143]
+INFO 2023-05-11 16:39:39,470 base>consumers>connect connecting:voice_KB_Reception
+INFO 2023-05-11 16:39:39,483 runserver>log_action WebSocket CONNECT /ws/voice/KB/Reception/ [127.0.0.1:53143]
+INFO 2023-05-11 16:39:42,262 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53147][0m
+INFO 2023-05-11 16:39:44,413 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:53150][0m
+INFO 2023-05-11 16:39:52,292 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53153][0m
+INFO 2023-05-11 16:40:02,325 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53156][0m
+INFO 2023-05-11 16:40:12,363 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53159][0m
+INFO 2023-05-11 16:40:22,414 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53162][0m
+INFO 2023-05-11 16:40:32,446 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53166][0m
+INFO 2023-05-11 16:40:42,483 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53169][0m
+INFO 2023-05-11 16:40:52,512 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53173][0m
+INFO 2023-05-11 16:41:02,544 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53176][0m
+INFO 2023-05-11 16:41:12,546 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53179][0m
+INFO 2023-05-11 16:41:22,556 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.04, 127.0.0.1:53185][0m
+INFO 2023-05-11 16:41:32,538 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53190][0m
+INFO 2023-05-11 16:41:42,540 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53196][0m
+INFO 2023-05-11 16:41:52,542 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53199][0m
+INFO 2023-05-11 16:42:02,541 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53207][0m
+INFO 2023-05-11 16:42:12,550 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53210][0m
+INFO 2023-05-11 16:42:21,754 runserver>log_action [mHTTP POST /api/token/ 200 [0.26, 127.0.0.1:53215][0m
+INFO 2023-05-11 16:42:30,781 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53223][0m
+INFO 2023-05-11 16:42:40,775 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53227][0m
+INFO 2023-05-11 16:42:50,778 runserver>log_action [mHTTP GET /api/displaywait/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53230][0m
+INFO 2023-05-11 16:44:29,274 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53291][0m
+INFO 2023-05-11 16:44:44,619 runserver>log_action [mHTTP POST /api/token/ 200 [0.26, 127.0.0.1:53295][0m
+INFO 2023-05-11 16:46:55,508 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:53414][0m
+INFO 2023-05-11 16:46:55,867 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.1.0.0 200 [0.02, 127.0.0.1:53417][0m
+INFO 2023-05-11 16:46:55,883 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:53420]
+INFO 2023-05-11 16:46:55,886 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:53421]
+INFO 2023-05-11 16:46:55,889 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-11 16:46:55,891 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-11 16:46:55,898 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:53420]
+INFO 2023-05-11 16:46:55,913 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:53421]
+INFO 2023-05-11 16:47:09,912 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&app=Softkey&version=8.1.0.0&branchcode=KB 200 [0.03, 127.0.0.1:53443][0m
+INFO 2023-05-11 16:47:10,073 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.24, 127.0.0.1:53440][0m
+INFO 2023-05-11 16:47:20,709 runserver>log_action [mHTTP POST /api/counterlogin/?username=anya&password=asdf2206&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:53448][0m
+INFO 2023-05-11 16:47:20,934 runserver>log_action [mHTTP GET /api/waiting/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.04, 127.0.0.1:53451][0m
+INFO 2023-05-11 16:47:33,564 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 16:47:33,582 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 16:47:33,589 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 16:47:33,594 base>ws>wssendql ...Done
+INFO 2023-05-11 16:47:33,601 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A047_2UQ sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 16:47:33,604 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 16:47:33,608 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 16:47:33,612 base>ws>wssendvoice ...Done
+INFO 2023-05-11 16:47:33,615 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 16:47:33,618 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 16:47:33,622 runserver>log_action [mHTTP POST /api/call/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.19, 127.0.0.1:53457][0m
+INFO 2023-05-11 16:48:15,123 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:53421]
+INFO 2023-05-11 16:48:15,125 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:53420]
+INFO 2023-05-11 16:48:38,666 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:53489][0m
+INFO 2023-05-11 16:48:38,956 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.1.0.0 200 [0.02, 127.0.0.1:53494][0m
+INFO 2023-05-11 16:48:38,969 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:53498]
+INFO 2023-05-11 16:48:38,971 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:53497]
+INFO 2023-05-11 16:48:38,975 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-11 16:48:38,976 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-11 16:48:38,983 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:53498]
+INFO 2023-05-11 16:48:38,987 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:53497]
+INFO 2023-05-11 16:48:43,940 runserver>log_action [mHTTP POST /api/counterlogin/?username=anya&password=asdf2206&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:53500][0m
+INFO 2023-05-11 16:48:44,100 runserver>log_action [mHTTP GET /api/waiting/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.03, 127.0.0.1:53503][0m
+INFO 2023-05-11 16:48:45,986 runserver>log_action [mHTTP GET /api/printerstatus/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB 200 [0.02, 127.0.0.1:53507][0m
+INFO 2023-05-11 16:48:46,418 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A047_2UQ sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 16:48:46,424 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 16:48:46,427 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 16:48:46,429 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 16:48:46,432 runserver>log_action [mHTTP POST /api/miss/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=047&tickettime=2023-05-08T09:30:45.373172Z 200 [0.09, 127.0.0.1:53510][0m
+INFO 2023-05-11 16:48:47,622 runserver>log_action [mHTTP POST /api/counterlogout/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.04, 127.0.0.1:53514][0m
+INFO 2023-05-11 16:48:49,720 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:53498]
+INFO 2023-05-11 16:48:49,722 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:53497]
+INFO 2023-05-11 16:49:26,266 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53525][0m
+INFO 2023-05-11 16:54:16,267 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53642][0m
+INFO 2023-05-11 16:56:16,041 runserver>log_action [mHTTP POST /api/token/ 200 [0.26, 127.0.0.1:53664][0m
+INFO 2023-05-11 16:56:38,508 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:53675][0m
+INFO 2023-05-11 16:59:06,266 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53715][0m
+INFO 2023-05-11 16:59:38,102 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:53725][0m
+INFO 2023-05-11 16:59:42,717 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:53729][0m
+INFO 2023-05-11 16:59:42,729 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53732]
+INFO 2023-05-11 16:59:42,732 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-05-11 16:59:42,739 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53732]
+INFO 2023-05-11 16:59:44,753 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53736][0m
+INFO 2023-05-11 17:00:04,889 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53744][0m
+INFO 2023-05-11 17:00:05,279 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.1.0.0 200 [0.02, 127.0.0.1:53747][0m
+INFO 2023-05-11 17:00:05,315 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:53750]
+INFO 2023-05-11 17:00:05,318 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:53751]
+INFO 2023-05-11 17:00:05,321 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-11 17:00:05,323 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-11 17:00:05,333 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:53750]
+INFO 2023-05-11 17:00:05,337 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:53751]
+INFO 2023-05-11 17:00:09,441 runserver>log_action [mHTTP POST /api/counterlogin/?username=anya&password=asdf2206&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.26, 127.0.0.1:53753][0m
+INFO 2023-05-11 17:00:10,332 runserver>log_action [mHTTP GET /api/waiting/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.03, 127.0.0.1:53756][0m
+INFO 2023-05-11 17:00:12,328 runserver>log_action [mHTTP GET /api/printerstatus/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB 200 [0.02, 127.0.0.1:53759][0m
+INFO 2023-05-11 17:00:15,983 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:00:15,991 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:00:15,998 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:00:16,001 base>ws>wssendql ...Done
+INFO 2023-05-11 17:00:16,009 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A048_S4v sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:00:16,011 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:00:16,015 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:00:16,018 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:00:16,022 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:00:16,024 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:00:16,028 runserver>log_action [mHTTP POST /api/call/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.17, 127.0.0.1:53762][0m
+INFO 2023-05-11 17:00:45,528 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:00:45,535 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:00:45,539 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:00:45,545 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:00:45,549 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=048&tickettime=2023-05-08T09:30:54.987734Z 200 [0.10, 127.0.0.1:53774][0m
+INFO 2023-05-11 17:02:24,166 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:02:24,172 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:02:24,178 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:02:24,184 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:02:24,188 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=048&tickettime=2023-05-08T09:30:54.987734Z 200 [0.11, 127.0.0.1:53795][0m
+INFO 2023-05-11 17:02:55,013 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53732]
+INFO 2023-05-11 17:04:18,277 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53823][0m
+INFO 2023-05-11 17:04:55,109 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53830][0m
+INFO 2023-05-11 17:07:00,625 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53855]
+INFO 2023-05-11 17:07:00,628 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-05-11 17:07:00,637 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53855]
+INFO 2023-05-11 17:07:02,644 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:53856][0m
+INFO 2023-05-11 17:07:22,372 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:07:22,379 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:07:22,387 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:07:22,394 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:07:22,399 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=048&tickettime=2023-05-08T09:30:54.987734Z 200 [0.11, 127.0.0.1:53862][0m
+INFO 2023-05-11 17:08:13,730 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:08:13,738 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:08:13,742 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:08:13,747 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:08:13,750 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=048&tickettime=2023-05-08T09:30:54.987734Z 200 [0.10, 127.0.0.1:53877][0m
+INFO 2023-05-11 17:09:12,011 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53855]
+INFO 2023-05-11 17:09:22,272 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53893][0m
+INFO 2023-05-11 17:09:45,100 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53906][0m
+INFO 2023-05-11 17:14:12,278 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53957][0m
+INFO 2023-05-11 17:14:35,100 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53964][0m
+INFO 2023-05-11 17:14:54,241 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:14:54,258 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:14:54,264 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:14:54,270 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:14:54,275 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=048&tickettime=2023-05-08T09:30:54.987734Z 200 [0.11, 127.0.0.1:53972][0m
+INFO 2023-05-11 17:15:08,262 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:15:08,266 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:15:08,270 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:15:08,276 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:15:08,280 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=048&tickettime=2023-05-08T09:30:54.987734Z 200 [0.10, 127.0.0.1:53977][0m
+INFO 2023-05-11 17:15:19,012 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:53982][0m
+INFO 2023-05-11 17:15:22,638 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:53985][0m
+INFO 2023-05-11 17:15:22,650 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53988]
+INFO 2023-05-11 17:15:22,653 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-05-11 17:15:22,660 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53988]
+INFO 2023-05-11 17:15:24,669 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:53990][0m
+INFO 2023-05-11 17:15:38,545 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:15:38,551 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:15:38,556 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:15:38,560 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:15:38,564 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=048&tickettime=2023-05-08T09:30:54.987734Z 200 [0.10, 127.0.0.1:54002][0m
+INFO 2023-05-11 17:16:20,344 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A048_S4v sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:20,349 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:16:20,352 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:20,354 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:16:20,357 runserver>log_action [mHTTP POST /api/miss/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=048&tickettime=2023-05-08T09:30:54.987734Z 200 [0.09, 127.0.0.1:54014][0m
+INFO 2023-05-11 17:16:21,015 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:21,032 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:16:21,039 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:21,043 base>ws>wssendql ...Done
+INFO 2023-05-11 17:16:21,050 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A049_jSn sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:21,052 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:16:21,056 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:21,061 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:16:21,064 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:21,066 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:16:21,069 runserver>log_action [mHTTP POST /api/call/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.17, 127.0.0.1:54018][0m
+INFO 2023-05-11 17:16:21,651 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A049_jSn sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:21,656 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:16:21,658 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:21,661 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:16:21,664 runserver>log_action [mHTTP POST /api/miss/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=049&tickettime=2023-05-09T11:22:06.174577Z 200 [0.09, 127.0.0.1:54022][0m
+INFO 2023-05-11 17:16:22,287 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:22,295 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:16:22,302 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:22,305 base>ws>wssendql ...Done
+INFO 2023-05-11 17:16:22,312 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A050_HQ0 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:22,315 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:16:22,318 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:22,321 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:16:22,324 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:22,327 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:16:22,331 runserver>log_action [mHTTP POST /api/call/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.18, 127.0.0.1:54026][0m
+INFO 2023-05-11 17:16:22,850 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A050_HQ0 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:22,855 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:16:22,858 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:22,860 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:16:22,864 runserver>log_action [mHTTP POST /api/miss/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=050&tickettime=2023-05-09T11:22:11.432524Z 200 [0.09, 127.0.0.1:54030][0m
+INFO 2023-05-11 17:16:24,787 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:24,795 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:16:24,800 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:24,804 base>ws>wssendql ...Done
+INFO 2023-05-11 17:16:24,810 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A051_lZg sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:24,813 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:16:24,816 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:24,819 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:16:24,823 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:24,825 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:16:24,829 runserver>log_action [mHTTP POST /api/call/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.16, 127.0.0.1:54035][0m
+INFO 2023-05-11 17:16:25,324 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A051_lZg sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:25,330 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:16:25,333 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:25,337 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:16:25,340 runserver>log_action [mHTTP POST /api/miss/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=051&tickettime=2023-05-09T11:22:24.633975Z 200 [0.09, 127.0.0.1:54039][0m
+INFO 2023-05-11 17:16:26,304 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:26,312 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:16:26,319 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:26,323 base>ws>wssendql ...Done
+INFO 2023-05-11 17:16:26,330 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A052_izX sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:26,333 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:16:26,337 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:26,341 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:16:26,345 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:26,347 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:16:26,350 runserver>log_action [mHTTP POST /api/call/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.28, 127.0.0.1:54043][0m
+INFO 2023-05-11 17:16:35,516 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53988]
+INFO 2023-05-11 17:16:39,404 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:54057][0m
+INFO 2023-05-11 17:16:43,061 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:54060][0m
+INFO 2023-05-11 17:16:43,071 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:54063]
+INFO 2023-05-11 17:16:43,074 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-05-11 17:16:43,081 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54063]
+INFO 2023-05-11 17:16:44,733 runserver>log_action WebSocket DISCONNECT /ws/voice/KB/Reception/ [127.0.0.1:53143]
+INFO 2023-05-11 17:16:45,103 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.04, 127.0.0.1:54064][0m
+INFO 2023-05-11 17:16:49,251 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:49,259 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:16:49,265 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:16:49,267 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:16:49,271 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=052&tickettime=2023-05-09T11:22:31.245129Z 200 [0.10, 127.0.0.1:54072][0m
+INFO 2023-05-11 17:17:21,411 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:17:21,418 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:17:21,423 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:17:21,425 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:17:21,429 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=052&tickettime=2023-05-09T11:22:31.245129Z 200 [0.10, 127.0.0.1:54077][0m
+INFO 2023-05-11 17:17:34,692 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:17:34,701 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:17:34,706 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:17:34,708 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:17:34,711 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=052&tickettime=2023-05-09T11:22:31.245129Z 200 [0.11, 127.0.0.1:54081][0m
+INFO 2023-05-11 17:18:06,654 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:18:06,660 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:18:06,665 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:18:06,668 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:18:06,671 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=052&tickettime=2023-05-09T11:22:31.245129Z 200 [0.10, 127.0.0.1:54096][0m
+INFO 2023-05-11 17:18:17,790 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:18:17,796 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:18:17,800 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:18:17,804 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:18:17,807 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=052&tickettime=2023-05-09T11:22:31.245129Z 200 [0.09, 127.0.0.1:54102][0m
+INFO 2023-05-11 17:19:01,252 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54063]
+INFO 2023-05-11 17:19:25,097 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:54139][0m
+INFO 2023-05-11 17:21:34,012 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:54165][0m
+INFO 2023-05-11 17:21:37,689 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:54171][0m
+INFO 2023-05-11 17:21:37,699 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:54174]
+INFO 2023-05-11 17:21:37,702 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-05-11 17:21:37,707 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54174]
+INFO 2023-05-11 17:21:39,717 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:54175][0m
+INFO 2023-05-11 17:22:07,097 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:22:07,105 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:22:07,110 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:22:07,113 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:22:07,116 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=052&tickettime=2023-05-09T11:22:31.245129Z 200 [0.10, 127.0.0.1:54184][0m
+INFO 2023-05-11 17:22:42,854 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A052_izX sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:22:42,859 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:22:42,862 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:22:42,864 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:22:42,867 runserver>log_action [mHTTP POST /api/miss/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=052&tickettime=2023-05-09T11:22:31.245129Z 200 [0.09, 127.0.0.1:54193][0m
+INFO 2023-05-11 17:22:50,874 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:22:50,881 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:22:50,885 runserver>log_action [mHTTP POST /api/get/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=041 200 [0.06, 127.0.0.1:54200][0m
+INFO 2023-05-11 17:22:59,939 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A047_2UQ sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:22:59,944 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:22:59,947 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:22:59,949 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:22:59,952 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:22:59,954 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:22:59,972 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:22:59,976 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:22:59,981 runserver>log_action [mHTTP POST /api/get/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=047 200 [0.14, 127.0.0.1:54206][0m
+INFO 2023-05-11 17:23:02,597 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A047_2UQ sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:02,602 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:23:02,605 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:02,607 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:23:02,609 runserver>log_action [mHTTP POST /api/miss/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=047&tickettime=2023-05-08T09:30:45.373172Z 200 [0.09, 127.0.0.1:54210][0m
+INFO 2023-05-11 17:23:05,619 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A048_S4v sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:05,624 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:23:05,628 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:05,631 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:23:05,633 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:05,637 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:23:05,658 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:05,663 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:23:05,667 runserver>log_action [mHTTP POST /api/get/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=048 200 [0.15, 127.0.0.1:54214][0m
+INFO 2023-05-11 17:23:07,289 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A048_S4v sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:07,293 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:23:07,296 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:07,298 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:23:07,300 runserver>log_action [mHTTP POST /api/miss/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=048&tickettime=2023-05-08T09:30:54.987734Z 200 [0.08, 127.0.0.1:54219][0m
+INFO 2023-05-11 17:23:09,583 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A049_jSn sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:09,589 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:23:09,592 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:09,594 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:23:09,597 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:09,599 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:23:09,616 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:09,620 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:23:09,624 runserver>log_action [mHTTP POST /api/get/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=049 200 [0.15, 127.0.0.1:54223][0m
+INFO 2023-05-11 17:23:12,019 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A049_jSn sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:12,023 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:23:12,026 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:12,028 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:23:12,031 runserver>log_action [mHTTP POST /api/miss/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=049&tickettime=2023-05-09T11:22:06.174577Z 200 [0.09, 127.0.0.1:54227][0m
+INFO 2023-05-11 17:23:19,122 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A050_HQ0 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:19,126 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:23:19,130 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:19,133 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:23:19,136 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:19,138 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:23:19,157 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:19,162 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:23:19,166 runserver>log_action [mHTTP POST /api/get/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=050 200 [0.14, 127.0.0.1:54235][0m
+INFO 2023-05-11 17:23:20,242 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A050_HQ0 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:20,247 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:23:20,250 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:20,253 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:23:20,256 runserver>log_action [mHTTP POST /api/miss/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=050&tickettime=2023-05-09T11:22:11.432524Z 200 [0.09, 127.0.0.1:54239][0m
+INFO 2023-05-11 17:23:22,593 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A051_lZg sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:22,598 base>ws>wsSendTicketStatus ...Done
+INFO 2023-05-11 17:23:22,602 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:22,604 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:23:22,607 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:22,610 base>ws>wscounterstatus ...Done
+INFO 2023-05-11 17:23:22,630 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:23:22,635 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:23:22,640 runserver>log_action [mHTTP POST /api/get/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=051 200 [0.14, 127.0.0.1:54243][0m
+INFO 2023-05-11 17:23:28,886 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54174]
+INFO 2023-05-11 17:23:32,835 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:54249][0m
+INFO 2023-05-11 17:23:36,524 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:54254][0m
+INFO 2023-05-11 17:23:36,535 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:54257]
+INFO 2023-05-11 17:23:36,538 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-05-11 17:23:36,545 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54257]
+INFO 2023-05-11 17:23:38,563 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.04, 127.0.0.1:54260][0m
+INFO 2023-05-11 17:24:14,426 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:24:14,434 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:24:14,440 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:24:14,442 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:24:14,444 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=051&tickettime=2023-05-09T11:22:24.633975Z 200 [0.09, 127.0.0.1:54277][0m
+INFO 2023-05-11 17:24:15,106 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:54281][0m
+INFO 2023-05-11 17:24:39,284 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:24:39,292 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:24:39,296 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:24:39,298 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:24:39,301 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=051&tickettime=2023-05-09T11:22:24.633975Z 200 [0.09, 127.0.0.1:54290][0m
+INFO 2023-05-11 17:27:15,002 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54257]
+INFO 2023-05-11 17:27:38,301 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-11 17:27:39,841 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-11 17:27:39,852 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-11 17:27:40,013 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-11 17:27:40,014 base>views><module> -SCH- Now:05/11/2023, 09:27:40
+INFO 2023-05-11 17:27:40,152 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-11 15:59:59 Local:2023-05-11 23:59:59
+INFO 2023-05-11 17:27:40,153 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-11 17:27:40,153 base>views>init_branch_reset    -SCH- 2023-05-11 15:59:59 > 2023-05-11 09:27:40 [Yes]
+INFO 2023-05-11 17:27:40,245 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-11 15:59:59 Local:2023-05-11 23:59:59
+INFO 2023-05-11 17:27:40,246 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-11 17:27:40,246 base>views>init_branch_reset    -SCH- 2023-05-11 15:59:59 > 2023-05-11 09:27:40 [Yes]
+INFO 2023-05-11 17:27:40,256 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-11 18:00:00 Local:2023-05-12 02:00:00
+INFO 2023-05-11 17:27:40,257 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-11 17:27:40,257 base>views>init_branch_reset    -SCH- 2023-05-11 18:00:00 > 2023-05-11 09:27:40 [Yes]
+INFO 2023-05-11 17:27:40,954 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54371]
+INFO 2023-05-11 17:27:41,013 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-05-11 17:27:41,016 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54373]
+INFO 2023-05-11 17:27:41,023 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-05-11 17:27:41,029 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54371]
+INFO 2023-05-11 17:27:41,035 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54373]
+INFO 2023-05-11 17:27:41,084 runserver>log_action [mHTTP GET /api/waiting/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.07, 127.0.0.1:54372][0m
+INFO 2023-05-11 17:27:44,473 runserver>log_action [mHTTP GET /api/waiting/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.03, 127.0.0.1:54378][0m
+INFO 2023-05-11 17:27:46,063 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:27:46,068 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:27:46,073 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:27:46,078 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:27:46,081 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=051&tickettime=2023-05-09T11:22:24.633975Z 200 [0.10, 127.0.0.1:54381][0m
+INFO 2023-05-11 17:27:46,434 runserver>log_action [mHTTP GET /api/printerstatus/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB 200 [0.02, 127.0.0.1:54385][0m
+INFO 2023-05-11 17:27:49,244 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:27:49,249 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:27:49,252 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:27:49,256 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:27:49,259 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=051&tickettime=2023-05-09T11:22:24.633975Z 200 [0.10, 127.0.0.1:54388][0m
+INFO 2023-05-11 17:28:05,673 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:28:05,690 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:28:05,694 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:28:05,697 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:28:05,701 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=051&tickettime=2023-05-09T11:22:24.633975Z 200 [0.11, 127.0.0.1:54395][0m
+INFO 2023-05-11 17:28:28,389 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:54407][0m
+INFO 2023-05-11 17:28:30,033 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:54410][0m
+INFO 2023-05-11 17:28:30,044 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:54413]
+INFO 2023-05-11 17:28:30,047 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-05-11 17:28:30,053 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54413]
+INFO 2023-05-11 17:28:30,460 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:28:30,468 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:28:30,473 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:28:30,475 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:28:30,478 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=051&tickettime=2023-05-09T11:22:24.633975Z 200 [0.10, 127.0.0.1:54414][0m
+INFO 2023-05-11 17:28:32,072 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.04, 127.0.0.1:54418][0m
+INFO 2023-05-11 17:29:05,094 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:54425][0m
+INFO 2023-05-11 17:29:13,649 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:29:13,661 base>ws>wssendwebtv ...Done
+INFO 2023-05-11 17:29:13,671 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-05-11 17:29:13,675 base>ws>wssendvoice ...Done
+INFO 2023-05-11 17:29:13,679 runserver>log_action [mHTTP POST /api/recall/?username=anya&app=Softkey&version=8.1.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=051&tickettime=2023-05-09T11:22:24.633975Z 200 [0.12, 127.0.0.1:54428][0m
+INFO 2023-05-11 17:29:53,088 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54373]
+INFO 2023-05-11 17:29:53,089 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54371]
+INFO 2023-05-11 17:30:19,850 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54413]
+WARNING 2023-05-11 18:06:18,827 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:06:18,828 log>log_response Unauthorized: /api/displaylast/
+WARNING 2023-05-11 18:06:18,829 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62884][0m
+WARNING 2023-05-11 18:06:18,831 runserver>log_action [31;1mHTTP GET /api/displaylast/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.0&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62885][0m
+WARNING 2023-05-11 18:06:23,861 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:06:23,862 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62884][0m
+WARNING 2023-05-11 18:06:28,877 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:06:28,878 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62884][0m
+WARNING 2023-05-11 18:06:33,899 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:06:33,901 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62884][0m
+WARNING 2023-05-11 18:06:38,921 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:06:38,922 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62884][0m
+WARNING 2023-05-11 18:08:12,278 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:08:12,278 log>log_response Unauthorized: /api/displaylast/
+WARNING 2023-05-11 18:08:12,280 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62918][0m
+WARNING 2023-05-11 18:08:12,281 runserver>log_action [31;1mHTTP GET /api/displaylast/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.0&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62919][0m
+WARNING 2023-05-11 18:08:28,121 log>log_response Unauthorized: /api/displaylast/
+WARNING 2023-05-11 18:08:28,122 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:08:28,123 runserver>log_action [31;1mHTTP GET /api/displaylast/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.0&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:62932][0m
+WARNING 2023-05-11 18:08:28,125 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:08:33,157 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:08:33,158 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:08:38,169 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:08:38,171 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:08:43,192 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:08:43,193 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:08:48,204 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:08:48,206 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:08:53,227 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:08:53,228 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:08:58,250 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:08:58,251 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:09:03,262 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:09:03,264 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:09:08,284 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:09:08,285 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:09:13,308 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:09:13,310 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:09:18,325 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:09:18,326 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:09:23,340 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:09:23,342 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:09:28,367 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:09:28,369 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:09:33,389 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:09:33,390 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:09:38,415 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:09:38,416 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:09:43,439 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:09:43,440 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:09:48,457 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:09:48,459 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:09:53,470 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:09:53,471 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:09:58,482 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:09:58,483 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:10:03,508 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:10:03,509 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:10:08,542 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:10:08,544 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:10:13,564 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:10:13,565 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:10:18,583 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:10:18,585 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:10:23,619 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:10:23,620 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:10:28,639 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:10:28,641 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:10:33,659 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:10:33,661 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:10:38,678 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:10:38,680 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:10:43,713 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:10:43,715 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:10:48,738 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:10:48,739 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:10:53,750 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:10:53,752 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.00, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:10:58,762 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:10:58,763 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:11:03,786 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:11:03,787 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:11:08,807 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:11:08,809 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:11:13,825 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:11:13,826 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:11:18,842 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:11:18,843 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:11:23,858 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:11:23,859 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:11:28,919 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:11:28,920 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:62933][0m
+WARNING 2023-05-11 18:11:32,977 log>log_response Unauthorized: /api/displaylast/
+WARNING 2023-05-11 18:11:32,978 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:11:32,979 runserver>log_action [31;1mHTTP GET /api/displaylast/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.0&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:63060][0m
+WARNING 2023-05-11 18:11:32,981 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63061][0m
+WARNING 2023-05-11 18:11:38,021 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:11:38,022 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63061][0m
+WARNING 2023-05-11 18:11:43,334 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:11:43,335 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63061][0m
+WARNING 2023-05-11 18:11:48,344 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:11:48,345 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63061][0m
+WARNING 2023-05-11 18:11:53,359 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:11:53,360 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63061][0m
+WARNING 2023-05-11 18:11:58,372 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:11:58,373 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63061][0m
+WARNING 2023-05-11 18:12:03,401 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:12:03,402 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63061][0m
+WARNING 2023-05-11 18:12:08,419 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:12:08,420 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63061][0m
+WARNING 2023-05-11 18:12:13,437 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:12:13,438 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63061][0m
+WARNING 2023-05-11 18:12:18,455 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:12:18,457 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63061][0m
+WARNING 2023-05-11 18:12:23,464 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:12:23,466 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63061][0m
+WARNING 2023-05-11 18:12:31,138 log>log_response Unauthorized: /api/displaylast/
+WARNING 2023-05-11 18:12:31,138 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:12:31,140 runserver>log_action [31;1mHTTP GET /api/displaylast/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.0&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:63105][0m
+WARNING 2023-05-11 18:12:31,142 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63106][0m
+WARNING 2023-05-11 18:12:36,170 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:12:36,171 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63106][0m
+WARNING 2023-05-11 18:12:41,187 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:12:41,188 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63106][0m
+WARNING 2023-05-11 18:12:46,200 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:12:46,201 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63106][0m
+WARNING 2023-05-11 18:12:51,216 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:12:51,217 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63106][0m
+WARNING 2023-05-11 18:14:48,923 log>log_response Unauthorized: /api/displaylast/
+WARNING 2023-05-11 18:14:48,924 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:14:48,925 runserver>log_action [31;1mHTTP GET /api/displaylast/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.0&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:63140][0m
+WARNING 2023-05-11 18:14:48,926 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63139][0m
+WARNING 2023-05-11 18:14:53,960 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:14:53,962 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63140][0m
+WARNING 2023-05-11 18:14:58,993 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:14:58,994 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63140][0m
+WARNING 2023-05-11 18:15:04,355 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:15:04,356 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63140][0m
+WARNING 2023-05-11 18:15:09,379 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:15:09,380 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63140][0m
+WARNING 2023-05-11 18:16:03,416 log>log_response Unauthorized: /api/displaylast/
+WARNING 2023-05-11 18:16:03,416 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:16:03,418 runserver>log_action [31;1mHTTP GET /api/displaylast/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.0&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:63171][0m
+WARNING 2023-05-11 18:16:03,420 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:16:08,452 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:16:08,453 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:16:13,468 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:16:13,469 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:16:18,996 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:16:18,998 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:16:24,046 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:16:24,047 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:16:29,085 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:16:29,086 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:16:34,125 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:16:34,126 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:16:39,138 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:16:39,139 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:16:44,164 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:16:44,165 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:16:49,172 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:16:49,173 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:16:54,197 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:16:54,198 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:16:59,224 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:16:59,226 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:17:04,232 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:17:04,233 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:17:09,251 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:17:09,252 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:17:14,276 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:17:14,277 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:17:19,297 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:17:19,298 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:17:24,309 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:17:24,310 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:17:29,332 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:17:29,333 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:17:34,350 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:17:34,351 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:17:39,370 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:17:39,372 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:17:44,398 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:17:44,399 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:17:49,420 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:17:49,421 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:17:54,443 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:17:54,445 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:17:59,452 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:17:59,453 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:18:04,472 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:18:04,473 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:18:09,492 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:18:09,493 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:18:14,541 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:18:14,543 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:18:19,563 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:18:19,564 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:18:24,575 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:18:24,576 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:18:29,597 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:18:29,598 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:18:34,604 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:18:34,605 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:18:39,634 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:18:39,636 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:18:44,656 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:18:44,657 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:18:49,672 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:18:49,673 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:18:54,697 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:18:54,698 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:18:59,718 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:18:59,719 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:19:04,735 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:19:04,737 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:19:09,755 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:19:09,756 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:19:14,775 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:19:14,776 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:19:19,798 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:19:19,799 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:19:24,821 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:19:24,822 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:19:29,845 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:19:29,846 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:19:34,855 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:19:34,856 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:19:39,877 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:19:39,878 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:19:44,895 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:19:44,896 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:19:49,905 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:19:49,906 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:19:54,926 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:19:54,927 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:19:59,942 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:19:59,943 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:20:04,961 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:20:04,962 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:20:09,987 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:20:09,989 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:20:15,012 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:20:15,013 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:20:20,033 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:20:20,034 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:20:25,054 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:20:25,055 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:20:30,077 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:20:30,078 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:20:35,096 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:20:35,097 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:20:40,107 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:20:40,108 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:20:45,124 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:20:45,125 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:20:50,150 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:20:50,151 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:20:55,174 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:20:55,175 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:21:00,195 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:21:00,196 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:21:05,219 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:21:05,220 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:21:10,241 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:21:10,242 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:21:15,248 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:21:15,249 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:21:20,267 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:21:20,269 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:21:25,286 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:21:25,287 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:21:30,294 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:21:30,296 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:21:35,312 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:21:35,313 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:21:40,331 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:21:40,332 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:21:45,351 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:21:45,352 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:21:50,379 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:21:50,380 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:21:55,403 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:21:55,404 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:22:00,421 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:22:00,422 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:22:05,443 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:22:05,444 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:22:10,454 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:22:10,455 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:22:15,478 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:22:15,480 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:22:20,497 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:22:20,498 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:22:25,521 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:22:25,522 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:22:30,538 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:22:30,539 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:22:35,563 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:22:35,565 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:22:40,584 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:22:40,585 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:22:45,602 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:22:45,603 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:22:50,630 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:22:50,632 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:22:55,639 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:22:55,640 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:23:00,662 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:23:00,663 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:23:05,681 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:23:05,682 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:23:10,700 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:23:10,701 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:23:15,722 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:23:15,723 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:23:20,743 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:23:20,744 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:23:25,770 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:23:25,772 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:23:30,802 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:23:30,803 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:23:35,822 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:23:35,823 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:23:40,840 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:23:40,842 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:23:45,863 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:23:45,864 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:23:50,874 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:23:50,875 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:23:55,892 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:23:55,893 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:24:00,931 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:24:00,933 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:24:05,955 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:24:05,956 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:24:10,978 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:24:10,979 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:24:15,998 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:24:15,999 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:24:21,025 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:24:21,027 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:24:26,056 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:24:26,058 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:24:31,077 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:24:31,078 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:24:36,091 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:24:36,092 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:24:41,112 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:24:41,113 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:24:46,121 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:24:46,122 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:24:51,142 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:24:51,144 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:24:56,166 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:24:56,167 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:25:01,185 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:25:01,187 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:25:06,209 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:25:06,210 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:25:11,217 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:25:11,218 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:25:16,241 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:25:16,242 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:25:21,269 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:25:21,270 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:25:26,280 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:25:26,281 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:25:31,299 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:25:31,301 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:25:36,320 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:25:36,321 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:25:41,353 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:25:41,354 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:25:46,375 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:25:46,376 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:25:51,397 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:25:51,398 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:25:56,403 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:25:56,404 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:26:01,420 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:26:01,421 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:26:06,445 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:26:06,447 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:26:11,464 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:26:11,465 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:26:16,484 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:26:16,485 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:26:21,506 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:26:21,508 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:26:26,516 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:26:26,517 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:26:31,541 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:26:31,542 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:26:36,573 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:26:36,574 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:26:41,601 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:26:41,602 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:26:46,627 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:26:46,628 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:26:51,651 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:26:51,652 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:26:56,678 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:26:56,679 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:27:01,707 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:27:01,709 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:27:06,742 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:27:06,743 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:27:11,764 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:27:11,765 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:27:16,786 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:27:16,787 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:27:21,795 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:27:21,796 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:27:26,821 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:27:26,822 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:27:31,845 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:27:31,846 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:27:36,867 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:27:36,868 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:27:41,891 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:27:41,892 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:27:46,907 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:27:46,908 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:27:51,917 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:27:51,918 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:27:56,941 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:27:56,942 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:28:01,964 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:28:01,965 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:28:06,983 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:28:06,984 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:28:12,003 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:28:12,004 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:28:17,021 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:28:17,022 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:28:22,028 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:28:22,029 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:28:27,055 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:28:27,056 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:28:32,088 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:28:32,089 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:28:37,109 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:28:37,111 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:28:42,132 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:28:42,133 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:28:47,155 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:28:47,157 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:28:52,178 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:28:52,179 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:28:57,203 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:28:57,204 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:29:02,228 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:29:02,229 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:29:07,248 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:29:07,249 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:29:12,271 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:29:12,272 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:29:17,285 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:29:17,286 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:29:22,297 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:29:22,299 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:29:27,320 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:29:27,321 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:29:32,339 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:29:32,340 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:29:37,361 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:29:37,362 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:29:42,378 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:29:42,380 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:29:47,412 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:29:47,414 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:29:52,443 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:29:52,444 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:29:57,466 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:29:57,467 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:30:02,484 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:30:02,485 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:30:07,500 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:30:07,501 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:30:12,520 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:30:12,522 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:30:17,527 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:30:17,529 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:30:22,554 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:30:22,555 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:30:27,574 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:30:27,575 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:30:32,593 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:30:32,594 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63172][0m
+WARNING 2023-05-11 18:30:56,066 log>log_response Unauthorized: /api/displaylast/
+WARNING 2023-05-11 18:30:56,066 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:30:56,068 runserver>log_action [31;1mHTTP GET /api/displaylast/?username=userapi&password=asdf2206&app=Display%20Panel&version=8.0.0.0&branchcode=KB&countername=Reception 401 [0.01, 127.0.0.1:63694][0m
+WARNING 2023-05-11 18:30:56,070 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.02, 127.0.0.1:63693][0m
+WARNING 2023-05-11 18:31:01,108 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:31:01,110 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63693][0m
+WARNING 2023-05-11 18:31:06,123 log>log_response Unauthorized: /api/
+WARNING 2023-05-11 18:31:06,125 runserver>log_action [31;1mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 401 [0.01, 127.0.0.1:63693][0m
+INFO 2023-05-11 18:47:02,200 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:63978][0m
+INFO 2023-05-11 18:47:05,877 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 200 [0.02, 127.0.0.1:63981][0m
+INFO 2023-05-11 18:47:05,900 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:63984]
+INFO 2023-05-11 18:47:05,904 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-05-11 18:47:05,915 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:63984]
+INFO 2023-05-11 18:47:07,902 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.0.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:63986][0m
+INFO 2023-05-11 18:47:26,485 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:63984]
+INFO 2023-05-11 18:47:57,969 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:63994][0m
+INFO 2023-05-11 18:48:01,662 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 200 [0.02, 127.0.0.1:63998][0m
+INFO 2023-05-11 18:48:01,673 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:64001]
+INFO 2023-05-11 18:48:01,676 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-05-11 18:48:01,684 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:64001]
+INFO 2023-05-11 18:48:03,698 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.0.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:64003][0m
+INFO 2023-05-11 18:51:20,770 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:64001]
+INFO 2023-05-11 18:51:26,377 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:64043][0m
+INFO 2023-05-11 18:51:30,057 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.0.0.0 200 [0.02, 127.0.0.1:64047][0m
+INFO 2023-05-11 18:51:30,070 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:64050]
+INFO 2023-05-11 18:51:30,072 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-05-11 18:51:30,082 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:64050]
+INFO 2023-05-11 18:51:43,350 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.0.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:64054][0m
+INFO 2023-05-11 18:52:20,014 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:64050]
+INFO 2023-05-11 18:57:39,585 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:64130][0m
+INFO 2023-05-11 18:57:43,248 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:64134][0m
+INFO 2023-05-11 18:57:43,258 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:64137]
+INFO 2023-05-11 18:57:43,261 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-05-11 18:57:43,268 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:64137]
+INFO 2023-05-11 18:57:54,547 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:64141][0m
+INFO 2023-05-11 19:00:34,671 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:64137]
+INFO 2023-05-11 19:00:39,108 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:64187][0m
+INFO 2023-05-11 19:00:42,791 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:64190][0m
+INFO 2023-05-11 19:00:42,802 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:64193]
+INFO 2023-05-11 19:00:42,804 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-05-11 19:00:42,812 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:64193]
