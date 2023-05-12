@@ -9771,3 +9771,4 @@ INFO 2023-05-11 19:00:42,791 runserver>log_action [mHTTP GET /api/?app=Display%
 INFO 2023-05-11 19:00:42,802 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:64193]
 INFO 2023-05-11 19:00:42,804 base>consumers>connect connecting:webtv_KB_Reception
 INFO 2023-05-11 19:00:42,812 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:64193]
+INFO 2023-05-11 19:00:44,669 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:64193]
