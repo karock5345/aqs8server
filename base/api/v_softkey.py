@@ -29,7 +29,7 @@ def postCounterGet(request):
 
     rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
     # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
-    rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
+    # rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
