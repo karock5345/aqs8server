@@ -26,9 +26,9 @@
 - API Support JWT
 - All API request.user should be user group 'api'
 - Separete Touch Panel API functions to new file : v_touch.py
-- Touch Panel v8.1 support API JWT
-
-
+- Added TicketFormat , TicketRoute HTML input check
+- Support Ticket Type more than 1 char and not case sensitive (e.g. Ticket type: A, AA, Aa, LAB, ...)
+- User update HTML support new ticket type format
 
 
 # Development env setup

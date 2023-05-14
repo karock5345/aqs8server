@@ -111,7 +111,7 @@ def SoftkeyView(request, pk):
             
             # dict add to list
             userttype = False
-            if context_counter['data']['userttype'].find(tr.tickettype) != -1:
+            if context_counter['data']['userttype'].find(tr.tickettype + ',') != -1:
                 userttype = True
             newrow = {
                 'tickettype' : tr.tickettype,
@@ -142,23 +142,15 @@ def SoftkeyView(request, pk):
                 # add Get form to context
                 getform = getForm(request.POST)
                 getticket = getform['ticketnumber'].value()
-                gettt = ''
-                gettno = ''
-                if getticket != '':
-                    gettt = getticket[0:1]
-                    gettno = getticket[1:]
-                    # change gettt to uppercase
-                    gettt = gettt.upper()
-                    # change gettno to "000" format and convert to string
-                    tformat = counterstatus.countertype.branch.ticketnoformat 
-                    gettno = tformat + str(gettno)
-                    # get gettno string right 3 char
-                    gettno = gettno[-len(tformat):]
-
-                status, msg, context_get = funCounterGet(gettt, gettno, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket :', 'Softkey-web', softkey_version, datetime_now)
-                if status['status'] == 'Error':
-                    messages.error(request, msg['msg'] + ' ' + gettt + gettno)
-                context = context | context_counter | {'pk':pk} | context_get
+                
+                if error == '':
+                    status, msg, context_get = funCounterGet(getticket, '', '', request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket :', 'Softkey-web', softkey_version, datetime_now)
+                    if status['status'] == 'Error':
+                        messages.error(request, msg['msg'] + ' ' + getticket)
+                    context = context | context_counter | {'pk':pk} | context_get
+                else :
+                    messages.error(request, error)
+              
                 return redirect('softkey', pk=pk)
                 # return render(request, 'base/softkey.html', context)
             elif action == 'call':
@@ -1171,28 +1163,40 @@ def TicketRouteNewView(request):
         auth_branchs = auth_userp.branchs.all()
     form = trForm(auth_branchs=auth_branchs)
     if request.method == 'POST':
+        error = ''
         form = trForm(request.POST, auth_branchs=auth_branchs)
-        if form.is_valid():
-            newroute = form.save(commit=False)
-            newroute.tickettype  = newroute.tickettype.upper()
+        error, newroute = checkticketrouteform(form)
+                            # if error == '':
+                            #     if form.is_valid() == False:
+                            #         error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
+                            #         error = 'An error occurcd during registration: '+ error_string
+                            # # newroute.tickettype  = newroute.tickettype.upper()
+                            # if error == '':
+                            #     newroute = form.save(commit=False)
+                            #     if newroute.branch == None :
+                            #         error = 'An error occurcd : Branch is blank'
+                            # if error == '':
+                            #     if newroute.countertype == None :
+                            #         error = 'An error occurcd : Counter Type is blank'
+                            # if error == '' :
+                            #     #check ticket type should be letter
+                            #     if newroute.tickettype.isalpha() == False :
+                            #         error = 'An error occurcd : Ticket Type should be letter'
+                            # # newroute.step is int so no need to check
+                            # # if error == '' :
+                            #     #check step should be number
+                            #     # if newroute.step.isnumeric() == False :
+                            #     #     error = 'An error occurcd : Step should be number'
+        if error == '':
+            try:
+                newroute.save()
+                messages.success(request, 'Created new Ticket Route.')
+            except:
+                messages.error(request,' An error occurcd during registration: ' )
+            return redirect('routesummary')
 
-            error = False
-            if newroute.branch == None :
-                messages.error(request,' An error occurcd : Branch is blank ' )
-                error = True
-            if newroute.countertype == None :
-                messages.error(request,' An error occurcd : Counter Type is blank ' )
-                error = True
-
-            if error == False:
-                try:
-                    newroute.save()
-                    messages.success(request, 'Created new Ticket Route.')
-                except:
-                    messages.error(request,' An error occurcd during registration: ' )
-                return redirect('routesummary')
-        else:
-            messages.error(request,' An error occurcd during registration: '+ str(form.errors) )
+        if error != '':
+            messages.error(request, error)
     #context = {'page':page}
     return render(request, 'base/routenew.html', {'form':form})
 
@@ -1218,26 +1222,19 @@ def TicketRouteUpdateView(request, pk):
         auth_branchs = auth_userp.branchs.all()
     route = TicketRoute.objects.get(id=pk)    
     if request.method == 'POST':
-    
+        error = ''
         trform = trForm(request.POST, instance=route, prefix='trform', auth_branchs=auth_branchs)
-          
-                
-        if trform.is_valid():  
-            new = trform.save(commit=False)          
-            new.tickettype  = new.tickettype.upper()
-            error = False
-            if new.branch == None :
-                # Error branch is None
-                messages.error(request,' Error Branch is blank: ' )
-                error = True
-            if new.countertype == None :
-                # Error Counter type is None
-                messages.error(request,' Error Counter Type is blank: ' )
-                error = True
-            if error == False :
-                new.save()
-                messages.success(request, 'Ticket Route was successfully changed!')
-                return redirect('routesummary')
+        error, newroute = checkticketrouteform(trform)  
+        if error == '':
+            try:
+                newroute.save()
+                messages.success(request, 'Ticket Route was successfully updated!')
+            except:
+                messages.error(request,'An error occurcd during update' )
+            return redirect('routesummary')
+
+        if error != '':
+            messages.error(request, error)                
     else:
         trform = trForm(instance=route, prefix='trform', auth_branchs=auth_branchs)
        
@@ -1262,6 +1259,7 @@ def TicketRouteSummaryView(request):
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
 def TicketFormatNewView(request):
+
     if request.user.is_superuser == True :
         auth_branchs = Branch.objects.all()
     else :
@@ -1270,20 +1268,18 @@ def TicketFormatNewView(request):
     form = TicketFormatForm(auth_branchs=auth_branchs)
     if request.method == 'POST':
         form = TicketFormatForm(request.POST, auth_branchs=auth_branchs)
-        if form.is_valid():
-            tf = form.save(commit=False)
-            tf.ttype = tf.ttype.upper()
-            if tf.branch == None :
-                # Error branch is None
-                messages.error(request,' Error Branch is blank: ' )
-            else :
-                try:
-                    tf.save()
-                except:
-                    messages.error(request,' An error occurcd during registration: ' )
-                return redirect('tfsummary')
-        else:
-            messages.error(request,' An error occurcd during registration: '+ str(form.errors) )
+        
+        error = ''
+        error, tf = checkticketformatform(form)
+        
+        if error == '' :
+            try:
+                tf.save()
+            except:
+                error = 'An error occurcd during registration'
+            return redirect('tfsummary')
+        if error != '':
+            messages.error(request, error)
     #context = {'page':page}
     return render(request, 'base/tfnew.html', {'form':form})
 
@@ -1310,18 +1306,19 @@ def TicketFormatUpdateView(request, pk):
         auth_branchs = auth_userp.branchs.all()
 
     if request.method == 'POST':
-    
         tfform = TicketFormatForm(request.POST, instance=ticketformat, prefix='tfform',  auth_branchs=auth_branchs)
-        
-        if  (tfform.is_valid()):
-            tf = tfform.save(commit=False)
-            if tf.branch == None :
-                # Error branch is None
-                messages.error(request,' Error Branch is blank: ' )
-            else :
+        error = ''
+        error, tf = checkticketformatform(tfform)
+        if error == '' :
+            try :
                 tf.save()
-                messages.success(request, 'Ticket Format was successfully updated!')        
+                messages.success(request, 'Ticket Format was successfully updated!')
                 return redirect('tfsummary')
+            except:
+                error = 'An error occurcd during updating TicketFormat'
+            
+        if error != '':
+            messages.error(request, error )
     else:
         tfform = TicketFormatForm(instance=ticketformat, prefix='tfform', auth_branchs=auth_branchs)        
     context =  {'tfform':tfform, 'ticketformat':ticketformat, }
@@ -1772,7 +1769,7 @@ def UserUpdateView(request, pk):
 
         if (userform.is_valid() & profileform.is_valid()):
             profileform_temp = profileform.save(commit=False)
-
+            
             if profileform_temp.mobilephone != None:
                 inttel = profileform_temp.mobilephone[0:4]
                 if inttel != '+852':
@@ -1916,3 +1913,49 @@ def auth_data(user):
         auth_routes = TicketRoute.objects.filter(branch__in=auth_branchs)
         auth_countertype = CounterType.objects.filter(branch__in=auth_branchs)
     return(auth_branchs, auth_userlist, auth_profilelist, auth_ticketformats, auth_routes, auth_countertype)
+
+
+def checkticketrouteform(form):
+    error = ''
+    newform = None
+    if error == '':
+        if form.is_valid() == False:
+            error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
+            error = 'An error occurcd during registration: '+ error_string
+    # newroute.tickettype  = newroute.tickettype.upper()
+    if error == '':
+        newform = form.save(commit=False)
+        if newform.branch == None :
+            error = 'An error occurcd : Branch is blank'
+    if error == '':
+        if newform.countertype == None :
+            error = 'An error occurcd : Counter Type is blank'
+    if error == '' :
+        #check ticket type should be letter
+        if newform.tickettype.isalpha() == False :
+            error = 'An error occurcd : Ticket Type should be letter'
+    # newroute.step is int so no need to check
+    # if error == '' :
+        #check step should be number
+        # if newroute.step.isnumeric() == False :
+        #     error = 'An error occurcd : Step should be number'
+    return (error, newform)
+
+def checkticketformatform(form):
+    error = ''
+    newform = None
+
+    if form.is_valid() == False:
+        error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
+        error = 'An error occurcd during registration: '+ error_string
+    
+    if error == '' :
+        newform = form.save(commit=False)
+        if newform.branch == None :
+            # Error branch is None
+            error = 'Error Branch is blank'
+    if error == '' :
+        # check if ticket type should be letter
+        if newform.ttype.isalpha() == False :
+            error = 'Ticket type should be letter'
+    return (error, newform)

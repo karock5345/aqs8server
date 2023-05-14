@@ -56,10 +56,19 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
             msg =  dict({'msg':'Queue priority not found (qp:' + qp + ') '+ mask + '<-mask , priority->' + priority})   
         if mask != '' and priority == 'bmask' :
             new_mask=''
-            mask_b = mask            
-            for tt in mask_b:
-                if userp.tickettype.find(tt) != -1:
-                    new_mask = new_mask + tt
+            mask_b = mask
+            # remove all space in mask_b
+            mask_b = mask_b.replace(' ', '')
+            u_tt = userp.tickettype
+            u_tt = u_tt.replace(' ', '')
+
+            istart = 0
+            for i in range(len(mask_b)):
+                if mask_b[i] == ',':
+                    tt = mask_b[istart:i+1]
+                    istart = i +1
+                    if u_tt.find(tt) != -1 :
+                        new_mask  = new_mask +tt
             mask = new_mask
         if priority == 'bmask' or priority == 'umask' :
             priority = 'mask'
@@ -98,20 +107,34 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
             # found the waiting ticket by time
             ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0])  & Q(locked=False)   ).order_by('tickettime')            
             for ticket in ticketlist:
-                if mask.find(ticket.tickettype) != -1:
+                tt = ticket.tickettype + ','
+                if mask.find(tt) != -1:
                     # call this ticket
                     context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
                     break
         elif priority == 'mask':
             ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0])  & Q(locked=False)   ).order_by('tickettime')
-            for tt in mask:
-                for ticket in ticketlist:
-                    if tt == ticket.tickettype:
-                        # call this ticket
-                        context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
+            istart = 0
+            for i in range(len(mask)):
+                if mask[i] == ',':
+                    tt = mask[istart:i+1] # tt = 'A,'
+                    istart = i + 1
+                    for ticket in ticketlist:
+                        if tt == ticket.tickettype + ',':
+                            # call this ticket
+                            context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
+                            break
+                    if context != dict({}):
                         break
-                if context != dict({}):
-                    break
+
+            # for tt in mask:
+            #     for ticket in ticketlist:
+            #         if tt == ticket.tickettype:
+            #             # call this ticket
+            #             context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
+            #             break
+            #     if context != dict({}):
+            #         break
         if context != dict({}) and ticket != None :
 
 
@@ -448,23 +471,61 @@ def funCounterRecall(user, branch, countertype, counterstatus, logtext, rx_app, 
         msg =  dict({'msg':'Recall ticket.'}) 
     return status, msg
 
-def funCounterGet(tickettype, ticketnumber, user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
+def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     status = dict({})
     msg = dict({})
     context = dict({})
-    rx_ticketype = tickettype
-    rx_ticketnumber = ticketnumber
-
-    if rx_ticketype == '' or rx_ticketnumber == '' :
-        status = dict({'status': 'Error'})
-        msg =  dict({'msg':'Please input ticket'})
-    
     ticket = None
+    gettt = ''
+    gettno = ''
+
+    if getticket == '' :
+        gettt = getttype
+        gettno = gettnumber
+    else:
+        if status == dict({}) :
+            if getticket == '':
+                status = dict({'status': 'Error'})
+                msg =  dict({'msg':'Please input ticket'})
+        if status == dict({}) :
+            # split getticket to gettt and gettno
+            for i in range(len(getticket)):
+                if getticket[i].isalpha() == False:
+                    gettt = getticket[0:i]
+                    gettno = getticket[i:]
+                    break
+    if status == dict({}) :
+        if gettt == '':
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Please input ticket type.'})
+    # check gettt is letter only
+    if status == dict({}) :
+        if gettt.isalpha() == False:
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Ticket type must be letter only.'})
+    if status == dict({}) :
+        if gettno == '':
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Please input ticket number.'})
+    if status == dict({}) :
+        # check gettno is number only
+        if gettno.isnumeric() == False:
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Ticket number must be number only.'})        
+    if status == dict({}) :
+        # change gettno to "000" format and convert to string
+        tformat = counterstatus.countertype.branch.ticketnoformat 
+        gettno = tformat + str(gettno)
+        # get gettno string right 3 char
+        gettno = gettno[-len(tformat):]
+
+
+
     if status == dict({}) :
         # find ticket in waiting list
         objt = TicketTemp.objects.filter(
-            tickettype=rx_ticketype,
-            ticketnumber=rx_ticketnumber,
+            tickettype=gettt,
+            ticketnumber=gettno,
             branch=branch,
             status='waiting',
             locked=False).order_by('-tickettime')
@@ -473,8 +534,8 @@ def funCounterGet(tickettype, ticketnumber, user, branch, countertype, counterst
         else:
             # find ticket in miss list
             objt = TicketTemp.objects.filter(
-                tickettype=rx_ticketype,
-                ticketnumber=rx_ticketnumber,
+                tickettype=gettt,
+                ticketnumber=gettno,
                 branch=branch,
                 status='miss',
                 locked=False).order_by('-tickettime')
@@ -487,7 +548,6 @@ def funCounterGet(tickettype, ticketnumber, user, branch, countertype, counterst
       
         
     if status == dict({}) :
-
         # update ticketdata db
         objtd = TicketData.objects.filter(
             tickettemp=ticket,

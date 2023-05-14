@@ -41,7 +41,7 @@ def postCounterGet(request):
 #    rx_tickettime =request.GET.get('tickettime') if request.GET.get('tickettime') != None else ''
 
     datetime_now =timezone.now()
-   
+
     # check input
     if status == dict({}) :
         if rx_countername == '' :
@@ -69,11 +69,19 @@ def postCounterGet(request):
     if status == dict({}) :
         if rx_ticketype == '' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':'No ticket type'})  
+            msg =  dict({'msg':'No ticket type'})
+        # check ticket type only letter
+        if not(rx_ticketype.isalpha()) :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Ticket type should be letter only'})
     if status == dict({}) :
         if rx_ticketnumber == '' :
             status = dict({'status': 'Error'})
             msg =  dict({'msg':'No ticket number'})  
+        # check ticket number only number
+        if not(rx_ticketnumber.isnumeric()) :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Ticket number should be number only'})
     # if status == dict({}) :
     #     if rx_tickettime == '' :
     #         status = dict({'status': 'Error'})
@@ -137,28 +145,8 @@ def postCounterGet(request):
             msg =  dict({'msg':'Counter status - have ticket'})  
 
 
-
-
-
-    # if status == dict({}) :
-
-    #     stickettime = ''        
-    #     try:
-    #         stickettime = str(datetime.strptime(rx_tickettime, '%Y-%m-%dT%H:%M:%S.%fZ'))
-    #         rx_tickettime = datetime.strptime(rx_tickettime, '%Y-%m-%dT%H:%M:%S.%f%z' )
-    #     except:
-    #         stickettime = ''
-    #     if stickettime == '' :
-    #         try :
-    #             stickettime = str(datetime.strptime(rx_tickettime, '%Y-%m-%dT%H:%M:%SZ' )) 
-    #             rx_tickettime = datetime.strptime(rx_tickettime, '%Y-%m-%dT%H:%M:%S%z')
-    #         except:
-    #             stickettime = ''
-    #             status = dict({'status': 'Error'})
-    #             msg =  dict({'msg':'Ticket time format not correct. Should be : 2022-05-19T23:59:59.123456Z'}) 
-
     if status == dict({}) :
-        status, msg, context = funCounterGet(rx_ticketype, rx_ticketnumber, user, branch, countertype, counterstatus, 'Ticket Get API : ', rx_app, rx_version, datetime_now)
+        status, msg, context = funCounterGet('', rx_ticketype, rx_ticketnumber, user, branch, countertype, counterstatus, 'Ticket Get API : ', rx_app, rx_version, datetime_now)
 
         # websocket to web tv
         wssendwebtv(rx_bcode,countertype.name)

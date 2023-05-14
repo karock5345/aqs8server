@@ -47,7 +47,7 @@ class Branch(models.Model):
        default=BYTIME,
        null=False,
     )
-    queuemask =  models.CharField(default='ABCDEFGHIJKLMNOPQRSTUVWXYZ', max_length=200, null=False)
+    queuemask =  models.CharField(default='A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, ', max_length=200, null=False)
 
     # ticket settings
     tickettimestart = models.TimeField(default=datetime.time(8, 0, 0))
@@ -93,7 +93,7 @@ class UserProfile(models.Model):
     ]
     user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True)
     
-    tickettype = models.CharField(default='ABCDEFGHIJKLMNOPQRSTUVWXYZ', max_length=200, null=True, blank=True, )
+    tickettype = models.CharField(default='A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, ', max_length=200, null=True, blank=True, )
     queuepriority = models.CharField(
        max_length=32,
        choices=PRIORITY,
@@ -187,6 +187,9 @@ class TicketRoute(models.Model):
     waiting = models.IntegerField(default=0)
     def __str__(self):
         return self.branch.bcode + '-' + self.tickettype + '[' + str(self.step) + ']'
+    class Meta:
+        ordering = ['branch','tickettype', 'step']
+        unique_together = ('branch', 'tickettype', 'step')
  
 class Ticket(models.Model):
     tickettype = models.CharField(max_length=200)

@@ -43,6 +43,7 @@ class UserProfileForm(ModelForm):
         super().__init__(*args,**kwargs)
         self.fields['branchs'].queryset = Branch.objects.filter(id__in=self.auth_branchs)   # Q(groups__name='api')
 
+
 class TicketFormatForm(ModelForm):
     def __init__(self, *args,**kwargs):
         self.auth_branchs = kwargs.pop('auth_branchs')
@@ -50,7 +51,7 @@ class TicketFormatForm(ModelForm):
         self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs) 
     class Meta:
         model = TicketFormat
-        fields = ['enabled', 'ttype', 'branch', 'tformat']
+        fields = ['enabled', 'ttype', 'branch', 'tformat', 'touchkey_lang1', 'touchkey_lang2', 'touchkey_lang3', 'touchkey_lang4']
 
 class trForm(ModelForm):
     def __init__(self, *args,**kwargs):
