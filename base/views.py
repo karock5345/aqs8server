@@ -1753,6 +1753,24 @@ def UserUpdateView(request, pk):
     else :
         auth_userp = UserProfile.objects.get(user__exact=request.user)
         auth_branchs = auth_userp.branchs.all()
+    # get all ticketformat but not ttype is repeated 
+    ticketformat = TicketFormat.objects.all()
+    ticketformat2 = TicketFormat.objects.all()
+    for tf in ticketformat:
+        for tf2 in ticketformat:
+            if tf != tf2:
+                if tf.ttype == tf2.ttype:
+                    ticketformat = ticketformat.exclude(id=tf.id)
+                    ticketformat2 = ticketformat2.exclude(id=tf2.id)
+
+    for tt in ticketformat2:
+        tt2 = tt.ttype + ','
+        if userp.tickettype.find(tt2) != -1:
+            tt.checked = 'checked'
+        else:
+            tt.checked = 'unchecked'
+        tt.save()
+
     if request.method == 'POST':
     
         userform = UserForm(request.POST, instance=user, prefix='uform')
@@ -1796,7 +1814,7 @@ def UserUpdateView(request, pk):
         if user == request.user:
             userform = UserFormAdmin(instance=user, prefix='uform')  
         profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
-    context =  {'userform':userform , 'profileform':profileform, 'user':user, 'userp':userp}
+    context =  {'userform':userform , 'profileform':profileform, 'user':user, 'userp':userp,'ticketformat':ticketformat2,}
     return render(request, 'base/user-update.html', context)
 
 @unauth_user

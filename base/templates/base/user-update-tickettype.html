@@ -22,25 +22,92 @@
                 <div class="layout__body">
 
                     <h1>User :{{userp.user.first_name}} {{userp.user.last_name}} (Username: {{userp.user.username}})</h1>
-                    <label>Ticket type : {{userp.tickettype}}</label>
+                    <h1>Ticket type : <label id="lbl_tickettype">{{userp.tickettype}}&nbsp;</label></h1>
                     {% for tt in ticketformat %}
                         <div>
                             {% if tt.checked == "checked" %}
-                                <input type="checkbox" checked>{{tt.ttype}} {{tt.touchkey_lang1}} {{tt.touchkey_lang2}}</input>
+                                <input type="checkbox" checked id="id_chk_{{tt.ttype}}">{{tt.ttype}} {{tt.touchkey_lang1}} {{tt.touchkey_lang2}}</input>
                             {% else %}
-                                <input type="checkbox">{{tt.ttype}} {{tt.touchkey_lang1}} {{tt.touchkey_lang2}}</input>
+                                <input type="checkbox" id="id_chk_{{tt.ttype}}">{{tt.ttype}} {{tt.touchkey_lang1}} {{tt.touchkey_lang2}}</input>
                             {% endif %} 
                         </div>
                     {% endfor %}
 
                     <div>
-                        <a class="btn btn--del" href="">Delete User</a>
-                        <a class="btn btn--dark" href="">Cancel</a>
-                        <button class="btn btn--main" >Update</button>
+                        <a class="btn btn--dark" href="{{request.META.HTTP_REFERER}}">Cancel</a>
+                        <button class="btn btn--main" id="id_update">Update</button>
                     </div>
                 </div>
             </div>
         </div>
-      </div>
+      
+
+        {{ userp.tickettype|json_script:"js-tt" }}
+        <script>
+            var tickettype = JSON.parse(document.getElementById('js-tt').textContent) + " ";
+            // how to get all the checkbox id and value
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+            Array.prototype.forEach.call(checkboxes, function(el) {
+                el.addEventListener('change', function() {
+                    var tt = this.id.replace("id_chk_", "");
+                    if (this.checked) {
+                        // Checkbox is checked..
+                        tickettype = tickettype + tt + ", ";
+                    } else {
+                        // Checkbox is not checked..
+                        tickettype = tickettype.replace(tt + ", ", "");
+                        tickettype = tickettype.replace(tt + ",", "");
+                    }
+                    console.log(tickettype);
+                    document.getElementById('lbl_tickettype').innerHTML = tickettype;
+                });
+            });
+
+            // add event button clicked pass tickettype to view
+            document.getElementById('id_update').addEventListener('click', function() {
+                var url = "{% url 'user-update-tickettype' userp.user.id %}";
+                var data = {
+                    'tickettype': tickettype
+                };
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: data,
+                    dataType: 'json',
+                    success: function(response) {
+                        console.log(response);
+                        if (response.status == "success") {
+                            alert("Update success");
+                            window.location.href = "{% url 'user-update-tickettype' userp.user.id %}";
+                        } else {
+                            alert("Update fail");
+                        }
+                    },
+                    error: function(response) {
+                        console.log(response);
+                        alert("Update fail");
+                    }
+                });
+            });
+          
+
+
+
+
+
+            // document.getElementById('id_chkA').addEventListener('change', function() {
+            //     if (this.checked) {
+            //         // Checkbox is checked..
+            //         tt = tt + "A" + ",";
+            //     } else {
+            //         // Checkbox is not checked..
+            //         tt = tt.replace("A,", "");
+            //     }
+            //     console.log('New ticket type: ' + tt);
+            // });
+
+
+        </script>
     </main>
     {% endblock content %}

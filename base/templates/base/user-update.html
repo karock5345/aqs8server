@@ -3,7 +3,7 @@
 {% block content %}
 
     <main class="update-account layout">
-        <div class="container">
+        <div class="container" id="id_area_main">
             <div class="layout__box__form">
                 <div class="layout__boxHeader">
                     <div class="layout__boxTitle">
@@ -37,7 +37,7 @@
                             {% if field.name == "tickettype" %}
                                 <label>Ticket type</label>
                                 <!-- the field display but cannot edit-->
-                                <a class="form" href="{% url 'update-user-tt' userp.id %}">{{field.value}}</a>
+                                <a id="id_tickettype" class="form" href="{% url 'update-user-tt' userp.id %}">{{field.value}}</a>
                             {% else %}
                                 <label for="profile_pic">{{field.help_text}}</label>
                                 {{field}}
@@ -56,5 +56,103 @@
             </div>
         </div>
       </div>
+
+
+
+
+      <div class="container" id="id_area_tt">
+        <div class="layout__box__form">
+            <div class="layout__boxHeader">
+                <div class="layout__boxTitle">
+                    <a href="">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 32 32">
+                            <title>arrow-left</title>
+                            <path
+                                d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                            </path>
+                        </svg>
+                    </a>
+                    <h3>Change ticket type</h3>
+                </div>
+            </div>
+            <div class="layout__body">
+
+                <h1>User :{{userp.user.first_name}} {{userp.user.last_name}} (Username: {{userp.user.username}})</h1>
+                <h1>Ticket type : <label id="lbl_tickettype">{{userp.tickettype}}&nbsp;</label></h1>
+                {% for tt in ticketformat %}
+                    <div>
+                        {% if tt.checked == "checked" %}
+                            <input type="checkbox" checked id="id_chk_{{tt.ttype}}">{{tt.ttype}} {{tt.touchkey_lang1}} {{tt.touchkey_lang2}}</input>
+                        {% else %}
+                            <input type="checkbox" id="id_chk_{{tt.ttype}}">{{tt.ttype}} {{tt.touchkey_lang1}} {{tt.touchkey_lang2}}</input>
+                        {% endif %} 
+                    </div>
+                {% endfor %}
+
+                <div>
+                    <button class="btn btn--dark" id="id_tt_cancel">Cancel</button>
+                    <button class="btn btn--main" id="id_tt_update">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    {{ userp.tickettype|json_script:"js-tt" }}
+    <script>
+        var tickettype = JSON.parse(document.getElementById('js-tt').textContent) + " ";
+        // how to get all the checkbox id and value
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+        Array.prototype.forEach.call(checkboxes, function(el) {
+            el.addEventListener('change', function() {
+                var tt = this.id.replace("id_chk_", "");
+                if (this.checked) {
+                    // Checkbox is checked..
+                    tickettype = tickettype + tt + ", ";
+                } else {
+                    // Checkbox is not checked..
+                    tickettype = tickettype.replace(tt + ", ", "");
+                    tickettype = tickettype.replace(tt + ",", "");
+                }
+                console.log(tickettype);
+                document.getElementById('lbl_tickettype').innerHTML = tickettype;
+            });
+        });
+
+        // add event button clicked pass tickettype to view
+        document.getElementById('id_tt_update').addEventListener('click', function() {
+            document.getElementById('id_tickettype').innerHTML = tickettype;
+            document.getElementById('id_area_tt').innerHTML = "";
+            // document.getElementById('id_area_main').innerHTML= false;
+
+        });
+          
+
+
+
+
+
+          // document.getElementById('id_chkA').addEventListener('change', function() {
+          //     if (this.checked) {
+          //         // Checkbox is checked..
+          //         tt = tt + "A" + ",";
+          //     } else {
+          //         // Checkbox is not checked..
+          //         tt = tt.replace("A,", "");
+          //     }
+          //     console.log('New ticket type: ' + tt);
+          // });
+
+
+      </script>
+
+
+
+
+
     </main>
     {% endblock content %}
