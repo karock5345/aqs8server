@@ -93,20 +93,21 @@ class UserProfile(models.Model):
     ]
     user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True)
     
-    tickettype = models.CharField(default='A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, ', max_length=200, null=True, blank=True, )
+    tickettype = models.CharField(default='A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, ', max_length=200, null=True, blank=True, help_text='Ticket type',)
     queuepriority = models.CharField(
        max_length=32,
        choices=PRIORITY,
        default=BYBRANCH,
        null=False,
+       help_text='Queue Priority',
     )
-    branchs = models.ManyToManyField(Branch, related_name='branchs_u',  blank=True)
-    staffnumber = models.CharField(max_length=200, null=True, blank=True, default='')    
+    branchs = models.ManyToManyField(Branch, related_name='branchs_u',  blank=True, help_text='Branch access rights',)
+    staffnumber = models.CharField(max_length=200, null=True, blank=True, default='', help_text='Staff number',)    
     #enabled = models.BooleanField(default=True)  
     # room = models.ForeignKey(Room, on_delete=models.CASCADE)
     # body = models.TextField()
-    mobilephone = models.CharField(max_length=20, null=True, blank=True, )
-    updated = models.DateTimeField(auto_now=True)
+    mobilephone = models.CharField(max_length=20, null=True, blank=True, help_text='Mobile phone', )
+    updated = models.DateTimeField(auto_now=True,)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
 
 

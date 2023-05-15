@@ -7,7 +7,7 @@
             <div class="layout__box__form">
                 <div class="layout__boxHeader">
                     <div class="layout__boxTitle">
-                        <a href="{% url 'home' %}">
+                        <a href="{{request.META.HTTP_REFERER}}">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                                 viewBox="0 0 32 32">
                                 <title>arrow-left</title>
@@ -34,8 +34,14 @@
                                              
                         {% for field in profileform %}
                         <div class="form__group">
-                            <label for="profile_pic">{{field.label}}</label>
-                            {{field}}
+                            {% if field.name == "tickettype" %}
+                                <label>Ticket type</label>
+                                <!-- the field display but cannot edit-->
+                                <a class="form" href="{% url 'update-user-tt' userp.id %}">{{field.value}}</a>
+                            {% else %}
+                                <label for="profile_pic">{{field.help_text}}</label>
+                                {{field}}
+                            {% endif %}
                         </div>
                         {% endfor %}                                  
 
