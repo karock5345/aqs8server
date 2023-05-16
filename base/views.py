@@ -13,7 +13,7 @@ from base.decorators import *
 # from django.urls import reverse_lazy
 
 from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch
-from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, CaptchaForm, getForm, voidForm
+from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, CaptchaForm, getForm, voidForm, newTicketTypeForm
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
@@ -1762,9 +1762,9 @@ def UserUpdateView(request, pk):
                 if tf.ttype == tf2.ttype:
                     ticketformat = ticketformat.exclude(id=tf.id)
                     ticketformat2 = ticketformat2.exclude(id=tf2.id)
-
+    # add column for checked or unchecked to ticketformat2
     for tt in ticketformat2:
-        tt2 = tt.ttype + ','
+        tt2 = '{' + tt.ttype + '}'
         if userp.tickettype.find(tt2) != -1:
             tt.checked = 'checked'
         else:
@@ -1778,16 +1778,21 @@ def UserUpdateView(request, pk):
             userform = UserFormAdmin(request.POST, instance=user, prefix='uform')        
         
         profileform = UserProfileForm(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
-        
+        newtickettypeform = newTicketTypeForm(request.POST,)
         # check moblie phone format
         # inttel = profileform.mobilephone
         # if inttel != '+852':
         #     profileform.is_valid = False
         #     messages.error(request, 'Mobile phone number should include country code. E.g. "+852"')
 
-        if (userform.is_valid() & profileform.is_valid()):
+
+        if (userform.is_valid() & profileform.is_valid() & newtickettypeform.is_valid()):
             profileform_temp = profileform.save(commit=False)
             
+            # get data from html, and update to profileform_temp
+            new_tt = newtickettypeform['new_tickettype'].value()
+            profileform_temp.tickettype = new_tt
+
             if profileform_temp.mobilephone != None:
                 inttel = profileform_temp.mobilephone[0:4]
                 if inttel != '+852':
@@ -1831,6 +1836,7 @@ def UserUpdateTTView(request, pk):
                     ticketformat = ticketformat.exclude(id=tf.id)
                     ticketformat2 = ticketformat2.exclude(id=tf2.id)
 
+    # add column for checked or unchecked to ticketformat2
     for tt in ticketformat2:
         tt2 = tt.ttype + ','
         if userp.tickettype.find(tt2) != -1:

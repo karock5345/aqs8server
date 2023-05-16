@@ -47,7 +47,7 @@ class Branch(models.Model):
        default=BYTIME,
        null=False,
     )
-    queuemask =  models.CharField(default='A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, ', max_length=200, null=False)
+    queuemask =  models.CharField(default='{A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}', max_length=200, null=False)
 
     # ticket settings
     tickettimestart = models.TimeField(default=datetime.time(8, 0, 0))
@@ -93,7 +93,7 @@ class UserProfile(models.Model):
     ]
     user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True)
     
-    tickettype = models.CharField(default='A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, ', max_length=200, null=True, blank=True, help_text='Ticket type',)
+    tickettype = models.CharField(default='{A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}', max_length=200, null=True, blank=True, help_text='Ticket type',)
     queuepriority = models.CharField(
        max_length=32,
        choices=PRIORITY,

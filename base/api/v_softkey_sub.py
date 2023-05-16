@@ -63,13 +63,18 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
             u_tt = u_tt.replace(' ', '')
 
             istart = 0
+            # get text inside mask_b string format '{x}{y}{z}' -> x,y,z
             for i in range(len(mask_b)):
-                if mask_b[i] == ',':
-                    tt = mask_b[istart:i+1]
-                    istart = i +1
-                    if u_tt.find(tt) != -1 :
-                        new_mask  = new_mask +tt
+                if mask_b[i] == '{':
+                    for j in range(i+1, len(mask_b)):
+                        if mask_b[j] == '}':
+                            tt = mask_b[i:j+1]
+                            istart = j + 1
+                            if u_tt.find(tt) != -1 :
+                                new_mask  = new_mask + tt
+                            break                   
             mask = new_mask
+            print('new branch mask:' + new_mask)
         if priority == 'bmask' or priority == 'umask' :
             priority = 'mask'
     if status == dict({}) :
@@ -107,7 +112,7 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
             # found the waiting ticket by time
             ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0])  & Q(locked=False)   ).order_by('tickettime')            
             for ticket in ticketlist:
-                tt = ticket.tickettype + ','
+                tt = '{' + ticket.tickettype + '}'
                 if mask.find(tt) != -1:
                     # call this ticket
                     context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
@@ -116,14 +121,26 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
             ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0])  & Q(locked=False)   ).order_by('tickettime')
             istart = 0
             for i in range(len(mask)):
-                if mask[i] == ',':
-                    tt = mask[istart:i+1] # tt = 'A,'
-                    istart = i + 1
-                    for ticket in ticketlist:
-                        if tt == ticket.tickettype + ',':
-                            # call this ticket
-                            context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
-                            break
+                if mask[i] == '{':
+                    for j in range(i+1, len(mask)):
+                        if mask[j] == '}':
+                            tt = mask[i:j+1]
+                            istart = j + 1
+                            for ticket in ticketlist:
+                                if tt == '{' + ticket.tickettype + '}':
+                                    # call this ticket
+                                    context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
+                                    break
+                            if context != dict({}):
+                                break
+
+                    # tt = mask[istart:i+1] # tt = '{A}'
+                    # istart = i + 1
+                    # for ticket in ticketlist:
+                    #     if tt == ticket.tickettype + ',':
+                    #         # call this ticket
+                    #         context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
+                    #         break
                     if context != dict({}):
                         break
 

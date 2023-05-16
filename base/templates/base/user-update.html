@@ -3,6 +3,7 @@
 {% block content %}
 
     <main class="update-account layout">
+
         <div class="container" id="id_area_main">
             <div class="layout__box__form">
                 <div class="layout__boxHeader">
@@ -10,7 +11,7 @@
                         <a href="{{request.META.HTTP_REFERER}}">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                                 viewBox="0 0 32 32">
-                                <title>arrow-left</title>
+                                <title>Back</title>
                                 <path
                                     d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
                                 </path>
@@ -37,7 +38,8 @@
                             {% if field.name == "tickettype" %}
                                 <label>Ticket type</label>
                                 <!-- the field display but cannot edit-->
-                                <a id="id_tickettype" class="form" href="{% url 'update-user-tt' userp.id %}">{{field.value}}</a>
+                                <a id="id_a_tickettype" class="form" >{{field.value}}</a>
+                                <input type="text"  value="{{field.value}}" name="new_tickettype" id="id_text_tickettype" hidden>
                             {% else %}
                                 <label for="profile_pic">{{field.help_text}}</label>
                                 {{field}}
@@ -55,7 +57,6 @@
                 </div>
             </div>
         </div>
-      </div>
 
 
 
@@ -67,7 +68,7 @@
                     <a href="">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                             viewBox="0 0 32 32">
-                            <title>arrow-left</title>
+                            <title>Back</title>
                             <path
                                 d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
                             </path>
@@ -92,7 +93,7 @@
 
                 <div>
                     <button class="btn btn--dark" id="id_tt_cancel">Cancel</button>
-                    <button class="btn btn--main" id="id_tt_update">Update</button>
+                    <button class="btn btn--main" id="id_tt_confirm">Confirm</button>
                 </div>
             </div>
         </div>
@@ -103,51 +104,53 @@
 
     {{ userp.tickettype|json_script:"js-tt" }}
     <script>
-        var tickettype = JSON.parse(document.getElementById('js-tt').textContent) + " ";
+        var tickettype = JSON.parse(document.getElementById('js-tt').textContent);
         // how to get all the checkbox id and value
         var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        var btn_cancel = document.getElementById('id_tt_cancel');
+
+        // check tickettype do not have character "{" or "}" then set to ""
+        if (!(tickettype.indexOf("{") > -1 || tickettype.indexOf("}") > -1)) {
+            tickettype = "";
+            document.getElementById('id_a_tickettype').innerHTML = "No ticket type";
+            document.getElementById('id_text_tickettype').value = "No ticket type";
+        }
+        document.getElementById('id_area_tt').style.display = "none";
+
+        document.getElementById('id_a_tickettype').addEventListener('click', function() {
+            document.getElementById('id_area_tt').style.display = "block";
+            document.getElementById('id_area_main').style.display = "none";
+        });
 
         Array.prototype.forEach.call(checkboxes, function(el) {
             el.addEventListener('change', function() {
                 var tt = this.id.replace("id_chk_", "");
                 if (this.checked) {
                     // Checkbox is checked..
-                    tickettype = tickettype + tt + ", ";
+                    tickettype = tickettype + "{" + tt + "}";
                 } else {
                     // Checkbox is not checked..
-                    tickettype = tickettype.replace(tt + ", ", "");
-                    tickettype = tickettype.replace(tt + ",", "");
+                    tickettype = tickettype.replace("{" + tt + "}", "");
                 }
-                console.log(tickettype);
                 document.getElementById('lbl_tickettype').innerHTML = tickettype;
             });
         });
 
-        // add event button clicked pass tickettype to view
-        document.getElementById('id_tt_update').addEventListener('click', function() {
-            document.getElementById('id_tickettype').innerHTML = tickettype;
-            document.getElementById('id_area_tt').innerHTML = "";
-            // document.getElementById('id_area_main').innerHTML= false;
+        // add event button clicked cancel
+        btn_cancel.addEventListener('click', function() {
+            document.getElementById('id_area_tt').style.display = "none";
+            document.getElementById('id_area_main').style.display = "block";
+        });
 
+
+        // add event button clicked pass tickettype to view
+        document.getElementById('id_tt_confirm').addEventListener('click', function() {
+            document.getElementById('id_area_tt').style.display = "none";
+            document.getElementById('id_area_main').style.display = "block";
+            document.getElementById('id_a_tickettype').innerHTML = tickettype;
+            document.getElementById('id_text_tickettype').value = tickettype;
         });
           
-
-
-
-
-
-          // document.getElementById('id_chkA').addEventListener('change', function() {
-          //     if (this.checked) {
-          //         // Checkbox is checked..
-          //         tt = tt + "A" + ",";
-          //     } else {
-          //         // Checkbox is not checked..
-          //         tt = tt.replace("A,", "");
-          //     }
-          //     console.log('New ticket type: ' + tt);
-          // });
-
-
       </script>
 
 

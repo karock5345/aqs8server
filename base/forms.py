@@ -37,12 +37,15 @@ class UserFormAdmin(ModelForm):
 class UserProfileForm(ModelForm):
     class Meta:
         model = UserProfile
+
         fields = ['tickettype', 'queuepriority', 'branchs', 'staffnumber', 'mobilephone']
     def __init__(self, *args,**kwargs):
         self.auth_branchs = kwargs.pop('auth_branchs')
         super().__init__(*args,**kwargs)
         self.fields['branchs'].queryset = Branch.objects.filter(id__in=self.auth_branchs)   # Q(groups__name='api')
-
+        
+class newTicketTypeForm(forms.Form):
+    new_tickettype = forms.CharField(label='New Ticket Type', max_length=100)
 
 class TicketFormatForm(ModelForm):
     def __init__(self, *args,**kwargs):
