@@ -33,7 +33,15 @@ class UserFormAdmin(ModelForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'email']
-        
+
+class UserFormSuper(ModelForm):
+    class Meta:
+        model = User 
+        fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
+    def __init__(self, *args,**kwargs):
+        super (UserFormSuper,self ).__init__(*args,**kwargs)
+        self.fields['groups'].queryset = Group.objects.filter(~Q(name='web'))  
+
 class UserProfileForm(ModelForm):
     class Meta:
         model = UserProfile

@@ -28,7 +28,9 @@
 - Separete Touch Panel API functions to new file : v_touch.py
 - Added TicketFormat , TicketRoute HTML input check
 - Support Ticket Type more than 1 char and not case sensitive (e.g. Ticket type: A, AA, Aa, LAB, ...)
-- User update HTML support new ticket type format
+- userp.Tickettype changed to "{A}{B}{AA}{Aa}{LAB}" from "A, AA, Aa, LAB"
+- user.update.html add HTML ticket type data input by checkbox
+- fixed checkbox only show user related branch
 
 
 # Development env setup

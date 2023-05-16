@@ -75,7 +75,8 @@ a {
   color:red;
   font-size: 20px;
   background-color: rgb(90, 90, 90);
-
+  animation-name: anibackred2;
+  animation-duration: 2s;
 }
 .msgsuccess {
   width: 100%;
@@ -83,7 +84,8 @@ a {
   color:rgb(0, 255, 0);
   font-size: 20px;
   background-color: rgb(90, 90, 90);
-
+  animation-name: anibackgreen2;
+  animation-duration: 2s;
 }
 /*========== components ==========*/
 .container {
@@ -527,9 +529,9 @@ a {
   max-width: 90rem;
   min-height: 40rem;
   position: absolute;
-  top: 50%;
+  top: 12rem;
   left: 50%;
-  transform: translate(-50%, -30%);
+  transform: translate(-50%, 0);
   background-color: var(--color-dark);
   border-radius: 1rem;
   box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.1);
@@ -1609,6 +1611,24 @@ color: white;
   75% {background-color: var(--color-error)}
   100% {background-color: var(--color-dark)}
 }
+/* The animation code */
+@keyframes anibackgreen2 {
+  0% {background-color: rgb(90, 90, 90)}
+  25% {background-color: rgb(0, 255, 0)}
+  50% {background-color: rgb(90, 90, 90)}
+  75% {background-color: rgb(0, 255, 0)}
+  100% {background-color: rgb(90, 90, 90)}
+
+}
+@keyframes anibackred2 {
+  0% {background-color: rgb(90, 90, 90)}
+  25% {background-color: red}
+  50% {background-color: rgb(90, 90, 90)}
+  75% {background-color: red}
+  100% {background-color: rgb(90, 90, 90)}
+}
+
+
 /* The element to apply the animation to */
 .anibackcolor {
   animation-name: anibackgreen;
@@ -1616,5 +1636,13 @@ color: white;
 }
 .anibackcolorred {
   animation-name: anibackred;
+  animation-duration: 2s;
+}
+.anibackcolor2 {
+  animation-name: anibackgreen2;
+  animation-duration: 2s;
+}
+.anibackcolorred2 {
+  animation-name: anibackred2;
   animation-duration: 2s;
 }

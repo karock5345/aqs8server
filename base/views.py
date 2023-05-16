@@ -13,7 +13,7 @@ from base.decorators import *
 # from django.urls import reverse_lazy
 
 from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch
-from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, CaptchaForm, getForm, voidForm, newTicketTypeForm
+from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, CaptchaForm, getForm, voidForm, newTicketTypeForm, UserFormSuper
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
@@ -1755,13 +1755,27 @@ def UserUpdateView(request, pk):
         auth_branchs = auth_userp.branchs.all()
     # get all ticketformat but not ttype is repeated 
     ticketformat = TicketFormat.objects.all()
-    ticketformat2 = TicketFormat.objects.all()
+
+    for tf in ticketformat:
+        # check if userp.branchs is not in tt.branchs
+        if tf.branch not in userp.branchs.all():
+            ticketformat = ticketformat.exclude(id=tf.id)
+    ticketformat2 = ticketformat
+
+
+
     for tf in ticketformat:
         for tf2 in ticketformat:
             if tf != tf2:
                 if tf.ttype == tf2.ttype:
                     ticketformat = ticketformat.exclude(id=tf.id)
                     ticketformat2 = ticketformat2.exclude(id=tf2.id)
+    
+    for tt in ticketformat2:
+        # check if userp.branchs is not in tt.branchs
+        if tt.branch not in userp.branchs.all():
+            ticketformat2 = ticketformat2.exclude(id=tt.id)
+
     # add column for checked or unchecked to ticketformat2
     for tt in ticketformat2:
         tt2 = '{' + tt.ttype + '}'
@@ -1771,9 +1785,19 @@ def UserUpdateView(request, pk):
             tt.checked = 'unchecked'
         tt.save()
 
-    if request.method == 'POST':
-    
-        userform = UserForm(request.POST, instance=user, prefix='uform')
+    if request.method != 'POST':
+        if request.user.is_superuser == True :
+            userform = UserFormSuper(instance=user, prefix='uform')
+        else :
+            userform = UserForm(instance=user, prefix='uform')
+        if user == request.user:
+            userform = UserFormAdmin(instance=user, prefix='uform')  
+        profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
+    elif request.method == 'POST':
+        if request.user.is_superuser == True :
+            userform = UserFormSuper(request.POST, instance=user, prefix='uform')
+        else :
+            userform = UserForm(request.POST, instance=user, prefix='uform')
         if user == request.user:
             userform = UserFormAdmin(request.POST, instance=user, prefix='uform')        
         
@@ -1814,11 +1838,7 @@ def UserUpdateView(request, pk):
             return redirect('usersummary')
         else:
             messages.error(request, error)
-    else:
-        userform = UserForm(instance=user, prefix='uform')
-        if user == request.user:
-            userform = UserFormAdmin(instance=user, prefix='uform')  
-        profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
+
     context =  {'userform':userform , 'profileform':profileform, 'user':user, 'userp':userp,'ticketformat':ticketformat2,}
     return render(request, 'base/user-update.html', context)
 

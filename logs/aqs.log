@@ -22520,3 +22520,1172 @@ INFO 2023-05-16 21:12:41,482 runserver>log_action [32mHTTP POST /login/ 302 [0.
 INFO 2023-05-16 21:12:41,527 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:59029][0m
 INFO 2023-05-16 21:12:44,653 runserver>log_action [mHTTP GET /branch/ 200 [0.05, 127.0.0.1:59029][0m
 INFO 2023-05-16 21:12:46,736 runserver>log_action [mHTTP GET /user/ 200 [0.06, 127.0.0.1:59029][0m
+INFO 2023-05-17 00:13:56,870 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:13:57,680 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:13:57,687 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:13:57,974 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:13:57,975 base>views><module> -SCH- Now:05/16/2023, 16:13:57
+INFO 2023-05-17 00:13:58,085 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:13:58,085 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:13:58,087 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:13:57 [No]
+INFO 2023-05-17 00:13:58,134 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:13:58,135 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:13:58,135 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:13:57 [No]
+INFO 2023-05-17 00:13:58,141 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:13:58,141 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:13:58,143 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:13:57 [Yes]
+INFO 2023-05-17 00:14:02,867 runserver>log_action [mHTTP GET /login/ 200 [0.05, 127.0.0.1:55148][0m
+INFO 2023-05-17 00:14:02,934 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:55148][0m
+INFO 2023-05-17 00:14:07,902 runserver>log_action [32mHTTP POST /login/ 302 [0.17, 127.0.0.1:55148][0m
+INFO 2023-05-17 00:14:07,953 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:55148][0m
+WARNING 2023-05-17 00:14:22,395 log>log_response Forbidden (CSRF token from POST incorrect.): /login/
+WARNING 2023-05-17 00:14:22,422 runserver>log_action [31;1mHTTP POST /login/ 403 [0.03, 127.0.0.1:55148][0m
+WARNING 2023-05-17 00:14:26,543 log>log_response Forbidden (CSRF token from POST incorrect.): /login/
+WARNING 2023-05-17 00:14:26,554 runserver>log_action [31;1mHTTP POST /login/ 403 [0.02, 127.0.0.1:55148][0m
+INFO 2023-05-17 00:14:30,892 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:55148][0m
+INFO 2023-05-17 00:14:35,454 runserver>log_action [32mHTTP GET /logout/ 302 [0.02, 127.0.0.1:55148][0m
+INFO 2023-05-17 00:14:35,467 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:55148][0m
+INFO 2023-05-17 00:14:39,448 runserver>log_action [32mHTTP POST /login/ 302 [0.17, 127.0.0.1:55148][0m
+INFO 2023-05-17 00:14:39,474 runserver>log_action [mHTTP GET / 200 [0.02, 127.0.0.1:55148][0m
+INFO 2023-05-17 00:14:41,439 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:55148][0m
+INFO 2023-05-17 00:14:47,810 runserver>log_action [mHTTP GET /update-user/6/ 200 [0.14, 127.0.0.1:55148][0m
+INFO 2023-05-17 00:19:25,373 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\forms.py changed, reloading.
+INFO 2023-05-17 00:19:26,654 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:19:26,663 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:19:28,031 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\forms.py changed, reloading.
+INFO 2023-05-17 00:19:28,968 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:19:28,975 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:19:29,106 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:19:29,106 base>views><module> -SCH- Now:05/16/2023, 16:19:29
+INFO 2023-05-17 00:19:29,185 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:19:29,185 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:19:29,186 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:19:29 [No]
+INFO 2023-05-17 00:19:29,230 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:19:29,230 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:19:29,232 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:19:29 [No]
+INFO 2023-05-17 00:19:29,242 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:19:29,242 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:19:29,242 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:19:29 [Yes]
+INFO 2023-05-17 00:19:32,052 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\forms.py changed, reloading.
+INFO 2023-05-17 00:19:32,965 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:19:32,971 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:19:33,064 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:19:33,064 base>views><module> -SCH- Now:05/16/2023, 16:19:33
+INFO 2023-05-17 00:19:33,142 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:19:33,142 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:19:33,142 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:19:33 [No]
+INFO 2023-05-17 00:19:33,192 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:19:33,192 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:19:33,192 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:19:33 [No]
+INFO 2023-05-17 00:19:33,202 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:19:33,203 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:19:33,204 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:19:33 [Yes]
+INFO 2023-05-17 00:19:40,047 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\forms.py changed, reloading.
+INFO 2023-05-17 00:19:41,044 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:19:41,050 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:19:41,149 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:19:41,149 base>views><module> -SCH- Now:05/16/2023, 16:19:41
+INFO 2023-05-17 00:19:41,226 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:19:41,228 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:19:41,229 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:19:41 [No]
+INFO 2023-05-17 00:19:41,270 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:19:41,271 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:19:41,271 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:19:41 [No]
+INFO 2023-05-17 00:19:41,279 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:19:41,279 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:19:41,279 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:19:41 [Yes]
+INFO 2023-05-17 00:20:04,069 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:20:05,062 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:20:05,070 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:20:05,184 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:20:05,185 base>views><module> -SCH- Now:05/16/2023, 16:20:05
+INFO 2023-05-17 00:20:05,278 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:20:05,278 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:20:05,279 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:20:05 [No]
+INFO 2023-05-17 00:20:05,321 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:20:05,322 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:20:05,322 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:20:05 [No]
+INFO 2023-05-17 00:20:05,330 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:20:05,331 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:20:05,331 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:20:05 [Yes]
+INFO 2023-05-17 00:20:48,051 runserver>log_action [mHTTP GET /update-user/1/ 200 [0.11, 127.0.0.1:55562][0m
+INFO 2023-05-17 00:20:51,285 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.09, 127.0.0.1:55562][0m
+INFO 2023-05-17 00:21:06,326 runserver>log_action [mHTTP GET /update-user/1/ 200 [0.10, 127.0.0.1:55562][0m
+INFO 2023-05-17 00:21:12,855 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:21:13,755 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:21:13,763 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:21:13,866 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:21:13,866 base>views><module> -SCH- Now:05/16/2023, 16:21:13
+INFO 2023-05-17 00:21:13,943 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:21:13,944 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:21:13,944 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:21:13 [No]
+INFO 2023-05-17 00:21:13,987 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:21:13,987 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:21:13,988 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:21:13 [No]
+INFO 2023-05-17 00:21:13,996 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:21:13,997 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:21:13,997 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:21:13 [Yes]
+INFO 2023-05-17 00:21:20,864 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:21:21,747 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:21:21,753 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:21:24,160 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:21:25,208 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:21:25,214 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:21:26,587 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:21:27,443 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:21:27,450 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:21:29,907 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:21:30,887 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:21:30,894 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:21:34,405 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:21:35,372 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:21:35,378 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:21:35,482 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:21:35,483 base>views><module> -SCH- Now:05/16/2023, 16:21:35
+INFO 2023-05-17 00:21:35,564 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:21:35,565 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:21:35,565 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:21:35 [No]
+INFO 2023-05-17 00:21:35,607 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:21:35,607 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:21:35,609 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:21:35 [No]
+INFO 2023-05-17 00:21:35,616 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:21:35,617 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:21:35,617 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:21:35 [Yes]
+INFO 2023-05-17 00:21:44,544 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:21:45,529 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:21:45,536 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:21:45,656 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:21:45,657 base>views><module> -SCH- Now:05/16/2023, 16:21:45
+INFO 2023-05-17 00:21:45,747 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:21:45,748 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:21:45,749 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:21:45 [No]
+INFO 2023-05-17 00:21:45,794 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:21:45,795 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:21:45,795 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:21:45 [No]
+INFO 2023-05-17 00:21:45,805 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:21:45,805 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:21:45,806 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:21:45 [Yes]
+INFO 2023-05-17 00:21:47,390 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:21:48,390 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:21:48,397 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:21:48,532 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:21:48,533 base>views><module> -SCH- Now:05/16/2023, 16:21:48
+INFO 2023-05-17 00:21:48,627 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:21:48,628 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:21:48,628 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:21:48 [No]
+INFO 2023-05-17 00:21:48,668 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:21:48,669 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:21:48,671 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:21:48 [No]
+INFO 2023-05-17 00:21:48,678 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:21:48,678 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:21:48,678 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:21:48 [Yes]
+INFO 2023-05-17 00:21:50,215 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:21:51,141 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:21:51,147 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:21:51,247 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:21:51,247 base>views><module> -SCH- Now:05/16/2023, 16:21:51
+INFO 2023-05-17 00:21:51,325 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:21:51,326 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:21:51,326 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:21:51 [No]
+INFO 2023-05-17 00:21:51,367 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:21:51,368 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:21:51,369 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:21:51 [No]
+INFO 2023-05-17 00:21:51,379 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:21:51,379 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:21:51,379 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:21:51 [Yes]
+INFO 2023-05-17 00:21:58,239 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:21:59,246 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:21:59,251 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:22:02,712 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:22:03,559 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:22:03,565 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:22:03,665 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:22:03,666 base>views><module> -SCH- Now:05/16/2023, 16:22:03
+INFO 2023-05-17 00:22:03,740 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:22:03,741 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:22:03,742 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:22:03 [No]
+INFO 2023-05-17 00:22:03,782 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:22:03,783 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:22:03,783 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:22:03 [No]
+INFO 2023-05-17 00:22:03,792 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:22:03,793 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:22:03,793 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:22:03 [Yes]
+INFO 2023-05-17 00:22:19,867 runserver>log_action [mHTTP GET /user/ 200 [0.07, 127.0.0.1:55858][0m
+INFO 2023-05-17 00:22:24,131 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.10, 127.0.0.1:55858][0m
+INFO 2023-05-17 00:22:29,726 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.11, 127.0.0.1:55858][0m
+INFO 2023-05-17 00:22:34,524 runserver>log_action [mHTTP GET /update-user/1/ 200 [0.10, 127.0.0.1:55858][0m
+INFO 2023-05-17 00:22:47,012 runserver>log_action [mHTTP GET /update-user/6/ 200 [0.10, 127.0.0.1:55858][0m
+INFO 2023-05-17 00:23:39,119 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\forms.py changed, reloading.
+INFO 2023-05-17 00:23:40,012 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:23:40,019 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:23:40,113 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:23:40,114 base>views><module> -SCH- Now:05/16/2023, 16:23:40
+INFO 2023-05-17 00:23:40,193 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:23:40,194 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:23:40,195 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:23:40 [No]
+INFO 2023-05-17 00:23:40,236 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:23:40,236 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:23:40,237 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:23:40 [No]
+INFO 2023-05-17 00:23:40,245 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:23:40,246 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:23:40,246 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:23:40 [Yes]
+INFO 2023-05-17 00:23:43,924 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:55924][0m
+INFO 2023-05-17 00:23:44,927 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:55924][0m
+INFO 2023-05-17 00:23:47,474 runserver>log_action [mHTTP GET /update-user/6/ 200 [0.12, 127.0.0.1:55924][0m
+INFO 2023-05-17 00:23:53,864 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:55924][0m
+INFO 2023-05-17 00:23:56,539 runserver>log_action [mHTTP GET /update-user/6/ 200 [0.12, 127.0.0.1:55924][0m
+INFO 2023-05-17 00:24:24,582 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\forms.py changed, reloading.
+INFO 2023-05-17 00:24:25,413 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:24:25,419 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:24:25,509 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:24:25,510 base>views><module> -SCH- Now:05/16/2023, 16:24:25
+INFO 2023-05-17 00:24:25,586 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:24:25,587 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:24:25,588 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:24:25 [No]
+INFO 2023-05-17 00:24:25,630 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:24:25,631 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:24:25,631 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:24:25 [No]
+INFO 2023-05-17 00:24:25,639 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:24:25,639 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:24:25,640 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:24:25 [Yes]
+INFO 2023-05-17 00:24:29,046 runserver>log_action [mHTTP GET /user/ 200 [0.09, 127.0.0.1:55966][0m
+INFO 2023-05-17 00:24:30,816 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.11, 127.0.0.1:55966][0m
+INFO 2023-05-17 00:24:34,927 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:55966][0m
+INFO 2023-05-17 00:24:36,997 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.10, 127.0.0.1:55966][0m
+INFO 2023-05-17 00:25:14,179 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\forms.py changed, reloading.
+INFO 2023-05-17 00:25:15,134 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:25:15,139 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:25:15,238 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:25:15,239 base>views><module> -SCH- Now:05/16/2023, 16:25:15
+INFO 2023-05-17 00:25:15,317 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:25:15,318 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:25:15,319 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:25:15 [No]
+INFO 2023-05-17 00:25:15,361 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:25:15,361 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:25:15,362 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:25:15 [No]
+INFO 2023-05-17 00:25:15,370 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:25:15,371 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:25:15,371 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:25:15 [Yes]
+INFO 2023-05-17 00:25:15,917 runserver>log_action [mHTTP GET /user/ 200 [0.07, 127.0.0.1:56087][0m
+INFO 2023-05-17 00:25:17,431 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:56087][0m
+INFO 2023-05-17 00:25:20,665 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.12, 127.0.0.1:56087][0m
+INFO 2023-05-17 00:26:16,304 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:26:17,253 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:26:17,259 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:26:17,385 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:26:17,386 base>views><module> -SCH- Now:05/16/2023, 16:26:17
+INFO 2023-05-17 00:26:17,468 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:26:17,469 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:26:17,469 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:26:17 [No]
+INFO 2023-05-17 00:26:17,509 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:26:17,510 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:26:17,510 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:26:17 [No]
+INFO 2023-05-17 00:26:17,519 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:26:17,520 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:26:17,520 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:26:17 [Yes]
+INFO 2023-05-17 00:28:22,914 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:28:23,849 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:28:23,854 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:28:23,960 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:28:23,960 base>views><module> -SCH- Now:05/16/2023, 16:28:23
+INFO 2023-05-17 00:28:24,045 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:28:24,046 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:28:24,046 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:28:23 [No]
+INFO 2023-05-17 00:28:24,088 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:28:24,088 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:28:24,088 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:28:23 [No]
+INFO 2023-05-17 00:28:24,096 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:28:24,097 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:28:24,097 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:28:23 [Yes]
+INFO 2023-05-17 00:28:28,867 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:28:29,729 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:28:29,735 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:28:29,838 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:28:29,839 base>views><module> -SCH- Now:05/16/2023, 16:28:29
+INFO 2023-05-17 00:28:29,920 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:28:29,921 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:28:29,922 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:28:29 [No]
+INFO 2023-05-17 00:28:29,965 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:28:29,966 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:28:29,967 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:28:29 [No]
+INFO 2023-05-17 00:28:29,976 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:28:29,977 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:28:29,978 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:28:29 [Yes]
+INFO 2023-05-17 00:28:33,679 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:28:34,562 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:28:34,569 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:28:35,920 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:28:36,830 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:28:36,836 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:28:38,229 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:28:39,305 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:28:39,312 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:28:40,828 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:28:41,697 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:28:41,703 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:28:44,128 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:28:45,075 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:28:45,081 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:28:45,183 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:28:45,184 base>views><module> -SCH- Now:05/16/2023, 16:28:45
+INFO 2023-05-17 00:28:45,266 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:28:45,268 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:28:45,269 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:28:45 [No]
+INFO 2023-05-17 00:28:45,310 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:28:45,311 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:28:45,311 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:28:45 [No]
+INFO 2023-05-17 00:28:45,319 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:28:45,319 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:28:45,320 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:28:45 [Yes]
+INFO 2023-05-17 00:28:52,163 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:28:53,038 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:28:53,043 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:28:53,142 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:28:53,143 base>views><module> -SCH- Now:05/16/2023, 16:28:53
+INFO 2023-05-17 00:28:53,217 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:28:53,219 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:28:53,219 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:28:53 [No]
+INFO 2023-05-17 00:28:53,258 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:28:53,259 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:28:53,259 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:28:53 [No]
+INFO 2023-05-17 00:28:53,268 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:28:53,268 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:28:53,269 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:28:53 [Yes]
+INFO 2023-05-17 00:29:07,518 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:29:08,401 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:29:08,406 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:29:11,852 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:29:12,799 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:29:12,805 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:29:14,173 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:29:15,026 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:29:15,032 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:29:15,133 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:29:15,134 base>views><module> -SCH- Now:05/16/2023, 16:29:15
+INFO 2023-05-17 00:29:15,209 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:29:15,210 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:29:15,211 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:29:15 [No]
+INFO 2023-05-17 00:29:15,251 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:29:15,252 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:29:15,253 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:29:15 [No]
+INFO 2023-05-17 00:29:15,261 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:29:15,261 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:29:15,261 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:29:15 [Yes]
+INFO 2023-05-17 00:29:21,103 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:29:21,988 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:29:21,993 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:29:22,097 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:29:22,097 base>views><module> -SCH- Now:05/16/2023, 16:29:22
+INFO 2023-05-17 00:29:22,171 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:29:22,173 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:29:22,174 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:29:22 [No]
+INFO 2023-05-17 00:29:22,215 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:29:22,215 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:29:22,216 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:29:22 [No]
+INFO 2023-05-17 00:29:22,223 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:29:22,224 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:29:22,224 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:29:22 [Yes]
+INFO 2023-05-17 00:29:29,315 runserver>log_action [mHTTP GET /user/ 200 [0.09, 127.0.0.1:56446][0m
+INFO 2023-05-17 00:29:30,600 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.11, 127.0.0.1:56446][0m
+INFO 2023-05-17 00:29:37,911 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:56446][0m
+INFO 2023-05-17 00:29:42,901 runserver>log_action [mHTTP GET /update-user/6/ 200 [0.12, 127.0.0.1:56446][0m
+INFO 2023-05-17 00:29:50,170 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:56446][0m
+INFO 2023-05-17 00:30:22,639 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:30:23,535 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:30:23,540 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:30:25,988 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:30:26,909 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:30:26,914 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:30:28,297 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:30:29,159 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:30:29,164 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:30:29,262 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:30:29,263 base>views><module> -SCH- Now:05/16/2023, 16:30:29
+INFO 2023-05-17 00:30:29,340 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:30:29,340 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:30:29,341 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:30:29 [No]
+INFO 2023-05-17 00:30:29,381 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:30:29,382 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:30:29,382 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:30:29 [No]
+INFO 2023-05-17 00:30:29,392 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:30:29,392 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:30:29,393 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:30:29 [Yes]
+INFO 2023-05-17 00:30:57,422 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\forms.py changed, reloading.
+INFO 2023-05-17 00:30:58,334 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:30:58,340 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:30:58,434 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:30:58,435 base>views><module> -SCH- Now:05/16/2023, 16:30:58
+INFO 2023-05-17 00:30:58,518 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:30:58,519 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:30:58,520 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:30:58 [No]
+INFO 2023-05-17 00:30:58,562 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:30:58,563 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:30:58,564 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:30:58 [No]
+INFO 2023-05-17 00:30:58,574 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:30:58,574 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:30:58,575 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:30:58 [Yes]
+INFO 2023-05-17 00:31:00,267 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.12, 127.0.0.1:56544][0m
+INFO 2023-05-17 00:31:02,360 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:56544][0m
+INFO 2023-05-17 00:31:04,418 runserver>log_action [mHTTP GET /update-user/6/ 200 [0.12, 127.0.0.1:56544][0m
+INFO 2023-05-17 00:31:08,263 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:56544][0m
+INFO 2023-05-17 00:31:24,136 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\forms.py changed, reloading.
+INFO 2023-05-17 00:31:25,161 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:31:25,168 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:31:25,253 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:31:25,254 base>views><module> -SCH- Now:05/16/2023, 16:31:25
+INFO 2023-05-17 00:31:25,329 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:31:25,330 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:31:25,330 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:31:25 [No]
+INFO 2023-05-17 00:31:25,371 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:31:25,371 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:31:25,372 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:31:25 [No]
+INFO 2023-05-17 00:31:25,380 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:31:25,381 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:31:25,382 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:31:25 [Yes]
+INFO 2023-05-17 00:31:28,055 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\forms.py changed, reloading.
+INFO 2023-05-17 00:31:29,012 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:31:29,017 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:31:29,111 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:31:29,111 base>views><module> -SCH- Now:05/16/2023, 16:31:29
+INFO 2023-05-17 00:31:29,188 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:31:29,189 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:31:29,190 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:31:29 [No]
+INFO 2023-05-17 00:31:29,229 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:31:29,230 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:31:29,230 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:31:29 [No]
+INFO 2023-05-17 00:31:29,238 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:31:29,239 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:31:29,240 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:31:29 [Yes]
+INFO 2023-05-17 00:31:38,616 runserver>log_action [mHTTP GET /update-user/1/ 200 [0.13, 127.0.0.1:56721][0m
+INFO 2023-05-17 00:31:49,161 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:56721][0m
+INFO 2023-05-17 00:31:50,784 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.09, 127.0.0.1:56721][0m
+INFO 2023-05-17 00:32:00,392 runserver>log_action [32mHTTP GET /logout/ 302 [0.04, 127.0.0.1:56721][0m
+INFO 2023-05-17 00:32:00,402 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:56721][0m
+INFO 2023-05-17 00:32:04,062 runserver>log_action [32mHTTP POST /login/ 302 [0.15, 127.0.0.1:56721][0m
+INFO 2023-05-17 00:32:04,103 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:56721][0m
+INFO 2023-05-17 00:32:05,658 runserver>log_action [mHTTP GET /softkey_login/ 200 [0.06, 127.0.0.1:56721][0m
+INFO 2023-05-17 00:32:07,166 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:56721][0m
+INFO 2023-05-17 00:32:13,386 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.09, 127.0.0.1:56721][0m
+INFO 2023-05-17 00:33:21,765 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:33:22,820 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:33:22,827 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:33:22,923 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:33:22,924 base>views><module> -SCH- Now:05/16/2023, 16:33:22
+INFO 2023-05-17 00:33:23,014 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:33:23,015 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:33:23,016 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:33:22 [No]
+INFO 2023-05-17 00:33:23,092 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:33:23,092 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:33:23,092 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:33:22 [No]
+INFO 2023-05-17 00:33:23,101 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:33:23,101 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:33:23,103 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:33:22 [Yes]
+INFO 2023-05-17 00:33:24,705 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:33:25,812 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:33:25,821 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:33:25,969 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:33:25,970 base>views><module> -SCH- Now:05/16/2023, 16:33:25
+INFO 2023-05-17 00:33:26,053 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:33:26,053 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:33:26,053 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:33:25 [No]
+INFO 2023-05-17 00:33:26,097 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:33:26,097 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:33:26,098 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:33:25 [No]
+INFO 2023-05-17 00:33:26,105 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:33:26,106 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:33:26,106 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:33:25 [Yes]
+INFO 2023-05-17 00:33:29,839 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:33:30,719 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:33:30,726 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:33:30,826 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:33:30,826 base>views><module> -SCH- Now:05/16/2023, 16:33:30
+INFO 2023-05-17 00:33:30,904 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:33:30,905 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:33:30,905 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:33:30 [No]
+INFO 2023-05-17 00:33:30,952 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:33:30,952 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:33:30,953 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:33:30 [No]
+INFO 2023-05-17 00:33:30,961 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:33:30,962 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:33:30,962 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:33:30 [Yes]
+INFO 2023-05-17 00:33:35,698 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:33:36,585 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:33:36,592 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:33:36,695 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:33:36,695 base>views><module> -SCH- Now:05/16/2023, 16:33:36
+INFO 2023-05-17 00:33:36,774 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:33:36,774 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:33:36,775 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:33:36 [No]
+INFO 2023-05-17 00:33:36,813 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:33:36,814 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:33:36,814 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:33:36 [No]
+INFO 2023-05-17 00:33:36,822 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:33:36,823 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:33:36,823 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:33:36 [Yes]
+INFO 2023-05-17 00:33:44,719 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:33:45,612 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:33:45,631 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:33:45,743 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:33:45,744 base>views><module> -SCH- Now:05/16/2023, 16:33:45
+INFO 2023-05-17 00:33:45,819 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:33:45,820 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:33:45,820 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:33:45 [No]
+INFO 2023-05-17 00:33:45,863 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:33:45,863 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:33:45,864 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:33:45 [No]
+INFO 2023-05-17 00:33:45,873 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:33:45,874 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:33:45,874 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:33:45 [Yes]
+INFO 2023-05-17 00:33:51,661 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:33:52,561 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:33:52,568 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:33:52,685 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:33:52,686 base>views><module> -SCH- Now:05/16/2023, 16:33:52
+INFO 2023-05-17 00:33:52,763 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:33:52,764 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:33:52,765 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:33:52 [No]
+INFO 2023-05-17 00:33:52,804 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:33:52,805 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:33:52,805 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:33:52 [No]
+INFO 2023-05-17 00:33:52,811 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:33:52,812 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:33:52,812 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:33:52 [Yes]
+INFO 2023-05-17 00:33:59,674 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:34:00,597 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:34:00,603 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:34:00,728 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:34:00,729 base>views><module> -SCH- Now:05/16/2023, 16:34:00
+INFO 2023-05-17 00:34:00,813 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:34:00,814 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:34:00,814 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:34:00 [No]
+INFO 2023-05-17 00:34:00,856 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:34:00,856 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:34:00,857 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:34:00 [No]
+INFO 2023-05-17 00:34:00,865 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:34:00,866 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:34:00,866 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:34:00 [Yes]
+INFO 2023-05-17 00:34:02,428 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:34:03,300 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:34:03,308 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:34:03,409 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:34:03,410 base>views><module> -SCH- Now:05/16/2023, 16:34:03
+INFO 2023-05-17 00:34:03,487 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:34:03,487 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:34:03,488 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:34:03 [No]
+INFO 2023-05-17 00:34:03,527 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:34:03,527 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:34:03,528 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:34:03 [No]
+INFO 2023-05-17 00:34:03,536 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:34:03,536 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:34:03,536 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:34:03 [Yes]
+INFO 2023-05-17 00:34:20,973 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:34:21,998 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:34:22,006 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:34:24,458 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:34:25,305 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:34:25,311 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:34:27,720 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:34:28,702 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:34:28,708 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:34:31,099 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:34:31,977 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:34:31,983 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:34:34,419 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:34:35,237 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:34:35,243 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:35:02,846 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:35:03,723 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:35:03,729 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:35:08,288 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:35:09,226 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:35:09,231 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:35:20,047 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:35:20,883 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:35:20,890 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:35:23,276 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:35:24,123 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:35:24,130 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:35:27,619 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:35:28,652 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:35:28,658 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:35:30,061 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:35:31,004 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:35:31,011 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:35:37,594 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:35:38,462 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:35:38,468 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:35:38,586 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:35:38,587 base>views><module> -SCH- Now:05/16/2023, 16:35:38
+INFO 2023-05-17 00:35:38,663 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:35:38,663 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:35:38,664 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:35:38 [No]
+INFO 2023-05-17 00:35:38,704 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:35:38,704 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:35:38,705 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:35:38 [No]
+INFO 2023-05-17 00:35:38,712 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:35:38,713 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:35:38,713 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:35:38 [Yes]
+INFO 2023-05-17 00:35:40,262 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:35:41,117 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:35:41,123 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:35:41,244 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:35:41,244 base>views><module> -SCH- Now:05/16/2023, 16:35:41
+INFO 2023-05-17 00:35:41,325 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:35:41,326 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:35:41,326 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:35:41 [No]
+INFO 2023-05-17 00:35:41,368 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:35:41,369 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:35:41,369 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:35:41 [No]
+INFO 2023-05-17 00:35:41,378 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:35:41,378 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:35:41,379 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:35:41 [Yes]
+INFO 2023-05-17 00:35:47,144 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:35:48,009 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:35:48,015 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:36:09,343 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:36:10,416 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:36:10,429 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:36:11,923 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:36:12,864 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:36:12,872 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:36:15,291 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:36:16,397 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:36:16,405 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:36:17,787 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:36:18,835 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:36:18,843 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:36:23,389 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:36:24,282 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:36:24,288 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:36:28,822 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:36:29,639 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:36:29,645 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:36:37,288 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:36:38,124 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:36:38,131 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:36:38,232 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:36:38,233 base>views><module> -SCH- Now:05/16/2023, 16:36:38
+INFO 2023-05-17 00:36:38,308 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:36:38,309 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:36:38,309 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:36:38 [No]
+INFO 2023-05-17 00:36:38,353 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:36:38,353 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:36:38,354 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:36:38 [No]
+INFO 2023-05-17 00:36:38,360 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:36:38,361 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:36:38,361 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:36:38 [Yes]
+INFO 2023-05-17 00:36:45,210 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:36:46,241 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:36:46,247 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:36:46,345 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:36:46,346 base>views><module> -SCH- Now:05/16/2023, 16:36:46
+INFO 2023-05-17 00:36:46,426 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:36:46,426 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:36:46,427 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:36:46 [No]
+INFO 2023-05-17 00:36:46,472 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:36:46,473 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:36:46,474 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:36:46 [No]
+INFO 2023-05-17 00:36:46,482 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:36:46,484 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:36:46,484 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:36:46 [Yes]
+INFO 2023-05-17 00:36:50,181 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:36:51,053 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:36:51,060 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:36:51,189 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:36:51,190 base>views><module> -SCH- Now:05/16/2023, 16:36:51
+INFO 2023-05-17 00:36:51,268 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:36:51,268 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:36:51,268 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:36:51 [No]
+INFO 2023-05-17 00:36:51,308 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:36:51,309 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:36:51,310 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:36:51 [No]
+INFO 2023-05-17 00:36:51,317 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:36:51,318 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:36:51,318 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:36:51 [Yes]
+INFO 2023-05-17 00:36:57,082 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:36:58,116 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:36:58,122 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:36:58,223 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:36:58,223 base>views><module> -SCH- Now:05/16/2023, 16:36:58
+INFO 2023-05-17 00:36:58,298 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:36:58,299 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:36:58,300 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:36:58 [No]
+INFO 2023-05-17 00:36:58,336 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:36:58,337 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:36:58,337 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:36:58 [No]
+INFO 2023-05-17 00:36:58,344 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:36:58,345 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:36:58,345 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:36:58 [Yes]
+INFO 2023-05-17 00:37:06,278 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:37:07,239 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:37:07,245 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:37:07,369 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:37:07,370 base>views><module> -SCH- Now:05/16/2023, 16:37:07
+INFO 2023-05-17 00:37:07,449 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:37:07,451 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:37:07,451 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:37:07 [No]
+INFO 2023-05-17 00:37:07,493 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:37:07,494 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:37:07,495 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:37:07 [No]
+INFO 2023-05-17 00:37:07,503 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:37:07,504 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:37:07,504 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:37:07 [Yes]
+INFO 2023-05-17 00:37:12,238 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:37:13,108 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:37:13,114 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:37:13,216 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:37:13,217 base>views><module> -SCH- Now:05/16/2023, 16:37:13
+INFO 2023-05-17 00:37:13,292 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:37:13,293 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:37:13,293 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:37:13 [No]
+INFO 2023-05-17 00:37:13,338 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:37:13,338 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:37:13,339 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:37:13 [No]
+INFO 2023-05-17 00:37:13,346 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:37:13,346 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:37:13,347 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:37:13 [Yes]
+INFO 2023-05-17 00:37:18,021 runserver>log_action [mHTTP GET /user/ 200 [0.08, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:37:25,310 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:37:32,063 runserver>log_action [mHTTP GET /update-tf/4/ 200 [0.03, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:37:37,842 runserver>log_action [32mHTTP POST /update-tf/4/ 302 [0.03, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:37:37,895 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:37:44,255 runserver>log_action [mHTTP GET /update-tf/5/ 200 [0.04, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:37:48,591 runserver>log_action [32mHTTP POST /update-tf/5/ 302 [0.04, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:37:48,645 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:37:51,167 runserver>log_action [mHTTP GET /update-tf/6/ 200 [0.03, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:37:55,681 runserver>log_action [32mHTTP POST /update-tf/6/ 302 [0.03, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:37:55,732 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:38:01,768 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:38:03,999 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.04, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:38:57,808 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:39:01,820 runserver>log_action [mHTTP GET /update-user/7/ 200 [0.12, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:39:05,571 runserver>log_action [mHTTP GET /update-user/7/ 200 [0.11, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:39:11,294 runserver>log_action [mHTTP GET /update-user/7/ 200 [0.11, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:39:12,626 runserver>log_action [mHTTP GET /update-user/7/ 200 [0.10, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:39:13,335 runserver>log_action [mHTTP GET /update-user/7/ 200 [0.10, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:39:13,941 runserver>log_action [mHTTP GET /update-user/7/ 200 [0.11, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:39:18,447 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:39:24,928 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:39:33,193 runserver>log_action [mHTTP GET /user/ 200 [0.08, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:39:38,542 runserver>log_action [mHTTP GET /update-user/9/ 200 [0.11, 127.0.0.1:57602][0m
+INFO 2023-05-17 00:40:21,418 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:40:22,348 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:40:22,353 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:40:22,451 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:40:22,452 base>views><module> -SCH- Now:05/16/2023, 16:40:22
+INFO 2023-05-17 00:40:22,529 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:40:22,531 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:40:22,531 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:40:22 [No]
+INFO 2023-05-17 00:40:22,575 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:40:22,575 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:40:22,575 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:40:22 [No]
+INFO 2023-05-17 00:40:22,582 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:40:22,582 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:40:22,583 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:40:22 [Yes]
+INFO 2023-05-17 00:40:33,685 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:40:34,599 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:40:34,606 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:40:34,722 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:40:34,723 base>views><module> -SCH- Now:05/16/2023, 16:40:34
+INFO 2023-05-17 00:40:34,800 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:40:34,800 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:40:34,801 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:40:34 [No]
+INFO 2023-05-17 00:40:34,841 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:40:34,843 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:40:34,844 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:40:34 [No]
+INFO 2023-05-17 00:40:34,851 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:40:34,852 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:40:34,852 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:40:34 [Yes]
+INFO 2023-05-17 00:40:44,883 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:40:45,864 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:40:45,871 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:40:45,991 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:40:45,992 base>views><module> -SCH- Now:05/16/2023, 16:40:45
+INFO 2023-05-17 00:40:46,074 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:40:46,075 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:40:46,076 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:40:45 [No]
+INFO 2023-05-17 00:40:46,120 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:40:46,121 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:40:46,121 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:40:45 [No]
+INFO 2023-05-17 00:40:46,129 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:40:46,129 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:40:46,130 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:40:45 [Yes]
+INFO 2023-05-17 00:40:50,892 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:40:51,915 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:40:51,920 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:40:52,057 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:40:52,057 base>views><module> -SCH- Now:05/16/2023, 16:40:52
+INFO 2023-05-17 00:40:52,133 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:40:52,134 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:40:52,135 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:40:52 [No]
+INFO 2023-05-17 00:40:52,179 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:40:52,180 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:40:52,181 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:40:52 [No]
+INFO 2023-05-17 00:40:52,188 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:40:52,189 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:40:52,189 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:40:52 [Yes]
+INFO 2023-05-17 00:40:54,827 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:40:55,712 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:40:55,718 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:40:55,821 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:40:55,822 base>views><module> -SCH- Now:05/16/2023, 16:40:55
+INFO 2023-05-17 00:40:55,904 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:40:55,905 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:40:55,905 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:40:55 [No]
+INFO 2023-05-17 00:40:55,946 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:40:55,947 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:40:55,947 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:40:55 [No]
+INFO 2023-05-17 00:40:55,954 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:40:55,955 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:40:55,955 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:40:55 [Yes]
+INFO 2023-05-17 00:41:03,849 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:41:04,762 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:41:04,770 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:41:04,887 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:41:04,888 base>views><module> -SCH- Now:05/16/2023, 16:41:04
+INFO 2023-05-17 00:41:04,963 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:41:04,964 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:41:04,965 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:41:04 [No]
+INFO 2023-05-17 00:41:05,006 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:41:05,007 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:41:05,007 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:41:04 [No]
+INFO 2023-05-17 00:41:05,019 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:41:05,020 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:41:05,020 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:41:04 [Yes]
+INFO 2023-05-17 00:41:06,602 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:41:07,449 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:41:07,456 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:41:07,577 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:41:07,578 base>views><module> -SCH- Now:05/16/2023, 16:41:07
+INFO 2023-05-17 00:41:07,659 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:41:07,660 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:41:07,661 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:41:07 [No]
+INFO 2023-05-17 00:41:07,697 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:41:07,698 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:41:07,698 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:41:07 [No]
+INFO 2023-05-17 00:41:07,707 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:41:07,708 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:41:07,708 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:41:07 [Yes]
+INFO 2023-05-17 00:41:10,369 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:41:11,255 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:41:11,261 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:41:11,382 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:41:11,383 base>views><module> -SCH- Now:05/16/2023, 16:41:11
+INFO 2023-05-17 00:41:11,465 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:41:11,465 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:41:11,466 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:41:11 [No]
+INFO 2023-05-17 00:41:11,514 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:41:11,514 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:41:11,515 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:41:11 [No]
+INFO 2023-05-17 00:41:11,524 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:41:11,524 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:41:11,525 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:41:11 [Yes]
+INFO 2023-05-17 00:41:14,179 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-05-17 00:41:15,147 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 00:41:15,152 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 00:41:15,249 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 00:41:15,250 base>views><module> -SCH- Now:05/16/2023, 16:41:15
+INFO 2023-05-17 00:41:15,330 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:41:15,331 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:41:15,331 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:41:15 [No]
+INFO 2023-05-17 00:41:15,373 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 00:41:15,374 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 00:41:15,374 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 16:41:15 [No]
+INFO 2023-05-17 00:41:15,381 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 00:41:15,382 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 00:41:15,382 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 16:41:15 [Yes]
+INFO 2023-05-17 00:41:18,286 runserver>log_action [mHTTP GET / 200 [0.06, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:41:19,707 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:41:20,856 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.08, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:41:31,040 runserver>log_action [mHTTP GET /user/ 200 [0.07, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:41:34,693 runserver>log_action [mHTTP GET /update-user/5/ 200 [0.13, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:41:45,637 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:41:51,430 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.06, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:42:00,259 runserver>log_action [32mHTTP POST /update-user/3/ 302 [0.09, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:42:00,322 runserver>log_action [mHTTP GET /user/ 200 [0.06, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:42:04,691 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.06, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:42:12,374 runserver>log_action [32mHTTP POST /update-user/3/ 302 [0.11, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:42:12,437 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:42:33,864 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:42:35,577 runserver>log_action [mHTTP GET /softkey_login/ 200 [0.08, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:43:05,529 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:43:10,995 runserver>log_action [mHTTP GET /update-user/5/ 200 [0.13, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:43:12,859 runserver>log_action [32mHTTP POST /update-user/5/ 302 [0.15, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:43:12,915 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:57959][0m
+INFO 2023-05-17 00:50:50,818 runserver>log_action [mHTTP GET /softkey_login/ 200 [0.07, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:50:52,545 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:50:54,536 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:50:56,546 runserver>log_action [32mHTTP POST /update-user/3/ 302 [0.09, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:50:56,605 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:51:15,688 runserver>log_action [32mHTTP GET /user/ 302 [0.00, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:51:15,697 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:51:15,775 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.05, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:51:15,782 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.06, 127.0.0.1:58843][0m
+INFO 2023-05-17 00:51:15,785 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:58844][0m
+INFO 2023-05-17 00:51:15,789 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:58845][0m
+INFO 2023-05-17 00:51:16,683 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:58845][0m
+INFO 2023-05-17 00:51:19,293 runserver>log_action [32mHTTP POST /login/ 302 [0.18, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:51:19,331 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:51:19,364 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:58845][0m
+INFO 2023-05-17 00:51:20,470 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:51:22,288 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:51:22,317 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:58845][0m
+INFO 2023-05-17 00:51:23,792 runserver>log_action [32mHTTP POST /update-user/3/ 302 [0.11, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:51:23,846 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:51:48,345 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:51:48,375 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:58845][0m
+INFO 2023-05-17 00:51:50,116 runserver>log_action [32mHTTP POST /update-user/3/ 302 [0.09, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:51:50,169 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:58817][0m
+INFO 2023-05-17 00:51:50,195 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:58845][0m
+INFO 2023-05-17 00:54:14,884 runserver>log_action [mHTTP GET /softkey_login/ 200 [0.06, 127.0.0.1:58916][0m
+INFO 2023-05-17 00:54:14,924 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:58919][0m
+INFO 2023-05-17 01:13:11,313 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 01:13:12,105 base>apps>ready    *** Queuing System Started ***
+INFO 2023-05-17 01:13:12,111 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-05-17 01:13:12,203 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-05-17 01:13:12,203 base>views><module> -SCH- Now:05/16/2023, 17:13:12
+INFO 2023-05-17 01:13:12,284 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 01:13:12,284 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 01:13:12,285 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 17:13:12 [No]
+INFO 2023-05-17 01:13:12,330 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-05-17 15:59:59 Local:2023-05-17 23:59:59
+INFO 2023-05-17 01:13:12,330 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-05-17 01:13:12,330 base>views>init_branch_reset    -SCH- 2023-05-16 15:59:59 > 2023-05-16 17:13:12 [No]
+INFO 2023-05-17 01:13:12,339 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-05-16 18:00:00 Local:2023-05-17 02:00:00
+INFO 2023-05-17 01:13:12,340 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-05-17 01:13:12,340 base>views>init_branch_reset    -SCH- 2023-05-16 18:00:00 > 2023-05-16 17:13:12 [Yes]
+INFO 2023-05-17 01:13:44,440 runserver>log_action [mHTTP GET /softkey_login/ 200 [0.09, 127.0.0.1:59395][0m
+INFO 2023-05-17 01:13:44,509 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.05, 127.0.0.1:59395][0m
+INFO 2023-05-17 01:13:45,494 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:59395][0m
+INFO 2023-05-17 01:13:45,527 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:59398][0m
+INFO 2023-05-17 01:13:47,041 runserver>log_action [mHTTP GET /update-user/5/ 200 [0.12, 127.0.0.1:59395][0m
+INFO 2023-05-17 01:13:47,071 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:59398][0m
+INFO 2023-05-17 01:13:54,662 runserver>log_action [32mHTTP POST /update-user/5/ 302 [0.14, 127.0.0.1:59395][0m
+INFO 2023-05-17 01:13:54,718 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:59395][0m
+INFO 2023-05-17 01:13:54,743 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:59398][0m
+INFO 2023-05-17 01:14:07,720 runserver>log_action [mHTTP GET /update-user/5/ 200 [0.12, 127.0.0.1:59395][0m
+INFO 2023-05-17 01:14:07,754 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:59398][0m
+INFO 2023-05-17 01:14:09,555 runserver>log_action [32mHTTP POST /update-user/5/ 302 [0.17, 127.0.0.1:59395][0m
+INFO 2023-05-17 01:14:09,616 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:59395][0m
+INFO 2023-05-17 01:14:15,952 runserver>log_action [mHTTP GET /update-user/9/ 200 [0.14, 127.0.0.1:59395][0m
+INFO 2023-05-17 01:14:15,980 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:59398][0m
+INFO 2023-05-17 01:14:17,734 runserver>log_action [32mHTTP POST /update-user/9/ 302 [0.16, 127.0.0.1:59395][0m
+INFO 2023-05-17 01:14:17,793 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:59395][0m
+INFO 2023-05-17 01:16:40,133 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:59446][0m
+INFO 2023-05-17 01:16:40,162 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:59446][0m
+INFO 2023-05-17 01:16:49,206 runserver>log_action [mHTTP POST /update-user/3/ 200 [0.07, 127.0.0.1:59446][0m
+INFO 2023-05-17 01:18:36,230 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:18:36,260 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:18:37,712 runserver>log_action [mHTTP GET /branch/ 200 [0.04, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:18:38,678 runserver>log_action [mHTTP GET /update-branch/1/ 200 [0.02, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:18:40,472 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:18:44,428 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:18:45,544 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.02, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:18:51,081 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:18:52,715 runserver>log_action [mHTTP GET /routes/ 200 [0.05, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:18:54,420 runserver>log_action [mHTTP GET /update-route/1 200 [0.05, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:18:57,764 runserver>log_action [mHTTP GET /routes/ 200 [0.05, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:18:59,083 runserver>log_action [mHTTP GET /supervisors/ 200 [0.04, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:19:00,410 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.18, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:19:01,550 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:19:02,623 runserver>log_action [mHTTP GET /softkey_login/ 200 [0.06, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:19:06,717 runserver>log_action [mHTTP GET /branch/ 200 [0.05, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:19:06,748 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:19:09,004 runserver>log_action [mHTTP GET /update-branch/1/ 200 [0.03, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:19:10,427 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:19:12,164 runserver>log_action [mHTTP GET /branch/ 200 [0.04, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:19:14,309 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:19:15,151 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.02, 127.0.0.1:48676][0m
+INFO 2023-05-17 01:20:42,744 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:20:42,767 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:20:43,718 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:20:44,701 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.06, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:20:47,974 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:20:48,683 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.06, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:20:48,892 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:21:00,343 runserver>log_action [32mHTTP GET / 302 [0.00, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:21:00,354 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:21:00,386 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:21:00,392 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48950][0m
+INFO 2023-05-17 01:21:00,394 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:21:00,396 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:48951][0m
+INFO 2023-05-17 01:21:01,254 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:21:04,311 runserver>log_action [32mHTTP POST /login/ 302 [0.17, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:21:04,352 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:21:05,350 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:21:06,474 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:21:21,003 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.08, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:21:57,858 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.09, 127.0.0.1:48920][0m
+INFO 2023-05-17 01:21:57,875 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:22:10,718 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:22:10,739 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:22:23,797 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.09, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:22:23,816 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:22:37,386 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.09, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:22:37,402 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:22:48,278 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:22:48,293 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:22:54,955 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.06, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:22:54,969 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:00,405 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:00,443 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:02,451 runserver>log_action [mHTTP GET /branch/ 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:02,479 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:03,889 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:03,917 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:04,916 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.02, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:04,942 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:06,987 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:07,014 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:08,354 runserver>log_action [mHTTP GET /routes/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:08,386 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:09,451 runserver>log_action [mHTTP GET /update-route/1 200 [0.03, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:09,478 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:37,056 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:37,097 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:38,418 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:39,127 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.02, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:50,403 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.02, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:50,419 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:23:51,485 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.03, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:24:08,541 runserver>log_action [32mHTTP GET /logout/ 302 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:24:08,553 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:24:08,587 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:24:08,592 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:49301][0m
+INFO 2023-05-17 01:24:08,594 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:49302][0m
+INFO 2023-05-17 01:24:08,599 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:24:08,971 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:24:14,833 runserver>log_action [32mHTTP POST /login/ 302 [0.15, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:24:14,876 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:24:16,458 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:24:16,493 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:24:17,160 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:24:18,538 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:24:20,330 runserver>log_action [mHTTP GET /branch/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:24:21,855 runserver>log_action [mHTTP GET /tfs/ 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:24:22,564 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.02, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:25:18,772 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.02, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:25:18,790 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:25:26,656 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.03, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:25:26,674 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:25:35,294 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.03, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:25:35,310 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:25:46,235 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.02, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:25:46,252 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:25:52,974 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:25:52,990 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:25:58,629 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.03, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:25:58,646 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:04,681 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:04,713 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:06,139 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:06,173 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:06,882 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:06,913 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:12,342 runserver>log_action [32mHTTP GET /logout/ 302 [0.02, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:12,350 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:12,380 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:30,595 runserver>log_action [32mHTTP POST /login/ 302 [0.17, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:30,638 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:30,674 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:32,513 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:33,318 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:33,350 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:34,440 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:35,416 runserver>log_action [mHTTP GET /branch/ 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:37,008 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:37,037 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:38,200 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.02, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:40,402 runserver>log_action [mHTTP GET /tfs/ 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:41,342 runserver>log_action [mHTTP GET /routes/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:41,376 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:26:42,064 runserver>log_action [mHTTP GET /update-route/1 200 [0.03, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:02,472 runserver>log_action [mHTTP GET /update-route/1 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:02,484 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:34,662 runserver>log_action [mHTTP GET /routes/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:34,700 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:35,853 runserver>log_action [mHTTP GET /routes/ 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:36,504 runserver>log_action [mHTTP GET /supervisors/ 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:37,714 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.08, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:38,813 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:39,934 runserver>log_action [mHTTP GET /softkey_login/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:40,929 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:42,365 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.06, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:46,087 runserver>log_action [mHTTP GET /user/ 200 [0.07, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:46,116 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:47,217 runserver>log_action [mHTTP GET /branch/ 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:48,457 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:50,080 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.03, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:27:53,890 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:13,388 runserver>log_action [mHTTP GET /branch/ 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:13,412 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:15,211 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:17,088 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.08, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:18,636 runserver>log_action [32mHTTP POST /update-user/3/ 302 [0.09, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:18,688 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:21,421 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:26,878 runserver>log_action [mHTTP POST /update-user/3/ 200 [0.07, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:26,892 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:44,541 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.09, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:44,566 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:46,239 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:46,275 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:48,674 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:48,708 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:50,849 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:50,879 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:51,773 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:51,799 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:56,683 runserver>log_action [mHTTP POST /update-user/3/ 200 [0.07, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:28:56,704 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:29:14,215 runserver>log_action [32mHTTP POST /update-user/3/ 302 [0.08, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:29:14,278 runserver>log_action [mHTTP GET /user/ 200 [0.06, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:29:14,307 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:29:19,728 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:29:19,747 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:29:21,844 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:29:23,494 runserver>log_action [mHTTP GET /update-tf/1/ 200 [0.04, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:29:23,519 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48952][0m
+INFO 2023-05-17 01:33:40,337 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:54282][0m
+INFO 2023-05-17 01:33:40,367 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:54282][0m
+INFO 2023-05-17 01:33:41,618 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:54282][0m
+INFO 2023-05-17 01:33:42,390 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:54282][0m
+INFO 2023-05-17 01:39:59,863 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:61677][0m
+INFO 2023-05-17 01:39:59,880 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:61677][0m
+INFO 2023-05-17 01:40:02,753 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.08, 127.0.0.1:61677][0m
+INFO 2023-05-17 01:40:02,767 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:61677][0m
+INFO 2023-05-17 01:42:06,035 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:61928][0m
+INFO 2023-05-17 01:42:06,051 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:61928][0m
+INFO 2023-05-17 01:42:10,602 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:61928][0m
+INFO 2023-05-17 01:42:10,630 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:42:11,631 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:61928][0m
+INFO 2023-05-17 01:42:11,660 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:42:12,443 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.08, 127.0.0.1:61928][0m
+INFO 2023-05-17 01:42:12,476 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:42:44,569 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.08, 127.0.0.1:61928][0m
+INFO 2023-05-17 01:42:44,586 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:43:16,025 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.07, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:43:16,043 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:43:17,137 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:43:17,165 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:43:19,582 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:43:19,610 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:43:21,267 runserver>log_action [mHTTP GET /update-user/5/ 200 [0.15, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:43:21,297 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:44:04,875 runserver>log_action [mHTTP GET /update-user/5/ 200 [0.13, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:44:04,889 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:44:15,957 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:44:15,990 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:44:17,364 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:44:17,393 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:44:18,548 runserver>log_action [mHTTP GET /update-user/5/ 200 [0.12, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:44:18,576 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:61932][0m
+INFO 2023-05-17 01:45:42,642 runserver>log_action [mHTTP GET /update-user/5/ 200 [0.12, 127.0.0.1:62544][0m
+INFO 2023-05-17 01:45:42,657 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62544][0m
+INFO 2023-05-17 01:45:45,225 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:62544][0m
+INFO 2023-05-17 01:45:45,253 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:62547][0m
+INFO 2023-05-17 01:46:48,032 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:62774][0m
+INFO 2023-05-17 01:46:48,060 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62774][0m
+INFO 2023-05-17 01:46:48,979 runserver>log_action [mHTTP GET /update-user/3/ 200 [0.08, 127.0.0.1:62774][0m
+INFO 2023-05-17 01:46:49,005 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:62777][0m
+INFO 2023-05-17 01:46:51,582 runserver>log_action [mHTTP GET / 200 [0.06, 127.0.0.1:62774][0m
+INFO 2023-05-17 01:46:51,613 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:62777][0m
