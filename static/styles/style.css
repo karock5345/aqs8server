@@ -135,6 +135,26 @@ a {
   bottom: 3rem;
 }
 
+.softkey_btn_cc {
+  height: 3.5rem;
+  background-color: transparent;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 2.4rem;
+  min-width: 20rem;
+  /* the buttom text auto align center */
+  /* text-align: center; */
+  /* q:not work */
+  justify-content: center;
+}
+
 @media screen and (max-width: 800px) {
   .softkey_btn{
     margin-top: 0.5rem;
@@ -165,7 +185,12 @@ a {
   background-color: var(--color-main);
   color: var(--color-dark);
 }
-
+/* .btn--main disabled  */
+.btn--main[disabled] {
+  background-color: var(--color-dark-light);
+  color: var(--color-dark);
+  cursor: not-allowed;
+}
 .btn:hover {
   opacity: 0.9;
 }
@@ -1367,7 +1392,18 @@ color: white;
   border-style: inset;
   border-color: var(--color-main);
   padding: 1rem;
-} 
+}
+
+.softkey_cc_call_container{
+  display: flex;
+  justify-content: space-between;
+  /* padding-top: 0.5rem;
+  padding-bottom: 0.5rem; */
+  background-color: none;
+  
+  padding: 0.5rem;
+}
+
 /* softkey_call_container when small screen will change items to vertical and center align */
 
 .printer_ready_text {

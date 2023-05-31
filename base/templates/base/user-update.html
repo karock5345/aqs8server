@@ -103,14 +103,16 @@
 
 
     {{ userp.tickettype|json_script:"js-tt" }}
+    {{ userptt|json_script:"js-userptt" }}
     <script>
+        var userptt = JSON.parse(document.getElementById('js-userptt').textContent);
         var tickettype = JSON.parse(document.getElementById('js-tt').textContent);
         // how to get all the checkbox id and value
         var checkboxes = document.querySelectorAll('input[type="checkbox"]');
         var btn_cancel = document.getElementById('id_tt_cancel');
 
         // check tickettype do not have character "{" or "}" then set to ""
-        if (!(tickettype.indexOf("{") > -1 || tickettype.indexOf("}") > -1)) {
+        if (!(tickettype.indexOf(",") > -1 || tickettype == "")) {
             tickettype = "";
             document.getElementById('id_a_tickettype').innerHTML = "No ticket type";
             document.getElementById('id_text_tickettype').value = "No ticket type";
@@ -127,10 +129,10 @@
                 var tt = this.id.replace("id_chk_", "");
                 if (this.checked) {
                     // Checkbox is checked..
-                    tickettype = tickettype + "{" + tt + "}";
+                    tickettype = tickettype + tt + ",";
                 } else {
                     // Checkbox is not checked..
-                    tickettype = tickettype.replace("{" + tt + "}", "");
+                    tickettype = tickettype.replace(tt + ",", "");
                 }
                 document.getElementById('lbl_tickettype').innerHTML = tickettype;
             });

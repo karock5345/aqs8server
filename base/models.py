@@ -12,6 +12,11 @@ lcounterstatus = [
                 'done',
                 'miss',
                 'void',
+                'ACW',
+                'AUX',
+                'ready',
+                'login',
+                'walking',               
                 ]
 
 class testingModel(models.Model):
@@ -47,7 +52,7 @@ class Branch(models.Model):
        default=BYTIME,
        null=False,
     )
-    queuemask =  models.CharField(default='{A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}', max_length=200, null=False)
+    queuemask =  models.CharField(default='A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,', max_length=200, null=False)
 
     # ticket settings
     tickettimestart = models.TimeField(default=datetime.time(8, 0, 0))
@@ -93,7 +98,7 @@ class UserProfile(models.Model):
     ]
     user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True)
     
-    tickettype = models.CharField(default='{A}{B}{C}{D}{E}{F}{G}{H}{I}{J}{K}{L}{M}{N}{O}{P}{Q}{R}{S}{T}{U}{V}{W}{X}{Y}{Z}', max_length=200, null=True, blank=True, help_text='Ticket type',)
+    tickettype = models.CharField(default='A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,', max_length=200, null=True, blank=True, help_text='Ticket type',)
     queuepriority = models.CharField(
        max_length=32,
        choices=PRIORITY,
@@ -165,7 +170,11 @@ class CounterType(models.Model):
     lang2 = models.CharField(max_length=200, null=True)
     lang3 = models.CharField(max_length=200, null=True)    
     lang4 = models.CharField(max_length=200, null=True)    
-    displayscrollingtext = models.TextField(null=False, blank=False, default='Testing 123...') 
+    displayscrollingtext = models.TextField(null=False, blank=False, default='Testing 123...')
+    countermode = models.CharField(max_length=200, null=False, blank=False, default='normal') # normal, callcentre
+    nextcounter = models.IntegerField(default=0)  # only for CallCentre mode system auto assign ticket to counter 
+                                                  # this is NOT counter number, system will generate a list of counterstatus. 
+                                                  # This number is the index of the list
 
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
@@ -339,6 +348,16 @@ class CounterLoginLog(models.Model) :
     logintime = models.DateTimeField(null=True, blank=True)
     logouttime = models.DateTimeField(null=True, blank=True)
 
+class UserStatusLog(models.Model) :
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
+    status = models.TextField(default=lcounterstatus[0])
+    starttime = models.DateTimeField(null=True, blank=True)
+    endtime = models.DateTimeField(null=True, blank=True)
+    ticket = models.ForeignKey(Ticket, on_delete=models.SET_NULL, blank=True, null=True)
+    
+    updated = models.DateTimeField(auto_now=True,)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+    
 class PrinterStatus(models.Model):       
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)  # if name='global' branch should be null
     printernumber = models.TextField(null=True, blank=True)

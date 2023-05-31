@@ -1,15 +1,12 @@
-from datetime import datetime
-from django.utils import timezone
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
 from django.db.models import Q
-from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, counteractive
+from .views import counteractive
 from .v_display import newdisplayvoice
-from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
-from .serializers import waitinglistSerivalizer
+from base.models import CounterStatus, CounterType, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus, UserStatusLog
 from base.ws import wssendwebtv, wssendql, wsSendTicketStatus, wssendvoice, wscounterstatus
+import logging
 
-softkey_version = '8.0.2.0'
+logger = logging.getLogger(__name__)
+softkey_version = '8.1.0.0'
 
 def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     status = dict({})
@@ -50,31 +47,41 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
                 mask = branch.queuemask 
             if qp == 'user':
                 priority = 'umask'
-                mask = userp.tickettype 
+                mask = userp.tickettype
         if mask == '' or priority == '' :
             status = dict({'status': 'Error'})
             msg =  dict({'msg':'Queue priority not found (qp:' + qp + ') '+ mask + '<-mask , priority->' + priority})   
         if mask != '' and priority == 'bmask' :
+            l_mask = mask.split(',')
             new_mask=''
+            l_new_mask = []
             mask_b = mask
             # remove all space in mask_b
             mask_b = mask_b.replace(' ', '')
             u_tt = userp.tickettype
             u_tt = u_tt.replace(' ', '')
+            l_mask_b = mask_b.split(',')
+            l_u_tt = u_tt.split(',')
 
-            istart = 0
-            # get text inside mask_b string format '{x}{y}{z}' -> x,y,z
-            for i in range(len(mask_b)):
-                if mask_b[i] == '{':
-                    for j in range(i+1, len(mask_b)):
-                        if mask_b[j] == '}':
-                            tt = mask_b[i:j+1]
-                            istart = j + 1
-                            if u_tt.find(tt) != -1 :
-                                new_mask  = new_mask + tt
-                            break                   
+            # check user ticket type in branch mask
+            for tt in l_mask_b:
+                if tt in l_u_tt:
+                    new_mask = new_mask + tt + ','
+                    l_new_mask.append(tt)
+
+            # istart = 0
+            # # get text inside mask_b string format '{x}{y}{z}' -> x,y,z
+            # for i in range(len(mask_b)):
+            #     if mask_b[i] == '{':
+            #         for j in range(i+1, len(mask_b)):
+            #             if mask_b[j] == '}':
+            #                 tt = mask_b[i:j+1]
+            #                 istart = j + 1
+            #                 if u_tt.find(tt) != -1 :
+            #                     new_mask  = new_mask + tt
+            #                 break                   
             mask = new_mask
-            print('new branch mask:' + new_mask)
+            l_mask = l_new_mask
         if priority == 'bmask' or priority == 'umask' :
             priority = 'mask'
     if status == dict({}) :
@@ -95,9 +102,9 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
         counterstatus.save()
 
         # check counter status
-        if counterstatus.status != 'waiting' :
+        if not(counterstatus.status == 'waiting' or counterstatus.status == 'ready') :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':'Counter status is not WAITING'})  
+            msg =  dict({'msg':'Counter status is not WAITING/READY'})  
         elif counterstatus.tickettemp != None :
             status = dict({'status': 'Error'})
             msg =  dict({'msg':'Counter still processing ticket:' + counterstatus.tickettemp.tickettype + counterstatus.tickettemp.ticketnumber})  
@@ -105,34 +112,43 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
 
 
     if status == dict({}) :
-
+        mask = mask.replace(' ', '')
+        l_mask = mask.split(',')
         ticket = None
 
         if priority== 'time':
             # found the waiting ticket by time
-            ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0])  & Q(locked=False)   ).order_by('tickettime')            
+            ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')            
             for ticket in ticketlist:
-                tt = '{' + ticket.tickettype + '}'
-                if mask.find(tt) != -1:
+                tt =  ticket.tickettype 
+                if ticket.tickettype in l_mask:
                     # call this ticket
                     context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
                     break
         elif priority == 'mask':
-            ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0])  & Q(locked=False)   ).order_by('tickettime')
-            istart = 0
-            for i in range(len(mask)):
-                if mask[i] == '{':
-                    for j in range(i+1, len(mask)):
-                        if mask[j] == '}':
-                            tt = mask[i:j+1]
-                            istart = j + 1
-                            for ticket in ticketlist:
-                                if tt == '{' + ticket.tickettype + '}':
-                                    # call this ticket
-                                    context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
-                                    break
-                            if context != dict({}):
-                                break
+            ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')
+
+            for tt in l_mask:
+                for ticket in ticketlist:
+                    if tt == ticket.tickettype:
+                        # call this ticket
+                        context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
+                        break
+                if context != dict({}):
+                    break
+            # for i in range(len(mask)):
+            #     if mask[i] == '{':
+            #         for j in range(i+1, len(mask)):
+            #             if mask[j] == '}':
+            #                 tt = mask[i:j+1]
+            #                 istart = j + 1
+            #                 for ticket in ticketlist:
+            #                     if tt == '{' + ticket.tickettype + '}':
+            #                         # call this ticket
+            #                         context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
+            #                         break
+            #                 if context != dict({}):
+            #                     break
 
                     # tt = mask[istart:i+1] # tt = '{A}'
                     # istart = i + 1
@@ -141,8 +157,8 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
                     #         # call this ticket
                     #         context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
                     #         break
-                    if context != dict({}):
-                        break
+                    # if context != dict({}):
+                    #     break
 
             # for tt in mask:
             #     for ticket in ticketlist:
@@ -278,6 +294,19 @@ def funCounterProcess(user, branch, countertype, counterstatus, logtext, rx_app,
             logtext= logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
             user=user,
         )
+        # call centre mode only
+        if countertype.countermode != 'normal':
+            # end of 'walking' period
+            objusl = UserStatusLog.objects.filter(Q(user=user) & Q(status=lcounterstatus[lcounterstatus.index('walking')]) & Q(endtime=None))
+            for usl in objusl:
+                usl.endtime = datetime_now
+                usl.save()
+            # start of 'processing' period
+            UserStatusLog.objects.create(
+                user = user,
+                starttime = datetime_now,
+                status = lcounterstatus[lcounterstatus.index('processing')],
+            )  
         # websocket to web softkey for update counter status
         wscounterstatus(counterstatus)
 
@@ -386,6 +415,14 @@ def funCounterComplete(user, branch, countertype, counterstatus, logtext, rx_app
                 logtext= 'Next step ' + logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
                 user=user,
             )
+
+            # call centre mode only
+            if countertype.countermode != 'normal':
+                objusl = UserStatusLog.objects.filter(Q(user=user) & Q(status=lcounterstatus[lcounterstatus.index('processing')]) & Q(endtime=None))
+                for usl in objusl:
+                    usl.endtime = datetime_now
+                    usl.save()
+
         # websocket to web my ticket
         wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
         # websocket to web softkey for update counter status
@@ -451,6 +488,19 @@ def funCounterMiss(user, branch, countertype, counterstatus, logtext, rx_app, rx
             logtext=logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
             user=user,
         )
+
+
+        # Call Centre mode only
+        if countertype.countermode != 'normal':
+            # end of 'walking' period
+            objusl = UserStatusLog.objects.filter(Q(user=user) & Q(status=lcounterstatus[lcounterstatus.index('walking')]) & Q(endtime=None))
+            for usl in objusl:
+                usl.endtime = datetime_now
+                usl.save()
+            # turn to 'AUX' status
+            counterstatus.status = lcounterstatus[lcounterstatus.index('AUX')]
+            counterstatus.save()
+
 
         # websocket to web my ticket
         wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
@@ -640,6 +690,7 @@ def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, co
     return status, msg, context
 
 def funCounterLogout(counterstatus, datetime_now):
+
     logoutOK = logcounterlogout(counterstatus.user, counterstatus.countertype, counterstatus.counternumber, counterstatus.logintime, datetime_now)
     if logoutOK == 'OK' :
         # counter replace new user
@@ -691,80 +742,81 @@ def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber,
     ttype=''
     tno = ''
     ttime=''
-    # check the counter is already login 
+    # check the user come back to counter
     if status == dict({}) :
-        if counterstatus.loged == True :
-            # need auto logout ? and then login again
-            timediff = datetime_now - counterstatus.lastactive 
-            timediff = timediff.seconds / 60
-            if timediff >= counteractive : # if the counter keep active > 3 minutes then auto logout and the counter replace the new user
-                # auto logout and counter replace new user
-                autologoutOK = logcounterlogout(counterstatus.user, countertype, rx_counternumber, counterstatus.logintime, counterstatus.lastactive)
-                if autologoutOK == 'OK' :
-                    # counter replace new user
-                    counterstatus.user = user
-                    counterstatus.loged = True
-                    counterstatus.logintime = datetime_now
-                    counterstatus.lastactive = datetime_now
-                    counterstatus.save()
-
-                    logcounterlogin(user, countertype, rx_counternumber, datetime_now)
-                    status = dict({'status': 'OK'})
-                    msg =  dict({'msg':'Have a nice day'})  
-
-
-                    if counterstatus.tickettemp != None:
-                        ttype = counterstatus.tickettemp.tickettype
-                        tno = counterstatus.tickettemp.ticketnumber
-                        ttime = counterstatus.tickettemp.tickettime
-
-                    # context = {'name': user.first_name + ' ' + user.last_name , 'ttype': userp.tickettype, 'timezone': branch.timezone,
-                    # 'counterstatus':counterstatus.status, 'tickettype':ttype, 'ticketnumber':tno, 'tickettime':ttime,
-                    # 'ticketnoformat':branch.ticketnoformat,
-                    # }
-                    # context = dict({'data':context})    
-                else:
-                    status = dict({'status': 'Error'})
-                    msg =  dict({'msg':'Counter auto logout fault'}) 
-            else :
-                # no need create new Counter Login Log
-                # check is same user
-                if counterstatus.user == user:
-                    counterstatus.lastactive = datetime_now
-                    counterstatus.save()
-                    status = dict({'status': 'OK'})
-                    msg =  dict({'msg':'Have a nice day'})  
-
-                    if counterstatus.tickettemp != None:
-                        ttype = counterstatus.tickettemp.tickettype
-                        tno = counterstatus.tickettemp.ticketnumber
-                        ttime = counterstatus.tickettemp.tickettime
-
-                    # context = {'name': user.first_name + ' ' + user.last_name , 'ttype': userp.tickettype, 'timezone': branch.timezone,
-                    # 'counterstatus':counterstatus.status, 'tickettype':ttype, 'ticketnumber':tno, 'tickettime':ttime,
-                    # 'ticketnoformat':branch.ticketnoformat,
-                    # }
-                    # context = dict({'data':context})    
-                else :
-                    status = dict({'status': 'Error'})
-                    msg =  dict({'msg':'Counter already logged-in'})  
-        else:
-            if status == dict({}) :
-                # login 
-                counterstatus.user = user
-                counterstatus.loged = True
-                counterstatus.logintime = datetime_now
+        if counterstatus.loged == True:
+            if counterstatus.user == user :
+                # user come back to counter
                 counterstatus.lastactive = datetime_now
-                counterstatus.save()       
-
-                logcounterlogin(user, countertype, rx_counternumber, datetime_now)
+                counterstatus.save()
                 status = dict({'status': 'OK'})
-                msg =  dict({'msg':'Have a nice day'})  
+                msg =  dict({'msg':'Welcome back'})  
 
                 if counterstatus.tickettemp != None:
                     ttype = counterstatus.tickettemp.tickettype
                     tno = counterstatus.tickettemp.ticketnumber
                     ttime = counterstatus.tickettemp.tickettime
+
+                # context = {'name': user.first_name + ' ' + user.last_name , 'ttype': userp.tickettype, 'timezone': branch.timezone,
+                # 'counterstatus':counterstatus.status, 'tickettype':ttype, 'ticketnumber':tno, 'tickettime':ttime,
+                # 'ticketnoformat':branch.ticketnoformat,
+                # }
+                # context = dict({'data':context})
+
+            else :
+                # other user login to this counter
+                #  need auto logout ? and then login again
+                timediff = datetime_now - counterstatus.lastactive 
+                timediff = timediff.seconds / 60
+                if timediff >= counteractive : # if the counter keep active > 6 minutes then auto logout and the counter replace the new user
+                    # auto logout and counter replace new user
+                    autologoutOK = logcounterlogout(counterstatus.user, countertype, rx_counternumber, counterstatus.logintime, counterstatus.lastactive)
+                    if autologoutOK == 'OK' :
+                        # counter replace new user
+                        counterstatus.user = user
+                        counterstatus.loged = True
+                        counterstatus.logintime = datetime_now
+                        counterstatus.lastactive = datetime_now
+                        counterstatus.save()
+                        
+                        logcounterlogin(user, countertype, rx_counternumber, datetime_now)
+                        status = dict({'status': 'OK'})
+                        msg =  dict({'msg':'Have a nice day'})  
+
+                        if counterstatus.tickettemp != None:
+                            ttype = counterstatus.tickettemp.tickettype
+                            tno = counterstatus.tickettemp.ticketnumber
+                            ttime = counterstatus.tickettemp.tickettime
+                    else:
+                        status = dict({'status': 'Error'})
+                        msg =  dict({'msg':'Counter auto logout fault'}) 
+                else:
+                    status = dict({'status': 'Error'})
+                    msg =  dict({'msg':'Counter already Login, please wait ' + str(counteractive) + ' minutes'})
+    # normal login
+    if status == dict({}) : 
+        # login 
+        if countertype.countermode == 'normal':
+            pass
+        else :
+            # counter status sould be start at 'AUX'
+            counterstatus.status = lcounterstatus[lcounterstatus.index('AUX')]
+            counterstatus.save()
+
+        counterstatus.user = user
+        counterstatus.loged = True
+        counterstatus.logintime = datetime_now
+        counterstatus.lastactive = datetime_now
+        counterstatus.save()       
+
+        logcounterlogin(user, countertype, rx_counternumber, datetime_now)
+        status = dict({'status': 'OK'})
+        msg =  dict({'msg':'Have a nice day'})  
+
+        if counterstatus.tickettemp != None:
+            ttype = counterstatus.tickettemp.tickettype
+            tno = counterstatus.tickettemp.ticketnumber
+            ttime = counterstatus.tickettemp.tickettime
 
     context = {
         'branch':branch.name,
@@ -821,9 +873,15 @@ def logcounterlogout (user, countertype, counternumber, logintime, logouttime) -
         loginlog.save()
         sOut = 'OK'
 
+    if countertype.countermode != 'normal':
+        obj = UserStatusLog.objects.filter( Q(user=user) & Q(endtime=None) )
+        for usl in obj:
+            usl.endtime = logouttime
+            usl.save()
+
     return sOut
 
-def logcounterlogin (user, countertype, counternumber, logintime) -> str :
+def logcounterlogin (user, countertype, counternumber, logintime) :
 
     CounterLoginLog.objects.create(
             countertype=countertype,
@@ -831,3 +889,187 @@ def logcounterlogin (user, countertype, counternumber, logintime) -> str :
             user = user,
             logintime = logintime,
         )
+    
+    if countertype.countermode != 'normal':
+        # Call centre mode : login counter status is AUX
+        UserStatusLog.objects.create(
+        user = user,
+        starttime = logintime,
+        status = lcounterstatus[lcounterstatus.index('login')],
+        )
+        UserStatusLog.objects.create(
+        user = user,
+        starttime = logintime,
+        status = lcounterstatus[lcounterstatus.index('AUX')],
+        )
+
+def cc_autocall(countertype, rx_app, rx_version, datetime_now):
+    # auto send ticket to counters
+    called = False
+
+    def fun(cs, called, k,):
+        if cs.status == lcounterstatus[lcounterstatus.index('ready')] :
+            # counter is ready
+            user = cs.user
+            branch = cs.countertype.branch
+            logtext = 'CallCentre mode - Auto call '
+            status, msg, context_call = cc_ready(user, branch, countertype, cs, logtext, rx_app, rx_version, datetime_now)
+            if status['status'] == 'OK' and context_call != {'data': {}} :
+                # counter is calling a ticket 
+                called = True
+                new_i = k + 1
+                if new_i >= objcs.count():
+                    new_i = 0
+                countertype.nextcounter = new_i
+                countertype.save()
+            elif status['status'] == 'OK' and context_call == {'data': {}} :
+                # no ticket to call
+                pass
+            else:
+                # error
+                pass
+        return called
+
+    objcs = CounterStatus.objects.filter( Q(countertype=countertype) & Q(enabled=True))
+
+    i = countertype.nextcounter
+    for k in range(i, objcs.count()):
+        
+        cs = objcs[k]
+        called = fun(cs, called, k)
+        if called == True :
+            break
+    if called == False :
+        if i > 0 :
+            for k in range(0, i):
+                cs = objcs[k]
+                called = fun(cs, called, k)
+                if called == True :
+                    break
+
+def cc_ready(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
+    # Softkey pass 'Ready' button
+
+    # if counter status is 'processing' then complete the ticket
+    if counterstatus.status == lcounterstatus[lcounterstatus.index('processing')] :
+        status, msg = funCounterComplete(user, branch, countertype, counterstatus, 'Ticket completed by SK:Ready', rx_app, rx_version, datetime_now)
+        logger.warning('cc_ready status = ' + str(status) + ' msg = ' + str(msg))
+        
+    if counterstatus.status == lcounterstatus[lcounterstatus.index('ACW')] :
+        counterstatus.tickettemp = None
+
+    # user status log for end last status
+    objusl = UserStatusLog.objects.filter( Q(user=user) & Q(endtime=None) & Q(status=counterstatus.status) )
+    if objusl.count() > 0 :
+        for usl in objusl:
+            usl.endtime = datetime_now
+            usl.save()
+    
+    # change status to ready first
+    counterstatus.status = lcounterstatus[lcounterstatus.index('ready')]
+    counterstatus.save()
+    # websocket to web softkey for update counter status
+    wscounterstatus(counterstatus)
+
+    # add user status log 'ready' status
+    objusl = UserStatusLog.objects.filter( Q(user=user) & Q(endtime=None) & Q(status=lcounterstatus[lcounterstatus.index('ready')]) )
+    if objusl.count() == 0 :
+        UserStatusLog.objects.create(
+            user = user,
+            starttime = datetime_now,
+            status = lcounterstatus[lcounterstatus.index('ready')],
+        )
+
+    ############### modify funCounterCall function from only accept 'waiting' to accept 'waiting' and 'ready'
+    status, msg, context_call = funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now)
+    logger.warning('cc_ready status = ' + str(status) + ' msg = ' + str(msg) + ' context_call = ' + str(context_call))
+    if status['status'] == 'OK' and context_call != {'data': {}} :
+        # counter is calling a ticket 
+        # add user status log 'walking' status
+        UserStatusLog.objects.create(
+            user = user,
+            starttime = datetime_now,
+            status = lcounterstatus[lcounterstatus.index('walking')],
+        )
+    elif status['status'] == 'OK' and context_call == {'data': {}} :
+        # no ticket to call 
+        # add user status log 'waiting' status
+        UserStatusLog.objects.create(
+            user = user,
+            starttime = datetime_now,
+            status = lcounterstatus[lcounterstatus.index('waiting')],
+        )  
+    return status, msg, context_call
+
+def cc_aux(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
+    if counterstatus.status == lcounterstatus[lcounterstatus.index('ACW')] :
+        # user status log for ACW status
+        objusl = UserStatusLog.objects.filter( Q(user=user) & Q(endtime=None) & Q(status=lcounterstatus[lcounterstatus.index('ACW')]) )
+        if objusl.count() > 0 :
+            for usl in objusl:
+                usl.endtime = datetime_now
+                usl.save()         
+    if counterstatus.status == lcounterstatus[lcounterstatus.index('ready')] :
+        # user status log for ready status
+        objusl = UserStatusLog.objects.filter( Q(user=user) & Q(endtime=None) & Q(status=lcounterstatus[lcounterstatus.index('ready')]) )
+        if objusl.count() > 0 :
+            for usl in objusl:
+                usl.endtime = datetime_now
+                usl.save()  
+    if counterstatus.status == lcounterstatus[lcounterstatus.index('processing')] :
+        status, msg = funCounterComplete(user, branch, countertype, counterstatus, 'Ticket completed by SK:AUX', rx_app, rx_version, datetime_now)
+
+
+    # change status to AUX
+    counterstatus.status = lcounterstatus[lcounterstatus.index('AUX')]
+    counterstatus.save()
+    # add user status log 'walking' status
+    UserStatusLog.objects.create(
+        user = user,
+        starttime = datetime_now,
+        status = lcounterstatus[lcounterstatus.index('AUX')],
+    )
+    # websocket to web softkey for update counter status
+    wscounterstatus(counterstatus)
+
+def cc_acw(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
+    if counterstatus.status == lcounterstatus[lcounterstatus.index('AUX')] :
+        # user status log for AUX status
+        objusl = UserStatusLog.objects.filter( Q(user=user) & Q(endtime=None) & Q(status=lcounterstatus[lcounterstatus.index('AUX')]) )
+        if objusl.count() > 0 :
+            for usl in objusl:
+                usl.endtime = datetime_now
+                usl.save()         
+    if counterstatus.status == lcounterstatus[lcounterstatus.index('ready')] :
+        # user status log for ready status
+        objusl = UserStatusLog.objects.filter( Q(user=user) & Q(endtime=None) & Q(status=lcounterstatus[lcounterstatus.index('ready')]) )
+        if objusl.count() > 0 :
+            for usl in objusl:
+                usl.endtime = datetime_now
+                usl.save()  
+
+    # if counter status is 'processing' then complete the ticket
+    ticket = None
+    tticket = None
+    if counterstatus.status == lcounterstatus[lcounterstatus.index('processing')] :
+        tticket = counterstatus.tickettemp
+        ticket = counterstatus.tickettemp.ticket
+        status, msg = funCounterComplete(user, branch, countertype, counterstatus, 'Ticket completed by SK:ACW', rx_app, rx_version, datetime_now)
+        # counter status add ticket back
+        counterstatus.tickettemp = tticket
+        counterstatus.save()
+
+        # add 
+    # change status to ACW
+    counterstatus.status = lcounterstatus[lcounterstatus.index('ACW')]
+    counterstatus.save()
+    # add user status log 'ACW' status
+    UserStatusLog.objects.create(
+        user = user,
+        starttime = datetime_now,
+        status = lcounterstatus[lcounterstatus.index('ACW')],
+        ticket = ticket,
+    )
+    # websocket to web softkey for update counter status
+    wscounterstatus(counterstatus)
+

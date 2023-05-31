@@ -11,6 +11,8 @@ from .views import setting_APIlogEnabled, visitor_ip_address, funUTCtoLocal, che
 from .v_roche import rocheSMS
 from base.ws import wssendwebtv, wssendql, wsSendPrintTicket
 import random
+from .v_softkey_sub import cc_autocall
+from .serializers import touchkeysSerivalizer
 
 def gensecuritycode():
     sc = ''
@@ -174,6 +176,9 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
         wsSendPrintTicket(branch.bcode, ttype, ticketno_str, datetime_now, tickettext, pno)
         rocheSMS(branch, tickettemp)
 
+        # call centre mode auto send ticket to counter
+        if countertype.countermode != 'normal':
+            cc_autocall(countertype,  app, version, datetime_now)
 
     return ticketno_str, countertype, tickettemp, ticket, error
 
@@ -299,3 +304,73 @@ def postTicket(request):
     output = status | msg | context
     return Response(output)  
 
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def postTouchKeys(request):
+    # {
+    #    "status":"OK/Error",
+    #    "msg":"Ticket format not found",
+    #    "data":[
+    #         {"tickettype":"A","touchkey_lang1":"一般查詢","touchkey_lang2":"General Enquiry","touchkey_lang3":"---","touchkey_lang4":"---"}   
+    #    ]
+    # }
+    status = dict({})
+    msg = dict({})
+    context = dict({})
+    app = request.GET.get('app') if request.GET.get('app') != None else ''
+    version = request.GET.get('version') if request.GET.get('version') != None else ''
+    bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
+    
+    #datetime_now = datetime.utcnow()
+    datetime_now =timezone.now()
+
+ 
+
+    # check input
+   
+    branch = None
+    if status == dict({}) :        
+        if bcode == '' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'No branch code'})
+        else :
+            # check branch        
+            branchobj = Branch.objects.filter( Q(bcode=bcode) )
+            if branchobj.count() != 1:
+                # branch not found
+                status = dict({'status': 'Error'})
+                msg =  dict({'msg':'Branch not found'})   
+            else:
+                branch = branchobj[0]
+                if branch.enabled == False :
+                    status = dict({'status': 'Error'})
+                    msg =  dict({'msg':'Branch disabled'})
+    
+
+     # Save Api Log
+    if setting_APIlogEnabled(branch) == True :
+        APILog.objects.create(
+            logtime=datetime_now,
+            requeststr = request.build_absolute_uri() ,
+            ip = visitor_ip_address(request),
+            app = app,
+            version = version,
+            logtext = 'API Get Touch Keys',
+        ) 
+
+   
+         
+      
+    if status == dict({}) :
+
+        objticketformat = TicketFormat.objects.filter(branch=branch, enabled=True).order_by('ttype')
+        serializers  = touchkeysSerivalizer(objticketformat, many=True)
+        context = dict({'data':serializers.data})
+       
+        status = dict({'status': 'OK'})                     
+
+        
+
+      
+    output = status | msg | context
+    return Response(output)  

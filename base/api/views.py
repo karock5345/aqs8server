@@ -19,7 +19,7 @@ from .serializers import branchSerivalizer, ticketlistSerivalizer
 
 token_api = 'WrE-1t7IdrU2iB3a0e'
 # if the counter keep active > 6 minutes then auto logout and the counter replace the new user
-counteractive = 6
+counteractive = 1
 
 def checkuser(apiuser, branch, rx_username):
     # check user group is api

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.db import models
 from django import forms
 from .models import TicketTemp, testingModel, Branch, CounterLoginLog, CounterStatus, DisplayAndVoice,  TicketFormat
-from .models import UserProfile, CounterType, Ticket, TicketLog, TicketRoute, TicketData, APILog, Setting, PrinterStatus, SystemLog, WebTouch
+from .models import UserProfile, CounterType, Ticket, TicketLog, TicketRoute, TicketData, APILog, Setting, PrinterStatus, SystemLog, WebTouch, UserStatusLog
 # Register your models here.
 
 
@@ -114,6 +114,10 @@ class WebTouchView(admin.ModelAdmin):
     ordering = ('branch', 'name', )
     list_display = ('name', 'branch', 'enabled',)
 
+class UserStatusLogView(admin.ModelAdmin):
+    model = UserStatusLog
+    ordering = ('-created', )
+    list_display = ('user', 'status', 'starttime', 'endtime', 'ticket')
 
 admin.site.register(testingModel, testingView)
 admin.site.register(UserProfile, UserProfileView)
@@ -133,3 +137,4 @@ admin.site.register(PrinterStatus, PrinterStatusView)
 admin.site.register(DisplayAndVoice, DispView)
 admin.site.register(SystemLog, SystemLogView)
 admin.site.register(WebTouch, WebTouchView)
+admin.site.register(UserStatusLog, UserStatusLogView)

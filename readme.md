@@ -28,10 +28,11 @@
 - Separete Touch Panel API functions to new file : v_touch.py
 - Added TicketFormat , TicketRoute HTML input check
 - Support Ticket Type more than 1 char and not case sensitive (e.g. Ticket type: A, AA, Aa, LAB, ...)
-- userp.Tickettype changed to "{A}{B}{AA}{Aa}{LAB}" from "A, AA, Aa, LAB"
 - user.update.html add HTML ticket type data input by checkbox
 - fixed checkbox only show user related branch
-
+- New Ticketformat will create new ticket route automatically
+- Web Softkey login select Branch first then select Counter
+- New API : /api/touchkeys/ for PCCW Touch Panel
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
@@ -62,7 +63,7 @@ python -m pip install django
 pip install -r requirements.txt
 # new project: 
 django-admin startproject newproj
-# [update package] 
+# [update/ upgrade package] 
 pip install django -U
 #deactivate virtual env:
 .\env\scripts\deactivate

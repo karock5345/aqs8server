@@ -43,7 +43,8 @@ urlpatterns = [
     path('cancel/<str:pk>/<str:sc>/', views.CancelTicketView,  name='cancelticket'),
     path('touch/', views.webtouchView),
 
-    path('softkey_login/', views.SoftkeyLoginView,  name='softkeylogin'),
+    path('softkey_login_b/', views.SoftkeyLoginBranchView,  name='softkeyloginb'),
+    path('softkey_login/<str:pk>/', views.SoftkeyLoginView,  name='softkeylogin'),
     path('softkey/<str:pk>/', views.SoftkeyView, name='softkey'),
     # path('softkey_logout/<str:pk>/', views.SoftkeyLogoutView,  name='softkeylogout'),
     path('softkey_logout/', views.SoftkeyLogoutView,  name='softkeylogout'),

@@ -530,7 +530,8 @@ def wssendwebtv(bcode, countertypename):
     if error == '' : 
 
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
-            
+        for display in displaylist:
+            logger.warning('display:' + str(display.tickettemp))
         wdserializers = displaylistSerivalizer(displaylist, many=True)
         jsontx = {
             "cmd":"list5",

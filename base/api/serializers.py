@@ -1,6 +1,6 @@
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
-from base.models import Branch, DisplayAndVoice, PrinterStatus, Ticket, TicketRoute, TicketTemp
+from base.models import Branch, DisplayAndVoice, PrinterStatus, TicketFormat, TicketRoute, TicketTemp
 # from base.api.views import funUTCtoLocal
 # from django.contrib.auth.models import User
 
@@ -105,6 +105,12 @@ class lastDisplaySerivalizer(ModelSerializer):
         model = TicketRoute
         fields = ('bcode', 'countertype', 'displasttickettype', 'displastticketnumber', 'displastcounter', 'waiting',)
 
+class touchkeysSerivalizer(ModelSerializer):
+    # bcode = serializers.CharField(source='branch.bcode')
+    tickettype = serializers.CharField(source='ttype')
+    class Meta:
+        model = TicketFormat
+        fields = ('tickettype', 'touchkey_lang1', 'touchkey_lang2', 'touchkey_lang3', 'touchkey_lang4')
 
 # # User Serializer
 # class UserSerializer(ModelSerializer):

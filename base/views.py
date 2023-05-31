@@ -17,7 +17,7 @@ from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,tr
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
-from .api.serializers import displaylistSerivalizer
+from .api.serializers import displaylistSerivalizer, waitinglistSerivalizer
 from django.utils import timezone
 # from .api.v_softkey import funVoid
 from .api.v_softkey_sub import *
@@ -129,7 +129,11 @@ def SoftkeyView(request, pk):
         # add new column to context_ql (tickettime_local)
         for i in range(len(context_ql)):
             # convert string context_ql[i]['tickettime'] to datetime
-            utctt = datetime.strptime(context_ql[i]['tickettime'], '%Y-%m-%dT%H:%M:%S.%fZ')
+            try:                
+                utctt = datetime.strptime(context_ql[i]['tickettime'], '%Y-%m-%dT%H:%M:%S.%fZ')
+            except:
+                utctt = datetime.strptime(context_ql[i]['tickettime'], '%Y-%m-%dT%H:%M:%SZ')
+
             context_ql[i]['tickettime_local'] = funUTCtoLocal(utctt, counterstatus.countertype.branch.timezone)
             context_ql[i]['tickettime_local'] = context_ql[i]['tickettime_local'].strftime('%H:%M:%S %Y-%m-%d')
 
@@ -186,8 +190,28 @@ def SoftkeyView(request, pk):
             #         return redirect('softkey', pk=pk)
             #     # funVoid(request.user,tt, td, datetime_now)
             #     render(request, '')
+            elif action == 'logout':
+                status, msg= funCounterLogout(counterstatus, datetime_now)
+                if status['status'] == 'Error':
+                    messages.error(request, msg['msg'])
+                else:
+                    messages.success(request, 'Logout success.')
+                    return redirect('softkeylogin', counterstatus.countertype.branch.id)
+            elif action == 'ready':
+                cc_ready(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Ready button passed', 'Softkey-web', softkey_version, datetime_now)
+            elif action == 'busy':
+                # call centre mode 
+                status, msg = funCounterProcess(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Process ticket :', 'Softkey-web', softkey_version, datetime_now)
+            elif action == 'aux':
+                cc_aux(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'AUX button passed', 'Softkey-web', softkey_version, datetime_now)
+            elif action == 'acw':
+                cc_acw(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'ACW button passed', 'Softkey-web', softkey_version, datetime_now)
+            elif action == 'cancel':
+                status, msg = funCounterMiss(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Miss ticket :', 'Softkey-web', softkey_version, datetime_now)
             elif action == None :
                 pass
+            else:
+                messages.error(request, 'Action not found:' + action)
             return redirect('softkey', pk=pk)
             # q: how to return to same page after post and do not refresh page
             # return render(request, 'base/softkey.html', context_login[pk] | context)
@@ -200,7 +224,10 @@ def SoftkeyView(request, pk):
         context = context | {'qlist' : context_ql}
         # context_login[pk] = context
 
-        return render(request, 'base/softkey.html', context)
+        if counterstatus.countertype.countermode == 'normal':
+            return render(request, 'base/softkey.html', context)
+        else:
+            return render(request, 'base/softkey_callcentre.html', context)
         # pass
     else:
         messages.error(request, error)
@@ -208,7 +235,7 @@ def SoftkeyView(request, pk):
         return redirect('softkeylogin')
 
 @unauth_user
-def SoftkeyLoginView(request):
+def SoftkeyLoginBranchView(request):
     error = ''
     context = {}
 
@@ -235,7 +262,56 @@ def SoftkeyLoginView(request):
         'counterstatus':counterstatus,
         }
 
-        return render(request, 'base/softkey_main.html', context)
+        return render(request, 'base/softkey_lobby_branch.html', context)
+    else :
+        return HttpResponse(error)
+
+@unauth_user
+def SoftkeyLoginView(request, pk):
+    error = ''
+    context = {}
+
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+
+    branch = Branch.objects.get(id=pk)
+
+    user = request.user
+    # get user auth branchs
+    userpobj = UserProfile.objects.filter(user=user)
+    if userpobj.count() == 1 :
+        userp = userpobj[0]
+        # print (userp.user.username)
+    else :
+        error = 'UserProfile not find'
+    if error == '':
+
+        # new version should select branch first then counter
+        # branchs = userp.branchs.all()
+        # counterstatus =[[],[]]        
+        # for branch in branchs :
+        #     countertypes = CounterType.objects.filter(Q(branch=branch))
+        #     for ct in countertypes :
+        #         cs = CounterStatus.objects.filter(Q(countertype=ct)).order_by('countertype', 'counternumber',).exclude(enabled=False)
+        #         counterstatus.append(cs)
+
+
+        # branchs = userp.branchs.all()
+        counterstatus =[[],[]]        
+        # for branch in branchs :
+        countertypes = CounterType.objects.filter(Q(branch=branch))
+        for ct in countertypes :
+            cs = CounterStatus.objects.filter(Q(countertype=ct)).order_by('countertype', 'counternumber',).exclude(enabled=False)
+            counterstatus.append(cs)
+
+
+
+
+        context = {
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes,
+        'counterstatus':counterstatus,
+        }
+
+        return render(request, 'base/softkey_lobby.html', context)
     else :
         return HttpResponse(error)
   
@@ -262,7 +338,7 @@ def SoftkeyLogoutView(request, pk):
 
     if error == '':
         messages.success(request, 'Logout success.')
-        return redirect('softkeylogin')
+        return redirect('softkeylogin', counterstatus.countertype.branch.id)
         # pass
     else:
         messages.error(request, error)
@@ -622,6 +698,11 @@ def webtouchView(request):
       
                     ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, key.ttype, '','', datetime_now, userweb, 'web', '8')
                     if error == '' :
+                        s_now= ''
+                        try:
+                            s_now = datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+                        except:
+                            s_now = datetime_now.strftime('%Y-%m-%dT%H:%M:%SZ')
                         # add ticketlog
                         TicketLog.objects.create(
                             tickettemp=tickettemp,
@@ -629,7 +710,7 @@ def webtouchView(request):
                             logtime=datetime_now,
                             app = 'web',
                             version = '8',
-                            logtext='New Ticket by Web Touch: '  + tickettemp.branch.bcode + '_' + tickettemp.tickettype + '_'+ tickettemp.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+                            logtext='New Ticket by Web Touch: '  + tickettemp.branch.bcode + '_' + tickettemp.tickettype + '_'+ tickettemp.ticketnumber + '_' + s_now ,
                             user=userweb,
                         )
                         # rediect to e-ticket
@@ -708,14 +789,18 @@ def CancelTicketView(request, pk, sc):
             if error == '' :  
                 datetime_now =timezone.now()
                 funVoid(user, tt, td, datetime_now)
-
+                s_now= ''
+                try:
+                    s_now = datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+                except:
+                    s_now = datetime_now.strftime('%Y-%m-%dT%H:%M:%SZ')
                 # add ticketlog
                 TicketLog.objects.create(
                     tickettemp=tt,
                     logtime=datetime_now,
                     app = 'Web',
                     version = '8',
-                    logtext='Ticket Void by web : '  + tt.branch.bcode + '_' + tt.tickettype + '_'+ tt.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+                    logtext='Ticket Void by web : '  + tt.branch.bcode + '_' + tt.tickettype + '_'+ tt.ticketnumber + '_' + s_now ,
                     user=user,
                 )
 
@@ -1275,8 +1360,25 @@ def TicketFormatNewView(request):
         if error == '' :
             try:
                 tf.save()
+                messages.success(request, 'Created new Ticket Format.')
+
             except:
                 error = 'An error occurcd during registration'
+
+            if error == '':
+                # create new ticket route automatically
+                # check if ticket route already exist
+                objct = CounterType.objects.filter(branch=tf.branch)
+                if objct.count() > 0 :
+                    ct = objct[0]
+                    objtr = TicketRoute.objects.filter(branch=tf.branch, tickettype=tf.ttype, countertype=ct, step=1)
+                    if objtr.count() == 0 :
+                        # Create new ticket route
+                        TicketRoute.objects.create(enabled=True, branch=tf.branch, tickettype=tf.ttype, step=1, countertype=ct)
+                        messages.success(request, 'Create new ticket route automatically')
+            else:
+                messages.error(request, error)
+
             return redirect('tfsummary')
         if error != '':
             messages.error(request, error)
@@ -1777,9 +1879,9 @@ def UserUpdateView(request, pk):
             ticketformat2 = ticketformat2.exclude(id=tt.id)
 
     # add column for checked or unchecked to ticketformat2
+    listusertt = userp.tickettype.split(',')
     for tt in ticketformat2:
-        tt2 = '{' + tt.ttype + '}'
-        if userp.tickettype.find(tt2) != -1:
+        if tt.ttype in listusertt:
             tt.checked = 'checked'
         else:
             tt.checked = 'unchecked'
@@ -1839,7 +1941,7 @@ def UserUpdateView(request, pk):
         else:
             messages.error(request, error)
 
-    context =  {'userform':userform , 'profileform':profileform, 'user':user, 'userp':userp,'ticketformat':ticketformat2,}
+    context =  {'userform':userform , 'profileform':profileform, 'user':user, 'userp':userp,'ticketformat':ticketformat2,'userptt':listusertt,}
     return render(request, 'base/user-update.html', context)
 
 @unauth_user
@@ -1953,8 +2055,8 @@ def auth_data(user):
         auth_profilelist = UserProfile.objects.all()
         auth_userlist = User.objects.exclude(Q(groups__name='web'))
         auth_branchs = Branch.objects.all()
-        auth_ticketformats = TicketFormat.objects.all()
-        auth_routes = TicketRoute.objects.all()
+        auth_ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
+        auth_routes = TicketRoute.objects.all().order_by('branch','countertype', 'tickettype', 'step')
         auth_countertype = CounterType.objects.all()
     else :
         profiles = UserProfile.objects.all()
@@ -1978,8 +2080,8 @@ def auth_data(user):
                         
         auth_userlist = User.objects.filter(id__in=userid_list)
         auth_profilelist = UserProfile.objects.filter(id__in=profid_list)
-        auth_ticketformats = TicketFormat.objects.filter(branch__in=auth_branchs)
-        auth_routes = TicketRoute.objects.filter(branch__in=auth_branchs)
+        auth_ticketformats = TicketFormat.objects.filter(branch__in=auth_branchs).order_by('branch','ttype')
+        auth_routes = TicketRoute.objects.filter(branch__in=auth_branchs).order_by('branch','countertype', 'tickettype', 'step')
         auth_countertype = CounterType.objects.filter(branch__in=auth_branchs)
     return(auth_branchs, auth_userlist, auth_profilelist, auth_ticketformats, auth_routes, auth_countertype)
 
