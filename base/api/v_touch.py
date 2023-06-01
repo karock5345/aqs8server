@@ -1,4 +1,3 @@
-
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -307,6 +306,7 @@ def postTicket(request):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def postTouchKeys(request):
+    # for Touch Panel to get the touch keys
     # {
     #    "status":"OK/Error",
     #    "msg":"Ticket format not found",

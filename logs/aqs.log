@@ -2859,3 +2859,113 @@ INFO 2023-06-01 01:12:25,964 base>views>init_branch_reset  -SCH- Next reset [HY]
 INFO 2023-06-01 01:12:25,965 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
 INFO 2023-06-01 01:12:25,965 base>views>init_branch_reset    -SCH- 2023-05-31 18:00:00 > 2023-05-31 17:12:25 [Yes]
 INFO 2023-06-01 01:12:46,982 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=postman&version=8.1 200 [0.04, 127.0.0.1:27332][0m
+INFO 2023-06-01 18:27:43,477 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-01 18:27:44,806 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-01 18:27:44,817 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-01 18:27:45,254 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-01 18:27:45,255 base>views><module> -SCH- Now:06/01/2023, 10:27:45
+INFO 2023-06-01 18:27:45,405 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-01 16:42:00 Local:2023-06-02 00:42:00
+INFO 2023-06-01 18:27:45,406 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-01 18:27:45,406 base>views>init_branch_reset    -SCH- 2023-06-01 16:42:00 > 2023-06-01 10:27:45 [Yes]
+INFO 2023-06-01 18:27:45,477 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-01 15:59:59 Local:2023-06-01 23:59:59
+INFO 2023-06-01 18:27:45,478 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-01 18:27:45,478 base>views>init_branch_reset    -SCH- 2023-06-01 15:59:59 > 2023-06-01 10:27:45 [Yes]
+INFO 2023-06-01 18:27:45,486 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-01 18:00:00 Local:2023-06-02 02:00:00
+INFO 2023-06-01 18:27:45,487 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-01 18:27:45,487 base>views>init_branch_reset    -SCH- 2023-06-01 18:00:00 > 2023-06-01 10:27:45 [Yes]
+INFO 2023-06-01 18:28:13,678 runserver>log_action [mHTTP POST /api/token/ 200 [0.67, 127.0.0.1:58358][0m
+INFO 2023-06-01 18:28:13,990 runserver>log_action [mHTTP GET /api/?app=Voice%20COMP&version=8.1.0.0 200 [0.02, 127.0.0.1:58364][0m
+INFO 2023-06-01 18:28:14,008 runserver>log_action WebSocket HANDSHAKING /ws/voice/KB/Reception/ [127.0.0.1:58367]
+INFO 2023-06-01 18:28:14,179 base>consumers>connect connecting:voice_KB_Reception
+INFO 2023-06-01 18:28:14,205 runserver>log_action WebSocket CONNECT /ws/voice/KB/Reception/ [127.0.0.1:58367]
+INFO 2023-06-01 18:28:17,058 runserver>log_action WebSocket DISCONNECT /ws/voice/KB/Reception/ [127.0.0.1:58367]
+INFO 2023-06-01 18:29:51,416 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:58416][0m
+INFO 2023-06-01 18:29:51,719 runserver>log_action [mHTTP GET /api/?app=Voice%20COMP&version=8.1.0.0 200 [0.02, 127.0.0.1:58419][0m
+INFO 2023-06-01 18:29:51,738 runserver>log_action WebSocket HANDSHAKING /ws/voice/KB/Reception/ [127.0.0.1:58422]
+INFO 2023-06-01 18:29:51,742 base>consumers>connect connecting:voice_KB_Reception
+INFO 2023-06-01 18:29:51,751 runserver>log_action WebSocket CONNECT /ws/voice/KB/Reception/ [127.0.0.1:58422]
+INFO 2023-06-01 18:29:56,766 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:58425][0m
+INFO 2023-06-01 18:30:06,892 runserver>log_action [32mHTTP GET /user/ 302 [0.03, 127.0.0.1:58445][0m
+INFO 2023-06-01 18:30:07,031 runserver>log_action [mHTTP GET /login/ 200 [0.07, 127.0.0.1:58445][0m
+INFO 2023-06-01 18:30:07,854 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.11, 127.0.0.1:58445][0m
+INFO 2023-06-01 18:30:07,859 runserver>log_action [36mHTTP GET /static/images/logo-q.svg 304 [0.11, 127.0.0.1:58448][0m
+INFO 2023-06-01 18:30:07,863 runserver>log_action [36mHTTP GET /static/js/script.js 304 [0.04, 127.0.0.1:58460][0m
+INFO 2023-06-01 18:30:07,921 runserver>log_action [36mHTTP GET /static/images/avatar.svg 304 [0.00, 127.0.0.1:58460][0m
+INFO 2023-06-01 18:30:08,049 runserver>log_action [36mHTTP GET /static/images/favicon.ico 304 [0.00, 127.0.0.1:58460][0m
+INFO 2023-06-01 18:30:09,366 runserver>log_action [mHTTP GET /my/KB/A/215/y1y/ 200 [0.04, 127.0.0.1:58460][0m
+INFO 2023-06-01 18:30:09,369 runserver>log_action [mHTTP GET /touch/?bc=KB&t=t1 200 [0.04, 127.0.0.1:58448][0m
+INFO 2023-06-01 18:30:09,430 runserver>log_action [mHTTP GET /static/styles/styletv.css 200 [0.01, 127.0.0.1:58448][0m
+INFO 2023-06-01 18:30:09,445 runserver>log_action [mHTTP GET /static/icofont/icofont.min.css 200 [0.02, 127.0.0.1:58460][0m
+INFO 2023-06-01 18:30:09,450 runserver>log_action [mHTTP GET /static/images/logo_ts.png 200 [0.02, 127.0.0.1:58445][0m
+INFO 2023-06-01 18:30:09,962 runserver>log_action [32mHTTP GET /admin/auth/user/ 302 [0.05, 127.0.0.1:58445][0m
+INFO 2023-06-01 18:30:09,967 runserver>log_action [mHTTP GET /static/icofont/fonts/icofont.woff2 200 [0.03, 127.0.0.1:58460][0m
+INFO 2023-06-01 18:30:10,135 runserver>log_action [mHTTP GET /admin/login/?next=/admin/auth/user/ 200 [0.15, 127.0.0.1:58445][0m
+INFO 2023-06-01 18:30:10,285 runserver>log_action [36mHTTP GET /static/admin/css/base.css 304 [0.00, 127.0.0.1:58478][0m
+INFO 2023-06-01 18:30:10,361 runserver>log_action [36mHTTP GET /static/admin/css/dark_mode.css 304 [0.01, 127.0.0.1:58478][0m
+INFO 2023-06-01 18:30:10,367 runserver>log_action [36mHTTP GET /static/admin/css/nav_sidebar.css 304 [0.01, 127.0.0.1:58479][0m
+INFO 2023-06-01 18:30:10,493 runserver>log_action [36mHTTP GET /static/admin/css/login.css 304 [0.00, 127.0.0.1:58479][0m
+INFO 2023-06-01 18:30:10,498 runserver>log_action [36mHTTP GET /static/admin/css/responsive.css 304 [0.01, 127.0.0.1:58478][0m
+INFO 2023-06-01 18:30:10,502 runserver>log_action [36mHTTP GET /static/admin/css/fonts.css 304 [0.01, 127.0.0.1:58480][0m
+INFO 2023-06-01 18:30:10,525 runserver>log_action [36mHTTP GET /static/admin/js/nav_sidebar.js 304 [0.00, 127.0.0.1:58480][0m
+INFO 2023-06-01 18:30:10,615 runserver>log_action [36mHTTP GET /static/admin/fonts/Roboto-Regular-webfont.woff 304 [0.00, 127.0.0.1:58480][0m
+INFO 2023-06-01 18:30:10,618 runserver>log_action [36mHTTP GET /static/admin/fonts/Roboto-Light-webfont.woff 304 [0.01, 127.0.0.1:58478][0m
+WARNING 2023-06-01 18:30:10,718 log>log_response Not Found: /favicon.ico
+WARNING 2023-06-01 18:30:10,719 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.06, 127.0.0.1:58478][0m
+INFO 2023-06-01 18:30:28,119 runserver>log_action [32mHTTP POST /login/ 302 [0.25, 127.0.0.1:58518][0m
+INFO 2023-06-01 18:30:28,193 runserver>log_action [mHTTP GET / 200 [0.07, 127.0.0.1:58518][0m
+INFO 2023-06-01 18:30:30,170 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.05, 127.0.0.1:58518][0m
+INFO 2023-06-01 18:30:32,058 runserver>log_action [mHTTP GET /softkey_login/1/ 200 [0.08, 127.0.0.1:58537][0m
+INFO 2023-06-01 18:30:33,485 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.11, 127.0.0.1:58537][0m
+INFO 2023-06-01 18:30:33,523 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:58543]
+INFO 2023-06-01 18:30:33,530 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-06-01 18:30:33,536 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:58543]
+INFO 2023-06-01 18:30:33,550 runserver>log_action WebSocket HANDSHAKING /ws/cs/1/ [127.0.0.1:58544]
+INFO 2023-06-01 18:30:33,556 base>consumers>connect connecting:cs_1
+INFO 2023-06-01 18:30:33,561 runserver>log_action WebSocket CONNECT /ws/cs/1/ [127.0.0.1:58544]
+INFO 2023-06-01 18:30:33,575 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:58545]
+INFO 2023-06-01 18:30:33,580 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-06-01 18:30:33,589 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:58545]
+INFO 2023-06-01 18:30:36,236 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-01 18:30:36,245 base>ws>wscounterstatus ...Done
+WARNING 2023-06-01 18:30:36,350 base>ws>wssendwebtv display:A003
+WARNING 2023-06-01 18:30:36,351 base>ws>wssendwebtv display:A002
+WARNING 2023-06-01 18:30:36,352 base>ws>wssendwebtv display:A001
+INFO 2023-06-01 18:30:36,360 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-01 18:30:36,363 base>ws>wssendwebtv ...Done
+INFO 2023-06-01 18:30:36,369 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-01 18:30:36,373 base>ws>wssendql ...Done
+INFO 2023-06-01 18:30:36,380 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A003_ggV sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-01 18:30:36,383 base>ws>wsSendTicketStatus ...Done
+INFO 2023-06-01 18:30:36,387 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-01 18:30:36,391 base>ws>wssendvoice ...Done
+INFO 2023-06-01 18:30:36,395 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-01 18:30:36,399 base>ws>wscounterstatus ...Done
+WARNING 2023-06-01 18:30:36,400 base>v_softkey_sub>cc_ready cc_ready status = {'status': 'OK'} msg = {} context_call = {'data': {'priority': 'time', 'mask': 'B,A,C,', 'tickettype': 'A', 'ticketnumber': '003', 'tickettime': datetime.datetime(2023, 5, 26, 15, 10, 36, 689875, tzinfo=datetime.timezone.utc)}}
+INFO 2023-06-01 18:30:36,420 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.26, 127.0.0.1:58537][0m
+INFO 2023-06-01 18:30:36,499 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.07, 127.0.0.1:58537][0m
+INFO 2023-06-01 18:30:36,509 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:58545]
+INFO 2023-06-01 18:30:36,511 runserver>log_action WebSocket DISCONNECT /ws/cs/1/ [127.0.0.1:58544]
+INFO 2023-06-01 18:30:36,512 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:58543]
+INFO 2023-06-01 18:30:36,599 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:58553]
+INFO 2023-06-01 18:30:36,606 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-06-01 18:30:36,612 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:58553]
+INFO 2023-06-01 18:30:36,627 runserver>log_action WebSocket HANDSHAKING /ws/cs/1/ [127.0.0.1:58554]
+INFO 2023-06-01 18:30:36,635 base>consumers>connect connecting:cs_1
+INFO 2023-06-01 18:30:36,644 runserver>log_action WebSocket CONNECT /ws/cs/1/ [127.0.0.1:58554]
+INFO 2023-06-01 18:30:36,659 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:58555]
+INFO 2023-06-01 18:30:36,665 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-06-01 18:30:36,672 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:58555]
+INFO 2023-06-01 18:34:49,587 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:58733][0m
+INFO 2023-06-01 18:39:39,587 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:58779][0m
+INFO 2023-06-01 18:43:23,818 runserver>log_action [mHTTP GET /webtv/KB/Reception/ 200 [0.04, 127.0.0.1:58812][0m
+INFO 2023-06-01 18:43:24,388 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:58816]
+INFO 2023-06-01 18:43:24,395 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-06-01 18:43:24,404 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:58816]
+INFO 2023-06-01 18:44:29,581 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:58830][0m
+INFO 2023-06-01 18:49:19,583 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:58849][0m
+INFO 2023-06-01 18:54:09,599 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:58969][0m
+INFO 2023-06-01 18:58:59,595 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:59020][0m
+INFO 2023-06-01 19:03:49,591 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:59117][0m
+INFO 2023-06-01 19:04:06,705 runserver>log_action WebSocket DISCONNECT /ws/voice/KB/Reception/ [127.0.0.1:58422]
+INFO 2023-06-01 19:04:08,716 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:58553]
+INFO 2023-06-01 19:04:29,891 runserver>log_action WebSocket DISCONNECT /ws/cs/1/ [127.0.0.1:58554]
