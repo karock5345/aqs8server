@@ -2969,3 +2969,442 @@ INFO 2023-06-01 19:03:49,591 runserver>log_action [mHTTP POST /api/token/refres
 INFO 2023-06-01 19:04:06,705 runserver>log_action WebSocket DISCONNECT /ws/voice/KB/Reception/ [127.0.0.1:58422]
 INFO 2023-06-01 19:04:08,716 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:58553]
 INFO 2023-06-01 19:04:29,891 runserver>log_action WebSocket DISCONNECT /ws/cs/1/ [127.0.0.1:58554]
+INFO 2023-06-02 01:49:10,298 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 01:49:11,501 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 01:49:11,511 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-02 01:49:12,838 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-02 01:49:12,840 base>views><module> -SCH- Now:06/01/2023, 17:49:12
+INFO 2023-06-02 01:49:13,055 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-02 16:42:00 Local:2023-06-03 00:42:00
+INFO 2023-06-02 01:49:13,056 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-02 01:49:13,056 base>views>init_branch_reset    -SCH- 2023-06-01 16:42:00 > 2023-06-01 17:49:12 [No]
+INFO 2023-06-02 01:49:13,179 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-02 15:59:59 Local:2023-06-02 23:59:59
+INFO 2023-06-02 01:49:13,181 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-02 01:49:13,181 base>views>init_branch_reset    -SCH- 2023-06-01 15:59:59 > 2023-06-01 17:49:12 [No]
+INFO 2023-06-02 01:49:13,193 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-01 18:00:00 Local:2023-06-02 02:00:00
+INFO 2023-06-02 01:49:13,193 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-02 01:49:13,194 base>views>init_branch_reset    -SCH- 2023-06-01 18:00:00 > 2023-06-01 17:49:12 [Yes]
+INFO 2023-06-02 01:49:23,651 runserver>log_action [32mHTTP GET / 302 [0.07, 127.0.0.1:17858][0m
+INFO 2023-06-02 01:49:23,731 runserver>log_action [mHTTP GET /login/ 200 [0.07, 127.0.0.1:17858][0m
+INFO 2023-06-02 01:49:23,867 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.08, 127.0.0.1:17858][0m
+INFO 2023-06-02 01:49:35,337 runserver>log_action [32mHTTP GET /admin/ 302 [0.09, 127.0.0.1:17867][0m
+INFO 2023-06-02 01:49:35,591 runserver>log_action [mHTTP GET /admin/login/?next=/admin/ 200 [0.25, 127.0.0.1:17870][0m
+INFO 2023-06-02 01:49:35,665 runserver>log_action [mHTTP GET /static/admin/js/theme.js 200 [0.02, 127.0.0.1:17870][0m
+WARNING 2023-06-02 01:49:35,803 log>log_response Not Found: /favicon.ico
+WARNING 2023-06-02 01:49:35,805 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:17877][0m
+INFO 2023-06-02 01:49:45,436 runserver>log_action [32mHTTP POST /admin/login/?next=/admin/ 302 [1.37, 127.0.0.1:17877][0m
+INFO 2023-06-02 01:49:45,622 runserver>log_action [mHTTP GET /admin/ 200 [0.18, 127.0.0.1:17877][0m
+INFO 2023-06-02 01:49:45,677 runserver>log_action [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.01, 127.0.0.1:17877][0m
+INFO 2023-06-02 01:49:45,689 runserver>log_action [mHTTP GET /static/admin/img/icon-changelink.svg 200 [0.02, 127.0.0.1:17890][0m
+INFO 2023-06-02 01:49:45,702 runserver>log_action [mHTTP GET /static/admin/img/icon-deletelink.svg 200 [0.03, 127.0.0.1:17891][0m
+WARNING 2023-06-02 01:49:45,769 log>log_response Not Found: /favicon.ico
+WARNING 2023-06-02 01:49:45,772 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.07, 127.0.0.1:17891][0m
+INFO 2023-06-02 01:50:01,641 runserver>log_action [mHTTP GET /admin/base/printerstatus/ 200 [0.22, 127.0.0.1:17891][0m
+INFO 2023-06-02 01:50:01,740 runserver>log_action [mHTTP GET /static/admin/js/jquery.init.js 200 [0.02, 127.0.0.1:17890][0m
+INFO 2023-06-02 01:50:01,759 runserver>log_action [mHTTP GET /static/admin/js/filters.js 200 [0.03, 127.0.0.1:17901][0m
+INFO 2023-06-02 01:50:01,773 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.06, 127.0.0.1:17891][0m
+INFO 2023-06-02 01:50:02,700 runserver>log_action [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.01, 127.0.0.1:17891][0m
+INFO 2023-06-02 01:50:02,714 runserver>log_action [mHTTP GET /static/admin/img/sorting-icons.svg 200 [0.02, 127.0.0.1:17901][0m
+INFO 2023-06-02 01:50:05,249 runserver>log_action [mHTTP GET /admin/base/printerstatus/5/change/ 200 [0.17, 127.0.0.1:17891][0m
+INFO 2023-06-02 01:50:05,314 runserver>log_action [mHTTP GET /static/admin/css/forms.css 200 [0.02, 127.0.0.1:17901][0m
+INFO 2023-06-02 01:50:05,333 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.04, 127.0.0.1:17891][0m
+INFO 2023-06-02 01:50:05,338 runserver>log_action [mHTTP GET /static/admin/js/change_form.js 200 [0.04, 127.0.0.1:17890][0m
+INFO 2023-06-02 01:50:05,352 runserver>log_action [mHTTP GET /static/admin/js/prepopulate_init.js 200 [0.05, 127.0.0.1:17906][0m
+INFO 2023-06-02 01:50:05,371 runserver>log_action [mHTTP GET /static/admin/css/widgets.css 200 [0.04, 127.0.0.1:17901][0m
+INFO 2023-06-02 01:50:05,384 runserver>log_action [mHTTP GET /static/admin/img/icon-viewlink.svg 200 [0.01, 127.0.0.1:17891][0m
+INFO 2023-06-02 01:50:31,207 runserver>log_action [mHTTP POST /api/token/ 200 [1.54, 127.0.0.1:17935][0m
+INFO 2023-06-02 01:51:16,351 runserver>log_action [mHTTP GET / 200 [0.14, 127.0.0.1:17969][0m
+INFO 2023-06-02 01:51:18,787 runserver>log_action [mHTTP GET /admin/base/printerstatus/5/change/ 200 [0.12, 127.0.0.1:17969][0m
+INFO 2023-06-02 01:51:31,006 runserver>log_action [mHTTP GET /admin/django_apscheduler/djangojob/ 200 [0.11, 127.0.0.1:17969][0m
+INFO 2023-06-02 01:51:31,104 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:17969][0m
+INFO 2023-06-02 01:51:31,119 runserver>log_action [mHTTP GET /static/admin/img/search.svg 200 [0.01, 127.0.0.1:17981][0m
+INFO 2023-06-02 01:51:34,512 runserver>log_action [mHTTP GET /admin/django_apscheduler/djangojobexecution/ 200 [0.12, 127.0.0.1:17969][0m
+INFO 2023-06-02 01:51:34,617 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.04, 127.0.0.1:17981][0m
+INFO 2023-06-02 01:52:04,256 runserver>log_action [32mHTTP GET /admin/django_apscheduler/djangojobexecution/ 302 [0.01, 127.0.0.1:17969][0m
+INFO 2023-06-02 01:52:04,294 runserver>log_action [mHTTP GET /admin/login/?next=/admin/django_apscheduler/djangojobexecution/ 200 [0.02, 127.0.0.1:17969][0m
+INFO 2023-06-02 01:52:04,385 runserver>log_action [mHTTP GET /static/admin/css/base.css 200 [0.03, 127.0.0.1:17981][0m
+INFO 2023-06-02 01:52:04,400 runserver>log_action [mHTTP GET /static/admin/css/dark_mode.css 200 [0.04, 127.0.0.1:17969][0m
+INFO 2023-06-02 01:52:04,408 runserver>log_action [mHTTP GET /static/admin/js/theme.js 200 [0.05, 127.0.0.1:18001][0m
+INFO 2023-06-02 01:52:04,426 runserver>log_action [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.06, 127.0.0.1:18002][0m
+INFO 2023-06-02 01:52:04,437 runserver>log_action [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.07, 127.0.0.1:18003][0m
+INFO 2023-06-02 01:52:04,449 runserver>log_action [mHTTP GET /static/admin/css/login.css 200 [0.08, 127.0.0.1:18004][0m
+ERROR 2023-06-02 01:52:05,021 runserver>log_action [35;1mHTTP GET /static/admin/css/responsive.css 500 [0.63, 127.0.0.1:17981][0m
+WARNING 2023-06-02 01:52:05,078 log>log_response Not Found: /favicon.ico
+WARNING 2023-06-02 01:52:05,080 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:17981][0m
+INFO 2023-06-02 01:52:09,920 runserver>log_action [32mHTTP POST /admin/login/?next=/admin/django_apscheduler/djangojobexecution/ 302 [0.92, 127.0.0.1:17981][0m
+INFO 2023-06-02 01:52:10,022 runserver>log_action [mHTTP GET /admin/django_apscheduler/djangojobexecution/ 200 [0.09, 127.0.0.1:17981][0m
+INFO 2023-06-02 01:52:10,090 runserver>log_action [mHTTP GET /static/admin/css/changelists.css 200 [0.03, 127.0.0.1:17981][0m
+INFO 2023-06-02 01:52:10,114 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:18003][0m
+INFO 2023-06-02 01:52:10,215 runserver>log_action [mHTTP GET /static/admin/js/vendor/jquery/jquery.js 200 [0.15, 127.0.0.1:18002][0m
+INFO 2023-06-02 01:52:10,223 runserver>log_action [mHTTP GET /static/admin/js/jquery.init.js 200 [0.16, 127.0.0.1:18001][0m
+INFO 2023-06-02 01:52:10,240 runserver>log_action [mHTTP GET /static/admin/js/core.js 200 [0.17, 127.0.0.1:18004][0m
+INFO 2023-06-02 01:52:10,261 runserver>log_action [mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 200 [0.19, 127.0.0.1:17969][0m
+INFO 2023-06-02 01:52:10,285 runserver>log_action [mHTTP GET /static/admin/js/urlify.js 200 [0.17, 127.0.0.1:18003][0m
+INFO 2023-06-02 01:52:10,301 runserver>log_action [mHTTP GET /static/admin/js/prepopulate.js 200 [0.08, 127.0.0.1:18002][0m
+ERROR 2023-06-02 01:52:11,067 runserver>log_action [35;1mHTTP GET /static/admin/js/actions.js 500 [0.98, 127.0.0.1:17981][0m
+ERROR 2023-06-02 01:52:11,075 runserver>log_action [35;1mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 500 [0.85, 127.0.0.1:18001][0m
+ERROR 2023-06-02 01:52:11,082 runserver>log_action [35;1mHTTP GET /static/admin/js/filters.js 500 [0.84, 127.0.0.1:18004][0m
+ERROR 2023-06-02 01:52:11,089 runserver>log_action [35;1mHTTP GET /static/admin/css/responsive.css 500 [0.83, 127.0.0.1:17969][0m
+INFO 2023-06-02 01:52:11,300 runserver>log_action [mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 200 [0.19, 127.0.0.1:18002][0m
+INFO 2023-06-02 01:52:11,333 runserver>log_action [mHTTP GET /static/admin/js/filters.js 200 [0.01, 127.0.0.1:18002][0m
+INFO 2023-06-02 01:52:11,345 runserver>log_action [mHTTP GET /static/admin/css/responsive.css 200 [0.02, 127.0.0.1:17981][0m
+INFO 2023-06-02 01:52:11,365 runserver>log_action [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.01, 127.0.0.1:18002][0m
+INFO 2023-06-02 01:52:11,375 runserver>log_action [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.02, 127.0.0.1:17981][0m
+WARNING 2023-06-02 01:52:11,433 log>log_response Not Found: /favicon.ico
+WARNING 2023-06-02 01:52:11,436 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.06, 127.0.0.1:18002][0m
+INFO 2023-06-02 01:55:21,646 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.02, 127.0.0.1:18148][0m
+INFO 2023-06-02 01:55:59,728 runserver>log_action [mHTTP POST /api/token/ 200 [0.36, 127.0.0.1:18196][0m
+INFO 2023-06-02 01:58:03,783 runserver>log_action [mHTTP POST /api/token/ 200 [0.64, 127.0.0.1:18346][0m
+INFO 2023-06-02 01:58:13,424 runserver>log_action [mHTTP GET /admin/ 200 [0.14, 127.0.0.1:18356][0m
+INFO 2023-06-02 01:58:13,710 runserver>log_action [mHTTP GET /static/admin/css/dashboard.css 200 [0.03, 127.0.0.1:18357][0m
+INFO 2023-06-02 01:58:13,729 runserver>log_action [mHTTP GET /static/admin/img/icon-changelink.svg 200 [0.01, 127.0.0.1:18357][0m
+INFO 2023-06-02 01:58:13,735 runserver>log_action [mHTTP GET /static/admin/img/icon-deletelink.svg 200 [0.01, 127.0.0.1:18356][0m
+WARNING 2023-06-02 01:58:13,801 log>log_response Not Found: /favicon.ico
+INFO 2023-06-02 01:58:44,278 runserver>log_action [mHTTP GET /admin/base/apilog/ 200 [0.71, 127.0.0.1:18356][0m
+INFO 2023-06-02 01:58:44,382 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.04, 127.0.0.1:18356][0m
+INFO 2023-06-02 01:58:44,384 runserver>log_action [mHTTP GET /static/admin/js/actions.js 200 [0.04, 127.0.0.1:18376][0m
+INFO 2023-06-02 01:58:44,451 runserver>log_action [mHTTP GET /static/admin/img/sorting-icons.svg 200 [0.01, 127.0.0.1:18376][0m
+INFO 2023-06-02 01:58:57,474 runserver>log_action [mHTTP GET /admin/base/apilog/49433/change/ 200 [0.14, 127.0.0.1:18356][0m
+INFO 2023-06-02 01:58:57,553 runserver>log_action [mHTTP GET /static/admin/css/forms.css 200 [0.02, 127.0.0.1:18376][0m
+INFO 2023-06-02 01:58:57,574 runserver>log_action [mHTTP GET /static/admin/js/calendar.js 200 [0.03, 127.0.0.1:18385][0m
+INFO 2023-06-02 01:58:57,585 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:18356][0m
+INFO 2023-06-02 01:58:57,601 runserver>log_action [mHTTP GET /static/admin/js/admin/DateTimeShortcuts.js 200 [0.06, 127.0.0.1:18386][0m
+INFO 2023-06-02 01:58:57,609 runserver>log_action [mHTTP GET /static/admin/js/change_form.js 200 [0.06, 127.0.0.1:18387][0m
+INFO 2023-06-02 01:58:57,618 runserver>log_action [mHTTP GET /static/admin/js/prepopulate_init.js 200 [0.07, 127.0.0.1:18388][0m
+INFO 2023-06-02 01:58:57,627 runserver>log_action [mHTTP GET /static/admin/css/widgets.css 200 [0.07, 127.0.0.1:18376][0m
+INFO 2023-06-02 01:58:57,698 runserver>log_action [mHTTP GET /static/admin/img/icon-calendar.svg 200 [0.02, 127.0.0.1:18386][0m
+INFO 2023-06-02 01:58:57,716 runserver>log_action [mHTTP GET /static/admin/img/icon-clock.svg 200 [0.04, 127.0.0.1:18376][0m
+INFO 2023-06-02 01:59:01,607 runserver>log_action [mHTTP GET /admin/ 200 [0.13, 127.0.0.1:18356][0m
+INFO 2023-06-02 01:59:08,375 runserver>log_action [mHTTP GET /admin/base/webtouch/ 200 [0.12, 127.0.0.1:18356][0m
+INFO 2023-06-02 01:59:08,463 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.04, 127.0.0.1:18386][0m
+INFO 2023-06-02 01:59:08,487 runserver>log_action [mHTTP GET /static/admin/img/icon-yes.svg 200 [0.02, 127.0.0.1:18376][0m
+INFO 2023-06-02 02:00:00,057 base>views>job_shutdown    -SCH- Shutdown and reset branch :HY -SCH-
+INFO 2023-06-02 02:00:01,275 base>ws>wssendwebtv channel_group_name:webtv_HY_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-02 02:00:01,419 base>ws>wssendwebtv ...Done
+INFO 2023-06-02 02:00:01,596 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-02 16:42:00 Local:2023-06-03 00:42:00
+INFO 2023-06-02 02:00:01,598 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-02 02:00:01,602 base>views>init_branch_reset    -SCH- 2023-06-01 16:42:00 > 2023-06-01 18:00:01 [No]
+INFO 2023-06-02 02:00:01,626 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-02 15:59:59 Local:2023-06-02 23:59:59
+INFO 2023-06-02 02:00:01,629 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-02 02:00:01,631 base>views>init_branch_reset    -SCH- 2023-06-01 15:59:59 > 2023-06-01 18:00:01 [No]
+INFO 2023-06-02 02:00:01,651 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-02 18:00:00 Local:2023-06-03 02:00:00
+INFO 2023-06-02 02:00:01,654 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-02 02:00:01,655 base>views>init_branch_reset    -SCH- 2023-06-01 18:00:00 > 2023-06-01 18:00:01 [No]
+INFO 2023-06-02 02:00:21,984 runserver>log_action [mHTTP GET / 200 [0.35, 127.0.0.1:18502][0m
+INFO 2023-06-02 02:00:22,028 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:18505][0m
+INFO 2023-06-02 02:00:22,043 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:18502][0m
+INFO 2023-06-02 02:00:22,052 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:18505][0m
+INFO 2023-06-02 02:00:22,061 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.03, 127.0.0.1:18507][0m
+INFO 2023-06-02 02:00:22,201 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:18505][0m
+INFO 2023-06-02 02:00:23,755 runserver>log_action [mHTTP GET /menu/ 200 [0.04, 127.0.0.1:18505][0m
+INFO 2023-06-02 02:00:25,103 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:18502][0m
+INFO 2023-06-02 02:00:27,697 runserver>log_action [mHTTP GET /update-branch/3/ 200 [0.06, 127.0.0.1:18502][0m
+INFO 2023-06-02 02:02:54,325 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:18574][0m
+INFO 2023-06-02 02:06:13,936 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\models.py changed, reloading.
+INFO 2023-06-02 02:06:15,945 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:06:15,959 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-02 02:06:16,134 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-02 02:06:16,134 base>views><module> -SCH- Now:06/01/2023, 18:06:16
+INFO 2023-06-02 02:06:16,285 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-02 16:42:00 Local:2023-06-03 00:42:00
+INFO 2023-06-02 02:06:16,286 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-02 02:06:16,286 base>views>init_branch_reset    -SCH- 2023-06-01 16:42:00 > 2023-06-01 18:06:16 [No]
+INFO 2023-06-02 02:06:16,363 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-02 15:59:59 Local:2023-06-02 23:59:59
+INFO 2023-06-02 02:06:16,363 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-02 02:06:16,365 base>views>init_branch_reset    -SCH- 2023-06-01 15:59:59 > 2023-06-01 18:06:16 [No]
+INFO 2023-06-02 02:06:16,376 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-02 18:00:00 Local:2023-06-03 02:00:00
+INFO 2023-06-02 02:06:16,377 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-02 02:06:16,377 base>views>init_branch_reset    -SCH- 2023-06-01 18:00:00 > 2023-06-01 18:06:16 [No]
+INFO 2023-06-02 02:06:44,279 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:06:49,160 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:06:49,393 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-02 02:06:49,394 base>views><module> -SCH- Now:06/01/2023, 18:06:49
+INFO 2023-06-02 02:06:49,526 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-02 16:42:00 Local:2023-06-03 00:42:00
+INFO 2023-06-02 02:06:49,527 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-02 02:06:49,529 base>views>init_branch_reset    -SCH- 2023-06-01 16:42:00 > 2023-06-01 18:06:49 [No]
+INFO 2023-06-02 02:06:49,591 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-02 15:59:59 Local:2023-06-02 23:59:59
+INFO 2023-06-02 02:06:49,592 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-02 02:06:49,592 base>views>init_branch_reset    -SCH- 2023-06-01 15:59:59 > 2023-06-01 18:06:49 [No]
+INFO 2023-06-02 02:06:49,605 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-02 18:00:00 Local:2023-06-03 02:00:00
+INFO 2023-06-02 02:06:49,607 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-02 02:06:49,607 base>views>init_branch_reset    -SCH- 2023-06-01 18:00:00 > 2023-06-01 18:06:49 [No]
+INFO 2023-06-02 02:07:07,322 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:07:07,454 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-02 02:07:07,455 base>views><module> -SCH- Now:06/01/2023, 18:07:07
+INFO 2023-06-02 02:07:07,572 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-02 16:42:00 Local:2023-06-03 00:42:00
+INFO 2023-06-02 02:07:07,572 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-02 02:07:07,573 base>views>init_branch_reset    -SCH- 2023-06-01 16:42:00 > 2023-06-01 18:07:07 [No]
+INFO 2023-06-02 02:07:07,640 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-02 15:59:59 Local:2023-06-02 23:59:59
+INFO 2023-06-02 02:07:07,641 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-02 02:07:07,642 base>views>init_branch_reset    -SCH- 2023-06-01 15:59:59 > 2023-06-01 18:07:07 [No]
+INFO 2023-06-02 02:07:07,661 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-02 18:00:00 Local:2023-06-03 02:00:00
+INFO 2023-06-02 02:07:07,662 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-02 02:07:07,662 base>views>init_branch_reset    -SCH- 2023-06-01 18:00:00 > 2023-06-01 18:07:07 [No]
+INFO 2023-06-02 02:07:16,452 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:07:17,643 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:07:17,654 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-02 02:07:17,782 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-02 02:07:17,783 base>views><module> -SCH- Now:06/01/2023, 18:07:17
+INFO 2023-06-02 02:07:17,928 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-02 16:42:00 Local:2023-06-03 00:42:00
+INFO 2023-06-02 02:07:17,929 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-02 02:07:17,930 base>views>init_branch_reset    -SCH- 2023-06-01 16:42:00 > 2023-06-01 18:07:17 [No]
+INFO 2023-06-02 02:07:17,983 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-02 15:59:59 Local:2023-06-02 23:59:59
+INFO 2023-06-02 02:07:17,983 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-02 02:07:17,984 base>views>init_branch_reset    -SCH- 2023-06-01 15:59:59 > 2023-06-01 18:07:17 [No]
+INFO 2023-06-02 02:07:17,998 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-02 18:00:00 Local:2023-06-03 02:00:00
+INFO 2023-06-02 02:07:17,999 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-02 02:07:17,999 base>views>init_branch_reset    -SCH- 2023-06-01 18:00:00 > 2023-06-01 18:07:17 [No]
+INFO 2023-06-02 02:07:32,091 runserver>log_action [mHTTP GET /update-branch/3/ 200 [0.16, 127.0.0.1:44998][0m
+INFO 2023-06-02 02:07:34,734 runserver>log_action [mHTTP GET /update-branch/3/ 200 [0.07, 127.0.0.1:44998][0m
+INFO 2023-06-02 02:07:44,399 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.05, 127.0.0.1:45004][0m
+INFO 2023-06-02 02:08:05,405 runserver>log_action [32mHTTP GET /update-branch/3/ 302 [0.01, 127.0.0.1:44998][0m
+INFO 2023-06-02 02:08:05,437 runserver>log_action [mHTTP GET /login/ 200 [0.02, 127.0.0.1:44998][0m
+INFO 2023-06-02 02:08:05,643 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.15, 127.0.0.1:44998][0m
+INFO 2023-06-02 02:08:05,653 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.16, 127.0.0.1:45032][0m
+INFO 2023-06-02 02:08:05,660 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:45033][0m
+INFO 2023-06-02 02:08:05,667 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:45034][0m
+INFO 2023-06-02 02:08:05,800 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:45033][0m
+INFO 2023-06-02 02:08:10,583 runserver>log_action [32mHTTP POST /login/ 302 [1.32, 127.0.0.1:44998][0m
+INFO 2023-06-02 02:08:10,741 runserver>log_action [mHTTP GET / 200 [0.15, 127.0.0.1:44998][0m
+INFO 2023-06-02 02:08:12,999 runserver>log_action [mHTTP GET /menu/ 200 [0.06, 127.0.0.1:44998][0m
+INFO 2023-06-02 02:08:14,105 runserver>log_action [mHTTP GET /branch/ 200 [0.17, 127.0.0.1:44998][0m
+INFO 2023-06-02 02:08:16,651 runserver>log_action [mHTTP GET /update-branch/1/ 200 [0.07, 127.0.0.1:44998][0m
+INFO 2023-06-02 02:12:00,232 runserver>log_action [32mHTTP GET /update-branch/1/ 302 [0.06, 127.0.0.1:14715][0m
+INFO 2023-06-02 02:12:00,295 runserver>log_action [mHTTP GET /login/ 200 [0.05, 127.0.0.1:14715][0m
+INFO 2023-06-02 02:12:00,361 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:00,371 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:14715][0m
+INFO 2023-06-02 02:12:00,380 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:00,388 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:14722][0m
+INFO 2023-06-02 02:12:00,459 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:03,645 runserver>log_action [32mHTTP POST /login/ 302 [0.91, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:03,787 runserver>log_action [mHTTP GET / 200 [0.14, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:05,584 runserver>log_action [mHTTP GET /menu/ 200 [0.07, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:07,349 runserver>log_action [mHTTP GET /branch/ 200 [0.15, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:09,301 runserver>log_action [mHTTP GET /update-branch/1/ 200 [0.08, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:34,485 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.04, 127.0.0.1:14874][0m
+INFO 2023-06-02 02:12:35,325 runserver>log_action [32mHTTP GET /update-branch/1/savebranch?branchname=Kowloon+Bay+Centre&timezone=Asia%2FHong_Kong&address=2+Road%2C+Kowloon+Bay%2C+Hong+Kong&gps=0.0%2C0.1&officehourstart=00%3A00%3A00&officehourend=00%3A42%3A00&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&KB-Reception=%E6%AD%A1%E8%BF%8E%E5%85%89%E8%87%A8%EF%BC%8C%E8%AB%8B%E7%A8%8D%E5%80%99+++Welcome%2C+please+wait+to+be+served+...&KB-Payment=Testing+123...PayP&KB-Counter=Testing+123...&enabledsms=on&smsmsg=New+ticket+%3CTICKET%3E+is+issued. 301 [0.10, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:41,557 runserver>log_action [32mHTTP GET /update-branch/1/savebranch/?branchname=Kowloon+Bay+Centre&timezone=Asia%2FHong_Kong&address=2+Road%2C+Kowloon+Bay%2C+Hong+Kong&gps=0.0%2C0.1&officehourstart=00%3A00%3A00&officehourend=00%3A42%3A00&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&KB-Reception=%E6%AD%A1%E8%BF%8E%E5%85%89%E8%87%A8%EF%BC%8C%E8%AB%8B%E7%A8%8D%E5%80%99+++Welcome%2C+please+wait+to+be+served+...&KB-Payment=Testing+123...PayP&KB-Counter=Testing+123...&enabledsms=on&smsmsg=New+ticket+%3CTICKET%3E+is+issued. 302 [6.22, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:41,739 runserver>log_action [mHTTP GET /branch/ 200 [0.18, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:46,419 runserver>log_action [mHTTP GET /update-branch/2/ 200 [0.06, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:54,147 runserver>log_action [32mHTTP GET /logout/ 302 [0.04, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:54,168 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:58,735 runserver>log_action [32mHTTP POST /login/ 302 [0.91, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:12:58,806 runserver>log_action [mHTTP GET / 200 [0.06, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:13:00,360 runserver>log_action [mHTTP GET /menu/ 200 [0.05, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:13:02,023 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:13:04,269 runserver>log_action [mHTTP GET /update-branch/3/ 200 [0.07, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:13:11,491 runserver>log_action [32mHTTP GET /update-branch/3/savebranch?branchname=Hypic+Service+Centre&timezone=Asia%2FHong_Kong&address=FLAT%2FRM+L%2C+3%2FF%2C+CENTURY+INDUSTRIAL+BUILDING%2C+33-35+AU+PUI+WAN+STREET%2C+FOTAN&gps=0.0%2C0.0&officehourstart=17%3A00%3A00&officehourend=02%3A00%3A00&tickettimestart=16%3A00%3A00&tickettimeend=01%3A00%3A00&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&HY-c=Testing+123...&enabledsms=on&smsmsg= 301 [0.08, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:13:11,591 runserver>log_action [32mHTTP GET /update-branch/3/savebranch/?branchname=Hypic+Service+Centre&timezone=Asia%2FHong_Kong&address=FLAT%2FRM+L%2C+3%2FF%2C+CENTURY+INDUSTRIAL+BUILDING%2C+33-35+AU+PUI+WAN+STREET%2C+FOTAN&gps=0.0%2C0.0&officehourstart=17%3A00%3A00&officehourend=02%3A00%3A00&tickettimestart=16%3A00%3A00&tickettimeend=01%3A00%3A00&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&HY-c=Testing+123...&enabledsms=on&smsmsg= 302 [0.09, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:13:11,732 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:14720][0m
+INFO 2023-06-02 02:13:27,132 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\models.py changed, reloading.
+INFO 2023-06-02 02:13:29,488 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:13:29,499 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-02 02:13:29,620 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-02 02:13:29,621 base>views><module> -SCH- Now:06/01/2023, 18:13:29
+INFO 2023-06-02 02:13:29,731 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-02 16:42:00 Local:2023-06-03 00:42:00
+INFO 2023-06-02 02:13:29,732 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-02 02:13:29,733 base>views>init_branch_reset    -SCH- 2023-06-01 16:42:00 > 2023-06-01 18:13:29 [No]
+INFO 2023-06-02 02:13:29,811 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-02 15:59:59 Local:2023-06-02 23:59:59
+INFO 2023-06-02 02:13:29,813 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-02 02:13:29,813 base>views>init_branch_reset    -SCH- 2023-06-01 15:59:59 > 2023-06-01 18:13:29 [No]
+INFO 2023-06-02 02:13:29,828 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-02 18:00:00 Local:2023-06-03 02:00:00
+INFO 2023-06-02 02:13:29,829 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-02 02:13:29,829 base>views>init_branch_reset    -SCH- 2023-06-01 18:00:00 > 2023-06-01 18:13:29 [No]
+INFO 2023-06-02 02:13:37,589 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:13:37,722 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-02 02:13:37,722 base>views><module> -SCH- Now:06/01/2023, 18:13:37
+INFO 2023-06-02 02:13:37,831 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-02 16:42:00 Local:2023-06-03 00:42:00
+INFO 2023-06-02 02:13:37,833 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-02 02:13:37,834 base>views>init_branch_reset    -SCH- 2023-06-01 16:42:00 > 2023-06-01 18:13:37 [No]
+INFO 2023-06-02 02:13:37,899 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-02 15:59:59 Local:2023-06-02 23:59:59
+INFO 2023-06-02 02:13:37,900 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-02 02:13:37,901 base>views>init_branch_reset    -SCH- 2023-06-01 15:59:59 > 2023-06-01 18:13:37 [No]
+INFO 2023-06-02 02:13:37,923 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-02 18:00:00 Local:2023-06-03 02:00:00
+INFO 2023-06-02 02:13:37,923 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-02 02:13:37,924 base>views>init_branch_reset    -SCH- 2023-06-01 18:00:00 > 2023-06-01 18:13:37 [No]
+INFO 2023-06-02 02:13:41,072 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:13:41,212 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-02 02:13:41,213 base>views><module> -SCH- Now:06/01/2023, 18:13:41
+INFO 2023-06-02 02:13:41,330 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-02 16:42:00 Local:2023-06-03 00:42:00
+INFO 2023-06-02 02:13:41,332 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-02 02:13:41,332 base>views>init_branch_reset    -SCH- 2023-06-01 16:42:00 > 2023-06-01 18:13:41 [No]
+INFO 2023-06-02 02:13:41,397 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-02 15:59:59 Local:2023-06-02 23:59:59
+INFO 2023-06-02 02:13:41,399 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-02 02:13:41,399 base>views>init_branch_reset    -SCH- 2023-06-01 15:59:59 > 2023-06-01 18:13:41 [No]
+INFO 2023-06-02 02:13:41,415 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-02 18:00:00 Local:2023-06-03 02:00:00
+INFO 2023-06-02 02:13:41,416 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-02 02:13:41,417 base>views>init_branch_reset    -SCH- 2023-06-01 18:00:00 > 2023-06-01 18:13:41 [No]
+INFO 2023-06-02 02:13:52,605 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:13:53,906 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:13:53,914 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-02 02:13:54,042 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-02 02:13:54,043 base>views><module> -SCH- Now:06/01/2023, 18:13:54
+INFO 2023-06-02 02:13:54,151 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-02 16:42:00 Local:2023-06-03 00:42:00
+INFO 2023-06-02 02:13:54,152 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-02 02:13:54,153 base>views>init_branch_reset    -SCH- 2023-06-01 16:42:00 > 2023-06-01 18:13:54 [No]
+INFO 2023-06-02 02:13:54,211 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-02 15:59:59 Local:2023-06-02 23:59:59
+INFO 2023-06-02 02:13:54,212 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-02 02:13:54,213 base>views>init_branch_reset    -SCH- 2023-06-01 15:59:59 > 2023-06-01 18:13:54 [No]
+INFO 2023-06-02 02:13:54,225 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-02 18:00:00 Local:2023-06-03 02:00:00
+INFO 2023-06-02 02:13:54,225 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-02 02:13:54,226 base>views>init_branch_reset    -SCH- 2023-06-01 18:00:00 > 2023-06-01 18:13:54 [No]
+INFO 2023-06-02 02:14:04,776 runserver>log_action [mHTTP GET /admin/ 200 [0.38, 127.0.0.1:52295][0m
+INFO 2023-06-02 02:14:05,080 runserver>log_action [mHTTP GET /static/admin/css/base.css 200 [0.17, 127.0.0.1:52295][0m
+INFO 2023-06-02 02:14:05,089 runserver>log_action [mHTTP GET /static/admin/css/dark_mode.css 200 [0.17, 127.0.0.1:52298][0m
+INFO 2023-06-02 02:14:05,098 runserver>log_action [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.18, 127.0.0.1:52300][0m
+INFO 2023-06-02 02:14:05,107 runserver>log_action [mHTTP GET /static/admin/js/theme.js 200 [0.19, 127.0.0.1:52299][0m
+INFO 2023-06-02 02:14:05,114 runserver>log_action [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.19, 127.0.0.1:52301][0m
+INFO 2023-06-02 02:14:05,123 runserver>log_action [mHTTP GET /static/admin/css/dashboard.css 200 [0.20, 127.0.0.1:52302][0m
+INFO 2023-06-02 02:14:05,131 runserver>log_action [mHTTP GET /static/admin/css/responsive.css 200 [0.05, 127.0.0.1:52295][0m
+INFO 2023-06-02 02:14:05,148 runserver>log_action [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.01, 127.0.0.1:52301][0m
+INFO 2023-06-02 02:14:05,155 runserver>log_action [mHTTP GET /static/admin/img/icon-changelink.svg 200 [0.01, 127.0.0.1:52298][0m
+INFO 2023-06-02 02:14:05,163 runserver>log_action [mHTTP GET /static/admin/img/icon-deletelink.svg 200 [0.02, 127.0.0.1:52300][0m
+WARNING 2023-06-02 02:14:05,229 log>log_response Not Found: /favicon.ico
+WARNING 2023-06-02 02:14:05,232 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.07, 127.0.0.1:52301][0m
+INFO 2023-06-02 02:14:07,702 runserver>log_action [mHTTP GET /admin/base/branch/ 200 [0.16, 127.0.0.1:52295][0m
+INFO 2023-06-02 02:14:07,761 runserver>log_action [mHTTP GET /static/admin/css/changelists.css 200 [0.01, 127.0.0.1:52301][0m
+INFO 2023-06-02 02:14:07,776 runserver>log_action [mHTTP GET /static/admin/js/jquery.init.js 200 [0.02, 127.0.0.1:52299][0m
+INFO 2023-06-02 02:14:07,792 runserver>log_action [mHTTP GET /static/admin/js/vendor/jquery/jquery.js 200 [0.04, 127.0.0.1:52300][0m
+INFO 2023-06-02 02:14:07,808 runserver>log_action [mHTTP GET /static/admin/js/core.js 200 [0.05, 127.0.0.1:52302][0m
+INFO 2023-06-02 02:14:07,818 runserver>log_action [mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 200 [0.06, 127.0.0.1:52295][0m
+INFO 2023-06-02 02:14:07,827 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.08, 127.0.0.1:52298][0m
+INFO 2023-06-02 02:14:07,829 runserver>log_action [mHTTP GET /static/admin/js/prepopulate.js 200 [0.03, 127.0.0.1:52300][0m
+ERROR 2023-06-02 02:14:08,662 runserver>log_action [35;1mHTTP GET /static/admin/js/actions.js 500 [0.90, 127.0.0.1:52301][0m
+ERROR 2023-06-02 02:14:08,672 runserver>log_action [35;1mHTTP GET /static/admin/js/urlify.js 500 [0.90, 127.0.0.1:52299][0m
+ERROR 2023-06-02 02:14:08,681 runserver>log_action [35;1mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 500 [0.87, 127.0.0.1:52302][0m
+ERROR 2023-06-02 02:14:08,689 runserver>log_action [35;1mHTTP GET /static/admin/js/filters.js 500 [0.87, 127.0.0.1:52295][0m
+INFO 2023-06-02 02:14:08,702 runserver>log_action [mHTTP GET /static/admin/img/icon-yes.svg 200 [0.01, 127.0.0.1:52300][0m
+INFO 2023-06-02 02:14:08,714 runserver>log_action [mHTTP GET /static/admin/js/urlify.js 200 [0.01, 127.0.0.1:52300][0m
+INFO 2023-06-02 02:14:08,725 runserver>log_action [mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 200 [0.01, 127.0.0.1:52300][0m
+INFO 2023-06-02 02:14:08,745 runserver>log_action [mHTTP GET /static/admin/js/filters.js 200 [0.01, 127.0.0.1:52300][0m
+INFO 2023-06-02 02:14:08,753 runserver>log_action [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.01, 127.0.0.1:52300][0m
+INFO 2023-06-02 02:14:11,164 runserver>log_action [mHTTP GET /admin/base/branch/3/change/ 200 [0.19, 127.0.0.1:52300][0m
+INFO 2023-06-02 02:14:11,236 runserver>log_action [mHTTP GET /static/admin/css/forms.css 200 [0.02, 127.0.0.1:52300][0m
+INFO 2023-06-02 02:14:11,254 runserver>log_action [mHTTP GET /static/admin/js/calendar.js 200 [0.03, 127.0.0.1:52302][0m
+INFO 2023-06-02 02:14:11,264 runserver>log_action [mHTTP GET /static/admin/js/actions.js 200 [0.04, 127.0.0.1:52299][0m
+INFO 2023-06-02 02:14:11,271 runserver>log_action [mHTTP GET /static/admin/js/admin/DateTimeShortcuts.js 200 [0.05, 127.0.0.1:52298][0m
+INFO 2023-06-02 02:14:11,281 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.06, 127.0.0.1:52301][0m
+INFO 2023-06-02 02:14:11,284 runserver>log_action [mHTTP GET /static/admin/js/change_form.js 200 [0.06, 127.0.0.1:52295][0m
+ERROR 2023-06-02 02:14:11,723 runserver>log_action [35;1mHTTP GET /static/admin/js/prepopulate_init.js 500 [0.49, 127.0.0.1:52300][0m
+ERROR 2023-06-02 02:14:11,730 runserver>log_action [35;1mHTTP GET /static/admin/css/widgets.css 500 [0.48, 127.0.0.1:52302][0m
+INFO 2023-06-02 02:14:11,781 runserver>log_action [mHTTP GET /static/admin/js/prepopulate_init.js 200 [0.01, 127.0.0.1:52300][0m
+INFO 2023-06-02 02:14:30,120 runserver>log_action [mHTTP GET /admin/ 200 [0.10, 127.0.0.1:52300][0m
+INFO 2023-06-02 02:17:24,665 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.17, 127.0.0.1:52527][0m
+INFO 2023-06-02 02:19:51,432 runserver>log_action [mHTTP GET /branch/ 200 [0.27, 127.0.0.1:52615][0m
+INFO 2023-06-02 02:19:51,489 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.02, 127.0.0.1:52615][0m
+INFO 2023-06-02 02:19:51,494 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:52618][0m
+INFO 2023-06-02 02:19:51,502 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:52620][0m
+INFO 2023-06-02 02:19:51,510 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:52619][0m
+INFO 2023-06-02 02:19:51,911 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:52619][0m
+INFO 2023-06-02 02:20:07,949 runserver>log_action [mHTTP GET /admin/ 200 [0.16, 127.0.0.1:52635][0m
+INFO 2023-06-02 02:20:07,983 runserver>log_action [mHTTP GET /static/admin/css/base.css 200 [0.01, 127.0.0.1:52635][0m
+INFO 2023-06-02 02:20:07,991 runserver>log_action [mHTTP GET /static/admin/css/dark_mode.css 200 [0.02, 127.0.0.1:52638][0m
+INFO 2023-06-02 02:20:08,000 runserver>log_action [mHTTP GET /static/admin/js/theme.js 200 [0.02, 127.0.0.1:52639][0m
+INFO 2023-06-02 02:20:08,008 runserver>log_action [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.03, 127.0.0.1:52640][0m
+INFO 2023-06-02 02:20:08,017 runserver>log_action [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.04, 127.0.0.1:52641][0m
+INFO 2023-06-02 02:20:08,027 runserver>log_action [mHTTP GET /static/admin/css/dashboard.css 200 [0.05, 127.0.0.1:52642][0m
+INFO 2023-06-02 02:20:08,035 runserver>log_action [mHTTP GET /static/admin/css/responsive.css 200 [0.05, 127.0.0.1:52635][0m
+INFO 2023-06-02 02:20:08,054 runserver>log_action [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.01, 127.0.0.1:52641][0m
+INFO 2023-06-02 02:20:08,061 runserver>log_action [mHTTP GET /static/admin/img/icon-changelink.svg 200 [0.01, 127.0.0.1:52638][0m
+INFO 2023-06-02 02:20:08,070 runserver>log_action [mHTTP GET /static/admin/img/icon-deletelink.svg 200 [0.02, 127.0.0.1:52640][0m
+WARNING 2023-06-02 02:20:08,139 log>log_response Not Found: /favicon.ico
+WARNING 2023-06-02 02:20:08,142 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.07, 127.0.0.1:52641][0m
+INFO 2023-06-02 02:24:32,314 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:24:33,468 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:24:33,480 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-02 02:24:33,642 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-02 02:24:33,643 base>views><module> -SCH- Now:06/01/2023, 18:24:33
+INFO 2023-06-02 02:24:33,783 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-02 16:42:00 Local:2023-06-03 00:42:00
+INFO 2023-06-02 02:24:33,784 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-02 02:24:33,784 base>views>init_branch_reset    -SCH- 2023-06-01 16:42:00 > 2023-06-01 18:24:33 [No]
+INFO 2023-06-02 02:24:33,866 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-02 15:59:59 Local:2023-06-02 23:59:59
+INFO 2023-06-02 02:24:33,866 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-02 02:24:33,867 base>views>init_branch_reset    -SCH- 2023-06-01 15:59:59 > 2023-06-01 18:24:33 [No]
+INFO 2023-06-02 02:24:33,894 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-02 18:00:00 Local:2023-06-03 02:00:00
+INFO 2023-06-02 02:24:33,894 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-02 02:24:33,895 base>views>init_branch_reset    -SCH- 2023-06-01 18:00:00 > 2023-06-01 18:24:33 [No]
+INFO 2023-06-02 02:24:41,286 runserver>log_action [mHTTP GET /admin/ 200 [1.94, 127.0.0.1:27216][0m
+INFO 2023-06-02 02:24:42,299 runserver>log_action [mHTTP GET /static/admin/css/base.css 200 [0.73, 127.0.0.1:27216][0m
+INFO 2023-06-02 02:24:42,612 runserver>log_action [mHTTP GET /static/admin/css/dark_mode.css 200 [1.04, 127.0.0.1:27219][0m
+INFO 2023-06-02 02:24:42,916 runserver>log_action [mHTTP GET /static/admin/css/nav_sidebar.css 200 [1.34, 127.0.0.1:27220][0m
+INFO 2023-06-02 02:24:43,117 runserver>log_action [mHTTP GET /static/admin/js/nav_sidebar.js 200 [1.54, 127.0.0.1:27221][0m
+INFO 2023-06-02 02:24:43,126 runserver>log_action [mHTTP GET /static/admin/css/dashboard.css 200 [1.54, 127.0.0.1:27222][0m
+INFO 2023-06-02 02:24:43,134 runserver>log_action [mHTTP GET /static/admin/css/responsive.css 200 [1.55, 127.0.0.1:27223][0m
+INFO 2023-06-02 02:24:43,141 runserver>log_action [mHTTP GET /static/admin/css/fonts.css 200 [0.81, 127.0.0.1:27216][0m
+INFO 2023-06-02 02:24:43,159 runserver>log_action [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.01, 127.0.0.1:27223][0m
+INFO 2023-06-02 02:24:43,166 runserver>log_action [mHTTP GET /static/admin/img/icon-changelink.svg 200 [0.01, 127.0.0.1:27221][0m
+INFO 2023-06-02 02:24:43,175 runserver>log_action [mHTTP GET /static/admin/img/icon-deletelink.svg 200 [0.02, 127.0.0.1:27220][0m
+INFO 2023-06-02 02:24:43,183 runserver>log_action [mHTTP GET /static/admin/fonts/Roboto-Regular-webfont.woff 200 [0.02, 127.0.0.1:27223][0m
+INFO 2023-06-02 02:24:43,191 runserver>log_action [mHTTP GET /static/admin/fonts/Roboto-Light-webfont.woff 200 [0.02, 127.0.0.1:27221][0m
+INFO 2023-06-02 02:24:43,199 runserver>log_action [mHTTP GET /static/admin/fonts/Roboto-Bold-webfont.woff 200 [0.02, 127.0.0.1:27220][0m
+WARNING 2023-06-02 02:24:43,308 log>log_response Not Found: /favicon.ico
+WARNING 2023-06-02 02:24:43,310 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.11, 127.0.0.1:27220][0m
+INFO 2023-06-02 02:25:01,642 runserver>log_action [mHTTP GET /admin/base/webtouch/ 200 [0.13, 127.0.0.1:27220][0m
+INFO 2023-06-02 02:25:01,706 runserver>log_action [36mHTTP GET /static/admin/css/base.css 304 [0.01, 127.0.0.1:27220][0m
+INFO 2023-06-02 02:25:01,710 runserver>log_action [36mHTTP GET /static/admin/css/dark_mode.css 304 [0.01, 127.0.0.1:27223][0m
+INFO 2023-06-02 02:25:01,719 runserver>log_action [36mHTTP GET /static/admin/css/nav_sidebar.css 304 [0.02, 127.0.0.1:27221][0m
+INFO 2023-06-02 02:25:01,724 runserver>log_action [36mHTTP GET /static/admin/js/nav_sidebar.js 304 [0.02, 127.0.0.1:27219][0m
+INFO 2023-06-02 02:25:01,732 runserver>log_action [36mHTTP GET /static/admin/css/responsive.css 304 [0.02, 127.0.0.1:27220][0m
+INFO 2023-06-02 02:25:01,765 runserver>log_action [36mHTTP GET /static/admin/css/fonts.css 304 [0.04, 127.0.0.1:27221][0m
+INFO 2023-06-02 02:25:01,768 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:27223][0m
+INFO 2023-06-02 02:25:01,807 runserver>log_action [mHTTP GET /static/admin/img/sorting-icons.svg 200 [0.01, 127.0.0.1:27220][0m
+INFO 2023-06-02 02:25:04,020 runserver>log_action [mHTTP GET /admin/base/webtouch/1/change/ 200 [0.17, 127.0.0.1:27220][0m
+INFO 2023-06-02 02:25:04,108 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.04, 127.0.0.1:27220][0m
+INFO 2023-06-02 02:25:04,111 runserver>log_action [mHTTP GET /static/admin/css/widgets.css 200 [0.03, 127.0.0.1:27254][0m
+INFO 2023-06-02 02:25:04,119 runserver>log_action [mHTTP GET /static/admin/img/icon-viewlink.svg 200 [0.01, 127.0.0.1:27220][0m
+INFO 2023-06-02 02:25:04,141 runserver>log_action [36mHTTP GET /static/admin/img/icon-changelink.svg 304 [0.01, 127.0.0.1:27220][0m
+INFO 2023-06-02 02:25:04,145 runserver>log_action [36mHTTP GET /static/admin/img/icon-addlink.svg 304 [0.01, 127.0.0.1:27254][0m
+INFO 2023-06-02 02:25:04,148 runserver>log_action [36mHTTP GET /static/admin/img/icon-deletelink.svg 304 [0.01, 127.0.0.1:27255][0m
+INFO 2023-06-02 02:41:32,371 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:41:33,518 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-02 02:41:33,527 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-02 02:41:33,671 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-02 02:41:33,672 base>views><module> -SCH- Now:06/01/2023, 18:41:33
+INFO 2023-06-02 02:41:33,786 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-02 16:42:00 Local:2023-06-03 00:42:00
+INFO 2023-06-02 02:41:33,786 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-02 02:41:33,787 base>views>init_branch_reset    -SCH- 2023-06-01 16:42:00 > 2023-06-01 18:41:33 [No]
+INFO 2023-06-02 02:41:33,848 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-02 15:59:59 Local:2023-06-02 23:59:59
+INFO 2023-06-02 02:41:33,848 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-02 02:41:33,849 base>views>init_branch_reset    -SCH- 2023-06-01 15:59:59 > 2023-06-01 18:41:33 [No]
+INFO 2023-06-02 02:41:33,861 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-02 18:00:00 Local:2023-06-03 02:00:00
+INFO 2023-06-02 02:41:33,861 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-02 02:41:33,862 base>views>init_branch_reset    -SCH- 2023-06-01 18:00:00 > 2023-06-01 18:41:33 [No]
+INFO 2023-06-02 02:41:38,874 runserver>log_action [32mHTTP GET /branch/ 302 [0.03, 127.0.0.1:20567][0m
+INFO 2023-06-02 02:41:38,906 runserver>log_action [mHTTP GET /login/ 200 [0.02, 127.0.0.1:20567][0m
+INFO 2023-06-02 02:41:39,003 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.05, 127.0.0.1:20567][0m
+INFO 2023-06-02 02:41:39,011 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.05, 127.0.0.1:20577][0m
+INFO 2023-06-02 02:41:39,016 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:20578][0m
+INFO 2023-06-02 02:41:39,021 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:20579][0m
+INFO 2023-06-02 02:41:39,119 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:20578][0m
+INFO 2023-06-02 02:41:42,093 runserver>log_action [32mHTTP POST /login/ 302 [0.46, 127.0.0.1:20567][0m
+INFO 2023-06-02 02:41:42,138 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:20567][0m
+INFO 2023-06-02 02:41:44,347 runserver>log_action [mHTTP GET /admin/base/webtouch/1/change/ 200 [0.25, 127.0.0.1:20567][0m
+INFO 2023-06-02 02:41:44,403 runserver>log_action [mHTTP GET /static/admin/css/base.css 200 [0.01, 127.0.0.1:20578][0m
+INFO 2023-06-02 02:41:44,415 runserver>log_action [mHTTP GET /static/admin/css/dark_mode.css 200 [0.02, 127.0.0.1:20577][0m
+INFO 2023-06-02 02:41:44,430 runserver>log_action [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.04, 127.0.0.1:20579][0m
+INFO 2023-06-02 02:41:44,440 runserver>log_action [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.05, 127.0.0.1:20567][0m
+INFO 2023-06-02 02:41:44,446 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:20606][0m
+INFO 2023-06-02 02:41:44,452 runserver>log_action [mHTTP GET /static/admin/css/forms.css 200 [0.06, 127.0.0.1:20605][0m
+INFO 2023-06-02 02:41:44,463 runserver>log_action [mHTTP GET /static/admin/js/vendor/jquery/jquery.js 200 [0.06, 127.0.0.1:20578][0m
+INFO 2023-06-02 02:41:44,471 runserver>log_action [mHTTP GET /static/admin/js/jquery.init.js 200 [0.05, 127.0.0.1:20577][0m
+INFO 2023-06-02 02:41:44,478 runserver>log_action [mHTTP GET /static/admin/js/core.js 200 [0.04, 127.0.0.1:20579][0m
+INFO 2023-06-02 02:41:44,488 runserver>log_action [mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 200 [0.04, 127.0.0.1:20567][0m
+INFO 2023-06-02 02:41:44,497 runserver>log_action [mHTTP GET /static/admin/js/actions.js 200 [0.05, 127.0.0.1:20606][0m
+INFO 2023-06-02 02:41:44,507 runserver>log_action [mHTTP GET /static/admin/js/urlify.js 200 [0.05, 127.0.0.1:20605][0m
+INFO 2023-06-02 02:41:44,517 runserver>log_action [mHTTP GET /static/admin/js/prepopulate.js 200 [0.05, 127.0.0.1:20578][0m
+INFO 2023-06-02 02:41:44,527 runserver>log_action [mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 200 [0.05, 127.0.0.1:20577][0m
+INFO 2023-06-02 02:41:44,536 runserver>log_action [mHTTP GET /static/admin/css/responsive.css 200 [0.05, 127.0.0.1:20579][0m
+INFO 2023-06-02 02:41:44,544 runserver>log_action [mHTTP GET /static/admin/js/prepopulate_init.js 200 [0.04, 127.0.0.1:20606][0m
+INFO 2023-06-02 02:41:44,551 runserver>log_action [mHTTP GET /static/admin/css/fonts.css 200 [0.04, 127.0.0.1:20605][0m
+ERROR 2023-06-02 02:41:45,289 runserver>log_action [35;1mHTTP GET /static/admin/js/change_form.js 500 [0.80, 127.0.0.1:20567][0m
+ERROR 2023-06-02 02:41:45,297 runserver>log_action [35;1mHTTP GET /static/admin/css/widgets.css 500 [0.78, 127.0.0.1:20578][0m
+INFO 2023-06-02 02:41:45,311 runserver>log_action [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.01, 127.0.0.1:20577][0m
+INFO 2023-06-02 02:41:45,319 runserver>log_action [mHTTP GET /static/admin/img/icon-deletelink.svg 200 [0.02, 127.0.0.1:20606][0m
+INFO 2023-06-02 02:41:45,326 runserver>log_action [mHTTP GET /static/admin/img/icon-viewlink.svg 200 [0.02, 127.0.0.1:20605][0m
+INFO 2023-06-02 02:41:45,333 runserver>log_action [mHTTP GET /static/admin/img/icon-changelink.svg 200 [0.03, 127.0.0.1:20579][0m
+INFO 2023-06-02 02:41:45,342 runserver>log_action [mHTTP GET /static/admin/js/change_form.js 200 [0.01, 127.0.0.1:20578][0m
+INFO 2023-06-02 02:41:45,349 runserver>log_action [mHTTP GET /static/admin/fonts/Roboto-Regular-webfont.woff 200 [0.01, 127.0.0.1:20577][0m
+INFO 2023-06-02 02:41:45,356 runserver>log_action [mHTTP GET /static/admin/fonts/Roboto-Light-webfont.woff 200 [0.02, 127.0.0.1:20579][0m
+INFO 2023-06-02 02:41:45,364 runserver>log_action [mHTTP GET /static/admin/fonts/Roboto-Bold-webfont.woff 200 [0.02, 127.0.0.1:20578][0m
+WARNING 2023-06-02 02:41:45,429 log>log_response Not Found: /favicon.ico
+WARNING 2023-06-02 02:41:45,431 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.06, 127.0.0.1:20578][0m
+INFO 2023-06-02 02:41:48,822 runserver>log_action [mHTTP GET /admin/ 200 [0.11, 127.0.0.1:20578][0m
+INFO 2023-06-02 02:41:48,858 runserver>log_action [mHTTP GET /static/admin/css/dashboard.css 200 [0.01, 127.0.0.1:20578][0m
