@@ -33,6 +33,9 @@
 - New Ticketformat will create new ticket route automatically
 - Web Softkey login select Branch first then select Counter
 - New API : /api/touchkeys/ for PCCW Touch Panel
+- Fixed Error when open admin page : Error HTTP GET /static/admin/js/actions.js 500 (aqs/urls.py)
+- Upgrade some packages (hiredis==2.2.3, cryptography==41.0.1, pyOpenSSL==23.2.0 etc.)
+- upgrade django to 4.1.9 from 4.1.7
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
