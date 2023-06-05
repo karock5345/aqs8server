@@ -232,7 +232,7 @@ def SoftkeyView(request, pk):
     else:
         messages.error(request, error)
         # Redirect to last page
-        return redirect('softkeylogin')
+        return redirect('softkeylogin', counterstatus.countertype.branch.id)
 
 @unauth_user
 def SoftkeyLoginBranchView(request):

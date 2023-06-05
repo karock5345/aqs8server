@@ -734,10 +734,22 @@ def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber,
     # check the user is already login 
     if status == dict({}) :
         if branch.usersinglelogin == True :
-            csobj = CounterStatus.objects.filter( Q(loged=True) & ~Q(counternumber=rx_counternumber) & Q(user=user) )
+            csobj = CounterStatus.objects.filter(loged=True, user=user)
             if csobj.count() > 0 :
-                    status = dict({'status': 'Error'})
-                    msg =  dict({'msg':'User already logged-in'})    
+                    islogged = False
+                    error = ''
+                    for cs in csobj:
+                        if cs.countertype.branch == branch and cs.counternumber != rx_counternumber:
+                            islogged = True
+                            error = 'User already logged-in at counter ' + cs.counternumber
+                            break
+                        if cs.countertype.branch != branch :
+                            islogged = True
+                            error = 'User already logged-in at other branch ' + cs.countertype.branch.name
+                            break
+                    if islogged == True:
+                        status = dict({'status': 'Error'})
+                        msg =  dict({'msg':error})    
     
     ttype=''
     tno = ''
