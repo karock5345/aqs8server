@@ -2307,3 +2307,623 @@ INFO 2023-06-06 17:17:59,488 runserver>log_action [mHTTP POST /api/token/ 200 [
 INFO 2023-06-06 17:18:00,062 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:64943][0m
 INFO 2023-06-06 18:05:26,817 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:65197][0m
 INFO 2023-06-06 18:05:27,384 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:65200][0m
+INFO 2023-06-07 00:17:41,946 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-07 00:17:42,844 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-07 00:17:42,850 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-07 00:17:43,373 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-07 00:17:43,374 base>views><module> -SCH- Now:06/06/2023, 16:17:43
+INFO 2023-06-07 00:17:43,483 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-06 16:42:00 Local:2023-06-07 00:42:00
+INFO 2023-06-07 00:17:43,483 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-07 00:17:43,485 base>views>init_branch_reset    -SCH- 2023-06-06 16:42:00 > 2023-06-06 16:17:43 [Yes]
+INFO 2023-06-07 00:17:43,547 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-07 15:59:59 Local:2023-06-07 23:59:59
+INFO 2023-06-07 00:17:43,547 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-07 00:17:43,548 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 16:17:43 [No]
+INFO 2023-06-07 00:17:43,556 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-06 18:00:00 Local:2023-06-07 02:00:00
+INFO 2023-06-07 00:17:43,557 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-07 00:17:43,557 base>views>init_branch_reset    -SCH- 2023-06-06 18:00:00 > 2023-06-06 16:17:43 [Yes]
+INFO 2023-06-07 00:17:43,569 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-07 15:59:59 Local:2023-06-07 23:59:59
+INFO 2023-06-07 00:17:43,570 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-07 00:17:43,570 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 16:17:43 [No]
+INFO 2023-06-07 00:17:43,582 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-07 15:59:59 Local:2023-06-07 23:59:59
+INFO 2023-06-07 00:17:43,583 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-07 00:17:43,584 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 16:17:43 [No]
+INFO 2023-06-07 00:17:43,594 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-07 15:59:59 Local:2023-06-07 23:59:59
+INFO 2023-06-07 00:17:43,595 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-07 00:17:43,596 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 16:17:43 [No]
+INFO 2023-06-07 00:18:01,357 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:54159][0m
+INFO 2023-06-07 00:18:02,011 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.1.0.0 200 [0.05, 127.0.0.1:54163][0m
+INFO 2023-06-07 00:18:35,652 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:54200][0m
+INFO 2023-06-07 00:18:36,177 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:54203][0m
+INFO 2023-06-07 00:19:13,604 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:54243][0m
+INFO 2023-06-07 00:19:14,130 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.1.0.0 200 [0.03, 127.0.0.1:54246][0m
+INFO 2023-06-07 00:19:25,400 runserver>log_action [mHTTP POST /api/token/ 200 [0.16, 127.0.0.1:54277][0m
+INFO 2023-06-07 00:19:25,894 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:54280][0m
+INFO 2023-06-07 00:20:09,531 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:54313][0m
+INFO 2023-06-07 00:20:10,055 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.1.0.0 200 [0.04, 127.0.0.1:54316][0m
+INFO 2023-06-07 00:21:25,570 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:54374][0m
+INFO 2023-06-07 00:21:26,156 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.03, 127.0.0.1:54377][0m
+INFO 2023-06-07 00:22:28,375 runserver>log_action [mHTTP POST /api/token/ 200 [0.17, 127.0.0.1:54415][0m
+INFO 2023-06-07 00:22:28,839 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:54418][0m
+INFO 2023-06-07 00:48:32,894 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-07 00:48:33,624 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-07 00:48:33,630 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-07 00:48:33,753 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-07 00:48:33,753 base>views><module> -SCH- Now:06/06/2023, 16:48:33
+INFO 2023-06-07 00:48:33,831 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-07 16:42:00 Local:2023-06-08 00:42:00
+INFO 2023-06-07 00:48:33,832 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-07 00:48:33,832 base>views>init_branch_reset    -SCH- 2023-06-06 16:42:00 > 2023-06-06 16:48:33 [No]
+INFO 2023-06-07 00:48:33,875 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-07 15:59:59 Local:2023-06-07 23:59:59
+INFO 2023-06-07 00:48:33,875 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-07 00:48:33,876 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 16:48:33 [No]
+INFO 2023-06-07 00:48:33,883 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-06 18:00:00 Local:2023-06-07 02:00:00
+INFO 2023-06-07 00:48:33,884 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-07 00:48:33,884 base>views>init_branch_reset    -SCH- 2023-06-06 18:00:00 > 2023-06-06 16:48:33 [Yes]
+INFO 2023-06-07 00:48:33,891 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-07 15:59:59 Local:2023-06-07 23:59:59
+INFO 2023-06-07 00:48:33,892 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-07 00:48:33,892 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 16:48:33 [No]
+INFO 2023-06-07 00:48:33,903 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-07 15:59:59 Local:2023-06-07 23:59:59
+INFO 2023-06-07 00:48:33,903 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-07 00:48:33,903 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 16:48:33 [No]
+INFO 2023-06-07 00:48:33,914 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-07 15:59:59 Local:2023-06-07 23:59:59
+INFO 2023-06-07 00:48:33,914 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-07 00:48:33,915 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 16:48:33 [No]
+INFO 2023-06-07 01:03:03,490 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-07 01:03:04,930 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-07 01:03:04,946 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-07 01:03:06,302 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-07 01:03:06,303 base>views><module> -SCH- Now:06/06/2023, 17:03:06
+INFO 2023-06-07 01:03:06,657 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-07 16:42:00 Local:2023-06-08 00:42:00
+INFO 2023-06-07 01:03:06,658 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-07 01:03:06,658 base>views>init_branch_reset    -SCH- 2023-06-06 16:42:00 > 2023-06-06 17:03:06 [No]
+INFO 2023-06-07 01:03:06,927 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-07 15:59:59 Local:2023-06-07 23:59:59
+INFO 2023-06-07 01:03:06,928 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-07 01:03:06,929 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 17:03:06 [No]
+INFO 2023-06-07 01:03:06,964 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-06 18:00:00 Local:2023-06-07 02:00:00
+INFO 2023-06-07 01:03:06,964 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-07 01:03:06,966 base>views>init_branch_reset    -SCH- 2023-06-06 18:00:00 > 2023-06-06 17:03:06 [Yes]
+INFO 2023-06-07 01:03:06,999 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-07 15:59:59 Local:2023-06-07 23:59:59
+INFO 2023-06-07 01:03:06,999 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-07 01:03:07,000 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 17:03:06 [No]
+INFO 2023-06-07 01:03:07,030 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-07 15:59:59 Local:2023-06-07 23:59:59
+INFO 2023-06-07 01:03:07,030 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-07 01:03:07,040 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 17:03:06 [No]
+INFO 2023-06-07 01:03:07,054 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-07 15:59:59 Local:2023-06-07 23:59:59
+INFO 2023-06-07 01:03:07,055 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-07 01:03:07,055 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 17:03:06 [No]
+INFO 2023-06-07 01:04:15,569 runserver>log_action [32mHTTP GET / 302 [0.63, 127.0.0.1:6806][0m
+INFO 2023-06-07 01:04:15,789 runserver>log_action [mHTTP GET /login/ 200 [0.18, 127.0.0.1:6806][0m
+INFO 2023-06-07 01:04:22,952 runserver>log_action [32mHTTP POST /login/ 302 [1.06, 127.0.0.1:53734][0m
+INFO 2023-06-07 01:04:23,257 runserver>log_action [mHTTP GET / 200 [0.21, 127.0.0.1:53734][0m
+INFO 2023-06-07 01:04:26,265 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.11, 127.0.0.1:53734][0m
+INFO 2023-06-07 01:04:28,471 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.23, 127.0.0.1:53734][0m
+INFO 2023-06-07 01:04:32,761 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.37, 127.0.0.1:53734][0m
+INFO 2023-06-07 01:04:32,871 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:53762]
+INFO 2023-06-07 01:04:33,318 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-07 01:04:33,459 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:53762]
+INFO 2023-06-07 01:04:33,467 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:53765]
+INFO 2023-06-07 01:04:33,477 base>consumers>connect connecting:cs_33
+INFO 2023-06-07 01:04:33,486 runserver>log_action WebSocket CONNECT /ws/cs/33/ [127.0.0.1:53765]
+INFO 2023-06-07 01:04:33,492 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:53766]
+INFO 2023-06-07 01:04:33,502 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-07 01:04:33,512 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:53766]
+INFO 2023-06-07 01:04:38,645 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:53766]
+INFO 2023-06-07 01:04:38,647 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:53765]
+INFO 2023-06-07 01:04:38,648 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:53762]
+INFO 2023-06-07 01:04:38,801 runserver>log_action [mHTTP GET /user/ 200 [0.15, 127.0.0.1:53734][0m
+INFO 2023-06-07 01:04:40,547 runserver>log_action [mHTTP GET /update-user/7/ 200 [0.54, 127.0.0.1:53734][0m
+INFO 2023-06-07 01:04:57,844 runserver>log_action [32mHTTP POST /update-user/7/ 302 [1.17, 127.0.0.1:53734][0m
+INFO 2023-06-07 01:04:58,094 runserver>log_action [mHTTP GET /user/ 200 [0.24, 127.0.0.1:53734][0m
+INFO 2023-06-07 01:05:00,821 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.35, 127.0.0.1:53734][0m
+INFO 2023-06-07 01:05:03,444 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.26, 127.0.0.1:53734][0m
+INFO 2023-06-07 01:05:04,959 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.28, 127.0.0.1:53734][0m
+INFO 2023-06-07 01:05:05,098 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:53835]
+INFO 2023-06-07 01:05:05,108 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-07 01:05:05,143 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:53835]
+INFO 2023-06-07 01:05:05,149 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:53836]
+INFO 2023-06-07 01:05:05,158 base>consumers>connect connecting:cs_33
+INFO 2023-06-07 01:05:05,181 runserver>log_action WebSocket CONNECT /ws/cs/33/ [127.0.0.1:53836]
+INFO 2023-06-07 01:05:05,188 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:53837]
+INFO 2023-06-07 01:05:05,197 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-07 01:05:05,310 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:53837]
+INFO 2023-06-07 01:05:33,378 runserver>log_action [mHTTP POST /api/token/ 200 [1.02, 127.0.0.1:53870][0m
+INFO 2023-06-07 01:05:34,239 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.16, 127.0.0.1:53874][0m
+INFO 2023-06-07 01:07:03,348 runserver>log_action [mHTTP POST /api/token/ 200 [0.80, 127.0.0.1:23161][0m
+INFO 2023-06-07 01:07:04,490 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.06, 127.0.0.1:23167][0m
+WARNING 2023-06-07 01:07:16,343 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:07:16,346 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:07:16,361 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:16,386 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:07:16,394 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:16,417 base>ws>wssendql ...Done
+INFO 2023-06-07 01:07:16,425 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:16,430 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:07:16,431 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:07:16,458 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=AA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.27, 127.0.0.1:23172][0m
+WARNING 2023-06-07 01:07:18,651 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:07:18,654 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:07:18,662 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:18,671 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:07:18,678 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:18,693 base>ws>wssendql ...Done
+INFO 2023-06-07 01:07:18,701 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:18,705 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:07:18,706 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:07:18,767 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=AA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.58, 127.0.0.1:23184][0m
+WARNING 2023-06-07 01:07:21,922 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:07:21,924 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:07:21,934 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:21,941 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:07:21,948 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:21,956 base>ws>wssendql ...Done
+INFO 2023-06-07 01:07:21,960 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:21,964 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:07:21,965 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:07:21,987 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=BA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.19, 127.0.0.1:23198][0m
+WARNING 2023-06-07 01:07:25,390 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:07:25,392 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:07:25,401 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:25,410 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:07:25,419 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:25,425 base>ws>wssendql ...Done
+INFO 2023-06-07 01:07:25,429 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:25,433 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:07:25,433 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:07:25,456 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=BA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.16, 127.0.0.1:23207][0m
+WARNING 2023-06-07 01:07:27,297 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:07:27,300 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:07:27,311 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:27,318 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:07:27,325 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:27,331 base>ws>wssendql ...Done
+INFO 2023-06-07 01:07:27,335 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:27,340 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:07:27,340 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:07:27,365 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=CA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.17, 127.0.0.1:23218][0m
+WARNING 2023-06-07 01:07:28,956 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:07:28,957 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:07:28,967 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:28,974 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:07:28,981 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:28,987 base>ws>wssendql ...Done
+INFO 2023-06-07 01:07:28,991 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:28,993 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:07:28,995 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:07:29,021 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=DA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.16, 127.0.0.1:23230][0m
+WARNING 2023-06-07 01:07:30,535 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:07:30,539 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:07:30,547 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:30,553 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:07:30,560 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:30,564 base>ws>wssendql ...Done
+INFO 2023-06-07 01:07:30,567 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:30,571 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:07:30,571 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:07:30,599 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=DA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.16, 127.0.0.1:23236][0m
+WARNING 2023-06-07 01:07:31,620 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:07:31,621 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:07:31,629 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:31,636 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:07:31,643 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:31,648 base>ws>wssendql ...Done
+INFO 2023-06-07 01:07:31,653 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:31,656 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:07:31,658 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:07:31,683 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=DA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.15, 127.0.0.1:23241][0m
+WARNING 2023-06-07 01:07:32,709 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:07:32,710 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:07:32,718 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:32,725 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:07:32,732 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:32,740 base>ws>wssendql ...Done
+INFO 2023-06-07 01:07:32,745 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:32,750 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:07:32,751 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:07:32,780 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=AA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.16, 127.0.0.1:23245][0m
+WARNING 2023-06-07 01:07:36,654 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:07:36,656 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:07:36,665 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:36,673 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:07:36,678 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:36,682 base>ws>wssendql ...Done
+INFO 2023-06-07 01:07:36,686 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:07:36,689 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:07:36,689 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:07:36,707 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=AA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.14, 127.0.0.1:23251][0m
+INFO 2023-06-07 01:08:07,847 runserver>log_action [mHTTP POST /api/token/ 200 [0.42, 127.0.0.1:23307][0m
+INFO 2023-06-07 01:08:08,522 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:23310][0m
+WARNING 2023-06-07 01:08:11,335 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:08:11,336 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:08:11,342 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:08:11,348 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:08:11,354 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:08:11,360 base>ws>wssendql ...Done
+INFO 2023-06-07 01:08:11,363 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:08:11,366 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:08:11,367 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:08:11,388 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=EA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.14, 127.0.0.1:23317][0m
+INFO 2023-06-07 01:09:04,554 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:53836]
+INFO 2023-06-07 01:09:04,556 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:53837]
+INFO 2023-06-07 01:09:04,556 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:53835]
+INFO 2023-06-07 01:09:04,683 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:13,618 runserver>log_action [mHTTP GET /update-tf/36/ 200 [0.05, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:18,119 runserver>log_action [32mHTTP POST /update-tf/36/ 302 [0.04, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:18,216 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:24,426 runserver>log_action [mHTTP GET /update-tf/37/ 200 [0.02, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:28,193 runserver>log_action [32mHTTP POST /update-tf/37/ 302 [0.03, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:28,255 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:32,349 runserver>log_action [mHTTP GET /update-tf/38/ 200 [0.03, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:35,854 runserver>log_action [32mHTTP POST /update-tf/38/ 302 [0.03, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:35,934 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:38,695 runserver>log_action [mHTTP GET /update-tf/39/ 200 [0.03, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:45,528 runserver>log_action [32mHTTP POST /update-tf/39/ 302 [0.03, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:45,597 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:51,147 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.07, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:52,321 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.18, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:52,979 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:23427][0m
+INFO 2023-06-07 01:09:53,584 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.03, 127.0.0.1:23431][0m
+INFO 2023-06-07 01:09:54,217 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.08, 127.0.0.1:23341][0m
+INFO 2023-06-07 01:09:54,275 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23436]
+INFO 2023-06-07 01:09:54,289 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-07 01:09:54,300 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:23436]
+INFO 2023-06-07 01:09:54,304 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:23437]
+INFO 2023-06-07 01:09:54,311 base>consumers>connect connecting:cs_33
+INFO 2023-06-07 01:09:54,317 runserver>log_action WebSocket CONNECT /ws/cs/33/ [127.0.0.1:23437]
+INFO 2023-06-07 01:09:54,321 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:23438]
+INFO 2023-06-07 01:09:54,326 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-07 01:09:54,332 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:23438]
+WARNING 2023-06-07 01:09:59,045 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:09:59,047 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:09:59,052 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:09:59,059 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:09:59,064 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:09:59,068 base>ws>wssendql ...Done
+INFO 2023-06-07 01:09:59,071 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:09:59,074 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:09:59,075 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:09:59,095 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=AA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.14, 127.0.0.1:23440][0m
+INFO 2023-06-07 01:11:48,755 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:23437]
+INFO 2023-06-07 01:11:48,757 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:23438]
+INFO 2023-06-07 01:11:48,758 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23436]
+INFO 2023-06-07 01:11:48,869 runserver>log_action [mHTTP GET /routes/ 200 [0.09, 127.0.0.1:23489][0m
+INFO 2023-06-07 01:11:50,292 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:23489][0m
+INFO 2023-06-07 01:11:53,971 runserver>log_action [mHTTP GET /update-tf/36/ 200 [0.03, 127.0.0.1:23489][0m
+INFO 2023-06-07 01:11:57,173 runserver>log_action [32mHTTP POST /update-tf/36/ 302 [0.03, 127.0.0.1:23489][0m
+INFO 2023-06-07 01:11:57,243 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:23489][0m
+INFO 2023-06-07 01:12:02,523 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:23535][0m
+INFO 2023-06-07 01:12:03,278 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.03, 127.0.0.1:23539][0m
+INFO 2023-06-07 01:12:07,867 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:23489][0m
+INFO 2023-06-07 01:12:09,527 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.05, 127.0.0.1:23489][0m
+INFO 2023-06-07 01:12:10,938 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.15, 127.0.0.1:23489][0m
+INFO 2023-06-07 01:12:10,992 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23555]
+INFO 2023-06-07 01:12:11,005 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-07 01:12:11,017 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:23555]
+INFO 2023-06-07 01:12:11,026 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:23557]
+INFO 2023-06-07 01:12:11,037 base>consumers>connect connecting:cs_33
+INFO 2023-06-07 01:12:11,045 runserver>log_action WebSocket CONNECT /ws/cs/33/ [127.0.0.1:23557]
+INFO 2023-06-07 01:12:11,065 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:23559]
+INFO 2023-06-07 01:12:11,075 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-07 01:12:11,093 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:23559]
+WARNING 2023-06-07 01:12:13,069 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:12:13,071 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:12:13,079 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:12:13,085 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:12:13,091 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:12:13,095 base>ws>wssendql ...Done
+INFO 2023-06-07 01:12:13,098 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:12:13,101 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:12:13,102 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:12:13,118 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=AA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.15, 127.0.0.1:23567][0m
+WARNING 2023-06-07 01:12:15,090 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:12:15,091 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:12:15,097 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:12:15,102 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:12:15,108 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:12:15,111 base>ws>wssendql ...Done
+INFO 2023-06-07 01:12:15,115 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:12:15,117 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:12:15,118 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:12:15,135 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=BA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.13, 127.0.0.1:23573][0m
+INFO 2023-06-07 01:13:34,159 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:23557]
+INFO 2023-06-07 01:13:34,160 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:23559]
+INFO 2023-06-07 01:13:34,161 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23555]
+INFO 2023-06-07 01:13:34,226 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:13:38,296 runserver>log_action [mHTTP GET /update-tf/32/ 200 [0.24, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:13:42,713 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:13:43,792 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:13:44,670 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:13:45,717 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.05, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:13:46,873 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:13:46,904 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23657]
+INFO 2023-06-07 01:13:46,912 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-07 01:13:46,919 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:23657]
+INFO 2023-06-07 01:13:46,928 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:23658]
+INFO 2023-06-07 01:13:46,934 base>consumers>connect connecting:cs_33
+INFO 2023-06-07 01:13:46,940 runserver>log_action WebSocket CONNECT /ws/cs/33/ [127.0.0.1:23658]
+INFO 2023-06-07 01:13:46,944 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:23659]
+INFO 2023-06-07 01:13:46,951 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-07 01:13:46,959 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:23659]
+INFO 2023-06-07 01:13:53,420 runserver>log_action [mHTTP POST /api/token/ 200 [0.46, 127.0.0.1:23696][0m
+INFO 2023-06-07 01:13:54,093 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:23700][0m
+INFO 2023-06-07 01:13:58,550 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:23658]
+INFO 2023-06-07 01:13:58,552 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23657]
+INFO 2023-06-07 01:13:58,554 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:23659]
+INFO 2023-06-07 01:13:58,635 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:14:04,119 runserver>log_action [mHTTP GET /update-tf/37/ 200 [0.03, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:14:10,466 runserver>log_action [32mHTTP POST /update-tf/37/ 302 [0.04, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:14:10,548 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:14:12,146 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:14:13,076 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.05, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:14:14,277 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.07, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:14:14,322 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23738]
+INFO 2023-06-07 01:14:14,329 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-07 01:14:14,337 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:23738]
+INFO 2023-06-07 01:14:14,343 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:23739]
+INFO 2023-06-07 01:14:14,348 base>consumers>connect connecting:cs_33
+INFO 2023-06-07 01:14:14,354 runserver>log_action WebSocket CONNECT /ws/cs/33/ [127.0.0.1:23739]
+INFO 2023-06-07 01:14:14,358 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:23740]
+INFO 2023-06-07 01:14:14,363 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-07 01:14:14,370 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:23740]
+INFO 2023-06-07 01:14:19,585 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:23763][0m
+INFO 2023-06-07 01:14:20,287 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:23767][0m
+WARNING 2023-06-07 01:14:24,794 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:14:24,795 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:14:24,803 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:14:24,811 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:14:24,816 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:14:24,823 base>ws>wssendql ...Done
+INFO 2023-06-07 01:14:24,826 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:14:24,830 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:14:24,830 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:14:24,849 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=AA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.28, 127.0.0.1:23773][0m
+WARNING 2023-06-07 01:14:31,100 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:14:31,102 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:14:31,108 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:14:31,113 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:14:31,118 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:14:31,122 base>ws>wssendql ...Done
+INFO 2023-06-07 01:14:31,126 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:14:31,129 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:14:31,130 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:14:31,149 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=BA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.12, 127.0.0.1:23779][0m
+WARNING 2023-06-07 01:14:32,962 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:14:32,963 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:14:32,969 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:14:32,975 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:14:32,979 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:14:32,983 base>ws>wssendql ...Done
+INFO 2023-06-07 01:14:32,986 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:14:32,990 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:14:32,991 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:14:33,009 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=BA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.12, 127.0.0.1:23783][0m
+WARNING 2023-06-07 01:14:35,488 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:14:35,490 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:14:35,496 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:14:35,501 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:14:35,508 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:14:35,511 base>ws>wssendql ...Done
+INFO 2023-06-07 01:14:35,516 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:14:35,518 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:14:35,519 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:14:35,538 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=CA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.13, 127.0.0.1:23787][0m
+INFO 2023-06-07 01:14:58,084 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23738]
+INFO 2023-06-07 01:14:58,085 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:23740]
+INFO 2023-06-07 01:14:58,087 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:23739]
+INFO 2023-06-07 01:14:58,159 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:15:01,541 runserver>log_action [mHTTP GET /update-tf/38/ 200 [0.02, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:15:03,066 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:15:04,705 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:15:08,358 runserver>log_action [mHTTP GET /update-tf/39/ 200 [0.02, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:15:12,225 runserver>log_action [32mHTTP POST /update-tf/39/ 302 [0.03, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:15:12,290 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:15:14,405 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:15:15,437 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.05, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:15:16,540 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:15:16,578 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23834]
+INFO 2023-06-07 01:15:16,587 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-07 01:15:16,593 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:23834]
+INFO 2023-06-07 01:15:16,598 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:23835]
+INFO 2023-06-07 01:15:16,606 base>consumers>connect connecting:cs_33
+INFO 2023-06-07 01:15:16,613 runserver>log_action WebSocket CONNECT /ws/cs/33/ [127.0.0.1:23835]
+INFO 2023-06-07 01:15:16,619 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:23836]
+INFO 2023-06-07 01:15:16,626 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-07 01:15:16,634 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:23836]
+INFO 2023-06-07 01:15:22,376 runserver>log_action [mHTTP POST /api/token/ 200 [0.18, 127.0.0.1:23868][0m
+INFO 2023-06-07 01:15:22,890 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.03, 127.0.0.1:23871][0m
+WARNING 2023-06-07 01:15:28,185 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:15:28,187 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:15:28,194 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:28,201 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:15:28,206 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:28,210 base>ws>wssendql ...Done
+INFO 2023-06-07 01:15:28,214 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:28,218 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:15:28,219 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:15:28,236 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=EA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.14, 127.0.0.1:23875][0m
+WARNING 2023-06-07 01:15:30,873 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:15:30,874 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:15:30,880 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:30,885 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:15:30,891 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:30,896 base>ws>wssendql ...Done
+INFO 2023-06-07 01:15:30,900 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:30,904 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:15:30,905 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:15:30,922 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=CA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.15, 127.0.0.1:23879][0m
+WARNING 2023-06-07 01:15:32,812 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:15:32,814 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:15:32,821 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:32,827 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:15:32,831 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:32,835 base>ws>wssendql ...Done
+INFO 2023-06-07 01:15:32,838 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:32,840 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:15:32,841 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:15:32,857 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=BA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.13, 127.0.0.1:23883][0m
+WARNING 2023-06-07 01:15:34,559 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:15:34,561 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:15:34,568 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:34,574 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:15:34,580 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:34,584 base>ws>wssendql ...Done
+INFO 2023-06-07 01:15:34,587 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:34,589 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:15:34,590 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:15:34,607 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=BA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.13, 127.0.0.1:23887][0m
+WARNING 2023-06-07 01:15:36,181 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:15:36,183 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:15:36,190 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:36,199 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:15:36,208 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:36,213 base>ws>wssendql ...Done
+INFO 2023-06-07 01:15:36,219 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:15:36,224 base>ws>wsSendPrintTicket ...Done
+INFO 2023-06-07 01:15:36,226 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-07 01:15:36,259 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=AA&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [0.16, 127.0.0.1:23891][0m
+INFO 2023-06-07 01:16:11,762 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:23836]
+INFO 2023-06-07 01:16:11,764 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23834]
+INFO 2023-06-07 01:16:11,765 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:23835]
+INFO 2023-06-07 01:16:11,851 runserver>log_action [mHTTP GET /supervisors/ 200 [0.07, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:16:15,848 runserver>log_action [mHTTP GET /supervisor/6/ 200 [2.00, 127.0.0.1:23631][0m
+WARNING 2023-06-07 01:16:21,184 log>log_response Not Found: /favicon.ico
+WARNING 2023-06-07 01:16:21,187 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.09, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:16:22,331 runserver>log_action [mHTTP GET /supervisor/4/ 200 [0.03, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:06,630 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:08,722 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:13,190 runserver>log_action [mHTTP GET /update-tf/38/ 200 [0.02, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:18,362 runserver>log_action [32mHTTP POST /update-tf/38/ 302 [0.03, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:18,433 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:27,989 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:28,845 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.05, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:30,352 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:30,387 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:52677]
+INFO 2023-06-07 01:17:30,395 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-07 01:17:30,402 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:52677]
+INFO 2023-06-07 01:17:30,412 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:52678]
+INFO 2023-06-07 01:17:30,419 base>consumers>connect connecting:cs_33
+INFO 2023-06-07 01:17:30,425 runserver>log_action WebSocket CONNECT /ws/cs/33/ [127.0.0.1:52678]
+INFO 2023-06-07 01:17:30,430 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:52679]
+INFO 2023-06-07 01:17:30,436 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-07 01:17:30,443 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:52679]
+INFO 2023-06-07 01:17:33,653 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:52679]
+INFO 2023-06-07 01:17:33,655 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:52677]
+INFO 2023-06-07 01:17:33,655 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:52678]
+INFO 2023-06-07 01:17:33,729 base>ws>wscounterstatus channel_group_name:cs_33 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:33,734 base>ws>wscounterstatus ...Done
+WARNING 2023-06-07 01:17:33,836 base>ws>wssendwebtv display:AA003
+WARNING 2023-06-07 01:17:33,838 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:17:33,839 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:17:33,846 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:33,848 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:17:33,854 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:33,857 base>ws>wssendql ...Done
+INFO 2023-06-07 01:17:33,863 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_ST_AA003_I1z sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:33,866 base>ws>wsSendTicketStatus ...Done
+INFO 2023-06-07 01:17:33,870 base>ws>wssendvoice channel_group_name:voice_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:33,873 base>ws>wssendvoice ...Done
+INFO 2023-06-07 01:17:33,876 base>ws>wscounterstatus channel_group_name:cs_33 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:33,879 base>ws>wscounterstatus ...Done
+WARNING 2023-06-07 01:17:33,880 base>v_softkey_sub>cc_ready cc_ready status = {'status': 'OK'} msg = {} context_call = {'data': {'priority': 'time', 'mask': 'B,A,C,AA,BA,CA,DA,EA,', 'tickettype': 'AA', 'ticketnumber': '003', 'tickettime': datetime.datetime(2023, 6, 5, 16, 6, 49, 880945, tzinfo=datetime.timezone.utc)}}
+INFO 2023-06-07 01:17:33,902 runserver>log_action [32mHTTP POST /softkey/33/ 302 [0.24, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:33,977 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.07, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:34,002 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:52686]
+INFO 2023-06-07 01:17:34,009 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-07 01:17:34,018 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:52686]
+INFO 2023-06-07 01:17:34,027 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:52687]
+INFO 2023-06-07 01:17:34,033 base>consumers>connect connecting:cs_33
+INFO 2023-06-07 01:17:34,038 runserver>log_action WebSocket CONNECT /ws/cs/33/ [127.0.0.1:52687]
+INFO 2023-06-07 01:17:34,044 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:52688]
+INFO 2023-06-07 01:17:34,050 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-07 01:17:34,058 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:52688]
+INFO 2023-06-07 01:17:36,242 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:52688]
+INFO 2023-06-07 01:17:36,243 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:52686]
+INFO 2023-06-07 01:17:36,244 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:52687]
+INFO 2023-06-07 01:17:36,349 base>ws>wscounterstatus channel_group_name:cs_33 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:36,355 base>ws>wscounterstatus ...Done
+INFO 2023-06-07 01:17:36,367 runserver>log_action [32mHTTP POST /softkey/33/ 302 [0.12, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:36,445 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.07, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:36,472 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:52698]
+INFO 2023-06-07 01:17:36,479 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-07 01:17:36,491 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:52698]
+INFO 2023-06-07 01:17:36,495 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:52699]
+INFO 2023-06-07 01:17:36,503 base>consumers>connect connecting:cs_33
+INFO 2023-06-07 01:17:36,509 runserver>log_action WebSocket CONNECT /ws/cs/33/ [127.0.0.1:52699]
+INFO 2023-06-07 01:17:36,513 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:52700]
+INFO 2023-06-07 01:17:36,520 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-07 01:17:36,526 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:52700]
+INFO 2023-06-07 01:17:46,039 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:52698]
+INFO 2023-06-07 01:17:46,041 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:52699]
+INFO 2023-06-07 01:17:46,042 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:52700]
+INFO 2023-06-07 01:17:46,131 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_ST_AA003_I1z sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:46,136 base>ws>wsSendTicketStatus ...Done
+INFO 2023-06-07 01:17:46,137 base>ws>wscounterstatus channel_group_name:cs_33 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:46,139 base>ws>wscounterstatus ...Done
+WARNING 2023-06-07 01:17:46,140 base>v_softkey_sub>cc_ready cc_ready status = {'status': 'OK'} msg = {'msg': 'Ticket done.'}
+INFO 2023-06-07 01:17:46,151 base>ws>wscounterstatus channel_group_name:cs_33 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:46,153 base>ws>wscounterstatus ...Done
+WARNING 2023-06-07 01:17:46,244 base>ws>wssendwebtv display:AA004
+WARNING 2023-06-07 01:17:46,246 base>ws>wssendwebtv display:AA003
+WARNING 2023-06-07 01:17:46,249 base>ws>wssendwebtv display:AA002
+WARNING 2023-06-07 01:17:46,250 base>ws>wssendwebtv display:AA001
+INFO 2023-06-07 01:17:46,259 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:46,261 base>ws>wssendwebtv ...Done
+INFO 2023-06-07 01:17:46,266 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:46,269 base>ws>wssendql ...Done
+INFO 2023-06-07 01:17:46,273 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_ST_AA004_dw1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:46,276 base>ws>wsSendTicketStatus ...Done
+INFO 2023-06-07 01:17:46,280 base>ws>wssendvoice channel_group_name:voice_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:46,284 base>ws>wssendvoice ...Done
+INFO 2023-06-07 01:17:46,286 base>ws>wscounterstatus channel_group_name:cs_33 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:46,289 base>ws>wscounterstatus ...Done
+WARNING 2023-06-07 01:17:46,290 base>v_softkey_sub>cc_ready cc_ready status = {'status': 'OK'} msg = {} context_call = {'data': {'priority': 'time', 'mask': 'B,A,C,AA,BA,CA,DA,EA,', 'tickettype': 'AA', 'ticketnumber': '004', 'tickettime': datetime.datetime(2023, 6, 5, 16, 6, 50, 716909, tzinfo=datetime.timezone.utc)}}
+INFO 2023-06-07 01:17:46,311 runserver>log_action [32mHTTP POST /softkey/33/ 302 [0.27, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:46,381 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:46,407 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:52709]
+INFO 2023-06-07 01:17:46,415 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-07 01:17:46,421 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:52709]
+INFO 2023-06-07 01:17:46,431 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:52710]
+INFO 2023-06-07 01:17:46,437 base>consumers>connect connecting:cs_33
+INFO 2023-06-07 01:17:46,443 runserver>log_action WebSocket CONNECT /ws/cs/33/ [127.0.0.1:52710]
+INFO 2023-06-07 01:17:46,447 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:52711]
+INFO 2023-06-07 01:17:46,452 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-07 01:17:46,461 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:52711]
+INFO 2023-06-07 01:17:47,884 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:52710]
+INFO 2023-06-07 01:17:47,885 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:52711]
+INFO 2023-06-07 01:17:47,886 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:52709]
+INFO 2023-06-07 01:17:47,993 base>ws>wscounterstatus channel_group_name:cs_33 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:47,999 base>ws>wscounterstatus ...Done
+INFO 2023-06-07 01:17:48,010 runserver>log_action [32mHTTP POST /softkey/33/ 302 [0.12, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:48,080 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.07, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:48,101 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:52719]
+INFO 2023-06-07 01:17:48,110 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-07 01:17:48,117 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:52719]
+INFO 2023-06-07 01:17:48,121 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:52720]
+INFO 2023-06-07 01:17:48,129 base>consumers>connect connecting:cs_33
+INFO 2023-06-07 01:17:48,135 runserver>log_action WebSocket CONNECT /ws/cs/33/ [127.0.0.1:52720]
+INFO 2023-06-07 01:17:48,139 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:52721]
+INFO 2023-06-07 01:17:48,145 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-07 01:17:48,152 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:52721]
+INFO 2023-06-07 01:17:50,158 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:52721]
+INFO 2023-06-07 01:17:50,159 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:52719]
+INFO 2023-06-07 01:17:50,160 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:52720]
+INFO 2023-06-07 01:17:50,256 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_ST_AA004_dw1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:50,261 base>ws>wsSendTicketStatus ...Done
+INFO 2023-06-07 01:17:50,261 base>ws>wscounterstatus channel_group_name:cs_33 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:50,263 base>ws>wscounterstatus ...Done
+INFO 2023-06-07 01:17:50,281 base>ws>wscounterstatus channel_group_name:cs_33 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-07 01:17:50,284 base>ws>wscounterstatus ...Done
+INFO 2023-06-07 01:17:50,301 runserver>log_action [32mHTTP POST /softkey/33/ 302 [0.14, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:50,375 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.07, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:50,403 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:52729]
+INFO 2023-06-07 01:17:50,411 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-07 01:17:50,418 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:52729]
+INFO 2023-06-07 01:17:50,429 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:52730]
+INFO 2023-06-07 01:17:50,434 base>consumers>connect connecting:cs_33
+INFO 2023-06-07 01:17:50,440 runserver>log_action WebSocket CONNECT /ws/cs/33/ [127.0.0.1:52730]
+INFO 2023-06-07 01:17:50,444 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:52731]
+INFO 2023-06-07 01:17:50,450 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-07 01:17:50,456 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:52731]
+INFO 2023-06-07 01:17:51,326 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:52731]
+INFO 2023-06-07 01:17:51,327 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:52729]
+INFO 2023-06-07 01:17:51,328 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:52730]
+INFO 2023-06-07 01:17:51,454 runserver>log_action [32mHTTP POST /softkey/33/ 302 [0.13, 127.0.0.1:23631][0m
+INFO 2023-06-07 01:17:51,517 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.06, 127.0.0.1:23631][0m
