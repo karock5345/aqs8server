@@ -2266,3 +2266,44 @@ INFO 2023-06-06 00:42:07,597 base>views>init_branch_reset    -SCH- reset time: 1
 INFO 2023-06-06 00:42:07,598 base>views>init_branch_reset    -SCH- 2023-06-05 15:59:59 > 2023-06-05 16:42:07 [No]
 INFO 2023-06-06 00:47:43,760 runserver>log_action [mHTTP POST /api/token/ 200 [0.39, 127.0.0.1:61456][0m
 INFO 2023-06-06 01:05:49,710 runserver>log_action [mHTTP POST /api/token/ 200 [0.64, 127.0.0.1:1177][0m
+INFO 2023-06-06 15:52:09,800 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-06 15:52:11,075 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-06 15:52:11,085 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-06 15:52:11,522 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-06 15:52:11,523 base>views><module> -SCH- Now:06/06/2023, 07:52:11
+INFO 2023-06-06 15:52:11,653 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-06 16:42:00 Local:2023-06-07 00:42:00
+INFO 2023-06-06 15:52:11,654 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-06 15:52:11,655 base>views>init_branch_reset    -SCH- 2023-06-06 16:42:00 > 2023-06-06 07:52:11 [Yes]
+INFO 2023-06-06 15:52:11,724 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-06 15:59:59 Local:2023-06-06 23:59:59
+INFO 2023-06-06 15:52:11,725 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-06 15:52:11,725 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 07:52:11 [Yes]
+INFO 2023-06-06 15:52:11,733 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-06 18:00:00 Local:2023-06-07 02:00:00
+INFO 2023-06-06 15:52:11,733 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-06 15:52:11,734 base>views>init_branch_reset    -SCH- 2023-06-06 18:00:00 > 2023-06-06 07:52:11 [Yes]
+INFO 2023-06-06 15:52:11,742 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-06 15:59:59 Local:2023-06-06 23:59:59
+INFO 2023-06-06 15:52:11,742 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-06 15:52:11,743 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 07:52:11 [Yes]
+INFO 2023-06-06 15:52:11,751 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-06 15:59:59 Local:2023-06-06 23:59:59
+INFO 2023-06-06 15:52:11,752 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-06 15:52:11,752 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 07:52:11 [Yes]
+INFO 2023-06-06 15:52:11,760 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-06 15:59:59 Local:2023-06-06 23:59:59
+INFO 2023-06-06 15:52:11,761 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-06 15:52:11,762 base>views>init_branch_reset    -SCH- 2023-06-06 15:59:59 > 2023-06-06 07:52:11 [Yes]
+INFO 2023-06-06 15:57:09,648 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:64513][0m
+INFO 2023-06-06 15:57:31,618 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=postman&version=8.1 200 [0.02, 127.0.0.1:64513][0m
+INFO 2023-06-06 15:57:39,765 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=postman&version=8.1 200 [0.02, 127.0.0.1:64513][0m
+INFO 2023-06-06 16:19:59,296 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=STa&app=postman&version=8.1 200 [0.02, 127.0.0.1:64659][0m
+INFO 2023-06-06 16:20:05,699 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=postman&version=8.1 200 [0.02, 127.0.0.1:64659][0m
+INFO 2023-06-06 16:21:07,330 runserver>log_action [mHTTP POST /api/token/ 200 [0.21, 127.0.0.1:64676][0m
+INFO 2023-06-06 16:23:36,249 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:64692][0m
+INFO 2023-06-06 16:23:36,827 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:64695][0m
+INFO 2023-06-06 17:04:48,811 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:64863][0m
+INFO 2023-06-06 17:04:49,393 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:64866][0m
+INFO 2023-06-06 17:05:43,010 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:64882][0m
+INFO 2023-06-06 17:05:43,579 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:64885][0m
+INFO 2023-06-06 17:17:14,513 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:64930][0m
+INFO 2023-06-06 17:17:15,081 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:64933][0m
+INFO 2023-06-06 17:17:59,488 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:64940][0m
+INFO 2023-06-06 17:18:00,062 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:64943][0m
+INFO 2023-06-06 18:05:26,817 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:65197][0m
+INFO 2023-06-06 18:05:27,384 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:65200][0m
