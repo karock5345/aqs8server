@@ -37,6 +37,7 @@
 - Upgrade some packages (hiredis==2.2.3, cryptography==41.0.1, pyOpenSSL==23.2.0 etc.)
 - upgrade django to 4.1.9 from 4.1.7
 - Fixed already login user in other branch 
+- Fixed Web Softkey ticket sub total hiden ticketFormat Disabled
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>

@@ -3048,3 +3048,1602 @@ INFO 2023-06-08 00:46:43,109 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 1
 INFO 2023-06-08 00:46:46,830 runserver>log_action [mHTTP GET /update-tf/40/ 200 [0.03, 127.0.0.1:56959][0m
 INFO 2023-06-08 00:46:49,506 runserver>log_action [mHTTP GET /delete-tf/40/ 200 [0.02, 127.0.0.1:56959][0m
 INFO 2023-06-08 00:46:51,872 runserver>log_action [mHTTP GET /update-tf/40/ 200 [0.02, 127.0.0.1:56959][0m
+INFO 2023-06-08 15:04:38,917 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:04:40,239 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:04:40,250 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:04:40,544 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:04:40,545 base>views><module> -SCH- Now:06/08/2023, 07:04:40
+INFO 2023-06-08 15:04:40,675 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:04:40,675 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:04:40,676 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:04:40 [Yes]
+INFO 2023-06-08 15:04:40,747 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:04:40,747 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:04:40,748 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:04:40 [Yes]
+INFO 2023-06-08 15:04:40,756 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:04:40,757 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:04:40,757 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:04:40 [Yes]
+INFO 2023-06-08 15:04:40,765 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:04:40,765 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:04:40,766 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:04:40 [Yes]
+INFO 2023-06-08 15:04:40,774 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:04:40,775 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:04:40,775 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:04:40 [Yes]
+INFO 2023-06-08 15:04:40,783 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:04:40,784 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:04:40,784 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:04:40 [Yes]
+INFO 2023-06-08 15:04:46,704 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:50664][0m
+INFO 2023-06-08 15:04:47,148 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:50667][0m
+INFO 2023-06-08 15:08:57,711 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:50726][0m
+INFO 2023-06-08 15:08:58,232 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:50729][0m
+INFO 2023-06-08 15:10:16,828 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:50752][0m
+INFO 2023-06-08 15:10:17,325 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:50755][0m
+INFO 2023-06-08 15:11:29,133 runserver>log_action [mHTTP POST /api/token/ 200 [0.28, 127.0.0.1:50780][0m
+INFO 2023-06-08 15:11:29,586 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:50783][0m
+INFO 2023-06-08 15:12:22,701 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:50796][0m
+INFO 2023-06-08 15:12:23,158 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:50799][0m
+INFO 2023-06-08 15:13:43,103 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:50812][0m
+INFO 2023-06-08 15:13:43,554 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:50815][0m
+INFO 2023-06-08 15:14:29,666 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:50828][0m
+INFO 2023-06-08 15:14:30,122 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:50831][0m
+INFO 2023-06-08 15:15:12,753 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:50838][0m
+INFO 2023-06-08 15:15:13,250 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:50841][0m
+INFO 2023-06-08 15:15:25,450 runserver>log_action [mHTTP GET /webtv/KB/Reception/ 200 [0.03, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:25,749 runserver>log_action [36mHTTP GET /static/styles/styletv.css 304 [0.00, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:25,783 runserver>log_action [36mHTTP GET /static/icofont/icofont.min.css 304 [0.00, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:25,794 runserver>log_action [36mHTTP GET /static/images/logo_ts.png 304 [0.00, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:25,884 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:52733]
+INFO 2023-06-08 15:15:25,965 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-06-08 15:15:25,970 runserver>log_action [36mHTTP GET /static/icofont/fonts/icofont.woff2 304 [0.00, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:29,702 runserver>log_action [mHTTP GET /touch/?bc=KB&t=t1 200 [0.01, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:30,014 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:52733]
+INFO 2023-06-08 15:15:30,720 runserver>log_action [mHTTP GET /my/KB/A/215/y1y/ 200 [0.01, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:31,315 runserver>log_action [32mHTTP GET /softkey/1/ 302 [0.03, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:31,331 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:31,551 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:31,582 runserver>log_action [36mHTTP GET /static/images/logo-q.svg 304 [0.00, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:31,609 runserver>log_action [36mHTTP GET /static/js/script.js 304 [0.00, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:31,611 runserver>log_action [36mHTTP GET /static/images/avatar.svg 304 [0.00, 127.0.0.1:52729][0m
+INFO 2023-06-08 15:15:34,132 runserver>log_action [32mHTTP GET /admin/auth/user/ 302 [0.04, 127.0.0.1:52729][0m
+INFO 2023-06-08 15:15:34,238 runserver>log_action [mHTTP GET /admin/login/?next=/admin/auth/user/ 200 [0.10, 127.0.0.1:52729][0m
+INFO 2023-06-08 15:15:34,440 runserver>log_action [mHTTP GET /static/admin/css/base.css 200 [0.08, 127.0.0.1:52729][0m
+INFO 2023-06-08 15:15:34,446 runserver>log_action [mHTTP GET /static/admin/css/dark_mode.css 200 [0.06, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:34,454 runserver>log_action [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.06, 127.0.0.1:59878][0m
+INFO 2023-06-08 15:15:34,460 runserver>log_action [mHTTP GET /static/admin/css/login.css 200 [0.07, 127.0.0.1:59879][0m
+INFO 2023-06-08 15:15:34,471 runserver>log_action [mHTTP GET /static/admin/css/responsive.css 200 [0.08, 127.0.0.1:59880][0m
+INFO 2023-06-08 15:15:34,478 runserver>log_action [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.08, 127.0.0.1:59881][0m
+INFO 2023-06-08 15:15:34,485 runserver>log_action [mHTTP GET /static/admin/css/fonts.css 200 [0.03, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:34,529 runserver>log_action [mHTTP GET /static/admin/fonts/Roboto-Regular-webfont.woff 200 [0.01, 127.0.0.1:52728][0m
+INFO 2023-06-08 15:15:34,537 runserver>log_action [mHTTP GET /static/admin/fonts/Roboto-Light-webfont.woff 200 [0.01, 127.0.0.1:59881][0m
+WARNING 2023-06-08 15:15:34,583 log>log_response Not Found: /favicon.ico
+WARNING 2023-06-08 15:15:34,585 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.02, 127.0.0.1:59881][0m
+INFO 2023-06-08 15:15:38,521 runserver>log_action [32mHTTP POST /login/ 302 [0.23, 127.0.0.1:59881][0m
+INFO 2023-06-08 15:15:38,570 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:59881][0m
+INFO 2023-06-08 15:15:43,376 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:59881][0m
+INFO 2023-06-08 15:15:44,384 runserver>log_action [mHTTP GET /new-tf/ 200 [0.05, 127.0.0.1:59881][0m
+INFO 2023-06-08 15:16:04,540 runserver>log_action [32mHTTP POST /new-tf/ 302 [0.04, 127.0.0.1:59881][0m
+INFO 2023-06-08 15:16:04,599 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:59881][0m
+INFO 2023-06-08 15:16:17,743 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:57442][0m
+INFO 2023-06-08 15:16:18,187 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:57445][0m
+INFO 2023-06-08 15:17:03,356 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:57460][0m
+INFO 2023-06-08 15:17:03,793 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:57463][0m
+INFO 2023-06-08 15:17:13,561 runserver>log_action [mHTTP GET /new-tf/ 200 [0.02, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:17:30,504 runserver>log_action [32mHTTP POST /new-tf/ 302 [0.04, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:17:30,561 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:17:42,610 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:57479][0m
+INFO 2023-06-08 15:17:43,052 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:57482][0m
+INFO 2023-06-08 15:17:47,508 runserver>log_action [mHTTP GET /new-tf/ 200 [0.03, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:18:03,842 runserver>log_action [32mHTTP POST /new-tf/ 302 [0.04, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:18:03,900 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:18:10,361 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:57496][0m
+INFO 2023-06-08 15:18:10,792 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:57499][0m
+INFO 2023-06-08 15:18:20,537 runserver>log_action [mHTTP GET /new-tf/ 200 [0.02, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:18:35,718 runserver>log_action [32mHTTP POST /new-tf/ 302 [0.04, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:18:35,783 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:18:41,612 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:57512][0m
+INFO 2023-06-08 15:18:42,050 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:57515][0m
+INFO 2023-06-08 15:19:02,543 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:19:03,519 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.05, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:19:05,403 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.09, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:19:05,496 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:57534]
+INFO 2023-06-08 15:19:05,501 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:19:10,007 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:57534]
+INFO 2023-06-08 15:19:10,020 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:57537]
+INFO 2023-06-08 15:19:10,026 base>consumers>connect connecting:cs_33
+INFO 2023-06-08 15:19:15,013 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:57537]
+INFO 2023-06-08 15:19:15,026 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:57539]
+INFO 2023-06-08 15:19:15,031 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:19:17,273 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:19:20,002 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:57539]
+INFO 2023-06-08 15:19:22,002 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:19:25,116 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:19:27,468 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:19:34,043 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:19:36,914 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:19:38,304 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:19:38,309 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:19:40,294 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.12, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:19:40,361 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:57575]
+INFO 2023-06-08 15:19:40,368 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:19:40,376 runserver>log_action [36mHTTP GET /static/images/favicon.ico 304 [0.01, 127.0.0.1:57466][0m
+ERROR 2023-06-08 15:19:43,043 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:19:43,049 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:19:45,012 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:57575]
+INFO 2023-06-08 15:19:45,024 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:57580]
+INFO 2023-06-08 15:19:45,029 base>consumers>connect connecting:cs_33
+ERROR 2023-06-08 15:19:46,172 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:19:46,178 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:19:46,702 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:19:48,511 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:19:48,516 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:19:48,634 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:19:48,640 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:57580]
+INFO 2023-06-08 15:19:48,700 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:57590]
+INFO 2023-06-08 15:19:48,709 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:19:49,878 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:19:51,210 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:19:51,216 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:57590]
+INFO 2023-06-08 15:19:51,252 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:57598]
+INFO 2023-06-08 15:19:51,258 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:19:53,651 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:19:55,109 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:19:55,113 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:19:55,600 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:19:55,606 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:57598]
+INFO 2023-06-08 15:19:55,785 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:57608]
+INFO 2023-06-08 15:19:55,791 base>consumers>connect connecting:printerstatus_ST
+ERROR 2023-06-08 15:19:57,958 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:19:57,963 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:19:59,351 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:19:59,354 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:00,006 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:57608]
+INFO 2023-06-08 15:20:00,019 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:57613]
+INFO 2023-06-08 15:20:00,025 base>consumers>connect connecting:cs_33
+INFO 2023-06-08 15:20:00,827 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:02,182 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:20:02,188 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:57613]
+INFO 2023-06-08 15:20:04,087 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:20:04,091 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:04,093 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:04,154 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:57630]
+INFO 2023-06-08 15:20:04,162 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:20:05,438 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:20:05,444 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:57630]
+ERROR 2023-06-08 15:20:07,207 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:07,210 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:07,465 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:20:07,737 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:07,741 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:09,050 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:57466][0m
+ERROR 2023-06-08 15:20:09,555 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:09,557 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:10,307 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:20:10,921 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:10,926 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:11,418 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:57651]
+INFO 2023-06-08 15:20:11,425 base>consumers>connect connecting:cs_33
+INFO 2023-06-08 15:20:12,010 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:20:12,016 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:57651]
+INFO 2023-06-08 15:20:13,239 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:14,151 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:57660]
+INFO 2023-06-08 15:20:14,160 base>consumers>connect connecting:cs_33
+INFO 2023-06-08 15:20:14,512 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:20:14,519 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:57660]
+ERROR 2023-06-08 15:20:14,709 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:14,714 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:15,772 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:16,031 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:57670]
+INFO 2023-06-08 15:20:16,039 base>consumers>connect connecting:cs_33
+ERROR 2023-06-08 15:20:16,173 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:16,176 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:17,771 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:20:17,776 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:57670]
+ERROR 2023-06-08 15:20:19,017 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:19,039 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:19,049 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:19,112 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:57680]
+INFO 2023-06-08 15:20:19,120 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:20:20,108 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:20:20,113 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:57680]
+ERROR 2023-06-08 15:20:20,407 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:20,408 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:20:20,423 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=ZA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.22, 127.0.0.1:57541][0m
+ERROR 2023-06-08 15:20:21,888 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:21,892 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:22,000 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:57685]
+INFO 2023-06-08 15:20:22,007 base>consumers>connect connecting:ql_ST_c
+ERROR 2023-06-08 15:20:25,118 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:25,123 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:20:25,133 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:25,134 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:20:25,149 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=IA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.22, 127.0.0.1:57546][0m
+INFO 2023-06-08 15:20:27,015 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:57685]
+INFO 2023-06-08 15:20:27,029 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:57690]
+INFO 2023-06-08 15:20:27,035 base>consumers>connect connecting:printerstatus_ST
+ERROR 2023-06-08 15:20:28,238 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:28,239 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:20:28,256 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=HA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.21, 127.0.0.1:57553][0m
+ERROR 2023-06-08 15:20:28,524 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:28,529 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:20:28,778 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:28,781 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:20:30,590 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:30,591 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:20:30,605 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=GA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.21, 127.0.0.1:57558][0m
+ERROR 2023-06-08 15:20:31,340 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:31,345 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:20:31,966 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:31,969 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:32,014 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:57690]
+INFO 2023-06-08 15:20:32,027 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:57700]
+INFO 2023-06-08 15:20:32,033 base>consumers>connect connecting:cs_33
+ERROR 2023-06-08 15:20:34,257 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:34,263 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:20:35,759 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:35,761 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:20:36,799 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:36,804 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:37,001 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:57700]
+ERROR 2023-06-08 15:20:37,202 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:37,203 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:20:37,217 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=FA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.25, 127.0.0.1:57562][0m
+ERROR 2023-06-08 15:20:40,088 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:40,093 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:20:40,104 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:40,105 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:20:40,117 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=EA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.28, 127.0.0.1:57566][0m
+INFO 2023-06-08 15:20:42,724 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:57466][0m
+ERROR 2023-06-08 15:20:42,937 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:42,939 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:45,227 runserver>log_action [mHTTP GET /update-tf/40/ 200 [0.03, 127.0.0.1:57466][0m
+ERROR 2023-06-08 15:20:46,171 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:46,173 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:48,351 runserver>log_action [32mHTTP POST /update-tf/40/ 302 [0.03, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:20:48,409 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:57466][0m
+ERROR 2023-06-08 15:20:49,585 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:49,587 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:20:49,848 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:49,849 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:20:49,863 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=ZA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.23, 127.0.0.1:57583][0m
+INFO 2023-06-08 15:20:50,506 runserver>log_action [mHTTP GET /update-tf/44/ 200 [0.02, 127.0.0.1:57466][0m
+ERROR 2023-06-08 15:20:52,377 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:52,380 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-08 15:20:53,019 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:53,020 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:20:53,035 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=IA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.23, 127.0.0.1:57592][0m
+INFO 2023-06-08 15:20:54,043 runserver>log_action [32mHTTP POST /update-tf/44/ 302 [0.03, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:20:54,102 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:57466][0m
+ERROR 2023-06-08 15:20:55,310 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:55,312 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:56,408 runserver>log_action [mHTTP GET /update-tf/43/ 200 [0.02, 127.0.0.1:57466][0m
+ERROR 2023-06-08 15:20:56,821 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:56,822 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:20:56,837 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=HA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.26, 127.0.0.1:57600][0m
+ERROR 2023-06-08 15:20:57,842 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:20:57,845 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:20:59,296 runserver>log_action [32mHTTP POST /update-tf/43/ 302 [0.03, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:20:59,364 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:57466][0m
+ERROR 2023-06-08 15:21:01,132 base>ws>wssendql ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:21:01,134 base>ws>wsSendPrintTicket channel_group_name:print_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-08 15:21:03,839 runserver>log_action [mHTTP GET /update-tf/42/ 200 [0.03, 127.0.0.1:57466][0m
+ERROR 2023-06-08 15:21:03,974 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:21:03,975 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:21:03,992 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=GA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.23, 127.0.0.1:57615][0m
+ERROR 2023-06-08 15:21:07,218 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:21:07,219 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:21:07,233 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=FA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.22, 127.0.0.1:57622][0m
+INFO 2023-06-08 15:21:07,841 runserver>log_action [32mHTTP POST /update-tf/42/ 302 [0.03, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:21:07,899 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:57466][0m
+ERROR 2023-06-08 15:21:10,626 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:21:10,625 runserver>log_action [mHTTP GET /update-tf/41/ 200 [0.02, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:21:10,626 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:21:10,643 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=AA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.25, 127.0.0.1:57636][0m
+ERROR 2023-06-08 15:21:13,430 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:21:13,431 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:21:13,443 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=BA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.21, 127.0.0.1:57644][0m
+INFO 2023-06-08 15:21:14,440 runserver>log_action [32mHTTP POST /update-tf/41/ 302 [0.03, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:21:14,501 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:57466][0m
+ERROR 2023-06-08 15:21:16,361 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:21:16,362 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:21:16,376 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=CA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.22, 127.0.0.1:57656][0m
+ERROR 2023-06-08 15:21:18,891 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:21:18,892 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:21:18,904 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=DA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.21, 127.0.0.1:57666][0m
+INFO 2023-06-08 15:21:21,214 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:21:22,125 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.05, 127.0.0.1:57466][0m
+ERROR 2023-06-08 15:21:22,175 base>ws>wsSendPrintTicket ...ERROR:Redis Server is down!
+INFO 2023-06-08 15:21:22,176 base>v_roche>rocheSMS SMS disabled
+INFO 2023-06-08 15:21:22,188 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=ST&tickettype=EA&printernumber=%3CPNO%3Ep999%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.0 200 [63.22, 127.0.0.1:57675][0m
+INFO 2023-06-08 15:21:23,440 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:57466][0m
+INFO 2023-06-08 15:21:23,584 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:57758]
+INFO 2023-06-08 15:21:23,592 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:21:28,007 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:57758]
+INFO 2023-06-08 15:21:28,020 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:57763]
+INFO 2023-06-08 15:21:28,025 base>consumers>connect connecting:cs_33
+INFO 2023-06-08 15:21:33,014 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:57763]
+INFO 2023-06-08 15:21:33,028 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:57765]
+INFO 2023-06-08 15:21:33,033 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:21:38,006 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:57765]
+INFO 2023-06-08 15:21:42,332 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:57774][0m
+INFO 2023-06-08 15:21:42,753 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:57777][0m
+INFO 2023-06-08 15:22:56,335 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:22:58,043 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:22:58,053 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:22:58,208 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:22:58,209 base>views><module> -SCH- Now:06/08/2023, 07:22:58
+INFO 2023-06-08 15:22:58,340 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:22:58,341 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:22:58,342 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:22:58 [Yes]
+INFO 2023-06-08 15:22:58,418 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:22:58,419 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:22:58,420 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:22:58 [Yes]
+INFO 2023-06-08 15:22:58,428 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:22:58,429 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:22:58,429 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:22:58 [Yes]
+INFO 2023-06-08 15:22:58,439 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:22:58,440 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:22:58,440 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:22:58 [Yes]
+INFO 2023-06-08 15:22:58,449 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:22:58,450 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:22:58,451 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:22:58 [Yes]
+INFO 2023-06-08 15:22:58,459 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:22:58,460 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:22:58,461 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:22:58 [Yes]
+INFO 2023-06-08 15:23:00,724 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:23:02,171 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:23:02,180 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:23:02,305 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:23:02,305 base>views><module> -SCH- Now:06/08/2023, 07:23:02
+INFO 2023-06-08 15:23:02,428 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:23:02,428 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:23:02,429 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:23:02 [Yes]
+INFO 2023-06-08 15:23:02,496 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:23:02,497 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:23:02,498 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:23:02 [Yes]
+INFO 2023-06-08 15:23:02,505 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:23:02,506 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:23:02,507 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:23:02 [Yes]
+INFO 2023-06-08 15:23:02,516 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:23:02,516 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:23:02,517 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:23:02 [Yes]
+INFO 2023-06-08 15:23:02,525 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:23:02,526 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:23:02,526 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:23:02 [Yes]
+INFO 2023-06-08 15:23:02,534 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:23:02,535 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:23:02,535 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:23:02 [Yes]
+INFO 2023-06-08 15:23:10,444 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:23:11,888 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:23:11,898 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:23:16,920 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:23:18,338 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:23:18,348 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:23:25,614 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:23:27,048 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:23:27,057 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:23:59,899 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:24:01,442 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:24:01,452 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:24:20,992 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:24:22,457 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:24:22,467 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:24:22,602 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:24:22,603 base>views><module> -SCH- Now:06/08/2023, 07:24:22
+INFO 2023-06-08 15:24:22,725 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:24:22,726 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:24:22,726 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:24:22 [Yes]
+INFO 2023-06-08 15:24:22,803 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:24:22,803 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:24:22,804 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:24:22 [Yes]
+INFO 2023-06-08 15:24:22,812 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:24:22,812 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:24:22,813 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:24:22 [Yes]
+INFO 2023-06-08 15:24:22,822 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:24:22,822 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:24:22,822 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:24:22 [Yes]
+INFO 2023-06-08 15:24:22,829 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:24:22,830 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:24:22,832 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:24:22 [Yes]
+INFO 2023-06-08 15:24:22,839 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:24:22,840 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:24:22,840 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:24:22 [Yes]
+INFO 2023-06-08 15:25:37,363 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:25:39,065 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:25:39,075 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:25:39,236 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:25:39,237 base>views><module> -SCH- Now:06/08/2023, 07:25:39
+INFO 2023-06-08 15:25:39,370 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:25:39,371 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:25:39,372 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:25:39 [Yes]
+INFO 2023-06-08 15:25:39,443 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:25:39,444 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:25:39,445 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:25:39 [Yes]
+INFO 2023-06-08 15:25:39,452 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:25:39,453 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:25:39,454 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:25:39 [Yes]
+INFO 2023-06-08 15:25:39,462 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:25:39,463 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:25:39,463 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:25:39 [Yes]
+INFO 2023-06-08 15:25:39,472 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:25:39,473 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:25:39,474 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:25:39 [Yes]
+INFO 2023-06-08 15:25:39,482 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:25:39,482 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:25:39,483 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:25:39 [Yes]
+INFO 2023-06-08 15:25:45,194 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:25:46,825 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:25:46,837 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:25:48,541 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:25:50,022 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:25:50,032 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:25:52,835 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:25:54,265 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:25:54,273 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:25:55,942 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:25:57,354 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:25:57,363 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:25:57,498 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:25:57,499 base>views><module> -SCH- Now:06/08/2023, 07:25:57
+INFO 2023-06-08 15:25:57,624 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:25:57,625 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:25:57,625 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:25:57 [Yes]
+INFO 2023-06-08 15:25:57,690 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:25:57,691 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:25:57,692 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:25:57 [Yes]
+INFO 2023-06-08 15:25:57,700 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:25:57,700 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:25:57,701 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:25:57 [Yes]
+INFO 2023-06-08 15:25:57,708 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:25:57,709 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:25:57,709 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:25:57 [Yes]
+INFO 2023-06-08 15:25:57,717 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:25:57,718 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:25:57,718 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:25:57 [Yes]
+INFO 2023-06-08 15:25:57,726 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:25:57,727 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:25:57,727 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:25:57 [Yes]
+INFO 2023-06-08 15:26:05,529 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.12, 127.0.0.1:57882][0m
+INFO 2023-06-08 15:26:05,602 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:57886]
+INFO 2023-06-08 15:26:05,656 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:26:07,723 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.07, 127.0.0.1:57882][0m
+INFO 2023-06-08 15:26:07,730 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:57886]
+INFO 2023-06-08 15:26:07,792 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:57893]
+INFO 2023-06-08 15:26:07,802 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:26:10,224 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.07, 127.0.0.1:57882][0m
+INFO 2023-06-08 15:26:10,231 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:57893]
+INFO 2023-06-08 15:26:10,294 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:57897]
+INFO 2023-06-08 15:26:10,304 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:26:15,015 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:57897]
+INFO 2023-06-08 15:26:15,028 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:57899]
+INFO 2023-06-08 15:26:15,034 base>consumers>connect connecting:cs_33
+INFO 2023-06-08 15:26:20,008 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:57899]
+INFO 2023-06-08 15:26:20,022 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:57904]
+INFO 2023-06-08 15:26:20,028 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:26:25,007 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:57904]
+INFO 2023-06-08 15:26:32,550 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.02, 127.0.0.1:57910][0m
+INFO 2023-06-08 15:27:48,813 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.08, 127.0.0.1:57928][0m
+INFO 2023-06-08 15:27:48,902 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:57932]
+INFO 2023-06-08 15:27:48,907 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:27:53,003 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:57932]
+INFO 2023-06-08 15:27:53,016 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:57936]
+INFO 2023-06-08 15:27:53,022 base>consumers>connect connecting:cs_33
+INFO 2023-06-08 15:27:58,015 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:57936]
+INFO 2023-06-08 15:27:58,029 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:57939]
+INFO 2023-06-08 15:27:58,033 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:28:03,008 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:57939]
+INFO 2023-06-08 15:29:37,944 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:29:39,358 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.05, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:29:41,120 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.07, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:29:41,212 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:57966]
+INFO 2023-06-08 15:29:41,217 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:29:46,013 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:57966]
+INFO 2023-06-08 15:29:46,027 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:57969]
+INFO 2023-06-08 15:29:46,032 base>consumers>connect connecting:cs_33
+INFO 2023-06-08 15:29:51,013 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:57969]
+INFO 2023-06-08 15:29:51,026 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:57971]
+INFO 2023-06-08 15:29:51,031 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:29:56,007 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:57971]
+INFO 2023-06-08 15:30:09,943 runserver>log_action [mHTTP GET /routes/ 200 [0.08, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:30:11,467 runserver>log_action [mHTTP GET /update-route/26 200 [0.05, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:30:23,880 runserver>log_action [mHTTP GET /routes/ 200 [0.07, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:30:26,682 runserver>log_action [mHTTP GET /update-route/41 200 [0.03, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:30:33,974 runserver>log_action [32mHTTP POST /update-route/41 302 [0.03, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:30:34,045 runserver>log_action [mHTTP GET /routes/ 200 [0.07, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:30:38,863 runserver>log_action [mHTTP GET /update-route/45 200 [0.04, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:30:44,306 runserver>log_action [mHTTP GET /routes/ 200 [0.07, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:30:51,165 runserver>log_action [mHTTP GET /update-route/41 200 [0.03, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:30:53,727 runserver>log_action [32mHTTP POST /update-route/41 302 [0.03, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:30:53,805 runserver>log_action [mHTTP GET /routes/ 200 [0.07, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:31:01,067 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:57958][0m
+INFO 2023-06-08 15:31:22,679 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:58015][0m
+INFO 2023-06-08 15:31:45,812 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:31:47,349 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:31:47,359 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:31:47,487 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:31:47,488 base>views><module> -SCH- Now:06/08/2023, 07:31:47
+INFO 2023-06-08 15:31:47,617 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:31:47,618 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:31:47,618 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:31:47 [Yes]
+INFO 2023-06-08 15:31:47,684 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:31:47,685 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:31:47,685 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:31:47 [Yes]
+INFO 2023-06-08 15:31:47,694 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:31:47,694 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:31:47,695 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:31:47 [Yes]
+INFO 2023-06-08 15:31:47,702 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:31:47,703 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:31:47,704 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:31:47 [Yes]
+INFO 2023-06-08 15:31:47,713 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:31:47,715 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:31:47,717 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:31:47 [Yes]
+INFO 2023-06-08 15:31:47,726 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:31:47,726 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:31:47,727 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:31:47 [Yes]
+INFO 2023-06-08 15:31:52,244 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:31:53,859 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:31:53,869 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:31:53,994 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:31:53,995 base>views><module> -SCH- Now:06/08/2023, 07:31:53
+INFO 2023-06-08 15:31:54,125 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:31:54,126 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:31:54,127 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:31:54 [Yes]
+INFO 2023-06-08 15:31:54,199 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:31:54,200 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:31:54,200 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:31:54 [Yes]
+INFO 2023-06-08 15:31:54,208 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:31:54,209 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:31:54,210 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:31:54 [Yes]
+INFO 2023-06-08 15:31:54,218 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:31:54,218 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:31:54,219 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:31:54 [Yes]
+INFO 2023-06-08 15:31:54,228 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:31:54,228 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:31:54,229 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:31:54 [Yes]
+INFO 2023-06-08 15:31:54,237 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:31:54,238 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:31:54,238 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:31:54 [Yes]
+INFO 2023-06-08 15:31:56,518 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:31:58,065 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:31:58,077 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:31:58,205 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:31:58,205 base>views><module> -SCH- Now:06/08/2023, 07:31:58
+INFO 2023-06-08 15:31:58,332 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:31:58,333 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:31:58,333 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:31:58 [Yes]
+INFO 2023-06-08 15:31:58,398 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:31:58,399 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:31:58,399 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:31:58 [Yes]
+INFO 2023-06-08 15:31:58,407 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:31:58,408 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:31:58,409 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:31:58 [Yes]
+INFO 2023-06-08 15:31:58,416 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:31:58,417 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:31:58,418 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:31:58 [Yes]
+INFO 2023-06-08 15:31:58,425 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:31:58,426 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:31:58,427 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:31:58 [Yes]
+INFO 2023-06-08 15:31:58,434 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:31:58,435 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:31:58,436 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:31:58 [Yes]
+INFO 2023-06-08 15:32:07,589 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.09, 127.0.0.1:58044][0m
+INFO 2023-06-08 15:32:08,632 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.05, 127.0.0.1:58044][0m
+INFO 2023-06-08 15:32:10,043 runserver>log_action [32mHTTP GET /softkey/33/ 302 [0.05, 127.0.0.1:58044][0m
+INFO 2023-06-08 15:32:10,096 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.05, 127.0.0.1:58044][0m
+INFO 2023-06-08 15:33:44,272 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:33:45,780 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:33:45,790 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:33:45,912 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:33:45,912 base>views><module> -SCH- Now:06/08/2023, 07:33:45
+INFO 2023-06-08 15:33:46,034 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:33:46,035 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:33:46,035 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:33:45 [Yes]
+INFO 2023-06-08 15:33:46,101 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:33:46,101 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:33:46,101 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:33:45 [Yes]
+INFO 2023-06-08 15:33:46,109 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:33:46,110 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:33:46,110 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:33:45 [Yes]
+INFO 2023-06-08 15:33:46,117 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:33:46,118 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:33:46,118 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:33:45 [Yes]
+INFO 2023-06-08 15:33:46,126 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:33:46,126 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:33:46,127 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:33:45 [Yes]
+INFO 2023-06-08 15:33:46,134 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:33:46,135 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:33:46,135 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:33:45 [Yes]
+INFO 2023-06-08 15:33:50,620 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:33:52,085 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:33:52,096 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:33:57,122 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:33:58,680 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:33:58,689 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:34:00,344 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:34:01,816 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:34:01,825 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:34:04,593 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:34:06,080 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:34:06,090 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:34:06,216 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:34:06,216 base>views><module> -SCH- Now:06/08/2023, 07:34:06
+INFO 2023-06-08 15:34:06,339 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:34:06,340 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:34:06,341 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:34:06 [Yes]
+INFO 2023-06-08 15:34:06,407 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:06,408 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:06,408 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:06 [Yes]
+INFO 2023-06-08 15:34:06,416 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:34:06,417 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:34:06,417 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:34:06 [Yes]
+INFO 2023-06-08 15:34:06,425 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:06,426 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:06,426 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:06 [Yes]
+INFO 2023-06-08 15:34:06,435 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:06,436 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:06,436 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:06 [Yes]
+INFO 2023-06-08 15:34:06,444 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:06,444 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:06,445 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:06 [Yes]
+INFO 2023-06-08 15:34:10,946 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:34:12,485 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:34:12,495 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:34:14,172 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:34:15,692 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:34:15,702 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:34:15,825 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:34:15,826 base>views><module> -SCH- Now:06/08/2023, 07:34:15
+INFO 2023-06-08 15:34:15,952 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:34:15,953 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:34:15,954 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:34:15 [Yes]
+INFO 2023-06-08 15:34:16,019 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:16,019 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:16,020 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:15 [Yes]
+INFO 2023-06-08 15:34:16,028 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:34:16,028 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:34:16,029 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:34:15 [Yes]
+INFO 2023-06-08 15:34:16,036 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:16,037 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:16,037 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:15 [Yes]
+INFO 2023-06-08 15:34:16,044 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:16,044 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:16,045 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:15 [Yes]
+INFO 2023-06-08 15:34:16,052 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:16,053 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:16,053 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:15 [Yes]
+INFO 2023-06-08 15:34:19,451 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:34:20,934 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:34:20,945 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:34:21,066 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:34:21,066 base>views><module> -SCH- Now:06/08/2023, 07:34:21
+INFO 2023-06-08 15:34:21,191 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:34:21,192 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:34:21,193 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:34:21 [Yes]
+INFO 2023-06-08 15:34:21,259 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:21,260 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:21,261 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:21 [Yes]
+INFO 2023-06-08 15:34:21,268 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:34:21,269 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:34:21,269 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:34:21 [Yes]
+INFO 2023-06-08 15:34:21,276 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:21,276 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:21,277 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:21 [Yes]
+INFO 2023-06-08 15:34:21,284 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:21,285 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:21,285 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:21 [Yes]
+INFO 2023-06-08 15:34:21,293 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:21,294 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:21,294 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:21 [Yes]
+INFO 2023-06-08 15:34:25,798 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:34:27,241 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:34:27,250 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:34:38,906 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:34:40,436 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:34:40,445 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:34:40,573 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:34:40,574 base>views><module> -SCH- Now:06/08/2023, 07:34:40
+INFO 2023-06-08 15:34:40,697 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:34:40,698 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:34:40,698 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:34:40 [Yes]
+INFO 2023-06-08 15:34:40,771 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:40,772 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:40,772 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:40 [Yes]
+INFO 2023-06-08 15:34:40,780 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:34:40,780 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:34:40,781 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:34:40 [Yes]
+INFO 2023-06-08 15:34:40,789 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:40,790 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:40,790 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:40 [Yes]
+INFO 2023-06-08 15:34:40,798 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:40,799 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:40,799 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:40 [Yes]
+INFO 2023-06-08 15:34:40,807 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:40,807 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:40,808 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:40 [Yes]
+INFO 2023-06-08 15:34:55,495 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:34:56,955 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:34:56,965 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:34:57,103 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:34:57,104 base>views><module> -SCH- Now:06/08/2023, 07:34:57
+INFO 2023-06-08 15:34:57,220 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:34:57,221 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:34:57,221 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:34:57 [Yes]
+INFO 2023-06-08 15:34:57,288 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:57,289 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:57,290 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:57 [Yes]
+INFO 2023-06-08 15:34:57,299 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:34:57,300 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:34:57,301 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:34:57 [Yes]
+INFO 2023-06-08 15:34:57,309 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:57,310 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:57,310 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:57 [Yes]
+INFO 2023-06-08 15:34:57,318 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:57,319 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:57,319 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:57 [Yes]
+INFO 2023-06-08 15:34:57,326 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:34:57,327 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:34:57,327 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:34:57 [Yes]
+ERROR 2023-06-08 15:34:59,129 log>log_response Internal Server Error: /softkey/33/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\views.py", line 107, in SoftkeyView
+    ticketformat = TicketFormat.objects.get(ttype=tr.tickettype , branch=counterstatus.countertype.branch, enabled=True)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\db\models\query.py", line 650, in get
+    raise self.model.DoesNotExist(
+base.models.TicketFormat.DoesNotExist: TicketFormat matching query does not exist.
+ERROR 2023-06-08 15:34:59,141 runserver>log_action [35;1mHTTP GET /softkey/33/ 500 [0.25, 127.0.0.1:58159][0m
+INFO 2023-06-08 15:36:08,309 runserver>log_action [mHTTP GET /admin/login/?next=/admin/auth/user/ 200 [0.09, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:08,682 runserver>log_action [mHTTP GET /static/admin/fonts/Roboto-Bold-webfont.woff 200 [0.07, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:12,754 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.02, 127.0.0.1:58179][0m
+INFO 2023-06-08 15:36:18,477 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:19,806 runserver>log_action [mHTTP GET /update-tf/25/ 200 [0.03, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:34,537 runserver>log_action [32mHTTP GET /admin 301 [0.00, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:34,559 runserver>log_action [32mHTTP GET /admin/ 302 [0.02, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:34,584 runserver>log_action [mHTTP GET /admin/login/?next=/admin/ 200 [0.02, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:43,523 runserver>log_action [mHTTP POST /admin/login/?next=/admin/ 200 [0.22, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:45,860 runserver>log_action [32mHTTP POST /admin/login/?next=/admin/ 302 [0.23, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:45,931 runserver>log_action [mHTTP GET /admin/ 200 [0.07, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:46,010 runserver>log_action [mHTTP GET /static/admin/css/dashboard.css 200 [0.01, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:46,067 runserver>log_action [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.00, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:46,073 runserver>log_action [mHTTP GET /static/admin/img/icon-changelink.svg 200 [0.01, 127.0.0.1:58172][0m
+INFO 2023-06-08 15:36:51,619 runserver>log_action [mHTTP GET /admin/base/ticketformat/ 200 [0.14, 127.0.0.1:58172][0m
+INFO 2023-06-08 15:36:51,648 runserver>log_action [mHTTP GET /static/admin/css/changelists.css 200 [0.01, 127.0.0.1:58172][0m
+INFO 2023-06-08 15:36:51,724 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.03, 127.0.0.1:58172][0m
+INFO 2023-06-08 15:36:51,753 runserver>log_action [mHTTP GET /static/admin/js/vendor/jquery/jquery.js 200 [0.05, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:51,759 runserver>log_action [mHTTP GET /static/admin/js/jquery.init.js 200 [0.06, 127.0.0.1:58202][0m
+INFO 2023-06-08 15:36:51,767 runserver>log_action [mHTTP GET /static/admin/js/core.js 200 [0.06, 127.0.0.1:58203][0m
+INFO 2023-06-08 15:36:51,774 runserver>log_action [mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 200 [0.07, 127.0.0.1:58204][0m
+INFO 2023-06-08 15:36:51,784 runserver>log_action [mHTTP GET /static/admin/js/actions.js 200 [0.08, 127.0.0.1:58205][0m
+INFO 2023-06-08 15:36:51,795 runserver>log_action [mHTTP GET /static/admin/js/urlify.js 200 [0.07, 127.0.0.1:58172][0m
+INFO 2023-06-08 15:36:51,804 runserver>log_action [mHTTP GET /static/admin/js/prepopulate.js 200 [0.05, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:51,873 runserver>log_action [mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 200 [0.07, 127.0.0.1:58202][0m
+INFO 2023-06-08 15:36:51,880 runserver>log_action [mHTTP GET /static/admin/js/filters.js 200 [0.07, 127.0.0.1:58171][0m
+INFO 2023-06-08 15:36:51,951 runserver>log_action [mHTTP GET /static/admin/img/icon-yes.svg 200 [0.01, 127.0.0.1:58202][0m
+INFO 2023-06-08 15:36:51,958 runserver>log_action [mHTTP GET /static/admin/img/icon-no.svg 200 [0.01, 127.0.0.1:58172][0m
+INFO 2023-06-08 15:36:51,965 runserver>log_action [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.02, 127.0.0.1:58205][0m
+INFO 2023-06-08 15:36:51,971 runserver>log_action [mHTTP GET /static/admin/img/sorting-icons.svg 200 [0.03, 127.0.0.1:58204][0m
+INFO 2023-06-08 15:36:58,430 runserver>log_action [mHTTP GET /admin/base/ticketformat/41/change/ 200 [0.08, 127.0.0.1:58204][0m
+INFO 2023-06-08 15:36:58,459 runserver>log_action [mHTTP GET /static/admin/css/forms.css 200 [0.01, 127.0.0.1:58204][0m
+INFO 2023-06-08 15:36:58,514 runserver>log_action [mHTTP GET /static/admin/js/prepopulate_init.js 200 [0.01, 127.0.0.1:58205][0m
+INFO 2023-06-08 15:36:58,522 runserver>log_action [mHTTP GET /static/admin/css/widgets.css 200 [0.01, 127.0.0.1:58172][0m
+INFO 2023-06-08 15:36:58,527 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:58204][0m
+INFO 2023-06-08 15:36:58,533 runserver>log_action [mHTTP GET /static/admin/img/icon-deletelink.svg 200 [0.01, 127.0.0.1:58172][0m
+INFO 2023-06-08 15:36:58,540 runserver>log_action [mHTTP GET /static/admin/img/icon-viewlink.svg 200 [0.01, 127.0.0.1:58204][0m
+INFO 2023-06-08 15:36:58,561 runserver>log_action [mHTTP GET /static/admin/js/change_form.js 200 [0.02, 127.0.0.1:58204][0m
+INFO 2023-06-08 15:37:35,108 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:37:36,689 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:37:36,698 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:37:38,432 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:37:39,868 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:37:39,877 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:37:48,222 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:37:49,711 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:37:49,720 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:37:51,386 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:37:52,851 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:37:52,862 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:37:55,673 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:37:57,193 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:37:57,203 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:37:57,334 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:37:57,334 base>views><module> -SCH- Now:06/08/2023, 07:37:57
+INFO 2023-06-08 15:37:57,459 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:37:57,460 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:37:57,460 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:37:57 [Yes]
+INFO 2023-06-08 15:37:57,534 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:37:57,535 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:37:57,535 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:37:57 [Yes]
+INFO 2023-06-08 15:37:57,561 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:37:57,562 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:37:57,562 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:37:57 [Yes]
+INFO 2023-06-08 15:37:57,570 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:37:57,571 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:37:57,572 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:37:57 [Yes]
+INFO 2023-06-08 15:37:57,580 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:37:57,581 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:37:57,582 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:37:57 [Yes]
+INFO 2023-06-08 15:37:57,590 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:37:57,590 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:37:57,591 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:37:57 [Yes]
+INFO 2023-06-08 15:38:11,561 runserver>log_action [mHTTP GET / 200 [0.07, 127.0.0.1:58257][0m
+INFO 2023-06-08 15:38:13,745 runserver>log_action [32mHTTP GET /logout/ 302 [0.02, 127.0.0.1:58257][0m
+INFO 2023-06-08 15:38:13,757 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:58257][0m
+INFO 2023-06-08 15:38:15,437 runserver>log_action [32mHTTP POST /login/ 302 [0.23, 127.0.0.1:58257][0m
+INFO 2023-06-08 15:38:15,481 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:58257][0m
+INFO 2023-06-08 15:38:16,921 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:58257][0m
+INFO 2023-06-08 15:38:17,959 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.05, 127.0.0.1:58257][0m
+WARNING 2023-06-08 15:38:19,755 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+WARNING 2023-06-08 15:38:19,757 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+WARNING 2023-06-08 15:38:19,758 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+WARNING 2023-06-08 15:38:19,760 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+WARNING 2023-06-08 15:38:19,763 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+INFO 2023-06-08 15:38:19,790 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.07, 127.0.0.1:58257][0m
+INFO 2023-06-08 15:38:19,887 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:58277]
+INFO 2023-06-08 15:38:19,925 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:38:24,007 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:58277]
+INFO 2023-06-08 15:38:24,022 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:58280]
+INFO 2023-06-08 15:38:24,028 base>consumers>connect connecting:cs_33
+INFO 2023-06-08 15:38:29,003 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:58280]
+INFO 2023-06-08 15:38:29,016 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:58282]
+INFO 2023-06-08 15:38:29,022 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:38:34,010 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:58282]
+INFO 2023-06-08 15:39:52,017 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:39:53,665 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:39:53,675 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:39:53,807 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:39:53,808 base>views><module> -SCH- Now:06/08/2023, 07:39:53
+INFO 2023-06-08 15:39:53,932 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:39:53,933 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:39:53,934 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:39:53 [Yes]
+INFO 2023-06-08 15:39:53,999 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:39:54,000 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:39:54,001 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:39:53 [Yes]
+INFO 2023-06-08 15:39:54,008 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:39:54,008 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:39:54,009 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:39:53 [Yes]
+INFO 2023-06-08 15:39:54,016 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:39:54,016 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:39:54,017 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:39:53 [Yes]
+INFO 2023-06-08 15:39:54,025 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:39:54,026 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:39:54,026 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:39:53 [Yes]
+INFO 2023-06-08 15:39:54,033 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:39:54,034 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:39:54,034 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:39:53 [Yes]
+WARNING 2023-06-08 15:39:55,562 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+WARNING 2023-06-08 15:39:55,563 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+WARNING 2023-06-08 15:39:55,565 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+WARNING 2023-06-08 15:39:55,567 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+WARNING 2023-06-08 15:39:55,569 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+INFO 2023-06-08 15:39:55,636 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.12, 127.0.0.1:58306][0m
+INFO 2023-06-08 15:39:55,704 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:58310]
+INFO 2023-06-08 15:39:55,760 base>consumers>connect connecting:printerstatus_ST
+WARNING 2023-06-08 15:39:58,217 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+WARNING 2023-06-08 15:39:58,219 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+WARNING 2023-06-08 15:39:58,221 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+WARNING 2023-06-08 15:39:58,223 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+WARNING 2023-06-08 15:39:58,224 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting).
+INFO 2023-06-08 15:39:58,245 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.07, 127.0.0.1:58306][0m
+INFO 2023-06-08 15:39:58,253 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:58310]
+INFO 2023-06-08 15:39:58,300 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:58316]
+INFO 2023-06-08 15:39:58,307 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:40:03,005 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:58316]
+INFO 2023-06-08 15:40:03,019 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:58320]
+INFO 2023-06-08 15:40:03,025 base>consumers>connect connecting:cs_33
+INFO 2023-06-08 15:40:08,015 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:58320]
+INFO 2023-06-08 15:40:08,029 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:58322]
+INFO 2023-06-08 15:40:08,035 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:40:13,011 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:58322]
+INFO 2023-06-08 15:40:41,060 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:40:42,650 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:40:42,659 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:40:42,782 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:40:42,783 base>views><module> -SCH- Now:06/08/2023, 07:40:42
+INFO 2023-06-08 15:40:42,908 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:40:42,908 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:40:42,909 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:40:42 [Yes]
+INFO 2023-06-08 15:40:42,977 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:40:42,977 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:40:42,977 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:40:42 [Yes]
+INFO 2023-06-08 15:40:42,986 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:40:42,987 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:40:42,987 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:40:42 [Yes]
+INFO 2023-06-08 15:40:42,995 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:40:42,995 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:40:42,996 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:40:42 [Yes]
+INFO 2023-06-08 15:40:43,002 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:40:43,003 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:40:43,004 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:40:42 [Yes]
+INFO 2023-06-08 15:40:43,011 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:40:43,012 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:40:43,012 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:40:42 [Yes]
+INFO 2023-06-08 15:40:56,567 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:40:58,014 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:40:58,024 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:41:03,034 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:41:04,517 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:41:04,526 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:41:04,654 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:41:04,655 base>views><module> -SCH- Now:06/08/2023, 07:41:04
+INFO 2023-06-08 15:41:04,782 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:41:04,783 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:41:04,784 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:41:04 [Yes]
+INFO 2023-06-08 15:41:04,856 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:04,857 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:04,857 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:04 [Yes]
+INFO 2023-06-08 15:41:04,865 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:41:04,865 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:41:04,866 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:41:04 [Yes]
+INFO 2023-06-08 15:41:04,874 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:04,874 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:04,875 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:04 [Yes]
+INFO 2023-06-08 15:41:04,883 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:04,884 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:04,884 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:04 [Yes]
+INFO 2023-06-08 15:41:04,892 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:04,893 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:04,893 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:04 [Yes]
+INFO 2023-06-08 15:41:05,687 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:58357][0m
+INFO 2023-06-08 15:41:06,188 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=ST&app=Touch%20Panel&version=8.1.0.0 200 [0.02, 127.0.0.1:58362][0m
+INFO 2023-06-08 15:41:08,298 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:41:09,881 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:41:09,890 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:41:11,517 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:41:12,945 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:41:12,955 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:41:13,080 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:41:13,081 base>views><module> -SCH- Now:06/08/2023, 07:41:13
+INFO 2023-06-08 15:41:13,204 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:41:13,205 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:41:13,206 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:41:13 [Yes]
+INFO 2023-06-08 15:41:13,274 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:13,275 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:13,276 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:13 [Yes]
+INFO 2023-06-08 15:41:13,283 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:41:13,284 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:41:13,285 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:41:13 [Yes]
+INFO 2023-06-08 15:41:13,293 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:13,294 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:13,294 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:13 [Yes]
+INFO 2023-06-08 15:41:13,303 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:13,303 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:13,304 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:13 [Yes]
+INFO 2023-06-08 15:41:13,313 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:13,314 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:13,315 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:13 [Yes]
+ERROR 2023-06-08 15:41:13,938 log>log_response Internal Server Error: /softkey/33/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\base\views.py", line 107, in SoftkeyView
+    ticketformat = TicketFormat.objects.get(ttype=tr.tickettype , branch=counterstatus.countertype.branch, enabled=True)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\db\models\query.py", line 650, in get
+    raise self.model.DoesNotExist(
+base.models.TicketFormat.DoesNotExist: TicketFormat matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\views.py", line 111, in SoftkeyView
+    logger.warning( 'TicketFormat not found (in find TicketRoute.waiting).' + (ticketformat==None) )
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+TypeError: can only concatenate str (not "bool") to str
+ERROR 2023-06-08 15:41:13,952 runserver>log_action [35;1mHTTP GET /softkey/33/ 500 [0.36, 127.0.0.1:58379][0m
+INFO 2023-06-08 15:41:24,882 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:41:26,422 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:41:26,432 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:41:26,569 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:41:26,570 base>views><module> -SCH- Now:06/08/2023, 07:41:26
+INFO 2023-06-08 15:41:26,700 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:41:26,701 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:41:26,702 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:41:26 [Yes]
+INFO 2023-06-08 15:41:26,788 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:26,789 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:26,790 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:26 [Yes]
+INFO 2023-06-08 15:41:26,799 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:41:26,800 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:41:26,800 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:41:26 [Yes]
+INFO 2023-06-08 15:41:26,808 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:26,809 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:26,810 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:26 [Yes]
+INFO 2023-06-08 15:41:26,818 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:26,818 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:26,819 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:26 [Yes]
+INFO 2023-06-08 15:41:26,829 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:26,830 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:26,831 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:26 [Yes]
+INFO 2023-06-08 15:41:29,179 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:41:30,682 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:41:30,693 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:41:30,823 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:41:30,824 base>views><module> -SCH- Now:06/08/2023, 07:41:30
+INFO 2023-06-08 15:41:30,951 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:41:30,951 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:41:30,952 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:41:30 [Yes]
+INFO 2023-06-08 15:41:31,017 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:31,018 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:31,018 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:30 [Yes]
+INFO 2023-06-08 15:41:31,026 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:41:31,027 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:41:31,028 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:41:30 [Yes]
+INFO 2023-06-08 15:41:31,036 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:31,037 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:31,037 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:30 [Yes]
+INFO 2023-06-08 15:41:31,045 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:31,046 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:31,046 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:30 [Yes]
+INFO 2023-06-08 15:41:31,053 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:31,054 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:31,054 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:30 [Yes]
+ERROR 2023-06-08 15:41:32,999 log>log_response Internal Server Error: /softkey/33/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\base\views.py", line 107, in SoftkeyView
+    ticketformat = TicketFormat.objects.get(ttype=tr.tickettype , branch=counterstatus.countertype.branch, enabled=True)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\db\models\query.py", line 650, in get
+    raise self.model.DoesNotExist(
+base.models.TicketFormat.DoesNotExist: TicketFormat matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\views.py", line 111, in SoftkeyView
+    logger.warning( 'TicketFormat not found (in find TicketRoute.waiting).' + (ticketformat==None).string() )
+                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'bool' object has no attribute 'string'
+ERROR 2023-06-08 15:41:33,013 runserver>log_action [35;1mHTTP GET /softkey/33/ 500 [0.36, 127.0.0.1:58396][0m
+INFO 2023-06-08 15:41:39,716 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:41:41,275 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:41:41,284 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:41:41,410 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:41:41,411 base>views><module> -SCH- Now:06/08/2023, 07:41:41
+INFO 2023-06-08 15:41:41,537 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:41:41,538 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:41:41,539 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:41:41 [Yes]
+INFO 2023-06-08 15:41:41,605 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:41,606 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:41,606 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:41 [Yes]
+INFO 2023-06-08 15:41:41,614 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:41:41,614 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:41:41,615 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:41:41 [Yes]
+INFO 2023-06-08 15:41:41,623 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:41,623 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:41,624 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:41 [Yes]
+INFO 2023-06-08 15:41:41,631 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:41,632 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:41,633 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:41 [Yes]
+INFO 2023-06-08 15:41:41,640 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:41,641 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:41,642 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:41 [Yes]
+INFO 2023-06-08 15:41:45,047 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:41:46,543 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:41:46,553 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:41:46,688 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:41:46,689 base>views><module> -SCH- Now:06/08/2023, 07:41:46
+INFO 2023-06-08 15:41:46,811 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:41:46,811 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:41:46,812 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:41:46 [Yes]
+INFO 2023-06-08 15:41:46,879 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:46,879 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:46,880 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:46 [Yes]
+INFO 2023-06-08 15:41:46,887 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:41:46,888 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:41:46,889 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:41:46 [Yes]
+INFO 2023-06-08 15:41:46,896 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:46,897 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:46,898 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:46 [Yes]
+INFO 2023-06-08 15:41:46,905 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:46,905 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:46,906 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:46 [Yes]
+INFO 2023-06-08 15:41:46,914 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:41:46,915 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:41:46,915 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:41:46 [Yes]
+WARNING 2023-06-08 15:41:47,665 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). False
+WARNING 2023-06-08 15:41:47,666 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). False
+WARNING 2023-06-08 15:41:47,668 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). False
+WARNING 2023-06-08 15:41:47,670 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). False
+WARNING 2023-06-08 15:41:47,671 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). False
+INFO 2023-06-08 15:41:47,735 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.12, 127.0.0.1:58408][0m
+INFO 2023-06-08 15:41:47,831 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:58417]
+INFO 2023-06-08 15:41:47,876 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:41:52,012 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:58417]
+INFO 2023-06-08 15:41:52,025 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:58420]
+INFO 2023-06-08 15:41:52,031 base>consumers>connect connecting:cs_33
+INFO 2023-06-08 15:41:57,014 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:58420]
+INFO 2023-06-08 15:41:57,027 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:58424]
+INFO 2023-06-08 15:41:57,033 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:42:02,007 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:58424]
+INFO 2023-06-08 15:42:19,785 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:42:21,388 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:42:21,398 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:42:21,538 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:42:21,539 base>views><module> -SCH- Now:06/08/2023, 07:42:21
+INFO 2023-06-08 15:42:21,676 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:42:21,676 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:42:21,677 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:42:21 [Yes]
+INFO 2023-06-08 15:42:21,751 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:42:21,751 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:42:21,752 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:42:21 [Yes]
+INFO 2023-06-08 15:42:21,760 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:42:21,761 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:42:21,761 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:42:21 [Yes]
+INFO 2023-06-08 15:42:21,769 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:42:21,770 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:42:21,770 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:42:21 [Yes]
+INFO 2023-06-08 15:42:21,780 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:42:21,781 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:42:21,782 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:42:21 [Yes]
+INFO 2023-06-08 15:42:21,793 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:42:21,794 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:42:21,794 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:42:21 [Yes]
+WARNING 2023-06-08 15:42:24,963 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). False
+WARNING 2023-06-08 15:42:24,964 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). False
+WARNING 2023-06-08 15:42:24,966 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). False
+WARNING 2023-06-08 15:42:24,968 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). False
+WARNING 2023-06-08 15:42:24,970 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). False
+INFO 2023-06-08 15:42:25,035 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.12, 127.0.0.1:58440][0m
+INFO 2023-06-08 15:42:25,108 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:58445]
+INFO 2023-06-08 15:42:25,167 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:42:30,010 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:58445]
+INFO 2023-06-08 15:42:30,023 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:58448]
+INFO 2023-06-08 15:42:30,030 base>consumers>connect connecting:cs_33
+INFO 2023-06-08 15:42:35,005 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:58448]
+INFO 2023-06-08 15:42:35,019 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:58452]
+INFO 2023-06-08 15:42:35,025 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:42:40,002 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:58452]
+INFO 2023-06-08 15:42:46,606 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:42:48,065 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:42:48,075 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:42:48,199 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:42:48,200 base>views><module> -SCH- Now:06/08/2023, 07:42:48
+INFO 2023-06-08 15:42:48,329 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:42:48,330 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:42:48,331 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:42:48 [Yes]
+INFO 2023-06-08 15:42:48,393 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:42:48,394 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:42:48,394 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:42:48 [Yes]
+INFO 2023-06-08 15:42:48,403 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:42:48,403 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:42:48,404 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:42:48 [Yes]
+INFO 2023-06-08 15:42:48,411 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:42:48,411 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:42:48,412 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:42:48 [Yes]
+INFO 2023-06-08 15:42:48,419 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:42:48,420 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:42:48,420 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:42:48 [Yes]
+INFO 2023-06-08 15:42:48,427 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:42:48,428 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:42:48,428 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:42:48 [Yes]
+WARNING 2023-06-08 15:42:50,355 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:42:50,357 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:42:50,359 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:42:50,361 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:42:50,364 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:42:50,432 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.13, 127.0.0.1:58465][0m
+INFO 2023-06-08 15:42:50,508 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:58469]
+INFO 2023-06-08 15:42:50,556 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:42:55,002 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:58469]
+INFO 2023-06-08 15:42:55,016 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:58473]
+INFO 2023-06-08 15:42:55,022 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:43:00,004 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:58473]
+INFO 2023-06-08 15:43:00,017 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:58475]
+INFO 2023-06-08 15:43:00,023 base>consumers>connect connecting:cs_33
+INFO 2023-06-08 15:43:05,006 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:58475]
+INFO 2023-06-08 15:43:31,404 runserver>log_action [32mHTTP GET /admin/ 302 [0.05, 127.0.0.1:58465][0m
+INFO 2023-06-08 15:43:31,442 runserver>log_action [mHTTP GET /admin/login/?next=/admin/ 200 [0.04, 127.0.0.1:58465][0m
+INFO 2023-06-08 15:43:39,791 runserver>log_action [32mHTTP POST /admin/login/?next=/admin/ 302 [0.24, 127.0.0.1:58465][0m
+INFO 2023-06-08 15:43:39,848 runserver>log_action [mHTTP GET /admin/ 200 [0.05, 127.0.0.1:58465][0m
+INFO 2023-06-08 15:43:42,061 runserver>log_action [mHTTP GET /admin/base/branch/ 200 [0.05, 127.0.0.1:58465][0m
+INFO 2023-06-08 15:43:42,152 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:58465][0m
+INFO 2023-06-08 15:43:45,007 runserver>log_action [mHTTP GET /admin/base/branch/6/change/ 200 [0.08, 127.0.0.1:58465][0m
+INFO 2023-06-08 15:43:45,108 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:58465][0m
+INFO 2023-06-08 15:43:45,169 runserver>log_action [mHTTP GET /static/admin/js/calendar.js 200 [0.08, 127.0.0.1:58466][0m
+INFO 2023-06-08 15:43:45,176 runserver>log_action [mHTTP GET /static/admin/js/admin/DateTimeShortcuts.js 200 [0.09, 127.0.0.1:58499][0m
+INFO 2023-06-08 15:43:45,264 runserver>log_action [mHTTP GET /static/admin/img/icon-calendar.svg 200 [0.01, 127.0.0.1:58499][0m
+INFO 2023-06-08 15:43:45,270 runserver>log_action [mHTTP GET /static/admin/img/icon-clock.svg 200 [0.01, 127.0.0.1:58466][0m
+INFO 2023-06-08 15:43:58,163 runserver>log_action [mHTTP GET /admin/base/countertype/ 200 [0.05, 127.0.0.1:58466][0m
+INFO 2023-06-08 15:43:58,256 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:58466][0m
+INFO 2023-06-08 15:44:00,554 runserver>log_action [mHTTP GET /admin/base/countertype/8/change/ 200 [0.05, 127.0.0.1:58466][0m
+INFO 2023-06-08 15:44:00,597 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:58466][0m
+INFO 2023-06-08 15:44:11,341 runserver>log_action [32mHTTP POST /admin/base/countertype/8/change/ 302 [0.03, 127.0.0.1:58466][0m
+INFO 2023-06-08 15:44:11,386 runserver>log_action [mHTTP GET /admin/base/countertype/8/change/ 200 [0.04, 127.0.0.1:58466][0m
+INFO 2023-06-08 15:44:11,477 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:58466][0m
+INFO 2023-06-08 15:44:16,988 runserver>log_action [mHTTP GET / 200 [0.02, 127.0.0.1:58466][0m
+INFO 2023-06-08 15:44:20,874 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.03, 127.0.0.1:58466][0m
+INFO 2023-06-08 15:44:22,402 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.04, 127.0.0.1:58466][0m
+WARNING 2023-06-08 15:44:23,574 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:44:23,576 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:44:23,577 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:44:23,578 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:44:23,579 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:44:23,606 runserver>log_action [mHTTP GET /softkey/34/ 200 [0.06, 127.0.0.1:58466][0m
+INFO 2023-06-08 15:44:23,753 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:58530]
+INFO 2023-06-08 15:44:23,760 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:44:28,010 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:58530]
+INFO 2023-06-08 15:44:28,024 runserver>log_action WebSocket HANDSHAKING /ws/cs/34/ [127.0.0.1:58533]
+INFO 2023-06-08 15:44:28,029 base>consumers>connect connecting:cs_34
+INFO 2023-06-08 15:44:33,010 runserver>log_action WebSocket DISCONNECT /ws/cs/34/ [127.0.0.1:58533]
+INFO 2023-06-08 15:44:33,023 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:58536]
+INFO 2023-06-08 15:44:33,028 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:44:38,006 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:58536]
+INFO 2023-06-08 15:45:01,614 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:45:03,183 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:45:03,193 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:45:03,330 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:45:03,330 base>views><module> -SCH- Now:06/08/2023, 07:45:03
+INFO 2023-06-08 15:45:03,463 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:45:03,463 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:45:03,464 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:45:03 [Yes]
+INFO 2023-06-08 15:45:03,541 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:45:03,542 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:45:03,543 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:45:03 [Yes]
+INFO 2023-06-08 15:45:03,572 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:45:03,573 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:45:03,574 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:45:03 [Yes]
+INFO 2023-06-08 15:45:03,589 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:45:03,590 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:45:03,591 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:45:03 [Yes]
+INFO 2023-06-08 15:45:03,598 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:45:03,599 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:45:03,600 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:45:03 [Yes]
+INFO 2023-06-08 15:45:03,609 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:45:03,609 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:45:03,610 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:45:03 [Yes]
+WARNING 2023-06-08 15:45:04,425 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:04,427 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:04,429 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:04,431 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:04,434 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:45:04,505 runserver>log_action [mHTTP GET /softkey/34/ 200 [0.12, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:45:04,573 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:58560]
+INFO 2023-06-08 15:45:04,637 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:45:09,012 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:58560]
+INFO 2023-06-08 15:45:09,025 runserver>log_action WebSocket HANDSHAKING /ws/cs/34/ [127.0.0.1:58564]
+INFO 2023-06-08 15:45:09,032 base>consumers>connect connecting:cs_34
+INFO 2023-06-08 15:45:14,009 runserver>log_action WebSocket DISCONNECT /ws/cs/34/ [127.0.0.1:58564]
+INFO 2023-06-08 15:45:14,022 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:58566]
+INFO 2023-06-08 15:45:14,027 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:45:19,010 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:58566]
+INFO 2023-06-08 15:45:32,127 runserver>log_action [32mHTTP POST /admin/base/countertype/8/change/ 302 [0.03, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:45:32,232 runserver>log_action [mHTTP GET /admin/base/countertype/8/change/ 200 [0.10, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:45:32,333 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:58556][0m
+WARNING 2023-06-08 15:45:34,526 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:34,527 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:34,529 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:34,530 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:34,531 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:45:34,556 runserver>log_action [mHTTP GET /softkey/34/ 200 [0.06, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:45:34,630 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:58583]
+INFO 2023-06-08 15:45:34,641 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:45:39,005 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:58583]
+INFO 2023-06-08 15:45:39,019 runserver>log_action WebSocket HANDSHAKING /ws/cs/34/ [127.0.0.1:58586]
+INFO 2023-06-08 15:45:39,025 base>consumers>connect connecting:cs_34
+INFO 2023-06-08 15:45:44,012 runserver>log_action WebSocket DISCONNECT /ws/cs/34/ [127.0.0.1:58586]
+INFO 2023-06-08 15:45:44,025 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:58588]
+INFO 2023-06-08 15:45:44,031 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:45:44,896 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.03, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:45:44,984 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:58588]
+INFO 2023-06-08 15:45:46,393 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.04, 127.0.0.1:58556][0m
+WARNING 2023-06-08 15:45:47,667 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:47,669 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:47,671 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:47,672 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:47,673 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:45:47,693 runserver>log_action [mHTTP GET /softkey/34/ 200 [0.06, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:45:47,799 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:58596]
+INFO 2023-06-08 15:45:47,805 base>consumers>connect connecting:printerstatus_ST
+WARNING 2023-06-08 15:45:48,902 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:48,905 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:48,907 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:48,909 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:48,910 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:45:48,978 runserver>log_action [32mHTTP POST /softkey/34/ 302 [0.10, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:45:49,020 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.04, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:45:49,197 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:58596]
+WARNING 2023-06-08 15:45:50,564 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:50,566 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:50,567 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:50,568 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:50,570 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:45:50,593 runserver>log_action [mHTTP GET /softkey/34/ 200 [0.08, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:45:51,016 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:58605]
+INFO 2023-06-08 15:45:51,024 base>consumers>connect connecting:printerstatus_ST
+WARNING 2023-06-08 15:45:52,846 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:52,847 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:52,849 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:52,850 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:52,851 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:45:52,895 runserver>log_action [32mHTTP POST /softkey/34/ 302 [0.07, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:45:52,938 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.04, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:45:53,114 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:58605]
+INFO 2023-06-08 15:45:53,829 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.02, 127.0.0.1:58611][0m
+WARNING 2023-06-08 15:45:55,768 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:55,769 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:55,771 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:55,773 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:55,774 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:45:55,796 runserver>log_action [mHTTP GET /softkey/34/ 200 [0.08, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:45:56,887 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:58618]
+INFO 2023-06-08 15:45:56,893 base>consumers>connect connecting:printerstatus_ST
+WARNING 2023-06-08 15:45:57,892 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:57,893 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:57,895 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:57,897 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:57,899 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:45:57,913 runserver>log_action [32mHTTP POST /softkey/34/ 302 [0.05, 127.0.0.1:58556][0m
+WARNING 2023-06-08 15:45:57,946 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:57,948 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:57,950 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:57,951 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:45:57,952 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:45:57,972 runserver>log_action [mHTTP GET /softkey/34/ 200 [0.05, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:45:57,978 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:58618]
+INFO 2023-06-08 15:46:00,892 runserver>log_action WebSocket HANDSHAKING /ws/cs/34/ [127.0.0.1:58625]
+INFO 2023-06-08 15:46:00,898 base>consumers>connect connecting:cs_34
+INFO 2023-06-08 15:46:05,014 runserver>log_action WebSocket DISCONNECT /ws/cs/34/ [127.0.0.1:58625]
+INFO 2023-06-08 15:46:05,027 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:58628]
+INFO 2023-06-08 15:46:05,031 base>consumers>connect connecting:ql_ST_c
+WARNING 2023-06-08 15:46:05,116 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:05,118 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:05,119 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:05,120 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:05,122 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:46:05,137 runserver>log_action [32mHTTP POST /softkey/34/ 302 [0.05, 127.0.0.1:58556][0m
+WARNING 2023-06-08 15:46:05,174 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:05,176 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:05,177 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:05,178 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:05,180 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:46:05,203 runserver>log_action [mHTTP GET /softkey/34/ 200 [0.06, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:46:05,209 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:58628]
+INFO 2023-06-08 15:46:07,062 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:58635]
+INFO 2023-06-08 15:46:07,068 base>consumers>connect connecting:ql_ST_c
+WARNING 2023-06-08 15:46:07,570 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:07,572 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:07,573 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:07,575 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:07,577 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:46:07,592 runserver>log_action [32mHTTP POST /softkey/34/ 302 [0.05, 127.0.0.1:58556][0m
+WARNING 2023-06-08 15:46:07,625 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:07,627 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:07,629 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:07,630 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:46:07,632 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:46:07,651 runserver>log_action [mHTTP GET /softkey/34/ 200 [0.06, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:46:07,658 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:58635]
+INFO 2023-06-08 15:46:09,497 runserver>log_action WebSocket HANDSHAKING /ws/cs/34/ [127.0.0.1:58642]
+INFO 2023-06-08 15:46:09,504 base>consumers>connect connecting:cs_34
+INFO 2023-06-08 15:46:12,592 runserver>log_action [mHTTP GET / 200 [0.02, 127.0.0.1:58556][0m
+INFO 2023-06-08 15:46:12,685 runserver>log_action WebSocket DISCONNECT /ws/cs/34/ [127.0.0.1:58642]
+INFO 2023-06-08 15:50:37,201 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.03, 127.0.0.1:64567][0m
+INFO 2023-06-08 15:50:38,389 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.04, 127.0.0.1:64567][0m
+WARNING 2023-06-08 15:50:40,922 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:50:40,924 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:50:40,925 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:50:40,926 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+WARNING 2023-06-08 15:50:40,927 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). None
+INFO 2023-06-08 15:50:40,947 runserver>log_action [mHTTP GET /softkey/34/ 200 [0.06, 127.0.0.1:64567][0m
+INFO 2023-06-08 15:50:41,107 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:64579]
+INFO 2023-06-08 15:50:41,114 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:50:43,837 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:64582][0m
+INFO 2023-06-08 15:50:46,009 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:64579]
+INFO 2023-06-08 15:50:46,022 runserver>log_action WebSocket HANDSHAKING /ws/cs/34/ [127.0.0.1:64585]
+INFO 2023-06-08 15:50:46,028 base>consumers>connect connecting:cs_34
+INFO 2023-06-08 15:50:51,011 runserver>log_action WebSocket DISCONNECT /ws/cs/34/ [127.0.0.1:64585]
+INFO 2023-06-08 15:50:51,023 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:64587]
+INFO 2023-06-08 15:50:51,030 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:50:56,009 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:64587]
+INFO 2023-06-08 15:51:03,712 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:51:05,226 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:51:05,238 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:51:05,369 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:51:05,370 base>views><module> -SCH- Now:06/08/2023, 07:51:05
+INFO 2023-06-08 15:51:05,498 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:51:05,498 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:51:05,499 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:51:05 [Yes]
+INFO 2023-06-08 15:51:05,567 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:51:05,567 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:51:05,568 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:51:05 [Yes]
+INFO 2023-06-08 15:51:05,576 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:51:05,577 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:51:05,577 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:51:05 [Yes]
+INFO 2023-06-08 15:51:05,584 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:51:05,585 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:51:05,585 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:51:05 [Yes]
+INFO 2023-06-08 15:51:05,594 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:51:05,595 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:51:05,595 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:51:05 [Yes]
+INFO 2023-06-08 15:51:05,604 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:51:05,604 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:51:05,605 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:51:05 [Yes]
+INFO 2023-06-08 15:51:07,870 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-08 15:51:09,325 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-08 15:51:09,335 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-08 15:51:09,461 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-08 15:51:09,462 base>views><module> -SCH- Now:06/08/2023, 07:51:09
+INFO 2023-06-08 15:51:09,584 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-08 16:42:00 Local:2023-06-09 00:42:00
+INFO 2023-06-08 15:51:09,585 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-08 15:51:09,585 base>views>init_branch_reset    -SCH- 2023-06-08 16:42:00 > 2023-06-08 07:51:09 [Yes]
+INFO 2023-06-08 15:51:09,650 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:51:09,650 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:51:09,650 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:51:09 [Yes]
+INFO 2023-06-08 15:51:09,658 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-08 18:00:00 Local:2023-06-09 02:00:00
+INFO 2023-06-08 15:51:09,659 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-08 15:51:09,659 base>views>init_branch_reset    -SCH- 2023-06-08 18:00:00 > 2023-06-08 07:51:09 [Yes]
+INFO 2023-06-08 15:51:09,668 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:51:09,668 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:51:09,669 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:51:09 [Yes]
+INFO 2023-06-08 15:51:09,677 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:51:09,677 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:51:09,678 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:51:09 [Yes]
+INFO 2023-06-08 15:51:09,685 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-08 15:59:59 Local:2023-06-08 23:59:59
+INFO 2023-06-08 15:51:09,686 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-08 15:51:09,686 base>views>init_branch_reset    -SCH- 2023-06-08 15:59:59 > 2023-06-08 07:51:09 [Yes]
+WARNING 2023-06-08 15:51:10,663 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). ticketformat is None
+WARNING 2023-06-08 15:51:10,665 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). ticketformat is None
+WARNING 2023-06-08 15:51:10,666 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). ticketformat is None
+WARNING 2023-06-08 15:51:10,667 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). ticketformat is None
+WARNING 2023-06-08 15:51:10,669 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). ticketformat is None
+INFO 2023-06-08 15:51:10,732 runserver>log_action [mHTTP GET /softkey/34/ 200 [0.10, 127.0.0.1:64613][0m
+INFO 2023-06-08 15:51:10,807 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:64617]
+INFO 2023-06-08 15:51:10,858 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:51:15,002 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:64617]
+INFO 2023-06-08 15:51:15,015 runserver>log_action WebSocket HANDSHAKING /ws/cs/34/ [127.0.0.1:64620]
+INFO 2023-06-08 15:51:15,021 base>consumers>connect connecting:cs_34
+INFO 2023-06-08 15:51:20,002 runserver>log_action WebSocket DISCONNECT /ws/cs/34/ [127.0.0.1:64620]
+INFO 2023-06-08 15:51:20,015 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:64622]
+INFO 2023-06-08 15:51:20,021 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:51:25,003 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:64622]
+INFO 2023-06-08 15:53:26,220 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.03, 127.0.0.1:58039][0m
+INFO 2023-06-08 15:53:28,203 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.04, 127.0.0.1:58039][0m
+WARNING 2023-06-08 15:53:30,596 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). ticketformat is None
+WARNING 2023-06-08 15:53:30,598 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). ticketformat is None
+WARNING 2023-06-08 15:53:30,599 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). ticketformat is None
+WARNING 2023-06-08 15:53:30,600 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). ticketformat is None
+WARNING 2023-06-08 15:53:30,601 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). ticketformat is None
+INFO 2023-06-08 15:53:30,624 runserver>log_action [mHTTP GET /softkey/34/ 200 [0.05, 127.0.0.1:58039][0m
+INFO 2023-06-08 15:53:30,727 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:58049]
+INFO 2023-06-08 15:53:30,733 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-08 15:53:35,002 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:58049]
+INFO 2023-06-08 15:53:35,015 runserver>log_action WebSocket HANDSHAKING /ws/cs/34/ [127.0.0.1:58054]
+INFO 2023-06-08 15:53:35,021 base>consumers>connect connecting:cs_34
+INFO 2023-06-08 15:53:40,011 runserver>log_action WebSocket DISCONNECT /ws/cs/34/ [127.0.0.1:58054]
+INFO 2023-06-08 15:53:40,025 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:58057]
+INFO 2023-06-08 15:53:40,031 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-08 15:53:45,014 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:58057]
+INFO 2023-06-08 15:55:34,008 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.02, 127.0.0.1:58085][0m
+INFO 2023-06-08 16:00:24,054 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:58471][0m
+INFO 2023-06-08 16:05:14,214 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:57198][0m
+INFO 2023-06-08 16:10:04,335 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:57234][0m
+INFO 2023-06-08 16:14:54,504 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:57266][0m
+INFO 2023-06-08 16:19:44,535 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:57313][0m
+INFO 2023-06-08 16:24:34,539 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:57352][0m
+INFO 2023-06-08 16:29:24,679 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:57385][0m
+INFO 2023-06-08 16:34:14,787 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:56116][0m
+INFO 2023-06-08 16:39:04,890 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:56153][0m
+INFO 2023-06-08 16:43:55,207 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:56196][0m
+INFO 2023-06-08 16:48:45,267 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:56222][0m
+INFO 2023-06-08 16:53:31,878 runserver>log_action [32mHTTP GET /softkey/34/ 302 [0.02, 127.0.0.1:53889][0m
+INFO 2023-06-08 16:53:31,890 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:53889][0m
+INFO 2023-06-08 16:53:35,311 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:53896][0m
+INFO 2023-06-08 16:58:25,669 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53941][0m
+INFO 2023-06-08 17:03:15,787 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53455][0m
+INFO 2023-06-08 17:08:06,209 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53497][0m
+INFO 2023-06-08 17:12:56,256 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53529][0m
+INFO 2023-06-08 17:17:46,340 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:53557][0m
+INFO 2023-06-08 17:22:36,389 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53581][0m
+INFO 2023-06-08 17:27:26,403 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53610][0m
+INFO 2023-06-08 17:32:16,484 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53628][0m
+INFO 2023-06-08 17:37:06,481 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53673][0m
+INFO 2023-06-08 17:41:56,550 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:53697][0m
+INFO 2023-06-08 17:46:46,574 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:51527][0m
+INFO 2023-06-08 17:51:36,574 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:51638][0m
+INFO 2023-06-08 17:56:26,580 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:56619][0m
+INFO 2023-06-08 18:01:16,579 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:56648][0m
+INFO 2023-06-08 18:06:06,592 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:51836][0m
+INFO 2023-06-08 18:10:56,614 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:58988][0m
+INFO 2023-06-08 18:15:46,648 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:49834][0m
+INFO 2023-06-08 18:20:36,658 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:49900][0m
+INFO 2023-06-08 18:25:26,657 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:49949][0m
+INFO 2023-06-08 18:30:16,646 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:65370][0m
+INFO 2023-06-08 18:35:06,653 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:57835][0m
+INFO 2023-06-08 18:39:56,645 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:57904][0m
+INFO 2023-06-08 18:44:46,658 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:57938][0m
+INFO 2023-06-08 18:49:36,884 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53131][0m
+INFO 2023-06-08 18:54:26,892 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:53178][0m
+INFO 2023-06-08 18:59:16,897 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:54031][0m
+INFO 2023-06-08 19:04:06,935 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:52711][0m
+INFO 2023-06-08 19:08:56,911 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:52793][0m
+INFO 2023-06-08 19:13:46,929 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:52920][0m
+INFO 2023-06-08 19:18:36,914 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53019][0m
+INFO 2023-06-08 19:23:26,941 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53094][0m
+INFO 2023-06-08 19:28:16,963 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53182][0m
+INFO 2023-06-08 19:33:06,968 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:53233][0m
+INFO 2023-06-08 19:37:56,960 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53280][0m
+INFO 2023-06-08 19:42:46,957 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53352][0m
+INFO 2023-06-08 19:47:36,966 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53390][0m
+INFO 2023-06-08 19:52:26,982 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.02, 127.0.0.1:57775][0m
+INFO 2023-06-08 19:57:16,972 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:56721][0m
+INFO 2023-06-08 20:02:06,968 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:53414][0m
+INFO 2023-06-08 20:06:56,965 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:64101][0m

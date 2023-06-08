@@ -98,29 +98,35 @@ def SoftkeyView(request, pk):
             error = msg['msg']
     if error == '':
         context_tr = []
-        trobj = TicketRoute.objects.filter(Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype))
+        trobj = TicketRoute.objects.filter(Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype)  )
         for tr in trobj:
+
             lang1 = ''
             lang2 = ''
+            ticketformat = None
             try :
-                ticketformat = TicketFormat.objects.get(ttype=tr.tickettype , branch=counterstatus.countertype.branch)
-                lang1 = ticketformat.touchkey_lang1
-                lang2 = ticketformat.touchkey_lang2
+                ticketformat = TicketFormat.objects.get(ttype=tr.tickettype , branch=counterstatus.countertype.branch, enabled=True)
+                # lang1 = ticketformat.touchkey_lang1
+                # lang2 = ticketformat.touchkey_lang2
             except:
-                error = 'TicketFormat not found (in find TicketRoute.waiting).'
+                logger.warning( 'TicketFormat not found (in find TicketRoute.waiting). ticketformat is ' + str(ticketformat))
             
             # dict add to list
-            userttype = False
-            if context_counter['data']['userttype'].find(tr.tickettype + ',') != -1:
-                userttype = True
-            newrow = {
-                'tickettype' : tr.tickettype,
-                'lang1' : lang1,
-                'lang2' : lang2,
-                'wait' : tr.waiting,
-                'userttype' : userttype,             
-            }
-            context_tr.append(newrow)
+            if ticketformat != None:
+                lang1 = ticketformat.touchkey_lang1
+                lang2 = ticketformat.touchkey_lang2
+
+                userttype = False
+                if context_counter['data']['userttype'].find(tr.tickettype + ',') != -1:
+                    userttype = True
+                newrow = {
+                    'tickettype' : tr.tickettype,
+                    'lang1' : lang1,
+                    'lang2' : lang2,
+                    'wait' : tr.waiting,
+                    'userttype' : userttype,             
+                }
+                context_tr.append(newrow)
 
     if error == '':
         ticketlist = TicketTemp.objects.filter( Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) & Q(locked=False))       
