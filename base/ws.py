@@ -16,6 +16,55 @@ wsHypertext = 'ws://'
 logger = logging.getLogger(__name__)
 
 
+def wssendflashlight(branch, countertype, counterstatus, cmd):
+    # {"cmd":"light",
+    #  "data":
+    #    {
+    #     "flashid": "1", 
+    #     "cmd": "on/off/flash",
+    #     "flashtime": "3",
+    #     "countertypename": "Counter",
+    #     }
+    # }
+    context = None
+    error = ''
+
+    flashid = counterstatus.flashid
+    flashtime = branch.flashlighttime
+
+    if error == '' : 
+        json_tx = {'cmd': 'light',
+            'data': {
+                    "flashid": flashid,
+                    "flashcmd": cmd,
+                    "flashtime": flashtime,
+                    "countertypename": countertype.name,
+            }
+        }
+        str_tx = json.dumps(json_tx)
+
+        context = {
+        'type':'broadcast_message',
+        'tx': str_tx,
+        }
+        
+        channel_layer = get_channel_layer()
+        channel_group_name = 'flashlight_' + branch.bcode
+        logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        try:
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            logger.info('...Done')
+        except Exception as e:
+            # error_e = 'WS send voice Error:' + str(e)
+            logger.error('...ERROR:Redis Server is down!')
+
+    if error != '':
+        error_e = 'WS send Flash Light (Control Box Python) Error:' + error
+        logger.error(error_e)
+
+
+
+
 def wscounterstatus(counterstatus):
     # {"cmd":"cs",
     #  "lastupdate":now,

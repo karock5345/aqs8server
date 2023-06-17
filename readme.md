@@ -38,6 +38,10 @@
 - upgrade django to 4.1.9 from 4.1.7
 - Fixed already login user in other branch 
 - Fixed Web Softkey ticket sub total hiden ticketFormat Disabled
+### <span style="color:orange;">**Version 8.2.0**</span>
+- Support Control Box python version (Flash light function only. Next version will support Keypad)
+
+
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
@@ -197,7 +201,7 @@ exit and save
 ```sh
 sudo netplan apply
 ```
-## Local server startup
+# Local server startup
 1. Add user (htopuser) and password (asdf1234) for cmd htop
 ```sh
 sudo adduser htopuser
@@ -239,6 +243,38 @@ logout
 
 > Ctrl+Alt+F2
 
+## Auto power off script (for Ubuntu Desktop / Raspberry Pi Window OS):
+```bash
+sudo nano /home/pi/.config/autostart/autooff.desktop
+```
+```nano
+	[Desktop Entry]
+	Type=Application
+	Name=Auto Power Off at 23:55
+	Exec=sh -c "shutdown -h 23:55"
+```
+- Restart Pi:
+```
+sudo reboot
+```
+## Auto power off script (for Linux server)
+```bash
+sudo nano /etc/rc.local
+```
+- add line:
+```nano
+shutdown -h 23:55
+```
+- Save and exit
+
+## Make Linux Use Local Time (On linux system BIOS time is UTC time)
+- Please note that: Auto power on (In BIOS setting) will not work.
+
+- Please note that the hardware clock is always stored as UTC time, and Linux converts it to local time when displaying it to the user. So 2 times seem to be different, but they are actually the same time.
+```bash
+sudo timedatectl set-local-rtc 1 --adjust-system-clock
+```
+
 ### <span style="color:orange;">**Locate PuTTY setup (for AWS):**</span>
 
 Download the key (aws_rvd_server_key) from AWS
@@ -249,7 +285,7 @@ Open PuTTY -> Host Name (rvd.tsvd.com.hk or IP) -> Saved Sessions (RVD) -> Categ
 
 PuTTY -> Data -> Auto-login username (ubuntu) -> Session -> Save
 
-### <span style="color:orange;">**Basic server settings :**</span>
+# Basic server settings
 
 ```sh
 sudo timedatectl set-timezone Asia/Hong_Kong
@@ -274,6 +310,8 @@ sudo ufw status verbose
 >(no need, use AWS firewall so Ubuntu firewall can be disabled)
 
 
+
+
 # SETUP SOURCE CODE
 ### <span style="color:orange;">**Copy / git source code to home dir**</span>
 Preparation:
@@ -294,6 +332,21 @@ sudo apt-get install -y virtualenv
 cd to project folder
 virtualenv env
 source env/bin/activate
+```
+
+- OR download private repo
+```bash
+# Generate SSH key (optional): If you haven't already, you can generate an SSH key pair to securely authenticate with GitHub. Run the following command to generate an SSH key:
+
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+# Follow the prompts and leave the passphrase blank if you want to avoid entering it every time.
+
+# Add SSH key to GitHub: Copy the contents of the public key (~/.ssh/id_rsa.pub) using the following command:
+cat ~/.ssh/id_rsa.pub
+# Then, go to your GitHub account's settings, navigate to "SSH and GPG keys," and click on "New SSH key." Paste the copied key into the "Key" field and save it.
+
+# Clone the repository: Once you have Git installed and your SSH key set up, you can clone the private repository to your local machine using the git clone command. Replace <repository> with the URL of your private repository. For example:
+git clone git@github.com:<username>/<repository>.git
 ```
 
 > twisted-iocpsupport is a package providing bindings to the Windows "I/O Completion Ports" APIs. These are Windows-only APIs.

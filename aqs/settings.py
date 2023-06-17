@@ -273,7 +273,9 @@ LOGGING = {
 
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    # Debug mode set 120 minutes, otherwise 5 minutes    
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=120),
+    # Debug mode set 30 minutes, otherwise days=1
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": False,
     "BLACKLIST_AFTER_ROTATION": False,

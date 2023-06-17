@@ -12,6 +12,71 @@ from django.core.serializers.json import DjangoJSONEncoder
 
 
 logger = logging.getLogger(__name__)
+
+class FlashLightConsumer(AsyncWebsocketConsumer):
+    async def connect(self):
+        @sync_to_async
+        def check_input():
+            error = ''
+            branch = None
+            # branchobj = await sync_to_async(Branch.objects.filter, thread_sensitive=True)( Q(bcode=self.bcode) )
+            branchobj = Branch.objects.filter(Q(bcode=self.bcode))
+
+            if branchobj.count() == 1:
+                branch = branchobj[0]
+                pass
+            else :
+                error = 'Branch not found.'
+
+            return error
+                
+        error = ''
+        self.bcode = self.scope['url_route']['kwargs']['bcode']
+        # self.ct = self.scope['url_route']['kwargs']['ct']
+        self.room_group_name = 'flashlight_' + self.bcode
+        logger.info('connecting:' + self.room_group_name )
+        
+        # check bcode and ct (countertype) is not exit do not accept connection
+        error = await check_input()       
+
+        if error == '':          
+            await self.channel_layer.group_add(
+                self.room_group_name,
+                self.channel_name
+            )
+
+            await self.accept()
+        else :
+            logger.info('Error:' + error )
+            
+
+    # Receive message from room group
+    async def broadcast_message(self, event):
+        str_tx = event['tx']
+
+        # Send message to WebSocket
+        try:
+            await self.send(text_data=str_tx)
+        except:
+            # If the channel layer is not available, send the data directly to all WebSocket connections in the group
+            for connection in await self.get_all_connections():
+                await connection.send_data_fallback(str_tx)
+    async def disconnect(self, close_code):
+        # Leave room group
+        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
+    async def send_data_fallback(self, data):
+        # Send the data directly to the WebSocket connection
+        await self.send(json.dumps(data, cls=DjangoJSONEncoder))
+    async def get_all_connections(self):
+        # Get all WebSocket connections in the group
+        group_channels = await self.channel_layer.group_channels(self.room_group_name)
+        connections = []
+        for channel_name in group_channels:
+            connection = self.__class__.for_channel(channel_name)
+            connections.append(connection)
+        return connections
+
+
 class CounterStatusConsumer(AsyncWebsocketConsumer):
     # ws://127.0.0.1:8000/ws/cs/1/
     async def connect(self):

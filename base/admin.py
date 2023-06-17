@@ -83,8 +83,8 @@ class SettingsView(admin.ModelAdmin):
 
 class CounterStatusView(admin.ModelAdmin):
     model = CounterStatus
-    ordering = ('countertype', 'counternumber', )
-    list_display =('countertype', 'counternumber', 'enabled', 'user', 'tickettemp',  )
+    ordering = ('countertype', 'counternumber' )
+    list_display =('countertype', 'counternumber', 'enabled', 'user', 'tickettemp', 'flashid' )
 
 
 

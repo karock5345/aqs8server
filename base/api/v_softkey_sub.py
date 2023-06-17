@@ -2,7 +2,7 @@ from django.db.models import Q
 from .views import counteractive
 from .v_display import newdisplayvoice
 from base.models import CounterStatus, CounterType, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus, UserStatusLog
-from base.ws import wssendwebtv, wssendql, wsSendTicketStatus, wssendvoice, wscounterstatus
+from base.ws import wssendwebtv, wssendql, wsSendTicketStatus, wssendvoice, wscounterstatus, wssendflashlight
 import logging
 
 logger = logging.getLogger(__name__)
@@ -228,8 +228,10 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
                 wssendql(branch.bcode, countertype.name, ticket, 'del')
                 # websocket to web my ticket
                 wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
-                # websocket to voice com
+                # websocket to voice com and flash light
                 wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+                wssendflashlight(branch, countertype, counterstatus, 'flash')
+
                 # websocket to web softkey for update counter status
                 wscounterstatus(counterstatus)
 
@@ -518,6 +520,11 @@ def funCounterRecall(user, branch, countertype, counterstatus, logtext, rx_app, 
     if status == dict({}) :
         # add ticketlog
         ticket = counterstatus.tickettemp 
+        if ticket == None:
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'No ticket to recall'})
+            
+    if status == dict({}) :
         TicketLog.objects.create(
             tickettemp=ticket,
             logtime=datetime_now,
@@ -531,8 +538,9 @@ def funCounterRecall(user, branch, countertype, counterstatus, logtext, rx_app, 
         newdisplayvoice(branch, countertype, counterstatus.counternumber, ticket, datetime_now, user)
         # websocket to web tv
         wssendwebtv(branch.bcode, countertype.name)
-        # websocket to voice com
+        # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        wssendflashlight(branch, countertype, counterstatus, 'flash')
 
         status = dict({'status': 'OK'})
         msg =  dict({'msg':'Recall ticket.'}) 
@@ -676,8 +684,9 @@ def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, co
         newdisplayvoice(branch, countertype, counterstatus.counternumber, ticket, datetime_now, user)
         # websocket to web my ticket
         wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
-        # websocket to voice com
+        # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        wssendflashlight(branch, countertype, counterstatus, 'flash')
         # websocket to web softkey for update counter status
         wscounterstatus(counterstatus)
 
@@ -836,6 +845,7 @@ def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber,
         'countertype':counterstatus.countertype.name, 
         'counternumber':counterstatus.counternumber,
         'name': user.first_name + ' ' + user.last_name , 
+        'username': user.username,
         'userttype': userp.tickettype, 
         'timezone': branch.timezone,
         'counterstatus':counterstatus.status, 

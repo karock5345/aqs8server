@@ -44,7 +44,7 @@
           </div>
               
           <div class="softkey_login">
-            Login : {{ data.name }} 
+            Login : {{ data.name }} ({{data.username}})
           </div>
 
           <div id="status_text" class="softkey_status_text anibackcolor">
@@ -59,7 +59,7 @@
 
                   <!-- form no style -->
                   <form action="" method="POST">
-                    {% csrf_token %}
+                    {% csrf_token %}                    
                     <div class="softkey_cc_call_container">
                         <button id="id_btn_ready" type="submit" name="action" value="ready" class="softkey_btn_cc btn--main">Ready</button>
                         <button id="id_btn_busy" type="submit" name="action" value="busy" class="softkey_btn_cc btn--main">Busy</button>
@@ -71,6 +71,7 @@
                         <button id="id_btn_logout" type="submit" name="action" value="logout" class="softkey_btn_cc btn--main">Logout</button>
                     </div>
                     <div class="softkey_cc_call_container">
+                      <button id="id_btn_recall" type="submit" name="action" value="recall" class="btn btn--main btn--pill">Recall</button>
                       <button id="id_btn_on" type="submit" name="action" value="on" class="btn btn--main btn--pill">On</button>
                       <button id="id_btn_off" type="submit" name="action" value="off" class="btn btn--main btn--pill">Off</button>
                       <button id="id_btn_flash" type="submit" name="action" value="flash" class="btn btn--main btn--pill">Flash</button>

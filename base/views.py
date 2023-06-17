@@ -22,7 +22,7 @@ from django.utils import timezone
 # from .api.v_softkey import funVoid
 from .api.v_softkey_sub import *
 from .api.v_touch import newticket
-from base.ws import wsHypertext, wscounterstatus
+from base.ws import wsHypertext, wscounterstatus, wssendflashlight
 
 
 from asgiref.sync import async_to_sync
@@ -98,18 +98,19 @@ def SoftkeyView(request, pk):
             error = msg['msg']
     if error == '':
         context_tr = []
-        trobj = TicketRoute.objects.filter(Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype)  )
+        trobj = TicketRoute.objects.filter(Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(enabled=True) )
         for tr in trobj:
 
             lang1 = ''
             lang2 = ''
             ticketformat = None
+
             try :
                 ticketformat = TicketFormat.objects.get(ttype=tr.tickettype , branch=counterstatus.countertype.branch, enabled=True)
                 # lang1 = ticketformat.touchkey_lang1
                 # lang2 = ticketformat.touchkey_lang2
             except:
-                logger.warning( 'TicketFormat not found (in find TicketRoute.waiting). ticketformat is ' + str(ticketformat))
+                logger.warning( 'TicketFormat not found (in find TicketRoute.waiting). Branch is ' + str(counterstatus.countertype.branch) + ', TicketType is ' + tr.tickettype + ' TicketFormat maybe disabled/removed. Please disable TicketRoute : ' + str(tr))
             
             # dict add to list
             if ticketformat != None:
@@ -214,6 +215,18 @@ def SoftkeyView(request, pk):
                 cc_acw(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'ACW button passed', 'Softkey-web', softkey_version, datetime_now)
             elif action == 'cancel':
                 status, msg = funCounterMiss(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Miss ticket :', 'Softkey-web', softkey_version, datetime_now)
+            elif action == 'on':
+                # websocket to flash light ON
+                wssendflashlight(counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'on')
+                pass
+            elif action == 'off':
+                # websocket to flash light OFF
+                wssendflashlight(counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'off')
+                pass
+            elif action == 'flash':
+                # websocket to flash light FLASH
+                wssendflashlight(counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'flash')                            
+                pass
             elif action == None :
                 pass
             else:
@@ -1910,7 +1923,7 @@ def UserUpdateView(request, pk):
             userform = UserFormAdmin(request.POST, instance=user, prefix='uform')        
         
         profileform = UserProfileForm(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
-        newtickettypeform = newTicketTypeForm(request.POST,)
+        newtickettypeform = newTicketTypeForm(request.POST)
         # check moblie phone format
         # inttel = profileform.mobilephone
         # if inttel != '+852':
@@ -1919,10 +1932,14 @@ def UserUpdateView(request, pk):
 
 
         if (userform.is_valid() & profileform.is_valid() & newtickettypeform.is_valid()):
+        # if (userform.is_valid() & profileform.is_valid()  ):
             profileform_temp = profileform.save(commit=False)
             
             # get data from html, and update to profileform_temp
             new_tt = newtickettypeform['new_tickettype'].value()
+            print ('new_tt = ' + new_tt)
+            if new_tt == '<No ticket type>':
+                new_tt = ''
             profileform_temp.tickettype = new_tt
 
             if profileform_temp.mobilephone != None:
@@ -1931,11 +1948,13 @@ def UserUpdateView(request, pk):
                     error = 'Mobile phone number should include HK country code. E.g. "+852"'
                 if len(profileform_temp.mobilephone) != 12 :
                     error = 'Mobile phone number should 12-digit including country code.'
+        else:
+            profileform_temp = profileform.save(commit=False)
 
         if error == '':
             userform.save()
-            profileform.save()
-            profileform_temp.tickettype = profileform_temp.tickettype.upper()
+            profileform.save()            
+            # profileform_temp.tickettype = profileform_temp.tickettype.upper()
             profileform_temp.save()
             # profileform_temp = profileform.save(commit=False)
             # profileform_temp.tickettype = profileform_temp.tickettype.upper()

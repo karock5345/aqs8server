@@ -65,6 +65,8 @@ class Branch(models.Model):
     # display settings
     displayenabled  = models.BooleanField(default=True) 
     displayflashtime = models.IntegerField(default=3)
+    # flash light
+    flashlighttime = models.IntegerField(default=3)
 
     # voice settings
     voiceenabled  = models.BooleanField(default=True) 
@@ -98,7 +100,7 @@ class UserProfile(models.Model):
     ]
     user = models.OneToOneField(User, on_delete=models.CASCADE,unique=True)
     
-    tickettype = models.CharField(default='A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,', max_length=200, null=True, blank=True, help_text='Ticket type',)
+    tickettype = models.CharField(default='', max_length=200, null=True, blank=True, help_text='Ticket type',)
     queuepriority = models.CharField(
        max_length=32,
        choices=PRIORITY,
@@ -340,6 +342,7 @@ class CounterStatus(models.Model):
     loged = models.BooleanField(default=False)
     logintime = models.DateTimeField(null=True, blank=True)
     lastactive = models.DateTimeField(null=True, blank=True)
+    flashid = models.IntegerField(null=True, blank=True, default=1)
 
 class CounterLoginLog(models.Model) :
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True) 

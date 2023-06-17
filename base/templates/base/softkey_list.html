@@ -34,7 +34,7 @@
                 {% if counter.user == None %}
                     <td>---</td>
                 {% else %}
-                    <td>{{ counter.user.first_name}} {{counter.user.last_name}}</td>
+                    <td>{{ counter.user.first_name}} {{counter.user.last_name}} ({{counter.user.username}})</td>
                 {% endif %}                    
                 <!-- <td style="border: 0;background-color:var(--color-bg)"><button class="btn btn--main" onclick="">Login</button></td> -->
                 <!-- Button for click link to url 'softkey' and with counter.id -->

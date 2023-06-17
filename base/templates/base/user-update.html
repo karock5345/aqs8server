@@ -38,7 +38,11 @@
                             {% if field.name == "tickettype" %}
                                 <label>Ticket type</label>
                                 <!-- the field display but cannot edit-->
-                                <a id="id_a_tickettype" class="form" >{{field.value}}</a>
+                                {% if field.value == "" %}
+                                    <a id="id_a_tickettype" class="form" >No ticket type</a>
+                                {% else %}
+                                    <a id="id_a_tickettype" class="form" >{{field}}</a>
+                                {% endif %}
                                 <input type="text"  value="{{field.value}}" name="new_tickettype" id="id_text_tickettype" hidden>
                             {% else %}
                                 <label for="profile_pic">{{field.help_text}}</label>
@@ -84,9 +88,9 @@
                 {% for tt in ticketformat %}
                     <div>
                         {% if tt.checked == "checked" %}
-                            <input type="checkbox" checked id="id_chk_{{tt.ttype}}">{{tt.ttype}} {{tt.touchkey_lang1}} {{tt.touchkey_lang2}}</input>
+                            <input type="checkbox" checked id="id_chk_tt_{{tt.ttype}}">{{tt.ttype}} {{tt.touchkey_lang1}} {{tt.touchkey_lang2}}</input>
                         {% else %}
-                            <input type="checkbox" id="id_chk_{{tt.ttype}}">{{tt.ttype}} {{tt.touchkey_lang1}} {{tt.touchkey_lang2}}</input>
+                            <input type="checkbox" id="id_chk_tt_{{tt.ttype}}">{{tt.ttype}} {{tt.touchkey_lang1}} {{tt.touchkey_lang2}}</input>
                         {% endif %} 
                     </div>
                 {% endfor %}
@@ -112,10 +116,10 @@
         var btn_cancel = document.getElementById('id_tt_cancel');
 
         // check tickettype do not have character "{" or "}" then set to ""
-        if (!(tickettype.indexOf(",") > -1 || tickettype == "")) {
+        if ((!(tickettype.indexOf(",") > -1) || tickettype == "")) {
             tickettype = "";
             document.getElementById('id_a_tickettype').innerHTML = "No ticket type";
-            document.getElementById('id_text_tickettype').value = "No ticket type";
+            document.getElementById('id_text_tickettype').value = "";
         }
         document.getElementById('id_area_tt').style.display = "none";
 
@@ -126,7 +130,7 @@
 
         Array.prototype.forEach.call(checkboxes, function(el) {
             el.addEventListener('change', function() {
-                var tt = this.id.replace("id_chk_", "");
+                var tt = this.id.replace("id_chk_tt_", "");
                 if (this.checked) {
                     // Checkbox is checked..
                     tickettype = tickettype + tt + ",";
@@ -147,10 +151,30 @@
 
         // add event button clicked pass tickettype to view
         document.getElementById('id_tt_confirm').addEventListener('click', function() {
+            // for loop checkbox to get tickettype
+            tickettype = "";
+            for (var i = 0; i < checkboxes.length; i++) {
+                //  check if the checkbox id is is "id_chk_tt_xxx"
+                if ((checkboxes[i].id.indexOf("id_chk_tt_") > -1)) {
+                    var tt = checkboxes[i].id.replace("id_chk_tt_", "");
+                    if (checkboxes[i].checked) {
+                        // Checkbox is checked..
+                        tickettype = tickettype + tt + ",";
+                    } 
+                }
+                
+            }
+
+
+
             document.getElementById('id_area_tt').style.display = "none";
             document.getElementById('id_area_main').style.display = "block";
             document.getElementById('id_a_tickettype').innerHTML = tickettype;
             document.getElementById('id_text_tickettype').value = tickettype;
+            if (tickettype == "") {
+                document.getElementById('id_a_tickettype').innerHTML = "No ticket type";
+                document.getElementById('id_text_tickettype').value = "<No ticket type>";
+            }
         });
           
       </script>
