@@ -27,7 +27,8 @@ class UserForm(ModelForm):
     def __init__(self, *args,**kwargs):
         super (UserForm,self ).__init__(*args,**kwargs)
         self.fields['groups'].queryset = Group.objects.filter(~Q(name='api'), ~Q(name='web'))   # Q(groups__name='api')
-
+        # here we can filter the groups by user branchs
+        asfasfsfs
 class UserFormAdmin(ModelForm):
 # admin can not change himself group and cannot set is_active
     class Meta:
@@ -41,7 +42,9 @@ class UserFormSuper(ModelForm):
     def __init__(self, *args,**kwargs):
         super (UserFormSuper,self ).__init__(*args,**kwargs)
         self.fields['groups'].queryset = Group.objects.filter(~Q(name='web'))  
-
+        # here we can filter the groups by user branchs
+        asfasfsfs
+        
 class UserProfileForm(ModelForm):
     class Meta:
         model = UserProfile

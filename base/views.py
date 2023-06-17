@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.urls import reverse
 from urllib.parse import urlencode
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
@@ -1088,7 +1088,7 @@ def webtv(request, bcode, ct):
 
 
 @unauth_user
-@allowed_users(allowed_roles=['admin', 'report'])
+@allowed_users(allowed_roles=['admin', 'report','manager','support'])
 def Report_RAW_Result(request):
     bcode = request.GET['branch']
     s_startdate = request.GET['startdate']
@@ -1175,7 +1175,7 @@ def Report_RAW_Result(request):
     return render(request, 'base/r-raw.html', context)
     
 @unauth_user
-@allowed_users(allowed_roles=['admin', 'report'])
+@allowed_users(allowed_roles=['admin', 'report','manager','support'])
 def Report_RAW_q(request):
 
     auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
@@ -1198,7 +1198,7 @@ def Report_RAW_q(request):
     return render(request, 'base/r-rawq.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin', 'report'])
+@allowed_users(allowed_roles=['admin', 'report','manager','support'])
 def SuperVisorView(request, pk):
 
     branch = Branch.objects.get(id=pk)    
@@ -1241,7 +1241,7 @@ def SuperVisorView(request, pk):
 
 
 @unauth_user
-@allowed_users(allowed_roles=['admin', 'report'])
+@allowed_users(allowed_roles=['admin', 'report','manager','support'])
 def SuperVisorListView(request):  
     auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
  
@@ -1811,7 +1811,7 @@ def homeView(request):
     return render(request, 'base/home.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','manager','support'])
 def UserSummaryView(request):     
     auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
  
@@ -1864,12 +1864,15 @@ def UserLoginView(request):
     return render(request, 'base/login_register.html', context)
     
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','manager','support'])
 def UserUpdateView(request, pk):
+
+
+
     user = User.objects.get(id=pk)
     userp = UserProfile.objects.get(user__exact=user)
     error = ''
-    if request.user.is_superuser == True :
+    if request.user.is_superuser == True or request.user.groups.filter(name='support').exists() == True or request.user.groups.filter(name='admin').exists() == True:
         auth_branchs = Branch.objects.all()
     else :
         auth_userp = UserProfile.objects.get(user__exact=request.user)
@@ -1966,7 +1969,7 @@ def UserUpdateView(request, pk):
         else:
             messages.error(request, error)
 
-    context =  {'userform':userform , 'profileform':profileform, 'user':user, 'userp':userp,'ticketformat':ticketformat2,'userptt':listusertt,}
+    context =  {'userform':userform , 'profileform':profileform, 'user':user, 'userp':userp,'ticketformat':ticketformat2,'userptt':listusertt, }
     return render(request, 'base/user-update.html', context)
 
 @unauth_user
@@ -1996,7 +1999,7 @@ def UserUpdateTTView(request, pk):
     return render(request, 'base/user-update-tickettype.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','manager','support'])
 def UserNewView(request):
     #page = 'register'
     form = UserCreationForm()
@@ -2035,7 +2038,7 @@ def UserChangePWView(request):
     return render(request, 'base/changepassword.html', {'form': form})
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','manager','support'])
 def UserDelView(request, pk):
     user = User.objects.get(id=pk)
     userp =UserProfile.objects.get(user__exact=user)
@@ -2088,7 +2091,34 @@ def auth_data(user):
         auth_ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
         auth_routes = TicketRoute.objects.all().order_by('branch','countertype', 'tickettype', 'step')
         auth_countertype = CounterType.objects.all()
-    else :
+    elif user.groups.filter(name='admin').exists() == True or user.groups.filter(name='support').exists() == True:
+        profiles = UserProfile.objects.all()
+        auth_branchs = Branch.objects.all()
+
+        profid_list = []
+        userid_list = []
+        for prof in profiles :
+            not_auth = False
+            for b in prof.branchs.all():
+                if (b in auth_branchs) == True :
+                    pass                
+                else :
+                    not_auth = True
+            if not_auth == False :
+                if prof.user.is_superuser == False :
+                    if ('api' in prof.user.groups.all()) == False :
+                        if ('web' in prof.user.groups.all()) == False :
+                            profid_list.append(prof.id)
+                            userid_list.append(prof.user.id)
+                        
+        auth_userlist = User.objects.filter(id__in=userid_list)
+        auth_profilelist = UserProfile.objects.filter(id__in=profid_list)
+        auth_ticketformats = TicketFormat.objects.filter(branch__in=auth_branchs).order_by('branch','ttype')
+        auth_routes = TicketRoute.objects.filter(branch__in=auth_branchs).order_by('branch','countertype', 'tickettype', 'step')
+        auth_countertype = CounterType.objects.filter(branch__in=auth_branchs)
+ 
+    else : 
+    # include counter, frontline, manager, report
         profiles = UserProfile.objects.all()
         auth_branchs = UserProfile.objects.get(user=user).branchs.all()
 
@@ -2152,6 +2182,7 @@ def checkticketformatform(form):
     
     if error == '' :
         newform = form.save(commit=False)
+    if error == '' :
         if newform.branch == None :
             # Error branch is None
             error = 'Error Branch is blank'
@@ -2159,4 +2190,12 @@ def checkticketformatform(form):
         # check if ticket type should be letter
         if newform.ttype.isalpha() == False :
             error = 'Ticket type should be letter'
+    # for PCCW Ticket type should be 2 letter
+    if error == '' :
+        if len(newform.ttype) != 2 :
+            error = 'Ticket type should be 2 letters'
+    # Ticket type should be upper case
+    if error == '' :
+        if newform.ttype != newform.ttype.upper():
+            error = 'Ticket type should be upper case'
     return (error, newform)

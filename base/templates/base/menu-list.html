@@ -21,6 +21,16 @@
     </li>
     <li>
       <a href="{% url 'reportrawq' %}" class="active">Data log <span>1</span></a>
+    </li>
+  {% elif request.user.groups.all.0.name == 'manager' or request.user.groups.all.0.name == 'support' %}  
+    <li>
+      <a href="{% url 'usersummary' %}" class="active">Edit user <span>{{ users.count }}</span></a>   
+    </li>    
+    <li>
+      <a href="{% url 'supersummary' %}" class="active">Supervisor <span>{{ branchs.count }}</span></a>
+    </li>
+    <li>
+      <a href="{% url 'reportrawq' %}" class="active">Data log <span>1</span></a>
     </li>      
   {% elif request.user.groups.all.0.name == 'report' %}      
     <li>

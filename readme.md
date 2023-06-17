@@ -43,6 +43,9 @@
 - Remove Search function for all HTML (include mobile version)
 - Improve HTML: Branch list, Ticket Format list, Ticket Route list, Supervisor list (Show red color when disabled)
 - Fixed number not correct in m-menu for mobile version (base/views -> MenuView)
+### <span style="color:orange;">**Version 8.1.1 for PCCW 2023**</span>
+- New Ticket Format, Ticket Type should be 2 letters and should be uppercase
+
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
