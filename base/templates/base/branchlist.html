@@ -63,9 +63,16 @@
             {% endfor %} -->
             
         </a>
-            <p class="roomListRoom__topic">
-                Branch enabled : {{ branch.enabled }}                
-            </p>
+
+            {% if branch.enabled == False %}
+                <p class="roomListRoom__topic_red">
+                    Branch enabled : {{ branch.enabled }}  
+                </p>
+            {% else %}
+                <p class="roomListRoom__topic">
+                    Branch enabled : {{ branch.enabled }}  
+                </p>
+            {% endif %}
         </div>
     
     </div>

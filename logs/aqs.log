@@ -23011,3 +23011,679 @@ INFO 2023-06-17 21:54:29,681 runserver>log_action WebSocket DISCONNECT /ws/pstat
 INFO 2023-06-17 21:54:48,845 runserver>log_action WebSocket DISCONNECT /ws/cs/30/ [127.0.0.1:57835]
 INFO 2023-06-17 21:55:10,020 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:49780]
 INFO 2023-06-17 21:55:30,181 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:57836]
+INFO 2023-06-17 22:56:59,562 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-17 22:57:00,358 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-17 22:57:00,364 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-17 22:57:00,645 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-17 22:57:00,646 base>views><module> -SCH- Now:06/17/2023, 14:57:00
+INFO 2023-06-17 22:57:00,727 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-17 16:42:00 Local:2023-06-18 00:42:00
+INFO 2023-06-17 22:57:00,727 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-17 22:57:00,728 base>views>init_branch_reset    -SCH- 2023-06-17 16:42:00 > 2023-06-17 14:57:00 [Yes]
+INFO 2023-06-17 22:57:00,788 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-17 15:59:59 Local:2023-06-17 23:59:59
+INFO 2023-06-17 22:57:00,789 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-17 22:57:00,789 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 14:57:00 [Yes]
+INFO 2023-06-17 22:57:00,798 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-17 18:00:00 Local:2023-06-18 02:00:00
+INFO 2023-06-17 22:57:00,799 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-17 22:57:00,799 base>views>init_branch_reset    -SCH- 2023-06-17 18:00:00 > 2023-06-17 14:57:00 [Yes]
+INFO 2023-06-17 22:57:00,806 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-17 15:59:59 Local:2023-06-17 23:59:59
+INFO 2023-06-17 22:57:00,807 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-17 22:57:00,807 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 14:57:00 [Yes]
+INFO 2023-06-17 22:57:00,819 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-17 15:59:59 Local:2023-06-17 23:59:59
+INFO 2023-06-17 22:57:00,819 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-17 22:57:00,820 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 14:57:00 [Yes]
+INFO 2023-06-17 22:57:00,829 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-17 15:59:59 Local:2023-06-17 23:59:59
+INFO 2023-06-17 22:57:00,829 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-17 22:57:00,830 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 14:57:00 [Yes]
+INFO 2023-06-17 22:57:10,376 runserver>log_action [32mHTTP GET / 302 [0.02, 127.0.0.1:20499][0m
+INFO 2023-06-17 22:57:10,402 runserver>log_action [mHTTP GET /login/ 200 [0.02, 127.0.0.1:20499][0m
+INFO 2023-06-17 22:57:10,506 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.06, 127.0.0.1:20499][0m
+INFO 2023-06-17 22:57:15,360 runserver>log_action [32mHTTP POST /login/ 302 [0.18, 127.0.0.1:20499][0m
+INFO 2023-06-17 22:57:15,419 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:20499][0m
+INFO 2023-06-17 22:57:16,828 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:20499][0m
+INFO 2023-06-17 22:57:18,443 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.05, 127.0.0.1:20499][0m
+INFO 2023-06-17 22:57:19,782 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:20499][0m
+INFO 2023-06-17 22:57:19,813 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:20522]
+INFO 2023-06-17 22:57:19,864 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 22:57:24,010 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:20522]
+INFO 2023-06-17 22:57:24,355 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:20525]
+INFO 2023-06-17 22:57:24,362 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 22:57:26,701 base>ws>wssendflashlight channel_group_name:flashlight_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-17 22:57:29,001 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:20525]
+ERROR 2023-06-17 22:57:47,738 base>ws>wssendflashlight ...ERROR:Redis Server is down!
+INFO 2023-06-17 22:57:47,775 runserver>log_action [32mHTTP POST /softkey/33/ 302 [21.11, 127.0.0.1:20499][0m
+INFO 2023-06-17 22:57:47,841 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:20499][0m
+INFO 2023-06-17 22:57:47,859 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:20499][0m
+INFO 2023-06-17 22:57:47,868 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:20544]
+INFO 2023-06-17 22:57:47,875 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 22:57:52,009 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:20544]
+INFO 2023-06-17 22:57:52,514 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:20549]
+INFO 2023-06-17 22:57:52,525 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 22:57:57,009 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:20549]
+INFO 2023-06-17 22:57:57,758 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:20552]
+INFO 2023-06-17 22:57:57,769 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 22:58:02,007 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:20552]
+INFO 2023-06-17 23:05:08,486 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:20949][0m
+INFO 2023-06-17 23:05:08,512 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:20949][0m
+INFO 2023-06-17 23:05:08,525 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:20953]
+INFO 2023-06-17 23:05:08,531 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:05:13,005 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:20953]
+INFO 2023-06-17 23:05:13,434 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:20967]
+INFO 2023-06-17 23:05:13,448 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:05:18,000 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:20967]
+INFO 2023-06-17 23:05:18,611 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:20992]
+INFO 2023-06-17 23:05:18,616 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 23:05:23,006 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:20992]
+INFO 2023-06-17 23:05:27,240 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:20949][0m
+INFO 2023-06-17 23:05:27,260 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:20949][0m
+INFO 2023-06-17 23:05:27,274 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21009]
+INFO 2023-06-17 23:05:27,280 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:05:32,010 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21009]
+INFO 2023-06-17 23:05:33,356 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:21012]
+INFO 2023-06-17 23:05:33,361 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:05:38,012 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:21012]
+INFO 2023-06-17 23:05:40,032 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:21015]
+INFO 2023-06-17 23:05:40,038 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 23:05:45,014 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:21015]
+INFO 2023-06-17 23:06:19,020 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.05, 127.0.0.1:20949][0m
+INFO 2023-06-17 23:06:19,039 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:20949][0m
+INFO 2023-06-17 23:06:19,048 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21074]
+INFO 2023-06-17 23:06:19,054 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:06:24,004 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21074]
+INFO 2023-06-17 23:06:28,529 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:21079]
+INFO 2023-06-17 23:06:28,536 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:06:33,001 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:21079]
+INFO 2023-06-17 23:06:34,931 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:20949][0m
+INFO 2023-06-17 23:06:34,947 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:20949][0m
+INFO 2023-06-17 23:06:39,769 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21105]
+INFO 2023-06-17 23:06:39,774 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:06:44,007 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21105]
+INFO 2023-06-17 23:06:46,143 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:20949][0m
+INFO 2023-06-17 23:06:46,161 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:20949][0m
+INFO 2023-06-17 23:06:54,166 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21127]
+INFO 2023-06-17 23:06:54,171 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:06:59,011 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21127]
+INFO 2023-06-17 23:07:06,739 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:20949][0m
+INFO 2023-06-17 23:07:06,755 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:20949][0m
+INFO 2023-06-17 23:07:14,250 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21144]
+INFO 2023-06-17 23:07:14,259 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:07:19,013 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21144]
+INFO 2023-06-17 23:07:41,855 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:21168]
+INFO 2023-06-17 23:07:41,865 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:07:46,004 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:21168]
+INFO 2023-06-17 23:08:20,247 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:21249]
+INFO 2023-06-17 23:08:20,252 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 23:08:25,002 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:21249]
+INFO 2023-06-17 23:09:10,933 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21328][0m
+INFO 2023-06-17 23:09:10,946 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21328][0m
+INFO 2023-06-17 23:09:16,369 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21337]
+INFO 2023-06-17 23:09:16,379 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:09:21,009 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21337]
+INFO 2023-06-17 23:10:11,744 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21369][0m
+INFO 2023-06-17 23:10:11,761 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21369][0m
+INFO 2023-06-17 23:10:21,019 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21380]
+INFO 2023-06-17 23:10:21,028 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:10:26,014 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21380]
+INFO 2023-06-17 23:11:00,666 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21369][0m
+INFO 2023-06-17 23:11:00,679 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21369][0m
+INFO 2023-06-17 23:11:01,509 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21369][0m
+INFO 2023-06-17 23:11:01,525 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:21420][0m
+INFO 2023-06-17 23:11:02,277 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21369][0m
+INFO 2023-06-17 23:11:02,292 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:21420][0m
+INFO 2023-06-17 23:11:26,034 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21433]
+INFO 2023-06-17 23:11:26,042 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:11:31,013 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21433]
+INFO 2023-06-17 23:12:02,855 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21513][0m
+INFO 2023-06-17 23:12:02,872 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21513][0m
+INFO 2023-06-17 23:12:03,672 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21513][0m
+INFO 2023-06-17 23:12:03,689 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:12:27,429 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21513][0m
+INFO 2023-06-17 23:12:27,443 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:12:31,021 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21544]
+INFO 2023-06-17 23:12:31,026 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:12:36,004 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21544]
+INFO 2023-06-17 23:12:44,795 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:12:44,808 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:12:45,405 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:12:45,415 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:12:45,849 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.13, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:12:45,863 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:13:36,020 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21587]
+INFO 2023-06-17 23:13:36,028 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:13:41,001 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21587]
+INFO 2023-06-17 23:13:45,255 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:13:45,267 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:13:55,914 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:13:55,928 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:14:04,170 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:14:04,182 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:14:38,685 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:14:38,699 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:14:41,021 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21687]
+INFO 2023-06-17 23:14:41,024 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:14:45,717 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:14:45,730 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:14:45,744 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21747]
+INFO 2023-06-17 23:14:45,750 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:14:46,014 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21687]
+INFO 2023-06-17 23:14:50,014 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21747]
+INFO 2023-06-17 23:15:14,464 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:15:14,478 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:15:50,035 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21780]
+INFO 2023-06-17 23:15:50,043 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:15:54,806 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.05, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:15:54,823 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:15:54,832 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21794]
+INFO 2023-06-17 23:15:54,838 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:15:55,005 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21780]
+INFO 2023-06-17 23:15:59,005 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21794]
+INFO 2023-06-17 23:16:14,699 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.05, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:16:14,712 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:16:40,731 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.05, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:16:40,745 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:16:57,569 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:16:57,583 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:21516][0m
+INFO 2023-06-17 23:16:59,014 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:21863]
+INFO 2023-06-17 23:16:59,023 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:17:04,015 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:21863]
+INFO 2023-06-17 23:18:04,023 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:21885]
+INFO 2023-06-17 23:18:04,034 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:18:09,012 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:21885]
+INFO 2023-06-17 23:19:09,021 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:21899]
+INFO 2023-06-17 23:19:09,032 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 23:19:14,002 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:21899]
+INFO 2023-06-17 23:43:08,504 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.07, 127.0.0.1:22617][0m
+INFO 2023-06-17 23:43:08,532 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:22617][0m
+INFO 2023-06-17 23:43:08,542 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:22620]
+INFO 2023-06-17 23:43:08,550 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:43:13,005 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:22620]
+INFO 2023-06-17 23:43:13,381 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:22626]
+INFO 2023-06-17 23:43:13,385 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:43:18,013 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:22626]
+INFO 2023-06-17 23:43:18,561 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:22628]
+INFO 2023-06-17 23:43:18,570 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 23:43:23,010 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:22628]
+INFO 2023-06-17 23:43:43,191 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:22617][0m
+INFO 2023-06-17 23:43:43,206 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:22617][0m
+INFO 2023-06-17 23:43:43,220 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:22668]
+INFO 2023-06-17 23:43:43,225 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:43:48,003 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:22668]
+INFO 2023-06-17 23:43:49,232 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:22674]
+INFO 2023-06-17 23:43:49,240 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:43:54,001 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:22674]
+INFO 2023-06-17 23:43:55,838 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:22681]
+INFO 2023-06-17 23:43:55,844 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 23:44:00,010 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:22681]
+INFO 2023-06-17 23:44:39,891 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:22617][0m
+INFO 2023-06-17 23:44:39,907 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:22617][0m
+INFO 2023-06-17 23:44:39,917 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:22763]
+INFO 2023-06-17 23:44:39,923 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:44:44,014 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:22763]
+INFO 2023-06-17 23:44:48,130 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:22766]
+INFO 2023-06-17 23:44:48,137 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:44:53,001 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:22766]
+INFO 2023-06-17 23:44:59,231 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:22617][0m
+INFO 2023-06-17 23:44:59,248 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:22617][0m
+INFO 2023-06-17 23:44:59,256 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:22800]
+INFO 2023-06-17 23:44:59,263 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:45:00,280 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:22617][0m
+INFO 2023-06-17 23:45:00,293 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:22799][0m
+INFO 2023-06-17 23:45:00,310 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:22804]
+INFO 2023-06-17 23:45:00,317 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:45:04,016 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:22800]
+INFO 2023-06-17 23:45:05,010 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:22804]
+INFO 2023-06-17 23:45:14,260 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:22819]
+INFO 2023-06-17 23:45:14,269 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:45:19,013 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:22819]
+INFO 2023-06-17 23:45:32,871 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:22851]
+INFO 2023-06-17 23:45:32,878 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 23:45:37,010 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:22851]
+INFO 2023-06-17 23:48:23,064 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:22997][0m
+INFO 2023-06-17 23:48:23,084 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:22997][0m
+INFO 2023-06-17 23:48:23,097 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23001]
+INFO 2023-06-17 23:48:23,102 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:48:28,012 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23001]
+INFO 2023-06-17 23:48:28,253 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:23008]
+INFO 2023-06-17 23:48:28,265 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:48:33,012 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:23008]
+INFO 2023-06-17 23:48:33,378 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:23010]
+INFO 2023-06-17 23:48:33,388 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 23:48:38,001 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:23010]
+INFO 2023-06-17 23:51:01,176 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.05, 127.0.0.1:23169][0m
+INFO 2023-06-17 23:51:01,189 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:23169][0m
+INFO 2023-06-17 23:51:01,200 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23173]
+INFO 2023-06-17 23:51:01,205 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:51:06,013 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23173]
+INFO 2023-06-17 23:51:06,371 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:23177]
+INFO 2023-06-17 23:51:06,377 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:51:11,011 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:23177]
+INFO 2023-06-17 23:51:11,526 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:23192]
+INFO 2023-06-17 23:51:11,531 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 23:51:12,757 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:23169][0m
+INFO 2023-06-17 23:51:12,774 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:23169][0m
+INFO 2023-06-17 23:51:12,784 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23205]
+INFO 2023-06-17 23:51:12,789 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:51:16,014 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:23192]
+INFO 2023-06-17 23:51:17,011 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23205]
+INFO 2023-06-17 23:51:17,792 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:23210]
+INFO 2023-06-17 23:51:17,802 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:51:22,013 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:23210]
+INFO 2023-06-17 23:51:23,174 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:23221]
+INFO 2023-06-17 23:51:23,183 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 23:51:28,015 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:23221]
+INFO 2023-06-17 23:51:39,625 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:23169][0m
+INFO 2023-06-17 23:51:39,639 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:23169][0m
+INFO 2023-06-17 23:51:39,651 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23259]
+INFO 2023-06-17 23:51:39,657 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:51:44,000 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23259]
+INFO 2023-06-17 23:51:46,599 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:23264]
+INFO 2023-06-17 23:51:46,608 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:51:51,013 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:23264]
+INFO 2023-06-17 23:51:54,899 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:23274]
+INFO 2023-06-17 23:51:54,909 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 23:51:59,001 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:23274]
+INFO 2023-06-17 23:52:01,449 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.05, 127.0.0.1:23169][0m
+INFO 2023-06-17 23:52:01,466 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:23169][0m
+INFO 2023-06-17 23:52:04,819 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23299]
+INFO 2023-06-17 23:52:04,827 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:52:09,004 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23299]
+INFO 2023-06-17 23:52:17,723 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:23303]
+INFO 2023-06-17 23:52:17,728 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:52:22,010 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:23303]
+INFO 2023-06-17 23:52:35,081 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:23317]
+INFO 2023-06-17 23:52:35,092 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 23:52:40,010 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:23317]
+INFO 2023-06-17 23:53:22,313 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:23371][0m
+INFO 2023-06-17 23:53:22,332 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:23371][0m
+INFO 2023-06-17 23:53:22,345 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23375]
+INFO 2023-06-17 23:53:22,352 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:53:27,001 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23375]
+INFO 2023-06-17 23:53:56,402 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:23416]
+INFO 2023-06-17 23:53:56,410 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:54:01,014 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:23416]
+INFO 2023-06-17 23:54:45,097 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:23453]
+INFO 2023-06-17 23:54:45,101 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 23:54:47,953 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:23464][0m
+INFO 2023-06-17 23:54:47,969 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:23464][0m
+INFO 2023-06-17 23:54:47,979 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23468]
+INFO 2023-06-17 23:54:47,986 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:54:50,006 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:23453]
+INFO 2023-06-17 23:54:52,014 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23468]
+INFO 2023-06-17 23:55:09,472 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:23464][0m
+INFO 2023-06-17 23:55:09,486 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:23464][0m
+INFO 2023-06-17 23:55:17,791 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:23464][0m
+INFO 2023-06-17 23:55:17,803 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:23464][0m
+INFO 2023-06-17 23:55:52,035 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23530]
+INFO 2023-06-17 23:55:52,043 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:55:57,008 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23530]
+INFO 2023-06-17 23:56:27,208 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.08, 127.0.0.1:23601][0m
+INFO 2023-06-17 23:56:27,220 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:23601][0m
+INFO 2023-06-17 23:56:33,036 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.07, 127.0.0.1:23601][0m
+INFO 2023-06-17 23:56:33,050 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:23601][0m
+INFO 2023-06-17 23:56:57,025 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23634]
+INFO 2023-06-17 23:56:57,035 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-17 23:57:02,011 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23634]
+INFO 2023-06-17 23:58:02,025 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:23640]
+INFO 2023-06-17 23:58:02,036 base>consumers>connect connecting:cs_33
+INFO 2023-06-17 23:58:07,014 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:23640]
+INFO 2023-06-17 23:59:07,035 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:23653]
+INFO 2023-06-17 23:59:07,045 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-17 23:59:12,001 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:23653]
+INFO 2023-06-17 23:59:59,042 base>views>job_shutdown    -SCH- Shutdown and reset branch :MK -SCH-
+INFO 2023-06-17 23:59:59,042 base>views>job_shutdown    -SCH- Shutdown and reset branch :ST -SCH-
+INFO 2023-06-17 23:59:59,043 base>views>job_shutdown    -SCH- Shutdown and reset branch :SW -SCH-
+INFO 2023-06-17 23:59:59,044 base>views>job_shutdown    -SCH- Shutdown and reset branch :TST -SCH-
+INFO 2023-06-17 23:59:59,420 base>ws>wssendwebtv channel_group_name:webtv_SW_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-17 23:59:59,500 base>ws>wssendwebtv channel_group_name:webtv_TST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-17 23:59:59,753 base>ws>wssendwebtv channel_group_name:webtv_MK_Counter sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-18 00:00:01,495 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-18 00:00:20,456 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+ERROR 2023-06-18 00:00:20,551 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+ERROR 2023-06-18 00:00:20,795 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+ERROR 2023-06-18 00:00:22,539 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-18 00:00:34,964 base>ws>wssendflashlight channel_group_name:flashlight_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-18 00:00:56,003 base>ws>wssendflashlight ...ERROR:Redis Server is down!
+INFO 2023-06-18 00:00:56,024 runserver>log_action [32mHTTP POST /softkey/33/ 302 [21.10, 127.0.0.1:23744][0m
+INFO 2023-06-18 00:00:56,098 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.07, 127.0.0.1:23744][0m
+INFO 2023-06-18 00:00:56,116 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:23744][0m
+INFO 2023-06-18 00:00:56,127 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:23752]
+INFO 2023-06-18 00:00:56,134 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-18 00:01:01,009 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:23752]
+INFO 2023-06-18 00:06:29,290 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 00:06:30,066 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 00:06:30,073 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 00:06:30,208 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 00:06:30,209 base>views><module> -SCH- Now:06/17/2023, 16:06:30
+INFO 2023-06-18 00:06:30,294 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-17 16:42:00 Local:2023-06-18 00:42:00
+INFO 2023-06-18 00:06:30,295 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 00:06:30,295 base>views>init_branch_reset    -SCH- 2023-06-17 16:42:00 > 2023-06-17 16:06:30 [Yes]
+INFO 2023-06-18 00:06:30,343 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:06:30,344 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:06:30,345 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:06:30 [No]
+INFO 2023-06-18 00:06:30,353 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-17 18:00:00 Local:2023-06-18 02:00:00
+INFO 2023-06-18 00:06:30,353 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 00:06:30,354 base>views>init_branch_reset    -SCH- 2023-06-17 18:00:00 > 2023-06-17 16:06:30 [Yes]
+INFO 2023-06-18 00:06:30,363 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:06:30,363 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:06:30,363 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:06:30 [No]
+INFO 2023-06-18 00:06:30,371 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:06:30,372 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:06:30,372 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:06:30 [No]
+INFO 2023-06-18 00:06:30,382 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:06:30,383 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:06:30,383 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:06:30 [No]
+INFO 2023-06-18 00:06:31,243 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.10, 127.0.0.1:24160][0m
+INFO 2023-06-18 00:06:31,271 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:24160][0m
+INFO 2023-06-18 00:06:31,284 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:24163]
+INFO 2023-06-18 00:06:31,333 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-18 00:06:36,007 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:24163]
+INFO 2023-06-18 00:06:36,300 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:24166]
+INFO 2023-06-18 00:06:36,307 base>consumers>connect connecting:cs_33
+INFO 2023-06-18 00:06:40,273 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:24160][0m
+INFO 2023-06-18 00:06:41,005 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:24166]
+INFO 2023-06-18 00:06:47,443 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:24160][0m
+INFO 2023-06-18 00:07:34,869 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:24160][0m
+INFO 2023-06-18 00:07:34,895 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:24160][0m
+INFO 2023-06-18 00:07:49,342 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:24160][0m
+INFO 2023-06-18 00:07:58,145 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:24160][0m
+INFO 2023-06-18 00:08:02,429 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:24160][0m
+INFO 2023-06-18 00:08:05,421 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:24160][0m
+INFO 2023-06-18 00:08:41,896 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:24160][0m
+INFO 2023-06-18 00:08:41,911 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:24160][0m
+INFO 2023-06-18 00:08:45,939 runserver>log_action [mHTTP GET /menu/ 200 [0.03, 127.0.0.1:24160][0m
+INFO 2023-06-18 00:08:49,152 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:24160][0m
+INFO 2023-06-18 00:10:01,571 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.06, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:10:01,584 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:10:15,509 runserver>log_action [mHTTP GET /softkey_login/4/ 200 [0.05, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:10:42,122 runserver>log_action [mHTTP GET /softkey_login/4/ 200 [0.06, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:10:43,745 runserver>log_action [32mHTTP GET /softkey/21/ 302 [0.03, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:10:43,795 runserver>log_action [mHTTP GET /softkey_login/4/ 200 [0.05, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:10:49,963 runserver>log_action [mHTTP GET /menu/ 200 [0.03, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:10:51,481 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:10:52,273 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.05, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:10:53,848 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:10:53,876 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:24533]
+INFO 2023-06-18 00:10:53,882 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-18 00:10:58,014 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:24533]
+INFO 2023-06-18 00:10:58,409 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:24538]
+INFO 2023-06-18 00:10:58,421 base>consumers>connect connecting:cs_33
+INFO 2023-06-18 00:11:03,005 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:24538]
+INFO 2023-06-18 00:11:03,583 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:24625]
+INFO 2023-06-18 00:11:03,588 base>consumers>connect connecting:ql_ST_c
+INFO 2023-06-18 00:11:08,010 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:24625]
+INFO 2023-06-18 00:11:26,679 runserver>log_action [mHTTP GET /softkey/33/ 200 [0.06, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:11:26,698 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:11:26,712 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:24741]
+INFO 2023-06-18 00:11:26,719 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-06-18 00:11:31,014 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:24741]
+INFO 2023-06-18 00:11:32,295 runserver>log_action WebSocket HANDSHAKING /ws/cs/33/ [127.0.0.1:24744]
+INFO 2023-06-18 00:11:32,301 base>consumers>connect connecting:cs_33
+INFO 2023-06-18 00:11:33,940 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:11:35,733 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:11:37,015 runserver>log_action WebSocket DISCONNECT /ws/cs/33/ [127.0.0.1:24744]
+INFO 2023-06-18 00:11:37,964 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.05, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:11:39,068 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:11:40,347 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:24462][0m
+INFO 2023-06-18 00:12:46,586 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:12:47,484 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:12:50,059 runserver>log_action [mHTTP GET /update-user/7/ 200 [0.19, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:12:52,240 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:12:54,957 runserver>log_action [mHTTP GET /update-user/7/ 200 [0.16, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:12:58,862 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:12:58,885 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:13:01,075 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:13:04,047 runserver>log_action [mHTTP GET /branch/ 200 [0.04, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:13:23,751 runserver>log_action [mHTTP GET /branch/ 200 [0.05, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:13:25,895 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.02, 127.0.0.1:24799][0m
+WARNING 2023-06-18 00:14:16,374 log>log_response Not Found: /favicon.ico
+WARNING 2023-06-18 00:14:16,375 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:14:18,520 runserver>log_action [mHTTP GET /menu/ 200 [0.04, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:14:21,051 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:14:36,402 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:14:36,413 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:14:37,699 runserver>log_action [mHTTP GET /update-tf/25/ 200 [0.03, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:14:39,427 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:14:40,842 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:14:42,323 runserver>log_action [mHTTP GET /routes/ 200 [0.06, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:00,287 runserver>log_action [mHTTP GET /routes/ 200 [0.07, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:01,248 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:02,859 runserver>log_action [mHTTP GET /supervisors/ 200 [0.04, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:18,022 runserver>log_action [mHTTP GET /supervisors/ 200 [0.06, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:19,271 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:23,424 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:24,985 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:25,931 runserver>log_action [mHTTP GET /routes/ 200 [0.06, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:27,304 runserver>log_action [mHTTP GET /update-route/26 200 [0.04, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:28,853 runserver>log_action [mHTTP GET / 200 [0.09, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:30,248 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:32,691 runserver>log_action [mHTTP GET /supervisors/ 200 [0.04, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:34,143 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:35,548 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:15:36,637 runserver>log_action [mHTTP GET /rawdata/ 200 [0.05, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:16:25,006 runserver>log_action [mHTTP GET /rawdata/ 200 [0.04, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:16:25,019 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:16:46,569 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:24799][0m
+INFO 2023-06-18 00:18:56,374 runserver>log_action [mHTTP GET /branch/ 200 [0.07, 127.0.0.1:25650][0m
+INFO 2023-06-18 00:18:56,396 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:25651][0m
+INFO 2023-06-18 00:18:59,008 runserver>log_action [mHTTP GET /branch/ 200 [0.04, 127.0.0.1:25650][0m
+INFO 2023-06-18 00:19:01,559 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:25650][0m
+INFO 2023-06-18 00:19:32,671 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:25650][0m
+INFO 2023-06-18 00:19:36,531 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.07, 127.0.0.1:25650][0m
+INFO 2023-06-18 00:21:54,234 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:25861][0m
+INFO 2023-06-18 00:21:54,248 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:25861][0m
+INFO 2023-06-18 00:22:49,402 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.05, 127.0.0.1:25861][0m
+INFO 2023-06-18 00:22:53,148 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:25861][0m
+INFO 2023-06-18 00:23:12,203 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:25861][0m
+INFO 2023-06-18 00:23:16,303 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:25861][0m
+INFO 2023-06-18 00:23:19,444 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:25861][0m
+INFO 2023-06-18 00:23:23,559 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:25861][0m
+INFO 2023-06-18 00:23:28,479 runserver>log_action [mHTTP GET /supervisors/ 200 [0.05, 127.0.0.1:25861][0m
+INFO 2023-06-18 00:23:32,011 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:25861][0m
+INFO 2023-06-18 00:23:37,607 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:25861][0m
+INFO 2023-06-18 00:23:48,831 runserver>log_action [mHTTP GET /menu/ 200 [0.02, 127.0.0.1:25861][0m
+INFO 2023-06-18 00:29:50,132 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-18 00:29:51,259 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 00:29:51,266 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 00:29:51,430 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 00:29:51,430 base>views><module> -SCH- Now:06/17/2023, 16:29:51
+INFO 2023-06-18 00:29:51,546 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-17 16:42:00 Local:2023-06-18 00:42:00
+INFO 2023-06-18 00:29:51,547 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 00:29:51,547 base>views>init_branch_reset    -SCH- 2023-06-17 16:42:00 > 2023-06-17 16:29:51 [Yes]
+INFO 2023-06-18 00:29:51,597 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:29:51,597 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:29:51,598 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:29:51 [No]
+INFO 2023-06-18 00:29:51,607 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-17 18:00:00 Local:2023-06-18 02:00:00
+INFO 2023-06-18 00:29:51,607 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 00:29:51,608 base>views>init_branch_reset    -SCH- 2023-06-17 18:00:00 > 2023-06-17 16:29:51 [Yes]
+INFO 2023-06-18 00:29:51,616 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:29:51,616 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:29:51,616 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:29:51 [No]
+INFO 2023-06-18 00:29:51,627 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:29:51,627 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:29:51,628 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:29:51 [No]
+INFO 2023-06-18 00:29:51,637 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:29:51,638 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:29:51,638 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:29:51 [No]
+INFO 2023-06-18 00:29:58,542 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-18 00:29:59,462 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 00:29:59,469 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 00:29:59,597 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 00:29:59,597 base>views><module> -SCH- Now:06/17/2023, 16:29:59
+INFO 2023-06-18 00:29:59,675 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-17 16:42:00 Local:2023-06-18 00:42:00
+INFO 2023-06-18 00:29:59,676 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 00:29:59,676 base>views>init_branch_reset    -SCH- 2023-06-17 16:42:00 > 2023-06-17 16:29:59 [Yes]
+INFO 2023-06-18 00:29:59,725 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:29:59,726 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:29:59,726 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:29:59 [No]
+INFO 2023-06-18 00:29:59,735 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-17 18:00:00 Local:2023-06-18 02:00:00
+INFO 2023-06-18 00:29:59,736 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 00:29:59,736 base>views>init_branch_reset    -SCH- 2023-06-17 18:00:00 > 2023-06-17 16:29:59 [Yes]
+INFO 2023-06-18 00:29:59,745 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:29:59,745 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:29:59,746 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:29:59 [No]
+INFO 2023-06-18 00:29:59,752 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:29:59,753 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:29:59,754 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:29:59 [No]
+INFO 2023-06-18 00:29:59,762 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:29:59,762 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:29:59,763 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:29:59 [No]
+INFO 2023-06-18 00:30:06,618 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-18 00:30:07,549 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 00:30:07,556 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 00:30:07,672 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 00:30:07,672 base>views><module> -SCH- Now:06/17/2023, 16:30:07
+INFO 2023-06-18 00:30:07,756 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-17 16:42:00 Local:2023-06-18 00:42:00
+INFO 2023-06-18 00:30:07,757 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 00:30:07,757 base>views>init_branch_reset    -SCH- 2023-06-17 16:42:00 > 2023-06-17 16:30:07 [Yes]
+INFO 2023-06-18 00:30:07,823 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:30:07,824 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:30:07,825 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:30:07 [No]
+INFO 2023-06-18 00:30:07,861 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-17 18:00:00 Local:2023-06-18 02:00:00
+INFO 2023-06-18 00:30:07,863 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 00:30:07,863 base>views>init_branch_reset    -SCH- 2023-06-17 18:00:00 > 2023-06-17 16:30:07 [Yes]
+INFO 2023-06-18 00:30:07,967 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:30:07,967 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:30:07,968 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:30:07 [No]
+INFO 2023-06-18 00:30:08,037 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:30:08,037 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:30:08,038 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:30:07 [No]
+INFO 2023-06-18 00:30:08,117 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:30:08,118 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:30:08,118 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:30:07 [No]
+INFO 2023-06-18 00:30:58,674 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-18 00:30:59,592 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 00:30:59,598 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 00:30:59,740 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 00:30:59,741 base>views><module> -SCH- Now:06/17/2023, 16:30:59
+INFO 2023-06-18 00:30:59,821 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-17 16:42:00 Local:2023-06-18 00:42:00
+INFO 2023-06-18 00:30:59,821 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 00:30:59,822 base>views>init_branch_reset    -SCH- 2023-06-17 16:42:00 > 2023-06-17 16:30:59 [Yes]
+INFO 2023-06-18 00:30:59,872 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:30:59,873 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:30:59,873 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:30:59 [No]
+INFO 2023-06-18 00:30:59,880 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-17 18:00:00 Local:2023-06-18 02:00:00
+INFO 2023-06-18 00:30:59,882 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 00:30:59,883 base>views>init_branch_reset    -SCH- 2023-06-17 18:00:00 > 2023-06-17 16:30:59 [Yes]
+INFO 2023-06-18 00:30:59,890 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:30:59,891 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:30:59,891 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:30:59 [No]
+INFO 2023-06-18 00:30:59,900 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:30:59,901 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:30:59,901 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:30:59 [No]
+INFO 2023-06-18 00:30:59,911 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:30:59,912 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:30:59,912 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:30:59 [No]
+INFO 2023-06-18 00:31:18,367 runserver>log_action [mHTTP GET /menu/ 200 [0.06, 127.0.0.1:26521][0m
+INFO 2023-06-18 00:31:18,392 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:26521][0m
+INFO 2023-06-18 00:31:25,323 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:26521][0m
+INFO 2023-06-18 00:31:26,746 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:26521][0m
+INFO 2023-06-18 00:31:32,399 runserver>log_action [mHTTP GET /supervisors/ 200 [0.04, 127.0.0.1:26521][0m
+INFO 2023-06-18 00:31:40,239 runserver>log_action [mHTTP GET /menu/ 200 [0.04, 127.0.0.1:26521][0m
+INFO 2023-06-18 00:31:42,101 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:26521][0m
+INFO 2023-06-18 00:35:35,523 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:26854][0m
+INFO 2023-06-18 00:35:35,588 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.05, 127.0.0.1:26854][0m
+INFO 2023-06-18 00:36:26,516 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:26854][0m
+INFO 2023-06-18 00:36:26,542 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:26854][0m
+INFO 2023-06-18 00:36:43,666 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:26854][0m
+INFO 2023-06-18 00:36:43,682 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:26854][0m
+INFO 2023-06-18 00:37:26,132 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:26854][0m
+INFO 2023-06-18 00:37:26,146 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:26854][0m
+INFO 2023-06-18 00:38:28,270 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:27104][0m
+INFO 2023-06-18 00:38:28,291 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:27104][0m
+INFO 2023-06-18 00:38:52,201 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:27104][0m
+INFO 2023-06-18 00:38:52,232 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:27117][0m
+INFO 2023-06-18 00:39:01,265 runserver>log_action [mHTTP GET /branch/ 200 [0.05, 127.0.0.1:27104][0m
+INFO 2023-06-18 00:39:01,295 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:27117][0m
+INFO 2023-06-18 00:40:28,135 runserver>log_action [mHTTP GET /branch/ 200 [0.05, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:40:28,149 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:40:36,938 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:40:54,886 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:40:54,918 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:41:01,272 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:41:03,306 runserver>log_action [mHTTP GET /rawdata/ 200 [0.04, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:41:04,459 runserver>log_action [mHTTP GET /supervisors/ 200 [0.04, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:41:07,304 runserver>log_action [mHTTP GET /supervisors/ 200 [0.05, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:41:29,013 runserver>log_action [mHTTP GET /supervisors/ 200 [0.06, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:41:29,036 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:41:53,203 runserver>log_action [mHTTP GET /supervisors/ 200 [0.05, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:41:53,218 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:42:00,013 base>views>job_shutdown    -SCH- Shutdown and reset branch :KB -SCH-
+INFO 2023-06-18 00:42:00,746 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-06-18 00:42:08,853 runserver>log_action [mHTTP GET /routes/ 200 [0.07, 127.0.0.1:27269][0m
+ERROR 2023-06-18 00:42:21,784 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-18 00:42:21,788 base>ws>wssendwebtv channel_group_name:webtv_KB_Payment sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-18 00:42:42,802 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-18 00:42:42,806 base>ws>wssendwebtv channel_group_name:webtv_KB_Counter sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-18 00:43:03,853 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-18 00:43:03,973 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 00:43:03,973 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 00:43:03,974 base>views>init_branch_reset    -SCH- 2023-06-17 16:42:00 > 2023-06-17 16:43:03 [No]
+INFO 2023-06-18 00:43:03,982 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:43:03,982 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:43:03,983 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:43:03 [No]
+INFO 2023-06-18 00:43:03,990 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-17 18:00:00 Local:2023-06-18 02:00:00
+INFO 2023-06-18 00:43:03,990 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 00:43:03,990 base>views>init_branch_reset    -SCH- 2023-06-17 18:00:00 > 2023-06-17 16:43:03 [Yes]
+INFO 2023-06-18 00:43:04,000 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:43:04,000 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:43:04,000 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:43:03 [No]
+INFO 2023-06-18 00:43:04,007 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:43:04,008 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:43:04,008 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:43:03 [No]
+INFO 2023-06-18 00:43:04,016 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:43:04,017 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:43:04,017 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:43:03 [No]
+INFO 2023-06-18 00:43:07,276 runserver>log_action [mHTTP GET /routes/ 200 [0.07, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:43:07,291 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:43:58,985 runserver>log_action [mHTTP GET /routes/ 200 [0.06, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:43:58,999 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:44:18,567 runserver>log_action [mHTTP GET /routes/ 200 [0.06, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:44:18,581 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:44:34,070 runserver>log_action [mHTTP GET /login/ 200 [0.00, 127.0.0.1:27627][0m
+INFO 2023-06-18 00:45:03,588 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:45:03,619 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:27269][0m
+INFO 2023-06-18 00:48:44,441 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-18 00:48:45,399 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 00:48:45,405 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 00:48:45,521 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 00:48:45,522 base>views><module> -SCH- Now:06/17/2023, 16:48:45
+INFO 2023-06-18 00:48:45,600 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 00:48:45,601 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 00:48:45,601 base>views>init_branch_reset    -SCH- 2023-06-17 16:42:00 > 2023-06-17 16:48:45 [No]
+INFO 2023-06-18 00:48:45,646 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:48:45,647 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:48:45,648 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:48:45 [No]
+INFO 2023-06-18 00:48:45,657 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-17 18:00:00 Local:2023-06-18 02:00:00
+INFO 2023-06-18 00:48:45,657 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 00:48:45,658 base>views>init_branch_reset    -SCH- 2023-06-17 18:00:00 > 2023-06-17 16:48:45 [Yes]
+INFO 2023-06-18 00:48:45,665 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:48:45,666 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:48:45,666 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:48:45 [No]
+INFO 2023-06-18 00:48:45,673 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:48:45,673 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:48:45,675 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:48:45 [No]
+INFO 2023-06-18 00:48:45,682 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:48:45,682 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:48:45,683 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:48:45 [No]
+INFO 2023-06-18 00:48:55,764 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-18 00:48:56,734 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 00:48:56,743 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 00:48:56,869 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 00:48:56,870 base>views><module> -SCH- Now:06/17/2023, 16:48:56
+INFO 2023-06-18 00:48:56,958 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 00:48:56,958 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 00:48:56,959 base>views>init_branch_reset    -SCH- 2023-06-17 16:42:00 > 2023-06-17 16:48:56 [No]
+INFO 2023-06-18 00:48:57,010 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:48:57,010 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:48:57,010 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:48:56 [No]
+INFO 2023-06-18 00:48:57,019 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-17 18:00:00 Local:2023-06-18 02:00:00
+INFO 2023-06-18 00:48:57,020 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 00:48:57,020 base>views>init_branch_reset    -SCH- 2023-06-17 18:00:00 > 2023-06-17 16:48:56 [Yes]
+INFO 2023-06-18 00:48:57,029 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:48:57,029 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:48:57,029 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:48:56 [No]
+INFO 2023-06-18 00:48:57,037 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:48:57,039 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:48:57,039 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:48:56 [No]
+INFO 2023-06-18 00:48:57,048 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 00:48:57,049 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 00:48:57,049 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:48:56 [No]

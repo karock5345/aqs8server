@@ -38,10 +38,11 @@
 - upgrade django to 4.1.9 from 4.1.7
 - Fixed already login user in other branch 
 - Fixed Web Softkey ticket sub total hiden ticketFormat Disabled
-### <span style="color:orange;">**Version 8.2.0**</span>
 - Support Control Box python version (Flash light function only. Next version will support Keypad)
-
-
+- Improve Web Softkey CallCentre UI
+- Remove Search function for all HTML (include mobile version)
+- Improve HTML: Branch list, Ticket Format list, Ticket Route list, Supervisor list (Show red color when disabled)
+- Fixed number not correct in m-menu for mobile version (base/views -> MenuView)
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>

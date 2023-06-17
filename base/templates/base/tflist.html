@@ -38,9 +38,16 @@
             
             
         </a>
-            <p class="roomListRoom__topic">
-                Enabled : {{ ticketformat.enabled }}  
-            </p>
+
+            {% if ticketformat.enabled == False %}
+                <p class="roomListRoom__topic_red">
+                    Enabled : {{ ticketformat.enabled }}  
+                </p>
+            {% else %}
+                <p class="roomListRoom__topic">
+                    Enabled : {{ ticketformat.enabled }}  
+                </p>
+            {% endif %}
         </div>
     
     </div>

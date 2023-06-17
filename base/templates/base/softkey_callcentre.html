@@ -12,7 +12,7 @@
         <!-- Room List Start -->
         <div class="roomList">
           <div id="id_mobile-menu" class="mobile-menu">
-            <form class="mobile-header__search" action="{% url 'home' %}" method="GET" >
+            <!-- <form class="mobile-header__search" action="{% url 'home' %}" method="GET" >
               <label>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                   <title>search</title>
@@ -22,7 +22,7 @@
                 </svg>
                 <input name="q" placeholder="Search for users" />
               </label>
-            </form>
+            </form> -->
             <div class="mobile-menuItems">
               <!-- <a class="btn btn--main btn--pill" href="{-% url 'topics' %}">Browse Topics</a>
               <a class="btn btn--main btn--pill" href="{-% url 'activity' %}">Recent Activities</a> -->
@@ -70,7 +70,7 @@
                         <button id="id_btn_aux" type="submit" name="action" value="aux" class="softkey_btn_cc btn--main">AUX</button>
                         <button id="id_btn_logout" type="submit" name="action" value="logout" class="softkey_btn_cc btn--main">Logout</button>
                     </div>
-                    <div class="softkey_cc_call_container">
+                    <div class="softkey_cc_flashlight_container">
                       <button id="id_btn_recall" type="submit" name="action" value="recall" class="btn btn--main btn--pill">Recall</button>
                       <button id="id_btn_on" type="submit" name="action" value="on" class="btn btn--main btn--pill">On</button>
                       <button id="id_btn_off" type="submit" name="action" value="off" class="btn btn--main btn--pill">Off</button>
@@ -142,15 +142,15 @@
             {% endfor%}
           </div>
 
-          <div class="subtotal_container" id="subtotal_area">
+          <div class="subtotal_container_cc" id="subtotal_area">
             {% for sub in subtotal %}
-              <div class="subtotal_div">
-                <div class="subtotal_ttype">
-                  <div class="subtotal_ttype_text">
+              <div class="subtotal_div_cc">
+                <div class="subtotal_ttype_cc">
+                  <div class="subtotal_ttype_text_cc">
                     {{sub.tickettype}}
                   </div>
                 </div>
-                <div class="subtotal_des">
+                <div class="subtotal_des_cc">
                   <div class="subtotal_lang">{{sub.lang1}}</div>
                   <div class="subtotal_lang">{{sub.lang2}}</div>
                 </div>

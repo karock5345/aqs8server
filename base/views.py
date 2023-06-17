@@ -2054,25 +2054,30 @@ def UserDelView(request, pk):
 
 def MenuView(request):
 
-    users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
-    branchs = Branch.objects.all()
-    ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
-    routes = TicketRoute.objects.all()
-    
-    adminuser = '0'
-    reportuser = '0'
-    for group in request.user.groups.all() :
-        if group.name == 'admin':
-            adminuser = '1'
-            reportuser = '1'
-        elif group.name == 'report':
-            reportuser = '1'
-    if request.user.is_superuser :
-        adminuser = '1'
-        reportuser = '1'
+    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
 
-    context = {'users':users, 'branchs':branchs, 'ticketformats':ticketformats, 'routes':routes, 'admin':adminuser, 'report':reportuser}
-    return render (request, 'base/m-menu.html', context)
+    context =  {'users':auth_userlist , 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    return render(request, 'base/m-menu.html', context)
+
+    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
+    # branchs = Branch.objects.all()
+    # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
+    # routes = TicketRoute.objects.all()
+    
+    # adminuser = '0'
+    # reportuser = '0'
+    # for group in request.user.groups.all() :
+    #     if group.name == 'admin':
+    #         adminuser = '1'
+    #         reportuser = '1'
+    #     elif group.name == 'report':
+    #         reportuser = '1'
+    # if request.user.is_superuser :
+    #     adminuser = '1'
+    #     reportuser = '1'
+
+    # context = {'users':users, 'branchs':branchs, 'ticketformats':ticketformats, 'routes':routes, 'admin':adminuser, 'report':reportuser}
+    # return render (request, 'base/m-menu.html', context)
 
 def auth_data(user):
 

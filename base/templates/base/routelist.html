@@ -38,9 +38,15 @@
 
             
         </a>
-            <p class="roomListRoom__topic">
-                Enabled : {{route.enabled}}
-            </p>
+            {% if route.enabled == False %}
+                <p class="roomListRoom__topic_red">
+                    Enabled : {{ route.enabled }}  
+                </p>
+            {% else %}
+                <p class="roomListRoom__topic">
+                    Enabled : {{ route.enabled }}  
+                </p>
+            {% endif %}
         </div>
     
     </div>
