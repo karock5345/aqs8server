@@ -23687,3 +23687,872 @@ INFO 2023-06-18 00:48:57,039 base>views>init_branch_reset    -SCH- 2023-06-17 15
 INFO 2023-06-18 00:48:57,048 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
 INFO 2023-06-18 00:48:57,049 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
 INFO 2023-06-18 00:48:57,049 base>views>init_branch_reset    -SCH- 2023-06-17 15:59:59 > 2023-06-17 16:48:56 [No]
+INFO 2023-06-18 14:18:57,758 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 14:18:59,427 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 14:18:59,442 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 14:19:00,239 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 14:19:00,240 base>views><module> -SCH- Now:06/18/2023, 06:19:00
+INFO 2023-06-18 14:19:00,457 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 14:19:00,458 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 14:19:00,459 base>views>init_branch_reset    -SCH- 2023-06-18 16:42:00 > 2023-06-18 06:19:00 [Yes]
+INFO 2023-06-18 14:19:00,626 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 14:19:00,628 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 14:19:00,629 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 06:19:00 [Yes]
+INFO 2023-06-18 14:19:00,638 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-18 18:00:00 Local:2023-06-19 02:00:00
+INFO 2023-06-18 14:19:00,640 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 14:19:00,640 base>views>init_branch_reset    -SCH- 2023-06-18 18:00:00 > 2023-06-18 06:19:00 [Yes]
+INFO 2023-06-18 14:19:00,650 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 14:19:00,652 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 14:19:00,653 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 06:19:00 [Yes]
+INFO 2023-06-18 14:19:00,662 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 14:19:00,662 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 14:19:00,663 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 06:19:00 [Yes]
+INFO 2023-06-18 14:19:00,673 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 14:19:00,674 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 14:19:00,675 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 06:19:00 [Yes]
+INFO 2023-06-18 14:19:02,259 runserver>log_action [32mHTTP GET /admin/base/counterstatus/ 302 [0.08, 127.0.0.1:50075][0m
+INFO 2023-06-18 14:19:02,315 runserver>log_action [mHTTP GET /touch/?bc=KB&t=t1 200 [0.06, 127.0.0.1:50077][0m
+INFO 2023-06-18 14:19:02,347 runserver>log_action [36mHTTP GET /static/styles/styletv.css 304 [0.00, 127.0.0.1:50077][0m
+INFO 2023-06-18 14:19:02,386 runserver>log_action [36mHTTP GET /static/icofont/icofont.min.css 304 [0.00, 127.0.0.1:50077][0m
+INFO 2023-06-18 14:19:02,410 runserver>log_action [36mHTTP GET /static/images/logo_ts.png 304 [0.01, 127.0.0.1:50077][0m
+INFO 2023-06-18 14:19:02,415 runserver>log_action [mHTTP GET /admin/login/?next=/admin/base/counterstatus/ 200 [0.14, 127.0.0.1:50075][0m
+INFO 2023-06-18 14:19:02,488 runserver>log_action [36mHTTP GET /static/admin/css/base.css 304 [0.00, 127.0.0.1:50075][0m
+INFO 2023-06-18 14:19:02,500 runserver>log_action [36mHTTP GET /static/admin/css/dark_mode.css 304 [0.00, 127.0.0.1:50075][0m
+INFO 2023-06-18 14:19:02,504 runserver>log_action [36mHTTP GET /static/admin/css/nav_sidebar.css 304 [0.01, 127.0.0.1:50077][0m
+INFO 2023-06-18 14:19:02,804 runserver>log_action [36mHTTP GET /static/admin/css/login.css 304 [0.01, 127.0.0.1:50077][0m
+INFO 2023-06-18 14:19:02,810 runserver>log_action [36mHTTP GET /static/admin/css/fonts.css 304 [0.01, 127.0.0.1:50091][0m
+INFO 2023-06-18 14:19:02,817 runserver>log_action [36mHTTP GET /static/admin/css/responsive.css 304 [0.02, 127.0.0.1:50081][0m
+INFO 2023-06-18 14:19:02,837 runserver>log_action [mHTTP GET /my/KB/A/215/y1y/ 200 [0.04, 127.0.0.1:50075][0m
+INFO 2023-06-18 14:19:02,888 runserver>log_action [36mHTTP GET /static/icofont/fonts/icofont.woff2 304 [0.00, 127.0.0.1:50075][0m
+INFO 2023-06-18 14:19:02,893 runserver>log_action [36mHTTP GET /static/admin/js/nav_sidebar.js 304 [0.01, 127.0.0.1:50081][0m
+INFO 2023-06-18 14:19:03,035 runserver>log_action [36mHTTP GET /static/admin/fonts/Roboto-Regular-webfont.woff 304 [0.00, 127.0.0.1:50081][0m
+INFO 2023-06-18 14:19:03,039 runserver>log_action [36mHTTP GET /static/admin/fonts/Roboto-Light-webfont.woff 304 [0.01, 127.0.0.1:50075][0m
+WARNING 2023-06-18 14:19:03,191 log>log_response Not Found: /favicon.ico
+WARNING 2023-06-18 14:19:03,192 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.08, 127.0.0.1:50075][0m
+INFO 2023-06-18 14:19:05,000 runserver>log_action [mHTTP GET /admin/login/?next=/admin/base/countertype/8/change/ 200 [0.01, 127.0.0.1:50075][0m
+INFO 2023-06-18 14:19:05,164 runserver>log_action [mHTTP GET /admin/login/?next=/admin/auth/user/ 200 [0.01, 127.0.0.1:50075][0m
+INFO 2023-06-18 14:19:05,763 runserver>log_action [mHTTP GET /login/ 200 [0.02, 127.0.0.1:50081][0m
+INFO 2023-06-18 14:19:05,769 runserver>log_action [mHTTP GET /webtv/KB/Reception/ 200 [0.03, 127.0.0.1:50075][0m
+INFO 2023-06-18 14:19:06,092 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50108]
+INFO 2023-06-18 14:19:06,256 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-06-18 14:19:06,337 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.08, 127.0.0.1:50075][0m
+INFO 2023-06-18 14:19:06,341 runserver>log_action [36mHTTP GET /static/js/script.js 304 [0.09, 127.0.0.1:50091][0m
+INFO 2023-06-18 14:19:06,344 runserver>log_action [36mHTTP GET /static/images/logo-q.svg 304 [0.09, 127.0.0.1:50081][0m
+INFO 2023-06-18 14:19:06,352 runserver>log_action [36mHTTP GET /static/images/avatar.svg 304 [0.01, 127.0.0.1:50091][0m
+INFO 2023-06-18 14:19:11,010 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50108]
+INFO 2023-06-18 14:20:41,882 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:33912]
+INFO 2023-06-18 14:20:41,884 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 14:20:44,151 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:33912]
+INFO 2023-06-18 14:22:42,162 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 192.168.1.180:46530][0m
+INFO 2023-06-18 14:23:28,311 runserver>log_action [32mHTTP GET /softkey/30/ 302 [0.01, 127.0.0.1:50415][0m
+INFO 2023-06-18 14:23:28,322 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:50415][0m
+INFO 2023-06-18 14:23:28,358 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:50415][0m
+INFO 2023-06-18 14:23:28,551 runserver>log_action [36mHTTP GET /static/images/favicon.ico 304 [0.00, 127.0.0.1:50415][0m
+INFO 2023-06-18 14:23:30,732 runserver>log_action [32mHTTP POST /login/ 302 [0.25, 127.0.0.1:50415][0m
+INFO 2023-06-18 14:23:30,789 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:50415][0m
+INFO 2023-06-18 14:23:35,881 runserver>log_action [mHTTP GET /user/ 200 [0.07, 127.0.0.1:50415][0m
+INFO 2023-06-18 14:23:42,495 runserver>log_action [mHTTP GET /routes/ 200 [0.09, 127.0.0.1:50415][0m
+INFO 2023-06-18 14:23:48,917 runserver>log_action [mHTTP GET /user/ 200 [0.06, 127.0.0.1:50415][0m
+INFO 2023-06-18 14:24:10,052 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:50415][0m
+INFO 2023-06-18 14:24:10,082 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:50415][0m
+INFO 2023-06-18 14:24:10,848 runserver>log_action [mHTTP GET /new-tf/ 200 [0.05, 127.0.0.1:50415][0m
+INFO 2023-06-18 14:25:41,867 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:35914]
+INFO 2023-06-18 14:25:41,869 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 14:25:44,669 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:35914]
+INFO 2023-06-18 14:27:31,886 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:59398][0m
+INFO 2023-06-18 14:30:41,858 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:35980]
+INFO 2023-06-18 14:30:41,861 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 14:30:44,168 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:35980]
+INFO 2023-06-18 14:32:21,881 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:47026][0m
+INFO 2023-06-18 14:33:53,811 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:50878][0m
+INFO 2023-06-18 14:33:53,895 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:50878][0m
+INFO 2023-06-18 14:33:55,513 runserver>log_action [mHTTP GET /user/ 200 [0.06, 127.0.0.1:50878][0m
+INFO 2023-06-18 14:33:57,454 runserver>log_action [mHTTP GET /update-user/7/ 200 [0.20, 127.0.0.1:50878][0m
+INFO 2023-06-18 14:33:58,858 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:50878][0m
+INFO 2023-06-18 14:35:17,551 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:19,031 runserver>log_action [mHTTP GET /new-tf/ 200 [0.03, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:37,457 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:39,074 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:40,116 runserver>log_action [mHTTP GET /update-tf/25/ 200 [0.03, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:41,629 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:41,856 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:59084]
+INFO 2023-06-18 14:35:41,858 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 14:35:43,366 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:44,056 runserver>log_action [mHTTP GET /new-tf/ 200 [0.03, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:44,086 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:44,665 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:59084]
+INFO 2023-06-18 14:35:45,186 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:46,500 runserver>log_action [mHTTP GET /user/ 200 [0.07, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:47,333 runserver>log_action [mHTTP GET /new-user/ 200 [0.04, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:48,676 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:49,940 runserver>log_action [mHTTP GET /user/ 200 [0.07, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:50,969 runserver>log_action [mHTTP GET /update-user/7/ 200 [0.20, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:52,182 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:53,782 runserver>log_action [mHTTP GET /routes/ 200 [0.09, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:35:55,384 runserver>log_action [mHTTP GET /new-route/ 200 [0.05, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:36:05,886 runserver>log_action [mHTTP GET /routes/ 200 [0.08, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:36:33,586 runserver>log_action [mHTTP GET /new-route/ 200 [0.04, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:37:09,552 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:37:10,897 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:37:11,872 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:60348][0m
+INFO 2023-06-18 14:37:12,775 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.02, 127.0.0.1:50903][0m
+INFO 2023-06-18 14:40:41,827 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:53472]
+INFO 2023-06-18 14:40:41,829 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 14:40:44,141 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:53472]
+INFO 2023-06-18 14:40:57,794 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-06-18 14:40:57,824 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:50992][0m
+INFO 2023-06-18 14:40:58,596 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-06-18 14:42:01,841 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:50456][0m
+INFO 2023-06-18 14:42:05,625 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.03, 127.0.0.1:51005][0m
+INFO 2023-06-18 14:43:20,942 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.03, 127.0.0.1:51019][0m
+INFO 2023-06-18 14:43:20,972 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51019][0m
+INFO 2023-06-18 14:43:22,161 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.02, 127.0.0.1:51019][0m
+INFO 2023-06-18 14:43:47,790 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.03, 127.0.0.1:51019][0m
+INFO 2023-06-18 14:43:48,533 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.02, 127.0.0.1:51019][0m
+INFO 2023-06-18 14:43:49,160 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.02, 127.0.0.1:51019][0m
+INFO 2023-06-18 14:43:49,336 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.02, 127.0.0.1:51019][0m
+INFO 2023-06-18 14:45:26,925 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.02, 127.0.0.1:51041][0m
+INFO 2023-06-18 14:45:29,226 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:51041][0m
+INFO 2023-06-18 14:45:30,828 runserver>log_action [mHTTP GET /user/ 200 [0.07, 127.0.0.1:51041][0m
+INFO 2023-06-18 14:45:33,062 runserver>log_action [mHTTP GET /update-user/7/ 200 [0.21, 127.0.0.1:51041][0m
+INFO 2023-06-18 14:45:41,381 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:51041][0m
+INFO 2023-06-18 14:45:41,796 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:38758]
+INFO 2023-06-18 14:45:41,798 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 14:45:43,250 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:51041][0m
+INFO 2023-06-18 14:45:44,642 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:38758]
+INFO 2023-06-18 14:45:45,180 runserver>log_action [mHTTP GET /update-branch/5/ 200 [0.02, 127.0.0.1:51041][0m
+INFO 2023-06-18 14:46:51,812 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:36632][0m
+INFO 2023-06-18 14:46:55,337 runserver>log_action [mHTTP GET /update-branch/5/ 200 [0.03, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:46:55,361 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:47:15,675 runserver>log_action [mHTTP GET /update-branch/5/ 200 [0.02, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:47:17,269 runserver>log_action [mHTTP GET /update-branch/5/ 200 [0.02, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:47:27,341 runserver>log_action [mHTTP GET /update-branch/5/ 200 [0.03, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:47:50,990 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:47:52,672 runserver>log_action [mHTTP GET /user/ 200 [0.07, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:47:54,033 runserver>log_action [mHTTP GET /update-user/7/ 200 [0.27, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:47:57,685 runserver>log_action [mHTTP GET /user/ 200 [0.06, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:48:00,090 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:48:02,016 runserver>log_action [mHTTP GET /update-tf/25/ 200 [0.03, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:48:19,724 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:48:21,498 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:48:22,541 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.02, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:48:29,808 runserver>log_action [32mHTTP GET /update-branch/4/savebranch?branchname=HKT+Sheung+Wan+Centre&timezone=Asia%2FHong_Kong&address=24%2FF+West+Exchange+Tower%2C+322+Des+Voeux+Road+Central%2C+Sheung+Wan%2C+Hong+Kong&gps=&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=4&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&SW-c=Testing+123...&smsmsg= 301 [0.00, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:48:32,078 runserver>log_action [32mHTTP GET /update-branch/4/savebranch/?branchname=HKT+Sheung+Wan+Centre&timezone=Asia%2FHong_Kong&address=24%2FF+West+Exchange+Tower%2C+322+Des+Voeux+Road+Central%2C+Sheung+Wan%2C+Hong+Kong&gps=&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=4&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&SW-c=Testing+123...&smsmsg= 302 [2.27, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:48:32,139 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:48:36,743 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.02, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:48:45,383 runserver>log_action [32mHTTP GET /update-branch/4/savebranch?branchname=HKT+Sheung+Wan+Centre&timezone=Asia%2FHong_Kong&address=24%2FF+West+Exchange+Tower%2C+322+Des+Voeux+Road+Central%2C+Sheung+Wan%2C+Hong+Kong&gps=&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&SW-c=Testing+123...&smsmsg= 301 [0.00, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:48:45,424 runserver>log_action [32mHTTP GET /update-branch/4/savebranch/?branchname=HKT+Sheung+Wan+Centre&timezone=Asia%2FHong_Kong&address=24%2FF+West+Exchange+Tower%2C+322+Des+Voeux+Road+Central%2C+Sheung+Wan%2C+Hong+Kong&gps=&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&SW-c=Testing+123...&smsmsg= 302 [0.03, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:48:45,486 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:48:48,618 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:49:44,697 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:49:44,721 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:49:55,353 runserver>log_action [32mHTTP GET /update-branch/6/savebranch?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=30&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 301 [0.00, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:49:55,393 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=30&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.04, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:49:55,460 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:49:57,373 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:50:01,482 runserver>log_action [32mHTTP GET /update-branch/6/savebranch?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 301 [0.00, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:50:01,521 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.03, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:50:01,582 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:50:03,720 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.02, 127.0.0.1:51081][0m
+INFO 2023-06-18 14:50:41,766 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:44792]
+INFO 2023-06-18 14:50:41,768 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 14:50:44,103 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:44792]
+INFO 2023-06-18 14:51:41,783 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:41914][0m
+INFO 2023-06-18 14:55:41,740 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:59274]
+INFO 2023-06-18 14:55:41,742 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 14:55:44,584 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:59274]
+INFO 2023-06-18 14:56:31,757 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:52798][0m
+INFO 2023-06-18 15:00:41,708 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:54186]
+INFO 2023-06-18 15:00:41,710 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 15:00:44,063 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:54186]
+INFO 2023-06-18 15:01:21,727 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 192.168.1.180:36754][0m
+INFO 2023-06-18 15:05:41,680 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:56946]
+INFO 2023-06-18 15:05:41,683 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 15:05:44,538 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:56946]
+INFO 2023-06-18 15:06:05,528 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:51281][0m
+INFO 2023-06-18 15:06:05,563 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51281][0m
+INFO 2023-06-18 15:06:07,918 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:51281][0m
+INFO 2023-06-18 15:06:09,151 runserver>log_action [mHTTP GET /update-tf/25/ 200 [0.03, 127.0.0.1:51281][0m
+INFO 2023-06-18 15:06:11,701 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:35588][0m
+INFO 2023-06-18 15:10:40,952 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:51333][0m
+INFO 2023-06-18 15:10:41,657 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:34866]
+INFO 2023-06-18 15:10:41,660 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 15:10:44,022 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:34866]
+INFO 2023-06-18 15:11:01,678 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:59370][0m
+INFO 2023-06-18 15:11:27,993 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:51333][0m
+INFO 2023-06-18 15:11:28,026 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51333][0m
+INFO 2023-06-18 15:11:30,343 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51333][0m
+INFO 2023-06-18 15:12:24,309 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:51333][0m
+INFO 2023-06-18 15:14:22,875 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:51376][0m
+INFO 2023-06-18 15:14:40,895 runserver>log_action [32mHTTP GET /update-branch/6/savebranch?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 301 [0.00, 127.0.0.1:51376][0m
+INFO 2023-06-18 15:14:40,933 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.03, 127.0.0.1:51376][0m
+INFO 2023-06-18 15:14:41,005 runserver>log_action [mHTTP GET /branch/ 200 [0.07, 127.0.0.1:51376][0m
+INFO 2023-06-18 15:14:43,261 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51376][0m
+INFO 2023-06-18 15:15:41,640 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:45876]
+INFO 2023-06-18 15:15:41,642 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 15:15:44,516 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:45876]
+INFO 2023-06-18 15:15:51,662 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:57302][0m
+INFO 2023-06-18 15:15:57,840 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:51397][0m
+INFO 2023-06-18 15:16:00,023 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51397][0m
+INFO 2023-06-18 15:16:21,525 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:51397][0m
+INFO 2023-06-18 15:16:23,935 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51397][0m
+INFO 2023-06-18 15:16:24,393 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51397][0m
+INFO 2023-06-18 15:16:24,558 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51397][0m
+INFO 2023-06-18 15:17:28,483 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:28,506 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:31,081 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:31,520 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:31,699 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:31,853 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:32,009 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:32,187 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:32,988 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:34,647 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:35,165 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:35,333 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:35,510 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:35,670 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:35,845 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:17:36,024 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51746][0m
+INFO 2023-06-18 15:18:40,501 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:19:16,172 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:02,651 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:04,989 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:05,368 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:05,537 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:05,692 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:05,845 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:29,704 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:30,455 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:30,643 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:30,821 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:30,984 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:31,151 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:31,882 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:32,540 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:32,744 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:33,140 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:41,623 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:46844]
+INFO 2023-06-18 15:20:41,625 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 15:20:41,645 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:46848][0m
+INFO 2023-06-18 15:20:43,999 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:46844]
+INFO 2023-06-18 15:20:47,548 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:48,231 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:48,417 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:48,593 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:48,757 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:48,943 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:49,124 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:49,501 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:50,036 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:52,443 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:58,766 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:59,218 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:59,383 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:59,552 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:59,703 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:20:59,871 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:21:02,349 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:21:03,826 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:21:05,561 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:21:58,705 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:51815][0m
+INFO 2023-06-18 15:25:31,628 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 192.168.1.180:55200][0m
+INFO 2023-06-18 15:25:41,607 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:43376]
+INFO 2023-06-18 15:25:41,610 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 15:25:44,497 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:43376]
+INFO 2023-06-18 15:28:50,081 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:52340][0m
+INFO 2023-06-18 15:28:50,144 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52340][0m
+INFO 2023-06-18 15:28:50,943 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:52340][0m
+INFO 2023-06-18 15:28:50,966 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52340][0m
+INFO 2023-06-18 15:28:51,159 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:52340][0m
+INFO 2023-06-18 15:28:51,340 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:52340][0m
+INFO 2023-06-18 15:28:51,515 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:52340][0m
+INFO 2023-06-18 15:29:13,141 runserver>log_action [32mHTTP GET /update-branch/6/ 302 [0.00, 127.0.0.1:52359][0m
+INFO 2023-06-18 15:29:13,151 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:52359][0m
+INFO 2023-06-18 15:29:13,176 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52359][0m
+INFO 2023-06-18 15:29:13,187 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:52359][0m
+INFO 2023-06-18 15:29:13,194 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:52360][0m
+INFO 2023-06-18 15:29:13,200 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:52367][0m
+INFO 2023-06-18 15:29:13,328 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:52367][0m
+INFO 2023-06-18 15:29:14,909 runserver>log_action [32mHTTP POST /login/ 302 [0.24, 127.0.0.1:52367][0m
+INFO 2023-06-18 15:29:14,970 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:52367][0m
+INFO 2023-06-18 15:29:16,561 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.05, 127.0.0.1:52367][0m
+INFO 2023-06-18 15:29:16,593 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52367][0m
+INFO 2023-06-18 15:29:18,510 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:52367][0m
+INFO 2023-06-18 15:29:21,153 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:52367][0m
+INFO 2023-06-18 15:29:21,187 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52367][0m
+INFO 2023-06-18 15:30:21,618 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 192.168.1.180:34888][0m
+INFO 2023-06-18 15:30:41,596 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:57000]
+INFO 2023-06-18 15:30:41,598 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 15:30:43,991 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:57000]
+INFO 2023-06-18 15:30:53,157 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:52424][0m
+INFO 2023-06-18 15:30:53,182 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52424][0m
+INFO 2023-06-18 15:30:54,500 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:52424][0m
+INFO 2023-06-18 15:30:54,561 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52424][0m
+INFO 2023-06-18 15:30:55,076 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:52424][0m
+INFO 2023-06-18 15:30:55,098 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52424][0m
+INFO 2023-06-18 15:30:55,226 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:52424][0m
+INFO 2023-06-18 15:30:55,394 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:52424][0m
+INFO 2023-06-18 15:30:55,557 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:52424][0m
+INFO 2023-06-18 15:35:11,612 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 192.168.1.180:41836][0m
+INFO 2023-06-18 15:35:41,590 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:35272]
+INFO 2023-06-18 15:35:41,592 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 15:35:44,494 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:35272]
+INFO 2023-06-18 15:40:01,605 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:51262][0m
+INFO 2023-06-18 15:40:41,582 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:56818]
+INFO 2023-06-18 15:40:41,584 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 15:40:43,955 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:56818]
+INFO 2023-06-18 15:44:51,596 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 192.168.1.180:40454][0m
+INFO 2023-06-18 15:45:41,575 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:56070]
+INFO 2023-06-18 15:45:41,577 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 15:45:44,459 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:56070]
+INFO 2023-06-18 15:49:41,590 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:43916][0m
+INFO 2023-06-18 15:50:09,916 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:52730][0m
+INFO 2023-06-18 15:50:09,939 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52730][0m
+INFO 2023-06-18 15:50:41,569 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:44218]
+INFO 2023-06-18 15:50:41,571 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 15:50:43,947 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:44218]
+INFO 2023-06-18 15:51:10,196 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:52746][0m
+INFO 2023-06-18 15:52:11,389 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:52761][0m
+INFO 2023-06-18 15:52:11,412 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52761][0m
+INFO 2023-06-18 15:54:31,583 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:34168][0m
+INFO 2023-06-18 15:55:41,562 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:42622]
+INFO 2023-06-18 15:55:41,564 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 15:55:44,443 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:42622]
+INFO 2023-06-18 15:55:46,287 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:52827][0m
+INFO 2023-06-18 15:55:46,310 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52827][0m
+INFO 2023-06-18 15:59:21,578 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:55894][0m
+INFO 2023-06-18 15:59:40,641 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:52888][0m
+INFO 2023-06-18 15:59:40,666 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52888][0m
+INFO 2023-06-18 16:00:41,555 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:38868]
+INFO 2023-06-18 16:00:41,557 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 16:00:43,933 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:38868]
+INFO 2023-06-18 16:02:27,274 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:52920][0m
+INFO 2023-06-18 16:02:27,298 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52920][0m
+INFO 2023-06-18 16:03:36,753 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:52957][0m
+INFO 2023-06-18 16:03:36,777 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52957][0m
+INFO 2023-06-18 16:04:11,573 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:47888][0m
+INFO 2023-06-18 16:05:41,552 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:44276]
+INFO 2023-06-18 16:05:41,554 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 16:05:44,430 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:44276]
+INFO 2023-06-18 16:07:48,972 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:07:49,007 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:07:56,262 runserver>log_action [32mHTTP GET /update-branch/6/savebranch?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 301 [0.00, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:07:56,302 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.04, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:07:56,372 runserver>log_action [mHTTP GET /branch/ 200 [0.07, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:07:58,586 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:08:26,429 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.04, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:08:26,516 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:08:29,436 runserver>log_action [32mHTTP GET /update-branch/6/savebranch?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 301 [0.00, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:08:29,478 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.04, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:08:29,557 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:08:31,099 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:09:01,572 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:34116][0m
+INFO 2023-06-18 16:09:07,271 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.03, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:09:07,335 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:09:09,509 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:09:14,873 runserver>log_action [32mHTTP GET /update-branch/6/savebranch?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 301 [0.00, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:09:14,912 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.03, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:09:14,973 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:09:17,096 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:09:49,295 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:09:49,326 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:09:51,222 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:09:56,314 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.03, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:09:56,374 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:09:57,905 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:10:07,874 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:10:11,268 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.03, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:10:11,338 runserver>log_action [mHTTP GET /branch/ 200 [0.07, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:10:13,667 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:10:18,229 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.03, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:10:18,295 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:10:20,165 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53042][0m
+INFO 2023-06-18 16:10:41,550 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:35966]
+INFO 2023-06-18 16:10:41,552 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 16:10:43,910 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:35966]
+INFO 2023-06-18 16:13:24,497 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-18 16:13:26,466 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 16:13:26,478 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 16:13:26,663 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 16:13:26,664 base>views><module> -SCH- Now:06/18/2023, 08:13:26
+INFO 2023-06-18 16:13:26,794 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 16:13:26,795 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 16:13:26,795 base>views>init_branch_reset    -SCH- 2023-06-18 16:42:00 > 2023-06-18 08:13:26 [Yes]
+INFO 2023-06-18 16:13:26,870 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:13:26,871 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:13:26,871 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:13:26 [Yes]
+INFO 2023-06-18 16:13:26,881 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-18 18:00:00 Local:2023-06-19 02:00:00
+INFO 2023-06-18 16:13:26,882 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 16:13:26,883 base>views>init_branch_reset    -SCH- 2023-06-18 18:00:00 > 2023-06-18 08:13:26 [Yes]
+INFO 2023-06-18 16:13:26,893 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:13:26,894 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:13:26,895 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:13:26 [Yes]
+INFO 2023-06-18 16:13:26,904 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:13:26,905 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:13:26,906 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:13:26 [Yes]
+INFO 2023-06-18 16:13:26,916 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:13:26,917 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:13:26,918 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:13:26 [Yes]
+INFO 2023-06-18 16:13:29,352 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-18 16:13:30,852 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 16:13:30,861 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 16:13:30,991 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 16:13:30,992 base>views><module> -SCH- Now:06/18/2023, 08:13:30
+INFO 2023-06-18 16:13:31,122 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 16:13:31,123 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 16:13:31,124 base>views>init_branch_reset    -SCH- 2023-06-18 16:42:00 > 2023-06-18 08:13:31 [Yes]
+INFO 2023-06-18 16:13:31,188 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:13:31,189 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:13:31,190 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:13:31 [Yes]
+INFO 2023-06-18 16:13:31,196 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-18 18:00:00 Local:2023-06-19 02:00:00
+INFO 2023-06-18 16:13:31,197 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 16:13:31,197 base>views>init_branch_reset    -SCH- 2023-06-18 18:00:00 > 2023-06-18 08:13:31 [Yes]
+INFO 2023-06-18 16:13:31,206 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:13:31,206 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:13:31,207 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:13:31 [Yes]
+INFO 2023-06-18 16:13:31,215 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:13:31,215 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:13:31,216 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:13:31 [Yes]
+INFO 2023-06-18 16:13:31,225 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:13:31,225 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:13:31,226 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:13:31 [Yes]
+INFO 2023-06-18 16:13:34,636 runserver>log_action [32mHTTP GET /update-branch/6/savebranch?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 301 [0.01, 127.0.0.1:53195][0m
+INFO 2023-06-18 16:13:34,833 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.19, 127.0.0.1:53195][0m
+INFO 2023-06-18 16:13:34,922 runserver>log_action [mHTTP GET /branch/ 200 [0.08, 127.0.0.1:53195][0m
+INFO 2023-06-18 16:13:34,956 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:53195][0m
+INFO 2023-06-18 16:13:40,119 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:53195][0m
+ERROR 2023-06-18 16:13:44,048 log>log_response Internal Server Error: /update-branch/6/savebranch/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ticketrepeatnumber'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\views.py", line 1570, in Branch_Save
+    print(request.GET['ticketrepeatnumber'])
+          ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'ticketrepeatnumber'
+ERROR 2023-06-18 16:13:44,060 runserver>log_action [35;1mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 500 [0.09, 127.0.0.1:53195][0m
+INFO 2023-06-18 16:13:51,582 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.02, 192.168.1.180:34036][0m
+INFO 2023-06-18 16:15:41,547 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:49646]
+INFO 2023-06-18 16:15:41,586 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 16:15:44,634 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:49646]
+INFO 2023-06-18 16:16:31,232 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-18 16:16:32,844 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 16:16:32,854 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 16:16:32,985 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 16:16:32,986 base>views><module> -SCH- Now:06/18/2023, 08:16:32
+INFO 2023-06-18 16:16:33,115 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 16:16:33,116 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 16:16:33,116 base>views>init_branch_reset    -SCH- 2023-06-18 16:42:00 > 2023-06-18 08:16:32 [Yes]
+INFO 2023-06-18 16:16:33,184 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:16:33,184 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:16:33,185 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:16:32 [Yes]
+INFO 2023-06-18 16:16:33,192 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-18 18:00:00 Local:2023-06-19 02:00:00
+INFO 2023-06-18 16:16:33,193 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 16:16:33,193 base>views>init_branch_reset    -SCH- 2023-06-18 18:00:00 > 2023-06-18 08:16:32 [Yes]
+INFO 2023-06-18 16:16:33,201 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:16:33,202 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:16:33,202 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:16:32 [Yes]
+INFO 2023-06-18 16:16:33,211 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:16:33,211 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:16:33,212 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:16:32 [Yes]
+INFO 2023-06-18 16:16:33,219 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:16:33,220 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:16:33,221 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:16:32 [Yes]
+ERROR 2023-06-18 16:16:43,307 log>log_response Internal Server Error: /update-branch/6/savebranch/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ticketrepeatnumber'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\views.py", line 1570, in Branch_Save
+    print(request.GET['ticketrepeatnumber'])
+          ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'ticketrepeatnumber'
+ERROR 2023-06-18 16:16:43,319 runserver>log_action [35;1mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 500 [0.18, 127.0.0.1:53254][0m
+INFO 2023-06-18 16:18:35,472 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-18 16:18:37,168 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 16:18:37,179 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 16:18:37,314 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 16:18:37,315 base>views><module> -SCH- Now:06/18/2023, 08:18:37
+INFO 2023-06-18 16:18:37,443 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 16:18:37,444 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 16:18:37,445 base>views>init_branch_reset    -SCH- 2023-06-18 16:42:00 > 2023-06-18 08:18:37 [Yes]
+INFO 2023-06-18 16:18:37,512 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:37,513 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:37,514 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:37 [Yes]
+INFO 2023-06-18 16:18:37,523 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-18 18:00:00 Local:2023-06-19 02:00:00
+INFO 2023-06-18 16:18:37,523 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 16:18:37,524 base>views>init_branch_reset    -SCH- 2023-06-18 18:00:00 > 2023-06-18 08:18:37 [Yes]
+INFO 2023-06-18 16:18:37,532 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:37,533 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:37,533 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:37 [Yes]
+INFO 2023-06-18 16:18:37,542 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:37,543 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:37,544 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:37 [Yes]
+INFO 2023-06-18 16:18:37,552 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:37,553 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:37,553 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:37 [Yes]
+INFO 2023-06-18 16:18:39,912 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-18 16:18:41,427 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 16:18:41,437 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 16:18:41,564 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 16:18:41,565 base>views><module> -SCH- Now:06/18/2023, 08:18:41
+INFO 2023-06-18 16:18:41,693 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 16:18:41,694 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 16:18:41,695 base>views>init_branch_reset    -SCH- 2023-06-18 16:42:00 > 2023-06-18 08:18:41 [Yes]
+INFO 2023-06-18 16:18:41,761 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:41,761 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:41,762 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:41 [Yes]
+INFO 2023-06-18 16:18:41,769 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-18 18:00:00 Local:2023-06-19 02:00:00
+INFO 2023-06-18 16:18:41,770 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 16:18:41,771 base>views>init_branch_reset    -SCH- 2023-06-18 18:00:00 > 2023-06-18 08:18:41 [Yes]
+INFO 2023-06-18 16:18:41,778 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:41,779 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:41,780 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:41 [Yes]
+INFO 2023-06-18 16:18:41,788 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:41,788 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:41,789 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:41 [Yes]
+INFO 2023-06-18 16:18:41,797 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:41,799 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:41,799 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:41 [Yes]
+INFO 2023-06-18 16:18:42,594 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.02, 192.168.1.180:33222][0m
+INFO 2023-06-18 16:18:44,166 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-18 16:18:45,688 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 16:18:45,697 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 16:18:45,827 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 16:18:45,828 base>views><module> -SCH- Now:06/18/2023, 08:18:45
+INFO 2023-06-18 16:18:45,954 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 16:18:45,955 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 16:18:45,956 base>views>init_branch_reset    -SCH- 2023-06-18 16:42:00 > 2023-06-18 08:18:45 [Yes]
+INFO 2023-06-18 16:18:46,022 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:46,023 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:46,023 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:45 [Yes]
+INFO 2023-06-18 16:18:46,031 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-18 18:00:00 Local:2023-06-19 02:00:00
+INFO 2023-06-18 16:18:46,032 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 16:18:46,032 base>views>init_branch_reset    -SCH- 2023-06-18 18:00:00 > 2023-06-18 08:18:45 [Yes]
+INFO 2023-06-18 16:18:46,040 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:46,040 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:46,041 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:45 [Yes]
+INFO 2023-06-18 16:18:46,049 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:46,049 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:46,050 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:45 [Yes]
+INFO 2023-06-18 16:18:46,057 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:46,058 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:46,058 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:45 [Yes]
+INFO 2023-06-18 16:18:51,808 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-18 16:18:53,450 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 16:18:53,460 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 16:18:53,593 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 16:18:53,594 base>views><module> -SCH- Now:06/18/2023, 08:18:53
+INFO 2023-06-18 16:18:53,721 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 16:18:53,722 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 16:18:53,723 base>views>init_branch_reset    -SCH- 2023-06-18 16:42:00 > 2023-06-18 08:18:53 [Yes]
+INFO 2023-06-18 16:18:53,793 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:53,794 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:53,795 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:53 [Yes]
+INFO 2023-06-18 16:18:53,804 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-18 18:00:00 Local:2023-06-19 02:00:00
+INFO 2023-06-18 16:18:53,805 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 16:18:53,805 base>views>init_branch_reset    -SCH- 2023-06-18 18:00:00 > 2023-06-18 08:18:53 [Yes]
+INFO 2023-06-18 16:18:53,815 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:53,815 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:53,816 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:53 [Yes]
+INFO 2023-06-18 16:18:53,824 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:53,825 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:53,826 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:53 [Yes]
+INFO 2023-06-18 16:18:53,835 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:18:53,836 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:18:53,836 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:18:53 [Yes]
+ERROR 2023-06-18 16:18:54,823 log>log_response Internal Server Error: /update-branch/6/savebranch/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'ticketrepeatnumber'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\views.py", line 1570, in Branch_Save
+    s_ticketrepeatnumber = request.GET['ticketrepeatnumber']
+                           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'ticketrepeatnumber'
+ERROR 2023-06-18 16:18:54,835 runserver>log_action [35;1mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 500 [0.18, 127.0.0.1:53330][0m
+ERROR 2023-06-18 16:20:41,057 log>log_response Internal Server Error: /update-branch/6/savebranch/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.1\server\aqs\base\views.py", line 1706, in Branch_Save
+    branch.ticketrepeatnumber = new_ticketrepeatnumber
+                               ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'new_ticketrepeatnumber' is not defined
+ERROR 2023-06-18 16:20:41,065 runserver>log_action [35;1mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 500 [0.06, 127.0.0.1:53349][0m
+INFO 2023-06-18 16:20:41,544 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:34790]
+INFO 2023-06-18 16:20:41,579 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 16:20:44,069 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:34790]
+INFO 2023-06-18 16:21:17,696 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-18 16:21:19,224 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 16:21:19,234 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 16:21:19,361 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 16:21:19,362 base>views><module> -SCH- Now:06/18/2023, 08:21:19
+INFO 2023-06-18 16:21:19,491 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 16:21:19,491 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 16:21:19,492 base>views>init_branch_reset    -SCH- 2023-06-18 16:42:00 > 2023-06-18 08:21:19 [Yes]
+INFO 2023-06-18 16:21:19,559 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:19,560 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:19,561 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:19 [Yes]
+INFO 2023-06-18 16:21:19,570 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-18 18:00:00 Local:2023-06-19 02:00:00
+INFO 2023-06-18 16:21:19,570 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 16:21:19,571 base>views>init_branch_reset    -SCH- 2023-06-18 18:00:00 > 2023-06-18 08:21:19 [Yes]
+INFO 2023-06-18 16:21:19,578 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:19,579 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:19,579 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:19 [Yes]
+INFO 2023-06-18 16:21:19,587 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:19,588 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:19,588 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:19 [Yes]
+INFO 2023-06-18 16:21:19,596 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:19,596 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:19,597 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:19 [Yes]
+INFO 2023-06-18 16:21:23,062 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-18 16:21:24,597 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 16:21:24,607 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 16:21:24,742 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 16:21:24,742 base>views><module> -SCH- Now:06/18/2023, 08:21:24
+INFO 2023-06-18 16:21:24,871 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 16:21:24,872 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 16:21:24,873 base>views>init_branch_reset    -SCH- 2023-06-18 16:42:00 > 2023-06-18 08:21:24 [Yes]
+INFO 2023-06-18 16:21:24,942 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:24,943 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:24,944 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:24 [Yes]
+INFO 2023-06-18 16:21:24,953 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-18 18:00:00 Local:2023-06-19 02:00:00
+INFO 2023-06-18 16:21:24,954 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 16:21:24,955 base>views>init_branch_reset    -SCH- 2023-06-18 18:00:00 > 2023-06-18 08:21:24 [Yes]
+INFO 2023-06-18 16:21:24,964 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:24,965 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:24,966 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:24 [Yes]
+INFO 2023-06-18 16:21:24,975 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:24,975 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:24,976 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:24 [Yes]
+INFO 2023-06-18 16:21:24,986 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:24,987 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:24,987 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:24 [Yes]
+INFO 2023-06-18 16:21:31,924 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-18 16:21:33,545 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 16:21:33,555 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 16:21:33,690 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 16:21:33,690 base>views><module> -SCH- Now:06/18/2023, 08:21:33
+INFO 2023-06-18 16:21:33,823 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 16:21:33,823 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 16:21:33,824 base>views>init_branch_reset    -SCH- 2023-06-18 16:42:00 > 2023-06-18 08:21:33 [Yes]
+INFO 2023-06-18 16:21:33,894 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:33,895 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:33,895 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:33 [Yes]
+INFO 2023-06-18 16:21:33,903 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-18 18:00:00 Local:2023-06-19 02:00:00
+INFO 2023-06-18 16:21:33,904 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 16:21:33,904 base>views>init_branch_reset    -SCH- 2023-06-18 18:00:00 > 2023-06-18 08:21:33 [Yes]
+INFO 2023-06-18 16:21:33,914 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:33,915 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:33,916 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:33 [Yes]
+INFO 2023-06-18 16:21:33,927 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:33,928 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:33,929 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:33 [Yes]
+INFO 2023-06-18 16:21:33,940 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:33,941 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:33,942 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:33 [Yes]
+INFO 2023-06-18 16:21:36,450 autoreload>trigger_reload D:\Projects\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2023-06-18 16:21:38,024 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-18 16:21:38,036 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-18 16:21:38,171 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-18 16:21:38,172 base>views><module> -SCH- Now:06/18/2023, 08:21:38
+INFO 2023-06-18 16:21:38,299 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-18 16:42:00 Local:2023-06-19 00:42:00
+INFO 2023-06-18 16:21:38,299 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-18 16:21:38,300 base>views>init_branch_reset    -SCH- 2023-06-18 16:42:00 > 2023-06-18 08:21:38 [Yes]
+INFO 2023-06-18 16:21:38,367 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:38,368 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:38,369 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:38 [Yes]
+INFO 2023-06-18 16:21:38,378 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-18 18:00:00 Local:2023-06-19 02:00:00
+INFO 2023-06-18 16:21:38,379 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-18 16:21:38,380 base>views>init_branch_reset    -SCH- 2023-06-18 18:00:00 > 2023-06-18 08:21:38 [Yes]
+INFO 2023-06-18 16:21:38,390 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:38,391 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:38,391 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:38 [Yes]
+INFO 2023-06-18 16:21:38,398 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:38,399 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:38,400 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:38 [Yes]
+INFO 2023-06-18 16:21:38,408 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-18 15:59:59 Local:2023-06-18 23:59:59
+INFO 2023-06-18 16:21:38,408 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-18 16:21:38,409 base>views>init_branch_reset    -SCH- 2023-06-18 15:59:59 > 2023-06-18 08:21:38 [Yes]
+INFO 2023-06-18 16:21:42,574 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.17, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:21:42,655 runserver>log_action [mHTTP GET /branch/ 200 [0.08, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:21:42,689 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:21:46,148 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:21:48,841 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.04, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:21:48,904 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:21:51,266 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:22:43,055 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:22:45,896 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.03, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:22:45,960 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:22:48,387 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:22:51,706 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.03, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:22:51,770 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:22:53,814 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:22:57,543 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.03, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:22:57,606 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53402][0m
+INFO 2023-06-18 16:23:31,575 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.02, 192.168.1.180:52418][0m
+INFO 2023-06-18 16:25:41,542 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [192.168.1.180:47542]
+INFO 2023-06-18 16:25:41,580 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-06-18 16:25:44,788 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [192.168.1.180:47542]
+INFO 2023-06-18 16:26:04,305 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.03, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:04,339 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:13,971 runserver>log_action [32mHTTP GET /update-branch/6/savebranch?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&enabledsms=on&smsmsg= 301 [0.00, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:14,011 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&enabledsms=on&smsmsg= 302 [0.03, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:14,079 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:15,624 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:27,448 runserver>log_action [32mHTTP GET /update-branch/6/savebranch?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayflashtime=3&language1=1&language2=2&language3=0&language4=0&ST-c=Testing+123...&smsmsg= 301 [0.00, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:27,496 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayflashtime=3&language1=1&language2=2&language3=0&language4=0&ST-c=Testing+123...&smsmsg= 302 [0.03, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:27,564 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:30,050 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:37,103 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&enabledsms=on&smsmsg= 302 [0.03, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:37,164 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:38,121 runserver>log_action [mHTTP GET /update-branch/4/ 200 [0.03, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:40,667 runserver>log_action [mHTTP GET /branch/ 200 [0.05, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:41,666 runserver>log_action [mHTTP GET /update-branch/5/ 200 [0.02, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:46,451 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:54,167 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&displayflashtime=3&language1=1&language2=2&language3=0&language4=0&ST-c=Testing+123...&smsmsg= 302 [0.03, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:54,228 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:26:56,450 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:27:01,569 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&enabledsms=on&smsmsg= 302 [0.04, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:27:01,632 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:27:03,432 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:27:17,433 runserver>log_action [32mHTTP GET /update-branch/6/savebranch/?branchname=HKT+Sha+Tin+Centre&timezone=Asia%2FHong_Kong&address=Unit+Nos.+1720-21%2C+Level+17%2C+Tower+II%2C+Grand+Central+Plaza+Shatin&gps=0.0&officehourstart=00%3A00%3A00&officehourend=23%3A59%3A59&tickettimestart=00%3A00%3A00&tickettimeend=23%3A59%3A59&queuepriority=time&queuemask=A%2CB%2CC%2CD%2CE%2CF%2CG%2CH%2CI%2CJ%2CK%2CL%2CM%2CN%2CO%2CP%2CQ%2CR%2CS%2CT%2CU%2CV%2CW%2CX%2CY%2CZ%2C&ticketmax=999&ticketnoformat=000&ticketrepeatnumber=on&displayenabled=on&displayflashtime=3&voiceenabled=on&language1=1&language2=2&language3=0&language4=0&usersinglelogin=on&ST-c=Testing+123...&smsmsg= 302 [0.03, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:27:17,496 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:27:20,008 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:27:23,341 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:27:24,620 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:27:42,540 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53533][0m
+INFO 2023-06-18 16:28:21,562 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:43010][0m

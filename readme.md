@@ -43,6 +43,7 @@
 - Remove Search function for all HTML (include mobile version)
 - Improve HTML: Branch list, Ticket Format list, Ticket Route list, Supervisor list (Show red color when disabled)
 - Fixed number not correct in m-menu for mobile version (base/views -> MenuView)
+- Improve HTML UI for Branch settings
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>

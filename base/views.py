@@ -1567,6 +1567,7 @@ def Branch_Save(request, pk):
                 break
 
     s_ticketrepeatnumber = 'off'
+    # print(s_ticketrepeatnumber)
     try:
         s_ticketrepeatnumber = request.GET['ticketrepeatnumber']
     except:
