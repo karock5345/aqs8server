@@ -19,6 +19,35 @@ class CaptchaForm(forms.Form):
 
     # captcha = ReCaptchaField()
 
+# for PCCW manager Group only include frontline and manager
+class UserFormManager(ModelForm):
+    class Meta:
+        model = User 
+        fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
+    def __init__(self, *args,**kwargs):
+        super (UserFormManager,self ).__init__(*args,**kwargs)
+        self.fields['groups'].queryset = Group.objects.filter(Q(name='manager') | Q(name='frontline'))   # Q(groups__name='api')
+
+        
+
+# for PCCW manager Group only include frontline and manager and support
+class UserFormSupport(ModelForm):
+    class Meta:
+        model = User 
+        fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
+    def __init__(self, *args,**kwargs):
+        super (UserFormSupport,self ).__init__(*args,**kwargs)
+        self.fields['groups'].queryset = Group.objects.filter(Q(name='manager')| Q(name='frontline')| Q(name='support'))   # Q(groups__name='api')
+
+
+# for PCCW manager Group only include frontline and manager and support and admin
+class UserFormAdmin(ModelForm):
+    class Meta:
+        model = User 
+        fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
+    def __init__(self, *args,**kwargs):
+        super (UserFormAdmin,self ).__init__(*args,**kwargs)
+        self.fields['groups'].queryset = Group.objects.filter(Q(name='manager')| Q(name='frontline')| Q(name='support')| Q(name='admin'))   # Q(groups__name='api')
 
 class UserForm(ModelForm):
     class Meta:
@@ -28,8 +57,8 @@ class UserForm(ModelForm):
         super (UserForm,self ).__init__(*args,**kwargs)
         self.fields['groups'].queryset = Group.objects.filter(~Q(name='api'), ~Q(name='web'))   # Q(groups__name='api')
         # here we can filter the groups by user branchs
-        asfasfsfs
-class UserFormAdmin(ModelForm):
+        
+class UserFormAdminSelf(ModelForm):
 # admin can not change himself group and cannot set is_active
     class Meta:
         model = User
@@ -42,8 +71,7 @@ class UserFormSuper(ModelForm):
     def __init__(self, *args,**kwargs):
         super (UserFormSuper,self ).__init__(*args,**kwargs)
         self.fields['groups'].queryset = Group.objects.filter(~Q(name='web'))  
-        # here we can filter the groups by user branchs
-        asfasfsfs
+
         
 class UserProfileForm(ModelForm):
     class Meta:

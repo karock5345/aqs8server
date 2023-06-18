@@ -13,7 +13,8 @@ from base.decorators import *
 # from django.urls import reverse_lazy
 
 from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch
-from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, CaptchaForm, getForm, voidForm, newTicketTypeForm, UserFormSuper
+from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm
+from .forms import CaptchaForm, getForm, voidForm, newTicketTypeForm, UserFormSuper, UserFormManager, UserFormSupport, UserFormAdminSelf
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
@@ -1912,19 +1913,32 @@ def UserUpdateView(request, pk):
     if request.method != 'POST':
         if request.user.is_superuser == True :
             userform = UserFormSuper(instance=user, prefix='uform')
+        elif user == request.user:
+            userform = UserFormAdminSelf(instance=user, prefix='uform')
+        elif request.user.groups.filter(name='admin').exists() == True :
+            userform = UserFormAdmin(instance=user, prefix='uform')
+        elif request.user.groups.filter(name='support').exists() == True :
+            userform = UserFormSupport(instance=user, prefix='uform')
+        elif request.user.groups.filter(name='manager').exists() == True :
+            userform = UserFormManager(instance=user, prefix='uform')
         else :
             userform = UserForm(instance=user, prefix='uform')
-        if user == request.user:
-            userform = UserFormAdmin(instance=user, prefix='uform')  
+
         profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
     elif request.method == 'POST':
         if request.user.is_superuser == True :
             userform = UserFormSuper(request.POST, instance=user, prefix='uform')
+        elif user == request.user:
+            userform = UserFormAdminSelf(request.POST, instance=user, prefix='uform')        
+        elif request.user.groups.filter(name='admin').exists() == True :
+            userform = UserFormAdmin(request.POST, instance=user, prefix='uform')
+        elif request.user.groups.filter(name='support').exists() == True :
+            userform = UserFormSupport(request.POST, instance=user, prefix='uform')
+        elif request.user.groups.filter(name='manager').exists() == True :
+            userform = UserFormManager(request.POST, instance=user, prefix='uform')
         else :
             userform = UserForm(request.POST, instance=user, prefix='uform')
-        if user == request.user:
-            userform = UserFormAdmin(request.POST, instance=user, prefix='uform')        
-        
+
         profileform = UserProfileForm(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
         newtickettypeform = newTicketTypeForm(request.POST)
         # check moblie phone format
@@ -2091,53 +2105,128 @@ def auth_data(user):
         auth_ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
         auth_routes = TicketRoute.objects.all().order_by('branch','countertype', 'tickettype', 'step')
         auth_countertype = CounterType.objects.all()
-    elif user.groups.filter(name='admin').exists() == True or user.groups.filter(name='support').exists() == True:
-        profiles = UserProfile.objects.all()
-        auth_branchs = Branch.objects.all()
+        '''
+        elif user.groups.filter(name='admin').exists() == True or user.groups.filter(name='support').exists() == True:
+            profiles = UserProfile.objects.all()
+            auth_branchs = Branch.objects.all()
 
-        profid_list = []
-        userid_list = []
-        for prof in profiles :
-            not_auth = False
-            for b in prof.branchs.all():
-                if (b in auth_branchs) == True :
-                    pass                
-                else :
-                    not_auth = True
-            if not_auth == False :
-                if prof.user.is_superuser == False :
-                    if ('api' in prof.user.groups.all()) == False :
-                        if ('web' in prof.user.groups.all()) == False :
-                            profid_list.append(prof.id)
-                            userid_list.append(prof.user.id)
-                        
-        auth_userlist = User.objects.filter(id__in=userid_list)
-        auth_profilelist = UserProfile.objects.filter(id__in=profid_list)
-        auth_ticketformats = TicketFormat.objects.filter(branch__in=auth_branchs).order_by('branch','ttype')
-        auth_routes = TicketRoute.objects.filter(branch__in=auth_branchs).order_by('branch','countertype', 'tickettype', 'step')
-        auth_countertype = CounterType.objects.filter(branch__in=auth_branchs)
- 
+            # profid_list = []
+            # userid_list = []
+            # for prof in profiles :
+            #     not_auth = False
+            #     for b in prof.branchs.all():
+            #         if (b in auth_branchs) == True :
+            #             pass                
+            #         else :
+            #             not_auth = True
+            #     if not_auth == False :
+            #         if prof.user.is_superuser == False :
+            #             if ('api' in prof.user.groups.all()) == False :
+            #                 if ('web' in prof.user.groups.all()) == False :
+            #                     profid_list.append(prof.id)
+            #                     userid_list.append(prof.user.id)
+                            
+            # rewrote by below
+            # userid_list only include user.group = frontline,  manager
+            # profid_list only include user.group = frontline,  manager
+            profid_list = []
+            userid_list = []
+            authgroup_list = []
+            if user.groups.filter(name='admin').exists() == True :
+                authgroup_list.append('admin')
+                authgroup_list.append('support')
+                authgroup_list.append('manager')
+                authgroup_list.append('frontline')
+            elif user.groups.filter(name='support').exists() == True :
+                authgroup_list.append('support')
+                authgroup_list.append('manager')
+                authgroup_list.append('frontline')
+            elif user.groups.filter(name='manager').exists() == True :
+                authgroup_list.append('manager')
+                authgroup_list.append('frontline')
+            
+            for prof in profiles :
+                not_auth = False
+                for b in prof.branchs.all():
+                    if (b in auth_branchs) == True :
+                        pass                
+                    else :
+                        not_auth = True
+                if not_auth == False :
+                    if prof.user.is_superuser == False :
+                        for usergroup in prof.user.groups.all() :
+                            if (usergroup.name in authgroup_list) == True :                   
+                                profid_list.append(prof.id)
+                                userid_list.append(prof.user.id)
+                                break
+
+
+
+            auth_userlist = User.objects.filter(id__in=userid_list)
+            auth_profilelist = UserProfile.objects.filter(id__in=profid_list)
+            auth_ticketformats = TicketFormat.objects.filter(branch__in=auth_branchs).order_by('branch','ttype')
+            auth_routes = TicketRoute.objects.filter(branch__in=auth_branchs).order_by('branch','countertype', 'tickettype', 'step')
+            auth_countertype = CounterType.objects.filter(branch__in=auth_branchs)
+        '''
     else : 
-    # include counter, frontline, manager, report
-        profiles = UserProfile.objects.all()
-        auth_branchs = UserProfile.objects.get(user=user).branchs.all()
+        if user.groups.filter(name='admin').exists() == True or user.groups.filter(name='support').exists() == True:
+            profiles = UserProfile.objects.all()
+            auth_branchs = Branch.objects.all()
+        else:
+            # include counter, frontline, manager, report
+            profiles = UserProfile.objects.all()
+            auth_branchs = UserProfile.objects.get(user=user).branchs.all()
 
+        # profid_list = []
+        # userid_list = []
+        # for prof in profiles :
+        #     not_auth = False
+        #     for b in prof.branchs.all():
+        #         if (b in auth_branchs) == True :
+        #             pass                
+        #         else :
+        #             not_auth = True
+        #     if not_auth == False :
+        #         if prof.user.is_superuser == False :
+        #             if ('api' in prof.user.groups.all()) == False :
+        #                 if ('web' in prof.user.groups.all()) == False :
+        #                     profid_list.append(prof.id)
+        #                     userid_list.append(prof.user.id)
         profid_list = []
         userid_list = []
+        authgroup_list = []
+        if user.groups.filter(name='admin').exists() == True :
+            authgroup_list.append('admin')
+            authgroup_list.append('support')
+            authgroup_list.append('manager')
+            authgroup_list.append('frontline')
+        elif user.groups.filter(name='support').exists() == True :
+            authgroup_list.append('support')
+            authgroup_list.append('manager')
+            authgroup_list.append('frontline')
+        elif user.groups.filter(name='manager').exists() == True :
+            authgroup_list.append('manager')
+            authgroup_list.append('frontline')
+        
         for prof in profiles :
             not_auth = False
-            for b in prof.branchs.all():
-                if (b in auth_branchs) == True :
-                    pass                
-                else :
-                    not_auth = True
+            if prof.branchs.all().count() == 0 :
+                profid_list.append(prof.id)
+                userid_list.append(prof.user.id)
+            else:
+                for b in prof.branchs.all():                
+                    if (b in auth_branchs) == True  :
+                        pass                
+                    else :
+                        not_auth = True
             if not_auth == False :
                 if prof.user.is_superuser == False :
-                    if ('api' in prof.user.groups.all()) == False :
-                        if ('web' in prof.user.groups.all()) == False :
+                    for usergroup in prof.user.groups.all() :
+                        if (usergroup.name in authgroup_list) == True :                   
                             profid_list.append(prof.id)
                             userid_list.append(prof.user.id)
-                        
+                            break
+
         auth_userlist = User.objects.filter(id__in=userid_list)
         auth_profilelist = UserProfile.objects.filter(id__in=profid_list)
         auth_ticketformats = TicketFormat.objects.filter(branch__in=auth_branchs).order_by('branch','ttype')

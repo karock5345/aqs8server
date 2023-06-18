@@ -43,9 +43,28 @@
 - Remove Search function for all HTML (include mobile version)
 - Improve HTML: Branch list, Ticket Format list, Ticket Route list, Supervisor list (Show red color when disabled)
 - Fixed number not correct in m-menu for mobile version (base/views -> MenuView)
+- Improve HTML UI for Branch settings
 ### <span style="color:orange;">**Version 8.1.1 for PCCW 2023**</span>
 - New Ticket Format, Ticket Type should be 2 letters and should be uppercase
+- User group 'frontline' 'support' 'admin' 'manager' for PCCW 2023 
 
+# For Project PCCW 2023
+
+- Linux main server (DELL 13th i5) IP : 192.168.1.190
+- Linux server su: ubuntu /// asdf (password will be changed)
+- Network enp0s31f6
+- Change Server IP :
+```
+sudo nano /etc/netplan/00-installer-config.yaml
+sudo nano /etc/nginx/sites-available/aqs8server
+```
+- Django SU : supertim /// Wu1NpI67foMdaBW ,  admin : pccwadmin /// YEjLZBYGF4
+- Linux backup server (DELL 12th i3) IP : 192.168.1.
+- Linux server su: ubuntu /// asdf (password will be changed)
+- Network 
+- Linux DB server (DELL 12th i3) IP : 192.168.1.
+- Linux server su: ubuntu /// asdf (password will be changed)
+- Network 
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
@@ -175,7 +194,7 @@ edit:
 # This is the network config written by 'subiquity'
 network:
   ethernets:
-    enxf01e3411f0f8:
+    enp0s31f6:
       dhcp4: no
       addresses:
         - 192.168.1.222/24
@@ -186,21 +205,7 @@ network:
         addresses: [8.8.8.8, 1.1.1.1]
   version: 2
 ```
-OR
 
-```sh
-network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    ens3:
-      dhcp4: no
-      addresses:
-        - 192.168.121.221/24
-      gateway4: 192.168.121.1
-      nameservers:
-          addresses: [8.8.8.8, 1.1.1.1]
-```
 exit and save
 ```sh
 sudo netplan apply
@@ -249,7 +254,7 @@ logout
 
 ## Auto power off script (for Ubuntu Desktop / Raspberry Pi Window OS):
 ```bash
-sudo nano /home/pi/.config/autostart/autooff.desktop
+sudo nano /home/ubuntu/.config/autostart/autooff.desktop
 ```
 ```nano
 	[Desktop Entry]
