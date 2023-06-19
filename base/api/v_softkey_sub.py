@@ -888,7 +888,7 @@ def logcounterlogout (user, countertype, counternumber, logintime, logouttime) -
 
     obj = CounterLoginLog.objects.filter( Q(user=user) & Q(countertype=countertype)  & Q(counternumber=counternumber)  & Q(logintime=logintime) )
     if not(obj.count() > 0) :
-        sOut = 'Counter Login Log not find ' + countertype.name + ',' + str(counternumber) + ',' + str(logintime)
+        sOut = 'Counter Login Log not find ... Username:' + user.username + ',Counter:' + countertype.name + ',Counter#:' + str(counternumber) + ',Login time:' + str(logintime)
     else :        
         loginlog = obj[0]
         loginlog.logouttime = logouttime

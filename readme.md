@@ -1,4 +1,4 @@
-# AQS version 8
+# AQS version 8 For PCCW 2023
 ### <span style="color:orange;">**Version 8.0.0**</span>
 - First Django version for Queuing Server
 ### <span style="color:orange;">**Version 8.0.1**</span>
@@ -49,22 +49,51 @@
 - User group 'frontline' 'support' 'admin' 'manager' for PCCW 2023 
 
 # For Project PCCW 2023
-
 - Linux main server (DELL 13th i5) IP : 192.168.1.190
 - Linux server su: ubuntu /// asdf (password will be changed)
 - Network enp0s31f6
 - Change Server IP :
 ```
+# Config server IP
 sudo nano /etc/netplan/00-installer-config.yaml
+# Nginx
 sudo nano /etc/nginx/sites-available/aqs8server
 ```
-- Django SU : supertim /// Wu1NpI67foMdaBW ,  admin : pccwadmin /// YEjLZBYGF4
+- Django SU : supertim /// YtZqEIpk5345 ,  admin : pccwadmin /// YEjLZBYGF4
 - Linux backup server (DELL 12th i3) IP : 192.168.1.
-- Linux server su: ubuntu /// asdf (password will be changed)
+- Linux server su: ubuntu /// asdf (password will be changed cmd:passwd)
 - Network 
-- Linux DB server (DELL 12th i3) IP : 192.168.1.
-- Linux server su: ubuntu /// asdf (password will be changed)
-- Network 
+- Linux DB server (DELL 12th i3) IP : 192.168.1.173
+- Linux server su: ubuntu /// asdf (password will be changed cmd:passwd)
+- Network enp1s0
+
+### Change Django settings.py for DB server IP was changed
+
+```bash
+sudo nano ~/aqs8server/aqs/settings.py
+```
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'aqsdb8',
+        'USER': 'aqsdbuser',
+        'PASSWORD': 'dbpassword-Dlcg1dwMOXSKIAIM',
+        'HOST': '192.168.1.173',
+        'PORT': '5432',
+    }
+}
+```
+### Change DB server IP
+```
+# Config DB server IP
+sudo nano /etc/netplan/00-installer-config.yaml
+# PostgreSQL
+sudo find / -name pg_hba.conf
+sudo nano /path/to/pg_hba.conf
+# edit:
+host    aqsdb8    aqsdbuser    <newIP>/32    md5
+```
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
@@ -189,7 +218,7 @@ sudo ip link
 sudo nano /etc/netplan/xxx.yaml 
 # (01-netcfg.yaml, 50-cloud-init.yaml, or NN_interfaceName.yaml)
 ```
-edit: 
+edit (main server): 
 ```sh
 # This is the network config written by 'subiquity'
 network:
@@ -197,7 +226,7 @@ network:
     enp0s31f6:
       dhcp4: no
       addresses:
-        - 192.168.1.222/24
+        - 192.168.1.190/24
       routes:
         - to: default
           via: 192.168.1.1
@@ -205,7 +234,22 @@ network:
         addresses: [8.8.8.8, 1.1.1.1]
   version: 2
 ```
-
+edit (db server): 
+```sh
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    enp1s0:
+      dhcp4: no
+      addresses:
+        - 192.168.1.173/24
+      routes:
+        - to: default
+          via: 192.168.1.1
+      nameservers:
+        addresses: [8.8.8.8, 1.1.1.1]
+  version: 2
+```
 exit and save
 ```sh
 sudo netplan apply
@@ -268,11 +312,42 @@ sudo reboot
 ```
 ## Auto power off script (for Linux server)
 ```bash
-sudo nano /etc/rc.local
+cd /etc/systemd/system/
+sudo nano autorun.service
 ```
 - add line:
+```
+[Unit]
+Description=Autorun
+After=network.target
+
+[Service]
+ExecStart=/bin/bash /home/ubuntu/autorun.sh
+
+[Install]
+WantedBy=default.target
+```
+- Save and exit
+
+```bash
+sudo systemctl enable autorun.service
+```
+
+```
+nano /home/ubuntu/autorun.sh
+```
+
 ```nano
-shutdown -h 23:55
+# Auto shutdown at 00:30
+shutdown -h 00:30
+# add some script for auto run Control box program
+sudo chmod 666 /dev/ttyS0
+cd /home/ubuntu/cb
+./cb
+```
+
+```
+chmod +x /home/ubuntu/autorun.sh
 ```
 - Save and exit
 
@@ -332,11 +407,11 @@ Preparation:
 ```bash
 git clone https://github.com/karock5345/aqs8server.git
 # or
-git clone --branch roche https://github.com/karock5345/aqs8server.git
+git clone --branch pccw2023 https://github.com/karock5345/aqs8server.git
 # remove .git folder
 sudo rm -r ~/aqs8server/.git
 # remove readme.md (it stores password and other sensitive info)
-sudo rm ~/aqs8server/README.md
+sudo rm ~/aqs8server/readme.md
 sudo apt-get install -y virtualenv
 cd to project folder
 virtualenv env
@@ -380,7 +455,7 @@ deactivate
 ```
 
 
-# SETUP DB (PostgreSQL)
+# SETUP DB (PostgreSQL) in this Project we use other server for DB
 ```bash
 sudo systemctl reload postgresql.service
 sudo su -l postgres
@@ -389,7 +464,7 @@ psql
 PostgreSQL command:
 ```sql
 CREATE DATABASE aqsdb8;
-CREATE USER aqsdbuser WITH PASSWORD 'dbpassword';
+CREATE USER aqsdbuser WITH PASSWORD 'dbpassword-Dlcg1dwMOXSKIAIM';
 ALTER ROLE aqsdbuser SET client_encoding TO 'utf8';
 ALTER ROLE aqsdbuser SET default_transaction_isolation TO 'read committed';
 SHOW TIMEZONE;
@@ -414,20 +489,20 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'aqsdb8',
         'USER': 'aqsdbuser',
-        'PASSWORD': 'dbpassword',
-        'HOST': 'localhost',
+        'PASSWORD': 'dbpassword-Dlcg1dwMOXSKIAIM',
+        'HOST': '192.168.1.173',
         'PORT': '5432',
     }
 }
 ```
 
 ```bash
-source env/bin/activate
+source .env/bin/activate
 python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 ```
-tim /// asdf
+supertim /// YtZqEIpk5345
 
 Test the Postgres DB:
 ```bash
@@ -438,7 +513,8 @@ python manage.py runserver 0.0.0.0:8000
 
 ### <span style="color:orange;">**Django secret key**</span>
 
-Save the SECRET_KEY from settings.py to text file (e.g. : django-insecure-9e^jTw&jk-@-^5u45=*m^el@@$$!7#gav!y=8r8e*&l64^@*v#):
+Save the SECRET_KEY from settings.py to text file (e.g. : django-insecure-BITRaxa&rupHUGo&rab@JaRe4iT@amuQlDroFunljib$duxogO):
+
 ```bash
 sudo touch /etc/secret_key.txt
 sudo nano /etc/secret_key.txt
@@ -548,14 +624,14 @@ After=network.target
 [Service]
 Type=notify
 # the specific user that our service will run as
-User=**ubuntu
+User=ubuntu
 # Group=someuser
 # another option for an even more restricted service is
 # DynamicUser=yes
 # see http://0pointer.net/blog/dynamic-users-with-systemd.html
 RuntimeDirectory=gunicorn
-WorkingDirectory=/home/**ubuntu/aqs8server
-ExecStart=/home/**ubuntu/aqs8server/env/bin/gunicorn aqs.wsgi
+WorkingDirectory=/home/ubuntu/aqs8server
+ExecStart=/home/ubuntu/aqs8server/env/bin/gunicorn aqs.wsgi
 ExecReload=/bin/kill -s HUP $MAINPID
 KillMode=mixed
 TimeoutStopSec=5
@@ -645,21 +721,21 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 ```
-Superuser: tim /// asdf
+Superuser: supertim /// YtZqEIpk5345
 
 Open web browser http://[ip address]/admin
 
 create settings : Name=global, Branch=---, disabled API log
 
-create user groups : api admin report counter web
+create user groups : api web admin support manager frontline 
 
 create user : userapi /// asdf2206 (group:api)
 
 create user : userweb /// asdf2206 (group:web, set:in-active)
 
-create branch (bcode='KB')
+create branch (bcode=WTT, SCP, HHT)
 
-create counter type (Counter)
+create counter type (c)
 
 create counter (CounterStatus) 1-4
 
@@ -667,8 +743,8 @@ create ticket type (TicketFormat)
 
 create TicketRoute
 
-create admin, apiuser user for our customer
-
+create admin, api user for our customer
+admin : pccwadmin /// YEjLZBYGF4
 
 
 # Troubleshooting and Debug
@@ -688,7 +764,7 @@ less /etc/group
 ```bash
 sudo su -l postgres
 psql
-CREATE USER repuser REPLICATION LOGIN ENCRYPTED PASSWORD 'reppass';
+CREATE USER repuser REPLICATION LOGIN ENCRYPTED PASSWORD 'reppass-Fr8sEp2pat';
 \q
 logout
 sudo nano /etc/postgresql/14/main/postgresql.conf
@@ -903,8 +979,8 @@ After=network.target
 [Service]
 Type=simple
 User=ubuntu
-WorkingDirectory=/home/**ubuntu/aqs8server
-ExecStart=/home/**ubuntu/aqs8server/env/bin/python /home/**ubuntu/aqs8server/env/bin/daphne -b 0.0.0.0 -p 8001 aqs.asgi:application
+WorkingDirectory=/home/ubuntu/aqs8server
+ExecStart=/home/ubuntu/aqs8server/env/bin/python /home/ubuntu/aqs8server/env/bin/daphne -b 0.0.0.0 -p 8001 aqs.asgi:application
 Restart=always
 StartLimitBurst=2
 
