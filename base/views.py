@@ -1210,7 +1210,7 @@ def SuperVisorView(request, pk):
         t = TicketTemp.objects.filter( Q(branch=branch) & Q(locked=False) & Q(status='waiting') & Q(countertype=ct))
         qlists.append(t)
 
-        cs = CounterStatus.objects.filter(Q(countertype=ct)).order_by('countertype', 'counternumber',)
+        cs = CounterStatus.objects.filter(Q(countertype=ct) & Q(enabled=True)).order_by('countertype', 'counternumber',)
         counterstatus.append(cs)
         
     # qlists[0] = Ticket.objects.filter( Q(branch=branch) & Q(locked=False) & Q(status='waiting') & Q(countertype=countertypes[0]))
@@ -1225,6 +1225,16 @@ def SuperVisorView(request, pk):
 
     now = datetime.utcnow()
     # snow = now.strftime('%H:%M:%S %Y-%m-%d')
+
+
+    if request.method == 'POST':
+        csid = request.POST.get('forcelogout')
+        csid = int(csid)
+        # if action == 'forcelogout':
+        # counterstatus = CounterStatus.objects.get(id=csid)
+        cs_force =  CounterStatus.objects.get(id=csid)
+        print('forcelogout ', csid,  cs_force.loged, cs_force.user)
+    
 
     context = {
     'now':now,

@@ -24556,3 +24556,1654 @@ INFO 2023-06-18 16:27:23,341 runserver>log_action [mHTTP GET /branch/ 200 [0.06
 INFO 2023-06-18 16:27:24,620 runserver>log_action [mHTTP GET /update-branch/6/ 200 [0.02, 127.0.0.1:53533][0m
 INFO 2023-06-18 16:27:42,540 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:53533][0m
 INFO 2023-06-18 16:28:21,562 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 192.168.1.180:43010][0m
+INFO 2023-06-26 00:06:27,117 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:06:41,174 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:06:42,292 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:06:42,306 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:06:42,795 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:06:42,796 base>views><module> -SCH- Now:06/25/2023, 16:06:42
+INFO 2023-06-26 00:06:42,907 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-25 16:42:00 Local:2023-06-26 00:42:00
+INFO 2023-06-26 00:06:42,908 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:06:42,908 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:06:42 [Yes]
+INFO 2023-06-26 00:06:42,971 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:06:42,972 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:06:42,972 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:06:42 [No]
+INFO 2023-06-26 00:06:42,984 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:06:42,985 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:06:42,985 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:06:42 [Yes]
+INFO 2023-06-26 00:06:42,999 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:06:42,999 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:06:43,000 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:06:42 [No]
+INFO 2023-06-26 00:06:43,013 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:06:43,014 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:06:43,014 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:06:42 [No]
+INFO 2023-06-26 00:06:43,028 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:06:43,029 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:06:43,030 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:06:42 [No]
+INFO 2023-06-26 00:07:03,467 runserver>log_action [32mHTTP GET / 302 [0.08, 127.0.0.1:11168][0m
+INFO 2023-06-26 00:07:03,529 runserver>log_action [mHTTP GET /login/ 200 [0.05, 127.0.0.1:11168][0m
+INFO 2023-06-26 00:07:03,719 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.13, 127.0.0.1:11168][0m
+INFO 2023-06-26 00:07:03,736 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.14, 127.0.0.1:11173][0m
+INFO 2023-06-26 00:07:03,744 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:11175][0m
+INFO 2023-06-26 00:07:03,758 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.03, 127.0.0.1:11176][0m
+INFO 2023-06-26 00:07:10,031 runserver>log_action [32mHTTP POST /login/ 302 [0.55, 127.0.0.1:11168][0m
+INFO 2023-06-26 00:07:10,116 runserver>log_action [mHTTP GET / 200 [0.08, 127.0.0.1:11168][0m
+INFO 2023-06-26 00:07:12,129 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.07, 127.0.0.1:11168][0m
+INFO 2023-06-26 00:07:13,717 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.10, 127.0.0.1:11168][0m
+INFO 2023-06-26 00:07:19,459 runserver>log_action [mHTTP GET /supervisors/ 200 [0.13, 127.0.0.1:11168][0m
+INFO 2023-06-26 00:07:26,719 runserver>log_action [mHTTP GET /supervisor/6/ 200 [0.48, 127.0.0.1:11168][0m
+INFO 2023-06-26 00:07:51,000 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:11168][0m
+INFO 2023-06-26 00:09:14,315 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:09:16,129 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:09:16,138 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:09:16,336 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:09:16,337 base>views><module> -SCH- Now:06/25/2023, 16:09:16
+INFO 2023-06-26 00:09:16,466 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-25 16:42:00 Local:2023-06-26 00:42:00
+INFO 2023-06-26 00:09:16,466 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:09:16,467 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:09:16 [Yes]
+INFO 2023-06-26 00:09:16,526 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:16,528 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:16,529 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:16 [No]
+INFO 2023-06-26 00:09:16,539 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:09:16,539 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:09:16,540 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:09:16 [Yes]
+INFO 2023-06-26 00:09:16,553 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:16,555 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:16,556 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:16 [No]
+INFO 2023-06-26 00:09:16,567 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:16,568 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:16,568 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:16 [No]
+INFO 2023-06-26 00:09:16,580 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:16,581 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:16,581 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:16 [No]
+INFO 2023-06-26 00:09:20,595 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:09:21,837 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:09:21,845 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:09:22,001 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:09:22,002 base>views><module> -SCH- Now:06/25/2023, 16:09:22
+INFO 2023-06-26 00:09:22,131 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-25 16:42:00 Local:2023-06-26 00:42:00
+INFO 2023-06-26 00:09:22,132 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:09:22,132 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:09:22 [Yes]
+INFO 2023-06-26 00:09:22,201 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:22,202 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:22,203 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:22 [No]
+INFO 2023-06-26 00:09:22,216 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:09:22,216 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:09:22,218 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:09:22 [Yes]
+INFO 2023-06-26 00:09:22,236 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:22,237 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:22,238 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:22 [No]
+INFO 2023-06-26 00:09:22,258 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:22,258 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:22,259 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:22 [No]
+INFO 2023-06-26 00:09:22,272 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:22,272 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:22,273 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:22 [No]
+INFO 2023-06-26 00:09:24,069 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:09:25,411 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:09:25,421 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:09:25,629 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:09:25,630 base>views><module> -SCH- Now:06/25/2023, 16:09:25
+INFO 2023-06-26 00:09:25,773 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-25 16:42:00 Local:2023-06-26 00:42:00
+INFO 2023-06-26 00:09:25,775 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:09:25,776 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:09:25 [Yes]
+INFO 2023-06-26 00:09:25,828 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:25,828 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:25,829 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:25 [No]
+INFO 2023-06-26 00:09:25,838 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:09:25,839 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:09:25,840 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:09:25 [Yes]
+INFO 2023-06-26 00:09:25,850 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:25,850 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:25,851 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:25 [No]
+INFO 2023-06-26 00:09:25,863 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:25,864 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:25,864 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:25 [No]
+INFO 2023-06-26 00:09:25,874 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:25,875 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:25,876 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:25 [No]
+INFO 2023-06-26 00:09:27,733 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:09:29,138 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:09:29,150 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:09:30,680 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:09:31,863 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:09:31,873 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:09:32,031 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:09:32,033 base>views><module> -SCH- Now:06/25/2023, 16:09:32
+INFO 2023-06-26 00:09:32,146 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-25 16:42:00 Local:2023-06-26 00:42:00
+INFO 2023-06-26 00:09:32,148 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:09:32,148 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:09:32 [Yes]
+INFO 2023-06-26 00:09:32,202 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:32,203 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:32,203 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:32 [No]
+INFO 2023-06-26 00:09:32,213 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:09:32,214 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:09:32,214 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:09:32 [Yes]
+INFO 2023-06-26 00:09:32,225 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:32,226 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:32,227 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:32 [No]
+INFO 2023-06-26 00:09:32,236 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:32,236 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:32,237 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:32 [No]
+INFO 2023-06-26 00:09:32,247 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:09:32,247 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:09:32,248 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:09:32 [No]
+INFO 2023-06-26 00:09:37,164 runserver>log_action [mHTTP GET /supervisors/ 200 [0.08, 127.0.0.1:11506][0m
+INFO 2023-06-26 00:09:37,212 runserver>log_action [36mHTTP GET /static/js/script.js 304 [0.00, 127.0.0.1:11506][0m
+INFO 2023-06-26 00:09:37,271 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.06, 127.0.0.1:11509][0m
+INFO 2023-06-26 00:09:37,277 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:11506][0m
+INFO 2023-06-26 00:09:37,280 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:11510][0m
+INFO 2023-06-26 00:09:41,028 runserver>log_action [mHTTP GET /supervisor/6/ 200 [0.28, 127.0.0.1:11509][0m
+INFO 2023-06-26 00:10:06,482 runserver>log_action [mHTTP GET /supervisor/6/ 200 [0.09, 127.0.0.1:11509][0m
+INFO 2023-06-26 00:10:08,258 runserver>log_action [mHTTP GET /supervisor/6/ 200 [0.08, 127.0.0.1:11509][0m
+INFO 2023-06-26 00:10:09,355 runserver>log_action [mHTTP GET /supervisor/6/ 200 [0.08, 127.0.0.1:11509][0m
+INFO 2023-06-26 00:15:16,536 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:15:17,889 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:15:17,897 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:15:22,912 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:15:24,135 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:15:24,145 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:27:08,711 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:27:09,665 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:27:09,672 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:27:09,820 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:27:09,821 base>views><module> -SCH- Now:06/25/2023, 16:27:09
+INFO 2023-06-26 00:27:09,924 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-25 16:42:00 Local:2023-06-26 00:42:00
+INFO 2023-06-26 00:27:09,925 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:27:09,926 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:27:09 [Yes]
+INFO 2023-06-26 00:27:09,979 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:27:09,980 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:27:09,981 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:27:09 [No]
+INFO 2023-06-26 00:27:09,991 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:27:09,991 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:27:09,992 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:27:09 [Yes]
+INFO 2023-06-26 00:27:10,005 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:27:10,006 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:27:10,006 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:27:09 [No]
+INFO 2023-06-26 00:27:10,017 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:27:10,018 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:27:10,018 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:27:09 [No]
+INFO 2023-06-26 00:27:10,029 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:27:10,030 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:27:10,031 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:27:09 [No]
+ERROR 2023-06-26 00:27:15,032 log>log_response Internal Server Error: /supervisor/6/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'counter.id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py", line 1247, in SuperVisorView
+    return render(request, 'base/supervisor.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 103: 'counter.id', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+ERROR 2023-06-26 00:27:15,056 runserver>log_action [35;1mHTTP GET /supervisor/6/ 500 [0.21, 127.0.0.1:12928][0m
+WARNING 2023-06-26 00:27:15,150 log>log_response Not Found: /favicon.ico
+WARNING 2023-06-26 00:27:15,151 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:12928][0m
+INFO 2023-06-26 00:28:18,047 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:28:19,414 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:28:19,424 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:28:19,597 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:28:19,598 base>views><module> -SCH- Now:06/25/2023, 16:28:19
+INFO 2023-06-26 00:28:19,716 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-25 16:42:00 Local:2023-06-26 00:42:00
+INFO 2023-06-26 00:28:19,717 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:28:19,717 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:28:19 [Yes]
+INFO 2023-06-26 00:28:19,774 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:28:19,775 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:28:19,775 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:28:19 [No]
+INFO 2023-06-26 00:28:19,786 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:28:19,787 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:28:19,787 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:28:19 [Yes]
+INFO 2023-06-26 00:28:19,799 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:28:19,800 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:28:19,800 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:28:19 [No]
+INFO 2023-06-26 00:28:19,812 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:28:19,812 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:28:19,813 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:28:19 [No]
+INFO 2023-06-26 00:28:19,824 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:28:19,825 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:28:19,825 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:28:19 [No]
+INFO 2023-06-26 00:28:27,137 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:28:28,301 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:28:28,309 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:28:28,451 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:28:28,452 base>views><module> -SCH- Now:06/25/2023, 16:28:28
+INFO 2023-06-26 00:28:28,559 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-25 16:42:00 Local:2023-06-26 00:42:00
+INFO 2023-06-26 00:28:28,560 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:28:28,560 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:28:28 [Yes]
+INFO 2023-06-26 00:28:28,618 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:28:28,619 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:28:28,620 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:28:28 [No]
+INFO 2023-06-26 00:28:28,631 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:28:28,632 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:28:28,633 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:28:28 [Yes]
+INFO 2023-06-26 00:28:28,647 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:28:28,648 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:28:28,648 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:28:28 [No]
+INFO 2023-06-26 00:28:28,661 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:28:28,662 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:28:28,662 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:28:28 [No]
+INFO 2023-06-26 00:28:28,676 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:28:28,676 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:28:28,678 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:28:28 [No]
+INFO 2023-06-26 00:28:56,447 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:28:57,587 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:28:57,599 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:29:00,419 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:29:01,550 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:29:01,558 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:29:01,707 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:29:01,708 base>views><module> -SCH- Now:06/25/2023, 16:29:01
+INFO 2023-06-26 00:29:01,831 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-25 16:42:00 Local:2023-06-26 00:42:00
+INFO 2023-06-26 00:29:01,832 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:29:01,832 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:29:01 [Yes]
+INFO 2023-06-26 00:29:01,889 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:29:01,890 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:29:01,890 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:29:01 [No]
+INFO 2023-06-26 00:29:01,901 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:29:01,902 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:29:01,903 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:29:01 [Yes]
+INFO 2023-06-26 00:29:01,916 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:29:01,917 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:29:01,917 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:29:01 [No]
+INFO 2023-06-26 00:29:01,930 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:29:01,931 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:29:01,932 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:29:01 [No]
+INFO 2023-06-26 00:29:01,944 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:29:01,944 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:29:01,945 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:29:01 [No]
+INFO 2023-06-26 00:29:05,812 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:29:06,959 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:29:06,969 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:29:07,122 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:29:07,123 base>views><module> -SCH- Now:06/25/2023, 16:29:07
+INFO 2023-06-26 00:29:07,223 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-25 16:42:00 Local:2023-06-26 00:42:00
+INFO 2023-06-26 00:29:07,223 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:29:07,224 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:29:07 [Yes]
+INFO 2023-06-26 00:29:07,280 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:29:07,281 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:29:07,281 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:29:07 [No]
+INFO 2023-06-26 00:29:07,294 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:29:07,295 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:29:07,296 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:29:07 [Yes]
+INFO 2023-06-26 00:29:07,306 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:29:07,306 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:29:07,307 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:29:07 [No]
+INFO 2023-06-26 00:29:07,319 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:29:07,320 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:29:07,321 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:29:07 [No]
+INFO 2023-06-26 00:29:07,332 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:29:07,333 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:29:07,334 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:29:07 [No]
+INFO 2023-06-26 00:29:09,064 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:29:10,279 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:29:10,286 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:29:10,463 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:29:10,463 base>views><module> -SCH- Now:06/25/2023, 16:29:10
+INFO 2023-06-26 00:29:10,571 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-25 16:42:00 Local:2023-06-26 00:42:00
+INFO 2023-06-26 00:29:10,572 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:29:10,572 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:29:10 [Yes]
+INFO 2023-06-26 00:29:10,629 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:29:10,630 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:29:10,630 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:29:10 [No]
+INFO 2023-06-26 00:29:10,642 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:29:10,643 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:29:10,643 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:29:10 [Yes]
+INFO 2023-06-26 00:29:10,655 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:29:10,655 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:29:10,656 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:29:10 [No]
+INFO 2023-06-26 00:29:10,667 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:29:10,668 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:29:10,668 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:29:10 [No]
+INFO 2023-06-26 00:29:10,678 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:29:10,680 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:29:10,680 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:29:10 [No]
+ERROR 2023-06-26 00:29:26,602 log>log_response Internal Server Error: /supervisor/6/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'counter.id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py", line 1247, in SuperVisorView
+    return render(request, 'base/supervisor.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 103: 'counter.id', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+ERROR 2023-06-26 00:29:26,623 runserver>log_action [35;1mHTTP GET /supervisor/6/ 500 [0.20, 127.0.0.1:13134][0m
+ERROR 2023-06-26 00:29:31,081 log>log_response Internal Server Error: /supervisor/6/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'counter.id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py", line 1247, in SuperVisorView
+    return render(request, 'base/supervisor.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 103: 'counter.id', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+ERROR 2023-06-26 00:29:31,117 runserver>log_action [35;1mHTTP GET /supervisor/6/ 500 [0.27, 127.0.0.1:13134][0m
+INFO 2023-06-26 00:30:29,570 runserver>log_action [mHTTP GET /supervisor/6/ 200 [0.07, 127.0.0.1:13134][0m
+INFO 2023-06-26 00:30:29,613 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.01, 127.0.0.1:13134][0m
+INFO 2023-06-26 00:30:29,617 runserver>log_action [36mHTTP GET /static/js/script.js 304 [0.01, 127.0.0.1:13282][0m
+INFO 2023-06-26 00:30:29,619 runserver>log_action [36mHTTP GET /static/images/avatar.svg 304 [0.00, 127.0.0.1:13284][0m
+INFO 2023-06-26 00:30:29,622 runserver>log_action [36mHTTP GET /static/images/logo-q.svg 304 [0.01, 127.0.0.1:13283][0m
+INFO 2023-06-26 00:30:32,583 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.09, 127.0.0.1:13134][0m
+INFO 2023-06-26 00:31:10,279 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:31:11,552 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:31:11,562 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:34:55,362 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:34:56,327 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:34:56,336 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:35:03,228 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:35:04,510 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:35:04,518 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:35:04,682 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:35:04,682 base>views><module> -SCH- Now:06/25/2023, 16:35:04
+INFO 2023-06-26 00:35:04,780 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-25 16:42:00 Local:2023-06-26 00:42:00
+INFO 2023-06-26 00:35:04,781 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:35:04,782 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:35:04 [Yes]
+INFO 2023-06-26 00:35:04,834 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:35:04,834 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:35:04,836 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:35:04 [No]
+INFO 2023-06-26 00:35:04,848 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:35:04,848 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:35:04,849 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:35:04 [Yes]
+INFO 2023-06-26 00:35:04,861 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:35:04,862 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:35:04,862 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:35:04 [No]
+INFO 2023-06-26 00:35:04,872 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:35:04,872 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:35:04,873 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:35:04 [No]
+INFO 2023-06-26 00:35:04,884 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:35:04,884 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:35:04,885 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:35:04 [No]
+INFO 2023-06-26 00:35:09,671 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.15, 127.0.0.1:13588][0m
+INFO 2023-06-26 00:35:09,698 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:13588][0m
+INFO 2023-06-26 00:35:09,702 runserver>log_action [36mHTTP GET /static/js/script.js 304 [0.01, 127.0.0.1:13591][0m
+INFO 2023-06-26 00:35:09,705 runserver>log_action [36mHTTP GET /static/images/logo-q.svg 304 [0.01, 127.0.0.1:13592][0m
+INFO 2023-06-26 00:35:09,709 runserver>log_action [36mHTTP GET /static/images/avatar.svg 304 [0.01, 127.0.0.1:13593][0m
+INFO 2023-06-26 00:35:30,643 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.04, 127.0.0.1:13588][0m
+INFO 2023-06-26 00:35:32,544 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.04, 127.0.0.1:13588][0m
+INFO 2023-06-26 00:36:37,726 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.04, 127.0.0.1:13775][0m
+INFO 2023-06-26 00:36:39,575 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.04, 127.0.0.1:13775][0m
+INFO 2023-06-26 00:36:47,703 runserver>log_action [mHTTP GET / 200 [0.07, 127.0.0.1:13775][0m
+INFO 2023-06-26 00:36:48,986 runserver>log_action [mHTTP GET /menu/ 200 [0.05, 127.0.0.1:13775][0m
+INFO 2023-06-26 00:36:50,779 runserver>log_action [mHTTP GET /supervisors/ 200 [0.12, 127.0.0.1:13775][0m
+INFO 2023-06-26 00:36:52,665 runserver>log_action [mHTTP GET /supervisor/6/ 200 [0.10, 127.0.0.1:13775][0m
+INFO 2023-06-26 00:36:54,637 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.08, 127.0.0.1:13775][0m
+INFO 2023-06-26 00:37:12,612 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.04, 127.0.0.1:13775][0m
+INFO 2023-06-26 00:37:16,335 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.09, 127.0.0.1:13775][0m
+INFO 2023-06-26 00:37:18,672 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.08, 127.0.0.1:13775][0m
+INFO 2023-06-26 00:37:20,231 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.08, 127.0.0.1:13775][0m
+INFO 2023-06-26 00:37:21,987 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.08, 127.0.0.1:13775][0m
+INFO 2023-06-26 00:37:23,420 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.09, 127.0.0.1:13775][0m
+INFO 2023-06-26 00:37:26,223 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.08, 127.0.0.1:13775][0m
+INFO 2023-06-26 00:42:00,009 base>views>job_shutdown    -SCH- Shutdown and reset branch :KB -SCH-
+INFO 2023-06-26 00:42:00,427 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-26 00:42:21,478 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-26 00:42:21,491 base>ws>wssendwebtv channel_group_name:webtv_KB_Payment sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-26 00:42:42,537 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-26 00:42:42,550 base>ws>wssendwebtv channel_group_name:webtv_KB_Counter sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+ERROR 2023-06-26 00:43:03,577 base>ws>wssendwebtv ...ERROR:Redis Server is down!
+INFO 2023-06-26 00:43:03,923 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:43:03,925 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:43:03,927 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:43:03 [No]
+INFO 2023-06-26 00:43:03,947 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:43:03,949 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:43:03,951 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:43:03 [No]
+INFO 2023-06-26 00:43:03,972 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:43:03,974 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:43:03,974 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:43:03 [Yes]
+INFO 2023-06-26 00:43:03,994 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:43:03,996 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:43:03,997 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:43:03 [No]
+INFO 2023-06-26 00:43:04,013 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:43:04,013 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:43:04,014 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:43:03 [No]
+INFO 2023-06-26 00:43:04,124 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:43:04,126 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:43:04,127 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:43:03 [No]
+INFO 2023-06-26 00:51:03,125 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:51:04,501 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:51:04,515 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:51:04,691 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:51:04,692 base>views><module> -SCH- Now:06/25/2023, 16:51:04
+INFO 2023-06-26 00:51:04,814 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:51:04,814 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:51:04,815 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:51:04 [No]
+INFO 2023-06-26 00:51:04,876 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:04,876 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:04,877 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:04 [No]
+INFO 2023-06-26 00:51:04,889 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:51:04,890 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:51:04,891 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:51:04 [Yes]
+INFO 2023-06-26 00:51:04,901 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:04,903 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:04,904 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:04 [No]
+INFO 2023-06-26 00:51:04,913 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:04,914 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:04,915 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:04 [No]
+INFO 2023-06-26 00:51:04,925 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:04,925 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:04,926 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:04 [No]
+INFO 2023-06-26 00:51:09,932 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:51:11,376 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:51:11,383 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:51:11,587 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:51:11,588 base>views><module> -SCH- Now:06/25/2023, 16:51:11
+INFO 2023-06-26 00:51:11,719 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:51:11,720 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:51:11,721 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:51:11 [No]
+INFO 2023-06-26 00:51:11,776 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:11,777 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:11,778 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:11 [No]
+INFO 2023-06-26 00:51:11,789 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:51:11,790 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:51:11,790 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:51:11 [Yes]
+INFO 2023-06-26 00:51:11,801 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:11,802 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:11,802 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:11 [No]
+INFO 2023-06-26 00:51:11,817 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:11,818 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:11,819 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:11 [No]
+INFO 2023-06-26 00:51:11,828 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:11,829 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:11,830 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:11 [No]
+INFO 2023-06-26 00:51:14,734 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:51:16,336 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:51:16,344 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:51:16,513 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:51:16,514 base>views><module> -SCH- Now:06/25/2023, 16:51:16
+INFO 2023-06-26 00:51:16,642 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:51:16,643 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:51:16,644 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:51:16 [No]
+INFO 2023-06-26 00:51:16,699 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:16,700 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:16,701 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:16 [No]
+INFO 2023-06-26 00:51:16,710 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:51:16,711 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:51:16,711 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:51:16 [Yes]
+INFO 2023-06-26 00:51:16,722 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:16,723 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:16,724 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:16 [No]
+INFO 2023-06-26 00:51:16,735 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:16,735 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:16,737 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:16 [No]
+INFO 2023-06-26 00:51:16,746 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:16,747 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:16,747 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:16 [No]
+INFO 2023-06-26 00:51:18,574 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:51:19,973 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:51:19,981 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:51:20,174 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:51:20,175 base>views><module> -SCH- Now:06/25/2023, 16:51:20
+INFO 2023-06-26 00:51:20,298 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:51:20,298 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:51:20,299 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:51:20 [No]
+INFO 2023-06-26 00:51:20,356 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:20,357 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:20,357 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:20 [No]
+INFO 2023-06-26 00:51:20,370 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:51:20,370 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:51:20,371 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:51:20 [Yes]
+INFO 2023-06-26 00:51:20,385 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:20,385 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:20,386 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:20 [No]
+INFO 2023-06-26 00:51:20,395 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:20,397 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:20,397 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:20 [No]
+INFO 2023-06-26 00:51:20,408 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:20,410 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:20,411 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:20 [No]
+INFO 2023-06-26 00:51:24,407 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:51:25,739 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:51:25,747 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:51:27,283 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:51:28,765 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:51:28,773 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:51:28,949 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:51:28,949 base>views><module> -SCH- Now:06/25/2023, 16:51:28
+INFO 2023-06-26 00:51:29,098 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:51:29,102 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:51:29,104 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:51:28 [No]
+INFO 2023-06-26 00:51:29,169 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:29,170 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:29,170 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:28 [No]
+INFO 2023-06-26 00:51:29,189 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:51:29,190 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:51:29,191 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:51:28 [Yes]
+INFO 2023-06-26 00:51:29,207 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:29,208 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:29,208 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:28 [No]
+INFO 2023-06-26 00:51:29,219 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:29,220 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:29,220 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:28 [No]
+INFO 2023-06-26 00:51:29,229 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:29,230 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:29,231 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:28 [No]
+INFO 2023-06-26 00:51:31,165 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:51:32,654 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:51:32,661 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:51:32,820 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:51:32,820 base>views><module> -SCH- Now:06/25/2023, 16:51:32
+INFO 2023-06-26 00:51:32,946 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:51:32,947 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:51:32,949 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:51:32 [No]
+INFO 2023-06-26 00:51:33,009 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:33,011 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:33,011 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:32 [No]
+INFO 2023-06-26 00:51:33,022 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:51:33,023 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:51:33,023 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:51:32 [Yes]
+INFO 2023-06-26 00:51:33,035 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:33,035 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:33,036 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:32 [No]
+INFO 2023-06-26 00:51:33,046 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:33,047 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:33,048 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:32 [No]
+INFO 2023-06-26 00:51:33,057 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:33,058 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:33,059 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:32 [No]
+INFO 2023-06-26 00:51:50,087 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:51:51,306 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:51:51,315 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:51:51,467 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:51:51,467 base>views><module> -SCH- Now:06/25/2023, 16:51:51
+INFO 2023-06-26 00:51:51,591 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:51:51,593 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:51:51,595 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:51:51 [No]
+INFO 2023-06-26 00:51:51,649 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:51,650 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:51,650 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:51 [No]
+INFO 2023-06-26 00:51:51,664 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:51:51,665 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:51:51,665 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:51:51 [Yes]
+INFO 2023-06-26 00:51:51,676 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:51,676 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:51,678 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:51 [No]
+INFO 2023-06-26 00:51:51,689 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:51,689 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:51,690 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:51 [No]
+INFO 2023-06-26 00:51:51,699 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:51,700 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:51,700 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:51 [No]
+INFO 2023-06-26 00:51:53,525 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:51:54,707 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:51:54,717 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:51:54,883 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:51:54,884 base>views><module> -SCH- Now:06/25/2023, 16:51:54
+INFO 2023-06-26 00:51:54,985 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:51:54,986 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:51:54,987 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:51:54 [No]
+INFO 2023-06-26 00:51:55,043 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:55,043 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:55,044 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:54 [No]
+INFO 2023-06-26 00:51:55,058 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:51:55,059 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:51:55,059 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:51:54 [Yes]
+INFO 2023-06-26 00:51:55,073 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:55,074 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:55,074 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:54 [No]
+INFO 2023-06-26 00:51:55,087 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:55,088 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:55,088 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:54 [No]
+INFO 2023-06-26 00:51:55,101 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:51:55,102 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:51:55,102 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:51:54 [No]
+INFO 2023-06-26 00:52:02,323 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:52:03,606 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:52:03,616 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:52:09,409 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:52:10,591 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:52:10,598 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:52:10,757 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:52:10,758 base>views><module> -SCH- Now:06/25/2023, 16:52:10
+INFO 2023-06-26 00:52:10,862 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:52:10,863 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:52:10,864 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:52:10 [No]
+INFO 2023-06-26 00:52:10,917 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:52:10,918 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:52:10,919 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:52:10 [No]
+INFO 2023-06-26 00:52:10,928 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:52:10,928 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:52:10,929 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:52:10 [Yes]
+INFO 2023-06-26 00:52:10,940 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:52:10,940 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:52:10,941 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:52:10 [No]
+INFO 2023-06-26 00:52:10,951 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:52:10,952 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:52:10,952 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:52:10 [No]
+INFO 2023-06-26 00:52:10,962 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:52:10,963 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:52:10,964 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:52:10 [No]
+ERROR 2023-06-26 00:52:16,381 log>log_response Internal Server Error: /supervisor/6/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py", line 1248, in SuperVisorView
+    return render(request, 'base/supervisor.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 193, in render
+    values = list(values)
+             ^^^^^^^^^^^^
+TypeError: 'CounterStatus' object is not iterable
+ERROR 2023-06-26 00:52:16,398 runserver>log_action [35;1mHTTP POST /supervisor/6/ 500 [0.28, 127.0.0.1:14788][0m
+INFO 2023-06-26 00:52:43,991 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:52:45,738 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:52:45,852 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:52:46,105 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:52:46,106 base>views><module> -SCH- Now:06/25/2023, 16:52:46
+INFO 2023-06-26 00:52:46,231 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:52:46,233 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:52:46,235 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:52:46 [No]
+INFO 2023-06-26 00:52:46,320 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:52:46,321 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:52:46,321 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:52:46 [No]
+INFO 2023-06-26 00:52:46,350 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:52:46,352 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:52:46,353 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:52:46 [Yes]
+INFO 2023-06-26 00:52:46,393 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:52:46,394 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:52:46,395 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:52:46 [No]
+INFO 2023-06-26 00:52:46,425 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:52:46,427 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:52:46,427 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:52:46 [No]
+INFO 2023-06-26 00:52:46,442 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:52:46,443 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:52:46,443 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:52:46 [No]
+INFO 2023-06-26 00:52:48,459 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:52:49,825 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:52:49,834 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:52:53,502 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:52:54,897 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:52:54,905 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:52:55,091 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:52:55,092 base>views><module> -SCH- Now:06/25/2023, 16:52:55
+INFO 2023-06-26 00:52:55,192 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:52:55,193 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:52:55,194 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:52:55 [No]
+INFO 2023-06-26 00:52:55,253 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:52:55,253 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:52:55,254 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:52:55 [No]
+INFO 2023-06-26 00:52:55,266 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:52:55,266 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:52:55,268 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:52:55 [Yes]
+INFO 2023-06-26 00:52:55,280 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:52:55,280 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:52:55,281 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:52:55 [No]
+INFO 2023-06-26 00:52:55,295 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:52:55,295 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:52:55,296 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:52:55 [No]
+INFO 2023-06-26 00:52:55,307 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:52:55,308 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:52:55,309 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:52:55 [No]
+ERROR 2023-06-26 00:52:59,478 log>log_response Internal Server Error: /supervisor/6/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py", line 1249, in SuperVisorView
+    return render(request, 'base/supervisor.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 193, in render
+    values = list(values)
+             ^^^^^^^^^^^^
+TypeError: 'CounterStatus' object is not iterable
+ERROR 2023-06-26 00:52:59,491 runserver>log_action [35;1mHTTP POST /supervisor/6/ 500 [0.27, 127.0.0.1:14862][0m
+ERROR 2023-06-26 00:54:17,785 log>log_response Internal Server Error: /supervisor/6/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py", line 1249, in SuperVisorView
+    return render(request, 'base/supervisor.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 193, in render
+    values = list(values)
+             ^^^^^^^^^^^^
+TypeError: 'CounterStatus' object is not iterable
+ERROR 2023-06-26 00:54:17,814 runserver>log_action [35;1mHTTP POST /supervisor/6/ 500 [0.30, 127.0.0.1:15058][0m
+INFO 2023-06-26 00:55:20,576 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:55:21,853 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:55:21,864 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:55:22,066 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:55:22,067 base>views><module> -SCH- Now:06/25/2023, 16:55:22
+INFO 2023-06-26 00:55:22,181 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:55:22,182 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:55:22,182 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:55:22 [No]
+INFO 2023-06-26 00:55:22,236 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:22,238 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:22,238 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:22 [No]
+INFO 2023-06-26 00:55:22,253 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:55:22,253 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:55:22,253 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:55:22 [Yes]
+INFO 2023-06-26 00:55:22,264 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:22,264 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:22,265 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:22 [No]
+INFO 2023-06-26 00:55:22,276 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:22,278 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:22,279 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:22 [No]
+INFO 2023-06-26 00:55:22,319 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:22,320 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:22,320 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:22 [No]
+INFO 2023-06-26 00:55:24,087 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:55:25,236 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:55:25,243 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:55:25,415 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:55:25,417 base>views><module> -SCH- Now:06/25/2023, 16:55:25
+INFO 2023-06-26 00:55:25,523 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:55:25,523 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:55:25,524 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:55:25 [No]
+INFO 2023-06-26 00:55:25,579 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:25,579 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:25,581 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:25 [No]
+INFO 2023-06-26 00:55:25,592 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:55:25,593 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:55:25,593 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:55:25 [Yes]
+INFO 2023-06-26 00:55:25,604 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:25,605 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:25,605 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:25 [No]
+INFO 2023-06-26 00:55:25,616 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:25,617 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:25,618 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:25 [No]
+INFO 2023-06-26 00:55:25,628 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:25,629 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:25,629 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:25 [No]
+INFO 2023-06-26 00:55:27,451 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:55:28,595 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:55:28,602 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:55:30,074 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:55:31,321 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:55:31,332 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:55:31,486 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:55:31,487 base>views><module> -SCH- Now:06/25/2023, 16:55:31
+INFO 2023-06-26 00:55:31,583 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:55:31,584 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:55:31,585 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:55:31 [No]
+INFO 2023-06-26 00:55:31,652 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:31,653 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:31,654 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:31 [No]
+INFO 2023-06-26 00:55:31,664 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:55:31,665 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:55:31,666 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:55:31 [Yes]
+INFO 2023-06-26 00:55:31,677 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:31,678 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:31,679 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:31 [No]
+INFO 2023-06-26 00:55:31,690 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:31,690 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:31,691 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:31 [No]
+INFO 2023-06-26 00:55:31,703 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:31,704 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:31,704 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:31 [No]
+ERROR 2023-06-26 00:55:42,665 log>log_response Internal Server Error: /supervisor/6/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py", line 1249, in SuperVisorView
+    return render(request, 'base/supervisor.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 193, in render
+    values = list(values)
+             ^^^^^^^^^^^^
+TypeError: 'CounterStatus' object is not iterable
+ERROR 2023-06-26 00:55:42,682 runserver>log_action [35;1mHTTP POST /supervisor/6/ 500 [0.21, 127.0.0.1:15220][0m
+INFO 2023-06-26 00:55:54,327 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:55:55,541 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:55:55,548 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:55:55,693 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:55:55,694 base>views><module> -SCH- Now:06/25/2023, 16:55:55
+INFO 2023-06-26 00:55:55,794 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:55:55,794 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:55:55,795 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:55:55 [No]
+INFO 2023-06-26 00:55:55,854 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:55,855 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:55,856 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:55 [No]
+INFO 2023-06-26 00:55:55,868 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:55:55,869 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:55:55,869 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:55:55 [Yes]
+INFO 2023-06-26 00:55:55,882 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:55,882 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:55,883 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:55 [No]
+INFO 2023-06-26 00:55:55,893 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:55,894 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:55,895 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:55 [No]
+INFO 2023-06-26 00:55:55,904 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:55:55,905 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:55:55,906 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:55:55 [No]
+INFO 2023-06-26 00:55:57,832 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.18, 127.0.0.1:15264][0m
+INFO 2023-06-26 00:55:57,859 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.01, 127.0.0.1:15265][0m
+INFO 2023-06-26 00:55:57,862 runserver>log_action [36mHTTP GET /static/js/script.js 304 [0.01, 127.0.0.1:15264][0m
+INFO 2023-06-26 00:55:57,865 runserver>log_action [36mHTTP GET /static/images/logo-q.svg 304 [0.00, 127.0.0.1:15271][0m
+INFO 2023-06-26 00:55:57,868 runserver>log_action [36mHTTP GET /static/images/avatar.svg 304 [0.01, 127.0.0.1:15272][0m
+INFO 2023-06-26 00:55:59,173 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.04, 127.0.0.1:15264][0m
+INFO 2023-06-26 00:56:00,345 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.05, 127.0.0.1:15264][0m
+INFO 2023-06-26 00:56:25,841 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:56:27,277 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:56:27,287 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:56:27,461 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:56:27,462 base>views><module> -SCH- Now:06/25/2023, 16:56:27
+INFO 2023-06-26 00:56:27,567 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:56:27,568 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:56:27,569 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:56:27 [No]
+INFO 2023-06-26 00:56:27,632 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:27,633 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:27,633 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:27 [No]
+INFO 2023-06-26 00:56:27,646 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:56:27,646 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:56:27,647 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:56:27 [Yes]
+INFO 2023-06-26 00:56:27,659 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:27,660 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:27,661 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:27 [No]
+INFO 2023-06-26 00:56:27,672 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:27,672 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:27,673 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:27 [No]
+INFO 2023-06-26 00:56:27,685 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:27,686 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:27,686 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:27 [No]
+INFO 2023-06-26 00:56:31,567 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:56:32,982 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:56:32,989 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:56:33,154 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:56:33,154 base>views><module> -SCH- Now:06/25/2023, 16:56:33
+INFO 2023-06-26 00:56:33,264 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:56:33,265 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:56:33,266 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:56:33 [No]
+INFO 2023-06-26 00:56:33,316 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:33,316 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:33,317 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:33 [No]
+INFO 2023-06-26 00:56:33,327 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:56:33,327 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:56:33,328 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:56:33 [Yes]
+INFO 2023-06-26 00:56:33,371 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:33,372 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:33,372 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:33 [No]
+INFO 2023-06-26 00:56:33,386 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:33,387 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:33,388 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:33 [No]
+INFO 2023-06-26 00:56:33,400 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:33,400 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:33,402 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:33 [No]
+INFO 2023-06-26 00:56:35,146 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:56:36,371 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:56:36,380 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:56:36,550 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:56:36,551 base>views><module> -SCH- Now:06/25/2023, 16:56:36
+INFO 2023-06-26 00:56:36,661 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:56:36,663 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:56:36,663 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:56:36 [No]
+INFO 2023-06-26 00:56:36,712 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:36,712 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:36,713 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:36 [No]
+INFO 2023-06-26 00:56:36,723 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:56:36,724 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:56:36,724 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:56:36 [Yes]
+INFO 2023-06-26 00:56:36,737 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:36,738 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:36,738 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:36 [No]
+INFO 2023-06-26 00:56:36,750 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:36,750 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:36,751 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:36 [No]
+INFO 2023-06-26 00:56:36,761 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:36,761 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:36,762 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:36 [No]
+INFO 2023-06-26 00:56:39,568 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:56:40,891 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:56:40,898 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:56:45,602 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:56:46,712 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:56:46,721 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:56:49,252 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:56:50,413 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:56:50,424 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:56:50,575 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:56:50,576 base>views><module> -SCH- Now:06/25/2023, 16:56:50
+INFO 2023-06-26 00:56:50,680 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:56:50,681 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:56:50,682 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:56:50 [No]
+INFO 2023-06-26 00:56:50,738 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:50,739 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:50,739 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:50 [No]
+INFO 2023-06-26 00:56:50,751 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:56:50,752 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:56:50,753 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:56:50 [Yes]
+INFO 2023-06-26 00:56:50,765 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:50,766 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:50,766 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:50 [No]
+INFO 2023-06-26 00:56:50,779 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:50,779 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:50,780 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:50 [No]
+INFO 2023-06-26 00:56:50,791 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:56:50,792 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:56:50,792 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:56:50 [No]
+INFO 2023-06-26 00:56:58,847 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.14, 127.0.0.1:15522][0m
+INFO 2023-06-26 00:57:00,837 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.04, 127.0.0.1:15522][0m
+INFO 2023-06-26 00:57:09,653 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:57:10,827 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:57:10,833 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:57:10,980 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:57:10,981 base>views><module> -SCH- Now:06/25/2023, 16:57:10
+INFO 2023-06-26 00:57:11,084 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:57:11,085 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:57:11,086 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:57:10 [No]
+INFO 2023-06-26 00:57:11,141 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:57:11,142 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:57:11,142 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:57:10 [No]
+INFO 2023-06-26 00:57:11,153 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:57:11,153 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:57:11,154 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:57:10 [Yes]
+INFO 2023-06-26 00:57:11,165 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:57:11,166 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:57:11,166 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:57:10 [No]
+INFO 2023-06-26 00:57:11,176 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:57:11,177 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:57:11,177 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:57:10 [No]
+INFO 2023-06-26 00:57:11,189 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:57:11,189 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:57:11,190 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:57:10 [No]
+INFO 2023-06-26 00:57:12,990 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:57:14,227 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:57:14,235 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:57:14,384 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:57:14,385 base>views><module> -SCH- Now:06/25/2023, 16:57:14
+INFO 2023-06-26 00:57:14,479 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:57:14,481 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:57:14,482 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:57:14 [No]
+INFO 2023-06-26 00:57:14,545 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:57:14,546 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:57:14,546 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:57:14 [No]
+INFO 2023-06-26 00:57:14,559 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:57:14,561 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:57:14,562 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:57:14 [Yes]
+INFO 2023-06-26 00:57:14,575 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:57:14,576 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:57:14,577 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:57:14 [No]
+INFO 2023-06-26 00:57:14,590 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:57:14,591 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:57:14,593 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:57:14 [No]
+INFO 2023-06-26 00:57:14,604 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:57:14,605 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:57:14,606 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:57:14 [No]
+INFO 2023-06-26 00:57:16,391 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:57:17,592 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:57:17,604 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:57:17,771 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:57:17,773 base>views><module> -SCH- Now:06/25/2023, 16:57:17
+INFO 2023-06-26 00:57:17,873 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:57:17,874 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:57:17,875 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:57:17 [No]
+INFO 2023-06-26 00:57:17,930 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:57:17,931 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:57:17,932 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:57:17 [No]
+INFO 2023-06-26 00:57:17,945 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:57:17,946 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:57:17,947 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:57:17 [Yes]
+INFO 2023-06-26 00:57:17,959 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:57:17,960 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:57:17,960 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:57:17 [No]
+INFO 2023-06-26 00:57:17,969 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:57:17,970 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:57:17,970 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:57:17 [No]
+INFO 2023-06-26 00:57:17,981 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:57:17,982 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:57:17,982 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:57:17 [No]
+INFO 2023-06-26 00:57:22,642 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.15, 127.0.0.1:15604][0m
+INFO 2023-06-26 00:57:25,260 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.04, 127.0.0.1:15604][0m
+ERROR 2023-06-26 00:57:26,941 log>log_response Internal Server Error: /supervisor/6/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 442, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py", line 1236, in SuperVisorView
+    print('forcelogout ', csid,  cs_force.loged, cs_force.user.username)
+                                                 ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'username'
+ERROR 2023-06-26 00:57:26,962 runserver>log_action [35;1mHTTP POST /supervisor/6/ 500 [0.15, 127.0.0.1:15604][0m
+INFO 2023-06-26 00:59:23,794 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.1\aqs8server\base\views.py changed, reloading.
+INFO 2023-06-26 00:59:25,135 base>apps>ready    *** Queuing System Started ***
+INFO 2023-06-26 00:59:25,142 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-06-26 00:59:25,386 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-06-26 00:59:25,388 base>views><module> -SCH- Now:06/25/2023, 16:59:25
+INFO 2023-06-26 00:59:25,504 base>views>init_branch_reset  -SCH- Next reset [KB]: 2023-06-26 16:42:00 Local:2023-06-27 00:42:00
+INFO 2023-06-26 00:59:25,505 base>views>init_branch_reset    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-06-26 00:59:25,506 base>views>init_branch_reset    -SCH- 2023-06-25 16:42:00 > 2023-06-25 16:59:25 [No]
+INFO 2023-06-26 00:59:25,556 base>views>init_branch_reset  -SCH- Next reset [MK]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:59:25,556 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:59:25,557 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:59:25 [No]
+INFO 2023-06-26 00:59:25,568 base>views>init_branch_reset  -SCH- Next reset [HY]: 2023-06-25 18:00:00 Local:2023-06-26 02:00:00
+INFO 2023-06-26 00:59:25,569 base>views>init_branch_reset    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-06-26 00:59:25,570 base>views>init_branch_reset    -SCH- 2023-06-25 18:00:00 > 2023-06-25 16:59:25 [Yes]
+INFO 2023-06-26 00:59:25,583 base>views>init_branch_reset  -SCH- Next reset [SW]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:59:25,584 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:59:25,585 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:59:25 [No]
+INFO 2023-06-26 00:59:25,596 base>views>init_branch_reset  -SCH- Next reset [TST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:59:25,597 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:59:25,598 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:59:25 [No]
+INFO 2023-06-26 00:59:25,609 base>views>init_branch_reset  -SCH- Next reset [ST]: 2023-06-26 15:59:59 Local:2023-06-26 23:59:59
+INFO 2023-06-26 00:59:25,610 base>views>init_branch_reset    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-06-26 00:59:25,611 base>views>init_branch_reset    -SCH- 2023-06-25 15:59:59 > 2023-06-25 16:59:25 [No]
+INFO 2023-06-26 00:59:33,425 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.16, 127.0.0.1:15816][0m
+INFO 2023-06-26 00:59:36,119 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.08, 127.0.0.1:15816][0m
+INFO 2023-06-26 00:59:38,210 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.08, 127.0.0.1:15816][0m
+INFO 2023-06-26 00:59:39,902 runserver>log_action [mHTTP POST /supervisor/6/ 200 [0.08, 127.0.0.1:15816][0m
