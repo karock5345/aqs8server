@@ -4,7 +4,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-# from .views import job_shutdown
 
 # sch = BackgroundScheduler()
 # sch.start()

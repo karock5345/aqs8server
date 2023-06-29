@@ -1664,11 +1664,12 @@ color: white;
 }
 .subtotal_des_cc {
   width: 30rem;
-  margin-top: -0.6rem;
-
+  margin-top: -0.2rem;
 }
-
-.subtotal_lang {
+.subtotal_lang2_des_cc {
+  margin-top: -0.5rem;
+}
+.subtotal_lang_cc {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
   white-space: nowrap; 

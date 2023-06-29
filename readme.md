@@ -44,6 +44,18 @@
 - Improve HTML: Branch list, Ticket Format list, Ticket Route list, Supervisor list (Show red color when disabled)
 - Fixed number not correct in m-menu for mobile version (base/views -> MenuView)
 - Improve HTML UI for Branch settings
+### <span style="color:orange;">**Version 8.1.1**</span>
+- Fixed bug : Counter can not logout and Counter status is not correct (waiting) in Call Centre mode when reset branch, if counter still login then.
+### <span style="color:orange;">**Version 8.1.2**</span>
+- Add 'force logout' function for supervise.html
+- New API for shutdown branch and run INIT_SCH : /sch/shutdown/?bcode=KB&app=postman&version=8.1
+```bash
+# get JWT (this api should be use superuser)
+curl -X POST http://127.0.0.1/api/token/ -d "username=<su username>&password=<your-password>"
+# Shutdown branch api
+curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=8.1 -H "Authorization: JWT <your-token>"
+```
+- Fixed bug : Schedule task not run when branchs is shutdown time same. Casue by the init_branch_reset() function is remove all schedule task first.
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>

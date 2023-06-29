@@ -100,11 +100,8 @@
                     {% endif %}
                     <form action="" method="POST">
                         {% csrf_token %}
-                        <td style="border: 0;background-color:var(--color-bg)"><button type="submit" name="forcelogout" value="{{ counter.id }}"  class="btn btn--main">Logout</button></td>
-                    </form>                    
-                    <!-- <td style="border: 0;background-color:var(--color-bg)"><a class="btn btn--main" href="">Logout</a></td>            -->
-                    <!-- <td style="border: 0;background-color:var(--color-bg)"><a class="btn btn--main" href="{% url 'softkeylogin' branch.id %}">Select</a></td>         -->
-                    
+                        <td style="border: 0;background-color:var(--color-bg)"><a class="btn btn--main" href="{% url 'forcelogout' branch.id counter.id %}">Logout</a></td>
+                    </form>
                 </tr>
                 {% endfor %}
                 {% endfor %}

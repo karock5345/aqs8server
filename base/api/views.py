@@ -10,17 +10,16 @@ from django.contrib.auth.models import User, Group
 from django.db.models import Q
 import pytz
 from dateutil import tz
-
-# from base.models import UserProfile, TicketFormat, Branch
-# from django.db import models
-
 from base.models import APILog, Branch, Setting, TicketFormat, Ticket, TicketRoute, TicketData, TicketLog, UserProfile, lcounterstatus
 from .serializers import branchSerivalizer, ticketlistSerivalizer
+
 
 token_api = 'WrE-1t7IdrU2iB3a0e'
 # if the counter keep active > 6 minutes then auto logout and the counter replace the new user
 counteractive = 1
 
+
+    
 def checkuser(apiuser, branch, rx_username):
     # check user group is api
     isAPIuser = False

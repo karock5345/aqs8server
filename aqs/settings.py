@@ -13,7 +13,7 @@ from pathlib import Path
 from django.contrib.messages import constants as messages
 from datetime import timedelta
 
-aqs_version = '8.1.0'
+aqs_version = '8.1.2'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

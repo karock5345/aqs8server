@@ -718,6 +718,19 @@ def funCounterLogout(counterstatus, datetime_now):
         msg =  dict({'msg':logoutOK})  
     return status, msg
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber, countertype):
     status = dict({})
     msg = dict({})
@@ -772,7 +785,7 @@ def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber,
                 counterstatus.save()
                 status = dict({'status': 'OK'})
                 msg =  dict({'msg':'Welcome back'})  
-
+                # print ('CounterStatus:' + counterstatus.status)
                 if counterstatus.tickettemp != None:
                     ttype = counterstatus.tickettemp.tickettype
                     tno = counterstatus.tickettemp.ticketnumber
