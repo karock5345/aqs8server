@@ -109,7 +109,7 @@ def getDisplay5(request):
     if status == dict({}) :
 
         servertime = dict({'servertime': datetime_now})
-        scrollingtext = dict({'scrollingtext' : countertype.displayscrollingtext})
+        scrollingtext = dict({'scroll' : countertype.displayscrollingtext})
 
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
         serializers = displaylistSerivalizer(displaylist, many=True)
