@@ -43,6 +43,58 @@ except:
 
 context_login = {}
 
+@allowed_users(allowed_roles=['admin', 'report'])
+@unauth_user
+def SuperVisor_ForceLogoutView(request, pk, csid):
+    context = {}
+    datetime_now =timezone.now()
+    username = ''
+    try:
+        cs = CounterStatus.objects.get(id=csid)
+        datetime_now_local = funUTCtoLocal(datetime_now, cs.countertype.branch.timezone)
+        str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
+    except:
+        messages.error(request, 'Counter Status not found.')
+        return redirect('supervisor', pk=pk)
+    # check counterstatus is loged in and user is not None
+    if cs.loged == True and cs.user != None:       
+        username = cs.user.first_name + ' ' + cs.user.last_name + ' (' + cs.user.username + ')'
+    else:
+        messages.error(request, 'No user login on this counter number ' + cs.counternumber + '.')
+        return redirect('supervisor', pk=pk)
+    
+    context = {'confirm_obj':cs, 'confirm_text':'Could you please confirm to force logout ' + username + '?'}
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        if action == 'confirm':           
+            result = ForceLogout(cs, datetime_now)
+            if result == 'OK':
+                # websocket to web softkey for update counter status
+                wscounterstatus(cs)
+                messages.success(request, 'User ' + username + ' has been force logout.')
+            else:
+                messages.error(request, result)
+            return redirect('supervisor', pk=pk)
+    return render(request , 'base/confirm.html', context)
+    
+def ForceLogout(cs, datetime_now):
+    # update counter login log
+    # update user status log
+    result = logcounterlogout(cs.user, cs.countertype, cs.counternumber, cs.logintime, datetime_now)
+
+    if result == 'OK':
+        # update counterstatus
+        cs.loged = False
+        cs.user = None
+        cs.status = lcounterstatus[lcounterstatus.index('waiting')]
+        cs.tickettemp = None
+        cs.save()
+
+        # send websocket to counterstatus
+        wscounterstatus(cs)
+    return result
+
+
 @unauth_user
 def Softkey_VoidView(request, pk, ttid):
     context = {}

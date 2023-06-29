@@ -10,10 +10,6 @@ from django.contrib.auth.models import User, Group
 from django.db.models import Q
 import pytz
 from dateutil import tz
-
-# from base.models import UserProfile, TicketFormat, Branch
-# from django.db import models
-
 from base.models import APILog, Branch, Setting, TicketFormat, Ticket, TicketRoute, TicketData, TicketLog, UserProfile, lcounterstatus
 from .serializers import branchSerivalizer, ticketlistSerivalizer
 

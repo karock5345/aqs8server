@@ -718,6 +718,19 @@ def funCounterLogout(counterstatus, datetime_now):
         msg =  dict({'msg':logoutOK})  
     return status, msg
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber, countertype):
     status = dict({})
     msg = dict({})

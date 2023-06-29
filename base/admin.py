@@ -62,8 +62,8 @@ class TicketLogView(admin.ModelAdmin):
 
 
 class TicketDataView(admin.ModelAdmin):
-    ordering = ('branch', 'countertype','ticket',   )
-    list_display =('branch', 'countertype','ticket',   )
+    ordering = ('branch', 'countertype','ticket', 'starttime' )
+    list_display =('branch', 'countertype','ticket', 'tickettemp', 'starttime'  )
 
 
 

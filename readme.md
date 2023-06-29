@@ -47,27 +47,38 @@
 ### <span style="color:orange;">**Version 8.1.1 for PCCW 2023**</span>
 - New Ticket Format, Ticket Type should be 2 letters and should be uppercase
 - User group 'frontline' 'support' 'admin' 'manager' for PCCW 2023 
+### <span style="color:orange;">**Version 8.1.1**</span>
+- Fixed bug : Counter can not logout and Counter status is not correct (waiting) in Call Centre mode when reset branch, if counter still login then.
+### <span style="color:orange;">**Version 8.1.2**</span>
+- Add 'force logout' function for supervise.html
+- New API for shutdown branch and run INIT_SCH : /sch/shutdown/?bcode=KB&app=postman&version=8.1
+```bash
+# get JWT (this api should be use superuser)
+curl -X POST http://127.0.0.1/api/token/ -d "username=<su username>&password=<your-password>"
+# Shutdown branch api
+curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=8.1 -H "Authorization: JWT <your-token>"
+```
+- Fixed bug : Schedule task not run when branchs is shutdown time same. Casue by the init_branch_reset() function is remove all schedule task first.
+
 
 # For Project PCCW 2023
-- Linux main server (DELL 13th i5) IP : 192.168.1.190
-- Linux server su: ubuntu /// asdf (password will be changed)
+## Main Server (WTT)
+- Linux main server (DELL 13th i5) 
+- IP : 10.95.157.237
+- Sub mask : /24 (255.255.255.0)
+- Gateway : 10.95.157.254
+- DNS : 10.2.202.1, 10.3.220.160
+- Linux server su: ubuntu /// wert2206EDC5345 (change password cmd:passwd)
+- Django SU : supertim /// YtZqEIpk5345 ,  admin : pccwadmin /// YEjLZBYGF4
 - Network enp0s31f6
-- Change Server IP :
+- Change Server IP CMD:
 ```
 # Config server IP
 sudo nano /etc/netplan/00-installer-config.yaml
 # Nginx
 sudo nano /etc/nginx/sites-available/aqs8server
 ```
-- Django SU : supertim /// YtZqEIpk5345 ,  admin : pccwadmin /// YEjLZBYGF4
-- Linux backup server (DELL 12th i3) IP : 192.168.1.
-- Linux server su: ubuntu /// asdf (password will be changed cmd:passwd)
-- Network 
-- Linux DB server (DELL 12th i3) IP : 192.168.1.173
-- Linux server su: ubuntu /// asdf (password will be changed cmd:passwd)
-- Network enp1s0
-
-### Change Django settings.py for DB server IP was changed
+- Change Django settings.py for DB server IP was changed
 
 ```bash
 sudo nano ~/aqs8server/aqs/settings.py
@@ -79,12 +90,28 @@ DATABASES = {
         'NAME': 'aqsdb8',
         'USER': 'aqsdbuser',
         'PASSWORD': 'dbpassword-Dlcg1dwMOXSKIAIM',
-        'HOST': '192.168.1.173',
+        'HOST': '10.95.157.236',
         'PORT': '5432',
     }
 }
 ```
-### Change DB server IP
+## Backup server
+
+- Linux backup server (DELL 12th i3) IP : 10.95.157.237
+- Linux server su: ubuntu /// wert2206EDC5345
+- Network 
+
+
+## DB server
+- Linux DB server (DELL 12th i3) 
+- IP : 10.95.157.236
+- Sub mask : /24 (255.255.255.0)
+- Gateway : 10.95.160.254
+- DNS : 10.2.202.1, 10.3.220.160
+- Linux server su: ubuntu /// wert2206EDC5345 
+- Network enp1s0
+
+- Change DB server IP
 ```
 # Config DB server IP
 sudo nano /etc/netplan/00-installer-config.yaml
@@ -92,8 +119,57 @@ sudo nano /etc/netplan/00-installer-config.yaml
 sudo find / -name pg_hba.conf
 sudo nano /path/to/pg_hba.conf
 # edit:
-host    aqsdb8    aqsdbuser    <newIP>/32    md5
+host    aqsdb8    aqsdbuser    10.95.157.237/32    md5
 ```
+## TV PC (Ubuntu 22)
+
+- Linux SU : ts /// asdf
+- Sheung Wan (WTT)
+- IP : TV1 10.95.157.233, TV2 10.95.157.234, TV3 10.95.157.235
+- Sha Tin (SCP)
+- IP : TV1 10.95.160.233, TV2 10.95.160.234, TV3 (reserve) 10.95.160.235
+- TST (HHT)
+- IP : TV1
+
+## Touch PC (Windows 10)
+- Sheung Wan (WTT)
+- IP : 10.95.157.231
+- Sha Tin (SCP)
+- IP : 10.95.157.232
+- TST (HHT)
+- IP :
+
+## Control Box Server (Ubuntu 22)
+- Linux SU : ubuntu /// asdf
+- Sheung Wan (WTT)
+- IP : 10.95.157.232
+- Flash ID:
+```
+ID      Counter#
+1       1
+2       2
+3       3
+...
+...
+...
+10      10
+```
+
+- Sha Tin (SCP)
+- IP : 10.95.160.236
+- Flash ID:
+```
+ID      Counter#
+2       1
+3       2
+4       3
+5       4
+6       5
+7       A (6)
+9       B (8)
+```
+- TST (HHT)
+- IP :
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>

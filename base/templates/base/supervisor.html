@@ -73,10 +73,11 @@
                     <tr>
                         <th>Counter Type</th>
                         <th>Number</th>
-                        <th>Enabled</th>                        
+                        <!-- <th>Enabled</th>                         -->
                         <th>Status</th>
                         <th>Ticket</th>
-                        <th>Staff</th>                        
+                        <th>Staff</th>
+                        <th>Force</th>                  
                     </tr>
                 </thead>
                 <tbody>
@@ -85,7 +86,7 @@
                 <tr>
                     <td>{{ counter.countertype.lang1 }}</td>                   
                     <td>{{ counter.counternumber }}</td>
-                    <td>{{ counter.enabled }}</td>                    
+                    <!-- <td>{{ counter.enabled }}</td>                     -->
                     <td>{{ counter.status }}</td>
                     {% if counter.tickettemp == None %}
                         <td>---</td>
@@ -96,8 +97,11 @@
                         <td>---</td>
                     {% else %}
                         <td>{{ counter.user }}</td>
-                    {% endif %}                    
-                    
+                    {% endif %}
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <td style="border: 0;background-color:var(--color-bg)"><a class="btn btn--main" href="{% url 'forcelogout' branch.id counter.id %}">Logout</a></td>
+                    </form>
                 </tr>
                 {% endfor %}
                 {% endfor %}
