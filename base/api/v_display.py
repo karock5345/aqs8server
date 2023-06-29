@@ -30,7 +30,97 @@ displaylist_x_mins = 3
        
   
     
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getDisplay5(request):
+
+    status = dict({})
+    msg = dict({})
+    context = dict({})
+
+    # rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
+    # rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
+    # rx_token = request.GET.get('token') if request.GET.get('token') != None else ''
+    rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
+    rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
+    rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
+    rx_countername = request.GET.get('countername') if request.GET.get('countername') != None else ''
+
+
+
+    #datetime_now = datetime.utcnow()
+    datetime_now =timezone.now()
+
+   
+    # check input
+    branch = None
+    if status == dict({}) :
+        if rx_bcode == '' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'No branch code'})
+        else :
+            # check branch        
+            branchobj = Branch.objects.filter( Q(bcode=rx_bcode) )
+            if branchobj.count() != 1:
+                # branch not found
+                status = dict({'status': 'Error'})
+                msg =  dict({'msg':'Branch not found'})   
+            else:
+                branch = branchobj[0]        
+
+    if status == dict({}) :
+        if branch.displayenabled == False :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Display function disabled'})
+
+    if status == dict({}) :
+        if rx_countername == '' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'No counter name'})  
+
+    if status == dict({}) :
+        # get the Counter type
+        ctypeobj = CounterType.objects.filter( Q(branch=branch) & Q(name=rx_countername) )
+        if not(ctypeobj.count() > 0) :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Counter Type not found'}) 
+        else:
+            countertype = ctypeobj[0]
+
+    # Save Api Log
+    if setting_APIlogEnabled(branch) == True :
+        APILog.objects.create(
+            logtime=datetime_now,
+            requeststr = request.build_absolute_uri() ,
+            ip = visitor_ip_address(request),
+            app = rx_app,
+            version = rx_version,
+            logtext = 'API call : Display API',
+        )
+
+
+    # check user
+    if status == dict({}) :
+        error, user = checkuser(request.user, branch, '')
+        if error !='OK' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':error})   
+
+    if status == dict({}) :
+
+        servertime = dict({'servertime': datetime_now})
+        scrollingtext = dict({'scrollingtext' : countertype.displayscrollingtext})
+
+        displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
+        serializers = displaylistSerivalizer(displaylist, many=True)
+
+        context = dict({'ticketlist':serializers.data})
+        context = servertime | scrollingtext | context
+        status = dict({'status': 'OK'})
+
     
+    output = status | msg | context
+    return Response(output)    
 
 def newdisplayvoice(branch, countertype, counternumber, tickettemp, displaytime, user):
     # find number of waiting

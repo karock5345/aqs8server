@@ -29,7 +29,8 @@ urlpatterns = [
 
     path('display/', v_display.getDisplay), 
     path('displaywait/', v_display.getWaiting), 
-    path('displaylast/', v_display.getLastDisplay), 
+    path('displaylast/', v_display.getLastDisplay),
+    path('display5/', v_display.getDisplay5), 
 
     path('voice/', v_display.getVoice), 
 
