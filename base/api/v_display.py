@@ -29,7 +29,7 @@ displaylist_x_mins = 3
 #     )
        
   
-    
+# http://127.0.0.1:8000/api/display5/?app=web&version=8&branchcode=KB&countername=Reception
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def getDisplay5(request):
@@ -126,15 +126,40 @@ def newdisplayvoice(branch, countertype, counternumber, tickettemp, displaytime,
     # find number of waiting
     # ticketobj = TicketTemp.objects.filter(Q(branch=branch) & Q(tickettype=tickettemp.tickettype) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False))    
     
+    # # for recall a ticket , check if the ticket is in the DisplayAndVoice
+    # dvobj = DisplayAndVoice.objects.filter(Q(tickettemp=tickettemp))
+    # print (str(dvobj.count()))
+    # if dvobj.count() == 0 :
+    #     DisplayAndVoice.objects.create(
+    #         branch = branch,
+    #         countertype = countertype,
+    #         counternumber = counternumber,
+    #         tickettemp = tickettemp,
+    #         displaytime = displaytime,
+    #         user = user,
+    #         flashtime = branch.displayflashtime,
+    #     )
+    # elif dvobj.count() >= 1 :
+    #     dvobj.delete()
+    #     print (str(dvobj.count()))
+    #     DisplayAndVoice.objects.create(
+    #         branch = branch,
+    #         countertype = countertype,
+    #         counternumber = counternumber,
+    #         tickettemp = tickettemp,
+    #         displaytime = displaytime,
+    #         user = user,
+    #         flashtime = branch.displayflashtime,
+    #     )
     DisplayAndVoice.objects.create(
-        branch = branch,
-        countertype = countertype,
-        counternumber = counternumber,
-        tickettemp = tickettemp,
-        displaytime = displaytime,
-        user = user,
-        flashtime = branch.displayflashtime,
-    )
+                branch = branch,
+                countertype = countertype,
+                counternumber = counternumber,
+                tickettemp = tickettemp,
+                displaytime = displaytime,
+                user = user,
+                flashtime = branch.displayflashtime,
+            )
 
     tr_obj = TicketRoute.objects.filter(branch=branch, tickettype=tickettemp.tickettype, countertype=countertype)
     if tr_obj.count() == 1 :

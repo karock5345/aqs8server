@@ -16,6 +16,8 @@ wsHypertext = 'ws://'
 logger = logging.getLogger(__name__)
 
 
+
+
 def wssendflashlight(branch, countertype, counterstatus, cmd):
     # {"cmd":"light",
     #  "data":
@@ -546,7 +548,60 @@ def wssendql(bcode, countertypename, ticket, cmd):
         logger.error('WS send queue list Error:' & error)
 
     
+# ws to Display Panel cmd call / recall a ticket
+def wssenddispcall(branch, counterstatus, countertype, ticket):
+    str_now = '--:--'
+    datetime_now =timezone.now()
+    datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+    str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
 
+    jticket = {
+        "ticket" : {
+            "tickettype": ticket.tickettype,
+            "ticketnumber": ticket.ticketnumber,
+            "tickettime": ticket.tickettime.strftime('%Y-%m-%dT%H:%M:%S.%fZ'),
+            "displaytime": datetime_now,
+            "counternumber": counterstatus.counternumber,
+            "wait": ticket.ticketroute.waiting,
+            "flashtime": branch.flashlighttime,
+            "ct_lang1": countertype.lang1,
+            "ct_lang2": countertype.lang2,
+            "ct_lang3": countertype.lang3,
+            "ct_lang4": countertype.lang4,
+            "t_lang1": ticket.ticketformat.lang1,
+            "t_lang2": ticket.ticketformat.lang2,
+            "t_lang3": ticket.ticketformat.lang3,
+            "t_lang4": ticket.ticketformat.lang4,
+        }
+    }
+
+    jsontx = {
+        "cmd":"call",
+        "data": {
+            "servertime": str_now,
+            "scroll": countertype.displayscrollingtext,
+            "ticket": jticket,
+            }
+        }
+    str_tx = json.dumps(jsontx)        
+    # str_tx = str_tx.replace('"<ticketlist>"', json.dumps(wdserializers.data))
+
+    context = {
+    'type':'broadcast_message',
+    'tx':str_tx
+    }
+    channel_layer = get_channel_layer()
+    channel_group_name = 'disp_' + branch.bcode + '_' + countertype.name
+    logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+    try:
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        logger.info('...Done')
+    except:
+        logger.error('...ERROR:Redis Server is down!')
+    pass
+# ws to Display Panel cmd remove a ticket
+# ws to Display Panel cmd clear all ticket
+# ws to Display Panel cmd number of queue by TicketType 
 
 def wssendwebtv(bcode, countertypename):
     context = None
@@ -579,8 +634,8 @@ def wssendwebtv(bcode, countertypename):
     if error == '' : 
 
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
-        for display in displaylist:
-            logger.warning('display:' + str(display.tickettemp))
+        # for display in displaylist:
+        #     logger.warning('display:' + str(display.tickettemp))
         wdserializers = displaylistSerivalizer(displaylist, many=True)
         jsontx = {
             "cmd":"list5",

@@ -59,7 +59,7 @@ curl -X POST http://127.0.0.1/api/token/ -d "username=<su username>&password=<yo
 curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=8.1 -H "Authorization: JWT <your-token>"
 ```
 - Fixed bug : Schedule task not run when branchs is shutdown time same. Casue by the init_branch_reset() function is remove all schedule task first.
-
+- New API for Display Panel get latest 5 tickets 
 
 # For Project PCCW 2023
 ## Main Server (WTT)
