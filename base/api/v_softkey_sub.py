@@ -2,7 +2,7 @@ from django.db.models import Q
 from .views import counteractive
 from .v_display import newdisplayvoice
 from base.models import CounterStatus, CounterType, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus, UserStatusLog
-from base.ws import wssendwebtv, wssendql, wsSendTicketStatus, wssendvoice, wscounterstatus, wssendflashlight
+from base.ws import *
 import logging
 
 logger = logging.getLogger(__name__)
@@ -224,6 +224,8 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
 
                 # websocket to web tv
                 wssendwebtv(branch.bcode ,countertype.name)
+                # websocket to Display Panel display ticket
+                wssenddispcall(branch,counterstatus, countertype, ticket)
                 # websocket to softkey (update Queue List)
                 wssendql(branch.bcode, countertype.name, ticket, 'del')
                 # websocket to web my ticket
@@ -538,6 +540,8 @@ def funCounterRecall(user, branch, countertype, counterstatus, logtext, rx_app, 
         newdisplayvoice(branch, countertype, counterstatus.counternumber, ticket, datetime_now, user)
         # websocket to web tv
         wssendwebtv(branch.bcode, countertype.name)
+        # websocket to Display Panel display ticket
+        wssenddispcall(branch, counterstatus, countertype, ticket)
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
         wssendflashlight(branch, countertype, counterstatus, 'flash')

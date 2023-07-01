@@ -23,11 +23,10 @@ def wssenddispcall(branch, counterstatus, countertype, ticket):
     str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
 
     jticket = {
-        "ticket" : {
             "tickettype": ticket.tickettype,
             "ticketnumber": ticket.ticketnumber,
             "tickettime": ticket.tickettime.strftime('%Y-%m-%dT%H:%M:%S.%fZ'),
-            "displaytime": datetime_now,
+            "displaytime": datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ'),
             "counternumber": counterstatus.counternumber,
             "wait": ticket.ticketroute.waiting,
             "flashtime": branch.flashlighttime,
@@ -35,11 +34,10 @@ def wssenddispcall(branch, counterstatus, countertype, ticket):
             "ct_lang2": countertype.lang2,
             "ct_lang3": countertype.lang3,
             "ct_lang4": countertype.lang4,
-            "t_lang1": ticket.ticketformat.lang1,
-            "t_lang2": ticket.ticketformat.lang2,
-            "t_lang3": ticket.ticketformat.lang3,
-            "t_lang4": ticket.ticketformat.lang4,
-        }
+            "t_lang1": ticket.ticketformat.touchkey_lang1,
+            "t_lang2": ticket.ticketformat.touchkey_lang2,
+            "t_lang3": ticket.ticketformat.touchkey_lang3,
+            "t_lang4": ticket.ticketformat.touchkey_lang4,
     }
 
     jsontx = {
