@@ -379,7 +379,7 @@ class DisplayAndVoice(models.Model):
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True) 
     counternumber = models.CharField(max_length=200, null=True)
     tickettemp = models.ForeignKey(TicketTemp, on_delete=models.SET_NULL, blank=True, null=True)
-    flashtime = models.CharField(max_length=200, null=True)
+    flashtime = models.IntegerField(null=True, blank=True, default=3)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
     displaytime = models.DateTimeField(null=True, blank=True)     
     
