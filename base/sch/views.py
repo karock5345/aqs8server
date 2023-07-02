@@ -9,7 +9,7 @@ import pytz
 from django.utils import timezone
 from apscheduler.schedulers.background import BackgroundScheduler
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, funLocaltoUTC, funLocaltoUTCtime, funUTCtoLocaltime
-from base.ws import wssendwebtv, wscounterstatus
+from base.ws import wssendwebtv, wscounterstatus, wssenddispremoveall
 import logging
 from .decorators import superuser_required
 import time
@@ -275,7 +275,7 @@ def job_shutdown(branch):
     ctobj = CounterType.objects.filter(Q(branch=branch))
     for countertype in ctobj:
         wssendwebtv(bcode,countertype.name)
-
+        wssenddispremoveall(branch, countertype)
 
     # counterstatus all reset to 'waiting'
     csobj = CounterStatus.objects.all()

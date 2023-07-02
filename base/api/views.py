@@ -99,17 +99,16 @@ def checkuser(apiuser, branch, rx_username):
 
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
 def getRoutes(request):
     # check request user group is api
-    user = request.user
-    isAPIuser = False
-    for group in user.groups.all():
-        if group.name == 'api':
-            isAPIuser = True
-            exit
-    if isAPIuser == False:
-        return Response('User group is not allow to call API')
+    # user = request.user
+    # isAPIuser = False
+    # for group in user.groups.all():
+    #     if group.name == 'api':
+    #         isAPIuser = True
+    #         exit
+    # if isAPIuser == False:
+    #     return Response('User group is not allow to call API')
     
     if setting_APIlogEnabled(None) == True :
         app = request.GET.get('app') if request.GET.get('app') != None else ''

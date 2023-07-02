@@ -693,7 +693,9 @@ def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, co
         wssendflashlight(branch, countertype, counterstatus, 'flash')
         # websocket to web softkey for update counter status
         wscounterstatus(counterstatus)
-
+        # websocket to web tv
+        wssendwebtv(branch.bcode, countertype.name)
+        
         context = {'tickettype': ticket.tickettype, 
                    'ticketnumber': ticket.ticketnumber , 
                    'tickettime': ticket.tickettime}
@@ -896,6 +898,8 @@ def funVoid(user, tickett, td, datetime_now):
     wssendql(tickett.branch.bcode , tickett.countertype.name, tickett, 'del')
     # websocket to web tv
     wssendwebtv(tickett.branch.bcode, tickett.countertype.name)
+    # websocket to Display Panel waiting number update
+    wssenddispwait(tickett.branch, tickett.countertype, tickett)
     # websocket to web my ticket
     wsSendTicketStatus(tickett.branch.bcode, tickett.tickettype, tickett.ticketnumber, tickett.securitycode)
 

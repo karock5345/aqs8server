@@ -66,8 +66,70 @@ def wssenddispcall(branch, counterstatus, countertype, ticket):
     pass
 # ws to Display Panel cmd remove a ticket
 # ws to Display Panel cmd clear all ticket
-# ws to Display Panel cmd number of queue by TicketType 
+def wssenddispremoveall(branch,  countertype):
+    str_now = '--:--'
+    datetime_now =timezone.now()
+    datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+    str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
 
+
+    jsontx = {
+        "cmd":"removeall",
+        "data": {
+            "servertime": str_now,
+            }
+        }
+    str_tx = json.dumps(jsontx)        
+    # str_tx = str_tx.replace('"<ticketlist>"', json.dumps(wdserializers.data))
+
+    context = {
+    'type':'broadcast_message',
+    'tx':str_tx
+    }
+    channel_layer = get_channel_layer()
+    channel_group_name = 'disp_' + branch.bcode + '_' + countertype.name
+    logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+    try:
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        logger.info('...Done')
+    except:
+        logger.error('...ERROR:Redis Server is down!')
+    pass
+# ws to Display Panel cmd waiting number of queue by TicketType 
+def wssenddispwait(branch,  countertype, ticket):
+    str_now = '--:--'
+    datetime_now =timezone.now()
+    datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+    str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
+
+    jwait = {
+            "tickettype": ticket.tickettype,
+            "wait": ticket.ticketroute.waiting,
+    }
+
+    jsontx = {
+        "cmd":"wait",
+        "data": {
+            "servertime": str_now,
+            "waitdata": jwait,
+            }
+        }
+    str_tx = json.dumps(jsontx)        
+    # str_tx = str_tx.replace('"<ticketlist>"', json.dumps(wdserializers.data))
+
+    context = {
+    'type':'broadcast_message',
+    'tx':str_tx
+    }
+    channel_layer = get_channel_layer()
+    channel_group_name = 'disp_' + branch.bcode + '_' + countertype.name
+    logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+    try:
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        logger.info('...Done')
+    except:
+        logger.error('...ERROR:Redis Server is down!')
+    pass
 
 def wssendflashlight(branch, countertype, counterstatus, cmd):
     # {"cmd":"light",

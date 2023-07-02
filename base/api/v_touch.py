@@ -8,7 +8,7 @@ from base.models import APILog, Branch, TicketFormat, Ticket, TicketTemp
 from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus
 from .views import setting_APIlogEnabled, visitor_ip_address, funUTCtoLocal, checkuser
 from .v_roche import rocheSMS
-from base.ws import wssendwebtv, wssendql, wsSendPrintTicket
+from base.ws import wssendwebtv, wssendql, wsSendPrintTicket, wssenddispwait
 import random
 from .v_softkey_sub import cc_autocall
 from .serializers import touchkeysSerivalizer
@@ -171,6 +171,8 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
             )
 
         wssendwebtv(branch.bcode, countertype.name)
+        # websocket to display panel for waiting ticket
+        wssenddispwait(branch, countertype, ticket)
         wssendql(branch.bcode, countertype.name,tickettemp,'add')
         wsSendPrintTicket(branch.bcode, ttype, ticketno_str, datetime_now, tickettext, pno)
         rocheSMS(branch, tickettemp)
