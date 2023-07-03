@@ -60,7 +60,8 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 ```
 - Fixed bug : Schedule task not run when branchs is shutdown time same. Casue by the init_branch_reset() function is remove all schedule task first.
 - New API for Display Panel get latest 5 tickets 
-- Websocket disp_ for Display Panel replace from webtv_, websocket webtv_ only for HTML online ticket number 
+- Websocket disp_ for Display Panel replace from webtv_, websocket webtv_ only for HTML online ticket number
+- Websocket disp_ new commands: call, removeall, wait
 
 # For Project PCCW 2023
 ## Main Server (WTT)
