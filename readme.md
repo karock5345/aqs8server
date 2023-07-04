@@ -273,11 +273,42 @@ sudo reboot
 ```
 ## Auto power off script (for Linux server)
 ```bash
-sudo nano /etc/rc.local
+cd /etc/systemd/system/
+sudo nano autorun.service
 ```
 - add line:
+```
+[Unit]
+Description=Autorun
+After=network.target
+
+[Service]
+ExecStart=/bin/bash /home/ubuntu/autorun.sh
+
+[Install]
+WantedBy=default.target
+```
+- Save and exit
+
+```bash
+sudo systemctl enable autorun.service
+```
+
+```
+nano /home/ubuntu/autorun.sh
+```
+
 ```nano
-shutdown -h 23:55
+# Auto shutdown at 00:30
+shutdown -h 00:30
+# add some script for auto run Control box program
+sudo chmod 666 /dev/ttyS0
+cd /home/ubuntu/cb
+./cb
+```
+
+```
+chmod +x /home/ubuntu/autorun.sh
 ```
 - Save and exit
 
