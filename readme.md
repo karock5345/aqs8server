@@ -1,4 +1,107 @@
 # AQS version 8 For PCCW 2023
+
+
+## Upgrade Server v8.1.2 (Phase 1)
+- Support new Display Panel
+- New 'Force Logout' function for Supervise
+- New API for shutdown branch and run INIT_SCH
+- New API for Display Panel get latest 5 tickets
+- Fixed bug : Schedule task not run when branchs is shutdown time same. Casue by the init_branch_reset() function is remove all schedule task first.
+
+### Check the server auto shutdown?
+```
+# See log of my Linux system shutdown
+last -x shutdown
+```
+## Auto power off script (for Linux server)
+```bash
+cd /etc/systemd/system/
+sudo nano autorun.service
+```
+- add line:
+```
+[Unit]
+Description=Autorun
+After=network.target
+
+[Service]
+ExecStart=/bin/bash /home/ts/autorun.sh
+
+[Install]
+WantedBy=default.target
+```
+- Save and exit
+
+```bash
+sudo systemctl enable autorun.service
+```
+
+```
+nano /home/ts/autorun.sh
+```
+
+```nano
+# Auto shutdown at 00:30
+shutdown -h 00:30
+# Reboot at 00:00
+shutdown -r 00:00
+```
+## Wrong Auto power off script (for Linux server)
+```bash
+sudo nano /etc/rc.local
+```
+- add line:
+```nano
+shutdown -h 23:55
+```
+- Save and exit
+
+
+## Upgrade Server v8.1.2
+```bash
+# Backup settings.py
+cp ~/aqs8server/aqs/settings.py ~/
+# Backup previous version
+cp -r ~/aqs8server/ ~/aqs8server.bak/
+# Remove previous version
+rm -r ~/aqs8server/
+
+# mount USB drive
+# find out your usb drive my case is sdb1
+lsblk
+sudo mkdir /mnt/usb
+sudo mount /dev/sdb /mnt/usb
+cd /mnt/usb
+sudo cp aqs8server /home/ubuntu/aqs8server/ -r
+sudo umount /mnt/usb
+
+cd ~/aqs8server
+virtualenv env
+source env/bin/activate
+sudo nano requirements.txt
+# [del line :] twisted-iocpsupport=x.x.x
+
+pip install -r requirements.txt
+pip install gunicorn psycopg2
+pip install daphne
+
+cp ~/settings.py ~/aqs8server/aqs/
+
+rm ./readme.md
+
+python3 manage.py collectstatic
+sudo gpasswd -a www-data ubuntu
+sudo chmod g+x /home/ubuntu && chmod g+x /home/ubuntu/aqs8server/ && chmod g+x /home/ubuntu/aqs8server/static_deploy
+
+# DB is modified, so need to migrate
+python manage.py makemigrations
+python manage.py migrate
+
+sudo nginx -s reload
+sudo reboot
+
+```
+
 ### <span style="color:orange;">**Version 8.0.0**</span>
 - First Django version for Queuing Server
 ### <span style="color:orange;">**Version 8.0.1**</span>
@@ -62,6 +165,8 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 - New API for Display Panel get latest 5 tickets 
 - Websocket disp_ for Display Panel replace from webtv_, websocket webtv_ only for HTML online ticket number
 - Websocket disp_ new commands: call, removeall, wait
+
+
 
 # For Project PCCW 2023
 ## Main Server (WTT)
