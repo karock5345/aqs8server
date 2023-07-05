@@ -73,6 +73,8 @@ sudo mkdir /mnt/usb
 sudo mount /dev/sdb /mnt/usb
 cd /mnt/usb
 sudo cp aqs8server /home/ubuntu/aqs8server/ -r
+# change owner
+sudo chown ubuntu ~/aqs8server -R
 sudo umount /mnt/usb
 
 cd ~/aqs8server
@@ -80,10 +82,17 @@ virtualenv env
 source env/bin/activate
 sudo nano requirements.txt
 # [del line :] twisted-iocpsupport=x.x.x
-
-pip install -r requirements.txt
-pip install gunicorn psycopg2
-pip install daphne
+```
+# PCCW is no internet access
+~~pip install -r requirements.txt~~
+~~pip install gunicorn psycopg2~~
+~~pip install daphne~~
+```
+# copy backup env to new version folder
+cp ~/aqs8server.bak/env/ ~/aqs8server/env/
+# test env
+cd ~/aqs8server
+source ./env/bin/activate
 
 cp ~/settings.py ~/aqs8server/aqs/
 
