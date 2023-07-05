@@ -77,13 +77,18 @@ sudo cp aqs8server /home/ubuntu/aqs8server/ -r
 sudo chown ubuntu ~/aqs8server -R
 sudo umount /mnt/usb
 
-cd ~/aqs8server
-virtualenv env
-source env/bin/activate
-sudo nano requirements.txt
-# [del line :] twisted-iocpsupport=x.x.x
+
 ```
 ## PCCW is no internet access
+~~cd ~/aqs8server~~
+
+~~virtualenv env~~
+
+~~source env/bin/activate~~
+
+~~sudo nano requirements.txt~~
+
+~~# [del line :] twisted-iocpsupport=x.x.x~~
 
 ~~pip install -r requirements.txt~~
 
