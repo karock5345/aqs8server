@@ -11,7 +11,7 @@ from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus
 from .serializers import printerstatusSerivalizer, ticketlistSerivalizer
 from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal
 from .v_roche import rocheSMS
-from base.ws import wssendwebtv, wssendql, wssendprinterstatus, wsSendPrintTicket
+from base.ws import wssendwebtv, wssendql, wssendprinterstatus, wsSendPrintTicket, wssendwebtvwait
 import random
 from django.contrib.auth.models import User, Group
 from asgiref.sync import async_to_sync
@@ -181,6 +181,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
         wssendwebtv(branch.bcode, countertype.name)
         wssendql(branch.bcode, countertype.name,tickettemp,'add')
         wsSendPrintTicket(branch.bcode, ttype, ticketno_str, datetime_now, tickettext, pno)
+        wssendwebtvwait(branch.bcode, countertype.name)
         rocheSMS(branch, tickettemp)
 
 

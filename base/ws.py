@@ -7,12 +7,75 @@ from django.utils import timezone
 from django.db.models import Q
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, counteractive
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, PrinterStatus, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
-from base.api.serializers import displaylistSerivalizer, printerstatusSerivalizer
+from base.api.serializers import displaylistSerivalizer, printerstatusSerivalizer, waitinglistSerivalizer
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 import asyncio
 
 wsHypertext = 'ws://'
+
+
+def wssendwebtvwait(bcode, countertypename):
+    context = None
+    error = ''
+    str_now = '---'
+
+    branch = None
+    if error == '' :        
+        branchobj = Branch.objects.filter( Q(bcode=bcode) )
+        if branchobj.count() == 1:
+            branch = branchobj[0]
+            datetime_now = timezone.now()
+            datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+            str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
+        else :
+            error = 'Branch not found.'
+
+    # get the Counter type
+    countertype = None
+    if error == '' :    
+        if countertypename == '' :
+            ctypeobj = CounterType.objects.filter( Q(branch=branch) )
+        else:
+            ctypeobj = CounterType.objects.filter( Q(branch=branch) & Q(name=countertypename) )
+        if (ctypeobj.count() > 0) :
+            countertype = ctypeobj[0]
+        else :
+            error = 'Counter Type not found.' 
+
+    if error == '' : 
+
+        waitlist = TicketTemp.objects.filter (branch=branch, countertype=countertype, status='waiting', locked=False).order_by('tickettime')[:5]
+            
+        wdserializers = waitinglistSerivalizer(waitlist, many=True)
+        jsontx = {
+            "cmd":"waitlist",
+            "data": {
+                "lastupdate": str_now,
+                "waitlist": "<ticketlist>",
+                }
+            }
+        str_tx = json.dumps(jsontx)
+        # print(str_tx)             
+        str_tx = str_tx.replace('"<ticketlist>"', json.dumps(wdserializers.data))
+        # print(str_tx)
+
+        context = {
+        'type':'broadcast_message',
+        'tx':str_tx
+        }
+        channel_layer = get_channel_layer()
+        channel_group_name = 'webtv_' + bcode + '_' + countertypename
+        print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        try:
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            print('...Done')
+        except:
+            print('...ERROR:Redis Server is down!')
+    if error != '' :
+        print ('WS send webtv Error:' & error)
+
+   
 
 def wscounterstatus(counterstatus):
     # {"cmd":"cs",

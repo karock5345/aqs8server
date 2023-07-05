@@ -21,6 +21,9 @@ from base.models import Branch, DisplayAndVoice, PrinterStatus, Ticket, TicketRo
 #         fields = ('tickettype', 'ticketnumber', 'ct_lang1', 'ct_lang2', 'ct_lang3', 'ct_lang4', 'counternumber', 'wait', 't_lang1', 't_lang2', 't_lang3', 't_lang4',)
 
 
+
+
+
 class waitinglistSerivalizer(ModelSerializer):
 
     class Meta:

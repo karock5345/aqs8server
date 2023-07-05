@@ -7,7 +7,7 @@ from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCto
 from .v_display import newdisplayvoice
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
 from .serializers import waitinglistSerivalizer
-from base.ws import wssendwebtv, wssendql, wsSendTicketStatus, wssendvoice, wscounterstatus
+from base.ws import wssendwebtv, wssendql, wsSendTicketStatus, wssendvoice, wscounterstatus, wssendwebtvwait
 
 softkey_version = '8.0.2.0'
 
@@ -168,6 +168,7 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
 
                 # websocket to web tv
                 wssendwebtv(branch.bcode ,countertype.name)
+                wssendwebtvwait(branch.bcode ,countertype.name)
                 # websocket to softkey (update Queue List)
                 wssendql(branch.bcode, countertype.name, ticket, 'del')
                 # websocket to web my ticket
@@ -549,6 +550,9 @@ def funCounterGet(tickettype, ticketnumber, user, branch, countertype, counterst
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
         # websocket to web softkey for update counter status
         wscounterstatus(counterstatus)
+        # websocket to web tv
+        wssendwebtv(branch.bcode, countertype.name)
+        wssendwebtvwait(branch.bcode ,countertype.name)
 
         context = {'tickettype': ticket.tickettype, 
                    'ticketnumber': ticket.ticketnumber , 
@@ -724,6 +728,7 @@ def funVoid(user, tickett, td, datetime_now):
     wssendql(tickett.branch.bcode , tickett.countertype.name, tickett, 'del')
     # websocket to web tv
     wssendwebtv(tickett.branch.bcode, tickett.countertype.name)
+    wssendwebtvwait(tickett.branch.bcode ,tickett.countertype.name)
     # websocket to web my ticket
     wsSendTicketStatus(tickett.branch.bcode, tickett.tickettype, tickett.ticketnumber, tickett.securitycode)
 

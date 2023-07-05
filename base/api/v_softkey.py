@@ -156,8 +156,6 @@ def postCounterGet(request):
     if status == dict({}) :
         status, msg, context = funCounterGet(rx_ticketype, rx_ticketnumber, user, branch, countertype, counterstatus, 'Ticket Get API : ', rx_app, rx_version, datetime_now)
 
-        # websocket to web tv
-        wssendwebtv(rx_bcode,countertype.name)
 
 
 
@@ -378,7 +376,6 @@ def postCounterVoid(request):
             logtext='Ticket Void API : '  + branch.bcode + '_' + tickett.tickettype + '_'+ tickett.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
             user=user,
         )
-
 
 
         status = dict({'status': 'OK'})
