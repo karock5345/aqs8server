@@ -83,10 +83,14 @@ source env/bin/activate
 sudo nano requirements.txt
 # [del line :] twisted-iocpsupport=x.x.x
 ```
-# PCCW is no internet access
+## PCCW is no internet access
+
 ~~pip install -r requirements.txt~~
+
 ~~pip install gunicorn psycopg2~~
+
 ~~pip install daphne~~
+
 ```
 # copy backup env to new version folder
 cp ~/aqs8server.bak/env/ ~/aqs8server/env/
