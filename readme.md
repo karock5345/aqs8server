@@ -1,10 +1,25 @@
 # Upgrade server to version 2 (SMS + Softkey)
 > go to github change to public
 ```bash
+# backup the old server
+cp -r ~/aqs8server ~/aqs8server_old
 cp ~/aqs8server/aqs/settings.py ~/
 sudo rm -r ~/aqs8server/
 git clone --branch roche_v2 https://github.com/karock5345/aqs8server.git
-cd aqs8server
+cd ~/aqs8server
+# remove readme.md
+rm ./readme.md
+
+# copy the env folder from old server
+cp -r ~/aqs8server_old/env ~/aqs8server/
+
+# try the virtual env
+source env/bin/activate
+
+# set owner to ubuntu
+sudo chown -R ubuntu ~/aqs8server/
+
+# Or install the packages
 virtualenv env
 source env/bin/activate
 sudo nano requirements.txt
@@ -60,6 +75,9 @@ nano /home/ubuntu/autorun.sh
 ```nano
 # Auto shutdown at 00:30
 shutdown -h 00:30
+# or reboot at 3am
+# shutdown -r 03:00
+
 # add some script for auto run Control box program
 sudo chmod 666 /dev/ttyS0
 cd /home/ubuntu/cb
@@ -75,8 +93,9 @@ chmod +x /home/ubuntu/autorun.sh
 - 1. sudo nano /etc/netplan/00-installer-config.yaml
 - 2. sudo nano /etc/nginx/sites-available/aqs8server
 - User : supertim /// QusP9k-z5345 , tim /// asdf2206 , rocheadmin /// edAgipa4
-- Linux server IP : 162.132.82.162
+- Linux server IP : 162.132.82.162 /24
 - Linux server su: ubuntu /// asdf2206
+- Branch code: R1
 
 # AQS version 8
 ### <span style="color:orange;">**Version 8.0.0**</span>
@@ -100,7 +119,11 @@ chmod +x /home/ubuntu/autorun.sh
 ### <span style="color:orange;">**Version 8.0.2**</span>
 - Support SMS Module
 - Softkey web version
-
+### <span style="color:orange;">**Version 8.0.3**</span>
+- Support waiting ticket on TV (WS webtv_ cmd 'waitlist')
+- New Kiosk vertical 32" touch
+- New TV layout like Mc Donalds
+- New Kiosk layout (Touch_vert and VGA_vert)
 
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
