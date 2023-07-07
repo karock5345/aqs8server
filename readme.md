@@ -1,6 +1,35 @@
 # AQS version 8 For PCCW 2023
 
+## Upgrade Server v8.1.3 (Phase 2)
+- Report function (1. Staff performance report, 2. Total ticket report)
+- Migration old DB to new server
 
+### JWT settings
+```bash
+nano ./aqs/settings.py
+```
+Edit:
+
+```python
+SIMPLE_JWT = {
+    # Debug mode set 120 minutes, otherwise 5 minutes    
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    # Debug mode set 30 minutes, otherwise days=1
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "UPDATE_LAST_LOGIN": False,
+
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": SECRET_KEY,
+    "VERIFYING_KEY": None,
+    "AUDIENCE": None,
+    "ISSUER": None,
+   
+    "AUTH_HEADER_TYPES": ("Bearer",),
+}
+```
+exit and save
 ## Upgrade Server v8.1.2 (Phase 1)
 - Support new Display Panel
 - New 'Force Logout' function for Supervise
@@ -769,12 +798,31 @@ token_api = 'WrE-1t7IdrU2iB3a0e'
 nano ./aqs/settings.py
 ```
 Edit:
-```bash
+```python
 STATIC_URL = '/static/'
 STATICFILES_DIRS =[
     BASE_DIR / 'static'
 ]
 STATIC_ROOT = BASE_DIR / 'static_deploy'
+```
+```python
+SIMPLE_JWT = {
+    # Debug mode set 120 minutes, otherwise 5 minutes    
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    # Debug mode set 30 minutes, otherwise days=1
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "UPDATE_LAST_LOGIN": False,
+
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": SECRET_KEY,
+    "VERIFYING_KEY": None,
+    "AUDIENCE": None,
+    "ISSUER": None,
+   
+    "AUTH_HEADER_TYPES": ("Bearer",),
+}
 ```
 exit and save
 ```bash
