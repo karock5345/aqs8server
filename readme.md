@@ -764,18 +764,40 @@ token_api = 'WrE-1t7IdrU2iB3a0e'
 
 
 ### <span style="color:orange;">**SETUP nginx + gunicorn**</span>
-
+### JWT settings
 ```bash
 nano ./aqs/settings.py
 ```
 Edit:
-```bash
+
+```python
+SIMPLE_JWT = {
+    # Debug mode set 120 minutes, otherwise 5 minutes    
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    # Debug mode set 30 minutes, otherwise days=1
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "UPDATE_LAST_LOGIN": False,
+
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": SECRET_KEY,
+    "VERIFYING_KEY": None,
+    "AUDIENCE": None,
+    "ISSUER": None,
+   
+    "AUTH_HEADER_TYPES": ("Bearer",),
+}
+```
+### static files settings
+```python
 STATIC_URL = '/static/'
 STATICFILES_DIRS =[
     BASE_DIR / 'static'
 ]
 STATIC_ROOT = BASE_DIR / 'static_deploy'
 ```
+
 exit and save
 ```bash
 python3 manage.py collectstatic
