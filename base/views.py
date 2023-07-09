@@ -12,7 +12,7 @@ from base.decorators import *
 # from django.contrib.auth.views import PasswordChangeView
 # from django.urls import reverse_lazy
 
-from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch
+from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch, Ticket, UserStatusLog
 from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm
 from .forms import CaptchaForm, getForm, voidForm, newTicketTypeForm, UserFormSuper, UserFormManager, UserFormSupport, UserFormAdminSelf
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
@@ -1216,7 +1216,7 @@ def Report_RAW_Result(request):
                 Q(countertype=countertype),
             )        
             report_result = 'RAW Data Report  Branch:' + branch.name + '(' + branch.bcode + ') Start datetime:' + s_startdate + ' End datetime:' + s_enddate + ' Counter Type:' + countertype.name
-
+        
 
     if error == '':
         context = {
@@ -1232,7 +1232,319 @@ def Report_RAW_Result(request):
         return redirect('reports')
 
     return render(request, 'base/r-raw.html', context)
+
+@unauth_user
+@allowed_users(allowed_roles=['admin', 'report','manager','support'])
+def Report_Ticket_Result(request):
+    bcode = request.GET['branch']
+    s_startdate = request.GET['startdate']
+    s_enddate = request.GET['enddate']
+    ticketformat_id = request.GET['ticketformats']
+
+    error = ''
+
+    if error == '':
+        try:
+            branch = Branch.objects.get(bcode=bcode)
+        except:
+            error = 'Error : Branch not found.'
     
+    ticketformat = None            
+    if error == '':
+        if ticketformat_id == '':
+            # error = 'Error : Counter Type is blank.'
+            pass
+        else:
+            try:
+                ticketformat = TicketFormat.objects.get(id=int(ticketformat_id))
+            except:
+                error = 'Error : Ticket Format not found.'
+             
+    if error == '':
+        try:
+            startdate = datetime.strptime(s_startdate, '%Y-%m-%dT%H:%M:%S')
+            startdate = funLocaltoUTC(startdate, branch.timezone)
+        except:
+            try: 
+                startdate = datetime.strptime(s_startdate + ':00', '%Y-%m-%dT%H:%M:%S')
+                startdate = funLocaltoUTC(startdate, branch.timezone) 
+            except:
+                error = 'Error : Start Datetime not found.'
+    
+    if error == '':
+        try:
+            enddate = datetime.strptime(s_enddate, '%Y-%m-%dT%H:%M:%S')
+            enddate = funLocaltoUTC(enddate, branch.timezone)
+        except:
+            try:
+                enddate = datetime.strptime(s_enddate + ':00', '%Y-%m-%dT%H:%M:%S')
+                enddate = funLocaltoUTC(enddate, branch.timezone)
+            except:
+                error = 'Error : End Datetime not found.'
+
+    
+    if error == '':
+        if startdate > enddate :
+            error = 'Error : Start Datetime > End Datetime.'
+
+    if error == '':
+        # check enddate - startdate > 200 days
+        if (enddate - startdate).days > 200 :
+            error = 'Error : Date range do not more then 200 days.'
+    table = None
+    if error == '':
+        localtimezone = pytz.timezone(branch.timezone)
+        report_table = []
+        if ticketformat == None  :
+            tfobj = TicketFormat.objects.filter(branch=branch)
+            for tf in tfobj:
+                ttype = tf.ttype
+                # ttype in report_table?
+                found = False
+                for row in report_table:
+                    if row[0] == ttype:
+                        found = True
+                        break
+                if found == False:
+                    ticketobj = Ticket.objects.filter(
+                        Q(branch=branch),
+                        Q(tickettime__range=[startdate,enddate]),
+                        Q(tickettype=ttype),                        
+                        )
+                    total = ticketobj.count()
+                    ticketobj = Ticket.objects.filter(
+                        Q(branch=branch),
+                        Q(tickettime__range=[startdate,enddate]),
+                        Q(tickettype=ttype),
+                        Q(status='miss'),
+                        )
+                    miss = ticketobj.count()
+                    done = total - miss
+                    report_table.append([ttype,done,miss,total])
+
+            report_result = 'Total ticket Report  Branch:' + branch.name + '(' + branch.bcode + ') Start datetime:' + s_startdate + ' End datetime:' + s_enddate + ' Ticket Type:ALL'
+        else:
+            ttype = ticketformat.ttype
+            ticketobj = Ticket.objects.filter(
+                Q(branch=branch),
+                Q(tickettime__range=[startdate,enddate]),
+                Q(tickettype=ttype),                        
+                )
+            total = ticketobj.count()
+            ticketobj = Ticket.objects.filter(
+                Q(branch=branch),
+                Q(tickettime__range=[startdate,enddate]),
+                Q(tickettype=ttype),
+                Q(status='miss'),
+                )
+            miss = ticketobj.count()
+            done = total - miss
+            report_table.append([ttype,done,miss,total])
+
+            report_result = 'Total ticket Report  Branch:' + branch.name + '(' + branch.bcode + ') Start datetime:' + s_startdate + ' End datetime:' + s_enddate + ' Ticket Type:' + ticketformat.ttype
+
+        
+
+    if error == '':
+        context = {
+        'localtimezone':localtimezone,
+        'result':report_result,
+        'table':report_table,        
+        }
+    else:
+        messages.error(request, error)
+        context = {
+        'result':error,
+        }
+        return redirect('reports')
+
+    return render(request, 'base/r-ticket.html', context)
+@unauth_user
+@allowed_users(allowed_roles=['admin', 'report','manager','support'])
+def Report_Staff_Result(request):
+    bcode = request.GET['branch']
+    s_startdate = request.GET['startdate']
+    s_enddate = request.GET['enddate']
+    user_id = request.GET['users']
+
+    error = ''
+
+    if error == '':
+        try:
+            branch = Branch.objects.get(bcode=bcode)
+        except:
+            error = 'Error : Branch not found.'
+    
+    user = None            
+    if error == '':
+        if user_id == '':
+            # error = 'Error : Counter Type is blank.'
+            pass
+        else:
+            try:
+                user = User.objects.get(id=int(user_id))
+            except:
+                error = 'Error : Ticket Format not found.'
+             
+    if error == '':
+        try:
+            startdate = datetime.strptime(s_startdate, '%Y-%m-%dT%H:%M:%S')
+            startdate = funLocaltoUTC(startdate, branch.timezone)
+        except:
+            try: 
+                startdate = datetime.strptime(s_startdate + ':00', '%Y-%m-%dT%H:%M:%S')
+                startdate = funLocaltoUTC(startdate, branch.timezone) 
+            except:
+                error = 'Error : Start Datetime not found.'
+    
+    if error == '':
+        try:
+            enddate = datetime.strptime(s_enddate, '%Y-%m-%dT%H:%M:%S')
+            enddate = funLocaltoUTC(enddate, branch.timezone)
+        except:
+            try:
+                enddate = datetime.strptime(s_enddate + ':00', '%Y-%m-%dT%H:%M:%S')
+                enddate = funLocaltoUTC(enddate, branch.timezone)
+            except:
+                error = 'Error : End Datetime not found.'
+
+    
+    if error == '':
+        if startdate > enddate :
+            error = 'Error : Start Datetime > End Datetime.'
+
+    if error == '':
+        # check enddate - startdate > 200 days
+        if (enddate - startdate).days > 200 :
+            error = 'Error : Date range do not more then 200 days.'
+    table = None
+    if error == '':
+        localtimezone = pytz.timezone(branch.timezone)
+        report_table = []
+        if user == None  :
+            auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+          
+            for user in auth_userlist:
+                userlogobj = UserStatusLog.objects.filter(
+                    Q(starttime__range=[startdate,enddate]),
+                    Q(user=user),
+                    ~Q(starttime = None),
+                    ~Q(endtime = None),
+                )
+                login = 0
+                ready = 0
+                waiting = 0
+                walking = 0
+                process = 0
+                acw = 0
+                aux =0
+                for ul in userlogobj:
+                    seconds = (ul.endtime - ul.starttime).seconds
+                    if ul.status == 'login':
+                        login = login + seconds
+                    elif ul.status == 'ready':
+                        ready = ready + seconds
+                    elif ul.status == 'waiting':
+                        waiting = waiting + seconds
+                    elif ul.status == 'walking':
+                        walking = walking + seconds
+                    elif ul.status == 'processing':
+                        process = process + seconds
+                    elif ul.status == 'ACW':
+                        acw = acw + seconds
+                    elif ul.status == 'AUX':
+                        aux = aux + seconds
+                # convert all to '00:00:00' string
+                login_s = str(timedelta(seconds=login))
+                ready_s = str(timedelta(seconds=ready))
+                waiting_s = str(timedelta(seconds=waiting))
+                walking_s = str(timedelta(seconds=walking))
+                process_s = str(timedelta(seconds=process))
+                acw_s = str(timedelta(seconds=acw))
+                aux_s = str(timedelta(seconds=aux))
+
+                # print('AUX seconds:' + str(aux) + ' AUX string:' + aux_s)
+                # print('Login seconds:' + str(login) + ' Login string:' + login_s)
+                # print('Ready seconds:' + str(ready) + ' Ready string:' + ready_s)
+                # print('Waiting seconds:' + str(waiting) + ' Waiting string:' + waiting_s)
+                # print('Walking seconds:' + str(walking) + ' Walking string:' + walking_s)
+                # print('Process seconds:' + str(process) + ' Process string:' + process_s)
+                # print('ACW seconds:' + str(acw) + ' ACW string:' + acw_s)
+                # print('AUX seconds:' + str(aux) + ' AUX string:' + aux_s)
+
+                report_table.append([user.username, user.first_name + ' ' + user.last_name, login_s, ready_s, waiting_s, walking_s, process_s, acw_s, aux_s])
+
+            report_result = 'Staff performance report  Branch:' + branch.name + '(' + branch.bcode + ') Start datetime:' + s_startdate + ' End datetime:' + s_enddate + ' User:' + user.username
+
+        else:
+            userlogobj = UserStatusLog.objects.filter(
+                Q(starttime__range=[startdate,enddate]),
+                Q(user=user),
+                ~Q(starttime = None),
+                ~Q(endtime = None),
+            )
+            login = 0
+            ready = 0
+            waiting = 0
+            walking = 0
+            process = 0
+            acw = 0
+            aux =0
+            for ul in userlogobj:
+                seconds = (ul.endtime - ul.starttime).seconds
+                if ul.status == 'login':
+                    login = login + seconds
+                elif ul.status == 'ready':
+                    ready = ready + seconds
+                elif ul.status == 'waiting':
+                    waiting = waiting + seconds
+                elif ul.status == 'walking':
+                    walking = walking + seconds
+                elif ul.status == 'processing':
+                    process = process + seconds
+                elif ul.status == 'ACW':
+                    acw = acw + seconds
+                elif ul.status == 'AUX':
+                    aux = aux + seconds
+            # convert all to '00:00:00' string
+            login_s = str(timedelta(seconds=login))
+            ready_s = str(timedelta(seconds=ready))
+            waiting_s = str(timedelta(seconds=waiting))
+            walking_s = str(timedelta(seconds=walking))
+            process_s = str(timedelta(seconds=process))
+            acw_s = str(timedelta(seconds=acw))
+            aux_s = str(timedelta(seconds=aux))
+
+            # print('AUX seconds:' + str(aux) + ' AUX string:' + aux_s)
+            # print('Login seconds:' + str(login) + ' Login string:' + login_s)
+            # print('Ready seconds:' + str(ready) + ' Ready string:' + ready_s)
+            # print('Waiting seconds:' + str(waiting) + ' Waiting string:' + waiting_s)
+            # print('Walking seconds:' + str(walking) + ' Walking string:' + walking_s)
+            # print('Process seconds:' + str(process) + ' Process string:' + process_s)
+            # print('ACW seconds:' + str(acw) + ' ACW string:' + acw_s)
+            # print('AUX seconds:' + str(aux) + ' AUX string:' + aux_s)
+
+            report_table.append([user.username, user.first_name + ' ' + user.last_name, login_s, ready_s, waiting_s, walking_s, process_s, acw_s, aux_s])
+
+            report_result = 'Staff performance report  Branch:' + branch.name + '(' + branch.bcode + ') Start datetime:' + s_startdate + ' End datetime:' + s_enddate + ' User:' + user.username
+
+        
+
+    if error == '':
+        context = {
+        'localtimezone':localtimezone,
+        'result':report_result,
+        'table':report_table,        
+        }
+    else:
+        messages.error(request, error)
+        context = {
+        'result':error,
+        }
+        return redirect('reports')
+
+    return render(request, 'base/r-staff.html', context)
+
 @unauth_user
 @allowed_users(allowed_roles=['admin', 'report','manager','support'])
 def Reports(request):

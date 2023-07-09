@@ -1,0 +1,64 @@
+{% extends 'main.html' %}
+{% load tz %}
+
+{% block content %}
+<style>
+    #table-style {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    #table-style td, #table-style th {
+    border: 1px groove #04AA6D;
+    padding: 1px;
+    }
+
+    #table-style tr:nth-child(even){background-color: #202020;}
+
+    /* #table-style tr:hover {background-color: #ddd;} */
+
+    #table-style th {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+    }
+</style>
+
+
+<h1>{{result}}<br></h1>
+
+    <table id="table-style">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Name</th>
+                <th>Logon time</th>
+                <th>Ready time</th>
+                <th>Waiting time</th>
+                <th>Walking time</th>
+                <th>Process time</th>
+                <th>ACW</th>
+                <th>AUX</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for row in table %}
+        <tr>
+            <td>{{ row.0 }}</td>
+            <td>{{ row.1 }}</td>
+            <td>{{ row.2 }}</td>
+            <td>{{ row.3 }}</td>   
+            <td>{{ row.4 }}</td>   
+            <td>{{ row.5 }}</td>   
+            <td>{{ row.6 }}</td>   
+            <td>{{ row.7 }}</td>   
+            <td>{{ row.8 }}</td>   
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock content %}

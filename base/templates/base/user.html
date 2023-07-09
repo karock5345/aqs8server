@@ -34,7 +34,11 @@
                 <p>{{users.count}} Users</p>
             </div>
             <!-- <a class="btn btn--main" href="{-% url 'create-room' %}"> -->
-            <a class="btn btn--main" href="{% url 'new-user' %}">                
+            <input type="button" class="btn btn--main" value="Show all" id="id_showall">
+            
+
+           
+            <a class="btn btn--main" href="{% url 'new-user' %}" >                
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                 <title>add</title>
                 <path
@@ -42,10 +46,12 @@
                 ></path>
               </svg>
               Add User
-            </a>            
+            </a>   
+                     
           </div>
-          {% include 'base/userlist.html' %}  
-
+          <div id="userlistarea">
+            {% include 'base/userlist.html' %}  
+          </div>
         </div>
         <!-- Room List End -->
 
@@ -57,5 +63,24 @@
 
         <!-- Activities End -->
       </div>
+<!-- add javascript here link button  id="id_showall" -->
 
+<script>
+  // <!-- globle variable : b_showall is bool -->
+  var b_showall = false;
+  var btn_listshow = document.getElementById('id_showall');
+
+  btn_listshow.addEventListener('click', function() {
+          b_showall = true;
+          // document.getElementById('userlistarea').innerHTML = "";
+          // replace all class="roomListRoom" to class="roomListRoom showall"
+          var elements = document.getElementsByClassName("roomListRoom__hide");
+          for (var i = 0; i < elements.length; i++) {
+              elements[i].className = "roomListRoom";
+          }
+        });
+  
+</script>
 {% endblock %}      
+
+

@@ -83,7 +83,7 @@
               End date and time (Local time) : <input type="datetime-local" name="enddate" value={{now}} step="1"><br>
               
               Select Ticket Type:
-              <select name="ticketformats" id="id_ticketformats">
+              <select name="users" id="id_users">
                 <option value="">---All user---</option>
                 {% for user in users %}
                   <option value={{user.id}}>{{user.first_name}} {{user.last_name}} ({{user.username}})</option>

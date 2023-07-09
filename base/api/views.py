@@ -12,10 +12,81 @@ import pytz
 from dateutil import tz
 from base.models import APILog, Branch, Setting, TicketFormat, Ticket, TicketRoute, TicketData, TicketLog, UserProfile, lcounterstatus
 from .serializers import branchSerivalizer, ticketlistSerivalizer
+from .thread import MigrateDBThread
 
 token_api = 'WrE-1t7IdrU2iB3a0e'
 # if the counter keep active > 6 minutes then auto logout and the counter replace the new user
 counteractive = 1
+
+
+@api_view(['GET'])
+def getDB(request):
+    # for PCCW migration old data to new system
+    app = request.GET.get('app') if request.GET.get('app') != None else ''
+    version = request.GET.get('version') if request.GET.get('version') != None else ''
+    bcode = request.GET.get('bcode') if request.GET.get('bcode') != None else ''
+    error = ''
+    branch = None
+    staff_file = ''
+    maindb_file = ''
+    userlog_file = ''
+
+    try:
+        branch = Branch.objects.get(bcode=bcode)
+    except:
+        error = 'Branch not found'
+    
+    if error == '' :
+        if branch.bcode == 'SCP':
+            staff_file = './base/api/shatin/staff.csv'
+            maindb_file = './base/api/shatin/main.csv'
+            userlog_file = './base/api/shatin/userlog.csv'
+            
+            # check file exist
+            try:
+                f = open(staff_file)
+            except:
+                error = 'File not found:' + staff_file
+            try:
+                f = open(maindb_file)
+            except:
+                error = 'File not found:' + maindb_file
+            try:
+                f = open(userlog_file)
+            except:
+                error = 'File not found:' + userlog_file
+            
+
+        else :
+            error = 'Old branch data not found'
+
+
+    if setting_APIlogEnabled(None) == True :
+        #datetime_now = datetime.utcnow()
+        datetime_now =timezone.now()    
+        APILog.objects.create(
+            logtime=datetime_now,
+            requeststr = request.build_absolute_uri() ,
+            ip = visitor_ip_address(request),
+            app = app,
+            version = version,
+            logtext = 'API call : Migration old data to new system (branch:' + bcode + ')',
+        )
+
+    if error == '':
+
+        MigrateDBThread(branch, staff_file, maindb_file, userlog_file).start()
+        routes = [
+            'Migration processing....',
+            'Version : ' + aqs_version,
+                    ]
+    else:
+        routes = [
+            'Migration error : ' + error,
+            'Version : ' + aqs_version,
+                    ]
+    return Response(routes)
+
 
 def checkuser(apiuser, branch, rx_username):
     # check user group is api

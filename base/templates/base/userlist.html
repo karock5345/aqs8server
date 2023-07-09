@@ -1,9 +1,14 @@
 {% load static %}
 
 {% for user in users %}
+
 {% for prof in profiles %}
     {% if user == prof.user %}
+    {% if user.is_active == True %}
     <div class="roomListRoom">
+    {% else %}
+    <div class="roomListRoom__hide">
+    {% endif %}
         <div class="roomListRoom__header">
             <a href="{% url 'update-user' user.id %}" class="roomListRoom__author">
                 <div class="avatar avatar--small">

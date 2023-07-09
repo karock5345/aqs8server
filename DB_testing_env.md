@@ -23,6 +23,16 @@ ALTER ROLE aqsdbuser SET timezone TO 'UTC';
 GRANT ALL PRIVILEGES ON DATABASE aqsdb8_test1 TO aqsdbuser;
 \q
 exit
+
+
+-- Copy DB aqsdb8_test1 to aqsdb8_test2
+sudo su -l postgres
+psql
+CREATE DATABASE aqsdb8_test0 WITH TEMPLATE aqsdb8_test1 OWNER aqsdbuser;
+-- OR
+CREATE DATABASE aqsdb8_test2 WITH TEMPLATE aqsdb8_test0 OWNER aqsdbuser;
+-- Drop DB
+DROP DATABASE aqsdb8_test0;
 ```
 
 - Allow Django Server access DB server
