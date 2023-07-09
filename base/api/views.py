@@ -20,45 +20,22 @@ counteractive = 1
 
 
 @api_view(['GET'])
-def getDB(request):
+def getDB2(request):
     # for PCCW migration old data to new system
     app = request.GET.get('app') if request.GET.get('app') != None else ''
     version = request.GET.get('version') if request.GET.get('version') != None else ''
-    bcode = request.GET.get('bcode') if request.GET.get('bcode') != None else ''
+
     error = ''
     branch = None
     staff_file = ''
     maindb_file = ''
     userlog_file = ''
 
-    try:
-        branch = Branch.objects.get(bcode=bcode)
-    except:
-        error = 'Branch not found'
-    
-    if error == '' :
-        if branch.bcode == 'SCP':
-            staff_file = './base/api/shatin/staff.csv'
-            maindb_file = './base/api/shatin/main.csv'
-            userlog_file = './base/api/shatin/userlog.csv'
-            
-            # check file exist
-            try:
-                f = open(staff_file)
-            except:
-                error = 'File not found:' + staff_file
-            try:
-                f = open(maindb_file)
-            except:
-                error = 'File not found:' + maindb_file
-            try:
-                f = open(userlog_file)
-            except:
-                error = 'File not found:' + userlog_file
-            
 
-        else :
-            error = 'Old branch data not found'
+    if error == '' :
+        staff_file = ''
+        maindb_file = ''
+        userlog_file = ''
 
 
     if setting_APIlogEnabled(None) == True :
@@ -70,14 +47,14 @@ def getDB(request):
             ip = visitor_ip_address(request),
             app = app,
             version = version,
-            logtext = 'API call : Migration old data to new system (branch:' + bcode + ')',
+            logtext = 'API call : Migration 2 branchs old database to new system (branch:(SCP, WTT))',
         )
 
     if error == '':
 
         MigrateDBThread(branch, staff_file, maindb_file, userlog_file).start()
         routes = [
-            'Migration processing....',
+            'Migration 2 branchs old database (SCP, WTT) processing....',
             'Version : ' + aqs_version,
                     ]
     else:
