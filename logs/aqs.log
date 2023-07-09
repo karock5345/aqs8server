@@ -436,3 +436,4 @@ INFO 2023-07-09 20:36:48,936 runserver>log_action [mHTTP GET /user/ 200 [0.24, 
 INFO 2023-07-09 20:37:03,349 runserver>log_action [mHTTP GET /user/ 200 [0.24, 127.0.0.1:56092][0m
 INFO 2023-07-09 20:37:20,084 runserver>log_action [mHTTP GET /user/ 200 [0.24, 127.0.0.1:56092][0m
 INFO 2023-07-09 20:37:20,108 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:56092][0m
+INFO 2023-07-09 20:37:25,791 runserver>log_action [mHTTP GET /user/ 200 [0.23, 127.0.0.1:56092][0m
