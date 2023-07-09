@@ -3,6 +3,9 @@
 - DB IP 192.168.85.128 (VM)
 
 ```bash
+sudo apt-get install -y libpq-dev postgresql 
+sudo apt-get install -y unixodbc unixodbc-dev
+
 sudo systemctl reload postgresql.service
 sudo su -l postgres
 psql
@@ -35,7 +38,8 @@ sudo nano /etc/postgresql/14/main/pg_hba.conf
 # edit:
 host    all     aqsdbuser    192.168.1.22/32    md5
 host    all     aqsdbuser    192.168.85.1/32    md5
-
+# Laptop IP address
+host    all     aqsdbuser    192.168.1.155/32    md5
 ```
 > Please note that IP 192.168.85.1 for VM
 

@@ -32,8 +32,8 @@ urlpatterns = [
     path('supervisor/<str:pk>/', views.SuperVisorView, name='supervisor'),
     path('supervisor/forcelogout/<str:pk>/<str:csid>/', views.SuperVisor_ForceLogoutView ,  name='forcelogout'),    
     
-    path('rawdata/', views.Report_RAW_q, name='reportrawq'),
-    path('rawdata/result/', views.Report_RAW_Result , name='reportraw'),
+    path('reports/', views.Reports, name='reports'),
+    path('reports/raw/', views.Report_RAW_Result , name='reportraw'),
 
     # http://127.0.0.1:8000/webtv/KB/Reception/
     path('webtv/<str:bcode>/<str:ct>/', views.webtv ),

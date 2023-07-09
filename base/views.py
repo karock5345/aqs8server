@@ -1177,7 +1177,7 @@ def Report_RAW_Result(request):
                 startdate = funLocaltoUTC(startdate, branch.timezone) 
             except:
                 error = 'Error : Start Datetime not found.'
-
+    
     if error == '':
         try:
             enddate = datetime.strptime(s_enddate, '%Y-%m-%dT%H:%M:%S')
@@ -1194,6 +1194,10 @@ def Report_RAW_Result(request):
         if startdate > enddate :
             error = 'Error : Start Datetime > End Datetime.'
 
+    if error == '':
+        # check enddate - startdate > 200 days
+        if (enddate - startdate).days > 200 :
+            error = 'Error : Date range do not more then 200 days.'
     table = None
     if error == '':
         localtimezone = pytz.timezone(branch.timezone)
@@ -1221,15 +1225,17 @@ def Report_RAW_Result(request):
         'table':table,        
         }
     else:
+        messages.error(request, error)
         context = {
         'result':error,
         }
+        return redirect('reports')
 
     return render(request, 'base/r-raw.html', context)
     
 @unauth_user
 @allowed_users(allowed_roles=['admin', 'report','manager','support'])
-def Report_RAW_q(request):
+def Reports(request):
 
     auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))    
@@ -1248,7 +1254,7 @@ def Report_RAW_q(request):
     'routes':auth_routes,
     'countertypes':auth_countertype,
     }
-    return render(request, 'base/r-rawq.html', context)
+    return render(request, 'base/r-main.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin', 'report','manager','support'])
@@ -1954,7 +1960,11 @@ def UserUpdateView(request, pk):
             ticketformat2 = ticketformat2.exclude(id=tt.id)
 
     # add column for checked or unchecked to ticketformat2
-    listusertt = userp.tickettype.split(',')
+    if userp.tickettype != None:
+        listusertt = userp.tickettype.split(',')
+    else:
+        sTemp = ''
+        listusertt = sTemp.split(',')
     for tt in ticketformat2:
         if tt.ttype in listusertt:
             tt.checked = 'checked'
