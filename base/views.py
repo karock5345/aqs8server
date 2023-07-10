@@ -1216,7 +1216,9 @@ def Report_RAW_Result(request):
                 Q(countertype=countertype),
             )        
             report_result = 'RAW Data Report  Branch:' + branch.name + '(' + branch.bcode + ') Start datetime:' + s_startdate + ' End datetime:' + s_enddate + ' Counter Type:' + countertype.name
-        
+        # check if rows > 10000 then error
+        if table.count() > 10000 :
+            error = 'Error : Records more then 10000'
 
     if error == '':
         context = {
@@ -1296,16 +1298,21 @@ def Report_Ticket_Result(request):
         localtimezone = pytz.timezone(branch.timezone)
         report_table = []
         if ticketformat == None  :
-            tfobj = TicketFormat.objects.filter(branch=branch)
-            for tf in tfobj:
-                ttype = tf.ttype
-                # ttype in report_table?
-                found = False
-                for row in report_table:
-                    if row[0] == ttype:
-                        found = True
-                        break
-                if found == False:
+            # tfobj = TicketFormat.objects.filter(branch=branch)
+            slist = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,'
+            tlist = slist.split(',')
+            for ttype1 in tlist:
+                for ttype2 in tlist:
+                    ttype = ttype1 + ttype2
+                    # for tf in tfobj:  
+                    # ttype = tf.ttype
+                    # ttype in report_table?
+                    # found = False
+                    # for row in report_table:
+                    #     if row[0] == ttype:
+                    #         found = True
+                    #         break
+                    # if found == False:
                     ticketobj = Ticket.objects.filter(
                         Q(branch=branch),
                         Q(tickettime__range=[startdate,enddate]),
@@ -1320,7 +1327,8 @@ def Report_Ticket_Result(request):
                         )
                     miss = ticketobj.count()
                     done = total - miss
-                    report_table.append([ttype,done,miss,total])
+                    if total > 0 :
+                        report_table.append([ttype,done,miss,total])
 
             report_result = 'Total ticket Report  Branch:' + branch.name + '(' + branch.bcode + ') Start datetime:' + s_startdate + ' End datetime:' + s_enddate + ' Ticket Type:ALL'
         else:
