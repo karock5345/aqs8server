@@ -37,7 +37,6 @@ class MigrateDBThread(threading.Thread):
     def run(self):        
         try:
             for index in range(1, 3):
-                print(str(index))
                 error = ''
                 bcode = ''
                 staff_file = ''
