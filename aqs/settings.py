@@ -103,7 +103,7 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'aqsdb8_test2',
+        'NAME': 'aqsdb8_test1',
         'USER': 'aqsdbuser',
         'PASSWORD': 'dbpassword-Dlcg1dwMOXSKIAIM',
         'HOST': '192.168.85.128',

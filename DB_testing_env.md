@@ -28,11 +28,22 @@ exit
 -- Copy DB aqsdb8_test1 to aqsdb8_test2
 sudo su -l postgres
 psql
-CREATE DATABASE aqsdb8_test0 WITH TEMPLATE aqsdb8_test1 OWNER aqsdbuser;
+CREATE DATABASE aqsdb8_test2 WITH TEMPLATE aqsdb8_test1 OWNER aqsdbuser;
 -- OR
 CREATE DATABASE aqsdb8_test2 WITH TEMPLATE aqsdb8_test0 OWNER aqsdbuser;
 -- Drop DB
-DROP DATABASE aqsdb8_test0;
+DROP DATABASE aqsdb8_test1;
+-- list all databases
+\l
+-- select database
+\c aqsdb8_test1
+-- list all tables
+\dt
+-- see table structure
+\d+ aqs_ticket
+-- see table data
+SELECT * FROM base_ticket;
+SELECT * FROM auth_user;
 ```
 
 - Allow Django Server access DB server
