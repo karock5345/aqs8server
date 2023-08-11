@@ -12,12 +12,56 @@ import pytz
 from dateutil import tz
 from base.models import APILog, Branch, Setting, TicketFormat, Ticket, TicketRoute, TicketData, TicketLog, UserProfile, lcounterstatus
 from .serializers import branchSerivalizer, ticketlistSerivalizer
-from .thread import MigrateDBThread
+from .thread import MigrateDBThread, MigrateDBThreadtst
 
 token_api = 'WrE-1t7IdrU2iB3a0e'
 # if the counter keep active > 6 minutes then auto logout and the counter replace the new user
 counteractive = 1
 
+@api_view(['GET'])
+def getDBtst(request):
+    # for PCCW migration old data to new system
+    app = request.GET.get('app') if request.GET.get('app') != None else ''
+    version = request.GET.get('version') if request.GET.get('version') != None else ''
+
+    error = ''
+    branch = None
+    staff_file = ''
+    maindb_file = ''
+    userlog_file = ''
+
+
+    if error == '' :
+        staff_file = ''
+        maindb_file = ''
+        userlog_file = ''
+
+
+    if setting_APIlogEnabled(None) == True :
+        #datetime_now = datetime.utcnow()
+        datetime_now =timezone.now()    
+        APILog.objects.create(
+            logtime=datetime_now,
+            requeststr = request.build_absolute_uri() ,
+            ip = visitor_ip_address(request),
+            app = app,
+            version = version,
+            logtext = 'API call : Migration TST branch old database to new system (branch:(HHT))',
+        )
+
+    if error == '':
+
+        MigrateDBThreadtst(branch, staff_file, maindb_file, userlog_file).start()
+        routes = [
+            'Migration TST branch old database (HHT) processing....',
+            'Version : ' + aqs_version,
+                    ]
+    else:
+        routes = [
+            'Migration error : ' + error,
+            'Version : ' + aqs_version,
+                    ]
+    return Response(routes)
 
 @api_view(['GET'])
 def getDB2(request):

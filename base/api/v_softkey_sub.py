@@ -973,14 +973,14 @@ def cc_autocall(countertype, rx_app, rx_version, datetime_now):
                 pass
         return called
 
-    objcs = CounterStatus.objects.filter( Q(countertype=countertype) & Q(enabled=True))
+    objcs = CounterStatus.objects.filter(Q(countertype=countertype) & Q(enabled=True)).order_by('counternumber')
 
     i = countertype.nextcounter
     for k in range(i, objcs.count()):
         
         cs = objcs[k]
         called = fun(cs, called, k)
-        if called == True :
+        if called == True :            
             break
     if called == False :
         if i > 0 :
@@ -989,6 +989,13 @@ def cc_autocall(countertype, rx_app, rx_version, datetime_now):
                 called = fun(cs, called, k)
                 if called == True :
                     break
+    # # for debug
+    # if called == True :
+    #     print('Auto call : ' + str(k))
+    #     print('Counter:' + cs.counternumber)
+    #     print('Next counter = ' + str(countertype.nextcounter))
+        
+
 
 def cc_ready(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     # Softkey pass 'Ready' button

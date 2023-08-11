@@ -27,10 +27,17 @@
                     <form class="form" action="" method="POST" prefix="profileform">
                         {% csrf_token %}
                         {% for field in userform %}
-                        <div class="form__group">
-                            <label for="profile_pic">{{field.label}}</label>
-                            {{field}}
-                        </div>
+                            
+                            {% if field.name == "is_active" %}
+                                <div class="form__group_checkbox">
+                                    {{field}}<label>&nbsp;{{field.label}}</label>
+                                </div>
+                            {% else %}
+                                <div class="form__group">
+                                    <label for="profile_pic">{{field.label}}</label>
+                                    {{field}}
+                                </div>
+                            {% endif %}
                         {% endfor %}
                                              
                         {% for field in profileform %}
@@ -54,6 +61,7 @@
 
                         <div class="form__action">
                             <a class="btn btn--del" href="{% url 'delete-user' user.id %}">Delete User</a>
+                            <a class="btn btn--del" href="{% url 'resetpw-user' user.id %}">Reset password</a>
                             <a class="btn btn--dark" href="{% url 'usersummary' %}">Cancel</a>
                             <button class="btn btn--main" type="submit">Update</button>
                         </div>
@@ -152,18 +160,18 @@
         // add event button clicked pass tickettype to view
         document.getElementById('id_tt_confirm').addEventListener('click', function() {
             // for loop checkbox to get tickettype
-            tickettype = "";
-            for (var i = 0; i < checkboxes.length; i++) {
-                //  check if the checkbox id is is "id_chk_tt_xxx"
-                if ((checkboxes[i].id.indexOf("id_chk_tt_") > -1)) {
-                    var tt = checkboxes[i].id.replace("id_chk_tt_", "");
-                    if (checkboxes[i].checked) {
-                        // Checkbox is checked..
-                        tickettype = tickettype + tt + ",";
-                    } 
-                }
+            // tickettype = "";
+            // for (var i = 0; i < checkboxes.length; i++) {
+            //     //  check if the checkbox id is is "id_chk_tt_xxx"
+            //     if ((checkboxes[i].id.indexOf("id_chk_tt_") > -1)) {
+            //         var tt = checkboxes[i].id.replace("id_chk_tt_", "");
+            //         if (checkboxes[i].checked) {
+            //             // Checkbox is checked..
+            //             tickettype = tickettype + tt + ",";
+            //         } 
+            //     }
                 
-            }
+            // }
 
 
 

@@ -1,0 +1,56 @@
+<!-- in_progress.html -->
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="progress_div">        
+
+    <div class="progress_text" id="progress_text">
+        In Progress...
+    </div>
+
+    <div class="progress_per" id="progress">
+        0%
+    </div>
+
+    <div id="area_download" >
+        <a href="{{url_download}}" class="btn btn--main">Download</a>
+    </div>
+</div>
+
+<script>
+    const c_wsh = "{{ wsh }}";        
+    const task_id = "{{ task_id }}";
+    var area_download_html = document.getElementById('area_download').innerHTML;
+
+    const socket = new WebSocket(
+        c_wsh 
+        + window.location.host 
+        + '/ws/progress/'
+        + task_id
+        + '/'
+    );
+
+    // 
+    socket.onmessage = function(e) {
+        const data = JSON.parse(e.data);
+        const progress = data.progress;
+        console.log('Progress:', progress, '%');
+        
+        document.getElementById('area_download').hidden = true;
+
+        // Update the progress indicator on the page
+        document.getElementById('progress').innerText = `${progress}%`;
+        
+        // Check if the task is complete
+        if (data.task_complete) {
+            // Redirect to the result page or perform any other action
+            // window.location.href = '/result/';
+            // window.history.back();
+            document.getElementById('area_download').hidden = false;
+            document.getElementById('progress_text').innerText = `Completed`;
+        }
+    };
+</script>
+
+
+{% endblock %} 

@@ -9,11 +9,13 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+# aqs.settings.py
 from pathlib import Path
 from django.contrib.messages import constants as messages
 from datetime import timedelta
+from celery import Celery
 
-aqs_version = '8.1.3'
+aqs_version = '8.1.4'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -148,7 +150,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-
 STATICFILES_DIRS =[
     BASE_DIR / 'static'
 ]
@@ -187,13 +188,14 @@ MESSAGE_TAGS = {
 
 ASGI_APPLICATION = 'aqs.asgi.application'
 
+REDIS_HOST = '192.168.85.128'
 CHANNEL_LAYERS = {
     'default':{
         'BACKEND':'channels_redis.core.RedisChannelLayer',
         # 'BACKEND':'channels_redis.pubsub.RedisPubSubChannelLayer',
         'CONFIG': {
             # 'hosts':[('127.0.0.1', '6379')],
-            'hosts':[('192.168.85.128', '6379')],      # vm
+            'hosts':[(REDIS_HOST, '6379')],      # vm
         # "channel_capacity": {
         #         "http.request": 200,
         #         "http.response!*": 10,
@@ -203,7 +205,11 @@ CHANNEL_LAYERS = {
     }
 }
 
-
+CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':6379/0'
+CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':6379/0'
+CELERY_TASK_LOG_LEVEL = 'DEBUG'
+# set the celery timezone
+CELERY_TIMEZONE = 'UTC'
 
 LOGGING = {
     'version': 1,

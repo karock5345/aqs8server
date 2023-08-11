@@ -6,7 +6,7 @@ It exposes the ASGI callable as a module-level variable named ``application``.
 For more information on this file, see
 https://docs.djangoproject.com/en/4.0/howto/deployment/asgi/
 """
-
+# aqs.asgi.py
 import os
 
 from channels.auth import AuthMiddlewareStack
@@ -29,3 +29,4 @@ application = ProtocolTypeRouter({
             AuthMiddlewareStack(URLRouter(base.routing.websocket_urlpatterns))
         ),
 })
+

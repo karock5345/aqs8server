@@ -67,7 +67,7 @@ class UserFormAdminSelf(ModelForm):
 class UserFormSuper(ModelForm):
     class Meta:
         model = User 
-        fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
+        fields = ['is_active', 'is_active', 'first_name', 'last_name', 'email', 'groups']
     def __init__(self, *args,**kwargs):
         super (UserFormSuper,self ).__init__(*args,**kwargs)
         self.fields['groups'].queryset = Group.objects.filter(~Q(name='web'))  
@@ -112,3 +112,6 @@ class voidForm(forms.Form):
     tickettype = forms.CharField(label='Ticket Type', max_length=100)
     ticketnumber = forms.CharField(label='Ticket Number', max_length=100)
     tickettime = forms.DateField(label='Ticket Time')
+
+class resetForm(forms.Form):
+    new_password1 = forms.CharField(label='New password', max_length=100)

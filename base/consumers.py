@@ -1,3 +1,4 @@
+# base.consumers.py
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer, WebsocketConsumer
 # from asgiref.sync import async_to_sync
@@ -8,10 +9,71 @@ from .models import Branch, CounterType, TicketTemp, CounterStatus
 from asgiref.sync import sync_to_async
 import logging
 from django.core.serializers.json import DjangoJSONEncoder
-
-
+from celery.result import AsyncResult
+import asyncio
 
 logger = logging.getLogger(__name__)
+
+
+
+class ReportRaw_ProgressConsumer(AsyncWebsocketConsumer):
+    async def connect(self):
+        # Retrieve the task_id from the URL query parameter
+        self.ptask_id = self.scope['url_route']['kwargs']['task_id']
+
+        self.task_id = self.ptask_id.replace('_', '-')
+
+        self.room_group_name = 'progress_' + self.ptask_id
+        logger.info('connecting:' + self.room_group_name )
+        
+        await self.channel_layer.group_add(
+                self.room_group_name,
+                self.channel_name
+            )
+
+        await self.accept()
+
+        # Start polling the task progress
+        await self.check_progress()
+
+    async def disconnect(self, close_code):
+        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
+
+    async def check_progress(self):
+
+        # Retrieve the task result using the task_id
+        task_result = AsyncResult(self.task_id)
+        
+        # Log the task_id and task_result for debugging
+        # logger.info(f"Task ID: {self.task_id}, Task Result: {task_result}")
+
+        # Loop until the task is complete or not found
+        while task_result is not None and not task_result.ready():
+            # Get the progress from the task's state
+            progress = 0
+            if task_result.status == 'SUCCESS':
+                progress = 100
+            elif task_result.status == 'FAILURE':
+                progress = 0
+            elif task_result.status == 'PROGRESS':
+                progress = task_result.info.get('progress')  # needs to be set by task
+            elif task_result.status == 'PENDING':
+                progress = 'P'
+
+            # print('Task status:' + task_result.status + ' ' + str(progress))
+            await self.send(text_data=json.dumps({'progress': progress}))
+
+            # Sleep to simulate updates (replace with actual progress retrieval)
+            await asyncio.sleep(1)
+
+            # Update the task_result for the next iteration
+            task_result = AsyncResult(self.task_id)
+
+        # Task is complete or not found, send a final message
+        if task_result is None:
+            await self.send(text_data=json.dumps({'progress': 100, 'task_complete': False}))
+        else:
+            await self.send(text_data=json.dumps({'progress': 100, 'task_complete': True}))
 
 
 

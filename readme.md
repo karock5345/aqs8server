@@ -1,5 +1,94 @@
 # AQS version 8 For PCCW 2023
 
+## Upgrade Server v8.1.4 (Phase 3)
+- new Python lib : django-crequest (for raw data report)
+- New Python lib : celery[redis] (for long time task)
+- New Python lib : wcwidth vine redis prompt-toolkit colorama billiard click amqp kombu click-repl click-plugins click-didyoumean (for celery)
+
+## Upgrade Server v8.1.4  (Phase 3)
+```bash
+# Backup settings.py
+cp ~/aqs8server/aqs/settings.py ~/
+# Backup previous version
+cp -r ~/aqs8server/ ~/aqs8server.bak/
+# Remove previous version
+rm -r ~/aqs8server/
+
+# Copy new version from PC or USB drive
+# from PC :
+# in server
+mkdir ~/aqs8server/
+# in PC
+pscp -r your/folder/aqs8server/* ubuntu@10.95.157.237:/home/ubuntu/aqs8server/
+# change owner
+sudo chown ubuntu ~/aqs8server -R
+
+# Or from USB drive :
+# find out your usb drive my case is sdb1
+lsblk
+sudo mkdir /mnt/usb
+sudo mount /dev/sdb /mnt/usb
+cd /mnt/usb
+sudo cp aqs8server /home/ubuntu/aqs8server/ -r
+# change owner
+sudo chown ubuntu ~/aqs8server -R
+sudo umount /mnt/usb
+```
+
+### copy settings.py from backup
+```bash
+cp ~/settings.py ~/aqs8server/aqs/settings.py
+```
+
+
+
+### Install python lib offline
+```bash
+# Download python lib to local PC
+pip download django-crequest -d ./static_deploy
+pip download celery[redis] -d ./static_deploy
+
+# new dir on server
+mkdir ~/aqs8server/static_deploy
+# Copy to server from PC
+cd (your project folder)
+pscp -r ./aqs8server/static_deploy/* ubuntu@10.95.157.237:/home/ubuntu/aqs8server/static_deploy/
+
+# change owner
+sudo chown ubuntu ~/aqs8server -R
+
+# Install python lib on liunx server
+cd /home/ubuntu/static_deploy
+cd /home/ubuntu/aqs8server
+source ./env/bin/activate
+pip3 install django-crequest --no-index --find-links=/home/ubuntu/static_deploy
+pip3 install celery[redis] --no-index --find-links=/home/ubuntu/static_deploy
+```
+### Edit settings.py after restore from backup
+> nano ~/aqs8server/aqs/settings.py
+
+```python
+# settings.py
+REDID_HOST = '127.0.0.1'
+CHANNEL_LAYERS = {
+    'default':{
+        'BACKEND':'channels_redis.core.RedisChannelLayer',
+        # 'BACKEND':'channels_redis.pubsub.RedisPubSubChannelLayer',
+        'CONFIG': {
+            # 'hosts':[('127.0.0.1', '6379')],
+            'hosts':[(REDID_HOST, '6379')],      # vm
+        # "channel_capacity": {
+        #         "http.request": 200,
+        #         "http.response!*": 10,
+        #         re.compile(r"^websocket.send\!.+"): 20,
+        #     },
+        },
+    }
+}
+CELERY_BROKER_URL = 'redis://' + REDID_HOST + ':6379/0'
+CELERY_RESULT_BACKEND = 'redis://' + REDID_HOST + ':6379/0'
+```
+
 ## Upgrade Server v8.1.3 (Phase 2)
 - Report function (1. Staff performance report, 2. Total ticket report)
 - Migration old DB to new server
@@ -212,8 +301,22 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 - New API for Display Panel get latest 5 tickets 
 - Websocket disp_ for Display Panel replace from webtv_, websocket webtv_ only for HTML online ticket number
 - Websocket disp_ new commands: call, removeall, wait
+### <span style="color:orange;">**Version 8.1.3**</span>
+- Report function (1. Staff performance report, 2. Total ticket report)
+- Add new API function for migrate 2 branchs (SCP, WTT) old DB to new server (http://127.0.0.1:8000/api/db2/?app=postman&version=8.1)
 
 
+### <span style="color:orange;">**Version 8.1.4**</span>
+- Fixed bug : Callcentre mode, auto call ticket the counter sequence is not correct
+- Add function : Update user add reset password
+- Add new API function for migrate HHT old DB to new server (http://127.0.0.1:8000/api/db_tst/?app=postman&version=8.1)
+- Romove API function for migrate 2 branchs (SCP, WTT) 
+- Add new function for export report to excel
+- Fixed bug : User ticket type 
+- Raw data report add split data into multiple pages (using django-crequest)
+- Add error message for new user 
+- Show "active user number" in user list
+- Celery support long time task (e.g. export report to excel)
 
 # For Project PCCW 2023
 ## Main Server (WTT)
@@ -369,7 +472,12 @@ new terminal in vscode
 python manage.py startapp base
 #*** please note that here is 'startapp' NOT 'startproject'
 
-python manage.py runserver
+python manage.py runserver 0.0.0.0:8000
+# run celery
+# open new terminal
+celery -A aqs.celery:app worker --loglevel=info --pool=solo
+# Celery task always PENDING problem
+# It is a Windows issue. Celery --pool=solo option solves the issue.
 ```
 try http://127.0.0.1:8000/
 
@@ -1380,6 +1488,6 @@ Window -> Appearance -> Change font -> Deja...Powerline
 Window -> Color -> Default Blue -> Red 44 Green 123 Blue 201
 
 # Copy file from PC to Linux server
-pscp c:/music.mp3  ubuntu@192.168.1.222:/home/ubuntu/aqs8server/static_deploy/
+pscp c:/music.mp3  ubuntu@192.168.1.222:/home/ubuntu/
 
 # AWS 

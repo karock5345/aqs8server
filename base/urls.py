@@ -1,3 +1,4 @@
+# base.urls.py
 from django.urls import path, reverse 
 # from django.contrib.auth import views as auth_views
 from . import views
@@ -12,6 +13,7 @@ urlpatterns = [
     path('new-user/', views.UserNewView, name='new-user'),
     path('password/', views.UserChangePWView, name='pw-user'),   
     path('delete/<str:pk>/', views.UserDelView, name='delete-user'),
+    path('reset/<str:pk>/', views.UserResetView, name='resetpw-user'),
     path('menu/', views.MenuView, name='menu'),
 
     path('branch/', views.BranchSummaryView, name='branchsummary'),
@@ -64,4 +66,5 @@ urlpatterns = [
     
     # for Hypic
     path('repair/', views.repair ),
+
 ]
