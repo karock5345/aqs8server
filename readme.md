@@ -10,7 +10,7 @@
 # Backup settings.py
 cp ~/aqs8server/aqs/settings.py ~/
 # Backup previous version
-cp -r ~/aqs8server/ ~/aqs8server.bak/
+cp -r ~/aqs8server/ ~/aqs8server813.bak/
 # Remove previous version
 rm -r ~/aqs8server/
 
@@ -39,7 +39,11 @@ sudo umount /mnt/usb
 ```bash
 cp ~/settings.py ~/aqs8server/aqs/settings.py
 ```
-
+### copy env from backup
+```bash
+rm -r ~/aqs8server/env
+cp -r ~/aqs8server813.bak/env ~/aqs8server/
+```
 
 
 ### Install python lib offline
@@ -88,6 +92,92 @@ CHANNEL_LAYERS = {
 CELERY_BROKER_URL = 'redis://' + REDID_HOST + ':6379/0'
 CELERY_RESULT_BACKEND = 'redis://' + REDID_HOST + ':6379/0'
 ```
+## Run Celery worker on the server
+### Using Systemd (Process Manager):
+Step 1: Create the Celery Worker Configuration File
+
+Create a Celery configuration file (e.g., `celery.conf`) in the `/etc/default/` directory:
+
+```bash
+sudo nano /etc/default/celery
+```
+
+Add the following content to the `celery.conf` file. Modify the values for your specific setup:
+
+```ini
+# /etc/default/celery
+CELERYD_USER=<your_django_user>
+CELERYD_GROUP=<your_django_group>
+CELERYD_NODES=1
+CELERY_BIN=/path/to/virtualenv/bin/celery
+CELERY_APP=your_project_name
+CELERYD_MULTI=multi
+CELERYD_OPTS="--time-limit=300 --concurrency=8"
+CELERYD_LOG_LEVEL="INFO"
+CELERYD_LOG_FILE="/var/log/celery/%N.log"
+CELERYD_PID_FILE="/var/run/celery/%N.pid"
+CELERYD_CHDIR=/path/to/your/django/project
+```
+
+Replace the placeholders (`<your_django_user>`, `<your_django_group>`, `your_project_name`, and other paths) with the appropriate values for your setup.
+
+Step 2: Create the Celery Worker Systemd Service File
+
+Create a Systemd service file (e.g., `celery.service`) in the `/etc/systemd/system/` directory:
+
+```bash
+sudo nano /etc/systemd/system/celery.service
+```
+
+Add the following content to the `celery.service` file:
+
+```ini
+# /etc/systemd/system/celery.service
+[Unit]
+Description=Celery Service
+After=network.target
+
+[Service]
+Type=forking
+User=%i
+Group=%i
+EnvironmentFile=/etc/default/celery
+WorkingDirectory=%h
+ExecStart=/bin/sh -c '${CELERY_BIN} multi start ${CELERYD_NODES} -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} --logfile=${CELERYD_LOG_FILE} ${CELERYD_OPTS}'
+
+ExecStop=/bin/sh -c '${CELERY_BIN} multi stopwait ${CELERYD_NODES} --pidfile=${CELERYD_PID_FILE}'
+ExecReload=/bin/sh -c '${CELERY_BIN} multi restart ${CELERYD_NODES} -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} --logfile=${CELERYD_LOG_FILE} ${CELERYD_OPTS}'
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Step 3: Enable and Start the Celery Service
+
+Now that you have created the configuration and service files, enable and start the Celery service:
+
+```bash
+sudo systemctl enable celery
+sudo systemctl start celery
+```
+
+The `enable` command ensures that the Celery service starts automatically during server startup.
+
+Step 4: Check the Celery Service Status
+
+You can check the status of the Celery service to ensure it is running:
+
+```bash
+sudo systemctl status celery
+```
+
+This command will display the current status and any logs related to the Celery service.
+
+Step 5: Monitor Celery Worker Logs
+
+You can monitor the Celery worker logs at the location specified in the `CELERYD_LOG_FILE` configuration (e.g., `/var/log/celery/%N.log`). These logs will contain information about the Celery worker's activities and task execution.
+
+That's it! Your Celery worker is now set up as a Systemd service and will start automatically during server startup. It will continue to run in the background, processing your asynchronous tasks as needed.
 
 ## Upgrade Server v8.1.3 (Phase 2)
 - Report function (1. Staff performance report, 2. Total ticket report)
@@ -450,11 +540,7 @@ python -m virtualenv env
 # activate virtual env:
 .\env\scripts\activate
 # install your packages e.g. 
-pip install django
-# or
-python -m pip install django
-# or
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 # new project: 
 django-admin startproject newproj
 # [update/ upgrade package] 

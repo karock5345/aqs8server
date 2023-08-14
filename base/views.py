@@ -35,6 +35,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from aqs.tasks import *
 import pickle
 from django.templatetags.static import static
+from celery.result import AsyncResult
+
 
 logger = logging.getLogger(__name__)
 
@@ -1353,6 +1355,11 @@ def Report_Ticket_Result(request):
     s_startdate = request.GET['startdate']
     s_enddate = request.GET['enddate']
     ticketformat_id = request.GET['ticketformats']
+    result_task_id = ''
+    try:    
+        result_task_id = request.GET['result']
+    except:
+        pass
 
     error = ''
 
@@ -1404,66 +1411,87 @@ def Report_Ticket_Result(request):
         # check enddate - startdate > 200 days
         if (enddate - startdate).days > 200 :
             error = 'Error : Date range do not more then 200 days.'
-    table = None
+    
     if error == '':
-        localtimezone = pytz.timezone(branch.timezone)
         report_table = []
+        report_result1 = 'Total ticket Report'
+        report_result2 = 'Branch:' + branch.name + '(' + branch.bcode + ')'
+        report_result3 = 'Start datetime:' + s_startdate
+        report_result4 = 'End datetime:' + s_enddate
+
         if ticketformat == None  :
-            # tfobj = TicketFormat.objects.filter(branch=branch)
-            slist = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,'
-            tlist = slist.split(',')
-            for ttype1 in tlist:
-                for ttype2 in tlist:
-                    ttype = ttype1 + ttype2
-                    # for tf in tfobj:  
-                    # ttype = tf.ttype
-                    # ttype in report_table?
-                    # found = False
-                    # for row in report_table:
-                    #     if row[0] == ttype:
-                    #         found = True
-                    #         break
-                    # if found == False:
-                    ticketobj = Ticket.objects.filter(
-                        Q(branch=branch),
-                        Q(tickettime__range=[startdate,enddate]),
-                        Q(tickettype=ttype),                        
-                        )
-                    total = ticketobj.count()
-                    ticketobj = Ticket.objects.filter(
-                        Q(branch=branch),
-                        Q(tickettime__range=[startdate,enddate]),
-                        Q(tickettype=ttype),
-                        Q(status='miss'),
-                        )
-                    miss = ticketobj.count()
-                    done = total - miss
-                    if total > 0 :
-                        report_table.append([ttype,done,miss,total])
-
-            report_result = 'Total ticket Report  Branch:' + branch.name + '(' + branch.bcode + ') Start datetime:' + s_startdate + ' End datetime:' + s_enddate + ' Ticket Type:ALL'
+            report_result5 = 'Ticket Type:All'
         else:
-            ttype = ticketformat.ttype
-            ticketobj = Ticket.objects.filter(
-                Q(branch=branch),
-                Q(tickettime__range=[startdate,enddate]),
-                Q(tickettype=ttype),                        
-                )
-            total = ticketobj.count()
-            ticketobj = Ticket.objects.filter(
-                Q(branch=branch),
-                Q(tickettime__range=[startdate,enddate]),
-                Q(tickettype=ttype),
-                Q(status='miss'),
-                )
-            miss = ticketobj.count()
-            done = total - miss
-            report_table.append([ttype,done,miss,total])
+            # report_result = 'Total ticket Report  Branch:' + branch.name + '(' + branch.bcode + ') Start datetime:' + s_startdate + ' End datetime:' + s_enddate + ' Ticket Type:' + ticketformat.ttype
+            # report_result = 'Total ticket Report\n' + 'Branch:' + branch.name + '(' + branch.bcode + ')\n' +  'Start datetime:' + s_startdate + '\n' + 'End datetime:' + s_enddate + '\nTicket Type:' + ticketformat.ttype
+            report_result5 = 'Ticket Type:' + ticketformat.ttype
+        report_result = report_result1 + '\n' + report_result2 + '\n' + report_result3 + '\n' + report_result4 + '\n' + report_result5
+     
+        if result_task_id == '':
+            # run celery task for long process
+            localtimezone = pytz.timezone(branch.timezone)
 
-            report_result = 'Total ticket Report  Branch:' + branch.name + '(' + branch.bcode + ') Start datetime:' + s_startdate + ' End datetime:' + s_enddate + ' Ticket Type:' + ticketformat.ttype
 
-        
+            task = report_ticket.apply_async(args=[branch.pk, ticketformat_id, startdate, enddate], countdown=0)  # 'countdown' time delay in second before execute
+            task_id = task.id
+            ptask_id = task_id.replace('-', '_')
 
+            # download path
+            url_download = ''
+            
+            
+            context = {'task_id': ptask_id}
+            context = context | {'wsh' : wsHypertext}
+            context = context | {'url_download': url_download}
+            return render(request, 'base/in_progress.html', context)
+        else :
+            # long process is done output result to HTML
+            # task id is result_task_id
+            task_id = result_task_id.replace('_', '-')
+            # print ('task_id', task_id)
+            task = AsyncResult(task_id, app=report_ticket)
+            status, report_table = task.get()
+                      
+            if request.method != 'POST':
+                localtimezone = pytz.timezone(branch.timezone)
+                # if ticketformat == None  :
+                #     report_result = 'Total ticket Report\n' + 'Branch:' + branch.name + '(' + branch.bcode + ')\n' +  'Start datetime:' + s_startdate + '\n' + 'End datetime:' + s_enddate + '\nTicket Type:ALL'
+                # else:
+                #     # report_result = 'Total ticket Report  Branch:' + branch.name + '(' + branch.bcode + ') Start datetime:' + s_startdate + ' End datetime:' + s_enddate + ' Ticket Type:' + ticketformat.ttype
+                #     report_result = 'Total ticket Report\n' + 'Branch:' + branch.name + '(' + branch.bcode + ')\n' +  'Start datetime:' + s_startdate + '\n' + 'End datetime:' + s_enddate + '\nTicket Type:' + ticketformat.ttype
+               
+                # report_result = status
+                context = {
+                'localtimezone':localtimezone,
+                'result':report_result,
+                'table':report_table,        
+                }
+                return render(request, 'base/r-ticket.html', context)
+            elif request.method == 'POST':
+                # Export and download excel file
+                action = request.POST.get('action')
+                if action == 'excel':
+                    # table convert to csv
+                    response = HttpResponse(content_type='text/csv')
+                    response['Content-Disposition'] = 'attachment; filename="totalticket.csv"'
+                    writer = csv.writer(response)   
+                    # add report header
+                    writer.writerow([report_result1])
+                    writer.writerow([report_result2])
+                    writer.writerow([report_result3])
+                    writer.writerow([report_result4])
+                    writer.writerow([report_result5])
+
+                    # add table header
+                    writer.writerow(['Ticket Type', 'Done', 'Miss', 'Total'])
+                    for row in report_table:
+                        writer.writerow([
+                                    row[0], 
+                                    row[1],
+                                    row[2],
+                                    row[3],
+                                        ])
+                    return response  
     if error == '':
         context = {
         'localtimezone':localtimezone,
@@ -1485,6 +1513,11 @@ def Report_Staff_Result(request):
     s_startdate = request.GET['startdate']
     s_enddate = request.GET['enddate']
     user_id = request.GET['users']
+    result_task_id = ''
+    try:    
+        result_task_id = request.GET['result']
+    except:
+        pass
 
     error = ''
 
@@ -1494,16 +1527,16 @@ def Report_Staff_Result(request):
         except:
             error = 'Error : Branch not found.'
     
-    user = None            
+    selected_user = None            
     if error == '':
         if user_id == '':
             # error = 'Error : Counter Type is blank.'
             pass
         else:
             try:
-                user = User.objects.get(id=int(user_id))
+                selected_user = User.objects.get(id=int(user_id))
             except:
-                error = 'Error : Ticket Format not found.'
+                error = 'Error : Selected user not found.'
              
     if error == '':
         try:
@@ -1536,10 +1569,96 @@ def Report_Staff_Result(request):
         # check enddate - startdate > 200 days
         if (enddate - startdate).days > 200 :
             error = 'Error : Date range do not more then 200 days.'
-    table = None
+    
     if error == '':
         localtimezone = pytz.timezone(branch.timezone)
-        report_table = []
+
+        report_result1 = 'Staff performance report'
+        report_result2 = 'Branch:' + branch.name + '(' + branch.bcode + ')'
+        report_result3 = 'Start datetime:' + s_startdate
+        report_result4 = 'End datetime:' + s_enddate 
+        report_result5 = 'User:ALL'
+        if selected_user != None  :
+            report_result5 ='User:' + selected_user.username
+        report_result = report_result1 + '\n' + report_result2 + '\n' + report_result3 + '\n' + report_result4 + '\n' + report_result5
+        auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+        # convert queryset to string
+        querystr_auth_userlist = pickle.dumps(auth_userlist.query)
+
+        if result_task_id == '':
+            # run celery task for long process
+            localtimezone = pytz.timezone(branch.timezone)
+
+
+            task = report_staff.apply_async(args=[user_id, querystr_auth_userlist, startdate, enddate], countdown=0)  # 'countdown' time delay in second before execute
+            task_id = task.id
+            ptask_id = task_id.replace('-', '_')
+
+            # download path
+            url_download = ''
+            
+            
+            context = {'task_id': ptask_id}
+            context = context | {'wsh' : wsHypertext}
+            context = context | {'url_download': url_download}
+            return render(request, 'base/in_progress.html', context)
+        else :
+            # long process is done output result to HTML
+
+            # task id is result_task_id
+            task_id = result_task_id.replace('_', '-')
+            # print ('task_id', task_id)
+            task = AsyncResult(task_id, app=report_ticket)
+            status, report_table = task.get()
+
+            # terminal task
+            # task.revoke()
+            
+            # report_ticket.control.revoke(task_id, terminate=True)
+           
+            if request.method != 'POST':
+
+                # report_result = status
+                context = {
+                'localtimezone':localtimezone,
+                'result':report_result,
+                'table':report_table,        
+                }
+                return render(request, 'base/r-staff.html', context)
+
+            elif request.method == 'POST':
+                # Export and download excel file
+                action = request.POST.get('action')
+                if action == 'excel':
+                    # table convert to csv
+                    response = HttpResponse(content_type='text/csv')
+                    response['Content-Disposition'] = 'attachment; filename="staffperf.csv"'
+                    writer = csv.writer(response)   
+                    # add report header
+                    writer.writerow([report_result1])
+                    writer.writerow([report_result2])
+                    writer.writerow([report_result3])
+                    writer.writerow([report_result4])
+                    writer.writerow([report_result5])
+
+                    # add table header
+                    writer.writerow(['User', 'Name', 'Logon time', 'Ready time', 'Waiting time', 'Walking time', 'Process time', 'ACW', 'AUX'])
+                    for row in report_table:
+                        writer.writerow([
+                                    row[0], 
+                                    row[1],
+                                    row[2],
+                                    row[3],
+                                    row[4], 
+                                    row[5],
+                                    row[6],
+                                    row[7],                                    
+                                    row[8],                                    
+                                        ])
+                    return response  
+
+        '''
+
         if user == None  :
             auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
           
@@ -1593,7 +1712,6 @@ def Report_Staff_Result(request):
 
                 report_table.append([user.username, user.first_name + ' ' + user.last_name, login_s, ready_s, waiting_s, walking_s, process_s, acw_s, aux_s])
 
-            report_result = 'Staff performance report  Branch:' + branch.name + '(' + branch.bcode + ') Start datetime:' + s_startdate + ' End datetime:' + s_enddate + ' User:' + user.username
 
         else:
             userlogobj = UserStatusLog.objects.filter(
@@ -1645,8 +1763,7 @@ def Report_Staff_Result(request):
 
             report_table.append([user.username, user.first_name + ' ' + user.last_name, login_s, ready_s, waiting_s, walking_s, process_s, acw_s, aux_s])
 
-            report_result = 'Staff performance report  Branch:' + branch.name + '(' + branch.bcode + ') Start datetime:' + s_startdate + ' End datetime:' + s_enddate + ' User:' + user.username
-
+        '''
         
 
     if error == '':

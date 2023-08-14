@@ -5,37 +5,44 @@
 
 
 
-<h1>{{result}}<br></h1>
+<form class="form" action="" method="POST">
+    {% csrf_token %}
+    <div>
+        <!-- <button type="submit" name="action" value="pdf" class="btn btn--main">Export to PDF</button>  -->
+        <button type="submit" name="action" value="excel" class="btn btn--main">Export to Excel</button> 
+        <div><label style="white-space: pre-wrap">{{result}}<br></label></div>
+    </div>
+</form>
 
-    <table id="table-style" class="table-style">
-        <thead>
-            <tr>
-                <th>User</th>
-                <th>Name</th>
-                <th>Logon time</th>
-                <th>Ready time</th>
-                <th>Waiting time</th>
-                <th>Walking time</th>
-                <th>Process time</th>
-                <th>ACW</th>
-                <th>AUX</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for row in table %}
+<table id="table-style" class="table-style">
+    <thead>
         <tr>
-            <td>{{ row.0 }}</td>
-            <td>{{ row.1 }}</td>
-            <td>{{ row.2 }}</td>
-            <td>{{ row.3 }}</td>   
-            <td>{{ row.4 }}</td>   
-            <td>{{ row.5 }}</td>   
-            <td>{{ row.6 }}</td>   
-            <td>{{ row.7 }}</td>   
-            <td>{{ row.8 }}</td>   
+            <th>User</th>
+            <th>Name</th>
+            <th>Logon time</th>
+            <th>Ready time</th>
+            <th>Waiting time</th>
+            <th>Walking time</th>
+            <th>Process time</th>
+            <th>ACW</th>
+            <th>AUX</th>
         </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    </thead>
+    <tbody>
+    {% for row in table %}
+    <tr>
+        <td>{{ row.0 }}</td>
+        <td>{{ row.1 }}</td>
+        <td>{{ row.2 }}</td>
+        <td>{{ row.3 }}</td>   
+        <td>{{ row.4 }}</td>   
+        <td>{{ row.5 }}</td>   
+        <td>{{ row.6 }}</td>   
+        <td>{{ row.7 }}</td>   
+        <td>{{ row.8 }}</td>   
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
 
 {% endblock content %}

@@ -13,13 +13,15 @@
     </div>
 
     <div id="area_download" >
-        <a href="{{url_download}}" class="btn btn--main">Download</a>
+        <a class="btn btn--main" href="{{url_download}}" download>Download</a>
     </div>
 </div>
 
 <script>
     const c_wsh = "{{ wsh }}";        
     const task_id = "{{ task_id }}";
+    const url_download = "{{ url_download }}";
+
     var area_download_html = document.getElementById('area_download').innerHTML;
 
     const socket = new WebSocket(
@@ -46,8 +48,18 @@
             // Redirect to the result page or perform any other action
             // window.location.href = '/result/';
             // window.history.back();
-            document.getElementById('area_download').hidden = false;
-            document.getElementById('progress_text').innerText = `Completed`;
+
+            if (url_download == '') {
+                // get the link of current page
+                var url = window.location.href;
+                console.log(url);
+                url = url + '&result=' + task_id;
+                // redirect to the link
+                location.href = url;
+            } else {
+                document.getElementById('area_download').hidden = false;
+                document.getElementById('progress_text').innerText = `Completed`;
+            }
         }
     };
 </script>

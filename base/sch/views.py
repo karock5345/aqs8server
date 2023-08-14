@@ -13,6 +13,9 @@ from base.ws import wssendwebtv, wscounterstatus, wssenddispremoveall
 import logging
 from .decorators import superuser_required
 import time
+from django.conf import settings
+import os
+import shutil
 
 logger = logging.getLogger(__name__)
 
@@ -205,6 +208,13 @@ def job_shutdown(branch):
             logtime = datetime_now,
             logtext = 'Local time:' + localtime_now.strftime('%H:%M:%S') + ' -SCH- Shutdown and reset branch :' + bcode + ' -SCH-'
             )   
+    
+    # delete files /download/bcode/*
+    static_root = str(settings.STATICFILES_DIRS[0])
+    path = static_root + '/download/' + bcode + '/'
+    if os.path.exists(path):
+        shutil.rmtree(path)
+    
     # reset to branch.ticketnext 1
     branch.ticketnext = 1
     branch.save()

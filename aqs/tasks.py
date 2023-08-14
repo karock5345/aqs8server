@@ -1,4 +1,5 @@
 # aqs/tasks.py
+from datetime import timedelta
 import os
 from celery import shared_task
 import csv
@@ -6,7 +7,8 @@ from django.http import HttpResponse
 from django.utils import timezone
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 import pickle
-from base.models import TicketData
+from base.models import TicketData, TicketFormat, Ticket, Branch, UserStatusLog
+from django.contrib.auth.models import User
 from django.db.models import Q
 import logging
 # from celery import Celery
@@ -66,6 +68,26 @@ def export_raw(quesrystr):
     save_path = static_root + '/download/' + bcode + '/raw_' + my_id +'.csv'
     logger.info(f'Full path of save file: {save_path}')
 
+    # create new folder if not exist
+    # Directory 
+    newdir = 'download'               
+    # Path 
+    path = os.path.join(static_root, newdir) 
+    try:
+        os.mkdir(path)
+    except:
+        # logger.error('Error new "download" folder')
+        pass
+
+    # Directory 
+    newdir = bcode           
+    # Path 
+    path = os.path.join(static_root + '/download/', newdir) 
+    try:
+        os.mkdir(path)
+    except:
+        # logger.error('Error new "bcode" folder')
+        pass
 
     i = 0
     for row in table:
@@ -123,24 +145,6 @@ def export_raw(quesrystr):
         #                 row.totalperiod,
         #                     ])
 
-    # create new folder if not exist
-    # Directory 
-    newdir = 'download'               
-    # Path 
-    path = os.path.join(static_root, newdir) 
-    try:
-        os.makedirs(path)
-    except:
-        pass
-
-    # Directory 
-    newdir = bcode           
-    # Path 
-    path = os.path.join(static_root + '/download/', newdir) 
-    try:
-        os.makedirs(static_root + '/download/' + bcode)
-    except:
-        pass
 
         
 
@@ -161,3 +165,232 @@ def export_raw(quesrystr):
 
     return current_task.status
 
+@shared_task
+def report_ticket(branch_id, ticketformat_id, startdate, enddate):
+    from celery import current_task
+    # Get my task ID
+    my_id = current_task.request.id
+    
+    current_task.status = 'PROGRESS'
+    current_task.table = []
+
+    per = -1
+
+    ticketformat = None
+    if ticketformat_id != '':
+        ticketformat = TicketFormat.objects.get(id=int(ticketformat_id))
+    branch = Branch.objects.get(pk=(branch_id))
+    
+    report_table = []
+    if ticketformat == None  :
+        # tfobj = TicketFormat.objects.filter(branch=branch)
+        slist = 'A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z'
+        # slist = 'A,B,C'
+        tlist = slist.split(',')
+
+        i = 0
+        for ttype1 in tlist:
+            for ttype2 in tlist:
+                i += 1                
+                newper = int(i/ (26 * 26) * 100)
+                if newper != per:
+                    per = newper
+                    # Set the progress in the task's state (for WebSocket consumer)
+                    current_task.update_state(state='PROGRESS', meta={'progress': per})
+
+
+                ttype = ttype1 + ttype2
+                # for tf in tfobj:  
+                # ttype = tf.ttype
+                # ttype in report_table?
+                # found = False
+                # for row in report_table:
+                #     if row[0] == ttype:
+                #         found = True
+                #         break
+                # if found == False:
+                ticketobj = Ticket.objects.filter(
+                    Q(branch=branch),
+                    Q(tickettime__range=[startdate,enddate]),
+                    Q(tickettype=ttype),                        
+                    )
+                total = ticketobj.count()
+                ticketobj = Ticket.objects.filter(
+                    Q(branch=branch),
+                    Q(tickettime__range=[startdate,enddate]),
+                    Q(tickettype=ttype),
+                    Q(status='miss'),
+                    )
+                miss = ticketobj.count()
+                done = total - miss
+                if total > 0 :
+                    report_table.append([ttype,done,miss,total])
+    else:
+        # Set the progress in the task's state (for WebSocket consumer)
+        per = 30
+        current_task.update_state(state='PROGRESS', meta={'progress': per})
+        ttype = ticketformat.ttype
+        ticketobj = Ticket.objects.filter(
+            Q(branch=branch),
+            Q(tickettime__range=[startdate,enddate]),
+            Q(tickettype=ttype),                        
+            )
+        
+        per = 60
+        current_task.update_state(state='PROGRESS', meta={'progress': per})
+        total = ticketobj.count()
+        ticketobj = Ticket.objects.filter(
+            Q(branch=branch),
+            Q(tickettime__range=[startdate,enddate]),
+            Q(tickettype=ttype),
+            Q(status='miss'),
+            )
+        miss = ticketobj.count()
+        done = total - miss
+        report_table.append([ttype,done,miss,total])
+
+    current_task.table = report_table
+    current_task.status = 'SUCCESS'
+
+    # print('report_table',current_task.table )
+
+    return  current_task.status, current_task.table
+
+
+@shared_task
+def report_staff(selected_user_id, querystr_auth_userlist, startdate, enddate):
+    from celery import current_task
+    report_table = []
+
+    # Get my task ID
+    my_id = current_task.request.id
+    
+    current_task.status = 'PROGRESS'
+    current_task.table = []
+
+    per = -1
+    # Restore the queryset convert table (list) to DataManager[TicketData]
+    auth_userlist = User.objects.all() 
+    auth_userlist.query = pickle.loads(querystr_auth_userlist)
+
+    selected_user = None
+    if selected_user_id != '':
+        selected_user = User.objects.get(id=int(selected_user_id))          
+   
+
+    if selected_user == None  :
+        # auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request_user)
+        
+        # total rows of auth_userlist * rows of userlogobj
+        userlogobj_all = UserStatusLog.objects.filter(
+            Q(starttime__range=[startdate, enddate]),
+            ~Q(starttime = None),
+            ~Q(endtime = None),
+        )
+        total = userlogobj_all.count() * len(auth_userlist)        
+        i = 0
+        for user in auth_userlist:
+            userlogobj = UserStatusLog.objects.filter(
+                Q(starttime__range=[startdate, enddate]),
+                Q(user=user),
+                ~Q(starttime = None),
+                ~Q(endtime = None),
+            )
+            login = 0
+            ready = 0
+            waiting = 0
+            walking = 0
+            process = 0
+            acw = 0
+            aux =0
+            for ul in userlogobj:
+                i += 1                
+                newper = int(i/ total * 100)
+                if newper != per:
+                    per = newper
+                    # Set the progress in the task's state (for WebSocket consumer)
+                    current_task.update_state(state='PROGRESS', meta={'progress': per})
+
+                seconds = (ul.endtime - ul.starttime).seconds
+                if ul.status == 'login':
+                    login = login + seconds
+                elif ul.status == 'ready':
+                    ready = ready + seconds
+                elif ul.status == 'waiting':
+                    waiting = waiting + seconds
+                elif ul.status == 'walking':
+                    walking = walking + seconds
+                elif ul.status == 'processing':
+                    process = process + seconds
+                elif ul.status == 'ACW':
+                    acw = acw + seconds
+                elif ul.status == 'AUX':
+                    aux = aux + seconds
+            # convert all to '00:00:00' string
+            login_s = str(timedelta(seconds=login))
+            ready_s = str(timedelta(seconds=ready))
+            waiting_s = str(timedelta(seconds=waiting))
+            walking_s = str(timedelta(seconds=walking))
+            process_s = str(timedelta(seconds=process))
+            acw_s = str(timedelta(seconds=acw))
+            aux_s = str(timedelta(seconds=aux))
+
+            report_table.append([user.username, user.first_name + ' ' + user.last_name, login_s, ready_s, waiting_s, walking_s, process_s, acw_s, aux_s])
+
+
+    else:
+        userlogobj = UserStatusLog.objects.filter(
+            Q(starttime__range=[startdate,enddate]),
+            Q(user=selected_user),
+            ~Q(starttime = None),
+            ~Q(endtime = None),
+        )
+        login = 0
+        ready = 0
+        waiting = 0
+        walking = 0
+        process = 0
+        acw = 0
+        aux =0
+        total = userlogobj.count()       
+        i = 0
+        for ul in userlogobj:
+            i += 1                
+            newper = int(i/ total * 100)
+            if newper != per:
+                per = newper
+                # Set the progress in the task's state (for WebSocket consumer)
+                current_task.update_state(state='PROGRESS', meta={'progress': per})
+
+            seconds = (ul.endtime - ul.starttime).seconds
+            if ul.status == 'login':
+                login = login + seconds
+            elif ul.status == 'ready':
+                ready = ready + seconds
+            elif ul.status == 'waiting':
+                waiting = waiting + seconds
+            elif ul.status == 'walking':
+                walking = walking + seconds
+            elif ul.status == 'processing':
+                process = process + seconds
+            elif ul.status == 'ACW':
+                acw = acw + seconds
+            elif ul.status == 'AUX':
+                aux = aux + seconds
+        # convert all to '00:00:00' string
+        login_s = str(timedelta(seconds=login))
+        ready_s = str(timedelta(seconds=ready))
+        waiting_s = str(timedelta(seconds=waiting))
+        walking_s = str(timedelta(seconds=walking))
+        process_s = str(timedelta(seconds=process))
+        acw_s = str(timedelta(seconds=acw))
+        aux_s = str(timedelta(seconds=aux))
+
+        report_table.append([selected_user.username, selected_user.first_name + ' ' + selected_user.last_name, login_s, ready_s, waiting_s, walking_s, process_s, acw_s, aux_s])
+    
+    current_task.table = report_table
+    current_task.status = 'SUCCESS'
+
+    # print('report_table',current_task.table )
+
+    return  current_task.status, current_task.table

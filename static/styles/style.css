@@ -1950,22 +1950,23 @@ color: white;
 
 }
 .progress_text {
-  font-size: 5rem;
+  font-size: 3rem;
   color: var(--color-light-gray);
   font-family:'Courier New', Courier, monospace;
-
+  font-weight: 1000;
+  margin-top: 3rem;
 }
 
 .progress_per {
-  height: 30rem;
-  width: 30rem;
+  height: 20rem;
+  width: 20rem;
   border-radius: 50%;
-  font-size: 10rem;
+  font-size: 7rem;
   background-color: var(--color-dark-light);
   color : var(--color-main);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
-  padding-top: 6rem;
+  padding-top: 4rem;
 
   margin-top: 3rem;
   margin-bottom: 3rem;
