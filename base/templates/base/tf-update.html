@@ -21,28 +21,40 @@
                 </div>
                 <div class="layout__body">
 
-                    <!-- <h1>Username : {{user.username}}</h1> -->
-
                     <form class="form" action="" method="POST" prefix="profileform">
+                        
                         {% csrf_token %}
+                        
                         {% for field in tfform %}
-                        <div class="form__group">
+                        
                             {% if field.label == "Enabled" %}
-                                <label for="profile_pic">Ticket Format Enabled : {{field}}</label>                         
+                            
+                                <div class="form__group_checkbox ">
+                                    {{field}}<label for="profile_pic">&nbsp;Ticket Format Enabled</label>
+                                </div>
+                                
                             {% elif field.label == "Ttype" %}
+                                <div class="form__group">
                                 <label for="profile_pic">Ticket Type : {{field}}</label>
+                                </div>
                             {% elif field.label == "Branch" %}
+                            <div class="form__group">
                                 <label for="profile_pic">Branch : {{field}}</label>
+                                </div>
                             {% elif field.label == "Tformat" %}
-                                <label for="profile_pic">Ticket Format : {{field}}</label>
+                            <div class="form__group">
+                                                                <label for="profile_pic">Ticket Format : {{field}}</label>
+                                                                </div>
                             {% else %}
+                            <div class="form__group">
                                 <label for="profile_pic">{{field.label}} : {{field}}</label>                            
+                                </div>
                             {% endif %}
 
-                            
-                        </div>
+                               
+                        
                         {% endfor %}
-                                                                             
+                                                                
 
 
                         <div class="form__action">

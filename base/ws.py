@@ -185,9 +185,10 @@ def wscounterstatus(counterstatus):
     #  "lastupdate":now,
     #  "data":
     #    {
-    #     "status": "waiting",", 
+    #     "status": "waiting",
     #     "tickettype": "A",
     #     "ticketnumber": "012",
+    #     "login": True/False,
     #     }
     # }
     context = None
@@ -202,7 +203,8 @@ def wscounterstatus(counterstatus):
             'data': {
                 'status' : counterstatus.status,
                 'tickettype' : '',
-                'ticketnumber' : '',            
+                'ticketnumber' : '',
+                'login' : counterstatus.loged,    
                 }
         }
     else:
@@ -212,7 +214,8 @@ def wscounterstatus(counterstatus):
             'data': {
                 'status' : counterstatus.status,
                 'tickettype' : counterstatus.tickettemp.tickettype,
-                'ticketnumber' : counterstatus.tickettemp.ticketnumber,            
+                'ticketnumber' : counterstatus.tickettemp.ticketnumber,
+                'login' : counterstatus.loged,            
                 }
         }
     str_tx = json.dumps(json_tx)

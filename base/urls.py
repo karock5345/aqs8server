@@ -11,6 +11,8 @@ urlpatterns = [
     path('update-user/<str:pk>/', views.UserUpdateView, name='update-user'),
     path('update-user-tickettype/<str:pk>/', views.UserUpdateTTView, name='update-user-tt'),
     path('new-user/', views.UserNewView, name='new-user'),
+    path('new-user2/<str:pk>/', views.UserNewView2, name='new-user2'),
+    path('new-user3/<str:pk>/', views.UserNewView3, name='new-user3'),
     path('password/', views.UserChangePWView, name='pw-user'),   
     path('delete/<str:pk>/', views.UserDelView, name='delete-user'),
     path('reset/<str:pk>/', views.UserResetView, name='resetpw-user'),
@@ -63,7 +65,8 @@ urlpatterns = [
     path('softkey_miss/<str:pk>/', views.SoftkeyMissView,  name='softkeymiss'),
     path('softkey_recall/<str:pk>/', views.SoftkeyRecallView,  name='softkeyrecall'),
     path('softkey_void/<str:pk>/<str:ttid>/', views.Softkey_VoidView,  name='softkeyvoid'),
-    
+    path('softkey_get/<str:pk>/<str:ttid>/', views.Softkey_GetView,  name='softkeyget'),
+
     # for Hypic
     path('repair/', views.repair ),
 

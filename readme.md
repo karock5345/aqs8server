@@ -407,6 +407,9 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 - Add error message for new user 
 - Show "active user number" in user list
 - Celery support long time task (e.g. export report to excel)
+- fixed bug : user group : 'manager' and 'support' can not Force Logout
+- Web softkey add WS CounterStatus for receive loged or not then redirect to home page
+- Web softkey ticket queue list add 'Call' button for each ticket
 
 # For Project PCCW 2023
 ## Main Server (WTT)

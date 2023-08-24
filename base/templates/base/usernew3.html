@@ -1,0 +1,233 @@
+<!-- New user step 2--> 
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <main class="update-account layout">
+
+        <div class="container" id="id_area_main">
+            <div class="layout__box__form">
+                <div class="layout__boxHeader">
+                    <div class="layout__boxTitle">
+                        <a href="{{request.META.HTTP_REFERER}}">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 32 32">
+                                <title>Back</title>
+                                <path
+                                    d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                                </path>
+                            </svg>
+                        </a>
+                        <h3>Edit your profile</h3>
+                    </div>
+                </div>
+                <div class="layout__body">
+                    <h1>New user step 3 - Select ticket type</h1>
+
+                    <h1>Username : {{user.username}}</h1>
+
+                    <form class="form" action="" method="POST" prefix="profileform">
+                        {% csrf_token %}
+                                             
+                        {% for field in profileform %}
+                        <div class="form__group">
+                            {% if field.name == "tickettype" %}
+                                <label>Ticket type</label>
+                                <!-- the field display but cannot edit-->
+                                {% if field.value == "" %}
+                                    <a id="id_a_tickettype" class="form" >No ticket type</a>
+                                {% else %}
+                                    <a id="id_a_tickettype" class="form" >{{field}}</a>
+                                {% endif %}
+                                <input type="text"  value="{{field.value}}" name="new_tickettype" id="id_text_tickettype" hidden>
+                            {% else %}
+                                <div hidden>
+                                    <label for="profile_pic">{{field.help_text}}</label>
+                                    {{field}}
+                                </div>
+                            {% endif %}   
+                        </div>
+                        {% endfor %}                                  
+
+
+                        <div class="form__action">
+                            <a class="btn btn--dark" href="{% url 'usersummary' %}">Back</a>
+                            <button class="btn btn--main" type="submit">Next</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container" id="id_area_tt">
+            <div class="layout__box__form">
+                <div class="layout__boxHeader">
+                    <div class="layout__boxTitle">
+                        <a href="">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 32 32">
+                                <title>Back</title>
+                                <path
+                                    d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                                </path>
+                            </svg>
+                        </a>
+                        <h3>Change ticket type</h3>
+                    </div>
+                </div>
+                <div class="layout__body">
+    
+                    <h1>User :{{userp.user.first_name}} {{userp.user.last_name}} (Username: {{userp.user.username}})</h1>
+                    <h1>Ticket type : <label id="lbl_tickettype">{{userp.tickettype}}&nbsp;</label></h1>
+                    {% for tt in ticketformat %}
+                        <div>
+                            {% if tt.checked == "checked" %}
+                                <input type="checkbox" checked id="id_chk_tt_{{tt.ttype}}">{{tt.ttype}} {{tt.touchkey_lang1}} {{tt.touchkey_lang2}}</input>
+                            {% else %}
+                                <input type="checkbox" id="id_chk_tt_{{tt.ttype}}">{{tt.ttype}} {{tt.touchkey_lang1}} {{tt.touchkey_lang2}}</input>
+                            {% endif %} 
+                        </div>
+                    {% endfor %}
+    
+                    <div>
+                        <button class="btn btn--dark" id="id_tt_cancel">Cancel</button>
+                        <button class="btn btn--main" id="id_tt_confirm">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {{ userp.tickettype|json_script:"js-tt" }}
+        {{ userptt|json_script:"js-userptt" }}
+        <script>
+            var userptt = JSON.parse(document.getElementById('js-userptt').textContent);
+            var tickettype = JSON.parse(document.getElementById('js-tt').textContent);
+            // how to get all the checkbox id and value
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            var btn_cancel = document.getElementById('id_tt_cancel');
+            var arr_tt = [];
+            var arr_tt_cb = [];
+            var arr_tt_new = [];
+            var tickettype_new = "";
+
+            // check tickettype do not have character "{" or "}" then set to ""
+            if (tickettype == null) {
+                
+                    tickettype = "";
+                    document.getElementById('id_a_tickettype').innerHTML = "No ticket type";
+                    document.getElementById('id_text_tickettype').value = "";
+            
+            } else {
+                // Remove ticket type is not in checkbox (ticket type only in auth branch)
+                arr_tt = tickettype.split(",");
+
+                for (var k =0; k < checkboxes.length; k++) {
+                    // check checkboxes[k].id start with "id_chk_tt_"
+                    if (checkboxes[k].id.indexOf("id_chk_tt_") > -1) {
+                        var tt = checkboxes[k].id.replace("id_chk_tt_", "");
+                        // add tt to array
+                        arr_tt_cb.push(tt);
+                    }
+                }
+                for (var k = 0; k < arr_tt.length; k++) {
+                    var tt = arr_tt[k];
+                    // check tt in arr_tt_cb
+                    if (arr_tt_cb.indexOf(tt) > -1) {                
+                        // tt in arr_tt_cb
+                        arr_tt_new.push(tt);
+                    }
+                }
+                // array arr_tt to string ','
+                tickettype_new = arr_tt_new.join(",");
+                if (tickettype_new != "") {
+                    tickettype_new = tickettype_new + ",";
+                }    
+                document.getElementById('lbl_tickettype').innerHTML = tickettype_new;        
+            }
+
+
+
+
+            document.getElementById('id_area_tt').style.display = "none";
+    
+            document.getElementById('id_a_tickettype').addEventListener('click', function() {
+                document.getElementById('id_area_tt').style.display = "block";
+                document.getElementById('id_area_main').style.display = "none";
+            });
+    
+    
+            
+    
+    
+            
+            Array.prototype.forEach.call(checkboxes, function(el) {
+                el.addEventListener('change', function() {
+                    if (this.id.indexOf("id_chk_tt_") > -1) {
+                        var tt = this.id.replace("id_chk_tt_", "");
+                        console.log(tt);
+                        if (this.checked) {
+                            // Checkbox is checked..
+                            tickettype_new = tickettype_new + tt + ",";
+                        } else {
+                            // Checkbox is not checked..
+                            // split tickettype by "," to array
+                            var arr = tickettype_new.split(",");
+                            // remove tt from array
+                            arr.splice(arr.indexOf(tt), 1);
+                            // join array to string
+                            tickettype_new = arr.join(",");
+    
+                            // tickettype = tickettype.replace(tt + ",", "");
+                        }
+                        document.getElementById('lbl_tickettype').innerHTML = tickettype_new;
+                        
+                        // document.getElementById('new_tickettype').innerHTML = tickettype_new;
+                    }
+                })
+            })
+    
+            // add event button clicked cancel
+            btn_cancel.addEventListener('click', function() {
+                document.getElementById('id_area_tt').style.display = "none";
+                document.getElementById('id_area_main').style.display = "block";
+            });
+    
+    
+            // add event button clicked pass tickettype to view
+            document.getElementById('id_tt_confirm').addEventListener('click', function() {
+                // for loop checkbox to get tickettype
+                // tickettype = "";
+                // for (var i = 0; i < checkboxes.length; i++) {
+                //     //  check if the checkbox id is is "id_chk_tt_xxx"
+                //     if ((checkboxes[i].id.indexOf("id_chk_tt_") > -1)) {
+                //         var tt = checkboxes[i].id.replace("id_chk_tt_", "");
+                //         if (checkboxes[i].checked) {
+                //             // Checkbox is checked..
+                //             tickettype = tickettype + tt + ",";
+                //         } 
+                //     }
+                    
+                // }
+    
+    
+    
+                document.getElementById('id_area_tt').style.display = "none";
+                document.getElementById('id_area_main').style.display = "block";
+                document.getElementById('id_a_tickettype').innerHTML = tickettype_new;
+                document.getElementById('id_text_tickettype').value = tickettype_new;
+                if (tickettype_new == "") {
+                    document.getElementById('id_a_tickettype').innerHTML = "No ticket type";
+                    document.getElementById('id_text_tickettype').value = "<No ticket type>";
+                }
+            });
+              
+          </script>
+    
+    
+    
+
+    
+    </main>
+{% endblock content %}

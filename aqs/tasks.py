@@ -36,7 +36,7 @@ def long_running_task():
     return "Long-running task completed!"
 
 @shared_task
-def export_raw(quesrystr):
+def export_raw(quesrystr, reporttitle1, reporttitle2, reporttitle3, reporttitle4, reporttitle5 ):
     from celery import  current_task
     report_str = ''
     # Get my task ID
@@ -88,6 +88,8 @@ def export_raw(quesrystr):
     except:
         # logger.error('Error new "bcode" folder')
         pass
+
+    
 
     i = 0
     for row in table:
@@ -150,8 +152,15 @@ def export_raw(quesrystr):
 
     # save report_str to save_path    
     with open(save_path, 'w') as f:
+        # add report title
+        f.write(reporttitle1 + '\n')
+        f.write(reporttitle2 + '\n')
+        f.write(reporttitle3 + '\n')
+        f.write(reporttitle4 + '\n')
+        f.write(reporttitle5 + '\n')        
+
         # add table header
-        # writer.writerow(['Ticket', 'Branch', 'Counter Type', 'Step', 'Start Time', 'Start by', 'Call Time', 'Call by', 'Process Time', 'Process by', 'Done Time', 'Done by', 'No Show Time', 'No Show by', 'Void Time', 'Void by', 'Waiting Time (s)', 'Walking time (s)', 'Process time (s)', 'Total time (s)'])
+        # writer.writerow(['Ticket', 'Branch', 'Counter Type', 'Step', 'Start Time', 'Start by', 'Call Time', 'Call by', 'Process Time', 'Process by', 'Done Time', 'Done by', 'No Show Time', 'No Show by', 'Void Time', 'Void by', 'Waiting Time (s)', 'Walking time (s)', 'Process time (s)', 'Total time (s)']                
         f.write('Ticket,Branch,Counter Type,Step,Start Time,Start by,Call Time,Call by,Process Time,Process by,Done Time,Done by,No Show Time,No Show by,Void Time,Void by,Waiting Time (s),Walking time (s),Process time (s),Total time (s)\n')
         f.write(report_str)
     f.close()

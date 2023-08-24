@@ -598,6 +598,10 @@ def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, co
         # get gettno string right 3 char
         gettno = gettno[-len(tformat):]
 
+    if status == dict({}) :
+        if counterstatus.status != 'waiting':
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Counter status is not waiting.'})
 
 
     if status == dict({}) :

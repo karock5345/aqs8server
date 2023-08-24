@@ -53,7 +53,7 @@ context_login = {}
 
 
 
-@allowed_users(allowed_roles=['admin', 'report'])
+@allowed_users(allowed_roles=['admin', 'support', 'manager'])
 @unauth_user
 def SuperVisor_ForceLogoutView(request, pk, csid):
     context = {}
@@ -121,15 +121,70 @@ def Softkey_VoidView(request, pk, ttid):
     except:
         messages.error(request, 'TicketData not found.')
         return redirect('softkey', pk=pk)
-    context = {'tt':tt}
+    
+    text = 'Confirm to void ticket : "' + tt.tickettype + tt.ticketnumber + '" ?'
+    context = {'tt':tt} | {'text':text}
     if request.method == 'POST':
         action = request.POST.get('action')
         if action == 'confirm':           
             funVoid(request.user, tt, td, datetime_now)
             messages.success(request, 'Ticket ' + tt.tickettype + tt.ticketnumber + ' has been voided.')
             return redirect('softkey', pk=pk)
-    return render(request , 'base/softkey_void.html', context)
+    return render(request , 'base/softkey_confirm.html', context)
+
+@unauth_user
+def Softkey_GetView(request, pk, ttid):
+    context = {}
+    datetime_now =timezone.now()
+    error = ''
+
+    if error == '':
+        try:
+            tt = TicketTemp.objects.get(id=ttid)
+            datetime_now_local = funUTCtoLocal(datetime_now, tt.branch.timezone)
+            str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
+        except:
+            error = 'TicketTemp not found.'
+    if error == '':
+        try:
+            td = TicketData.objects.get(Q(tickettemp=tt))
+        except:
+            error = 'TicketData not found.'
     
+    if error == '':
+        try:
+            counterstatus = CounterStatus.objects.get(id=pk)
+        except:
+            error = 'CounterStatus not found.'
+    
+    # no need to confirm
+    if error == '':
+        status, msg, context_get = funCounterGet('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list', 'Softkey-web', softkey_version, datetime_now)
+        if status['status'] == 'Error':
+            error = msg['msg'] + ' ' + tt.tickettype + tt.ticketnumber
+    # # no need to confirm
+    # if error == '':
+    #     text = 'Confirm to call ticket : "' + tt.tickettype + tt.ticketnumber + '" ?'
+    #     context = {'tt':tt} | {'text':text}
+    #     if request.method == 'POST':
+    #         action = request.POST.get('action')
+    #         if action == 'confirm':           
+    #             status, msg, context_get = funCounterGet('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list', 'Softkey-web', softkey_version, datetime_now)
+    #             if status['status'] == 'Error':
+    #                 error = msg['msg'] + ' ' + tt.tickettype + tt.ticketnumber
+    # if error != '':
+    #     messages.error(request, error)
+    #     return redirect('softkey', pk=pk)
+    # else :
+    #     return render(request , 'base/softkey_confirm.html', context)
+
+    if error != '':
+        messages.error(request, error)
+    return redirect('softkey', pk=pk)
+
+
+
+                
 
 
 @unauth_user
@@ -180,15 +235,23 @@ def SoftkeyView(request, pk):
                 lang1 = ticketformat.touchkey_lang1
                 lang2 = ticketformat.touchkey_lang2
 
-                userttype = False
-                if context_counter['data']['userttype'].find(tr.tickettype + ',') != -1:
-                    userttype = True
+                b_userttype = False
+                userttype = context_counter['data']['userttype']
+                # convert userttype to list split by comma
+                l_userttype = []
+                l_userttype = userttype.split(',')
+                # check if tr.tickettype in l_userttype
+                if tr.tickettype in l_userttype:
+                    b_userttype = True
+                    print (tr.tickettype + ' in ' + str(l_userttype))
+                # if context_counter['data']['userttype'].find(tr.tickettype + ',') != -1:
+                #     b_userttype = True
                 newrow = {
                     'tickettype' : tr.tickettype,
                     'lang1' : lang1,
                     'lang2' : lang2,
                     'wait' : tr.waiting,
-                    'userttype' : userttype,             
+                    'userttype' : b_userttype,             
                 }
                 context_tr.append(newrow)
 
@@ -205,7 +268,7 @@ def SoftkeyView(request, pk):
                 utctt = datetime.strptime(context_ql[i]['tickettime'], '%Y-%m-%dT%H:%M:%SZ')
 
             context_ql[i]['tickettime_local'] = funUTCtoLocal(utctt, counterstatus.countertype.branch.timezone)
-            context_ql[i]['tickettime_local'] = context_ql[i]['tickettime_local'].strftime('%H:%M:%S %Y-%m-%d')
+            context_ql[i]['tickettime_local'] = context_ql[i]['tickettime_local'].strftime('%H:%M:%S %m-%d')
 
     if error == '':
         printerobj = PrinterStatus.objects.filter(Q(branch=counterstatus.countertype.branch))
@@ -402,7 +465,7 @@ def SoftkeyLogoutView(request, pk):
     error = ''
     context = {}
     datetime_now =timezone.now()
-    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
     context = {
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
         }
@@ -433,7 +496,8 @@ def SoftkeyCallView(request, pk):
     error = ''
     context = {}
     datetime_now =timezone.now()
-    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+
     context = {
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
         }
@@ -466,7 +530,7 @@ def SoftkeyProcessView(request, pk):
     error = ''
     context = {}
     datetime_now =timezone.now()
-    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
     context = {
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
         }
@@ -495,7 +559,7 @@ def SoftkeyMissView(request, pk):
     error = ''
     context = {}
     datetime_now =timezone.now()
-    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
     context = {
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
         }
@@ -523,7 +587,7 @@ def SoftkeyRecallView(request, pk):
     error = ''
     context = {}
     datetime_now =timezone.now()
-    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
     context = {
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
         }
@@ -553,7 +617,7 @@ def SoftkeyDoneView(request, pk):
     error = ''
     context = {}
     datetime_now =timezone.now()
-    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
     context = {
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
         }
@@ -1212,14 +1276,20 @@ def Report_RAW_Result(request):
     table = None
     if error == '':
         localtimezone = pytz.timezone(branch.timezone)
-        report_result = 'RAW Data Report\nBranch:' + branch.name + '(' + branch.bcode + ')\nStart datetime:' + s_startdate + '\nEnd datetime:' + s_enddate 
+        # report_result = 'RAW Data Report\nBranch:' + branch.name + '(' + branch.bcode + ')\nStart datetime:' + s_startdate + '\nEnd datetime:' + s_enddate 
+        report_result1 = 'RAW Data Report'
+        report_result2 = 'Branch:' + branch.name + '(' + branch.bcode + ')'
+        report_result3 = 'Start datetime:' + s_startdate
+        report_result4 = 'End datetime:' + s_enddate 
+        report_result5 = 'Counter Type:ALL'        
+        
         if countertype == None  :
             table = TicketData.objects.filter(
                 Q(branch=branch),
                 Q(starttime__range=[startdate,enddate]),
                 ~Q(ticket = None),
             ).order_by('starttime')
-            report_result = report_result + '\nCounter Type:ALL' + '\nTotal records:' + str(table.count())
+            
         else:
             table = TicketData.objects.filter(
                 Q(branch=branch),
@@ -1227,8 +1297,9 @@ def Report_RAW_Result(request):
                 ~Q(ticket = None),
                 Q(countertype=countertype),
             ).order_by('starttime') 
-            report_result = report_result + '\nCounter Type:' + countertype.name + '\nTotal records:' + str(table.count())
-
+            report_result5 = 'Counter Type:' + countertype.name 
+        report_result6 = 'Total records:' + str(table.count())
+        report_result = report_result1 + '\n' + report_result2 + '\n' + report_result3 + '\n' + report_result4 + '\n' + report_result5 + '\n' + report_result6
 
         # # check if rows > 10000 then error
         # if table.count() > 10000 :
@@ -1237,7 +1308,9 @@ def Report_RAW_Result(request):
     table100 = None
     if error == '':            
         # Pagination
-        page = request.GET.get('page', 1)  # Get the current page number from the request
+
+        page = request.GET.get('page') if request.GET.get('page') != None else '1'
+        page = int(page)
         per_page = 100  # Number of items per page
 
         paginator = Paginator(table, per_page)
@@ -1266,7 +1339,7 @@ def Report_RAW_Result(request):
                 # print('is same?' + str(table2 == table))
 
                 # print(querystr)
-                task = export_raw.apply_async(args=[(querystr)], countdown=0)  # 'countdown' time delay in second before execute
+                task = export_raw.apply_async(args=[querystr,report_result1,report_result2,report_result3,report_result4,report_result5], countdown=0)  # 'countdown' time delay in second before execute
                 task_id = task.id
                 ptask_id = task_id.replace('-', '_')
 
@@ -1351,15 +1424,16 @@ def Report_RAW_Result(request):
 @unauth_user
 @allowed_users(allowed_roles=['admin', 'report','manager','support'])
 def Report_Ticket_Result(request):
-    bcode = request.GET['branch']
-    s_startdate = request.GET['startdate']
-    s_enddate = request.GET['enddate']
-    ticketformat_id = request.GET['ticketformats']
-    result_task_id = ''
-    try:    
-        result_task_id = request.GET['result']
-    except:
-        pass
+    # change code to if request.GET.get('x') != None else ''
+    bcode = request.GET.get('branch') if request.GET.get('branch') != None else ''
+    # bcode = request.GET['branch']
+    s_startdate = request.GET.get('startdate') if request.GET.get('startdate') != None else ''
+    # s_startdate = request.GET['startdate']
+    s_enddate = request.GET.get('enddate') if request.GET.get('enddate') != None else ''
+    # s_enddate = request.GET['enddate']
+    ticketformat_id = request.GET.get('ticketformats') if request.GET.get('ticketformats') != None else ''
+    # ticketformat_id = request.GET['ticketformats']
+    result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
 
     error = ''
 
@@ -1509,6 +1583,8 @@ def Report_Ticket_Result(request):
 @unauth_user
 @allowed_users(allowed_roles=['admin', 'report','manager','support'])
 def Report_Staff_Result(request):
+    # change code to if request.GET.get('x') != None else ''
+    bcode = request.GET.get('branch') if request.GET.get('branch') != None else ''
     bcode = request.GET['branch']
     s_startdate = request.GET['startdate']
     s_enddate = request.GET['enddate']
@@ -2638,10 +2714,13 @@ def UserNewView(request):
             user.save()
             # new userprofile for this user
             #newuser = user.user
-            UserProfile.objects.create(user=user)
+            userp = UserProfile.objects.create(user=user)
                    
-            #login(request, user)
-            return redirect('usersummary')
+            #login(request, user)        
+            # context =  {'user':user , 'userp':userp}
+            # return render(request, 'base/usernew2.html' + user.id + '/', context)
+            pk = user.id
+            return redirect('new-user2', pk=pk)
         else:
             # messages.error(request, 'An error occurcd during registration')
             # get all error message from form.errors
@@ -2651,6 +2730,131 @@ def UserNewView(request):
             
     #context = {'page':page}
     return render(request, 'base/usernew.html', {'form':form})
+
+@unauth_user
+@allowed_users(allowed_roles=['admin','manager','support'])
+def UserNewView2(request, pk):
+    user = User.objects.get(id=pk)
+    userp = UserProfile.objects.get(user__exact=user)
+
+    # check user group auth
+    auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+
+    if request.method == 'POST':
+        if request.user.is_superuser == True :
+            userform = UserFormSuper(request.POST, instance=user, prefix='uform')
+        elif user == request.user:
+            userform = UserFormAdminSelf(request.POST, instance=user, prefix='uform')        
+        elif request.user.groups.filter(name='admin').exists() == True :
+            userform = UserFormAdmin(request.POST, instance=user, prefix='uform')
+        elif request.user.groups.filter(name='support').exists() == True :
+            userform = UserFormSupport(request.POST, instance=user, prefix='uform')
+        elif request.user.groups.filter(name='manager').exists() == True :
+            userform = UserFormManager(request.POST, instance=user, prefix='uform')
+        else :
+            userform = UserForm(request.POST, instance=user, prefix='uform')
+        profileform = UserProfileForm(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
+        if (userform.is_valid() & profileform.is_valid()):
+            profileform.save() 
+            userform.save()
+                                   
+            return redirect('new-user3', pk=pk)
+        else:
+            # messages.error(request, 'An error occurcd during registration')
+            # get all error message from form.errors
+            for field, items in profileform.errors.items():
+                for item in items:
+                    messages.error(request, item + ' ' + field)
+    else:
+        if request.user.is_superuser == True :
+            userform = UserFormSuper(instance=user, prefix='uform')
+        elif user == request.user:
+            userform = UserFormAdminSelf(instance=user, prefix='uform')
+        elif request.user.groups.filter(name='admin').exists() == True :
+            userform = UserFormAdmin(instance=user, prefix='uform')
+        elif request.user.groups.filter(name='support').exists() == True :
+            userform = UserFormSupport(instance=user, prefix='uform')
+        elif request.user.groups.filter(name='manager').exists() == True :
+            userform = UserFormManager(instance=user, prefix='uform')
+        else :
+            userform = UserForm(instance=user, prefix='uform')
+
+        profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
+    context =  {'user':user , 'userp':userp, 'userform':userform, 'profileform':profileform}
+    return render(request, 'base/usernew2.html', context)
+
+@unauth_user
+@allowed_users(allowed_roles=['admin','manager','support'])
+def UserNewView3(request, pk):
+    user = User.objects.get(id=pk)
+    userp = UserProfile.objects.get(user__exact=user)
+
+    # check user group auth
+    auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+
+
+    ticketformat = TicketFormat.objects.all().order_by('ttype')
+    for tf in ticketformat:
+        # check if userp.branchs is not in tt.branchs
+        if tf.branch not in userp.branchs.all():
+            ticketformat = ticketformat.exclude(id=tf.id)
+    ticketformat2 = ticketformat
+
+
+
+    for tf in ticketformat:
+        for tf2 in ticketformat:
+            if tf != tf2:
+                if tf.ttype == tf2.ttype:
+                    ticketformat = ticketformat.exclude(id=tf.id)
+                    ticketformat2 = ticketformat2.exclude(id=tf2.id)
+    
+
+
+    # add column for checked or unchecked to ticketformat2
+    if userp.tickettype != None:
+        listusertt = userp.tickettype.split(',')
+    else:
+        sTemp = ''
+        listusertt = sTemp.split(',')
+    for tt in ticketformat2:
+        if tt.ttype in listusertt:
+            tt.checked = 'checked'
+        else:
+            tt.checked = 'unchecked'
+        tt.save()
+
+
+    if request.method == 'POST':
+        profileform = UserProfileForm(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
+        newtickettypeform = newTicketTypeForm(request.POST)
+
+        if (profileform.is_valid() & newtickettypeform.is_valid()):
+            profileform_temp = profileform.save(commit=False)
+            # get data from html, and update to profileform_temp
+            new_tt = newtickettypeform['new_tickettype'].value()
+            # print ('new_tt = ' + new_tt)
+            if new_tt == '<No ticket type>':
+                new_tt = ''
+            profileform_temp.tickettype = new_tt
+            profileform.save()
+            profileform_temp.save()
+            messages.success(request, 'New User successfully')            
+            return redirect('update-user', pk=pk)
+
+        else:
+            # messages.error(request, 'An error occurcd during registration')
+            # get all error message from form.errors
+            for field, items in profileform.errors.items():
+                for item in items:
+                    messages.error(request, item + ' ' + field)
+    else:
+        profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
+    context =  {'profileform':profileform, 'user':user, 'userp':userp,'ticketformat':ticketformat2,'userptt':listusertt, }
+    return render(request, 'base/usernew3.html', context)
+
+
+
 
 @unauth_user
 # @allowed_users(allowed_roles=['admin'])
@@ -2723,8 +2927,7 @@ def UserResetView(request, pk):
 
 def MenuView(request):
 
-    auth_branchs , auth_userlist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
-
+    auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
     context =  {'users':auth_userlist , 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
     return render(request, 'base/m-menu.html', context)
 
@@ -2753,7 +2956,7 @@ def auth_data(user):
     if user.is_superuser == True :
         auth_profilelist = UserProfile.objects.all()
         auth_userlist = User.objects.exclude(Q(groups__name='web'))
-        auth_userlist_active = User.objects.exclude(Q(groups__name='web') | Q(is_active=True))
+        auth_userlist_active = User.objects.filter(Q(is_active=True)).exclude(Q(groups__name='web'))
         auth_branchs = Branch.objects.all()
         auth_ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
         auth_routes = TicketRoute.objects.all().order_by('branch','countertype', 'tickettype', 'step')

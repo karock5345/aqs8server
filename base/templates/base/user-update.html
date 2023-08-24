@@ -73,7 +73,7 @@
 
 
 
-      <div class="container" id="id_area_tt">
+    <div class="container" id="id_area_tt">
         <div class="layout__box__form">
             <div class="layout__boxHeader">
                 <div class="layout__boxTitle">
@@ -136,19 +136,60 @@
             document.getElementById('id_area_main').style.display = "none";
         });
 
+
+        // Remove ticket type is not in checkbox (ticket type only in auth branch)
+        var arr_tt = tickettype.split(",");
+        var arr_tt_cb = [];
+        var arr_tt_new = [];
+        for (var k =0; k < checkboxes.length; k++) {
+            // check checkboxes[k].id start with "id_chk_tt_"
+            if (checkboxes[k].id.indexOf("id_chk_tt_") > -1) {
+                var tt = checkboxes[k].id.replace("id_chk_tt_", "");
+                // add tt to array
+                arr_tt_cb.push(tt);
+            }
+        }
+        for (var k = 0; k < arr_tt.length; k++) {
+            var tt = arr_tt[k];
+            // check tt in arr_tt_cb
+            if (arr_tt_cb.indexOf(tt) > -1) {                
+                // tt in arr_tt_cb
+                arr_tt_new.push(tt);
+            }
+        }
+        // array arr_tt to string ','
+        var tickettype_new = arr_tt_new.join(",");
+        if (tickettype_new != "") {
+            tickettype_new = tickettype_new + ",";
+        }    
+        document.getElementById('lbl_tickettype').innerHTML = tickettype_new;        
+
+
+        
         Array.prototype.forEach.call(checkboxes, function(el) {
             el.addEventListener('change', function() {
-                var tt = this.id.replace("id_chk_tt_", "");
-                if (this.checked) {
-                    // Checkbox is checked..
-                    tickettype = tickettype + tt + ",";
-                } else {
-                    // Checkbox is not checked..
-                    tickettype = tickettype.replace(tt + ",", "");
+                if (this.id.indexOf("id_chk_tt_") > -1) {
+                    var tt = this.id.replace("id_chk_tt_", "");
+                    if (this.checked) {
+                        // Checkbox is checked..
+                        tickettype_new = tickettype_new + tt + ",";
+                    } else {
+                        // Checkbox is not checked..
+                        // split tickettype by "," to array
+                        var arr = tickettype_new.split(",");
+                        // remove tt from array
+                        arr.splice(arr.indexOf(tt), 1);
+                        // join array to string
+                        tickettype_new = arr.join(",");
+
+                        // tickettype = tickettype.replace(tt + ",", "");
+                    }
+                    document.getElementById('lbl_tickettype').innerHTML = tickettype_new;
+                    
+                    // document.getElementById('new_tickettype').innerHTML = tickettype_new;
                 }
-                document.getElementById('lbl_tickettype').innerHTML = tickettype;
-            });
-        });
+            })
+        })
 
         // add event button clicked cancel
         btn_cancel.addEventListener('click', function() {
@@ -177,9 +218,9 @@
 
             document.getElementById('id_area_tt').style.display = "none";
             document.getElementById('id_area_main').style.display = "block";
-            document.getElementById('id_a_tickettype').innerHTML = tickettype;
-            document.getElementById('id_text_tickettype').value = tickettype;
-            if (tickettype == "") {
+            document.getElementById('id_a_tickettype').innerHTML = tickettype_new;
+            document.getElementById('id_text_tickettype').value = tickettype_new;
+            if (tickettype_new == "") {
                 document.getElementById('id_a_tickettype').innerHTML = "No ticket type";
                 document.getElementById('id_text_tickettype').value = "<No ticket type>";
             }
@@ -192,4 +233,4 @@
 
 
     </main>
-    {% endblock content %}
+{% endblock content %}

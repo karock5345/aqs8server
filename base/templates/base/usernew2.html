@@ -1,0 +1,73 @@
+<!-- New user step 2--> 
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <main class="update-account layout">
+
+        <div class="container" id="id_area_main">
+            <div class="layout__box__form">
+                <div class="layout__boxHeader">
+                    <div class="layout__boxTitle">
+                        <a href="{{request.META.HTTP_REFERER}}">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 32 32">
+                                <title>Back</title>
+                                <path
+                                    d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                                </path>
+                            </svg>
+                        </a>
+                        <h3>Edit your profile</h3>
+                    </div>
+                </div>
+                <div class="layout__body">
+                    <h1>New user step 2 - Select User authority and Branch</h1>
+
+                    <h1>Username : {{user.username}}</h1>
+
+                    <form class="form" action="" method="POST" prefix="profileform">
+                        {% for field in userform %}
+                            
+                            {% if field.name == "groups" %}
+                            <div class="form__group" >
+                                <label for="profile_pic">User authority</label>
+                                {{field}}
+                            </div>
+                            {% else %}
+                                <div class="form__group" hidden>
+                                    <label for="profile_pic">{{field.label}}</label>
+                                    {{field}}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+
+
+
+                        {% csrf_token %}
+                                             
+                        {% for field in profileform %}
+                        <div class="form__group">
+                            {% if field.name == "branchs" %}
+                                <label for="profile_pic">{{field.help_text}}</label>
+                                {{field}}                            
+                            {% else %}
+                                <div hidden>
+                                <label for="profile_pic">{{field.help_text}}</label>
+                                {{field}}
+                                </div>
+                            {% endif %}                            
+                        </div>
+                        {% endfor %}                                  
+
+
+                        <div class="form__action">
+                            <a class="btn btn--dark" href="{% url 'usersummary' %}">Back</a>
+                            <button class="btn btn--main" type="submit">Next</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock content %}

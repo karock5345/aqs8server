@@ -182,7 +182,10 @@
               <div id="ticket_{{ticket.tickettype}}{{ticket.ticketnumber}}{{ticket.tickettime}}" class="qlist_item">
                 <div class="qlist_ticketnumber">{{ticket.tickettype}}{{ticket.ticketnumber}}</div>
                 <div class="qlist_tickettime">{{ticket.tickettime_local}}</div>
-                <a class="btn btn--del" href="{% url 'softkeyvoid' pk ticket.id %}">Void</a>
+                <div>
+                  <a class="btn btn--main" href="{% url 'softkeyget' pk ticket.id %}">Call</a>
+                  <a class="btn btn--del" href="{% url 'softkeyvoid' pk ticket.id %}">Void</a>
+                </div>
               </div>
             {% endfor %}
           </div>
@@ -289,7 +292,12 @@
           localStorage.setItem("key_listshow", listshow);
         }
         // new funcition to change the status (input status, ticket type, ticket number)
-        function changeStatus(status, ttype, tno) {
+        function changeStatus(status, ttype, tno, loged) {
+          if (loged == false) {
+            // redirect to home page
+            window.location.href = "{% url 'home' %}";
+          }
+
           document.getElementById('call_menu').hidden = true;
           document.getElementById('process_menu').hidden = true;
           document.getElementById('done_menu').hidden = true;
@@ -308,7 +316,7 @@
         }
 
         //  call function changeStatus
-        changeStatus(c_counterstatus, c_ttype, c_tno);
+        changeStatus(c_counterstatus, c_ttype, c_tno, true);
 
         //  javascript Button "Get" show or hidden html id="get_area" 
         document.getElementById('get_area').innerHTML = '';
@@ -421,8 +429,9 @@
                 var status = data.status;
                 var ttype = data.tickettype;
                 var tno = data.ticketnumber;
+                var loged = data.login;
 
-                changeStatus(status, ttype, tno);
+                changeStatus(status, ttype, tno, loged);
             }        
         };
         CounterStatusSocket.onclose = function(e) {
