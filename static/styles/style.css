@@ -1374,8 +1374,8 @@ background-color:#04AA6D;
 color: white;
 }
 .table-style tr:hover {
-  background-color: var(--color-nearend); 
-  color:var(--color-dark);
+  /* background-color: var(--color-nearend); 
+  color:var(--color-dark); */
   cursor: pointer;
 }
 

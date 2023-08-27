@@ -2511,6 +2511,9 @@ def UserSummaryListView(request):
     q_branch = request.GET.get('qbranch') if request.GET.get('qbranch') != None else 'all'
     q_tt = request.GET.get('qtt') if request.GET.get('qtt') != None else 'all'
     q_group = request.GET.get('qgroup') if request.GET.get('qgroup') != None else 'all'
+    q_sort = request.GET.get('sort') if request.GET.get('sort') != None else ''
+
+    print('q_sort:' + q_sort)
 
     auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
 
@@ -2536,13 +2539,39 @@ def UserSummaryListView(request):
     elif q_branch != '' and q_branch != 'all':
         auth_userlist = auth_userlist.filter(Q(userprofile__branchs__bcode=q_branch))
 
-    if q_tt != '' and q_tt != 'all':
-        auth_userlist = auth_userlist.filter(Q(userprofile__tickettype__icontains=q_tt))
-    
-    if q_group != '' and q_group != 'all':
+    if q_group == 'none':
+        auth_userlist = auth_userlist.filter(Q(groups=None))  
+    elif q_group != '' and q_group != 'all':
         auth_userlist = auth_userlist.filter(Q(groups__name__icontains=q_group))        
   
-  
+    if q_tt == 'none':
+        auth_userlist = auth_userlist.filter(Q(userprofile__tickettype=''))
+    elif q_tt != '' and q_tt != 'all':
+        auth_userlist = auth_userlist.filter(Q(userprofile__tickettype__icontains=q_tt))
+
+    if q_sort == 'username':
+        auth_userlist = auth_userlist.order_by('username')
+    elif q_sort == 'active':
+        auth_userlist = auth_userlist.order_by('-is_active')
+    elif q_sort == 'fname':
+        auth_userlist = auth_userlist.order_by('first_name')
+    elif q_sort == 'lname':
+        auth_userlist = auth_userlist.order_by('last_name')
+    elif q_sort == 'email':
+        auth_userlist = auth_userlist.order_by('email')
+    elif q_sort == 'groups':
+        auth_userlist = auth_userlist.order_by('groups__name')
+    elif q_sort == 'branchs':
+        auth_userlist = auth_userlist.order_by('userprofile__branchs__bcode')
+    elif q_sort == 'tt':
+        auth_userlist = auth_userlist.order_by('userprofile__tickettype')
+    elif q_sort == 'qpriority':
+        auth_userlist = auth_userlist.order_by('userprofile__queuepriority')
+    elif q_sort == 'sno':
+        auth_userlist = auth_userlist.order_by('userprofile__staffnumber')
+    elif q_sort == 'phone':
+        auth_userlist = auth_userlist.order_by('userprofile__mobilephone')
+
     context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
     context = context | {'q':q}
     context = context | {'qactive':q_active}

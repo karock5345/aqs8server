@@ -1,52 +1,53 @@
 {% load static %}
 
-
-<table id="table-style" class="table-style">
 <table id="table-style" class="table-style">
     <thead>
         <tr>
-            <th>Username</th>
-            <th>Active</th>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Email</th>
-            <th>Groups</th>
-            <th>Branchs</th>
-            <th>Ticket types</th>               
-            <th>Queue priority</th>
-            <th>Staff number</th>               
-            <th>Mobile phone</th>
+            <th onclick="redirect('sort=username')" >Username</th>
+            <th onclick="redirect('sort=active')">Active</th>
+            <th onclick="redirect('sort=fname')">First name</th>
+            <th onclick="redirect('sort=lname')">Last name</th>
+            <th onclick="redirect('sort=email')">Email</th>
+            <th onclick="redirect('sort=groups')">Groups</th>
+            <th onclick="redirect('sort=branchs')">Branchs</th>
+            <th onclick="redirect('sort=tt')">Ticket types</th>               
+            <th onclick="redirect('sort=qpriority')">Queue priority</th>
+            <th onclick="redirect('sort=sno')">Staff number</th>               
+            <th onclick="redirect('sort=phone')">Mobile phone</th>
         </tr>
     </thead>
     <tbody>
-{% for user in users %}
 
-{% for prof in profiles %}
-    {% if user == prof.user %}
-    <tr  onclick="window.location='{% url 'update-user' user.id %}' " >
-        <td>{{user.username}}</td>
-        <td>{% if user.is_active == True %}True{% else %}False{% endif %}</td>
-        <td>{{user.first_name}}</td>
-        <td>{{user.last_name}}</td>
-        <td>{{user.email}}</td>
-        <td>
-            {% for usergroup in user.groups.filter %}
-                {{usergroup}}
-            {% endfor %}
-        </td>
-        <td>
-            {% for bname in prof.branchs.filter %}
-                {{bname.bcode}}
-            {% endfor %}
-        </td>
-        <td>{{prof.tickettype}}</td>
-        <td>{{prof.queuepriority}}</td>
-        <td>{{prof.staffnumber}}</td>
-        <td>{{prof.mobilephone}}</td>
-    </tr>
-
+    {% for user in users %}
+    {% for prof in profiles %}
+        {% if user == prof.user %}
+        <tr  onclick="window.location='{% url 'update-user' user.id %}' " >
+            
+            <td>{{user.username}}</td>
+            <td>{% if user.is_active == True %}True{% else %}False{% endif %}</td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.email}}</td>
+            <td>
+                {% for usergroup in user.groups.filter %}
+                    {{usergroup}}
+                {% endfor %}
+            </td>
+            <td>
+                {% for bname in prof.branchs.filter %}
+                    {{bname.bcode}}
+                {% endfor %}
+            </td>
+            <td>{{prof.tickettype}}</td>
+            <td>{{prof.queuepriority}}</td>
+            <td>{{prof.staffnumber}}</td>
+            <td>{{prof.mobilephone}}</td>
+        </tr>
     
-    
-    {% endif %}
-{% endfor %}
-{% endfor %}
+        
+        
+        {% endif %}
+    {% endfor %}
+    {% endfor %}
+    </tbody>
+</table>
