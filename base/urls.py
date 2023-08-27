@@ -8,6 +8,7 @@ urlpatterns = [
     path('login/', views.UserLoginView, name='login'),
     path('logout/', views.UserLogoutView, name='logout'),
     path('user/', views.UserSummaryView, name='usersummary'),
+    path('userlist/', views.UserSummaryListView, name='user-list'),
     path('update-user/<str:pk>/', views.UserUpdateView, name='update-user'),
     path('update-user-tickettype/<str:pk>/', views.UserUpdateTTView, name='update-user-tt'),
     path('new-user/', views.UserNewView, name='new-user'),

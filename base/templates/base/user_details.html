@@ -1,0 +1,218 @@
+{% extends 'main.html' %}
+{% block content %}
+
+    <main class="layout layout--2">
+      <div class="container">
+        <!-- Topics Start -->
+        {% include 'base/menu.html' %}        
+        <!-- Topics End -->
+
+        <!-- Room List Start -->
+        <div class="roomList">
+          <div class="mobile-menu">
+            <!-- <form class="mobile-header__search" action="{% url 'home' %}" method="GET">
+              <label>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                  <title>search</title>
+                  <path
+                    d="M32 30.586l-10.845-10.845c1.771-2.092 2.845-4.791 2.845-7.741 0-6.617-5.383-12-12-12s-12 5.383-12 12c0 6.617 5.383 12 12 12 2.949 0 5.649-1.074 7.741-2.845l10.845 10.845 1.414-1.414zM12 22c-5.514 0-10-4.486-10-10s4.486-10 10-10c5.514 0 10 4.486 10 10s-4.486 10-10 10z"
+                  ></path>
+                </svg>
+                <input name="q" placeholder="Search for users" />
+              </label>
+            </form> -->
+            <div class="mobile-menuItems">
+              <!-- <a class="btn btn--main btn--pill" href="{-% url 'topics' %}">Browse Topics</a>
+              <a class="btn btn--main btn--pill" href="{-% url 'activity' %}">Recent Activities</a> -->
+              <a class="btn btn--main btn--pill" href="{% url 'menu' %}">Menu</a>          
+            </div>
+          </div>
+
+          <form class="header__search" method="GET" action="{% url 'user-list' %}">
+            <label>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>search</title>
+                    <path
+                        d="M32 30.586l-10.845-10.845c1.771-2.092 2.845-4.791 2.845-7.741 0-6.617-5.383-12-12-12s-12 5.383-12 12c0 6.617 5.383 12 12 12 2.949 0 5.649-1.074 7.741-2.845l10.845 10.845 1.414-1.414zM12 22c-5.514 0-10-4.486-10-10s4.486-10 10-10c5.514 0 10 4.486 10 10s-4.486 10-10 10z">
+                    </path>
+                </svg>
+                <!-- input default is "user 123" -->
+                <input id="id_q" name="q" placeholder="Search for users" value="{{q}}" />
+            </label>
+
+            Select user active:
+            <select name="sel_active" id="id_active" >
+              <!-- <option value="">---</option> -->
+              {% if qactive == "all" %} 
+                <option value=all selected="selected">All</option>
+              {% else %}
+                <option value=all>All</option>
+              {% endif %}
+              {% if qactive == "active" %} 
+                <option value=active selected="selected">Active</option>
+              {% else %}
+                <option value=active>Active</option>
+              {% endif %}
+              {% if qactive == "inactive" %}
+                <option value=inactive selected="selected">Inactive</option>
+              {% else %}
+                <option value=inactive>Inactive</option>
+              {% endif %}
+            </select><br>
+
+            Select Branch:
+            <select name="sel_branch" id="id_branch">
+              <!-- <option value="">---</option> -->
+              <option value=all>All</option>
+              {% for branch in branchs %}
+                {% if qbranch == branch.bcode %}
+                  <option value={{branch.bcode}} selected="selected">{{branch.name}}</option>
+                {% else %}
+                  <option value={{branch.bcode}}>{{branch.name}}</option>
+                {% endif %}
+                
+              {% endfor %}
+              {% if qbranch == 'none' %}
+                <option value=none selected="selected">None</option>
+              {% else %}
+                <option value=none>None</option>
+              {% endif %}
+            </select><br>
+
+
+            Select group:
+            <select name="sel_group" id="id_group" >
+              <!-- <option value="">---</option> -->
+              {% if qgroup == "all" %} 
+                <option value=all selected="selected">All</option>
+              {% else %}
+                <option value=all>All</option>
+              {% endif %}
+              {% if qgroup == "frontline" %} 
+                <option value=frontline selected="selected">frontline</option>
+              {% else %}
+                <option value=frontline>frontline</option>
+              {% endif %}
+              {% if qgroup == "support" %}
+                <option value=support selected="selected">support</option>
+              {% else %}
+                <option value=support>support</option>
+              {% endif %}
+              {% if qgroup == "admin" %}
+                <option value=admin selected="selected">admin</option>
+              {% else %}
+                <option value=admin>admin</option>
+              {% endif %}              
+            </select><br>
+
+
+            Select ticket type:
+            <select name="sel_tt" id="id_tt">
+              <!-- <option value="">---</option> -->
+              <option value=all>All</option>
+              {% for tt in ticketformats %}
+                {% if qtt == tt.ttype %}
+                  <option value={{tt.ttype}} selected="selected">{{tt.ttype}}</option>
+                {% else %}
+                  <option value={{tt.ttype}}>{{tt.ttype}}</option>
+                {% endif %}
+                
+              {% endfor %}
+            </select>
+          </form>
+
+          <div>   
+            <div class="roomList__header">
+              <div style="display: flex;">
+                <div style="margin-right: 2rem;">
+                  <h2>Total result</h2>
+                  <p>{{users.count}} Users</p>
+                </div>
+              </div>    
+          </div>
+          <div id="userlistarea">
+            {% include 'base/userlist_details.html' %}  
+          </div>
+
+        </div>
+        <!-- Room List End -->
+
+        <!-- Activities Start -->
+        <!-- <div> -->
+            <!-- {-% include 'base/userlist.html' %}   -->
+        <!-- </div> -->
+        
+
+        <!-- Activities End -->
+      </div>
+<!-- add javascript here link button  id="id_showall" -->
+
+<script>
+  // <!-- globle variable : b_showall is bool -->
+  var b_showall = false;
+  var btn_listshow = document.getElementById('id_showall');
+  
+  // if click select option then send request to server : ?qacive=xxx  
+  var sel_active = document.getElementById('id_active');
+  var sel_branch = document.getElementById('id_branch');
+  var sel_tt = document.getElementById('id_tt');
+  var sel_group = document.getElementById('id_group');
+  var q_active = "qactive=";
+  var id_q = "q=";
+  var q_branch = "qbranch=";
+  var q_tt = "qtt=";
+  var q_group = "qgroup=";
+
+  sel_active.addEventListener('change', function() {
+    redirect();
+  });
+  sel_branch.addEventListener('change', function() {
+    redirect();
+  });  
+  sel_group.addEventListener('change', function() {
+    redirect();
+  });  
+  sel_tt.addEventListener('change', function() {
+    redirect();
+  });  
+  btn_listshow.addEventListener('click', function() {
+          b_showall = true;
+          // document.getElementById('userlistarea').innerHTML = "";
+          // replace all class="roomListRoom" to class="roomListRoom showall"
+          var elements = document.getElementsByClassName("roomListRoom__hide");
+          for (var i = 0; i < elements.length; i++) {
+              elements[i].className = "roomListRoom";
+          }
+        });
+  
+
+  // function for redirect to url
+  function redirect() {
+    var url = "{% url 'user-list' %}";
+    var q_user = document.getElementById('id_q').value;
+    q_user = "q=" + q_user;
+
+    var qb = document.getElementById('id_branch').value;
+    // alert(q);
+    q_branch = "qbranch=" + qb;
+
+    var qa = document.getElementById('id_active').value;
+    // alert(q);
+    q_active = "qactive=" + qa;
+
+    var qtt = document.getElementById('id_tt').value;
+    // alert(q);
+    q_tt = "qtt=" + qtt;
+    
+    var qgroup = document.getElementById('id_group').value;
+    // alert(q);
+    q_group = "qgroup=" + qgroup;
+
+    url = url + "?" + q_user + "&" + q_active + "&" + q_branch + "&" + q_tt + "&" + q_group;
+    // redirect to url
+    location.href = url;
+  }
+</script>
+{% endblock %}      
+
+

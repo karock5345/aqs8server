@@ -2503,6 +2503,54 @@ def UserSummaryView(request):
     context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
     return render(request, 'base/user.html', context)
 
+@unauth_user
+@allowed_users(allowed_roles=['admin','manager','support'])
+def UserSummaryListView(request):
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    q_active = request.GET.get('qactive') if request.GET.get('qactive') != None else 'all'
+    q_branch = request.GET.get('qbranch') if request.GET.get('qbranch') != None else 'all'
+    q_tt = request.GET.get('qtt') if request.GET.get('qtt') != None else 'all'
+    q_group = request.GET.get('qgroup') if request.GET.get('qgroup') != None else 'all'
+
+    auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+
+    # auth_ticketformats keep ttype is not repeated
+    auth_ticketformats = auth_ticketformats.order_by('ttype')
+    for tf in auth_ticketformats:
+        for tf2 in auth_ticketformats:
+            if tf != tf2:
+                if tf.ttype == tf2.ttype:
+                    auth_ticketformats = auth_ticketformats.exclude(id=tf.id)
+ 
+    if q != '':
+        auth_userlist = auth_userlist.filter(Q(username__icontains=q) | Q(first_name__icontains=q) | Q(last_name__icontains=q) | Q(email__icontains=q))
+    
+    if q_active != '' and q_active != 'all':
+        active_bool = True
+        if q_active == 'inactive':
+            active_bool = False
+        auth_userlist = auth_userlist.filter(Q(is_active=active_bool))
+    
+    if q_branch == 'none':
+        auth_userlist = auth_userlist.filter(Q(userprofile__branchs=None))
+    elif q_branch != '' and q_branch != 'all':
+        auth_userlist = auth_userlist.filter(Q(userprofile__branchs__bcode=q_branch))
+
+    if q_tt != '' and q_tt != 'all':
+        auth_userlist = auth_userlist.filter(Q(userprofile__tickettype__icontains=q_tt))
+    
+    if q_group != '' and q_group != 'all':
+        auth_userlist = auth_userlist.filter(Q(groups__name__icontains=q_group))        
+  
+  
+    context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    context = context | {'q':q}
+    context = context | {'qactive':q_active}
+    context = context | {'qbranch':q_branch}
+    context = context | {'qtt':q_tt}
+    context = context | {'qgroup':q_group}
+    return render(request, 'base/user_details.html', context)
+
 def UserLogoutView(request):   
     logout(request)
     return redirect('login')
