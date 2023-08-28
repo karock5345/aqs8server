@@ -121,7 +121,7 @@ def export_raw(quesrystr, reporttitle1, reporttitle2, reporttitle3, reporttitle4
             voidtime = funUTCtoLocal(row.voidtime, row.branch.timezone).strftime('%Y-%m-%d %H:%M:%S')
 
         # save data row to report_str for CSV format
-        report_str += f'{row.ticket.tickettype}{row.ticket.ticketnumber},{row.branch.bcode},{row.countertype.name},{row.step},{starttime},{row.startuser},{calltime},{row.calluser},{processtime},{row.processuser},{donetime},{row.doneuser},{misstime},{row.missuser},{voidtime},{row.voiduser},{row.waitingperiod},{row.walkingperiod},{row.processingperiod},{row.totalperiod}\n'
+        report_str += f'{row.ticket.tickettype}{row.ticket.ticketnumber},{row.ticket.tickettype},{row.ticket.ticketnumber},{row.branch.bcode},{row.countertype.name},{row.step},{starttime},{row.startuser},{calltime},{row.calluser},{processtime},{row.processuser},{donetime},{row.doneuser},{misstime},{row.missuser},{voidtime},{row.voiduser},{row.waitingperiod},{row.walkingperiod},{row.processingperiod},{row.totalperiod}\n'
 
 
         # writer.writerow([
@@ -161,7 +161,7 @@ def export_raw(quesrystr, reporttitle1, reporttitle2, reporttitle3, reporttitle4
 
         # add table header
         # writer.writerow(['Ticket', 'Branch', 'Counter Type', 'Step', 'Start Time', 'Start by', 'Call Time', 'Call by', 'Process Time', 'Process by', 'Done Time', 'Done by', 'No Show Time', 'No Show by', 'Void Time', 'Void by', 'Waiting Time (s)', 'Walking time (s)', 'Process time (s)', 'Total time (s)']                
-        f.write('Ticket,Branch,Counter Type,Step,Start Time,Start by,Call Time,Call by,Process Time,Process by,Done Time,Done by,No Show Time,No Show by,Void Time,Void by,Waiting Time (s),Walking time (s),Process time (s),Total time (s)\n')
+        f.write('Ticket,Type,No.,Branch,Counter Type,Step,Start Time,Start by,Call Time,Call by,Process Time,Process by,Done Time,Done by,No Show Time,No Show by,Void Time,Void by,Waiting Time (s),Walking time (s),Process time (s),Total time (s)\n')
         f.write(report_str)
     f.close()
 

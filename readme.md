@@ -410,6 +410,9 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 - fixed bug : user group : 'manager' and 'support' can not Force Logout
 - Web softkey add WS CounterStatus for receive loged or not then redirect to home page
 - Web softkey ticket queue list add 'Call' button for each ticket
+- Re-design "New User" page and change to 4 steps
+- User update add "Reset Password" button
+- Add new page for "User List"
 
 # For Project PCCW 2023
 ## Main Server (WTT)

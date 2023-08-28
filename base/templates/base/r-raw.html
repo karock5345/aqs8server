@@ -51,15 +51,17 @@
         <thead>
             <tr>
                 <th>Ticket</th>
+                <th>Type</th>
+                <th>No.</th>
                 <th>Branch</th>
                 <th>Counter Type</th>
                 <th>Step</th>
                 <th>Start Time</th>
                 <th>Start by</th>
                 <th>Call Time</th>
-                <th>Call by</th>               
+                <th>Call by</th>
                 <th>Process Time</th>
-                <th>Process by</th>               
+                <th>Process by</th>
                 <th>Done Time</th>
                 <th>Done by</th>     
                 <th>No Show Time</th>
@@ -75,7 +77,9 @@
         <tbody>
         {% for row in table.object_list %}
         <tr>
-            <td>{{ row.ticket.tickettype }}{{ row.ticket.ticketnumber }}</td>                   
+            <td>{{ row.ticket.tickettype }}{{ row.ticket.ticketnumber }}</td>
+            <td>{{ row.ticket.tickettype }}</td>
+            <td>{{ row.ticket.ticketnumber }}</td>
             <td>{{ row.branch.bcode }}</td>
             <td>{{ row.countertype.name }}</td>
             <td>{{ row.step }}</td>

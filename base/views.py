@@ -51,7 +51,7 @@ except:
 
 context_login = {}
 
-
+sort_direction = {'username':''}
 
 @allowed_users(allowed_roles=['admin', 'support', 'manager'])
 @unauth_user
@@ -2506,6 +2506,8 @@ def UserSummaryView(request):
 @unauth_user
 @allowed_users(allowed_roles=['admin','manager','support'])
 def UserSummaryListView(request):
+    global sort_direction    
+
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     q_active = request.GET.get('qactive') if request.GET.get('qactive') != None else 'all'
     q_branch = request.GET.get('qbranch') if request.GET.get('qbranch') != None else 'all'
@@ -2513,9 +2515,10 @@ def UserSummaryListView(request):
     q_group = request.GET.get('qgroup') if request.GET.get('qgroup') != None else 'all'
     q_sort = request.GET.get('sort') if request.GET.get('sort') != None else ''
 
-    print('q_sort:' + q_sort)
-
     auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+
+    result_userlist = auth_userlist
+    # print(result_userlist.count())
 
     # auth_ticketformats keep ttype is not repeated
     auth_ticketformats = auth_ticketformats.order_by('ttype')
@@ -2526,51 +2529,67 @@ def UserSummaryListView(request):
                     auth_ticketformats = auth_ticketformats.exclude(id=tf.id)
  
     if q != '':
-        auth_userlist = auth_userlist.filter(Q(username__icontains=q) | Q(first_name__icontains=q) | Q(last_name__icontains=q) | Q(email__icontains=q))
+        result_userlist = result_userlist.filter(Q(username__icontains=q) | Q(first_name__icontains=q) | Q(last_name__icontains=q) | Q(email__icontains=q) 
+                                             | Q(userprofile__staffnumber__icontains=q)
+                                             | Q(userprofile__mobilephone__icontains=q)
+                                             )
     
     if q_active != '' and q_active != 'all':
         active_bool = True
         if q_active == 'inactive':
             active_bool = False
-        auth_userlist = auth_userlist.filter(Q(is_active=active_bool))
+        result_userlist = result_userlist.filter(Q(is_active=active_bool))
     
     if q_branch == 'none':
-        auth_userlist = auth_userlist.filter(Q(userprofile__branchs=None))
+        result_userlist = result_userlist.filter(Q(userprofile__branchs=None))
     elif q_branch != '' and q_branch != 'all':
-        auth_userlist = auth_userlist.filter(Q(userprofile__branchs__bcode=q_branch))
+        result_userlist = result_userlist.filter(Q(userprofile__branchs__bcode=q_branch))
 
     if q_group == 'none':
-        auth_userlist = auth_userlist.filter(Q(groups=None))  
+        result_userlist = result_userlist.filter(Q(groups=None))  
     elif q_group != '' and q_group != 'all':
-        auth_userlist = auth_userlist.filter(Q(groups__name__icontains=q_group))        
+        result_userlist = result_userlist.filter(Q(groups__name__icontains=q_group))        
   
     if q_tt == 'none':
-        auth_userlist = auth_userlist.filter(Q(userprofile__tickettype=''))
+        result_userlist = result_userlist.filter(Q(userprofile__tickettype=''))
     elif q_tt != '' and q_tt != 'all':
-        auth_userlist = auth_userlist.filter(Q(userprofile__tickettype__icontains=q_tt))
+        result_userlist = result_userlist.filter(Q(userprofile__tickettype__icontains=q_tt))
+
+    direct = ''
+    if q_sort != '':
+        # find out the sort_list
+        try:
+            direct = sort_direction[q_sort]
+        except:
+            direct = ''
+            sort_direction[q_sort] = ''
+        if direct == '':
+            sort_direction[q_sort] = '-'
+        elif direct == '-':
+            sort_direction[q_sort] = ''
 
     if q_sort == 'username':
-        auth_userlist = auth_userlist.order_by('username')
+        result_userlist = result_userlist.order_by(direct + 'username')
     elif q_sort == 'active':
-        auth_userlist = auth_userlist.order_by('-is_active')
+        result_userlist = result_userlist.order_by(direct + 'is_active')
     elif q_sort == 'fname':
-        auth_userlist = auth_userlist.order_by('first_name')
+        result_userlist = result_userlist.order_by(direct + 'first_name')
     elif q_sort == 'lname':
-        auth_userlist = auth_userlist.order_by('last_name')
+        result_userlist = result_userlist.order_by(direct + 'last_name')
     elif q_sort == 'email':
-        auth_userlist = auth_userlist.order_by('email')
+        result_userlist = result_userlist.order_by(direct + 'email')
     elif q_sort == 'groups':
-        auth_userlist = auth_userlist.order_by('groups__name')
+        result_userlist = result_userlist.order_by(direct + 'groups__name')
     elif q_sort == 'branchs':
-        auth_userlist = auth_userlist.order_by('userprofile__branchs__bcode')
+        result_userlist = result_userlist.order_by(direct + 'userprofile__branchs__bcode')
     elif q_sort == 'tt':
-        auth_userlist = auth_userlist.order_by('userprofile__tickettype')
+        result_userlist = result_userlist.order_by(direct + 'userprofile__tickettype')
     elif q_sort == 'qpriority':
-        auth_userlist = auth_userlist.order_by('userprofile__queuepriority')
+        result_userlist = result_userlist.order_by(direct + 'userprofile__queuepriority')
     elif q_sort == 'sno':
-        auth_userlist = auth_userlist.order_by('userprofile__staffnumber')
+        result_userlist = result_userlist.order_by(direct + 'userprofile__staffnumber')
     elif q_sort == 'phone':
-        auth_userlist = auth_userlist.order_by('userprofile__mobilephone')
+        result_userlist = result_userlist.order_by(direct + 'userprofile__mobilephone')
 
     context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
     context = context | {'q':q}
@@ -2578,6 +2597,7 @@ def UserSummaryListView(request):
     context = context | {'qbranch':q_branch}
     context = context | {'qtt':q_tt}
     context = context | {'qgroup':q_group}
+    context = context | {'result_users':result_userlist}
     return render(request, 'base/user_details.html', context)
 
 def UserLogoutView(request):   

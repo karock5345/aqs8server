@@ -43,7 +43,7 @@
         {% for table in qlist %}
         {% if table.count > 0 %}
         
-            <h3>Counter: {{table.0.countertype.lang1}}</h3>
+            <h3>Counter: {{table.0.countertype.lang1}} ({{table.count}})</h3>
             <table class="table-style">
                 <thead>
                     <tr>
@@ -110,7 +110,7 @@
     </div>
 
     <div>
-        <h3>Completed Ticket: </h3>
+        <h3>Completed Ticket ({{donelist.count}})</h3>
         <table class="table-style">
             <thead>
                 <tr>
@@ -132,7 +132,7 @@
     </div>
 
     <div>
-        <h3>No Show Ticket: </h3>
+        <h3>No Show Ticket ({{misslist.count}}) </h3>
         <table class="table-style">
             <thead>
                 <tr>
