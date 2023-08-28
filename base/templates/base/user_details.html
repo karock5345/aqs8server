@@ -28,94 +28,105 @@
           </div>
           <div class="roomList__header">
             <div>
-              Select user active:
-              <select name="sel_active" id="id_active" >
-                <!-- <option value="">---</option> -->
-                {% if qactive == "all" %} 
-                  <option value=all selected="selected">All</option>
-                {% else %}
-                  <option value=all>All</option>
-                {% endif %}
-                {% if qactive == "active" %} 
-                  <option value=active selected="selected">Active</option>
-                {% else %}
-                  <option value=active>Active</option>
-                {% endif %}
-                {% if qactive == "inactive" %}
-                  <option value=inactive selected="selected">Inactive</option>
-                {% else %}
-                  <option value=inactive>Inactive</option>
-                {% endif %}
-              </select><br>
-            
-              Select Branch:
-              <select name="sel_branch" id="id_branch">
-                <!-- <option value="">---</option> -->
-                <option value=all>All</option>
-                {% for branch in branchs %}
-                  {% if qbranch == branch.bcode %}
-                    <option value={{branch.bcode}} selected="selected">{{branch.name}}</option>
+              <div class="roomListSelect">
+                Select user active:
+                <select name="sel_active" id="id_active" >
+                  <!-- <option value="">---</option> -->
+                  {% if qactive == "all" %} 
+                    <option value=all selected="selected">All</option>
                   {% else %}
-                    <option value={{branch.bcode}}>{{branch.name}}</option>
+                    <option value=all>All</option>
                   {% endif %}
-                  
-                {% endfor %}
-                {% if qbranch == 'none' %}
-                  <option value=none selected="selected">None</option>
-                {% else %}
-                  <option value=none>None</option>
-                {% endif %}
-              </select><br>
-
-
-              Select group:
-              <select name="sel_group" id="id_group" >
-                <!-- <option value="">---</option> -->
-                {% if qgroup == "all" %} 
-                  <option value=all selected="selected">All</option>
-                {% else %}
-                  <option value=all>All</option>
-                {% endif %}
-                {% if qgroup == "frontline" %} 
-                  <option value=frontline selected="selected">frontline</option>
-                {% else %}
-                  <option value=frontline>frontline</option>
-                {% endif %}
-                {% if qgroup == "support" %}
-                  <option value=support selected="selected">support</option>
-                {% else %}
-                  <option value=support>support</option>
-                {% endif %}
-                {% if qgroup == "admin" %}
-                  <option value=admin selected="selected">admin</option>
-                {% else %}
-                  <option value=admin>admin</option>
-                {% endif %}
-                {% if qgroup == 'none' %}
-                  <option value=none selected="selected">None</option>
-                {% else %}
-                  <option value=none>None</option>
-                {% endif %}                        
-              </select><br>
-
-
-              Select ticket type:
-              <select name="sel_tt" id="id_tt">
-                <!-- <option value="">---</option> -->
-                <option value=all>All</option>
-                {% for tt in ticketformats %}
-                  {% if qtt == tt.ttype %}
-                    <option value={{tt.ttype}} selected="selected">{{tt.ttype}}</option>
+                  {% if qactive == "active" %} 
+                    <option value=active selected="selected">Active</option>
                   {% else %}
-                    <option value={{tt.ttype}}>{{tt.ttype}}</option>
+                    <option value=active>Active</option>
+                  {% endif %}
+                  {% if qactive == "inactive" %}
+                    <option value=inactive selected="selected">Inactive</option>
+                  {% else %}
+                    <option value=inactive>Inactive</option>
+                  {% endif %}
+                </select><br>
+              </div>
+
+              <div class="roomListSelect">
+                Select Branch:
+                <select name="sel_branch" id="id_branch">
+                  <!-- <option value="">---</option> -->
+                  <option value=all>All</option>
+                  {% for branch in branchs %}
+                    {% if qbranch == branch.bcode %}
+                      <option value={{branch.bcode}} selected="selected">{{branch.name}}</option>
+                    {% else %}
+                      <option value={{branch.bcode}}>{{branch.name}}</option>
+                    {% endif %}
+                    
+                  {% endfor %}
+                  {% if qbranch == 'none' %}
+                    <option value=none selected="selected">None</option>
+                  {% else %}
+                    <option value=none>None</option>
+                  {% endif %}
+                </select><br>
+              </div>
+              
+              <div class="roomListSelect">
+                Select group:
+                <select name="sel_group" id="id_group" >
+                  <!-- <option value="">---</option> -->
+                  {% if qgroup == "all" %} 
+                    <option value=all selected="selected">All</option>
+                  {% else %}
+                    <option value=all>All</option>
+                  {% endif %}
+                  {% if qgroup == "frontline" %} 
+                    <option value=frontline selected="selected">frontline</option>
+                  {% else %}
+                    <option value=frontline>frontline</option>
+                  {% endif %}
+                  {% if qgroup == "manager" %} 
+                    <option value=manager selected="selected">manager</option>
+                  {% else %}
+                    <option value=manager>manager</option>
+                  {% endif %}
+                  {% if qgroup == "support" %}
+                    <option value=support selected="selected">support</option>
+                  {% else %}
+                    <option value=support>support</option>
+                  {% endif %}
+                  {% if qgroup == "admin" %}
+                    <option value=admin selected="selected">admin</option>
+                  {% else %}
+                    <option value=admin>admin</option>
+                  {% endif %}
+                  {% if qgroup == 'none' %}
+                    <option value=none selected="selected">None</option>
+                  {% else %}
+                    <option value=none>None</option>
+                  {% endif %}                        
+                </select><br>
+              </div>
+
+              <div class="roomListSelect">
+                Select ticket type:
+                <select name="sel_tt" id="id_tt">
+                  <!-- <option value="">---</option> -->
+                  <option value=all>All</option>
+                  {% for tt in ticketformats %}
+                    {% if qtt == tt.ttype %}
+                      <option value={{tt.ttype}} selected="selected">{{tt.ttype}}</option>
+                    {% else %}
+                      <option value={{tt.ttype}}>{{tt.ttype}}</option>
+                    {% endif %}                
+                  {% endfor %}
+                  {% if qtt == 'none' %}
+                    <option value=none selected="selected">None</option>
+                  {% else %}
+                    <option value=none>None</option>
                   {% endif %}                
-                {% endfor %}
-                {% if qtt == 'none' %}
-                  <option value=none selected="selected">None</option>
-                {% else %}
-                  <option value=none>None</option>
-                {% endif %}                
-              </select>
+                </select>
+              </div>
 
             </div>
               
