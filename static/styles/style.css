@@ -1377,11 +1377,12 @@ text-align: left;
 background-color:#04AA6D;
 color: white;
 }
-.table-style-userlist tr:hover {
+.table-style-userlist tr:hover, .table-style-userlist th:hover {
   /* background-color: var(--color-nearend); */
   color:var(--color-nearend); 
   cursor: pointer;
 }
+
 
 .header_superv {
   display:grid;

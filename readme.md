@@ -92,9 +92,9 @@ CHANNEL_LAYERS = {
 CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':6379/0'
 CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':6379/0'
 ```
-## Run Celery worker on the server
+# Run Celery worker on the server
 ### Using Systemd (Process Manager):
-Step 1: Create the dedicated user and group
+### Step 1: Create the dedicated user and group
 ```bash
 sudo groupadd celery ;
 sudo useradd -g celery celery ;
@@ -105,7 +105,7 @@ sudo mkdir /var/log/celery ;
 sudo chown -R celery:celery /var/log/celery/ ;
 sudo chmod o+w /var/log/celery
 ```
-Step 2: Create the Celery Worker Configuration File
+### Step 2: Create the Celery Worker Configuration File
 
 Create a Celery configuration file (e.g., `celeryd`) in the `/etc/default/` directory:
 
@@ -163,7 +163,7 @@ CELERY_CREATE_DIRS=1
 
 Replace the placeholders (`<your_django_user>`, `<your_django_group>`, `your_project_name`, and other paths) with the appropriate values for your setup.
 
-Step 3: Create the Celery Worker Systemd Service File
+### Step 3: Create the Celery Worker Systemd Service File
 
 Create a Systemd service file (e.g., `celery.service`) in the `/etc/systemd/system/` directory:
 
@@ -200,7 +200,7 @@ WantedBy=multi-user.target
 
 ```
 
-Step 3: Enable and Start the Celery Service
+### Step 4: Enable and Start the Celery Service
 
 Now that you have created the configuration and service files, enable and start the Celery service:
 
@@ -211,7 +211,7 @@ sudo systemctl start celery
 
 The `enable` command ensures that the Celery service starts automatically during server startup.
 
-Step 4: Add autorun script for auto shutdown
+### Step 5: Add autorun script for auto shutdown
 ```bash
 sudo nano /home/ubuntu/autorun.sh
 ```
@@ -224,7 +224,7 @@ chown -R celery:celery /var/run/celery/
 chmod o+w /var/run/celery
 ```
 
-Step 5: Check the Celery Service Status
+### Step 6: Check the Celery Service Status
 
 You can check the status of the Celery service to ensure it is running:
 
@@ -234,7 +234,7 @@ sudo systemctl status celery
 
 This command will display the current status and any logs related to the Celery service.
 
-Step 6: Monitor Celery Worker Logs
+### Step 7: Monitor Celery Worker Logs
 
 You can monitor the Celery worker logs at the location specified in the `CELERYD_LOG_FILE` configuration (e.g., `/var/log/celery/%N.log`). These logs will contain information about the Celery worker's activities and task execution.
 

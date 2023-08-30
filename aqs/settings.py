@@ -105,10 +105,10 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'aqsdb8_test1',
+        'NAME': 'aqsdb8',
         'USER': 'aqsdbuser',
         'PASSWORD': 'dbpassword-Dlcg1dwMOXSKIAIM',
-        'HOST': '192.168.85.128',
+        'HOST': '192.168.1.4',
         'PORT': '5432',
     }
 }
@@ -188,7 +188,7 @@ MESSAGE_TAGS = {
 
 ASGI_APPLICATION = 'aqs.asgi.application'
 
-REDIS_HOST = '192.168.85.128'
+REDIS_HOST = '192.168.1.4'
 CHANNEL_LAYERS = {
     'default':{
         'BACKEND':'channels_redis.core.RedisChannelLayer',
