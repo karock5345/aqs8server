@@ -73,14 +73,14 @@ pip3 install celery[redis] --no-index --find-links=/home/ubuntu/static_deploy
 
 ```python
 # settings.py
-REDID_HOST = '127.0.0.1'
+REDIS_HOST = '127.0.0.1'
 CHANNEL_LAYERS = {
     'default':{
         'BACKEND':'channels_redis.core.RedisChannelLayer',
         # 'BACKEND':'channels_redis.pubsub.RedisPubSubChannelLayer',
         'CONFIG': {
             # 'hosts':[('127.0.0.1', '6379')],
-            'hosts':[(REDID_HOST, '6379')],      # vm
+            'hosts':[(REDIS_HOST, '6379')],      # vm
         # "channel_capacity": {
         #         "http.request": 200,
         #         "http.response!*": 10,
@@ -89,39 +89,81 @@ CHANNEL_LAYERS = {
         },
     }
 }
-CELERY_BROKER_URL = 'redis://' + REDID_HOST + ':6379/0'
-CELERY_RESULT_BACKEND = 'redis://' + REDID_HOST + ':6379/0'
+CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':6379/0'
+CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':6379/0'
 ```
 ## Run Celery worker on the server
 ### Using Systemd (Process Manager):
-Step 1: Create the Celery Worker Configuration File
+Step 1: Create the dedicated user and group
+```bash
+sudo groupadd celery ;
+sudo useradd -g celery celery ;
+sudo mkdir /var/run/celery ;
+sudo chown -R celery:celery /var/run/celery/ ;
+sudo chmod o+w /var/run/celery ;
+sudo mkdir /var/log/celery ;
+sudo chown -R celery:celery /var/log/celery/ ;
+sudo chmod o+w /var/log/celery
+```
+Step 2: Create the Celery Worker Configuration File
 
-Create a Celery configuration file (e.g., `celery.conf`) in the `/etc/default/` directory:
+Create a Celery configuration file (e.g., `celeryd`) in the `/etc/default/` directory:
 
 ```bash
-sudo nano /etc/default/celery
+sudo nano /etc/default/celeryd
 ```
 
-Add the following content to the `celery.conf` file. Modify the values for your specific setup:
+Add the following content to the `celeryd` file. Modify the values for your specific setup:
 
 ```ini
-# /etc/default/celery
-CELERYD_USER=<your_django_user>
-CELERYD_GROUP=<your_django_group>
-CELERYD_NODES=1
-CELERY_BIN=/path/to/virtualenv/bin/celery
-CELERY_APP=your_project_name
-CELERYD_MULTI=multi
+# /etc/default/celeryd
+#   most people will only start one node:
+CELERYD_NODES="worker1"
+#   but you can also start multiple and configure settings
+#   for each in CELERYD_OPTS
+#CELERYD_NODES="worker1 worker2 worker3"
+#   alternatively, you can specify the number of nodes to start:
+#CELERYD_NODES=10
+
+# Absolute or relative path to the 'celery' command:
+CELERY_BIN="/home/ubuntu/aqs8server/env/bin/celery"
+#CELERY_BIN="/virtualenvs/def/bin/celery"
+
+# App instance to use
+# comment out this line if you don't use an app
+CELERY_APP="aqs.celery:app"
+# or fully qualified:
+#CELERY_APP="proj.tasks:app"
+
+# Where to chdir at start.
+CELERYD_CHDIR="/home/ubuntu/aqs8server"
+
+# Extra command-line arguments to the worker
 CELERYD_OPTS="--time-limit=300 --concurrency=8"
+# Configure node-specific settings by appending node name to arguments:
+#CELERYD_OPTS="--time-limit=300 -c 8 -c:worker2 4 -c:worker3 2 -Ofair:worker1"
+
+# Set logging level to DEBUG
+#CELERYD_LOG_LEVEL="DEBUG"
+
+# %n will be replaced with the first part of the node name.
+CELERYD_LOG_FILE="/var/log/celery/%n%I.log"
+CELERYD_PID_FILE="/var/run/celery/%n.pid"
+
+# Workers should run as an unprivileged user.
+#   You need to create this user manually (or you can choose
+#   a user/group combination that already exists (e.g., nobody).
+CELERYD_USER="celery"
+CELERYD_GROUP="celery"
 CELERYD_LOG_LEVEL="INFO"
-CELERYD_LOG_FILE="/var/log/celery/%N.log"
-CELERYD_PID_FILE="/var/run/celery/%N.pid"
-CELERYD_CHDIR=/path/to/your/django/project
+# If enabled PID and log directories will be created if missing,
+# and owned by the userid/group configured.
+CELERY_CREATE_DIRS=1
 ```
 
 Replace the placeholders (`<your_django_user>`, `<your_django_group>`, `your_project_name`, and other paths) with the appropriate values for your setup.
 
-Step 2: Create the Celery Worker Systemd Service File
+Step 3: Create the Celery Worker Systemd Service File
 
 Create a Systemd service file (e.g., `celery.service`) in the `/etc/systemd/system/` directory:
 
@@ -139,17 +181,23 @@ After=network.target
 
 [Service]
 Type=forking
-User=%i
-Group=%i
-EnvironmentFile=/etc/default/celery
-WorkingDirectory=%h
-ExecStart=/bin/sh -c '${CELERY_BIN} multi start ${CELERYD_NODES} -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} --logfile=${CELERYD_LOG_FILE} ${CELERYD_OPTS}'
+User=ubuntu
+Group=ubuntu
 
-ExecStop=/bin/sh -c '${CELERY_BIN} multi stopwait ${CELERYD_NODES} --pidfile=${CELERYD_PID_FILE}'
-ExecReload=/bin/sh -c '${CELERY_BIN} multi restart ${CELERYD_NODES} -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} --logfile=${CELERYD_LOG_FILE} ${CELERYD_OPTS}'
+EnvironmentFile=/etc/default/celeryd
+WorkingDirectory=/home/ubuntu/aqs8server
+ExecStart=/home/ubuntu/aqs8server/env/bin/celery multi start ${CELERYD_NODES} \
+  -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} \
+  --logfile=${CELERYD_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL} ${CELERYD_OPTS}
+ExecStop=/home/ubuntu/aqs8server/env/bin/celery multi stopwait ${CELERYD_NODES} \
+  --pidfile=${CELERYD_PID_FILE}
+ExecReload=/home/ubuntu/aqs8server/env/bin/celery multi restart ${CELERYD_NODES} \
+  -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} \
+  --logfile=${CELERYD_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL} ${CELERYD_OPTS}
 
 [Install]
 WantedBy=multi-user.target
+
 ```
 
 Step 3: Enable and Start the Celery Service
@@ -163,7 +211,20 @@ sudo systemctl start celery
 
 The `enable` command ensures that the Celery service starts automatically during server startup.
 
-Step 4: Check the Celery Service Status
+Step 4: Add autorun script for auto shutdown
+```bash
+sudo nano /home/ubuntu/autorun.sh
+```
+Add following script:
+```bash
+# For Celery
+# The dir will auto deleted when every time reboot.
+mkdir /var/run/celery
+chown -R celery:celery /var/run/celery/
+chmod o+w /var/run/celery
+```
+
+Step 5: Check the Celery Service Status
 
 You can check the status of the Celery service to ensure it is running:
 
@@ -173,7 +234,7 @@ sudo systemctl status celery
 
 This command will display the current status and any logs related to the Celery service.
 
-Step 5: Monitor Celery Worker Logs
+Step 6: Monitor Celery Worker Logs
 
 You can monitor the Celery worker logs at the location specified in the `CELERYD_LOG_FILE` configuration (e.g., `/var/log/celery/%N.log`). These logs will contain information about the Celery worker's activities and task execution.
 
@@ -903,9 +964,24 @@ SHOW TIMEZONE;
 ALTER ROLE aqsdbuser SET timezone TO 'UTC';
 GRANT ALL PRIVILEGES ON DATABASE aqsdb8 TO aqsdbuser;
 \q
+exit
+```
+Allow remote access to PostgreSQL server
+```bash
+nano /etc/postgresql/14/main/postgresql.conf
+# Edit: search (CTRL + W) listen_addresses
+listen_addresses = '*'
 ```
 ```bash
-exit
+sudo find / -name pg_hba.conf
+sudo nano /path/to/pg_hba.conf
+# this case:
+sudo nano /etc/postgresql/14/main/pg_hba.conf
+# add line:
+host    aqsdb8    aqsdbuser    10.95.157.237/32    md5
+```
+
+```bash
 sudo systemctl reload postgresql.service
 ```
 Edit settings.py
@@ -1582,4 +1658,8 @@ Window -> Color -> Default Blue -> Red 44 Green 123 Blue 201
 # Copy file from PC to Linux server
 pscp c:/music.mp3  ubuntu@192.168.1.222:/home/ubuntu/
 
-# AWS 
+# Network (Internet) speed test
+```bash
+sudo apt install speedtest-cli
+speedtest
+```
