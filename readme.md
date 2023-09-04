@@ -1,5 +1,8 @@
 # AQS version 8 For PCCW 2023
 
+## Upgrade Server v8.1.5 (Phase 4)
+- Switch to new server
+
 ## Upgrade Server v8.1.4 (Phase 3)
 - new Python lib : django-crequest (for raw data report)
 - New Python lib : celery[redis] (for long time task)
@@ -527,6 +530,9 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 - Web softkey ticket queue list add 'Call' button for each ticket
 - Re-design "New User" page and change to 4 steps
 - Add new page for "User List"
+
+### <span style="color:orange;">**Version 8.1.5**</span>
+- Romove API function for migrate DB for HHT 
 
 # For Project PCCW 2023
 ## Main Server (WTT)
