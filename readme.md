@@ -6,6 +6,60 @@
 - New Python lib : wcwidth vine redis prompt-toolkit colorama billiard click amqp kombu click-repl click-plugins click-didyoumean (for celery)
 
 ## Upgrade Server v8.1.4  (Phase 3)
+### Switch to new server
+### `Step 1` : Change the server IP
+
+```
+# Config server IP
+sudo nano /etc/netplan/00-installer-config.yaml
+```
+Edit:
+```ini
+# This is the network config written by 'subiquity'
+      addresses:
+        - 10.95.157.237/24
+      routes:
+        - to: default
+          via: 10.95.157.254
+      nameservers:
+        addresses: [10.2.202.1, 10.3.220.160]
+  version: 2
+```
+
+
+### `Step 2` : Change Nginx config
+```bash
+# Nginx
+sudo nano /etc/nginx/sites-available/aqs8server
+```
+Edit:
+```ini
+    server_name localhost 127.0.0.1 10.95.157.237;
+```
+### `Step 3` : Change Django settings.py for production DB server IP 
+```bash
+sudo nano ~/aqs8server/aqs/settings.py
+```
+Edit:
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'aqsdb8',
+        'USER': 'aqsdbuser',
+        'PASSWORD': 'dbpassword-Dlcg1dwMOXSKIAIM',
+        'HOST': '10.95.157.236',
+        'PORT': '5432',
+    }
+}
+```
+### `Step 4` : Change Q.Server SU password
+```bash
+sudo passwd ubuntu
+> wert2206EDC5345
+```
+### `Done` for switch to new server ------------------
+
 ```bash
 # Backup settings.py
 cp ~/aqs8server/aqs/settings.py ~/
@@ -294,7 +348,7 @@ Description=Autorun
 After=network.target
 
 [Service]
-ExecStart=/bin/bash /home/ts/autorun.sh
+ExecStart=/bin/bash /home/ubuntu/autorun.sh
 
 [Install]
 WantedBy=default.target
@@ -306,7 +360,7 @@ sudo systemctl enable autorun.service
 ```
 
 ```
-nano /home/ts/autorun.sh
+nano /home/ubuntu/autorun.sh
 ```
 
 ```nano
@@ -316,14 +370,14 @@ shutdown -h 00:30
 shutdown -r 00:00
 ```
 ## Wrong Auto power off script (for Linux server)
-```bash
-sudo nano /etc/rc.local
-```
-- add line:
-```nano
-shutdown -h 23:55
-```
-- Save and exit
+
+~~sudo nano /etc/rc.local~~
+
+~~- add line:~~
+
+~~shutdown -h 23:55~~
+
+~~- Save and exit~~
 
 
 ## Upgrade Server v8.1.2
@@ -459,7 +513,7 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 
 ### <span style="color:orange;">**Version 8.1.4**</span>
 - Fixed bug : Callcentre mode, auto call ticket the counter sequence is not correct
-- Add function : Update user add reset password
+- Add function : Update user add "reset password"
 - Add new API function for migrate HHT old DB to new server (http://127.0.0.1:8000/api/db_tst/?app=postman&version=8.1)
 - Romove API function for migrate 2 branchs (SCP, WTT) 
 - Add new function for export report to excel
@@ -472,7 +526,6 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 - Web softkey add WS CounterStatus for receive loged or not then redirect to home page
 - Web softkey ticket queue list add 'Call' button for each ticket
 - Re-design "New User" page and change to 4 steps
-- User update add "Reset Password" button
 - Add new page for "User List"
 
 # For Project PCCW 2023
@@ -544,7 +597,38 @@ host    aqsdb8    aqsdbuser    10.95.157.237/32    md5
 - IP : TV1 10.95.160.233, TV2 10.95.160.234, TV3 (reserve) 10.95.160.235
 - TST (HHT)
 - IP : TV1
+### Setting Ubuntu 22 for TV PC 
+- Install our software and auto run
+- No screen saver
+- No sleep
+- No lock screen
+- No auto update:
 
+
+`Step 1:`
+
+Goto Ubuntu Desktop -> Settings -> Software & Updates -> Updates -> Automatically check for updates: Never
+
+Settings -> Software & Updates -> Updates -> Notify me of new Ubuntu version: Never
+
+`Step 2:`
+> Change update setting
+```bash
+sudo nano /etc/apt/apt.conf.d/20auto-upgrades
+```
+Add lines:
+```ini
+APT::Periodic::Update-Package-Lists "0";
+APT::Periodic::Download-Upgradeable-Packages "0";
+APT::Periodic::AutocleanInterval "0";
+APT::Periodic::Unattended-Upgrade "1";
+```
+
+`Step 3:`
+> Remove update-manager
+```bash
+sudo apt-get remove update-manager
+```
 ## Touch PC (Windows 10)
 - Sheung Wan (WTT)
 - IP : 10.95.157.231
@@ -864,6 +948,7 @@ PuTTY -> Data -> Auto-login username (ubuntu) -> Session -> Save
 
 ```sh
 sudo timedatectl set-timezone Asia/Hong_Kong
+sudo hwclock -w
 sudo apt-get update ; sudo apt-get upgrade -y
 sudo apt-get install -y python3 python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx git 
 sudo nano ~/.bashrc
