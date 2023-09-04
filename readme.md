@@ -1,4 +1,4 @@
-# AQS version 8 For PCCW 2023
+# AQS version 8
 
 ## Upgrade Server v8.1.4 (Phase 3)
 - new Python lib : django-crequest (for raw data report)
@@ -6,59 +6,7 @@
 - New Python lib : wcwidth vine redis prompt-toolkit colorama billiard click amqp kombu click-repl click-plugins click-didyoumean (for celery)
 
 ## Upgrade Server v8.1.4  (Phase 3)
-### Switch to new server
-### `Step 1` : Change the server IP
 
-```
-# Config server IP
-sudo nano /etc/netplan/00-installer-config.yaml
-```
-Edit:
-```ini
-# This is the network config written by 'subiquity'
-      addresses:
-        - 10.95.157.237/24
-      routes:
-        - to: default
-          via: 10.95.157.254
-      nameservers:
-        addresses: [10.2.202.1, 10.3.220.160]
-  version: 2
-```
-
-
-### `Step 2` : Change Nginx config
-```bash
-# Nginx
-sudo nano /etc/nginx/sites-available/aqs8server
-```
-Edit:
-```ini
-    server_name localhost 127.0.0.1 10.95.157.237;
-```
-### `Step 3` : Change Django settings.py for production DB server IP 
-```bash
-sudo nano ~/aqs8server/aqs/settings.py
-```
-Edit:
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'aqsdb8',
-        'USER': 'aqsdbuser',
-        'PASSWORD': 'dbpassword-Dlcg1dwMOXSKIAIM',
-        'HOST': '10.95.157.236',
-        'PORT': '5432',
-    }
-}
-```
-### `Step 4` : Change Q.Server SU password
-```bash
-sudo passwd ubuntu
-> wert2206EDC5345
-```
-### `Done` for switch to new server ------------------
 
 ```bash
 # Backup settings.py
@@ -1748,3 +1696,56 @@ pscp c:/music.mp3  ubuntu@192.168.1.222:/home/ubuntu/
 sudo apt install speedtest-cli
 speedtest
 ```
+# Switch to new server (4 steps)
+### `Step 1` : Change the server IP
+
+```
+# Config server IP
+sudo nano /etc/netplan/00-installer-config.yaml
+```
+Edit:
+```ini
+# This is the network config written by 'subiquity'
+      addresses:
+        - 10.95.157.237/24
+      routes:
+        - to: default
+          via: 10.95.157.254
+      nameservers:
+        addresses: [10.2.202.1, 10.3.220.160]
+  version: 2
+```
+
+
+### `Step 2` : Change Nginx config
+```bash
+# Nginx
+sudo nano /etc/nginx/sites-available/aqs8server
+```
+Edit:
+```ini
+    server_name localhost 127.0.0.1 10.95.157.237;
+```
+### `Step 3` : Change Django settings.py for production DB server IP 
+```bash
+sudo nano ~/aqs8server/aqs/settings.py
+```
+Edit:
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'aqsdb8',
+        'USER': 'aqsdbuser',
+        'PASSWORD': 'dbpassword-Dlcg1dwMOXSKIAIM',
+        'HOST': '10.95.157.236',
+        'PORT': '5432',
+    }
+}
+```
+### `Step 4` : Change Q.Server SU password
+```bash
+sudo passwd ubuntu
+> wert2206EDC5345
+```
+### `Done` for switch to new server ------------------
