@@ -1,33 +1,11 @@
 # AQS version 8
 
-## Upgrade Server v8.1.4 (Phase 3)
-- new Python lib : django-crequest (for raw data report)
-- New Python lib : celery[redis] (for long time task)
-- New Python lib : wcwidth vine redis prompt-toolkit colorama billiard click amqp kombu click-repl click-plugins click-didyoumean (for celery)
-
-## Upgrade Server v8.1.4  (Phase 3)
-
-
+# Copy source from USB drive :
 ```bash
-# Backup settings.py
-cp ~/aqs8server/aqs/settings.py ~/
-# Backup previous version
-cp -r ~/aqs8server/ ~/aqs8server813.bak/
-# Remove previous version
-rm -r ~/aqs8server/
-
-# Copy new version from PC or USB drive
-# from PC :
-# in server
-mkdir ~/aqs8server/
-# in PC
-pscp -r your/folder/aqs8server/* ubuntu@10.95.157.237:/home/ubuntu/aqs8server/
-# change owner
-sudo chown ubuntu ~/aqs8server -R
-
-# Or from USB drive :
 # find out your usb drive my case is sdb1
 lsblk
+```
+```bash
 sudo mkdir /mnt/usb
 sudo mount /dev/sdb /mnt/usb
 cd /mnt/usb
@@ -475,6 +453,11 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 - Web softkey ticket queue list add 'Call' button for each ticket
 - Re-design "New User" page and change to 4 steps
 - Add new page for "User List"
+
+### <span style="color:orange;">**Version 8.1.5**</span>
+- Romove API function for migrate DB for HHT 
+- Fixed bug : deploy to production server, the static_deploy folder is not correct 
+for download CSV file (aqs/tasks.py -> export_raw)
 
 # For Project PCCW 2023
 ## Main Server (WTT)
@@ -1690,6 +1673,9 @@ Window -> Color -> Default Blue -> Red 44 Green 123 Blue 201
 
 # Copy file from PC to Linux server
 pscp c:/music.mp3  ubuntu@192.168.1.222:/home/ubuntu/
+pscp -r your/folder/aqs8server/* ubuntu@10.95.157.237:/home/ubuntu/aqs8server/
+# then change owner
+sudo chown ubuntu ~/aqs8server -R
 
 # Network (Internet) speed test
 ```bash

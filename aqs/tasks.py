@@ -41,11 +41,19 @@ def export_raw(quesrystr, reporttitle1, reporttitle2, reporttitle3, reporttitle4
     report_str = ''
     # Get my task ID
     my_id = current_task.request.id
-
-    static_root = str(settings.STATICFILES_DIRS[0])
-
-
     logger.info(f'Exporting raw data task id: {my_id}')
+
+    # Get settings.py STATIC_ROOT
+    static_root = None
+    if settings.STATIC_ROOT != None:
+        # This is for production
+        static_root = str(settings.STATIC_ROOT)
+    if static_root == None:
+        # This is for development
+        static_root = str(settings.STATICFILES_DIRS[0])
+    # logger.info(f'Static Root: {static_root}')
+
+
 
     current_task.status = 'PROGRESS'
 

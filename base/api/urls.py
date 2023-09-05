@@ -35,7 +35,7 @@ urlpatterns = [
     path('voice/', v_display.getVoice), 
 
 
-    path('db_tst/', views.getDBtst),
+    # path('db_tst/', views.getDBtst),
     # path('db2/', views.getDB2),
     # path('applogin/', v_roche.postRocheLogin),
     # path('applist/', v_roche.getRocheFirstPrint),
