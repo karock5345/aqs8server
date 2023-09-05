@@ -42,10 +42,21 @@ def export_raw(quesrystr, reporttitle1, reporttitle2, reporttitle3, reporttitle4
     # Get my task ID
     my_id = current_task.request.id
 
-    static_root = str(settings.STATICFILES_DIRS[0])
-
+    
+    # Get settings.py STATIC_ROOT
+    static_root = None
+    if settings.STATIC_ROOT != None:
+        # This is for production
+        static_root = str(settings.STATIC_ROOT)
+    if static_root == None:
+        # This is for development
+        static_root = str(settings.STATICFILES_DIRS[0])
+    # logger.info(f'Static Root: {static_root}')
 
     logger.info(f'Exporting raw data task id: {my_id}')
+
+
+
 
     current_task.status = 'PROGRESS'
 
@@ -66,6 +77,7 @@ def export_raw(quesrystr, reporttitle1, reporttitle2, reporttitle3, reporttitle4
     bcode = table[0].branch.bcode
     # get django static path
     save_path = static_root + '/download/' + bcode + '/raw_' + my_id +'.csv'
+
     logger.info(f'Full path of save file: {save_path}')
 
     # create new folder if not exist

@@ -533,6 +533,8 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 
 ### <span style="color:orange;">**Version 8.1.5**</span>
 - Romove API function for migrate DB for HHT 
+- Fixed bug : deploy to production server, the static_deploy folder is not correct 
+for download CSV file (aqs/tasks.py -> export_raw)
 
 # For Project PCCW 2023
 ## Main Server (WTT)
