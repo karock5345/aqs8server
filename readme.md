@@ -1,397 +1,63 @@
 # AQS version 8
 
-# Copy source from USB drive :
-```bash
-# find out your usb drive my case is sdb1
-lsblk
-```
-```bash
-sudo mkdir /mnt/usb
-sudo mount /dev/sdb /mnt/usb
-cd /mnt/usb
-sudo cp aqs8server /home/ubuntu/aqs8server/ -r
-# change owner
-sudo chown ubuntu ~/aqs8server -R
-sudo umount /mnt/usb
-```
-
-### copy settings.py from backup
-```bash
-cp ~/settings.py ~/aqs8server/aqs/settings.py
-```
-### copy env from backup
-```bash
-rm -r ~/aqs8server/env
-cp -r ~/aqs8server813.bak/env ~/aqs8server/
-```
+### <span style="color:orange;">**Coming up Version 8.2.1**</span>
+- Protect apiuser password for every Client software (including Softkey, Touch Panel, Display Panel, Printer Control, etc.)
+- Improve HTML UI for "Form" do not cover error message 
+- User Groups (frontline, support, admin, manager) for PCCW 2023 merge to our system (counter, report, admin)
+- Run sch_shutdown() (Schudule task) when the branch settings is saved, so the branch will be update and schedule task time.
+### <span style="color:orange;">**Coming up Version 8.2.0**</span>
+- Upgrade Django to 4.2.x
+- Secure all existing Websocket connection protect use the session Cookie
+- Create public Websocket for Web (WebTV and My E-ticket)
 
 
-### Install python lib offline
-```bash
-# Download python lib to local PC
-pip download django-crequest -d ./static_deploy
-pip download celery[redis] -d ./static_deploy
 
-# new dir on server
-mkdir ~/aqs8server/static_deploy
-# Copy to server from PC
-cd (your project folder)
-pscp -r ./aqs8server/static_deploy/* ubuntu@10.95.157.237:/home/ubuntu/aqs8server/static_deploy/
 
-# change owner
-sudo chown ubuntu ~/aqs8server -R
 
-# Install python lib on liunx server
-cd /home/ubuntu/static_deploy
-cd /home/ubuntu/aqs8server
-source ./env/bin/activate
-pip3 install django-crequest --no-index --find-links=/home/ubuntu/static_deploy
-pip3 install celery[redis] --no-index --find-links=/home/ubuntu/static_deploy
-```
-### Edit settings.py after restore from backup
-> nano ~/aqs8server/aqs/settings.py
 
-```python
-# settings.py
-REDIS_HOST = '127.0.0.1'
-CHANNEL_LAYERS = {
-    'default':{
-        'BACKEND':'channels_redis.core.RedisChannelLayer',
-        # 'BACKEND':'channels_redis.pubsub.RedisPubSubChannelLayer',
-        'CONFIG': {
-            # 'hosts':[('127.0.0.1', '6379')],
-            'hosts':[(REDIS_HOST, '6379')],      # vm
-        # "channel_capacity": {
-        #         "http.request": 200,
-        #         "http.response!*": 10,
-        #         re.compile(r"^websocket.send\!.+"): 20,
-        #     },
-        },
-    }
-}
-CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':6379/0'
-CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':6379/0'
-```
-# Run Celery worker on the server
-### Using Systemd (Process Manager):
-### Step 1: Create the dedicated user and group
-```bash
-sudo groupadd celery ;
-sudo useradd -g celery celery ;
-sudo mkdir /var/run/celery ;
-sudo chown -R celery:celery /var/run/celery/ ;
-sudo chmod o+w /var/run/celery ;
-sudo mkdir /var/log/celery ;
-sudo chown -R celery:celery /var/log/celery/ ;
-sudo chmod o+w /var/log/celery
-```
-### Step 2: Create the Celery Worker Configuration File
 
-Create a Celery configuration file (e.g., `celeryd`) in the `/etc/default/` directory:
-
-```bash
-sudo nano /etc/default/celeryd
-```
-
-Add the following content to the `celeryd` file. Modify the values for your specific setup:
-
-```ini
-# /etc/default/celeryd
-#   most people will only start one node:
-CELERYD_NODES="worker1"
-#   but you can also start multiple and configure settings
-#   for each in CELERYD_OPTS
-#CELERYD_NODES="worker1 worker2 worker3"
-#   alternatively, you can specify the number of nodes to start:
-#CELERYD_NODES=10
-
-# Absolute or relative path to the 'celery' command:
-CELERY_BIN="/home/ubuntu/aqs8server/env/bin/celery"
-#CELERY_BIN="/virtualenvs/def/bin/celery"
-
-# App instance to use
-# comment out this line if you don't use an app
-CELERY_APP="aqs.celery:app"
-# or fully qualified:
-#CELERY_APP="proj.tasks:app"
-
-# Where to chdir at start.
-CELERYD_CHDIR="/home/ubuntu/aqs8server"
-
-# Extra command-line arguments to the worker
-CELERYD_OPTS="--time-limit=300 --concurrency=8"
-# Configure node-specific settings by appending node name to arguments:
-#CELERYD_OPTS="--time-limit=300 -c 8 -c:worker2 4 -c:worker3 2 -Ofair:worker1"
-
-# Set logging level to DEBUG
-#CELERYD_LOG_LEVEL="DEBUG"
-
-# %n will be replaced with the first part of the node name.
-CELERYD_LOG_FILE="/var/log/celery/%n%I.log"
-CELERYD_PID_FILE="/var/run/celery/%n.pid"
-
-# Workers should run as an unprivileged user.
-#   You need to create this user manually (or you can choose
-#   a user/group combination that already exists (e.g., nobody).
-CELERYD_USER="celery"
-CELERYD_GROUP="celery"
-CELERYD_LOG_LEVEL="INFO"
-# If enabled PID and log directories will be created if missing,
-# and owned by the userid/group configured.
-CELERY_CREATE_DIRS=1
-```
-
-Replace the placeholders (`<your_django_user>`, `<your_django_group>`, `your_project_name`, and other paths) with the appropriate values for your setup.
-
-### Step 3: Create the Celery Worker Systemd Service File
-
-Create a Systemd service file (e.g., `celery.service`) in the `/etc/systemd/system/` directory:
-
-```bash
-sudo nano /etc/systemd/system/celery.service
-```
-
-Add the following content to the `celery.service` file:
-
-```ini
-# /etc/systemd/system/celery.service
-[Unit]
-Description=Celery Service
-After=network.target
-
-[Service]
-Type=forking
-User=ubuntu
-Group=ubuntu
-
-EnvironmentFile=/etc/default/celeryd
-WorkingDirectory=/home/ubuntu/aqs8server
-ExecStart=/home/ubuntu/aqs8server/env/bin/celery multi start ${CELERYD_NODES} \
-  -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} \
-  --logfile=${CELERYD_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL} ${CELERYD_OPTS}
-ExecStop=/home/ubuntu/aqs8server/env/bin/celery multi stopwait ${CELERYD_NODES} \
-  --pidfile=${CELERYD_PID_FILE}
-ExecReload=/home/ubuntu/aqs8server/env/bin/celery multi restart ${CELERYD_NODES} \
-  -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} \
-  --logfile=${CELERYD_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL} ${CELERYD_OPTS}
-
-[Install]
-WantedBy=multi-user.target
-
-```
-
-### Step 4: Enable and Start the Celery Service
-
-Now that you have created the configuration and service files, enable and start the Celery service:
-
-```bash
-sudo systemctl enable celery
-sudo systemctl start celery
-```
-
-The `enable` command ensures that the Celery service starts automatically during server startup.
-
-### Step 5: Add autorun script for auto shutdown
-```bash
-sudo nano /home/ubuntu/autorun.sh
-```
-Add following script:
-```bash
-# For Celery
-# The dir will auto deleted when every time reboot.
-mkdir /var/run/celery
-chown -R celery:celery /var/run/celery/
-chmod o+w /var/run/celery
-```
-
-### Step 6: Check the Celery Service Status
-
-You can check the status of the Celery service to ensure it is running:
-
-```bash
-sudo systemctl status celery
-```
-
-This command will display the current status and any logs related to the Celery service.
-
-### Step 7: Monitor Celery Worker Logs
-
-You can monitor the Celery worker logs at the location specified in the `CELERYD_LOG_FILE` configuration (e.g., `/var/log/celery/%N.log`). These logs will contain information about the Celery worker's activities and task execution.
-
-That's it! Your Celery worker is now set up as a Systemd service and will start automatically during server startup. It will continue to run in the background, processing your asynchronous tasks as needed.
-
-## Upgrade Server v8.1.3 (Phase 2)
+### <span style="color:orange;">**Version 8.1.5**</span>
+- Romove API function for migrate DB for HHT 
+- Fixed bug : deploy to production server, the static_deploy folder is not correct 
+for download CSV file (aqs/tasks.py -> export_raw)
+### <span style="color:orange;">**Version 8.1.4**</span>
+- Fixed bug : Callcentre mode, auto call ticket the counter sequence is not correct
+- Add function : Update user add "reset password"
+- Add new API function for migrate HHT old DB to new server (http://127.0.0.1:8000/api/db_tst/?app=postman&version=8.1)
+- Romove API function for migrate 2 branchs (SCP, WTT) 
+- Add new function for export report to excel
+- Fixed bug : User ticket type 
+- Raw data report add split data into multiple pages (using django-crequest)
+- Add error message for new user 
+- Show "active user number" in user list
+- Celery support long time task (e.g. export report to excel)
+- fixed bug : user group : 'manager' and 'support' can not Force Logout
+- Web softkey add WS CounterStatus for receive loged or not then redirect to home page
+- Web softkey ticket queue list add 'Call' button for each ticket
+- Re-design "New User" page and change to 4 steps
+- Add new page for "User List"
+### <span style="color:orange;">**Version 8.1.3**</span>
 - Report function (1. Staff performance report, 2. Total ticket report)
-- Migration old DB to new server
+- Add new API function for migrate 2 branchs (SCP, WTT) old DB to new server (http://127.0.0.1:8000/api/db2/?app=postman&version=8.1)
 
-### JWT settings
+### <span style="color:orange;">**Version 8.1.2**</span>
+- Add 'force logout' function for supervise.html
+- New API for shutdown branch and run INIT_SCH : /sch/shutdown/?bcode=KB&app=postman&version=8.1
 ```bash
-nano ./aqs/settings.py
+# get JWT (this api should be use superuser)
+curl -X POST http://127.0.0.1/api/token/ -d "username=<su username>&password=<your-password>"
+# Shutdown branch api
+curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=8.1 -H "Authorization: JWT <your-token>"
 ```
-Edit:
-
-```python
-SIMPLE_JWT = {
-    # Debug mode set 120 minutes, otherwise 5 minutes    
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
-    # Debug mode set 30 minutes, otherwise days=1
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
-    "ROTATE_REFRESH_TOKENS": False,
-    "BLACKLIST_AFTER_ROTATION": False,
-    "UPDATE_LAST_LOGIN": False,
-
-    "ALGORITHM": "HS256",
-    "SIGNING_KEY": SECRET_KEY,
-    "VERIFYING_KEY": None,
-    "AUDIENCE": None,
-    "ISSUER": None,
-   
-    "AUTH_HEADER_TYPES": ("Bearer",),
-}
-```
-exit and save
-## Upgrade Server v8.1.2 (Phase 1)
-- Support new Display Panel
-- New 'Force Logout' function for Supervise
-- New API for shutdown branch and run INIT_SCH
-- New API for Display Panel get latest 5 tickets
 - Fixed bug : Schedule task not run when branchs is shutdown time same. Casue by the init_branch_reset() function is remove all schedule task first.
-
-### Check the server auto shutdown?
-```
-# See log of my Linux system shutdown
-last -x shutdown
-```
-## Auto power off script (for Linux server)
-```bash
-cd /etc/systemd/system/
-sudo nano autorun.service
-```
-- add line:
-```
-[Unit]
-Description=Autorun
-After=network.target
-
-[Service]
-ExecStart=/bin/bash /home/ubuntu/autorun.sh
-
-[Install]
-WantedBy=default.target
-```
-- Save and exit
-
-```bash
-sudo systemctl enable autorun.service
-```
-
-```
-nano /home/ubuntu/autorun.sh
-```
-
-```nano
-# Auto shutdown at 00:30
-shutdown -h 00:30
-# Reboot at 00:00
-shutdown -r 00:00
-```
-## Wrong Auto power off script (for Linux server)
-
-~~sudo nano /etc/rc.local~~
-
-~~- add line:~~
-
-~~shutdown -h 23:55~~
-
-~~- Save and exit~~
-
-
-## Upgrade Server v8.1.2
-```bash
-# Backup settings.py
-cp ~/aqs8server/aqs/settings.py ~/
-# Backup previous version
-cp -r ~/aqs8server/ ~/aqs8server.bak/
-# Remove previous version
-rm -r ~/aqs8server/
-
-# mount USB drive
-# find out your usb drive my case is sdb1
-lsblk
-sudo mkdir /mnt/usb
-sudo mount /dev/sdb /mnt/usb
-cd /mnt/usb
-sudo cp aqs8server /home/ubuntu/aqs8server/ -r
-# change owner
-sudo chown ubuntu ~/aqs8server -R
-sudo umount /mnt/usb
-
-
-```
-## PCCW is no internet access
-~~cd ~/aqs8server~~
-
-~~virtualenv env~~
-
-~~source env/bin/activate~~
-
-~~sudo nano requirements.txt~~
-
-~~# [del line :] twisted-iocpsupport=x.x.x~~
-
-~~pip install -r requirements.txt~~
-
-~~pip install gunicorn psycopg2~~
-
-~~pip install daphne~~
-
-```
-# copy backup env to new version folder
-cp ~/aqs8server.bak/env/ ~/aqs8server/env/
-# test env
-cd ~/aqs8server
-source ./env/bin/activate
-
-cp ~/settings.py ~/aqs8server/aqs/
-
-rm ./readme.md
-
-python3 manage.py collectstatic
-sudo gpasswd -a www-data ubuntu
-sudo chmod g+x /home/ubuntu && chmod g+x /home/ubuntu/aqs8server/ && chmod g+x /home/ubuntu/aqs8server/static_deploy
-
-# DB is modified, so need to migrate
-python manage.py makemigrations
-python manage.py migrate
-
-sudo nginx -s reload
-sudo reboot
-
-```
-
-### <span style="color:orange;">**Version 8.0.0**</span>
-- First Django version for Queuing Server
-### <span style="color:orange;">**Version 8.0.1**</span>
-- Admin can edit TV scrolling text
-- New 3 APIs for Roche
-- Admin Supervise add Printer Status with color
-- WebTV support multi-branch and multi-counter
-- WebTV add counter type text (2 languages)
-- Web auto logout
-- New webTV HTML layout
-- New web my ticket function
-- Add Cancel Ticket to web my ticket
-- Add My e-Ticket link QR code for print ticket
-- Add Web Touch function for new ticket
-- Change user branch authority (Admin, Report) : User in group Admin or Report. For example, if user mary is Admin Group and Branch 1,2. Mary only add / edit / del user which is Branch 1 or 2 or 1,2. If the user_A is branch 1,2,3. Mary do not have access to user_A.
-- fixed waiting on queue (TicketRoute) show on TV / WebTV
-- Deploy to Production Server with Websocket + SSL is work
-- WebTV (HTML) is support WS
-### <span style="color:orange;">**Version 8.0.2**</span>
-- Support SMS Module
-- Softkey web version
-### <span style="color:orange;">**Version 8.0.3**</span>
-- fixed Print replaced by Django Log for debug on server
+- New API for Display Panel get latest 5 tickets 
+- Websocket disp_ for Display Panel replace from webtv_, websocket webtv_ only for HTML online ticket number
+- Websocket disp_ new commands: call, removeall, wait
+### <span style="color:orange;">**Version 8.1.1**</span>
+- Fixed bug : Counter can not logout and Counter status is not correct (waiting) in Call Centre mode when reset branch, if counter still login then.
+### <span style="color:orange;">**Version 8.1.1 for PCCW 2023**</span>
+- New Ticket Format, Ticket Type should be 2 letters and should be uppercase
+- User group 'frontline' 'support' 'admin' 'manager' for PCCW 2023 
 ### <span style="color:orange;">**Version 8.1.0**</span>
 - API Support JWT
 - All API request.user should be user group 'api'
@@ -414,50 +80,44 @@ sudo reboot
 - Improve HTML: Branch list, Ticket Format list, Ticket Route list, Supervisor list (Show red color when disabled)
 - Fixed number not correct in m-menu for mobile version (base/views -> MenuView)
 - Improve HTML UI for Branch settings
-### <span style="color:orange;">**Version 8.1.1 for PCCW 2023**</span>
-- New Ticket Format, Ticket Type should be 2 letters and should be uppercase
-- User group 'frontline' 'support' 'admin' 'manager' for PCCW 2023 
-### <span style="color:orange;">**Version 8.1.1**</span>
-- Fixed bug : Counter can not logout and Counter status is not correct (waiting) in Call Centre mode when reset branch, if counter still login then.
-### <span style="color:orange;">**Version 8.1.2**</span>
-- Add 'force logout' function for supervise.html
-- New API for shutdown branch and run INIT_SCH : /sch/shutdown/?bcode=KB&app=postman&version=8.1
-```bash
-# get JWT (this api should be use superuser)
-curl -X POST http://127.0.0.1/api/token/ -d "username=<su username>&password=<your-password>"
-# Shutdown branch api
-curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=8.1 -H "Authorization: JWT <your-token>"
-```
-- Fixed bug : Schedule task not run when branchs is shutdown time same. Casue by the init_branch_reset() function is remove all schedule task first.
-- New API for Display Panel get latest 5 tickets 
-- Websocket disp_ for Display Panel replace from webtv_, websocket webtv_ only for HTML online ticket number
-- Websocket disp_ new commands: call, removeall, wait
-### <span style="color:orange;">**Version 8.1.3**</span>
-- Report function (1. Staff performance report, 2. Total ticket report)
-- Add new API function for migrate 2 branchs (SCP, WTT) old DB to new server (http://127.0.0.1:8000/api/db2/?app=postman&version=8.1)
+### <span style="color:orange;">**Version 8.0.3**</span>
+- fixed Print replaced by Django Log for debug on server
+### <span style="color:orange;">**Version 8.0.2**</span>
+- Support SMS Module
+- Softkey web version
+### <span style="color:orange;">**Version 8.0.1**</span>
+- Admin can edit TV scrolling text
+- New 3 APIs for Roche
+- Admin Supervise add Printer Status with color
+- WebTV support multi-branch and multi-counter
+- WebTV add counter type text (2 languages)
+- Web auto logout
+- New webTV HTML layout
+- New web my ticket function
+- Add Cancel Ticket to web my ticket
+- Add My e-Ticket link QR code for print ticket
+- Add Web Touch function for new ticket
+- Change user branch authority (Admin, Report) : User in group Admin or Report. For example, if user mary is Admin Group and Branch 1,2. Mary only add / edit / del user which is Branch 1 or 2 or 1,2. If the user_A is branch 1,2,3. Mary do not have access to user_A.
+- fixed waiting on queue (TicketRoute) show on TV / WebTV
+- Deploy to Production Server with Websocket + SSL is work
+- WebTV (HTML) is support WS
+### <span style="color:orange;">**Version 8.0.0**</span>
+- First Django version for Queuing Server
 
 
-### <span style="color:orange;">**Version 8.1.4**</span>
-- Fixed bug : Callcentre mode, auto call ticket the counter sequence is not correct
-- Add function : Update user add "reset password"
-- Add new API function for migrate HHT old DB to new server (http://127.0.0.1:8000/api/db_tst/?app=postman&version=8.1)
-- Romove API function for migrate 2 branchs (SCP, WTT) 
-- Add new function for export report to excel
-- Fixed bug : User ticket type 
-- Raw data report add split data into multiple pages (using django-crequest)
-- Add error message for new user 
-- Show "active user number" in user list
-- Celery support long time task (e.g. export report to excel)
-- fixed bug : user group : 'manager' and 'support' can not Force Logout
-- Web softkey add WS CounterStatus for receive loged or not then redirect to home page
-- Web softkey ticket queue list add 'Call' button for each ticket
-- Re-design "New User" page and change to 4 steps
-- Add new page for "User List"
 
-### <span style="color:orange;">**Version 8.1.5**</span>
-- Romove API function for migrate DB for HHT 
-- Fixed bug : deploy to production server, the static_deploy folder is not correct 
-for download CSV file (aqs/tasks.py -> export_raw)
+
+
+
+
+
+
+
+
+
+
+
+
 
 # For Project PCCW 2023
 ## Main Server (WTT)
@@ -806,14 +466,14 @@ logout
 ```bash
 sudo nano /home/ubuntu/.config/autostart/autooff.desktop
 ```
-```nano
+```ini
 	[Desktop Entry]
 	Type=Application
 	Name=Auto Power Off at 23:55
 	Exec=sh -c "shutdown -h 23:55"
 ```
 - Restart Pi:
-```
+```bash
 sudo reboot
 ```
 ## Auto power off script (for Linux server)
@@ -822,7 +482,7 @@ cd /etc/systemd/system/
 sudo nano autorun.service
 ```
 - add line:
-```
+```ini
 [Unit]
 Description=Autorun
 After=network.target
@@ -837,22 +497,24 @@ WantedBy=default.target
 
 ```bash
 sudo systemctl enable autorun.service
+sudo systemctl start autorun.service
 ```
 
-```
+```bash
 nano /home/ubuntu/autorun.sh
 ```
 
-```nano
+```bash
 # Auto shutdown at 00:30
 shutdown -h 00:30
-# add some script for auto run Control box program
+# Change the COM Port permission for Control Box
 sudo chmod 666 /dev/ttyS0
+# auto run Control box program
 cd /home/ubuntu/cb
 ./cb
 ```
 
-```
+```bash
 chmod +x /home/ubuntu/autorun.sh
 ```
 - Save and exit
@@ -1429,14 +1091,7 @@ sudo service postgresql stop
 nano ~/aqs8server/aqs/settings.py
 ```
 ```python
-CHANNEL_LAYERS = {
-    'default':{
-        'BACKEND':'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            'hosts':[('127.0.0.1', '6379')],
-            },
-     }
-}
+REDIS_HOST = '127.0.0.1'
 ```
 sudo nano /etc/nginx/sites-available/aqs8server
 ```nginx
@@ -1547,6 +1202,157 @@ sudo systemctl status daphne.service
 ```
 sudo systemctl enable daphne.service
 ```
+
+
+# Run Celery worker on the server
+### Using Systemd (Process Manager):
+### Step 1: Create the dedicated user and group
+```bash
+sudo groupadd celery ;
+sudo useradd -g celery celery ;
+sudo mkdir /var/run/celery ;
+sudo chown -R celery:celery /var/run/celery/ ;
+sudo chmod o+w /var/run/celery ;
+sudo mkdir /var/log/celery ;
+sudo chown -R celery:celery /var/log/celery/ ;
+sudo chmod o+w /var/log/celery
+```
+### Step 2: Create the Celery Worker Configuration File
+
+Create a Celery configuration file (e.g., `celeryd`) in the `/etc/default/` directory:
+
+```bash
+sudo nano /etc/default/celeryd
+```
+
+Add the following content to the `celeryd` file. Modify the values for your specific setup:
+
+```ini
+# /etc/default/celeryd
+#   most people will only start one node:
+CELERYD_NODES="worker1"
+#   but you can also start multiple and configure settings
+#   for each in CELERYD_OPTS
+#CELERYD_NODES="worker1 worker2 worker3"
+#   alternatively, you can specify the number of nodes to start:
+#CELERYD_NODES=10
+
+# Absolute or relative path to the 'celery' command:
+CELERY_BIN="/home/ubuntu/aqs8server/env/bin/celery"
+#CELERY_BIN="/virtualenvs/def/bin/celery"
+
+# App instance to use
+# comment out this line if you don't use an app
+CELERY_APP="aqs.celery:app"
+# or fully qualified:
+#CELERY_APP="proj.tasks:app"
+
+# Where to chdir at start.
+CELERYD_CHDIR="/home/ubuntu/aqs8server"
+
+# Extra command-line arguments to the worker
+CELERYD_OPTS="--time-limit=300 --concurrency=8"
+# Configure node-specific settings by appending node name to arguments:
+#CELERYD_OPTS="--time-limit=300 -c 8 -c:worker2 4 -c:worker3 2 -Ofair:worker1"
+
+# Set logging level to DEBUG
+#CELERYD_LOG_LEVEL="DEBUG"
+
+# %n will be replaced with the first part of the node name.
+CELERYD_LOG_FILE="/var/log/celery/%n%I.log"
+CELERYD_PID_FILE="/var/run/celery/%n.pid"
+
+# Workers should run as an unprivileged user.
+#   You need to create this user manually (or you can choose
+#   a user/group combination that already exists (e.g., nobody).
+CELERYD_USER="celery"
+CELERYD_GROUP="celery"
+CELERYD_LOG_LEVEL="INFO"
+# If enabled PID and log directories will be created if missing,
+# and owned by the userid/group configured.
+CELERY_CREATE_DIRS=1
+```
+
+Replace the placeholders (`<your_django_user>`, `<your_django_group>`, `your_project_name`, and other paths) with the appropriate values for your setup.
+
+### Step 3: Create the Celery Worker Systemd Service File
+
+Create a Systemd service file (e.g., `celery.service`) in the `/etc/systemd/system/` directory:
+
+```bash
+sudo nano /etc/systemd/system/celery.service
+```
+
+Add the following content to the `celery.service` file:
+
+```ini
+# /etc/systemd/system/celery.service
+[Unit]
+Description=Celery Service
+After=network.target
+
+[Service]
+Type=forking
+User=ubuntu
+Group=ubuntu
+
+EnvironmentFile=/etc/default/celeryd
+WorkingDirectory=/home/ubuntu/aqs8server
+ExecStart=/home/ubuntu/aqs8server/env/bin/celery multi start ${CELERYD_NODES} \
+  -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} \
+  --logfile=${CELERYD_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL} ${CELERYD_OPTS}
+ExecStop=/home/ubuntu/aqs8server/env/bin/celery multi stopwait ${CELERYD_NODES} \
+  --pidfile=${CELERYD_PID_FILE}
+ExecReload=/home/ubuntu/aqs8server/env/bin/celery multi restart ${CELERYD_NODES} \
+  -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} \
+  --logfile=${CELERYD_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL} ${CELERYD_OPTS}
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+### Step 4: Enable and Start the Celery Service
+
+Now that you have created the configuration and service files, enable and start the Celery service:
+
+```bash
+sudo systemctl enable celery
+sudo systemctl start celery
+```
+
+The `enable` command ensures that the Celery service starts automatically during server startup.
+
+### Step 5: Add autorun script for auto shutdown
+```bash
+sudo nano /home/ubuntu/autorun.sh
+```
+Add following script:
+```bash
+# For Celery
+# The dir will auto deleted when every time reboot.
+mkdir /var/run/celery
+chown -R celery:celery /var/run/celery/
+chmod o+w /var/run/celery
+```
+
+### Step 6: Check the Celery Service Status
+
+You can check the status of the Celery service to ensure it is running:
+
+```bash
+sudo systemctl status celery
+```
+
+This command will display the current status and any logs related to the Celery service.
+
+### Step 7: Monitor Celery Worker Logs
+
+You can monitor the Celery worker logs at the location specified in the `CELERYD_LOG_FILE` configuration (e.g., `/var/log/celery/%N.log`). These logs will contain information about the Celery worker's activities and task execution.
+
+That's it! Your Celery worker is now set up as a Systemd service and will start automatically during server startup. It will continue to run in the background, processing your asynchronous tasks as needed.
+
+
 
 # SSL
 Before setup SSL, server must have domain name
@@ -1735,3 +1541,41 @@ sudo passwd ubuntu
 > wert2206EDC5345
 ```
 ### `Done` for switch to new server ------------------
+
+# Copy source from USB drive :
+```bash
+# find out your usb drive my case is sdb1
+lsblk
+```
+```bash
+sudo mkdir /mnt/usb
+sudo mount /dev/sdb1 /mnt/usb
+cd /mnt/usb
+sudo cp aqs8server /home/ubuntu/aqs8server/ -r
+# change owner
+sudo chown ubuntu ~/aqs8server -R
+```
+```bash
+# Unmount USB drive
+sudo umount /mnt/usb
+```
+
+# Install python lib offline
+```bash
+# Download python lib to local PC
+pip download django-crequest -d ./lib/
+pip download celery[redis] -d ./lib/
+
+# new dir on server
+mkdir ~/aqs8server/lib
+pscp -r ./lib/* ubuntu@10.95.157.237:/home/ubuntu/aqs8server/lib/
+
+# change owner
+sudo chown ubuntu ~/aqs8server -R
+
+# Install python lib on liunx server
+cd /home/ubuntu/aqs8server
+source ./env/bin/activate
+pip3 install django-crequest --no-index --find-links=/home/ubuntu/aqs8server/lib/
+pip3 install celery[redis] --no-index --find-links=/home/ubuntu/aqs8server/lib/
+```

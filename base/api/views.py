@@ -216,10 +216,11 @@ def getRoutes(request):
             logtext = 'API call : Get routes',
         )
 
-    routes = [
-        'API is working.',
-        'Version : ' + aqs_version,
-                ]
+    routes = {
+        'msg': 'API is working!',
+        'aqs_version' : aqs_version,
+    }
+
     return Response(routes)
 
 

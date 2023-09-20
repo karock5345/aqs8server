@@ -8,7 +8,7 @@ from . import v_softkey
 from . import v_roche
 
 urlpatterns = [
-    path('', views.getRoutes),
+    path('', views.getRoutes), # http://127.0.0.1:8000/api/
     path('branchs/', views.getBranchs),
     path('ticketkey/', v_touch.postTicket),  # http://127.0.0.1:8000/api/ticketkey/?username=userapi&password=asdf2206&token=jgd764Pf607qjK2NJFqbh96seg&branchcode=KB&tickettype=A&printernumber=<pno>1</pno>&remark=test&app=web&version=8
     path('touchkeys/', v_touch.postTouchKeys),

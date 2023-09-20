@@ -7,11 +7,11 @@ OK      ticket add source : touch panel / web / api / app
         support 24 hours non-stop service
         add more api user for 3rd party (add call-api counter, limit number of call api)
 OK      online view ticket status for everyone (TV disp web version)
-        online view ticket (channels version)
-        online get ticket
-        support channels to save data traffic        
+OK      online view ticket (channels version)
+OK      online get ticket
+OK      support channels to save data traffic        
         paper roll count total number of ticket per roll 
         base/sch/views.py -> function job_shutdown change to async
 OK      auto logout for web 
         
-        new Django for TV disp web (Q. server is local, TV / get ticket function is web version)
+OK      new Django for TV disp web (Q. server is local, TV / get ticket function is web version)

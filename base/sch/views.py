@@ -16,27 +16,37 @@ import time
 from django.conf import settings
 import os
 import shutil
+from base.sch.jobs import  job_stopall, job_testing
 
 logger = logging.getLogger(__name__)
 
-datetime_now =timezone.now()
-system_inited = False
-try:
-    SystemLog.objects.create(
-            logtime=datetime_now,
-            logtext =  'System started',
-        )
-    system_inited = True
-except:
-    system_inited = False
-
-logger.info('-SCH- Schedule INIT start @ base.sch.view.py -SCH-')
-now = timezone.now()
-snow = now.strftime("%m/%d/%Y, %H:%M:%S")
-logger.info('-SCH- Now:' + snow)
 sch = BackgroundScheduler(daemon=True)
-sch.start()
+system_inited = False
 
+
+def main():
+    datetime_now = timezone.now()
+    now = timezone.now()
+    try:
+        SystemLog.objects.create(
+                logtime=datetime_now,
+                logtext =  'System started',
+            )
+        system_inited = True
+    except:
+        system_inited = False
+
+    logger.info('-SCH- Schedule INIT start @ base.sch.view.py -SCH-')
+
+    snow = now.strftime("%m/%d/%Y, %H:%M:%S")
+    logger.info('-SCH- Now:' + snow)
+
+    sch.start()
+
+    # job_testing(3, '3 Seconds', ' |')
+
+if __name__ != '__main__':
+    main()
 
 # Sch
 
@@ -51,7 +61,7 @@ def getShutdown(request):
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
 
-    
+    datetime_now = timezone.now()
     if error == '' :
         if bcode == '' :
             error ='Branch code is empty'
@@ -117,23 +127,11 @@ def job_test_trigger():
 
 
 
-def job(text,text2):    
-    now = timezone.now()
-    now_l = funUTCtoLocal(now, 8)
-    snow = now_l.strftime("%m/%d/%Y, %H:%M:%S")
-    snow2 = now.strftime("%m/%d/%Y, %H:%M:%S")
-    text_out = '   -SCH- Now:' + snow2 + ' Local time:' +  snow + ' Testing job - ' + text + text2 + '-SCH-'
 
-    # print ( text_out )    
-    logger.info(text_out)
-
-def job_testing(input, text, text2):
-    txt_job = 'job_' + text
-    sch.add_job(job, 'interval', args=[text,text2], seconds=input, id=txt_job)
 
 def init_branch_reset():
     branch_count = 0    
-    datetime_now =timezone.now()
+    datetime_now = timezone.now()
 
     try:
         branchobj = Branch.objects.all()
@@ -151,7 +149,10 @@ def init_branch_reset():
             sch_shutdown(branch, datetime_now)
 
 
-def sch_shutdown(branch, nowUTC):
+def sch_shutdown(branch_input, nowUTC):
+    branch = Branch.objects.get(id=branch_input.id)
+
+    now = timezone.now()
     datetime_now = nowUTC
     localtime_now = funUTCtoLocaltime(datetime_now, branch.timezone )      
     localtime = funUTCtoLocaltime( branch.officehourend, branch.timezone )
@@ -197,8 +198,9 @@ def sch_shutdown(branch, nowUTC):
     sch.add_job(job_shutdown, 'date', run_date=nextreset, id=branch.bcode, args=[branch])
 
 
-def job_shutdown(branch):
+def job_shutdown(branch_input):    
     datetime_now =timezone.now()
+    branch = Branch.objects.get(id=branch_input.id)
     localtime_now = funUTCtoLocaltime(datetime_now, branch.timezone )
     bcode = branch.bcode
 
@@ -336,17 +338,17 @@ def job_shutdown(branch):
     
 
 
-def job(text,text2):    
-    now = timezone.now()
-    now_l = funUTCtoLocal(now, 8)
-    snow = now_l.strftime("%m/%d/%Y, %H:%M:%S")
-    snow2 = now.strftime("%m/%d/%Y, %H:%M:%S")
-    text_out = '   -SCH- Now:' + snow2 + ' Local time:' +  snow + ' Testing job - ' + text + text2 + '-SCH-'
+# def job(text,text2):    
+#     now = timezone.now()
+#     now_l = funUTCtoLocal(now, 8)
+#     snow = now_l.strftime("%m/%d/%Y, %H:%M:%S")
+#     snow2 = now.strftime("%m/%d/%Y, %H:%M:%S")
+#     text_out = '   -SCH- Now:' + snow2 + ' Local time:' +  snow + ' Testing job - ' + text + text2 + '-SCH-'
 
-    # print ( text_out )    
-    logger.info(text_out)
+#     # print ( text_out )    
+#     logger.info(text_out)
 
-def job_testing(input, text, text2):
-    txt_job = 'job_' + text
-    sch.add_job(job, 'interval', args=[text,text2], seconds=input, id=txt_job)
+# def job_testing(input, text, text2):
+#     txt_job = 'job_' + text
+#     sch.add_job(job, 'interval', args=[text,text2], seconds=input, id=txt_job)
 

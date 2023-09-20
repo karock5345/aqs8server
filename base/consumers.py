@@ -13,11 +13,13 @@ from celery.result import AsyncResult
 import asyncio
 
 logger = logging.getLogger(__name__)
-
+WebTVConsumer_connected = 0
+WebTVConsumer_connected_max = 100
 
 
 class ReportRaw_ProgressConsumer(AsyncWebsocketConsumer):
     async def connect(self):
+        error = ''
         # Retrieve the task_id from the URL query parameter
         self.ptask_id = self.scope['url_route']['kwargs']['task_id']
 
@@ -25,16 +27,24 @@ class ReportRaw_ProgressConsumer(AsyncWebsocketConsumer):
 
         self.room_group_name = 'progress_' + self.ptask_id
         logger.info('connecting:' + self.room_group_name )
-        
-        await self.channel_layer.group_add(
-                self.room_group_name,
-                self.channel_name
-            )
 
-        await self.accept()
+        if error == '':
+            if self.scope["user"].is_authenticated == False:
+                error = 'User not authenticated.'
 
-        # Start polling the task progress
-        await self.check_progress()
+        if error == '':        
+            await self.channel_layer.group_add(
+                    self.room_group_name,
+                    self.channel_name
+                )            
+            await self.accept()
+
+            # Start polling the task progress
+            await self.check_progress()
+        else:
+            logger.error('Error:' + error )
+            await self.close()
+            
 
     async def disconnect(self, close_code):
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
@@ -108,18 +118,24 @@ class DispPanelConsumer(AsyncWebsocketConsumer):
         self.room_group_name = 'disp_' + self.bcode + '_' + self.ct
         logger.info('connecting:' + self.room_group_name )
         
-        # check bcode and ct (countertype) is not exit do not accept connection
-        error = await check_input()       
+        if error == '':
+            if self.scope["user"].is_authenticated == False:
+                error = 'DispPanelConsumer: User not authenticated.'
+
+        if error == '':
+            # check bcode and ct (countertype) is not exit do not accept connection
+            error = await check_input()       
 
         if error == '':        
             await self.channel_layer.group_add(
                 self.room_group_name,
                 self.channel_name
             )
-
             await self.accept()
+            
         else :
-            logger.info('Error:' + error )
+            logger.error('Error:' + error )
+            await self.close()
             
 
     # Receive message from room group
@@ -172,10 +188,15 @@ class FlashLightConsumer(AsyncWebsocketConsumer):
         self.room_group_name = 'flashlight_' + self.bcode
         logger.info('connecting:' + self.room_group_name )
         
-        # check bcode and ct (countertype) is not exit do not accept connection
-        error = await check_input()       
+        if error == '':
+            if self.scope["user"].is_authenticated == False:
+                error = 'FlashLightConsumer: User not authenticated.'
 
-        if error == '':          
+        if error == '':
+            # check bcode and ct (countertype) is not exit do not accept connection
+            error = await check_input()      
+
+        if error == '': 
             await self.channel_layer.group_add(
                 self.room_group_name,
                 self.channel_name
@@ -183,7 +204,8 @@ class FlashLightConsumer(AsyncWebsocketConsumer):
 
             await self.accept()
         else :
-            logger.info('Error:' + error )
+            logger.error('Error:' + error )
+            await self.close()
             
 
     # Receive message from room group
@@ -235,17 +257,24 @@ class CounterStatusConsumer(AsyncWebsocketConsumer):
         self.room_group_name = 'cs_' + self.pk
         logger.info('connecting:' + self.room_group_name )
         
-        # check bcode and ct (countertype) is not exit do not accept connection
-        error = await check_input()       
+        if error == '':
+            if self.scope["user"].is_authenticated == False:
+                error = 'CounterStatusConsumer: User not authenticated.'
 
-        if error == '':          
+        if error == '':
+            # check bcode and ct (countertype) is not exit do not accept connection
+            error = await check_input()       
+
+        if error == '':                    
             await self.channel_layer.group_add(
                 self.room_group_name,
                 self.channel_name
             )
             await self.accept()
+
         else :
             logger.error('Error:' + error )
+            await self.close()
             
 
     # Receive message from room group
@@ -296,18 +325,24 @@ class SMSConsumer(AsyncWebsocketConsumer):
         self.room_group_name = 'sms_' + self.bcode 
         logger.info('connecting:' + self.room_group_name )
         
-        # check bcode and ct (countertype) is not exit do not accept connection
-        error = await check_input()       
+        if error == '':
+            if self.scope["user"].is_authenticated == False:
+                error = 'SMSConsumer: User not authenticated.'
 
-        if error == '':          
+        if error == '':
+            # check bcode and ct (countertype) is not exit do not accept connection
+            error = await check_input()   
+
+        if error == '':
             await self.channel_layer.group_add(
                 self.room_group_name,
                 self.channel_name
             )
-
             await self.accept()
+
         else :
-            logger.info('Error:' + error )
+            logger.error('Error:' + error )
+            await self.close()
             
 
     # Receive message from room group
@@ -366,18 +401,24 @@ class VoiceConsumer(AsyncWebsocketConsumer):
         self.room_group_name = 'voice_' + self.bcode + '_' + self.ct
         logger.info('connecting:' + self.room_group_name )
         
-        # check bcode and ct (countertype) is not exit do not accept connection
-        error = await check_input()       
+        if error == '':
+            if self.scope["user"].is_authenticated == False:
+                error = 'VoiceConsumer: User not authenticated.'
 
-        if error == '':          
+        if error == '':
+            # check bcode and ct (countertype) is not exit do not accept connection
+            error = await check_input()       
+
+        if error == '':
             await self.channel_layer.group_add(
                 self.room_group_name,
                 self.channel_name
             )
-
             await self.accept()
+
         else :
-            logger.info('Error:' + error )
+            logger.error('Error:' + error )
+            await self.close()
             
 
     # Receive message from room group
@@ -438,17 +479,24 @@ class TicketStatusConsumer(AsyncWebsocketConsumer):
         self.room_group_name = 'ticketstatus_' + self.bcode + '_' + self.ttype + self.tno + '_' + self.sc
         logger.info('connecting:' + self.room_group_name )
         
-        # check bcode and ct (countertype) is not exit do not accept connection
-        error = await check_input()       
+        if error == '':
+            if self.scope["user"].is_authenticated == False:
+                error = 'TicketStatusConsumer: User not authenticated.'
 
-        if error == '':          
+        if error == '':
+            # check bcode and ct (countertype) is not exit do not accept connection
+            error = await check_input()     
+
+        if error == '':           
             await self.channel_layer.group_add(
                 self.room_group_name,
                 self.channel_name
             )
             await self.accept()
+
         else :
-            logger.info('Error:' + error )
+            logger.error('Error:' + error )
+            await self.close()
             
 
     # Receive message from room group
@@ -499,9 +547,14 @@ class PrintConsumer(AsyncWebsocketConsumer):
         self.bcode = self.scope['url_route']['kwargs']['bcode']
         self.room_group_name = 'print_' + self.bcode 
         logger.info('connecting:' + self.room_group_name)
-        
-        # check bcode and ct (countertype) is not exit do not accept connection
-        error = await check_input()       
+
+        if error == '':
+            if self.scope["user"].is_authenticated == False:
+                error = 'PrintConsumer: User not authenticated.'
+
+        if error == '':
+            # check bcode and ct (countertype) is not exit do not accept connection
+            error = await check_input() 
 
         if error == '':          
             await self.channel_layer.group_add(
@@ -510,7 +563,8 @@ class PrintConsumer(AsyncWebsocketConsumer):
             )
             await self.accept()
         else :
-            logger.info('Error:' + error )
+            logger.error('Error:' + error )
+            await self.close()
             
 
     # Receive message from room group
@@ -559,8 +613,13 @@ class PrinterStatusConsumer(AsyncWebsocketConsumer):
         self.room_group_name = 'printerstatus_' + self.bcode 
         logger.info('connecting:' + self.room_group_name )
         
-        # check bcode and ct (countertype) is not exit do not accept connection
-        error = await check_input()       
+        if error == '':
+            if self.scope['user'].is_authenticated == False:
+                error = 'PrinterStatusConsumer: User not authenticated.'
+
+        if error == '':
+            # check bcode and ct (countertype) is not exit do not accept connection
+            error = await check_input()        
 
         if error == '':          
             await self.channel_layer.group_add(
@@ -570,7 +629,8 @@ class PrinterStatusConsumer(AsyncWebsocketConsumer):
             await self.accept()
 
         else :
-            logger.info('Error:' + error )
+            logger.error('Error:' + error )
+            await self.close()
             
 
     # Receive message from room group
@@ -631,18 +691,24 @@ class QLConsumer(AsyncWebsocketConsumer):
         self.room_group_name = 'ql_' + self.bcode + '_' + self.ct
         logger.info('connecting:' + self.room_group_name )
         
-        # check bcode and ct (countertype) is not exit do not accept connection
-        error = await check_input()       
+        if error == '':
+            if self.scope["user"].is_authenticated == False:
+                error = 'QLConsumer: User not authenticated.'
+
+        if error == '':
+            # check bcode and ct (countertype) is not exit do not accept connection
+            error = await check_input()      
 
         if error == '':          
             await self.channel_layer.group_add(
                 self.room_group_name,
                 self.channel_name
-            )
-
+            )    
             await self.accept()
+
         else :
             logger.error('Error:' + error )
+            await self.close()
             
 
     # Receive message from room group
@@ -671,8 +737,9 @@ class QLConsumer(AsyncWebsocketConsumer):
             connections.append(connection)
         return connections
 
-class WebTVConsumer(AsyncWebsocketConsumer):
+class WebTVConsumer(AsyncWebsocketConsumer): 
     async def connect(self):
+        global WebTVConsumer_connected, WebTVConsumer_connected_max
         @sync_to_async
         def check_input():
             error = ''
@@ -702,18 +769,27 @@ class WebTVConsumer(AsyncWebsocketConsumer):
         self.room_group_name = 'webtv_' + self.bcode + '_' + self.ct
         logger.info('connecting:' + self.room_group_name )
         
-        # check bcode and ct (countertype) is not exit do not accept connection
-        error = await check_input()       
+        if error == '':
+            if self.scope["user"].is_authenticated == False:
+                error = 'WebTVConsumer: User not authenticated.'
+
+        if error == '':
+            # check paramaters is not exit do not accept connection
+            error = await check_input() 
+
 
         if error == '':        
             await self.channel_layer.group_add(
                 self.room_group_name,
                 self.channel_name
             )
-
             await self.accept()
+            WebTVConsumer_connected = WebTVConsumer_connected + 1
+            logger.info('Connected:' + self.room_group_name + ' [' + str(WebTVConsumer_connected) + '/' + str(WebTVConsumer_connected_max) + ']' )
+            
         else :
-            logger.info('Error:' + error )
+            logger.error('Error:' + error )
+            await self.close()
             
 
     # Receive message from room group
@@ -728,6 +804,9 @@ class WebTVConsumer(AsyncWebsocketConsumer):
             for connection in await self.get_all_connections():
                 await connection.send_data_fallback(str_tx)
     async def disconnect(self, close_code):
+        global WebTVConsumer_connected, WebTVConsumer_connected_max
+
+        WebTVConsumer_connected = WebTVConsumer_connected - 1
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
     async def send_data_fallback(self, data):

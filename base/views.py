@@ -1,3 +1,4 @@
+from aqs.settings import aqs_version
 from django.shortcuts import render, redirect, HttpResponse
 from django.urls import reverse
 from urllib.parse import urlencode
@@ -36,7 +37,8 @@ from aqs.tasks import *
 import pickle
 from django.templatetags.static import static
 from celery.result import AsyncResult
-
+from django.conf import settings
+from base.sch.views import sch_shutdown
 
 logger = logging.getLogger(__name__)
 
@@ -51,7 +53,9 @@ except:
 
 context_login = {}
 
-sort_direction = {'username':''}
+sort_direction = {}
+
+
 
 @allowed_users(allowed_roles=['admin', 'support', 'manager'])
 @unauth_user
@@ -73,7 +77,7 @@ def SuperVisor_ForceLogoutView(request, pk, csid):
         messages.error(request, 'No user login on this counter number ' + cs.counternumber + '.')
         return redirect('supervisor', pk=pk)
     
-    context = {'confirm_obj':cs, 'confirm_text':'Could you please confirm to force logout ' + username + '?'}
+    context = {'aqs_version':aqs_version, 'confirm_obj':cs, 'confirm_text':'Could you please confirm to force logout ' + username + '?'}
     if request.method == 'POST':
         action = request.POST.get('action')
         if action == 'confirm':           
@@ -123,7 +127,7 @@ def Softkey_VoidView(request, pk, ttid):
         return redirect('softkey', pk=pk)
     
     text = 'Confirm to void ticket : "' + tt.tickettype + tt.ticketnumber + '" ?'
-    context = {'tt':tt} | {'text':text}
+    context = {'aqs_version':aqs_version} | {'tt':tt} | {'text':text}
     if request.method == 'POST':
         action = request.POST.get('action')
         if action == 'confirm':           
@@ -197,6 +201,7 @@ def SoftkeyView(request, pk):
 
     auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
     context = {
+    'aqs_version':aqs_version, 
     'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
     }
 
@@ -243,7 +248,7 @@ def SoftkeyView(request, pk):
                 # check if tr.tickettype in l_userttype
                 if tr.tickettype in l_userttype:
                     b_userttype = True
-                    print (tr.tickettype + ' in ' + str(l_userttype))
+                    # print (tr.tickettype + ' in ' + str(l_userttype))
                 # if context_counter['data']['userttype'].find(tr.tickettype + ',') != -1:
                 #     b_userttype = True
                 newrow = {
@@ -403,6 +408,7 @@ def SoftkeyLoginBranchView(request):
                 cs = CounterStatus.objects.filter(Q(countertype=ct)).order_by('countertype', 'counternumber',).exclude(enabled=False)
                 counterstatus.append(cs)
         context = {
+        'aqs_version':aqs_version, 
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes,
         'counterstatus':counterstatus,
         }
@@ -452,6 +458,7 @@ def SoftkeyLoginView(request, pk):
 
 
         context = {
+        'aqs_version':aqs_version, 
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes,
         'counterstatus':counterstatus,
         }
@@ -499,6 +506,7 @@ def SoftkeyCallView(request, pk):
     auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
 
     context = {
+        'aqs_version':aqs_version, 
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
         }
     try:
@@ -532,6 +540,7 @@ def SoftkeyProcessView(request, pk):
     datetime_now =timezone.now()
     auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
     context = {
+        'aqs_version':aqs_version, 
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
         }
     try:
@@ -561,6 +570,7 @@ def SoftkeyMissView(request, pk):
     datetime_now =timezone.now()
     auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
     context = {
+        'aqs_version':aqs_version, 
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
         }
     try:
@@ -589,6 +599,7 @@ def SoftkeyRecallView(request, pk):
     datetime_now =timezone.now()
     auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
     context = {
+        'aqs_version':aqs_version, 
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
         }
     try:
@@ -619,6 +630,7 @@ def SoftkeyDoneView(request, pk):
     datetime_now =timezone.now()
     auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
     context = {
+        'aqs_version':aqs_version, 
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
         }
     try:
@@ -701,6 +713,7 @@ def repair(request):
             'errormsg':error,
             }
         messages.error(request, error)
+    context = {'aqs_version':aqs_version} | context 
     return render(request , 'base/repair.html', context)
 
 def webmyticket(request, bcode, ttype, tno, sc):
@@ -790,6 +803,7 @@ def webmyticket(request, bcode, ttype, tno, sc):
             'css' : css,
             }
         messages.error(request, error)
+    context = {'aqs_version':aqs_version} | context 
     return render(request , 'base/webmyticket.html', context)
 
 # Create your views here.
@@ -878,11 +892,12 @@ def webtouchView(request):
         touchkeylist= []
         messages.error(request, error)
     context = {
+        'aqs_version':aqs_version,
         'touchkeylist':touchkeylist,
         'logofile':logofile,
         'errormsg':error,
         'css' : css,
-        }        
+        }
     return render(request, 'base/webtouch.html', context)
 
 def CancelTicketView(request, pk, sc):
@@ -909,7 +924,7 @@ def CancelTicketView(request, pk, sc):
         base_url = '/my'
         url = base_url + '/' + tt.branch.bcode + '/' + tt.tickettype +'/' + tt.ticketnumber + '/' + tt.securitycode + '/'
         backurl = '{0}://{1}'.format(request.scheme, request.get_host()) + url
-        print (backurl)
+
     except:
         error = 'Ticket not found.'
 
@@ -953,12 +968,12 @@ def CancelTicketView(request, pk, sc):
 
                 return redirect(url)
     if error != '' :
-        print (error)
         messages.error(request, error)
         if url != '':
             return redirect(url)
 
     context = {
+    'aqs_version':aqs_version,
     'logofile':logofile,
     'errormsg':error,
     'backurl':backurl,
@@ -1067,6 +1082,7 @@ def webmyticket_old_school(request):
             'errormsg':error,
             }
         messages.error(request, error)
+    context = {'aqs_version':aqs_version} | context 
     return render(request , 'base/webmyticketold2.html', context)
 
 
@@ -1137,6 +1153,7 @@ def webtv_old_school(request):
         'errormsg' : error,
         }
         messages.error(request, error)
+    context = {'aqs_version':aqs_version} | context 
     return render(request , 'base/webtvold3.html', context)
 
 
@@ -1210,7 +1227,7 @@ def webtv(request, bcode, ct):
         'ct' : ct,
         } | context
     
-
+    context = {'aqs_version':aqs_version} | context 
     return render(request , 'base/webtv.html', context)
 
 
@@ -1350,6 +1367,7 @@ def Report_RAW_Result(request):
                 context = {'task_id': ptask_id}
                 context = context | {'wsh' : wsHypertext}
                 context = context | {'url_download': url_download}
+                context = {'aqs_version':aqs_version} | context 
                 return render(request, 'base/in_progress.html', context)
 
 
@@ -1418,7 +1436,7 @@ def Report_RAW_Result(request):
         'result':error,
         }
         return redirect('reports')
-
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/r-raw.html', context)
 
 @unauth_user
@@ -1517,6 +1535,7 @@ def Report_Ticket_Result(request):
             context = {'task_id': ptask_id}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
+            context = {'aqs_version':aqs_version} | context 
             return render(request, 'base/in_progress.html', context)
         else :
             # long process is done output result to HTML
@@ -1540,6 +1559,7 @@ def Report_Ticket_Result(request):
                 'result':report_result,
                 'table':report_table,        
                 }
+                context = {'aqs_version':aqs_version} | context 
                 return render(request, 'base/r-ticket.html', context)
             elif request.method == 'POST':
                 # Export and download excel file
@@ -1578,7 +1598,7 @@ def Report_Ticket_Result(request):
         'result':error,
         }
         return redirect('reports')
-
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/r-ticket.html', context)
 @unauth_user
 @allowed_users(allowed_roles=['admin', 'report','manager','support'])
@@ -1677,6 +1697,7 @@ def Report_Staff_Result(request):
             context = {'task_id': ptask_id}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
+            context = {'aqs_version':aqs_version} | context 
             return render(request, 'base/in_progress.html', context)
         else :
             # long process is done output result to HTML
@@ -1700,6 +1721,7 @@ def Report_Staff_Result(request):
                 'result':report_result,
                 'table':report_table,        
                 }
+                context = {'aqs_version':aqs_version} | context 
                 return render(request, 'base/r-staff.html', context)
 
             elif request.method == 'POST':
@@ -1854,7 +1876,7 @@ def Report_Staff_Result(request):
         'result':error,
         }
         return redirect('reports')
-
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/r-staff.html', context)
 
 @unauth_user
@@ -1878,6 +1900,7 @@ def Reports(request):
     'routes':auth_routes,
     'countertypes':auth_countertype,
     }
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/r-main.html', context)
 
 @unauth_user
@@ -1921,7 +1944,7 @@ def SuperVisorView(request, pk):
     'misslist':misslist,
     'printerstatuslist':printerstatuslist,
     }
-
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/supervisor.html', context)
 
 
@@ -1940,6 +1963,7 @@ def SuperVisorListView(request):
     #profiles = users.userprofile_set.all()
     
     context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/supervisors.html', context)
 
 @unauth_user
@@ -1986,8 +2010,10 @@ def TicketRouteNewView(request):
 
         if error != '':
             messages.error(request, error)
-    #context = {'page':page}
-    return render(request, 'base/routenew.html', {'form':form})
+    context = {'form':form}
+
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'base/routenew.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
@@ -1998,8 +2024,11 @@ def TicketRouteDelView(request, pk):
     if request.method =='POST':
         route.delete()
         messages.success(request, 'Ticket Route was successfully Deleted!')
-        return redirect('routesummary')    
-    return render(request, 'base/delete.html', {'obj':route})
+        return redirect('routesummary')
+    context = {'obj':route}
+
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'base/delete.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
@@ -2028,6 +2057,7 @@ def TicketRouteUpdateView(request, pk):
         trform = trForm(instance=route, prefix='trform', auth_branchs=auth_branchs)
        
     context =  {'route':route, 'trform':trform }
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/route-update.html', context)
 
 
@@ -2042,7 +2072,7 @@ def TicketRouteSummaryView(request):
     # routes = TicketRoute.objects.all().order_by('branch','tickettype','step')
 
     context = {'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
-
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/routes.html', context)
 
 @unauth_user
@@ -2086,8 +2116,9 @@ def TicketFormatNewView(request):
             return redirect('tfsummary')
         if error != '':
             messages.error(request, error)
-    #context = {'page':page}
-    return render(request, 'base/tfnew.html', {'form':form})
+    context = {'form':form}
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'base/tfnew.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
@@ -2098,8 +2129,10 @@ def TicketFormatDelView(request, pk):
     if request.method =='POST':
         ticketformat.delete()       
         messages.success(request, 'Ticket Format was successfully deleted!') 
-        return redirect('tfsummary')    
-    return render(request, 'base/delete.html', {'obj':ticketformat})
+        return redirect('tfsummary')
+    context = {'obj':ticketformat}
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'base/delete.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
@@ -2128,6 +2161,7 @@ def TicketFormatUpdateView(request, pk):
     else:
         tfform = TicketFormatForm(instance=ticketformat, prefix='tfform', auth_branchs=auth_branchs)        
     context =  {'tfform':tfform, 'ticketformat':ticketformat, }
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/tf-update.html', context)
 
 @unauth_user
@@ -2140,6 +2174,7 @@ def TicketFormatSummaryView(request):
     # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
     # routes = TicketRoute.objects.all()
     context = {'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/tfs.html', context)
 
 @unauth_user
@@ -2400,6 +2435,8 @@ def Branch_Save(request, pk):
         
     if result == '' :
         branch.save()
+        datetime_now = timezone.now()
+        sch_shutdown(branch, datetime_now)
 
         countertypes = CounterType.objects.filter(Q(branch=branch))
         for ct in countertypes:
@@ -2458,7 +2495,7 @@ def BranchUpdateView(request, pk):
     'enabledsms':enabledsms,
     'smsmsg':smsmsg,
     }
-
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/branch-update.html', context)
 
 @unauth_user
@@ -2476,10 +2513,12 @@ def BranchSummaryView(request):
 
 
     context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/branch.html', context)
 
 @unauth_user
 def homeView(request):
+    
     auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
 
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
@@ -2493,6 +2532,7 @@ def homeView(request):
 
 
     context =  {'users':auth_userlist , 'users_active':auth_userlist_active, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/home.html', context)
 
 @unauth_user
@@ -2501,6 +2541,7 @@ def UserSummaryView(request):
     auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
  
     context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/user.html', context)
 
 @unauth_user
@@ -2598,6 +2639,8 @@ def UserSummaryListView(request):
     context = context | {'qtt':q_tt}
     context = context | {'qgroup':q_group}
     context = context | {'result_users':result_userlist}
+    
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/user_details.html', context)
 
 def UserLogoutView(request):   
@@ -2642,7 +2685,8 @@ def UserLoginView(request):
 
     context = {'page':page} 
     if enable_captcha == True :
-        context = context | {'captcha_form':captchaform} 
+        context = context | {'captcha_form':captchaform}
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/login_register.html', context)
     
 @unauth_user
@@ -2770,6 +2814,7 @@ def UserUpdateView(request, pk):
             messages.error(request, error)
 
     context =  {'userform':userform , 'profileform':profileform, 'user':user, 'userp':userp,'ticketformat':ticketformat2,'userptt':listusertt, }
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/user-update.html', context)
 
 @unauth_user
@@ -2796,6 +2841,7 @@ def UserUpdateTTView(request, pk):
         tt.save()
     ticketformat2 = ticketformat2.order_by('ttype')
     context =  {'userp':userp, 'ticketformat':ticketformat2, }
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/user-update-tickettype.html', context)
 
 @unauth_user
@@ -2825,8 +2871,9 @@ def UserNewView(request):
                 for item in items:
                     messages.error(request, item)
             
-    #context = {'page':page}
-    return render(request, 'base/usernew.html', {'form':form})
+    context = {'form':form}
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'base/usernew.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','manager','support'])
@@ -2878,6 +2925,7 @@ def UserNewView2(request, pk):
 
         profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
     context =  {'user':user , 'userp':userp, 'userform':userform, 'profileform':profileform}
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/usernew2.html', context)
 
 @unauth_user
@@ -2948,6 +2996,7 @@ def UserNewView3(request, pk):
     else:
         profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
     context =  {'profileform':profileform, 'user':user, 'userp':userp,'ticketformat':ticketformat2,'userptt':listusertt, }
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/usernew3.html', context)
 
 
@@ -2968,7 +3017,9 @@ def UserChangePWView(request):
             messages.error(request, 'Please correct the error below.')
     else:
         form = PasswordChangeForm(request.user)
-    return render(request, 'base/changepassword.html', {'form': form})
+    context = {'form': form}
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'base/changepassword.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','manager','support'])
@@ -2985,8 +3036,10 @@ def UserDelView(request, pk):
         userp.delete()
         user.delete()
         messages.success(request, 'User successfully deleted.')
-        return redirect('usersummary')    
-    return render(request, 'base/delete.html', {'obj':user})
+        return redirect('usersummary')
+    context = {'obj':user}
+    context = {'aqs_version':aqs_version} | context  
+    return render(request, 'base/delete.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','manager','support'])
@@ -3018,14 +3071,18 @@ def UserResetView(request, pk):
         user.save()
 
         messages.success(request, 'Reset password successfully.')
-        return redirect('usersummary')    
-    return render(request, 'base/reset.html', {'obj':user})
+        return redirect('usersummary')
+    context = {'obj':user}
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'base/reset.html', context)
 
 
 def MenuView(request):
 
     auth_branchs , auth_userlist, auth_userlist_active, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+        
     context =  {'users':auth_userlist , 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/m-menu.html', context)
 
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
