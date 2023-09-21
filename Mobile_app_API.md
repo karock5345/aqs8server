@@ -123,5 +123,67 @@ GET [Server IP or DN]/api/crm/info?app=postman&version=8.2.0&member_id=xxx&membe
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be 'iOS' or "Android" |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `username` | `string` | **Required**. Member username provided by TSVD |
-| `password` | `string` | **Required**. provided by TSVD |
+| `member_id` | `string` | **Required**. Member ID from `Member login API` |
+| `member_token` | `string` | **Required**. Member ID from `Member login API` |
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully!",
+    "nickname": "Hello Kitty",
+    "member_level": "Gold",
+    "member_points": 1000
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "Username or password does not exist"
+}
+```
+
+# Member items API
+### Request
+```http
+GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_id=xxx&member_token=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be 'iOS' or "Android" |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `member_id` | `string` | **Required**. Member ID from `Member login API` |
+| `member_token` | `string` | **Required**. Member ID from `Member login API` |
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully!",
+    "items": [
+        {
+        "name": "Men's Dress Shirt",
+        "des": "White, Slim Fit, Size M",
+        "price": 49.9,
+        "dis_price": 30,
+        "mp": 0
+		},
+		{
+        "name": "Nike Air Max Running Shoes",
+        "des": "Men's, Black/Red, Size 10",
+        "price": 129.9,
+        "dis_price": 99,
+        "mp": 1000
+		}
+	]
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "Username or password does not exist"
+}
+```
