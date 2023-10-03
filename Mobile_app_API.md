@@ -77,9 +77,36 @@ POST [Server IP or DN]/api/token/
 - The `refresh` token is used to generate a new `access` token once the previous one has expired.
 - The `access` token is valid for 5 minutes. The `refresh` token is valid for 24 hours.
 
+# API List
+## Member APP API List
+### 1. Member login API
+### 2. Member info API
+### 3. Member items list API
+### 4. Member logout API
+### 5. Member register API
+## Admin APP API List
+### 6. Admin login API
+### 7. Member items List API (same as member APP API 3)
+### 8. Member items Edit API
+### 9. Member items New API
+### 10. Member items Del API
+### 11. Member dicount List API
+### 12. Member dicount Edit API
+### 13. Member dicount New API
+### 14. Member dicount Del API
+### 15. Products List API
+### 16. Products Edit API
+### 17. Products New API
+### 18. Products Del API
+### 19. Quotation List API
+### 20. Quotation details API
+### 21. Quotation Confirm API
+### 22. Invoice List API
+### 23. Invoice details API
+### 24. Invoice Confirm API
+### 25. Admin logout API
 
-
-# Member login API
+# 1. Member login API
 
 ### Request
 ```http
@@ -113,7 +140,7 @@ Or if login failed
 ### Notes
 - The `member_token` token is valid for 24 hours. Once the token is expired, you need to call the login API again to get a new token.
 
-# Member info API
+# 2. Member info API
 ### Request
 ```http
 GET [Server IP or DN]/api/crm/info?app=postman&version=8.2.0&member_id=xxx&member_token=xxx
@@ -144,7 +171,7 @@ Or if failed
 }
 ```
 
-# Member items API
+# 3. Member items API
 ### Request
 ```http
 GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_id=xxx&member_token=xxx
