@@ -115,7 +115,7 @@ POST [Server IP or DN]/api/crm/login?app=postman&version=8.2.0&username=xxx&pass
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| `app` | `string` | If called by mobile App it can be 'iOS' or "Android" |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
 | `username` | `string` | **Required**. Member username provided by TSVD |
 | `password` | `string` | **Required**. provided by TSVD |
@@ -148,7 +148,7 @@ GET [Server IP or DN]/api/crm/info?app=postman&version=8.2.0&member_id=xxx&membe
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| `app` | `string` | If called by mobile App it can be 'iOS' or "Android" |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
 | `member_id` | `string` | **Required**. Member ID from `Member login API` |
 | `member_token` | `string` | **Required**. Member ID from `Member login API` |
@@ -179,7 +179,7 @@ GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_id=xxx&memb
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| `app` | `string` | If called by mobile App it can be 'iOS' or "Android" |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
 | `member_id` | `string` | **Required**. Member ID from `Member login API` |
 | `member_token` | `string` | **Required**. Member ID from `Member login API` |
@@ -212,5 +212,72 @@ Or if failed
 {
     "status": "failed",
     "msg": "Username or password does not exist"
+}
+```
+
+# 4. Member logout API
+
+### Request
+```http
+POST [Server IP or DN]/api/crm/logout?app=postman&version=8.2.0&username=xxx&member_token=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `username` | `string` | **Required**. Member username provided by TSVD |
+| `member_token` | `string` | **Required**. Member ID from `Member login API` |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Logout successfully!",
+    "member_id": 2
+}
+```
+Or if login failed
+```javascript
+{
+    "status": "failed",
+    "msg": "Username does not exist"
+}
+```
+# 5. Member register API
+### Request
+```http
+GET [Server IP or DN]/api/crm/info?app=postman&version=8.2.0&username=xxx&password=xxx&password2=xxx&email=xxx&mobile=xxx&nickname=xxx&gender=xxx&dob=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `username` | `string` | **Required**. Min. 4 char |
+| `password` | `string` | **Required**. Min. 8 char |
+| `password2` | `string` | **Required**. Should be same as `password` |
+| `email` | `string` | **Required**. Valid email address |
+| `mobile` | `string` | **Required**. Valid mobile number |
+| `nickname` | `string` | **Required**. Min. 4 char |
+| `gender` | `string` | **Required**. `M` or `F` |
+| `dob` | `string` | **Required**. Date of birth in `YYYY-MM-DD` format |
+
+
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully! Please check your email to activate your account."
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "Username is existing"
 }
 ```
