@@ -51,11 +51,27 @@ POST [Server IP or DN]/api/token/
 | `password` | `string` | **Required**. provided by TSVD |
 
 ### Response
-
 ```javascript
 {
     "refresh": "eyJhbG...NrLFilpU",
     "access":  "eyJhbG...enbnRfXk"
+}
+```
+
+### Refreshing JWT Tokens
+```http
+POST [Server IP or DN]/api/token/refresh/
+```
+*** Please note that, in Postman, select `Body` and you need to set the body type to "x-www-form-urlencoded"
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `refresh` | `string` | **Required**. from `/api/token/` |
+
+
+### Response
+```javascript
+{
+    "access": "eyJhbG...enbnRfXk"
 }
 ```
 
@@ -86,7 +102,7 @@ POST [Server IP or DN]/api/token/
 ### 5. Member register API
 ## Admin APP API List
 ### 6. Admin login API
-### 7. Member items List API (same as member APP API 3)
+### 7. Member items List API (Similiar to 3. Member items list API)
 ### 8. Member items Edit API
 ### 9. Member items New API
 ### 10. Member items Del API
@@ -106,7 +122,7 @@ POST [Server IP or DN]/api/token/
 ### 24. Invoice Confirm API
 ### 25. Admin logout API
 
-# 1. Member login API
+# 1. Member login API (Member APP)
 
 ### Request
 ```http
@@ -140,7 +156,7 @@ Or if login failed
 ### Notes
 - The `member_token` token is valid for 24 hours. Once the token is expired, you need to call the login API again to get a new token.
 
-# 2. Member info API
+# 2. Member info API (Member APP)
 ### Request
 ```http
 GET [Server IP or DN]/api/crm/info?app=postman&version=8.2.0&member_id=xxx&member_token=xxx
@@ -171,7 +187,7 @@ Or if failed
 }
 ```
 
-# 3. Member items API
+# 3. Member items API (Member APP)
 ### Request
 ```http
 GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_id=xxx&member_token=xxx
@@ -215,7 +231,7 @@ Or if failed
 }
 ```
 
-# 4. Member logout API
+# 4. Member logout API (Member APP)
 
 ### Request
 ```http
@@ -245,7 +261,7 @@ Or if login failed
     "msg": "Username does not exist"
 }
 ```
-# 5. Member register API
+# 5. Member register API (Member APP)
 ### Request
 ```http
 GET [Server IP or DN]/api/crm/info?app=postman&version=8.2.0&username=xxx&password=xxx&password2=xxx&email=xxx&mobile=xxx&nickname=xxx&gender=xxx&dob=xxx
@@ -257,12 +273,11 @@ GET [Server IP or DN]/api/crm/info?app=postman&version=8.2.0&username=xxx&passwo
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
 | `username` | `string` | **Required**. Min. 4 char |
 | `password` | `string` | **Required**. Min. 8 char |
-| `password2` | `string` | **Required**. Should be same as `password` |
 | `email` | `string` | **Required**. Valid email address |
 | `mobile` | `string` | **Required**. Valid mobile number |
 | `nickname` | `string` | **Required**. Min. 4 char |
 | `gender` | `string` | **Required**. `M` or `F` |
-| `dob` | `string` | **Required**. Date of birth in `YYYY-MM-DD` format |
+| `dob` | `string` | **Required**. Date of birth in `YYYY_MM_DD` format |
 
 
 
@@ -279,5 +294,102 @@ Or if failed
 {
     "status": "failed",
     "msg": "Username is existing"
+}
+```
+
+# 6. Admin login API (Admin APP)
+All API requests require the use of a generated JWT. 
+
+To authenticate an API request, you should provide your JWT in the `Authorization` header.
+
+Get your JWT from the server by calling the following API
+
+
+```http
+POST [Server IP or DN]/api/token/
+```
+*** Please note that, in Postman, select `Body` and you need to set the body type to "x-www-form-urlencoded"
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `username` | `string` | **Required**. provided by TSVD |
+| `password` | `string` | **Required**. provided by TSVD |
+
+### Response
+
+```javascript
+{
+    "refresh": "eyJhbG...NrLFilpU",
+    "access":  "eyJhbG...enbnRfXk"
+}
+```
+### Refreshing JWT Tokens
+```http
+POST [Server IP or DN]/api/token/refresh/
+```
+*** Please note that, in Postman, select `Body` and you need to set the body type to "x-www-form-urlencoded"
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `refresh` | `string` | **Required**. from `/api/token/` |
+
+
+### Response
+```javascript
+{
+    "access": "eyJhbG...enbnRfXk"
+}
+```
+# 7. Member items List API (Admin APP)
+### Request
+```http
+GET [Server IP or DN]/api/crm/admin_items?app=postman&version=8.2.0
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully!",
+    "items": [
+        {
+        "name": "Men's Dress Shirt",
+        "des": "White, Slim Fit, Size M",
+        "price": 49.9,
+        "dis_price": 30,
+        "mp": 0
+		},
+		{
+        "name": "Nike Air Max Running Shoes",
+        "des": "Men's, Black/Red, Size 10",
+        "price": 129.9,
+        "dis_price": 99,
+        "mp": 1000
+		}
+	]
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "User does not exist"
+}
+```
+```javascript
+{
+    "detail": "Given token not valid for any token type",
+    "code": "token_not_valid",
+    "messages": [
+        {
+            "token_class": "AccessToken",
+            "token_type": "access",
+            "message": "Token is invalid or expired"
+        }
+    ]
 }
 ```
