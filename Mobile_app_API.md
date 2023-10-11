@@ -100,27 +100,31 @@ POST [Server IP or DN]/api/token/refresh/
 ### 3. Member items list API
 ### 4. Member logout API
 ### 5. Member register API
+
 ## Admin APP API List
 ### 6. Admin login API
 ### 7. Member items List API (Similiar to 3. Member items list API)
-### 8. Member items Edit API
-### 9. Member items New API
-### 10. Member items Del API
-### 11. Member dicount List API
-### 12. Member dicount Edit API
-### 13. Member dicount New API
-### 14. Member dicount Del API
-### 15. Products List API
-### 16. Products Edit API
-### 17. Products New API
-### 18. Products Del API
-### 19. Quotation List API
-### 20. Quotation details API
-### 21. Quotation Confirm API
-### 22. Invoice List API
-### 23. Invoice details API
-### 24. Invoice Confirm API
-### 25. Admin logout API
+### 8. Member items create API
+### 9. Member items read API
+### 10. Member items update API
+### 11. Member items delete API
+### 12. Member discount List API
+### 13. Member discount create API
+### 14. Member discount read API
+### 15. Member discount update API
+### 16. Member discount delete API
+### 17. Products List API
+### 18. Products create API
+### 19. Products read API
+### 20. Products update API
+### 21. Products delete API
+### 22. Quotation List API
+### 23. Quotation read API
+### 24. Quotation Confirm API
+### 25. Invoice List API
+### 26. Invoice read API
+### 27. Invoice Confirm API
+### 28. Admin logout API
 
 # 1. Member login API (Member APP)
 
@@ -391,5 +395,126 @@ Or if failed
             "message": "Token is invalid or expired"
         }
     ]
+}
+```
+
+# 8. Member items create API
+*** Please note that, `pid`, `name`, `des`, `price` get from `Products List API` and `dis_price`, `mp` are input by admin
+
+
+### Request
+```http
+POST [Server IP or DN]/api/crm/admin_item_create?app=postman&version=8.2.0&pid=xxx&name=xxx&des=xxx&price=200&dis_price=100&mp=1000
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `pid` | `string` | **Required**. Product ID from `Products` table |
+| `name` | `string` | **Required**. Item name |
+| `des` | `string` | **Required**. Item description |
+| `price` | `string` | **Required**. Item price should be positive |
+| `dis_price` | `string` | **Required**. Item discount price should be positive |
+| `mp` | `string` | **Required**. Item member points should be positive integer |
+
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully!",
+    "items": [
+        {
+        "name": "Men's Dress Shirt",
+        "des": "White, Slim Fit, Size M",
+        "price": 49.9,
+        "dis_price": 30,
+        "mp": 0
+		},
+		{
+        "name": "Nike Air Max Running Shoes",
+        "des": "Men's, Black/Red, Size 10",
+        "price": 129.9,
+        "dis_price": 99,
+        "mp": 1000
+		}
+	]
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "User does not exist"
+}
+```
+# 9. Member items read API
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 17. Products List API
+### Request
+```http
+GET [Server IP or DN]/api/crm/admin_products_list?app=postman&version=8.2.0
+```
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully!",
+    "products": [
+        {
+        "pid":"001",
+        "name": "Men's Dress Shirt",
+        "des": "White, Slim Fit, Size M",
+        "price": 49.9
+		},
+		{
+        "pid":"002",
+        "name": "Nike Air Max Running Shoes",
+        "des": "Men's, Black/Red, Size 10",
+        "price": 129.9
+		}
+	]
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "User does not exist"
 }
 ```
