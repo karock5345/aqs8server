@@ -191,7 +191,7 @@ Or if failed
 }
 ```
 
-# 3. Member items API (Member APP)
+# 3. Member item list API (Member APP)
 ### Request
 ```http
 GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_id=xxx&member_token=xxx
@@ -211,6 +211,7 @@ GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_id=xxx&memb
     "msg": "Successfully!",
     "items": [
         {
+        "item_id":"001",
         "name": "Men's Dress Shirt",
         "des": "White, Slim Fit, Size M",
         "price": 49.9,
@@ -218,6 +219,7 @@ GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_id=xxx&memb
         "mp": 0
 		},
 		{
+        "item_id":"002",
         "name": "Nike Air Max Running Shoes",
         "des": "Men's, Black/Red, Size 10",
         "price": 129.9,
@@ -361,6 +363,8 @@ GET [Server IP or DN]/api/crm/admin_items?app=postman&version=8.2.0
     "msg": "Successfully!",
     "items": [
         {
+        "item_id": "001",
+        "pid":"001",
         "name": "Men's Dress Shirt",
         "des": "White, Slim Fit, Size M",
         "price": 49.9,
@@ -368,6 +372,8 @@ GET [Server IP or DN]/api/crm/admin_items?app=postman&version=8.2.0
         "mp": 0
 		},
 		{
+        "item_id": "002",
+        "pid":"002",
         "name": "Nike Air Max Running Shoes",
         "des": "Men's, Black/Red, Size 10",
         "price": 129.9,
@@ -398,13 +404,13 @@ Or if failed
 }
 ```
 
-# 8. Member items create API
+# 8. Member item create API
 *** Please note that, `pid`, `name`, `des`, `price` get from `Products List API` and `dis_price`, `mp` are input by admin
 
 
 ### Request
 ```http
-POST [Server IP or DN]/api/crm/admin_item_create?app=postman&version=8.2.0&pid=xxx&name=xxx&des=xxx&price=200&dis_price=100&mp=1000
+POST [Server IP or DN]/api/crm/admin_item_create?app=postman&version=8.2.0&pid=xxx&name=xxx&des=xxx&price=200&dis_price=xxx&mp=xxx
 ```
 
 | Key | Type | Description |
@@ -414,10 +420,37 @@ POST [Server IP or DN]/api/crm/admin_item_create?app=postman&version=8.2.0&pid=x
 | `pid` | `string` | **Required**. Product ID from `Products` table |
 | `name` | `string` | **Required**. Item name |
 | `des` | `string` | **Required**. Item description |
-| `price` | `string` | **Required**. Item price should be positive |
-| `dis_price` | `string` | **Required**. Item discount price should be positive |
-| `mp` | `string` | **Required**. Item member points should be positive integer |
+| `price` | `integer` | **Required**. Item price should be positive |
+| `dis_price` | `integer` | **Required**. Item discount price should be positive |
+| `mp` | `integer` | **Required**. Item member points should be positive integer |
 
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Member item create Successfully!"    
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "User does not exist"
+}
+```
+# 9. Member items read API
+### Request
+```http
+GET [Server IP or DN]/api/crm/admin_items_r?app=postman&version=8.2.0&item_id=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `item_id` | `string` | **Required**. Item ID |
 
 ### Response
 
@@ -426,14 +459,9 @@ POST [Server IP or DN]/api/crm/admin_item_create?app=postman&version=8.2.0&pid=x
     "status": "success",
     "msg": "Successfully!",
     "items": [
-        {
-        "name": "Men's Dress Shirt",
-        "des": "White, Slim Fit, Size M",
-        "price": 49.9,
-        "dis_price": 30,
-        "mp": 0
-		},
 		{
+        "item_id": "002",
+        "pid":"002",
         "name": "Nike Air Max Running Shoes",
         "des": "Men's, Black/Red, Size 10",
         "price": 129.9,
@@ -447,36 +475,253 @@ Or if failed
 ```javascript
 {
     "status": "failed",
+    "msg": "Item ID does not exist"
+}
+```
+
+
+# 10. Member item update API
+*** Please note that, `item_id`, `pid`, `name`, `des`, `price` get from `Products List API` and `dis_price`, `mp` are input by admin
+
+
+### Request
+```http
+POST [Server IP or DN]/api/crm/admin_item_update?app=postman&version=8.2.0&item_id=xxx&pid=xxx&name=xxx&des=xxx&price=200&dis_price=xxx&mp=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `item_id` | `string` | **Required**. Item ID |
+| `pid` | `string` | **Required**. Product ID from `Products` table |
+| `name` | `string` | **Required**. Item name |
+| `des` | `string` | **Required**. Item description |
+| `price` | `integer` | **Required**. Item price should be positive |
+| `dis_price` | `integer` | **Required**. Item discount price should be positive |
+| `mp` | `integer` | **Required**. Item member points should be positive integer |
+
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Member item update Successfully!"    
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
     "msg": "User does not exist"
 }
 ```
-# 9. Member items read API
+
+# 11. Member item delete API
+### Request
+```http
+POST [Server IP or DN]/api/crm/admin_items_del?app=postman&version=8.2.0&item_id=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `item_id` | `string` | **Required**. Item ID |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Member item delete successfully!"
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "Item ID does not exist"
+}
+```
+
+# 12. Member Discount list API
+### Request
+```http
+GET [Server IP or DN]/api/crm/admin_discounts?app=postman&version=8.2.0&member_id=xxx&member_token=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `member_id` | `string` | **Required**. Member ID from `Member login API` |
+| `member_token` | `string` | **Required**. Member ID from `Member login API` |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully!",
+    "items": [
+        {
+        "discount_id": "001",
+        "name": "Sliver",
+        "des": "Sliver Member",
+        "discount": 10,
+        "terms": 30,
+        "mp": 1000
+		},
+		{
+        "discount_id": "002",
+        "name": "Gold",
+        "des": "Gold Member",
+        "discount": 20,
+        "terms": 60,
+        "mp": 2000
+		}
+	]
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "User does not exist"
+}
+```
+
+# 13. Member Discount create API
+### Request
+```http
+POST [Server IP or DN]/api/crm/admin_discount_create?app=postman&version=8.2.0&name=xxx&des=xxx&terms=10&mp=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `name` | `string` | **Required**. Member Discount name |
+| `des` | `string` | **Required**. Member Discount description |
+| `terms` | `integer` | **Required**. Member Discount Payment terms should be 0-100 |
+| `mp` | `integer` | **Required**. Member Discount member points should be positive integer |
 
 
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Member Discount create successfully!"
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "User does not exist"
+}
+```
+# 14. Member Discount read API
+### Request
+```http
+GET [Server IP or DN]/api/crm/admin_discount_r?app=postman&version=8.2.0&discount_id=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `discount_id` | `string` | **Required**. Discount ID |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully!",
+    "items": [
+		{
+        "discount_id": "002",
+        "name": "Gold",
+        "des": "Gold Member",
+        "discount": 20,
+        "terms": 60,
+        "mp": 2000
+		}
+	]
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "Item ID does not exist"
+}
+```
 
 
+# 15. Member Discount update API
+### Request
+```http
+POST [Server IP or DN]/api/crm/admin_discount_update?app=postman&version=8.2.0&discount_id=xxx&name=xxx&des=xxx&terms=xxx&mp=xxx
+```
 
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `discount_id` | `string` | **Required**. Member Discount ID |
+| `name` | `string` | **Required**. Member Discount name |
+| `des` | `string` | **Required**. Member Discount description |
+| `terms` | `integer` | **Required**. Member Discount Payment terms should be 0-100 |
+| `mp` | `integer` | **Required**. Member Discount member points should be positive integer |
 
+### Response
 
+```javascript
+{
+    "status": "success",
+    "msg": "Member item update Successfully!"    
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "User does not exist"
+}
+```
 
+# 16. Member Discount delete API
+### Request
+```http
+POST [Server IP or DN]/api/crm/admin_discount_del?app=postman&version=8.2.0&discount_id=xxx
+```
 
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `discount_id` | `string` | **Required**. Member Discount ID |
 
+### Response
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```javascript
+{
+    "status": "success",
+    "msg": "Member Discount delete successfully!"
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "Item ID does not exist"
+}
+```
 
 # 17. Products List API
 ### Request
@@ -516,5 +761,179 @@ Or if failed
 {
     "status": "failed",
     "msg": "User does not exist"
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 18. Products create API
+### Request
+```http
+POST [Server IP or DN]/api/crm/admin_products_create?app=postman&version=8.2.0&name=xxx&des=xxx&cat=xxx&barcode=xxx&price=xxx&cost=xxx&tax=xxx&supplier=xxx&qty=xxx&minqty=xxx&maxqty=xxx&reorder=xxx&discount=xxx&attr=xxx&status=xxx&usernotes=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `name` | `string` | **Required**. Products name |
+| `des` | `string` | **Required**. Products description |
+| `cat` | `string` | **Required**. Refer to category table. Products category name |
+| `barcode` | `string` | Products barcode |
+| `price` | `integer` | **Required**. Products price |
+| `cost` | `integer` | Products cost |
+| `tax` | `integer` | Products tax |
+| `supplier` | `string` | Refer to supplier table. Products supplier ID|
+| `qty` | `integer` | Products quantity |
+| `minqty` | `integer` | The minimum quantity at which the system should trigger a restocking alert. |
+| `maxqty` | `integer` | The maximum quantity at which the system should stop ordering or producing the product |
+| `reorder` | `integer` |  A threshold level at which the system should initiate the reordering of the product. |
+| `discount` | `integer` | Products discount |
+| `attr` | `string` | Products attribute |
+| `status` | `string` | **Required**. Refer to `status` table. Indicates whether the product is active, discontinued, or out of stock. |
+| `usernotes` | `string` | A field for adding internal notes or comments about the product. |
+
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Products create successfully!"
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "User does not exist"
+}
+```
+# 19. Products read API
+### Request
+```http
+GET [Server IP or DN]/api/crm/admin_products_r?app=postman&version=8.2.0&pid=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `pid` | `string` | **Required**. Products ID |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully!",
+    "items": [
+		{
+        "pid": "002",
+        "name": "Samsung 55 TV",
+        "des": "Model:Q55F\nQLED Display\n HDR",
+        "cat": "TV",
+        "barcode": "123456789",
+        "price": 1299.9,
+        "cost": 1000,
+        "tax": 0,
+        "supplier": "Samsung",
+        "qty": 100,
+        "minqty": 10,
+        "maxqty": 1000,
+        "reorder": 20,
+        "discount": 0,
+        "attr": "55\" inch",
+        "status": "Active",
+        "usernotes": "This is a good TV"
+		}
+	]
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "Item ID does not exist"
+}
+```
+
+
+# x. Products update API
+### Request
+```http
+POST [Server IP or DN]/api/crm/admin_discount_update?app=postman&version=8.2.0&discount_id=xxx&name=xxx&des=xxx&terms=xxx&mp=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `discount_id` | `string` | **Required**. Member Discount ID |
+| `name` | `string` | **Required**. Member Discount name |
+| `des` | `string` | **Required**. Member Discount description |
+| `terms` | `string` | **Required**. Member Discount Payment terms should be 0-100 |
+| `mp` | `string` | **Required**. Member Discount member points should be positive integer |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Member item update Successfully!"    
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "User does not exist"
+}
+```
+
+# x. Member Discount delete API
+### Request
+```http
+POST [Server IP or DN]/api/crm/admin_discount_del?app=postman&version=8.2.0&discount_id=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `discount_id` | `string` | **Required**. Member Discount ID |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Member Discount delete successfully!"
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "Item ID does not exist"
 }
 ```
