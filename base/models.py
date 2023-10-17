@@ -412,6 +412,29 @@ class SubscribeOrder(models.Model):
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
 
+class Member(models.Model):
+    number = models.CharField(max_length=200, null=False, unique=True)
+    password = models.CharField(max_length=200, null=False)
+    enabled = models.BooleanField(default=True)
+    token = models.CharField(max_length=200, null=True, default='1234567890')
+    tokenexpire = models.DateTimeField(null=True, blank=True)
+    birthday = models.DateTimeField(null=True, blank=True)
+    gender = models.CharField(max_length=10, null=True)
+    memberpoint = models.IntegerField(default=0)
+    memberpointtotal = models.IntegerField(default=0)
+    memberlevel = models.CharField(max_length=10, null=True)
+    nickname = models.CharField(max_length=200, null=True)
+    lastname = models.CharField(max_length=200, null=True)
+    firstname = models.CharField(max_length=200, null=True)    
+    mobilephone = models.CharField(max_length=200, null=True)
+    email = models.CharField(max_length=200, null=True)
+    address = models.CharField(max_length=200, null=True)
+    remark = models.CharField(max_length=200, null=True)
+    createdby = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+
+
 
 # class Room(models.Model):
 #     host =models.ForeignKey(User, on_delete=models.SET_NULL, null=True)

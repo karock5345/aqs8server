@@ -420,8 +420,8 @@ POST [Server IP or DN]/api/crm/admin_item_create?app=postman&version=8.2.0&pid=x
 | `pid` | `string` | **Required**. Product ID from `Products` table |
 | `name` | `string` | **Required**. Item name |
 | `des` | `string` | **Required**. Item description |
-| `price` | `integer` | **Required**. Item price should be positive |
-| `dis_price` | `integer` | **Required**. Item discount price should be positive |
+| `price` | `float` | **Required**. Item price should be positive |
+| `dis_price` | `float` | **Required**. Item discount price should be positive |
 | `mp` | `integer` | **Required**. Item member points should be positive integer |
 
 
@@ -497,8 +497,8 @@ POST [Server IP or DN]/api/crm/admin_item_update?app=postman&version=8.2.0&item_
 | `pid` | `string` | **Required**. Product ID from `Products` table |
 | `name` | `string` | **Required**. Item name |
 | `des` | `string` | **Required**. Item description |
-| `price` | `integer` | **Required**. Item price should be positive |
-| `dis_price` | `integer` | **Required**. Item discount price should be positive |
+| `price` | `float` | **Required**. Item price should be positive |
+| `dis_price` | `float` | **Required**. Item discount price should be positive |
 | `mp` | `integer` | **Required**. Item member points should be positive integer |
 
 
@@ -764,27 +764,6 @@ Or if failed
 }
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 18. Products create API
 ### Request
 ```http
@@ -799,15 +778,15 @@ POST [Server IP or DN]/api/crm/admin_products_create?app=postman&version=8.2.0&n
 | `des` | `string` | **Required**. Products description |
 | `cat` | `string` | **Required**. Refer to category table. Products category name |
 | `barcode` | `string` | Products barcode |
-| `price` | `integer` | **Required**. Products price |
-| `cost` | `integer` | Products cost |
-| `tax` | `integer` | Products tax |
+| `price` | `float` | **Required**. Products price |
+| `cost` | `float` | Products cost |
+| `tax` | `float` | Products tax |
 | `supplier` | `string` | Refer to supplier table. Products supplier ID|
 | `qty` | `integer` | Products quantity |
 | `minqty` | `integer` | The minimum quantity at which the system should trigger a restocking alert. |
 | `maxqty` | `integer` | The maximum quantity at which the system should stop ordering or producing the product |
 | `reorder` | `integer` |  A threshold level at which the system should initiate the reordering of the product. |
-| `discount` | `integer` | Products discount |
+| `discount` | `float` | Products discount |
 | `attr` | `string` | Products attribute |
 | `status` | `string` | **Required**. Refer to `status` table. Indicates whether the product is active, discontinued, or out of stock. |
 | `usernotes` | `string` | A field for adding internal notes or comments about the product. |
@@ -878,28 +857,40 @@ Or if failed
 ```
 
 
-# x. Products update API
+# 20. Products update API
 ### Request
 ```http
-POST [Server IP or DN]/api/crm/admin_discount_update?app=postman&version=8.2.0&discount_id=xxx&name=xxx&des=xxx&terms=xxx&mp=xxx
+POST [Server IP or DN]/api/crm/admin_products_update?app=postman&version=8.2.0&pid=xxx&name=xxx&des=xxx&cat=xxx&barcode=xxx&price=xxx&cost=xxx&tax=xxx&supplier=xxx&qty=xxx&minqty=xxx&maxqty=xxx&reorder=xxx&discount=xxx&attr=xxx&status=xxx&usernotes=xxx
 ```
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `discount_id` | `string` | **Required**. Member Discount ID |
-| `name` | `string` | **Required**. Member Discount name |
-| `des` | `string` | **Required**. Member Discount description |
-| `terms` | `string` | **Required**. Member Discount Payment terms should be 0-100 |
-| `mp` | `string` | **Required**. Member Discount member points should be positive integer |
+| `pid` | `string` | Products ID |
+| `name` | `string` | **Required**. Products name |
+| `des` | `string` | **Required**. Products description |
+| `cat` | `string` | **Required**. Refer to category table. Products category name |
+| `barcode` | `string` | Products barcode |
+| `price` | `float` | **Required**. Products price |
+| `cost` | `float` | Products cost |
+| `tax` | `float` | Products tax |
+| `supplier` | `string` | Refer to supplier table. Products supplier ID|
+| `qty` | `integer` | Products quantity |
+| `minqty` | `integer` | The minimum quantity at which the system should trigger a restocking alert. |
+| `maxqty` | `integer` | The maximum quantity at which the system should stop ordering or producing the product |
+| `reorder` | `integer` |  A threshold level at which the system should initiate the reordering of the product. |
+| `discount` | `float` | Products discount |
+| `attr` | `string` | Products attribute |
+| `status` | `string` | **Required**. Refer to `status` table. Indicates whether the product is active, discontinued, or out of stock. |
+| `usernotes` | `string` | A field for adding internal notes or comments about the product. |
 
 ### Response
 
 ```javascript
 {
     "status": "success",
-    "msg": "Member item update Successfully!"    
+    "msg": "Products update Successfully!"    
 }
 ```
 Or if failed
@@ -910,30 +901,30 @@ Or if failed
 }
 ```
 
-# x. Member Discount delete API
+# 21. Products delete API
 ### Request
 ```http
-POST [Server IP or DN]/api/crm/admin_discount_del?app=postman&version=8.2.0&discount_id=xxx
+POST [Server IP or DN]/api/crm/admin_products_del?app=postman&version=8.2.0&pid=xxx
 ```
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `discount_id` | `string` | **Required**. Member Discount ID |
+| `pid` | `string` | **Required**. Products ID |
 
 ### Response
 
 ```javascript
 {
     "status": "success",
-    "msg": "Member Discount delete successfully!"
+    "msg": "Products delete successfully!"
 }
 ```
 Or if failed
 ```javascript
 {
     "status": "failed",
-    "msg": "Item ID does not exist"
+    "msg": "Products ID does not exist"
 }
 ```
