@@ -100,7 +100,7 @@ POST [Server IP or DN]/api/token/refresh/
 ### 3. Member items list API
 ### 4. Member logout API
 ### 5. Member register API
-
+---
 ## Admin APP API List
 ### 6. Admin login API
 ### 7. Member items List API (Similiar to 3. Member items list API)
@@ -125,6 +125,10 @@ POST [Server IP or DN]/api/token/refresh/
 ### 26. Invoice read API
 ### 27. Invoice Confirm API
 ### 28. Admin logout API
+---
+### 29. Supplier List API
+### 30. Products Status List API
+### 31. Products Category List API
 
 # 1. Member login API (Member APP)
 
@@ -765,7 +769,8 @@ Or if failed
 ```
 
 # 18. Products create API
-### Request
+*** Please note that, `cat`, `supplier`, `status` get from `category list API`, `supplier list API` and `status list API`.
+
 ```http
 POST [Server IP or DN]/api/crm/admin_products_create?app=postman&version=8.2.0&name=xxx&des=xxx&cat=xxx&barcode=xxx&price=xxx&cost=xxx&tax=xxx&supplier=xxx&qty=xxx&minqty=xxx&maxqty=xxx&reorder=xxx&discount=xxx&attr=xxx&status=xxx&usernotes=xxx
 ```
@@ -926,5 +931,449 @@ Or if failed
 {
     "status": "failed",
     "msg": "Products ID does not exist"
+}
+```
+
+# 22. Quotation List API
+### Request
+```http
+GET [Server IP or DN]/api/crm/admin_quotations_list?app=postman&version=8.2.0
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully!",
+    "items": [
+		{
+        "quotation_id": "002",
+        "agent": "John",
+        "amount": 1299.9,
+        "date": "2021-01-01",
+        "confirmed": "Elton",
+		},
+        {
+        "quotation_id": "003",
+        "agent": "May",
+        "amount": 11400.9,
+        "date": "2021-01-01",
+        "confirmed": None,
+		}
+	]
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "User does not exist"
+}
+```
+
+# 23. Quotation read API
+### Request
+```http
+GET [Server IP or DN]/api/crm/admin_quotation_r?app=postman&version=8.2.0&quotation_id=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `quotation_id` | `string` | **Required**. Quotation ID |
+
+### Response
+
+```javascript
+{
+   "status":"success",
+   "msg":"Successfully!",
+   "items":[
+      {
+         "quotation_id":"002",
+         "quotation_no":"Q20210101-002",
+         "version":1,
+         "agent":"John",
+         "date":"2021-01-01",
+         "confirmed":"Elton",
+         "confirmed_date":"2021-01-02",
+         "customer_id":"001",
+         "customer_co":"ABC Company",
+         "customer_tel":"12345678",
+         "customer_name":"John",
+         "customer_email":"john@email.com",
+         "customer_mobile":"12345678",
+         "customer_address":"Hong Kong",
+         "customer_fax":"12348567",
+         "quotation_vaild_start":"2021-01-31",
+         "quotation_vaild_end":"2021-02-28",
+         "quotation_payment_terms":"30 days",
+         "quotation_delivery_terms":"FOB Hong Kong",
+         "quotation_delivery_date":"2021-02-28",
+         "quotation_delivery_address":"Hong Kong",
+         "products":[
+            {
+               "row":1,
+               "pid":"001",
+               "name":"Samsung 55 TV",
+               "des":"Samsung 55 TV Model:Q55F\nQLED Display\n HDR",
+               "qty":1,
+               "price":1299.9,
+               "sub":1299.9
+            },
+            {
+               "row":2,
+               "pid":"002",
+               "name":"Nike Air",
+               "des":"Nike Air Max Running Shoes",
+               "qty":2,
+               "price":129.9,
+               "sub":259.8
+            }
+         ],
+         "subtotal":1559.7,
+         "tax":0,
+         "discount":0,
+         "amount":1559.7,
+         "terms_conditions":"Provide a link or reference to the full terms and conditions associated with the quotation.",
+         "remark":"This is a good quotation",
+         "quotation_status":"Draft",
+         "quotation_status_date":"2021-01-02",
+         "followup":"This is a good quotation"
+      }
+   ]
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "Quotation ID does not exist"
+}
+```
+*** Please note that, "quotation_status": Track the status of the quotation, such as "Draft", "Sent", "Accepted" or "Rejected"
+
+# 24. Quotation confirm API
+### Request
+```http
+POST [Server IP or DN]/api/crm/admin_quotation_confirm?app=postman&version=8.2.0&quotation_id=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `quotation_id` | `string` | **Required**. Quotation ID |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Quotation confirm successfully!"
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "Quotation ID does not exist"
+}
+```
+
+# 25. Invoice List API
+### Request
+```http
+GET [Server IP or DN]/api/crm/admin_invoice_list?app=postman&version=8.2.0
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully!",
+    "items": [
+		{
+        "invoice_id": "002",
+        "agent": "John",
+        "amount": 1299.9,
+        "date": "2021-01-01",
+        "paid": "2022-02-02",
+		},
+        {
+        "invoice_id": "003",
+        "agent": "May",
+        "amount": 11400.9,
+        "date": "2021-01-01",
+        "paid": None,
+		}
+	]
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "User does not exist"
+}
+```
+
+# 26. Invoice read API
+### Request
+```http
+GET [Server IP or DN]/api/crm/admin_invoice_r?app=postman&version=8.2.0&invoice_id=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `invoice_id` | `string` | **Required**. Invoice ID |
+
+### Response
+
+```javascript
+{
+   "status":"success",
+   "msg":"Successfully!",
+   "items":[
+      {
+         "invoice_id":"002",
+         "invoice_no":"Q20210101-002",
+         "quotation_id":"002",
+         "agent":"John",
+         "date":"2021-01-01",
+         "confirmed":"Elton",
+         "confirmed_date":"2021-01-02",
+         "customer_id":"001",
+         "customer_co":"ABC Company",
+         "customer_tel":"12345678",
+         "customer_name":"John",
+         "customer_email":"john@email.com",
+         "customer_mobile":"12345678",
+         "customer_address":"Hong Kong",
+         "customer_fax":"12348567",
+         "invoice_payment_terms":"30 days",
+         "invoice_delivery_terms":"FOB Hong Kong",
+         "invoice_delivery_date":"2021-02-28",
+         "invoice_delivery_address":"Hong Kong",
+         "products":[
+            {
+               "row":1,
+               "pid":"001",
+               "name":"Samsung 55 TV",
+               "des":"Samsung 55 TV Model:Q55F\nQLED Display\n HDR",
+               "qty":1,
+               "price":1299.9,
+               "sub":1299.9
+            },
+            {
+               "row":2,
+               "pid":"002",
+               "name":"Nike Air",
+               "des":"Nike Air Max Running Shoes",
+               "qty":2,
+               "price":129.9,
+               "sub":259.8
+            }
+         ],
+         "subtotal":1559.7,
+         "tax":0,
+         "discount":0,
+         "amount":1559.7,
+         "terms_conditions":"Provide a link or reference to the full terms and conditions associated with the quotation.",
+         "remark":"This is a good quotation",
+         "invoice_status":"paid",
+         "invoice_status_date":"2021-01-02",
+         "followup":"This is a good quotation"
+      }
+   ]
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "Invoice ID does not exist"
+}
+```
+*** Please note that, "invoice_status": Track the status of the invoice, such as "Unpaid" or "Paid"
+
+# 27. Quotation confirm API
+### Request
+```http
+POST [Server IP or DN]/api/crm/admin_invoice_confirm?app=postman&version=8.2.0&invoice_id=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `invoice_id` | `string` | **Required**. Invoice ID |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Invoice confirm successfully!"
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "Invoice ID does not exist"
+}
+```
+
+
+
+
+
+
+
+
+
+
+# 29. Supplier List API
+### Request
+```http
+GET [Server IP or DN]/api/crm/admin_supplier_list?app=postman&version=8.2.0
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully!",
+    "items": [
+		{
+        "supplier_id": "002",
+        "co": "ABC Company",
+        "person": "Mary",
+        "tel":"12345678",
+        "email":"john@email.com",
+        "mobile":"12345678",
+        "address":"Hong Kong",
+        "fax":"12348567"
+		},
+        {
+        "supplier_id": "003",
+        "co": "DEF Company",
+        "person": "Kaith",
+        "tel":"12345678",
+        "email":"john@email.com",
+        "mobile":"12345678",
+        "address":"Hong Kong",
+        "fax":"12348567"
+		}
+	]
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "User does not exist"
+}
+```
+
+# 30. Products Status List API
+```http
+GET [Server IP or DN]/api/crm/admin_status_list?app=postman&version=8.2.0
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully!",
+    "items": [
+		{
+        "status_id": "001",
+        "name": "Active"        
+		},
+        {
+        "status_id": "002",
+        "name": "Discontinued"  
+		},
+        {
+        "status_id": "003",
+        "name": "Out of stock"  
+		}        
+	]
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "User does not exist"
+}
+```
+
+# 31. Products Category List API
+```http
+GET [Server IP or DN]/api/crm/admin_category_list?app=postman&version=8.2.0
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully!",
+    "items": [
+		{
+        "cat_id": "001",
+        "name": "electronics"        
+		},
+        {
+        "cat_id": "002",
+        "name": "clothing"  
+		},
+        {
+        "cat_id": "003",
+        "name": "groceries"  
+		}        
+	]
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "User does not exist"
 }
 ```
