@@ -3,7 +3,7 @@
 ### <span style="color:orange;">**Coming up Version 8.2.1**</span>
 - Protect apiuser password for every Client software (including Softkey, Touch Panel, Display Panel, Printer Control, etc.)
 - Improve HTML UI for "Form" do not cover error message 
-- User Groups (frontline, support, admin, manager) for PCCW 2023 merge to our system (counter, report, admin)
+- User Groups (frontline, support, admin, manager) for PCCW 2023 merge to our system (counter, report, supervisor [same as admin, but only for the branchs which is belong to the user])
 - Run sch_shutdown() (Schudule task) when the branch settings is saved, so the branch will be update and schedule task time.
 ### <span style="color:orange;">**Coming up Version 8.2.0**</span>
 - Upgrade Django to 4.2.x

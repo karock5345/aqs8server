@@ -52,7 +52,7 @@ class printerstatusSerivalizer(ModelSerializer):
 
     class Meta:
         model = PrinterStatus
-        fields = ('printernumber', 'statustext', 'status')
+        fields = ('id', 'printernumber', 'statustext', 'status')
 
 class displaylistSerivalizer(ModelSerializer):
     # bcode = serializers.CharField(source='branch.bcode')

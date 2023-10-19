@@ -150,7 +150,7 @@ POST [Server IP or DN]/api/crm/login?app=postman&version=8.2.0&username=xxx&pass
 {
     "status": "success",
     "msg": "Login successfully!",
-    "member_id": 2,
+    "member_no": "20000SEDOIT",
     "member_token": "eyJhbGc...4NrLFilpU"
 }
 ```
@@ -167,15 +167,15 @@ Or if login failed
 # 2. Member info API (Member APP)
 ### Request
 ```http
-GET [Server IP or DN]/api/crm/info?app=postman&version=8.2.0&member_id=xxx&member_token=xxx
+GET [Server IP or DN]/api/crm/info?app=postman&version=8.2.0&member_no=xxx&member_token=xxx
 ```
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `member_id` | `string` | **Required**. Member ID from `Member login API` |
-| `member_token` | `string` | **Required**. Member ID from `Member login API` |
+| `member_no` | `string` | **Required**. Member number from `Member login API` |
+| `member_token` | `string` | **Required**. Member Token from `Member login API` |
 ### Response
 
 ```javascript
@@ -198,14 +198,14 @@ Or if failed
 # 3. Member item list API (Member APP)
 ### Request
 ```http
-GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_id=xxx&member_token=xxx
+GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_no=xxx&member_token=xxx
 ```
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `member_id` | `string` | **Required**. Member ID from `Member login API` |
+| `member_no` | `string` | **Required**. Member number from `Member login API` |
 | `member_token` | `string` | **Required**. Member ID from `Member login API` |
 ### Response
 
@@ -215,7 +215,7 @@ GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_id=xxx&memb
     "msg": "Successfully!",
     "items": [
         {
-        "item_id":"001",
+        "id": 1,
         "name": "Men's Dress Shirt",
         "des": "White, Slim Fit, Size M",
         "price": 49.9,
@@ -223,7 +223,7 @@ GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_id=xxx&memb
         "mp": 0
 		},
 		{
-        "item_id":"002",
+        "id": 2,
         "name": "Nike Air Max Running Shoes",
         "des": "Men's, Black/Red, Size 10",
         "price": 129.9,
@@ -261,7 +261,7 @@ POST [Server IP or DN]/api/crm/logout?app=postman&version=8.2.0&username=xxx&mem
 {
     "status": "success",
     "msg": "Logout successfully!",
-    "member_id": 2
+    "id": 2
 }
 ```
 Or if login failed
@@ -367,8 +367,8 @@ GET [Server IP or DN]/api/crm/admin_items?app=postman&version=8.2.0
     "msg": "Successfully!",
     "items": [
         {
-        "item_id": "001",
-        "pid":"001",
+        "id": 1,
+        "pid": 1,
         "name": "Men's Dress Shirt",
         "des": "White, Slim Fit, Size M",
         "price": 49.9,
@@ -376,8 +376,8 @@ GET [Server IP or DN]/api/crm/admin_items?app=postman&version=8.2.0
         "mp": 0
 		},
 		{
-        "item_id": "002",
-        "pid":"002",
+        "id": 2,
+        "pid": 2,
         "name": "Nike Air Max Running Shoes",
         "des": "Men's, Black/Red, Size 10",
         "price": 129.9,
@@ -454,7 +454,7 @@ GET [Server IP or DN]/api/crm/admin_items_r?app=postman&version=8.2.0&item_id=xx
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `item_id` | `string` | **Required**. Item ID |
+| `item_id` | `integer` | **Required**. Item ID |
 
 ### Response
 
@@ -464,8 +464,8 @@ GET [Server IP or DN]/api/crm/admin_items_r?app=postman&version=8.2.0&item_id=xx
     "msg": "Successfully!",
     "items": [
 		{
-        "item_id": "002",
-        "pid":"002",
+        "id": 2,
+        "pid": 2,
         "name": "Nike Air Max Running Shoes",
         "des": "Men's, Black/Red, Size 10",
         "price": 129.9,
@@ -497,8 +497,8 @@ POST [Server IP or DN]/api/crm/admin_item_update?app=postman&version=8.2.0&item_
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `item_id` | `string` | **Required**. Item ID |
-| `pid` | `string` | **Required**. Product ID from `Products` table |
+| `item_id` | `integer` | **Required**. Item ID |
+| `pid` | `integer` | **Required**. Product ID from `Products` table |
 | `name` | `string` | **Required**. Item name |
 | `des` | `string` | **Required**. Item description |
 | `price` | `float` | **Required**. Item price should be positive |
@@ -532,7 +532,7 @@ POST [Server IP or DN]/api/crm/admin_items_del?app=postman&version=8.2.0&item_id
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `item_id` | `string` | **Required**. Item ID |
+| `item_id` | `integer` | **Required**. Item ID |
 
 ### Response
 
@@ -553,14 +553,14 @@ Or if failed
 # 12. Member Discount list API
 ### Request
 ```http
-GET [Server IP or DN]/api/crm/admin_discounts?app=postman&version=8.2.0&member_id=xxx&member_token=xxx
+GET [Server IP or DN]/api/crm/admin_discounts?app=postman&version=8.2.0&member_no=xxx&member_token=xxx
 ```
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `member_id` | `string` | **Required**. Member ID from `Member login API` |
+| `member_no` | `string` | **Required**. Member number from `Member login API` |
 | `member_token` | `string` | **Required**. Member ID from `Member login API` |
 
 ### Response
@@ -571,7 +571,7 @@ GET [Server IP or DN]/api/crm/admin_discounts?app=postman&version=8.2.0&member_i
     "msg": "Successfully!",
     "items": [
         {
-        "discount_id": "001",
+        "id": 1,
         "name": "Sliver",
         "des": "Sliver Member",
         "discount": 10,
@@ -579,7 +579,7 @@ GET [Server IP or DN]/api/crm/admin_discounts?app=postman&version=8.2.0&member_i
         "mp": 1000
 		},
 		{
-        "discount_id": "002",
+        "id": 2,
         "name": "Gold",
         "des": "Gold Member",
         "discount": 20,
@@ -638,7 +638,7 @@ GET [Server IP or DN]/api/crm/admin_discount_r?app=postman&version=8.2.0&discoun
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `discount_id` | `string` | **Required**. Discount ID |
+| `discount_id` | `integer` | **Required**. Discount ID |
 
 ### Response
 
@@ -648,7 +648,7 @@ GET [Server IP or DN]/api/crm/admin_discount_r?app=postman&version=8.2.0&discoun
     "msg": "Successfully!",
     "items": [
 		{
-        "discount_id": "002",
+        "id": 2,
         "name": "Gold",
         "des": "Gold Member",
         "discount": 20,
@@ -677,7 +677,7 @@ POST [Server IP or DN]/api/crm/admin_discount_update?app=postman&version=8.2.0&d
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `discount_id` | `string` | **Required**. Member Discount ID |
+| `discount_id` | `integer` | **Required**. Member Discount ID |
 | `name` | `string` | **Required**. Member Discount name |
 | `des` | `string` | **Required**. Member Discount description |
 | `terms` | `integer` | **Required**. Member Discount Payment terms should be 0-100 |
@@ -709,7 +709,7 @@ POST [Server IP or DN]/api/crm/admin_discount_del?app=postman&version=8.2.0&disc
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `discount_id` | `string` | **Required**. Member Discount ID |
+| `discount_id` | `integer` | **Required**. Member Discount ID |
 
 ### Response
 
@@ -953,14 +953,14 @@ GET [Server IP or DN]/api/crm/admin_quotations_list?app=postman&version=8.2.0
     "msg": "Successfully!",
     "items": [
 		{
-        "quotation_id": "002",
+        "id": 2,
         "agent": "John",
         "amount": 1299.9,
         "date": "2021-01-01",
         "confirmed": "Elton",
 		},
         {
-        "quotation_id": "003",
+        "id": 3,
         "agent": "May",
         "amount": 11400.9,
         "date": "2021-01-01",
@@ -987,7 +987,7 @@ GET [Server IP or DN]/api/crm/admin_quotation_r?app=postman&version=8.2.0&quotat
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `quotation_id` | `string` | **Required**. Quotation ID |
+| `quotation_id` | `integer` | **Required**. Quotation ID |
 
 ### Response
 
@@ -997,14 +997,14 @@ GET [Server IP or DN]/api/crm/admin_quotation_r?app=postman&version=8.2.0&quotat
    "msg":"Successfully!",
    "items":[
       {
-         "quotation_id":"002",
+         "id": 2,
          "quotation_no":"Q20210101-002",
          "version":1,
          "agent":"John",
          "date":"2021-01-01",
          "confirmed":"Elton",
          "confirmed_date":"2021-01-02",
-         "customer_id":"001",
+         "customer_id": 1,
          "customer_co":"ABC Company",
          "customer_tel":"12345678",
          "customer_name":"John",
@@ -1070,7 +1070,7 @@ POST [Server IP or DN]/api/crm/admin_quotation_confirm?app=postman&version=8.2.0
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `quotation_id` | `string` | **Required**. Quotation ID |
+| `quotation_id` | `integer` | **Required**. Quotation ID |
 
 ### Response
 
@@ -1107,14 +1107,14 @@ GET [Server IP or DN]/api/crm/admin_invoice_list?app=postman&version=8.2.0
     "msg": "Successfully!",
     "items": [
 		{
-        "invoice_id": "002",
+        "id": 2,
         "agent": "John",
         "amount": 1299.9,
         "date": "2021-01-01",
         "paid": "2022-02-02",
 		},
         {
-        "invoice_id": "003",
+        "id": 3,
         "agent": "May",
         "amount": 11400.9,
         "date": "2021-01-01",
@@ -1141,7 +1141,7 @@ GET [Server IP or DN]/api/crm/admin_invoice_r?app=postman&version=8.2.0&invoice_
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `invoice_id` | `string` | **Required**. Invoice ID |
+| `invoice_id` | `integer` | **Required**. Invoice ID |
 
 ### Response
 
@@ -1151,14 +1151,14 @@ GET [Server IP or DN]/api/crm/admin_invoice_r?app=postman&version=8.2.0&invoice_
    "msg":"Successfully!",
    "items":[
       {
-         "invoice_id":"002",
+         "id": 2,
          "invoice_no":"Q20210101-002",
-         "quotation_id":"002",
+         "quotation_id": 2,
          "agent":"John",
          "date":"2021-01-01",
          "confirmed":"Elton",
          "confirmed_date":"2021-01-02",
-         "customer_id":"001",
+         "customer_id": 1,
          "customer_co":"ABC Company",
          "customer_tel":"12345678",
          "customer_name":"John",
@@ -1173,7 +1173,7 @@ GET [Server IP or DN]/api/crm/admin_invoice_r?app=postman&version=8.2.0&invoice_
          "products":[
             {
                "row":1,
-               "pid":"001",
+               "pid": 1,
                "name":"Samsung 55 TV",
                "des":"Samsung 55 TV Model:Q55F\nQLED Display\n HDR",
                "qty":1,
@@ -1182,7 +1182,7 @@ GET [Server IP or DN]/api/crm/admin_invoice_r?app=postman&version=8.2.0&invoice_
             },
             {
                "row":2,
-               "pid":"002",
+               "pid": 2,
                "name":"Nike Air",
                "des":"Nike Air Max Running Shoes",
                "qty":2,
@@ -1222,7 +1222,7 @@ POST [Server IP or DN]/api/crm/admin_invoice_confirm?app=postman&version=8.2.0&i
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `invoice_id` | `string` | **Required**. Invoice ID |
+| `invoice_id` | `integer` | **Required**. Invoice ID |
 
 ### Response
 
@@ -1268,7 +1268,7 @@ GET [Server IP or DN]/api/crm/admin_supplier_list?app=postman&version=8.2.0
     "msg": "Successfully!",
     "items": [
 		{
-        "supplier_id": "002",
+        "id": 2,
         "co": "ABC Company",
         "person": "Mary",
         "tel":"12345678",
@@ -1278,7 +1278,7 @@ GET [Server IP or DN]/api/crm/admin_supplier_list?app=postman&version=8.2.0
         "fax":"12348567"
 		},
         {
-        "supplier_id": "003",
+        "id": 3,
         "co": "DEF Company",
         "person": "Kaith",
         "tel":"12345678",
@@ -1316,15 +1316,15 @@ GET [Server IP or DN]/api/crm/admin_status_list?app=postman&version=8.2.0
     "msg": "Successfully!",
     "items": [
 		{
-        "status_id": "001",
+        "id": 1,
         "name": "Active"        
 		},
         {
-        "status_id": "002",
+        "id": 2,
         "name": "Discontinued"  
 		},
         {
-        "status_id": "003",
+        "id": 3,
         "name": "Out of stock"  
 		}        
 	]
@@ -1356,15 +1356,15 @@ GET [Server IP or DN]/api/crm/admin_category_list?app=postman&version=8.2.0
     "msg": "Successfully!",
     "items": [
 		{
-        "cat_id": "001",
+        "id": 1,
         "name": "electronics"        
 		},
         {
-        "cat_id": "002",
+        "id": 2,
         "name": "clothing"  
 		},
         {
-        "cat_id": "003",
+        "id": 3,
         "name": "groceries"  
 		}        
 	]
