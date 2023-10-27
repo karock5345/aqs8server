@@ -4,11 +4,29 @@
 - Protect apiuser password for every Client software (including Softkey, Touch Panel, Display Panel, Printer Control, etc.)
 - Improve HTML UI for "Form" do not cover error message 
 - User Groups (frontline, support, admin, manager) for PCCW 2023 merge to our system (counter, report, supervisor [same as admin, but only for the branchs which is belong to the user])
-- Run sch_shutdown() (Schudule task) when the branch settings is saved, so the branch will be update and schedule task time.
-### <span style="color:orange;">**Coming up Version 8.2.0**</span>
+  - admin (PCCW) : all branchs, all user, Softkey, Supervisor, Report and all settings
+  - support (PCCW) : all branchs, (support, manager and frontline) users, Softkey, Supervisor, Report
+  - manager (PCCW) : own branchs, (manager and frontline) users, Softkey, Supervisor, Report
+  - frontline (PCCW) : own branchs, Softkey
+  - supervisor : own branchs, (supervisor, report and counter) users, Softkey, Supervisor, Report and all settings
+  - report : own branchs, (report and counter) users, Softkey, Supervisor, Report
+  - counter : own branchs, Softkey
+  
+
+
+
+
+
+
+
+### <span style="color:orange;">**Version 8.2.0**</span>
 - Upgrade Django to 4.2.x
+- Run sch_shutdown() (Schudule task) when the branch settings is saved, so the branch will be update and schedule task time.
 - Secure all existing Websocket connection protect use the session Cookie
-- Create public Websocket for Web (WebTV and My E-ticket)
+- Change webtv Websocket for Web and client software, using 2 routes to separate public (ws/wtv/<bcode>/<ct>) and internal (ws/webtv/<bcode>/<ct>)
+- Keep My E-ticket public Websocket for Web
+- Others websocket is internal only protect by session cookie
+
 
 
 

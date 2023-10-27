@@ -13,10 +13,42 @@ from dateutil import tz
 from base.models import APILog, Branch, Setting, TicketFormat, Ticket, TicketRoute, TicketData, TicketLog, UserProfile, lcounterstatus
 from .serializers import branchSerivalizer, ticketlistSerivalizer
 from .thread import MigrateDBThread, MigrateDBThreadtst
+from rest_framework import status
+from rest_framework.authtoken.models import Token
 
 token_api = 'WrE-1t7IdrU2iB3a0e'
 # if the counter keep active > 6 minutes then auto logout and the counter replace the new user
 counteractive = 1
+
+
+@api_view(['POST'])
+def postLoginAPI(request):
+        # username = request.data.get('username')
+        # password = request.data.get('password')
+        # username = request.GET.get('username')
+        # password = request.GET.get('password')
+        # username = request.GET.get('username') if request.GET.get('username') != None else ''
+        # password = request.GET.get('password') if request.GET.get('password') != None else ''
+
+        # get the request data from body x-www-form-urlencoded
+        username = request.POST.get('username') if request.POST.get('username') != None else ''
+        password = request.POST.get('password') if request.POST.get('password') != None else ''
+
+        user = authenticate(request, username=username, password=password)
+        # user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            # token, created = Token.objects.get_or_create(user=user)
+            # session id
+            id = request
+            token = user.get_session_auth_hash()
+
+
+            return Response({'msg' : 'Login successful'})
+        else:
+            return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
+        
 
 @api_view(['GET'])
 def getDBtst(request):

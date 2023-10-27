@@ -34,6 +34,8 @@ urlpatterns = [
 
     path('voice/', v_display.getVoice), 
 
+    path('loginapi/', views.postLoginAPI),
+
 
     # path('db_tst/', views.getDBtst),
     # path('db2/', views.getDB2),

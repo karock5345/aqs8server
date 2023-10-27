@@ -64,6 +64,8 @@ def wssenddispcall(branch, counterstatus, countertype, ticket):
     except:
         logger.error('...ERROR:Redis Server is down!')
     pass
+
+
 # ws to Display Panel cmd remove a ticket
 # ws to Display Panel cmd clear all ticket
 def wssenddispremoveall(branch,  countertype):
