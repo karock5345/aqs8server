@@ -8,9 +8,10 @@
   - support (PCCW) : all branchs, (support, manager and frontline) users, Softkey, Supervisor, Report
   - manager (PCCW) : own branchs, (manager and frontline) users, Softkey, Supervisor, Report
   - frontline (PCCW) : own branchs, Softkey
-  - supervisor : own branchs, (supervisor, report and counter) users, Softkey, Supervisor, Report and all settings
+  - supervisor (new) : own branchs, (supervisor, report and counter) users, Softkey, Supervisor, Report and all settings
   - report : own branchs, (report and counter) users, Softkey, Supervisor, Report
   - counter : own branchs, Softkey
+  
   
 
 
