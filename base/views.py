@@ -3110,6 +3110,7 @@ def auth_data(user):
     if user.is_superuser == True :
         auth_profilelist = UserProfile.objects.all()
         auth_userlist = User.objects.exclude(Q(groups__name='web'))
+        auth_grouplist = Group.objects.all()
         auth_userlist_active = User.objects.filter(Q(is_active=True)).exclude(Q(groups__name='web'))
         auth_branchs = Branch.objects.all()
         auth_ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
@@ -3204,19 +3205,19 @@ def auth_data(user):
         #                     userid_list.append(prof.user.id)
         profid_list = []
         userid_list = []
-        auth_grouplist = []
+        grouplist = []
         if user.groups.filter(name='admin').exists() == True :
-            auth_grouplist.append('admin')
-            auth_grouplist.append('support')
-            auth_grouplist.append('manager')
-            auth_grouplist.append('frontline')
+            grouplist.append('admin')
+            grouplist.append('support')
+            grouplist.append('manager')
+            grouplist.append('frontline')
         elif user.groups.filter(name='support').exists() == True :
-            auth_grouplist.append('support')
-            auth_grouplist.append('manager')
-            auth_grouplist.append('frontline')
+            grouplist.append('support')
+            grouplist.append('manager')
+            grouplist.append('frontline')
         elif user.groups.filter(name='manager').exists() == True :
-            auth_grouplist.append('manager')
-            auth_grouplist.append('frontline')
+            grouplist.append('manager')
+            grouplist.append('frontline')
         
         for prof in profiles :
             not_auth = False
@@ -3232,7 +3233,7 @@ def auth_data(user):
             if not_auth == False :
                 if prof.user.is_superuser == False :
                     for usergroup in prof.user.groups.all() :
-                        if (usergroup.name in auth_grouplist) == True :                   
+                        if (usergroup.name in grouplist) == True :                   
                             profid_list.append(prof.id)
                             userid_list.append(prof.user.id)
                             break
@@ -3249,6 +3250,7 @@ def auth_data(user):
         auth_ticketformats = TicketFormat.objects.filter(branch__in=auth_branchs).order_by('branch','ttype')
         auth_routes = TicketRoute.objects.filter(branch__in=auth_branchs).order_by('branch','countertype', 'tickettype', 'step')
         auth_countertype = CounterType.objects.filter(branch__in=auth_branchs)
+        auth_grouplist = Group.objects.filter(name__in=grouplist)
     return(auth_branchs, auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats, auth_routes, auth_countertype)
 
 
@@ -3297,9 +3299,9 @@ def checkticketformatform(form):
         if newform.ttype.isalpha() == False :
             error = 'Ticket type should be letter'
     # for PCCW Ticket type should be 2 letter
-    if error == '' :
-        if len(newform.ttype) != 2 :
-            error = 'Ticket type should be 2 letters'
+    # if error == '' :
+    #     if len(newform.ttype) != 2 :
+    #         error = 'Ticket type should be 2 letters'
     # Ticket type should be upper case
     if error == '' :
         if newform.ttype != newform.ttype.upper():

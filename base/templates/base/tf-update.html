@@ -27,24 +27,23 @@
                         
                         {% for field in tfform %}
                         
-                            {% if field.label == "Enabled" %}
-                            
-                                <div class="form__group_checkbox ">
-                                    {{field}}<label for="profile_pic">&nbsp;Ticket Format Enabled</label>
+                            {% if field.name == "enabled" %}
+                                <div class="form__group_checkbox">
+                                    {{field}}<label>&nbsp;{{field.label}}</label>
                                 </div>
                                 
-                            {% elif field.label == "Ttype" %}
+                            {% elif field.name == "ttype" %}
                                 <div class="form__group">
                                 <label for="profile_pic">Ticket Type : {{field}}</label>
                                 </div>
                             {% elif field.label == "Branch" %}
                             <div class="form__group">
                                 <label for="profile_pic">Branch : {{field}}</label>
-                                </div>
+                            </div>
                             {% elif field.label == "Tformat" %}
                             <div class="form__group">
-                                                                <label for="profile_pic">Ticket Format : {{field}}</label>
-                                                                </div>
+                                <label for="profile_pic">Ticket Format : {{field}}</label>
+                            </div>
                             {% else %}
                             <div class="form__group">
                                 <label for="profile_pic">{{field.label}} : {{field}}</label>                            
