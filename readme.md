@@ -27,6 +27,7 @@
 - Change webtv Websocket for Web and client software, using 2 routes to separate public (ws/wtv/<bcode>/<ct>) and internal (ws/webtv/<bcode>/<ct>)
 - Keep My E-ticket public Websocket for Web
 - Others websocket is internal only protect by session cookie
+- Modify the HTMLs for SVG image (e.g. branch settings, ticket format, ticket route, etc.)
 
 
 

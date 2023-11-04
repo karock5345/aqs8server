@@ -167,3 +167,1646 @@ INFO 2023-11-03 19:32:06,900 runserver>log_action [mHTTP GET /update-route/10 2
 INFO 2023-11-03 19:32:16,414 runserver>log_action [mHTTP GET / 200 [0.08, 127.0.0.1:63531][0m
 INFO 2023-11-03 19:45:25,053 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:63639][0m
 INFO 2023-11-03 19:45:27,076 runserver>log_action [mHTTP GET /update-branch/3/ 200 [0.12, 127.0.0.1:63639][0m
+INFO 2023-11-04 15:22:31,248 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-04 15:22:32,258 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-04 15:22:32,258 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-04 15:22:32,581 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-04 15:22:32,581 base>views>main -SCH- Now:11/04/2023, 07:22:32
+INFO 2023-11-04 15:22:32,669 base>views>sch_shutdown  -SCH- Next reset [HHT]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 15:22:32,670 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 15:22:32,670 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 07:22:32 [Yes]
+INFO 2023-11-04 15:22:32,674 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 15:22:32,674 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 15:22:32,674 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 07:22:32 [Yes]
+INFO 2023-11-04 15:22:32,676 base>views>sch_shutdown  -SCH- Next reset [WTT]: 2023-11-04 18:00:00 Local:2023-11-05 02:00:00
+INFO 2023-11-04 15:22:32,676 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-04 15:22:32,676 base>views>sch_shutdown    -SCH- 2023-11-04 18:00:00 > 2023-11-04 07:22:32 [Yes]
+INFO 2023-11-04 15:22:32,678 base>views>sch_shutdown  -SCH- Next reset [SCP]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 15:22:32,678 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 15:22:32,678 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 07:22:32 [Yes]
+INFO 2023-11-04 15:22:39,526 runserver>log_action [32mHTTP GET /update-branch/3/ 302 [0.03, 127.0.0.1:50632][0m
+INFO 2023-11-04 15:22:39,570 runserver>log_action [mHTTP GET /login/ 200 [0.04, 127.0.0.1:50632][0m
+INFO 2023-11-04 15:22:42,233 runserver>log_action [mHTTP GET /webtv/HHT/c/ 200 [0.07, 127.0.0.1:50654][0m
+INFO 2023-11-04 15:22:42,246 runserver>log_action [mHTTP GET /webtv/SCP/c/ 200 [0.08, 127.0.0.1:50656][0m
+INFO 2023-11-04 15:22:42,253 runserver>log_action [mHTTP GET /my/SCP/AA/027/8Ly/ 200 [0.09, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:22:42,444 runserver>log_action WebSocket HANDSHAKING /ws/wtv/SCP/c/ [127.0.0.1:50667]
+INFO 2023-11-04 15:22:42,543 runserver>log_action [32mHTTP POST /login/ 302 [0.46, 127.0.0.1:50632][0m
+INFO 2023-11-04 15:22:42,544 base>consumers>connect connecting:webtv_SCP_c
+INFO 2023-11-04 15:22:42,619 runserver>log_action WebSocket CONNECT /ws/wtv/SCP/c/ [127.0.0.1:50667]
+INFO 2023-11-04 15:22:42,620 base>consumers>connect IP 127.0.0.1 Connected:webtv_SCP_c [1/200]
+INFO 2023-11-04 15:22:42,633 runserver>log_action WebSocket HANDSHAKING /ws/tstatus/SCP/AA/027/8Ly/ [127.0.0.1:50671]
+INFO 2023-11-04 15:22:42,635 base>consumers>connect connecting:ticketstatus_SCP_AA027_8Ly
+INFO 2023-11-04 15:22:42,688 runserver>log_action WebSocket CONNECT /ws/tstatus/SCP/AA/027/8Ly/ [127.0.0.1:50671]
+INFO 2023-11-04 15:22:42,689 base>consumers>connect IP 127.0.0.1 Connected:ticketstatus_SCP_AA027_8Ly [1/200]
+INFO 2023-11-04 15:22:42,708 runserver>log_action WebSocket HANDSHAKING /ws/wtv/HHT/c/ [127.0.0.1:50675]
+INFO 2023-11-04 15:22:42,730 base>consumers>connect connecting:webtv_HHT_c
+INFO 2023-11-04 15:22:42,765 runserver>log_action WebSocket CONNECT /ws/wtv/HHT/c/ [127.0.0.1:50675]
+INFO 2023-11-04 15:22:42,765 base>consumers>connect IP 127.0.0.1 Connected:webtv_HHT_c [1/200]
+INFO 2023-11-04 15:22:42,792 runserver>log_action WebSocket HANDSHAKING /ws/wtv/SCP/c/ [127.0.0.1:50680]
+INFO 2023-11-04 15:22:42,825 base>consumers>connect connecting:webtv_SCP_c
+INFO 2023-11-04 15:22:42,875 runserver>log_action WebSocket CONNECT /ws/wtv/SCP/c/ [127.0.0.1:50680]
+INFO 2023-11-04 15:22:42,876 base>consumers>connect IP 127.0.0.1 Connected:webtv_SCP_c [2/200]
+INFO 2023-11-04 15:22:42,978 runserver>log_action [mHTTP GET / 200 [0.32, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:22:46,383 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.27, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:22:48,598 runserver>log_action [mHTTP GET /softkey_login/4/ 200 [0.27, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:22:58,388 runserver>log_action [32mHTTP GET /logout/ 302 [0.06, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:22:58,393 runserver>log_action [mHTTP GET /login/ 200 [0.00, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:22:58,886 runserver>log_action [32mHTTP GET /admin/base/ticketroute/ 302 [0.03, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:22:58,938 runserver>log_action [mHTTP GET /admin/login/?next=/admin/base/ticketroute/ 200 [0.05, 127.0.0.1:50655][0m
+WARNING 2023-11-04 15:22:59,183 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-04 15:22:59,184 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.03, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:04,380 runserver>log_action [32mHTTP POST /admin/login/?next=/admin/base/ticketroute/ 302 [0.33, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:04,539 runserver>log_action [mHTTP GET /admin/base/ticketroute/ 200 [0.16, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:04,597 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:06,911 runserver>log_action [mHTTP GET /admin/base/counterstatus/ 200 [0.09, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:06,961 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.04, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:10,350 runserver>log_action [mHTTP GET /admin/base/counterstatus/add/ 200 [0.14, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:10,416 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.06, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:19,607 runserver>log_action [32mHTTP POST /admin/base/counterstatus/add/ 302 [0.10, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:19,690 runserver>log_action [mHTTP GET /admin/base/counterstatus/add/ 200 [0.08, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:19,756 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.06, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:29,129 runserver>log_action [32mHTTP POST /admin/base/counterstatus/add/ 302 [0.08, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:29,212 runserver>log_action [mHTTP GET /admin/base/counterstatus/add/ 200 [0.08, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:29,271 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:35,289 runserver>log_action [32mHTTP POST /admin/base/counterstatus/add/ 302 [0.08, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:35,364 runserver>log_action [mHTTP GET /admin/base/counterstatus/add/ 200 [0.07, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:35,423 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:40,468 runserver>log_action [32mHTTP POST /admin/base/counterstatus/add/ 302 [0.10, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:40,576 runserver>log_action [mHTTP GET /admin/base/counterstatus/ 200 [0.11, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:40,634 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:50655][0m
+INFO 2023-11-04 15:23:54,553 runserver>log_action [mHTTP GET / 200 [0.08, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:00,531 runserver>log_action [mHTTP GET /supervisors/ 200 [0.15, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:05,199 runserver>log_action [mHTTP GET /supervisor/2/ 200 [1.33, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:07,771 runserver>log_action [mHTTP GET /supervisor/forcelogout/2/7/ 200 [0.08, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:09,644 base>ws>wscounterstatus channel_group_name:cs_7 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 15:24:09,648 base>ws>wscounterstatus ...Done
+INFO 2023-11-04 15:24:09,649 base>ws>wscounterstatus channel_group_name:cs_7 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 15:24:09,652 base>ws>wscounterstatus ...Done
+INFO 2023-11-04 15:24:09,661 runserver>log_action [32mHTTP POST /supervisor/forcelogout/2/7/ 302 [0.36, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:09,762 runserver>log_action [mHTTP GET /supervisor/2/ 200 [0.09, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:11,093 runserver>log_action [mHTTP GET /supervisor/forcelogout/2/5/ 200 [0.06, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:12,133 base>ws>wscounterstatus channel_group_name:cs_5 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 15:24:12,137 base>ws>wscounterstatus ...Done
+INFO 2023-11-04 15:24:12,137 base>ws>wscounterstatus channel_group_name:cs_5 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 15:24:12,138 base>ws>wscounterstatus ...Done
+INFO 2023-11-04 15:24:12,151 runserver>log_action [32mHTTP POST /supervisor/forcelogout/2/5/ 302 [0.10, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:12,242 runserver>log_action [mHTTP GET /supervisor/2/ 200 [0.09, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:19,268 runserver>log_action [mHTTP GET / 200 [0.07, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:21,615 runserver>log_action [mHTTP GET /supervisors/ 200 [0.12, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:42,826 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:43,825 runserver>log_action [mHTTP GET /update-tf/7/ 200 [0.04, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:48,046 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:49,353 runserver>log_action [mHTTP GET /routes/ 200 [0.11, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:50,318 runserver>log_action [mHTTP GET /update-route/7 200 [0.07, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:57,493 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:24:58,876 runserver>log_action [mHTTP GET /supervisors/ 200 [0.12, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:25:01,124 runserver>log_action [mHTTP GET /supervisor/4/ 200 [0.07, 127.0.0.1:50797][0m
+INFO 2023-11-04 15:27:24,862 runserver>log_action [mHTTP GET /user/ 200 [0.32, 127.0.0.1:50895][0m
+INFO 2023-11-04 15:27:34,001 runserver>log_action [mHTTP GET /user/ 200 [0.24, 127.0.0.1:50895][0m
+INFO 2023-11-04 15:27:36,940 runserver>log_action [mHTTP GET /branch/ 200 [0.16, 127.0.0.1:50895][0m
+INFO 2023-11-04 15:27:40,544 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:50895][0m
+INFO 2023-11-04 15:27:42,017 runserver>log_action [mHTTP GET /routes/ 200 [0.09, 127.0.0.1:50895][0m
+INFO 2023-11-04 15:27:43,441 runserver>log_action [mHTTP GET /supervisors/ 200 [0.13, 127.0.0.1:50895][0m
+INFO 2023-11-04 15:27:44,498 runserver>log_action [mHTTP GET /routes/ 200 [0.09, 127.0.0.1:50895][0m
+INFO 2023-11-04 15:27:46,354 runserver>log_action [mHTTP GET /reports/ 200 [0.09, 127.0.0.1:50895][0m
+INFO 2023-11-04 15:27:47,121 runserver>log_action [mHTTP GET /supervisors/ 200 [0.11, 127.0.0.1:50895][0m
+INFO 2023-11-04 15:27:47,978 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:50895][0m
+INFO 2023-11-04 15:27:54,122 runserver>log_action [mHTTP GET /user/ 200 [0.37, 127.0.0.1:50895][0m
+INFO 2023-11-04 15:28:15,907 runserver>log_action [mHTTP GET /update-user/5/ 200 [0.12, 127.0.0.1:50895][0m
+INFO 2023-11-04 15:28:21,084 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:50895][0m
+INFO 2023-11-04 15:36:43,047 runserver>log_action [mHTTP GET /user/ 200 [0.32, 127.0.0.1:51070][0m
+INFO 2023-11-04 15:36:44,346 runserver>log_action [mHTTP GET /user/ 200 [0.25, 127.0.0.1:51070][0m
+INFO 2023-11-04 15:37:18,085 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:51070][0m
+INFO 2023-11-04 15:37:18,156 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.06, 127.0.0.1:51070][0m
+INFO 2023-11-04 15:37:18,159 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.06, 127.0.0.1:51071][0m
+INFO 2023-11-04 15:37:18,167 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.07, 127.0.0.1:51086][0m
+INFO 2023-11-04 15:37:18,169 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.07, 127.0.0.1:51087][0m
+INFO 2023-11-04 15:37:18,238 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51087][0m
+INFO 2023-11-04 15:37:42,493 runserver>log_action [mHTTP GET /user/ 200 [0.27, 127.0.0.1:51087][0m
+INFO 2023-11-04 15:37:42,503 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51087][0m
+INFO 2023-11-04 15:37:42,504 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51086][0m
+INFO 2023-11-04 15:37:42,509 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51087][0m
+INFO 2023-11-04 15:37:42,511 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51071][0m
+INFO 2023-11-04 15:37:42,564 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51071][0m
+INFO 2023-11-04 15:37:44,831 runserver>log_action [mHTTP GET /user/ 200 [0.27, 127.0.0.1:51071][0m
+INFO 2023-11-04 15:37:44,841 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51071][0m
+INFO 2023-11-04 15:37:44,844 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51087][0m
+INFO 2023-11-04 15:37:44,849 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51071][0m
+INFO 2023-11-04 15:37:44,851 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51086][0m
+INFO 2023-11-04 15:37:44,894 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51086][0m
+INFO 2023-11-04 15:37:55,187 runserver>log_action [mHTTP GET /user/ 200 [0.30, 127.0.0.1:51086][0m
+INFO 2023-11-04 15:38:11,878 runserver>log_action [mHTTP GET /user/ 200 [0.27, 127.0.0.1:51086][0m
+INFO 2023-11-04 15:38:11,887 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51086][0m
+INFO 2023-11-04 15:38:11,889 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51071][0m
+INFO 2023-11-04 15:38:11,894 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51086][0m
+INFO 2023-11-04 15:38:11,896 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51087][0m
+INFO 2023-11-04 15:38:11,949 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51087][0m
+INFO 2023-11-04 15:38:53,400 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51087][0m
+INFO 2023-11-04 15:40:17,585 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51132][0m
+INFO 2023-11-04 15:40:17,595 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51132][0m
+INFO 2023-11-04 15:40:17,597 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51133][0m
+INFO 2023-11-04 15:40:17,599 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51132][0m
+INFO 2023-11-04 15:40:17,602 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:51137][0m
+INFO 2023-11-04 15:40:17,669 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51137][0m
+INFO 2023-11-04 15:40:41,235 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51137][0m
+INFO 2023-11-04 15:40:41,967 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51137][0m
+INFO 2023-11-04 15:40:42,116 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51137][0m
+INFO 2023-11-04 15:40:42,283 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:51137][0m
+INFO 2023-11-04 15:40:43,882 runserver>log_action [mHTTP GET /branch/ 200 [0.21, 127.0.0.1:51137][0m
+INFO 2023-11-04 15:40:43,891 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51137][0m
+INFO 2023-11-04 15:40:43,894 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51133][0m
+INFO 2023-11-04 15:40:43,898 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51137][0m
+INFO 2023-11-04 15:40:43,900 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51132][0m
+INFO 2023-11-04 15:40:43,942 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51132][0m
+INFO 2023-11-04 15:41:03,211 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51132][0m
+INFO 2023-11-04 15:41:03,221 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51132][0m
+INFO 2023-11-04 15:41:03,224 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51137][0m
+INFO 2023-11-04 15:41:03,228 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51132][0m
+INFO 2023-11-04 15:41:03,230 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51133][0m
+INFO 2023-11-04 15:41:03,270 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51133][0m
+INFO 2023-11-04 15:41:51,509 runserver>log_action [mHTTP GET /user/ 200 [0.30, 127.0.0.1:51133][0m
+INFO 2023-11-04 15:43:00,802 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:51186][0m
+INFO 2023-11-04 15:43:01,909 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51186][0m
+INFO 2023-11-04 15:43:02,117 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51186][0m
+INFO 2023-11-04 15:43:04,248 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51186][0m
+INFO 2023-11-04 15:43:04,258 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51186][0m
+INFO 2023-11-04 15:43:04,260 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51187][0m
+INFO 2023-11-04 15:43:04,265 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51186][0m
+INFO 2023-11-04 15:43:04,266 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51200][0m
+INFO 2023-11-04 15:43:04,322 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51200][0m
+INFO 2023-11-04 15:44:39,121 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:39,132 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:39,134 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:44:39,138 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:39,139 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51223][0m
+INFO 2023-11-04 15:44:39,204 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51223][0m
+INFO 2023-11-04 15:44:39,729 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51223][0m
+INFO 2023-11-04 15:44:39,741 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51223][0m
+INFO 2023-11-04 15:44:39,743 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:39,747 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51223][0m
+INFO 2023-11-04 15:44:39,748 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:44:39,790 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:44:39,937 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:44:39,947 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:44:39,949 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51223][0m
+INFO 2023-11-04 15:44:39,952 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:44:39,954 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:39,998 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:40,112 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:40,123 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:40,126 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51223][0m
+INFO 2023-11-04 15:44:40,127 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:40,129 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:44:55,462 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:44:55,473 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:44:55,474 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51223][0m
+INFO 2023-11-04 15:44:55,478 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:44:55,481 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:55,520 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:57,194 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:57,203 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:57,205 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:44:57,209 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:57,211 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51223][0m
+INFO 2023-11-04 15:44:57,252 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:57,360 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51223][0m
+INFO 2023-11-04 15:44:57,371 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51223][0m
+INFO 2023-11-04 15:44:57,373 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:44:57,378 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51223][0m
+INFO 2023-11-04 15:44:57,380 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:45:11,331 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:45:11,341 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:45:11,343 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51223][0m
+INFO 2023-11-04 15:45:11,347 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51219][0m
+INFO 2023-11-04 15:45:11,349 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:45:11,389 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:45:29,176 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:45:29,186 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:45:32,906 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:45:33,863 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:45:46,449 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:45:46,459 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51218][0m
+INFO 2023-11-04 15:46:48,018 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51284][0m
+INFO 2023-11-04 15:46:48,027 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51284][0m
+INFO 2023-11-04 15:46:48,029 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51285][0m
+INFO 2023-11-04 15:46:48,034 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51284][0m
+INFO 2023-11-04 15:46:48,035 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:46:48,093 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:47:29,889 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:47:29,899 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:47:30,913 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:47:53,955 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:47:53,966 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:47:53,969 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:47:53,972 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51310][0m
+INFO 2023-11-04 15:47:53,974 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51314][0m
+INFO 2023-11-04 15:47:54,040 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51314][0m
+INFO 2023-11-04 15:48:05,564 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:51314][0m
+INFO 2023-11-04 15:48:09,081 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:51314][0m
+INFO 2023-11-04 15:48:21,576 runserver>log_action [mHTTP GET /user/ 200 [0.31, 127.0.0.1:51314][0m
+INFO 2023-11-04 15:48:21,586 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51314][0m
+INFO 2023-11-04 15:48:21,588 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51310][0m
+INFO 2023-11-04 15:48:21,593 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51314][0m
+INFO 2023-11-04 15:48:21,594 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:48:21,640 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:48:32,972 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:48:33,696 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:49:11,181 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:49:11,190 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:49:11,192 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51314][0m
+INFO 2023-11-04 15:49:11,196 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51289][0m
+INFO 2023-11-04 15:49:11,198 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51310][0m
+INFO 2023-11-04 15:49:11,256 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51310][0m
+INFO 2023-11-04 15:50:13,307 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:50:13,315 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:50:14,646 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:50:15,404 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:50:16,511 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:50:16,521 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:50:16,524 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:50:16,526 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:50:16,528 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:50:16,587 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:50:37,355 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:50:37,365 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:50:37,368 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:50:37,372 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:50:37,374 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:50:37,419 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:50:53,646 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:50:53,657 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:50:53,659 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:50:53,663 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:50:53,665 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:50:53,705 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:51:53,308 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:51:53,317 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:51:53,319 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:51:53,322 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:51:53,325 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:51:53,380 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:52:07,326 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:52:07,336 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:52:07,338 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:52:07,343 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:52:07,345 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:52:07,383 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:52:21,369 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:52:21,379 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:52:21,382 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:52:21,385 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:52:21,387 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:52:21,431 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:52:29,886 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:52:29,895 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:52:29,897 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:52:29,901 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:52:29,904 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:52:29,943 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:52:38,135 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:52:38,145 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:52:38,147 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:52:38,150 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:52:38,152 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:52:38,197 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:52:48,208 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:52:48,217 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:52:48,220 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:52:48,221 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:52:48,224 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:52:48,269 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:53:15,570 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:53:15,580 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:53:15,582 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:53:15,584 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:53:15,586 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:53:15,631 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:53:38,038 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:53:38,047 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:53:38,049 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:53:38,054 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:53:38,055 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:53:38,106 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:53:54,428 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:53:54,438 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:53:54,442 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:53:54,444 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:53:54,446 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:53:54,499 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:54:00,330 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:54:00,341 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:54:00,343 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:54:00,345 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:54:00,347 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:54:00,389 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:54:29,608 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:54:29,617 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51349][0m
+INFO 2023-11-04 15:54:29,620 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:54:29,621 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:54:29,623 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51450][0m
+INFO 2023-11-04 15:54:29,681 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51450][0m
+INFO 2023-11-04 15:55:10,813 runserver>log_action [mHTTP GET /branch/ 200 [0.19, 127.0.0.1:51450][0m
+INFO 2023-11-04 15:55:10,823 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51450][0m
+INFO 2023-11-04 15:55:10,825 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:55:10,829 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51450][0m
+INFO 2023-11-04 15:55:10,831 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:55:10,891 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:55:24,505 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:55:24,518 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:55:24,521 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51450][0m
+INFO 2023-11-04 15:55:24,526 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:55:24,528 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:55:24,575 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:55:26,446 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:55:26,456 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:55:26,458 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:55:26,462 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:55:26,464 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51450][0m
+INFO 2023-11-04 15:55:26,505 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:55:26,621 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51450][0m
+INFO 2023-11-04 15:55:26,632 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51450][0m
+INFO 2023-11-04 15:55:26,634 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:55:26,637 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51450][0m
+INFO 2023-11-04 15:55:26,639 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:55:26,820 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:55:26,830 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:55:26,833 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:55:26,837 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51450][0m
+INFO 2023-11-04 15:55:26,838 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:55:26,882 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:55:27,012 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:55:27,022 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:55:27,024 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51450][0m
+INFO 2023-11-04 15:55:27,029 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51350][0m
+INFO 2023-11-04 15:55:27,030 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:55:27,074 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:56:07,253 runserver>log_action [mHTTP GET /branch/ 200 [0.15, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:56:08,393 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:51363][0m
+INFO 2023-11-04 15:57:39,712 runserver>log_action [mHTTP GET /user/ 200 [0.31, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:57:39,722 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:57:41,260 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:57:42,834 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:57:43,500 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:57:46,963 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:57:46,973 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:57:46,975 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:57:46,978 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:57:46,981 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 15:57:47,039 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 15:57:47,538 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51531][0m
+INFO 2023-11-04 15:57:47,547 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 15:57:47,549 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:57:47,551 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 15:57:47,553 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:57:47,596 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:58:11,936 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:58:13,301 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:58:13,311 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:58:13,313 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:58:13,317 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:58:13,319 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 15:58:13,360 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 15:58:46,624 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:51531][0m
+INFO 2023-11-04 15:58:46,633 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 15:58:46,636 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:58:46,642 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 15:58:46,643 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:58:46,700 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:58:53,150 runserver>log_action [mHTTP GET /user/ 200 [0.30, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:58:53,164 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:58:54,291 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:58:54,302 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:59:16,583 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:59:16,593 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:59:16,596 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 15:59:16,599 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:59:16,601 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:59:16,661 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:59:26,290 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:59:26,299 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:59:46,136 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:59:46,145 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:59:48,117 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:59:48,126 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:59:48,129 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 15:59:48,130 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 15:59:48,132 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 15:59:48,189 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 16:00:23,196 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51531][0m
+INFO 2023-11-04 16:00:23,205 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 16:00:24,145 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:51531][0m
+INFO 2023-11-04 16:00:25,119 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51531][0m
+INFO 2023-11-04 16:00:25,128 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 16:00:25,131 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 16:00:25,133 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 16:00:25,135 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 16:00:25,193 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 16:00:39,819 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51513][0m
+INFO 2023-11-04 16:00:39,830 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 16:00:39,832 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 16:00:39,835 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 16:00:39,837 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 16:00:39,880 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 16:01:27,461 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51514][0m
+INFO 2023-11-04 16:01:27,471 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 16:01:27,473 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51513][0m
+INFO 2023-11-04 16:01:27,477 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51514][0m
+INFO 2023-11-04 16:01:27,478 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 16:01:27,541 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-11-04 16:02:55,042 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51618][0m
+INFO 2023-11-04 16:02:55,052 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51618][0m
+INFO 2023-11-04 16:03:09,709 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51618][0m
+INFO 2023-11-04 16:03:09,720 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51618][0m
+INFO 2023-11-04 16:03:09,723 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51619][0m
+INFO 2023-11-04 16:03:09,725 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51627][0m
+INFO 2023-11-04 16:03:09,728 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:03:09,797 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:03:36,015 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:03:36,026 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:03:36,698 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:03:39,178 runserver>log_action [mHTTP GET /user/ 200 [0.27, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:03:40,743 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:03:55,261 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:03:55,271 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:04:00,788 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:04:01,787 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:04:02,786 runserver>log_action [mHTTP GET /user/ 200 [0.26, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:04:03,693 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:04:04,659 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:04:07,015 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:04:07,747 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:04:09,313 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:04:09,970 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:04:11,760 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:51628][0m
+INFO 2023-11-04 16:05:25,148 runserver>log_action [mHTTP GET /user/ 200 [0.26, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:05:25,160 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:05:27,487 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:05:41,064 runserver>log_action [mHTTP GET /user/ 200 [0.24, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:05:42,130 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:05:44,303 runserver>log_action [mHTTP GET /user/ 200 [0.27, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:05:46,234 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:05:47,708 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:05:51,636 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:05:51,651 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:06:03,715 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:06:03,726 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:06:03,727 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:06:03,731 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:06:03,734 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:03,792 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:06,412 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:07,728 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:09,301 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:10,017 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:10,975 runserver>log_action [mHTTP GET /user/ 200 [0.27, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:12,298 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:14,412 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:15,936 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:19,099 runserver>log_action [mHTTP GET /user/ 200 [0.27, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:27,615 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:28,988 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:28,999 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:29,001 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:06:29,005 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:29,007 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:06:29,049 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:06:30,686 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:06:32,085 runserver>log_action [mHTTP GET /user/ 200 [0.35, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:06:33,334 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:06:35,526 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:06:37,421 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:06:41,633 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:06:43,365 runserver>log_action [mHTTP GET /user/ 200 [0.30, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:06:47,102 runserver>log_action [mHTTP GET /branch/ 200 [0.15, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:06:53,554 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:06:53,563 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:06:53,565 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:06:53,569 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:06:53,571 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:06:53,616 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:06:56,284 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:06:58,511 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:01,471 runserver>log_action [mHTTP GET /user/ 200 [0.27, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:02,944 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:04,159 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:10,760 runserver>log_action [mHTTP GET /user/ 200 [0.26, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:11,426 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:14,024 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:15,264 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:16,496 runserver>log_action [mHTTP GET /user/ 200 [0.25, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:17,137 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:18,152 runserver>log_action [mHTTP GET /user/ 200 [0.27, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:18,761 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:31,647 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:31,657 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:31,659 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:07:31,663 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:31,665 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:07:31,722 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:07:34,077 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:07:34,088 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:07:34,090 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:34,094 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:07:34,096 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:07:34,137 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51694][0m
+INFO 2023-11-04 16:07:34,835 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:07:34,845 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:07:34,847 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:34,851 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:07:34,853 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:34,892 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:37,287 runserver>log_action [mHTTP GET /user/ 200 [0.25, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:38,747 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:40,179 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:40,937 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:49,086 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:49,096 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:49,098 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:07:49,102 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:49,104 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:49,146 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:49,818 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:49,828 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:49,830 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:49,835 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:49,836 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:07:49,876 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:07:49,985 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:07:49,995 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:07:49,998 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:51693][0m
+INFO 2023-11-04 16:07:49,999 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51730][0m
+INFO 2023-11-04 16:07:50,001 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:50,047 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:52,858 runserver>log_action [mHTTP GET /user/ 200 [0.26, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:53,607 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:54,897 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:55,422 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:57,111 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:57,710 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:07:59,716 runserver>log_action [mHTTP GET /user/ 200 [0.27, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:08:01,232 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:08:53,268 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.09, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:08:53,281 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:08:55,873 runserver>log_action [mHTTP GET /user/ 200 [0.30, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:08:58,819 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:00,252 runserver>log_action [mHTTP GET /user/ 200 [0.24, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:00,752 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:02,666 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:03,436 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:04,689 runserver>log_action [mHTTP GET /user/ 200 [0.30, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:05,247 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:07,994 runserver>log_action [mHTTP GET /user/ 200 [0.24, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:09,734 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:10,541 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:11,773 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:12,323 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:12,988 runserver>log_action [mHTTP GET /routes/ 200 [0.11, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:13,729 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:15,228 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:15,976 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:16,584 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:17,975 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:19,490 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:20,689 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:21,571 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:35,847 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:56,592 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:57,899 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:09:58,823 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:10:00,021 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:10:06,415 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:10:06,428 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:10:08,055 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:10:18,985 runserver>log_action [mHTTP GET /user/ 200 [0.31, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:10:20,141 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:10:21,607 runserver>log_action [mHTTP GET /user/ 200 [0.24, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:10:22,090 runserver>log_action [mHTTP GET /branch/ 200 [0.17, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:10:24,404 runserver>log_action [mHTTP GET /user/ 200 [0.25, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:10:24,970 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:10:30,638 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:10:31,388 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:51886][0m
+INFO 2023-11-04 16:12:06,228 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:12:06,238 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:12:06,241 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:06,245 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:12:06,247 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:12:06,305 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:12:19,314 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:12:19,324 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:12:19,326 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:12:19,330 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:12:19,332 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:19,374 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:19,806 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:19,816 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:19,818 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:12:19,820 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:12:19,822 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:19,863 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:12:19,963 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:19,974 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:19,976 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:12:19,981 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:19,983 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:12:27,422 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:12:27,432 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:12:27,434 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:27,439 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:12:27,441 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:12:27,491 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:12:27,764 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:12:27,773 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:12:27,776 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:12:27,779 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:12:27,781 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:27,831 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:27,971 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:27,982 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:27,984 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:12:27,988 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:27,990 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:12:28,034 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:28,205 runserver>log_action [mHTTP GET /branch/ 200 [0.18, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:12:28,215 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:12:28,217 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:12:28,220 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:12:28,222 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:03,774 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:03,785 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:03,787 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:03,788 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:03,791 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:03,847 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:10,385 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:10,395 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:10,397 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:10,401 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:10,403 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:10,447 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:11,126 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:11,136 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:11,138 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:11,141 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:11,144 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:11,188 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:11,317 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:11,327 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:11,329 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:11,334 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:11,336 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:11,509 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:11,520 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:11,522 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:11,526 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:11,528 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:11,570 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:12,083 runserver>log_action [mHTTP GET /branch/ 200 [0.16, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:12,093 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:12,095 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:12,099 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:12,101 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:12,142 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:31,454 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:31,464 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:31,466 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:31,471 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:31,473 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:31,517 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:31,986 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:31,997 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:31,999 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:32,003 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:32,004 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:32,044 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:32,186 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:32,197 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:32,199 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:32,204 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:32,205 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:32,246 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:32,345 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:32,355 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:32,357 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:32,359 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:32,362 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:32,536 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:32,548 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:32,549 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52121][0m
+INFO 2023-11-04 16:13:32,554 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52127][0m
+INFO 2023-11-04 16:13:32,556 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:13:32,603 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52122][0m
+INFO 2023-11-04 16:18:06,984 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52322][0m
+INFO 2023-11-04 16:18:06,995 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52322][0m
+INFO 2023-11-04 16:18:06,997 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52323][0m
+INFO 2023-11-04 16:18:07,001 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52322][0m
+INFO 2023-11-04 16:18:07,003 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52327][0m
+INFO 2023-11-04 16:18:07,059 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52327][0m
+INFO 2023-11-04 16:18:07,675 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:52327][0m
+INFO 2023-11-04 16:18:07,684 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52327][0m
+INFO 2023-11-04 16:18:07,688 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52322][0m
+INFO 2023-11-04 16:18:07,689 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52327][0m
+INFO 2023-11-04 16:18:07,691 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52323][0m
+INFO 2023-11-04 16:18:07,732 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52323][0m
+INFO 2023-11-04 16:18:07,850 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:52323][0m
+INFO 2023-11-04 16:18:07,860 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52323][0m
+INFO 2023-11-04 16:18:07,862 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52322][0m
+INFO 2023-11-04 16:18:07,864 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52323][0m
+INFO 2023-11-04 16:18:07,866 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52327][0m
+INFO 2023-11-04 16:18:07,907 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52327][0m
+INFO 2023-11-04 16:21:11,404 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52370][0m
+INFO 2023-11-04 16:21:11,414 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52370][0m
+INFO 2023-11-04 16:21:13,061 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52370][0m
+INFO 2023-11-04 16:21:13,070 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52370][0m
+INFO 2023-11-04 16:21:13,072 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:21:13,075 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52370][0m
+INFO 2023-11-04 16:21:13,077 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52379][0m
+INFO 2023-11-04 16:21:13,131 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52379][0m
+INFO 2023-11-04 16:21:47,399 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52379][0m
+INFO 2023-11-04 16:21:47,408 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52379][0m
+INFO 2023-11-04 16:21:48,589 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:52379][0m
+INFO 2023-11-04 16:21:48,599 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52379][0m
+INFO 2023-11-04 16:21:48,602 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52370][0m
+INFO 2023-11-04 16:21:48,605 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52379][0m
+INFO 2023-11-04 16:21:48,606 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:21:48,685 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:22:24,085 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:22:24,095 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:22:51,672 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:22:51,682 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:22:52,529 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:22:52,662 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:23:13,224 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:23:13,234 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:23:46,563 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:23:46,573 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:23:47,770 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:23:48,519 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:23:50,343 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:23:50,354 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52371][0m
+INFO 2023-11-04 16:27:06,345 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:27:06,363 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:27:35,643 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:27:35,653 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:27:37,033 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:27:37,043 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:27:37,045 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:27:37,047 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:27:37,050 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:27:37,110 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:27:51,151 runserver>log_action [mHTTP GET /user/ 200 [0.27, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:27:51,163 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:27:51,851 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:27:53,541 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:27:53,551 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:27:53,553 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:27:53,556 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:27:53,558 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:27:53,605 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:28:00,417 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:28:00,427 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:28:00,429 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:28:00,433 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:28:00,435 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:28:00,479 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:28:02,089 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:28:02,099 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:28:02,101 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:28:02,105 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:28:02,107 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:28:02,149 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:28:02,247 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:28:02,258 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:28:02,264 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:28:02,266 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:28:02,267 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:28:59,485 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:28:59,496 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:29:01,006 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:29:01,015 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:29:01,022 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:29:01,026 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:29:01,028 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:29:01,080 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:29:01,576 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:29:01,586 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:29:01,588 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:29:01,589 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:29:01,591 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:29:01,633 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:29:01,760 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:29:01,769 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:29:01,771 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52520][0m
+INFO 2023-11-04 16:29:01,773 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52521][0m
+INFO 2023-11-04 16:29:01,775 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52548][0m
+INFO 2023-11-04 16:30:30,997 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:30:31,006 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:30:31,018 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:30:32,221 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:30:32,226 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:30:32,233 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:30:32,237 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:30:32,239 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:30:32,290 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:30:40,226 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:30:40,226 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:30:40,241 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:30:40,245 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:30:40,247 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:30:40,288 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:30:40,778 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:30:40,788 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:30:40,790 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:30:40,793 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:30:40,795 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:30:40,835 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:30:40,994 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:30:41,004 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:30:41,006 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:30:41,010 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:30:41,012 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:30:41,054 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:30:59,727 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:30:59,743 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:31:00,848 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:31:00,858 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:31:00,861 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:00,865 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:31:00,867 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:31:00,904 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:31:03,646 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:31:03,656 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:31:03,658 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:31:03,661 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:31:03,662 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:03,703 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:15,727 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:15,751 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:17,023 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:17,033 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:17,036 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:31:17,037 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:31:17,039 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:17,077 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:17,642 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:17,653 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:17,655 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:31:17,656 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:31:17,658 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:17,699 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:17,847 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:17,857 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:17,859 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:31:17,863 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:17,865 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:31:17,905 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:31:18,205 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:31:18,214 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:31:18,217 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:18,221 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:31:18,223 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:31:18,260 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:31:18,644 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:31:18,666 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:31:18,667 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:31:18,672 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:31:18,674 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:18,712 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:36,695 runserver>log_action [mHTTP GET /update-branch/3/ 200 [0.07, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:36,702 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:38,876 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:38,889 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:39,983 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:39,993 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:39,995 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:52868][0m
+INFO 2023-11-04 16:31:39,997 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:52867][0m
+INFO 2023-11-04 16:31:39,998 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:31:40,044 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:52875][0m
+INFO 2023-11-04 16:35:05,638 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:64312][0m
+INFO 2023-11-04 16:35:05,648 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64312][0m
+INFO 2023-11-04 16:35:06,987 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64312][0m
+INFO 2023-11-04 16:39:07,088 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64375][0m
+INFO 2023-11-04 16:39:07,098 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64375][0m
+INFO 2023-11-04 16:39:09,061 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64375][0m
+INFO 2023-11-04 16:39:57,135 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64375][0m
+INFO 2023-11-04 16:39:57,145 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64375][0m
+INFO 2023-11-04 16:40:11,375 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64375][0m
+INFO 2023-11-04 16:40:37,816 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64375][0m
+INFO 2023-11-04 16:41:43,446 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64423][0m
+INFO 2023-11-04 16:41:43,457 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:64423][0m
+INFO 2023-11-04 16:41:43,461 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:64424][0m
+INFO 2023-11-04 16:41:43,468 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:64423][0m
+INFO 2023-11-04 16:41:43,471 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:41:43,528 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:42:08,936 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:42:10,134 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:42:11,191 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:42:11,201 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:42:11,204 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:42:11,207 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:64423][0m
+INFO 2023-11-04 16:42:11,209 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:64424][0m
+INFO 2023-11-04 16:42:11,254 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:64424][0m
+INFO 2023-11-04 16:42:11,466 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64424][0m
+INFO 2023-11-04 16:42:11,476 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:64424][0m
+INFO 2023-11-04 16:42:11,478 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:64423][0m
+INFO 2023-11-04 16:42:11,479 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:64424][0m
+INFO 2023-11-04 16:42:11,482 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:42:11,524 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:42:19,474 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:43:06,865 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:43:07,631 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:43:07,823 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:43:20,451 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:43:28,784 runserver>log_action [mHTTP GET /tfs/ 200 [0.12, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:43:29,417 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:43:29,674 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:43:29,915 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:43:36,376 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:43:44,101 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:43:44,114 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:43:45,275 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:44:18,198 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:44:19,097 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:44:19,263 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:44:37,027 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:44:54,550 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:44:55,299 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:44:56,149 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:44:56,656 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:45:28,739 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:45:28,747 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:45:29,488 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:45:29,646 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:45:51,015 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:46:00,596 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:46:05,199 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:46:05,823 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:46:06,140 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:46:34,119 runserver>log_action [mHTTP GET /tfs/ 200 [0.11, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:46:47,013 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:46:47,846 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:46:48,037 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:46:55,338 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:46:55,612 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:47:00,799 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:47:01,298 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:47:01,489 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:47:01,681 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:47:02,089 runserver>log_action [mHTTP GET /tfs/ 200 [0.11, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:47:02,256 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:47:12,311 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:47:12,320 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:47:36,252 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:47:48,897 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:47:49,896 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:47:50,085 runserver>log_action [mHTTP GET /tfs/ 200 [0.11, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:48:10,034 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:48:14,803 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:48:14,986 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:48:15,170 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:48:15,361 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:48:15,527 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:48:15,727 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:48:33,924 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:48:34,324 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:48:34,466 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:48:34,640 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:48:58,040 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:48:58,739 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:48:58,889 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:15,505 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:15,516 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:16,013 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:16,023 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:16,179 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:16,329 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:16,339 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:16,520 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:16,696 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:16,705 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:16,862 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:17,053 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:17,270 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:17,279 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:19,143 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:19,153 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:19,326 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:29,940 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:29,950 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:30,531 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:30,540 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:30,680 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:40,853 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:40,862 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:41,086 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:41,294 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:43,933 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:43,943 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:43,945 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:49:43,950 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:43,952 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:64821][0m
+INFO 2023-11-04 16:49:44,014 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:64821][0m
+INFO 2023-11-04 16:49:51,591 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64821][0m
+INFO 2023-11-04 16:49:51,601 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64821][0m
+INFO 2023-11-04 16:49:52,707 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64821][0m
+INFO 2023-11-04 16:49:52,717 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:64821][0m
+INFO 2023-11-04 16:49:52,719 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:64428][0m
+INFO 2023-11-04 16:49:52,723 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:64821][0m
+INFO 2023-11-04 16:49:52,724 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:49:52,768 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:49:55,004 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:49:55,754 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:49:55,767 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:49:57,168 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:49:58,459 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:49:59,708 runserver>log_action [mHTTP GET /user/ 200 [0.38, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:49:59,722 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:50:01,623 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:50:02,389 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:50:16,049 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:50:16,058 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:50:17,006 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:50:17,173 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:50:22,867 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:50:22,876 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:50:23,549 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:50:23,749 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:50:56,297 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:50:56,307 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:07,702 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:07,711 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:08,335 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:08,526 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:08,726 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:09,364 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:16,193 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:16,900 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:17,075 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:22,735 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:22,745 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:23,343 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:23,501 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:23,701 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:23,885 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:24,059 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:28,904 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:29,495 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:29,637 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:34,423 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:35,039 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:35,206 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:35,463 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:35,639 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:35,789 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:40,442 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:40,642 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:40,833 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:41,033 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:41,042 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:48,567 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:49,258 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:51:49,433 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:23,845 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:23,855 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:24,462 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:24,653 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:24,869 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:26,143 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:33,818 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:35,084 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:35,284 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:35,458 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:35,616 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:40,295 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:41,219 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:41,402 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:55,595 runserver>log_action [mHTTP GET /routes/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:55,608 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:57,177 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:52:58,159 runserver>log_action [mHTTP GET /routes/ 200 [0.11, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:00,032 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:17,763 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:17,773 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:27,078 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:34,378 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:40,930 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:41,812 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:41,987 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:47,256 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:47,765 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:47,956 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:48,156 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:53,484 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:53,493 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:54,133 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:54,324 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:53:54,499 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:00,634 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:01,383 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:01,574 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:01,741 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:20,405 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:21,088 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:21,287 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:21,470 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:31,884 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:31,894 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:32,642 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:32,883 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:47,942 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:48,808 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:48,958 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:53,078 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:53,827 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:54,269 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:54:59,455 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:55:05,207 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:55:05,216 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:55:10,344 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:55:18,668 runserver>log_action [mHTTP GET /tfs/ 200 [0.11, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:55:24,604 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:55:25,985 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:55:26,151 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:55:26,318 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:56:11,628 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:56:11,638 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:56:12,285 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:56:12,477 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:56:20,293 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:56:21,442 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:56:22,516 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:56:24,081 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:56:27,544 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:56:35,019 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:56:36,660 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:56:36,859 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:56:47,073 runserver>log_action [mHTTP GET /tfs/ 200 [0.16, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:00,101 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:07,143 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:12,454 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:13,120 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:13,303 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:13,487 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:20,479 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:20,489 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:26,556 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:26,997 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:27,180 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:27,347 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:27,530 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:27,741 runserver>log_action [mHTTP GET /tfs/ 200 [0.12, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:27,888 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:28,113 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:54,776 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:55,625 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:57:55,766 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:58:19,091 runserver>log_action [mHTTP GET /update-tf/7/ 200 [0.06, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:58:25,010 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:58:25,024 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:58:39,887 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:58:40,521 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:58:40,744 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:58:40,960 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:58:41,177 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:58:53,197 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:58:53,207 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:58:53,209 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:65338][0m
+INFO 2023-11-04 16:58:53,212 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:64759][0m
+INFO 2023-11-04 16:58:53,214 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:65373][0m
+INFO 2023-11-04 16:58:53,277 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:65373][0m
+INFO 2023-11-04 16:59:15,398 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:65373][0m
+INFO 2023-11-04 16:59:16,080 runserver>log_action [mHTTP GET /tfs/ 200 [0.12, 127.0.0.1:65373][0m
+INFO 2023-11-04 16:59:16,206 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:65373][0m
+INFO 2023-11-04 16:59:16,381 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:65373][0m
+INFO 2023-11-04 16:59:52,975 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:65373][0m
+INFO 2023-11-04 16:59:52,985 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:65373][0m
+INFO 2023-11-04 16:59:54,140 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:65373][0m
+INFO 2023-11-04 16:59:54,290 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:65373][0m
+INFO 2023-11-04 17:00:27,962 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:65373][0m
+INFO 2023-11-04 17:00:29,178 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:65373][0m
+INFO 2023-11-04 17:00:29,311 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:65373][0m
+INFO 2023-11-04 17:00:37,161 runserver>log_action [mHTTP GET /update-tf/7/ 200 [0.07, 127.0.0.1:65373][0m
+INFO 2023-11-04 17:01:01,360 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:65373][0m
+INFO 2023-11-04 17:01:01,374 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:65373][0m
+INFO 2023-11-04 17:01:05,081 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:65373][0m
+INFO 2023-11-04 17:01:05,092 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:65373][0m
+INFO 2023-11-04 17:01:05,094 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:65429][0m
+INFO 2023-11-04 17:01:05,096 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:65373][0m
+INFO 2023-11-04 17:01:05,098 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:65436][0m
+INFO 2023-11-04 17:01:05,156 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:65436][0m
+INFO 2023-11-04 17:01:07,887 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:65436][0m
+INFO 2023-11-04 17:01:07,897 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:65436][0m
+INFO 2023-11-04 17:01:07,901 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:65429][0m
+INFO 2023-11-04 17:01:07,903 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:65373][0m
+INFO 2023-11-04 17:01:07,905 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:65436][0m
+INFO 2023-11-04 17:01:07,955 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:65436][0m
+INFO 2023-11-04 17:01:08,119 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:65436][0m
+INFO 2023-11-04 17:01:08,130 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:65436][0m
+INFO 2023-11-04 17:01:08,132 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:65429][0m
+INFO 2023-11-04 17:01:08,136 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:65436][0m
+INFO 2023-11-04 17:01:08,138 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:65373][0m
+INFO 2023-11-04 17:01:08,180 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:65373][0m
+INFO 2023-11-04 17:01:19,058 runserver>log_action [mHTTP GET /routes/ 200 [0.09, 127.0.0.1:65373][0m
+INFO 2023-11-04 17:04:36,339 runserver>log_action [mHTTP GET /routes/ 200 [0.09, 127.0.0.1:65481][0m
+INFO 2023-11-04 17:04:36,348 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:65481][0m
+INFO 2023-11-04 17:04:37,820 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:65481][0m
+INFO 2023-11-04 17:04:38,003 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:65481][0m
+INFO 2023-11-04 17:04:52,396 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:65481][0m
+INFO 2023-11-04 17:04:53,137 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:65481][0m
+INFO 2023-11-04 17:04:54,827 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:65481][0m
+INFO 2023-11-04 17:04:55,443 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:65481][0m
+INFO 2023-11-04 17:10:36,853 runserver>log_action [mHTTP GET /routes/ 200 [0.08, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:10:36,862 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:00,328 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:01,018 runserver>log_action [mHTTP GET /routes/ 200 [0.09, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:01,185 runserver>log_action [mHTTP GET /routes/ 200 [0.08, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:11,141 runserver>log_action [mHTTP GET /routes/ 200 [0.08, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:11,724 runserver>log_action [mHTTP GET /routes/ 200 [0.08, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:11,924 runserver>log_action [mHTTP GET /routes/ 200 [0.09, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:28,714 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:29,255 runserver>log_action [mHTTP GET /routes/ 200 [0.09, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:29,430 runserver>log_action [mHTTP GET /routes/ 200 [0.09, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:29,596 runserver>log_action [mHTTP GET /routes/ 200 [0.08, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:29,788 runserver>log_action [mHTTP GET /routes/ 200 [0.09, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:30,886 runserver>log_action [mHTTP GET /routes/ 200 [0.09, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:30,896 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:30,899 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:11:30,903 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:30,905 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:49293][0m
+INFO 2023-11-04 17:11:30,965 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:49293][0m
+INFO 2023-11-04 17:11:56,343 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:49293][0m
+INFO 2023-11-04 17:11:56,526 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:49293][0m
+INFO 2023-11-04 17:11:56,684 runserver>log_action [mHTTP GET /routes/ 200 [0.08, 127.0.0.1:49293][0m
+INFO 2023-11-04 17:11:56,859 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:49293][0m
+INFO 2023-11-04 17:11:57,892 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:49293][0m
+INFO 2023-11-04 17:11:57,902 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:49293][0m
+INFO 2023-11-04 17:11:57,904 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:49236][0m
+INFO 2023-11-04 17:11:57,908 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:49293][0m
+INFO 2023-11-04 17:11:57,910 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:11:57,979 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:12:50,011 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:13:04,012 runserver>log_action [mHTTP GET /routes/ 200 [0.11, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:13:26,605 runserver>log_action [mHTTP GET /supervisors/ 200 [0.12, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:13:30,850 runserver>log_action [mHTTP GET /supervisors/ 200 [0.10, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:14:12,997 runserver>log_action [mHTTP GET /supervisors/ 200 [0.13, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:14:13,007 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:14:32,385 runserver>log_action [mHTTP GET /reports/ 200 [0.07, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:14:36,089 runserver>log_action [mHTTP GET /supervisors/ 200 [0.13, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:14:39,801 runserver>log_action [mHTTP GET /routes/ 200 [0.08, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:14:41,483 runserver>log_action [mHTTP GET /tfs/ 200 [0.07, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:14:44,255 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:14:45,995 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:14:49,974 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.07, 127.0.0.1:49237][0m
+INFO 2023-11-04 17:20:39,261 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-04 17:20:40,069 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-04 17:20:40,074 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-04 17:20:40,216 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-04 17:20:40,216 base>views>main -SCH- Now:11/04/2023, 09:20:40
+INFO 2023-11-04 17:20:40,283 base>views>sch_shutdown  -SCH- Next reset [HHT]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 17:20:40,283 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 17:20:40,283 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 09:20:40 [Yes]
+INFO 2023-11-04 17:20:40,286 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 17:20:40,286 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 17:20:40,287 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 09:20:40 [Yes]
+INFO 2023-11-04 17:20:40,288 base>views>sch_shutdown  -SCH- Next reset [WTT]: 2023-11-04 18:00:00 Local:2023-11-05 02:00:00
+INFO 2023-11-04 17:20:40,289 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-04 17:20:40,289 base>views>sch_shutdown    -SCH- 2023-11-04 18:00:00 > 2023-11-04 09:20:40 [Yes]
+INFO 2023-11-04 17:20:40,291 base>views>sch_shutdown  -SCH- Next reset [SCP]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 17:20:40,291 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 17:20:40,291 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 09:20:40 [Yes]
+INFO 2023-11-04 17:21:11,674 runserver>log_action [mHTTP GET /userlist/ 200 [0.28, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:11,690 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:15,803 runserver>log_action [mHTTP GET /reports/ 200 [0.08, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:17,218 runserver>log_action [mHTTP GET /supervisors/ 200 [0.13, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:19,683 runserver>log_action [mHTTP GET /reports/ 200 [0.08, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:24,485 runserver>log_action [mHTTP GET /supervisors/ 200 [0.12, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:27,948 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:37,188 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:40,918 runserver>log_action [mHTTP GET /tfs/ 200 [0.08, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:42,558 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:43,781 runserver>log_action [mHTTP GET /tfs/ 200 [0.09, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:45,139 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:48,779 runserver>log_action [mHTTP GET /user/ 200 [0.30, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:53,613 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.09, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:56,393 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:21:57,883 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:22:00,172 runserver>log_action [mHTTP GET /tfs/ 200 [0.12, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:22:23,406 runserver>log_action [mHTTP GET /user/ 200 [0.30, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:22:24,172 runserver>log_action [mHTTP GET /userlist/ 200 [0.20, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:22:31,156 runserver>log_action [mHTTP GET /userlist/?q=&qactive=all&qbranch=KB&qtt=all&qgroup=all&sort= 200 [0.15, 127.0.0.1:49656][0m
+INFO 2023-11-04 17:25:17,953 runserver>log_action [mHTTP GET /admin/auth/user/ 200 [0.12, 127.0.0.1:49842][0m
+INFO 2023-11-04 17:25:18,014 runserver>log_action [mHTTP GET /static/admin/img/search.svg 200 [0.04, 127.0.0.1:49843][0m
+INFO 2023-11-04 17:25:18,019 runserver>log_action [mHTTP GET /static/admin/img/icon-no.svg 200 [0.00, 127.0.0.1:49843][0m
+INFO 2023-11-04 17:25:18,020 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:49842][0m
+WARNING 2023-11-04 17:25:18,144 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-04 17:25:18,145 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.05, 127.0.0.1:49842][0m
+INFO 2023-11-04 17:25:26,144 runserver>log_action [mHTTP GET /admin/auth/user/2/change/ 200 [0.12, 127.0.0.1:49842][0m
+INFO 2023-11-04 17:25:26,163 runserver>log_action [mHTTP GET /static/admin/js/SelectBox.js 200 [0.01, 127.0.0.1:49843][0m
+INFO 2023-11-04 17:25:26,168 runserver>log_action [mHTTP GET /static/admin/js/SelectFilter2.js 200 [0.01, 127.0.0.1:49858][0m
+INFO 2023-11-04 17:25:26,211 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:49842][0m
+INFO 2023-11-04 17:25:26,243 runserver>log_action [mHTTP GET /static/admin/img/icon-unknown.svg 200 [0.00, 127.0.0.1:49842][0m
+INFO 2023-11-04 17:25:26,247 runserver>log_action [mHTTP GET /static/admin/img/selector-icons.svg 200 [0.01, 127.0.0.1:49858][0m
+INFO 2023-11-04 17:25:26,251 runserver>log_action [mHTTP GET /static/admin/img/icon-unknown-alt.svg 200 [0.01, 127.0.0.1:49843][0m
+INFO 2023-11-04 17:25:43,808 runserver>log_action [mHTTP GET /admin/base/userprofile/ 200 [0.08, 127.0.0.1:49843][0m
+INFO 2023-11-04 17:25:43,850 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.03, 127.0.0.1:49843][0m
+INFO 2023-11-04 17:25:49,261 runserver>log_action [mHTTP GET /admin/base/userprofile/2/change/ 200 [0.10, 127.0.0.1:49843][0m
+INFO 2023-11-04 17:25:49,327 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.05, 127.0.0.1:49843][0m
+INFO 2023-11-04 17:26:54,324 runserver>log_action [mHTTP POST /api/token/ 200 [0.33, 127.0.0.1:49889][0m
+INFO 2023-11-04 17:26:54,695 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.2.0.0 200 [0.07, 127.0.0.1:49894][0m
+INFO 2023-11-04 17:27:04,730 runserver>log_action [mHTTP GET /webtv/KB/c/ 200 [0.09, 127.0.0.1:49906][0m
+INFO 2023-11-04 17:27:04,779 runserver>log_action WebSocket HANDSHAKING /ws/wtv/KB/c/ [127.0.0.1:49911]
+INFO 2023-11-04 17:27:04,832 base>consumers>connect connecting:webtv_KB_c
+INFO 2023-11-04 17:27:04,881 runserver>log_action WebSocket CONNECT /ws/wtv/KB/c/ [127.0.0.1:49911]
+INFO 2023-11-04 17:27:04,882 base>consumers>connect IP 127.0.0.1 Connected:webtv_KB_c [1/200]
+INFO 2023-11-04 17:27:21,029 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.08, 127.0.0.1:49906][0m
+INFO 2023-11-04 17:27:21,042 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:49906][0m
+INFO 2023-11-04 17:27:23,993 runserver>log_action [mHTTP GET /softkey_login/2/ 200 [0.09, 127.0.0.1:49906][0m
+INFO 2023-11-04 17:27:30,303 runserver>log_action [mHTTP GET /softkey/6/ 200 [0.19, 127.0.0.1:49906][0m
+INFO 2023-11-04 17:27:30,321 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/SCP/ [127.0.0.1:49926]
+INFO 2023-11-04 17:27:30,356 base>consumers>connect connecting:printerstatus_SCP
+INFO 2023-11-04 17:27:30,405 runserver>log_action WebSocket CONNECT /ws/pstatus/SCP/ [127.0.0.1:49926]
+INFO 2023-11-04 17:27:30,430 runserver>log_action WebSocket HANDSHAKING /ws/cs/6/ [127.0.0.1:49929]
+INFO 2023-11-04 17:27:30,467 base>consumers>connect connecting:cs_6
+INFO 2023-11-04 17:27:30,510 runserver>log_action WebSocket CONNECT /ws/cs/6/ [127.0.0.1:49929]
+INFO 2023-11-04 17:27:30,537 runserver>log_action WebSocket HANDSHAKING /ws/ql/SCP/c/ [127.0.0.1:49932]
+INFO 2023-11-04 17:27:30,573 base>consumers>connect connecting:ql_SCP_c
+INFO 2023-11-04 17:27:30,622 runserver>log_action WebSocket CONNECT /ws/ql/SCP/c/ [127.0.0.1:49932]
+INFO 2023-11-04 17:27:37,246 runserver>log_action [32mHTTP POST /softkey/6/ 302 [0.12, 127.0.0.1:49906][0m
+INFO 2023-11-04 17:27:37,321 runserver>log_action [mHTTP GET /softkey_login/2/ 200 [0.07, 127.0.0.1:49906][0m
+INFO 2023-11-04 17:27:37,342 runserver>log_action WebSocket DISCONNECT /ws/ql/SCP/c/ [127.0.0.1:49932]
+INFO 2023-11-04 17:27:37,343 runserver>log_action WebSocket DISCONNECT /ws/cs/6/ [127.0.0.1:49929]
+INFO 2023-11-04 17:27:37,343 runserver>log_action WebSocket DISCONNECT /ws/pstatus/SCP/ [127.0.0.1:49926]
+INFO 2023-11-04 17:27:40,534 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.08, 127.0.0.1:49906][0m
+INFO 2023-11-04 17:27:43,706 runserver>log_action [mHTTP GET /softkey_login/4/ 200 [0.08, 127.0.0.1:49906][0m
+INFO 2023-11-04 17:27:45,862 runserver>log_action [mHTTP GET /softkey/14/ 200 [0.09, 127.0.0.1:49906][0m
+INFO 2023-11-04 17:27:45,880 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:49953]
+INFO 2023-11-04 17:27:45,917 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-04 17:27:45,967 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:49953]
+INFO 2023-11-04 17:27:45,990 runserver>log_action WebSocket HANDSHAKING /ws/cs/14/ [127.0.0.1:49956]
+INFO 2023-11-04 17:27:46,026 base>consumers>connect connecting:cs_14
+INFO 2023-11-04 17:27:46,073 runserver>log_action WebSocket CONNECT /ws/cs/14/ [127.0.0.1:49956]
+INFO 2023-11-04 17:27:46,096 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/c/ [127.0.0.1:49959]
+INFO 2023-11-04 17:27:46,132 base>consumers>connect connecting:ql_KB_c
+INFO 2023-11-04 17:27:46,181 runserver>log_action WebSocket CONNECT /ws/ql/KB/c/ [127.0.0.1:49959]
+INFO 2023-11-04 17:27:51,047 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 17:27:51,052 base>ws>wssendwebtv ...Done
+INFO 2023-11-04 17:27:51,052 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 17:27:51,054 base>ws>wssenddispwait ...Done
+INFO 2023-11-04 17:27:51,059 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 17:27:51,061 base>ws>wssendql ...Done
+INFO 2023-11-04 17:27:51,063 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 17:27:51,064 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-04 17:27:51,064 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-04 17:27:51,075 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=B&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.2.0.0 200 [0.31, 127.0.0.1:49962][0m
+INFO 2023-11-04 17:28:16,177 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-04 17:28:17,016 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-04 17:28:17,021 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-04 17:28:17,171 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-04 17:28:17,172 base>views>main -SCH- Now:11/04/2023, 09:28:17
+INFO 2023-11-04 17:28:17,239 base>views>sch_shutdown  -SCH- Next reset [HHT]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 17:28:17,240 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 17:28:17,240 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 09:28:17 [Yes]
+INFO 2023-11-04 17:28:17,243 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 17:28:17,243 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 17:28:17,243 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 09:28:17 [Yes]
+INFO 2023-11-04 17:28:17,245 base>views>sch_shutdown  -SCH- Next reset [WTT]: 2023-11-04 18:00:00 Local:2023-11-05 02:00:00
+INFO 2023-11-04 17:28:17,245 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-04 17:28:17,246 base>views>sch_shutdown    -SCH- 2023-11-04 18:00:00 > 2023-11-04 09:28:17 [Yes]
+INFO 2023-11-04 17:28:17,247 base>views>sch_shutdown  -SCH- Next reset [SCP]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 17:28:17,248 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 17:28:17,248 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 09:28:17 [Yes]
+INFO 2023-11-04 17:28:20,307 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 17:28:20,312 base>ws>wssendwebtv ...Done
+INFO 2023-11-04 17:28:20,312 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 17:28:20,313 base>ws>wssenddispwait ...Done
+INFO 2023-11-04 17:28:20,319 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 17:28:20,322 base>ws>wssendql ...Done
+INFO 2023-11-04 17:28:20,324 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 17:28:20,325 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-04 17:28:20,325 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-04 17:28:20,336 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.2.0.0 200 [0.16, 127.0.0.1:49985][0m
+INFO 2023-11-04 17:28:32,502 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 17:28:32,507 base>ws>wssendwebtv ...Done
+INFO 2023-11-04 17:28:32,507 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 17:28:32,508 base>ws>wssenddispwait ...Done
+INFO 2023-11-04 17:28:32,513 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 17:28:32,515 base>ws>wssendql ...Done
+INFO 2023-11-04 17:28:32,517 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 17:28:32,518 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-04 17:28:32,518 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-04 17:28:32,530 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.2.0.0 200 [0.14, 127.0.0.1:49990][0m
+INFO 2023-11-04 17:28:44,200 runserver>log_action [mHTTP GET /softkey/14/ 200 [0.12, 127.0.0.1:49998][0m
+INFO 2023-11-04 17:28:44,223 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:50063]
+INFO 2023-11-04 17:28:44,262 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-04 17:28:44,308 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:50063]
+INFO 2023-11-04 17:28:44,335 runserver>log_action WebSocket HANDSHAKING /ws/cs/14/ [127.0.0.1:50068]
+INFO 2023-11-04 17:28:44,359 base>consumers>connect connecting:cs_14
+INFO 2023-11-04 17:28:44,397 runserver>log_action WebSocket CONNECT /ws/cs/14/ [127.0.0.1:50068]
+INFO 2023-11-04 17:28:44,413 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/c/ [127.0.0.1:50071]
+INFO 2023-11-04 17:28:44,446 base>consumers>connect connecting:ql_KB_c
+INFO 2023-11-04 17:28:44,477 runserver>log_action WebSocket CONNECT /ws/ql/KB/c/ [127.0.0.1:50071]
+INFO 2023-11-04 17:29:23,466 runserver>log_action [32mHTTP POST /softkey/14/ 302 [0.07, 127.0.0.1:49998][0m
+INFO 2023-11-04 17:29:23,550 runserver>log_action [mHTTP GET /softkey/14/ 200 [0.08, 127.0.0.1:49998][0m
+INFO 2023-11-04 17:29:23,555 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:50063]
+INFO 2023-11-04 17:29:23,556 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/c/ [127.0.0.1:50071]
+INFO 2023-11-04 17:29:23,556 runserver>log_action WebSocket DISCONNECT /ws/cs/14/ [127.0.0.1:50068]
+INFO 2023-11-04 17:29:23,568 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:50084]
+INFO 2023-11-04 17:29:23,618 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-04 17:29:23,661 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:50084]
+INFO 2023-11-04 17:29:23,675 runserver>log_action WebSocket HANDSHAKING /ws/cs/14/ [127.0.0.1:50087]
+INFO 2023-11-04 17:29:23,708 base>consumers>connect connecting:cs_14
+INFO 2023-11-04 17:29:23,737 runserver>log_action WebSocket CONNECT /ws/cs/14/ [127.0.0.1:50087]
+INFO 2023-11-04 17:29:23,752 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/c/ [127.0.0.1:50090]
+INFO 2023-11-04 17:29:23,786 base>consumers>connect connecting:ql_KB_c
+INFO 2023-11-04 17:29:23,818 runserver>log_action WebSocket CONNECT /ws/ql/KB/c/ [127.0.0.1:50090]
+INFO 2023-11-04 17:29:43,162 runserver>log_action [32mHTTP POST /softkey/14/ 302 [0.10, 127.0.0.1:49998][0m
+INFO 2023-11-04 17:29:43,262 runserver>log_action [mHTTP GET /softkey/14/ 200 [0.10, 127.0.0.1:49998][0m
+INFO 2023-11-04 17:29:43,267 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/c/ [127.0.0.1:50090]
+INFO 2023-11-04 17:29:43,267 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:50084]
+INFO 2023-11-04 17:29:43,268 runserver>log_action WebSocket DISCONNECT /ws/cs/14/ [127.0.0.1:50087]
+INFO 2023-11-04 17:29:43,278 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:50101]
+INFO 2023-11-04 17:29:43,321 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-04 17:29:43,367 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:50101]
+INFO 2023-11-04 17:29:43,393 runserver>log_action WebSocket HANDSHAKING /ws/cs/14/ [127.0.0.1:50104]
+INFO 2023-11-04 17:29:43,432 base>consumers>connect connecting:cs_14
+INFO 2023-11-04 17:29:43,476 runserver>log_action WebSocket CONNECT /ws/cs/14/ [127.0.0.1:50104]
+INFO 2023-11-04 17:29:43,504 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/c/ [127.0.0.1:50107]
+INFO 2023-11-04 17:29:43,541 base>consumers>connect connecting:ql_KB_c
+INFO 2023-11-04 17:29:43,591 runserver>log_action WebSocket CONNECT /ws/ql/KB/c/ [127.0.0.1:50107]
+INFO 2023-11-04 17:29:51,762 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:49998][0m
+INFO 2023-11-04 17:29:51,789 runserver>log_action WebSocket DISCONNECT /ws/cs/14/ [127.0.0.1:50104]
+INFO 2023-11-04 17:29:51,790 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:50101]
+INFO 2023-11-04 17:29:51,791 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/c/ [127.0.0.1:50107]
+INFO 2023-11-04 17:30:01,567 runserver>log_action [mHTTP GET /update-user/1/ 200 [0.17, 127.0.0.1:49998][0m
+INFO 2023-11-04 17:30:13,289 runserver>log_action [32mHTTP POST /update-user/1/ 302 [0.18, 127.0.0.1:49998][0m
+INFO 2023-11-04 17:30:13,521 runserver>log_action [mHTTP GET /user/ 200 [0.23, 127.0.0.1:49998][0m
+INFO 2023-11-04 17:30:15,844 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.06, 127.0.0.1:49998][0m
+INFO 2023-11-04 17:30:17,393 runserver>log_action [mHTTP GET /softkey_login/4/ 200 [0.09, 127.0.0.1:49998][0m
+INFO 2023-11-04 17:30:18,333 runserver>log_action [mHTTP GET /softkey/14/ 200 [0.10, 127.0.0.1:49998][0m
+INFO 2023-11-04 17:30:18,352 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:50133]
+INFO 2023-11-04 17:30:18,397 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-04 17:30:18,428 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:50133]
+INFO 2023-11-04 17:30:18,443 runserver>log_action WebSocket HANDSHAKING /ws/cs/14/ [127.0.0.1:50136]
+INFO 2023-11-04 17:30:18,478 base>consumers>connect connecting:cs_14
+INFO 2023-11-04 17:30:18,517 runserver>log_action WebSocket CONNECT /ws/cs/14/ [127.0.0.1:50136]
+INFO 2023-11-04 17:30:18,532 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/c/ [127.0.0.1:50139]
+INFO 2023-11-04 17:30:18,564 base>consumers>connect connecting:ql_KB_c
+INFO 2023-11-04 17:30:18,596 runserver>log_action WebSocket CONNECT /ws/ql/KB/c/ [127.0.0.1:50139]
+INFO 2023-11-04 17:30:50,416 runserver>log_action [mHTTP GET /reports/ 200 [0.08, 127.0.0.1:49998][0m
+INFO 2023-11-04 17:30:50,440 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:50133]
+INFO 2023-11-04 17:30:50,441 runserver>log_action WebSocket DISCONNECT /ws/cs/14/ [127.0.0.1:50136]
+INFO 2023-11-04 17:30:50,441 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/c/ [127.0.0.1:50139]
+INFO 2023-11-04 17:30:52,434 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:50154]
+INFO 2023-11-04 17:30:52,473 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-04 17:30:52,516 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:50154]
+INFO 2023-11-04 17:30:52,543 runserver>log_action WebSocket HANDSHAKING /ws/cs/14/ [127.0.0.1:50157]
+INFO 2023-11-04 17:30:52,576 base>consumers>connect connecting:cs_14
+INFO 2023-11-04 17:30:52,607 runserver>log_action WebSocket CONNECT /ws/cs/14/ [127.0.0.1:50157]
+INFO 2023-11-04 17:30:52,621 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/c/ [127.0.0.1:50160]
+INFO 2023-11-04 17:30:52,669 base>consumers>connect connecting:ql_KB_c
+INFO 2023-11-04 17:30:52,716 runserver>log_action WebSocket CONNECT /ws/ql/KB/c/ [127.0.0.1:50160]
+INFO 2023-11-04 17:31:25,823 runserver>log_action [mHTTP POST /api/token/ 200 [0.29, 127.0.0.1:50164][0m
+INFO 2023-11-04 17:31:26,177 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.2.0.0 200 [0.05, 127.0.0.1:50168][0m
+INFO 2023-11-04 18:30:22,222 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-04 18:30:23,045 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-04 18:30:23,050 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-04 18:30:23,185 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-04 18:30:23,185 base>views>main -SCH- Now:11/04/2023, 10:30:23
+INFO 2023-11-04 18:30:23,255 base>views>sch_shutdown  -SCH- Next reset [HHT]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 18:30:23,255 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 18:30:23,256 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 10:30:23 [Yes]
+INFO 2023-11-04 18:30:23,258 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 18:30:23,258 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 18:30:23,259 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 10:30:23 [Yes]
+INFO 2023-11-04 18:30:23,260 base>views>sch_shutdown  -SCH- Next reset [WTT]: 2023-11-04 18:00:00 Local:2023-11-05 02:00:00
+INFO 2023-11-04 18:30:23,261 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-04 18:30:23,261 base>views>sch_shutdown    -SCH- 2023-11-04 18:00:00 > 2023-11-04 10:30:23 [Yes]
+INFO 2023-11-04 18:30:23,262 base>views>sch_shutdown  -SCH- Next reset [SCP]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 18:30:23,263 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 18:30:23,263 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 10:30:23 [Yes]
+INFO 2023-11-04 18:30:24,230 runserver>log_action [mHTTP GET /api/?app=Touch%20Panel&version=8.2.0.0 200 [0.02, 127.0.0.1:50524][0m
+INFO 2023-11-04 18:30:24,588 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:50528][0m
+INFO 2023-11-04 18:30:24,964 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.2.0.0 200 [0.12, 127.0.0.1:50532][0m
+INFO 2023-11-04 18:30:35,739 runserver>log_action [mHTTP GET /softkey/14/ 200 [0.13, 127.0.0.1:50536][0m
+INFO 2023-11-04 18:30:35,750 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:50536][0m
+INFO 2023-11-04 18:30:35,765 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:50541]
+INFO 2023-11-04 18:30:35,811 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-04 18:30:35,838 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:50541]
+INFO 2023-11-04 18:30:35,860 runserver>log_action WebSocket HANDSHAKING /ws/cs/14/ [127.0.0.1:50546]
+INFO 2023-11-04 18:30:35,897 base>consumers>connect connecting:cs_14
+INFO 2023-11-04 18:30:35,942 runserver>log_action WebSocket CONNECT /ws/cs/14/ [127.0.0.1:50546]
+INFO 2023-11-04 18:30:35,969 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/c/ [127.0.0.1:50549]
+INFO 2023-11-04 18:30:36,007 base>consumers>connect connecting:ql_KB_c
+INFO 2023-11-04 18:30:36,053 runserver>log_action WebSocket CONNECT /ws/ql/KB/c/ [127.0.0.1:50549]
+INFO 2023-11-04 18:30:37,435 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:30:37,438 base>ws>wssendwebtv ...Done
+INFO 2023-11-04 18:30:37,439 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:30:37,440 base>ws>wssenddispwait ...Done
+INFO 2023-11-04 18:30:37,444 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:30:37,446 base>ws>wssendql ...Done
+INFO 2023-11-04 18:30:37,449 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:30:37,450 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-04 18:30:37,450 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-04 18:30:37,463 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=C&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.2.0.0 200 [0.14, 127.0.0.1:50552][0m
+INFO 2023-11-04 18:36:01,444 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-04 18:36:02,271 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-04 18:36:02,276 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-04 18:36:02,407 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-04 18:36:02,407 base>views>main -SCH- Now:11/04/2023, 10:36:02
+INFO 2023-11-04 18:36:02,475 base>views>sch_shutdown  -SCH- Next reset [HHT]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 18:36:02,476 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 18:36:02,476 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 10:36:02 [Yes]
+INFO 2023-11-04 18:36:02,479 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 18:36:02,479 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 18:36:02,479 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 10:36:02 [Yes]
+INFO 2023-11-04 18:36:02,480 base>views>sch_shutdown  -SCH- Next reset [WTT]: 2023-11-04 18:00:00 Local:2023-11-05 02:00:00
+INFO 2023-11-04 18:36:02,481 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-04 18:36:02,481 base>views>sch_shutdown    -SCH- 2023-11-04 18:00:00 > 2023-11-04 10:36:02 [Yes]
+INFO 2023-11-04 18:36:02,483 base>views>sch_shutdown  -SCH- Next reset [SCP]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 18:36:02,483 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 18:36:02,483 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 10:36:02 [Yes]
+INFO 2023-11-04 18:36:02,978 runserver>log_action [mHTTP GET /api/?app=Touch%20Panel&version=8.2.0.0 200 [0.05, 127.0.0.1:50603][0m
+INFO 2023-11-04 18:36:03,343 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:50607][0m
+INFO 2023-11-04 18:36:03,643 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.2.0.0 200 [0.05, 127.0.0.1:50603][0m
+INFO 2023-11-04 18:36:04,439 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:36:04,444 base>ws>wssendwebtv ...Done
+INFO 2023-11-04 18:36:04,444 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:36:04,446 base>ws>wssenddispwait ...Done
+INFO 2023-11-04 18:36:04,451 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:36:04,454 base>ws>wssendql ...Done
+INFO 2023-11-04 18:36:04,456 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:36:04,457 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-04 18:36:04,457 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-04 18:36:04,466 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.2.0.0 200 [0.17, 127.0.0.1:50603][0m
+INFO 2023-11-04 18:36:36,086 runserver>log_action [mHTTP GET /api/?app=Touch%20Panel&version=8.2.0.0 200 [0.05, 127.0.0.1:50622][0m
+INFO 2023-11-04 18:36:36,493 runserver>log_action [mHTTP POST /api/token/ 200 [0.29, 127.0.0.1:50627][0m
+INFO 2023-11-04 18:36:37,029 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.2.0.0 200 [0.05, 127.0.0.1:50622][0m
+INFO 2023-11-04 18:36:37,918 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:36:37,923 base>ws>wssendwebtv ...Done
+INFO 2023-11-04 18:36:37,923 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:36:37,924 base>ws>wssenddispwait ...Done
+INFO 2023-11-04 18:36:37,930 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:36:37,932 base>ws>wssendql ...Done
+INFO 2023-11-04 18:36:37,934 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:36:37,935 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-04 18:36:37,935 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-04 18:36:37,947 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.2.0.0 200 [0.17, 127.0.0.1:50622][0m
+INFO 2023-11-04 18:36:39,574 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:36:39,578 base>ws>wssendwebtv ...Done
+INFO 2023-11-04 18:36:39,578 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:36:39,580 base>ws>wssenddispwait ...Done
+INFO 2023-11-04 18:36:39,584 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:36:39,586 base>ws>wssendql ...Done
+INFO 2023-11-04 18:36:39,588 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:36:39,589 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-04 18:36:39,590 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-04 18:36:39,595 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=B&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.2.0.0 200 [0.13, 127.0.0.1:50622][0m
+INFO 2023-11-04 18:37:02,369 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-04 18:37:03,195 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-04 18:37:03,200 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-04 18:37:03,344 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-04 18:37:03,344 base>views>main -SCH- Now:11/04/2023, 10:37:03
+INFO 2023-11-04 18:37:03,414 base>views>sch_shutdown  -SCH- Next reset [HHT]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 18:37:03,415 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 18:37:03,415 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 10:37:03 [Yes]
+INFO 2023-11-04 18:37:03,417 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 18:37:03,418 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 18:37:03,418 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 10:37:03 [Yes]
+INFO 2023-11-04 18:37:03,420 base>views>sch_shutdown  -SCH- Next reset [WTT]: 2023-11-04 18:00:00 Local:2023-11-05 02:00:00
+INFO 2023-11-04 18:37:03,420 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-04 18:37:03,420 base>views>sch_shutdown    -SCH- 2023-11-04 18:00:00 > 2023-11-04 10:37:03 [Yes]
+INFO 2023-11-04 18:37:03,422 base>views>sch_shutdown  -SCH- Next reset [SCP]: 2023-11-04 15:59:59 Local:2023-11-04 23:59:59
+INFO 2023-11-04 18:37:03,423 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-04 18:37:03,423 base>views>sch_shutdown    -SCH- 2023-11-04 15:59:59 > 2023-11-04 10:37:03 [Yes]
+INFO 2023-11-04 18:37:05,238 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:37:05,242 base>ws>wssendwebtv ...Done
+INFO 2023-11-04 18:37:05,243 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:37:05,244 base>ws>wssenddispwait ...Done
+INFO 2023-11-04 18:37:05,250 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:37:05,252 base>ws>wssendql ...Done
+INFO 2023-11-04 18:37:05,254 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:37:05,255 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-04 18:37:05,256 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-04 18:37:05,269 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=C&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.2.0.0 200 [0.18, 127.0.0.1:50662][0m
+INFO 2023-11-04 18:39:52,776 runserver>log_action [mHTTP GET /api/?app=Touch%20Panel&version=8.2.0.0 200 [0.04, 127.0.0.1:50695][0m
+INFO 2023-11-04 18:39:53,126 runserver>log_action [mHTTP POST /api/token/ 200 [0.31, 127.0.0.1:50699][0m
+INFO 2023-11-04 18:39:53,443 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.2.0.0 200 [0.07, 127.0.0.1:50695][0m
+INFO 2023-11-04 18:40:00,694 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:40:00,697 base>ws>wssendwebtv ...Done
+INFO 2023-11-04 18:40:00,698 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:40:00,699 base>ws>wssenddispwait ...Done
+INFO 2023-11-04 18:40:00,704 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:40:00,706 base>ws>wssendql ...Done
+INFO 2023-11-04 18:40:00,708 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:40:00,709 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-04 18:40:00,709 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-04 18:40:00,723 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.2.0.0 200 [0.17, 127.0.0.1:50695][0m
+INFO 2023-11-04 18:40:07,030 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:40:07,035 base>ws>wssendwebtv ...Done
+INFO 2023-11-04 18:40:07,035 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:40:07,036 base>ws>wssenddispwait ...Done
+INFO 2023-11-04 18:40:07,042 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:40:07,044 base>ws>wssendql ...Done
+INFO 2023-11-04 18:40:07,046 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-04 18:40:07,047 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-04 18:40:07,048 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-04 18:40:07,058 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=C&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.2.0.0 200 [0.14, 127.0.0.1:50695][0m

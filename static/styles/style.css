@@ -831,6 +831,7 @@ a {
   display: flex;
   align-items: center;
   gap: 1rem;
+  color: var(--color-main)
 }
 
 .roomListRoom__actions {
@@ -889,6 +890,16 @@ a {
   fill: var(--color-main);
   width: 1.6rem;
   height: 1.6rem;
+}
+.list__svg {
+  width:26px;
+  height: 26px;
+}
+.list__svg svg {
+  fill: var(--color-main);
+  width:26;
+  height:26;
+
 }
 
 .roomListRoom__topic {
