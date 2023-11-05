@@ -1810,3 +1810,1604 @@ INFO 2023-11-04 18:40:07,046 base>ws>wsSendPrintTicket channel_group_name:print_
 INFO 2023-11-04 18:40:07,047 base>ws>wsSendPrintTicket ...Done
 INFO 2023-11-04 18:40:07,048 base>v_roche>rocheSMS SMS disabled
 INFO 2023-11-04 18:40:07,058 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=C&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.2.0.0 200 [0.14, 127.0.0.1:50695][0m
+INFO 2023-11-05 17:09:59,746 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-05 17:10:02,525 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-05 17:10:02,542 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-05 17:10:03,485 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-05 17:10:03,487 base>views>main -SCH- Now:11/05/2023, 09:10:03
+ERROR 2023-11-05 17:10:03,538 base>views><module> userweb not found.
+INFO 2023-11-05 17:10:59,146 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\aqs\settings.py changed, reloading.
+INFO 2023-11-05 17:11:03,094 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-05 17:11:03,109 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-05 17:11:05,419 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-05 17:11:05,420 base>views>main -SCH- Now:11/05/2023, 09:11:03
+ERROR 2023-11-05 17:11:07,457 base>views><module> userweb not found.
+INFO 2023-11-05 17:11:13,428 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\aqs\settings.py changed, reloading.
+INFO 2023-11-05 17:11:15,391 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-05 17:11:15,402 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-05 17:11:19,711 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-05 17:11:19,712 base>views>main -SCH- Now:11/05/2023, 09:11:15
+ERROR 2023-11-05 17:11:23,793 base>views><module> userweb not found.
+INFO 2023-11-05 17:11:32,947 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-05 17:11:35,792 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-05 17:11:35,804 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-05 17:11:36,109 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-05 17:11:36,110 base>views>main -SCH- Now:11/05/2023, 09:11:36
+INFO 2023-11-05 17:11:36,357 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-05 16:42:00 Local:2023-11-06 00:42:00
+INFO 2023-11-05 17:11:36,358 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-11-05 17:11:36,359 base>views>sch_shutdown    -SCH- 2023-11-05 16:42:00 > 2023-11-05 09:11:36 [Yes]
+INFO 2023-11-05 17:11:36,367 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-05 15:59:59 Local:2023-11-05 23:59:59
+INFO 2023-11-05 17:11:36,368 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-05 17:11:36,370 base>views>sch_shutdown    -SCH- 2023-11-05 15:59:59 > 2023-11-05 09:11:36 [Yes]
+INFO 2023-11-05 17:11:36,374 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-05 18:00:00 Local:2023-11-06 02:00:00
+INFO 2023-11-05 17:11:36,375 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-05 17:11:36,375 base>views>sch_shutdown    -SCH- 2023-11-05 18:00:00 > 2023-11-05 09:11:36 [Yes]
+INFO 2023-11-05 17:11:36,379 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-05 15:59:59 Local:2023-11-05 23:59:59
+INFO 2023-11-05 17:11:36,380 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-05 17:11:36,381 base>views>sch_shutdown    -SCH- 2023-11-05 15:59:59 > 2023-11-05 09:11:36 [Yes]
+INFO 2023-11-05 17:11:36,385 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-05 15:59:59 Local:2023-11-05 23:59:59
+INFO 2023-11-05 17:11:36,387 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-05 17:11:36,389 base>views>sch_shutdown    -SCH- 2023-11-05 15:59:59 > 2023-11-05 09:11:36 [Yes]
+INFO 2023-11-05 17:11:36,392 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-05 15:59:59 Local:2023-11-05 23:59:59
+INFO 2023-11-05 17:11:36,397 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-05 17:11:36,399 base>views>sch_shutdown    -SCH- 2023-11-05 15:59:59 > 2023-11-05 09:11:36 [Yes]
+INFO 2023-11-05 17:12:07,716 runserver>log_action [32mHTTP GET / 302 [0.15, 127.0.0.1:33235][0m
+INFO 2023-11-05 17:12:07,830 runserver>log_action [mHTTP GET /login/ 200 [0.10, 127.0.0.1:33235][0m
+INFO 2023-11-05 17:12:08,386 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.32, 127.0.0.1:33235][0m
+INFO 2023-11-05 17:12:08,486 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.41, 127.0.0.1:33240][0m
+INFO 2023-11-05 17:12:08,513 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.12, 127.0.0.1:33241][0m
+INFO 2023-11-05 17:12:08,523 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.13, 127.0.0.1:33242][0m
+INFO 2023-11-05 17:12:09,231 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.05, 127.0.0.1:33241][0m
+INFO 2023-11-05 17:12:16,279 runserver>log_action [32mHTTP POST /login/ 302 [1.78, 127.0.0.1:33235][0m
+INFO 2023-11-05 17:12:16,572 runserver>log_action [mHTTP GET / 200 [0.28, 127.0.0.1:33235][0m
+INFO 2023-11-05 17:12:22,434 runserver>log_action [mHTTP GET /user/ 200 [0.19, 127.0.0.1:33235][0m
+INFO 2023-11-05 17:12:25,572 runserver>log_action [mHTTP GET /branch/ 200 [0.22, 127.0.0.1:33235][0m
+INFO 2023-11-05 17:16:26,165 runserver>log_action [mHTTP GET /branch/ 200 [0.29, 127.0.0.1:33538][0m
+INFO 2023-11-05 17:16:26,282 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.02, 127.0.0.1:33538][0m
+INFO 2023-11-05 17:16:26,292 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:33542][0m
+INFO 2023-11-05 17:16:26,301 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:33544][0m
+INFO 2023-11-05 17:16:26,308 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:33543][0m
+INFO 2023-11-05 17:16:26,314 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.03, 127.0.0.1:33545][0m
+INFO 2023-11-05 17:16:26,756 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.02, 127.0.0.1:33543][0m
+INFO 2023-11-05 17:52:54,936 runserver>log_action [mHTTP GET /branch/ 200 [0.28, 127.0.0.1:35046][0m
+INFO 2023-11-05 17:52:55,020 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:35046][0m
+INFO 2023-11-05 17:52:55,026 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:35050][0m
+INFO 2023-11-05 17:52:55,031 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:35051][0m
+INFO 2023-11-05 17:52:55,036 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:35052][0m
+INFO 2023-11-05 17:52:55,042 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.02, 127.0.0.1:35053][0m
+INFO 2023-11-05 17:52:56,058 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:35052][0m
+INFO 2023-11-05 17:54:16,429 runserver>log_action [mHTTP GET /branch/ 200 [0.16, 127.0.0.1:35124][0m
+INFO 2023-11-05 17:54:18,602 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:35136][0m
+INFO 2023-11-05 17:54:18,662 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:35136][0m
+INFO 2023-11-05 17:54:18,673 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:35139][0m
+INFO 2023-11-05 17:54:18,679 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:35140][0m
+INFO 2023-11-05 17:54:18,689 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:35141][0m
+INFO 2023-11-05 17:54:18,694 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.03, 127.0.0.1:35142][0m
+INFO 2023-11-05 17:54:18,802 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:35141][0m
+INFO 2023-11-05 17:54:46,487 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:35180][0m
+INFO 2023-11-05 17:54:46,522 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:35180][0m
+INFO 2023-11-05 17:54:46,529 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:35183][0m
+INFO 2023-11-05 17:54:46,533 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.01, 127.0.0.1:35186][0m
+INFO 2023-11-05 17:54:46,539 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:35185][0m
+INFO 2023-11-05 17:54:46,545 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:35184][0m
+INFO 2023-11-05 17:54:46,664 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:35185][0m
+INFO 2023-11-05 17:55:18,299 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:35180][0m
+INFO 2023-11-05 17:55:18,366 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.02, 127.0.0.1:35185][0m
+INFO 2023-11-05 17:55:19,297 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:35180][0m
+INFO 2023-11-05 17:55:19,329 runserver>log_action [36mHTTP GET /static/images/branch.svg 304 [0.00, 127.0.0.1:35185][0m
+INFO 2023-11-05 17:55:19,725 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:35180][0m
+INFO 2023-11-05 17:55:19,767 runserver>log_action [36mHTTP GET /static/images/branch.svg 304 [0.00, 127.0.0.1:35185][0m
+INFO 2023-11-05 17:55:25,888 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:35180][0m
+INFO 2023-11-05 17:55:25,915 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.00, 127.0.0.1:35185][0m
+INFO 2023-11-05 17:55:36,793 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:35180][0m
+INFO 2023-11-05 17:55:36,815 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.00, 127.0.0.1:35185][0m
+INFO 2023-11-05 17:55:37,671 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:35180][0m
+INFO 2023-11-05 17:55:37,692 runserver>log_action [36mHTTP GET /static/images/branch.svg 304 [0.00, 127.0.0.1:35185][0m
+INFO 2023-11-05 17:55:38,028 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:35180][0m
+INFO 2023-11-05 17:55:38,047 runserver>log_action [36mHTTP GET /static/images/branch.svg 304 [0.00, 127.0.0.1:35185][0m
+INFO 2023-11-05 17:58:10,056 runserver>log_action [mHTTP GET /branch/ 200 [0.34, 127.0.0.1:35377][0m
+INFO 2023-11-05 17:58:10,144 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:35377][0m
+INFO 2023-11-05 17:58:10,152 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:35381][0m
+INFO 2023-11-05 17:58:10,156 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:35383][0m
+INFO 2023-11-05 17:58:10,161 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:35382][0m
+INFO 2023-11-05 17:58:10,168 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.02, 127.0.0.1:35384][0m
+INFO 2023-11-05 17:58:10,336 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:35382][0m
+INFO 2023-11-05 17:59:56,886 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:35512][0m
+INFO 2023-11-05 17:59:56,910 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:35512][0m
+INFO 2023-11-05 17:59:56,917 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:35516][0m
+INFO 2023-11-05 17:59:56,921 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:35517][0m
+INFO 2023-11-05 17:59:56,925 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:35518][0m
+INFO 2023-11-05 17:59:56,929 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.02, 127.0.0.1:35519][0m
+INFO 2023-11-05 17:59:57,037 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:35517][0m
+INFO 2023-11-05 17:59:58,188 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:35523][0m
+INFO 2023-11-05 17:59:58,210 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:35523][0m
+INFO 2023-11-05 17:59:58,216 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:35526][0m
+INFO 2023-11-05 17:59:58,221 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:35527][0m
+INFO 2023-11-05 17:59:58,225 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.01, 127.0.0.1:35529][0m
+INFO 2023-11-05 17:59:58,229 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:35528][0m
+INFO 2023-11-05 17:59:58,404 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:35531][0m
+INFO 2023-11-05 17:59:58,437 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:35531][0m
+INFO 2023-11-05 17:59:58,443 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:35534][0m
+INFO 2023-11-05 17:59:58,448 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:35535][0m
+INFO 2023-11-05 17:59:58,456 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:35536][0m
+INFO 2023-11-05 17:59:58,461 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.02, 127.0.0.1:35537][0m
+INFO 2023-11-05 17:59:58,563 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:35535][0m
+INFO 2023-11-05 18:00:00,193 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:35542][0m
+INFO 2023-11-05 18:00:00,213 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:35542][0m
+INFO 2023-11-05 18:00:00,220 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:35545][0m
+INFO 2023-11-05 18:00:00,224 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:35547][0m
+INFO 2023-11-05 18:00:00,228 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:35546][0m
+INFO 2023-11-05 18:00:00,232 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.02, 127.0.0.1:35548][0m
+INFO 2023-11-05 18:00:00,695 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:35552][0m
+INFO 2023-11-05 18:00:00,714 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:35552][0m
+INFO 2023-11-05 18:00:00,721 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:35555][0m
+INFO 2023-11-05 18:00:00,725 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:35557][0m
+INFO 2023-11-05 18:00:00,728 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:35558][0m
+INFO 2023-11-05 18:00:00,731 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.01, 127.0.0.1:35556][0m
+INFO 2023-11-05 18:00:01,980 runserver>log_action [mHTTP GET /branch/ 200 [0.28, 127.0.0.1:35582][0m
+INFO 2023-11-05 18:00:02,005 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:35582][0m
+INFO 2023-11-05 18:00:02,014 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:35585][0m
+INFO 2023-11-05 18:00:02,020 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.01, 127.0.0.1:35582][0m
+INFO 2023-11-05 18:00:02,407 runserver>log_action [mHTTP GET /branch/ 200 [0.22, 127.0.0.1:35591][0m
+INFO 2023-11-05 18:00:02,433 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:35591][0m
+INFO 2023-11-05 18:00:02,441 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:35596][0m
+INFO 2023-11-05 18:00:02,446 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:35598][0m
+INFO 2023-11-05 18:00:02,452 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:35597][0m
+INFO 2023-11-05 18:00:02,457 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.02, 127.0.0.1:35599][0m
+INFO 2023-11-05 18:00:02,555 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:35598][0m
+ERROR 2023-11-05 18:03:36,608 log>log_response Internal Server Error: /branch/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 452, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py", line 2517, in BranchSummaryView
+    return render(request, 'base/branch.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 206, in select_template
+    return self.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 83: 'endfor'. Did you forget to register or load this tag?
+ERROR 2023-11-05 18:03:36,660 runserver>log_action [35;1mHTTP GET /branch/ 500 [1.16, 127.0.0.1:35784][0m
+WARNING 2023-11-05 18:03:36,935 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-05 18:03:36,938 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.07, 127.0.0.1:35784][0m
+ERROR 2023-11-05 18:04:03,394 log>log_response Internal Server Error: /branch/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 212, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: images/branch.svg
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 452, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py", line 2517, in BranchSummaryView
+    return render(request, 'base/branch.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: images/branch.svg
+ERROR 2023-11-05 18:04:03,418 runserver>log_action [35;1mHTTP GET /branch/ 500 [1.61, 127.0.0.1:35819][0m
+WARNING 2023-11-05 18:04:03,561 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-05 18:04:03,563 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:35819][0m
+INFO 2023-11-05 18:07:19,027 runserver>log_action [mHTTP GET /branch/ 200 [0.31, 127.0.0.1:36669][0m
+INFO 2023-11-05 18:07:19,198 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.02, 127.0.0.1:36669][0m
+INFO 2023-11-05 18:07:19,206 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:36672][0m
+INFO 2023-11-05 18:07:19,217 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:36673][0m
+INFO 2023-11-05 18:07:19,226 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:36674][0m
+INFO 2023-11-05 18:07:19,565 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:36673][0m
+ERROR 2023-11-05 18:08:52,278 log>log_response Internal Server Error: /branch/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 452, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py", line 2517, in BranchSummaryView
+    return render(request, 'base/branch.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 206, in select_template
+    return self.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 341, in do_include
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'include' tag: "'images/branch.svg'".
+ERROR 2023-11-05 18:08:52,306 runserver>log_action [35;1mHTTP GET /branch/ 500 [1.10, 127.0.0.1:36788][0m
+WARNING 2023-11-05 18:08:52,544 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-05 18:08:52,546 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.05, 127.0.0.1:36788][0m
+INFO 2023-11-05 18:09:03,430 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:36788][0m
+INFO 2023-11-05 18:09:03,474 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.01, 127.0.0.1:36788][0m
+INFO 2023-11-05 18:10:28,174 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:36869][0m
+INFO 2023-11-05 18:10:28,226 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:36869][0m
+INFO 2023-11-05 18:10:29,261 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:36869][0m
+INFO 2023-11-05 18:10:30,567 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:36884][0m
+INFO 2023-11-05 18:10:30,597 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:36884][0m
+INFO 2023-11-05 18:10:30,607 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:36887][0m
+INFO 2023-11-05 18:10:30,611 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:36889][0m
+INFO 2023-11-05 18:10:30,617 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:36888][0m
+INFO 2023-11-05 18:10:30,960 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:36889][0m
+INFO 2023-11-05 18:12:06,192 runserver>log_action [mHTTP GET /branch/ 200 [0.18, 127.0.0.1:37001][0m
+INFO 2023-11-05 18:12:06,351 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:37001][0m
+INFO 2023-11-05 18:12:07,301 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:37001][0m
+INFO 2023-11-05 18:12:08,903 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:37012][0m
+INFO 2023-11-05 18:12:08,930 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:37012][0m
+INFO 2023-11-05 18:12:08,937 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:37015][0m
+INFO 2023-11-05 18:12:08,943 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:37017][0m
+INFO 2023-11-05 18:12:08,948 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:37016][0m
+INFO 2023-11-05 18:12:09,040 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:37017][0m
+INFO 2023-11-05 18:13:08,962 runserver>log_action [mHTTP GET /branch/ 200 [0.22, 127.0.0.1:37012][0m
+INFO 2023-11-05 18:13:09,060 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:37012][0m
+INFO 2023-11-05 18:13:10,023 runserver>log_action [mHTTP GET /branch/ 200 [0.17, 127.0.0.1:37012][0m
+INFO 2023-11-05 18:13:11,290 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:37079][0m
+INFO 2023-11-05 18:13:11,700 runserver>log_action [mHTTP GET /branch/ 200 [0.18, 127.0.0.1:37079][0m
+INFO 2023-11-05 18:13:13,121 runserver>log_action [mHTTP GET /branch/ 200 [0.50, 127.0.0.1:37096][0m
+INFO 2023-11-05 18:13:14,640 runserver>log_action [mHTTP GET /branch/ 200 [0.25, 127.0.0.1:37099][0m
+INFO 2023-11-05 18:13:14,690 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.02, 127.0.0.1:37099][0m
+INFO 2023-11-05 18:13:14,703 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.03, 127.0.0.1:37102][0m
+INFO 2023-11-05 18:13:14,714 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:37104][0m
+INFO 2023-11-05 18:13:14,731 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.04, 127.0.0.1:37103][0m
+INFO 2023-11-05 18:13:15,182 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:37104][0m
+INFO 2023-11-05 18:13:48,790 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:37158][0m
+INFO 2023-11-05 18:13:48,809 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:37158][0m
+INFO 2023-11-05 18:13:48,815 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:37163][0m
+INFO 2023-11-05 18:13:48,820 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:37164][0m
+INFO 2023-11-05 18:13:48,825 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:37165][0m
+INFO 2023-11-05 18:13:48,829 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.02, 127.0.0.1:37166][0m
+INFO 2023-11-05 18:13:48,913 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:37164][0m
+ERROR 2023-11-05 18:19:38,543 log>log_response Internal Server Error: /branch/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 452, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py", line 2517, in BranchSummaryView
+    return render(request, 'base/branch.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 206, in select_template
+    return self.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 341, in do_include
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'include' tag: "'images/branch.svg'".
+ERROR 2023-11-05 18:19:38,577 runserver>log_action [35;1mHTTP GET /branch/ 500 [1.35, 127.0.0.1:37335][0m
+WARNING 2023-11-05 18:19:38,719 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-05 18:19:38,722 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:37335][0m
+INFO 2023-11-05 18:19:49,956 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:37358][0m
+INFO 2023-11-05 18:19:49,989 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:37358][0m
+INFO 2023-11-05 18:19:49,995 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:37361][0m
+INFO 2023-11-05 18:19:50,000 runserver>log_action [mHTTP GET /static/images/branch.svg 200 [0.01, 127.0.0.1:37364][0m
+INFO 2023-11-05 18:19:50,006 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:37363][0m
+INFO 2023-11-05 18:19:50,010 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:37362][0m
+INFO 2023-11-05 18:19:50,135 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:37363][0m
+ERROR 2023-11-05 18:20:44,756 log>log_response Internal Server Error: /branch/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 212, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: images/branch.svg
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 452, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py", line 2517, in BranchSummaryView
+    return render(request, 'base/branch.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: images/branch.svg
+ERROR 2023-11-05 18:20:47,181 log>log_response Internal Server Error: /branch/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 212, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: images/branch.svg
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 452, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py", line 2517, in BranchSummaryView
+    return render(request, 'base/branch.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: images/branch.svg
+ERROR 2023-11-05 18:20:47,390 log>log_response Internal Server Error: /branch/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 212, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: images/branch.svg
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 452, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py", line 2517, in BranchSummaryView
+    return render(request, 'base/branch.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: images/branch.svg
+ERROR 2023-11-05 18:20:47,414 runserver>log_action [35;1mHTTP GET /branch/ 500 [4.68, 127.0.0.1:37407][0m
+WARNING 2023-11-05 18:20:47,525 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-05 18:20:47,526 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.05, 127.0.0.1:37410][0m
+ERROR 2023-11-05 18:21:00,301 log>log_response Internal Server Error: /branch/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 452, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py", line 2517, in BranchSummaryView
+    return render(request, 'base/branch.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 206, in select_template
+    return self.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 341, in do_include
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Unknown argument for 'include' tag: "'images/branch.svg'".
+ERROR 2023-11-05 18:21:00,322 runserver>log_action [35;1mHTTP GET /branch/ 500 [1.08, 127.0.0.1:37427][0m
+WARNING 2023-11-05 18:21:00,444 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-05 18:21:00,446 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:37427][0m
+INFO 2023-11-05 18:38:11,891 runserver>log_action [mHTTP GET /branch/ 200 [0.36, 127.0.0.1:37903][0m
+INFO 2023-11-05 18:38:12,045 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.02, 127.0.0.1:37903][0m
+INFO 2023-11-05 18:38:12,053 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:37907][0m
+INFO 2023-11-05 18:38:12,059 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:37908][0m
+INFO 2023-11-05 18:38:12,068 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:37909][0m
+WARNING 2023-11-05 18:38:12,118 runserver>log_action [33mHTTP GET /static/images/branch.svg 404 [0.07, 127.0.0.1:37910][0m
+INFO 2023-11-05 18:38:12,583 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:37908][0m
+INFO 2023-11-05 18:38:33,338 runserver>log_action [mHTTP GET /branch/ 200 [0.18, 127.0.0.1:37946][0m
+INFO 2023-11-05 18:38:33,375 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:37946][0m
+INFO 2023-11-05 18:38:33,390 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:37949][0m
+INFO 2023-11-05 18:38:33,394 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:37950][0m
+INFO 2023-11-05 18:38:33,404 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.03, 127.0.0.1:37951][0m
+INFO 2023-11-05 18:38:33,742 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:37950][0m
+INFO 2023-11-05 19:38:34,496 runserver>log_action [32mHTTP GET /branch/ 302 [0.04, 127.0.0.1:38605][0m
+INFO 2023-11-05 19:38:34,522 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:38605][0m
+INFO 2023-11-05 19:38:34,577 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:38605][0m
+INFO 2023-11-05 23:59:59,044 base>views>job_shutdown    -SCH- Shutdown and reset branch :TST -SCH-
+INFO 2023-11-05 23:59:59,045 base>views>job_shutdown    -SCH- Shutdown and reset branch :MK -SCH-
+INFO 2023-11-05 23:59:59,163 base>views>job_shutdown    -SCH- Shutdown and reset branch :SW -SCH-
+INFO 2023-11-05 23:59:59,163 base>views>job_shutdown    -SCH- Shutdown and reset branch :ST -SCH-
+INFO 2023-11-05 23:59:59,282 base>ws>wssendwebtv channel_group_name:webtv_TST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-11-05 23:59:59,341 base>ws>wssendwebtv ...Done
+INFO 2023-11-05 23:59:59,342 base>ws>wssenddispremoveall channel_group_name:disp_TST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-11-05 23:59:59,351 base>ws>wssenddispremoveall ...Done
+INFO 2023-11-05 23:59:59,361 base>ws>wssendwebtv channel_group_name:webtv_SW_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-11-05 23:59:59,372 base>ws>wssendwebtv ...Done
+INFO 2023-11-05 23:59:59,373 base>ws>wssenddispremoveall channel_group_name:disp_SW_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-11-05 23:59:59,381 base>ws>wssenddispremoveall ...Done
+INFO 2023-11-05 23:59:59,424 base>ws>wssendwebtv channel_group_name:webtv_MK_Counter sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-11-05 23:59:59,432 base>ws>wssendwebtv ...Done
+INFO 2023-11-05 23:59:59,433 base>ws>wssenddispremoveall channel_group_name:disp_MK_Counter sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-11-05 23:59:59,442 base>ws>wssenddispremoveall ...Done
+INFO 2023-11-06 00:00:01,171 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-11-06 00:00:01,196 base>ws>wssendwebtv ...Done
+INFO 2023-11-06 00:00:01,200 base>ws>wssenddispremoveall channel_group_name:disp_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-11-06 00:00:01,233 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-06 15:59:59 Local:2023-11-06 23:59:59
+INFO 2023-11-06 00:00:01,235 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-06 00:00:01,239 base>ws>wssenddispremoveall ...Done
+INFO 2023-11-06 00:00:01,241 base>views>sch_shutdown    -SCH- 2023-11-05 15:59:59 > 2023-11-05 16:00:01 [No]
+INFO 2023-11-06 00:00:01,273 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-06 15:59:59 Local:2023-11-06 23:59:59
+INFO 2023-11-06 00:00:01,276 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-06 00:00:01,279 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-06 15:59:59 Local:2023-11-06 23:59:59
+INFO 2023-11-06 00:00:01,279 base>views>sch_shutdown    -SCH- 2023-11-05 15:59:59 > 2023-11-05 16:00:01 [No]
+INFO 2023-11-06 00:00:01,282 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-06 00:00:01,287 base>views>sch_shutdown    -SCH- 2023-11-05 15:59:59 > 2023-11-05 16:00:01 [No]
+INFO 2023-11-06 00:00:01,339 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-06 15:59:59 Local:2023-11-06 23:59:59
+INFO 2023-11-06 00:00:01,340 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-06 00:00:01,340 base>views>sch_shutdown    -SCH- 2023-11-05 15:59:59 > 2023-11-05 16:00:01 [No]
+INFO 2023-11-06 00:42:00,010 base>views>job_shutdown    -SCH- Shutdown and reset branch :KB -SCH-
+INFO 2023-11-06 00:42:00,345 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-11-06 00:42:00,354 base>ws>wssendwebtv ...Done
+INFO 2023-11-06 00:42:00,355 base>ws>wssenddispremoveall channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-11-06 00:42:00,363 base>ws>wssenddispremoveall ...Done
+INFO 2023-11-06 00:42:00,370 base>ws>wssendwebtv channel_group_name:webtv_KB_Payment sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-11-06 00:42:00,376 base>ws>wssendwebtv ...Done
+INFO 2023-11-06 00:42:00,377 base>ws>wssenddispremoveall channel_group_name:disp_KB_Payment sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-11-06 00:42:00,383 base>ws>wssenddispremoveall ...Done
+INFO 2023-11-06 00:42:00,388 base>ws>wssendwebtv channel_group_name:webtv_KB_Counter sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-11-06 00:42:00,396 base>ws>wssendwebtv ...Done
+INFO 2023-11-06 00:42:00,397 base>ws>wssenddispremoveall channel_group_name:disp_KB_Counter sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.85.128', '6379')}])
+INFO 2023-11-06 00:42:00,402 base>ws>wssenddispremoveall ...Done
+INFO 2023-11-06 00:42:00,464 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-06 16:42:00 Local:2023-11-07 00:42:00
+INFO 2023-11-06 00:42:00,465 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-11-06 00:42:00,466 base>views>sch_shutdown    -SCH- 2023-11-05 16:42:00 > 2023-11-05 16:42:00 [No]
+INFO 2023-11-06 01:39:53,322 runserver>log_action [32mHTTP POST /login/ 302 [1.75, 127.0.0.1:41489][0m
+INFO 2023-11-06 01:39:53,569 runserver>log_action [mHTTP GET / 200 [0.22, 127.0.0.1:41489][0m
+INFO 2023-11-06 01:39:53,820 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.02, 127.0.0.1:41489][0m
+INFO 2023-11-06 01:39:57,062 runserver>log_action [mHTTP GET /user/ 200 [0.31, 127.0.0.1:41489][0m
+INFO 2023-11-06 01:39:59,836 runserver>log_action [mHTTP GET /branch/ 200 [0.25, 127.0.0.1:41489][0m
+INFO 2023-11-06 01:40:02,075 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:41489][0m
+INFO 2023-11-06 01:41:01,656 runserver>log_action [mHTTP GET /user/ 200 [0.16, 127.0.0.1:41629][0m
+INFO 2023-11-06 01:41:01,717 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:41629][0m
+INFO 2023-11-06 01:41:01,727 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:41633][0m
+INFO 2023-11-06 01:41:01,734 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:41634][0m
+INFO 2023-11-06 01:41:01,740 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:41635][0m
+INFO 2023-11-06 01:41:02,085 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:41634][0m
+INFO 2023-11-06 01:41:04,069 runserver>log_action [mHTTP GET /user/ 200 [0.12, 127.0.0.1:41629][0m
+INFO 2023-11-06 01:41:11,055 runserver>log_action [mHTTP GET /branch/ 200 [0.26, 127.0.0.1:41629][0m
+INFO 2023-11-06 01:41:12,570 runserver>log_action [mHTTP GET /branch/ 200 [0.24, 127.0.0.1:41664][0m
+INFO 2023-11-06 01:41:12,603 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:41664][0m
+INFO 2023-11-06 01:41:12,613 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:41667][0m
+INFO 2023-11-06 01:41:12,619 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:41668][0m
+INFO 2023-11-06 01:41:12,626 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:41669][0m
+INFO 2023-11-06 01:41:12,705 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:41669][0m
+INFO 2023-11-06 01:41:14,565 runserver>log_action [mHTTP GET /user/ 200 [0.24, 127.0.0.1:41664][0m
+INFO 2023-11-06 01:41:16,064 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:41679][0m
+INFO 2023-11-06 01:41:16,093 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:41679][0m
+INFO 2023-11-06 01:41:16,100 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:41682][0m
+INFO 2023-11-06 01:41:16,104 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:41684][0m
+INFO 2023-11-06 01:41:16,109 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:41683][0m
+INFO 2023-11-06 01:41:16,450 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:41684][0m
+INFO 2023-11-06 01:41:22,023 runserver>log_action [mHTTP GET /tfs/ 200 [0.36, 127.0.0.1:41679][0m
+INFO 2023-11-06 01:43:06,610 runserver>log_action [mHTTP GET /tfs/ 200 [0.12, 127.0.0.1:40340][0m
+INFO 2023-11-06 01:43:15,188 runserver>log_action [mHTTP GET /tfs/ 200 [0.15, 127.0.0.1:40340][0m
+INFO 2023-11-06 01:43:18,381 runserver>log_action [mHTTP GET /user/ 200 [0.10, 127.0.0.1:40340][0m
+INFO 2023-11-06 01:43:21,491 runserver>log_action [mHTTP GET /branch/ 200 [0.87, 127.0.0.1:40340][0m
+INFO 2023-11-06 01:45:33,403 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:40454][0m
+INFO 2023-11-06 01:45:41,541 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:40454][0m
+INFO 2023-11-06 01:46:44,417 runserver>log_action [mHTTP GET /branch/ 200 [0.16, 127.0.0.1:40592][0m
+INFO 2023-11-06 01:46:57,188 runserver>log_action [mHTTP GET /tfs/ 200 [0.33, 127.0.0.1:40592][0m
+INFO 2023-11-06 01:47:00,835 runserver>log_action [mHTTP GET /routes/ 200 [0.41, 127.0.0.1:40592][0m
+INFO 2023-11-06 01:48:57,853 runserver>log_action [mHTTP GET /routes/ 200 [0.15, 127.0.0.1:40707][0m
+INFO 2023-11-06 01:49:07,837 runserver>log_action [mHTTP GET /routes/ 200 [0.14, 127.0.0.1:40707][0m
+INFO 2023-11-06 01:50:09,773 runserver>log_action [mHTTP GET /routes/ 200 [0.13, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:50:19,888 runserver>log_action [mHTTP GET /routes/ 200 [0.16, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:50:32,815 runserver>log_action [mHTTP GET /routes/ 200 [0.18, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:50:37,324 runserver>log_action [mHTTP GET /supervisors/ 200 [0.11, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:51:19,126 runserver>log_action [mHTTP GET /supervisors/ 200 [0.11, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:51:28,954 runserver>log_action [mHTTP GET /supervisors/ 200 [0.26, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:51:44,568 runserver>log_action [mHTTP GET /supervisors/ 200 [0.10, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:51:53,481 runserver>log_action [mHTTP GET /supervisors/ 200 [0.11, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:51:59,207 runserver>log_action [mHTTP GET /supervisors/ 200 [0.25, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:52:00,893 runserver>log_action [mHTTP GET /reports/ 200 [0.26, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:52:45,152 runserver>log_action [mHTTP GET /routes/ 200 [0.14, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:52:45,885 runserver>log_action [mHTTP GET /tfs/ 200 [0.11, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:52:56,159 runserver>log_action [mHTTP GET /tfs/ 200 [0.31, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:52:58,891 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:53:01,519 runserver>log_action [mHTTP GET /userlist/ 200 [0.36, 127.0.0.1:40791][0m
+WARNING 2023-11-06 01:53:05,274 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-06 01:53:05,276 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.07, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:53:08,516 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.24, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:53:22,236 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.21, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:53:24,628 runserver>log_action [mHTTP GET /softkey_login/1/ 200 [0.29, 127.0.0.1:40791][0m
+WARNING 2023-11-06 01:53:30,604 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-06 01:53:30,611 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-06 01:53:30,618 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-06 01:53:30,733 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.35, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:53:30,785 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:41078]
+INFO 2023-11-06 01:53:30,804 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-06 01:53:30,874 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:41078]
+INFO 2023-11-06 01:53:30,882 runserver>log_action WebSocket HANDSHAKING /ws/cs/1/ [127.0.0.1:41081]
+INFO 2023-11-06 01:53:30,899 base>consumers>connect connecting:cs_1
+INFO 2023-11-06 01:53:30,910 runserver>log_action WebSocket CONNECT /ws/cs/1/ [127.0.0.1:41081]
+INFO 2023-11-06 01:53:30,922 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:41082]
+INFO 2023-11-06 01:53:30,939 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-06 01:53:30,957 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:41082]
+INFO 2023-11-06 01:54:10,484 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:41082]
+INFO 2023-11-06 01:54:10,486 runserver>log_action WebSocket DISCONNECT /ws/cs/1/ [127.0.0.1:41081]
+INFO 2023-11-06 01:54:10,486 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:41078]
+INFO 2023-11-06 01:54:10,605 runserver>log_action [mHTTP GET /tfs/ 200 [0.12, 127.0.0.1:40791][0m
+INFO 2023-11-06 01:55:42,097 runserver>log_action [mHTTP GET /routes/ 200 [0.13, 127.0.0.1:41183][0m
+INFO 2023-11-06 01:56:37,676 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:41183][0m
+INFO 2023-11-06 02:02:05,382 runserver>log_action [mHTTP GET /user/ 200 [0.12, 127.0.0.1:41382][0m
+INFO 2023-11-06 02:02:05,409 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:41382][0m
+INFO 2023-11-06 02:02:05,415 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:41386][0m
+INFO 2023-11-06 02:02:05,418 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:41387][0m
+INFO 2023-11-06 02:02:05,423 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:41388][0m
+INFO 2023-11-06 02:02:05,743 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:41388][0m
+INFO 2023-11-06 02:03:10,299 runserver>log_action [mHTTP GET /user/ 200 [0.11, 127.0.0.1:41442][0m
+INFO 2023-11-06 02:03:20,550 runserver>log_action [mHTTP GET /user/ 200 [0.25, 127.0.0.1:41454][0m
+INFO 2023-11-06 02:03:20,575 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:41454][0m
+INFO 2023-11-06 02:03:20,582 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:41457][0m
+INFO 2023-11-06 02:03:20,586 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:41459][0m
+INFO 2023-11-06 02:03:20,592 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:41458][0m
+INFO 2023-11-06 02:03:20,719 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:41458][0m
+INFO 2023-11-06 02:06:34,588 runserver>log_action [mHTTP GET /user/ 200 [0.11, 127.0.0.1:41575][0m
+INFO 2023-11-06 02:06:34,609 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:41575][0m
+INFO 2023-11-06 02:06:34,614 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:41579][0m
+INFO 2023-11-06 02:06:34,617 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:41581][0m
+INFO 2023-11-06 02:06:34,620 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:41580][0m
+INFO 2023-11-06 02:06:34,738 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:41581][0m
+INFO 2023-11-06 02:07:09,364 runserver>log_action [mHTTP GET /user/ 200 [0.11, 127.0.0.1:41609][0m
+INFO 2023-11-06 02:07:09,388 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:41609][0m
+INFO 2023-11-06 02:07:09,393 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:41612][0m
+INFO 2023-11-06 02:07:09,396 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:41613][0m
+INFO 2023-11-06 02:07:09,400 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:41614][0m
+INFO 2023-11-06 02:07:09,483 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:41614][0m
+INFO 2023-11-06 02:07:12,498 runserver>log_action [mHTTP GET /user/ 200 [0.10, 127.0.0.1:41619][0m
+INFO 2023-11-06 02:07:12,518 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:41619][0m
+INFO 2023-11-06 02:07:12,523 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:41622][0m
+INFO 2023-11-06 02:07:12,527 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:41624][0m
+INFO 2023-11-06 02:07:12,531 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:41623][0m
+INFO 2023-11-06 02:07:12,624 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:41624][0m
+INFO 2023-11-06 02:08:23,837 runserver>log_action [mHTTP GET /user/ 200 [0.12, 127.0.0.1:41712][0m
+INFO 2023-11-06 02:08:24,849 runserver>log_action [mHTTP GET /user/ 200 [0.10, 127.0.0.1:41712][0m
+INFO 2023-11-06 02:08:27,734 runserver>log_action [mHTTP GET /update-user/7/ 200 [0.20, 127.0.0.1:41712][0m
+INFO 2023-11-06 02:08:30,559 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:41712][0m
+INFO 2023-11-06 02:08:32,737 runserver>log_action [mHTTP GET /user/ 200 [0.27, 127.0.0.1:41725][0m
+INFO 2023-11-06 02:08:32,759 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:41725][0m
+INFO 2023-11-06 02:08:32,766 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:41728][0m
+INFO 2023-11-06 02:08:32,772 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:41730][0m
+INFO 2023-11-06 02:08:32,777 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:41729][0m
+INFO 2023-11-06 02:08:32,926 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:41730][0m
+INFO 2023-11-06 02:08:44,128 runserver>log_action [mHTTP GET /update-user/25/ 200 [0.23, 127.0.0.1:41725][0m
+INFO 2023-11-06 02:13:57,900 runserver>log_action [mHTTP GET /user/ 200 [0.30, 127.0.0.1:41959][0m
+INFO 2023-11-06 02:14:04,036 runserver>log_action [mHTTP GET /update-user/1/ 200 [0.46, 127.0.0.1:41959][0m
+INFO 2023-11-06 02:14:29,282 runserver>log_action [mHTTP GET /user/ 200 [0.12, 127.0.0.1:41993][0m
+INFO 2023-11-06 02:14:29,312 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:41993][0m
+INFO 2023-11-06 02:14:29,318 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:41996][0m
+INFO 2023-11-06 02:14:29,324 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:41997][0m
+INFO 2023-11-06 02:14:29,328 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:41998][0m
+INFO 2023-11-06 02:14:29,615 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:41997][0m
+INFO 2023-11-06 02:15:07,032 runserver>log_action [mHTTP GET /user/ 200 [0.11, 127.0.0.1:41993][0m
+INFO 2023-11-06 02:15:26,918 runserver>log_action [mHTTP GET /user/ 200 [0.13, 127.0.0.1:41993][0m
+INFO 2023-11-06 02:16:52,364 runserver>log_action [mHTTP GET /user/ 200 [0.13, 127.0.0.1:42163][0m
+INFO 2023-11-06 02:17:26,722 runserver>log_action [mHTTP GET /update-user/25/ 200 [0.13, 127.0.0.1:42163][0m
+INFO 2023-11-06 02:17:29,706 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:42163][0m
+INFO 2023-11-06 02:17:36,563 runserver>log_action [mHTTP GET /branch/ 200 [0.26, 127.0.0.1:42163][0m
+INFO 2023-11-06 02:17:37,901 runserver>log_action [mHTTP GET /user/ 200 [0.27, 127.0.0.1:42163][0m
+INFO 2023-11-06 02:19:35,316 runserver>log_action [mHTTP GET /user/ 200 [0.14, 127.0.0.1:42278][0m
+INFO 2023-11-06 02:19:36,230 runserver>log_action [mHTTP GET /user/ 200 [0.11, 127.0.0.1:42278][0m
+INFO 2023-11-06 02:19:37,649 runserver>log_action [mHTTP GET /user/ 200 [0.10, 127.0.0.1:42287][0m
+INFO 2023-11-06 02:19:37,676 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:42287][0m
+INFO 2023-11-06 02:19:37,681 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:42290][0m
+INFO 2023-11-06 02:19:37,684 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:42291][0m
+INFO 2023-11-06 02:19:37,690 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:42292][0m
+INFO 2023-11-06 02:19:37,913 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:42292][0m
+INFO 2023-11-06 02:20:14,789 runserver>log_action [mHTTP GET /user/ 200 [0.31, 127.0.0.1:42287][0m
+INFO 2023-11-06 02:20:57,534 runserver>log_action [mHTTP GET /user/ 200 [0.12, 127.0.0.1:42287][0m
+INFO 2023-11-06 02:21:34,642 runserver>log_action [mHTTP GET /userlist/ 200 [0.36, 127.0.0.1:42287][0m
+INFO 2023-11-06 02:21:37,123 runserver>log_action [mHTTP GET /user/ 200 [0.28, 127.0.0.1:42287][0m
+INFO 2023-11-06 02:21:39,706 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.22, 127.0.0.1:42287][0m
+INFO 2023-11-06 02:21:40,883 runserver>log_action [mHTTP GET /user/ 200 [0.29, 127.0.0.1:42287][0m
+INFO 2023-11-06 02:24:43,418 runserver>log_action [mHTTP GET /user/ 200 [0.15, 127.0.0.1:42493][0m
+INFO 2023-11-06 02:24:44,780 runserver>log_action [mHTTP GET /user/ 200 [0.10, 127.0.0.1:42500][0m
+INFO 2023-11-06 02:24:44,803 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:42500][0m
+INFO 2023-11-06 02:24:44,809 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:42503][0m
+INFO 2023-11-06 02:24:44,813 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:42504][0m
+INFO 2023-11-06 02:24:44,816 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:42505][0m
+INFO 2023-11-06 02:24:44,935 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:42505][0m
+INFO 2023-11-06 02:24:58,921 runserver>log_action [mHTTP GET /user/ 200 [0.27, 127.0.0.1:42524][0m
+INFO 2023-11-06 02:24:58,949 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:42524][0m
+INFO 2023-11-06 02:24:58,956 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:42534][0m
+INFO 2023-11-06 02:24:58,961 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:42535][0m
+INFO 2023-11-06 02:24:58,968 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:42536][0m
+INFO 2023-11-06 02:24:59,054 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:42536][0m
+INFO 2023-11-06 02:28:23,236 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:42661][0m
+INFO 2023-11-06 02:28:23,285 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:42661][0m
+INFO 2023-11-06 02:29:22,441 runserver>log_action [mHTTP GET /user/ 200 [0.11, 127.0.0.1:42661][0m
+INFO 2023-11-06 02:29:22,468 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:42661][0m
+INFO 2023-11-06 02:29:23,612 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:42661][0m
+INFO 2023-11-06 02:30:44,964 runserver>log_action [mHTTP GET /user/ 200 [0.11, 127.0.0.1:42802][0m
+INFO 2023-11-06 02:30:44,997 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:42802][0m
+INFO 2023-11-06 02:30:46,068 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:42802][0m
+INFO 2023-11-06 02:31:38,173 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:42802][0m
+INFO 2023-11-06 02:31:38,198 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:42802][0m
+INFO 2023-11-06 02:31:40,684 runserver>log_action [mHTTP GET /update-branch/1/ 200 [0.05, 127.0.0.1:42802][0m
+INFO 2023-11-06 02:32:27,873 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:42802][0m
+INFO 2023-11-06 02:32:27,898 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:42802][0m
+INFO 2023-11-06 02:32:30,097 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:42911][0m
+INFO 2023-11-06 02:32:30,119 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:42911][0m
+INFO 2023-11-06 02:32:30,125 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:42914][0m
+INFO 2023-11-06 02:32:30,129 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:42915][0m
+INFO 2023-11-06 02:32:30,132 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:42916][0m
+INFO 2023-11-06 02:32:30,240 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:42916][0m
+INFO 2023-11-06 02:33:42,309 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:42945][0m
+INFO 2023-11-06 02:33:42,332 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:42945][0m
+INFO 2023-11-06 02:35:01,267 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:43026][0m
+INFO 2023-11-06 02:35:01,286 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:43026][0m
+INFO 2023-11-06 02:35:02,122 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:43026][0m
+INFO 2023-11-06 02:35:03,199 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:43040][0m
+INFO 2023-11-06 02:35:03,216 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:43040][0m
+INFO 2023-11-06 02:35:03,223 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:43043][0m
+INFO 2023-11-06 02:35:03,227 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:43044][0m
+INFO 2023-11-06 02:35:03,230 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:43045][0m
+INFO 2023-11-06 02:35:03,496 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:43044][0m
+INFO 2023-11-06 02:35:11,595 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:43040][0m
+INFO 2023-11-06 02:35:13,409 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:43068][0m
+INFO 2023-11-06 02:35:13,432 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:43068][0m
+INFO 2023-11-06 02:35:13,438 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:43071][0m
+INFO 2023-11-06 02:35:13,443 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:43073][0m
+INFO 2023-11-06 02:35:13,446 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:43072][0m
+INFO 2023-11-06 02:35:13,682 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:43072][0m
+INFO 2023-11-06 02:36:54,218 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:43155][0m
+INFO 2023-11-06 02:36:54,280 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:43155][0m
+INFO 2023-11-06 02:36:56,053 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:43184][0m
+INFO 2023-11-06 02:36:56,076 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:43184][0m
+INFO 2023-11-06 02:36:56,082 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:43187][0m
+INFO 2023-11-06 02:36:56,086 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:43188][0m
+INFO 2023-11-06 02:36:56,091 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:43189][0m
+INFO 2023-11-06 02:36:56,221 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:43188][0m
+INFO 2023-11-06 02:37:11,095 runserver>log_action [mHTTP GET /branch/ 200 [0.23, 127.0.0.1:43184][0m
+INFO 2023-11-06 02:37:29,274 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:43184][0m
+INFO 2023-11-06 02:37:30,101 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:43184][0m
+INFO 2023-11-06 02:39:53,135 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:43382][0m
+INFO 2023-11-06 02:39:53,159 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.01, 127.0.0.1:43382][0m
+INFO 2023-11-06 02:40:32,007 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:43382][0m
+INFO 2023-11-06 02:41:58,663 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:43533][0m
+INFO 2023-11-06 02:41:58,685 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:43533][0m
+INFO 2023-11-06 02:42:00,232 runserver>log_action [mHTTP GET /user/ 200 [0.12, 127.0.0.1:43533][0m
+INFO 2023-11-06 02:42:02,140 runserver>log_action [mHTTP GET /tfs/ 200 [0.16, 127.0.0.1:43533][0m
+INFO 2023-11-06 02:44:56,861 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:43657][0m
+INFO 2023-11-06 02:44:56,918 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:43657][0m
+INFO 2023-11-06 02:45:02,457 runserver>log_action [mHTTP GET /user/ 200 [0.31, 127.0.0.1:43657][0m
+INFO 2023-11-06 02:45:03,806 runserver>log_action [mHTTP GET /branch/ 200 [0.26, 127.0.0.1:43657][0m
+INFO 2023-11-06 02:45:19,382 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:43657][0m
+INFO 2023-11-06 02:45:20,246 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:43657][0m
+INFO 2023-11-06 02:45:41,009 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:43657][0m
+INFO 2023-11-06 02:46:10,365 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:43657][0m
+INFO 2023-11-06 02:47:06,807 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:43657][0m
+INFO 2023-11-06 02:47:06,830 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:43657][0m
+INFO 2023-11-06 02:47:07,683 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:43657][0m
+INFO 2023-11-06 02:47:40,706 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:43657][0m
+INFO 2023-11-06 02:47:41,700 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:43657][0m
+INFO 2023-11-06 02:47:42,848 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:43850][0m
+INFO 2023-11-06 02:47:42,868 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:43850][0m
+INFO 2023-11-06 02:47:42,876 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:43853][0m
+INFO 2023-11-06 02:47:42,880 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:43854][0m
+INFO 2023-11-06 02:47:42,884 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:43855][0m
+INFO 2023-11-06 02:47:43,038 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:43854][0m
+INFO 2023-11-06 02:47:53,834 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:43850][0m
+INFO 2023-11-06 02:47:55,226 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:43870][0m
+INFO 2023-11-06 02:47:55,245 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:43870][0m
+INFO 2023-11-06 02:47:55,250 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:43873][0m
+INFO 2023-11-06 02:47:55,254 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:43875][0m
+INFO 2023-11-06 02:47:55,258 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:43874][0m
+INFO 2023-11-06 02:47:55,370 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:43875][0m
+INFO 2023-11-06 02:48:03,024 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:43870][0m
+INFO 2023-11-06 02:48:04,401 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:43889][0m
+INFO 2023-11-06 02:48:04,423 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:43889][0m
+INFO 2023-11-06 02:48:04,428 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:43893][0m
+INFO 2023-11-06 02:48:04,432 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:43895][0m
+INFO 2023-11-06 02:48:04,435 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:43894][0m
+INFO 2023-11-06 02:48:04,527 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:43895][0m
+INFO 2023-11-06 02:48:23,689 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:43925][0m
+INFO 2023-11-06 02:48:23,706 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:43925][0m
+INFO 2023-11-06 02:48:23,712 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:43929][0m
+INFO 2023-11-06 02:48:23,716 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:43930][0m
+INFO 2023-11-06 02:48:23,719 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:43931][0m
+INFO 2023-11-06 02:48:23,817 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:43930][0m
+INFO 2023-11-06 02:48:38,150 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:43925][0m
+INFO 2023-11-06 02:48:39,087 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:43925][0m
+INFO 2023-11-06 02:48:44,677 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:43965][0m
+INFO 2023-11-06 02:48:44,697 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:43965][0m
+INFO 2023-11-06 02:48:44,701 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:43968][0m
+INFO 2023-11-06 02:48:44,705 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:43970][0m
+INFO 2023-11-06 02:48:44,709 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:43969][0m
+INFO 2023-11-06 02:48:44,814 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:43970][0m
+INFO 2023-11-06 02:50:15,681 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:44034][0m
+INFO 2023-11-06 02:50:24,094 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:44034][0m
+INFO 2023-11-06 02:50:46,158 runserver>log_action [mHTTP GET /branch/ 200 [0.27, 127.0.0.1:44034][0m
+INFO 2023-11-06 02:50:55,068 runserver>log_action [mHTTP GET /branch/ 200 [0.28, 127.0.0.1:44034][0m
+INFO 2023-11-06 02:51:12,876 runserver>log_action [mHTTP GET /branch/ 200 [0.28, 127.0.0.1:44034][0m
+INFO 2023-11-06 02:51:12,911 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:44090][0m
+INFO 2023-11-06 02:51:20,224 runserver>log_action [mHTTP GET /branch/ 200 [0.28, 127.0.0.1:44034][0m
+INFO 2023-11-06 02:52:16,968 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:44143][0m
+INFO 2023-11-06 02:52:16,995 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:44143][0m
+INFO 2023-11-06 02:52:16,999 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:44146][0m
+INFO 2023-11-06 02:52:17,003 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:44148][0m
+INFO 2023-11-06 02:52:17,007 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:44147][0m
+INFO 2023-11-06 02:52:17,094 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:44148][0m
+INFO 2023-11-06 02:52:32,428 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:44143][0m
+INFO 2023-11-06 02:52:32,451 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:44148][0m
+INFO 2023-11-06 02:52:33,720 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:44165][0m
+INFO 2023-11-06 02:52:33,741 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:44165][0m
+INFO 2023-11-06 02:52:33,746 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:44168][0m
+INFO 2023-11-06 02:52:33,749 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:44169][0m
+INFO 2023-11-06 02:52:33,755 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:44170][0m
+INFO 2023-11-06 02:52:33,854 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:44168][0m
+INFO 2023-11-06 02:52:51,121 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:44165][0m
+INFO 2023-11-06 02:52:51,143 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:44168][0m
+INFO 2023-11-06 02:53:18,940 runserver>log_action [mHTTP GET /branch/ 200 [0.25, 127.0.0.1:44255][0m
+INFO 2023-11-06 02:53:18,983 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:44255][0m
+INFO 2023-11-06 02:53:18,990 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:44258][0m
+INFO 2023-11-06 02:53:18,995 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:44260][0m
+INFO 2023-11-06 02:53:19,000 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:44259][0m
+INFO 2023-11-06 02:53:19,102 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:44260][0m
+INFO 2023-11-06 02:53:36,974 runserver>log_action [mHTTP GET /branch/ 200 [0.23, 127.0.0.1:44255][0m
+INFO 2023-11-06 02:53:37,003 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:44260][0m
+INFO 2023-11-06 02:54:43,680 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:44337][0m
+INFO 2023-11-06 02:54:43,701 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:44337][0m
+INFO 2023-11-06 02:54:43,708 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:44341][0m
+INFO 2023-11-06 02:54:43,711 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:44342][0m
+INFO 2023-11-06 02:54:43,715 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:44343][0m
+INFO 2023-11-06 02:54:43,801 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:44343][0m
+INFO 2023-11-06 02:55:17,025 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:44372][0m
+INFO 2023-11-06 02:55:17,046 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:44372][0m
+INFO 2023-11-06 02:55:17,052 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:44375][0m
+INFO 2023-11-06 02:55:17,057 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:44377][0m
+INFO 2023-11-06 02:55:17,060 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:44376][0m
+INFO 2023-11-06 02:55:17,155 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:44377][0m
+INFO 2023-11-06 02:56:00,995 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:44372][0m
+INFO 2023-11-06 02:56:01,015 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:44377][0m
+INFO 2023-11-06 02:56:02,067 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:44372][0m
+INFO 2023-11-06 02:56:43,290 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:44372][0m
+INFO 2023-11-06 02:56:43,312 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:44377][0m
+INFO 2023-11-06 02:58:18,573 runserver>log_action [mHTTP GET /branch/ 200 [0.15, 127.0.0.1:44573][0m
+INFO 2023-11-06 02:58:18,612 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:44573][0m
+INFO 2023-11-06 02:58:19,523 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:44573][0m
+INFO 2023-11-06 02:58:21,818 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:44581][0m
+INFO 2023-11-06 02:58:21,842 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:44581][0m
+INFO 2023-11-06 02:58:21,847 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:44584][0m
+INFO 2023-11-06 02:58:21,851 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:44586][0m
+INFO 2023-11-06 02:58:21,855 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:44585][0m
+INFO 2023-11-06 02:58:22,118 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:44586][0m
