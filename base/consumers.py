@@ -1,3 +1,4 @@
+
 # base.consumers.py
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer, WebsocketConsumer
@@ -18,22 +19,22 @@ ws_connected_dict = {}
 ws_connected_max = 200
 
 # dict to store WS connection for each branch
-{'KB':
-      {
-       'webtv':
-           {
-               'pub':
-                   { 'count': 2,
-                       'ip': ['ip1', 'ip2']
-                   },
-               'int':
-                   { 'count': 4,
-                       'ip': ['ip1', 'ip2', 'ip3', 'ip4']
-                   }
-           },
-       'eticket':{...}
-      }
-}
+# {'KB':
+#       {
+#        'webtv':
+#            {
+#                'pub':
+#                    { 'count': 2,
+#                        'ip': ['ip1', 'ip2']
+#                    },
+#                'int':
+#                    { 'count': 4,
+#                        'ip': ['ip1', 'ip2', 'ip3', 'ip4']
+#                    }
+#            },
+#        'eticket':{...}
+#       }
+# }
 # print('Count of KB webtv public:' + str(ws_connected_dict['KB']['webtv']['pub']['count']))
 # ws_connected_dict['KB']['webtv']['pub']['ip'].append('test')
 # print('IP list of KB webtv public:' + str(ws_connected_dict['KB']['webtv']['pub']['ip']))

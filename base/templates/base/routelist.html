@@ -1,43 +1,41 @@
 {% load static %}
-
+<div class="roomArea">
 {% for route in routes %}
-    <div class="roomListRoom">
-        <div class="roomListRoom__header">
-        <a href="{% url 'update-route' route.id %}" class="roomListRoom__author">
-            <div class="list__svg">
-                {% include 'base/images/routes.svg' %}
+    <a href="{% url 'update-route' route.id %}">
+        <div class="roomListRoom">
+            <div class="roomListRoom__header">
+                <div class="roomListRoom__author">
+                    <div class="list__svg">
+                        {% include 'base/images/routes.svg' %}
+                    </div>
+                    <span>Ticket Type : {{route.tickettype}}</span>
+                </div>
+                <div class="roomListRoom__actions">
+                    <span>Branch : {{route.branch}}</span>
+                </div>
             </div>
-            <span>Ticket Type : {{route.tickettype}}</span>
-        </a>
-        <div class="roomListRoom__actions">
-            <span>Branch : {{route.branch}}</span>
+            <div class="roomListRoom__content">
+                Counter type name: {{route.countertype.name}}
+            </div>
+            <div class="roomListRoom__meta">
+                <div class="roomListRoom__joined">
+                    
+                    {% include 'base/images/steps.svg' %}
+                    
+                    Step: {{route.step}}
+                </div>
+                {% if route.enabled == False %}
+                    <p class="roomListRoom__topic_red">
+                        Disabled
+                    </p>
+                {% else %}
+                    <p class="roomListRoom__topic">
+                        Enabled
+                    </p>
+                {% endif %}
+            </div>
         </div>
-        </div>
-        <div class="roomListRoom__content">
-        <a href="{% url 'update-route' route.id %}">Counter type name: {{route.countertype.name}}</a>
-
-        </div>
-        <div class="roomListRoom__meta">
-        <a href="{% url 'update-route' route.id %}" class="roomListRoom__joined">
-            
-            {% include 'base/images/steps.svg' %}
-            
-            Step: {{route.step}}
-
-            
-        </a>
-            {% if route.enabled == False %}
-                <p class="roomListRoom__topic_red">
-                    Enabled : {{ route.enabled }}  
-                </p>
-            {% else %}
-                <p class="roomListRoom__topic">
-                    Enabled : {{ route.enabled }}  
-                </p>
-            {% endif %}
-        </div>
-    
-    </div>
-    
-
+    </a>
 {% endfor %}
+
+</div>

@@ -313,7 +313,7 @@ a {
   position: absolute;
   top: 5rem;
   right: 0.5rem;
-  background: var(--color-dark-light);
+  background: var(--color-dark-medium);
   border-radius: 5px;
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
   overflow: hidden;
@@ -333,11 +333,11 @@ a {
 }
 
 .dropdown-menu a:hover {
-  background-color: var(--color-dark-medium);
+  background-color: var(--color-dark-light);
 }
 
 .dropdown-menu > a:not(:last-child) {
-  border-bottom: 1px solid var(--color-dark-medium);
+  border-bottom: 1px solid var(--color-dark);
 }
 
 .dropdown-menu a svg {
@@ -806,12 +806,20 @@ a {
 }
 
 /*========== Room List Room ==========*/
-
+.roomArea {
+  display:grid; 
+  columns: 1;
+}
 .roomListRoom {
   margin-bottom: 2.4rem;
   background-color: var(--color-dark);
   border-radius: 1rem;
   padding: 2rem;
+}
+.roomListRoom:hover {
+
+  background-color: var(--color-dark-medium);
+  color:var(--color-main);
 }
 .roomListRoom__hide {
   display: none;
@@ -831,7 +839,11 @@ a {
   display: flex;
   align-items: center;
   gap: 1rem;
-  color: var(--color-main)
+  color: var(--color-main);
+}
+.roomListRoom__author span {
+  font-size : 2rem;
+  color: var(--color-main);
 }
 
 .roomListRoom__actions {
@@ -855,6 +867,10 @@ a {
 
 .roomListRoom__content {
   margin: 1rem 0;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--color-light);
 }
 
 .roomListRoom__content a {
@@ -870,7 +886,7 @@ a {
 }
 
 .roomListRoom__meta {
-  border-top: 1px solid var(--color-dark-medium);
+  border-top: 1px solid var(--color-dark-light);
   padding-top: 1rem;
   display: flex;
   align-items: center;
@@ -905,16 +921,17 @@ a {
 
 .roomListRoom__topic {
   padding: 5px 1.5rem;
-  background-color: var(--color-dark-medium);
+  background-color: var(--color-dark-light);
   border-radius: 5rem;
   font-weight: 500;
   font-size: 1.3rem;
 }
 .roomListRoom__topic_red {
   padding: 5px 1.5rem;
-  background-color: var(--color-dark-red);
+  background-color: var(--color-dark-light);
+  color: var(--color-error);
   border-radius: 5rem;
-  font-weight: 500;
+  font-weight: 200;
   font-size: 1.3rem;
 }
 .roomListSelect{

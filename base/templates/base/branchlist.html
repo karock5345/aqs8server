@@ -1,57 +1,45 @@
 {% load static %}
-<div style="display:grid; columns: 1;">
+<div class="roomArea">
 {% for branch in branchs %}
+    <a href="{% url 'update-branch' branch.id %}">
+        <div class="roomListRoom">
+            <div class="roomListRoom__header">
+                <div class="roomListRoom__author">
 
-<a href="{% url 'update-branch' branch.id %}">
-    <div class="roomListRoom">
-        <div class="roomListRoom__header">
-            <div class="roomListRoom__author">
-
-                <div class="list__svg">
-                    
-                   {% include 'base/images/branch.svg' %}
+                    <div class="list__svg">
+                        
+                    {% include 'base/images/branch.svg' %}
+                    </div>
+                    <span>{{branch.bcode}}</span>
                 </div>
-                <span>{{branch.bcode}}</span>
+                <div class="roomListRoom__actions">
+                    <span>{{branch.address}}</span>
+                </div>
             </div>
-            <div class="roomListRoom__actions">
-                <span>{{branch.address}}</span>
+            <div class="roomListRoom__content">
+                {{branch.name}}
             </div>
-        </div>
-        <div class="roomListRoom__content">
-            {{branch.name}}
+            <div class="roomListRoom__meta">
+                <div class="roomListRoom__joined">
+                
+                    {% include 'base/images/clock.svg' %}
 
-        </div>
-        <div class="roomListRoom__meta">
-        <div class="roomListRoom__joined">
-            {% include 'base/images/clock.svg' %}
-            <!-- Office hour: {{branch.officehourstart}} to {{branch.officehourend}}  -->
-            <!-- Ticket time: {{branch.tickettimestart}} to {{branch.tickettimeend}} -->
-            Time Zone: {{branch.timezone}}
-            <!-- Branchs: 
-            {% for prof in profiles %}
-                {% if user == prof.user %}                                       
-                    {% for bname in prof.branchs.filter %}
-                        {{bname.bcode}}
-                    {% endfor %}
-                    ({{prof.branchs.filter.count}})
+                    Time Zone: {{branch.timezone}}            
+                </div>
+
+                {% if branch.enabled == False %}
+                    <p class="roomListRoom__topic_red">
+                        Branch enabled : {{ branch.enabled }}  
+                    </p>
+                {% else %}
+                    <p class="roomListRoom__topic">
+                        Branch enabled : {{ branch.enabled }}  
+                    </p>
                 {% endif %}
-            {% endfor %} -->
-            
             </div>
-
-            {% if branch.enabled == False %}
-                <p class="roomListRoom__topic_red">
-                    Branch enabled : {{ branch.enabled }}  
-                </p>
-            {% else %}
-                <p class="roomListRoom__topic">
-                    Branch enabled : {{ branch.enabled }}  
-                </p>
-            {% endif %}
+        
         </div>
-    </div>
-
-</a>
+    </a>
 
 {% endfor %}
 

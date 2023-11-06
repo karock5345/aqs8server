@@ -3411,3 +3411,712 @@ INFO 2023-11-06 02:58:21,847 runserver>log_action [mHTTP GET /static/js/script.
 INFO 2023-11-06 02:58:21,851 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:44586][0m
 INFO 2023-11-06 02:58:21,855 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:44585][0m
 INFO 2023-11-06 02:58:22,118 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:44586][0m
+INFO 2023-11-06 13:22:46,654 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-06 13:22:49,503 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-06 13:22:49,522 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 13:22:49,949 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-06 13:22:49,950 base>views>main -SCH- Now:11/06/2023, 05:22:49
+INFO 2023-11-06 13:22:50,261 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-06 16:42:00 Local:2023-11-07 00:42:00
+INFO 2023-11-06 13:22:50,263 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-11-06 13:22:50,263 base>views>sch_shutdown    -SCH- 2023-11-06 16:42:00 > 2023-11-06 05:22:49 [Yes]
+INFO 2023-11-06 13:22:50,271 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-06 15:59:59 Local:2023-11-06 23:59:59
+INFO 2023-11-06 13:22:50,273 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-06 13:22:50,273 base>views>sch_shutdown    -SCH- 2023-11-06 15:59:59 > 2023-11-06 05:22:50 [Yes]
+INFO 2023-11-06 13:22:50,277 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-06 18:00:00 Local:2023-11-07 02:00:00
+INFO 2023-11-06 13:22:50,279 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-06 13:22:50,280 base>views>sch_shutdown    -SCH- 2023-11-06 18:00:00 > 2023-11-06 05:22:50 [Yes]
+INFO 2023-11-06 13:22:50,283 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-06 15:59:59 Local:2023-11-06 23:59:59
+INFO 2023-11-06 13:22:50,284 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-06 13:22:50,285 base>views>sch_shutdown    -SCH- 2023-11-06 15:59:59 > 2023-11-06 05:22:50 [Yes]
+INFO 2023-11-06 13:22:50,289 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-06 15:59:59 Local:2023-11-06 23:59:59
+INFO 2023-11-06 13:22:50,291 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-06 13:22:50,292 base>views>sch_shutdown    -SCH- 2023-11-06 15:59:59 > 2023-11-06 05:22:50 [Yes]
+INFO 2023-11-06 13:22:50,297 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-06 15:59:59 Local:2023-11-06 23:59:59
+INFO 2023-11-06 13:22:50,298 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-06 13:22:50,299 base>views>sch_shutdown    -SCH- 2023-11-06 15:59:59 > 2023-11-06 05:22:50 [Yes]
+INFO 2023-11-06 13:22:51,201 runserver>log_action [32mHTTP GET / 302 [0.06, 127.0.0.1:25645][0m
+INFO 2023-11-06 13:22:51,248 runserver>log_action [mHTTP GET /login/ 200 [0.04, 127.0.0.1:25645][0m
+INFO 2023-11-06 13:22:51,558 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.17, 127.0.0.1:25645][0m
+INFO 2023-11-06 13:22:51,567 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.17, 127.0.0.1:25650][0m
+INFO 2023-11-06 13:22:51,574 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:25651][0m
+INFO 2023-11-06 13:22:51,583 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:25644][0m
+INFO 2023-11-06 13:22:52,179 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:25645][0m
+INFO 2023-11-06 13:27:46,709 runserver>log_action [32mHTTP POST /login/ 302 [0.71, 127.0.0.1:25889][0m
+INFO 2023-11-06 13:27:46,921 runserver>log_action [mHTTP GET / 200 [0.19, 127.0.0.1:25889][0m
+INFO 2023-11-06 13:27:49,141 runserver>log_action [mHTTP GET /user/ 200 [0.26, 127.0.0.1:25889][0m
+INFO 2023-11-06 13:27:50,826 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:25889][0m
+INFO 2023-11-06 13:30:09,153 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:26017][0m
+INFO 2023-11-06 13:30:10,984 runserver>log_action [mHTTP GET /branch/ 200 [0.07, 127.0.0.1:26024][0m
+INFO 2023-11-06 13:30:11,018 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.02, 127.0.0.1:26024][0m
+INFO 2023-11-06 13:30:11,023 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:26027][0m
+INFO 2023-11-06 13:30:11,029 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:26028][0m
+INFO 2023-11-06 13:30:11,032 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:26029][0m
+INFO 2023-11-06 13:30:11,303 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:26029][0m
+INFO 2023-11-06 13:30:28,096 runserver>log_action [mHTTP GET /branch/ 200 [0.18, 127.0.0.1:26077][0m
+INFO 2023-11-06 13:30:28,146 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:26077][0m
+INFO 2023-11-06 13:30:28,153 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:26080][0m
+INFO 2023-11-06 13:30:28,161 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:26081][0m
+INFO 2023-11-06 13:30:28,171 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.03, 127.0.0.1:26082][0m
+INFO 2023-11-06 13:30:28,546 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:26081][0m
+INFO 2023-11-06 13:32:55,025 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:26225][0m
+INFO 2023-11-06 13:32:55,094 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:26225][0m
+INFO 2023-11-06 13:34:12,140 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:26370][0m
+INFO 2023-11-06 13:34:12,177 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:26370][0m
+INFO 2023-11-06 13:34:12,184 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:26373][0m
+INFO 2023-11-06 13:34:12,190 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:26374][0m
+INFO 2023-11-06 13:34:12,197 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:26375][0m
+INFO 2023-11-06 13:34:12,317 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:26375][0m
+INFO 2023-11-06 13:34:37,766 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:26399][0m
+INFO 2023-11-06 13:34:37,797 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:26399][0m
+INFO 2023-11-06 13:34:37,803 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:26402][0m
+INFO 2023-11-06 13:34:37,809 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:26403][0m
+INFO 2023-11-06 13:34:37,815 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:26404][0m
+INFO 2023-11-06 13:34:38,083 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:26404][0m
+INFO 2023-11-06 13:35:29,147 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:26442][0m
+INFO 2023-11-06 13:35:29,180 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:26442][0m
+INFO 2023-11-06 13:35:29,187 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:26445][0m
+INFO 2023-11-06 13:35:29,192 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:26446][0m
+INFO 2023-11-06 13:35:29,198 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:26447][0m
+INFO 2023-11-06 13:35:29,270 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:26447][0m
+INFO 2023-11-06 13:36:48,205 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:26541][0m
+INFO 2023-11-06 13:36:48,229 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:26541][0m
+INFO 2023-11-06 13:36:48,234 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:26545][0m
+INFO 2023-11-06 13:36:48,238 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:26546][0m
+INFO 2023-11-06 13:36:48,243 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:26547][0m
+INFO 2023-11-06 13:36:48,354 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:26547][0m
+INFO 2023-11-06 13:36:50,940 runserver>log_action [mHTTP GET /update-branch/1/ 200 [0.03, 127.0.0.1:26541][0m
+INFO 2023-11-06 13:36:50,973 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:26547][0m
+WARNING 2023-11-06 13:36:52,855 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-06 13:36:52,857 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.05, 127.0.0.1:26547][0m
+INFO 2023-11-06 13:38:37,148 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:26672][0m
+INFO 2023-11-06 13:38:37,185 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:26672][0m
+INFO 2023-11-06 13:38:37,192 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:26676][0m
+INFO 2023-11-06 13:38:37,196 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:26678][0m
+INFO 2023-11-06 13:38:37,200 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:26677][0m
+INFO 2023-11-06 13:38:37,294 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:26678][0m
+INFO 2023-11-06 13:38:51,878 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:26697][0m
+INFO 2023-11-06 13:38:51,903 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:26697][0m
+INFO 2023-11-06 13:38:51,910 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:26700][0m
+INFO 2023-11-06 13:38:51,915 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:26701][0m
+INFO 2023-11-06 13:38:51,919 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:26702][0m
+INFO 2023-11-06 13:38:52,024 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:26702][0m
+INFO 2023-11-06 14:38:53,569 runserver>log_action [32mHTTP GET /branch/ 302 [0.24, 127.0.0.1:50145][0m
+INFO 2023-11-06 14:38:53,652 runserver>log_action [mHTTP GET /login/ 200 [0.04, 127.0.0.1:50145][0m
+INFO 2023-11-06 14:38:53,937 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.02, 127.0.0.1:50145][0m
+INFO 2023-11-06 16:07:51,892 runserver>log_action [32mHTTP POST /login/ 302 [1.12, 127.0.0.1:39108][0m
+INFO 2023-11-06 16:07:52,077 runserver>log_action [mHTTP GET / 200 [0.16, 127.0.0.1:39108][0m
+INFO 2023-11-06 16:07:52,219 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.01, 127.0.0.1:39108][0m
+INFO 2023-11-06 16:07:54,513 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:39108][0m
+INFO 2023-11-06 16:08:49,439 runserver>log_action [mHTTP GET /branch/ 200 [0.22, 127.0.0.1:39108][0m
+INFO 2023-11-06 16:08:52,526 runserver>log_action [mHTTP GET /branch/ 200 [0.07, 127.0.0.1:39162][0m
+INFO 2023-11-06 16:08:52,558 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:39162][0m
+INFO 2023-11-06 16:08:52,565 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:39165][0m
+INFO 2023-11-06 16:08:52,572 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:39166][0m
+INFO 2023-11-06 16:08:52,596 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.04, 127.0.0.1:39167][0m
+INFO 2023-11-06 16:08:52,804 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:39167][0m
+INFO 2023-11-06 16:10:10,101 runserver>log_action [mHTTP GET /branch/ 200 [0.17, 127.0.0.1:39276][0m
+INFO 2023-11-06 16:10:10,203 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:39276][0m
+INFO 2023-11-06 16:10:10,211 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:39279][0m
+INFO 2023-11-06 16:10:10,216 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:39280][0m
+INFO 2023-11-06 16:10:10,221 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:39281][0m
+INFO 2023-11-06 16:10:10,532 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:39280][0m
+INFO 2023-11-06 16:11:12,299 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:39317][0m
+INFO 2023-11-06 16:11:12,330 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:39317][0m
+INFO 2023-11-06 16:11:12,339 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:39321][0m
+INFO 2023-11-06 16:11:12,346 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:39323][0m
+INFO 2023-11-06 16:11:12,352 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:39322][0m
+INFO 2023-11-06 16:11:12,469 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:39323][0m
+INFO 2023-11-06 16:13:58,864 runserver>log_action [mHTTP GET /branch/ 200 [0.57, 127.0.0.1:39492][0m
+INFO 2023-11-06 16:13:59,127 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.03, 127.0.0.1:39492][0m
+INFO 2023-11-06 16:13:59,135 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:39497][0m
+INFO 2023-11-06 16:13:59,142 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:39498][0m
+INFO 2023-11-06 16:13:59,149 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:39499][0m
+INFO 2023-11-06 16:13:59,479 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:39499][0m
+INFO 2023-11-06 16:14:24,886 runserver>log_action [mHTTP GET /branch/ 200 [0.20, 127.0.0.1:39533][0m
+INFO 2023-11-06 16:14:24,975 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:39533][0m
+INFO 2023-11-06 16:14:24,981 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:39536][0m
+INFO 2023-11-06 16:14:24,987 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:39538][0m
+INFO 2023-11-06 16:14:24,992 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:39537][0m
+INFO 2023-11-06 16:14:25,275 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:39538][0m
+INFO 2023-11-06 16:18:18,696 runserver>log_action [mHTTP GET /branch/ 200 [0.21, 127.0.0.1:39703][0m
+INFO 2023-11-06 16:18:18,889 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:39703][0m
+INFO 2023-11-06 16:18:18,902 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:39707][0m
+INFO 2023-11-06 16:18:18,910 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:39708][0m
+INFO 2023-11-06 16:18:18,922 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.03, 127.0.0.1:39709][0m
+INFO 2023-11-06 16:18:19,041 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:39709][0m
+INFO 2023-11-06 16:19:26,242 runserver>log_action [mHTTP GET /branch/ 200 [0.27, 127.0.0.1:39823][0m
+INFO 2023-11-06 16:19:26,439 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:39823][0m
+INFO 2023-11-06 16:19:26,447 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:39828][0m
+INFO 2023-11-06 16:19:26,459 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:39829][0m
+INFO 2023-11-06 16:19:26,467 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:39830][0m
+INFO 2023-11-06 16:19:26,948 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:39830][0m
+INFO 2023-11-06 16:21:29,370 runserver>log_action [mHTTP GET /branch/ 200 [0.19, 127.0.0.1:39889][0m
+INFO 2023-11-06 16:21:29,486 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:39889][0m
+INFO 2023-11-06 16:21:29,493 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:39892][0m
+INFO 2023-11-06 16:21:29,500 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:39894][0m
+INFO 2023-11-06 16:21:29,506 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:39893][0m
+INFO 2023-11-06 16:21:29,705 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:39894][0m
+INFO 2023-11-06 16:21:53,330 runserver>log_action [mHTTP GET /branch/ 200 [0.07, 127.0.0.1:39920][0m
+INFO 2023-11-06 16:21:53,347 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:39920][0m
+INFO 2023-11-06 16:21:53,353 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:39923][0m
+INFO 2023-11-06 16:21:53,357 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:39924][0m
+INFO 2023-11-06 16:21:53,361 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:39925][0m
+INFO 2023-11-06 16:21:53,478 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:39925][0m
+INFO 2023-11-06 16:22:07,413 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:39939][0m
+INFO 2023-11-06 16:22:07,438 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:39939][0m
+INFO 2023-11-06 16:22:07,445 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:39942][0m
+INFO 2023-11-06 16:22:07,449 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:39944][0m
+INFO 2023-11-06 16:22:07,455 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:39943][0m
+INFO 2023-11-06 16:22:07,563 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:39944][0m
+INFO 2023-11-06 16:27:14,841 runserver>log_action [mHTTP GET /branch/ 200 [0.40, 127.0.0.1:40200][0m
+INFO 2023-11-06 16:27:15,005 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.03, 127.0.0.1:40200][0m
+INFO 2023-11-06 16:27:15,012 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.03, 127.0.0.1:40205][0m
+INFO 2023-11-06 16:27:15,020 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:40207][0m
+INFO 2023-11-06 16:27:15,025 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:40206][0m
+INFO 2023-11-06 16:27:15,203 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:40207][0m
+INFO 2023-11-06 16:28:26,487 runserver>log_action [mHTTP GET /branch/ 200 [0.19, 127.0.0.1:40238][0m
+INFO 2023-11-06 16:28:26,590 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:40238][0m
+INFO 2023-11-06 16:28:26,598 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:40241][0m
+INFO 2023-11-06 16:28:26,605 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:40242][0m
+INFO 2023-11-06 16:28:26,612 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:40243][0m
+INFO 2023-11-06 16:28:26,788 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:40242][0m
+INFO 2023-11-06 16:29:17,724 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:22917][0m
+INFO 2023-11-06 16:29:17,857 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:22917][0m
+INFO 2023-11-06 16:29:17,863 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:22921][0m
+INFO 2023-11-06 16:29:17,871 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:22922][0m
+INFO 2023-11-06 16:29:17,878 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:22923][0m
+INFO 2023-11-06 16:29:18,283 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:22922][0m
+INFO 2023-11-06 16:30:52,360 runserver>log_action [mHTTP GET /branch/ 200 [0.13, 127.0.0.1:22963][0m
+INFO 2023-11-06 16:30:52,447 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:22963][0m
+INFO 2023-11-06 16:30:52,455 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:22966][0m
+INFO 2023-11-06 16:30:52,461 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:22967][0m
+INFO 2023-11-06 16:30:52,467 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:22968][0m
+INFO 2023-11-06 16:30:52,809 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:22968][0m
+INFO 2023-11-06 16:31:11,653 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:22990][0m
+INFO 2023-11-06 16:31:11,677 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:22990][0m
+INFO 2023-11-06 16:31:11,684 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:22993][0m
+INFO 2023-11-06 16:31:11,689 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:22994][0m
+INFO 2023-11-06 16:31:11,694 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:22995][0m
+INFO 2023-11-06 16:31:11,967 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:22994][0m
+INFO 2023-11-06 16:31:26,627 runserver>log_action [mHTTP GET /branch/ 200 [0.08, 127.0.0.1:23019][0m
+INFO 2023-11-06 16:31:26,652 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:23019][0m
+INFO 2023-11-06 16:31:26,656 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:23022][0m
+INFO 2023-11-06 16:31:26,660 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:23023][0m
+INFO 2023-11-06 16:31:26,665 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:23024][0m
+INFO 2023-11-06 16:31:26,776 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:23024][0m
+INFO 2023-11-06 16:33:20,971 runserver>log_action [mHTTP GET /branch/ 200 [0.35, 127.0.0.1:47277][0m
+INFO 2023-11-06 16:33:21,163 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.03, 127.0.0.1:47277][0m
+INFO 2023-11-06 16:33:21,173 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:47281][0m
+INFO 2023-11-06 16:33:21,181 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:47282][0m
+INFO 2023-11-06 16:33:21,190 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:47283][0m
+INFO 2023-11-06 16:33:21,628 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:47282][0m
+INFO 2023-11-06 16:34:48,124 runserver>log_action [mHTTP GET /branch/ 200 [0.32, 127.0.0.1:47381][0m
+INFO 2023-11-06 16:34:48,406 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:47381][0m
+INFO 2023-11-06 16:34:48,414 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:47385][0m
+INFO 2023-11-06 16:34:48,424 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:47386][0m
+INFO 2023-11-06 16:34:48,433 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:47387][0m
+INFO 2023-11-06 16:34:48,874 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:47387][0m
+INFO 2023-11-06 16:37:22,182 runserver>log_action [mHTTP GET /branch/ 200 [0.41, 127.0.0.1:47543][0m
+INFO 2023-11-06 16:37:22,336 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:47543][0m
+INFO 2023-11-06 16:37:22,344 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:47546][0m
+INFO 2023-11-06 16:37:22,353 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:47548][0m
+INFO 2023-11-06 16:37:22,361 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:47547][0m
+INFO 2023-11-06 16:37:22,722 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:47548][0m
+INFO 2023-11-06 16:38:21,028 runserver>log_action [mHTTP GET /branch/ 200 [0.25, 127.0.0.1:47628][0m
+INFO 2023-11-06 16:38:21,139 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:47628][0m
+INFO 2023-11-06 16:38:21,147 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:47631][0m
+INFO 2023-11-06 16:38:21,156 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:47632][0m
+INFO 2023-11-06 16:38:21,161 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:47633][0m
+INFO 2023-11-06 16:38:21,440 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:47632][0m
+INFO 2023-11-06 16:38:43,091 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:47654][0m
+INFO 2023-11-06 16:38:43,126 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:47654][0m
+INFO 2023-11-06 16:38:43,131 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:47657][0m
+INFO 2023-11-06 16:38:43,136 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:47659][0m
+INFO 2023-11-06 16:38:43,140 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:47658][0m
+INFO 2023-11-06 16:38:43,411 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:47659][0m
+INFO 2023-11-06 16:38:57,260 runserver>log_action [mHTTP GET /branch/ 200 [0.15, 127.0.0.1:47722][0m
+INFO 2023-11-06 16:38:57,290 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:47722][0m
+INFO 2023-11-06 16:38:57,297 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:47726][0m
+INFO 2023-11-06 16:38:57,304 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:47728][0m
+INFO 2023-11-06 16:38:57,308 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:47727][0m
+INFO 2023-11-06 16:38:57,611 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:47728][0m
+INFO 2023-11-06 16:39:00,873 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:47731][0m
+INFO 2023-11-06 16:39:00,894 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:47731][0m
+INFO 2023-11-06 16:39:00,902 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:47734][0m
+INFO 2023-11-06 16:39:00,906 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:47735][0m
+INFO 2023-11-06 16:39:00,910 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:47736][0m
+INFO 2023-11-06 16:39:01,021 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:47736][0m
+INFO 2023-11-06 16:39:12,683 runserver>log_action [mHTTP GET /branch/ 200 [0.15, 127.0.0.1:47766][0m
+INFO 2023-11-06 16:39:12,719 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:47766][0m
+INFO 2023-11-06 16:39:12,727 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:47769][0m
+INFO 2023-11-06 16:39:12,737 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:47770][0m
+INFO 2023-11-06 16:39:12,743 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:47771][0m
+INFO 2023-11-06 16:39:13,107 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:47771][0m
+INFO 2023-11-06 16:39:31,496 runserver>log_action [mHTTP GET /branch/ 200 [0.32, 127.0.0.1:47831][0m
+INFO 2023-11-06 16:39:31,699 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.02, 127.0.0.1:47831][0m
+INFO 2023-11-06 16:39:31,713 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:47837][0m
+INFO 2023-11-06 16:39:31,724 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:47838][0m
+INFO 2023-11-06 16:39:31,734 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.03, 127.0.0.1:47839][0m
+INFO 2023-11-06 16:39:32,202 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:47838][0m
+INFO 2023-11-06 16:40:02,195 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:47880][0m
+INFO 2023-11-06 16:40:02,246 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:47880][0m
+INFO 2023-11-06 16:40:02,258 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:47883][0m
+INFO 2023-11-06 16:40:02,264 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:47884][0m
+INFO 2023-11-06 16:40:02,269 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:47885][0m
+INFO 2023-11-06 16:40:02,367 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:47885][0m
+INFO 2023-11-06 16:40:33,008 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:47913][0m
+INFO 2023-11-06 16:40:33,069 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:47913][0m
+INFO 2023-11-06 16:40:33,077 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:47916][0m
+INFO 2023-11-06 16:40:33,082 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:47918][0m
+INFO 2023-11-06 16:40:33,093 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:47917][0m
+INFO 2023-11-06 16:40:33,198 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:47918][0m
+INFO 2023-11-06 16:40:51,084 runserver>log_action [mHTTP GET /branch/ 200 [0.15, 127.0.0.1:47935][0m
+INFO 2023-11-06 16:40:51,119 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:47935][0m
+INFO 2023-11-06 16:40:51,129 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:47939][0m
+INFO 2023-11-06 16:40:51,137 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:47940][0m
+INFO 2023-11-06 16:40:51,142 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:47941][0m
+INFO 2023-11-06 16:40:51,243 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:47941][0m
+INFO 2023-11-06 16:41:19,927 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:47971][0m
+INFO 2023-11-06 16:41:19,979 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:47971][0m
+INFO 2023-11-06 16:41:19,989 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:47975][0m
+INFO 2023-11-06 16:41:19,994 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:47976][0m
+INFO 2023-11-06 16:41:20,000 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:47977][0m
+INFO 2023-11-06 16:41:20,096 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:47977][0m
+INFO 2023-11-06 16:41:49,411 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:48016][0m
+INFO 2023-11-06 16:41:49,443 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48016][0m
+INFO 2023-11-06 16:41:49,452 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48022][0m
+INFO 2023-11-06 16:41:49,457 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:48023][0m
+INFO 2023-11-06 16:41:49,463 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:48024][0m
+INFO 2023-11-06 16:41:49,548 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:48024][0m
+INFO 2023-11-06 16:41:57,332 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:48039][0m
+INFO 2023-11-06 16:41:57,359 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48039][0m
+INFO 2023-11-06 16:41:57,375 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:48042][0m
+INFO 2023-11-06 16:41:57,384 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:48044][0m
+INFO 2023-11-06 16:41:57,392 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.03, 127.0.0.1:48043][0m
+INFO 2023-11-06 16:41:57,485 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:48044][0m
+INFO 2023-11-06 16:42:29,219 runserver>log_action [mHTTP GET /branch/ 200 [0.50, 127.0.0.1:48118][0m
+INFO 2023-11-06 16:42:29,267 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48118][0m
+INFO 2023-11-06 16:42:29,274 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48123][0m
+INFO 2023-11-06 16:42:29,278 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:48124][0m
+INFO 2023-11-06 16:42:29,283 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:48125][0m
+INFO 2023-11-06 16:42:29,394 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:48125][0m
+INFO 2023-11-06 16:43:18,488 runserver>log_action [mHTTP GET /branch/ 200 [0.15, 127.0.0.1:48176][0m
+INFO 2023-11-06 16:43:18,538 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48176][0m
+INFO 2023-11-06 16:43:18,547 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48180][0m
+INFO 2023-11-06 16:43:18,557 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:48181][0m
+INFO 2023-11-06 16:43:18,563 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:48182][0m
+INFO 2023-11-06 16:43:18,672 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:48181][0m
+INFO 2023-11-06 16:44:18,191 runserver>log_action [mHTTP GET /branch/ 200 [0.17, 127.0.0.1:48224][0m
+INFO 2023-11-06 16:44:18,243 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48224][0m
+INFO 2023-11-06 16:44:18,250 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48230][0m
+INFO 2023-11-06 16:44:18,256 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:48231][0m
+INFO 2023-11-06 16:44:18,261 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:48232][0m
+INFO 2023-11-06 16:44:18,571 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:48232][0m
+INFO 2023-11-06 16:44:45,470 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:48269][0m
+INFO 2023-11-06 16:44:45,495 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48269][0m
+INFO 2023-11-06 16:44:45,501 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48273][0m
+INFO 2023-11-06 16:44:45,505 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:48275][0m
+INFO 2023-11-06 16:44:45,508 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:48274][0m
+INFO 2023-11-06 16:44:45,614 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:48274][0m
+INFO 2023-11-06 16:45:07,833 runserver>log_action [mHTTP GET /update-branch/1/ 200 [0.06, 127.0.0.1:48269][0m
+INFO 2023-11-06 16:45:07,906 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48274][0m
+INFO 2023-11-06 16:45:10,297 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:48269][0m
+INFO 2023-11-06 16:45:10,342 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48274][0m
+INFO 2023-11-06 16:45:11,694 runserver>log_action [mHTTP GET /update-branch/2/ 200 [0.04, 127.0.0.1:48269][0m
+INFO 2023-11-06 16:45:13,432 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:48269][0m
+INFO 2023-11-06 16:45:13,460 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48274][0m
+INFO 2023-11-06 16:45:14,705 runserver>log_action [mHTTP GET /update-branch/2/ 200 [0.03, 127.0.0.1:48269][0m
+INFO 2023-11-06 16:45:17,322 runserver>log_action [mHTTP GET /branch/ 200 [0.08, 127.0.0.1:48269][0m
+INFO 2023-11-06 16:45:17,357 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48274][0m
+INFO 2023-11-06 16:47:25,722 runserver>log_action [mHTTP GET /branch/ 200 [0.17, 127.0.0.1:48406][0m
+INFO 2023-11-06 16:47:25,789 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48406][0m
+INFO 2023-11-06 16:47:25,795 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48409][0m
+INFO 2023-11-06 16:47:25,802 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:48411][0m
+INFO 2023-11-06 16:47:25,807 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:48410][0m
+INFO 2023-11-06 16:47:25,946 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:48411][0m
+INFO 2023-11-06 16:47:54,269 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:48442][0m
+INFO 2023-11-06 16:47:54,318 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48442][0m
+INFO 2023-11-06 16:47:54,324 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48445][0m
+INFO 2023-11-06 16:47:54,329 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:48446][0m
+INFO 2023-11-06 16:47:54,336 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:48447][0m
+INFO 2023-11-06 16:47:54,642 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:48447][0m
+INFO 2023-11-06 16:48:39,161 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:48507][0m
+INFO 2023-11-06 16:48:39,222 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48507][0m
+INFO 2023-11-06 16:48:39,226 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48510][0m
+INFO 2023-11-06 16:48:39,232 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:48511][0m
+INFO 2023-11-06 16:48:39,237 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:48512][0m
+INFO 2023-11-06 16:48:39,368 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:48511][0m
+INFO 2023-11-06 16:49:42,241 runserver>log_action [mHTTP GET /update-branch/1/ 200 [0.21, 127.0.0.1:48591][0m
+INFO 2023-11-06 16:49:42,535 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.01, 127.0.0.1:48591][0m
+WARNING 2023-11-06 16:49:44,579 log>log_response Not Found: /favicon.ico
+INFO 2023-11-06 16:51:55,305 runserver>log_action [mHTTP GET /branch/ 200 [0.15, 127.0.0.1:48729][0m
+INFO 2023-11-06 16:51:55,380 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48729][0m
+INFO 2023-11-06 16:51:55,389 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:48732][0m
+INFO 2023-11-06 16:51:55,394 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:48733][0m
+INFO 2023-11-06 16:51:55,402 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:48734][0m
+INFO 2023-11-06 16:51:55,580 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:48733][0m
+INFO 2023-11-06 16:52:50,587 runserver>log_action [mHTTP GET /branch/ 200 [0.09, 127.0.0.1:48772][0m
+INFO 2023-11-06 16:52:50,631 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48772][0m
+INFO 2023-11-06 16:52:50,640 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48775][0m
+INFO 2023-11-06 16:52:50,645 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:48776][0m
+INFO 2023-11-06 16:52:50,652 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:48777][0m
+INFO 2023-11-06 16:52:50,769 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:48777][0m
+INFO 2023-11-06 16:55:20,766 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:48913][0m
+INFO 2023-11-06 16:55:20,885 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48913][0m
+INFO 2023-11-06 16:55:20,891 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48917][0m
+INFO 2023-11-06 16:55:20,899 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:48919][0m
+INFO 2023-11-06 16:55:20,906 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:48918][0m
+INFO 2023-11-06 16:55:21,290 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:48919][0m
+INFO 2023-11-06 16:55:48,452 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:48946][0m
+INFO 2023-11-06 16:55:48,504 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48946][0m
+INFO 2023-11-06 16:55:48,511 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48949][0m
+INFO 2023-11-06 16:55:48,519 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:48951][0m
+INFO 2023-11-06 16:55:48,524 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:48950][0m
+INFO 2023-11-06 16:55:48,658 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:48951][0m
+INFO 2023-11-06 16:56:19,152 runserver>log_action [mHTTP GET /branch/ 200 [0.08, 127.0.0.1:48982][0m
+INFO 2023-11-06 16:56:19,176 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48982][0m
+INFO 2023-11-06 16:56:19,182 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48985][0m
+INFO 2023-11-06 16:56:19,186 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:48987][0m
+INFO 2023-11-06 16:56:19,190 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:48986][0m
+INFO 2023-11-06 16:56:19,277 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:48987][0m
+INFO 2023-11-06 16:56:44,624 runserver>log_action [mHTTP GET /user/ 200 [0.11, 127.0.0.1:48982][0m
+INFO 2023-11-06 16:56:44,669 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48987][0m
+INFO 2023-11-06 16:56:48,500 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:48982][0m
+INFO 2023-11-06 16:56:48,522 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48987][0m
+INFO 2023-11-06 16:56:51,965 runserver>log_action [mHTTP GET /user/ 200 [0.11, 127.0.0.1:48982][0m
+INFO 2023-11-06 16:56:51,988 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:48987][0m
+INFO 2023-11-06 17:06:34,139 runserver>log_action [mHTTP GET /user/ 200 [0.15, 127.0.0.1:49138][0m
+INFO 2023-11-06 17:06:34,184 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:49138][0m
+INFO 2023-11-06 17:09:54,261 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:49406][0m
+INFO 2023-11-06 17:09:54,339 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:49406][0m
+INFO 2023-11-06 17:09:55,725 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:49687][0m
+INFO 2023-11-06 17:09:55,769 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:49687][0m
+INFO 2023-11-06 17:09:55,781 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:49690][0m
+INFO 2023-11-06 17:09:55,786 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:49692][0m
+INFO 2023-11-06 17:09:55,791 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:49693][0m
+INFO 2023-11-06 17:09:55,916 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:49692][0m
+INFO 2023-11-06 17:10:03,342 runserver>log_action [mHTTP GET /branch/ 200 [0.07, 127.0.0.1:49711][0m
+INFO 2023-11-06 17:10:03,373 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:49711][0m
+INFO 2023-11-06 17:10:03,382 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:49714][0m
+INFO 2023-11-06 17:10:03,386 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:49715][0m
+INFO 2023-11-06 17:10:03,392 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:49716][0m
+INFO 2023-11-06 17:10:03,488 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:49716][0m
+INFO 2023-11-06 17:10:42,839 runserver>log_action [mHTTP GET /user/ 200 [0.16, 127.0.0.1:49711][0m
+INFO 2023-11-06 17:10:42,906 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:49716][0m
+INFO 2023-11-06 17:13:02,324 runserver>log_action [mHTTP GET /update-user/9/ 200 [0.20, 127.0.0.1:49926][0m
+INFO 2023-11-06 17:13:02,400 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:49926][0m
+INFO 2023-11-06 17:13:04,665 runserver>log_action [mHTTP GET /user/ 200 [0.08, 127.0.0.1:49926][0m
+INFO 2023-11-06 17:13:18,645 runserver>log_action [mHTTP GET /user/ 200 [0.13, 127.0.0.1:49926][0m
+INFO 2023-11-06 17:13:20,471 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.13, 127.0.0.1:49926][0m
+INFO 2023-11-06 17:13:21,718 runserver>log_action [mHTTP GET /user/ 200 [0.26, 127.0.0.1:49926][0m
+INFO 2023-11-06 17:13:22,397 runserver>log_action [mHTTP GET /branch/ 200 [0.10, 127.0.0.1:49926][0m
+INFO 2023-11-06 17:13:23,071 runserver>log_action [mHTTP GET /tfs/ 200 [0.20, 127.0.0.1:49926][0m
+INFO 2023-11-06 17:17:15,041 runserver>log_action [mHTTP GET /tfs/ 200 [0.15, 127.0.0.1:50290][0m
+INFO 2023-11-06 17:17:15,092 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:50290][0m
+INFO 2023-11-06 17:17:15,099 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:50294][0m
+INFO 2023-11-06 17:17:15,102 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:50295][0m
+INFO 2023-11-06 17:17:15,106 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:50296][0m
+INFO 2023-11-06 17:17:15,602 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:50296][0m
+INFO 2023-11-06 17:17:18,672 runserver>log_action [mHTTP GET /update-tf/18/ 200 [0.04, 127.0.0.1:50290][0m
+WARNING 2023-11-06 17:17:20,912 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-06 17:17:20,915 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.05, 127.0.0.1:50296][0m
+INFO 2023-11-06 17:17:22,202 runserver>log_action [mHTTP GET /update-tf/10/ 200 [0.04, 127.0.0.1:50290][0m
+INFO 2023-11-06 17:18:27,547 runserver>log_action [mHTTP GET /tfs/ 200 [0.17, 127.0.0.1:50410][0m
+INFO 2023-11-06 17:18:27,690 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:50410][0m
+INFO 2023-11-06 17:18:27,699 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:50414][0m
+INFO 2023-11-06 17:18:27,708 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:50416][0m
+INFO 2023-11-06 17:18:27,715 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:50415][0m
+INFO 2023-11-06 17:18:28,341 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:50416][0m
+INFO 2023-11-06 17:18:45,175 runserver>log_action [mHTTP GET /tfs/ 200 [0.14, 127.0.0.1:50454][0m
+INFO 2023-11-06 17:18:45,204 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:50454][0m
+INFO 2023-11-06 17:18:45,210 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:50457][0m
+INFO 2023-11-06 17:18:45,215 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:50459][0m
+INFO 2023-11-06 17:18:45,220 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:50458][0m
+INFO 2023-11-06 17:18:45,651 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:50458][0m
+INFO 2023-11-06 17:19:04,216 runserver>log_action [mHTTP GET /tfs/ 200 [0.17, 127.0.0.1:50475][0m
+INFO 2023-11-06 17:19:04,242 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:50475][0m
+INFO 2023-11-06 17:19:04,250 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:50478][0m
+INFO 2023-11-06 17:19:04,254 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:50479][0m
+INFO 2023-11-06 17:19:04,259 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:50480][0m
+INFO 2023-11-06 17:19:04,382 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:50480][0m
+INFO 2023-11-06 17:19:18,898 runserver>log_action [mHTTP GET /tfs/ 200 [0.22, 127.0.0.1:50493][0m
+INFO 2023-11-06 17:19:18,934 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:50493][0m
+INFO 2023-11-06 17:19:18,941 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:50496][0m
+INFO 2023-11-06 17:19:18,949 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:50497][0m
+INFO 2023-11-06 17:19:18,955 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:50498][0m
+INFO 2023-11-06 17:19:19,057 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:50498][0m
+INFO 2023-11-06 17:19:58,138 runserver>log_action [mHTTP GET /update-tf/4/ 200 [0.15, 127.0.0.1:50493][0m
+INFO 2023-11-06 17:19:58,344 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.01, 127.0.0.1:50498][0m
+INFO 2023-11-06 17:19:58,688 runserver>log_action [mHTTP GET /update-tf/4/ 200 [0.07, 127.0.0.1:48286][0m
+INFO 2023-11-06 17:19:58,736 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48286][0m
+INFO 2023-11-06 17:19:58,761 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.03, 127.0.0.1:48289][0m
+INFO 2023-11-06 17:19:58,791 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.06, 127.0.0.1:48290][0m
+INFO 2023-11-06 17:19:58,804 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.07, 127.0.0.1:48291][0m
+INFO 2023-11-06 17:19:59,347 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:48291][0m
+INFO 2023-11-06 17:20:03,494 runserver>log_action [mHTTP GET /tfs/ 200 [0.18, 127.0.0.1:48317][0m
+INFO 2023-11-06 17:20:03,527 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48317][0m
+INFO 2023-11-06 17:20:03,538 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48320][0m
+INFO 2023-11-06 17:20:03,542 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:48321][0m
+INFO 2023-11-06 17:20:03,547 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:48322][0m
+INFO 2023-11-06 17:20:03,703 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:48322][0m
+INFO 2023-11-06 17:20:24,647 runserver>log_action [mHTTP GET /tfs/ 200 [0.13, 127.0.0.1:48365][0m
+INFO 2023-11-06 17:20:24,665 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48365][0m
+INFO 2023-11-06 17:20:24,671 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:48365][0m
+INFO 2023-11-06 17:20:24,674 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:48368][0m
+INFO 2023-11-06 17:20:24,678 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:48369][0m
+INFO 2023-11-06 17:20:24,781 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:48368][0m
+INFO 2023-11-06 17:21:17,699 runserver>log_action [mHTTP GET /tfs/ 200 [0.17, 127.0.0.1:48404][0m
+INFO 2023-11-06 17:21:17,765 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:48404][0m
+INFO 2023-11-06 17:21:17,772 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48407][0m
+INFO 2023-11-06 17:21:17,777 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:48408][0m
+INFO 2023-11-06 17:21:17,784 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:48409][0m
+INFO 2023-11-06 17:21:17,895 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:48408][0m
+INFO 2023-11-06 17:21:38,349 runserver>log_action [mHTTP GET /tfs/ 200 [0.54, 127.0.0.1:48443][0m
+INFO 2023-11-06 17:21:38,375 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:48443][0m
+INFO 2023-11-06 17:21:38,384 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:48446][0m
+INFO 2023-11-06 17:21:38,389 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:48448][0m
+INFO 2023-11-06 17:21:38,394 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:48447][0m
+INFO 2023-11-06 17:21:38,501 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:48447][0m
+INFO 2023-11-06 17:25:19,097 runserver>log_action [mHTTP GET /tfs/ 200 [0.15, 127.0.0.1:52670][0m
+INFO 2023-11-06 17:25:19,123 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:52670][0m
+INFO 2023-11-06 17:25:20,191 runserver>log_action [mHTTP GET /routes/ 200 [0.21, 127.0.0.1:52670][0m
+INFO 2023-11-06 18:22:21,646 runserver>log_action [mHTTP GET /routes/ 200 [0.29, 127.0.0.1:7043][0m
+INFO 2023-11-06 18:22:21,798 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.02, 127.0.0.1:7043][0m
+INFO 2023-11-06 18:22:21,807 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:7046][0m
+INFO 2023-11-06 18:22:21,815 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:7047][0m
+INFO 2023-11-06 18:22:21,823 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:7048][0m
+INFO 2023-11-06 18:22:22,467 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:7047][0m
+INFO 2023-11-06 18:22:27,901 runserver>log_action [mHTTP GET /update-route/2 200 [0.04, 127.0.0.1:7043][0m
+INFO 2023-11-06 18:22:30,683 runserver>log_action [mHTTP GET /routes/ 200 [0.10, 127.0.0.1:7043][0m
+INFO 2023-11-06 18:23:08,538 runserver>log_action [mHTTP GET /update-route/43 200 [0.04, 127.0.0.1:7043][0m
+INFO 2023-11-06 18:23:11,997 runserver>log_action [mHTTP GET /routes/ 200 [0.17, 127.0.0.1:7043][0m
+INFO 2023-11-06 18:23:15,340 runserver>log_action [mHTTP GET /supervisors/ 200 [0.10, 127.0.0.1:7043][0m
+INFO 2023-11-06 18:23:21,358 runserver>log_action [mHTTP GET /routes/ 200 [0.18, 127.0.0.1:7043][0m
+INFO 2023-11-06 18:23:23,113 runserver>log_action [mHTTP GET /user/ 200 [0.13, 127.0.0.1:7043][0m
+INFO 2023-11-06 18:23:24,839 runserver>log_action [mHTTP GET /branch/ 200 [0.08, 127.0.0.1:7043][0m
+INFO 2023-11-06 18:23:27,632 runserver>log_action [mHTTP GET /tfs/ 200 [0.10, 127.0.0.1:7043][0m
+INFO 2023-11-06 18:23:28,875 runserver>log_action [mHTTP GET /routes/ 200 [0.15, 127.0.0.1:7043][0m
+INFO 2023-11-06 18:23:30,000 runserver>log_action [mHTTP GET /supervisors/ 200 [0.11, 127.0.0.1:7043][0m
+INFO 2023-11-06 18:26:24,627 runserver>log_action [mHTTP GET /supervisors/ 200 [0.09, 127.0.0.1:7361][0m
+INFO 2023-11-06 18:26:24,658 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:7361][0m
+INFO 2023-11-06 18:26:24,663 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:7365][0m
+INFO 2023-11-06 18:26:24,668 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:7366][0m
+INFO 2023-11-06 18:26:24,673 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:7367][0m
+INFO 2023-11-06 18:26:24,851 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:7366][0m
+INFO 2023-11-06 18:26:26,525 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.37, 127.0.0.1:7361][0m
+INFO 2023-11-06 18:26:31,213 runserver>log_action [mHTTP GET /supervisor/5/ 200 [0.05, 127.0.0.1:7361][0m
+INFO 2023-11-06 18:27:02,261 runserver>log_action [mHTTP GET /supervisors/ 200 [0.14, 127.0.0.1:7361][0m
+INFO 2023-11-06 18:27:10,547 runserver>log_action [mHTTP GET /supervisors/ 200 [0.07, 127.0.0.1:7361][0m
+INFO 2023-11-06 18:27:15,640 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.05, 127.0.0.1:7361][0m
+INFO 2023-11-06 18:27:26,382 runserver>log_action [mHTTP GET /reports/ 200 [0.07, 127.0.0.1:7361][0m
+INFO 2023-11-06 18:27:28,839 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.06, 127.0.0.1:7361][0m
+INFO 2023-11-06 18:27:32,091 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.06, 127.0.0.1:7361][0m
+INFO 2023-11-06 18:27:35,378 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.05, 127.0.0.1:7361][0m
+INFO 2023-11-06 18:28:24,438 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-06 18:28:32,633 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-06 18:28:32,648 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-06 18:28:32,951 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-06 18:28:32,953 base>views>main -SCH- Now:11/06/2023, 10:28:32
+INFO 2023-11-06 18:28:33,141 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-06 16:42:00 Local:2023-11-07 00:42:00
+INFO 2023-11-06 18:28:33,142 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-11-06 18:28:33,143 base>views>sch_shutdown    -SCH- 2023-11-06 16:42:00 > 2023-11-06 10:28:32 [Yes]
+INFO 2023-11-06 18:28:33,148 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-06 15:59:59 Local:2023-11-06 23:59:59
+INFO 2023-11-06 18:28:33,149 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-06 18:28:33,150 base>views>sch_shutdown    -SCH- 2023-11-06 15:59:59 > 2023-11-06 10:28:33 [Yes]
+INFO 2023-11-06 18:28:33,153 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-06 18:00:00 Local:2023-11-07 02:00:00
+INFO 2023-11-06 18:28:33,155 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-06 18:28:33,155 base>views>sch_shutdown    -SCH- 2023-11-06 18:00:00 > 2023-11-06 10:28:33 [Yes]
+INFO 2023-11-06 18:28:33,158 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-06 15:59:59 Local:2023-11-06 23:59:59
+INFO 2023-11-06 18:28:33,159 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-06 18:28:33,159 base>views>sch_shutdown    -SCH- 2023-11-06 15:59:59 > 2023-11-06 10:28:33 [Yes]
+INFO 2023-11-06 18:28:33,163 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-06 15:59:59 Local:2023-11-06 23:59:59
+INFO 2023-11-06 18:28:33,164 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-06 18:28:33,165 base>views>sch_shutdown    -SCH- 2023-11-06 15:59:59 > 2023-11-06 10:28:33 [Yes]
+INFO 2023-11-06 18:28:33,168 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-06 15:59:59 Local:2023-11-06 23:59:59
+INFO 2023-11-06 18:28:33,169 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-06 18:28:33,170 base>views>sch_shutdown    -SCH- 2023-11-06 15:59:59 > 2023-11-06 10:28:33 [Yes]
+INFO 2023-11-07 00:52:58,501 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-07 00:53:03,442 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-07 00:53:03,486 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-07 00:53:04,454 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-07 00:53:04,456 base>views>main -SCH- Now:11/06/2023, 16:53:04
+INFO 2023-11-07 00:53:04,875 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-07 16:42:00 Local:2023-11-08 00:42:00
+INFO 2023-11-07 00:53:04,877 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2023-11-07 00:53:04,877 base>views>sch_shutdown    -SCH- 2023-11-06 16:42:00 > 2023-11-06 16:53:04 [No]
+INFO 2023-11-07 00:53:04,886 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-07 15:59:59 Local:2023-11-07 23:59:59
+INFO 2023-11-07 00:53:04,888 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-07 00:53:04,889 base>views>sch_shutdown    -SCH- 2023-11-06 15:59:59 > 2023-11-06 16:53:04 [No]
+INFO 2023-11-07 00:53:04,900 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-06 18:00:00 Local:2023-11-07 02:00:00
+INFO 2023-11-07 00:53:04,902 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-07 00:53:04,905 base>views>sch_shutdown    -SCH- 2023-11-06 18:00:00 > 2023-11-06 16:53:04 [Yes]
+INFO 2023-11-07 00:53:04,913 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-07 15:59:59 Local:2023-11-07 23:59:59
+INFO 2023-11-07 00:53:04,916 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-07 00:53:04,917 base>views>sch_shutdown    -SCH- 2023-11-06 15:59:59 > 2023-11-06 16:53:04 [No]
+INFO 2023-11-07 00:53:04,924 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-07 15:59:59 Local:2023-11-07 23:59:59
+INFO 2023-11-07 00:53:04,926 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-07 00:53:04,927 base>views>sch_shutdown    -SCH- 2023-11-06 15:59:59 > 2023-11-06 16:53:04 [No]
+INFO 2023-11-07 00:53:04,933 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-07 15:59:59 Local:2023-11-07 23:59:59
+INFO 2023-11-07 00:53:04,934 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-07 00:53:04,936 base>views>sch_shutdown    -SCH- 2023-11-06 15:59:59 > 2023-11-06 16:53:04 [No]
+INFO 2023-11-07 00:53:11,181 runserver>log_action [32mHTTP GET / 302 [0.19, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:53:11,412 runserver>log_action [mHTTP GET /login/ 200 [0.15, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:53:14,525 runserver>log_action [mHTTP GET /static/styles/style.css 200 [1.08, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:53:14,546 runserver>log_action [mHTTP GET /static/js/script.js 200 [1.05, 127.0.0.1:10191][0m
+INFO 2023-11-07 00:53:14,562 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.03, 127.0.0.1:10194][0m
+INFO 2023-11-07 00:53:14,603 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.07, 127.0.0.1:10195][0m
+INFO 2023-11-07 00:53:16,099 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:10195][0m
+INFO 2023-11-07 00:53:20,840 runserver>log_action [32mHTTP POST /login/ 302 [1.13, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:53:21,014 runserver>log_action [mHTTP GET / 200 [0.17, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:53:23,203 runserver>log_action [mHTTP GET /user/ 200 [0.19, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:53:50,108 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:53:58,446 runserver>log_action [mHTTP GET /tfs/ 200 [0.19, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:54:02,808 runserver>log_action [mHTTP GET /branch/ 200 [0.14, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:54:04,382 runserver>log_action [mHTTP GET /tfs/ 200 [0.36, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:55:03,828 runserver>log_action [mHTTP GET /supervisors/ 200 [0.33, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:55:09,974 runserver>log_action [mHTTP GET /routes/ 200 [0.20, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:55:15,292 runserver>log_action [mHTTP GET /tfs/ 200 [0.13, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:55:21,212 runserver>log_action [mHTTP GET /branch/ 200 [0.11, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:55:23,624 runserver>log_action [mHTTP GET /tfs/ 200 [0.25, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:55:25,244 runserver>log_action [mHTTP GET /update-tf/18/ 200 [0.13, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:55:31,086 runserver>log_action [mHTTP GET /tfs/ 200 [0.23, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:56:21,518 runserver>log_action [mHTTP GET /routes/ 200 [0.27, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:56:23,746 runserver>log_action [mHTTP GET /tfs/ 200 [0.15, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:56:25,451 runserver>log_action [mHTTP GET /branch/ 200 [0.12, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:56:28,640 runserver>log_action [mHTTP GET /tfs/ 200 [0.12, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:56:29,462 runserver>log_action [mHTTP GET /update-tf/18/ 200 [0.04, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:56:38,373 runserver>log_action [mHTTP GET /tfs/ 200 [0.13, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:56:40,741 runserver>log_action [mHTTP GET /update-tf/18/ 200 [0.03, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:56:45,891 runserver>log_action [mHTTP GET /tfs/ 200 [0.15, 127.0.0.1:10178][0m
+INFO 2023-11-07 00:57:53,570 runserver>log_action [mHTTP GET /routes/ 200 [0.34, 127.0.0.1:10468][0m
+INFO 2023-11-07 00:57:55,294 runserver>log_action [mHTTP GET /user/ 200 [0.19, 127.0.0.1:10468][0m
+INFO 2023-11-07 00:59:24,331 runserver>log_action [mHTTP GET /tfs/ 200 [0.31, 127.0.0.1:10575][0m
+INFO 2023-11-07 00:59:27,150 runserver>log_action [mHTTP GET /update-tf/18/ 200 [0.04, 127.0.0.1:10575][0m
+ERROR 2023-11-07 01:00:04,433 log>log_response Internal Server Error: /tfs/
+Traceback (most recent call last):
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 452, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py", line 2178, in TicketFormatSummaryView
+    return render(request, 'base/tfs.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 193, in render
+    values = list(values)
+             ^^^^^^^^^^^^
+TypeError: 'Branch' object is not iterable
+ERROR 2023-11-07 01:00:04,498 runserver>log_action [35;1mHTTP GET /tfs/ 500 [1.49, 127.0.0.1:10575][0m
+WARNING 2023-11-07 01:00:05,138 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-07 01:00:05,143 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.18, 127.0.0.1:10575][0m
+INFO 2023-11-07 01:00:37,956 runserver>log_action [mHTTP GET /tfs/ 200 [0.19, 127.0.0.1:10575][0m
+INFO 2023-11-07 01:01:40,852 runserver>log_action [mHTTP GET /tfs/ 200 [0.44, 127.0.0.1:10791][0m
+INFO 2023-11-07 01:02:09,336 runserver>log_action [mHTTP GET /tfs/ 200 [0.24, 127.0.0.1:10840][0m
+INFO 2023-11-07 01:02:09,491 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.04, 127.0.0.1:10840][0m
+INFO 2023-11-07 01:02:09,501 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:10843][0m
+INFO 2023-11-07 01:02:09,511 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:10844][0m
+INFO 2023-11-07 01:02:09,518 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:10845][0m
+INFO 2023-11-07 01:02:10,076 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:10844][0m
+INFO 2023-11-07 01:02:31,233 runserver>log_action [mHTTP GET /tfs/ 200 [0.24, 127.0.0.1:10874][0m
+INFO 2023-11-07 01:02:31,320 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.01, 127.0.0.1:10874][0m
+INFO 2023-11-07 01:02:31,330 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.02, 127.0.0.1:10881][0m
+INFO 2023-11-07 01:02:31,337 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:10882][0m
+INFO 2023-11-07 01:02:31,344 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:10883][0m
+INFO 2023-11-07 01:02:31,484 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.01, 127.0.0.1:10882][0m

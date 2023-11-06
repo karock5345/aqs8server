@@ -1,7 +1,6 @@
 {% load static %}
-
+<div class="roomArea">
 {% for user in users %}
-
 {% for prof in profiles %}
     {% if user == prof.user %}
     {% if user.is_active == True %}
@@ -28,11 +27,9 @@
         </div>
         <div class="roomListRoom__content">
             {{user.first_name}} {{user.last_name}} 
-                {% if user.email|length > 0 %} 
-                    (e-mail : {{user.email}})
-                {% endif %}
-            
-
+            {% if user.email|length > 0 %} 
+                (e-mail : {{user.email}})
+            {% endif %}
         </div>
         <div class="roomListRoom__meta">
             <div class="roomListRoom__joined">
@@ -44,9 +41,6 @@
                     {{bname.bcode}}
                 {% endfor %}
                 ({{prof.branchs.filter.count}})
-
-
-
             </div>
             <p class="roomListRoom__topic">
                 {% for usergroup in user.groups.filter %}
@@ -55,13 +49,9 @@
             </p>
         </div>
     </div>
-</a>
+    </a>
     {% endif %}
 {% endfor %}
 {% endfor %}
 
-<a href="{% url 'update-user' 1 %}">
-    <div class="roomListRoom">
-        testing
-    </div>
-</a>
+</div>
