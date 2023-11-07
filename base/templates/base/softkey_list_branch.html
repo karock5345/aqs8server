@@ -1,29 +1,47 @@
 {% load static %}
-
-
-<div>
-    <h3>Choose branch to login: </h3>
-
-        <table class="table-style">
-            <thead>
-                <tr>
-                    <th>Branch</th>
-                    <th>Branch address</th>
-                    <th>Branch code</th>
-                                        
-                </tr>
-            </thead>
-            <tbody>
-            {% for branch in branchs %}
-            <tr>
-                <td>{{ branch.name }}</td>
-                <td>{{ branch.address }}</td>                   
-                <td>{{ branch.bcode }}</td>
-             
-
-                <td style="border: 0;background-color:var(--color-bg)"><a class="btn btn--main" href="{% url 'softkeylogin' branch.id %}">Select</a></td>
-            </tr>
-            {% endfor %}
-            </tbody>
-        </table>       
-</div>
+<h3>Choose branch to login: </h3>
+<div class="roomArea">
+    {% for branch in branchs %}
+        <a href="{% url 'softkeylogin' branch.id %}">
+            <div class="roomListRoom">
+                <div class="roomListRoom__header">
+                    <div class="roomListRoom__author">
+    
+                        <div class="list__svg">
+                            
+                        {% include 'base/images/counter.svg' %}
+                        </div>
+                        <span>{{branch.bcode}}</span>
+                    </div>
+                    <div class="roomListRoom__actions">
+                        <span>{{branch.address}}</span>
+                    </div>
+                </div>
+                <div class="roomListRoom__content">
+                    {{branch.name}}
+                </div>
+                <div class="roomListRoom__meta">
+                    <div class="roomListRoom__joined">
+                    
+                        {% include 'base/images/clock.svg' %}
+    
+                        Time Zone: {{branch.timezone}}            
+                    </div>
+    
+                    {% if branch.enabled == False %}
+                        <p class="roomListRoom__topic_red">
+                            Disabled
+                        </p>
+                    {% else %}
+                        <p class="roomListRoom__topic">
+                            Enabled
+                        </p>
+                    {% endif %}
+                </div>
+            
+            </div>
+        </a>
+    
+    {% endfor %}
+    
+    </div>

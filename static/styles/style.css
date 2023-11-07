@@ -16,6 +16,7 @@
   --color-open: #f9a70e;
   --color-nearend: #f9f90e;
   --color-dark-red: #79302d;
+  --color-verydark: #181818;
 }
 
 /*========== base styles ==========*/
@@ -731,6 +732,8 @@ a {
 .topics__list li a {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  
   margin-bottom: 3rem;
   font-weight: 500;
   color: var(--color-light-gray);
@@ -920,19 +923,27 @@ a {
 }
 
 .roomListRoom__topic {
-  padding: 5px 1.5rem;
-  background-color: var(--color-dark-light);
+  padding: 6px 1.5rem 4px;
+  background-color: var(--color-dark-medium);
   border-radius: 5rem;
   font-weight: 500;
   font-size: 1.3rem;
+
+  border-color: var(--color-main);
+  border-width: 1px;
+  border-style: outset;
 }
 .roomListRoom__topic_red {
-  padding: 5px 1.5rem;
-  background-color: var(--color-dark-light);
+  padding: 6px 1.5rem 4px;
+  background-color: var(--color-dark-medium);
   color: var(--color-error);
   border-radius: 5rem;
   font-weight: 200;
   font-size: 1.3rem;
+
+  border-color: var(--color-error);
+  border-width: 1px;
+  border-style: outset;
 }
 .roomListSelect{
   padding: 0.3rem 0rem 0.3rem;
