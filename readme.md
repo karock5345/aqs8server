@@ -28,7 +28,7 @@
 - Keep My E-ticket public Websocket for Web
 - Others websocket is internal only protect by session cookie
 - Modify the HTMLs for SVG image (e.g. branch settings, ticket format, ticket route, etc.)
-
+- Fixed bug : Softkey web version, the queue list update by Websocket no "Call" button and fixed the ticket time format
 
 
 

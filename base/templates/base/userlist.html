@@ -11,13 +11,16 @@
     <div class="roomListRoom__hide">
     {% endif %}
         <div class="roomListRoom__header">
-            <div class="roomListRoom__author">
-                <div class="avatar avatar--small">
-                    <img src="{% static 'images/avatar.svg' %}" />
-                </div>
+            <div class="roomListRoom__author">               
                 {% if user.is_active == True %}
+                    <div class="avatar avatar--small active">
+                        <img src="{% static 'images/avatar.svg' %}" />
+                    </div>
                     <span>{{user.username}}</span>
                 {% else %}
+                    <div class="avatar avatar--small">
+                        <img src="{% static 'images/avatar.svg' %}" />
+                    </div>
                     <span>{{user.username}} (User disabled)</span>
                 {% endif %}
             </div>

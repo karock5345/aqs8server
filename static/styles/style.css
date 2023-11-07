@@ -250,7 +250,7 @@ a {
   content: "";
   display: block;
   position: absolute;
-  background-color: var(--color-gray);
+  background-color: var(--color-error);
   z-index: 111;
   border-radius: 50%;
   border: 0.3rem solid var(--color-dark);
@@ -259,7 +259,10 @@ a {
 .avatar.active::after {
   background-color: var(--color-success);
 }
-
+.avatar.none::after {
+  background-color: var(--color-gray);
+  display: none;
+}
 .avatar.avatar--small img {
   width: 2.8rem;
   height: 2.8rem;

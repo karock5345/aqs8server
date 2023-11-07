@@ -9,7 +9,7 @@
   {% if request.user.groups.all.0.name == 'admin' or request.user.is_superuser == True %}  
     <li>
       <a href="{% url 'usersummary' %}" class="active">      
-      <div class="avatar avatar--small">
+      <div class="avatar avatar--small none">
         <img src="{% static 'images/avatar.svg' %}" />
       </div>
       Edit user

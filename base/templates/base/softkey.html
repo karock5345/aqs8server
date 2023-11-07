@@ -488,15 +488,23 @@
                   <div id="ticket_` + ttype + tno + ttime + `" class="qlist_item">
                     <div class="qlist_ticketnumber">` + ttype + tno + `</div>
                     <div class="qlist_tickettime">` + ttime_local + `</div>
-                    <a class="btn btn--del" href=` + 
-                    `/softkey_void/` +
-                    c_pk + 
-                    `/` +
-                    ttid + `/` +
-                    `>Void</a>
+                    <div>
+                      <a class="btn btn--main" href=` + 
+                      `/softkey_get/` +
+                      c_pk + 
+                      `/` +
+                      ttid + `/` +
+                      `>Call</a>
+                      <a class="btn btn--del" href=` + 
+                      `/softkey_void/` +
+                      c_pk + 
+                      `/` +
+                      ttid + `/` +
+                      `>Void</a>
+                    </div>
                   </div>
                   `
-           
+
 
                 } else if (cmd == 'del') {
                   subtotal = -1;
