@@ -189,8 +189,8 @@ MESSAGE_TAGS = {
 
 ASGI_APPLICATION = 'aqs.asgi.application'
 
-REDIS_HOST = '192.168.85.128'
-# REDIS_HOST = '192.168.1.4'
+# REDIS_HOST = '192.168.85.128'
+REDIS_HOST = '192.168.1.4'
 CHANNEL_LAYERS = {
     'default':{
         'BACKEND':'channels_redis.core.RedisChannelLayer',

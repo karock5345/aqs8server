@@ -7001,3 +7001,1576 @@ INFO 2023-11-08 01:40:13,936 runserver>log_action [mHTTP GET /menu/ 200 [0.25, 
 INFO 2023-11-08 01:40:14,153 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.02, 127.0.0.1:6154][0m
 INFO 2023-11-08 01:40:14,162 runserver>log_action [36mHTTP GET /static/images/avatar.svg 304 [0.01, 127.0.0.1:6159][0m
 INFO 2023-11-08 01:40:23,384 runserver>log_action [mHTTP GET / 200 [0.16, 127.0.0.1:6154][0m
+INFO 2023-11-08 15:09:31,030 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 15:09:31,837 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 15:09:31,837 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 15:09:32,091 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 15:09:32,091 base>views>main -SCH- Now:11/08/2023, 07:09:32
+INFO 2023-11-08 15:09:32,165 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 15:09:32,165 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 15:09:32,165 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 07:09:32 [Yes]
+INFO 2023-11-08 15:09:32,165 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 15:09:32,165 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 15:09:32,165 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 07:09:32 [Yes]
+INFO 2023-11-08 15:09:32,165 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 15:09:32,165 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 15:09:32,165 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 07:09:32 [Yes]
+INFO 2023-11-08 15:09:32,175 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 15:09:32,175 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 15:09:32,175 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 07:09:32 [Yes]
+INFO 2023-11-08 15:09:32,176 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 15:09:32,177 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 15:09:32,177 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 07:09:32 [Yes]
+INFO 2023-11-08 15:09:32,178 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 15:09:32,178 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 15:09:32,178 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 07:09:32 [Yes]
+INFO 2023-11-08 15:09:37,237 runserver>log_action [32mHTTP GET / 302 [0.02, 127.0.0.1:64656][0m
+INFO 2023-11-08 15:09:37,252 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:64656][0m
+INFO 2023-11-08 15:09:38,131 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.04, 127.0.0.1:64656][0m
+INFO 2023-11-08 15:09:39,881 runserver>log_action [32mHTTP GET /admin/base/branch/ 302 [0.01, 127.0.0.1:64677][0m
+INFO 2023-11-08 15:09:39,900 runserver>log_action [mHTTP GET /my/SCP/AA/027/8Ly/ 200 [0.03, 127.0.0.1:64678][0m
+INFO 2023-11-08 15:09:39,901 runserver>log_action [mHTTP GET /webtv/KB/c/ 200 [0.03, 127.0.0.1:64679][0m
+INFO 2023-11-08 15:09:39,920 runserver>log_action [mHTTP GET /admin/login/?next=/admin/base/branch/ 200 [0.04, 127.0.0.1:64677][0m
+WARNING 2023-11-08 15:09:40,075 runserver>log_action [33mHTTP GET /static/ 404 [0.01, 127.0.0.1:64677][0m
+WARNING 2023-11-08 15:09:40,081 runserver>log_action [33mHTTP GET /static/ 404 [0.00, 127.0.0.1:64677][0m
+WARNING 2023-11-08 15:09:40,315 runserver>log_action [33mHTTP GET /static/ 404 [0.00, 127.0.0.1:64677][0m
+WARNING 2023-11-08 15:09:40,341 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-08 15:09:40,342 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:64677][0m
+INFO 2023-11-08 16:04:00,016 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.0 200 [0.00, 127.0.0.1:65318][0m
+INFO 2023-11-08 16:04:00,299 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.1.0.0 200 [0.27, 127.0.0.1:65318][0m
+INFO 2023-11-08 16:04:00,307 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:65323]
+INFO 2023-11-08 16:04:00,336 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:04:05,012 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:65323]
+INFO 2023-11-08 16:04:05,012 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:65329]
+INFO 2023-11-08 16:04:05,012 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:04:10,012 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:65329]
+INFO 2023-11-08 16:04:10,083 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:65335]
+INFO 2023-11-08 16:04:10,086 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:04:15,013 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:65335]
+INFO 2023-11-08 16:04:15,014 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:65337]
+INFO 2023-11-08 16:04:15,015 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:04:20,013 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:65337]
+INFO 2023-11-08 16:04:20,083 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:65340]
+INFO 2023-11-08 16:04:20,086 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:04:22,934 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:65340]
+INFO 2023-11-08 16:05:35,464 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.0 200 [0.00, 127.0.0.1:65353][0m
+INFO 2023-11-08 16:05:35,740 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.1.0.0 200 [0.28, 127.0.0.1:65353][0m
+INFO 2023-11-08 16:05:51,589 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:65366]
+INFO 2023-11-08 16:05:51,592 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:05:56,010 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:65366]
+INFO 2023-11-08 16:05:56,012 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:65369]
+INFO 2023-11-08 16:05:56,014 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:05:58,570 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:65369]
+INFO 2023-11-08 16:06:58,155 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.0 200 [0.00, 127.0.0.1:65393][0m
+INFO 2023-11-08 16:07:32,590 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.1.0.0 200 [0.24, 127.0.0.1:65393][0m
+INFO 2023-11-08 16:08:19,658 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:65407]
+INFO 2023-11-08 16:08:19,662 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:08:24,000 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:65407]
+INFO 2023-11-08 16:08:24,000 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:65410]
+INFO 2023-11-08 16:08:24,000 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:08:29,011 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:65410]
+INFO 2023-11-08 16:12:55,225 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.0 200 [0.01, 127.0.0.1:65476][0m
+INFO 2023-11-08 16:12:59,346 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.1.0.0 200 [0.25, 127.0.0.1:65476][0m
+INFO 2023-11-08 16:13:04,547 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:65484]
+INFO 2023-11-08 16:13:04,561 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:13:09,011 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:65484]
+INFO 2023-11-08 16:13:09,012 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:65487]
+INFO 2023-11-08 16:13:09,012 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:13:14,012 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:65487]
+INFO 2023-11-08 16:13:14,113 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:65489]
+INFO 2023-11-08 16:13:14,113 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:13:15,760 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:65489]
+INFO 2023-11-08 16:16:26,139 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 16:16:26,986 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 16:16:27,003 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 16:16:27,131 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 16:16:27,132 base>views>main -SCH- Now:11/08/2023, 08:16:27
+INFO 2023-11-08 16:16:27,192 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 16:16:27,192 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 16:16:27,192 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 08:16:27 [Yes]
+INFO 2023-11-08 16:16:27,200 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 16:16:27,201 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 16:16:27,201 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 08:16:27 [Yes]
+INFO 2023-11-08 16:16:27,203 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 16:16:27,203 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 16:16:27,203 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 08:16:27 [Yes]
+INFO 2023-11-08 16:16:27,203 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 16:16:27,203 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 16:16:27,203 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 08:16:27 [Yes]
+INFO 2023-11-08 16:16:27,205 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 16:16:27,206 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 16:16:27,206 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 08:16:27 [Yes]
+INFO 2023-11-08 16:16:27,207 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 16:16:27,207 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 16:16:27,207 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 08:16:27 [Yes]
+INFO 2023-11-08 16:16:31,322 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.0 200 [0.01, 127.0.0.1:65526][0m
+INFO 2023-11-08 16:16:39,353 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.1.0.0 200 [0.23, 127.0.0.1:65526][0m
+INFO 2023-11-08 16:16:46,009 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:65534]
+INFO 2023-11-08 16:16:46,028 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:16:46,047 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:65534]
+INFO 2023-11-08 16:17:15,063 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:65534]
+INFO 2023-11-08 16:19:20,347 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:49173][0m
+INFO 2023-11-08 16:19:20,629 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.27, 127.0.0.1:49173][0m
+INFO 2023-11-08 16:19:20,629 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:49178]
+INFO 2023-11-08 16:19:20,645 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:19:20,647 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:49178]
+WARNING 2023-11-08 16:20:20,918 log>log_response Unauthorized: /api/ticketkey/
+WARNING 2023-11-08 16:20:20,919 runserver>log_action [31;1mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=SCP&tickettype=AA 401 [0.02, 127.0.0.1:49289][0m
+INFO 2023-11-08 16:20:24,918 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:49289][0m
+INFO 2023-11-08 16:20:52,785 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:20:52,795 base>ws>wssendwebtv ...Done
+INFO 2023-11-08 16:20:52,795 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:20:52,797 base>ws>wssenddispwait ...Done
+INFO 2023-11-08 16:20:52,800 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:20:52,802 base>ws>wssendql ...Done
+INFO 2023-11-08 16:20:52,805 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:20:52,807 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-08 16:20:52,807 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-08 16:20:52,818 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.10, 127.0.0.1:49289][0m
+INFO 2023-11-08 16:22:31,452 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:49178]
+INFO 2023-11-08 16:22:35,254 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:49323][0m
+INFO 2023-11-08 16:22:35,536 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.27, 127.0.0.1:49323][0m
+INFO 2023-11-08 16:22:35,536 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:49328]
+INFO 2023-11-08 16:22:35,551 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:22:35,557 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:49328]
+INFO 2023-11-08 16:23:26,015 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:49328]
+INFO 2023-11-08 16:24:21,279 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:49358]
+INFO 2023-11-08 16:24:21,282 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:24:21,287 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:49358]
+INFO 2023-11-08 16:25:14,419 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:49358]
+INFO 2023-11-08 16:31:15,428 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:49399][0m
+INFO 2023-11-08 16:31:15,716 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.29, 127.0.0.1:49399][0m
+INFO 2023-11-08 16:31:16,069 runserver>log_action [mHTTP POST /api/token/ 200 [0.34, 127.0.0.1:49404][0m
+INFO 2023-11-08 16:31:16,107 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:49407]
+INFO 2023-11-08 16:31:16,112 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:31:16,120 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:49407]
+INFO 2023-11-08 16:31:21,108 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:49399][0m
+INFO 2023-11-08 16:31:31,105 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=001&tickettime=2023-11-07T17:17:46.722353Z 200 [0.07, 127.0.0.1:49399][0m
+INFO 2023-11-08 16:31:31,175 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=004&tickettime=2023-11-07T17:27:07.800301Z 200 [0.13, 127.0.0.1:49422][0m
+INFO 2023-11-08 16:31:31,202 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=002&tickettime=2023-11-07T17:18:01.682870Z 200 [0.16, 127.0.0.1:49418][0m
+INFO 2023-11-08 16:31:31,233 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=007&tickettime=2023-11-07T17:37:14.329992Z 200 [0.18, 127.0.0.1:49427][0m
+INFO 2023-11-08 16:31:31,256 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:31:31,262 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 16:31:31,264 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.21, 127.0.0.1:49430][0m
+INFO 2023-11-08 16:31:31,304 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=005&tickettime=2023-11-07T17:28:06.693340Z 200 [0.26, 127.0.0.1:49423][0m
+INFO 2023-11-08 16:31:31,338 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=008&tickettime=2023-11-08T08:20:52.718604Z 200 [0.28, 127.0.0.1:49428][0m
+INFO 2023-11-08 16:31:31,367 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=003&tickettime=2023-11-07T17:23:25.922159Z 200 [0.33, 127.0.0.1:49419][0m
+INFO 2023-11-08 16:31:31,402 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=006&tickettime=2023-11-07T17:30:20.291330Z 200 [0.36, 127.0.0.1:49425][0m
+INFO 2023-11-08 16:32:20,897 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:32:20,897 base>ws>wssendwebtv ...Done
+INFO 2023-11-08 16:32:20,897 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:32:20,897 base>ws>wssenddispwait ...Done
+INFO 2023-11-08 16:32:20,904 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:32:20,906 base>ws>wssendql ...Done
+INFO 2023-11-08 16:32:20,907 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:32:20,910 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-08 16:32:20,910 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-08 16:32:20,920 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.08, 127.0.0.1:49454][0m
+INFO 2023-11-08 16:32:21,041 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=009&tickettime=2023-11-08T08:32:20.846865Z 200 [0.03, 127.0.0.1:49399][0m
+INFO 2023-11-08 16:32:23,552 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:49407]
+INFO 2023-11-08 16:32:25,683 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:49463][0m
+INFO 2023-11-08 16:32:25,950 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.26, 127.0.0.1:49463][0m
+INFO 2023-11-08 16:32:26,244 runserver>log_action [mHTTP POST /api/token/ 200 [0.28, 127.0.0.1:49468][0m
+INFO 2023-11-08 16:32:26,272 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:49471]
+INFO 2023-11-08 16:32:26,276 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:32:26,283 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:49471]
+INFO 2023-11-08 16:32:31,293 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:49463][0m
+INFO 2023-11-08 16:33:17,006 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:49471]
+INFO 2023-11-08 16:35:01,991 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:49498]
+INFO 2023-11-08 16:35:01,996 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:35:02,002 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:49498]
+INFO 2023-11-08 16:35:02,023 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:35:02,028 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 16:35:02,030 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:49499][0m
+INFO 2023-11-08 16:35:06,984 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:49499][0m
+INFO 2023-11-08 16:35:25,656 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:35:25,659 base>ws>wssendwebtv ...Done
+INFO 2023-11-08 16:35:25,660 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:35:25,661 base>ws>wssenddispwait ...Done
+INFO 2023-11-08 16:35:25,664 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:35:25,665 base>ws>wssendql ...Done
+INFO 2023-11-08 16:35:25,666 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:35:25,669 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-08 16:35:25,670 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-08 16:35:25,679 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.08, 127.0.0.1:49515][0m
+INFO 2023-11-08 16:35:26,996 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=010&tickettime=2023-11-08T08:35:25.603361Z 200 [0.02, 127.0.0.1:49499][0m
+INFO 2023-11-08 16:35:29,477 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:49498]
+INFO 2023-11-08 16:35:31,249 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:49525][0m
+INFO 2023-11-08 16:35:31,542 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.29, 127.0.0.1:49525][0m
+INFO 2023-11-08 16:35:31,863 runserver>log_action [mHTTP POST /api/token/ 200 [0.31, 127.0.0.1:49530][0m
+INFO 2023-11-08 16:35:31,897 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:49533]
+INFO 2023-11-08 16:35:31,902 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 16:35:31,909 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:49533]
+INFO 2023-11-08 16:35:36,926 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:49525][0m
+INFO 2023-11-08 16:35:37,113 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:35:37,113 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 16:35:37,113 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:49525][0m
+WARNING 2023-11-08 16:39:40,009 log>log_response Unauthorized: /api/printerstatus/
+WARNING 2023-11-08 16:39:40,010 runserver>log_action [31;1mHTTP GET /api/printerstatus/?app=postman&version=8.2&branchcode=KB 401 [0.01, 127.0.0.1:49688][0m
+INFO 2023-11-08 16:40:05,531 runserver>log_action [mHTTP GET /api/printerstatus/?app=postman&version=8.2&branchcode=KB 200 [0.01, 127.0.0.1:49688][0m
+INFO 2023-11-08 16:40:22,456 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:49698][0m
+INFO 2023-11-08 16:40:35,210 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 16:40:35,214 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 16:40:35,216 runserver>log_action [mHTTP POST /api/updateprinter/?app=postman&version=8.2&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.03, 127.0.0.1:49688][0m
+INFO 2023-11-08 16:41:27,616 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:49533]
+INFO 2023-11-08 17:55:01,490 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 17:55:02,369 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 17:55:02,374 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 17:55:02,539 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 17:55:02,540 base>views>main -SCH- Now:11/08/2023, 09:55:02
+INFO 2023-11-08 17:55:02,611 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 17:55:02,612 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 17:55:02,612 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 09:55:02 [Yes]
+INFO 2023-11-08 17:55:02,615 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 17:55:02,615 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 17:55:02,615 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 09:55:02 [Yes]
+INFO 2023-11-08 17:55:02,616 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 17:55:02,617 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 17:55:02,617 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 09:55:02 [Yes]
+INFO 2023-11-08 17:55:02,618 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 17:55:02,618 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 17:55:02,619 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 09:55:02 [Yes]
+INFO 2023-11-08 17:55:02,620 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 17:55:02,620 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 17:55:02,620 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 09:55:02 [Yes]
+INFO 2023-11-08 17:55:02,621 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 17:55:02,621 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 17:55:02,622 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 09:55:02 [Yes]
+INFO 2023-11-08 17:55:02,861 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50635][0m
+INFO 2023-11-08 17:55:03,128 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.26, 127.0.0.1:50635][0m
+INFO 2023-11-08 17:55:03,381 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:50640][0m
+INFO 2023-11-08 17:55:03,414 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:50643]
+INFO 2023-11-08 17:55:03,416 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:50644]
+INFO 2023-11-08 17:55:03,448 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 17:55:03,450 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-08 17:55:03,454 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:50643]
+INFO 2023-11-08 17:55:03,455 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:50644]
+INFO 2023-11-08 17:55:08,420 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:50635][0m
+INFO 2023-11-08 17:55:09,130 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 17:55:09,134 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 17:55:09,136 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50635][0m
+INFO 2023-11-08 17:56:14,014 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:50643]
+INFO 2023-11-08 17:56:14,015 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:50644]
+INFO 2023-11-08 18:03:56,916 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:50698]
+INFO 2023-11-08 18:03:56,919 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-08 18:03:56,922 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:50698]
+INFO 2023-11-08 18:03:57,000 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:50699]
+INFO 2023-11-08 18:03:57,003 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:03:57,006 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:50699]
+INFO 2023-11-08 18:04:02,020 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50705][0m
+INFO 2023-11-08 18:04:03,930 runserver>log_action [mHTTP GET /api/printerstatus/?app=Printer%20Control&version=8.2.0.0&branchcode=KB 200 [0.01, 127.0.0.1:50705][0m
+INFO 2023-11-08 18:04:47,689 runserver>log_action [mHTTP GET /api/printerstatus/?app=postman&version=8.2&branchcode=KB 200 [0.01, 127.0.0.1:50718][0m
+INFO 2023-11-08 18:04:56,837 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:04:56,842 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:04:56,844 runserver>log_action [mHTTP POST /api/updateprinter/?app=postman&version=8.2&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.03, 127.0.0.1:50718][0m
+INFO 2023-11-08 18:05:56,283 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:50698]
+INFO 2023-11-08 18:05:56,283 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:50699]
+INFO 2023-11-08 18:06:13,834 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50745][0m
+INFO 2023-11-08 18:06:14,101 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.26, 127.0.0.1:50745][0m
+INFO 2023-11-08 18:06:14,397 runserver>log_action [mHTTP POST /api/token/ 200 [0.29, 127.0.0.1:50750][0m
+INFO 2023-11-08 18:06:14,431 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:50753]
+INFO 2023-11-08 18:06:14,435 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:06:14,440 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:50753]
+INFO 2023-11-08 18:06:19,436 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:50745][0m
+INFO 2023-11-08 18:06:19,658 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:06:19,661 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:06:19,663 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50745][0m
+INFO 2023-11-08 18:06:22,546 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:06:22,549 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:06:22,551 runserver>log_action [mHTTP POST /api/updateprinter/?app=postman&version=8.2&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.02, 127.0.0.1:50761][0m
+INFO 2023-11-08 18:06:32,698 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:06:32,702 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:06:32,704 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50745][0m
+INFO 2023-11-08 18:06:33,721 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:06:33,735 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:06:33,737 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:50745][0m
+INFO 2023-11-08 18:06:49,876 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:50753]
+INFO 2023-11-08 18:06:55,672 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50785][0m
+INFO 2023-11-08 18:06:55,938 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.26, 127.0.0.1:50785][0m
+INFO 2023-11-08 18:06:56,222 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:50790][0m
+INFO 2023-11-08 18:06:56,249 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:50795]
+INFO 2023-11-08 18:06:56,251 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:50796]
+INFO 2023-11-08 18:06:56,254 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:06:56,257 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-08 18:06:56,261 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:50796]
+INFO 2023-11-08 18:06:56,262 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:50795]
+INFO 2023-11-08 18:07:01,266 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50785][0m
+INFO 2023-11-08 18:07:01,508 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:07:01,512 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:07:01,514 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50785][0m
+INFO 2023-11-08 18:07:14,838 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:07:14,842 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:07:14,845 runserver>log_action [mHTTP POST /api/updateprinter/?app=postman&version=8.2&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.03, 127.0.0.1:50761][0m
+INFO 2023-11-08 18:07:23,455 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:07:23,459 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:07:23,462 runserver>log_action [mHTTP POST /api/updateprinter/?app=postman&version=8.2&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.03, 127.0.0.1:50761][0m
+INFO 2023-11-08 18:09:50,641 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:50795]
+INFO 2023-11-08 18:09:50,642 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:50796]
+INFO 2023-11-08 18:13:40,611 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50915][0m
+INFO 2023-11-08 18:13:40,887 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.27, 127.0.0.1:50915][0m
+INFO 2023-11-08 18:13:41,214 runserver>log_action [mHTTP POST /api/token/ 200 [0.31, 127.0.0.1:50920][0m
+INFO 2023-11-08 18:13:41,246 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:50923]
+INFO 2023-11-08 18:13:41,250 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:13:41,253 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:50923]
+INFO 2023-11-08 18:13:46,255 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50915][0m
+INFO 2023-11-08 18:13:46,464 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:13:46,467 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:13:46,469 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50915][0m
+INFO 2023-11-08 18:14:02,192 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:50923]
+INFO 2023-11-08 18:15:45,375 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50946][0m
+INFO 2023-11-08 18:15:45,675 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.30, 127.0.0.1:50946][0m
+INFO 2023-11-08 18:15:45,972 runserver>log_action [mHTTP POST /api/token/ 200 [0.28, 127.0.0.1:50951][0m
+INFO 2023-11-08 18:15:45,996 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:50954]
+INFO 2023-11-08 18:15:45,999 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:15:46,005 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:50954]
+INFO 2023-11-08 18:15:51,003 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50946][0m
+INFO 2023-11-08 18:15:53,448 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:15:53,463 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:15:53,464 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:50946][0m
+INFO 2023-11-08 18:17:57,009 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:50954]
+INFO 2023-11-08 18:18:23,107 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:50967]
+INFO 2023-11-08 18:18:23,110 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:18:23,115 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:50967]
+INFO 2023-11-08 18:18:33,624 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50971][0m
+INFO 2023-11-08 18:20:12,135 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:50967]
+INFO 2023-11-08 18:21:43,001 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:21:43,301 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.30, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:21:43,607 runserver>log_action [mHTTP POST /api/token/ 200 [0.28, 127.0.0.1:50997][0m
+INFO 2023-11-08 18:21:43,634 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51000]
+INFO 2023-11-08 18:21:43,637 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:21:43,642 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51000]
+INFO 2023-11-08 18:21:48,640 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:21:49,208 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:21:49,224 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:21:49,225 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:21:52,319 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:21:52,322 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:21:52,325 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:51011][0m
+INFO 2023-11-08 18:21:53,351 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:21:53,356 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:21:53,358 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:21:54,356 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:21:54,371 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:21:54,372 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:21:55,401 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:21:55,404 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:21:55,406 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:21:56,398 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:21:56,401 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:21:56,403 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:21:57,433 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:21:57,437 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:21:57,439 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:21:58,423 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:21:58,427 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:21:58,428 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:21:59,438 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:21:59,451 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:21:59,453 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:00,436 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:00,440 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:00,442 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:01,460 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:01,463 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:01,464 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:02,456 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:02,459 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:02,460 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:02,476 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:02,479 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:02,480 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.05, 127.0.0.1:51011][0m
+INFO 2023-11-08 18:22:03,499 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:03,502 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:03,504 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:04,509 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:04,512 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:04,514 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:05,538 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:05,542 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:05,543 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:06,535 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:06,538 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:06,540 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:07,562 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:07,565 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:07,567 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:08,574 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:08,577 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:08,579 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:09,614 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:09,618 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:09,619 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:10,619 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:10,623 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:10,624 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:11,067 runserver>log_action [32mHTTP POST /login/ 302 [0.25, 127.0.0.1:51075][0m
+INFO 2023-11-08 18:22:11,121 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:51075][0m
+INFO 2023-11-08 18:22:11,138 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51075][0m
+INFO 2023-11-08 18:22:11,648 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:11,651 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:11,652 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:12,640 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:12,644 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:12,645 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:12,702 runserver>log_action [mHTTP GET /supervisors/ 200 [0.04, 127.0.0.1:51075][0m
+INFO 2023-11-08 18:22:13,488 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.14, 127.0.0.1:51075][0m
+INFO 2023-11-08 18:22:13,655 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:13,659 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:13,660 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:14,662 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:14,665 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:14,666 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:15,699 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:15,703 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:15,705 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:16,699 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:16,702 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:16,704 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:17,735 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:17,738 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:17,740 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:18,736 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:18,740 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:18,741 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:19,785 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:19,789 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:19,790 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.05, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:19,794 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:19,809 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:19,811 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.07, 127.0.0.1:51011][0m
+INFO 2023-11-08 18:22:20,826 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:20,830 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:20,832 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:21,838 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:21,842 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:21,843 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:22,425 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.03, 127.0.0.1:51075][0m
+INFO 2023-11-08 18:22:22,859 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:22,862 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:22,863 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:23,865 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:23,868 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:23,870 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:24,901 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:24,905 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:24,906 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:25,914 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:25,917 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:25,919 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.05, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:25,926 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:25,929 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:25,931 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.06, 127.0.0.1:51011][0m
+INFO 2023-11-08 18:22:26,959 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:26,963 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:26,964 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:27,964 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:27,968 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:27,969 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:28,986 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:28,991 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:28,992 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:29,988 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:29,991 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:29,993 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:31,014 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:31,018 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:31,019 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:32,027 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:32,042 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:32,044 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.04, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:33,060 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:33,063 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:33,064 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:34,070 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:34,073 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:34,075 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:35,108 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:35,111 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:35,112 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:36,116 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:36,120 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:36,121 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:37,139 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:37,142 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:37,144 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:38,147 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:38,149 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:38,151 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:39,174 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:39,178 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:39,180 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:40,194 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:40,197 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:40,199 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:41,230 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:41,234 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:41,235 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:42,222 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:42,225 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:42,227 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:43,254 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:43,258 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:43,259 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:44,251 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:44,254 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:44,255 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:44,273 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:44,276 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:44,277 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.05, 127.0.0.1:51011][0m
+INFO 2023-11-08 18:22:45,314 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:45,317 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:45,319 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:46,310 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:46,314 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:46,315 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:47,333 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:47,336 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:47,338 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:48,347 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:48,351 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:48,353 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:48,539 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.03, 127.0.0.1:51075][0m
+INFO 2023-11-08 18:22:49,383 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:49,387 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:49,388 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:50,391 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:50,394 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:50,396 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:51,418 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:51,421 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:51,423 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:52,429 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:52,433 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:52,434 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:53,463 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:53,466 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:53,468 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:54,460 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:54,463 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:54,465 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:55,486 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:55,490 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:55,491 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:56,491 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:56,494 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:56,495 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:57,517 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:57,521 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:57,522 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:58,515 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:58,518 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:58,519 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:22:59,532 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:22:59,547 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:22:59,549 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:00,533 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:00,537 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:00,538 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:01,574 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:01,578 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:01,579 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:02,588 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:02,592 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:02,593 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:03,609 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:03,612 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:03,614 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:04,617 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:04,620 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:04,622 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:05,691 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:05,694 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:05,696 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.07, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:06,645 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:06,649 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:06,650 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:07,674 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:07,677 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:07,678 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:08,672 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:08,675 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:08,676 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:09,697 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:09,712 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:09,714 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:10,689 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:10,692 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:10,694 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:11,706 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:11,709 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:11,711 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:12,711 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:12,714 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:12,715 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:13,746 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:13,749 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:13,750 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:14,742 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:14,745 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:14,747 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:15,786 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:15,790 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:15,791 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:16,782 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:16,798 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:16,799 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:17,811 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:17,826 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:17,827 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:18,814 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:18,817 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:18,819 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:19,849 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:19,864 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:19,866 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:20,846 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:20,849 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:20,851 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:21,859 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:21,873 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:21,875 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:23:22,862 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:23:22,866 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:23:22,868 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:50992][0m
+INFO 2023-11-08 18:24:01,995 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51000]
+INFO 2023-11-08 18:26:11,726 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:26:12,017 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.29, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:26:12,312 runserver>log_action [mHTTP POST /api/token/ 200 [0.28, 127.0.0.1:51344][0m
+INFO 2023-11-08 18:26:12,340 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51347]
+INFO 2023-11-08 18:26:12,343 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:26:12,348 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51347]
+INFO 2023-11-08 18:26:19,965 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:26:20,985 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:26:20,989 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:26:20,991 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:26:32,359 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:26:32,362 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:26:32,364 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.02, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:26:42,580 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:26:42,584 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:26:42,586 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.03, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:26:50,635 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:26:50,638 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:26:50,639 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.02, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:27:01,714 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:27:01,717 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:27:01,719 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:27:10,736 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:27:10,740 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:27:10,742 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:27:30,378 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.03, 127.0.0.1:51382][0m
+INFO 2023-11-08 18:27:33,793 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:27:33,797 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:27:33,798 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.02, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:27:36,814 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:27:36,818 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:27:36,819 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:27:45,829 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:27:45,832 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:27:45,834 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:27:48,871 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:27:48,874 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:27:48,876 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.02, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:27:51,910 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:27:51,914 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:27:51,915 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.02, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:28:11,003 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:28:11,018 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:28:11,019 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:28:15,032 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:28:15,035 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:28:15,037 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.03, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:28:17,049 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:28:17,052 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:28:17,053 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:51339][0m
+WARNING 2023-11-08 18:28:45,362 log>log_response Unauthorized: /api/ticketkey/
+WARNING 2023-11-08 18:28:45,362 runserver>log_action [31;1mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 401 [0.00, 127.0.0.1:51419][0m
+INFO 2023-11-08 18:28:49,447 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:51419][0m
+INFO 2023-11-08 18:28:59,982 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:28:59,986 base>ws>wssendwebtv ...Done
+INFO 2023-11-08 18:28:59,986 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:28:59,988 base>ws>wssenddispwait ...Done
+INFO 2023-11-08 18:28:59,990 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:28:59,991 base>ws>wssendql ...Done
+INFO 2023-11-08 18:28:59,993 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:28:59,995 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-08 18:28:59,996 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-08 18:29:00,004 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.09, 127.0.0.1:51419][0m
+INFO 2023-11-08 18:29:00,100 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=011&tickettime=2023-11-08T10:28:59.916614Z 200 [0.03, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:29:07,234 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:29:07,237 base>ws>wssendwebtv ...Done
+INFO 2023-11-08 18:29:07,238 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:29:07,239 base>ws>wssenddispwait ...Done
+INFO 2023-11-08 18:29:07,242 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:29:07,243 base>ws>wssendql ...Done
+INFO 2023-11-08 18:29:07,244 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:29:07,246 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-08 18:29:07,246 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-08 18:29:07,254 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.08, 127.0.0.1:51419][0m
+INFO 2023-11-08 18:29:07,325 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=012&tickettime=2023-11-08T10:29:07.180726Z 200 [0.03, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:29:15,704 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:29:15,708 base>ws>wssendwebtv ...Done
+INFO 2023-11-08 18:29:15,708 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:29:15,710 base>ws>wssenddispwait ...Done
+INFO 2023-11-08 18:29:15,713 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:29:15,714 base>ws>wssendql ...Done
+INFO 2023-11-08 18:29:15,715 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:29:15,718 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-08 18:29:15,718 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-08 18:29:15,728 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.10, 127.0.0.1:51419][0m
+INFO 2023-11-08 18:29:15,765 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=013&tickettime=2023-11-08T10:29:15.636903Z 200 [0.03, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:29:23,889 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:29:23,905 base>ws>wssendwebtv ...Done
+INFO 2023-11-08 18:29:23,906 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:29:23,907 base>ws>wssenddispwait ...Done
+INFO 2023-11-08 18:29:23,910 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:29:23,912 base>ws>wssendql ...Done
+INFO 2023-11-08 18:29:23,913 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:29:23,915 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-08 18:29:23,915 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-08 18:29:23,924 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.09, 127.0.0.1:51419][0m
+INFO 2023-11-08 18:29:23,979 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=014&tickettime=2023-11-08T10:29:23.833206Z 200 [0.03, 127.0.0.1:51339][0m
+INFO 2023-11-08 18:29:35,354 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51347]
+INFO 2023-11-08 18:29:48,140 runserver>log_action [mHTTP POST /api/token/ 200 [0.31, 127.0.0.1:51467][0m
+INFO 2023-11-08 18:29:51,810 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.0 200 [0.01, 127.0.0.1:51477][0m
+INFO 2023-11-08 18:29:51,817 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51480]
+INFO 2023-11-08 18:29:51,819 base>consumers>connect connecting:print_KB
+ERROR 2023-11-08 18:29:51,819 base>consumers>connect Error:PrintConsumer: User not authenticated.
+INFO 2023-11-08 18:29:51,819 runserver>log_action WebSocket REJECT /ws/print/KB/ [127.0.0.1:51480]
+INFO 2023-11-08 18:29:51,820 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51480]
+INFO 2023-11-08 18:29:51,923 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51482]
+INFO 2023-11-08 18:29:51,923 base>consumers>connect connecting:print_KB
+ERROR 2023-11-08 18:29:51,923 base>consumers>connect Error:PrintConsumer: User not authenticated.
+INFO 2023-11-08 18:29:51,924 runserver>log_action WebSocket REJECT /ws/print/KB/ [127.0.0.1:51482]
+INFO 2023-11-08 18:29:51,925 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51482]
+INFO 2023-11-08 18:30:02,520 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51487][0m
+INFO 2023-11-08 18:30:02,856 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.33, 127.0.0.1:51487][0m
+INFO 2023-11-08 18:30:03,159 runserver>log_action [mHTTP POST /api/token/ 200 [0.29, 127.0.0.1:51492][0m
+INFO 2023-11-08 18:30:03,180 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51495]
+INFO 2023-11-08 18:30:03,183 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:30:03,188 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51495]
+INFO 2023-11-08 18:30:08,185 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51487][0m
+INFO 2023-11-08 18:30:08,352 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:30:08,356 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:30:08,358 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:51487][0m
+INFO 2023-11-08 18:31:36,199 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:31:37,557 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:31:37,563 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:31:37,713 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:31:37,714 base>views>main -SCH- Now:11/08/2023, 10:31:37
+INFO 2023-11-08 18:31:37,783 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:31:37,783 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:31:37,783 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:31:37 [Yes]
+INFO 2023-11-08 18:31:37,785 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:31:37,786 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:31:37,786 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:31:37 [Yes]
+INFO 2023-11-08 18:31:37,787 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:31:37,787 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:31:37,787 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:31:37 [Yes]
+INFO 2023-11-08 18:31:37,788 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:31:37,788 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:31:37,789 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:31:37 [Yes]
+INFO 2023-11-08 18:31:37,790 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:31:37,790 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:31:37,790 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:31:37 [Yes]
+INFO 2023-11-08 18:31:37,791 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:31:37,791 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:31:37,792 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:31:37 [Yes]
+INFO 2023-11-08 18:31:37,970 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51522]
+INFO 2023-11-08 18:31:38,003 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:31:38,938 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51522]
+INFO 2023-11-08 18:31:41,461 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51530]
+INFO 2023-11-08 18:31:41,466 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:31:41,490 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.03, 127.0.0.1:51529][0m
+INFO 2023-11-08 18:31:41,982 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51530]
+INFO 2023-11-08 18:31:46,461 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51537]
+INFO 2023-11-08 18:31:46,466 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:31:46,474 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51529][0m
+INFO 2023-11-08 18:31:47,033 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51537]
+INFO 2023-11-08 18:31:51,458 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51542]
+INFO 2023-11-08 18:31:51,462 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:31:51,472 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51529][0m
+INFO 2023-11-08 18:31:52,089 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51542]
+INFO 2023-11-08 18:31:56,453 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51548]
+INFO 2023-11-08 18:31:56,458 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:31:56,466 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51529][0m
+INFO 2023-11-08 18:31:57,137 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51548]
+INFO 2023-11-08 18:32:01,462 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51552]
+INFO 2023-11-08 18:32:01,466 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:32:01,476 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51529][0m
+INFO 2023-11-08 18:32:02,187 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51552]
+INFO 2023-11-08 18:32:06,455 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51557]
+INFO 2023-11-08 18:32:06,460 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:32:06,468 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51529][0m
+INFO 2023-11-08 18:32:07,233 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51557]
+INFO 2023-11-08 18:32:11,462 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51564]
+INFO 2023-11-08 18:32:11,468 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:32:11,477 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51529][0m
+INFO 2023-11-08 18:32:12,281 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51564]
+INFO 2023-11-08 18:32:13,016 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:32:14,070 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:32:14,075 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:32:14,221 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:32:14,222 base>views>main -SCH- Now:11/08/2023, 10:32:14
+INFO 2023-11-08 18:32:14,292 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:14,293 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:14,293 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:14 [Yes]
+INFO 2023-11-08 18:32:14,295 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:14,295 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:14,296 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:14 [Yes]
+INFO 2023-11-08 18:32:14,297 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:32:14,297 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:32:14,297 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:32:14 [Yes]
+INFO 2023-11-08 18:32:14,299 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:14,299 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:14,300 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:14 [Yes]
+INFO 2023-11-08 18:32:14,301 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:14,301 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:14,301 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:14 [Yes]
+INFO 2023-11-08 18:32:14,303 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:14,303 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:14,303 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:14 [Yes]
+INFO 2023-11-08 18:32:17,043 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:32:18,100 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:32:18,105 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:32:18,233 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:32:18,233 base>views>main -SCH- Now:11/08/2023, 10:32:18
+INFO 2023-11-08 18:32:18,309 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:18,309 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:18,310 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:18 [Yes]
+INFO 2023-11-08 18:32:18,311 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:18,311 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:18,311 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:18 [Yes]
+INFO 2023-11-08 18:32:18,312 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:32:18,313 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:32:18,313 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:32:18 [Yes]
+INFO 2023-11-08 18:32:18,314 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:18,314 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:18,315 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:18 [Yes]
+INFO 2023-11-08 18:32:18,316 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:18,316 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:18,316 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:18 [Yes]
+INFO 2023-11-08 18:32:18,317 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:18,317 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:18,318 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:18 [Yes]
+INFO 2023-11-08 18:32:18,463 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51572]
+INFO 2023-11-08 18:32:18,502 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.04, 127.0.0.1:51571][0m
+INFO 2023-11-08 18:32:18,503 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:32:18,521 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51572]
+INFO 2023-11-08 18:32:21,467 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51571][0m
+INFO 2023-11-08 18:32:25,372 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:32:26,388 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:32:26,393 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:32:26,512 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:32:26,512 base>views>main -SCH- Now:11/08/2023, 10:32:26
+INFO 2023-11-08 18:32:26,578 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:26,578 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:26,578 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:26 [Yes]
+INFO 2023-11-08 18:32:26,580 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:26,580 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:26,581 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:26 [Yes]
+INFO 2023-11-08 18:32:26,581 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:32:26,581 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:32:26,583 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:32:26 [Yes]
+INFO 2023-11-08 18:32:26,584 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:26,584 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:26,584 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:26 [Yes]
+INFO 2023-11-08 18:32:26,586 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:26,586 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:26,587 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:26 [Yes]
+INFO 2023-11-08 18:32:26,588 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:32:26,588 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:32:26,588 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:32:26 [Yes]
+INFO 2023-11-08 18:32:26,977 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51591]
+INFO 2023-11-08 18:32:26,996 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:32:27,003 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51591]
+INFO 2023-11-08 18:32:31,492 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51595][0m
+INFO 2023-11-08 18:33:22,230 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:33:23,249 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:33:23,254 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:33:23,380 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:33:23,380 base>views>main -SCH- Now:11/08/2023, 10:33:23
+INFO 2023-11-08 18:33:23,460 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:23,461 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:23,461 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:23 [Yes]
+INFO 2023-11-08 18:33:23,463 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:23,463 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:23,464 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:23 [Yes]
+INFO 2023-11-08 18:33:23,465 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:33:23,465 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:33:23,465 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:33:23 [Yes]
+INFO 2023-11-08 18:33:23,466 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:23,467 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:23,467 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:23 [Yes]
+INFO 2023-11-08 18:33:23,468 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:23,469 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:23,469 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:23 [Yes]
+INFO 2023-11-08 18:33:23,470 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:23,470 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:23,470 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:23 [Yes]
+INFO 2023-11-08 18:33:26,530 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51611]
+INFO 2023-11-08 18:33:26,553 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:33:26,560 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51611]
+INFO 2023-11-08 18:33:26,560 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1/200]
+INFO 2023-11-08 18:33:31,564 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51617][0m
+INFO 2023-11-08 18:33:33,231 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:33:34,263 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:33:34,268 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:33:34,391 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:33:34,392 base>views>main -SCH- Now:11/08/2023, 10:33:34
+INFO 2023-11-08 18:33:34,458 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:34,458 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:34,459 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:34 [Yes]
+INFO 2023-11-08 18:33:34,460 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:34,461 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:34,461 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:34 [Yes]
+INFO 2023-11-08 18:33:34,462 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:33:34,462 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:33:34,462 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:33:34 [Yes]
+INFO 2023-11-08 18:33:34,463 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:34,464 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:34,464 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:34 [Yes]
+INFO 2023-11-08 18:33:34,465 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:34,465 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:34,465 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:34 [Yes]
+INFO 2023-11-08 18:33:34,467 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:34,467 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:34,467 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:34 [Yes]
+INFO 2023-11-08 18:33:36,537 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51626]
+INFO 2023-11-08 18:33:36,557 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:33:36,563 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51626]
+INFO 2023-11-08 18:33:36,563 base>consumers>connect IP 127.0.0.1 Connected:print_KB [0/200]
+INFO 2023-11-08 18:33:37,481 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:33:38,543 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:33:38,548 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:33:38,667 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:33:38,667 base>views>main -SCH- Now:11/08/2023, 10:33:38
+INFO 2023-11-08 18:33:38,734 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:38,734 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:38,734 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:38 [Yes]
+INFO 2023-11-08 18:33:38,736 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:38,736 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:38,737 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:38 [Yes]
+INFO 2023-11-08 18:33:38,738 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:33:38,738 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:33:38,738 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:33:38 [Yes]
+INFO 2023-11-08 18:33:38,739 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:38,740 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:38,740 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:38 [Yes]
+INFO 2023-11-08 18:33:38,741 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:38,741 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:38,741 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:38 [Yes]
+INFO 2023-11-08 18:33:38,742 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:33:38,743 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:33:38,743 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:33:38 [Yes]
+INFO 2023-11-08 18:33:41,539 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51636]
+INFO 2023-11-08 18:33:41,571 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.04, 127.0.0.1:51635][0m
+INFO 2023-11-08 18:33:41,572 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:33:41,578 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51636]
+INFO 2023-11-08 18:33:41,578 base>consumers>connect IP 127.0.0.1 Connected:print_KB [0/200]
+INFO 2023-11-08 18:33:46,552 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51635][0m
+INFO 2023-11-08 18:34:42,894 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:34:43,981 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:34:43,986 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:34:44,114 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:34:44,114 base>views>main -SCH- Now:11/08/2023, 10:34:44
+INFO 2023-11-08 18:34:44,185 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:34:44,186 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:34:44,186 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:34:44 [Yes]
+INFO 2023-11-08 18:34:44,188 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:34:44,188 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:34:44,189 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:34:44 [Yes]
+INFO 2023-11-08 18:34:44,190 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:34:44,190 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:34:44,190 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:34:44 [Yes]
+INFO 2023-11-08 18:34:44,192 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:34:44,192 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:34:44,192 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:34:44 [Yes]
+INFO 2023-11-08 18:34:44,193 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:34:44,193 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:34:44,194 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:34:44 [Yes]
+INFO 2023-11-08 18:34:44,195 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:34:44,195 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:34:44,195 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:34:44 [Yes]
+INFO 2023-11-08 18:34:46,550 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51671]
+INFO 2023-11-08 18:34:46,570 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:34:46,589 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51671]
+INFO 2023-11-08 18:34:46,590 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1/200]
+INFO 2023-11-08 18:34:46,590 base>consumers>connect Disconnected:print_KB Internal [1]
+INFO 2023-11-08 18:34:49,335 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:34:50,425 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:34:50,430 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:34:50,551 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:34:50,552 base>views>main -SCH- Now:11/08/2023, 10:34:50
+INFO 2023-11-08 18:34:50,617 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:34:50,618 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:34:50,618 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:34:50 [Yes]
+INFO 2023-11-08 18:34:50,620 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:34:50,620 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:34:50,621 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:34:50 [Yes]
+INFO 2023-11-08 18:34:50,622 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:34:50,622 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:34:50,622 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:34:50 [Yes]
+INFO 2023-11-08 18:34:50,623 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:34:50,623 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:34:50,624 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:34:50 [Yes]
+INFO 2023-11-08 18:34:50,625 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:34:50,625 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:34:50,625 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:34:50 [Yes]
+INFO 2023-11-08 18:34:50,626 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:34:50,626 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:34:50,627 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:34:50 [Yes]
+INFO 2023-11-08 18:34:51,551 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51679]
+INFO 2023-11-08 18:34:51,582 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.04, 127.0.0.1:51678][0m
+INFO 2023-11-08 18:34:51,583 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:34:51,609 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51679]
+INFO 2023-11-08 18:34:51,609 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1/200]
+INFO 2023-11-08 18:34:53,437 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51685][0m
+INFO 2023-11-08 18:34:56,556 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51678][0m
+INFO 2023-11-08 18:35:06,595 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:35:07,739 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:35:07,746 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:35:07,904 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:35:07,905 base>views>main -SCH- Now:11/08/2023, 10:35:07
+INFO 2023-11-08 18:35:07,975 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:35:07,975 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:35:07,976 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:35:07 [Yes]
+INFO 2023-11-08 18:35:07,977 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:35:07,978 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:35:07,978 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:35:07 [Yes]
+INFO 2023-11-08 18:35:07,979 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:35:07,980 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:35:07,980 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:35:07 [Yes]
+INFO 2023-11-08 18:35:07,981 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:35:07,981 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:35:07,982 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:35:07 [Yes]
+INFO 2023-11-08 18:35:07,983 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:35:07,983 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:35:07,983 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:35:07 [Yes]
+INFO 2023-11-08 18:35:07,984 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:35:07,984 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:35:07,985 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:35:07 [Yes]
+INFO 2023-11-08 18:35:11,570 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51718]
+INFO 2023-11-08 18:35:11,591 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:35:11,604 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51718]
+INFO 2023-11-08 18:35:12,143 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51718]
+INFO 2023-11-08 18:35:16,586 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51723][0m
+INFO 2023-11-08 18:35:58,558 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:35:59,669 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:35:59,674 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:35:59,794 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:35:59,795 base>views>main -SCH- Now:11/08/2023, 10:35:59
+INFO 2023-11-08 18:35:59,864 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:35:59,866 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:35:59,866 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:35:59 [Yes]
+INFO 2023-11-08 18:35:59,868 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:35:59,868 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:35:59,869 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:35:59 [Yes]
+INFO 2023-11-08 18:35:59,870 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:35:59,870 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:35:59,871 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:35:59 [Yes]
+INFO 2023-11-08 18:35:59,872 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:35:59,872 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:35:59,873 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:35:59 [Yes]
+INFO 2023-11-08 18:35:59,874 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:35:59,874 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:35:59,874 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:35:59 [Yes]
+INFO 2023-11-08 18:35:59,875 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:35:59,876 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:35:59,876 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:35:59 [Yes]
+INFO 2023-11-08 18:36:51,932 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:36:52,964 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:36:52,969 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:36:53,084 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:36:53,084 base>views>main -SCH- Now:11/08/2023, 10:36:53
+INFO 2023-11-08 18:36:53,155 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:36:53,156 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:36:53,156 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:36:53 [Yes]
+INFO 2023-11-08 18:36:53,158 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:36:53,158 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:36:53,158 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:36:53 [Yes]
+INFO 2023-11-08 18:36:53,159 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:36:53,160 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:36:53,160 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:36:53 [Yes]
+INFO 2023-11-08 18:36:53,161 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:36:53,161 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:36:53,162 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:36:53 [Yes]
+INFO 2023-11-08 18:36:53,163 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:36:53,163 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:36:53,163 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:36:53 [Yes]
+INFO 2023-11-08 18:36:53,165 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:36:53,165 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:36:53,165 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:36:53 [Yes]
+INFO 2023-11-08 18:37:03,445 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51785][0m
+INFO 2023-11-08 18:37:03,750 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.30, 127.0.0.1:51785][0m
+INFO 2023-11-08 18:37:04,095 runserver>log_action [mHTTP POST /api/token/ 200 [0.29, 127.0.0.1:51790][0m
+INFO 2023-11-08 18:37:04,129 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51793]
+INFO 2023-11-08 18:37:04,153 base>consumers>connect connecting:print_KB
+INFO 2023-11-08 18:37:04,162 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51793]
+INFO 2023-11-08 18:37:04,163 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-08 18:37:09,142 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51785][0m
+INFO 2023-11-08 18:37:09,293 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-08 18:37:09,297 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-08 18:37:09,298 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:51785][0m
+INFO 2023-11-08 18:37:15,399 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51793]
+INFO 2023-11-08 18:37:15,400 base>consumers>disconnect Disconnected:print_KB Internal [0]
+INFO 2023-11-08 18:37:39,100 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:37:40,130 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:37:40,135 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:37:40,241 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:37:40,242 base>views>main -SCH- Now:11/08/2023, 10:37:40
+INFO 2023-11-08 18:37:40,307 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:40,307 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:40,307 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:40 [Yes]
+INFO 2023-11-08 18:37:40,309 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:40,309 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:40,310 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:40 [Yes]
+INFO 2023-11-08 18:37:40,311 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:37:40,311 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:37:40,311 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:37:40 [Yes]
+INFO 2023-11-08 18:37:40,312 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:40,312 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:40,313 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:40 [Yes]
+INFO 2023-11-08 18:37:40,313 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:40,314 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:40,314 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:40 [Yes]
+INFO 2023-11-08 18:37:40,315 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:40,315 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:40,316 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:40 [Yes]
+INFO 2023-11-08 18:37:47,309 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:37:48,285 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:37:48,289 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:37:48,399 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:37:48,399 base>views>main -SCH- Now:11/08/2023, 10:37:48
+INFO 2023-11-08 18:37:48,464 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:48,465 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:48,465 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:48 [Yes]
+INFO 2023-11-08 18:37:48,466 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:48,466 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:48,468 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:48 [Yes]
+INFO 2023-11-08 18:37:48,468 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:37:48,469 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:37:48,469 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:37:48 [Yes]
+INFO 2023-11-08 18:37:48,470 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:48,470 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:48,470 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:48 [Yes]
+INFO 2023-11-08 18:37:48,471 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:48,472 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:48,472 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:48 [Yes]
+INFO 2023-11-08 18:37:48,473 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:48,473 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:48,473 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:48 [Yes]
+INFO 2023-11-08 18:37:51,171 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:37:52,145 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:37:52,151 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:37:52,273 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:37:52,274 base>views>main -SCH- Now:11/08/2023, 10:37:52
+INFO 2023-11-08 18:37:52,339 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:52,339 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:52,340 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:52 [Yes]
+INFO 2023-11-08 18:37:52,341 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:52,342 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:52,342 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:52 [Yes]
+INFO 2023-11-08 18:37:52,343 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:37:52,343 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:37:52,344 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:37:52 [Yes]
+INFO 2023-11-08 18:37:52,345 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:52,345 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:52,345 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:52 [Yes]
+INFO 2023-11-08 18:37:52,346 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:52,346 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:52,347 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:52 [Yes]
+INFO 2023-11-08 18:37:52,347 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:52,347 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:52,348 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:52 [Yes]
+INFO 2023-11-08 18:37:57,180 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:37:58,149 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:37:58,153 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:37:58,268 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:37:58,268 base>views>main -SCH- Now:11/08/2023, 10:37:58
+INFO 2023-11-08 18:37:58,333 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:58,333 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:58,334 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:58 [Yes]
+INFO 2023-11-08 18:37:58,335 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:58,336 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:58,336 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:58 [Yes]
+INFO 2023-11-08 18:37:58,337 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:37:58,337 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:37:58,337 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:37:58 [Yes]
+INFO 2023-11-08 18:37:58,338 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:58,339 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:58,339 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:58 [Yes]
+INFO 2023-11-08 18:37:58,340 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:58,340 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:58,340 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:58 [Yes]
+INFO 2023-11-08 18:37:58,341 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:37:58,342 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:37:58,342 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:37:58 [Yes]
+INFO 2023-11-08 18:38:07,452 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:38:08,436 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:38:08,441 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:38:08,549 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:38:08,549 base>views>main -SCH- Now:11/08/2023, 10:38:08
+INFO 2023-11-08 18:38:08,614 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:08,614 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:08,614 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:08 [Yes]
+INFO 2023-11-08 18:38:08,616 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:08,616 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:08,617 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:08 [Yes]
+INFO 2023-11-08 18:38:08,618 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:38:08,618 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:38:08,618 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:38:08 [Yes]
+INFO 2023-11-08 18:38:08,619 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:08,619 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:08,620 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:08 [Yes]
+INFO 2023-11-08 18:38:08,620 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:08,621 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:08,621 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:08 [Yes]
+INFO 2023-11-08 18:38:08,622 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:08,622 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:08,623 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:08 [Yes]
+INFO 2023-11-08 18:38:14,507 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:38:15,478 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:38:15,483 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:38:15,592 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:38:15,593 base>views>main -SCH- Now:11/08/2023, 10:38:15
+INFO 2023-11-08 18:38:15,656 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:15,657 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:15,657 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:15 [Yes]
+INFO 2023-11-08 18:38:15,658 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:15,659 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:15,659 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:15 [Yes]
+INFO 2023-11-08 18:38:15,660 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:38:15,660 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:38:15,660 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:38:15 [Yes]
+INFO 2023-11-08 18:38:15,661 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:15,662 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:15,662 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:15 [Yes]
+INFO 2023-11-08 18:38:15,663 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:15,663 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:15,663 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:15 [Yes]
+INFO 2023-11-08 18:38:15,665 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:15,665 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:15,665 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:15 [Yes]
+INFO 2023-11-08 18:38:22,638 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:38:23,587 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:38:23,592 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:38:23,701 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:38:23,701 base>views>main -SCH- Now:11/08/2023, 10:38:23
+INFO 2023-11-08 18:38:23,766 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:23,767 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:23,767 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:23 [Yes]
+INFO 2023-11-08 18:38:23,769 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:23,769 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:23,769 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:23 [Yes]
+INFO 2023-11-08 18:38:23,770 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:38:23,770 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:38:23,770 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:38:23 [Yes]
+INFO 2023-11-08 18:38:23,771 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:23,771 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:23,772 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:23 [Yes]
+INFO 2023-11-08 18:38:23,773 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:23,773 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:23,773 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:23 [Yes]
+INFO 2023-11-08 18:38:23,774 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:23,774 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:23,775 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:23 [Yes]
+INFO 2023-11-08 18:38:27,550 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:38:28,512 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:38:28,517 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:38:28,623 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:38:28,623 base>views>main -SCH- Now:11/08/2023, 10:38:28
+INFO 2023-11-08 18:38:28,690 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:28,691 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:28,691 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:28 [Yes]
+INFO 2023-11-08 18:38:28,693 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:28,693 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:28,694 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:28 [Yes]
+INFO 2023-11-08 18:38:28,695 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:38:28,695 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:38:28,695 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:38:28 [Yes]
+INFO 2023-11-08 18:38:28,696 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:28,696 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:28,697 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:28 [Yes]
+INFO 2023-11-08 18:38:28,697 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:28,698 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:28,698 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:28 [Yes]
+INFO 2023-11-08 18:38:28,698 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:28,700 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:28,700 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:28 [Yes]
+INFO 2023-11-08 18:38:31,408 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:38:32,358 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:38:32,363 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:38:32,473 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:38:32,474 base>views>main -SCH- Now:11/08/2023, 10:38:32
+INFO 2023-11-08 18:38:32,537 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:32,538 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:32,538 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:32 [Yes]
+INFO 2023-11-08 18:38:32,540 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:32,540 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:32,540 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:32 [Yes]
+INFO 2023-11-08 18:38:32,541 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:38:32,541 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:38:32,542 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:38:32 [Yes]
+INFO 2023-11-08 18:38:32,543 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:32,543 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:32,543 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:32 [Yes]
+INFO 2023-11-08 18:38:32,544 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:32,544 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:32,545 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:32 [Yes]
+INFO 2023-11-08 18:38:32,546 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:32,546 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:32,546 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:32 [Yes]
+INFO 2023-11-08 18:38:36,300 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:38:37,232 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:38:37,237 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:38:37,343 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:38:37,344 base>views>main -SCH- Now:11/08/2023, 10:38:37
+INFO 2023-11-08 18:38:37,407 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:37,408 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:37,408 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:37 [Yes]
+INFO 2023-11-08 18:38:37,410 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:37,411 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:37,411 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:37 [Yes]
+INFO 2023-11-08 18:38:37,412 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:38:37,412 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:38:37,412 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:38:37 [Yes]
+INFO 2023-11-08 18:38:37,413 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:37,413 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:37,414 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:37 [Yes]
+INFO 2023-11-08 18:38:37,415 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:37,415 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:37,415 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:37 [Yes]
+INFO 2023-11-08 18:38:37,416 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:37,417 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:37,417 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:37 [Yes]
+INFO 2023-11-08 18:38:43,314 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:38:44,351 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:38:44,356 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:38:44,476 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:38:44,476 base>views>main -SCH- Now:11/08/2023, 10:38:44
+INFO 2023-11-08 18:38:44,542 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:44,543 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:44,543 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:44 [Yes]
+INFO 2023-11-08 18:38:44,545 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:44,545 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:44,545 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:44 [Yes]
+INFO 2023-11-08 18:38:44,546 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:38:44,547 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:38:44,547 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:38:44 [Yes]
+INFO 2023-11-08 18:38:44,548 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:44,548 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:44,548 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:44 [Yes]
+INFO 2023-11-08 18:38:44,550 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:44,550 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:44,550 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:44 [Yes]
+INFO 2023-11-08 18:38:44,551 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:44,551 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:44,551 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:44 [Yes]
+INFO 2023-11-08 18:38:49,378 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:38:50,318 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:38:50,323 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:38:50,429 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:38:50,430 base>views>main -SCH- Now:11/08/2023, 10:38:50
+INFO 2023-11-08 18:38:50,495 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:50,495 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:50,496 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:50 [Yes]
+INFO 2023-11-08 18:38:50,497 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:50,498 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:50,498 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:50 [Yes]
+INFO 2023-11-08 18:38:50,498 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:38:50,500 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:38:50,500 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:38:50 [Yes]
+INFO 2023-11-08 18:38:50,501 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:50,501 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:50,501 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:50 [Yes]
+INFO 2023-11-08 18:38:50,502 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:50,503 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:50,503 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:50 [Yes]
+INFO 2023-11-08 18:38:50,504 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:50,505 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:50,505 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:50 [Yes]
+INFO 2023-11-08 18:38:54,276 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:38:55,210 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:38:55,215 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:38:55,326 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:38:55,327 base>views>main -SCH- Now:11/08/2023, 10:38:55
+INFO 2023-11-08 18:38:55,390 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:55,391 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:55,391 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:55 [Yes]
+INFO 2023-11-08 18:38:55,393 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:55,393 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:55,393 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:55 [Yes]
+INFO 2023-11-08 18:38:55,394 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:38:55,395 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:38:55,395 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:38:55 [Yes]
+INFO 2023-11-08 18:38:55,396 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:55,396 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:55,396 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:55 [Yes]
+INFO 2023-11-08 18:38:55,397 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:55,398 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:55,398 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:55 [Yes]
+INFO 2023-11-08 18:38:55,399 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:38:55,399 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:38:55,399 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:38:55 [Yes]
+INFO 2023-11-08 18:38:59,163 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:39:00,105 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:39:00,110 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:39:00,221 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:39:00,221 base>views>main -SCH- Now:11/08/2023, 10:39:00
+INFO 2023-11-08 18:39:00,288 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:00,288 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:00,290 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:00 [Yes]
+INFO 2023-11-08 18:39:00,290 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:00,290 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:00,291 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:00 [Yes]
+INFO 2023-11-08 18:39:00,292 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:39:00,292 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:39:00,292 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:39:00 [Yes]
+INFO 2023-11-08 18:39:00,293 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:00,294 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:00,294 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:00 [Yes]
+INFO 2023-11-08 18:39:00,295 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:00,295 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:00,295 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:00 [Yes]
+INFO 2023-11-08 18:39:00,296 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:00,297 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:00,297 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:00 [Yes]
+INFO 2023-11-08 18:39:07,262 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:39:08,221 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:39:08,226 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:39:08,332 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:39:08,332 base>views>main -SCH- Now:11/08/2023, 10:39:08
+INFO 2023-11-08 18:39:08,396 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:08,397 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:08,397 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:08 [Yes]
+INFO 2023-11-08 18:39:08,399 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:08,399 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:08,399 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:08 [Yes]
+INFO 2023-11-08 18:39:08,400 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:39:08,400 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:39:08,401 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:39:08 [Yes]
+INFO 2023-11-08 18:39:08,402 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:08,402 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:08,402 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:08 [Yes]
+INFO 2023-11-08 18:39:08,403 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:08,403 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:08,404 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:08 [Yes]
+INFO 2023-11-08 18:39:08,404 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:08,405 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:08,405 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:08 [Yes]
+INFO 2023-11-08 18:39:22,835 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:39:23,773 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:39:23,777 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:39:23,882 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:39:23,883 base>views>main -SCH- Now:11/08/2023, 10:39:23
+INFO 2023-11-08 18:39:23,950 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:23,950 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:23,950 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:23 [Yes]
+INFO 2023-11-08 18:39:23,952 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:23,952 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:23,953 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:23 [Yes]
+INFO 2023-11-08 18:39:23,954 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:39:23,954 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:39:23,954 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:39:23 [Yes]
+INFO 2023-11-08 18:39:23,955 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:23,955 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:23,956 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:23 [Yes]
+INFO 2023-11-08 18:39:23,957 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:23,957 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:23,957 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:23 [Yes]
+INFO 2023-11-08 18:39:23,958 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:23,958 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:23,958 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:23 [Yes]
+INFO 2023-11-08 18:39:29,867 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:39:30,815 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:39:30,820 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:39:30,931 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:39:30,931 base>views>main -SCH- Now:11/08/2023, 10:39:30
+INFO 2023-11-08 18:39:30,996 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:30,997 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:30,997 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:30 [Yes]
+INFO 2023-11-08 18:39:30,999 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:30,999 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:30,999 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:30 [Yes]
+INFO 2023-11-08 18:39:31,000 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:39:31,000 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:39:31,001 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:39:31 [Yes]
+INFO 2023-11-08 18:39:31,002 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:31,002 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:31,002 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:31 [Yes]
+INFO 2023-11-08 18:39:31,003 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:31,004 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:31,004 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:31 [Yes]
+INFO 2023-11-08 18:39:31,005 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:31,005 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:31,005 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:31 [Yes]
+INFO 2023-11-08 18:39:34,753 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:39:35,699 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:39:35,704 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:39:35,811 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:39:35,811 base>views>main -SCH- Now:11/08/2023, 10:39:35
+INFO 2023-11-08 18:39:35,875 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:35,875 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:35,876 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:35 [Yes]
+INFO 2023-11-08 18:39:35,878 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:35,878 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:35,878 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:35 [Yes]
+INFO 2023-11-08 18:39:35,879 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:39:35,879 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:39:35,880 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:39:35 [Yes]
+INFO 2023-11-08 18:39:35,881 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:35,881 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:35,881 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:35 [Yes]
+INFO 2023-11-08 18:39:35,882 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:35,882 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:35,883 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:35 [Yes]
+INFO 2023-11-08 18:39:35,883 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:35,884 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:35,884 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:35 [Yes]
+INFO 2023-11-08 18:39:47,113 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:39:48,062 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:39:48,066 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:39:48,178 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:39:48,179 base>views>main -SCH- Now:11/08/2023, 10:39:48
+INFO 2023-11-08 18:39:48,243 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:48,243 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:48,244 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:48 [Yes]
+INFO 2023-11-08 18:39:48,245 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:48,246 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:48,246 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:48 [Yes]
+INFO 2023-11-08 18:39:48,247 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:39:48,247 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:39:48,247 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:39:48 [Yes]
+INFO 2023-11-08 18:39:48,248 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:48,249 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:48,249 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:48 [Yes]
+INFO 2023-11-08 18:39:48,250 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:48,250 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:48,250 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:48 [Yes]
+INFO 2023-11-08 18:39:48,251 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:48,252 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:48,252 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:48 [Yes]
+INFO 2023-11-08 18:39:50,929 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\base\consumers.py changed, reloading.
+INFO 2023-11-08 18:39:51,882 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-08 18:39:51,887 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-08 18:39:52,003 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-08 18:39:52,003 base>views>main -SCH- Now:11/08/2023, 10:39:51
+INFO 2023-11-08 18:39:52,068 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:52,069 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:52,069 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:52 [Yes]
+INFO 2023-11-08 18:39:52,071 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:52,071 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:52,071 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:52 [Yes]
+INFO 2023-11-08 18:39:52,072 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-08 18:00:00 Local:2023-11-09 02:00:00
+INFO 2023-11-08 18:39:52,072 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-08 18:39:52,073 base>views>sch_shutdown    -SCH- 2023-11-08 18:00:00 > 2023-11-08 10:39:52 [Yes]
+INFO 2023-11-08 18:39:52,074 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:52,074 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:52,074 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:52 [Yes]
+INFO 2023-11-08 18:39:52,075 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:52,075 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:52,076 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:52 [Yes]
+INFO 2023-11-08 18:39:52,077 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-08 15:59:59 Local:2023-11-08 23:59:59
+INFO 2023-11-08 18:39:52,077 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-08 18:39:52,077 base>views>sch_shutdown    -SCH- 2023-11-08 15:59:59 > 2023-11-08 10:39:52 [Yes]

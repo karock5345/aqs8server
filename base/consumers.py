@@ -1,4 +1,3 @@
-
 # base.consumers.py
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer, WebsocketConsumer
@@ -35,6 +34,9 @@ ws_connected_max = 200
 #        'eticket':{...}
 #       }
 # }
+# 'eticket' for web online e-ticket
+# 'webtv' for web online tv public use, 'wtv' for interal Disp Penal use.
+# 'print' for internal PrinterControl use.
 # print('Count of KB webtv public:' + str(ws_connected_dict['KB']['webtv']['pub']['count']))
 # ws_connected_dict['KB']['webtv']['pub']['ip'].append('test')
 # print('IP list of KB webtv public:' + str(ws_connected_dict['KB']['webtv']['pub']['ip']))
@@ -610,6 +612,7 @@ class PrintConsumer(AsyncWebsocketConsumer):
         error = ''
         self.bcode = self.scope['url_route']['kwargs']['bcode']
         self.room_group_name = 'print_' + self.bcode 
+        self.ws_str = 'print'
         logger.info('connecting:' + self.room_group_name)
 
         if error == '':
@@ -620,12 +623,26 @@ class PrintConsumer(AsyncWebsocketConsumer):
             # check bcode and ct (countertype) is not exit do not accept connection
             error = await check_input() 
 
+
+        exist = True        
+        if self.bcode not in ws_connected_dict :
+            exist = False
+        elif self.ws_str not in ws_connected_dict[self.bcode]:
+            exist = False
+        if exist == False:
+            new_ws_connected_dict(self.bcode, self.ws_str)   
+
         if error == '':          
             await self.channel_layer.group_add(
                 self.room_group_name,
                 self.channel_name
             )
             await self.accept()
+            ip = self.scope['client'][0]           
+            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
+            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
+            logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
+            
         else :
             logger.error('Error:' + error )
             await self.close()
@@ -645,6 +662,10 @@ class PrintConsumer(AsyncWebsocketConsumer):
     async def disconnect(self, close_code):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
+        ip = self.scope['client'][0]
+        ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
+        ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
         await self.send(json.dumps(data, cls=DjangoJSONEncoder))
