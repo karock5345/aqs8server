@@ -10174,3 +10174,345 @@ INFO 2023-11-09 18:02:18,937 base>views>sch_shutdown    -SCH- 2023-11-09 15:59:5
 INFO 2023-11-09 18:02:18,938 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-09 15:59:59 Local:2023-11-09 23:59:59
 INFO 2023-11-09 18:02:18,938 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
 INFO 2023-11-09 18:02:18,939 base>views>sch_shutdown    -SCH- 2023-11-09 15:59:59 > 2023-11-09 10:02:18 [Yes]
+INFO 2023-11-10 14:55:53,712 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-10 14:55:54,592 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-10 14:55:54,597 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-10 14:55:54,777 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-10 14:55:54,778 base>views>main -SCH- Now:11/10/2023, 06:55:54
+INFO 2023-11-10 14:55:54,856 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-10 15:59:59 Local:2023-11-10 23:59:59
+INFO 2023-11-10 14:55:54,857 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-10 14:55:54,857 base>views>sch_shutdown    -SCH- 2023-11-10 15:59:59 > 2023-11-10 06:55:54 [Yes]
+INFO 2023-11-10 14:55:54,860 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-10 15:59:59 Local:2023-11-10 23:59:59
+INFO 2023-11-10 14:55:54,860 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-10 14:55:54,861 base>views>sch_shutdown    -SCH- 2023-11-10 15:59:59 > 2023-11-10 06:55:54 [Yes]
+INFO 2023-11-10 14:55:54,862 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-10 18:00:00 Local:2023-11-11 02:00:00
+INFO 2023-11-10 14:55:54,862 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-10 14:55:54,863 base>views>sch_shutdown    -SCH- 2023-11-10 18:00:00 > 2023-11-10 06:55:54 [Yes]
+INFO 2023-11-10 14:55:54,864 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-10 15:59:59 Local:2023-11-10 23:59:59
+INFO 2023-11-10 14:55:54,864 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-10 14:55:54,864 base>views>sch_shutdown    -SCH- 2023-11-10 15:59:59 > 2023-11-10 06:55:54 [Yes]
+INFO 2023-11-10 14:55:54,865 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-10 15:59:59 Local:2023-11-10 23:59:59
+INFO 2023-11-10 14:55:54,866 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-10 14:55:54,866 base>views>sch_shutdown    -SCH- 2023-11-10 15:59:59 > 2023-11-10 06:55:54 [Yes]
+INFO 2023-11-10 14:55:54,867 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-10 15:59:59 Local:2023-11-10 23:59:59
+INFO 2023-11-10 14:55:54,867 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-10 14:55:54,868 base>views>sch_shutdown    -SCH- 2023-11-10 15:59:59 > 2023-11-10 06:55:54 [Yes]
+INFO 2023-11-10 14:55:56,790 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51368][0m
+INFO 2023-11-10 14:55:57,054 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.26, 127.0.0.1:51368][0m
+INFO 2023-11-10 14:55:57,334 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:51373][0m
+INFO 2023-11-10 14:55:57,363 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51376]
+INFO 2023-11-10 14:55:57,401 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:56:02,000 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51376]
+INFO 2023-11-10 14:56:02,002 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51380]
+INFO 2023-11-10 14:56:02,005 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:56:02,380 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51368][0m
+INFO 2023-11-10 14:56:02,427 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 14:56:07,008 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51380]
+INFO 2023-11-10 14:56:07,090 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51387]
+INFO 2023-11-10 14:56:07,095 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:56:12,004 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51387]
+INFO 2023-11-10 14:56:12,006 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51389]
+INFO 2023-11-10 14:56:12,009 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:56:12,108 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51391][0m
+INFO 2023-11-10 14:56:17,005 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51389]
+INFO 2023-11-10 14:56:17,101 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51395]
+INFO 2023-11-10 14:56:17,104 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:56:22,005 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51395]
+INFO 2023-11-10 14:56:22,007 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51399]
+INFO 2023-11-10 14:56:22,010 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:56:22,108 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51391][0m
+ERROR 2023-11-10 14:56:23,464 base>ws>wssendprinterstatus ...ERROR:Redis Server is down!
+INFO 2023-11-10 14:56:23,466 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [21.07, 127.0.0.1:51368][0m
+INFO 2023-11-10 14:56:27,009 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51399]
+INFO 2023-11-10 14:56:27,092 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51435]
+INFO 2023-11-10 14:56:27,095 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:56:32,007 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51435]
+INFO 2023-11-10 14:56:32,009 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51440]
+INFO 2023-11-10 14:56:32,012 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:56:32,101 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51368][0m
+INFO 2023-11-10 14:56:37,014 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51440]
+INFO 2023-11-10 14:56:37,091 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51450]
+INFO 2023-11-10 14:56:37,094 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:56:42,014 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51450]
+INFO 2023-11-10 14:56:42,016 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51453]
+INFO 2023-11-10 14:56:42,020 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:56:42,106 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51368][0m
+INFO 2023-11-10 14:56:47,006 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51453]
+INFO 2023-11-10 14:56:47,104 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51458]
+INFO 2023-11-10 14:56:47,107 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:56:52,013 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51458]
+INFO 2023-11-10 14:56:52,014 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51461]
+INFO 2023-11-10 14:56:52,017 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:56:52,108 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51368][0m
+INFO 2023-11-10 14:56:57,011 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51461]
+INFO 2023-11-10 14:56:57,093 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51466]
+INFO 2023-11-10 14:56:57,096 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:57:02,014 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51466]
+INFO 2023-11-10 14:57:02,015 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51471]
+INFO 2023-11-10 14:57:02,018 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:57:02,108 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51368][0m
+INFO 2023-11-10 14:57:07,015 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51471]
+INFO 2023-11-10 14:57:07,098 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51476]
+INFO 2023-11-10 14:57:07,101 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:57:12,003 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51476]
+INFO 2023-11-10 14:57:12,005 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51481]
+INFO 2023-11-10 14:57:12,008 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:57:12,117 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51368][0m
+INFO 2023-11-10 14:57:14,500 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51481]
+INFO 2023-11-10 14:57:14,500 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-10 14:57:39,767 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51481]
+INFO 2023-11-10 14:57:39,768 base>consumers>disconnect Disconnected:print_KB Internal [0]
+INFO 2023-11-10 14:58:01,717 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51496][0m
+INFO 2023-11-10 14:58:02,022 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.30, 127.0.0.1:51496][0m
+INFO 2023-11-10 14:58:02,301 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:51501][0m
+INFO 2023-11-10 14:58:02,328 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51504]
+INFO 2023-11-10 14:58:02,331 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 14:58:02,335 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51504]
+INFO 2023-11-10 14:58:02,335 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-10 14:58:07,343 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51496][0m
+INFO 2023-11-10 14:58:07,570 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 14:58:07,595 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-10 14:58:07,597 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.05, 127.0.0.1:51496][0m
+INFO 2023-11-10 14:58:21,529 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51504]
+INFO 2023-11-10 14:58:21,530 base>consumers>disconnect Disconnected:print_KB Internal [0]
+INFO 2023-11-10 15:19:20,276 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.2.0.0 200 [0.01, 127.0.0.1:51733][0m
+INFO 2023-11-10 15:19:20,549 runserver>log_action [mHTTP POST /api/loginapi/?app=Softkey&version=8.2.0.0 200 [0.27, 127.0.0.1:51733][0m
+INFO 2023-11-10 15:19:20,794 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51738][0m
+INFO 2023-11-10 15:19:20,818 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:51744]
+INFO 2023-11-10 15:19:20,820 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:51743]
+INFO 2023-11-10 15:19:20,823 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-10 15:19:20,824 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-10 15:19:20,831 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:51744]
+INFO 2023-11-10 15:19:20,832 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-10 15:19:20,833 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:51743]
+INFO 2023-11-10 15:19:20,833 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+INFO 2023-11-10 15:20:00,796 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:51744]
+INFO 2023-11-10 15:20:00,797 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:51743]
+INFO 2023-11-10 15:20:00,798 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-10 15:20:00,798 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-10 15:21:15,984 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.2.0.0 200 [0.01, 127.0.0.1:51777][0m
+INFO 2023-11-10 15:21:16,265 runserver>log_action [mHTTP POST /api/loginapi/?app=Softkey&version=8.2.0.0 200 [0.28, 127.0.0.1:51777][0m
+INFO 2023-11-10 15:21:16,554 runserver>log_action [mHTTP POST /api/token/ 200 [0.28, 127.0.0.1:51782][0m
+INFO 2023-11-10 15:21:16,580 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:51786]
+INFO 2023-11-10 15:21:16,581 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:51785]
+INFO 2023-11-10 15:21:16,584 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-10 15:21:16,586 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-10 15:21:16,588 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:51786]
+INFO 2023-11-10 15:21:16,589 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-10 15:21:16,591 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:51785]
+INFO 2023-11-10 15:21:16,592 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+INFO 2023-11-10 15:21:28,639 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.24, 127.0.0.1:51777][0m
+INFO 2023-11-10 15:21:30,593 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB 200 [0.01, 127.0.0.1:51777][0m
+INFO 2023-11-10 15:21:31,603 runserver>log_action [mHTTP GET /api/waiting/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.03, 127.0.0.1:51777][0m
+INFO 2023-11-10 15:22:12,435 runserver>log_action [32mHTTP GET /softkey/1/ 302 [0.02, 127.0.0.1:51805][0m
+INFO 2023-11-10 15:22:12,455 runserver>log_action [mHTTP GET /login/ 200 [0.02, 127.0.0.1:51805][0m
+INFO 2023-11-10 15:22:13,263 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.04, 127.0.0.1:51805][0m
+INFO 2023-11-10 15:22:13,266 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.04, 127.0.0.1:51806][0m
+INFO 2023-11-10 15:22:13,269 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.05, 127.0.0.1:51831][0m
+INFO 2023-11-10 15:22:13,272 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:51805][0m
+INFO 2023-11-10 15:22:15,313 runserver>log_action [mHTTP GET /my/SCP/AA/027/8Ly/ 200 [0.02, 127.0.0.1:51840][0m
+INFO 2023-11-10 15:22:15,321 runserver>log_action [mHTTP GET /webtv/KB/c/ 200 [0.02, 127.0.0.1:51842][0m
+INFO 2023-11-10 15:22:15,422 runserver>log_action [mHTTP GET /admin/login/?next=/admin/base/branch/ 200 [0.12, 127.0.0.1:51841][0m
+WARNING 2023-11-10 15:22:15,605 runserver>log_action [33mHTTP GET /static/ 404 [0.02, 127.0.0.1:51841][0m
+INFO 2023-11-10 15:22:15,618 runserver>log_action [mHTTP GET /static/icofont/icofont.min.css 200 [0.02, 127.0.0.1:51842][0m
+WARNING 2023-11-10 15:22:15,628 runserver>log_action [33mHTTP GET /static/ 404 [0.02, 127.0.0.1:51841][0m
+INFO 2023-11-10 15:22:15,641 runserver>log_action [mHTTP GET /static/icofont/fonts/icofont.woff2 200 [0.01, 127.0.0.1:51841][0m
+INFO 2023-11-10 15:22:15,666 runserver>log_action [mHTTP GET /static/admin/css/base.css 200 [0.01, 127.0.0.1:51841][0m
+INFO 2023-11-10 15:22:15,672 runserver>log_action [mHTTP GET /static/admin/css/dark_mode.css 200 [0.01, 127.0.0.1:51842][0m
+INFO 2023-11-10 15:22:15,678 runserver>log_action [mHTTP GET /static/admin/css/nav_sidebar.css 200 [0.01, 127.0.0.1:51840][0m
+INFO 2023-11-10 15:22:15,686 runserver>log_action [mHTTP GET /static/admin/css/login.css 200 [0.01, 127.0.0.1:51842][0m
+INFO 2023-11-10 15:22:15,706 runserver>log_action [mHTTP GET /static/admin/css/responsive.css 200 [0.01, 127.0.0.1:51842][0m
+INFO 2023-11-10 15:22:15,712 runserver>log_action [mHTTP GET /static/admin/js/theme.js 200 [0.02, 127.0.0.1:51840][0m
+INFO 2023-11-10 15:22:15,720 runserver>log_action [mHTTP GET /static/admin/js/nav_sidebar.js 200 [0.02, 127.0.0.1:51841][0m
+WARNING 2023-11-10 15:22:15,791 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-10 15:22:15,792 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.02, 127.0.0.1:51841][0m
+WARNING 2023-11-10 15:22:15,825 runserver>log_action [33mHTTP GET /static/ 404 [0.01, 127.0.0.1:51841][0m
+INFO 2023-11-10 15:22:15,829 runserver>log_action [mHTTP GET /static/images/logo_ts.png 200 [0.01, 127.0.0.1:51840][0m
+INFO 2023-11-10 15:22:26,439 runserver>log_action [32mHTTP POST /login/ 302 [0.24, 127.0.0.1:51840][0m
+INFO 2023-11-10 15:22:26,461 runserver>log_action [mHTTP GET / 200 [0.02, 127.0.0.1:51840][0m
+INFO 2023-11-10 15:22:29,836 runserver>log_action [mHTTP GET /supervisors/ 200 [0.03, 127.0.0.1:51840][0m
+INFO 2023-11-10 15:22:32,708 runserver>log_action [mHTTP GET /supervisor/1/ 200 [1.22, 127.0.0.1:51840][0m
+INFO 2023-11-10 15:22:41,745 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51879][0m
+INFO 2023-11-10 15:22:42,050 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.30, 127.0.0.1:51879][0m
+INFO 2023-11-10 15:22:42,345 runserver>log_action [mHTTP POST /api/token/ 200 [0.28, 127.0.0.1:51884][0m
+INFO 2023-11-10 15:22:42,373 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51887]
+INFO 2023-11-10 15:22:42,377 base>consumers>connect connecting:print_KB
+INFO 2023-11-10 15:22:42,380 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51887]
+INFO 2023-11-10 15:22:42,380 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-10 15:22:47,394 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51879][0m
+INFO 2023-11-10 15:22:47,569 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:22:47,574 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-10 15:22:47,577 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:51879][0m
+INFO 2023-11-10 15:22:54,603 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:22:54,607 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-10 15:22:54,609 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_END%3E&statustext=Paper%20out 200 [0.03, 127.0.0.1:51879][0m
+INFO 2023-11-10 15:22:57,639 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:22:57,645 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-10 15:22:57,648 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3COPEN%3E&statustext=Cover%20open 200 [0.03, 127.0.0.1:51879][0m
+INFO 2023-11-10 15:23:12,692 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:23:12,768 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-10 15:23:12,770 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.10, 127.0.0.1:51879][0m
+INFO 2023-11-10 15:24:32,200 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:52016][0m
+INFO 2023-11-10 15:25:07,253 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:25:07,264 base>ws>wssendwebtv ...Done
+INFO 2023-11-10 15:25:07,265 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:25:07,266 base>ws>wssenddispwait ...Done
+INFO 2023-11-10 15:25:07,271 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:25:07,279 base>ws>wssendql ...Done
+INFO 2023-11-10 15:25:07,282 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:25:07,287 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-10 15:25:07,289 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-10 15:25:07,299 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=C 200 [0.11, 127.0.0.1:52016][0m
+INFO 2023-11-10 15:25:07,378 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=C&ticketnumber=001&tickettime=2023-11-10T07:25:07.193411Z 200 [0.03, 127.0.0.1:52031][0m
+INFO 2023-11-10 15:25:33,486 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.03, 127.0.0.1:52041][0m
+INFO 2023-11-10 15:25:35,026 runserver>log_action [mHTTP GET /supervisor/forcelogout/1/2/ 200 [0.02, 127.0.0.1:52041][0m
+INFO 2023-11-10 15:25:40,870 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.03, 127.0.0.1:52041][0m
+INFO 2023-11-10 15:25:42,455 runserver>log_action [mHTTP GET / 200 [0.02, 127.0.0.1:52041][0m
+INFO 2023-11-10 15:25:43,680 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.02, 127.0.0.1:52041][0m
+INFO 2023-11-10 15:25:45,954 runserver>log_action [mHTTP GET /softkey_login/1/ 200 [0.04, 127.0.0.1:52041][0m
+WARNING 2023-11-10 15:25:47,811 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-10 15:25:47,812 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-10 15:25:47,814 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-10 15:25:47,834 runserver>log_action [mHTTP GET /softkey/2/ 200 [0.04, 127.0.0.1:52041][0m
+INFO 2023-11-10 15:25:47,858 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52059]
+INFO 2023-11-10 15:25:47,864 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-10 15:25:47,868 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:52059]
+INFO 2023-11-10 15:25:47,869 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [2]
+INFO 2023-11-10 15:25:47,894 runserver>log_action WebSocket HANDSHAKING /ws/cs/2/ [127.0.0.1:52060]
+INFO 2023-11-10 15:25:47,898 base>consumers>connect connecting:cs_2
+INFO 2023-11-10 15:25:48,866 runserver>log_action WebSocket DISCONNECT /ws/cs/2/ [127.0.0.1:52060]
+INFO 2023-11-10 15:25:48,878 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52061]
+INFO 2023-11-10 15:25:48,882 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-10 15:25:48,886 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:52061]
+INFO 2023-11-10 15:25:48,886 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [2]
+INFO 2023-11-10 15:25:59,308 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:25:59,312 base>ws>wssendwebtv ...Done
+INFO 2023-11-10 15:25:59,312 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:25:59,313 base>ws>wssenddispwait ...Done
+INFO 2023-11-10 15:25:59,316 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:25:59,318 base>ws>wssendql ...Done
+INFO 2023-11-10 15:25:59,319 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:25:59,324 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-10 15:25:59,325 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-10 15:25:59,337 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=C 200 [0.08, 127.0.0.1:52016][0m
+INFO 2023-11-10 15:25:59,428 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=C&ticketnumber=002&tickettime=2023-11-10T07:25:59.258760Z 200 [0.03, 127.0.0.1:52031][0m
+INFO 2023-11-10 15:26:06,641 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52072][0m
+INFO 2023-11-10 15:26:37,594 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:51785]
+INFO 2023-11-10 15:26:37,595 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:51786]
+INFO 2023-11-10 15:26:37,596 base>consumers>disconnect Disconnected:printerstatus_KB Internal [1]
+INFO 2023-11-10 15:26:37,597 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [1]
+INFO 2023-11-10 15:27:21,832 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.2.0.0 200 [0.01, 127.0.0.1:52100][0m
+INFO 2023-11-10 15:27:22,194 runserver>log_action [mHTTP POST /api/loginapi/?app=Softkey&version=8.2.0.0 200 [0.36, 127.0.0.1:52100][0m
+INFO 2023-11-10 15:27:32,398 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52109][0m
+INFO 2023-11-10 15:27:39,547 runserver>log_action [mHTTP POST /api/token/ 200 [0.26, 127.0.0.1:52114][0m
+INFO 2023-11-10 15:27:39,588 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52117]
+INFO 2023-11-10 15:27:39,590 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52118]
+INFO 2023-11-10 15:27:39,595 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-10 15:27:39,597 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-10 15:27:39,601 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:52117]
+INFO 2023-11-10 15:27:39,601 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [2]
+INFO 2023-11-10 15:27:39,602 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:52118]
+INFO 2023-11-10 15:27:39,603 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [2]
+INFO 2023-11-10 15:28:52,169 runserver>log_action [mHTTP GET /routes/ 200 [0.06, 127.0.0.1:52129][0m
+INFO 2023-11-10 15:29:24,598 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB 200 [0.01, 127.0.0.1:52140][0m
+INFO 2023-11-10 15:29:24,675 runserver>log_action [mHTTP GET /api/waiting/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.02, 127.0.0.1:52140][0m
+INFO 2023-11-10 15:29:24,806 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.26, 127.0.0.1:52137][0m
+INFO 2023-11-10 15:29:29,474 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:29:29,495 base>ws>wssendwebtv ...Done
+INFO 2023-11-10 15:29:29,496 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:29:29,498 base>ws>wssenddispwait ...Done
+INFO 2023-11-10 15:29:29,501 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:29:29,503 base>ws>wssendql ...Done
+INFO 2023-11-10 15:29:29,505 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:29:29,507 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-10 15:29:29,508 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-10 15:29:29,515 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.09, 127.0.0.1:52147][0m
+INFO 2023-11-10 15:29:29,619 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=015&tickettime=2023-11-10T07:29:29.425835Z 200 [0.04, 127.0.0.1:52153][0m
+INFO 2023-11-10 15:29:33,952 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:29:33,956 base>ws>wssendwebtv ...Done
+INFO 2023-11-10 15:29:33,957 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:29:33,958 base>ws>wssenddispwait ...Done
+INFO 2023-11-10 15:29:33,962 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:29:33,964 base>ws>wssendql ...Done
+INFO 2023-11-10 15:29:33,966 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:29:33,968 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-10 15:29:33,968 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-10 15:29:33,976 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.09, 127.0.0.1:52147][0m
+INFO 2023-11-10 15:29:34,095 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=016&tickettime=2023-11-10T07:29:33.888119Z 200 [0.03, 127.0.0.1:52153][0m
+INFO 2023-11-10 15:29:41,712 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A003_qc5 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:29:41,716 base>ws>wsSendTicketStatus ...Done
+INFO 2023-11-10 15:29:41,717 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:29:41,723 base>ws>wscounterstatus ...Done
+INFO 2023-11-10 15:29:41,725 runserver>log_action [mHTTP POST /api/miss/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=003&tickettime=2023-11-07T17:23:25.922159Z 200 [0.06, 127.0.0.1:52137][0m
+INFO 2023-11-10 15:29:56,540 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52117]
+INFO 2023-11-10 15:29:56,541 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52118]
+INFO 2023-11-10 15:29:56,542 base>consumers>disconnect Disconnected:printerstatus_KB Internal [1]
+INFO 2023-11-10 15:29:56,542 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [1]
+INFO 2023-11-10 15:32:22,394 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52192][0m
+INFO 2023-11-10 15:34:51,929 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.2.0.0 200 [0.01, 127.0.0.1:52273][0m
+INFO 2023-11-10 15:34:52,223 runserver>log_action [mHTTP POST /api/loginapi/?app=Softkey&version=8.2.0.0 200 [0.29, 127.0.0.1:52273][0m
+INFO 2023-11-10 15:34:52,548 runserver>log_action [mHTTP POST /api/token/ 200 [0.31, 127.0.0.1:52279][0m
+INFO 2023-11-10 15:34:52,581 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52284]
+INFO 2023-11-10 15:34:52,582 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52283]
+INFO 2023-11-10 15:34:52,585 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-10 15:34:52,587 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-10 15:34:52,593 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:52284]
+INFO 2023-11-10 15:34:52,593 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [2]
+INFO 2023-11-10 15:34:52,597 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:52283]
+INFO 2023-11-10 15:34:52,598 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [2]
+INFO 2023-11-10 15:35:09,857 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.25, 127.0.0.1:52273][0m
+INFO 2023-11-10 15:35:11,021 runserver>log_action [mHTTP GET /api/waiting/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.02, 127.0.0.1:52273][0m
+INFO 2023-11-10 15:35:15,026 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB 200 [0.02, 127.0.0.1:52273][0m
+INFO 2023-11-10 15:35:19,536 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:35:19,540 base>ws>wssendwebtv ...Done
+INFO 2023-11-10 15:35:19,540 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:35:19,542 base>ws>wssenddispwait ...Done
+INFO 2023-11-10 15:35:19,545 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:35:19,547 base>ws>wssendql ...Done
+INFO 2023-11-10 15:35:19,549 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:35:19,552 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-10 15:35:19,553 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-10 15:35:19,563 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.08, 127.0.0.1:52309][0m
+INFO 2023-11-10 15:35:19,629 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=017&tickettime=2023-11-10T07:35:19.487305Z 200 [0.03, 127.0.0.1:52313][0m
+INFO 2023-11-10 15:37:12,409 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52335][0m
+INFO 2023-11-10 15:38:52,183 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52059]
+INFO 2023-11-10 15:38:52,184 base>consumers>disconnect Disconnected:printerstatus_KB Internal [1]
+INFO 2023-11-10 15:38:52,194 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52061]
+INFO 2023-11-10 15:38:52,196 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [1]
+INFO 2023-11-10 15:41:16,733 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52426][0m
+INFO 2023-11-10 15:42:02,559 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52451][0m
+INFO 2023-11-10 15:43:33,710 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:43:33,714 base>ws>wssendwebtv ...Done
+INFO 2023-11-10 15:43:33,714 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:43:33,715 base>ws>wssenddispwait ...Done
+INFO 2023-11-10 15:43:33,718 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:43:33,721 base>ws>wssendql ...Done
+INFO 2023-11-10 15:43:33,723 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-10 15:43:33,737 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-10 15:43:33,738 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-10 15:43:33,748 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.09, 127.0.0.1:52471][0m
+INFO 2023-11-10 15:43:33,874 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=018&tickettime=2023-11-10T07:43:33.658288Z 200 [0.03, 127.0.0.1:52476][0m
+INFO 2023-11-10 15:44:05,007 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52283]
+INFO 2023-11-10 15:44:05,008 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-10 15:44:25,003 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52284]
+INFO 2023-11-10 15:44:25,005 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-10 15:46:52,581 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52511][0m
+INFO 2023-11-10 15:51:42,618 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52594][0m
+INFO 2023-11-10 15:53:02,809 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:52631]
+INFO 2023-11-10 15:53:02,811 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:52632]
+INFO 2023-11-10 15:53:02,813 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-10 15:53:02,815 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-10 15:53:02,820 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:52631]
+INFO 2023-11-10 15:53:02,821 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-10 15:53:02,821 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:52632]
+INFO 2023-11-10 15:53:02,822 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+INFO 2023-11-10 15:53:05,996 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB 200 [0.01, 127.0.0.1:52635][0m
+INFO 2023-11-10 15:53:07,827 runserver>log_action [mHTTP GET /api/waiting/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.02, 127.0.0.1:52635][0m
+INFO 2023-11-10 15:55:33,860 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52671][0m
+INFO 2023-11-10 15:56:32,660 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52684][0m
+INFO 2023-11-10 15:56:35,378 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:52631]
+INFO 2023-11-10 15:56:35,378 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:52632]
+INFO 2023-11-10 15:56:35,379 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-10 15:56:35,380 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-10 15:56:41,458 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51887]
+INFO 2023-11-10 15:56:41,459 base>consumers>disconnect Disconnected:print_KB Internal [0]
