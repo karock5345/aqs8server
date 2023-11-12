@@ -1,6 +1,21 @@
 # AQS version 8
+* Run development server:
+1. Run redis server (vmware / 192.168.1.4)
+2. Start virtual env
+3. Run celery
+4. Run django server
+```bash
+# Start virtual env
+.\env\Scripts\activate
+# run celery
+celery -A aqs.celery:app worker --loglevel=info --pool=solo
+# open new terminal
+python manage.py runserver 0.0.0.0:8000
+```
 
 ### <span style="color:orange;">**Coming up Version 8.2.1**</span>
+- Modify "Total ticket report" for v8.2 from PCCW
+- Modify "Staff performance report" for v8.2 from PCCW
 - Protect apiuser password for every Client software (including Softkey, Touch Panel, Display Panel, Printer Control, etc.)
 - Improve HTML UI for "Form" do not cover error message 
 - User Groups (frontline, support, admin, manager) for PCCW 2023 merge to our system (counter, report, supervisor [same as admin, but only for the branchs which is belong to the user])
@@ -29,13 +44,7 @@
 - Others websocket is internal only protect by session cookie
 - Modify the HTMLs for SVG image (e.g. branch settings, ticket format, ticket route, etc.)
 - Fixed bug : Softkey web version, the queue list update by Websocket no "Call" button and fixed the ticket time format
-
-
-
-
-
-
-
+- Settings page will be split to 3 pages (Settings, Advanced settings, Admin settings)
 ### <span style="color:orange;">**Version 8.1.5**</span>
 - Romove API function for migrate DB for HHT 
 - Fixed bug : deploy to production server, the static_deploy folder is not correct 

@@ -66,11 +66,15 @@ def new_ws_connected_dict(bcode, ws):
 
 class ReportRaw_ProgressConsumer(AsyncWebsocketConsumer):
     async def connect(self):
+
+
         error = ''
         # Retrieve the task_id from the URL query parameter
         self.ptask_id = self.scope['url_route']['kwargs']['task_id']
         self.task_id = self.ptask_id.replace('_', '-')
         self.ws_str = 'reportraw'
+        # self.bcode is fixed 'ALL_...' for all branch
+        self.bcode = 'ALL3DiWk6siJ865kG3Ljgf72g46gfj5kDj4gk'
 
         self.room_group_name = 'progress_' + self.ptask_id
         logger.info('connecting:' + self.room_group_name )        
@@ -238,6 +242,7 @@ class FlashLightConsumer(AsyncWebsocketConsumer):
         return connections
 
 
+
 class CounterStatusConsumer(AsyncWebsocketConsumer):
     # ws://127.0.0.1:8000/ws/cs/1/
     async def connect(self):
@@ -250,7 +255,16 @@ class CounterStatusConsumer(AsyncWebsocketConsumer):
                 error = 'CounterStatus not found.'
            
             return error
-                
+        @sync_to_async
+        def get_bcode():
+            bcode = None
+            try:
+                counterstatus = CounterStatus.objects.get(id=pk)
+                bcode = counterstatus.countertype.branch.bcode
+            except:
+                bcode = None
+            return bcode
+        
         error = ''
         self.pk = self.scope['url_route']['kwargs']['pk']
 
@@ -268,6 +282,10 @@ class CounterStatusConsumer(AsyncWebsocketConsumer):
         if error == '':
             # check bcode and ct (countertype) is not exit do not accept connection
             error = await check_input()      
+
+        self.bcode = await get_bcode()
+        if self.bcode == None:
+            error = 'CounterStatusConsumer: Branch not found.'
 
         if error == '':
             exist = True        

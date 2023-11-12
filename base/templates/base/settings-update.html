@@ -1,0 +1,149 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+<main class="update-account layout">
+    <div class="container">
+        <div class="layout__box__form">
+            <div class="layout__boxHeader">
+                <div class="layout__boxTitle">
+                    <a href="{{request.META.HTTP_REFERER}}">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 32 32">
+                            <title>Back</title>
+                            <path
+                                d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                            </path>
+                        </svg>
+                    </a>
+                    <h3>Branch settings - {{branch.name}} </h3>
+                </div>
+            </div>
+            <div class="layout__body">
+
+                <!-- <h1>Username : {{user.username}}</h1> -->
+
+                <form action="save" class="form">
+
+                    
+                        <div class="form__group">
+                            <label for="profile_pic">Branch Code : {{branchcode}}</label>
+                            <!-- Branch Code : {{branchcode}}<br> -->
+                        </div>
+                        <div class="form__group">
+                            <label for="profile_pic">Branch enabled : {{branch.enabled}}</label>
+                            <!-- Branch Code : {{branchcode}}<br> -->
+                        </div>
+                        
+
+                        Branch Name : <input type="text" name="branchname" value="{{branchname}}" size="50" ><br>        
+                        Branch timezone (e.g. : Asia/Hong_Kong) : <input type="text" name="timezone" value={{timezone}} size="20" ><br>
+                        Branch Address : <input type="text" name="address" value="{{branch.address}}" size="50" ><br>
+                        Branch GPS : <input type="text" name="gps" value="{{branch.gps}}" size="50" ><br>
+                        Office hour start time (Local time) : <input type="time" name="officehourstart" value={{officehourstart}} step="1"><br>
+                        Office hour end time (Local time) : <input type="time" name="officehourend" value={{officehourend}} step="1"><br>
+                        Ticket start time (Local time) : <input type="time" name="tickettimestart" value={{tickettimestart}} step="1"><br>
+                        Ticket end time (Local time) : <input type="time" name="tickettimeend" value={{tickettimeend}} step="1"><br>
+                        
+                
+                        Queue priority:
+                        <select name="queuepriority" id="id_queuepriority">
+                        {% for list in branch.PRIORITY %}
+                            {% if list.0 == queuepriority %}
+                                <option value={{list.0}} selected>{{list.1}}</option>                
+                            {% else %}
+                                <option value={{list.0}}>{{list.1}}</option>
+                                {{list}}<br>
+                            {% endif %}               
+                        {% endfor %}
+                        </select><br>
+                
+                        Queue mask : <input type="text" name="queuemask" value="{{branch.queuemask}}" maxlength="60"><br>
+                        Ticket maximum no. (1-{{branch.ticketmax}}): <input type="text" name="ticketmax" value="{{branch.ticketmax}}" maxlength="10"><br>
+                        Ticket number format : <input type="text" name="ticketnoformat" value="{{branch.ticketnoformat}}" maxlength="10"><br> 
+
+                        {% if branch.ticketrepeatnumber == True %}
+                            <label><input type="checkbox" name="ticketrepeatnumber"  checked> Repeat ticket number</label><br>
+                        {% else %}
+                            <label><input type="checkbox" name="ticketrepeatnumber"  > Repeat ticket number</label><br>
+                        {% endif %}
+
+                               
+                        {% if branch.displayenabled == True %}
+                            <label><input type="checkbox" name="displayenabled" checked > Display enabled</label><br>
+                        {% else %}
+                            <label><input type="checkbox" name="displayenabled"> Display enabled</label><br>
+                        {% endif %}
+                
+                        Display flash time (1-50): <input type="text" name="displayflashtime" value="{{branch.displayflashtime}}" maxlength="3"><br>
+                
+    
+                        {% if branch.voiceenabled == True %}
+                            <label><input type="checkbox" name="voiceenabled" checked > Voice enabled</label><br>
+                        {% else %}
+                            <label><input type="checkbox" name="voiceenabled"> Voice enabled</label><br>
+                        {% endif %}
+                
+                        Language 1 [Cantonese] (0-4, set 0 is disabled): <input type="text" name="language1" value="{{branch.language1}}" maxlength="3"><br>
+                        Language 2 [English] (0-4, set 0 is disabled): <input type="text" name="language2" value="{{branch.language2}}" maxlength="3"><br>
+                        Language 3 [Mandarin] (0-4, set 0 is disabled): <input type="text" name="language3" value="{{branch.language3}}" maxlength="3"><br>
+                        Language 4 [Portuguese] (0-4, set 0 is disabled): <input type="text" name="language4" value="{{branch.language4}}" maxlength="3"><br>
+                
+          
+                        {% if branch.usersinglelogin == True %}
+                            <label><input type="checkbox" name="usersinglelogin" checked > User single login (Counter only)</label><br>
+                        {% else %}
+                            <label><input type="checkbox" name="usersinglelogin"> User single login (Counter only)</label><br>
+                        {% endif %}
+                
+                        TV Scrolling text : <br>
+                        {% for ct in countertypes %}
+                            Counter Type - {{ ct.name }} : <input type="text" name="{{ct.branch.bcode}}-{{ct.name}}" value="{{ct.displayscrollingtext}}" maxlength="200"><br>
+                        {% endfor %}
+                
+                        {% if branch.enabledsms == True %}
+                            <label><input type="checkbox" name="enabledsms" checked >SMS enabled</label><br>
+                        {% else %}
+                            <label><input type="checkbox" name="enabledsms">SMS enabled</label><br>
+                        {% endif %}
+                        
+                        SMS message (&lt;TICKET&gt; will replaced by ticket number): <br>
+                        <input type="text" name="smsmsg" value="{{smsmsg}}" maxlength="70" size="70" ><br>
+
+                    <div class="form__action">
+                        <a class="btn btn--dark" href="{{request.META.HTTP_REFERER}}">Cancel</a>
+                        <input class="btn btn--main" type="submit" value="Save">
+                    </div>
+                </form>
+            </div>
+            <div class="layout__body">
+
+                <form class="form" action="" method="POST" prefix="branchsettingsform">
+                    
+                    {% csrf_token %}
+                    
+                    {% for field in branchsettingsform %}
+                    <div class="form__group">
+                        <label class="profile_pic">{{field.label}}{{field}}</label>                            
+                    </div>
+                    {% endfor %}
+                    
+                    {% for key, value in scrollingtext.items %}
+                    <div class="form__group">
+                        <label class="profile_pic">{{key}}</label>
+                        <textarea>{{value}}</textarea>                            
+                    </div>
+                    {% endfor %}
+
+                    <div class="form__action">
+                        <a class="btn btn--dark" href="{% url 'settingssummary' %}">Cancel</a>
+                        <button class="btn btn--main" type="submit">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}

@@ -581,6 +581,8 @@ def wssendql(bcode, countertypename, ticket, cmd):
     #     "tickettype": "A", 
     #     "ticketnumber": "012",
     #     "tickettime": "2023-03-17T15:06:53.337639Z",
+    #     "tickettime_local": "23:06:53 2023-03-17",
+    #     "tickettime_local_short": "23:06:53 03-17",
     #     "ttid": 1,
     #     }
     # }
@@ -632,8 +634,9 @@ def wssendql(bcode, countertypename, ticket, cmd):
                 stickettime = ticket.tickettime.strftime('%m-%dT%H:%M:%SZ')
             except:
                 stickettime = 'error'
-        tickettime_local = funUTCtoLocal(ticket.tickettime, ticket.branch.timezone)
-        tickettime_local = tickettime_local.strftime('%H:%M:%S %m-%d')
+        temp_time = funUTCtoLocal(ticket.tickettime, ticket.branch.timezone)
+        tickettime_local = temp_time.strftime('%H:%M:%S %Y-%m-%d')
+        tickettime_local_short = temp_time.strftime('%H:%M:%S %m-%d')
 
         json_tx = {
             'cmd': cmd,
@@ -643,6 +646,7 @@ def wssendql(bcode, countertypename, ticket, cmd):
                 'ticketnumber' : ticket.ticketnumber,
                 'tickettime' : stickettime,
                 'tickettime_local' : tickettime_local,
+                'tickettime_local_short' : tickettime_local_short,
                 'ttid' : ticket.id,
                 }
         }
@@ -710,7 +714,7 @@ def wssendwebtv(bcode, countertypename):
                 "scroll": countertype.displayscrollingtext,
                 }
             }
-        str_tx = json.dumps(jsontx)        
+        str_tx = json.dumps(jsontx)
         str_tx = str_tx.replace('"<ticketlist>"', json.dumps(wdserializers.data))
 
         context = {

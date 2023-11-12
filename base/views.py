@@ -15,7 +15,7 @@ from base.decorators import *
 # from django.urls import reverse_lazy
 
 from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch, Ticket, UserStatusLog
-from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, resetForm
+from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, resetForm, BranchSettingsForm
 from .forms import CaptchaForm, getForm, voidForm, newTicketTypeForm, UserFormSuper, UserFormManager, UserFormSupport, UserFormAdminSelf
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 from django.utils.timezone import localtime, get_current_timezone
@@ -272,8 +272,10 @@ def SoftkeyView(request, pk):
             except:
                 utctt = datetime.strptime(context_ql[i]['tickettime'], '%Y-%m-%dT%H:%M:%SZ')
 
-            context_ql[i]['tickettime_local'] = funUTCtoLocal(utctt, counterstatus.countertype.branch.timezone)
-            context_ql[i]['tickettime_local'] = context_ql[i]['tickettime_local'].strftime('%H:%M:%S %m-%d')
+            tickettime_local = funUTCtoLocal(utctt, counterstatus.countertype.branch.timezone)
+            # context_ql[i]['tickettime_local'] = funUTCtoLocal(utctt, counterstatus.countertype.branch.timezone)
+            context_ql[i]['tickettime_local'] = tickettime_local.strftime('%H:%M:%S %Y-%m-%d')
+            context_ql[i]['tickettime_local_short'] = tickettime_local.strftime('%H:%M:%S %m-%d')
 
     if error == '':
         printerobj = PrinterStatus.objects.filter(Q(branch=counterstatus.countertype.branch))
@@ -2179,7 +2181,7 @@ def TicketFormatSummaryView(request):
 
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
-def Branch_Save(request, pk):
+def Settings_Save(request, pk):
     branch = Branch.objects.get(id=pk) 
     result = ''
 
@@ -2448,12 +2450,12 @@ def Branch_Save(request, pk):
         messages.error(request, result)
     
     # context = {'result':result}
-    return redirect('branchsummary')
+    return redirect('settingssummary')
     # return render(request, 'base/branchresult.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
-def BranchUpdateView(request, pk):
+def SettingsUpdateView(request, pk):
     branch = Branch.objects.get(id=pk)
 
     branchcode = branch.bcode
@@ -2495,12 +2497,38 @@ def BranchUpdateView(request, pk):
     'enabledsms':enabledsms,
     'smsmsg':smsmsg,
     }
-    context = {'aqs_version':aqs_version} | context 
-    return render(request, 'base/branch-update.html', context)
+
+
+    branch = Branch.objects.get(id=pk)
+    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+
+    if request.method == 'POST':
+        branchsettingsform = BranchSettingsForm(request.POST, instance=branch, prefix='branchsettingsform')
+        error = ''
+        error, bsf = checkbranchsettingsform(branchsettingsform)
+        if error == '':
+            try:
+                bsf.save()
+                messages.success(request, 'Branch settings was successfully updated!')
+                return redirect('settingssummary')
+            except:
+                error = 'An error occurcd during updating Branch settings'
+        if error != '':
+            messages.error(request, error )
+    else:
+        branchsettingsform = BranchSettingsForm(instance=branch, prefix='branchsettingsform')
+        cts = CounterType.objects.filter(branch=branch)
+        ct_dict = {}
+        for ct in cts:
+            ct_dict[branch.bcode + '-' + ct.name] = ct.displayscrollingtext
+        ct_dict = {'scrollingtext':ct_dict}
+
+    context = {'aqs_version':aqs_version} | context | {'branch':branch, 'branchsettingsform':branchsettingsform} | ct_dict
+    return render(request, 'base/settings-update.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
-def BranchSummaryView(request):  
+def SettingsSummaryView(request):  
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
     #users = User.objects.exclude( Q(is_superuser=True) )
     # profiles = UserProfile.objects.all()
@@ -2514,7 +2542,7 @@ def BranchSummaryView(request):
 
     context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
     context = {'aqs_version':aqs_version} | context 
-    return render(request, 'base/branch.html', context)
+    return render(request, 'base/settings.html', context)
 
 @unauth_user
 def homeView(request):
@@ -3261,23 +3289,80 @@ def checkticketrouteform(form):
         if form.is_valid() == False:
             error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
             error = 'An error occurcd during registration: '+ error_string
-    # newroute.tickettype  = newroute.tickettype.upper()
     if error == '':
         newform = form.save(commit=False)
-        if newform.branch == None :
-            error = 'An error occurcd : Branch is blank'
+        if newform.branchname == '':
+            error = 'An error occurcd : Branch name is blank'
+    # if error == '':
+    #     # check  newform.branchname is aplha or number
+    #     if newform.branchname.isalnum() == False :
+    #         error = 'An error occurcd : Branch should be letter or number'
     if error == '':
-        if newform.countertype == None :
-            error = 'An error occurcd : Counter Type is blank'
-    if error == '' :
-        #check ticket type should be letter
-        if newform.tickettype.isalpha() == False :
-            error = 'An error occurcd : Ticket Type should be letter'
-    # newroute.step is int so no need to check
-    # if error == '' :
-        #check step should be number
-        # if newroute.step.isnumeric() == False :
-        #     error = 'An error occurcd : Step should be number'
+        # check newform.timezone is right format
+        if newform.timezone not in pytz.all_timezones:
+            error = 'An error occurcd : Timezone is not correct'
+    if error == '':
+        try:
+            newform.officehourstart = funLocaltoUTCtime(newform.officehourstart, newform.timezone)
+        except:
+            error = 'An error occurcd : Office hour start is not correct'
+    if error == '':
+        try:
+            newform.officehourend = funLocaltoUTCtime(newform.officehourend, newform.timezone)
+        except:
+            error = 'An error occurcd : Office hour end is not correct'
+    if error == '':
+        try:
+            newform.tickettimestart = funLocaltoUTCtime(newform.tickettimestart, newform.timezone)
+        except:
+            error = 'An error occurcd : Ticket start time is not correct'
+    if error == '':
+        try:
+            newform.tickettimeend = funLocaltoUTCtime(newform.tickettimeend, newform.timezone)
+        except:
+            error = 'An error occurcd : Ticket end time is not correct'
+    if error == '':
+        if newform.queuepriority == '':
+            error = 'An error occurcd : Queue priority is blank'
+    if error == '':
+        if newform.queuemask == '':
+            error = 'An error occurcd : Queue mask is blank' 
+    if error == '':
+        if newform.ticketmax < 1 :
+            error = 'An error occurcd : Ticket max is not correct'
+    if error == '':
+        if newform.ticketnoformat == '':
+            error = 'An error occurcd : Ticket format is blank'
+    if error == '':
+        for c in newform.ticketnoformat:
+            if c != '0':
+                error = 'An error occurcd : Ticket number format should be "0".'
+                break
+    if error == '':
+        if 0 < newform.displayflashtime and newform.displayflashtim <= 50 :
+            pass
+        else :
+            error = 'An error occurcd : Display flash time should be 1-50.'
+    if error == '':
+        if -1 < newform.language1 and newform.language1 <= 4 :
+            pass
+        else :
+            error = 'An error occurcd : Language 1 should be 0-4.'
+    if error == '':
+        if -1 < newform.language2 and newform.language2 <= 4 :
+            pass
+        else :
+            error = 'An error occurcd : Language 2 should be 0-4.'
+    if error == '':
+        if -1 < newform.language3 and newform.language3 <= 4 :
+            pass
+        else :
+            error = 'An error occurcd : Language 3 should be 0-4.'
+    if error == '':
+        if -1 < newform.language4 and newform.language4 <= 4 :
+            pass
+        else :
+            error = 'An error occurcd : Language 4 should be 0-4.'            
     return (error, newform)
 
 def checkticketformatform(form):
@@ -3306,4 +3391,87 @@ def checkticketformatform(form):
     if error == '' :
         if newform.ttype != newform.ttype.upper():
             error = 'Ticket type should be upper case'
+    return (error, newform)
+
+def checkbranchsettingsform(form):
+    error = ''
+    newform = None
+    if error == '':
+        if form.is_valid() == False:
+            error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
+            error = 'An error occurcd during registration: '+ error_string
+    if error == '':
+        newform = form.save(commit=False)
+        if newform.name == '':
+            error = 'An error occurcd : Branch name is blank'
+    # if error == '':
+    #     # check  newform.branchname is aplha or number
+    #     if newform.branchname.isalnum() == False :
+    #         error = 'An error occurcd : Branch should be letter or number'
+    if error == '':
+        # check newform.timezone is right format
+        if newform.timezone not in pytz.all_timezones:
+            error = 'An error occurcd : Timezone is not correct'
+    if error == '':
+        try:
+            newform.officehourstart = funLocaltoUTCtime(newform.officehourstart, newform.timezone)
+        except:
+            error = 'An error occurcd : Office hour start is not correct'
+    if error == '':
+        try:
+            newform.officehourend = funLocaltoUTCtime(newform.officehourend, newform.timezone)
+        except:
+            error = 'An error occurcd : Office hour end is not correct'
+    if error == '':
+        try:
+            newform.tickettimestart = funLocaltoUTCtime(newform.tickettimestart, newform.timezone)
+        except:
+            error = 'An error occurcd : Ticket start time is not correct'
+    if error == '':
+        try:
+            newform.tickettimeend = funLocaltoUTCtime(newform.tickettimeend, newform.timezone)
+        except:
+            error = 'An error occurcd : Ticket end time is not correct'
+    if error == '':
+        if newform.queuepriority == '':
+            error = 'An error occurcd : Queue priority is blank'
+    if error == '':
+        if newform.queuemask == '':
+            error = 'An error occurcd : Queue mask is blank' 
+    if error == '':
+        if newform.ticketmax < 1 :
+            error = 'An error occurcd : Ticket max is not correct'
+    if error == '':
+        if newform.ticketnoformat == '':
+            error = 'An error occurcd : Ticket format is blank'
+    if error == '':
+        for c in newform.ticketnoformat:
+            if c != '0':
+                error = 'An error occurcd : Ticket number format should be "0".'
+                break
+    if error == '':
+        if 0 < newform.displayflashtime and newform.displayflashtime <= 50 :
+            pass
+        else :
+            error = 'An error occurcd : Display flash time should be 1-50.'
+    if error == '':
+        if -1 < newform.language1 and newform.language1 <= 4 :
+            pass
+        else :
+            error = 'An error occurcd : Language 1 should be 0-4.'
+    if error == '':
+        if -1 < newform.language2 and newform.language2 <= 4 :
+            pass
+        else :
+            error = 'An error occurcd : Language 2 should be 0-4.'
+    if error == '':
+        if -1 < newform.language3 and newform.language3 <= 4 :
+            pass
+        else :
+            error = 'An error occurcd : Language 3 should be 0-4.'
+    if error == '':
+        if -1 < newform.language4 and newform.language4 <= 4 :
+            pass
+        else :
+            error = 'An error occurcd : Language 4 should be 0-4.'            
     return (error, newform)

@@ -19,9 +19,10 @@ urlpatterns = [
     path('reset/<str:pk>/', views.UserResetView, name='resetpw-user'),
     path('menu/', views.MenuView, name='menu'),
 
-    path('branch/', views.BranchSummaryView, name='branchsummary'),
-    path('update-branch/<str:pk>/', views.BranchUpdateView, name='update-branch'),
-    path('update-branch/<str:pk>/savebranch/', views.Branch_Save, name='a'),
+    path('settings/', views.SettingsSummaryView, name='settingssummary'),
+    path('update-settings/<str:pk>/', views.SettingsUpdateView, name='update-settings'),
+    path('update-settings/<str:pk>/save/', views.Settings_Save),
+    # path('update-settings/<str:pk>/save/', views.Settings_Save, name='a'),
 
     path('tfs/', views.TicketFormatSummaryView, name='tfsummary'),
     path('update-tf/<str:pk>/', views.TicketFormatUpdateView, name='update-tf'),

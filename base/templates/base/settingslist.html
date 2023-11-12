@@ -1,0 +1,46 @@
+{% load static %}
+<div class="roomArea">
+{% for branch in branchs %}
+    <a href="{% url 'update-settings' branch.id %}">
+        <div class="roomListRoom">
+            <div class="roomListRoom__header">
+                <div class="roomListRoom__author">
+
+                    <div class="list__svg">
+                        
+                    {% include 'base/images/branch.svg' %}
+                    </div>
+                    <span>{{branch.bcode}}</span>
+                </div>
+                <div class="roomListRoom__actions">
+                    <span>{{branch.address}}</span>
+                </div>
+            </div>
+            <div class="roomListRoom__content">
+                {{branch.name}}
+            </div>
+            <div class="roomListRoom__meta">
+                <div class="roomListRoom__joined">
+                
+                    {% include 'base/images/clock.svg' %}
+
+                    Time Zone: {{branch.timezone}}            
+                </div>
+
+                {% if branch.enabled == False %}
+                    <p class="roomListRoom__topic_red">
+                        Disabled
+                    </p>
+                {% else %}
+                    <p class="roomListRoom__topic">
+                        Enabled
+                    </p>
+                {% endif %}                
+            </div>
+        
+        </div>
+    </a>
+
+{% endfor %}
+
+</div>

@@ -17,10 +17,20 @@
       </a>   
     </li>
     <li>
-      <a href="{% url 'branchsummary' %}" class="active"><div class="list__svg">{% include 'base/images/settings.svg' %}</div>
-        Branch settings
+      <a href="{% url 'settingssummary' %}" class="active"><div class="list__svg">{% include 'base/images/settings.svg' %}</div>
+        Settings
         <span>{{ branchs.count }}</span></a>
-    </li>        
+    </li>
+    <li>
+      <a href="{% url 'settingssummary' %}" class="active"><div class="list__svg">{% include 'base/images/settings.svg' %}</div>
+        Advanced settings
+        <span>{{ branchs.count }}</span></a>
+    </li>
+    <li>
+      <a href="{% url 'settingssummary' %}" class="active"><div class="list__svg">{% include 'base/images/settings.svg' %}</div>
+        Admin settings
+        <span>{{ branchs.count }}</span></a>
+    </li>
     <li>
       <a href="{% url 'tfsummary' %}" class="active"><div class="list__svg">{% include 'base/images/paper.svg' %}</div>Ticket Format <span>{{ ticketformats.count }}</span></a>
     </li>

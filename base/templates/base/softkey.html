@@ -170,7 +170,7 @@
             {% for ticket in qlist %}
               <div id="ticket_{{ticket.tickettype}}{{ticket.ticketnumber}}{{ticket.tickettime}}" class="qlist_item">
                 <div class="qlist_ticketnumber">{{ticket.tickettype}}{{ticket.ticketnumber}}</div>
-                <div class="qlist_tickettime">{{ticket.tickettime_local}}</div>
+                <div class="qlist_tickettime">{{ticket.tickettime_local_short}}</div>
                 <div>
                   <a class="btn btn--main" href="{% url 'softkeyget' pk ticket.id %}">Call</a>
                   <a class="btn btn--del" href="{% url 'softkeyvoid' pk ticket.id %}">Void</a>
@@ -450,7 +450,8 @@
             // #     "tickettype": "A", 
             // #     "ticketnumber": "012",
             // #     "tickettime": "2023-03-17T15:06:53.337639Z",
-            // #     "tickettime_local": "2023-03-17T15:06:53.337639Z",
+            // #     "tickettime_local": "23:06:53 2023-03-17",
+            // #     "tickettime_local_short": "23:06:53 03-17",
             // #     "ttid": 1,
             // #     }
             // # }
@@ -467,7 +468,7 @@
                 var ttype = data.tickettype;
                 var tno = data.ticketnumber;
                 var ttime = data.tickettime;
-                var ttime_local = data.tickettime_local;
+                var ttime_local = data.tickettime_local_short;
                 var ttid = data.ttid;
 
                 // check cmd add or del

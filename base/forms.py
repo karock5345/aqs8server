@@ -1,9 +1,14 @@
 # from ast import Mod
 #from dataclasses import field
+from collections.abc import Mapping
+from typing import Any
+from django.core.files.base import File
+from django.db.models.base import Model
 from django.forms import ModelForm
 from django import forms
 from django.contrib.auth.models import User, Group
 from django.db.models import Q
+from django.forms.utils import ErrorList
 from base.models import TicketFormat, TicketRoute, UserProfile, Branch, CounterType
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
@@ -18,6 +23,14 @@ class CaptchaForm(forms.Form):
     )
 
     # captcha = ReCaptchaField()
+
+class BranchSettingsForm(ModelForm):
+    class Meta:
+        model = Branch
+        fields = ['bcode', 'enabled', 'name', 'address', 'gps', 'timezone', 'officehourstart', 'officehourend', 'tickettimestart', 'tickettimeend', 'queuepriority', 'displayenabled', 'displayflashtime', 'voiceenabled', 'language1', 'language2', 'language3', 'language4', 'usersinglelogin', 'enabledsms', 'smsmsg']
+        # fields = '__all__'
+
+        
 
 # for PCCW manager Group only include frontline and manager
 class UserFormManager(ModelForm):

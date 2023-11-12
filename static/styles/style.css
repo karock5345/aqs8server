@@ -821,6 +821,7 @@ a {
   background-color: var(--color-dark);
   border-radius: 1rem;
   padding: 2rem;
+  transition: all 0.3s ease-in-out;
 }
 .roomListRoom:hover {
 
@@ -1418,11 +1419,11 @@ padding-top: 3px;
 padding-bottom: 3px;
 text-align: left;
 background-color:#04AA6D;
-color: white;
+color: var(--color-light);
 }
 .table-style-userlist tr:hover, .table-style-userlist th:hover {
   /* background-color: var(--color-nearend); */
-  color:var(--color-nearend); 
+  color:var(--color-main-light); 
   cursor: pointer;
 }
 
