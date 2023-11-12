@@ -3289,80 +3289,23 @@ def checkticketrouteform(form):
         if form.is_valid() == False:
             error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
             error = 'An error occurcd during registration: '+ error_string
+    # newroute.tickettype  = newroute.tickettype.upper()
     if error == '':
         newform = form.save(commit=False)
-        if newform.branchname == '':
-            error = 'An error occurcd : Branch name is blank'
-    # if error == '':
-    #     # check  newform.branchname is aplha or number
-    #     if newform.branchname.isalnum() == False :
-    #         error = 'An error occurcd : Branch should be letter or number'
+        if newform.branch == None :
+            error = 'An error occurcd : Branch is blank'
     if error == '':
-        # check newform.timezone is right format
-        if newform.timezone not in pytz.all_timezones:
-            error = 'An error occurcd : Timezone is not correct'
-    if error == '':
-        try:
-            newform.officehourstart = funLocaltoUTCtime(newform.officehourstart, newform.timezone)
-        except:
-            error = 'An error occurcd : Office hour start is not correct'
-    if error == '':
-        try:
-            newform.officehourend = funLocaltoUTCtime(newform.officehourend, newform.timezone)
-        except:
-            error = 'An error occurcd : Office hour end is not correct'
-    if error == '':
-        try:
-            newform.tickettimestart = funLocaltoUTCtime(newform.tickettimestart, newform.timezone)
-        except:
-            error = 'An error occurcd : Ticket start time is not correct'
-    if error == '':
-        try:
-            newform.tickettimeend = funLocaltoUTCtime(newform.tickettimeend, newform.timezone)
-        except:
-            error = 'An error occurcd : Ticket end time is not correct'
-    if error == '':
-        if newform.queuepriority == '':
-            error = 'An error occurcd : Queue priority is blank'
-    if error == '':
-        if newform.queuemask == '':
-            error = 'An error occurcd : Queue mask is blank' 
-    if error == '':
-        if newform.ticketmax < 1 :
-            error = 'An error occurcd : Ticket max is not correct'
-    if error == '':
-        if newform.ticketnoformat == '':
-            error = 'An error occurcd : Ticket format is blank'
-    if error == '':
-        for c in newform.ticketnoformat:
-            if c != '0':
-                error = 'An error occurcd : Ticket number format should be "0".'
-                break
-    if error == '':
-        if 0 < newform.displayflashtime and newform.displayflashtim <= 50 :
-            pass
-        else :
-            error = 'An error occurcd : Display flash time should be 1-50.'
-    if error == '':
-        if -1 < newform.language1 and newform.language1 <= 4 :
-            pass
-        else :
-            error = 'An error occurcd : Language 1 should be 0-4.'
-    if error == '':
-        if -1 < newform.language2 and newform.language2 <= 4 :
-            pass
-        else :
-            error = 'An error occurcd : Language 2 should be 0-4.'
-    if error == '':
-        if -1 < newform.language3 and newform.language3 <= 4 :
-            pass
-        else :
-            error = 'An error occurcd : Language 3 should be 0-4.'
-    if error == '':
-        if -1 < newform.language4 and newform.language4 <= 4 :
-            pass
-        else :
-            error = 'An error occurcd : Language 4 should be 0-4.'            
+        if newform.countertype == None :
+            error = 'An error occurcd : Counter Type is blank'
+    if error == '' :
+        #check ticket type should be letter
+        if newform.tickettype.isalpha() == False :
+            error = 'An error occurcd : Ticket Type should be letter'
+    # newroute.step is int so no need to check
+    # if error == '' :
+        #check step should be number
+        # if newroute.step.isnumeric() == False :
+        #     error = 'An error occurcd : Step should be number'
     return (error, newform)
 
 def checkticketformatform(form):
