@@ -12,6 +12,11 @@ from django.forms.utils import ErrorList
 from base.models import TicketFormat, TicketRoute, UserProfile, Branch, CounterType
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
+from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
+import pytz
+from django.utils.timezone import localtime, get_current_timezone
+from datetime import datetime
+
 
 class CaptchaForm(forms.Form):
     captcha = ReCaptchaField(
@@ -25,12 +30,19 @@ class CaptchaForm(forms.Form):
     # captcha = ReCaptchaField()
 
 class BranchSettingsForm(ModelForm):
+    bcode = forms.fields.CharField(label='Branch Code123', max_length=100)
     class Meta:
         model = Branch
         fields = ['bcode', 'enabled', 'name', 'address', 'gps', 'timezone', 'officehourstart', 'officehourend', 'tickettimestart', 'tickettimeend', 'queuepriority', 'displayenabled', 'displayflashtime', 'voiceenabled', 'language1', 'language2', 'language3', 'language4', 'usersinglelogin', 'enabledsms', 'smsmsg']
         # fields = '__all__'
-
-        
+    def __init__(self, *args, **kwargs):
+        super(BranchSettingsForm, self).__init__(*args, **kwargs)
+        # change time from DB utc to local time
+        timezone = self.initial['timezone']
+        self.initial['officehourstart'] = funUTCtoLocaltime(self.initial['officehourstart'], timezone)
+        self.initial['officehourend'] = funUTCtoLocaltime(self.initial['officehourend'], timezone)
+        self.initial['tickettimestart'] = funUTCtoLocaltime(self.initial['tickettimestart'], timezone)
+        self.initial['tickettimeend'] = funUTCtoLocaltime(self.initial['tickettimeend'], timezone)
 
 # for PCCW manager Group only include frontline and manager
 class UserFormManager(ModelForm):

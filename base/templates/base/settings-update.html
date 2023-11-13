@@ -97,10 +97,7 @@
                             <label><input type="checkbox" name="usersinglelogin"> User single login (Counter only)</label><br>
                         {% endif %}
                 
-                        TV Scrolling text : <br>
-                        {% for ct in countertypes %}
-                            Counter Type - {{ ct.name }} : <input type="text" name="{{ct.branch.bcode}}-{{ct.name}}" value="{{ct.displayscrollingtext}}" maxlength="200"><br>
-                        {% endfor %}
+
                 
                         {% if branch.enabledsms == True %}
                             <label><input type="checkbox" name="enabledsms" checked >SMS enabled</label><br>
@@ -124,16 +121,22 @@
                     {% csrf_token %}
                     
                     {% for field in branchsettingsform %}
-                    <div class="form__group">
-                        <label class="profile_pic">{{field.label}}{{field}}</label>                            
-                    </div>
+                        {% if field.name == "officehourstart" %}
+                            <input type="time"  value="12:34:56" step="1"></input>
+                            <label>{{field}}</label>
+                        {% else %}
+                            <div class="form__group">
+                                <label class="profile_pic">{{field.label}}{{field}}</label>
+                            </div>
+                        {% endif %}
                     {% endfor %}
                     
-                    {% for key, value in scrollingtext.items %}
-                    <div class="form__group">
-                        <label class="profile_pic">{{key}}</label>
-                        <textarea>{{value}}</textarea>                            
-                    </div>
+
+                    TV Scrolling text : <br>
+                    {% for ct in countertypes %}
+                        <div class="form__group">
+                            Counter Type - {{ ct.name }} : <input type="text" name="{{ct.branch.bcode}}-{{ct.name}}" value="{{ct.displayscrollingtext}}" maxlength="200">
+                        </div>
                     {% endfor %}
 
                     <div class="form__action">

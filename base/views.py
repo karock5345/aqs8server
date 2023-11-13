@@ -9,7 +9,7 @@ from django.contrib.auth import authenticate, login, logout, update_session_auth
 from django.contrib.auth.hashers import make_password
 from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
-from datetime import datetime
+# from datetime import datetime
 from base.decorators import *
 # from django.contrib.auth.views import PasswordChangeView
 # from django.urls import reverse_lazy
@@ -2509,21 +2509,30 @@ def SettingsUpdateView(request, pk):
         if error == '':
             try:
                 bsf.save()
-                messages.success(request, 'Branch settings was successfully updated!')
-                return redirect('settingssummary')
+
             except:
                 error = 'An error occurcd during updating Branch settings'
-        if error != '':
+        if error == '':
+            countertypes = CounterType.objects.filter(Q(branch=branch))
+            for ct in countertypes:
+                ct.displayscrollingtext = request.POST.get(branch.bcode + '-' + ct.name)
+                ct.save()
+        if error == '':
+            messages.error(request, error )
+            messages.success(request, 'Branch settings was successfully updated!')
+            return redirect('settingssummary')
+        else:
             messages.error(request, error )
     else:
         branchsettingsform = BranchSettingsForm(instance=branch, prefix='branchsettingsform')
-        cts = CounterType.objects.filter(branch=branch)
-        ct_dict = {}
-        for ct in cts:
-            ct_dict[branch.bcode + '-' + ct.name] = ct.displayscrollingtext
-        ct_dict = {'scrollingtext':ct_dict}
+        # change all time from UTC to local time
+        timezone = branch.timezone
+        # get branchsettingsform.fields['officehourstart'] time
 
-    context = {'aqs_version':aqs_version} | context | {'branch':branch, 'branchsettingsform':branchsettingsform} | ct_dict
+
+        
+        
+    context = {'aqs_version':aqs_version} | context | {'branch':branch, 'branchsettingsform':branchsettingsform}
     return render(request, 'base/settings-update.html', context)
 
 @unauth_user
