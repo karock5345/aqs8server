@@ -21324,3 +21324,542 @@ INFO 2023-11-13 13:33:46,529 runserver>log_action [mHTTP GET /static/js/script.
 INFO 2023-11-13 13:33:46,532 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:22907][0m
 INFO 2023-11-13 13:33:46,534 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:22908][0m
 INFO 2023-11-13 13:33:46,606 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:22907][0m
+INFO 2023-11-13 17:40:07,578 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-13 17:40:07,775 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-13 17:40:07,776 base>views>main -SCH- Now:11/13/2023, 09:40:07
+INFO 2023-11-13 17:40:07,854 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:40:07,854 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:40:07,854 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:40:07 [Yes]
+INFO 2023-11-13 17:40:07,857 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:40:07,857 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:40:07,857 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:40:07 [Yes]
+INFO 2023-11-13 17:40:07,858 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-13 18:00:00 Local:2023-11-14 02:00:00
+INFO 2023-11-13 17:40:07,858 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-13 17:40:07,858 base>views>sch_shutdown    -SCH- 2023-11-13 18:00:00 > 2023-11-13 09:40:07 [Yes]
+INFO 2023-11-13 17:40:07,859 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:40:07,859 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:40:07,860 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:40:07 [Yes]
+INFO 2023-11-13 17:40:07,860 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:40:07,861 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:40:07,861 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:40:07 [Yes]
+INFO 2023-11-13 17:40:07,862 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:40:07,862 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:40:07,862 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:40:07 [Yes]
+INFO 2023-11-13 17:42:22,860 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-13 17:42:22,927 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-13 17:42:22,928 base>views>main -SCH- Now:11/13/2023, 09:42:22
+INFO 2023-11-13 17:42:22,993 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:42:22,993 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:42:22,995 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:42:22 [Yes]
+INFO 2023-11-13 17:42:22,996 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:42:22,996 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:42:22,997 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:42:22 [Yes]
+INFO 2023-11-13 17:42:22,998 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-13 18:00:00 Local:2023-11-14 02:00:00
+INFO 2023-11-13 17:42:22,998 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-13 17:42:22,998 base>views>sch_shutdown    -SCH- 2023-11-13 18:00:00 > 2023-11-13 09:42:22 [Yes]
+INFO 2023-11-13 17:42:22,999 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:42:23,000 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:42:23,000 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:42:22 [Yes]
+INFO 2023-11-13 17:42:23,001 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:42:23,001 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:42:23,001 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:42:23 [Yes]
+INFO 2023-11-13 17:42:23,002 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:42:23,002 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:42:23,003 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:42:23 [Yes]
+INFO 2023-11-13 17:42:31,307 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-13 17:42:32,151 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-13 17:42:32,155 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-13 17:42:32,262 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-13 17:42:32,262 base>views>main -SCH- Now:11/13/2023, 09:42:32
+INFO 2023-11-13 17:42:32,327 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:42:32,328 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:42:32,328 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:42:32 [Yes]
+INFO 2023-11-13 17:42:32,330 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:42:32,330 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:42:32,330 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:42:32 [Yes]
+INFO 2023-11-13 17:42:32,331 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-13 18:00:00 Local:2023-11-14 02:00:00
+INFO 2023-11-13 17:42:32,331 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-13 17:42:32,331 base>views>sch_shutdown    -SCH- 2023-11-13 18:00:00 > 2023-11-13 09:42:32 [Yes]
+INFO 2023-11-13 17:42:32,332 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:42:32,332 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:42:32,333 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:42:32 [Yes]
+INFO 2023-11-13 17:42:32,334 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:42:32,334 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:42:32,334 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:42:32 [Yes]
+INFO 2023-11-13 17:42:32,335 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-13 15:59:59 Local:2023-11-13 23:59:59
+INFO 2023-11-13 17:42:32,335 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-13 17:42:32,335 base>views>sch_shutdown    -SCH- 2023-11-13 15:59:59 > 2023-11-13 09:42:32 [Yes]
+INFO 2023-11-13 17:42:59,552 runserver>log_action [mHTTP GET /api/?app=Softkey&version=8.2.0.0 200 [0.01, 127.0.0.1:56480][0m
+INFO 2023-11-13 17:42:59,855 runserver>log_action [mHTTP POST /api/loginapi/?app=Softkey&version=8.2.0.0 200 [0.30, 127.0.0.1:56480][0m
+INFO 2023-11-13 17:43:00,184 runserver>log_action [mHTTP POST /api/token/ 200 [0.31, 127.0.0.1:56486][0m
+INFO 2023-11-13 17:43:00,223 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:56490]
+INFO 2023-11-13 17:43:00,224 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:56491]
+INFO 2023-11-13 17:43:00,259 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-13 17:43:00,261 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-13 17:43:00,267 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:56491]
+INFO 2023-11-13 17:43:00,268 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-13 17:43:00,268 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:56490]
+INFO 2023-11-13 17:43:00,269 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+INFO 2023-11-13 17:43:13,135 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.24, 127.0.0.1:56480][0m
+INFO 2023-11-13 17:43:23,137 runserver>log_action [mHTTP POST /api/counterlogin/?username=anya&password=asdf2206&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.24, 127.0.0.1:56480][0m
+INFO 2023-11-13 17:43:34,684 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:56504]
+INFO 2023-11-13 17:43:34,688 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-13 17:43:34,691 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:56504]
+INFO 2023-11-13 17:43:34,691 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [2]
+INFO 2023-11-13 17:43:34,707 runserver>log_action WebSocket HANDSHAKING /ws/cs/2/ [127.0.0.1:56505]
+INFO 2023-11-13 17:43:34,711 base>consumers>connect connecting:cs_2
+INFO 2023-11-13 17:43:34,715 runserver>log_action WebSocket CONNECT /ws/cs/2/ [127.0.0.1:56505]
+INFO 2023-11-13 17:43:34,715 base>consumers>connect IP 127.0.0.1 Connected:cs_2 [1]
+INFO 2023-11-13 17:43:34,738 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:56506]
+INFO 2023-11-13 17:43:34,779 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.06, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:43:34,783 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-13 17:43:34,787 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:56506]
+INFO 2023-11-13 17:43:34,788 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [2]
+INFO 2023-11-13 17:43:38,872 runserver>log_action [32mHTTP GET /supervisors/ 302 [0.02, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:43:38,886 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:43:38,903 runserver>log_action WebSocket DISCONNECT /ws/cs/2/ [127.0.0.1:56505]
+INFO 2023-11-13 17:43:38,904 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:56506]
+INFO 2023-11-13 17:43:38,904 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:56504]
+INFO 2023-11-13 17:43:38,906 base>consumers>disconnect Disconnected:cs_2 Internal [0]
+INFO 2023-11-13 17:43:38,908 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [1]
+INFO 2023-11-13 17:43:38,911 base>consumers>disconnect Disconnected:printerstatus_KB Internal [1]
+INFO 2023-11-13 17:43:40,726 runserver>log_action [32mHTTP POST /login/ 302 [0.24, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:43:40,771 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:43:42,615 runserver>log_action [mHTTP GET /supervisors/ 200 [0.04, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:43:45,446 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.08, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:43:50,037 runserver>log_action [mHTTP GET /supervisor/forcelogout/1/4/ 200 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:43:51,349 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.02, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:43:52,290 runserver>log_action [mHTTP GET /supervisor/forcelogout/1/4/ 200 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:43:53,021 runserver>log_action [32mHTTP POST /supervisor/forcelogout/1/4/ 302 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:43:53,049 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.03, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:00,623 runserver>log_action [mHTTP GET /supervisor/forcelogout/1/5/ 200 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:01,451 runserver>log_action [32mHTTP POST /supervisor/forcelogout/1/5/ 302 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:01,479 runserver>log_action [mHTTP GET /supervisor/1/ 200 [0.03, 127.0.0.1:56502][0m
+WARNING 2023-11-13 17:44:14,998 log>log_response Forbidden (CSRF token from POST incorrect.): /admin/login/
+WARNING 2023-11-13 17:44:15,004 runserver>log_action [31;1mHTTP POST /admin/login/?next=/admin/base/branch/ 403 [0.01, 127.0.0.1:56502][0m
+WARNING 2023-11-13 17:44:17,794 log>log_response Forbidden (CSRF token from POST incorrect.): /admin/login/
+WARNING 2023-11-13 17:44:17,800 runserver>log_action [31;1mHTTP POST /admin/login/?next=/admin/base/branch/ 403 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:21,483 runserver>log_action [32mHTTP GET /admin/ 302 [0.02, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:21,509 runserver>log_action [mHTTP GET /admin/login/?next=/admin/ 200 [0.02, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:21,520 runserver>log_action [36mHTTP GET /static/admin/css/base.css 304 [0.00, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:21,529 runserver>log_action [36mHTTP GET /static/admin/css/dark_mode.css 304 [0.00, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:21,531 runserver>log_action [36mHTTP GET /static/admin/css/nav_sidebar.css 304 [0.00, 127.0.0.1:56503][0m
+INFO 2023-11-13 17:44:21,532 runserver>log_action [36mHTTP GET /static/admin/css/responsive.css 304 [0.00, 127.0.0.1:56555][0m
+INFO 2023-11-13 17:44:21,533 runserver>log_action [36mHTTP GET /static/admin/css/login.css 304 [0.01, 127.0.0.1:56554][0m
+INFO 2023-11-13 17:44:21,535 runserver>log_action [36mHTTP GET /static/admin/js/theme.js 304 [0.01, 127.0.0.1:56556][0m
+INFO 2023-11-13 17:44:21,536 runserver>log_action [36mHTTP GET /static/admin/js/nav_sidebar.js 304 [0.01, 127.0.0.1:56557][0m
+INFO 2023-11-13 17:44:26,118 runserver>log_action [32mHTTP POST /admin/login/?next=/admin/ 302 [0.24, 127.0.0.1:56557][0m
+INFO 2023-11-13 17:44:26,177 runserver>log_action [mHTTP GET /admin/ 200 [0.06, 127.0.0.1:56557][0m
+INFO 2023-11-13 17:44:26,190 runserver>log_action [mHTTP GET /static/admin/css/dashboard.css 200 [0.00, 127.0.0.1:56557][0m
+INFO 2023-11-13 17:44:26,196 runserver>log_action [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.00, 127.0.0.1:56557][0m
+INFO 2023-11-13 17:44:26,201 runserver>log_action [mHTTP GET /static/admin/img/icon-changelink.svg 200 [0.01, 127.0.0.1:56556][0m
+INFO 2023-11-13 17:44:26,205 runserver>log_action [mHTTP GET /static/admin/img/icon-deletelink.svg 200 [0.01, 127.0.0.1:56554][0m
+INFO 2023-11-13 17:44:29,392 runserver>log_action [mHTTP GET /admin/base/counterstatus/ 200 [0.10, 127.0.0.1:56554][0m
+INFO 2023-11-13 17:44:29,407 runserver>log_action [mHTTP GET /static/admin/css/changelists.css 200 [0.01, 127.0.0.1:56554][0m
+INFO 2023-11-13 17:44:29,415 runserver>log_action [mHTTP GET /static/admin/js/jquery.init.js 200 [0.01, 127.0.0.1:56555][0m
+INFO 2023-11-13 17:44:29,424 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.02, 127.0.0.1:56556][0m
+INFO 2023-11-13 17:44:29,444 runserver>log_action [mHTTP GET /static/admin/js/vendor/jquery/jquery.js 200 [0.04, 127.0.0.1:56557][0m
+INFO 2023-11-13 17:44:29,449 runserver>log_action [mHTTP GET /static/admin/js/core.js 200 [0.04, 127.0.0.1:56503][0m
+INFO 2023-11-13 17:44:29,456 runserver>log_action [mHTTP GET /static/admin/js/actions.js 200 [0.05, 127.0.0.1:56554][0m
+INFO 2023-11-13 17:44:29,461 runserver>log_action [mHTTP GET /static/admin/js/admin/RelatedObjectLookups.js 200 [0.05, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:29,466 runserver>log_action [mHTTP GET /static/admin/js/urlify.js 200 [0.05, 127.0.0.1:56555][0m
+INFO 2023-11-13 17:44:29,470 runserver>log_action [mHTTP GET /static/admin/js/prepopulate.js 200 [0.04, 127.0.0.1:56556][0m
+INFO 2023-11-13 17:44:29,516 runserver>log_action [mHTTP GET /static/admin/js/vendor/xregexp/xregexp.js 200 [0.07, 127.0.0.1:56557][0m
+INFO 2023-11-13 17:44:29,521 runserver>log_action [mHTTP GET /static/admin/img/icon-yes.svg 200 [0.05, 127.0.0.1:56555][0m
+INFO 2023-11-13 17:44:29,564 runserver>log_action [mHTTP GET /static/admin/js/filters.js 200 [0.01, 127.0.0.1:56557][0m
+INFO 2023-11-13 17:44:29,569 runserver>log_action [mHTTP GET /static/admin/img/sorting-icons.svg 200 [0.01, 127.0.0.1:56554][0m
+INFO 2023-11-13 17:44:29,573 runserver>log_action [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:35,131 runserver>log_action [mHTTP GET /admin/base/counterstatus/4/change/ 200 [0.07, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:35,146 runserver>log_action [mHTTP GET /static/admin/css/forms.css 200 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:35,153 runserver>log_action [mHTTP GET /static/admin/js/calendar.js 200 [0.01, 127.0.0.1:56554][0m
+INFO 2023-11-13 17:44:35,157 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:56555][0m
+INFO 2023-11-13 17:44:35,159 runserver>log_action [mHTTP GET /static/admin/js/admin/DateTimeShortcuts.js 200 [0.02, 127.0.0.1:56557][0m
+INFO 2023-11-13 17:44:35,162 runserver>log_action [mHTTP GET /static/admin/img/icon-viewlink.svg 200 [0.02, 127.0.0.1:56503][0m
+INFO 2023-11-13 17:44:35,165 runserver>log_action [mHTTP GET /static/admin/js/prepopulate_init.js 200 [0.02, 127.0.0.1:56556][0m
+INFO 2023-11-13 17:44:35,169 runserver>log_action [mHTTP GET /static/admin/css/widgets.css 200 [0.02, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:35,177 runserver>log_action [mHTTP GET /static/admin/js/change_form.js 200 [0.01, 127.0.0.1:56556][0m
+INFO 2023-11-13 17:44:35,211 runserver>log_action [mHTTP GET /static/admin/img/icon-calendar.svg 200 [0.00, 127.0.0.1:56556][0m
+INFO 2023-11-13 17:44:35,215 runserver>log_action [mHTTP GET /static/admin/img/icon-clock.svg 200 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:44,074 runserver>log_action [32mHTTP POST /admin/base/counterstatus/4/change/ 302 [0.06, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:44,130 runserver>log_action [mHTTP GET /admin/base/counterstatus/ 200 [0.05, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:44,152 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:46,339 runserver>log_action [mHTTP GET /admin/base/counterstatus/5/change/ 200 [0.03, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:46,410 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.06, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:53,047 runserver>log_action [32mHTTP POST /admin/base/counterstatus/5/change/ 302 [0.02, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:53,105 runserver>log_action [mHTTP GET /admin/base/counterstatus/ 200 [0.06, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:53,130 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:55,080 runserver>log_action [mHTTP GET /admin/base/counterstatus/2/change/ 200 [0.03, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:44:55,103 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:45:00,312 runserver>log_action [32mHTTP POST /admin/base/counterstatus/2/change/ 302 [0.02, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:45:00,367 runserver>log_action [mHTTP GET /admin/base/counterstatus/ 200 [0.05, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:45:00,391 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:45:04,381 runserver>log_action [mHTTP GET /admin/base/counterloginlog/ 200 [0.02, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:45:04,401 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:56502][0m
+INFO 2023-11-13 17:45:15,594 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.24, 127.0.0.1:56610][0m
+INFO 2023-11-13 17:45:20,241 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB 200 [0.01, 127.0.0.1:56610][0m
+INFO 2023-11-13 17:45:20,263 runserver>log_action [mHTTP GET /api/waiting/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.02, 127.0.0.1:56615][0m
+INFO 2023-11-13 17:45:40,800 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:56628][0m
+INFO 2023-11-13 17:45:53,826 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 17:45:53,829 base>ws>wssendwebtv ...Done
+INFO 2023-11-13 17:45:53,830 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 17:45:53,831 base>ws>wssenddispwait ...Done
+INFO 2023-11-13 17:45:53,833 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 17:45:53,835 base>ws>wssendql ...Done
+INFO 2023-11-13 17:45:53,837 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 17:45:53,839 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-13 17:45:53,839 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-13 17:45:53,847 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.07, 127.0.0.1:56628][0m
+INFO 2023-11-13 17:46:31,004 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:56490]
+INFO 2023-11-13 17:46:31,005 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-13 17:46:44,786 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:56641]
+INFO 2023-11-13 17:46:44,789 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-13 17:46:44,793 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:56641]
+INFO 2023-11-13 17:46:44,793 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+INFO 2023-11-13 17:46:49,804 runserver>log_action [mHTTP GET /api/waiting/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.02, 127.0.0.1:56642][0m
+INFO 2023-11-13 17:46:51,008 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:56491]
+INFO 2023-11-13 17:46:51,009 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-13 17:46:51,093 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:56647]
+INFO 2023-11-13 17:46:51,124 runserver>log_action [mHTTP POST /api/counterlogout/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.05, 127.0.0.1:56642][0m
+INFO 2023-11-13 17:46:51,134 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-13 17:46:51,137 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:56647]
+INFO 2023-11-13 17:46:51,138 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-13 17:46:56,723 runserver>log_action [mHTTP POST /api/counterlogin/?username=elton&password=asdf2206&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.24, 127.0.0.1:56642][0m
+INFO 2023-11-13 17:46:58,109 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB 200 [0.01, 127.0.0.1:56642][0m
+INFO 2023-11-13 17:48:40,326 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:56667][0m
+INFO 2023-11-13 17:53:30,348 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:56702][0m
+INFO 2023-11-13 17:54:10,264 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 17:54:10,267 base>ws>wssendwebtv ...Done
+INFO 2023-11-13 17:54:10,267 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 17:54:10,269 base>ws>wssenddispwait ...Done
+INFO 2023-11-13 17:54:10,272 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 17:54:10,275 base>ws>wssendql ...Done
+INFO 2023-11-13 17:54:10,277 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 17:54:10,278 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-13 17:54:10,279 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-13 17:54:10,285 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.06, 127.0.0.1:56720][0m
+INFO 2023-11-13 17:54:57,007 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:56641]
+INFO 2023-11-13 17:54:57,008 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-13 17:55:03,004 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:56647]
+INFO 2023-11-13 17:55:03,006 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-13 17:55:29,126 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:56756]
+INFO 2023-11-13 17:55:29,129 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:56757]
+INFO 2023-11-13 17:55:29,130 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-13 17:55:29,132 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-13 17:55:29,135 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:56756]
+INFO 2023-11-13 17:55:29,136 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+INFO 2023-11-13 17:55:29,138 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:56757]
+INFO 2023-11-13 17:55:29,139 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-13 17:55:34,147 runserver>log_action [mHTTP GET /api/waiting/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.02, 127.0.0.1:56761][0m
+INFO 2023-11-13 17:55:36,139 runserver>log_action [mHTTP GET /api/printerstatus/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB 200 [0.01, 127.0.0.1:56761][0m
+INFO 2023-11-13 17:59:33,407 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:56812][0m
+INFO 2023-11-13 18:04:23,413 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:56872][0m
+INFO 2023-11-13 18:09:13,418 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:56912][0m
+INFO 2023-11-13 18:14:03,468 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:56974][0m
+INFO 2023-11-13 18:18:53,493 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:57016][0m
+INFO 2023-11-13 18:23:43,499 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:57053][0m
+INFO 2023-11-13 18:28:11,180 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 18:28:11,204 base>ws>wssendwebtv ...Done
+INFO 2023-11-13 18:28:11,205 base>ws>wssenddispcall channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 18:28:11,206 base>ws>wssenddispcall ...Done
+INFO 2023-11-13 18:28:11,209 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 18:28:11,211 base>ws>wssendql ...Done
+INFO 2023-11-13 18:28:11,215 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A001_5Bu sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 18:28:11,218 base>ws>wsSendTicketStatus ...Done
+INFO 2023-11-13 18:28:11,220 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 18:28:11,221 base>ws>wssendvoice ...Done
+INFO 2023-11-13 18:28:11,221 base>ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 18:28:11,222 base>ws>wssendflashlight ...Done
+INFO 2023-11-13 18:28:11,223 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 18:28:11,224 base>ws>wscounterstatus ...Done
+INFO 2023-11-13 18:28:11,226 runserver>log_action [mHTTP POST /api/call/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1 200 [0.11, 127.0.0.1:57171][0m
+INFO 2023-11-13 18:28:18,996 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 18:28:18,999 base>ws>wscounterstatus ...Done
+INFO 2023-11-13 18:28:19,001 runserver>log_action [mHTTP POST /api/process/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=001&tickettime=2023-11-13T09:45:53.781584Z 200 [0.04, 127.0.0.1:57171][0m
+INFO 2023-11-13 18:28:28,592 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A001_5Bu sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 18:28:28,619 base>ws>wsSendTicketStatus ...Done
+INFO 2023-11-13 18:28:28,621 base>ws>wscounterstatus channel_group_name:cs_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-13 18:28:28,622 base>ws>wscounterstatus ...Done
+INFO 2023-11-13 18:28:28,624 runserver>log_action [mHTTP POST /api/done/?username=elton&app=Softkey&version=8.2.0.0&branchcode=KB&countername=Reception&counternumber=1&tickettype=A&ticketnumber=001&tickettime=2023-11-13T09:45:53.781584Z 200 [0.07, 127.0.0.1:57171][0m
+INFO 2023-11-13 18:28:31,501 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:56756]
+INFO 2023-11-13 18:28:31,502 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:56757]
+INFO 2023-11-13 18:28:31,503 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-13 18:28:31,503 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-13 18:28:55,870 runserver>log_action [mHTTP GET /my/SCP/AA/027/8Ly/ 200 [0.01, 127.0.0.1:57192][0m
+WARNING 2023-11-13 18:28:55,890 runserver>log_action [33mHTTP GET /static/ 404 [0.01, 127.0.0.1:57192][0m
+WARNING 2023-11-13 18:28:55,896 runserver>log_action [33mHTTP GET /static/ 404 [0.00, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:04,800 runserver>log_action [mHTTP GET / 200 [0.01, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:04,815 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:06,160 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.02, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:07,223 runserver>log_action [mHTTP GET /softkey_login/1/ 200 [0.03, 127.0.0.1:57192][0m
+WARNING 2023-11-13 18:29:09,312 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-13 18:29:09,314 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-13 18:29:09,315 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-13 18:29:09,331 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:09,351 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:57207]
+INFO 2023-11-13 18:29:09,355 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-13 18:29:09,359 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:57207]
+INFO 2023-11-13 18:29:09,359 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-13 18:29:09,387 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:57208]
+INFO 2023-11-13 18:29:09,390 base>consumers>connect connecting:cs_4
+INFO 2023-11-13 18:29:09,394 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:57208]
+INFO 2023-11-13 18:29:09,394 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-13 18:29:09,418 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:57209]
+INFO 2023-11-13 18:29:09,421 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-13 18:29:09,425 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:57209]
+INFO 2023-11-13 18:29:09,425 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+INFO 2023-11-13 18:29:11,156 runserver>log_action [32mHTTP GET /softkey_logout/4/ 302 [0.02, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:11,186 runserver>log_action [mHTTP GET /softkey_login/1/ 200 [0.03, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:11,206 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:57207]
+INFO 2023-11-13 18:29:11,207 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:57208]
+INFO 2023-11-13 18:29:11,207 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:57209]
+INFO 2023-11-13 18:29:11,208 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-13 18:29:11,214 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-13 18:29:11,221 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-13 18:29:14,565 runserver>log_action [32mHTTP GET /softkey/1/ 302 [0.01, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:14,595 runserver>log_action [mHTTP GET /softkey_login/1/ 200 [0.03, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:20,059 runserver>log_action [32mHTTP GET /logout/ 302 [0.01, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:20,064 runserver>log_action [mHTTP GET /login/ 200 [0.00, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:23,348 runserver>log_action [32mHTTP POST /login/ 302 [0.24, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:23,386 runserver>log_action [mHTTP GET / 200 [0.04, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:25,829 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:28,467 runserver>log_action [mHTTP GET /settings/ 200 [0.04, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:29:29,363 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:57192][0m
+INFO 2023-11-13 18:30:38,188 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:57260][0m
+INFO 2023-11-13 18:31:00,079 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:57260][0m
+INFO 2023-11-13 18:31:18,355 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:57260][0m
+INFO 2023-11-13 18:33:15,110 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:57302][0m
+INFO 2023-11-13 18:33:15,121 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:57302][0m
+INFO 2023-11-13 18:33:15,124 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:57303][0m
+INFO 2023-11-13 18:33:15,127 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:57306][0m
+INFO 2023-11-13 18:33:15,129 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:57302][0m
+INFO 2023-11-13 18:33:15,201 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:57302][0m
+INFO 2023-11-13 18:35:39,347 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:57348][0m
+INFO 2023-11-13 18:35:39,357 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:57348][0m
+INFO 2023-11-13 18:35:39,361 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:57349][0m
+INFO 2023-11-13 18:35:39,364 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:57348][0m
+INFO 2023-11-13 18:35:39,366 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:57352][0m
+INFO 2023-11-13 18:35:39,431 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:57352][0m
+INFO 2023-11-13 18:40:08,896 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:40:08,906 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:40:08,909 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:62542][0m
+INFO 2023-11-13 18:40:08,911 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:62545][0m
+INFO 2023-11-13 18:40:08,913 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:40:08,972 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:40:19,321 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:40:20,851 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:40:20,861 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:40:20,864 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:62542][0m
+INFO 2023-11-13 18:40:20,865 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:62545][0m
+INFO 2023-11-13 18:40:20,867 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:40:20,915 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:41:02,797 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:41:12,707 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:41:13,260 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:41:13,433 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62541][0m
+ERROR 2023-11-13 18:41:20,106 log>log_response Internal Server Error: /update-settings/1/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 486, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 448, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\asyncio\tasks.py", line 452, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 22, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 490, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\base\views.py", line 2536, in SettingsUpdateView
+    return render(request, 'base/settings-update.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 484, in parse
+    raise self.error(token, e)
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 698, in __init__
+    filter_func = parser.find_filter(filter_name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.2\aqs8server\env\Lib\site-packages\django\template\base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'string'
+ERROR 2023-11-13 18:41:20,118 runserver>log_action [35;1mHTTP GET /update-settings/1/ 500 [0.14, 127.0.0.1:62541][0m
+WARNING 2023-11-13 18:41:20,227 log>log_response Not Found: /favicon.ico
+WARNING 2023-11-13 18:41:20,227 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:41:26,875 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:41:37,038 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:41:37,048 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:41:37,051 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:62577][0m
+INFO 2023-11-13 18:41:37,053 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:62592][0m
+INFO 2023-11-13 18:41:37,055 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:41:37,119 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:41:46,041 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:41:46,052 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:41:46,056 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:62541][0m
+INFO 2023-11-13 18:41:46,058 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:62592][0m
+INFO 2023-11-13 18:41:46,060 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:62577][0m
+INFO 2023-11-13 18:41:46,109 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:62577][0m
+INFO 2023-11-13 18:42:59,721 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.05, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:43:12,194 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:43:12,204 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:43:12,207 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:62610][0m
+INFO 2023-11-13 18:43:12,209 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:62618][0m
+INFO 2023-11-13 18:43:12,211 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:43:12,270 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:43:31,376 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:43:31,386 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:43:31,388 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:62618][0m
+INFO 2023-11-13 18:43:31,391 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:62610][0m
+INFO 2023-11-13 18:43:31,393 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:43:31,439 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:43:49,524 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:43:49,534 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:43:49,537 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:62618][0m
+INFO 2023-11-13 18:43:49,539 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:62610][0m
+INFO 2023-11-13 18:43:49,541 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:43:49,586 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:44:18,099 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:44:19,740 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:44:19,749 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:44:19,752 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:62618][0m
+INFO 2023-11-13 18:44:19,754 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:62610][0m
+INFO 2023-11-13 18:44:19,756 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:44:19,815 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:62609][0m
+INFO 2023-11-13 18:45:46,715 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62778][0m
+INFO 2023-11-13 18:45:46,725 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62778][0m
+INFO 2023-11-13 18:45:46,735 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:62778][0m
+INFO 2023-11-13 18:45:46,737 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:62779][0m
+INFO 2023-11-13 18:45:46,739 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:62782][0m
+INFO 2023-11-13 18:45:46,795 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:62782][0m
+INFO 2023-11-13 18:46:08,543 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62782][0m
+INFO 2023-11-13 18:46:08,555 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62782][0m
+INFO 2023-11-13 18:46:08,559 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:62778][0m
+INFO 2023-11-13 18:46:08,561 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:62779][0m
+INFO 2023-11-13 18:46:08,564 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:62788][0m
+INFO 2023-11-13 18:46:08,615 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:62788][0m
+INFO 2023-11-13 18:46:16,354 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62788][0m
+INFO 2023-11-13 18:46:16,364 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62788][0m
+INFO 2023-11-13 18:46:16,367 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:62779][0m
+INFO 2023-11-13 18:46:16,369 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:62778][0m
+INFO 2023-11-13 18:46:16,373 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:62779][0m
+INFO 2023-11-13 18:46:16,424 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:62779][0m
+INFO 2023-11-13 18:46:49,809 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62779][0m
+INFO 2023-11-13 18:47:17,765 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62779][0m
+INFO 2023-11-13 18:47:36,875 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62779][0m
+INFO 2023-11-13 18:47:36,885 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62779][0m
+INFO 2023-11-13 18:47:36,888 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:62809][0m
+INFO 2023-11-13 18:47:36,890 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:62816][0m
+INFO 2023-11-13 18:47:36,892 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:62817][0m
+INFO 2023-11-13 18:47:36,951 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:62817][0m
+INFO 2023-11-13 18:47:46,252 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62817][0m
+INFO 2023-11-13 18:47:46,262 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62817][0m
+INFO 2023-11-13 18:47:46,266 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:62809][0m
+INFO 2023-11-13 18:47:46,268 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:62816][0m
+INFO 2023-11-13 18:47:46,269 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:62817][0m
+INFO 2023-11-13 18:47:46,312 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:62817][0m
+INFO 2023-11-13 18:50:49,179 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:62984][0m
+INFO 2023-11-13 18:50:49,189 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:62984][0m
+INFO 2023-11-13 18:50:49,191 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:62984][0m
+INFO 2023-11-13 18:50:49,195 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:62985][0m
+INFO 2023-11-13 18:50:49,197 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:62988][0m
+INFO 2023-11-13 18:50:49,250 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:62988][0m
+INFO 2023-11-13 18:54:33,495 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:59604][0m
+INFO 2023-11-13 18:54:33,505 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:59604][0m
+INFO 2023-11-13 18:54:33,508 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:59605][0m
+INFO 2023-11-13 18:54:33,511 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:59608][0m
+INFO 2023-11-13 18:54:33,514 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.01, 127.0.0.1:59609][0m
+INFO 2023-11-13 18:54:33,572 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:59609][0m
+INFO 2023-11-13 18:55:31,022 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:59609][0m
+INFO 2023-11-13 18:55:31,033 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:59609][0m
+INFO 2023-11-13 18:55:31,035 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:59608][0m
+INFO 2023-11-13 18:55:31,037 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:59605][0m
+INFO 2023-11-13 18:55:31,039 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:59609][0m
+INFO 2023-11-13 18:55:31,094 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:59609][0m
+INFO 2023-11-13 18:59:33,347 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:59723][0m
+INFO 2023-11-13 18:59:33,358 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:59723][0m
+INFO 2023-11-13 18:59:33,361 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:59724][0m
+INFO 2023-11-13 18:59:33,363 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:59727][0m
+INFO 2023-11-13 18:59:33,365 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:59723][0m
+INFO 2023-11-13 18:59:33,425 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:59723][0m
