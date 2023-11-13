@@ -17,7 +17,6 @@ import pytz
 from django.utils.timezone import localtime, get_current_timezone
 from datetime import datetime
 
-
 class CaptchaForm(forms.Form):
     captcha = ReCaptchaField(
     widget = ReCaptchaV2Checkbox(
@@ -30,7 +29,27 @@ class CaptchaForm(forms.Form):
     # captcha = ReCaptchaField()
 
 class BranchSettingsForm(ModelForm):
-    bcode = forms.fields.CharField(label='Branch Code123', max_length=100)
+    bcode = forms.fields.CharField(label='Branch Code')
+    enabled = forms.fields.BooleanField(label='Enabled Branch', required=False)
+    name = forms.fields.CharField(label='Branch Name')
+    address = forms.fields.CharField(label='Branch Address')
+    gps = forms.fields.CharField(label='GPS')
+    officehourstart = forms.fields.TimeField(label='Office Hour open time')
+    officehourend = forms.fields.TimeField(label='Office Hour close time')
+    tickettimestart = forms.fields.TimeField(label='Ticket start time')
+    tickettimeend = forms.fields.TimeField(label='Ticket end time')
+    displayenabled = forms.fields.BooleanField(label='Enabled display', required=False)
+    queuepriority = forms.fields.ChoiceField(label='Queue Priority', choices=Branch.PRIORITY)
+    displayflashtime = forms.fields.IntegerField(label='Display flash time (0-50)')
+    voiceenabled = forms.fields.BooleanField(label='Enabled Voice', required=False)
+    language1 = forms.fields.CharField(label='First Language (0-4), 0 is not used')
+    language2 = forms.fields.CharField(label='Second Language (0-4), 0 is not used')
+    language3 = forms.fields.CharField(label='3rd Language (0-4), 0 is not used')
+    language4 = forms.fields.CharField(label='4th Language (0-4), 0 is not used')
+    usersinglelogin = forms.fields.BooleanField(label='User single login', required=False)
+    enabledsms = forms.fields.BooleanField(label='Enabled SMS', required=False)
+    smsmsg = forms.fields.CharField(label='SMS Message')
+
     class Meta:
         model = Branch
         fields = ['bcode', 'enabled', 'name', 'address', 'gps', 'timezone', 'officehourstart', 'officehourend', 'tickettimestart', 'tickettimeend', 'queuepriority', 'displayenabled', 'displayflashtime', 'voiceenabled', 'language1', 'language2', 'language3', 'language4', 'usersinglelogin', 'enabledsms', 'smsmsg']

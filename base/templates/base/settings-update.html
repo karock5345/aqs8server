@@ -121,11 +121,13 @@
                     {% csrf_token %}
                     
                     {% for field in branchsettingsform %}
-                        {% if field.name == "officehourstart" or field.name == "officehourend" or field.name == "tickettimestart" or field.name == "tickettimeend" %}
+                        {% if field.name == "_officehourstart" or field.name == "_officehourend" or field.name == "_tickettimestart" or field.name == "_tickettimeend" %}
                             <div class="form__group">
                                 {{field.label}}
-                                <input type="time" name="{{field.name}}" value="{{field.value|time:'H:i:s'}}" step="1">
+                                <input type="time" name="{{field.name}}"  value={{field}} step="1">{{field}}
+                                <!-- <input type="time" name="{{field.name}}"  value="{{field.value|time:'H:i:s'}}" step="1"> -->
                             </div>
+                            
                         {% else %}
                             <div class="form__group">
                                 <label class="profile_pic">{{field.label}}{{field}}</label>
