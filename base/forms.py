@@ -38,9 +38,18 @@ class BranchSettingsForm(ModelForm):
     officehourend = forms.fields.TimeField(label='Office Hour close time')
     tickettimestart = forms.fields.TimeField(label='Ticket start time')
     tickettimeend = forms.fields.TimeField(label='Ticket end time')
-    displayenabled = forms.fields.BooleanField(label='Enabled display', required=False)
+
     queuepriority = forms.fields.ChoiceField(label='Queue Priority', choices=Branch.PRIORITY)
+    queuemask = forms.fields.CharField(label='Queue Mask')
+    ticketmax = forms.fields.IntegerField(label='Ticket max number')
+    ticketnext = forms.fields.IntegerField(label='Ticket next number')
+    ticketnoformat = forms.fields.CharField(label='Ticket number format ("000" means: A001, B049)')
+    ticketrepeatnumber = forms.fields.BooleanField(label='Ticket repeat number (False: A001 -> B002 -> A003)', required=False)
+    
+    
+    displayenabled = forms.fields.BooleanField(label='Enabled display', required=False)
     displayflashtime = forms.fields.IntegerField(label='Display flash time (0-50)')
+
     voiceenabled = forms.fields.BooleanField(label='Enabled Voice', required=False)
     language1 = forms.fields.CharField(label='First Language (0-4), 0 is not used')
     language2 = forms.fields.CharField(label='Second Language (0-4), 0 is not used')
@@ -52,7 +61,9 @@ class BranchSettingsForm(ModelForm):
 
     class Meta:
         model = Branch
-        fields = ['bcode', 'enabled', 'name', 'address', 'gps', 'timezone', 'officehourstart', 'officehourend', 'tickettimestart', 'tickettimeend', 'queuepriority', 'displayenabled', 'displayflashtime', 'voiceenabled', 'language1', 'language2', 'language3', 'language4', 'usersinglelogin', 'enabledsms', 'smsmsg']
+        fields = ['bcode', 'enabled', 'name', 'address', 'gps', 'timezone', 'officehourstart', 'officehourend', 'tickettimestart', 'tickettimeend', 
+                  'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
+                  'displayenabled', 'displayflashtime', 'voiceenabled', 'language1', 'language2', 'language3', 'language4', 'usersinglelogin', 'enabledsms', 'smsmsg']
         # fields = '__all__'
     def __init__(self, *args, **kwargs):
         super(BranchSettingsForm, self).__init__(*args, **kwargs)
