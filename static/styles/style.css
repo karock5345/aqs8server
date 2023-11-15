@@ -619,8 +619,8 @@ a {
 .form__group_checkbox  {
   /* margin-bottom: 2rem; */
   margin-top: auto;
-  padding-bottom: 2rem;
-  padding-top: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
   /* font-size: 15rem; */
   display: flex;
   align-self: right;
@@ -629,7 +629,7 @@ a {
 .form__group {
   /* margin-bottom: 2rem; */
   /* margin-top: auto; */
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
   width: 100%;
 }
 

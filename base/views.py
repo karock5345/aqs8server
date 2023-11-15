@@ -3382,20 +3382,23 @@ def checkbranchsettingsform(form):
     if error == '':
         if newform.queuepriority == '':
             error = 'An error occurcd : Queue priority is blank'
-    # if error == '':
-    #     if newform.queuemask == '':
-    #         error = 'An error occurcd : Queue mask is blank' 
-    # if error == '':
-    #     if newform.ticketmax < 1 :
-    #         error = 'An error occurcd : Ticket max is not correct'
-    # if error == '':
-    #     if newform.ticketnoformat == '':
-    #         error = 'An error occurcd : Ticket format is blank'
-    # if error == '':
-    #     for c in newform.ticketnoformat:
-    #         if c != '0':
-    #             error = 'An error occurcd : Ticket number format should be "0".'
-    #             break
+    if error == '':
+        if newform.queuemask == '':
+            error = 'An error occurcd : Queue mask is blank' 
+    if error == '':
+        if newform.ticketmax < 1 :
+            error = 'An error occurcd : Ticket max is not correct'
+    if error == '':
+        if newform.ticketnext < 1 :
+            error = 'An error occurcd : Ticket next is not correct'            
+    if error == '':
+        if newform.ticketnoformat == '':
+            error = 'An error occurcd : Ticket format is blank'
+    if error == '':
+        for c in newform.ticketnoformat:
+            if c != '0':
+                error = 'An error occurcd : Ticket number format should be "0".'
+                break
     if error == '':
         if 0 < newform.displayflashtime and newform.displayflashtime <= 50 :
             pass
