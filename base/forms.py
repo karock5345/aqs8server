@@ -28,16 +28,19 @@ class CaptchaForm(forms.Form):
 
     # captcha = ReCaptchaField()
 
-class BranchSettingsForm(ModelForm):
-    bcode = forms.fields.CharField(label='Branch Code')
-    enabled = forms.fields.BooleanField(label='Enabled Branch', required=False)
+class BranchSettingsForm_Admin(ModelForm):
+    enabled = forms.fields.BooleanField(label='Enable Branch', required=False)
+    subscribe = forms.fields.BooleanField(label='Enable Subscribe', required=False)
+    substart = forms.fields.DateTimeField(label='Subscribe start date (local time)' , widget=forms.widgets.DateTimeInput( attrs={'type':'datetime-local', 'step':'1'}))
+    subend = forms.fields.DateTimeField(label='Subscribe end date (local time)', widget=forms.widgets.DateTimeInput( attrs={'type':'datetime-local', 'step':'1'}))
+
     name = forms.fields.CharField(label='Branch Name')
     address = forms.fields.CharField(label='Branch Address')
-    gps = forms.fields.CharField(label='GPS')
-    officehourstart = forms.fields.TimeField(label='Office Hour open time')
-    officehourend = forms.fields.TimeField(label='Office Hour close time')
-    tickettimestart = forms.fields.TimeField(label='Ticket start time')
-    tickettimeend = forms.fields.TimeField(label='Ticket end time')
+    gps = forms.fields.CharField(label='GPS', required=False)
+    officehourstart = forms.fields.TimeField(label='Office Hour open time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}))
+    officehourend = forms.fields.TimeField(label='Office Hour close time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}))
+    tickettimestart = forms.fields.TimeField(label='Ticket start time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}))
+    tickettimeend = forms.fields.TimeField(label='Ticket end time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}))
 
     queuepriority = forms.fields.ChoiceField(label='Queue Priority', choices=Branch.PRIORITY)
     queuemask = forms.fields.CharField(label='Queue Mask')
@@ -47,32 +50,39 @@ class BranchSettingsForm(ModelForm):
     ticketrepeatnumber = forms.fields.BooleanField(label='Ticket repeat number (False: A001 -> B002 -> A003)', required=False)
     
     
-    displayenabled = forms.fields.BooleanField(label='Enabled display', required=False)
+    displayenabled = forms.fields.BooleanField(label='Enable display', required=False)
     displayflashtime = forms.fields.IntegerField(label='Display flash time (0-50)')
 
-    voiceenabled = forms.fields.BooleanField(label='Enabled Voice', required=False)
+    voiceenabled = forms.fields.BooleanField(label='Enable Voice announcement', required=False)
     language1 = forms.fields.CharField(label='First Language (0-4), 0 is not used')
     language2 = forms.fields.CharField(label='Second Language (0-4), 0 is not used')
     language3 = forms.fields.CharField(label='3rd Language (0-4), 0 is not used')
     language4 = forms.fields.CharField(label='4th Language (0-4), 0 is not used')
     usersinglelogin = forms.fields.BooleanField(label='User single login', required=False)
-    enabledsms = forms.fields.BooleanField(label='Enabled SMS', required=False)
-    smsmsg = forms.fields.CharField(label='SMS Message')
+    enabledsms = forms.fields.BooleanField(label='Enable SMS', required=False)
+    smsmsg = forms.fields.CharField(label='SMS Message', required=False)
 
     class Meta:
         model = Branch
-        fields = ['bcode', 'enabled', 'name', 'address', 'gps', 'timezone', 'officehourstart', 'officehourend', 'tickettimestart', 'tickettimeend', 
+        fields = ['enabled', 'subscribe', 'substart', 'subend',
+                  'name', 'address', 'gps', 
+                  'timezone', 'officehourstart', 'officehourend', 'tickettimestart', 'tickettimeend', 
                   'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
-                  'displayenabled', 'displayflashtime', 'voiceenabled', 'language1', 'language2', 'language3', 'language4', 'usersinglelogin', 'enabledsms', 'smsmsg']
-        # fields = '__all__'
+                  'displayenabled', 'displayflashtime', 
+                  'voiceenabled', 'language1', 'language2', 'language3', 'language4', 
+                  'usersinglelogin', 'enabledsms', 'smsmsg']
+
     def __init__(self, *args, **kwargs):
-        super(BranchSettingsForm, self).__init__(*args, **kwargs)
+        super(BranchSettingsForm_Admin, self).__init__(*args, **kwargs)
         # change time from DB utc to local time
         timezone = self.initial['timezone']
         self.initial['officehourstart'] = funUTCtoLocaltime(self.initial['officehourstart'], timezone)
         self.initial['officehourend'] = funUTCtoLocaltime(self.initial['officehourend'], timezone)
         self.initial['tickettimestart'] = funUTCtoLocaltime(self.initial['tickettimestart'], timezone)
         self.initial['tickettimeend'] = funUTCtoLocaltime(self.initial['tickettimeend'], timezone)
+        self.initial['substart'] = funUTCtoLocal(self.initial['substart'], timezone)
+        self.initial['subend'] = funUTCtoLocal(self.initial['subend'], timezone)
+
 
 # for PCCW manager Group only include frontline and manager
 class UserFormManager(ModelForm):

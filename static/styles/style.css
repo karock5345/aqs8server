@@ -649,6 +649,17 @@ a {
   font-weight: 1000;
   /* margin-bottom: 1rem; */
 }
+
+.form__group_title {
+  margin-top: 1rem;
+  display: block;
+  font-size: 2rem;
+  font-weight: 1000;
+  margin-bottom: 0rem;
+  text-align: center;
+  width: 100%;
+}
+
 .form__group a {
   display: block;
   font-size: 1.5rem;

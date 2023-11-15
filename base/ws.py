@@ -307,7 +307,10 @@ def wssendvoice(bcode, countertypename, ttype, tno, cno):
             branch = branchobj[0]
         else :
             error = 'Branch not found.'
-
+    if error == '' :
+        if branch.voiceenabled == False :
+            error = 'Voice is not enabled.'
+            
     # get the Counter type
     countertype = None
     if error == '' :    

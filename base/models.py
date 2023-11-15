@@ -38,8 +38,8 @@ class Branch(models.Model):
     bcode = models.CharField(max_length=200,unique=True, null=False, blank=False) # branch code
     enabled = models.BooleanField(default=True)
     subscribe = models.BooleanField(default=False)
-    substart = models.DateTimeField()
-    subend = models.DateTimeField()
+    substart = models.DateTimeField(default=datetime.datetime.strptime('2000-01-01 00:00:00', '%Y-%m-%d %H:%M:%S') )
+    subend = models.DateTimeField(default=datetime.datetime.strptime('2000-01-01 00:00:00', '%Y-%m-%d %H:%M:%S') )
     name = models.TextField() 
     address = models.TextField(null=True, blank=True) 
     gps = models.TextField(null=True, blank=True) 

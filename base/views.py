@@ -15,7 +15,7 @@ from base.decorators import *
 # from django.urls import reverse_lazy
 
 from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch, Ticket, UserStatusLog
-from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, resetForm, BranchSettingsForm
+from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, resetForm, BranchSettingsForm_Admin
 from .forms import CaptchaForm, getForm, voidForm, newTicketTypeForm, UserFormSuper, UserFormManager, UserFormSupport, UserFormAdminSelf
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 from django.utils.timezone import localtime, get_current_timezone
@@ -2456,61 +2456,28 @@ def Settings_Save(request, pk):
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
 def SettingsUpdateView(request, pk):
-    # branch = Branch.objects.get(id=pk)
-
-    # branchcode = branch.bcode
-    # branchname = branch.name
-    # branchenabled = branch.enabled
-
-    # timezone = branch.timezone
-
-    # officehourstart = branch.officehourstart
-    # l_officehourstart = funUTCtoLocaltime(officehourstart, timezone)
-    # sofficehourstart =  l_officehourstart.strftime('%H:%M:%S')
-
-    # officehourend = branch.officehourend
-    # l_officehourend = funUTCtoLocaltime(officehourend, timezone)
-    # sofficehourend =  l_officehourend.strftime('%H:%M:%S')
-
-    # tickettimestart = branch.tickettimestart
-    # l_tickettimestart = funUTCtoLocaltime(tickettimestart, timezone)
-    # stickettimestart =  l_tickettimestart.strftime('%H:%M:%S')
-    # tickettimeend = branch.tickettimeend
-    # l_tickettimeend = funUTCtoLocaltime(tickettimeend, timezone)
-    # stickettimeend =  l_tickettimeend.strftime('%H:%M:%S')
-
-    # queuepriority = branch.queuepriority
-
-    # countertypes = CounterType.objects.filter(Q(branch=branch))
-
-    # enabledsms = branch.enabledsms
-    # smsmsg = branch.smsmsg
-
-    # context = {
-    # 'branch':branch,
-    # 'branchcode':branchcode, 'branchname':branchname, 'branchenabled':branchenabled,
-    # 'timezone':timezone, 
-    # 'officehourstart':sofficehourstart, 'officehourend':sofficehourend,
-    # 'tickettimestart':stickettimestart, 'tickettimeend':stickettimeend,
-    # 'queuepriority':queuepriority,
-    # 'countertypes':countertypes,
-    # 'enabledsms':enabledsms,
-    # 'smsmsg':smsmsg,
-    # }
-
-
     branch = Branch.objects.get(id=pk)
     bcode = branch.bcode
+    branchname = branch.name
+    countertypes = CounterType.objects.filter(Q(branch=branch))
     # auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
 
+    userright = 'counter'
+    if request.user.is_superuser == True :
+        userright = 'admin'
+    elif request.user.groups.filter(name='admin').exists() == True :
+        userright = 'admin'
+
+
     if request.method == 'POST':
-        branchsettingsform = BranchSettingsForm(request.POST, instance=branch, prefix='branchsettingsform')
+        branchsettingsform = BranchSettingsForm_Admin(request.POST, instance=branch, prefix='branchsettingsform')
         error = ''
         error, bsf = checkbranchsettingsform(branchsettingsform)
         if error == '':
             try:
                 bsf.save()
-
+                datetime_now = timezone.now()
+                sch_shutdown(branch, datetime_now)
             except:
                 error = 'An error occurcd during updating Branch settings'
         if error == '':
@@ -2525,9 +2492,9 @@ def SettingsUpdateView(request, pk):
         else:
             messages.error(request, error )
     else:
-        branchsettingsform = BranchSettingsForm(instance=branch, prefix='branchsettingsform')
+        branchsettingsform = BranchSettingsForm_Admin(instance=branch, prefix='branchsettingsform')
         
-    context = {'aqs_version':aqs_version} | { 'bcode':bcode, 'branchsettingsform':branchsettingsform}
+    context = {'aqs_version':aqs_version, 'bcode':bcode,'branchname':branchname , 'countertypes':countertypes, 'branchsettingsform':branchsettingsform}
     return render(request, 'base/settings-update.html', context)
 
 @unauth_user
@@ -3380,6 +3347,16 @@ def checkbranchsettingsform(form):
         except:
             error = 'An error occurcd : Ticket end time is not correct'
     if error == '':
+        try:
+            newform.substart = funLocaltoUTC(newform.substart, newform.timezone)
+        except:
+            error = 'An error occurcd : Subscribe start time is not correct'
+    if error == '':
+        try:
+            newform.subend = funLocaltoUTC(newform.subend, newform.timezone)
+        except:
+            error = 'An error occurcd : Subscribe end time is not correct'            
+    if error == '':
         if newform.queuepriority == '':
             error = 'An error occurcd : Queue priority is blank'
     if error == '':
@@ -3424,5 +3401,7 @@ def checkbranchsettingsform(form):
             pass
         else :
             error = 'An error occurcd : Language 4 should be 0-4.'   
-
+    if error == '':
+        if newform.substart > newform.subend :
+            error = 'An error occurcd : subscribe start time should be earlier than sub end time.'
     return (error, newform)

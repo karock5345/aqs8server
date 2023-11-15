@@ -358,13 +358,16 @@ def loginapi(request, username, password, token, in_branch):
 
 # Convert UTC to Locate datetime
 def funUTCtoLocal(dInput, zone) -> datetime :
-    # localtime = dInput + timedelta(hours=zone)
     UTC_zone = tz.gettz('UTC')
     local_zone = tz.gettz(zone)
-    
-    utc = dInput.replace(tzinfo=UTC_zone)
-    
-    localtime = utc.astimezone(local_zone)
+
+    sDateTime = dInput.strftime('%Y-%m-%d %H:%M:%S')
+    utc = datetime.strptime(sDateTime, '%Y-%m-%d %H:%M:%S')
+    utc = utc.replace(tzinfo=UTC_zone)
+
+    newDateTime = utc.astimezone(local_zone)
+    sDateTime = newDateTime.strftime('%Y-%m-%d %H:%M:%S')
+    localtime = datetime.strptime(sDateTime, '%Y-%m-%d %H:%M:%S')
 
     return localtime
 
@@ -392,14 +395,13 @@ def funUTCtoLocaltime(dInput, zone) -> datetime.time :
 def funLocaltoUTC(dInput, zone) -> datetime :    
     # ts = datetime.mktime(dInput.timetuple())
     # utc = datetime.utcfromtimestamp(ts) 
-    UTC_zone = tz.gettz('UTC')
-    local_zone = tz.gettz(zone)
-    
-    localtime = dInput.replace(tzinfo=local_zone)
+    local_zone = pytz.timezone(zone)
+    str_time = dInput.strftime("%Y-%m-%d %H:%M:%S")
+    naive = datetime.strptime(str_time, "%Y-%m-%d %H:%M:%S")
+    local_dt = local_zone.localize(naive, is_dst=None)
+    utc_dt = local_dt.astimezone(pytz.utc)
 
-    utc = localtime.astimezone(UTC_zone)
-
-    return utc
+    return utc_dt
 # Convert Locate time to UTC
 def funLocaltoUTCtime(dInput, zone) -> datetime.time :   
     # hour = dInput.strftime('%H')
