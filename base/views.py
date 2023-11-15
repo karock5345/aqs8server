@@ -2456,51 +2456,52 @@ def Settings_Save(request, pk):
 @unauth_user
 @allowed_users(allowed_roles=['admin'])
 def SettingsUpdateView(request, pk):
+    # branch = Branch.objects.get(id=pk)
+
+    # branchcode = branch.bcode
+    # branchname = branch.name
+    # branchenabled = branch.enabled
+
+    # timezone = branch.timezone
+
+    # officehourstart = branch.officehourstart
+    # l_officehourstart = funUTCtoLocaltime(officehourstart, timezone)
+    # sofficehourstart =  l_officehourstart.strftime('%H:%M:%S')
+
+    # officehourend = branch.officehourend
+    # l_officehourend = funUTCtoLocaltime(officehourend, timezone)
+    # sofficehourend =  l_officehourend.strftime('%H:%M:%S')
+
+    # tickettimestart = branch.tickettimestart
+    # l_tickettimestart = funUTCtoLocaltime(tickettimestart, timezone)
+    # stickettimestart =  l_tickettimestart.strftime('%H:%M:%S')
+    # tickettimeend = branch.tickettimeend
+    # l_tickettimeend = funUTCtoLocaltime(tickettimeend, timezone)
+    # stickettimeend =  l_tickettimeend.strftime('%H:%M:%S')
+
+    # queuepriority = branch.queuepriority
+
+    # countertypes = CounterType.objects.filter(Q(branch=branch))
+
+    # enabledsms = branch.enabledsms
+    # smsmsg = branch.smsmsg
+
+    # context = {
+    # 'branch':branch,
+    # 'branchcode':branchcode, 'branchname':branchname, 'branchenabled':branchenabled,
+    # 'timezone':timezone, 
+    # 'officehourstart':sofficehourstart, 'officehourend':sofficehourend,
+    # 'tickettimestart':stickettimestart, 'tickettimeend':stickettimeend,
+    # 'queuepriority':queuepriority,
+    # 'countertypes':countertypes,
+    # 'enabledsms':enabledsms,
+    # 'smsmsg':smsmsg,
+    # }
+
+
     branch = Branch.objects.get(id=pk)
-
-    branchcode = branch.bcode
-    branchname = branch.name
-    branchenabled = branch.enabled
-
-    timezone = branch.timezone
-
-    officehourstart = branch.officehourstart
-    l_officehourstart = funUTCtoLocaltime(officehourstart, timezone)
-    sofficehourstart =  l_officehourstart.strftime('%H:%M:%S')
-
-    officehourend = branch.officehourend
-    l_officehourend = funUTCtoLocaltime(officehourend, timezone)
-    sofficehourend =  l_officehourend.strftime('%H:%M:%S')
-
-    tickettimestart = branch.tickettimestart
-    l_tickettimestart = funUTCtoLocaltime(tickettimestart, timezone)
-    stickettimestart =  l_tickettimestart.strftime('%H:%M:%S')
-    tickettimeend = branch.tickettimeend
-    l_tickettimeend = funUTCtoLocaltime(tickettimeend, timezone)
-    stickettimeend =  l_tickettimeend.strftime('%H:%M:%S')
-
-    queuepriority = branch.queuepriority
-
-    countertypes = CounterType.objects.filter(Q(branch=branch))
-
-    enabledsms = branch.enabledsms
-    smsmsg = branch.smsmsg
-
-    context = {
-    'branch':branch,
-    'branchcode':branchcode, 'branchname':branchname, 'branchenabled':branchenabled,
-    'timezone':timezone, 
-    'officehourstart':sofficehourstart, 'officehourend':sofficehourend,
-    'tickettimestart':stickettimestart, 'tickettimeend':stickettimeend,
-    'queuepriority':queuepriority,
-    'countertypes':countertypes,
-    'enabledsms':enabledsms,
-    'smsmsg':smsmsg,
-    }
-
-
-    branch = Branch.objects.get(id=pk)
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    bcode = branch.bcode
+    # auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
 
     if request.method == 'POST':
         branchsettingsform = BranchSettingsForm(request.POST, instance=branch, prefix='branchsettingsform')
@@ -2525,14 +2526,8 @@ def SettingsUpdateView(request, pk):
             messages.error(request, error )
     else:
         branchsettingsform = BranchSettingsForm(instance=branch, prefix='branchsettingsform')
-        # change all time from UTC to local time
-        timezone = branch.timezone
-        # get branchsettingsform.fields['officehourstart'] time
-
-
         
-        
-    context = {'aqs_version':aqs_version} | context | {'branch':branch, 'branchsettingsform':branchsettingsform}
+    context = {'aqs_version':aqs_version} | { 'bcode':bcode, 'branchsettingsform':branchsettingsform}
     return render(request, 'base/settings-update.html', context)
 
 @unauth_user
