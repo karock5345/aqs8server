@@ -31377,3 +31377,841 @@ INFO 2023-11-15 18:52:09,169 base>v_roche>rocheSMS SMS disabled
 INFO 2023-11-15 18:52:09,179 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=ST&tickettype=AA 200 [0.08, 127.0.0.1:54277][0m
 INFO 2023-11-15 18:54:18,488 runserver>log_action WebSocket DISCONNECT /ws/voice/ST/c/ [127.0.0.1:54167]
 INFO 2023-11-15 18:54:18,488 base>consumers>disconnect Disconnected:voice_ST_c Internal [0]
+INFO 2023-11-16 00:51:56,448 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 00:51:57,459 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 00:51:57,465 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 00:51:58,069 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 00:51:58,070 base>views>main -SCH- Now:11/15/2023, 16:51:58
+INFO 2023-11-16 00:51:58,204 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:51:58,204 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:51:58,205 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:51:58 [No]
+INFO 2023-11-16 00:51:58,209 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:51:58,210 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:51:58,210 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:51:58 [No]
+INFO 2023-11-16 00:51:58,211 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 00:51:58,212 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 00:51:58,213 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 16:51:58 [Yes]
+INFO 2023-11-16 00:51:58,214 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:51:58,215 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:51:58,215 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:51:58 [No]
+INFO 2023-11-16 00:51:58,217 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:51:58,217 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:51:58,217 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:51:58 [No]
+INFO 2023-11-16 00:51:58,219 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:51:58,219 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:51:58,219 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:51:58 [No]
+INFO 2023-11-16 00:52:07,449 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 00:52:07,593 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 00:52:07,593 base>views>main -SCH- Now:11/15/2023, 16:52:07
+INFO 2023-11-16 00:52:07,688 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:52:07,688 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:52:07,688 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:52:07 [No]
+INFO 2023-11-16 00:52:07,692 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:52:07,692 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:52:07,692 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:52:07 [No]
+INFO 2023-11-16 00:52:07,693 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 00:52:07,694 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 00:52:07,694 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 16:52:07 [Yes]
+INFO 2023-11-16 00:52:07,695 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:52:07,696 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:52:07,697 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:52:07 [No]
+INFO 2023-11-16 00:52:07,698 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:52:07,699 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:52:07,699 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:52:07 [No]
+INFO 2023-11-16 00:52:07,701 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:52:07,702 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:52:07,702 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:52:07 [No]
+INFO 2023-11-16 00:53:27,296 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\aqs\settings.py changed, reloading.
+INFO 2023-11-16 00:53:28,655 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 00:53:28,661 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 00:53:28,828 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 00:53:28,828 base>views>main -SCH- Now:11/15/2023, 16:53:28
+INFO 2023-11-16 00:53:28,918 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:53:28,918 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:53:28,919 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:53:28 [No]
+INFO 2023-11-16 00:53:28,921 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:53:28,922 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:53:28,922 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:53:28 [No]
+INFO 2023-11-16 00:53:28,924 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 00:53:28,924 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 00:53:28,925 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 16:53:28 [Yes]
+INFO 2023-11-16 00:53:28,926 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:53:28,926 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:53:28,927 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:53:28 [No]
+INFO 2023-11-16 00:53:28,928 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:53:28,928 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:53:28,928 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:53:28 [No]
+INFO 2023-11-16 00:53:28,930 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:53:28,931 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:53:28,931 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:53:28 [No]
+INFO 2023-11-16 00:53:33,266 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 00:53:33,407 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 00:53:33,407 base>views>main -SCH- Now:11/15/2023, 16:53:33
+INFO 2023-11-16 00:53:33,497 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:53:33,498 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:53:33,498 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:53:33 [No]
+INFO 2023-11-16 00:53:33,500 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:53:33,501 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:53:33,501 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:53:33 [No]
+INFO 2023-11-16 00:53:33,503 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 00:53:33,503 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 00:53:33,503 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 16:53:33 [Yes]
+INFO 2023-11-16 00:53:33,505 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:53:33,505 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:53:33,505 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:53:33 [No]
+INFO 2023-11-16 00:53:33,508 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:53:33,508 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:53:33,509 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:53:33 [No]
+INFO 2023-11-16 00:53:33,510 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 00:53:33,511 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 00:53:33,511 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 16:53:33 [No]
+INFO 2023-11-16 00:53:53,967 runserver>log_action [32mHTTP GET / 302 [0.04, 127.0.0.1:4533][0m
+INFO 2023-11-16 00:53:54,033 runserver>log_action [mHTTP GET /login/ 200 [0.05, 127.0.0.1:4533][0m
+INFO 2023-11-16 00:53:54,213 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.10, 127.0.0.1:4533][0m
+INFO 2023-11-16 00:53:54,226 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.11, 127.0.0.1:4540][0m
+INFO 2023-11-16 00:53:54,231 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.02, 127.0.0.1:4543][0m
+INFO 2023-11-16 00:53:54,236 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.02, 127.0.0.1:4544][0m
+INFO 2023-11-16 00:53:54,392 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:4543][0m
+INFO 2023-11-16 00:53:57,532 runserver>log_action [32mHTTP POST /login/ 302 [0.43, 127.0.0.1:4533][0m
+INFO 2023-11-16 00:53:57,642 runserver>log_action [mHTTP GET / 200 [0.11, 127.0.0.1:4533][0m
+INFO 2023-11-16 00:53:59,010 runserver>log_action [mHTTP GET /settings/ 200 [0.08, 127.0.0.1:4533][0m
+INFO 2023-11-16 00:54:00,077 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.07, 127.0.0.1:4533][0m
+INFO 2023-11-16 01:08:51,623 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:5481][0m
+INFO 2023-11-16 01:08:51,644 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:5481][0m
+INFO 2023-11-16 01:08:57,319 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:08:57,320 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:08:57,320 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:08:57 [No]
+INFO 2023-11-16 01:08:57,351 runserver>log_action [32mHTTP POST /update-settings/1/ 302 [1.83, 127.0.0.1:5481][0m
+INFO 2023-11-16 01:08:57,422 runserver>log_action [mHTTP GET /settings/ 200 [0.07, 127.0.0.1:5481][0m
+INFO 2023-11-16 01:08:58,414 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:5481][0m
+INFO 2023-11-16 01:10:16,802 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.04, 127.0.0.1:5570][0m
+INFO 2023-11-16 01:10:48,538 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:10:50,134 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:10:50,144 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:10:50,319 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:10:50,319 base>views>main -SCH- Now:11/15/2023, 17:10:50
+INFO 2023-11-16 01:10:50,418 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:10:50,419 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:10:50,419 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:10:50 [No]
+INFO 2023-11-16 01:10:50,422 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:10:50,423 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:10:50,423 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:10:50 [No]
+INFO 2023-11-16 01:10:50,424 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:10:50,425 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:10:50,425 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:10:50 [Yes]
+INFO 2023-11-16 01:10:50,427 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:10:50,427 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:10:50,427 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:10:50 [No]
+INFO 2023-11-16 01:10:50,429 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:10:50,429 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:10:50,429 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:10:50 [No]
+INFO 2023-11-16 01:10:50,431 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:10:50,431 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:10:50,432 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:10:50 [No]
+INFO 2023-11-16 01:10:58,635 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:11:00,113 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:11:00,122 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:11:00,331 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:11:00,331 base>views>main -SCH- Now:11/15/2023, 17:11:00
+INFO 2023-11-16 01:11:00,455 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:00,455 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:00,456 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:00 [No]
+INFO 2023-11-16 01:11:00,458 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:00,458 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:00,459 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:00 [No]
+INFO 2023-11-16 01:11:00,461 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:11:00,461 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:11:00,462 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:11:00 [Yes]
+INFO 2023-11-16 01:11:00,463 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:00,464 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:00,465 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:00 [No]
+INFO 2023-11-16 01:11:00,467 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:00,467 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:00,469 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:00 [No]
+INFO 2023-11-16 01:11:00,471 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:00,471 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:00,472 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:00 [No]
+INFO 2023-11-16 01:11:03,443 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:11:04,776 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:11:04,783 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:11:04,956 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:11:04,956 base>views>main -SCH- Now:11/15/2023, 17:11:04
+INFO 2023-11-16 01:11:05,059 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:05,060 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:05,060 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:04 [No]
+INFO 2023-11-16 01:11:05,063 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:05,064 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:05,064 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:05 [No]
+INFO 2023-11-16 01:11:05,067 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:11:05,067 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:11:05,067 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:11:05 [Yes]
+INFO 2023-11-16 01:11:05,069 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:05,069 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:05,070 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:05 [No]
+INFO 2023-11-16 01:11:05,072 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:05,073 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:05,073 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:05 [No]
+INFO 2023-11-16 01:11:05,075 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:05,077 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:05,077 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:05 [No]
+INFO 2023-11-16 01:11:10,177 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:11:11,550 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:11:11,559 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:11:11,726 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:11:11,727 base>views>main -SCH- Now:11/15/2023, 17:11:11
+INFO 2023-11-16 01:11:11,812 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:11,814 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:11,814 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:11 [No]
+INFO 2023-11-16 01:11:11,818 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:11,818 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:11,818 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:11 [No]
+INFO 2023-11-16 01:11:11,820 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:11:11,821 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:11:11,822 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:11:11 [Yes]
+INFO 2023-11-16 01:11:11,823 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:11,824 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:11,824 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:11 [No]
+INFO 2023-11-16 01:11:11,826 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:11,826 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:11,826 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:11 [No]
+INFO 2023-11-16 01:11:11,828 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:11,828 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:11,829 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:11 [No]
+INFO 2023-11-16 01:11:22,167 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:11:23,297 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:11:23,303 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:11:23,480 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:11:23,481 base>views>main -SCH- Now:11/15/2023, 17:11:23
+INFO 2023-11-16 01:11:23,575 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:23,575 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:23,576 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:23 [No]
+INFO 2023-11-16 01:11:23,579 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:23,579 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:23,579 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:23 [No]
+INFO 2023-11-16 01:11:23,581 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:11:23,581 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:11:23,581 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:11:23 [Yes]
+INFO 2023-11-16 01:11:23,584 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:23,584 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:23,585 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:23 [No]
+INFO 2023-11-16 01:11:23,587 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:23,587 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:23,587 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:23 [No]
+INFO 2023-11-16 01:11:23,589 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:23,589 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:23,590 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:23 [No]
+INFO 2023-11-16 01:11:46,865 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:11:47,989 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:11:47,997 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:11:48,163 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:11:48,163 base>views>main -SCH- Now:11/15/2023, 17:11:48
+INFO 2023-11-16 01:11:48,268 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:48,269 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:48,270 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:48 [No]
+INFO 2023-11-16 01:11:48,272 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:48,272 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:48,272 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:48 [No]
+INFO 2023-11-16 01:11:48,274 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:11:48,275 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:11:48,275 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:11:48 [Yes]
+INFO 2023-11-16 01:11:48,278 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:48,278 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:48,279 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:48 [No]
+INFO 2023-11-16 01:11:48,280 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:48,280 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:48,281 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:48 [No]
+INFO 2023-11-16 01:11:48,282 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:48,282 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:48,283 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:48 [No]
+INFO 2023-11-16 01:11:51,153 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:11:52,258 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:11:52,263 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:11:52,441 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:11:52,442 base>views>main -SCH- Now:11/15/2023, 17:11:52
+INFO 2023-11-16 01:11:52,515 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:52,516 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:52,517 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:52 [No]
+INFO 2023-11-16 01:11:52,519 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:52,520 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:52,520 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:52 [No]
+INFO 2023-11-16 01:11:52,522 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:11:52,523 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:11:52,523 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:11:52 [Yes]
+INFO 2023-11-16 01:11:52,525 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:52,525 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:52,526 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:52 [No]
+INFO 2023-11-16 01:11:52,527 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:52,527 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:52,528 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:52 [No]
+INFO 2023-11-16 01:11:52,529 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:11:52,529 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:11:52,530 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:11:52 [No]
+INFO 2023-11-16 01:11:59,717 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:12:00,997 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:12:01,005 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:12:02,863 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:12:04,233 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:12:04,244 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:12:04,501 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:12:04,502 base>views>main -SCH- Now:11/15/2023, 17:12:04
+INFO 2023-11-16 01:12:04,650 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:04,651 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:04,651 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:04 [No]
+INFO 2023-11-16 01:12:04,654 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:04,655 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:04,655 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:04 [No]
+INFO 2023-11-16 01:12:04,657 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:12:04,658 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:12:04,658 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:12:04 [Yes]
+INFO 2023-11-16 01:12:04,661 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:04,662 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:04,662 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:04 [No]
+INFO 2023-11-16 01:12:04,664 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:04,664 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:04,665 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:04 [No]
+INFO 2023-11-16 01:12:04,666 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:04,667 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:04,667 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:04 [No]
+INFO 2023-11-16 01:12:06,832 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:12:08,158 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:12:08,163 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:12:08,323 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:12:08,323 base>views>main -SCH- Now:11/15/2023, 17:12:08
+INFO 2023-11-16 01:12:08,412 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:08,413 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:08,413 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:08 [No]
+INFO 2023-11-16 01:12:08,415 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:08,415 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:08,415 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:08 [No]
+INFO 2023-11-16 01:12:08,418 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:12:08,418 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:12:08,418 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:12:08 [Yes]
+INFO 2023-11-16 01:12:08,420 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:08,420 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:08,421 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:08 [No]
+INFO 2023-11-16 01:12:08,422 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:08,423 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:08,424 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:08 [No]
+INFO 2023-11-16 01:12:08,425 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:08,425 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:08,425 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:08 [No]
+INFO 2023-11-16 01:12:11,283 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:12:12,594 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:12:12,600 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:12:12,742 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:12:12,742 base>views>main -SCH- Now:11/15/2023, 17:12:12
+INFO 2023-11-16 01:12:12,833 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:12,834 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:12,835 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:12 [No]
+INFO 2023-11-16 01:12:12,838 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:12,838 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:12,838 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:12 [No]
+INFO 2023-11-16 01:12:12,840 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:12:12,840 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:12:12,841 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:12:12 [Yes]
+INFO 2023-11-16 01:12:12,842 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:12,842 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:12,843 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:12 [No]
+INFO 2023-11-16 01:12:12,845 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:12,845 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:12,845 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:12 [No]
+INFO 2023-11-16 01:12:12,847 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:12,847 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:12,848 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:12 [No]
+INFO 2023-11-16 01:12:14,790 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:12:16,515 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:12:16,525 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:12:16,709 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:12:16,709 base>views>main -SCH- Now:11/15/2023, 17:12:16
+INFO 2023-11-16 01:12:16,820 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:16,822 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:16,822 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:16 [No]
+INFO 2023-11-16 01:12:16,824 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:16,826 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:16,827 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:16 [No]
+INFO 2023-11-16 01:12:16,829 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:12:16,830 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:12:16,830 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:12:16 [Yes]
+INFO 2023-11-16 01:12:16,832 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:16,832 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:16,833 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:16 [No]
+INFO 2023-11-16 01:12:16,834 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:16,835 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:16,836 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:16 [No]
+INFO 2023-11-16 01:12:16,838 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:16,838 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:16,839 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:16 [No]
+INFO 2023-11-16 01:12:18,591 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:12:19,893 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:12:19,903 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:12:20,115 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:12:20,116 base>views>main -SCH- Now:11/15/2023, 17:12:20
+INFO 2023-11-16 01:12:20,244 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:20,244 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:20,244 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:20 [No]
+INFO 2023-11-16 01:12:20,248 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:20,248 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:20,249 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:20 [No]
+INFO 2023-11-16 01:12:20,250 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:12:20,251 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:12:20,251 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:12:20 [Yes]
+INFO 2023-11-16 01:12:20,254 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:20,254 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:20,255 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:20 [No]
+INFO 2023-11-16 01:12:20,257 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:20,258 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:20,258 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:20 [No]
+INFO 2023-11-16 01:12:20,260 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:20,261 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:20,261 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:20 [No]
+INFO 2023-11-16 01:12:26,466 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:12:27,831 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:12:27,839 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:12:28,038 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:12:28,039 base>views>main -SCH- Now:11/15/2023, 17:12:28
+INFO 2023-11-16 01:12:28,142 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:28,143 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:28,144 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:28 [No]
+INFO 2023-11-16 01:12:28,148 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:28,149 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:28,149 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:28 [No]
+INFO 2023-11-16 01:12:28,151 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:12:28,152 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:12:28,152 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:12:28 [Yes]
+INFO 2023-11-16 01:12:28,155 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:28,155 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:28,156 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:28 [No]
+INFO 2023-11-16 01:12:28,159 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:28,160 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:28,160 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:28 [No]
+INFO 2023-11-16 01:12:28,163 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:28,163 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:28,164 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:28 [No]
+INFO 2023-11-16 01:12:35,379 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:12:37,062 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:12:37,071 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:12:38,882 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:12:40,347 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:12:40,357 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:12:40,565 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:12:40,566 base>views>main -SCH- Now:11/15/2023, 17:12:40
+INFO 2023-11-16 01:12:40,667 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:40,669 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:40,669 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:40 [No]
+INFO 2023-11-16 01:12:40,673 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:40,674 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:40,675 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:40 [No]
+INFO 2023-11-16 01:12:40,676 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:12:40,677 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:12:40,678 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:12:40 [Yes]
+INFO 2023-11-16 01:12:40,679 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:40,679 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:40,679 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:40 [No]
+INFO 2023-11-16 01:12:40,681 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:40,682 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:40,683 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:40 [No]
+INFO 2023-11-16 01:12:40,685 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:12:40,685 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:12:40,685 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:12:40 [No]
+INFO 2023-11-16 01:12:41,168 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.09, 127.0.0.1:5982][0m
+INFO 2023-11-16 01:12:41,187 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:5983][0m
+INFO 2023-11-16 01:12:59,866 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:13:01,628 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:13:01,639 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:13:01,877 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:13:01,878 base>views>main -SCH- Now:11/15/2023, 17:13:01
+INFO 2023-11-16 01:13:02,008 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:13:02,009 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:13:02,009 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:13:01 [No]
+INFO 2023-11-16 01:13:02,012 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:13:02,014 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:13:02,015 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:13:02 [No]
+INFO 2023-11-16 01:13:02,017 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:13:02,018 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:13:02,018 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:13:02 [Yes]
+INFO 2023-11-16 01:13:02,021 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:13:02,022 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:13:02,022 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:13:02 [No]
+INFO 2023-11-16 01:13:02,025 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:13:02,026 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:13:02,026 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:13:02 [No]
+INFO 2023-11-16 01:13:02,029 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:13:02,029 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:13:02,030 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:13:02 [No]
+INFO 2023-11-16 01:13:03,976 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:13:05,477 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:13:05,484 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:13:05,668 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:13:05,668 base>views>main -SCH- Now:11/15/2023, 17:13:05
+INFO 2023-11-16 01:13:05,797 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:13:05,798 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:13:05,798 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:13:05 [No]
+INFO 2023-11-16 01:13:05,802 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:13:05,803 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:13:05,803 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:13:05 [No]
+INFO 2023-11-16 01:13:05,806 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:13:05,806 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:13:05,806 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:13:05 [Yes]
+INFO 2023-11-16 01:13:05,809 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:13:05,810 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:13:05,810 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:13:05 [No]
+INFO 2023-11-16 01:13:05,812 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:13:05,812 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:13:05,812 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:13:05 [No]
+INFO 2023-11-16 01:13:05,815 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:13:05,816 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:13:05,817 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:13:05 [No]
+INFO 2023-11-16 01:13:06,667 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.08, 127.0.0.1:6039][0m
+INFO 2023-11-16 01:13:08,544 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.03, 127.0.0.1:6039][0m
+INFO 2023-11-16 01:13:37,828 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:13:37,829 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:13:37,829 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:13:37 [No]
+INFO 2023-11-16 01:13:37,862 runserver>log_action [32mHTTP POST /update-settings/1/ 302 [0.10, 127.0.0.1:6039][0m
+INFO 2023-11-16 01:13:37,939 runserver>log_action [mHTTP GET /settings/ 200 [0.07, 127.0.0.1:6039][0m
+INFO 2023-11-16 01:13:39,044 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.03, 127.0.0.1:6039][0m
+INFO 2023-11-16 01:26:34,128 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:26:35,845 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:26:35,853 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:26:36,058 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:26:36,059 base>views>main -SCH- Now:11/15/2023, 17:26:36
+INFO 2023-11-16 01:26:36,160 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:36,161 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:36,161 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:36 [No]
+INFO 2023-11-16 01:26:36,163 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:36,163 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:36,164 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:36 [No]
+INFO 2023-11-16 01:26:36,165 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:26:36,166 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:26:36,166 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:26:36 [Yes]
+INFO 2023-11-16 01:26:36,168 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:36,168 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:36,169 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:36 [No]
+INFO 2023-11-16 01:26:36,171 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:36,171 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:36,172 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:36 [No]
+INFO 2023-11-16 01:26:36,173 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:36,173 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:36,174 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:36 [No]
+INFO 2023-11-16 01:26:37,907 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:26:39,100 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:26:39,105 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:26:39,245 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:26:39,246 base>views>main -SCH- Now:11/15/2023, 17:26:39
+INFO 2023-11-16 01:26:39,342 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:39,343 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:39,344 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:39 [No]
+INFO 2023-11-16 01:26:39,346 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:39,347 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:39,347 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:39 [No]
+INFO 2023-11-16 01:26:39,348 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:26:39,348 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:26:39,349 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:26:39 [Yes]
+INFO 2023-11-16 01:26:39,350 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:39,351 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:39,351 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:39 [No]
+INFO 2023-11-16 01:26:39,353 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:39,354 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:39,354 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:39 [No]
+INFO 2023-11-16 01:26:39,355 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:39,356 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:39,356 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:39 [No]
+INFO 2023-11-16 01:26:42,102 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:26:43,184 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:26:43,190 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:26:43,358 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:26:43,359 base>views>main -SCH- Now:11/15/2023, 17:26:43
+INFO 2023-11-16 01:26:43,442 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:43,443 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:43,444 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:43 [No]
+INFO 2023-11-16 01:26:43,446 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:43,446 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:43,447 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:43 [No]
+INFO 2023-11-16 01:26:43,448 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:26:43,448 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:26:43,448 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:26:43 [Yes]
+INFO 2023-11-16 01:26:43,450 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:43,451 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:43,451 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:43 [No]
+INFO 2023-11-16 01:26:43,453 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:43,453 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:43,454 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:43 [No]
+INFO 2023-11-16 01:26:43,456 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:43,456 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:43,456 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:43 [No]
+INFO 2023-11-16 01:26:45,110 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:26:46,415 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:26:46,421 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:26:46,564 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:26:46,565 base>views>main -SCH- Now:11/15/2023, 17:26:46
+INFO 2023-11-16 01:26:46,638 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:46,639 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:46,639 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:46 [No]
+INFO 2023-11-16 01:26:46,642 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:46,643 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:46,643 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:46 [No]
+INFO 2023-11-16 01:26:46,644 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:26:46,644 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:26:46,645 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:26:46 [Yes]
+INFO 2023-11-16 01:26:46,646 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:46,647 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:46,647 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:46 [No]
+INFO 2023-11-16 01:26:46,648 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:46,649 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:46,649 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:46 [No]
+INFO 2023-11-16 01:26:46,651 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:46,651 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:46,652 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:46 [No]
+INFO 2023-11-16 01:26:52,626 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:26:53,985 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:26:53,990 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:26:56,630 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:26:57,671 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:26:57,678 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:26:57,813 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:26:57,814 base>views>main -SCH- Now:11/15/2023, 17:26:57
+INFO 2023-11-16 01:26:57,904 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:57,906 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:57,906 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:57 [No]
+INFO 2023-11-16 01:26:57,909 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:57,909 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:57,910 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:57 [No]
+INFO 2023-11-16 01:26:57,912 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:26:57,912 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:26:57,913 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:26:57 [Yes]
+INFO 2023-11-16 01:26:57,915 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:57,915 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:57,915 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:57 [No]
+INFO 2023-11-16 01:26:57,918 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:57,918 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:57,918 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:57 [No]
+INFO 2023-11-16 01:26:57,921 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:26:57,921 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:26:57,921 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:26:57 [No]
+INFO 2023-11-16 01:27:00,634 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:27:01,777 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:27:01,782 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:27:01,992 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:27:01,992 base>views>main -SCH- Now:11/15/2023, 17:27:01
+INFO 2023-11-16 01:27:02,112 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:02,112 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:02,113 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:02 [No]
+INFO 2023-11-16 01:27:02,116 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:02,117 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:02,117 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:02 [No]
+INFO 2023-11-16 01:27:02,119 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:27:02,120 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:27:02,120 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:27:02 [Yes]
+INFO 2023-11-16 01:27:02,123 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:02,123 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:02,124 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:02 [No]
+INFO 2023-11-16 01:27:02,126 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:02,126 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:02,127 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:02 [No]
+INFO 2023-11-16 01:27:02,130 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:02,131 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:02,131 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:02 [No]
+INFO 2023-11-16 01:27:06,042 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:27:07,278 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:27:07,284 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:27:07,423 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:27:07,424 base>views>main -SCH- Now:11/15/2023, 17:27:07
+INFO 2023-11-16 01:27:07,505 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:07,506 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:07,507 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:07 [No]
+INFO 2023-11-16 01:27:07,509 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:07,510 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:07,511 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:07 [No]
+INFO 2023-11-16 01:27:07,512 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:27:07,513 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:27:07,513 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:27:07 [Yes]
+INFO 2023-11-16 01:27:07,515 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:07,516 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:07,517 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:07 [No]
+INFO 2023-11-16 01:27:07,518 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:07,518 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:07,519 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:07 [No]
+INFO 2023-11-16 01:27:07,521 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:07,521 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:07,521 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:07 [No]
+INFO 2023-11-16 01:27:09,168 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:27:10,258 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:27:10,264 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:27:10,399 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:27:10,399 base>views>main -SCH- Now:11/15/2023, 17:27:10
+INFO 2023-11-16 01:27:10,482 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:10,482 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:10,484 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:10 [No]
+INFO 2023-11-16 01:27:10,486 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:10,487 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:10,487 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:10 [No]
+INFO 2023-11-16 01:27:10,489 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:27:10,489 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:27:10,489 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:27:10 [Yes]
+INFO 2023-11-16 01:27:10,491 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:10,492 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:10,492 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:10 [No]
+INFO 2023-11-16 01:27:10,493 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:10,494 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:10,494 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:10 [No]
+INFO 2023-11-16 01:27:10,496 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:10,496 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:10,497 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:10 [No]
+INFO 2023-11-16 01:27:12,178 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:27:13,311 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:27:13,316 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:27:13,452 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:27:13,453 base>views>main -SCH- Now:11/15/2023, 17:27:13
+INFO 2023-11-16 01:27:13,526 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:13,526 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:13,527 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:13 [No]
+INFO 2023-11-16 01:27:13,529 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:13,530 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:13,530 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:13 [No]
+INFO 2023-11-16 01:27:13,532 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:27:13,532 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:27:13,533 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:27:13 [Yes]
+INFO 2023-11-16 01:27:13,534 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:13,535 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:13,535 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:13 [No]
+INFO 2023-11-16 01:27:13,536 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:13,537 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:13,537 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:13 [No]
+INFO 2023-11-16 01:27:13,538 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:13,539 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:13,539 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:13 [No]
+INFO 2023-11-16 01:27:24,804 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:27:25,929 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:27:25,934 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:27:26,121 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:27:26,121 base>views>main -SCH- Now:11/15/2023, 17:27:26
+INFO 2023-11-16 01:27:26,214 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:26,214 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:26,215 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:26 [No]
+INFO 2023-11-16 01:27:26,218 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:26,219 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:26,220 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:26 [No]
+INFO 2023-11-16 01:27:26,222 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:27:26,223 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:27:26,223 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:27:26 [Yes]
+INFO 2023-11-16 01:27:26,226 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:26,226 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:26,227 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:26 [No]
+INFO 2023-11-16 01:27:26,228 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:26,229 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:26,229 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:26 [No]
+INFO 2023-11-16 01:27:26,231 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:26,231 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:26,231 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:26 [No]
+INFO 2023-11-16 01:27:28,976 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:27:30,040 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:27:30,045 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:27:30,181 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:27:30,182 base>views>main -SCH- Now:11/15/2023, 17:27:30
+INFO 2023-11-16 01:27:30,255 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:30,256 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:30,256 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:30 [No]
+INFO 2023-11-16 01:27:30,258 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:30,258 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:30,259 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:30 [No]
+INFO 2023-11-16 01:27:30,260 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:27:30,261 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:27:30,262 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:27:30 [Yes]
+INFO 2023-11-16 01:27:30,263 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:30,264 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:30,264 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:30 [No]
+INFO 2023-11-16 01:27:30,265 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:30,265 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:30,266 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:30 [No]
+INFO 2023-11-16 01:27:30,267 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:30,267 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:30,268 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:30 [No]
+INFO 2023-11-16 01:27:34,103 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:27:35,353 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:27:35,359 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:27:35,520 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:27:35,520 base>views>main -SCH- Now:11/15/2023, 17:27:35
+INFO 2023-11-16 01:27:35,605 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:35,606 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:35,607 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:35 [No]
+INFO 2023-11-16 01:27:35,609 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:35,609 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:35,610 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:35 [No]
+INFO 2023-11-16 01:27:35,611 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:27:35,612 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:27:35,613 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:27:35 [Yes]
+INFO 2023-11-16 01:27:35,614 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:35,615 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:35,615 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:35 [No]
+INFO 2023-11-16 01:27:35,616 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:35,616 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:35,617 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:35 [No]
+INFO 2023-11-16 01:27:35,619 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:35,619 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:35,620 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:35 [No]
+INFO 2023-11-16 01:27:37,320 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:27:38,489 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:27:38,494 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:27:38,631 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:27:38,632 base>views>main -SCH- Now:11/15/2023, 17:27:38
+INFO 2023-11-16 01:27:38,710 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:38,711 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:38,711 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:38 [No]
+INFO 2023-11-16 01:27:38,713 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:38,714 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:38,714 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:38 [No]
+INFO 2023-11-16 01:27:38,716 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:27:38,716 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:27:38,716 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:27:38 [Yes]
+INFO 2023-11-16 01:27:38,718 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:38,718 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:38,718 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:38 [No]
+INFO 2023-11-16 01:27:38,720 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:38,720 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:38,721 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:38 [No]
+INFO 2023-11-16 01:27:38,722 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:38,723 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:38,723 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:38 [No]
+INFO 2023-11-16 01:27:41,462 autoreload>trigger_reload C:\Users\Tim\Documents\Projects\AQS8.2\aqs8server\base\views.py changed, reloading.
+INFO 2023-11-16 01:27:42,573 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-16 01:27:42,579 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-16 01:27:42,712 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-16 01:27:42,713 base>views>main -SCH- Now:11/15/2023, 17:27:42
+INFO 2023-11-16 01:27:42,784 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:42,785 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:42,786 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:42 [No]
+INFO 2023-11-16 01:27:42,789 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:42,789 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:42,789 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:42 [No]
+INFO 2023-11-16 01:27:42,790 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-15 18:00:00 Local:2023-11-16 02:00:00
+INFO 2023-11-16 01:27:42,791 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-16 01:27:42,792 base>views>sch_shutdown    -SCH- 2023-11-15 18:00:00 > 2023-11-15 17:27:42 [Yes]
+INFO 2023-11-16 01:27:42,792 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:42,793 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:42,793 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:42 [No]
+INFO 2023-11-16 01:27:42,794 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:42,794 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:42,795 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:42 [No]
+INFO 2023-11-16 01:27:42,797 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:27:42,797 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:27:42,797 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:27:42 [No]
+INFO 2023-11-16 01:27:49,447 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.07, 127.0.0.1:6747][0m
+INFO 2023-11-16 01:27:49,464 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:6747][0m
+INFO 2023-11-16 01:28:48,939 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.03, 127.0.0.1:6747][0m
+INFO 2023-11-16 01:28:56,018 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:28:56,019 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:28:56,020 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:28:56 [No]
+INFO 2023-11-16 01:28:56,051 runserver>log_action [32mHTTP POST /update-settings/1/ 302 [0.11, 127.0.0.1:6747][0m
+INFO 2023-11-16 01:28:56,118 runserver>log_action [mHTTP GET /settings/ 200 [0.06, 127.0.0.1:6747][0m
+INFO 2023-11-16 01:28:57,325 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.03, 127.0.0.1:6747][0m
+INFO 2023-11-16 01:29:21,222 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:29:21,222 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:29:21,222 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:29:21 [No]
+INFO 2023-11-16 01:29:21,254 runserver>log_action [32mHTTP POST /update-settings/1/ 302 [0.06, 127.0.0.1:6747][0m
+INFO 2023-11-16 01:29:21,312 runserver>log_action [mHTTP GET /settings/ 200 [0.06, 127.0.0.1:6747][0m
+INFO 2023-11-16 01:29:22,460 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.03, 127.0.0.1:6747][0m
+INFO 2023-11-16 01:29:35,446 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-16 15:59:59 Local:2023-11-16 23:59:59
+INFO 2023-11-16 01:29:35,446 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-16 01:29:35,446 base>views>sch_shutdown    -SCH- 2023-11-15 15:59:59 > 2023-11-15 17:29:35 [No]
+INFO 2023-11-16 01:29:35,477 runserver>log_action [32mHTTP POST /update-settings/1/ 302 [0.05, 127.0.0.1:6747][0m
+INFO 2023-11-16 01:29:35,534 runserver>log_action [mHTTP GET /settings/ 200 [0.05, 127.0.0.1:6747][0m
+INFO 2023-11-16 01:29:36,603 runserver>log_action [mHTTP GET /update-settings/1/ 200 [0.03, 127.0.0.1:6747][0m

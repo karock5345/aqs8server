@@ -25,19 +25,15 @@
                 <div class="form__group">
                     <label for="profile_pic">Branch code : {{bcode}}</label>
                 </div>
-
+                {% if subscribe == True %}
+                    <div class="form__group_title">Subscription Expiration Date: {{subend}}</div>
+                {% endif %}
                 <form class="form" action="" method="POST" prefix="branchsettingsform">
                     
                     {% csrf_token %}
                     
                     {% for field in branchsettingsform %}
-                        {% if field.name == "_officehourstart" or field.name == "_officehourend" or field.name == "_tickettimestart" or field.name == "_tickettimeend" %}
-                            <div class="form__group">
-                                {{field.label}}
-                                <input type="time" name="{{field.name}}"  value={{field}} step="1">{{field}}
-                                <!-- <input type="time" name="{{field.name}}"  value="{{field.value|time:'H:i:s'}}" step="1"> -->
-                            </div>
-                        {% elif field.name == "enabled" or field.name == "subscribe" or field.name == "ticketrepeatnumber" or field.name == "displayenabled" or field.name == "voiceenabled" or field.name == "usersinglelogin" or field.name == "enabledsms" or field.name == "ticketrepeatnumber" %}
+                        {% if field.name == "enabled" or field.name == "subscribe" or field.name == "ticketrepeatnumber" or field.name == "displayenabled" or field.name == "voiceenabled" or field.name == "usersinglelogin" or field.name == "enabledsms" or field.name == "ticketrepeatnumber" %}
                             <div class="form__group_checkbox">
                                 <label class="profile_pic">{{field}} {{field.label}}</label><br>
                             </div>

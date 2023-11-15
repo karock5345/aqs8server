@@ -2460,6 +2460,9 @@ def SettingsUpdateView(request, pk):
     bcode = branch.bcode
     branchname = branch.name
     countertypes = CounterType.objects.filter(Q(branch=branch))
+    subend = branch.subend
+    subend = funUTCtoLocal(subend, branch.timezone).strftime('%Y-%m-%d %H:%M:%S')
+    subscribe = branch.subscribe
     # auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
 
     userright = 'counter'
@@ -2494,7 +2497,10 @@ def SettingsUpdateView(request, pk):
     else:
         branchsettingsform = BranchSettingsForm_Admin(instance=branch, prefix='branchsettingsform')
         
-    context = {'aqs_version':aqs_version, 'bcode':bcode,'branchname':branchname , 'countertypes':countertypes, 'branchsettingsform':branchsettingsform}
+    context = {'aqs_version':aqs_version, 'bcode':bcode,
+               'branchname':branchname , 'countertypes':countertypes, 
+               'branchsettingsform':branchsettingsform, 
+               'subend':subend , 'subscribe':subscribe}
     return render(request, 'base/settings-update.html', context)
 
 @unauth_user

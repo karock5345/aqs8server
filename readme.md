@@ -27,9 +27,14 @@ python manage.py runserver 0.0.0.0:8000
   - report : own branchs, (report and counter) users, Softkey, Supervisor, Report
   - counter : own branchs, Softkey
   
-  
+  - admin : all branchs, all user, Softkey, Supervisor, Report and Admin settings
+  - support : all branchs, (support, manager and frontline) users, Softkey, Supervisor, Report and Advanced settings
+  - manager : all branchs, (manager and frontline) users, Softkey, Supervisor, Report and Basic settings
+  - frontline : own branchs, Softkey
 
-
+  - supervisor (new) : own branchs, (supervisor, report and counter) users, Softkey, Supervisor, Report and Advanced settings
+  - report : own branchs, (report and counter) users, Softkey, Supervisor, Report and basic settings
+  - counter : own branchs, Softkey
 
 
 
