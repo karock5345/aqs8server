@@ -899,18 +899,21 @@ class QLConsumer(AsyncWebsocketConsumer):
 # /ws/wtv/[bcode]/[ct] for public. Connection limited. For web only.
 class WebTVConsumer(AsyncWebsocketConsumer): 
     async def connect(self):
+        error = ''
         @sync_to_async
         def check_input():
+
             error = ''
             branch = None
-            # branchobj = await sync_to_async(Branch.objects.filter, thread_sensitive=True)( Q(bcode=self.bcode) )
-            branchobj = Branch.objects.filter(Q(bcode=self.bcode))
+            if error == '':
+                # branchobj = await sync_to_async(Branch.objects.filter, thread_sensitive=True)( Q(bcode=self.bcode) )
+                branchobj = Branch.objects.filter(Q(bcode=self.bcode))
 
-            if branchobj.count() == 1:
-                branch = branchobj[0]
-                pass
-            else :
-                error = 'Branch not found.'
+                if branchobj.count() == 1:
+                    branch = branchobj[0]
+                    pass
+                else :
+                    error = 'Branch not found.'
 
             if error == '':
                 ctobj = CounterType.objects.filter( Q(branch=branch) & Q(name=self.ct) )
@@ -922,7 +925,7 @@ class WebTVConsumer(AsyncWebsocketConsumer):
 
             return error
                 
-        error = ''
+        self.error = ''
         # get the url route: 'webtv' or 'wtv'
         self.route = self.scope['path'].split('/')[2]
         self.bcode = self.scope['url_route']['kwargs']['bcode']
@@ -942,23 +945,22 @@ class WebTVConsumer(AsyncWebsocketConsumer):
             new_ws_connected_dict(self.bcode, self.ws_str)                         
         
         if self.route == 'webtv':
-            if error == '':
+            if self.error == '':
                 if self.scope['user'].is_authenticated == False:
-                    error = 'WebTVConsumer: User not authenticated.'
+                    self.error = 'WebTVConsumer: User not authenticated.'
 
         if self.route == 'wtv':
-            if error == '':
+            if self.error == '':
                 # check connection is not over max connection
                 if ws_connected_dict[self.bcode][self.ws_str]['pub']['count'] >= ws_connected_max:
-                    error = 'WebTVConsumer: Connection is over max [' + str(ws_connected_max) + '] connection. '
+                    self.error = 'WebTVConsumer: Connection is over max [' + str(ws_connected_max) + '] connection. '
 
-
-        if error == '':
+        if self.error == '':
             # check paramaters is not exit do not accept connection
-            error = await check_input() 
+            self.error = await check_input() 
 
 
-        if error == '':        
+        if self.error == '':        
             await self.channel_layer.group_add(
                 self.room_group_name,
                 self.channel_name
@@ -975,7 +977,8 @@ class WebTVConsumer(AsyncWebsocketConsumer):
                 ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
                 logger.info('IP ' + ip +  ' Connected :' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count'])+ ']' )
         else :
-            logger.error('Error:' + error )
+            # logger.error('Error:' + self.error )
+            # await self.disconnect('reject')
             await self.close()
             
 
@@ -991,18 +994,19 @@ class WebTVConsumer(AsyncWebsocketConsumer):
             for connection in await self.get_all_connections():
                 await connection.send_data_fallback(str_tx)
     async def disconnect(self, close_code):
-        # global ws_connected_dict, ws_connected_max
-        ip = self.scope['client'][0]
-        if self.route == 'wtv':            
-            ws_connected_dict[self.bcode][self.ws_str]['pub']['count'] = ws_connected_dict[self.bcode][self.ws_str]['pub']['count'] - 1
-            # remove ip from list            
-            ws_connected_dict[self.bcode][self.ws_str]['pub']['ip'].remove(ip)            
-            logger.info('Disconnected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['pub']['count']) + '/' + str(ws_connected_max) + ']' )
-        elif self.route == 'webtv':
-            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
-            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
-            logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )
-        
+        if self.error != "":
+            logger.error('Rejected:' + self.room_group_name + ' (' + self.error +')')
+        else:
+            ip = self.scope['client'][0]
+            if self.route == 'wtv':            
+                ws_connected_dict[self.bcode][self.ws_str]['pub']['count'] = ws_connected_dict[self.bcode][self.ws_str]['pub']['count'] - 1
+                # remove ip from list            
+                ws_connected_dict[self.bcode][self.ws_str]['pub']['ip'].remove(ip)            
+                logger.info('Disconnected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['pub']['count']) + '/' + str(ws_connected_max) + ']' )
+            elif self.route == 'webtv':
+                ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
+                ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+                logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
     async def send_data_fallback(self, data):

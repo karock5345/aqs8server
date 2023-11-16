@@ -18,22 +18,14 @@ python manage.py runserver 0.0.0.0:8000
 - Modify "Staff performance report" for v8.2 from PCCW
 - Protect apiuser password for every Client software (including Softkey, Touch Panel, Display Panel, Printer Control, etc.)
 - Improve HTML UI for "Form" do not cover error message 
-- User Groups (frontline, support, admin, manager) for PCCW 2023 merge to our system (counter, report, supervisor [same as admin, but only for the branchs which is belong to the user])
-  - admin (PCCW) : all branchs, all user, Softkey, Supervisor, Report and all settings
-  - support (PCCW) : all branchs, (support, manager and frontline) users, Softkey, Supervisor, Report
-  - manager (PCCW) : own branchs, (manager and frontline) users, Softkey, Supervisor, Report
-  - frontline (PCCW) : own branchs, Softkey
-  - supervisor (new) : own branchs, (supervisor, report and counter) users, Softkey, Supervisor, Report and all settings
-  - report : own branchs, (report and counter) users, Softkey, Supervisor, Report
-  - counter : own branchs, Softkey
-  
-  - admin : all branchs, all user, Softkey, Supervisor, Report and Admin settings
-  - support : all branchs, (support, manager and frontline) users, Softkey, Supervisor, Report and Advanced settings
-  - manager : all branchs, (manager and frontline) users, Softkey, Supervisor, Report and Basic settings
-  - frontline : own branchs, Softkey
+- User Groups PCCW2023 merge to our system (Group : support, supervisor, manager, reporter and counter)
+  - admin (TS use only) : all branchs, (Group: all, including "api" and "web") all user, Softkey, Supervisor, Report and Admin settings
+  - support (TS use only) : all branchs, (Group : support, supervisor, manager, reporter and counter) users, Softkey, Supervisor, Report and Advanced settings
+  - supervisor (TS use only) : all branchs, (Group : supervisor, manager, reporter and counter) users, Softkey, Supervisor, Report and Basic settings
+  - ~~(remove) frontline : own branchs, Softkey~~
 
-  - supervisor (new) : own branchs, (supervisor, report and counter) users, Softkey, Supervisor, Report and Advanced settings
-  - report : own branchs, (report and counter) users, Softkey, Supervisor, Report and basic settings
+  - manager : own branchs, (Group : manager, reporter and counter) users, Softkey, Supervisor, Report and Advanced settings
+  - reporter : own branchs, (Group : reporter and counter) users, Softkey, Supervisor, Report and basic settings
   - counter : own branchs, Softkey
 
 
