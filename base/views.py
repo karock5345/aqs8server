@@ -57,7 +57,7 @@ sort_direction = {}
 
 
 
-@allowed_users(allowed_roles=['admin', 'support', 'manager'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 @unauth_user
 def SuperVisor_ForceLogoutView(request, pk, csid):
     context = {}
@@ -1234,7 +1234,7 @@ def webtv(request, bcode, ct):
 
 
 @unauth_user
-@allowed_users(allowed_roles=['admin', 'report','manager','support'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def Report_RAW_Result(request):
     bcode = request.GET['branch']
     s_startdate = request.GET['startdate']
@@ -1442,7 +1442,7 @@ def Report_RAW_Result(request):
     return render(request, 'base/r-raw.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin', 'report','manager','support'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def Report_Ticket_Result(request):
     # change code to if request.GET.get('x') != None else ''
     bcode = request.GET.get('branch') if request.GET.get('branch') != None else ''
@@ -1603,7 +1603,7 @@ def Report_Ticket_Result(request):
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/r-ticket.html', context)
 @unauth_user
-@allowed_users(allowed_roles=['admin', 'report','manager','support'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def Report_Staff_Result(request):
     # change code to if request.GET.get('x') != None else ''
     bcode = request.GET.get('branch') if request.GET.get('branch') != None else ''
@@ -1882,7 +1882,7 @@ def Report_Staff_Result(request):
     return render(request, 'base/r-staff.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin', 'report','manager','support'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def Reports(request):
 
     auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
@@ -1906,7 +1906,7 @@ def Reports(request):
     return render(request, 'base/r-main.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin', 'report','manager','support'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def SuperVisorView(request, pk):
 
     branch = Branch.objects.get(id=pk)    
@@ -1951,7 +1951,7 @@ def SuperVisorView(request, pk):
 
 
 @unauth_user
-@allowed_users(allowed_roles=['admin', 'report','manager','support'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def SuperVisorListView(request):  
     auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
  
@@ -1969,7 +1969,7 @@ def SuperVisorListView(request):
     return render(request, 'base/supervisors.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketRouteNewView(request):
     if request.user.is_superuser == True :
         auth_branchs = Branch.objects.all()
@@ -2018,7 +2018,7 @@ def TicketRouteNewView(request):
     return render(request, 'base/routenew.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketRouteDelView(request, pk):
  
     route = TicketRoute.objects.get(id=pk)
@@ -2033,7 +2033,7 @@ def TicketRouteDelView(request, pk):
     return render(request, 'base/delete.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketRouteUpdateView(request, pk):
     if request.user.is_superuser == True :
         auth_branchs = Branch.objects.all()
@@ -2064,7 +2064,7 @@ def TicketRouteUpdateView(request, pk):
 
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketRouteSummaryView(request):  
     auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
  
@@ -2078,7 +2078,7 @@ def TicketRouteSummaryView(request):
     return render(request, 'base/routes.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketFormatNewView(request):
 
     if request.user.is_superuser == True :
@@ -2123,7 +2123,7 @@ def TicketFormatNewView(request):
     return render(request, 'base/tfnew.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketFormatDelView(request, pk):
  
     ticketformat = TicketFormat.objects.get(id=pk)
@@ -2137,7 +2137,7 @@ def TicketFormatDelView(request, pk):
     return render(request, 'base/delete.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketFormatUpdateView(request, pk):
     ticketformat = TicketFormat.objects.get(id=pk)    
     if request.user.is_superuser == True :
@@ -2167,7 +2167,7 @@ def TicketFormatUpdateView(request, pk):
     return render(request, 'base/tf-update.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketFormatSummaryView(request):
     auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
   
@@ -2180,7 +2180,7 @@ def TicketFormatSummaryView(request):
     return render(request, 'base/tfs.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def Settings_Save(request, pk):
     branch = Branch.objects.get(id=pk) 
     result = ''
@@ -2454,7 +2454,7 @@ def Settings_Save(request, pk):
     # return render(request, 'base/branchresult.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def SettingsUpdateView(request, pk):
     branch = Branch.objects.get(id=pk)
     bcode = branch.bcode
@@ -2504,7 +2504,7 @@ def SettingsUpdateView(request, pk):
     return render(request, 'base/settings-update.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def SettingsSummaryView(request):  
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
     #users = User.objects.exclude( Q(is_superuser=True) )
@@ -2541,7 +2541,7 @@ def homeView(request):
     return render(request, 'base/home.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin','manager','support'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserSummaryView(request):     
     auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
  
@@ -2550,7 +2550,7 @@ def UserSummaryView(request):
     return render(request, 'base/user.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin','manager','support'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserSummaryListView(request):
     global sort_direction    
 
@@ -2695,7 +2695,7 @@ def UserLoginView(request):
     return render(request, 'base/login_register.html', context)
     
 @unauth_user
-@allowed_users(allowed_roles=['admin','manager','support'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserUpdateView(request, pk):
 
 
@@ -2822,7 +2822,7 @@ def UserUpdateView(request, pk):
     return render(request, 'base/user-update.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserUpdateTTView(request, pk):
     userp = UserProfile.objects.get(id=pk)
     # get all ticketformat but not ttype is repeated 
@@ -2849,7 +2849,7 @@ def UserUpdateTTView(request, pk):
     return render(request, 'base/user-update-tickettype.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin','manager','support'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserNewView(request):
     #page = 'register'
     form = UserCreationForm()
@@ -2880,7 +2880,7 @@ def UserNewView(request):
     return render(request, 'base/usernew.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin','manager','support'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserNewView2(request, pk):
     user = User.objects.get(id=pk)
     userp = UserProfile.objects.get(user__exact=user)
@@ -2934,7 +2934,7 @@ def UserNewView2(request, pk):
     return render(request, 'base/usernew2.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin','manager','support'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserNewView3(request, pk):
     user = User.objects.get(id=pk)
     userp = UserProfile.objects.get(user__exact=user)
@@ -3027,7 +3027,7 @@ def UserChangePWView(request):
     return render(request, 'base/changepassword.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin','manager','support'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserDelView(request, pk):
     user = User.objects.get(id=pk)
     userp =UserProfile.objects.get(user__exact=user)
@@ -3047,7 +3047,7 @@ def UserDelView(request, pk):
     return render(request, 'base/delete.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin','manager','support'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserResetView(request, pk):
     user = User.objects.get(id=pk)
 
@@ -3185,14 +3185,38 @@ def auth_data(user):
             auth_countertype = CounterType.objects.filter(branch__in=auth_branchs)
         '''
     else : 
-        if user.groups.filter(name='admin').exists() == True or user.groups.filter(name='support').exists() == True:
-            profiles = UserProfile.objects.all()
+        profid_list = []
+        userid_list = []
+        grouplist = []
+        if user.groups.filter(name='admin').exists() == True :
             auth_branchs = Branch.objects.all()
-        else:
-            # include counter, frontline, manager, report
-            profiles = UserProfile.objects.all()
+            auth_grouplist = Group.objects.all()
+        elif user.groups.filter(name='support').exists() == True :
+            auth_branchs = Branch.objects.all()
+            grouplist.append('support')
+            grouplist.append('supervisor')
+            grouplist.append('manager')
+            grouplist.append('reporter')
+            grouplist.append('counter')
+        elif user.groups.filter(name='supervisor').exists() == True :
+            auth_branchs = Branch.objects.all()
+            grouplist.append('supervisor')
+            grouplist.append('manager')
+            grouplist.append('reporter')
+            grouplist.append('counter')
+        elif user.groups.filter(name='manager').exists() == True :
             auth_branchs = UserProfile.objects.get(user=user).branchs.all()
-
+            grouplist.append('manager')
+            grouplist.append('reporter')
+            grouplist.append('counter')        
+        elif user.groups.filter(name='reporter').exists() == True :
+            auth_branchs = UserProfile.objects.get(user=user).branchs.all()
+            grouplist.append('reporter')
+            grouplist.append('counter')           
+        elif user.groups.filter(name='counter').exists() == True :
+            auth_branchs = UserProfile.objects.get(user=user).branchs.all()
+            grouplist.append('counter')         
+        
         # profid_list = []
         # userid_list = []
         # for prof in profiles :
@@ -3208,22 +3232,9 @@ def auth_data(user):
         #                 if ('web' in prof.user.groups.all()) == False :
         #                     profid_list.append(prof.id)
         #                     userid_list.append(prof.user.id)
-        profid_list = []
-        userid_list = []
-        grouplist = []
-        if user.groups.filter(name='admin').exists() == True :
-            grouplist.append('admin')
-            grouplist.append('support')
-            grouplist.append('manager')
-            grouplist.append('frontline')
-        elif user.groups.filter(name='support').exists() == True :
-            grouplist.append('support')
-            grouplist.append('manager')
-            grouplist.append('frontline')
-        elif user.groups.filter(name='manager').exists() == True :
-            grouplist.append('manager')
-            grouplist.append('frontline')
-        
+
+
+        profiles = UserProfile.objects.all()        
         for prof in profiles :
             not_auth = False
             if prof.branchs.all().count() == 0 :

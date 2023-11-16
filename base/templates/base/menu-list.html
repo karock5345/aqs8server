@@ -18,16 +18,6 @@
     </li>
     <li>
       <a href="{% url 'settingssummary' %}" class="active"><div class="list__svg">{% include 'base/images/settings.svg' %}</div>
-        Settings
-        <span>{{ branchs.count }}</span></a>
-    </li>
-    <li>
-      <a href="{% url 'settingssummary' %}" class="active"><div class="list__svg">{% include 'base/images/settings.svg' %}</div>
-        Advanced settings
-        <span>{{ branchs.count }}</span></a>
-    </li>
-    <li>
-      <a href="{% url 'settingssummary' %}" class="active"><div class="list__svg">{% include 'base/images/settings.svg' %}</div>
         Admin settings
         <span>{{ branchs.count }}</span></a>
     </li>
@@ -43,33 +33,95 @@
     <li>
       <a href="{% url 'reports' %}" class="active"><div class="list__svg">{% include 'base/images/table.svg' %}</div>Data log <span>3</span></a>
     </li>
-  {% elif request.user.groups.all.0.name == 'manager' or request.user.groups.all.0.name == 'support' %}  
+
+  {% elif request.user.groups.all.0.name == 'support' %}  
+  <li>
+    <a href="{% url 'usersummary' %}" class="active">      
+    <div class="avatar avatar--small none">
+      <img src="{% static 'images/avatar.svg' %}" />
+    </div>
+    Edit user
+    <span>{{ users.count }}</span>
+    </a>   
+  </li>
+  <li>
+    <a href="{% url 'settingssummary' %}" class="active"><div class="list__svg">{% include 'base/images/settings.svg' %}</div>
+      Advanced settings
+      <span>{{ branchs.count }}</span></a>
+  </li>
+  <li>
+    <a href="{% url 'tfsummary' %}" class="active"><div class="list__svg">{% include 'base/images/paper.svg' %}</div>Ticket Format <span>{{ ticketformats.count }}</span></a>
+  </li>
+  <li>
+    <a href="{% url 'routesummary' %}" class="active"><div class="list__svg">{% include 'base/images/routes.svg' %}</div>Ticket Routes <span>{{ routes.count }}</span></a>
+  </li>        
+  <li>
+    <a href="{% url 'supersummary' %}" class="active"><div class="list__svg">{% include 'base/images/branch.svg' %}</div>Supervisor <span>{{ branchs.count }}</span></a>
+  </li>
+  <li>
+    <a href="{% url 'reports' %}" class="active"><div class="list__svg">{% include 'base/images/table.svg' %}</div>Data log <span>3</span></a>
+  </li>     
+  {% elif request.user.groups.all.0.name == 'supervisor' %}  
+  <li>
+    <a href="{% url 'usersummary' %}" class="active">      
+    <div class="avatar avatar--small none">
+      <img src="{% static 'images/avatar.svg' %}" />
+    </div>
+    Edit user
+    <span>{{ users.count }}</span>
+    </a>   
+  </li>
+  <li>
+    <a href="{% url 'settingssummary' %}" class="active"><div class="list__svg">{% include 'base/images/settings.svg' %}</div>
+      Settings
+      <span>{{ branchs.count }}</span></a>
+  </li>
+  <li>
+    <a href="{% url 'tfsummary' %}" class="active"><div class="list__svg">{% include 'base/images/paper.svg' %}</div>Ticket Format <span>{{ ticketformats.count }}</span></a>
+  </li>
+  <li>
+    <a href="{% url 'routesummary' %}" class="active"><div class="list__svg">{% include 'base/images/routes.svg' %}</div>Ticket Routes <span>{{ routes.count }}</span></a>
+  </li>        
+  <li>
+    <a href="{% url 'supersummary' %}" class="active"><div class="list__svg">{% include 'base/images/branch.svg' %}</div>Supervisor <span>{{ branchs.count }}</span></a>
+  </li>
+  <li>
+    <a href="{% url 'reports' %}" class="active"><div class="list__svg">{% include 'base/images/table.svg' %}</div>Data log <span>3</span></a>
+  </li>     
+  {% elif request.user.groups.all.0.name == 'manager' %}      
     <li>
-      <a href="{% url 'usersummary' %}" class="active">      <div class="avatar avatar--small">
+      <a href="{% url 'usersummary' %}" class="active">      
+      <div class="avatar avatar--small none">
         <img src="{% static 'images/avatar.svg' %}" />
-      </div>Edit user <span>{{ users.count }}</span></a>   
+      </div>
+      Edit user
+      <span>{{ users.count }}</span>
+      </a>   
     </li>
+    <li>
+      <a href="{% url 'settingssummary' %}" class="active"><div class="list__svg">{% include 'base/images/settings.svg' %}</div>
+        Advanced settings
+        <span>{{ branchs.count }}</span></a>
+    </li>
+    <li>
+      <a href="{% url 'tfsummary' %}" class="active"><div class="list__svg">{% include 'base/images/paper.svg' %}</div>Ticket Format <span>{{ ticketformats.count }}</span></a>
+    </li>
+    <li>
+      <a href="{% url 'routesummary' %}" class="active"><div class="list__svg">{% include 'base/images/routes.svg' %}</div>Ticket Routes <span>{{ routes.count }}</span></a>
+    </li>        
     <li>
       <a href="{% url 'supersummary' %}" class="active"><div class="list__svg">{% include 'base/images/branch.svg' %}</div>Supervisor <span>{{ branchs.count }}</span></a>
     </li>
     <li>
       <a href="{% url 'reports' %}" class="active"><div class="list__svg">{% include 'base/images/table.svg' %}</div>Data log <span>3</span></a>
-    </li>     
-  {% elif request.user.groups.all.0.name == 'report' %}      
-     
-    <li>
-      <a href="{% url 'supersummary' %}" class="active"><div class="list__svg">{% include 'base/images/branch.svg' %}</div>Supervisor <span>{{ branchs.count }}</span></a>
     </li>
+
+  {% elif request.user.groups.all.0.name == 'reporter' %}
     <li>
-      <a href="{% url 'reports' %}" class="active"><div class="list__svg">{% include 'base/images/table.svg' %}</div>Data log <span>3</span></a>
-    </li>
-           <!-- for PCCW -->
-  {% elif request.user.groups.all.0.name == 'manager' %}          
-    <li>
-      <a href="{% url 'usersummary' %}" class="active">      <div class="avatar avatar--small">
-        <img src="{% static 'images/avatar.svg' %}" />
-      </div>Edit user <span>{{ users.count }}</span></a>   
-    </li>
+      <a href="{% url 'settingssummary' %}" class="active"><div class="list__svg">{% include 'base/images/settings.svg' %}</div>
+        Settings
+        <span>{{ branchs.count }}</span></a>
+    </li>        
     <li>
       <a href="{% url 'supersummary' %}" class="active"><div class="list__svg">{% include 'base/images/branch.svg' %}</div>Supervisor <span>{{ branchs.count }}</span></a>
     </li>
