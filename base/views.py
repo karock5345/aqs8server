@@ -12,7 +12,7 @@ from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 # from datetime import datetime
 from base.decorators import *
 # from django.contrib.auth.views import PasswordChangeView
-# from django.urls import reverse_lazy
+from django.urls import reverse_lazy
 
 from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch, Ticket, UserStatusLog
 from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, resetForm, BranchSettingsForm_Admin
@@ -810,8 +810,8 @@ def webmyticket(request, bcode, ttype, tno, sc):
 
 # Create your views here.
 def webtouchView(request):
-    # 127.0.0.1:8000/touch?bc=KB&t=01
-    # t=kiosk01 is Touch Name
+    # 127.0.0.1:8000/touch?bc=KB&t=t1
+    # t1 is Touch Name
     context = None
     error = ''
     bcode = ''
@@ -842,11 +842,12 @@ def webtouchView(request):
         else :
             error = 'Branch not found.'
     if error == '' :
-        wtobj = WebTouch.objects.filter( Q(branch=branch) & Q(name=touchname)  )
+        wtobj = WebTouch.objects.filter( Q(branch=branch) & Q(name=touchname))
         if wtobj.count() == 1:
             wt = wtobj[0]
             touchkeylist = wt.touchkey.filter(Q(branch=branch))
-            # touchkeylist = touchkeylistall.filter(Q(branch=branch))
+            # sort touchkeylist by tickettype
+            touchkeylist = sorted(touchkeylist, key=lambda x: x.ttype)
         else :
             error = 'Web Touch not found.'
     if error == '' :
@@ -876,16 +877,20 @@ def webtouchView(request):
                             user=userweb,
                         )
                         # rediect to e-ticket
-                        base_url = reverse('myticket')
-                        query_string =  urlencode({
-                                    'tt':tickettemp.tickettype , 
-                                    'no':tickettemp.ticketnumber, 
-                                    'bc':tickettemp.branch.bcode, 
-                                    'sc':tickettemp.securitycode,
-                                    }) 
-                        url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
-                        backurl = '{0}://{1}'.format(request.scheme, request.get_host()) +   url
-                        print (backurl)
+                        # ip/my/KB/A/003/vVL
+                        base_url = reverse('myticket', args=[tickettemp.branch.bcode, tickettemp.tickettype, tickettemp.ticketnumber, tickettemp.securitycode] )
+                        url = base_url
+
+                        # for old version (webmyticket_old_school) ip/my/?tt=A&no=003&bc=KB&sc=vVL
+                        # query_string =  urlencode({
+                        #             'tt':tickettemp.tickettype , 
+                        #             'no':tickettemp.ticketnumber, 
+                        #             'bc':tickettemp.branch.bcode, 
+                        #             'sc':tickettemp.securitycode,
+                        #             })
+                        # url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
+                        # backurl = '{0}://{1}'.format(request.scheme, request.get_host()) +   url
+                        # print (backurl)
                         if url != '':
                             return redirect(url)
                         

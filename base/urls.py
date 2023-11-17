@@ -3,6 +3,11 @@ from django.urls import path, reverse
 # from django.contrib.auth import views as auth_views
 from . import views
 
+# Touch URL : 127.0.0.1:8000/touch?bc=KB&t=t1
+# New or edit the WEB Touch panel : open 127.0.0.1:8000/admin and webtouch table
+
+
+
 urlpatterns = [
     path('', views.homeView, name='home'),
     path('login/', views.UserLoginView, name='login'),

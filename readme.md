@@ -18,15 +18,7 @@ python manage.py runserver 0.0.0.0:8000
 - Modify "Staff performance report" for v8.2 from PCCW
 - Protect apiuser password for every Client software (including Softkey, Touch Panel, Display Panel, Printer Control, etc.)
 - Improve HTML UI for "Form" do not cover error message 
-- User Groups PCCW2023 merge to our system (Group : support, supervisor, manager, reporter and counter)
-  - admin (TS use only) : all branchs, (Group: all, including "api" and "web") all user, Softkey, Supervisor, Report and Admin settings
-  - support (TS use only) : all branchs, (Group : support, supervisor, manager, reporter and counter) users, Softkey, Supervisor, Report and Advanced settings
-  - supervisor (TS use only) : all branchs, (Group : supervisor, manager, reporter and counter) users, Softkey, Supervisor, Report and Basic settings
-  - ~~(remove) frontline : own branchs, Softkey~~
 
-  - manager : own branchs, (Group : manager, reporter and counter) users, Softkey, Supervisor, Report and Advanced settings
-  - reporter : own branchs, (Group : reporter and counter) users, Softkey, Supervisor, Report and basic settings
-  - counter : own branchs, Softkey
 
 
 
@@ -41,7 +33,17 @@ python manage.py runserver 0.0.0.0:8000
 - Others websocket is internal only protect by session cookie
 - Modify the HTMLs for SVG image (e.g. branch settings, ticket format, ticket route, etc.)
 - Fixed bug : Softkey web version, the queue list update by Websocket no "Call" button and fixed the ticket time format
+- User Groups merged from PCCW2023 (Group : support, supervisor, manager, reporter and counter)
+  - admin (TS use only) : all branchs, (Group: all, including "api" and "web") all user, Softkey, Supervisor, Report and Admin settings
+  - support (TS use only) : all branchs, (Group : support, supervisor, manager, reporter and counter) users, Softkey, Supervisor, Report and Advanced settings
+  - supervisor (TS use only) : all branchs, (Group : supervisor, manager, reporter and counter) users, Softkey, Supervisor, Report and Basic settings
+  - ~~(remove) frontline : own branchs, Softkey~~
+  - manager : own branchs, (Group : manager, reporter and counter) users, Softkey, Supervisor, Report and Advanced settings
+  - reporter : own branchs, (Group : reporter and counter) users, Softkey, Supervisor, Report and basic settings
+  - counter : own branchs, Softkey
 - Settings page will be split to 3 pages (Settings, Advanced settings, Admin settings)
+- Fixed bug : Web Touch panel can not redirect to e-ticket page
+
 ### <span style="color:orange;">**Version 8.1.5**</span>
 - Romove API function for migrate DB for HHT 
 - Fixed bug : deploy to production server, the static_deploy folder is not correct 
