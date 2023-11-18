@@ -2703,16 +2703,17 @@ def UserLoginView(request):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserUpdateView(request, pk):
 
+    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
 
 
     user = User.objects.get(id=pk)
     userp = UserProfile.objects.get(user__exact=user)
     error = ''
-    if request.user.is_superuser == True or request.user.groups.filter(name='support').exists() == True or request.user.groups.filter(name='admin').exists() == True:
-        auth_branchs = Branch.objects.all()
-    else :
-        auth_userp = UserProfile.objects.get(user__exact=request.user)
-        auth_branchs = auth_userp.branchs.all()
+    # if request.user.is_superuser == True or request.user.groups.filter(name='support').exists() == True or request.user.groups.filter(name='admin').exists() == True:
+    #     auth_branchs = Branch.objects.all()
+    # else :
+    #     auth_userp = UserProfile.objects.get(user__exact=request.user)
+    #     auth_branchs = auth_userp.branchs.all()
 
     # get all ticketformat but not ttype is repeated 
     ticketformat = TicketFormat.objects.all().order_by('ttype')
@@ -2750,32 +2751,33 @@ def UserUpdateView(request, pk):
         tt.save()
 
     if request.method != 'POST':
-        if request.user.is_superuser == True :
-            userform = UserFormSuper(instance=user, prefix='uform')
-        elif user == request.user:
+        # if request.user.is_superuser == True :
+        #     userform = UserFormSuper(instance=user, prefix='uform')
+        if user == request.user:
             userform = UserFormAdminSelf(instance=user, prefix='uform')
-        elif request.user.groups.filter(name='admin').exists() == True :
-            userform = UserFormAdmin(instance=user, prefix='uform')
-        elif request.user.groups.filter(name='support').exists() == True :
-            userform = UserFormSupport(instance=user, prefix='uform')
-        elif request.user.groups.filter(name='manager').exists() == True :
-            userform = UserFormManager(instance=user, prefix='uform')
+        # elif request.user.groups.filter(name='admin').exists() == True :
+        #     userform = UserFormAdmin(instance=user, prefix='uform')
+        # elif request.user.groups.filter(name='support').exists() == True :
+        #     userform = UserFormSupport(instance=user, prefix='uform')
+        # elif request.user.groups.filter(name='manager').exists() == True :
+        #     userform = UserFormManager(instance=user, prefix='uform')
         else :
-            userform = UserForm(instance=user, prefix='uform')
+            userform = UserForm(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
+        print(auth_branchs)
     elif request.method == 'POST':
-        if request.user.is_superuser == True :
-            userform = UserFormSuper(request.POST, instance=user, prefix='uform')
-        elif user == request.user:
+        # if request.user.is_superuser == True :
+        #     userform = UserFormSuper(request.POST, instance=user, prefix='uform')
+        if user == request.user:
             userform = UserFormAdminSelf(request.POST, instance=user, prefix='uform')        
-        elif request.user.groups.filter(name='admin').exists() == True :
-            userform = UserFormAdmin(request.POST, instance=user, prefix='uform')
-        elif request.user.groups.filter(name='support').exists() == True :
-            userform = UserFormSupport(request.POST, instance=user, prefix='uform')
-        elif request.user.groups.filter(name='manager').exists() == True :
-            userform = UserFormManager(request.POST, instance=user, prefix='uform')
+        # elif request.user.groups.filter(name='admin').exists() == True :
+        #     userform = UserFormAdmin(request.POST, instance=user, prefix='uform')
+        # elif request.user.groups.filter(name='support').exists() == True :
+        #     userform = UserFormSupport(request.POST, instance=user, prefix='uform')
+        # elif request.user.groups.filter(name='manager').exists() == True :
+        #     userform = UserFormManager(request.POST, instance=user, prefix='uform')
         else :
-            userform = UserForm(request.POST, instance=user, prefix='uform')
+            userform = UserForm(request.POST, instance=user, prefix='uform', auth_grouplist=auth_grouplist)
 
         profileform = UserProfileForm(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
         newtickettypeform = newTicketTypeForm(request.POST)
@@ -3119,9 +3121,20 @@ def auth_data(user):
 
     if user.is_superuser == True :
         auth_profilelist = UserProfile.objects.all()
-        auth_userlist = User.objects.exclude(Q(groups__name='web'))
+        auth_userlist = User.objects.all()
         auth_grouplist = Group.objects.all()
-        auth_userlist_active = User.objects.filter(Q(is_active=True)).exclude(Q(groups__name='web'))
+        auth_userlist_active = User.objects.filter(Q(is_active=True))
+        # auth_userlist_active = User.objects.filter(Q(is_active=True)).exclude(Q(groups__name='web'))
+        auth_branchs = Branch.objects.all()
+        auth_ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
+        auth_routes = TicketRoute.objects.all().order_by('branch','countertype', 'tickettype', 'step')
+        auth_countertype = CounterType.objects.all()
+    elif user.groups.filter(name='admin').exists() == True:
+        auth_profilelist = UserProfile.objects.all()
+        auth_userlist = User.objects.all().exclude(Q(is_superuser=True))
+        auth_grouplist = Group.objects.all()
+        auth_userlist_active = User.objects.filter(Q(is_active=True))
+        # auth_userlist_active = User.objects.filter(Q(is_active=True)).exclude(Q(groups__name='web'))
         auth_branchs = Branch.objects.all()
         auth_ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
         auth_routes = TicketRoute.objects.all().order_by('branch','countertype', 'tickettype', 'step')
@@ -3193,10 +3206,10 @@ def auth_data(user):
         profid_list = []
         userid_list = []
         grouplist = []
-        if user.groups.filter(name='admin').exists() == True :
-            auth_branchs = Branch.objects.all()
-            auth_grouplist = Group.objects.all()
-        elif user.groups.filter(name='support').exists() == True :
+        # if user.groups.filter(name='admin').exists() == True :
+        #     auth_branchs = Branch.objects.all()
+        #     auth_grouplist = Group.objects.all()
+        if user.groups.filter(name='support').exists() == True :
             auth_branchs = Branch.objects.all()
             grouplist.append('support')
             grouplist.append('supervisor')

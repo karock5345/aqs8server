@@ -119,8 +119,10 @@ class UserForm(ModelForm):
         model = User 
         fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
     def __init__(self, *args,**kwargs):
-        super (UserForm,self ).__init__(*args,**kwargs)
-        self.fields['groups'].queryset = Group.objects.filter(~Q(name='api'), ~Q(name='web'))   # Q(groups__name='api')
+        auth_grouplist = kwargs.pop('auth_grouplist')
+        super ().__init__(*args,**kwargs)
+        self.fields['groups'].queryset = Group.objects.filter(id__in=auth_grouplist)   
+        # self.fields['groups'].queryset = Group.objects.filter()   # Q(groups__name='api')
         # here we can filter the groups by user branchs
         
 class UserFormAdminSelf(ModelForm):
@@ -128,6 +130,7 @@ class UserFormAdminSelf(ModelForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'email']
+
 
 class UserFormSuper(ModelForm):
     class Meta:
