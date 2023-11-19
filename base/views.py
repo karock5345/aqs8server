@@ -2642,7 +2642,9 @@ def UserSummaryListView(request):
     elif q_sort == 'phone':
         result_userlist = result_userlist.order_by(direct + 'userprofile__mobilephone')
 
-    context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    print(auth_grouplist)
+    print(auth_branchs)
+    context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'auth_grouplist':auth_grouplist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
     context = context | {'q':q}
     context = context | {'qactive':q_active}
     context = context | {'qbranch':q_branch}
@@ -3285,6 +3287,8 @@ def auth_data(user):
         auth_routes = TicketRoute.objects.filter(branch__in=auth_branchs).order_by('branch','countertype', 'tickettype', 'step')
         auth_countertype = CounterType.objects.filter(branch__in=auth_branchs)
         auth_grouplist = Group.objects.filter(name__in=grouplist)
+        # sort auth_grouplist by name
+        auth_grouplist = auth_grouplist.order_by('name')
     return(auth_branchs, auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats, auth_routes, auth_countertype)
 
 
