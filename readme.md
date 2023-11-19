@@ -132,162 +132,6 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 ### <span style="color:orange;">**Version 8.0.0**</span>
 - First Django version for Queuing Server
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# For Project PCCW 2023
-## Main Server (WTT)
-- Linux main server (DELL 13th i5) 
-- IP : 10.95.157.237
-- Sub mask : /24 (255.255.255.0)
-- Gateway : 10.95.157.254
-- DNS : 10.2.202.1, 10.3.220.160
-- Linux server su: ubuntu /// wert2206EDC5345 (change password cmd:passwd)
-- Django SU : supertim /// YtZqEIpk5345 ,  admin : pccwadmin /// YEjLZBYGF4
-- Network enp0s31f6
-- Change Server IP CMD:
-```
-# Config server IP
-sudo nano /etc/netplan/00-installer-config.yaml
-# Nginx
-sudo nano /etc/nginx/sites-available/aqs8server
-```
-- Change Django settings.py for DB server IP was changed
-
-```bash
-sudo nano ~/aqs8server/aqs/settings.py
-```
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'aqsdb8',
-        'USER': 'aqsdbuser',
-        'PASSWORD': 'dbpassword-Dlcg1dwMOXSKIAIM',
-        'HOST': '10.95.157.236',
-        'PORT': '5432',
-    }
-}
-```
-## Backup server
-
-- Linux backup server (DELL 12th i3) IP : 10.95.157.237
-- Linux server su: ubuntu /// wert2206EDC5345
-- Network 
-
-
-## DB server
-- Linux DB server (DELL 12th i3) 
-- IP : 10.95.157.236
-- Sub mask : /24 (255.255.255.0)
-- Gateway : 10.95.160.254
-- DNS : 10.2.202.1, 10.3.220.160
-- Linux server su: ubuntu /// wert2206EDC5345 
-- Network enp1s0
-
-- Change DB server IP
-```
-# Config DB server IP
-sudo nano /etc/netplan/00-installer-config.yaml
-# PostgreSQL
-sudo find / -name pg_hba.conf
-sudo nano /path/to/pg_hba.conf
-# edit:
-host    aqsdb8    aqsdbuser    10.95.157.237/32    md5
-```
-## TV PC (Ubuntu 22)
-
-- Linux SU : ts /// asdf
-- Sheung Wan (WTT)
-- IP : TV1 10.95.157.233, TV2 10.95.157.234, TV3 10.95.157.235
-- Sha Tin (SCP)
-- IP : TV1 10.95.160.233, TV2 10.95.160.234, TV3 (reserve) 10.95.160.235
-- TST (HHT)
-- IP : TV1
-### Setting Ubuntu 22 for TV PC 
-- Install our software and auto run
-- No screen saver
-- No sleep
-- No lock screen
-- No auto update:
-
-
-`Step 1:`
-
-Goto Ubuntu Desktop -> Settings -> Software & Updates -> Updates -> Automatically check for updates: Never
-
-Settings -> Software & Updates -> Updates -> Notify me of new Ubuntu version: Never
-
-`Step 2:`
-> Change update setting
-```bash
-sudo nano /etc/apt/apt.conf.d/20auto-upgrades
-```
-Add lines:
-```ini
-APT::Periodic::Update-Package-Lists "0";
-APT::Periodic::Download-Upgradeable-Packages "0";
-APT::Periodic::AutocleanInterval "0";
-APT::Periodic::Unattended-Upgrade "1";
-```
-
-`Step 3:`
-> Remove update-manager
-```bash
-sudo apt-get remove update-manager
-```
-## Touch PC (Windows 10)
-- Sheung Wan (WTT)
-- IP : 10.95.157.231
-- Sha Tin (SCP)
-- IP : 10.95.157.232
-- TST (HHT)
-- IP :
-
-## Control Box Server (Ubuntu 22)
-- Linux SU : ubuntu /// asdf
-- Sheung Wan (WTT)
-- IP : 10.95.157.232
-- Flash ID:
-```
-ID      Counter#
-1       1
-2       2
-3       3
-...
-...
-...
-10      10
-```
-
-- Sha Tin (SCP)
-- IP : 10.95.160.236
-- Flash ID:
-```
-ID      Counter#
-2       1
-3       2
-4       3
-5       4
-6       5
-7       A (6)
-9       B (8)
-```
-- TST (HHT)
-- IP :
-
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
 install python for all users
@@ -952,19 +796,19 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 ```
-Superuser: supertim /// YtZqEIpk5345
+Superuser: tim /// asdf
 
 Open web browser http://[ip address]/admin
 
 create settings : Name=global, Branch=---, disabled API log
 
-create user groups : api web admin support manager frontline 
+create user groups : api web admin support supervisor manager reporter and counter
 
 create user : userapi /// asdf2206 (group:api)
 
 create user : userweb /// asdf2206 (group:web, set:in-active)
 
-create branch (bcode=WTT, SCP, HHT)
+create branch (bcode=KB)
 
 create counter type (c)
 
@@ -975,7 +819,7 @@ create ticket type (TicketFormat)
 create TicketRoute
 
 create admin, api user for our customer
-admin : pccwadmin /// YEjLZBYGF4
+admin : elton /// asdf2206
 
 
 # Troubleshooting and Debug
