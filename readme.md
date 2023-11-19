@@ -41,7 +41,7 @@ python manage.py runserver 0.0.0.0:8000
   - manager : own branchs, (Group : manager, reporter and counter) users, Softkey, Supervisor, Report and Advanced settings
   - reporter : own branchs, (Group : reporter and counter) users, Softkey, Supervisor, Report and basic settings
   - counter : own branchs, Softkey
-- Settings page will be split to 3 pages (Settings, Advanced settings, Admin settings)
+- Settings page will be split to 3 pages for different user auth (Settings, Advanced settings, Admin settings)
 - Fixed bug : Web Touch panel can not redirect to e-ticket page
 
 ### <span style="color:orange;">**Version 8.1.5**</span>

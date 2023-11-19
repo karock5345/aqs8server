@@ -15,7 +15,8 @@ from base.decorators import *
 from django.urls import reverse_lazy
 
 from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch, Ticket, UserStatusLog
-from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, resetForm, BranchSettingsForm_Admin
+from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, resetForm
+from .forms import BranchSettingsForm_Admin, BranchSettingsForm_Adv, BranchSettingsForm_Basic
 from .forms import CaptchaForm, getForm, voidForm, newTicketTypeForm, UserFormSuper, UserFormManager, UserFormSupport, UserFormAdminSelf
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 from django.utils.timezone import localtime, get_current_timezone
@@ -2475,10 +2476,25 @@ def SettingsUpdateView(request, pk):
         userright = 'admin'
     elif request.user.groups.filter(name='admin').exists() == True :
         userright = 'admin'
+    elif request.user.groups.filter(name='support').exists() == True :
+        userright = 'support'
+    elif request.user.groups.filter(name='supervisor').exists() == True :
+        userright = 'supervisor'
+    elif request.user.groups.filter(name='manager').exists() == True :
+        userright = 'manager'
+    elif request.user.groups.filter(name='reporter').exists() == True :
+        userright = 'reporter'
+    else:
+        userright = 'counter'
 
-
+    print(userright)
     if request.method == 'POST':
-        branchsettingsform = BranchSettingsForm_Admin(request.POST, instance=branch, prefix='branchsettingsform')
+        if userright == 'admin':
+            branchsettingsform = BranchSettingsForm_Admin(request.POST, instance=branch, prefix='branchsettingsform')
+        elif userright == 'support' or userright == 'manager':
+            branchsettingsform = BranchSettingsForm_Adv(request.POST, instance=branch, prefix='branchsettingsform')
+        else:
+            branchsettingsform = BranchSettingsForm_Basic(request.POST, instance=branch, prefix='branchsettingsform')
         error = ''
         error, bsf = checkbranchsettingsform(branchsettingsform)
         if error == '':
@@ -2500,7 +2516,12 @@ def SettingsUpdateView(request, pk):
         else:
             messages.error(request, error )
     else:
-        branchsettingsform = BranchSettingsForm_Admin(instance=branch, prefix='branchsettingsform')
+        if userright == 'admin':
+            branchsettingsform = BranchSettingsForm_Admin(instance=branch, prefix='branchsettingsform')
+        elif userright == 'support' or userright == 'manager':
+            branchsettingsform = BranchSettingsForm_Adv(instance=branch, prefix='branchsettingsform')
+        else:
+            branchsettingsform = BranchSettingsForm_Basic(instance=branch, prefix='branchsettingsform')
         
     context = {'aqs_version':aqs_version, 'bcode':bcode,
                'branchname':branchname , 'countertypes':countertypes, 
@@ -2642,8 +2663,7 @@ def UserSummaryListView(request):
     elif q_sort == 'phone':
         result_userlist = result_userlist.order_by(direct + 'userprofile__mobilephone')
 
-    print(auth_grouplist)
-    print(auth_branchs)
+
     context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'auth_grouplist':auth_grouplist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
     context = context | {'q':q}
     context = context | {'qactive':q_active}
@@ -2766,7 +2786,6 @@ def UserUpdateView(request, pk):
         else :
             userform = UserForm(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
-        print(auth_branchs)
     elif request.method == 'POST':
         # if request.user.is_superuser == True :
         #     userform = UserFormSuper(request.POST, instance=user, prefix='uform')
