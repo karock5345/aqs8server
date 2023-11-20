@@ -629,12 +629,12 @@ def wssendql(bcode, countertypename, ticket, cmd):
             cmd = 'add'
 
         try:
-            stickettime = ticket.tickettime.strftime('%m-%dT%H:%M:%S.%fZ')
+            stickettime = ticket.tickettime.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
         except:
             stickettime = ''
         if stickettime == '' :
             try :                
-                stickettime = ticket.tickettime.strftime('%m-%dT%H:%M:%SZ')
+                stickettime = ticket.tickettime.strftime('%Y-%m-%dT%H:%M:%SZ')
             except:
                 stickettime = 'error'
         temp_time = funUTCtoLocal(ticket.tickettime, ticket.branch.timezone)
