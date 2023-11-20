@@ -18,7 +18,7 @@ python manage.py runserver 0.0.0.0:8000
 - Modify "Staff performance report" for v8.2 from PCCW
 - Protect apiuser password for every Client software (including Softkey, Touch Panel, Display Panel, Printer Control, etc.)
 - Improve HTML UI for "Form" do not cover error message 
-
+- Counting tickets per "paper roll"
 
 
 
@@ -26,6 +26,7 @@ python manage.py runserver 0.0.0.0:8000
 
 ### <span style="color:orange;">**Version 8.2.0**</span>
 - Upgrade Django to 4.2.x
+- CRM function (Customer Relationship Management) Initial
 - Run sch_shutdown() (Schudule task) when the branch settings is saved, so the branch will be update and schedule task time.
 - Secure all existing Websocket connection protect use the session Cookie
 - Change webtv Websocket for Web and client software, using 2 routes to separate public (ws/wtv/<bcode>/<ct>) and internal (ws/webtv/<bcode>/<ct>)
@@ -43,6 +44,7 @@ python manage.py runserver 0.0.0.0:8000
   - counter : own branchs, Softkey
 - Settings page will be split to 3 pages for different user auth (Settings, Advanced settings, Admin settings)
 - Fixed bug : Web Touch panel can not redirect to e-ticket page
+- Fixed bug : Softkey_cc WS queue list update not correct
 
 ### <span style="color:orange;">**Version 8.1.5**</span>
 - Romove API function for migrate DB for HHT 

@@ -37,7 +37,8 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 50000 # higher than the count of fields (default
 # Application definition
 
 INSTALLED_APPS = [
-    'channels',
+    'base',
+    'crm',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,14 +47,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    # 'base.apps.BaseConfig',
-    'base',
-    'rest_framework',
-    
+    'rest_framework',    
     'django_apscheduler',
     'captcha',
     'rest_framework_simplejwt',
-
+    'channels',
 ]
 
 
