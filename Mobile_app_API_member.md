@@ -139,7 +139,7 @@ Or if login failed
 # 2. Member info API (Member APP)
 ### Request
 ```http
-GET [Server IP or DN]/api/crm/info?app=postman&version=8.2.0&member_no=xxx&member_token=xxx
+GET [Server IP or DN]/api/crm/info?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&bcode=xxx
 ```
 
 | Key | Type | Description |
@@ -148,6 +148,8 @@ GET [Server IP or DN]/api/crm/info?app=postman&version=8.2.0&member_no=xxx&membe
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
 | `member_no` | `string` | **Required**. Member number from `Member login API` |
 | `member_token` | `string` | **Required**. Member Token from `Member login API` |
+| `bcode` | `string` | **Required**. provided by TSVD |
+
 ### Response
 
 ```javascript

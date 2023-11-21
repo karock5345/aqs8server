@@ -612,6 +612,10 @@ nano ~/aqs8server/base/views.py
 ```bash
 # init_branch_reset()
 ```
+### <span style="color:orange;">**Change the Member.email at crm/models.py**</span>
+```py
+email = models.EmailField(null=False, blank=False, unique=True) # unique=True for production
+```
 
 ### <span style="color:orange;">**Change the token_api at base/api/views.py**</span>
 ```bash

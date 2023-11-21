@@ -22,7 +22,7 @@ class Member(models.Model):
     firstname = models.CharField(max_length=200, null=True, blank=True)    
     mobilephone_country = models.CharField(max_length=200, null=True, blank=True)
     mobilephone = models.CharField(max_length=200, null=True, blank=True)
-    email = models.EmailField(null=False, blank=False, unique=True)
+    email = models.EmailField(null=False, blank=False) #, unique=True) # unique=True for production
     address = models.CharField(max_length=200, null=True, blank=True)
     remark = models.CharField(max_length=200, null=True, blank=True)
     createdby = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
