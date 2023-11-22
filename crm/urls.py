@@ -5,8 +5,8 @@ from . import views
 
 urlpatterns = [
     # Testing page
-    path('', views.WelcomeView, name='welcome'),
+    # path('', views.WelcomeView, name='crmhome'),
 
     # CRM APIs for mobile app
-    path('api/login/', views.crmUserLoginView, name='login'),
+    path('api/login/', views.crmUserLoginView, name='crmlogin'),
 ]

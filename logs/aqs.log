@@ -16808,3 +16808,1379 @@ INFO 2023-11-21 18:35:47,262 base>views>sch_shutdown    -SCH- 2023-11-21 15:59:5
 INFO 2023-11-21 18:35:47,263 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-21 15:59:59 Local:2023-11-21 23:59:59
 INFO 2023-11-21 18:35:47,263 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
 INFO 2023-11-21 18:35:47,263 base>views>sch_shutdown    -SCH- 2023-11-21 15:59:59 > 2023-11-21 10:35:47 [Yes]
+INFO 2023-11-22 13:47:17,292 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 13:47:18,158 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 13:47:18,178 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 13:47:18,312 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 13:47:18,313 base>views>main -SCH- Now:11/22/2023, 05:47:18
+INFO 2023-11-22 13:47:18,381 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:47:18,382 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:47:18,382 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:47:18 [Yes]
+INFO 2023-11-22 13:47:18,384 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:47:18,384 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:47:18,384 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:47:18 [Yes]
+INFO 2023-11-22 13:47:18,385 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 13:47:18,386 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 13:47:18,386 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 05:47:18 [Yes]
+INFO 2023-11-22 13:47:18,387 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:47:18,387 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:47:18,387 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:47:18 [Yes]
+INFO 2023-11-22 13:47:18,389 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:47:18,389 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:47:18,389 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:47:18 [Yes]
+INFO 2023-11-22 13:47:18,390 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:47:18,390 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:47:18,391 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:47:18 [Yes]
+INFO 2023-11-22 13:47:26,649 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 13:47:26,739 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 13:47:26,740 base>views>main -SCH- Now:11/22/2023, 05:47:26
+INFO 2023-11-22 13:47:26,804 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:47:26,805 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:47:26,805 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:47:26 [Yes]
+INFO 2023-11-22 13:47:26,807 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:47:26,807 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:47:26,808 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:47:26 [Yes]
+INFO 2023-11-22 13:47:26,808 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 13:47:26,808 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 13:47:26,809 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 05:47:26 [Yes]
+INFO 2023-11-22 13:47:26,810 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:47:26,810 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:47:26,810 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:47:26 [Yes]
+INFO 2023-11-22 13:47:26,811 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:47:26,811 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:47:26,812 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:47:26 [Yes]
+INFO 2023-11-22 13:47:26,812 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:47:26,813 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:47:26,813 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:47:26 [Yes]
+INFO 2023-11-22 13:48:56,815 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\crm\views.py changed, reloading.
+INFO 2023-11-22 13:48:57,804 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 13:48:57,824 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 13:48:57,939 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 13:48:57,940 base>views>main -SCH- Now:11/22/2023, 05:48:57
+INFO 2023-11-22 13:48:58,008 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:48:58,008 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:48:58,009 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:48:57 [Yes]
+INFO 2023-11-22 13:48:58,010 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:48:58,011 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:48:58,011 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:48:58 [Yes]
+INFO 2023-11-22 13:48:58,012 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 13:48:58,012 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 13:48:58,013 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 05:48:58 [Yes]
+INFO 2023-11-22 13:48:58,014 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:48:58,014 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:48:58,014 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:48:58 [Yes]
+INFO 2023-11-22 13:48:58,015 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:48:58,015 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:48:58,016 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:48:58 [Yes]
+INFO 2023-11-22 13:48:58,017 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:48:58,017 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:48:58,017 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:48:58 [Yes]
+INFO 2023-11-22 13:49:02,650 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 13:49:03,463 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 13:49:03,482 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 13:49:03,592 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 13:49:03,593 base>views>main -SCH- Now:11/22/2023, 05:49:03
+INFO 2023-11-22 13:49:03,655 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:49:03,655 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:49:03,656 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:49:03 [Yes]
+INFO 2023-11-22 13:49:03,657 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:49:03,658 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:49:03,658 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:49:03 [Yes]
+INFO 2023-11-22 13:49:03,659 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 13:49:03,659 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 13:49:03,659 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 05:49:03 [Yes]
+INFO 2023-11-22 13:49:03,660 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:49:03,660 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:49:03,660 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:49:03 [Yes]
+INFO 2023-11-22 13:49:03,661 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:49:03,662 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:49:03,662 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:49:03 [Yes]
+INFO 2023-11-22 13:49:03,663 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:49:03,663 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:49:03,664 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:49:03 [Yes]
+INFO 2023-11-22 13:50:15,137 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\crm\views.py changed, reloading.
+INFO 2023-11-22 13:50:16,065 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 13:50:16,084 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 13:50:16,197 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 13:50:16,197 base>views>main -SCH- Now:11/22/2023, 05:50:16
+INFO 2023-11-22 13:50:16,260 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:50:16,260 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:50:16,261 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:50:16 [Yes]
+INFO 2023-11-22 13:50:16,262 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:50:16,263 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:50:16,263 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:50:16 [Yes]
+INFO 2023-11-22 13:50:16,264 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 13:50:16,265 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 13:50:16,265 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 05:50:16 [Yes]
+INFO 2023-11-22 13:50:16,266 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:50:16,266 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:50:16,267 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:50:16 [Yes]
+INFO 2023-11-22 13:50:16,268 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:50:16,268 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:50:16,268 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:50:16 [Yes]
+INFO 2023-11-22 13:50:16,269 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 13:50:16,269 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 13:50:16,270 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 05:50:16 [Yes]
+INFO 2023-11-22 13:59:56,669 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.02, 127.0.0.1:54502][0m
+INFO 2023-11-22 13:59:56,963 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.29, 127.0.0.1:54502][0m
+INFO 2023-11-22 13:59:57,222 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:54508][0m
+INFO 2023-11-22 13:59:57,252 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [127.0.0.1:54511]
+INFO 2023-11-22 13:59:57,287 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-11-22 13:59:57,295 runserver>log_action WebSocket CONNECT /ws/webtv/ST/c/ [127.0.0.1:54511]
+INFO 2023-11-22 13:59:57,296 base>consumers>connect IP 127.0.0.1 Connected :webtv_ST_c Internal [1]
+INFO 2023-11-22 13:59:57,328 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=ST&countername=c 200 [0.03, 127.0.0.1:54502][0m
+INFO 2023-11-22 13:59:59,305 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=ST&countername=c 200 [0.02, 127.0.0.1:54502][0m
+INFO 2023-11-22 14:00:44,541 runserver>log_action WebSocket DISCONNECT /ws/webtv/ST/c/ [127.0.0.1:54511]
+INFO 2023-11-22 14:00:44,541 base>consumers>disconnect Disconnected:webtv_ST_c Internal [0]
+INFO 2023-11-22 14:06:58,962 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:54571][0m
+INFO 2023-11-22 14:06:59,213 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.25, 127.0.0.1:54571][0m
+INFO 2023-11-22 14:06:59,457 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:54576][0m
+INFO 2023-11-22 14:06:59,482 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:54581]
+INFO 2023-11-22 14:06:59,486 base>consumers>connect connecting:print_KB
+INFO 2023-11-22 14:06:59,495 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:54581]
+INFO 2023-11-22 14:06:59,496 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-22 14:06:59,502 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:54583]
+INFO 2023-11-22 14:06:59,505 base>consumers>connect connecting:print_KB
+INFO 2023-11-22 14:06:59,508 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:54583]
+INFO 2023-11-22 14:06:59,508 base>consumers>connect IP 127.0.0.1 Connected:print_KB [2]
+INFO 2023-11-22 14:07:04,510 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:54571][0m
+INFO 2023-11-22 14:07:06,719 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:54592][0m
+INFO 2023-11-22 14:07:53,854 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:07:53,858 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-22 14:07:53,859 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 127.0.0.1:54571][0m
+INFO 2023-11-22 14:08:17,558 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:08:17,561 base>ws>wssendwebtv ...Done
+INFO 2023-11-22 14:08:17,561 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:08:17,562 base>ws>wssenddispwait ...Done
+INFO 2023-11-22 14:08:17,565 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:08:17,566 base>ws>wssendql ...Done
+INFO 2023-11-22 14:08:17,567 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:08:17,569 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-22 14:08:17,570 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-22 14:08:17,576 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.08, 127.0.0.1:54609][0m
+INFO 2023-11-22 14:08:50,013 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:54581]
+INFO 2023-11-22 14:08:50,014 base>consumers>disconnect Disconnected:print_KB Internal [1]
+INFO 2023-11-22 14:09:10,002 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:54583]
+INFO 2023-11-22 14:09:10,005 base>consumers>disconnect Disconnected:print_KB Internal [0]
+INFO 2023-11-22 14:09:14,112 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=007&tickettime=2023-11-22T06:08:17.502015Z 200 [0.02, 127.0.0.1:54617][0m
+INFO 2023-11-22 14:13:25,815 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:54634][0m
+INFO 2023-11-22 14:13:26,091 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.27, 127.0.0.1:54634][0m
+INFO 2023-11-22 14:13:26,355 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:54639][0m
+INFO 2023-11-22 14:13:26,380 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:54642]
+INFO 2023-11-22 14:13:26,383 base>consumers>connect connecting:print_KB
+INFO 2023-11-22 14:13:26,388 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:54642]
+INFO 2023-11-22 14:13:26,389 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-22 14:13:31,406 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:54634][0m
+INFO 2023-11-22 14:13:31,645 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:13:31,649 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-22 14:13:31,650 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:54634][0m
+INFO 2023-11-22 14:13:47,203 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:13:47,207 base>ws>wssendwebtv ...Done
+INFO 2023-11-22 14:13:47,207 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:13:47,208 base>ws>wssenddispwait ...Done
+INFO 2023-11-22 14:13:47,211 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:13:47,212 base>ws>wssendql ...Done
+INFO 2023-11-22 14:13:47,213 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:13:47,215 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-22 14:13:47,216 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-22 14:13:47,223 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.07, 127.0.0.1:54658][0m
+INFO 2023-11-22 14:13:47,340 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=008&tickettime=2023-11-22T06:13:47.153475Z 200 [0.04, 127.0.0.1:54634][0m
+INFO 2023-11-22 14:14:37,687 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:54669][0m
+INFO 2023-11-22 14:14:38,032 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.34, 127.0.0.1:54669][0m
+INFO 2023-11-22 14:14:38,306 runserver>log_action [mHTTP POST /api/token/ 200 [0.26, 127.0.0.1:54674][0m
+INFO 2023-11-22 14:14:38,329 runserver>log_action WebSocket HANDSHAKING /ws/webtv/ST/c/ [127.0.0.1:54677]
+INFO 2023-11-22 14:14:38,333 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-11-22 14:14:38,337 runserver>log_action WebSocket CONNECT /ws/webtv/ST/c/ [127.0.0.1:54677]
+INFO 2023-11-22 14:14:38,338 base>consumers>connect IP 127.0.0.1 Connected :webtv_ST_c Internal [1]
+INFO 2023-11-22 14:14:38,372 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=ST&countername=c 200 [0.03, 127.0.0.1:54669][0m
+INFO 2023-11-22 14:14:40,351 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=ST&countername=c 200 [0.01, 127.0.0.1:54669][0m
+INFO 2023-11-22 14:14:58,975 runserver>log_action [32mHTTP GET / 302 [0.02, 127.0.0.1:54685][0m
+INFO 2023-11-22 14:14:58,994 runserver>log_action [mHTTP GET /crm/api/login/ 200 [0.02, 127.0.0.1:54685][0m
+INFO 2023-11-22 14:15:03,055 runserver>log_action [32mHTTP GET / 302 [0.00, 127.0.0.1:54685][0m
+INFO 2023-11-22 14:15:03,062 runserver>log_action [mHTTP GET /crm/api/login/ 200 [0.00, 127.0.0.1:54685][0m
+INFO 2023-11-22 14:15:12,214 runserver>log_action [32mHTTP GET / 302 [0.00, 127.0.0.1:54685][0m
+INFO 2023-11-22 14:15:12,221 runserver>log_action [mHTTP GET /crm/api/login/ 200 [0.00, 127.0.0.1:54685][0m
+INFO 2023-11-22 14:15:43,889 runserver>log_action [mHTTP GET /crm/ 200 [0.00, 127.0.0.1:54685][0m
+INFO 2023-11-22 14:15:49,331 runserver>log_action [32mHTTP GET / 302 [0.00, 127.0.0.1:54685][0m
+INFO 2023-11-22 14:15:49,337 runserver>log_action [mHTTP GET /crm/api/login/ 200 [0.00, 127.0.0.1:54685][0m
+INFO 2023-11-22 14:16:26,140 runserver>log_action [32mHTTP GET / 302 [0.00, 127.0.0.1:54685][0m
+INFO 2023-11-22 14:16:26,148 runserver>log_action [mHTTP GET /crm/api/login/ 200 [0.00, 127.0.0.1:54685][0m
+INFO 2023-11-22 14:16:39,895 runserver>log_action [32mHTTP GET / 302 [0.00, 127.0.0.1:54685][0m
+INFO 2023-11-22 14:16:39,902 runserver>log_action [mHTTP GET /crm/api/login/ 200 [0.00, 127.0.0.1:54685][0m
+INFO 2023-11-22 14:16:53,319 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\crm\urls.py changed, reloading.
+INFO 2023-11-22 14:16:54,491 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:16:54,514 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 14:16:54,646 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 14:16:54,647 base>views>main -SCH- Now:11/22/2023, 06:16:54
+INFO 2023-11-22 14:16:54,722 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:16:54,723 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:16:54,723 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:16:54 [Yes]
+INFO 2023-11-22 14:16:54,725 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:16:54,725 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:16:54,725 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:16:54 [Yes]
+INFO 2023-11-22 14:16:54,726 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 14:16:54,727 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 14:16:54,727 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 06:16:54 [Yes]
+INFO 2023-11-22 14:16:54,729 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:16:54,729 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:16:54,729 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:16:54 [Yes]
+INFO 2023-11-22 14:16:54,730 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:16:54,731 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:16:54,731 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:16:54 [Yes]
+INFO 2023-11-22 14:16:54,732 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:16:54,733 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:16:54,733 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:16:54 [Yes]
+INFO 2023-11-22 14:16:57,968 runserver>log_action [32mHTTP GET / 302 [0.02, 127.0.0.1:54740][0m
+INFO 2023-11-22 14:16:57,986 runserver>log_action [mHTTP GET /crm/api/login/ 200 [0.02, 127.0.0.1:54740][0m
+INFO 2023-11-22 14:17:05,305 runserver>log_action [32mHTTP GET / 302 [0.00, 127.0.0.1:54740][0m
+INFO 2023-11-22 14:17:05,311 runserver>log_action [mHTTP GET /crm/api/login/ 200 [0.00, 127.0.0.1:54740][0m
+INFO 2023-11-22 14:18:10,061 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\crm\urls.py changed, reloading.
+INFO 2023-11-22 14:18:11,177 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:18:11,199 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 14:18:11,339 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 14:18:11,340 base>views>main -SCH- Now:11/22/2023, 06:18:11
+INFO 2023-11-22 14:18:11,414 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:11,415 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:11,415 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:11 [Yes]
+INFO 2023-11-22 14:18:11,417 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:11,417 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:11,417 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:11 [Yes]
+INFO 2023-11-22 14:18:11,418 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 14:18:11,419 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 14:18:11,419 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 06:18:11 [Yes]
+INFO 2023-11-22 14:18:11,420 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:11,420 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:11,421 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:11 [Yes]
+INFO 2023-11-22 14:18:11,422 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:11,422 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:11,423 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:11 [Yes]
+INFO 2023-11-22 14:18:11,424 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:11,424 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:11,424 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:11 [Yes]
+INFO 2023-11-22 14:18:16,433 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:54760][0m
+INFO 2023-11-22 14:18:16,992 runserver>log_action [32mHTTP GET / 302 [0.01, 127.0.0.1:54758][0m
+INFO 2023-11-22 14:18:17,005 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:54758][0m
+INFO 2023-11-22 14:18:17,021 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:54758][0m
+INFO 2023-11-22 14:18:17,030 runserver>log_action [36mHTTP GET /static/images/avatar.svg 304 [0.00, 127.0.0.1:54758][0m
+INFO 2023-11-22 14:18:26,367 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\crm\urls.py changed, reloading.
+INFO 2023-11-22 14:18:27,489 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:18:27,509 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 14:18:27,649 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 14:18:27,650 base>views>main -SCH- Now:11/22/2023, 06:18:27
+INFO 2023-11-22 14:18:27,726 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:27,728 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:27,728 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:27 [Yes]
+INFO 2023-11-22 14:18:27,729 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:27,731 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:27,731 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:27 [Yes]
+INFO 2023-11-22 14:18:27,733 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 14:18:27,733 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 14:18:27,733 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 06:18:27 [Yes]
+INFO 2023-11-22 14:18:27,735 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:27,735 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:27,735 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:27 [Yes]
+INFO 2023-11-22 14:18:27,736 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:27,736 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:27,736 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:27 [Yes]
+INFO 2023-11-22 14:18:27,737 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:27,737 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:27,739 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:27 [Yes]
+INFO 2023-11-22 14:18:30,500 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\crm\urls.py changed, reloading.
+INFO 2023-11-22 14:18:31,591 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:18:31,611 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 14:18:31,738 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 14:18:31,738 base>views>main -SCH- Now:11/22/2023, 06:18:31
+INFO 2023-11-22 14:18:31,804 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:31,805 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:31,805 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:31 [Yes]
+INFO 2023-11-22 14:18:31,807 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:31,807 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:31,807 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:31 [Yes]
+INFO 2023-11-22 14:18:31,808 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 14:18:31,808 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 14:18:31,809 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 06:18:31 [Yes]
+INFO 2023-11-22 14:18:31,810 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:31,810 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:31,810 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:31 [Yes]
+INFO 2023-11-22 14:18:31,811 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:31,812 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:31,812 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:31 [Yes]
+INFO 2023-11-22 14:18:31,813 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:18:31,813 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:18:31,813 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:18:31 [Yes]
+INFO 2023-11-22 14:18:55,523 runserver>log_action [32mHTTP POST /login/ 302 [0.27, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:18:55,554 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:18:56,701 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.03, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:18:57,533 runserver>log_action [mHTTP GET /softkey_login/1/ 200 [0.04, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:18:58,972 runserver>log_action [32mHTTP GET /softkey/2/ 302 [0.02, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:18:59,010 runserver>log_action [mHTTP GET /softkey_login/1/ 200 [0.03, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:19:01,504 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.02, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:19:03,122 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.03, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:19:04,147 runserver>log_action [mHTTP GET /softkey/30/ 200 [0.04, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:19:04,163 runserver>log_action [36mHTTP GET /static/js/softkey_cc.js 304 [0.00, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:19:04,187 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:54803]
+INFO 2023-11-22 14:19:04,209 base>consumers>connect connecting:printerstatus_ST
+INFO 2023-11-22 14:19:04,215 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:54803]
+INFO 2023-11-22 14:19:04,216 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_ST [1]
+INFO 2023-11-22 14:19:04,236 runserver>log_action WebSocket HANDSHAKING /ws/cs/30/ [127.0.0.1:54806]
+INFO 2023-11-22 14:19:04,240 base>consumers>connect connecting:cs_30
+INFO 2023-11-22 14:19:04,245 runserver>log_action WebSocket CONNECT /ws/cs/30/ [127.0.0.1:54806]
+INFO 2023-11-22 14:19:04,245 base>consumers>connect IP 127.0.0.1 Connected:cs_30 [1]
+INFO 2023-11-22 14:19:04,266 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:54807]
+INFO 2023-11-22 14:19:04,271 base>consumers>connect connecting:ql_ST_c
+INFO 2023-11-22 14:19:04,276 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:54807]
+INFO 2023-11-22 14:19:04,276 base>consumers>connect IP 127.0.0.1 Connected:ql_ST_c [1]
+INFO 2023-11-22 14:19:05,068 runserver>log_action [32mHTTP POST /softkey/30/ 302 [0.05, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:19:05,100 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.03, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:19:05,128 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:54803]
+INFO 2023-11-22 14:19:05,129 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:54807]
+INFO 2023-11-22 14:19:05,129 runserver>log_action WebSocket DISCONNECT /ws/cs/30/ [127.0.0.1:54806]
+INFO 2023-11-22 14:19:05,131 base>consumers>disconnect Disconnected:printerstatus_ST Internal [0]
+INFO 2023-11-22 14:19:05,135 base>consumers>disconnect Disconnected:ql_ST_c Internal [0]
+INFO 2023-11-22 14:19:05,136 base>consumers>disconnect Disconnected:cs_30 Internal [0]
+INFO 2023-11-22 14:19:05,992 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.02, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:19:07,161 runserver>log_action [mHTTP GET /softkey_login/1/ 200 [0.04, 127.0.0.1:54783][0m
+WARNING 2023-11-22 14:19:08,518 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:19:08,519 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:19:08,521 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:19:08,538 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:19:08,557 runserver>log_action [36mHTTP GET /static/js/softkey.js 304 [0.00, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:19:08,594 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54820]
+INFO 2023-11-22 14:19:08,598 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:19:08,602 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54820]
+INFO 2023-11-22 14:19:08,603 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:19:08,625 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54821]
+INFO 2023-11-22 14:19:08,628 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:19:08,632 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54821]
+INFO 2023-11-22 14:19:08,633 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:19:08,656 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54822]
+INFO 2023-11-22 14:19:08,661 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:19:08,667 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54822]
+INFO 2023-11-22 14:19:08,668 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+WARNING 2023-11-22 14:19:12,345 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:19:12,347 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:19:12,348 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:19:12,423 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:19:12,427 base>ws>wssendwebtv ...Done
+INFO 2023-11-22 14:19:12,429 base>ws>wssenddispcall channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:19:12,430 base>ws>wssenddispcall ...Done
+INFO 2023-11-22 14:19:12,433 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:19:12,436 base>ws>wssendql ...Done
+INFO 2023-11-22 14:19:12,441 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_B012_n8w sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:19:12,442 base>ws>wsSendTicketStatus ...Done
+INFO 2023-11-22 14:19:12,444 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:19:12,446 base>ws>wssendvoice ...Done
+INFO 2023-11-22 14:19:12,446 base>ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:19:12,447 base>ws>wssendflashlight ...Done
+INFO 2023-11-22 14:19:12,449 base>ws>wscounterstatus channel_group_name:cs_4 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:19:12,452 base>ws>wscounterstatus ...Done
+INFO 2023-11-22 14:19:12,463 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.14, 127.0.0.1:54783][0m
+WARNING 2023-11-22 14:19:12,490 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:19:12,491 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:19:12,492 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:19:12,508 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:54783][0m
+INFO 2023-11-22 14:19:12,513 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54820]
+INFO 2023-11-22 14:19:12,514 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54822]
+INFO 2023-11-22 14:19:12,515 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:54821]
+INFO 2023-11-22 14:19:12,516 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-22 14:19:12,523 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-22 14:19:12,527 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54830]
+INFO 2023-11-22 14:19:12,531 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-22 14:19:12,532 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:19:12,536 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54830]
+INFO 2023-11-22 14:19:12,537 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:19:12,561 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54831]
+INFO 2023-11-22 14:19:12,564 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:19:12,572 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54831]
+INFO 2023-11-22 14:19:12,573 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:19:12,592 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54832]
+INFO 2023-11-22 14:19:12,596 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:19:12,601 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54832]
+INFO 2023-11-22 14:19:12,601 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+INFO 2023-11-22 14:19:28,363 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:54835][0m
+INFO 2023-11-22 14:20:36,668 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:54841][0m
+INFO 2023-11-22 14:20:36,992 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.32, 127.0.0.1:54841][0m
+INFO 2023-11-22 14:20:37,314 runserver>log_action [mHTTP POST /api/token/ 200 [0.31, 127.0.0.1:54846][0m
+INFO 2023-11-22 14:20:37,344 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:54849]
+INFO 2023-11-22 14:20:37,347 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-11-22 14:20:37,351 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54849]
+INFO 2023-11-22 14:20:37,351 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-11-22 14:20:37,380 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:54841][0m
+INFO 2023-11-22 14:20:39,385 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:54841][0m
+WARNING 2023-11-22 14:20:47,647 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:20:47,648 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:20:47,649 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:20:47,680 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:20:47,684 base>ws>wssendwebtv ...Done
+INFO 2023-11-22 14:20:47,686 base>ws>wssenddispcall channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:20:47,687 base>ws>wssenddispcall ...Done
+INFO 2023-11-22 14:20:47,691 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:20:47,692 base>ws>wssendvoice ...Done
+INFO 2023-11-22 14:20:47,693 base>ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:20:47,694 base>ws>wssendflashlight ...Done
+INFO 2023-11-22 14:20:47,705 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.08, 127.0.0.1:54859][0m
+WARNING 2023-11-22 14:20:47,732 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:20:47,734 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:20:47,736 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:20:47,756 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.05, 127.0.0.1:54859][0m
+INFO 2023-11-22 14:20:47,762 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54830]
+INFO 2023-11-22 14:20:47,763 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:54831]
+INFO 2023-11-22 14:20:47,763 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54832]
+INFO 2023-11-22 14:20:47,765 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-22 14:20:47,767 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-22 14:20:47,770 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-22 14:20:47,783 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54868]
+INFO 2023-11-22 14:20:47,788 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:20:47,794 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54868]
+INFO 2023-11-22 14:20:47,795 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:20:47,818 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54869]
+INFO 2023-11-22 14:20:47,822 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:20:47,827 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54869]
+INFO 2023-11-22 14:20:47,828 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:20:47,848 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54870]
+INFO 2023-11-22 14:20:47,852 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:20:47,855 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54870]
+INFO 2023-11-22 14:20:47,856 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+WARNING 2023-11-22 14:20:55,597 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:20:55,599 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:20:55,600 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:20:55,630 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_B012_n8w sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:20:55,634 base>ws>wsSendTicketStatus ...Done
+INFO 2023-11-22 14:20:55,634 base>ws>wscounterstatus channel_group_name:cs_4 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:20:55,636 base>ws>wscounterstatus ...Done
+INFO 2023-11-22 14:20:55,645 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.07, 127.0.0.1:54859][0m
+WARNING 2023-11-22 14:20:55,668 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:20:55,669 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:20:55,670 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:20:55,685 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:54859][0m
+INFO 2023-11-22 14:20:55,691 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54870]
+INFO 2023-11-22 14:20:55,692 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:54869]
+INFO 2023-11-22 14:20:55,692 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54868]
+INFO 2023-11-22 14:20:55,705 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54878]
+INFO 2023-11-22 14:20:55,706 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-22 14:20:55,708 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-22 14:20:55,710 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-22 14:20:55,711 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:20:55,714 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54878]
+INFO 2023-11-22 14:20:55,715 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:20:55,734 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54879]
+INFO 2023-11-22 14:20:55,738 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:20:55,744 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54879]
+INFO 2023-11-22 14:20:55,744 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:20:55,757 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54880]
+INFO 2023-11-22 14:20:55,762 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:20:55,766 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54880]
+INFO 2023-11-22 14:20:55,767 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+WARNING 2023-11-22 14:20:57,850 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:20:57,852 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:20:57,853 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:20:57,923 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:20:57,946 base>ws>wssendwebtv ...Done
+INFO 2023-11-22 14:20:57,948 base>ws>wssenddispcall channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:20:57,949 base>ws>wssenddispcall ...Done
+INFO 2023-11-22 14:20:57,952 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:20:57,954 base>ws>wssendql ...Done
+INFO 2023-11-22 14:20:57,960 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_B013_HOO sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:20:57,962 base>ws>wsSendTicketStatus ...Done
+INFO 2023-11-22 14:20:57,964 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:20:57,965 base>ws>wssendvoice ...Done
+INFO 2023-11-22 14:20:57,966 base>ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:20:57,967 base>ws>wssendflashlight ...Done
+INFO 2023-11-22 14:20:57,968 base>ws>wscounterstatus channel_group_name:cs_4 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:20:57,970 base>ws>wscounterstatus ...Done
+INFO 2023-11-22 14:20:57,981 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.15, 127.0.0.1:54859][0m
+WARNING 2023-11-22 14:20:58,003 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:20:58,006 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:20:58,007 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:20:58,025 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:54859][0m
+INFO 2023-11-22 14:20:58,030 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54880]
+INFO 2023-11-22 14:20:58,032 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54878]
+INFO 2023-11-22 14:20:58,032 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:54879]
+INFO 2023-11-22 14:20:58,033 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-22 14:20:58,033 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-22 14:20:58,036 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-22 14:20:58,046 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54887]
+INFO 2023-11-22 14:20:58,050 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:20:58,054 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54887]
+INFO 2023-11-22 14:20:58,054 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:20:58,070 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54888]
+INFO 2023-11-22 14:20:58,075 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:20:58,080 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54888]
+INFO 2023-11-22 14:20:58,080 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:20:58,100 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54889]
+INFO 2023-11-22 14:20:58,103 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:20:58,108 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54889]
+INFO 2023-11-22 14:20:58,108 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+WARNING 2023-11-22 14:21:15,340 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:15,342 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:15,344 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:15,375 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_B013_HOO sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:15,380 base>ws>wsSendTicketStatus ...Done
+INFO 2023-11-22 14:21:15,380 base>ws>wscounterstatus channel_group_name:cs_4 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:15,386 base>ws>wscounterstatus ...Done
+INFO 2023-11-22 14:21:15,396 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.08, 127.0.0.1:54859][0m
+WARNING 2023-11-22 14:21:15,418 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:15,420 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:15,421 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:15,438 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:54859][0m
+INFO 2023-11-22 14:21:15,445 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54887]
+INFO 2023-11-22 14:21:15,446 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:54888]
+INFO 2023-11-22 14:21:15,446 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54889]
+INFO 2023-11-22 14:21:15,447 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-22 14:21:15,448 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-22 14:21:15,448 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-22 14:21:15,456 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54896]
+INFO 2023-11-22 14:21:15,461 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:21:15,465 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54896]
+INFO 2023-11-22 14:21:15,466 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:21:15,484 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54897]
+INFO 2023-11-22 14:21:15,487 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:21:15,492 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54897]
+INFO 2023-11-22 14:21:15,492 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:21:15,515 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54898]
+INFO 2023-11-22 14:21:15,519 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:21:15,522 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54898]
+INFO 2023-11-22 14:21:15,523 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+WARNING 2023-11-22 14:21:15,989 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:15,991 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:15,992 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:16,065 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:16,070 base>ws>wssendwebtv ...Done
+INFO 2023-11-22 14:21:16,072 base>ws>wssenddispcall channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:16,074 base>ws>wssenddispcall ...Done
+INFO 2023-11-22 14:21:16,078 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:16,080 base>ws>wssendql ...Done
+INFO 2023-11-22 14:21:16,085 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_B014_nJC sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:16,086 base>ws>wsSendTicketStatus ...Done
+INFO 2023-11-22 14:21:16,089 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:16,091 base>ws>wssendvoice ...Done
+INFO 2023-11-22 14:21:16,091 base>ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:16,093 base>ws>wssendflashlight ...Done
+INFO 2023-11-22 14:21:16,095 base>ws>wscounterstatus channel_group_name:cs_4 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:16,098 base>ws>wscounterstatus ...Done
+INFO 2023-11-22 14:21:16,107 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.14, 127.0.0.1:54859][0m
+WARNING 2023-11-22 14:21:16,135 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:16,138 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:16,140 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:16,159 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.05, 127.0.0.1:54859][0m
+INFO 2023-11-22 14:21:16,165 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54898]
+INFO 2023-11-22 14:21:16,166 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:54897]
+INFO 2023-11-22 14:21:16,166 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54896]
+INFO 2023-11-22 14:21:16,167 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-22 14:21:16,168 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-22 14:21:16,170 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-22 14:21:16,178 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54905]
+INFO 2023-11-22 14:21:16,183 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:21:16,187 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54905]
+INFO 2023-11-22 14:21:16,188 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:21:16,211 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54906]
+INFO 2023-11-22 14:21:16,216 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:21:16,222 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54906]
+INFO 2023-11-22 14:21:16,223 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:21:16,241 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54907]
+INFO 2023-11-22 14:21:16,246 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:21:16,250 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54907]
+INFO 2023-11-22 14:21:16,251 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+WARNING 2023-11-22 14:21:19,281 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:19,282 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:19,283 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:19,318 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_B014_nJC sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:19,325 base>ws>wsSendTicketStatus ...Done
+INFO 2023-11-22 14:21:19,326 base>ws>wscounterstatus channel_group_name:cs_4 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:19,329 base>ws>wscounterstatus ...Done
+INFO 2023-11-22 14:21:19,338 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.08, 127.0.0.1:54859][0m
+WARNING 2023-11-22 14:21:19,364 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:19,365 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:19,367 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:19,382 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:54859][0m
+INFO 2023-11-22 14:21:19,387 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54905]
+INFO 2023-11-22 14:21:19,388 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:54906]
+INFO 2023-11-22 14:21:19,388 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54907]
+INFO 2023-11-22 14:21:19,389 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-22 14:21:19,389 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-22 14:21:19,389 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-22 14:21:19,402 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54913]
+INFO 2023-11-22 14:21:19,408 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:21:19,412 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54913]
+INFO 2023-11-22 14:21:19,412 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:21:19,433 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54914]
+INFO 2023-11-22 14:21:19,437 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:21:19,441 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54914]
+INFO 2023-11-22 14:21:19,441 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:21:19,465 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54915]
+INFO 2023-11-22 14:21:19,469 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:21:19,472 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54915]
+INFO 2023-11-22 14:21:19,473 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+WARNING 2023-11-22 14:21:20,208 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:20,209 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:20,210 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:20,278 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:20,282 base>ws>wssendwebtv ...Done
+INFO 2023-11-22 14:21:20,284 base>ws>wssenddispcall channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:20,285 base>ws>wssenddispcall ...Done
+INFO 2023-11-22 14:21:20,288 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:20,292 base>ws>wssendql ...Done
+INFO 2023-11-22 14:21:20,296 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_B015_oWb sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:20,298 base>ws>wsSendTicketStatus ...Done
+INFO 2023-11-22 14:21:20,300 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:20,301 base>ws>wssendvoice ...Done
+INFO 2023-11-22 14:21:20,301 base>ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:20,303 base>ws>wssendflashlight ...Done
+INFO 2023-11-22 14:21:20,304 base>ws>wscounterstatus channel_group_name:cs_4 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:20,308 base>ws>wscounterstatus ...Done
+INFO 2023-11-22 14:21:20,316 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.13, 127.0.0.1:54859][0m
+WARNING 2023-11-22 14:21:20,342 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:20,343 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:20,345 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:20,361 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:54859][0m
+INFO 2023-11-22 14:21:20,367 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54915]
+INFO 2023-11-22 14:21:20,368 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54913]
+INFO 2023-11-22 14:21:20,369 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:54914]
+INFO 2023-11-22 14:21:20,370 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-22 14:21:20,370 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-22 14:21:20,372 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-22 14:21:20,385 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54922]
+INFO 2023-11-22 14:21:20,390 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:21:20,399 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54922]
+INFO 2023-11-22 14:21:20,400 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:21:20,416 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54923]
+INFO 2023-11-22 14:21:20,420 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:21:20,444 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54923]
+INFO 2023-11-22 14:21:20,445 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:21:20,460 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54924]
+INFO 2023-11-22 14:21:20,464 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:21:20,468 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54924]
+INFO 2023-11-22 14:21:20,469 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+INFO 2023-11-22 14:21:30,928 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:21:31,846 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:21:31,870 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 14:21:32,019 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 14:21:32,019 base>views>main -SCH- Now:11/22/2023, 06:21:32
+INFO 2023-11-22 14:21:32,106 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:21:32,106 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:21:32,106 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:21:32 [Yes]
+INFO 2023-11-22 14:21:32,108 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:21:32,108 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:21:32,110 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:21:32 [Yes]
+INFO 2023-11-22 14:21:32,111 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 14:21:32,111 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 14:21:32,112 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 06:21:32 [Yes]
+INFO 2023-11-22 14:21:32,113 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:21:32,114 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:21:32,114 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:21:32 [Yes]
+INFO 2023-11-22 14:21:32,115 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:21:32,115 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:21:32,116 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:21:32 [Yes]
+INFO 2023-11-22 14:21:32,117 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:21:32,117 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:21:32,117 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:21:32 [Yes]
+WARNING 2023-11-22 14:21:41,547 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:41,549 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:41,551 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:41,600 base>ws>wscounterstatus channel_group_name:cs_4 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:41,605 base>ws>wscounterstatus ...Done
+INFO 2023-11-22 14:21:41,623 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.10, 127.0.0.1:54942][0m
+WARNING 2023-11-22 14:21:41,645 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:41,647 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:41,648 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:41,678 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.05, 127.0.0.1:54942][0m
+INFO 2023-11-22 14:21:41,705 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54949]
+INFO 2023-11-22 14:21:41,710 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:21:41,733 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54949]
+INFO 2023-11-22 14:21:41,734 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:21:41,748 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54953]
+INFO 2023-11-22 14:21:41,752 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:21:41,757 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54953]
+INFO 2023-11-22 14:21:41,757 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:21:41,779 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54954]
+INFO 2023-11-22 14:21:41,782 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:21:41,786 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54954]
+INFO 2023-11-22 14:21:41,786 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+WARNING 2023-11-22 14:21:42,699 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:42,700 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:42,701 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:42,734 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_B015_oWb sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:42,739 base>ws>wsSendTicketStatus ...Done
+INFO 2023-11-22 14:21:42,739 base>ws>wscounterstatus channel_group_name:cs_4 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:42,742 base>ws>wscounterstatus ...Done
+INFO 2023-11-22 14:21:42,751 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.08, 127.0.0.1:54942][0m
+WARNING 2023-11-22 14:21:42,773 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:42,774 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:42,776 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:42,792 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:54942][0m
+INFO 2023-11-22 14:21:42,796 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:54953]
+INFO 2023-11-22 14:21:42,797 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54949]
+INFO 2023-11-22 14:21:42,798 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54954]
+INFO 2023-11-22 14:21:42,800 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-22 14:21:42,803 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-22 14:21:42,804 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-22 14:21:42,809 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54962]
+INFO 2023-11-22 14:21:42,813 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:21:42,830 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54962]
+INFO 2023-11-22 14:21:42,831 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:21:42,845 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54963]
+INFO 2023-11-22 14:21:42,849 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:21:42,860 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54963]
+INFO 2023-11-22 14:21:42,861 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:21:42,876 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54964]
+INFO 2023-11-22 14:21:42,880 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:21:42,892 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54964]
+INFO 2023-11-22 14:21:42,892 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+WARNING 2023-11-22 14:21:43,373 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:43,374 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:43,376 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:43,444 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:43,449 base>ws>wssendwebtv ...Done
+INFO 2023-11-22 14:21:43,451 base>ws>wssenddispcall channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:43,452 base>ws>wssenddispcall ...Done
+INFO 2023-11-22 14:21:43,456 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:43,461 base>ws>wssendql ...Done
+INFO 2023-11-22 14:21:43,466 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_B016_W2g sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:43,467 base>ws>wsSendTicketStatus ...Done
+INFO 2023-11-22 14:21:43,470 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:43,473 base>ws>wssendvoice ...Done
+INFO 2023-11-22 14:21:43,474 base>ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:43,475 base>ws>wssendflashlight ...Done
+INFO 2023-11-22 14:21:43,477 base>ws>wscounterstatus channel_group_name:cs_4 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:43,480 base>ws>wscounterstatus ...Done
+INFO 2023-11-22 14:21:43,488 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.14, 127.0.0.1:54942][0m
+WARNING 2023-11-22 14:21:43,510 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:43,512 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:43,513 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:43,532 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:54942][0m
+INFO 2023-11-22 14:21:43,538 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54962]
+INFO 2023-11-22 14:21:43,539 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54964]
+INFO 2023-11-22 14:21:43,539 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:54963]
+INFO 2023-11-22 14:21:43,541 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-22 14:21:43,542 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-22 14:21:43,544 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-22 14:21:43,552 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54971]
+INFO 2023-11-22 14:21:43,556 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:21:43,561 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54971]
+INFO 2023-11-22 14:21:43,561 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:21:43,578 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54972]
+INFO 2023-11-22 14:21:43,582 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:21:43,594 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54972]
+INFO 2023-11-22 14:21:43,594 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:21:43,609 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54973]
+INFO 2023-11-22 14:21:43,613 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:21:43,617 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54973]
+INFO 2023-11-22 14:21:43,617 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+WARNING 2023-11-22 14:21:46,564 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:46,566 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:46,567 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:46,594 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:46,614 base>ws>wssendwebtv ...Done
+INFO 2023-11-22 14:21:46,616 base>ws>wssenddispcall channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:46,617 base>ws>wssenddispcall ...Done
+INFO 2023-11-22 14:21:46,619 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:46,620 base>ws>wssendvoice ...Done
+INFO 2023-11-22 14:21:46,620 base>ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:46,621 base>ws>wssendflashlight ...Done
+INFO 2023-11-22 14:21:46,628 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.08, 127.0.0.1:54942][0m
+WARNING 2023-11-22 14:21:46,652 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:21:46,654 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:21:46,655 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:21:46,671 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:54942][0m
+INFO 2023-11-22 14:21:46,677 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:54973]
+INFO 2023-11-22 14:21:46,678 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:54972]
+INFO 2023-11-22 14:21:46,678 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:54971]
+INFO 2023-11-22 14:21:46,681 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-22 14:21:46,687 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:54984]
+INFO 2023-11-22 14:21:46,688 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-22 14:21:46,691 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:21:46,695 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-22 14:21:46,696 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:54984]
+INFO 2023-11-22 14:21:46,696 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:21:46,719 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:54985]
+INFO 2023-11-22 14:21:46,723 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:21:46,727 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:54985]
+INFO 2023-11-22 14:21:46,728 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:21:46,752 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:54986]
+INFO 2023-11-22 14:21:46,756 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:21:46,761 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:54986]
+INFO 2023-11-22 14:21:46,762 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+INFO 2023-11-22 14:21:56,390 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:56,410 base>ws>wssendwebtv ...Done
+INFO 2023-11-22 14:21:56,410 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:56,411 base>ws>wssenddispwait ...Done
+INFO 2023-11-22 14:21:56,414 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:56,417 base>ws>wssendql ...Done
+INFO 2023-11-22 14:21:56,418 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:21:56,420 base>ws>wsSendPrintTicket ...Done
+INFO 2023-11-22 14:21:56,421 base>v_roche>rocheSMS SMS disabled
+INFO 2023-11-22 14:21:56,430 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.11, 127.0.0.1:54989][0m
+INFO 2023-11-22 14:23:06,432 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:55000][0m
+INFO 2023-11-22 14:23:13,413 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:55004][0m
+INFO 2023-11-22 14:23:13,705 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.29, 127.0.0.1:55004][0m
+INFO 2023-11-22 14:23:13,988 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:55009][0m
+INFO 2023-11-22 14:23:14,013 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:55012]
+INFO 2023-11-22 14:23:14,017 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-11-22 14:23:14,020 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:55012]
+INFO 2023-11-22 14:23:14,021 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-11-22 14:23:14,047 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:55004][0m
+INFO 2023-11-22 14:23:17,891 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:23:18,819 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:23:18,840 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 14:23:18,956 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 14:23:18,957 base>views>main -SCH- Now:11/22/2023, 06:23:18
+INFO 2023-11-22 14:23:19,031 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:23:19,031 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:23:19,032 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:23:18 [Yes]
+INFO 2023-11-22 14:23:19,034 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:23:19,034 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:23:19,034 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:23:19 [Yes]
+INFO 2023-11-22 14:23:19,035 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 14:23:19,036 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 14:23:19,036 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 06:23:19 [Yes]
+INFO 2023-11-22 14:23:19,037 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:23:19,037 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:23:19,038 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:23:19 [Yes]
+INFO 2023-11-22 14:23:19,039 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:23:19,039 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:23:19,039 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:23:19 [Yes]
+INFO 2023-11-22 14:23:19,040 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:23:19,040 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:23:19,040 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:23:19 [Yes]
+INFO 2023-11-22 14:23:19,596 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:55015][0m
+WARNING 2023-11-22 14:23:51,257 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:23:51,258 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:23:51,259 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:23:51,308 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:23:51,313 base>ws>wssendwebtv ...Done
+INFO 2023-11-22 14:23:51,314 base>ws>wssenddispcall channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:23:51,317 base>ws>wssenddispcall ...Done
+INFO 2023-11-22 14:23:51,319 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:23:51,320 base>ws>wssendvoice ...Done
+INFO 2023-11-22 14:23:51,321 base>ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:23:51,322 base>ws>wssendflashlight ...Done
+INFO 2023-11-22 14:23:51,340 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.10, 127.0.0.1:55030][0m
+WARNING 2023-11-22 14:23:51,361 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:23:51,363 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:23:51,364 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:23:51,389 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.05, 127.0.0.1:55030][0m
+INFO 2023-11-22 14:23:51,415 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55037]
+INFO 2023-11-22 14:23:51,420 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:23:51,426 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55037]
+INFO 2023-11-22 14:23:51,427 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:23:51,440 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:55040]
+INFO 2023-11-22 14:23:51,445 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:23:51,449 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:55040]
+INFO 2023-11-22 14:23:51,450 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:23:51,471 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55041]
+INFO 2023-11-22 14:23:51,476 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:23:51,479 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55041]
+INFO 2023-11-22 14:23:51,480 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+WARNING 2023-11-22 14:23:54,824 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:23:54,825 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:23:54,826 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:23:54,856 base>ws>wscounterstatus channel_group_name:cs_4 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:23:54,862 base>ws>wscounterstatus ...Done
+INFO 2023-11-22 14:23:54,871 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.07, 127.0.0.1:55030][0m
+WARNING 2023-11-22 14:23:54,892 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:23:54,894 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:23:54,895 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:23:54,912 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:55030][0m
+INFO 2023-11-22 14:23:54,917 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:55040]
+INFO 2023-11-22 14:23:54,918 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55041]
+INFO 2023-11-22 14:23:54,919 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55037]
+INFO 2023-11-22 14:23:54,920 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-22 14:23:54,922 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-22 14:23:54,929 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55049]
+INFO 2023-11-22 14:23:54,932 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:23:54,938 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55049]
+INFO 2023-11-22 14:23:54,939 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [2]
+INFO 2023-11-22 14:23:54,940 base>consumers>disconnect Disconnected:printerstatus_KB Internal [1]
+INFO 2023-11-22 14:23:54,966 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:55050]
+INFO 2023-11-22 14:23:54,970 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:23:54,974 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:55050]
+INFO 2023-11-22 14:23:54,974 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:23:54,996 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55051]
+INFO 2023-11-22 14:23:55,001 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:23:55,006 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55051]
+INFO 2023-11-22 14:23:55,006 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+WARNING 2023-11-22 14:23:55,852 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:23:55,854 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:23:55,855 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:23:55,887 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_B016_W2g sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:23:55,905 base>ws>wsSendTicketStatus ...Done
+INFO 2023-11-22 14:23:55,906 base>ws>wscounterstatus channel_group_name:cs_4 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:23:55,909 base>ws>wscounterstatus ...Done
+INFO 2023-11-22 14:23:55,917 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.08, 127.0.0.1:55030][0m
+WARNING 2023-11-22 14:23:55,941 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:23:55,943 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:23:55,944 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:23:55,960 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:55030][0m
+INFO 2023-11-22 14:23:55,965 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55049]
+INFO 2023-11-22 14:23:55,966 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:55050]
+INFO 2023-11-22 14:23:55,967 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55051]
+INFO 2023-11-22 14:23:55,968 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-22 14:23:55,973 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-22 14:23:55,974 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-22 14:23:55,978 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55059]
+INFO 2023-11-22 14:23:55,982 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:23:55,987 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55059]
+INFO 2023-11-22 14:23:55,987 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:23:56,013 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:55060]
+INFO 2023-11-22 14:23:56,017 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:23:56,021 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:55060]
+INFO 2023-11-22 14:23:56,022 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:23:56,043 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55061]
+INFO 2023-11-22 14:23:56,047 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:23:56,051 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55061]
+INFO 2023-11-22 14:23:56,052 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+WARNING 2023-11-22 14:23:56,609 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:23:56,611 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:23:56,613 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:23:56,680 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:23:56,685 base>ws>wssendwebtv ...Done
+INFO 2023-11-22 14:23:56,687 base>ws>wssenddispcall channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:23:56,688 base>ws>wssenddispcall ...Done
+INFO 2023-11-22 14:23:56,692 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:23:56,694 base>ws>wssendql ...Done
+INFO 2023-11-22 14:23:56,699 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_B017_7p2 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:23:56,700 base>ws>wsSendTicketStatus ...Done
+INFO 2023-11-22 14:23:56,703 base>ws>wssendvoice channel_group_name:voice_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:23:56,704 base>ws>wssendvoice ...Done
+INFO 2023-11-22 14:23:56,704 base>ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:23:56,706 base>ws>wssendflashlight ...Done
+INFO 2023-11-22 14:23:56,707 base>ws>wscounterstatus channel_group_name:cs_4 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:23:56,710 base>ws>wscounterstatus ...Done
+INFO 2023-11-22 14:23:56,719 runserver>log_action [32mHTTP POST /softkey/4/ 302 [0.13, 127.0.0.1:55030][0m
+WARNING 2023-11-22 14:23:56,741 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is D TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-D[1]
+WARNING 2023-11-22 14:23:56,743 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is E TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-E[1]
+WARNING 2023-11-22 14:23:56,744 base>views>SoftkeyView TicketFormat not found (in find TicketRoute.waiting). Branch is KB, TicketType is F TicketFormat maybe disabled/removed. Please disable TicketRoute : KB-F[1]
+INFO 2023-11-22 14:23:56,759 runserver>log_action [mHTTP GET /softkey/4/ 200 [0.04, 127.0.0.1:55030][0m
+INFO 2023-11-22 14:23:56,764 runserver>log_action WebSocket DISCONNECT /ws/cs/4/ [127.0.0.1:55060]
+INFO 2023-11-22 14:23:56,765 runserver>log_action WebSocket DISCONNECT /ws/pstatus/KB/ [127.0.0.1:55059]
+INFO 2023-11-22 14:23:56,765 runserver>log_action WebSocket DISCONNECT /ws/ql/KB/Reception/ [127.0.0.1:55061]
+INFO 2023-11-22 14:23:56,767 base>consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2023-11-22 14:23:56,767 base>consumers>disconnect Disconnected:cs_4 Internal [0]
+INFO 2023-11-22 14:23:56,769 base>consumers>disconnect Disconnected:ql_KB_Reception Internal [0]
+INFO 2023-11-22 14:23:56,776 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/KB/ [127.0.0.1:55068]
+INFO 2023-11-22 14:23:56,782 base>consumers>connect connecting:printerstatus_KB
+INFO 2023-11-22 14:23:56,787 runserver>log_action WebSocket CONNECT /ws/pstatus/KB/ [127.0.0.1:55068]
+INFO 2023-11-22 14:23:56,788 base>consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2023-11-22 14:23:56,803 runserver>log_action WebSocket HANDSHAKING /ws/cs/4/ [127.0.0.1:55069]
+INFO 2023-11-22 14:23:56,807 base>consumers>connect connecting:cs_4
+INFO 2023-11-22 14:23:56,812 runserver>log_action WebSocket CONNECT /ws/cs/4/ [127.0.0.1:55069]
+INFO 2023-11-22 14:23:56,812 base>consumers>connect IP 127.0.0.1 Connected:cs_4 [1]
+INFO 2023-11-22 14:23:56,835 runserver>log_action WebSocket HANDSHAKING /ws/ql/KB/Reception/ [127.0.0.1:55070]
+INFO 2023-11-22 14:23:56,839 base>consumers>connect connecting:ql_KB_Reception
+INFO 2023-11-22 14:23:56,842 runserver>log_action WebSocket CONNECT /ws/ql/KB/Reception/ [127.0.0.1:55070]
+INFO 2023-11-22 14:23:56,843 base>consumers>connect IP 127.0.0.1 Connected:ql_KB_Reception [1]
+INFO 2023-11-22 14:24:28,311 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:55073][0m
+INFO 2023-11-22 14:24:28,565 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.25, 127.0.0.1:55073][0m
+INFO 2023-11-22 14:24:28,874 runserver>log_action [mHTTP POST /api/token/ 200 [0.30, 127.0.0.1:55078][0m
+INFO 2023-11-22 14:24:28,902 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:55081]
+INFO 2023-11-22 14:24:28,906 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-11-22 14:24:28,910 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:55081]
+INFO 2023-11-22 14:24:28,910 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-11-22 14:24:28,936 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:55073][0m
+INFO 2023-11-22 14:24:30,948 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:55073][0m
+INFO 2023-11-22 14:24:36,338 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:24:37,290 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:24:37,310 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 14:24:37,451 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 14:24:37,452 base>views>main -SCH- Now:11/22/2023, 06:24:37
+INFO 2023-11-22 14:24:37,516 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:24:37,517 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:24:37,517 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:24:37 [Yes]
+INFO 2023-11-22 14:24:37,519 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:24:37,519 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:24:37,520 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:24:37 [Yes]
+INFO 2023-11-22 14:24:37,521 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 14:24:37,521 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 14:24:37,522 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 06:24:37 [Yes]
+INFO 2023-11-22 14:24:37,523 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:24:37,523 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:24:37,523 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:24:37 [Yes]
+INFO 2023-11-22 14:24:37,525 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:24:37,525 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:24:37,525 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:24:37 [Yes]
+INFO 2023-11-22 14:24:37,526 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:24:37,526 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:24:37,526 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:24:37 [Yes]
+INFO 2023-11-22 14:25:18,675 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:55100][0m
+INFO 2023-11-22 14:25:18,936 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.26, 127.0.0.1:55100][0m
+INFO 2023-11-22 14:25:19,285 runserver>log_action [mHTTP POST /api/token/ 200 [0.34, 127.0.0.1:55105][0m
+INFO 2023-11-22 14:25:19,316 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:55108]
+INFO 2023-11-22 14:25:19,343 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-11-22 14:25:19,356 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:55108]
+INFO 2023-11-22 14:25:19,356 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-11-22 14:25:19,388 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:55100][0m
+INFO 2023-11-22 14:25:46,312 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:55100][0m
+INFO 2023-11-22 14:27:25,663 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:27:26,561 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:27:26,582 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 14:27:26,700 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 14:27:26,700 base>views>main -SCH- Now:11/22/2023, 06:27:26
+INFO 2023-11-22 14:27:26,766 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:27:26,767 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:27:26,767 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:27:26 [Yes]
+INFO 2023-11-22 14:27:26,769 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:27:26,770 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:27:26,770 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:27:26 [Yes]
+INFO 2023-11-22 14:27:26,771 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 14:27:26,771 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 14:27:26,771 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 06:27:26 [Yes]
+INFO 2023-11-22 14:27:26,772 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:27:26,773 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:27:26,773 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:27:26 [Yes]
+INFO 2023-11-22 14:27:26,775 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:27:26,775 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:27:26,775 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:27:26 [Yes]
+INFO 2023-11-22 14:27:26,776 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:27:26,777 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:27:26,777 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:27:26 [Yes]
+INFO 2023-11-22 14:27:29,794 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:55173][0m
+INFO 2023-11-22 14:27:30,040 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:55173][0m
+INFO 2023-11-22 14:27:30,300 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:55178][0m
+INFO 2023-11-22 14:27:30,322 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:55181]
+INFO 2023-11-22 14:27:30,343 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-11-22 14:27:30,349 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:55181]
+INFO 2023-11-22 14:27:30,349 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-11-22 14:27:30,378 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:55173][0m
+INFO 2023-11-22 14:27:32,373 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:55173][0m
+INFO 2023-11-22 14:41:19,035 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:41:20,026 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:41:20,047 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 14:41:20,173 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 14:41:20,173 base>views>main -SCH- Now:11/22/2023, 06:41:20
+INFO 2023-11-22 14:41:20,244 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:41:20,244 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:41:20,245 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:41:20 [Yes]
+INFO 2023-11-22 14:41:20,246 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:41:20,247 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:41:20,247 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:41:20 [Yes]
+INFO 2023-11-22 14:41:20,248 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 14:41:20,248 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 14:41:20,248 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 06:41:20 [Yes]
+INFO 2023-11-22 14:41:20,249 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:41:20,250 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:41:20,250 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:41:20 [Yes]
+INFO 2023-11-22 14:41:20,251 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:41:20,251 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:41:20,252 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:41:20 [Yes]
+INFO 2023-11-22 14:41:20,252 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:41:20,253 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:41:20,253 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:41:20 [Yes]
+INFO 2023-11-22 14:41:21,325 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:55383][0m
+INFO 2023-11-22 14:41:21,565 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:55383][0m
+INFO 2023-11-22 14:41:21,801 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:55388][0m
+INFO 2023-11-22 14:41:21,805 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:55391]
+INFO 2023-11-22 14:41:21,830 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-11-22 14:41:21,836 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:55391]
+INFO 2023-11-22 14:41:21,837 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-11-22 14:41:21,860 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:55383][0m
+INFO 2023-11-22 14:41:23,844 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:55383][0m
+INFO 2023-11-22 14:42:24,480 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55456][0m
+INFO 2023-11-22 14:42:24,750 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.27, 127.0.0.1:55456][0m
+INFO 2023-11-22 14:42:25,353 runserver>log_action [mHTTP POST /api/token/ 200 [0.59, 127.0.0.1:55461][0m
+INFO 2023-11-22 14:42:25,410 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:55464]
+INFO 2023-11-22 14:42:25,421 base>consumers>connect connecting:print_KB
+INFO 2023-11-22 14:42:25,431 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:55464]
+INFO 2023-11-22 14:42:25,432 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-22 14:42:30,449 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:55456][0m
+INFO 2023-11-22 14:42:30,492 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=009&tickettime=2023-11-22T06:21:56.333170Z 200 [0.03, 127.0.0.1:55456][0m
+INFO 2023-11-22 14:42:31,326 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:42:31,330 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-22 14:42:31,332 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:55456][0m
+INFO 2023-11-22 14:42:58,525 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:42:59,375 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:42:59,394 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 14:42:59,510 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 14:42:59,511 base>views>main -SCH- Now:11/22/2023, 06:42:59
+INFO 2023-11-22 14:42:59,577 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:42:59,577 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:42:59,578 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:42:59 [Yes]
+INFO 2023-11-22 14:42:59,579 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:42:59,580 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:42:59,580 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:42:59 [Yes]
+INFO 2023-11-22 14:42:59,581 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 14:42:59,581 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 14:42:59,581 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 06:42:59 [Yes]
+INFO 2023-11-22 14:42:59,582 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:42:59,582 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:42:59,583 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:42:59 [Yes]
+INFO 2023-11-22 14:42:59,584 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:42:59,584 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:42:59,584 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:42:59 [Yes]
+INFO 2023-11-22 14:42:59,585 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:42:59,586 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:42:59,586 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:42:59 [Yes]
+INFO 2023-11-22 14:43:00,739 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:55493][0m
+INFO 2023-11-22 14:43:00,981 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:55493][0m
+INFO 2023-11-22 14:43:01,220 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:55498][0m
+INFO 2023-11-22 14:43:01,225 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:55501]
+INFO 2023-11-22 14:43:01,250 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-11-22 14:43:01,257 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:55501]
+INFO 2023-11-22 14:43:01,258 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-11-22 14:43:01,283 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:55493][0m
+INFO 2023-11-22 14:43:03,282 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:55493][0m
+INFO 2023-11-22 14:43:10,817 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55510][0m
+INFO 2023-11-22 14:43:11,097 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.27, 127.0.0.1:55510][0m
+INFO 2023-11-22 14:43:11,374 runserver>log_action [mHTTP POST /api/token/ 200 [0.26, 127.0.0.1:55515][0m
+INFO 2023-11-22 14:43:11,401 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:55518]
+INFO 2023-11-22 14:43:11,405 base>consumers>connect connecting:print_KB
+INFO 2023-11-22 14:43:11,408 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:55518]
+INFO 2023-11-22 14:43:11,408 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-22 14:43:16,431 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55510][0m
+INFO 2023-11-22 14:43:16,640 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:43:16,645 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-22 14:43:16,647 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:55510][0m
+INFO 2023-11-22 14:44:50,115 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:44:50,993 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:44:51,013 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 14:44:51,130 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 14:44:51,130 base>views>main -SCH- Now:11/22/2023, 06:44:51
+INFO 2023-11-22 14:44:51,195 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:44:51,196 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:44:51,196 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:44:51 [Yes]
+INFO 2023-11-22 14:44:51,198 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:44:51,198 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:44:51,198 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:44:51 [Yes]
+INFO 2023-11-22 14:44:51,199 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 14:44:51,200 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 14:44:51,200 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 06:44:51 [Yes]
+INFO 2023-11-22 14:44:51,201 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:44:51,201 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:44:51,201 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:44:51 [Yes]
+INFO 2023-11-22 14:44:51,203 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:44:51,203 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:44:51,204 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:44:51 [Yes]
+INFO 2023-11-22 14:44:51,205 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:44:51,205 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:44:51,205 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:44:51 [Yes]
+INFO 2023-11-22 14:44:51,995 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:55580][0m
+INFO 2023-11-22 14:44:52,237 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:55580][0m
+INFO 2023-11-22 14:44:52,481 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:55585][0m
+INFO 2023-11-22 14:44:52,486 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:55588]
+INFO 2023-11-22 14:44:52,509 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-11-22 14:44:52,518 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:55588]
+INFO 2023-11-22 14:44:52,518 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-11-22 14:44:52,549 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:55580][0m
+INFO 2023-11-22 14:44:53,651 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55594][0m
+INFO 2023-11-22 14:44:53,920 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.26, 127.0.0.1:55594][0m
+INFO 2023-11-22 14:44:54,224 runserver>log_action [mHTTP POST /api/token/ 200 [0.29, 127.0.0.1:55599][0m
+INFO 2023-11-22 14:44:54,256 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:55602]
+INFO 2023-11-22 14:44:54,260 base>consumers>connect connecting:print_KB
+INFO 2023-11-22 14:44:54,264 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:55602]
+INFO 2023-11-22 14:44:54,264 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-22 14:44:54,543 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:55580][0m
+INFO 2023-11-22 14:44:59,274 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55594][0m
+INFO 2023-11-22 14:44:59,472 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:44:59,477 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-22 14:44:59,479 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:55594][0m
+INFO 2023-11-22 14:46:29,019 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:46:29,845 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:46:29,864 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 14:46:29,979 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 14:46:29,980 base>views>main -SCH- Now:11/22/2023, 06:46:29
+INFO 2023-11-22 14:46:30,046 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:46:30,046 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:46:30,046 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:46:29 [Yes]
+INFO 2023-11-22 14:46:30,048 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:46:30,048 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:46:30,049 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:46:30 [Yes]
+INFO 2023-11-22 14:46:30,050 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 14:46:30,050 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 14:46:30,050 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 06:46:30 [Yes]
+INFO 2023-11-22 14:46:30,051 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:46:30,052 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:46:30,052 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:46:30 [Yes]
+INFO 2023-11-22 14:46:30,053 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:46:30,054 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:46:30,054 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:46:30 [Yes]
+INFO 2023-11-22 14:46:30,055 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:46:30,055 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:46:30,055 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:46:30 [Yes]
+INFO 2023-11-22 14:46:30,757 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55640][0m
+INFO 2023-11-22 14:46:31,018 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.26, 127.0.0.1:55640][0m
+INFO 2023-11-22 14:46:31,297 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:55645][0m
+INFO 2023-11-22 14:46:31,322 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:55648]
+INFO 2023-11-22 14:46:31,342 base>consumers>connect connecting:print_KB
+INFO 2023-11-22 14:46:31,347 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:55648]
+INFO 2023-11-22 14:46:31,348 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-22 14:46:36,371 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55640][0m
+INFO 2023-11-22 14:46:36,579 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:46:36,584 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-22 14:46:36,586 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:55640][0m
+INFO 2023-11-22 14:59:01,038 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:59:01,923 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 14:59:01,944 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 14:59:02,075 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 14:59:02,076 base>views>main -SCH- Now:11/22/2023, 06:59:02
+INFO 2023-11-22 14:59:02,145 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:59:02,146 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:59:02,146 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:59:02 [Yes]
+INFO 2023-11-22 14:59:02,148 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:59:02,148 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:59:02,149 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:59:02 [Yes]
+INFO 2023-11-22 14:59:02,150 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 14:59:02,150 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 14:59:02,150 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 06:59:02 [Yes]
+INFO 2023-11-22 14:59:02,151 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:59:02,151 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:59:02,152 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:59:02 [Yes]
+INFO 2023-11-22 14:59:02,153 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:59:02,153 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:59:02,154 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:59:02 [Yes]
+INFO 2023-11-22 14:59:02,155 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 14:59:02,155 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 14:59:02,155 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 06:59:02 [Yes]
+INFO 2023-11-22 14:59:07,143 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55787][0m
+INFO 2023-11-22 14:59:07,385 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.24, 127.0.0.1:55787][0m
+INFO 2023-11-22 14:59:07,629 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:55792][0m
+INFO 2023-11-22 14:59:07,660 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:55795]
+INFO 2023-11-22 14:59:07,679 base>consumers>connect connecting:print_KB
+INFO 2023-11-22 14:59:07,684 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:55795]
+INFO 2023-11-22 14:59:07,684 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-22 14:59:12,714 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55787][0m
+INFO 2023-11-22 14:59:15,890 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 14:59:15,895 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-22 14:59:15,897 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:55787][0m
+INFO 2023-11-22 15:01:17,892 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 15:01:18,846 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 15:01:18,868 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 15:01:18,992 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 15:01:18,993 base>views>main -SCH- Now:11/22/2023, 07:01:18
+INFO 2023-11-22 15:01:19,069 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:01:19,069 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:01:19,070 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:01:18 [Yes]
+INFO 2023-11-22 15:01:19,072 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:01:19,072 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:01:19,072 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:01:19 [Yes]
+INFO 2023-11-22 15:01:19,073 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 15:01:19,074 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 15:01:19,074 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 07:01:19 [Yes]
+INFO 2023-11-22 15:01:19,075 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:01:19,076 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:01:19,076 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:01:19 [Yes]
+INFO 2023-11-22 15:01:19,077 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:01:19,077 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:01:19,078 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:01:19 [Yes]
+INFO 2023-11-22 15:01:19,079 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:01:19,079 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:01:19,079 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:01:19 [Yes]
+INFO 2023-11-22 15:01:21,702 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55825][0m
+INFO 2023-11-22 15:01:21,948 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.24, 127.0.0.1:55825][0m
+INFO 2023-11-22 15:01:22,200 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:55830][0m
+INFO 2023-11-22 15:01:22,230 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:55833]
+INFO 2023-11-22 15:01:22,250 base>consumers>connect connecting:print_KB
+INFO 2023-11-22 15:01:22,257 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:55833]
+INFO 2023-11-22 15:01:22,257 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-22 15:02:00,199 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 15:02:01,133 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 15:02:01,153 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 15:02:01,276 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 15:02:01,276 base>views>main -SCH- Now:11/22/2023, 07:02:01
+INFO 2023-11-22 15:02:01,345 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:02:01,346 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:02:01,346 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:02:01 [Yes]
+INFO 2023-11-22 15:02:01,348 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:02:01,348 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:02:01,348 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:02:01 [Yes]
+INFO 2023-11-22 15:02:01,349 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 15:02:01,349 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 15:02:01,350 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 07:02:01 [Yes]
+INFO 2023-11-22 15:02:01,351 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:02:01,351 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:02:01,351 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:02:01 [Yes]
+INFO 2023-11-22 15:02:01,352 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:02:01,352 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:02:01,353 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:02:01 [Yes]
+INFO 2023-11-22 15:02:01,354 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:02:01,354 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:02:01,354 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:02:01 [Yes]
+INFO 2023-11-22 15:02:01,855 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55857][0m
+INFO 2023-11-22 15:02:02,098 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.24, 127.0.0.1:55857][0m
+INFO 2023-11-22 15:02:02,332 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:55866][0m
+INFO 2023-11-22 15:02:02,337 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:55869]
+INFO 2023-11-22 15:02:02,357 base>consumers>connect connecting:print_KB
+INFO 2023-11-22 15:02:02,362 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:55869]
+INFO 2023-11-22 15:02:02,362 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-22 15:02:07,376 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55857][0m
+INFO 2023-11-22 15:02:09,407 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 15:02:09,412 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-22 15:02:09,414 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:55857][0m
+INFO 2023-11-22 15:04:48,833 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 15:04:49,757 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 15:04:49,781 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 15:04:49,917 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 15:04:49,917 base>views>main -SCH- Now:11/22/2023, 07:04:49
+INFO 2023-11-22 15:04:49,983 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:04:49,983 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:04:49,984 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:04:49 [Yes]
+INFO 2023-11-22 15:04:49,986 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:04:49,986 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:04:49,986 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:04:49 [Yes]
+INFO 2023-11-22 15:04:49,987 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 15:04:49,987 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 15:04:49,988 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 07:04:49 [Yes]
+INFO 2023-11-22 15:04:49,989 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:04:49,989 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:04:49,989 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:04:49 [Yes]
+INFO 2023-11-22 15:04:49,990 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:04:49,991 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:04:49,991 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:04:49 [Yes]
+INFO 2023-11-22 15:04:49,992 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:04:49,992 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:04:49,993 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:04:49 [Yes]
+INFO 2023-11-22 15:04:52,612 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55916][0m
+INFO 2023-11-22 15:04:52,874 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.26, 127.0.0.1:55916][0m
+INFO 2023-11-22 15:04:53,130 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:55921][0m
+INFO 2023-11-22 15:04:53,160 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:55924]
+INFO 2023-11-22 15:04:53,180 base>consumers>connect connecting:print_KB
+INFO 2023-11-22 15:04:53,185 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:55924]
+INFO 2023-11-22 15:04:53,185 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-22 15:05:00,155 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55916][0m
+INFO 2023-11-22 15:05:06,897 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:55924]
+INFO 2023-11-22 15:05:06,898 base>consumers>disconnect Disconnected:print_KB Internal [0]
+INFO 2023-11-22 15:05:34,200 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55930][0m
+INFO 2023-11-22 15:05:34,504 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.30, 127.0.0.1:55930][0m
+INFO 2023-11-22 15:05:34,776 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:55935][0m
+INFO 2023-11-22 15:05:34,802 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:55938]
+INFO 2023-11-22 15:05:34,806 base>consumers>connect connecting:print_KB
+INFO 2023-11-22 15:05:34,825 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:55938]
+INFO 2023-11-22 15:05:34,826 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-22 15:05:44,095 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55930][0m
+INFO 2023-11-22 15:05:50,106 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 15:05:50,111 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-22 15:05:50,113 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:55930][0m
+INFO 2023-11-22 15:06:08,376 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 15:06:09,240 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-22 15:06:09,259 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-11-22 15:06:09,375 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-22 15:06:09,375 base>views>main -SCH- Now:11/22/2023, 07:06:09
+INFO 2023-11-22 15:06:09,439 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:06:09,439 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:06:09,439 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:06:09 [Yes]
+INFO 2023-11-22 15:06:09,441 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:06:09,441 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:06:09,442 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:06:09 [Yes]
+INFO 2023-11-22 15:06:09,443 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-22 18:00:00 Local:2023-11-23 02:00:00
+INFO 2023-11-22 15:06:09,443 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-22 15:06:09,443 base>views>sch_shutdown    -SCH- 2023-11-22 18:00:00 > 2023-11-22 07:06:09 [Yes]
+INFO 2023-11-22 15:06:09,444 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:06:09,444 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:06:09,445 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:06:09 [Yes]
+INFO 2023-11-22 15:06:09,446 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:06:09,446 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:06:09,446 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:06:09 [Yes]
+INFO 2023-11-22 15:06:09,447 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-22 15:59:59 Local:2023-11-22 23:59:59
+INFO 2023-11-22 15:06:09,448 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-22 15:06:09,448 base>views>sch_shutdown    -SCH- 2023-11-22 15:59:59 > 2023-11-22 07:06:09 [Yes]
+INFO 2023-11-22 15:06:10,416 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55957][0m
+INFO 2023-11-22 15:06:10,660 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.24, 127.0.0.1:55957][0m
+INFO 2023-11-22 15:06:10,903 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:55962][0m
+INFO 2023-11-22 15:06:10,909 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:55965]
+INFO 2023-11-22 15:06:10,934 base>consumers>connect connecting:print_KB
+INFO 2023-11-22 15:06:10,939 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:55965]
+INFO 2023-11-22 15:06:10,940 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-11-22 15:06:15,968 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:55957][0m
+INFO 2023-11-22 15:06:16,164 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-11-22 15:06:16,191 base>ws>wssendprinterstatus ...Done
+INFO 2023-11-22 15:06:16,192 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.05, 127.0.0.1:55957][0m
+INFO 2023-11-22 15:07:05,007 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:55965]
+INFO 2023-11-22 15:07:05,009 base>consumers>disconnect Disconnected:print_KB Internal [0]

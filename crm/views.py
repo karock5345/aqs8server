@@ -7,7 +7,7 @@ from base.models import Branch, APILog
 import random
 import string
 from datetime import datetime, timedelta, timezone
-from .views import setting_APIlogEnabled, visitor_ip_address, loginapi_notoken, funUTCtoLocal, counteractive, checkuser
+from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi_notoken, funUTCtoLocal, counteractive, checkuser
 
 # Create your views here.
 def WelcomeView(request):
