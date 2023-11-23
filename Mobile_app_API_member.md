@@ -139,7 +139,7 @@ Or if login failed
 # 2. Member info API (Member APP)
 ### Request
 ```http
-GET [Server IP or DN]/api/crm/info?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&bcode=xxx
+GET [Server IP or DN]/crm/api/info?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&bcode=xxx
 ```
 
 | Key | Type | Description |

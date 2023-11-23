@@ -14,7 +14,7 @@ class Member(models.Model):
     tokendate = models.DateTimeField(null=True, blank=True)
     birthday = models.DateTimeField(null=True, blank=True)
     gender = models.CharField(max_length=10, null=True, blank=True)
-    memberpoint = models.IntegerField(default=0)
+    memberpoints = models.IntegerField(default=0)
     memberpointtotal = models.IntegerField(default=0)
     memberlevel = models.CharField(max_length=10, null=True, blank=True)
     nickname = models.CharField(max_length=200, null=True, blank=True)

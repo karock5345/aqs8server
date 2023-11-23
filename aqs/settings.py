@@ -187,8 +187,8 @@ MESSAGE_TAGS = {
 
 ASGI_APPLICATION = 'aqs.asgi.application'
 
-# REDIS_HOST = '192.168.85.135'
-REDIS_HOST = '192.168.1.4'
+REDIS_HOST = '192.168.85.135'
+# REDIS_HOST = '192.168.1.4'
 CHANNEL_LAYERS = {
     'default':{
         'BACKEND':'channels_redis.core.RedisChannelLayer',
@@ -289,7 +289,7 @@ LOGGING = {
 
 SIMPLE_JWT = {
     # Debug mode set 120 minutes, otherwise 5 minutes    
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=120),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=999),
     # Debug mode set 30 minutes, otherwise days=1
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": False,
