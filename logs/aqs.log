@@ -956,3 +956,29 @@ INFO 2023-09-05 13:20:40,209 base>views>sch_shutdown    -SCH- 2023-09-05 18:00:0
 INFO 2023-09-05 13:20:40,214 base>views>sch_shutdown  -SCH- Next reset [SCP]: 2023-09-05 18:00:00 Local:2023-09-06 02:00:00
 INFO 2023-09-05 13:20:40,214 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
 INFO 2023-09-05 13:20:40,215 base>views>sch_shutdown    -SCH- 2023-09-05 18:00:00 > 2023-09-05 05:20:40 [Yes]
+INFO 2023-09-05 19:02:24,235 base>apps>ready    *** Queuing System Started ***
+INFO 2023-09-05 19:02:25,048 base>apps>ready    *** Queuing System Started ***
+INFO 2023-09-05 19:02:25,053 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-09-05 19:02:25,207 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-09-05 19:02:25,208 base>views><module> -SCH- Now:09/05/2023, 11:02:25
+INFO 2023-09-05 19:02:25,275 base>views>sch_shutdown  -SCH- Next reset [SCP]: 2023-09-05 15:59:59 Local:2023-09-05 23:59:59
+INFO 2023-09-05 19:02:25,276 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-09-05 19:02:25,276 base>views>sch_shutdown    -SCH- 2023-09-05 15:59:59 > 2023-09-05 11:02:25 [Yes]
+INFO 2023-09-05 19:02:25,292 base>views>sch_shutdown  -SCH- Next reset [HHT]: 2023-09-05 18:00:00 Local:2023-09-06 02:00:00
+INFO 2023-09-05 19:02:25,292 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-09-05 19:02:25,293 base>views>sch_shutdown    -SCH- 2023-09-05 18:00:00 > 2023-09-05 11:02:25 [Yes]
+INFO 2023-09-05 19:02:25,298 base>views>sch_shutdown  -SCH- Next reset [WTT]: 2023-09-05 18:00:00 Local:2023-09-06 02:00:00
+INFO 2023-09-05 19:02:25,298 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-09-05 19:02:25,299 base>views>sch_shutdown    -SCH- 2023-09-05 18:00:00 > 2023-09-05 11:02:25 [Yes]
+INFO 2023-09-05 19:02:28,092 runserver>log_action [mHTTP GET /admin/login/?next=/admin/auth/user/2/change/%3F_changelist_filters%3Dq%253Duserapi 200 [0.09, 127.0.0.1:60143][0m
+INFO 2023-09-05 19:02:28,106 runserver>log_action [36mHTTP GET /static/admin/css/base.css 304 [0.00, 127.0.0.1:60143][0m
+INFO 2023-09-05 19:02:28,110 runserver>log_action [36mHTTP GET /static/admin/css/dark_mode.css 304 [0.00, 127.0.0.1:60144][0m
+INFO 2023-09-05 19:02:28,112 runserver>log_action [36mHTTP GET /static/admin/css/nav_sidebar.css 304 [0.00, 127.0.0.1:60148][0m
+INFO 2023-09-05 19:02:28,114 runserver>log_action [36mHTTP GET /static/admin/css/responsive.css 304 [0.01, 127.0.0.1:60150][0m
+INFO 2023-09-05 19:02:28,117 runserver>log_action [36mHTTP GET /static/admin/css/login.css 304 [0.01, 127.0.0.1:60149][0m
+INFO 2023-09-05 19:02:28,119 runserver>log_action [36mHTTP GET /static/admin/js/nav_sidebar.js 304 [0.01, 127.0.0.1:60148][0m
+WARNING 2023-09-05 19:02:28,154 log>log_response Not Found: /favicon.ico
+WARNING 2023-09-05 19:02:28,155 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:60148][0m
+INFO 2023-09-05 19:02:35,079 runserver>log_action [32mHTTP GET / 302 [0.01, 127.0.0.1:60148][0m
+INFO 2023-09-05 19:02:35,087 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:60148][0m
+INFO 2023-09-05 19:02:35,099 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:60148][0m

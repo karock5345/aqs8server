@@ -1326,7 +1326,7 @@ then it will fail (as does the stat command in your log). Make sure the www-data
 
 cd all the way to the /username/test/static. You can confirm that the stat will fail or succeed by running
 
->sudo -u www-data stat /home/ubuntu/aqs8server/static_deploy will fail
+>sudo -u www-data stat /home/ubuntu/aqs8server/static_deploy
 ```bash
 sudo gpasswd -a www-data ubuntu
 sudo chmod g+x /home/ubuntu && chmod g+x /home/ubuntu/aqs8server/ && chmod g+x /home/ubuntu/aqs8server/static_deploy
