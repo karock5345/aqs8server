@@ -1,15 +1,104 @@
 # AQS version 8 For PCCW 2023
+## Main Server (Causeway Bay)
+- Linux main server (DELL 13th i5) 
+- IP : 10.95.157.237
+- Linux server su: ubuntu /// wert2206EDC5345 (change password cmd:passwd)
+- Django SU : supertim /// YtZqEIpk5345 ,  admin : pccwadmin /// YEjLZBYGF4
+- Network enp0s31f6
+
+## DB server
+- Linux DB server (DELL 12th i3) 
+- IP : 10.95.157.236
+- Linux server su: ubuntu /// wert2206EDC5345 
+- Network enp1s0
+
 ## Relocate to Causeway Bay
 
-Q. Server| 	10.202.2.108|
-Database server| 	10.202.2.109|
-3 	Kiosk Computer 	10.202.2.110  
-4 	TV Computer #1 	10.202.102.21
-5 	TV Computer #2 	10.202.102.22
-6 	Submask 	255.255.255.0  , 10.202.2.xxx
-7 	Gateway 	10.202.2.254 , 10.202.102.xxx, 10.202.102.254
-8 	DNS1 	10.168.9.6
-9 	DNS2 	10.203.65.53
+| Item | IP | Gateway | DNS |
+| --- | --- | --- | --- |
+| Q. Server | 10.202.2.108 | 10.202.2.254 | 10.168.9.6 10.203.65.53 |
+| Database server | 10.202.2.109 | 10.202.2.254 | 10.168.9.6  10.203.65.53 |
+| Kiosk Computer | 10.202.2.110  | 10.202.2.254 | 10.168.9.6  10.203.65.53 |
+| TV Computer #1 | 10.202.102.21  | 10.202.102.254 | 10.168.9.6  10.203.65.53 |
+| TV Computer #2 | 10.202.102.22  | 10.202.102.254 | 10.168.9.6  10.203.65.53 |
+
+## Q. Server settings:
+### `Step 1` : Change Q. Server IP:
+```
+# Config server IP
+sudo nano /etc/netplan/00-installer-config.yaml
+```
+Edit:
+```ini
+# This is the network config written by 'subiquity'
+      addresses:
+        - 10.202.2.108/24
+      routes:
+        - to: default
+          via: 10.202.2.254
+      nameservers:
+        addresses: [10.168.9.6, 10.203.65.53]
+  version: 2
+```
+### `Step 2` : Change Nginx config
+```bash
+# Nginx
+sudo nano /etc/nginx/sites-available/aqs8server
+```
+Edit:
+```ini
+    server_name localhost 127.0.0.1 10.202.2.108;
+```
+### `Step 3` : Change Django settings.py for production DB server IP 
+```bash
+sudo nano ~/aqs8server/aqs/settings.py
+```
+Edit:
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'aqsdb8',
+        'USER': 'aqsdbuser',
+        'PASSWORD': 'dbpassword-Dlcg1dwMOXSKIAIM',
+        'HOST': '10.202.2.109',
+        'PORT': '5432',
+    }
+}
+```
+
+## DB Server settings:
+### `Step 1` : Change DB Server IP:
+```
+# Config server IP
+sudo nano /etc/netplan/00-installer-config.yaml
+```
+Edit:
+```ini
+# This is the network config written by 'subiquity'
+      addresses:
+        - 10.202.2.109/24
+      routes:
+        - to: default
+          via: 10.202.2.254
+      nameservers:
+        addresses: [10.168.9.6, 10.203.65.53]
+  version: 2
+```
+### `Step 2` : Change DB Server PostgreSQL config
+```bash
+sudo find / -name pg_hba.conf
+sudo nano /path/to/pg_hba.conf
+# this case:
+sudo nano /etc/postgresql/14/main/pg_hba.conf
+# add line:
+host    aqsdb8    aqsdbuser    10.202.2.108/32    md5
+```
+
+```bash
+sudo systemctl reload postgresql.service
+```
+
 ## Upgrade Server v8.1.5 (Phase 4)
 - Switch to new server
 
