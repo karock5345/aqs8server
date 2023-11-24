@@ -1,5 +1,15 @@
 # AQS version 8 For PCCW 2023
+## Relocate to Causeway Bay
 
+Q. Server| 	10.202.2.108|
+Database server| 	10.202.2.109|
+3 	Kiosk Computer 	10.202.2.110  
+4 	TV Computer #1 	10.202.102.21
+5 	TV Computer #2 	10.202.102.22
+6 	Submask 	255.255.255.0  , 10.202.2.xxx
+7 	Gateway 	10.202.2.254 , 10.202.102.xxx, 10.202.102.254
+8 	DNS1 	10.168.9.6
+9 	DNS2 	10.203.65.53
 ## Upgrade Server v8.1.5 (Phase 4)
 - Switch to new server
 
