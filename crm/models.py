@@ -3,6 +3,15 @@ from django.contrib.auth.models import User
 from base.models import Branch
 # Create your models here.
 
+item_status_choices = [('active', ('active')),
+                        ('inactive', ('inactive')),
+                        ('deleted', ('deleted')),
+                        ('soldout', ('soldout')),
+                        ('outofstock', ('outofstock')),
+                        ('reserved', ('reserved')),
+                        ('pending', ('pending'))
+                        ]
+
 class Member(models.Model):
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, null=True, blank=True)
     username = models.CharField(max_length=200, null=False, unique=True)
@@ -39,3 +48,19 @@ class MemberAdmin(models.Model):
     nextmembernumber = models.IntegerField(default=1)
     def __str__(self):
         return self.branch.bcode
+
+class MemberItem(models.Model):
+    # global item_status_choices
+    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, null=True, blank=True)
+    name = models.CharField(max_length=200, null=False, blank=False)
+    des = models.CharField(max_length=200, null=True, blank=True)
+    price = models.IntegerField(default=0)
+    discount_price = models.IntegerField(default=0)
+    member_points = models.IntegerField(default=0)
+    qty = models.IntegerField(default=0)
+    status = models.CharField(max_length=200, choices=item_status_choices, default='active')
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+
+    def __str__(self):
+        return self.name

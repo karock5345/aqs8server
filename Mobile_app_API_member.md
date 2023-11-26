@@ -172,7 +172,7 @@ Or if failed
 # 3. Member item list API (Member APP)
 ### Request
 ```http
-GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_no=xxx&member_token=xxx
+GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&member_token=xxx&bcode=xxx
 ```
 
 | Key | Type | Description |
@@ -181,6 +181,8 @@ GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_no=xxx&memb
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
 | `member_no` | `string` | **Required**. Member number from `Member login API` |
 | `member_token` | `string` | **Required**. Member ID from `Member login API` |
+| `bcode` | `string` | **Required**. provided by TSVD |
+
 ### Response
 
 ```javascript
