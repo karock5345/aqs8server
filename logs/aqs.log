@@ -19247,3 +19247,129 @@ INFO 2023-11-27 00:48:17,553 base>views>sch_shutdown    -SCH- 2023-11-26 15:59:5
 INFO 2023-11-27 00:48:17,555 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
 INFO 2023-11-27 00:48:17,555 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
 INFO 2023-11-27 00:48:17,555 base>views>sch_shutdown    -SCH- 2023-11-26 15:59:59 > 2023-11-26 16:48:17 [No]
+INFO 2023-11-27 18:19:59,543 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-27 18:20:00,148 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-27 18:20:00,148 base>views>main -SCH- Now:11/27/2023, 10:20:00
+INFO 2023-11-27 18:20:00,232 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:20:00,232 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:20:00,232 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:20:00 [Yes]
+INFO 2023-11-27 18:20:00,247 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:20:00,248 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:20:00,248 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:20:00 [Yes]
+INFO 2023-11-27 18:20:00,249 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-27 18:00:00 Local:2023-11-28 02:00:00
+INFO 2023-11-27 18:20:00,249 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-27 18:20:00,249 base>views>sch_shutdown    -SCH- 2023-11-27 18:00:00 > 2023-11-27 10:20:00 [Yes]
+INFO 2023-11-27 18:20:00,250 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:20:00,251 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:20:00,251 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:20:00 [Yes]
+INFO 2023-11-27 18:20:00,252 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:20:00,252 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:20:00,252 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:20:00 [Yes]
+INFO 2023-11-27 18:20:00,253 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:20:00,253 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:20:00,254 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:20:00 [Yes]
+INFO 2023-11-27 18:20:11,765 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-27 18:20:11,915 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-27 18:20:11,915 base>views>main -SCH- Now:11/27/2023, 10:20:11
+INFO 2023-11-27 18:20:11,971 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:20:11,971 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:20:11,971 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:20:11 [Yes]
+INFO 2023-11-27 18:20:11,981 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:20:11,982 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:20:11,982 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:20:11 [Yes]
+INFO 2023-11-27 18:20:11,984 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-27 18:00:00 Local:2023-11-28 02:00:00
+INFO 2023-11-27 18:20:11,984 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-27 18:20:11,984 base>views>sch_shutdown    -SCH- 2023-11-27 18:00:00 > 2023-11-27 10:20:11 [Yes]
+INFO 2023-11-27 18:20:11,985 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:20:11,985 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:20:11,986 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:20:11 [Yes]
+INFO 2023-11-27 18:20:11,987 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:20:11,987 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:20:11,987 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:20:11 [Yes]
+INFO 2023-11-27 18:20:11,988 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:20:11,988 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:20:11,988 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:20:11 [Yes]
+INFO 2023-11-27 18:25:12,693 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-27 18:25:12,835 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-27 18:25:12,835 base>views>main -SCH- Now:11/27/2023, 10:25:12
+INFO 2023-11-27 18:25:12,902 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:25:12,903 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:25:12,903 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:25:12 [Yes]
+INFO 2023-11-27 18:25:12,903 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:25:12,903 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:25:12,903 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:25:12 [Yes]
+INFO 2023-11-27 18:25:12,903 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-27 18:00:00 Local:2023-11-28 02:00:00
+INFO 2023-11-27 18:25:12,903 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-27 18:25:12,903 base>views>sch_shutdown    -SCH- 2023-11-27 18:00:00 > 2023-11-27 10:25:12 [Yes]
+INFO 2023-11-27 18:25:12,908 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:25:12,908 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:25:12,908 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:25:12 [Yes]
+INFO 2023-11-27 18:25:12,909 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:25:12,909 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:25:12,909 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:25:12 [Yes]
+INFO 2023-11-27 18:25:12,910 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:25:12,911 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:25:12,911 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:25:12 [Yes]
+INFO 2023-11-27 18:25:15,247 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-27 18:25:15,387 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-27 18:25:15,387 base>views>main -SCH- Now:11/27/2023, 10:25:15
+INFO 2023-11-27 18:25:15,453 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:25:15,453 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:25:15,453 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:25:15 [Yes]
+INFO 2023-11-27 18:25:15,453 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:25:15,453 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:25:15,453 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:25:15 [Yes]
+INFO 2023-11-27 18:25:15,453 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-27 18:00:00 Local:2023-11-28 02:00:00
+INFO 2023-11-27 18:25:15,453 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-27 18:25:15,453 base>views>sch_shutdown    -SCH- 2023-11-27 18:00:00 > 2023-11-27 10:25:15 [Yes]
+INFO 2023-11-27 18:25:15,465 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:25:15,465 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:25:15,465 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:25:15 [Yes]
+INFO 2023-11-27 18:25:15,466 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:25:15,466 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:25:15,467 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:25:15 [Yes]
+INFO 2023-11-27 18:25:15,468 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:25:15,468 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:25:15,468 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:25:15 [Yes]
+INFO 2023-11-27 18:26:10,835 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-27 18:26:10,971 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-27 18:26:10,971 base>views>main -SCH- Now:11/27/2023, 10:26:10
+INFO 2023-11-27 18:26:11,037 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:26:11,037 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:26:11,037 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:26:10 [Yes]
+INFO 2023-11-27 18:26:11,037 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:26:11,037 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:26:11,037 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:26:11 [Yes]
+INFO 2023-11-27 18:26:11,052 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-27 18:00:00 Local:2023-11-28 02:00:00
+INFO 2023-11-27 18:26:11,053 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-27 18:26:11,053 base>views>sch_shutdown    -SCH- 2023-11-27 18:00:00 > 2023-11-27 10:26:11 [Yes]
+INFO 2023-11-27 18:26:11,055 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:26:11,055 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:26:11,055 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:26:11 [Yes]
+INFO 2023-11-27 18:26:11,056 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:26:11,056 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:26:11,057 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:26:11 [Yes]
+INFO 2023-11-27 18:26:11,057 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:26:11,058 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:26:11,058 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:26:11 [Yes]
+INFO 2023-11-27 18:26:13,088 base>apps>ready    *** Queuing System Started ***
+INFO 2023-11-27 18:26:13,237 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-11-27 18:26:13,237 base>views>main -SCH- Now:11/27/2023, 10:26:13
+INFO 2023-11-27 18:26:13,292 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:26:13,292 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:26:13,292 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:26:13 [Yes]
+INFO 2023-11-27 18:26:13,303 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:26:13,303 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:26:13,303 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:26:13 [Yes]
+INFO 2023-11-27 18:26:13,304 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-11-27 18:00:00 Local:2023-11-28 02:00:00
+INFO 2023-11-27 18:26:13,305 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-11-27 18:26:13,305 base>views>sch_shutdown    -SCH- 2023-11-27 18:00:00 > 2023-11-27 10:26:13 [Yes]
+INFO 2023-11-27 18:26:13,306 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:26:13,306 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:26:13,307 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:26:13 [Yes]
+INFO 2023-11-27 18:26:13,307 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:26:13,308 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:26:13,308 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:26:13 [Yes]
+INFO 2023-11-27 18:26:13,309 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-11-27 15:59:59 Local:2023-11-27 23:59:59
+INFO 2023-11-27 18:26:13,309 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-11-27 18:26:13,309 base>views>sch_shutdown    -SCH- 2023-11-27 15:59:59 > 2023-11-27 10:26:13 [Yes]
