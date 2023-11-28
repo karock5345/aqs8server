@@ -44,6 +44,7 @@ class Supplier(models.Model):
 
 # Model for Products and Services
 class Product(models.Model):
+    branchs = models.ManyToManyField(Branch, related_name='branchs')
     name = models.CharField(max_length=200)
     description = models.TextField()
     product_type = models.ForeignKey(Type, on_delete=models.SET_NULL, null=True, blank=True)
@@ -54,6 +55,14 @@ class Product(models.Model):
     quantity = models.IntegerField()
     min_quantity = models.IntegerField()
     duration = models.DurationField()
+    barcode = models.CharField(max_length=20, blank=True, null=True)
+    weight = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    dimensions = models.CharField(max_length=50, blank=True, null=True)
+    manufacturing_date = models.DateField(blank=True, null=True)
+    expiration_date = models.DateField(blank=True, null=True)
+    is_available = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
