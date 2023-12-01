@@ -3,6 +3,7 @@ from django.db import models
 from django import forms
 from .models import TicketTemp, testingModel, Branch, CounterLoginLog, CounterStatus, DisplayAndVoice,  TicketFormat
 from .models import UserProfile, CounterType, Ticket, TicketLog, TicketRoute, TicketData, APILog, Setting, PrinterStatus, SystemLog, WebTouch, UserStatusLog
+from .models import Company
 # Register your models here.
 
 
@@ -11,14 +12,20 @@ class testingView(admin.ModelAdmin):
     model = testingModel
     list_display =('name', 'des')
 
+class BranchProfileView(admin.ModelAdmin):
+    list_display =(  'bcode', 'name', 'address', 'enabled', )
+    ordering = ('-updated', '-created')
+
+class CompanyView(admin.ModelAdmin):
+    list_display =('name', 'enabled' )
+
+
 class UserProfileView(admin.ModelAdmin):
     list_display =('user', 'tickettype')
     ordering = ('-updated', '-created')
         
 
-class BranchProfileView(admin.ModelAdmin):
-    list_display =(  'bcode', 'name', 'address', 'enabled', )
-    ordering = ('-updated', '-created')
+
 
 class TicketFormatView(admin.ModelAdmin):
     list_display =( 'branch', 'ttype' ,'enabled')
@@ -120,9 +127,10 @@ class UserStatusLogView(admin.ModelAdmin):
     list_display = ('user', 'status', 'starttime', 'endtime', 'ticket')
 
 admin.site.register(testingModel, testingView)
+admin.site.register(Branch, BranchProfileView)
+admin.site.register(Company, CompanyView)
 admin.site.register(UserProfile, UserProfileView)
 admin.site.register(TicketFormat, TicketFormatView)
-admin.site.register(Branch, BranchProfileView)
 admin.site.register(CounterType, CounterTypeView)
 admin.site.register(Ticket, TicketView)
 admin.site.register(TicketTemp, TicketTempView)
