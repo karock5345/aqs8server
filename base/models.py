@@ -87,12 +87,7 @@ class Branch(models.Model):
     def __str__(self):
         return self.bcode
     
-class Company(models.Model):
-    enabled = models.BooleanField(default=True)
-    name = models.TextField(null=True, blank=True)
-    branchs = models.ManyToManyField(Branch, related_name='branchs',  blank=True, help_text='Branch access rights',)
-    def __str__(self):
-        return self.name
+
 
 class UserProfile(models.Model):  
     BYBRANCH = 'branch'    

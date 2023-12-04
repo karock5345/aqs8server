@@ -3,7 +3,6 @@ from django.db import models
 from django import forms
 from .models import TicketTemp, testingModel, Branch, CounterLoginLog, CounterStatus, DisplayAndVoice,  TicketFormat
 from .models import UserProfile, CounterType, Ticket, TicketLog, TicketRoute, TicketData, APILog, Setting, PrinterStatus, SystemLog, WebTouch, UserStatusLog
-from .models import Company
 # Register your models here.
 
 
@@ -15,10 +14,6 @@ class testingView(admin.ModelAdmin):
 class BranchProfileView(admin.ModelAdmin):
     list_display =(  'bcode', 'name', 'address', 'enabled', )
     ordering = ('-updated', '-created')
-
-class CompanyView(admin.ModelAdmin):
-    list_display =('name', 'enabled' )
-
 
 class UserProfileView(admin.ModelAdmin):
     list_display =('user', 'tickettype')
@@ -128,7 +123,7 @@ class UserStatusLogView(admin.ModelAdmin):
 
 admin.site.register(testingModel, testingView)
 admin.site.register(Branch, BranchProfileView)
-admin.site.register(Company, CompanyView)
+
 admin.site.register(UserProfile, UserProfileView)
 admin.site.register(TicketFormat, TicketFormatView)
 admin.site.register(CounterType, CounterTypeView)

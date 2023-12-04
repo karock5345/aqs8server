@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from base.models import Branch, Company
+from base.models import Branch
 # Create your models here.
 
 item_status_choices = [('active', ('active')),
@@ -22,10 +22,21 @@ q_status_choices = [('free', ('When a quote is created, the status is Free')),
                     ('lost', ('Indicates that the customer has selected another supplier. This status must be set manually. This status is applicable only for Quotes that are not generated from another object')),
                     ]
 
+class Company(models.Model):
+    ccode = models.CharField(max_length=200, null=False, unique=True)
+    enabled = models.BooleanField(default=True)
+    branchs = models.ManyToManyField(Branch, related_name='branchs',  blank=True, help_text='Branch access rights',)
+
+    name = models.TextField(null=True, blank=True)
+    address = models.TextField(null=True, blank=True)
+    contact_person = models.CharField(max_length=200, null=True, blank=True)
+    phone = models.CharField(max_length=200, null=True, blank=True)
+    email = models.EmailField(null=False, blank=False) 
+    def __str__(self):
+        return self.ccode + '-' + self.name
 
 
-
-class Type(models.Model):
+class Product_Type(models.Model):
     # default 'product' or 'service'
     company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=200)
@@ -36,7 +47,7 @@ class Type(models.Model):
 
 class Category(models.Model):
     company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
-    type = models.ForeignKey(Type, on_delete=models.SET_NULL, null=True, blank=True)
+    product_type = models.ForeignKey(Product_Type, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=200)
     description = models.TextField()
 
@@ -45,15 +56,15 @@ class Category(models.Model):
 
 class Supplier(models.Model):
     company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
-    person = models.CharField(max_length=200)
-    company = models.CharField(max_length=200)
+    contact = models.CharField(max_length=200)
+    supplier_company = models.CharField(max_length=200)
     website = models.CharField(max_length=200)    
     address = models.TextField()
-    contact_number = models.CharField(max_length=15)
+    phone = models.CharField(max_length=15)
     email = models.EmailField()
 
     def __str__(self):
-        return self.name
+        return self.supplier_company
 
 
 # Model for Products and Services
@@ -61,13 +72,11 @@ class Product(models.Model):
     company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=200)
     description = models.TextField()
-    product_type = models.ForeignKey(Type, on_delete=models.SET_NULL, null=True, blank=True)
+    product_type = models.ForeignKey(Product_Type, on_delete=models.SET_NULL, null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
     supplier = models.ForeignKey(Supplier, on_delete=models.SET_NULL, null=True, blank=True)
     status = models.CharField(max_length=200, choices=item_status_choices, default='active')
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    quantity = models.IntegerField()
-    min_quantity = models.IntegerField()
     duration = models.DurationField()
     barcode = models.CharField(max_length=20, blank=True, null=True)
     weight = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
@@ -83,6 +92,7 @@ class Product(models.Model):
 
 class MemberItem(models.Model):
     # global item_status_choices
+    enabled = models.BooleanField(default=True)
     company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=200, null=False, blank=False)
@@ -128,16 +138,45 @@ class Member(models.Model):
     def __str__(self):
         return self.username
 
-class MemberAdmin(models.Model):
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+class CRMAdmin(models.Model):
+    # CRM function is enabled or disabled
     enabled = models.BooleanField(default=True, null=False)
-    nextmembernumber = models.IntegerField(default=1)
+    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    # Member function is enabled or disabled
+    member_enabled = models.BooleanField(default=True, null=False)
+    membernumber_next = models.IntegerField(default=1)
+    # membernumber_digit is member number digit, e.g. 3 is 001, 4 is 0001 
+    # number = 12 ; print(f"{number:03d}")
+    membernumber_digit = models.IntegerField(default=3)
+    # membernumber_reset is role for reset member number, e.g. role:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1
+    membernumber_reset = models.CharField(max_length=100, null=True, blank=True, verbose_name='Reset Member Number role')
+    # membernumber_prefix is role for member number, <TEXT>MEM</TEXT><Y></Y><m></m><d></d><H></H><M></M><S></S><no></no> is Year, Month, Day, Hour, Minute, Second, Number('%Y-%m-%d %H:%M:%S')
+    # e.g. <TEXT>MEM</TEXT><Y></Y><no></no> is MEM2023001       
+    membernumber_prefix = models.CharField(max_length=100, null=True, blank=True)
+
+    # Quotation function is enabled or disabled
+    quotation_enabled = models.BooleanField(default=True, null=False)
+    quotationnumber_next = models.IntegerField(default=1)
+    # quotationnumber_digit is quotation number digit, e.g. 3 is 001, 4 is 0001 
+    # number = 12 ; print(f"{number:03d}")
+    quotationnumber_digit = models.IntegerField(default=3)
+    # quotationnumber_reset is role for reset quotation number, e.g. role:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1
+    quotationnumber_reset = models.CharField(max_length=100, null=True, blank=True)
+    # quotationnumber_prefix is role for quotation number, <TEXT>Q-</TEXT><Y></Y><m></m><d></d><H></H><M></M><S></S><no></no> is Year, Month, Day, Hour, Minute, Second, Number('%Y-%m-%d %H:%M:%S')
+    # e.g. <TEXT>Q-</TEXT><Y></Y><no></no> is Q-2023001    
+    quotationnumber_prefix = models.CharField(max_length=100, null=True, blank=True)
+    quotation_default_terms = models.TextField(max_length=200, null=True, blank=True)
+    quotation_default_remark = models.TextField(max_length=200, null=True, blank=True)
+
+    # Inventory function is enabled or disabled
+    inventory_enabled = models.BooleanField(default=True, null=False)
 
     def __str__(self):
-        return self.branch.bcode    
+        return self.company.name  
     
 class Customer(models.Model):
-    company = models.CharField(max_length=200, null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    customer_company = models.CharField(max_length=200, null=True, blank=True)
     contact = models.CharField(max_length=200, null=True, blank=True)
     address = models.CharField(max_length=200, null=True, blank=True)
     phone = models.CharField(max_length=200, null=True, blank=True)
@@ -169,9 +208,13 @@ class Quotation(models.Model):
     remark = models.CharField(max_length=200, null=True, blank=True)
     terms = models.CharField(max_length=200, null=True, blank=True)    
     total = models.DecimalField(max_digits=20, decimal_places=2)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+    updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.quotation_date
+        return self.number
+    def unique_together(self):
+        return ('company', 'number')
     
 class Quotation_item(models.Model):
     quotation = models.ForeignKey(Quotation, on_delete=models.CASCADE)
@@ -182,3 +225,20 @@ class Quotation_item(models.Model):
     quantity = models.PositiveIntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     sub_total = models.DecimalField(max_digits=20, decimal_places=2)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+    updated = models.DateTimeField(auto_now=True)
+class Inventory(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, null=True, blank=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.IntegerField()
+    min_quantity = models.IntegerField()
+    max_quantity = models.IntegerField()
+    status = models.CharField(max_length=200, choices=item_status_choices, default='active')
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.product.name
+    def unique_together(self):
+        return ('branch', 'product',)
