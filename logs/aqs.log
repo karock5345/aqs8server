@@ -21986,3 +21986,1077 @@ INFO 2023-12-04 19:32:33,954 base>views>sch_shutdown    -SCH- 2023-12-04 15:59:5
 INFO 2023-12-04 19:32:33,955 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-12-04 15:59:59 Local:2023-12-04 23:59:59
 INFO 2023-12-04 19:32:33,955 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
 INFO 2023-12-04 19:32:33,955 base>views>sch_shutdown    -SCH- 2023-12-04 15:59:59 > 2023-12-04 11:32:33 [Yes]
+INFO 2023-12-07 17:26:17,266 base>apps>ready    *** Queuing System Started ***
+INFO 2023-12-07 17:26:18,181 base>apps>ready    *** Queuing System Started ***
+INFO 2023-12-07 17:26:18,196 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-12-07 17:26:18,515 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-12-07 17:26:18,515 base>views>main -SCH- Now:12/07/2023, 09:26:18
+INFO 2023-12-07 17:26:18,596 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:26:18,596 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:26:18,596 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:26:18 [Yes]
+INFO 2023-12-07 17:26:18,596 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:26:18,596 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:26:18,596 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:26:18 [Yes]
+INFO 2023-12-07 17:26:18,596 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-12-07 18:00:00 Local:2023-12-08 02:00:00
+INFO 2023-12-07 17:26:18,596 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-12-07 17:26:18,596 base>views>sch_shutdown    -SCH- 2023-12-07 18:00:00 > 2023-12-07 09:26:18 [Yes]
+INFO 2023-12-07 17:26:18,596 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:26:18,596 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:26:18,596 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:26:18 [Yes]
+INFO 2023-12-07 17:26:18,611 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:26:18,612 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:26:18,612 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:26:18 [Yes]
+INFO 2023-12-07 17:26:18,612 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:26:18,612 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:26:18,612 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:26:18 [Yes]
+INFO 2023-12-07 17:26:19,110 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.02, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:26:19,462 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.35, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:26:19,794 runserver>log_action [mHTTP POST /api/token/ 200 [0.30, 127.0.0.1:53238][0m
+INFO 2023-12-07 17:26:19,815 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53241]
+INFO 2023-12-07 17:26:19,912 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:26:24,005 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53241]
+INFO 2023-12-07 17:26:24,007 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53249]
+INFO 2023-12-07 17:26:24,010 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:26:29,011 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53249]
+INFO 2023-12-07 17:26:29,815 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:26:30,046 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.23, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:26:30,280 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53258][0m
+INFO 2023-12-07 17:26:30,284 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53261]
+INFO 2023-12-07 17:26:30,287 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:26:35,010 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53261]
+INFO 2023-12-07 17:26:35,010 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53264]
+INFO 2023-12-07 17:26:35,010 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:26:36,138 base>apps>ready    *** Queuing System Started ***
+INFO 2023-12-07 17:26:36,230 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-12-07 17:26:36,230 base>views>main -SCH- Now:12/07/2023, 09:26:36
+INFO 2023-12-07 17:26:36,306 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:26:36,306 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:26:36,307 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:26:36 [Yes]
+INFO 2023-12-07 17:26:36,308 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:26:36,309 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:26:36,309 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:26:36 [Yes]
+INFO 2023-12-07 17:26:36,310 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-12-07 18:00:00 Local:2023-12-08 02:00:00
+INFO 2023-12-07 17:26:36,310 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-12-07 17:26:36,310 base>views>sch_shutdown    -SCH- 2023-12-07 18:00:00 > 2023-12-07 09:26:36 [Yes]
+INFO 2023-12-07 17:26:36,311 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:26:36,311 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:26:36,312 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:26:36 [Yes]
+INFO 2023-12-07 17:26:36,313 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:26:36,313 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:26:36,314 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:26:36 [Yes]
+INFO 2023-12-07 17:26:36,315 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:26:36,315 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:26:36,315 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:26:36 [Yes]
+INFO 2023-12-07 17:26:40,011 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53264]
+INFO 2023-12-07 17:26:40,284 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:26:40,523 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:26:40,742 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:53276][0m
+INFO 2023-12-07 17:26:40,742 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53279]
+INFO 2023-12-07 17:26:40,742 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:26:45,005 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53279]
+INFO 2023-12-07 17:26:45,005 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53281]
+INFO 2023-12-07 17:26:45,005 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:26:50,010 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53281]
+INFO 2023-12-07 17:26:50,749 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:26:50,990 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:26:51,213 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:53289][0m
+INFO 2023-12-07 17:26:51,213 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53292]
+INFO 2023-12-07 17:26:51,213 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:26:56,007 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53292]
+INFO 2023-12-07 17:26:56,007 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53295]
+INFO 2023-12-07 17:26:56,007 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:27:01,008 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53295]
+INFO 2023-12-07 17:27:01,209 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:27:01,455 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.25, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:27:01,675 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:53304][0m
+INFO 2023-12-07 17:27:01,675 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53307]
+INFO 2023-12-07 17:27:01,691 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:27:06,004 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53307]
+INFO 2023-12-07 17:27:06,004 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53309]
+INFO 2023-12-07 17:27:06,008 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:27:11,010 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53309]
+INFO 2023-12-07 17:27:11,684 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:27:11,922 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:27:12,153 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53317][0m
+INFO 2023-12-07 17:27:12,157 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53321]
+INFO 2023-12-07 17:27:12,160 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:27:17,016 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53321]
+INFO 2023-12-07 17:27:17,016 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53325]
+INFO 2023-12-07 17:27:17,016 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:27:22,005 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53325]
+INFO 2023-12-07 17:27:22,168 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:27:22,407 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:27:22,642 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53332][0m
+INFO 2023-12-07 17:27:22,646 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53335]
+INFO 2023-12-07 17:27:22,649 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:27:27,012 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53335]
+INFO 2023-12-07 17:27:27,012 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53338]
+INFO 2023-12-07 17:27:27,012 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:27:32,013 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53338]
+INFO 2023-12-07 17:27:32,654 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:27:32,881 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.23, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:27:33,114 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53352][0m
+INFO 2023-12-07 17:27:33,114 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53358]
+INFO 2023-12-07 17:27:33,129 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:27:33,136 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53358]
+INFO 2023-12-07 17:27:33,136 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-12-07 17:27:33,158 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:27:35,147 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:53233][0m
+INFO 2023-12-07 17:28:50,200 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53358]
+INFO 2023-12-07 17:28:50,200 base>consumers>disconnect Disconnected:webtv_KB_Reception Internal [0]
+INFO 2023-12-07 17:29:56,853 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\aqs\settings.py changed, reloading.
+INFO 2023-12-07 17:29:57,873 base>apps>ready    *** Queuing System Started ***
+INFO 2023-12-07 17:29:57,892 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-12-07 17:29:58,021 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-12-07 17:29:58,021 base>views>main -SCH- Now:12/07/2023, 09:29:58
+INFO 2023-12-07 17:29:58,086 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:29:58,086 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:29:58,087 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:29:58 [Yes]
+INFO 2023-12-07 17:29:58,088 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:29:58,089 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:29:58,089 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:29:58 [Yes]
+INFO 2023-12-07 17:29:58,090 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-12-07 18:00:00 Local:2023-12-08 02:00:00
+INFO 2023-12-07 17:29:58,091 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-12-07 17:29:58,091 base>views>sch_shutdown    -SCH- 2023-12-07 18:00:00 > 2023-12-07 09:29:58 [Yes]
+INFO 2023-12-07 17:29:58,091 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:29:58,092 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:29:58,092 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:29:58 [Yes]
+INFO 2023-12-07 17:29:58,093 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:29:58,093 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:29:58,093 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:29:58 [Yes]
+INFO 2023-12-07 17:29:58,094 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 17:29:58,094 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 17:29:58,095 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 09:29:58 [Yes]
+INFO 2023-12-07 17:30:11,970 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53420][0m
+INFO 2023-12-07 17:30:12,245 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.28, 127.0.0.1:53420][0m
+INFO 2023-12-07 17:30:12,509 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:53425][0m
+INFO 2023-12-07 17:30:12,534 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53428]
+INFO 2023-12-07 17:30:12,553 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:30:17,019 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53428]
+INFO 2023-12-07 17:30:17,021 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53431]
+INFO 2023-12-07 17:30:17,024 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:30:22,001 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53431]
+INFO 2023-12-07 17:30:22,543 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53420][0m
+INFO 2023-12-07 17:30:22,785 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.23, 127.0.0.1:53420][0m
+INFO 2023-12-07 17:30:23,003 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:53438][0m
+INFO 2023-12-07 17:30:23,003 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53441]
+INFO 2023-12-07 17:30:23,019 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:30:28,002 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53441]
+INFO 2023-12-07 17:30:28,003 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53445]
+INFO 2023-12-07 17:30:28,003 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:30:33,002 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53445]
+INFO 2023-12-07 17:30:33,003 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53420][0m
+INFO 2023-12-07 17:30:33,253 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.23, 127.0.0.1:53420][0m
+INFO 2023-12-07 17:30:33,486 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53452][0m
+INFO 2023-12-07 17:30:33,486 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53455]
+INFO 2023-12-07 17:30:33,486 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:30:38,002 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53455]
+INFO 2023-12-07 17:30:38,003 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53457]
+INFO 2023-12-07 17:30:38,003 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:30:43,003 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53457]
+INFO 2023-12-07 17:30:43,497 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53420][0m
+INFO 2023-12-07 17:30:43,737 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:53420][0m
+INFO 2023-12-07 17:30:43,953 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:53466][0m
+INFO 2023-12-07 17:30:43,953 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53469]
+INFO 2023-12-07 17:30:43,971 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:30:47,576 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53469]
+INFO 2023-12-07 17:37:49,100 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:37:49,417 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.32, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:37:49,820 runserver>log_action [mHTTP POST /api/token/ 200 [0.37, 127.0.0.1:53590][0m
+INFO 2023-12-07 17:37:49,838 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53593]
+INFO 2023-12-07 17:37:49,849 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:37:54,000 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53593]
+INFO 2023-12-07 17:37:54,000 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53596]
+INFO 2023-12-07 17:37:54,000 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:37:59,000 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53596]
+INFO 2023-12-07 17:37:59,851 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:38:00,100 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.25, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:38:00,317 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:53602][0m
+INFO 2023-12-07 17:38:00,317 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53605]
+INFO 2023-12-07 17:38:00,335 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:38:05,016 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53605]
+INFO 2023-12-07 17:38:05,018 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53608]
+INFO 2023-12-07 17:38:05,018 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:38:10,001 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53608]
+INFO 2023-12-07 17:38:10,324 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:38:10,566 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:38:10,796 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53615][0m
+INFO 2023-12-07 17:38:10,799 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53618]
+INFO 2023-12-07 17:38:10,801 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:38:15,015 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53618]
+INFO 2023-12-07 17:38:15,016 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53620]
+INFO 2023-12-07 17:38:15,019 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:38:20,001 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53620]
+INFO 2023-12-07 17:38:20,801 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:38:21,050 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.25, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:38:21,284 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53628][0m
+INFO 2023-12-07 17:38:21,284 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53631]
+INFO 2023-12-07 17:38:21,284 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:38:26,001 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53631]
+INFO 2023-12-07 17:38:26,001 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53634]
+INFO 2023-12-07 17:38:26,004 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:38:31,000 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53634]
+INFO 2023-12-07 17:38:31,293 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:38:31,538 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:38:31,767 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53641][0m
+INFO 2023-12-07 17:38:31,768 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53644]
+INFO 2023-12-07 17:38:31,768 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:38:36,001 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53644]
+INFO 2023-12-07 17:38:36,002 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53646]
+INFO 2023-12-07 17:38:36,005 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:38:41,017 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53646]
+INFO 2023-12-07 17:38:41,771 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:38:42,029 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.26, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:38:42,256 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53654][0m
+INFO 2023-12-07 17:38:42,260 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53657]
+INFO 2023-12-07 17:38:42,263 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:38:47,001 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53657]
+INFO 2023-12-07 17:38:47,002 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53661]
+INFO 2023-12-07 17:38:47,002 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:38:52,000 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53661]
+INFO 2023-12-07 17:38:52,269 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:38:52,516 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.25, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:38:52,746 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53673][0m
+INFO 2023-12-07 17:38:52,750 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53676]
+INFO 2023-12-07 17:38:52,752 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:38:57,018 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53676]
+INFO 2023-12-07 17:38:57,019 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53684]
+INFO 2023-12-07 17:38:57,022 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:39:02,001 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53684]
+INFO 2023-12-07 17:39:02,760 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:39:02,998 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:39:03,219 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:53692][0m
+INFO 2023-12-07 17:39:03,226 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53695]
+INFO 2023-12-07 17:39:03,226 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:39:08,000 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53695]
+INFO 2023-12-07 17:39:08,001 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53698]
+INFO 2023-12-07 17:39:08,002 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:39:13,018 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53698]
+INFO 2023-12-07 17:39:13,236 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:39:13,469 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.23, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:39:13,702 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53705][0m
+INFO 2023-12-07 17:39:13,702 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53708]
+INFO 2023-12-07 17:39:13,702 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:39:18,000 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53708]
+INFO 2023-12-07 17:39:18,002 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53710]
+INFO 2023-12-07 17:39:18,003 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:39:23,003 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53710]
+INFO 2023-12-07 17:39:23,703 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:39:23,937 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.23, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:39:24,169 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:53718][0m
+INFO 2023-12-07 17:39:24,169 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53721]
+INFO 2023-12-07 17:39:24,169 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:39:29,001 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53721]
+INFO 2023-12-07 17:39:29,003 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53724]
+INFO 2023-12-07 17:39:29,006 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:39:34,002 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53724]
+INFO 2023-12-07 17:39:34,170 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:39:34,420 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.25, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:39:34,653 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53731][0m
+INFO 2023-12-07 17:39:34,656 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53734]
+INFO 2023-12-07 17:39:34,659 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:39:39,002 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53734]
+INFO 2023-12-07 17:39:39,003 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53736]
+INFO 2023-12-07 17:39:39,003 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:39:44,004 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53736]
+INFO 2023-12-07 17:39:44,653 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:39:44,903 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.25, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:39:45,120 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:53745][0m
+INFO 2023-12-07 17:39:45,120 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53748]
+INFO 2023-12-07 17:39:45,137 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:39:50,019 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53748]
+INFO 2023-12-07 17:39:50,020 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53751]
+INFO 2023-12-07 17:39:50,020 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:39:55,002 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53751]
+INFO 2023-12-07 17:39:55,121 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:39:55,371 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.25, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:39:55,605 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53759][0m
+INFO 2023-12-07 17:39:55,608 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53762]
+INFO 2023-12-07 17:39:55,611 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:40:00,003 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53762]
+INFO 2023-12-07 17:40:00,005 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53766]
+INFO 2023-12-07 17:40:00,008 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:40:05,013 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53766]
+INFO 2023-12-07 17:40:05,604 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:40:05,865 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.26, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:40:06,138 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:53776][0m
+INFO 2023-12-07 17:40:06,147 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53780]
+INFO 2023-12-07 17:40:06,153 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:40:11,004 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53780]
+INFO 2023-12-07 17:40:11,005 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53782]
+INFO 2023-12-07 17:40:11,008 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:40:16,004 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53782]
+INFO 2023-12-07 17:40:16,155 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:40:16,520 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.36, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:40:16,771 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:53790][0m
+INFO 2023-12-07 17:40:16,771 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53793]
+INFO 2023-12-07 17:40:16,771 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:40:21,004 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53793]
+INFO 2023-12-07 17:40:21,004 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53795]
+INFO 2023-12-07 17:40:21,004 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:40:26,003 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53795]
+INFO 2023-12-07 17:40:26,788 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:40:27,062 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.27, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:40:27,318 runserver>log_action [mHTTP POST /api/token/ 200 [0.26, 127.0.0.1:53822][0m
+INFO 2023-12-07 17:40:27,322 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53825]
+INFO 2023-12-07 17:40:27,326 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:40:32,002 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53825]
+INFO 2023-12-07 17:40:32,003 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53855]
+INFO 2023-12-07 17:40:32,007 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:40:37,003 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53855]
+INFO 2023-12-07 17:40:37,338 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:40:37,622 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.28, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:40:37,872 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53865][0m
+INFO 2023-12-07 17:40:37,872 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53868]
+INFO 2023-12-07 17:40:37,872 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:40:42,003 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53868]
+INFO 2023-12-07 17:40:42,005 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53872]
+INFO 2023-12-07 17:40:42,008 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:40:47,004 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53872]
+INFO 2023-12-07 17:40:47,873 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:40:48,149 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.28, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:40:48,386 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:53887][0m
+INFO 2023-12-07 17:40:48,391 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53890]
+INFO 2023-12-07 17:40:48,395 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:40:53,003 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53890]
+INFO 2023-12-07 17:40:53,004 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53895]
+INFO 2023-12-07 17:40:53,006 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:40:58,003 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53895]
+INFO 2023-12-07 17:40:58,413 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:40:58,672 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.26, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:40:58,924 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:53910][0m
+INFO 2023-12-07 17:40:58,930 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53914]
+INFO 2023-12-07 17:40:58,933 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:41:03,012 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53914]
+INFO 2023-12-07 17:41:03,013 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53921]
+INFO 2023-12-07 17:41:03,017 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:41:08,004 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53921]
+INFO 2023-12-07 17:41:08,957 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:41:09,209 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.25, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:41:09,442 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:53929][0m
+INFO 2023-12-07 17:41:09,442 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53932]
+INFO 2023-12-07 17:41:09,442 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:41:14,005 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53932]
+INFO 2023-12-07 17:41:14,007 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53939]
+INFO 2023-12-07 17:41:14,010 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:41:19,005 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53939]
+INFO 2023-12-07 17:41:19,443 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:41:19,706 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.26, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:41:19,955 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:53947][0m
+INFO 2023-12-07 17:41:19,957 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53950]
+INFO 2023-12-07 17:41:19,966 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:41:24,014 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53950]
+INFO 2023-12-07 17:41:24,015 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:53981]
+INFO 2023-12-07 17:41:24,019 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:41:29,007 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:53981]
+INFO 2023-12-07 17:41:29,954 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:41:30,193 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:41:30,424 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:54011][0m
+INFO 2023-12-07 17:41:30,428 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:54014]
+INFO 2023-12-07 17:41:30,432 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:41:35,001 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54014]
+INFO 2023-12-07 17:41:35,002 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:54019]
+INFO 2023-12-07 17:41:35,006 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:41:40,002 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54019]
+INFO 2023-12-07 17:41:40,432 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:41:40,683 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.25, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:41:40,913 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:54030][0m
+INFO 2023-12-07 17:41:40,916 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:54033]
+INFO 2023-12-07 17:41:40,920 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:41:45,004 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54033]
+INFO 2023-12-07 17:41:45,006 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:54039]
+INFO 2023-12-07 17:41:45,009 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:41:50,009 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54039]
+INFO 2023-12-07 17:41:50,932 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:41:51,176 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:41:51,408 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:54048][0m
+INFO 2023-12-07 17:41:51,412 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:54051]
+INFO 2023-12-07 17:41:51,415 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:41:56,008 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54051]
+INFO 2023-12-07 17:41:56,009 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:54056]
+INFO 2023-12-07 17:41:56,013 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:42:01,010 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54056]
+INFO 2023-12-07 17:42:01,407 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:42:01,652 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:53585][0m
+INFO 2023-12-07 17:42:01,896 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:54081][0m
+INFO 2023-12-07 17:42:01,900 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:54084]
+INFO 2023-12-07 17:42:01,903 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 17:42:05,084 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:54084]
+INFO 2023-12-07 18:03:51,232 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:03:51,537 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.30, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:03:51,799 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:50193][0m
+INFO 2023-12-07 18:03:51,825 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50196]
+INFO 2023-12-07 18:03:51,828 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:03:56,013 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50196]
+INFO 2023-12-07 18:03:56,014 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50199]
+INFO 2023-12-07 18:03:56,014 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:03:58,848 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:00,845 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:01,013 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50199]
+INFO 2023-12-07 18:04:02,833 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:04,834 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:06,846 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:08,836 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:10,846 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:12,840 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:14,842 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:16,844 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:18,845 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:20,831 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:22,847 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:24,831 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:26,832 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:28,842 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:30,843 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:32,843 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:34,847 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:36,832 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:38,832 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:40,848 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:42,832 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:44,832 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:46,833 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:48,832 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:50,836 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:52,838 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:54,849 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:56,854 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.02, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:56,866 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:50267][0m
+INFO 2023-12-07 18:04:57,107 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.25, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:04:57,336 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:50274][0m
+INFO 2023-12-07 18:04:57,340 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50277]
+INFO 2023-12-07 18:04:57,343 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:04:58,845 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:05:00,833 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:05:02,014 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50277]
+INFO 2023-12-07 18:05:02,016 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50284]
+INFO 2023-12-07 18:05:02,019 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:05:02,833 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:05:04,846 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:05:06,833 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:05:07,015 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50284]
+INFO 2023-12-07 18:05:08,833 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:05:10,846 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:05:12,846 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:05:14,846 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:05:16,833 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:05:18,846 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50188][0m
+INFO 2023-12-07 18:05:19,453 autoreload>trigger_reload D:\Projects\AQS8.2\aqs8server\aqs\settings.py changed, reloading.
+INFO 2023-12-07 18:05:20,550 base>apps>ready    *** Queuing System Started ***
+INFO 2023-12-07 18:05:20,583 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2023-12-07 18:05:20,705 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2023-12-07 18:05:20,706 base>views>main -SCH- Now:12/07/2023, 10:05:20
+INFO 2023-12-07 18:05:20,768 base>views>sch_shutdown  -SCH- Next reset [KB]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 18:05:20,768 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 18:05:20,768 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 10:05:20 [Yes]
+INFO 2023-12-07 18:05:20,768 base>views>sch_shutdown  -SCH- Next reset [MK]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 18:05:20,768 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 18:05:20,768 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 10:05:20 [Yes]
+INFO 2023-12-07 18:05:20,768 base>views>sch_shutdown  -SCH- Next reset [HY]: 2023-12-07 18:00:00 Local:2023-12-08 02:00:00
+INFO 2023-12-07 18:05:20,768 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2023-12-07 18:05:20,768 base>views>sch_shutdown    -SCH- 2023-12-07 18:00:00 > 2023-12-07 10:05:20 [Yes]
+INFO 2023-12-07 18:05:20,776 base>views>sch_shutdown  -SCH- Next reset [SW]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 18:05:20,777 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 18:05:20,777 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 10:05:20 [Yes]
+INFO 2023-12-07 18:05:20,778 base>views>sch_shutdown  -SCH- Next reset [TST]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 18:05:20,778 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 18:05:20,778 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 10:05:20 [Yes]
+INFO 2023-12-07 18:05:20,779 base>views>sch_shutdown  -SCH- Next reset [ST]: 2023-12-07 15:59:59 Local:2023-12-07 23:59:59
+INFO 2023-12-07 18:05:20,780 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2023-12-07 18:05:20,780 base>views>sch_shutdown    -SCH- 2023-12-07 15:59:59 > 2023-12-07 10:05:20 [Yes]
+INFO 2023-12-07 18:05:21,367 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50312][0m
+INFO 2023-12-07 18:05:26,865 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:50316][0m
+INFO 2023-12-07 18:05:27,147 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.28, 127.0.0.1:50316][0m
+INFO 2023-12-07 18:05:27,383 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:50321][0m
+INFO 2023-12-07 18:05:27,410 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50324]
+INFO 2023-12-07 18:05:27,433 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:05:27,441 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50324]
+INFO 2023-12-07 18:05:27,442 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-12-07 18:05:27,469 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50316][0m
+INFO 2023-12-07 18:05:27,492 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.04, 127.0.0.1:50329][0m
+INFO 2023-12-07 18:05:36,746 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50324]
+INFO 2023-12-07 18:05:36,747 base>consumers>disconnect Disconnected:webtv_KB_Reception Internal [0]
+INFO 2023-12-07 18:05:38,818 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:50334][0m
+INFO 2023-12-07 18:05:39,067 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.23, 127.0.0.1:50334][0m
+INFO 2023-12-07 18:05:39,334 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:50339][0m
+INFO 2023-12-07 18:05:39,370 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50342]
+INFO 2023-12-07 18:05:39,375 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:05:39,386 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50342]
+INFO 2023-12-07 18:05:39,386 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-12-07 18:05:39,426 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.04, 127.0.0.1:50334][0m
+INFO 2023-12-07 18:05:39,447 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.06, 127.0.0.1:50346][0m
+INFO 2023-12-07 18:07:06,774 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50342]
+INFO 2023-12-07 18:07:06,774 base>consumers>disconnect Disconnected:webtv_KB_Reception Internal [0]
+INFO 2023-12-07 18:07:09,937 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:50355][0m
+INFO 2023-12-07 18:07:10,187 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.23, 127.0.0.1:50355][0m
+INFO 2023-12-07 18:07:10,470 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:50360][0m
+INFO 2023-12-07 18:07:10,509 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50363]
+INFO 2023-12-07 18:07:10,513 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:07:10,519 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50363]
+INFO 2023-12-07 18:07:10,519 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-12-07 18:07:10,560 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.04, 127.0.0.1:50355][0m
+INFO 2023-12-07 18:07:10,575 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.05, 127.0.0.1:50367][0m
+INFO 2023-12-07 18:11:04,048 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50363]
+INFO 2023-12-07 18:11:04,048 base>consumers>disconnect Disconnected:webtv_KB_Reception Internal [0]
+INFO 2023-12-07 18:11:07,294 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:50409][0m
+INFO 2023-12-07 18:11:07,577 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.28, 127.0.0.1:50409][0m
+INFO 2023-12-07 18:11:07,861 runserver>log_action [mHTTP POST /api/token/ 200 [0.28, 127.0.0.1:50414][0m
+INFO 2023-12-07 18:11:07,885 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50417]
+INFO 2023-12-07 18:11:07,885 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:11:07,893 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50417]
+INFO 2023-12-07 18:11:07,894 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-12-07 18:11:07,934 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:50409][0m
+INFO 2023-12-07 18:11:07,956 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.05, 127.0.0.1:50421][0m
+INFO 2023-12-07 18:11:16,982 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50417]
+INFO 2023-12-07 18:11:16,982 base>consumers>disconnect Disconnected:webtv_KB_Reception Internal [0]
+INFO 2023-12-07 18:11:28,165 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:50430][0m
+INFO 2023-12-07 18:11:28,412 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.23, 127.0.0.1:50430][0m
+INFO 2023-12-07 18:11:28,678 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:50435][0m
+INFO 2023-12-07 18:11:28,717 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50438]
+INFO 2023-12-07 18:11:28,725 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:11:28,733 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50438]
+INFO 2023-12-07 18:11:28,734 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-12-07 18:11:28,771 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:50430][0m
+INFO 2023-12-07 18:11:28,789 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.05, 127.0.0.1:50442][0m
+INFO 2023-12-07 18:11:30,710 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50438]
+INFO 2023-12-07 18:11:30,711 base>consumers>disconnect Disconnected:webtv_KB_Reception Internal [0]
+INFO 2023-12-07 18:11:30,928 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:50430][0m
+INFO 2023-12-07 18:11:31,165 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.24, 127.0.0.1:50430][0m
+INFO 2023-12-07 18:11:31,397 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:50449][0m
+INFO 2023-12-07 18:11:31,397 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50452]
+INFO 2023-12-07 18:11:31,397 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:11:31,415 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50452]
+INFO 2023-12-07 18:11:31,415 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-12-07 18:11:31,433 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50430][0m
+INFO 2023-12-07 18:11:31,456 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.04, 127.0.0.1:50442][0m
+INFO 2023-12-07 18:11:35,369 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50452]
+INFO 2023-12-07 18:11:35,369 base>consumers>disconnect Disconnected:webtv_KB_Reception Internal [0]
+INFO 2023-12-07 18:11:35,478 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:50430][0m
+INFO 2023-12-07 18:11:35,727 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.25, 127.0.0.1:50430][0m
+INFO 2023-12-07 18:11:35,954 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:50462][0m
+INFO 2023-12-07 18:11:35,958 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50465]
+INFO 2023-12-07 18:11:35,962 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:11:35,968 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50465]
+INFO 2023-12-07 18:11:35,969 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-12-07 18:11:35,985 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50430][0m
+INFO 2023-12-07 18:11:36,002 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.03, 127.0.0.1:50442][0m
+INFO 2023-12-07 18:11:47,553 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50465]
+INFO 2023-12-07 18:11:47,554 base>consumers>disconnect Disconnected:webtv_KB_Reception Internal [0]
+INFO 2023-12-07 18:12:20,263 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:20,535 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.27, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:20,785 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:50477][0m
+INFO 2023-12-07 18:12:20,819 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50480]
+INFO 2023-12-07 18:12:20,824 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:12:25,011 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50480]
+INFO 2023-12-07 18:12:25,013 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50483]
+INFO 2023-12-07 18:12:25,013 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:12:27,813 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:29,827 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:30,003 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50483]
+INFO 2023-12-07 18:12:31,814 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:33,824 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:35,813 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:37,814 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:39,814 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:41,826 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:43,813 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:45,825 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:47,813 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:49,814 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:51,827 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:53,815 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:55,817 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:57,818 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:12:59,819 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:01,821 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:03,825 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:05,823 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:07,822 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:09,828 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:11,823 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:13,830 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:15,824 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:17,825 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:19,830 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:21,828 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:23,815 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:25,834 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.02, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:25,857 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.04, 127.0.0.1:50548][0m
+INFO 2023-12-07 18:13:26,065 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.23, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:26,298 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:50555][0m
+INFO 2023-12-07 18:13:26,298 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50558]
+INFO 2023-12-07 18:13:26,298 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:13:27,830 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:29,815 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:31,014 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50558]
+INFO 2023-12-07 18:13:31,015 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50565]
+INFO 2023-12-07 18:13:31,015 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:13:31,815 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:33,815 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:35,815 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:36,013 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50565]
+INFO 2023-12-07 18:13:37,815 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:39,818 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:41,815 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:43,815 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:45,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:47,815 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:49,815 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:51,828 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:53,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:55,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:57,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:13:59,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:01,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:03,830 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:05,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:07,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:09,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:11,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:13,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:15,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:17,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:19,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:21,831 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:23,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:25,816 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:27,817 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:29,817 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:31,300 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:31,534 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.23, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:31,777 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:50637][0m
+INFO 2023-12-07 18:14:31,783 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50640]
+INFO 2023-12-07 18:14:31,788 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:14:31,835 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:33,814 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:35,818 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:36,003 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50640]
+INFO 2023-12-07 18:14:36,003 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50651]
+INFO 2023-12-07 18:14:36,003 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:14:37,813 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:39,809 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:41,013 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50651]
+INFO 2023-12-07 18:14:41,828 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:43,810 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:45,817 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:47,811 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:49,829 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:51,830 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:53,817 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:55,818 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:57,814 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:14:59,818 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:01,817 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:03,812 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:05,818 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:07,822 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:09,818 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:11,817 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:13,821 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:15,817 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:17,811 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:19,817 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:21,812 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:23,818 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:25,832 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:27,834 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.01, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:29,830 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:31,848 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:33,830 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:35,820 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:36,783 runserver>log_action [mHTTP GET /api/?app=Display%20Panel&version=8.2.0.0 200 [0.00, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:37,031 runserver>log_action [mHTTP POST /api/loginapi/?app=Display%20Panel&version=8.2.0.0 200 [0.25, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:37,262 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:50722][0m
+INFO 2023-12-07 18:15:37,262 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:50725]
+INFO 2023-12-07 18:15:37,278 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2023-12-07 18:15:37,278 runserver>log_action WebSocket CONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50725]
+INFO 2023-12-07 18:15:37,278 base>consumers>connect IP 127.0.0.1 Connected :webtv_KB_Reception Internal [1]
+INFO 2023-12-07 18:15:37,303 runserver>log_action [mHTTP GET /api/display/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50472][0m
+INFO 2023-12-07 18:15:37,303 runserver>log_action [mHTTP GET /api/displaylast/?app=Display%20Panel&version=8.2.0.0&branchcode=KB&countername=Reception 200 [0.02, 127.0.0.1:50730][0m
+INFO 2023-12-07 18:15:55,026 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:50725]
+INFO 2023-12-07 18:15:55,027 base>consumers>disconnect Disconnected:webtv_KB_Reception Internal [0]
+INFO 2023-12-07 18:25:49,955 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:50809][0m
+INFO 2023-12-07 18:25:50,205 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.25, 127.0.0.1:50809][0m
+INFO 2023-12-07 18:25:50,470 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:50814][0m
+INFO 2023-12-07 18:25:50,496 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:50818]
+INFO 2023-12-07 18:25:50,500 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 18:25:50,522 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:50818]
+INFO 2023-12-07 18:25:50,523 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-12-07 18:26:23,345 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:50818]
+INFO 2023-12-07 18:26:23,346 base>consumers>disconnect Disconnected:print_KB Internal [0]
+INFO 2023-12-07 18:28:01,642 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:50836][0m
+INFO 2023-12-07 18:28:01,942 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.30, 127.0.0.1:50836][0m
+INFO 2023-12-07 18:28:02,200 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:50841][0m
+INFO 2023-12-07 18:28:02,225 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:50844]
+INFO 2023-12-07 18:28:02,227 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 18:28:02,234 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:50844]
+INFO 2023-12-07 18:28:02,234 base>consumers>connect IP 127.0.0.1 Connected:print_KB [1]
+INFO 2023-12-07 18:28:02,253 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:50836][0m
+INFO 2023-12-07 18:28:07,525 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-12-07 18:28:07,525 base>ws>wssendprinterstatus ...Done
+INFO 2023-12-07 18:28:07,525 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:50836][0m
+INFO 2023-12-07 18:28:35,742 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:50844]
+INFO 2023-12-07 18:28:35,926 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:50836][0m
+INFO 2023-12-07 18:28:36,176 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.25, 127.0.0.1:50836][0m
+INFO 2023-12-07 18:28:36,410 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:50859][0m
+INFO 2023-12-07 18:28:36,412 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:50862]
+INFO 2023-12-07 18:28:36,417 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 18:28:38,785 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:50862]
+INFO 2023-12-07 18:29:38,816 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:50872][0m
+INFO 2023-12-07 18:29:39,069 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.25, 127.0.0.1:50872][0m
+INFO 2023-12-07 18:29:39,305 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:50877][0m
+INFO 2023-12-07 18:29:39,310 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:50880]
+INFO 2023-12-07 18:29:39,314 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 18:29:44,006 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:50880]
+INFO 2023-12-07 18:29:44,008 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:50883]
+INFO 2023-12-07 18:29:44,011 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 18:29:49,010 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:50883]
+INFO 2023-12-07 18:29:49,322 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50872][0m
+INFO 2023-12-07 18:29:49,561 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-12-07 18:29:54,329 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:50892][0m
+INFO 2023-12-07 18:29:59,312 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:50892][0m
+INFO 2023-12-07 18:30:04,312 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:50892][0m
+INFO 2023-12-07 18:30:09,328 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:50892][0m
+ERROR 2023-12-07 18:30:10,595 base>ws>wssendprinterstatus ...ERROR:Redis Server is down!
+INFO 2023-12-07 18:30:10,595 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [21.05, 127.0.0.1:50872][0m
+INFO 2023-12-07 18:30:14,324 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50872][0m
+INFO 2023-12-07 18:30:19,313 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:50872][0m
+INFO 2023-12-07 18:30:24,313 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:50872][0m
+INFO 2023-12-07 18:30:29,325 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50872][0m
+INFO 2023-12-07 18:30:34,313 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:50872][0m
+INFO 2023-12-07 18:30:39,317 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:50872][0m
+INFO 2023-12-07 18:30:44,330 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:50872][0m
+INFO 2023-12-07 18:30:44,350 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.04, 127.0.0.1:50892][0m
+INFO 2023-12-07 18:30:44,563 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.23, 127.0.0.1:50872][0m
+INFO 2023-12-07 18:30:44,796 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:50924][0m
+INFO 2023-12-07 18:30:44,813 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:50927]
+INFO 2023-12-07 18:30:44,813 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 18:30:49,012 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:50927]
+INFO 2023-12-07 18:30:49,013 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:50930]
+INFO 2023-12-07 18:30:49,013 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 18:30:49,021 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:50930]
+INFO 2023-12-07 18:30:49,022 base>consumers>connect IP 127.0.0.1 Connected:print_KB [2]
+INFO 2023-12-07 18:30:49,038 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:50872][0m
+INFO 2023-12-07 18:32:12,517 runserver>log_action [32mHTTP GET /admin/crm/crmadmin/1/change/ 302 [0.08, 127.0.0.1:50950][0m
+INFO 2023-12-07 18:32:12,636 runserver>log_action [mHTTP GET /admin/login/?next=/admin/crm/crmadmin/1/change/ 200 [0.11, 127.0.0.1:50950][0m
+WARNING 2023-12-07 18:32:13,472 log>log_response Not Found: /favicon.ico
+WARNING 2023-12-07 18:32:13,473 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:50950][0m
+INFO 2023-12-07 18:32:15,336 runserver>log_action [mHTTP GET /login/ 200 [0.02, 127.0.0.1:50980][0m
+INFO 2023-12-07 18:32:15,350 runserver>log_action [mHTTP GET /webtv/ST/c/ 200 [0.04, 127.0.0.1:50979][0m
+INFO 2023-12-07 18:32:15,884 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:50979][0m
+INFO 2023-12-07 18:32:15,886 runserver>log_action [36mHTTP GET /static/images/avatar.svg 304 [0.00, 127.0.0.1:50980][0m
+INFO 2023-12-07 18:32:15,941 runserver>log_action WebSocket HANDSHAKING /ws/wtv/ST/c/ [127.0.0.1:50987]
+INFO 2023-12-07 18:32:15,943 base>consumers>connect connecting:webtv_ST_c
+INFO 2023-12-07 18:32:15,973 runserver>log_action WebSocket CONNECT /ws/wtv/ST/c/ [127.0.0.1:50987]
+INFO 2023-12-07 18:32:15,973 base>consumers>connect IP 127.0.0.1 Connected:webtv_ST_c [1/200]
+INFO 2023-12-07 18:32:52,288 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51063][0m
+INFO 2023-12-07 18:32:52,590 runserver>log_action [mHTTP POST /api/token/ 200 [0.28, 127.0.0.1:51066][0m
+INFO 2023-12-07 18:33:11,859 runserver>log_action [mHTTP POST /api/token/ 200 [0.26, 127.0.0.1:51110][0m
+INFO 2023-12-07 18:33:24,325 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-12-07 18:33:24,329 base>ws>wssendwebtv ...Done
+INFO 2023-12-07 18:33:24,329 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-12-07 18:33:24,330 base>ws>wssenddispwait ...Done
+INFO 2023-12-07 18:33:24,333 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-12-07 18:33:24,334 base>ws>wssendql ...Done
+INFO 2023-12-07 18:33:24,336 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-12-07 18:33:24,339 base>ws>wsSendPrintTicket ...Done
+INFO 2023-12-07 18:33:24,340 base>v_roche>rocheSMS SMS disabled
+INFO 2023-12-07 18:33:24,346 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.14, 127.0.0.1:51110][0m
+INFO 2023-12-07 18:33:24,510 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=013&tickettime=2023-12-07T10:33:24.212906Z 200 [0.03, 127.0.0.1:51129][0m
+INFO 2023-12-07 18:33:42,207 base>ws>wssendwebtv channel_group_name:webtv_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-12-07 18:33:42,211 base>ws>wssendwebtv ...Done
+INFO 2023-12-07 18:33:42,212 base>ws>wssenddispwait channel_group_name:disp_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-12-07 18:33:42,213 base>ws>wssenddispwait ...Done
+INFO 2023-12-07 18:33:42,216 base>ws>wssendql channel_group_name:ql_KB_Reception sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-12-07 18:33:42,218 base>ws>wssendql ...Done
+INFO 2023-12-07 18:33:42,219 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-12-07 18:33:42,223 base>ws>wsSendPrintTicket ...Done
+INFO 2023-12-07 18:33:42,223 base>v_roche>rocheSMS SMS disabled
+INFO 2023-12-07 18:33:42,231 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=%3Cpno%3EP1%3C/pno%3E&remark=test&app=postman&version=8.2&branchcode=KB&tickettype=A 200 [0.08, 127.0.0.1:51110][0m
+INFO 2023-12-07 18:33:42,278 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&tickettype=A&ticketnumber=014&tickettime=2023-12-07T10:33:42.155183Z 200 [0.03, 127.0.0.1:51129][0m
+INFO 2023-12-07 18:37:42,712 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51180][0m
+INFO 2023-12-07 18:37:42,943 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51183][0m
+INFO 2023-12-07 18:39:54,083 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:51216][0m
+INFO 2023-12-07 18:40:19,961 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51216][0m
+INFO 2023-12-07 18:40:33,279 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:50930]
+INFO 2023-12-07 18:40:33,280 base>consumers>disconnect Disconnected:print_KB Internal [1]
+INFO 2023-12-07 18:43:05,633 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51301][0m
+INFO 2023-12-07 18:43:05,926 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.29, 127.0.0.1:51301][0m
+INFO 2023-12-07 18:43:06,190 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:51306][0m
+INFO 2023-12-07 18:43:06,228 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51309]
+INFO 2023-12-07 18:43:06,233 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 18:43:06,237 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51309]
+INFO 2023-12-07 18:43:06,237 base>consumers>connect IP 127.0.0.1 Connected:print_KB [2]
+INFO 2023-12-07 18:43:06,263 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51301][0m
+INFO 2023-12-07 18:43:11,218 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51313][0m
+INFO 2023-12-07 18:43:11,467 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51316][0m
+INFO 2023-12-07 18:43:47,236 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51325][0m
+INFO 2023-12-07 18:43:47,486 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51328][0m
+INFO 2023-12-07 18:43:52,487 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51335][0m
+INFO 2023-12-07 18:43:52,731 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51338][0m
+INFO 2023-12-07 18:43:57,736 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51343][0m
+INFO 2023-12-07 18:43:57,981 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51346][0m
+INFO 2023-12-07 18:43:59,604 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51309]
+INFO 2023-12-07 18:43:59,605 base>consumers>disconnect Disconnected:print_KB Internal [1]
+INFO 2023-12-07 18:45:00,853 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51378][0m
+INFO 2023-12-07 18:45:01,133 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.28, 127.0.0.1:51378][0m
+INFO 2023-12-07 18:45:01,383 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:51383][0m
+INFO 2023-12-07 18:45:01,428 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51386]
+INFO 2023-12-07 18:45:01,433 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 18:45:01,438 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51386]
+INFO 2023-12-07 18:45:01,439 base>consumers>connect IP 127.0.0.1 Connected:print_KB [2]
+INFO 2023-12-07 18:45:01,465 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51378][0m
+INFO 2023-12-07 18:45:06,427 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51391][0m
+INFO 2023-12-07 18:45:06,668 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51394][0m
+INFO 2023-12-07 18:45:06,689 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-12-07 18:45:06,689 base>ws>wssendprinterstatus ...Done
+INFO 2023-12-07 18:45:06,689 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:51378][0m
+INFO 2023-12-07 18:45:11,672 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51403][0m
+INFO 2023-12-07 18:45:11,926 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51406][0m
+INFO 2023-12-07 18:45:16,939 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51410][0m
+INFO 2023-12-07 18:45:17,207 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51413][0m
+INFO 2023-12-07 18:45:22,203 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51416][0m
+INFO 2023-12-07 18:45:22,434 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51419][0m
+INFO 2023-12-07 18:45:27,456 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51422][0m
+INFO 2023-12-07 18:45:27,689 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51425][0m
+INFO 2023-12-07 18:45:32,688 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51428][0m
+INFO 2023-12-07 18:45:32,923 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51431][0m
+INFO 2023-12-07 18:45:37,921 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51435][0m
+INFO 2023-12-07 18:45:38,163 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51438][0m
+INFO 2023-12-07 18:45:43,166 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51441][0m
+INFO 2023-12-07 18:45:43,406 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51444][0m
+INFO 2023-12-07 18:45:48,405 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51447][0m
+INFO 2023-12-07 18:45:48,637 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51450][0m
+INFO 2023-12-07 18:45:53,636 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51454][0m
+INFO 2023-12-07 18:45:53,876 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51457][0m
+INFO 2023-12-07 18:45:58,872 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51460][0m
+INFO 2023-12-07 18:45:59,104 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51463][0m
+INFO 2023-12-07 18:46:04,118 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51467][0m
+INFO 2023-12-07 18:46:04,370 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51470][0m
+INFO 2023-12-07 18:46:09,367 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51476][0m
+INFO 2023-12-07 18:46:09,608 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51479][0m
+INFO 2023-12-07 18:46:14,606 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51482][0m
+INFO 2023-12-07 18:46:14,837 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51485][0m
+INFO 2023-12-07 18:46:19,844 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51489][0m
+INFO 2023-12-07 18:46:20,088 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51492][0m
+INFO 2023-12-07 18:46:25,093 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51496][0m
+INFO 2023-12-07 18:46:25,332 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51499][0m
+INFO 2023-12-07 18:46:29,432 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51386]
+INFO 2023-12-07 18:46:29,432 base>consumers>disconnect Disconnected:print_KB Internal [1]
+INFO 2023-12-07 18:46:32,209 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51507][0m
+INFO 2023-12-07 18:46:32,492 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.28, 127.0.0.1:51507][0m
+INFO 2023-12-07 18:46:32,756 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:51512][0m
+INFO 2023-12-07 18:46:32,779 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51515]
+INFO 2023-12-07 18:46:32,783 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 18:46:32,786 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51515]
+INFO 2023-12-07 18:46:32,786 base>consumers>connect IP 127.0.0.1 Connected:print_KB [2]
+INFO 2023-12-07 18:46:32,791 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:51507][0m
+INFO 2023-12-07 18:46:37,791 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51518][0m
+INFO 2023-12-07 18:46:38,041 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51521][0m
+INFO 2023-12-07 18:46:43,051 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51525][0m
+INFO 2023-12-07 18:46:43,283 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51528][0m
+INFO 2023-12-07 18:46:48,284 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51531][0m
+INFO 2023-12-07 18:46:48,525 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51534][0m
+INFO 2023-12-07 18:46:53,535 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51539][0m
+INFO 2023-12-07 18:46:53,776 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51542][0m
+INFO 2023-12-07 18:46:58,801 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51545][0m
+INFO 2023-12-07 18:46:59,043 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51548][0m
+INFO 2023-12-07 18:47:04,043 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:51551][0m
+INFO 2023-12-07 18:47:04,285 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51554][0m
+INFO 2023-12-07 18:47:09,272 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51560][0m
+INFO 2023-12-07 18:47:09,504 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51563][0m
+INFO 2023-12-07 18:47:14,496 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51567][0m
+INFO 2023-12-07 18:47:14,729 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51570][0m
+INFO 2023-12-07 18:47:19,758 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51574][0m
+INFO 2023-12-07 18:47:20,007 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51577][0m
+INFO 2023-12-07 18:47:25,019 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51580][0m
+INFO 2023-12-07 18:47:25,260 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51583][0m
+INFO 2023-12-07 18:47:30,271 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51586][0m
+INFO 2023-12-07 18:47:30,502 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51589][0m
+INFO 2023-12-07 18:47:35,519 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51593][0m
+INFO 2023-12-07 18:47:35,763 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51596][0m
+INFO 2023-12-07 18:47:40,772 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51600][0m
+INFO 2023-12-07 18:47:41,036 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:51603][0m
+INFO 2023-12-07 18:47:46,024 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51606][0m
+INFO 2023-12-07 18:47:46,266 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51609][0m
+INFO 2023-12-07 18:47:51,273 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51612][0m
+INFO 2023-12-07 18:47:51,506 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51615][0m
+INFO 2023-12-07 18:47:56,505 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51623][0m
+INFO 2023-12-07 18:47:56,736 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51626][0m
+INFO 2023-12-07 18:48:01,728 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51632][0m
+INFO 2023-12-07 18:48:01,972 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51635][0m
+INFO 2023-12-07 18:48:06,986 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51638][0m
+INFO 2023-12-07 18:48:07,229 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51641][0m
+INFO 2023-12-07 18:48:12,225 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51646][0m
+INFO 2023-12-07 18:48:12,456 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51649][0m
+INFO 2023-12-07 18:48:17,474 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51652][0m
+INFO 2023-12-07 18:48:17,744 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:51655][0m
+INFO 2023-12-07 18:48:22,743 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51659][0m
+INFO 2023-12-07 18:48:22,985 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51662][0m
+INFO 2023-12-07 18:48:27,999 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51665][0m
+INFO 2023-12-07 18:48:28,245 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51668][0m
+INFO 2023-12-07 18:48:33,250 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51672][0m
+INFO 2023-12-07 18:48:33,478 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51675][0m
+INFO 2023-12-07 18:48:38,478 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51678][0m
+INFO 2023-12-07 18:48:38,708 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51681][0m
+INFO 2023-12-07 18:48:43,725 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51684][0m
+INFO 2023-12-07 18:48:43,974 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51687][0m
+INFO 2023-12-07 18:48:48,977 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51690][0m
+INFO 2023-12-07 18:48:49,211 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51693][0m
+INFO 2023-12-07 18:48:54,215 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51696][0m
+INFO 2023-12-07 18:48:54,460 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51699][0m
+INFO 2023-12-07 18:48:59,474 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51704][0m
+INFO 2023-12-07 18:48:59,707 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51707][0m
+INFO 2023-12-07 18:49:04,715 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51710][0m
+INFO 2023-12-07 18:49:04,986 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:51713][0m
+INFO 2023-12-07 18:49:09,979 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51717][0m
+INFO 2023-12-07 18:49:10,211 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51720][0m
+INFO 2023-12-07 18:49:15,224 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51724][0m
+INFO 2023-12-07 18:49:15,468 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51727][0m
+INFO 2023-12-07 18:49:20,473 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51731][0m
+INFO 2023-12-07 18:49:20,717 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51734][0m
+INFO 2023-12-07 18:49:25,717 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51738][0m
+INFO 2023-12-07 18:49:25,962 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51741][0m
+INFO 2023-12-07 18:49:30,967 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51744][0m
+INFO 2023-12-07 18:49:31,197 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51747][0m
+INFO 2023-12-07 18:49:36,199 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51752][0m
+INFO 2023-12-07 18:49:36,430 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51755][0m
+INFO 2023-12-07 18:49:41,440 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51758][0m
+INFO 2023-12-07 18:49:41,692 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51761][0m
+INFO 2023-12-07 18:49:46,699 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51766][0m
+INFO 2023-12-07 18:49:46,969 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:51769][0m
+INFO 2023-12-07 18:49:51,964 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51772][0m
+INFO 2023-12-07 18:49:52,199 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51775][0m
+INFO 2023-12-07 18:49:57,210 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51784][0m
+INFO 2023-12-07 18:49:57,467 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:51787][0m
+INFO 2023-12-07 18:50:02,469 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51790][0m
+INFO 2023-12-07 18:50:02,705 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51793][0m
+INFO 2023-12-07 18:50:07,700 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51796][0m
+INFO 2023-12-07 18:50:07,929 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51799][0m
+INFO 2023-12-07 18:50:12,931 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51805][0m
+INFO 2023-12-07 18:50:13,174 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51808][0m
+INFO 2023-12-07 18:50:18,164 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51811][0m
+INFO 2023-12-07 18:50:18,398 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51814][0m
+INFO 2023-12-07 18:50:23,403 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51818][0m
+INFO 2023-12-07 18:50:23,632 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51821][0m
+INFO 2023-12-07 18:50:28,631 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51825][0m
+INFO 2023-12-07 18:50:28,863 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51828][0m
+INFO 2023-12-07 18:50:33,865 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51831][0m
+INFO 2023-12-07 18:50:34,085 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51515]
+INFO 2023-12-07 18:50:34,086 base>consumers>disconnect Disconnected:print_KB Internal [1]
+INFO 2023-12-07 18:54:43,223 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:51898][0m
+INFO 2023-12-07 18:54:43,528 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.30, 127.0.0.1:51898][0m
+INFO 2023-12-07 18:54:43,812 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:51903][0m
+INFO 2023-12-07 18:54:43,854 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51906]
+INFO 2023-12-07 18:54:43,859 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 18:54:43,864 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51906]
+INFO 2023-12-07 18:54:43,865 base>consumers>connect IP 127.0.0.1 Connected:print_KB [2]
+INFO 2023-12-07 18:54:43,890 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51898][0m
+INFO 2023-12-07 18:54:48,840 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51909][0m
+INFO 2023-12-07 18:54:49,076 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51912][0m
+INFO 2023-12-07 18:54:54,093 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51916][0m
+INFO 2023-12-07 18:54:54,339 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:51919][0m
+INFO 2023-12-07 18:54:59,340 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51922][0m
+INFO 2023-12-07 18:54:59,580 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51925][0m
+INFO 2023-12-07 18:55:01,407 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51906]
+INFO 2023-12-07 18:55:01,408 base>consumers>disconnect Disconnected:print_KB Internal [1]
+INFO 2023-12-07 18:56:41,627 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51960][0m
+INFO 2023-12-07 18:56:41,941 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.31, 127.0.0.1:51960][0m
+INFO 2023-12-07 18:56:42,198 runserver>log_action [mHTTP POST /api/token/ 200 [0.24, 127.0.0.1:51965][0m
+INFO 2023-12-07 18:56:42,228 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:51968]
+INFO 2023-12-07 18:56:42,233 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 18:56:42,239 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:51968]
+INFO 2023-12-07 18:56:42,239 base>consumers>connect IP 127.0.0.1 Connected:print_KB [2]
+INFO 2023-12-07 18:56:42,267 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:51960][0m
+INFO 2023-12-07 18:56:47,245 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51971][0m
+INFO 2023-12-07 18:56:47,476 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51974][0m
+INFO 2023-12-07 18:56:52,494 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51978][0m
+INFO 2023-12-07 18:56:52,737 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51981][0m
+INFO 2023-12-07 18:56:57,729 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:51985][0m
+INFO 2023-12-07 18:56:57,960 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:51988][0m
+INFO 2023-12-07 18:57:02,049 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:51968]
+INFO 2023-12-07 18:57:02,050 base>consumers>disconnect Disconnected:print_KB Internal [1]
+INFO 2023-12-07 18:58:49,763 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:52020][0m
+INFO 2023-12-07 18:58:50,064 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.30, 127.0.0.1:52020][0m
+INFO 2023-12-07 18:58:50,316 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:52025][0m
+INFO 2023-12-07 18:58:50,343 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:52028]
+INFO 2023-12-07 18:58:50,347 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 18:58:50,352 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:52028]
+INFO 2023-12-07 18:58:50,352 base>consumers>connect IP 127.0.0.1 Connected:print_KB [2]
+INFO 2023-12-07 18:58:50,374 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:52020][0m
+INFO 2023-12-07 18:58:55,347 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52034][0m
+INFO 2023-12-07 18:58:55,580 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:52037][0m
+INFO 2023-12-07 18:59:00,602 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52040][0m
+INFO 2023-12-07 18:59:00,847 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:52043][0m
+INFO 2023-12-07 18:59:01,943 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:52028]
+INFO 2023-12-07 18:59:01,944 base>consumers>disconnect Disconnected:print_KB Internal [1]
+INFO 2023-12-07 19:01:44,268 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:52072][0m
+INFO 2023-12-07 19:01:44,584 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.31, 127.0.0.1:52072][0m
+INFO 2023-12-07 19:01:44,831 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:52077][0m
+INFO 2023-12-07 19:01:44,861 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:52080]
+INFO 2023-12-07 19:01:44,865 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 19:01:44,868 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:52080]
+INFO 2023-12-07 19:01:44,868 base>consumers>connect IP 127.0.0.1 Connected:print_KB [2]
+INFO 2023-12-07 19:01:44,890 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:52072][0m
+INFO 2023-12-07 19:01:49,852 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52083][0m
+INFO 2023-12-07 19:01:50,086 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:52086][0m
+INFO 2023-12-07 19:01:54,531 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:52080]
+INFO 2023-12-07 19:01:54,531 base>consumers>disconnect Disconnected:print_KB Internal [1]
+INFO 2023-12-07 19:08:33,399 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:52164][0m
+INFO 2023-12-07 19:08:33,735 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.34, 127.0.0.1:52164][0m
+INFO 2023-12-07 19:08:34,007 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:52169][0m
+INFO 2023-12-07 19:08:34,034 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:52172]
+INFO 2023-12-07 19:08:34,037 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 19:08:34,040 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:52172]
+INFO 2023-12-07 19:08:34,040 base>consumers>connect IP 127.0.0.1 Connected:print_KB [2]
+INFO 2023-12-07 19:08:34,059 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:52164][0m
+INFO 2023-12-07 19:08:39,032 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52175][0m
+INFO 2023-12-07 19:08:39,265 runserver>log_action [mHTTP POST /api/token/ 200 [0.21, 127.0.0.1:52178][0m
+INFO 2023-12-07 19:08:44,264 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.01, 127.0.0.1:52181][0m
+INFO 2023-12-07 19:08:44,498 runserver>log_action [mHTTP POST /api/token/ 200 [0.22, 127.0.0.1:52184][0m
+INFO 2023-12-07 19:08:49,499 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52190][0m
+INFO 2023-12-07 19:08:49,769 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:52193][0m
+INFO 2023-12-07 19:08:54,782 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52202][0m
+INFO 2023-12-07 19:08:55,016 runserver>log_action [mHTTP POST /api/token/ 200 [0.21, 127.0.0.1:52205][0m
+INFO 2023-12-07 19:09:00,036 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52211][0m
+INFO 2023-12-07 19:09:00,283 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:52214][0m
+INFO 2023-12-07 19:09:00,776 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:52172]
+INFO 2023-12-07 19:09:00,778 base>consumers>disconnect Disconnected:print_KB Internal [1]
+INFO 2023-12-07 19:11:15,201 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:52253][0m
+INFO 2023-12-07 19:11:15,491 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.29, 127.0.0.1:52253][0m
+INFO 2023-12-07 19:11:15,746 runserver>log_action [mHTTP POST /api/token/ 200 [0.23, 127.0.0.1:52258][0m
+INFO 2023-12-07 19:11:15,782 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:52261]
+INFO 2023-12-07 19:11:15,788 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 19:11:15,792 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:52261]
+INFO 2023-12-07 19:11:15,793 base>consumers>connect IP 127.0.0.1 Connected:print_KB [2]
+INFO 2023-12-07 19:11:15,826 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.02, 127.0.0.1:52253][0m
+INFO 2023-12-07 19:11:20,787 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52265][0m
+INFO 2023-12-07 19:11:21,037 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-12-07 19:11:21,037 base>ws>wssendprinterstatus ...Done
+INFO 2023-12-07 19:11:21,037 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:52253][0m
+INFO 2023-12-07 19:11:25,787 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52274][0m
+INFO 2023-12-07 19:11:30,804 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52279][0m
+INFO 2023-12-07 19:11:35,820 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52282][0m
+INFO 2023-12-07 19:11:40,824 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52285][0m
+INFO 2023-12-07 19:11:45,837 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52288][0m
+INFO 2023-12-07 19:11:50,843 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52291][0m
+INFO 2023-12-07 19:11:55,838 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52295][0m
+INFO 2023-12-07 19:12:00,841 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52298][0m
+INFO 2023-12-07 19:12:05,843 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52301][0m
+INFO 2023-12-07 19:12:10,838 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52305][0m
+INFO 2023-12-07 19:12:12,769 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:52261]
+INFO 2023-12-07 19:12:12,770 base>consumers>disconnect Disconnected:print_KB Internal [1]
+INFO 2023-12-07 19:12:15,271 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.2.0.0 200 [0.00, 127.0.0.1:52310][0m
+INFO 2023-12-07 19:12:15,555 runserver>log_action [mHTTP POST /api/loginapi/?app=Printer%20Control&version=8.2.0.0 200 [0.28, 127.0.0.1:52310][0m
+INFO 2023-12-07 19:12:15,838 runserver>log_action [mHTTP POST /api/token/ 200 [0.26, 127.0.0.1:52315][0m
+INFO 2023-12-07 19:12:15,871 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:52318]
+INFO 2023-12-07 19:12:15,875 base>consumers>connect connecting:print_KB
+INFO 2023-12-07 19:12:15,878 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:52318]
+INFO 2023-12-07 19:12:15,879 base>consumers>connect IP 127.0.0.1 Connected:print_KB [2]
+INFO 2023-12-07 19:12:15,892 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.2.0.0 200 [0.01, 127.0.0.1:52310][0m
+INFO 2023-12-07 19:12:20,855 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 127.0.0.1:52322][0m
+INFO 2023-12-07 19:12:21,072 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('192.168.1.4', '6379')}])
+INFO 2023-12-07 19:12:21,072 base>ws>wssendprinterstatus ...Done
+INFO 2023-12-07 19:12:21,072 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.2.0.0&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.02, 127.0.0.1:52310][0m
+INFO 2023-12-07 19:12:24,940 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:52318]
+INFO 2023-12-07 19:12:24,942 base>consumers>disconnect Disconnected:print_KB Internal [1]
