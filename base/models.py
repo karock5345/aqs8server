@@ -170,10 +170,10 @@ class CounterType(models.Model):
     enabled = models.BooleanField(default=True)
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
     name = models.CharField(max_length=200, null=False)
-    lang1 = models.CharField(max_length=200, null=True)
-    lang2 = models.CharField(max_length=200, null=True)
-    lang3 = models.CharField(max_length=200, null=True)    
-    lang4 = models.CharField(max_length=200, null=True)    
+    lang1 = models.CharField(max_length=200, null=True, blank=True, default='')
+    lang2 = models.CharField(max_length=200, null=True, blank=True, default='')
+    lang3 = models.CharField(max_length=200, null=True, blank=True, default='')    
+    lang4 = models.CharField(max_length=200, null=True, blank=True, default='')    
     displayscrollingtext = models.TextField(null=False, blank=False, default='Testing 123...')
     countermode = models.CharField(max_length=200, null=False, blank=False, default='normal') # normal, callcentre
     nextcounter = models.IntegerField(default=0)  # only for CallCentre mode system auto assign ticket to counter 

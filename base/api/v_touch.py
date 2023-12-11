@@ -313,7 +313,11 @@ def postTouchKeys(request):
     #    "status":"OK/Error",
     #    "msg":"Ticket format not found",
     #    "data":[
-    #         {"tickettype":"A","touchkey_lang1":"一般查詢","touchkey_lang2":"General Enquiry","touchkey_lang3":"---","touchkey_lang4":"---"}   
+    #         {"tickettype":"A",
+    #          "touchkey_lang1":"一般查詢",
+    #          "touchkey_lang2":"General Enquiry",
+    #          "touchkey_lang3":"---",
+    #          "touchkey_lang4":"---"}   
     #    ]
     # }
     status = dict({})
