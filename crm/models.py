@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from base.models import Branch
+from datetime import timedelta
 # Create your models here.
 
 item_status_choices = [('active', ('active')),
@@ -49,7 +50,7 @@ class Category(models.Model):
     company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
     product_type = models.ForeignKey(Product_Type, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True, default='')
 
     def __str__(self):
         return self.name
@@ -59,9 +60,9 @@ class Supplier(models.Model):
     contact = models.CharField(max_length=200)
     supplier_company = models.CharField(max_length=200)
     website = models.CharField(max_length=200)    
-    address = models.TextField()
+    address = models.TextField(null=True, blank=True, default='')
     phone = models.CharField(max_length=15)
-    email = models.EmailField()
+    email = models.EmailField(null=True, blank=True, default='')
 
     def __str__(self):
         return self.supplier_company
@@ -71,13 +72,13 @@ class Supplier(models.Model):
 class Product(models.Model):
     company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True, default='')
     product_type = models.ForeignKey(Product_Type, on_delete=models.SET_NULL, null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
     supplier = models.ForeignKey(Supplier, on_delete=models.SET_NULL, null=True, blank=True)
     status = models.CharField(max_length=200, choices=item_status_choices, default='active')
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    duration = models.DurationField()
+    duration = models.DurationField(default=timedelta(days=0))
     barcode = models.CharField(max_length=20, blank=True, null=True)
     weight = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     dimensions = models.CharField(max_length=50, blank=True, null=True)
