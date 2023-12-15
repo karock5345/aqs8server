@@ -1,7 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
-from crm.models import Member
+from crm.models import Member, Company
 from base.models import Branch, APILog
 import random
 import string
@@ -96,23 +96,23 @@ def crmUserLoginView(request):
     member_no = ''
     member_token = ''
     error = ''
-    branch = None
+    company = None
 
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
     rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
-    rx_bcode = request.GET.get('bcode') if request.GET.get('bcode') != None else ''
+    rx_ccode = request.GET.get('ccode') if request.GET.get('ccode') != None else ''
 
-    if rx_username == '' or rx_password == '' or rx_bcode == '':
+    if rx_username == '' or rx_password == '' or rx_ccode == '':
         error = 'Missing parameters'
         
     if error == '' :        
-        error, member_no, member_token, branch = crmUserLogin(rx_username, rx_password, rx_bcode, datetime_now_utc)
+        error, member_no, member_token, company = crmUserLogin(rx_username, rx_password, rx_ccode, datetime_now_utc)
         
     # Save Api Log
-    if branch != None:
-        if setting_APIlogEnabled(branch) == True :
+    if company != None:
+        if setting_APIlogEnabled(None, company) == True :
             APILog.objects.create(
                 logtime=datetime_now_utc,
                 requeststr = request.build_absolute_uri() ,
@@ -122,6 +122,9 @@ def crmUserLoginView(request):
                 logtext = 'API call : CRM User Login',
             )
 
+            # # remove all data from APILog
+            # APILog.objects.all().delete()
+
     if error == '':
         status = {'status':'success', 'msg':'Login success', }
         data = {'member_no':member_no, 'member_token':member_token, }
@@ -130,20 +133,21 @@ def crmUserLoginView(request):
         data = {}
     return Response(status | data )
 
-def crmUserLogin(username, password, bcode, datetime_now_utc):
+def crmUserLogin(username, password, ccode, datetime_now_utc):
     error = ''
     member_no = ''
     member_token = ''
 
-    branch = None
+    # branch = None
+    company = None
     if error == '' :
         try:
-            branch = Branch.objects.get(bcode=bcode)
+            company = Company.objects.get(ccode=ccode)
         except :
             error = 'Login failed'
     if error == '' :
         try:
-            member = Member.objects.get(username=username, branch=branch, password=password)
+            member = Member.objects.get(username=username, company=company, password=password)
         except :
             error = 'Login failed'
     if error == '' :
@@ -158,4 +162,4 @@ def crmUserLogin(username, password, bcode, datetime_now_utc):
         else:
             error = 'Member is deactivated'
 
-    return error, member_no, member_token, branch
+    return error, member_no, member_token, company

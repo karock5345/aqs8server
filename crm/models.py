@@ -48,7 +48,7 @@ class Product_Type(models.Model):
 
 class Category(models.Model):
     company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
-    product_type = models.ForeignKey(Product_Type, on_delete=models.SET_NULL, null=True, blank=True)
+    # product_type = models.ForeignKey(Product_Type, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True, default='')
 
@@ -102,6 +102,8 @@ class MemberItem(models.Model):
     discount_price = models.DecimalField(max_digits=10, decimal_places=2)
     member_points = models.IntegerField(default=0)
     qty = models.IntegerField(default=0)
+    total_qty = models.IntegerField(default=0)
+    duration = models.DurationField(default=timedelta(days=0))
     status = models.CharField(max_length=200, choices=item_status_choices, default='active')
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)

@@ -72,12 +72,14 @@ class TicketDataView(admin.ModelAdmin):
 class APILogView(admin.ModelAdmin):
     model = APILog
     ordering = ('-logtime',)
-    list_display =('logtime', 'ip', 'requeststr',  'app')
+    list_display =('logtime', 'ip', 'requeststr',  'app')    
+    list_per_page = 1000  # Display 1000 rows per page
 
 class SystemLogView(admin.ModelAdmin):
     model = SystemLog
     ordering = ('-logtime',)
-    list_display =('logtime', 'logtext')       
+    list_display =('logtime', 'logtext')   
+    list_per_page = 1000  # Display 1000 rows per page    
 
 class SettingsView(admin.ModelAdmin):
     model = Setting

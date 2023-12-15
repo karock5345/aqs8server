@@ -105,7 +105,7 @@ POST [Server IP or DN]/api/token/refresh/
 
 ### Request
 ```http
-GET [Server IP or DN]/crm/api/login?app=postman&version=8.2.0&username=xxx&password=xxx&bcode=xxx
+GET [Server IP or DN]/crm/api/login?app=postman&version=8.2.0&username=xxx&password=xxx&ccode=xxx
 ```
 
 | Key | Type | Description |
@@ -114,7 +114,7 @@ GET [Server IP or DN]/crm/api/login?app=postman&version=8.2.0&username=xxx&passw
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
 | `username` | `string` | **Required**. Member username provided by TSVD |
 | `password` | `string` | **Required**. provided by TSVD |
-| `bcode` | `string` | **Required**. provided by TSVD |
+| `ccode` | `string` | **Required**. provided by TSVD |
 
 ### Response
 

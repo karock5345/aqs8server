@@ -435,17 +435,31 @@ def visitor_ip_address(request):
     return ip
 
 # Convert Locate time to UTC
-def setting_APIlogEnabled(branch) -> bool :
+def setting_APIlogEnabled(branch, company=None) -> bool :
     
+
     out = True
-    setobj = Setting.objects.filter( Q(branch=branch))
-    if setobj.count() > 0 :
-        set = setobj[0]
-        out = set.API_Log_Enabled
-    else:
-        setobj = Setting.objects.filter( Q(name='global'))
+
+    if branch != None :
+        setobj = Setting.objects.filter( Q(branch=branch))
         if setobj.count() > 0 :
             set = setobj[0]
             out = set.API_Log_Enabled
-
+        else:
+            setobj = Setting.objects.filter( Q(name='global'))
+            if setobj.count() > 0 :
+                set = setobj[0]
+                out = set.API_Log_Enabled
+    elif company != None :
+        for branch in company.branchs.all():
+            setobj = Setting.objects.filter( Q(branch=branch))
+            if setobj.count() > 0 :
+                set = setobj[0]
+                out = set.API_Log_Enabled
+                break
+            else:
+                setobj = Setting.objects.filter( Q(name='global'))
+                if setobj.count() > 0 :
+                    set = setobj[0]
+                    out = set.API_Log_Enabled
     return out    
