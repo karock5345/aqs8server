@@ -299,7 +299,7 @@ def funCounterProcess(user, branch, countertype, counterstatus, logtext, rx_app,
             user=user,
         )
         # call centre mode only
-        if countertype.countermode != 'normal':
+        if countertype.countermode == 'cc':
             # end of 'walking' period
             objusl = UserStatusLog.objects.filter(Q(user=user) & Q(status=lcounterstatus[lcounterstatus.index('walking')]) & Q(endtime=None))
             for usl in objusl:
@@ -421,7 +421,7 @@ def funCounterComplete(user, branch, countertype, counterstatus, logtext, rx_app
             )
 
             # call centre mode only
-            if countertype.countermode != 'normal':
+            if countertype.countermode == 'cc':
                 objusl = UserStatusLog.objects.filter(Q(user=user) & Q(status=lcounterstatus[lcounterstatus.index('processing')]) & Q(endtime=None))
                 for usl in objusl:
                     usl.endtime = datetime_now
@@ -495,7 +495,7 @@ def funCounterMiss(user, branch, countertype, counterstatus, logtext, rx_app, rx
 
 
         # Call Centre mode only
-        if countertype.countermode != 'normal':
+        if countertype.countermode == 'cc':
             # end of 'walking' period
             objusl = UserStatusLog.objects.filter(Q(user=user) & Q(status=lcounterstatus[lcounterstatus.index('walking')]) & Q(endtime=None))
             for usl in objusl:
@@ -842,7 +842,7 @@ def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber,
         # login 
         if countertype.countermode == 'normal':
             pass
-        else :
+        elif countertype.countermode == 'cc':
             # counter status sould be start at 'AUX'
             counterstatus.status = lcounterstatus[lcounterstatus.index('AUX')]
             counterstatus.save()
@@ -920,7 +920,7 @@ def logcounterlogout (user, countertype, counternumber, logintime, logouttime) -
         loginlog.save()
         sOut = 'OK'
 
-    if countertype.countermode != 'normal':
+    if countertype.countermode == 'cc':
         obj = UserStatusLog.objects.filter( Q(user=user) & Q(endtime=None) )
         for usl in obj:
             usl.endtime = logouttime
@@ -937,7 +937,7 @@ def logcounterlogin (user, countertype, counternumber, logintime) :
             logintime = logintime,
         )
     
-    if countertype.countermode != 'normal':
+    if countertype.countermode == 'cc':
         # Call centre mode : login counter status is AUX
         UserStatusLog.objects.create(
         user = user,

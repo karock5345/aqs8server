@@ -379,7 +379,7 @@ def SoftkeyView(request, pk):
 
         if counterstatus.countertype.countermode == 'normal':
             return render(request, 'base/softkey.html', context)
-        else:
+        elif counterstatus.countertype.countermode == 'cc':
             return render(request, 'base/softkey_callcentre.html', context)
         # pass
     else:

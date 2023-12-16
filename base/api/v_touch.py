@@ -178,7 +178,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
         rocheSMS(branch, tickettemp)
 
         # call centre mode auto send ticket to counter
-        if countertype.countermode != 'normal':
+        if countertype.countermode == 'cc':
             cc_autocall(countertype,  app, version, datetime_now)
 
     return ticketno_str, countertype, tickettemp, ticket, error

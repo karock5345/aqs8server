@@ -175,7 +175,7 @@ class CounterType(models.Model):
     lang3 = models.CharField(max_length=200, null=True, blank=True, default='')    
     lang4 = models.CharField(max_length=200, null=True, blank=True, default='')    
     displayscrollingtext = models.TextField(null=False, blank=False, default='Testing 123...')
-    countermode = models.CharField(max_length=200, null=False, blank=False, default='normal') # normal, callcentre
+    countermode = models.CharField(max_length=200, null=False, blank=False, default='normal', verbose_name='Counter Mode', help_text='Normal mode=normal, Call Centre mode=cc, Restaurant mode=res') # normal, callcentre
     nextcounter = models.IntegerField(default=0)  # only for CallCentre mode system auto assign ticket to counter 
                                                   # this is NOT counter number, system will generate a list of counterstatus. 
                                                   # This number is the index of the list

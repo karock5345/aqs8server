@@ -299,7 +299,7 @@ def job_shutdown(branch_input):
                     if counter.status != 'waiting':                        
                         counter.status = 'waiting'
                         counter.save()
-            else:
+            elif counter.countertype.countermode == 'cc' :
                 # Call center mode
                 # counterstatus all reset to 'AUX'
                 if counter.loged == True and counter.user != None :
