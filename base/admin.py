@@ -29,7 +29,8 @@ class TicketFormatView(admin.ModelAdmin):
 
 
 class CounterTypeView(admin.ModelAdmin):
-    list_display =( 'branch', 'name', 'lang1', 'lang2', 'enabled',)
+    list_display =( 'name','enabled','branch',  'lang1', 'lang2', 'countermode')
+    ordering=('branch', 'name')
 
 
 
@@ -116,7 +117,7 @@ class WebTouchView(admin.ModelAdmin):
 
     model = WebTouch
     ordering = ('branch', 'name', )
-    list_display = ('name', 'branch', 'enabled',)
+    list_display = ('name', 'enabled','branch', )
 
 class UserStatusLogView(admin.ModelAdmin):
     model = UserStatusLog

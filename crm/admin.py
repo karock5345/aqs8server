@@ -24,7 +24,7 @@ class ProductView(admin.ModelAdmin):
     ordering = ('company', 'name')
 
 class MemberItemView(admin.ModelAdmin):
-    list_display =('name', 'qty', 'status', 'enabled')
+    list_display =('name', 'company', 'qty', 'status', 'enabled')
     ordering = ('-updated', '-created') 
 
 class MemberView(admin.ModelAdmin):

@@ -105,7 +105,7 @@ POST [Server IP or DN]/api/token/refresh/
 
 ### Request
 ```http
-GET [Server IP or DN]/crm/api/login?app=postman&version=8.2.0&username=xxx&password=xxx&ccode=xxx
+POST [Server IP or DN]/crm/api/login?app=postman&version=8.2.0&username=xxx&password=xxx&ccode=xxx
 ```
 
 | Key | Type | Description |
@@ -139,7 +139,7 @@ Or if login failed
 # 2. Member info API (Member APP)
 ### Request
 ```http
-GET [Server IP or DN]/crm/api/info?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&bcode=xxx
+GET [Server IP or DN]/crm/api/info?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&ccode=xxx
 ```
 
 | Key | Type | Description |
@@ -148,7 +148,7 @@ GET [Server IP or DN]/crm/api/info?app=postman&version=8.2.0&member_no=xxx&membe
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
 | `member_no` | `string` | **Required**. Member number from `Member login API` |
 | `member_token` | `string` | **Required**. Member Token from `Member login API` |
-| `bcode` | `string` | **Required**. provided by TSVD |
+| `ccode` | `string` | **Required**. provided by TSVD |
 
 ### Response
 
@@ -172,7 +172,7 @@ Or if failed
 # 3. Member item list API (Member APP)
 ### Request
 ```http
-GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&member_token=xxx&bcode=xxx
+GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&member_token=xxx&ccode=xxx
 ```
 
 | Key | Type | Description |
@@ -181,7 +181,7 @@ GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_no=xxx&memb
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
 | `member_no` | `string` | **Required**. Member number from `Member login API` |
 | `member_token` | `string` | **Required**. Member ID from `Member login API` |
-| `bcode` | `string` | **Required**. provided by TSVD |
+| `ccode` | `string` | **Required**. provided by TSVD |
 
 ### Response
 
@@ -191,20 +191,20 @@ GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_no=xxx&memb
     "msg": "Successfully!",
     "items": [
         {
-        "id": 1,
-        "name": "Men's Dress Shirt",
-        "des": "White, Slim Fit, Size M",
-        "price": 49.9,
-        "dis_price": 30,
-        "mp": 0
+            "id": 1,
+            "name": "Men's Dress Shirt",
+            "des": "White, Slim Fit, Size M",
+            "price": 49.9,
+            "dis_price": 30,
+            "mp": 0
 		},
 		{
-        "id": 2,
-        "name": "Nike Air Max Running Shoes",
-        "des": "Men's, Black/Red, Size 10",
-        "price": 129.9,
-        "dis_price": 99,
-        "mp": 1000
+            "id": 2,
+            "name": "Nike Air Max Running Shoes",
+            "des": "Men's, Black/Red, Size 10",
+            "price": 129.9,
+            "dis_price": 99,
+            "mp": 1000
 		}
 	]
 }
@@ -221,15 +221,16 @@ Or if failed
 
 ### Request
 ```http
-POST [Server IP or DN]/api/crm/logout?app=postman&version=8.2.0&username=xxx&member_token=xxx
+POST [Server IP or DN]/api/crm/logout?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&ccode=xxx
 ```
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
-| `username` | `string` | **Required**. Member username provided by TSVD |
+| `member_no` | `string` | **Required**. Member number from `Member login API` |
 | `member_token` | `string` | **Required**. Member ID from `Member login API` |
+| `ccode` | `string` | **Required**. provided by TSVD |
 
 ### Response
 
@@ -237,7 +238,6 @@ POST [Server IP or DN]/api/crm/logout?app=postman&version=8.2.0&username=xxx&mem
 {
     "status": "success",
     "msg": "Logout successfully!",
-    "id": 2
 }
 ```
 Or if login failed
