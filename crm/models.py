@@ -114,9 +114,12 @@ class MemberItem(models.Model):
 class Member(models.Model):
     company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
     username = models.CharField(max_length=200, null=False, unique=True)
+    login = models.BooleanField(default=False, null=False)
     number = models.CharField(max_length=200, null=False, unique=True)
     password = models.CharField(max_length=200, null=False, blank=False)
     verifycode = models.CharField(max_length=200, null=True, blank=True)
+    verifycode_date = models.DateTimeField(null=True, blank=True)
+    verified = models.BooleanField(default=False, null=False)
     enabled = models.BooleanField(default=True, null=False)
     token = models.CharField(max_length=200, null=True, blank=True)
     tokendate = models.DateTimeField(null=True, blank=True)

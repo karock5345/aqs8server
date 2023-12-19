@@ -250,13 +250,14 @@ Or if login failed
 # 5. Member register API (Member APP)
 ### Request
 ```http
-GET [Server IP or DN]/api/crm/info?app=postman&version=8.2.0&username=xxx&password=xxx&password2=xxx&email=xxx&mobile=xxx&nickname=xxx&gender=xxx&dob=xxx
+GET [Server IP or DN]/api/crm/reg?app=postman&version=8.2.0&ccode=xxx&username=xxx&password=xxx&email=xxx&mobile=xxx&nickname=xxx&gender=xxx&dob=xxx
 ```
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `ccode` | `string` | **Required**. provided by TSVD |
 | `username` | `string` | **Required**. Min. 4 char |
 | `password` | `string` | **Required**. Min. 8 char |
 | `email` | `string` | **Required**. Valid email address |
