@@ -1,7 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
-from crm.models import Member, Company, MemberItem
+from crm.models import Member, Company, MemberItem, CRMAdmin
 from base.models import Branch, APILog
 import random
 import string
@@ -11,6 +11,8 @@ from crm.serializers import MemberItemListSerivalizer
 import re
 import phonenumbers
 import phonenumbers.timezone
+import xml.etree.ElementTree as ET
+
 # from phonenumbers import timezone
 
 # Member token expire hours
@@ -44,11 +46,14 @@ def crmMemberRegistrationView(request):
     rx_nickname = request.GET.get('nickname') if request.GET.get('nickname') != None else ''
     rx_gender = request.GET.get('gender') if request.GET.get('gender') != None else ''
     rx_dob = request.GET.get('dob') if request.GET.get('dob') != None else ''
+    # username is lowercase, auto convert to lowercase
+    rx_member_username = rx_member_username.lower()
 
     # check miss parameters
     if error == '':
         if rx_ccode == '' or rx_member_username == '' or rx_member_password == '' or rx_email == '' or rx_mobile == '' or rx_nickname == '' or rx_gender == '' or rx_dob == '' :
             error = 'Missing parameters'
+
     # check ccode
     if error == '':
         try:
@@ -64,21 +69,22 @@ def crmMemberRegistrationView(request):
             error = 'Username already exists'
         except :
             pass
-    # check rx_member_username should be 4-20 chars
+    # check rx_member_username should be 3-20 chars
     if error == '':
-        if len(rx_member_username) < 4 or len(rx_member_username) > 20 :
+        if len(rx_member_username) < 3 or len(rx_member_username) > 20 :
             error = 'Username should be 4-20 chars'
     # check password should be 8-20 chars
     if error == '':
         if len(rx_member_password) < 8 or len(rx_member_password) > 20 :
             error = 'Password should be 8-20 chars'
-    # check email
-    if error == '':
-        try:
-            member = Member.objects.get(email=rx_email, company=company)
-            error = 'Email already exists'
-        except :
-            pass
+    # check email 
+            # for development mode
+    # if error == '':
+    #     try:
+    #         member = Member.objects.get(email=rx_email, company=company)
+    #         error = 'Email already exists'
+    #     except :
+    #         pass
     # check email format
     if error == '':
         regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
@@ -87,32 +93,41 @@ def crmMemberRegistrationView(request):
         else:
             error = 'Email format is incorrect'
 
+
+    # check mobile format
+    # print('Received phone number:' + rx_mobile)
+    if error == '':
+        if len(rx_mobile) == 8 and rx_mobile.isdigit() == True:
+            rx_mobile = '+852' + rx_mobile
+            print('Received phone number:' + rx_mobile)
+    if error == '':
+        # check mobile first 3 digits is '852'
+        if rx_mobile[0:3] == '852':
+            # add '+' from mobile
+            rx_mobile = '+' + rx_mobile
+
+    if error == '':
+        try:
+            phone_number = phonenumbers.parse(rx_mobile)
+        except:
+            error = 'Mobile format is incorrect'
+    if error == '':
+        if phonenumbers.is_valid_number(phone_number) == False:
+            error = 'Mobile format is incorrect'
+    # if error == '':
+    #     print(phonenumbers.is_valid_number(phone_number))
+    #     print(phonenumbers.timezone.time_zones_for_number(phone_number))
+    #     print('Country code:' + str(phone_number.country_code))
+    #     print('National number:' + str(phone_number.national_number))
     # check mobile
     if error == '':
         try:
-            member = Member.objects.get(mobile=rx_mobile, company=company)
+            member = Member.objects.get(mobile_country=str(phone_number.country_code), mobile=str(phone_number.national_number), company=company)
             error = 'Mobile already exists'
         except :
             pass
-    # check mobile format
 
-    if error == '':
-        if len(rx_mobile) == 8 and rx_mobile.isdigit() == True:
-            rx_mobile = '852' + rx_mobile
-            pass
-    if error == '':
-        # check mobile first 4 digits is '+852'
-        if rx_mobile[0:4] == '+852':
-            # remove '+' from mobile
-            rx_mobile = rx_mobile[1:]
-    if error == '':
-        print(rx_mobile)
-        phone_number = phonenumbers.parse('+' + rx_mobile)
-        print(phone_number)
-        print(phonenumbers.is_valid_number(phone_number))
-        print(phonenumbers.timezone.time_zones_for_number(phone_number))
-        print('Country code:' + str(phone_number.country_code))
-        print('National number:' + str(phone_number.national_number))
+
 
     # check nickname
     if error == '':
@@ -131,7 +146,12 @@ def crmMemberRegistrationView(request):
         except:
             error = 'DOB format must be YYYY_MM_DD'
     
-    
+    if error == '':
+        # genrate member number
+        try:
+            crmadmin = CRMAdmin.objects.get(company=company)
+        except:
+            error = 'CRM Admin not found'
     # Save Api Log
     if company != None:
         if setting_APIlogEnabled(None, company) == True :
@@ -145,16 +165,109 @@ def crmMemberRegistrationView(request):
             )
     
     if error == '' :
+        number = crmadmin.membernumber_next
+        number_digit = crmadmin.membernumber_digit
+        # check number reset
+        # membernumber_reset is role for reset member number, e.g. role:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1 
+        reset ='<DATA>' + crmadmin.membernumber_reset + '</DATA>'
+        tree = ET.fromstring(reset)
+        for elem in tree.iter():
+            # print(elem.tag, elem.text)
+            if elem.text == None and elem.tag != 'DATA':
+                error = 'Member number reset format error'
+                break
+            if elem.tag == 'Y':
+                value = int(elem.text)
+                now_y = datetime_now_utc.year
+                if value != now_y:
+                    number = 1
+
+                    crmadmin.membernumber_reset = crmadmin.membernumber_reset.replace('<Y>' + str(value) + '</Y>', '<Y>' + str(now_y) + '</Y>')
+                    crmadmin.save()
+                    # save xml to db
+            elif elem.tag == 'M':
+                value = int(elem.text)
+                now_m = datetime_now_utc.month
+                if value != now_m:
+                    number = 1
+                    
+                    crmadmin.membernumber_reset = crmadmin.membernumber_reset.replace('<M>' + str(value) + '</M>', '<M>' + str(now_m) + '</M>')
+                    crmadmin.save()
+            elif elem.tag == 'D':
+                value = int(elem.text)
+                now_d = datetime_now_utc.day
+                if value != now_d:
+                    number = 1
+
+                    crmadmin.membernumber_reset = crmadmin.membernumber_reset.replace('<D>' + str(value) + '</D>', '<D>' + str(now_d) + '</D>')
+                    crmadmin.save()
+        
+    if error == '':
+    # process prefix
+    # membernumber_prefix is role for member number, <TEXT>MEM</TEXT><Y></Y><m></m><d></d><H></H><M></M><S></S><no></no> is Year, Month, Day, Hour, Minute, Second, Number('%Y-%m-%d %H:%M:%S')
+    # e.g. <TEXT>VIP</TEXT><Y></Y><no></no> is VIP2023001       
+        number_str = ''
+        prefix = crmadmin.membernumber_prefix
+        if prefix == '' or prefix == None :
+            number_str = str(number).zfill(number_digit)
+        else:
+            nonumber = True
+            prefix ='<DATA>' + prefix + '</DATA>'
+            tree = ET.fromstring(prefix)
+            for elem in tree.iter():
+                # print(elem.tag, elem.text)
+                if elem.tag == 'Y':
+                    number_str = number_str + str(datetime_now_utc.year)
+                elif elem.tag == 'M':
+                    number_str = number_str + str(datetime_now_utc.month)
+                elif elem.tag == 'D':
+                    number_str = number_str + str(datetime_now_utc.day)
+                elif elem.tag == 'no':
+                    number_str = number_str + str(number).zfill(number_digit)
+                    nonumber = False
+                elif elem.tag == 'TEXT' :
+                    if elem.text != None :
+                        number_str = number_str + elem.text
+            if nonumber == True:
+                number_str = number_str + str(number).zfill(number_digit)
+        # print(number_str)
+
+    if error == '':
         # new member
-        # verifycode = random.choices(string.ascii_uppercase + string.ascii_lowercase + string.digits, k=6)
+        # verifycode = random.choices(string.ascii_uppercase + string.ascii_lowercase + string.digits, k=128)
         # verifycode = ''.join(verifycode)
         verifycode = '1234'
-        # username is lowercase, auto convert to lowercase
-        rx_member_username = rx_member_username.lower()
 
-        
+        # get the http host
+        http_host = request.META['HTTP_HOST']
+        verify_link = http_host + '/crm/api/verify/?app=email&username=' + rx_member_username + '&ccode=' + company.ccode +  '&verifycode=' + verifycode
 
-        status = {'status':'success', 'msg':'Successfully! Please check your email to activate your account.', }
+        # genrate member number
+
+        member = Member.objects.create(
+            company = company,
+            username = rx_member_username,
+            number = number_str,
+            password = rx_member_password,
+            verifycode = verifycode,
+            verified = False,
+            enabled = True,
+            birthday = rx_dob,
+            gender = rx_gender,
+            memberpoints = 0,
+            memberpointtotal = 0,
+            memberlevel = 'SILVER',
+            nickname = rx_nickname,
+            mobilephone_country = str(phone_number.country_code),
+            mobilephone = str(phone_number.national_number),
+            email = rx_email,            
+        )
+        crmadmin.membernumber_next = crmadmin.membernumber_next + 1
+        crmadmin.save()
+
+        print('Link:' + verify_link)
+
+        status = {'status':'success', 'msg':'Successfully! Please check your email to activate your account.' +  ' In development mode: ' + verify_link }
     else:
         status = {'status':'failed', 'msg':error}
     return Response(status | data )

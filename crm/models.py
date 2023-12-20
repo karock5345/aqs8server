@@ -139,8 +139,9 @@ class Member(models.Model):
     createdby = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
-    # class Meta:
-    #     unique_together = ('mobilephone_country', 'mobilephone',)  
+    class Meta:
+        # unique_together = ('mobilephone_country', 'mobilephone',)
+        unique_together = ('company', 'username',)
     def __str__(self):
         return self.username
 

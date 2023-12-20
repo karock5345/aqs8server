@@ -105,7 +105,7 @@ POST [Server IP or DN]/api/token/refresh/
 
 ### Request
 ```http
-POST [Server IP or DN]/crm/api/login?app=postman&version=8.2.0&username=xxx&password=xxx&ccode=xxx
+POST [Server IP or DN]/crm/api/login/?app=postman&version=8.2.0&username=xxx&password=xxx&ccode=xxx
 ```
 
 | Key | Type | Description |
@@ -139,7 +139,7 @@ Or if login failed
 # 2. Member info API (Member APP)
 ### Request
 ```http
-GET [Server IP or DN]/crm/api/info?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&ccode=xxx
+GET [Server IP or DN]/crm/api/info/?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&ccode=xxx
 ```
 
 | Key | Type | Description |
@@ -172,7 +172,7 @@ Or if failed
 # 3. Member item list API (Member APP)
 ### Request
 ```http
-GET [Server IP or DN]/api/crm/items?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&member_token=xxx&ccode=xxx
+GET [Server IP or DN]/api/crm/items/?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&member_token=xxx&ccode=xxx
 ```
 
 | Key | Type | Description |
@@ -221,7 +221,7 @@ Or if failed
 
 ### Request
 ```http
-POST [Server IP or DN]/api/crm/logout?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&ccode=xxx
+POST [Server IP or DN]/api/crm/logout/?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&ccode=xxx
 ```
 
 | Key | Type | Description |
@@ -250,7 +250,7 @@ Or if login failed
 # 5. Member register API (Member APP)
 ### Request
 ```http
-GET [Server IP or DN]/api/crm/reg?app=postman&version=8.2.0&ccode=xxx&username=xxx&password=xxx&email=xxx&mobile=xxx&nickname=xxx&gender=xxx&dob=xxx
+POST [Server IP or DN]/api/crm/reg/?app=postman&version=8.2.0&ccode=xxx&username=xxx&password=xxx&email=xxx&mobile=xxx&nickname=xxx&gender=xxx&dob=xxx
 ```
 
 | Key | Type | Description |
@@ -258,10 +258,10 @@ GET [Server IP or DN]/api/crm/reg?app=postman&version=8.2.0&ccode=xxx&username=x
 | `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
 | `version` | `string` | Your App version. It should be start from 8.2.0 |
 | `ccode` | `string` | **Required**. provided by TSVD |
-| `username` | `string` | **Required**. Min. 4 char |
+| `username` | `string` | **Required**. Min. 3 char |
 | `password` | `string` | **Required**. Min. 8 char |
 | `email` | `string` | **Required**. Valid email address |
-| `mobile` | `string` | **Required**. Valid mobile number |
+| `mobile` | `string` | **Required**. Valid mobile number 8-digit or 8-digit with "%2B852"(+852) country code e.g. "91234567", "%2B85291234567" Hong Kong mobile phone number start digit is "9", "6", "8", "5"|
 | `nickname` | `string` | **Required**. Min. 4 char |
 | `gender` | `string` | **Required**. `M` or `F` |
 | `dob` | `string` | **Required**. Date of birth in `YYYY_MM_DD` format |
@@ -284,3 +284,22 @@ Or if failed
 }
 ```
 
+# 6. Member verify API (Member APP)
+
+### When the registration is successful, the system will send an email to the member's email address. The email contains a link to activate the member's account. In development mode the verify code is 1234. 
+
+
+### Request (no need jwt token, this API link is in the member email)
+```http
+POST [Server IP or DN]/api/crm/verify/?app=email&username=xxx&ccode=xxx&verifycode=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `ccode` | `string` | **Required**. provided by TSVD |
+| `username` | `string` | **Required**. Min. 3 char |
+| `verifycode` | `string` | **Required**. random by the system |
+
+### Response
+HTML page
