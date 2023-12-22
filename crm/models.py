@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from base.models import Branch
 from datetime import timedelta
+import django.utils.html
+from django.utils.html import format_html, escape
+from django.utils.safestring import mark_safe
 # Create your models here.
 
 item_status_choices = [('active', ('active')),
@@ -154,12 +157,12 @@ class CRMAdmin(models.Model):
     membernumber_next = models.IntegerField(default=1)
     # membernumber_digit is member number digit, e.g. 3 is 001, 4 is 0001 
     # number = 12 ; print(f"{number:03d}")
-    membernumber_digit = models.IntegerField(default=3)
-    # membernumber_reset is role for reset member number, e.g. role:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1
-    membernumber_reset = models.CharField(max_length=100, null=True, blank=True, verbose_name='Reset Member Number role')
-    # membernumber_prefix is role for member number, <TEXT>MEM</TEXT><Y></Y><m></m><d></d><H></H><M></M><S></S><no></no> is Year, Month, Day, Hour, Minute, Second, Number('%Y-%m-%d %H:%M:%S')
+    membernumber_digit = models.IntegerField(default=3, help_text=escape(mark_safe('Member number digit, e.g. 3 is 001, 4 is 0001')))
+    # membernumber_reset is rules for reset member number, e.g. rules:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1
+    membernumber_reset = models.CharField(max_length=100, null=True, blank=True, verbose_name='Reset Member Number rules', help_text = escape(mark_safe('Rules for reset member number, e.g. rules:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1')))
+    # membernumber_prefix is rules for member number, <TEXT>MEM</TEXT><Y></Y><m></m><d></d><no></no> is Year, Month, Day, Hour, Minute, Second, Number('%Y-%m-%d %H:%M:%S')
     # e.g. <TEXT>MEM</TEXT><Y></Y><no></no> is MEM2023001       
-    membernumber_prefix = models.CharField(max_length=100, null=True, blank=True)
+    membernumber_prefix = models.CharField(max_length=100, null=True, blank=True, help_text = escape(mark_safe('Rules for member number, <TEXT>MEM</TEXT><Y></Y><m></m><d></d><H></H><M></M><S></S><no></no> is Year, Month, Day, Hour, Minute, Second, Number (''%Y-%m-%d %H:%M:%S'')')))
 
     # Quotation function is enabled or disabled
     quotation_enabled = models.BooleanField(default=True, null=False)
@@ -167,9 +170,9 @@ class CRMAdmin(models.Model):
     # quotationnumber_digit is quotation number digit, e.g. 3 is 001, 4 is 0001 
     # number = 12 ; print(f"{number:03d}")
     quotationnumber_digit = models.IntegerField(default=3)
-    # quotationnumber_reset is role for reset quotation number, e.g. role:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1
+    # quotationnumber_reset is rules for reset quotation number, e.g. rules:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1
     quotationnumber_reset = models.CharField(max_length=100, null=True, blank=True)
-    # quotationnumber_prefix is role for quotation number, <TEXT>Q-</TEXT><Y></Y><m></m><d></d><H></H><M></M><S></S><no></no> is Year, Month, Day, Hour, Minute, Second, Number('%Y-%m-%d %H:%M:%S')
+    # quotationnumber_prefix is rules for quotation number, <TEXT>Q-</TEXT><Y></Y><m></m><d></d><H></H><M></M><S></S><no></no> is Year, Month, Day, Hour, Minute, Second, Number('%Y-%m-%d %H:%M:%S')
     # e.g. <TEXT>Q-</TEXT><Y></Y><no></no> is Q-2023001    
     quotationnumber_prefix = models.CharField(max_length=100, null=True, blank=True)
     quotation_default_terms = models.TextField(max_length=200, null=True, blank=True)

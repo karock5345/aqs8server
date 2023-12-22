@@ -185,26 +185,26 @@ def crmMemberRegistrationView(request):
                     crmadmin.membernumber_reset = crmadmin.membernumber_reset.replace('<Y>' + str(value) + '</Y>', '<Y>' + str(now_y) + '</Y>')
                     crmadmin.save()
                     # save xml to db
-            elif elem.tag == 'M':
+            elif elem.tag == 'm':
                 value = int(elem.text)
                 now_m = datetime_now_utc.month
                 if value != now_m:
                     number = 1
                     
-                    crmadmin.membernumber_reset = crmadmin.membernumber_reset.replace('<M>' + str(value) + '</M>', '<M>' + str(now_m) + '</M>')
+                    crmadmin.membernumber_reset = crmadmin.membernumber_reset.replace('<m>' + str(value) + '</m>', '<m>' + str(now_m) + '</m>')
                     crmadmin.save()
-            elif elem.tag == 'D':
+            elif elem.tag == 'd':
                 value = int(elem.text)
                 now_d = datetime_now_utc.day
                 if value != now_d:
                     number = 1
 
-                    crmadmin.membernumber_reset = crmadmin.membernumber_reset.replace('<D>' + str(value) + '</D>', '<D>' + str(now_d) + '</D>')
+                    crmadmin.membernumber_reset = crmadmin.membernumber_reset.replace('<d>' + str(value) + '</d>', '<d>' + str(now_d) + '</d>')
                     crmadmin.save()
         
     if error == '':
     # process prefix
-    # membernumber_prefix is role for member number, <TEXT>MEM</TEXT><Y></Y><m></m><d></d><H></H><M></M><S></S><no></no> is Year, Month, Day, Hour, Minute, Second, Number('%Y-%m-%d %H:%M:%S')
+    # membernumber_prefix is role for member number, <TEXT>MEM</TEXT><Y></Y><m></m><d></d><no></no> is Year, Month, Day, Hour, Minute, Second, Number('%Y-%m-%d %H:%M:%S')
     # e.g. <TEXT>VIP</TEXT><Y></Y><no></no> is VIP2023001       
         number_str = ''
         prefix = crmadmin.membernumber_prefix
@@ -218,9 +218,9 @@ def crmMemberRegistrationView(request):
                 # print(elem.tag, elem.text)
                 if elem.tag == 'Y':
                     number_str = number_str + str(datetime_now_utc.year)
-                elif elem.tag == 'M':
+                elif elem.tag == 'm':
                     number_str = number_str + str(datetime_now_utc.month)
-                elif elem.tag == 'D':
+                elif elem.tag == 'd':
                     number_str = number_str + str(datetime_now_utc.day)
                 elif elem.tag == 'no':
                     number_str = number_str + str(number).zfill(number_digit)
