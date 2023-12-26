@@ -149,10 +149,10 @@ def checkuser(apiuser, branch, rx_username):
     userp = None
 
     if error == '' :
-        for group in apiuser.groups.all():
-            if group.name == 'api':
-                isAPIuser = True
-                exit
+        # check user group in api
+        if apiuser.groups.filter(name='api').exists():
+            isAPIuser = True
+
         if isAPIuser == False:
             error = 'User group is not allow to call API'
     
@@ -164,10 +164,13 @@ def checkuser(apiuser, branch, rx_username):
         except :
             error = 'User Profile not found'
         if userp != None :
-            for branch in userp.branchs.all():
-                if branch == branch :
-                    b_found = True
-                    exit
+            if branch in userp.branchs.all():
+                b_found = True
+
+            # for branch in userp.branchs.all():
+            #     if branch == branch :
+            #         b_found = True
+            #         exit
             if b_found == False :
                 error = 'User not authorized operate this branch'
 
@@ -190,10 +193,12 @@ def checkuser(apiuser, branch, rx_username):
                 except :
                     error = 'Receiver user Profile not found'
                 if error == '' :
-                    for branch in rx_userp.branchs.all():
-                        if branch == branch :
-                            b_found = True
-                            exit
+                    if branch in rx_userp.branchs.all():
+                        b_found = True
+                    # for branch in rx_userp.branchs.all():
+                    #     if branch == branch :
+                    #         b_found = True
+                    #         exit
                     if b_found == False :
                         error = 'Receiver user not authorized operate this branch'
     

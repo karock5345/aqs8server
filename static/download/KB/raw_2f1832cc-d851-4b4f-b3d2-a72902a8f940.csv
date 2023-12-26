@@ -1,0 +1,37 @@
+RAW Data Report
+Branch:Kowloon Bay Center(KB)
+Start datetime:2023-07-26T18:22:05
+End datetime:2023-12-26T18:22:05
+Counter Type:ALL
+Ticket,Type,No.,Branch,Counter Type,Step,Start Time,Start by,Call Time,Call by,Process Time,Process by,Done Time,Done by,No Show Time,No Show by,Void Time,Void by,Waiting Time (s),Walking time (s),Process time (s),Total time (s)
+A024,A,024,KB,Reception,1,2023-11-10 23:50:21,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+A001,A,001,KB,Reception,1,2023-11-11 00:05:34,userapi,2023-11-11 00:07:34,elton,2023-11-11 00:07:38,elton,2023-11-11 00:07:39,elton,None,None,None,None,120,3,4,127
+A002,A,002,KB,Reception,1,2023-11-11 00:05:55,userapi,2023-11-11 00:07:40,elton,None,None,None,None,2023-11-11 00:07:41,elton,None,None,105,1,None,None
+A001,A,001,KB,Reception,1,2023-11-11 22:24:53,userapi,2023-11-11 22:27:49,elton,2023-11-11 22:27:52,elton,2023-11-11 22:27:53,elton,None,None,None,None,176,2,4,182
+A002,A,002,KB,Reception,1,2023-11-11 22:27:17,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+A003,A,003,KB,Reception,1,2023-11-11 22:27:25,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+A004,A,004,KB,Reception,1,2023-11-11 22:27:56,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+A001,A,001,KB,Reception,1,2023-11-13 17:45:53,userapi,2023-11-13 18:28:11,elton,2023-11-13 18:28:18,elton,2023-11-13 18:28:28,elton,None,None,None,None,2537,7,17,2561
+A002,A,002,KB,Reception,1,2023-11-13 17:54:10,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+A001,A,001,KB,Reception,1,2023-11-16 16:12:50,userapi,2023-11-16 16:13:01,elton,None,None,None,None,2023-11-16 16:13:06,elton,None,None,10,5,None,None
+A002,A,002,KB,Reception,1,2023-11-16 16:12:53,userapi,2023-11-16 16:13:08,elton,None,None,None,None,2023-11-16 16:13:11,elton,None,None,15,2,None,None
+A003,A,003,KB,Reception,1,2023-11-16 16:12:54,userapi,2023-11-16 16:13:12,elton,None,None,None,None,2023-11-16 16:13:13,elton,None,None,17,0,None,None
+A004,A,004,KB,Reception,1,2023-11-16 16:12:55,userapi,2023-11-16 16:13:28,elton,None,None,None,None,2023-11-16 16:13:30,elton,None,None,33,1,None,None
+A005,A,005,KB,Reception,1,2023-11-16 16:12:56,userapi,2023-11-16 16:15:43,elton,None,None,None,None,2023-11-16 16:15:44,elton,None,None,167,1,None,None
+A006,A,006,KB,Reception,1,2023-11-16 16:12:57,userapi,2023-11-16 16:15:45,elton,None,None,None,None,2023-11-16 16:15:45,elton,None,None,167,0,None,None
+A007,A,007,KB,Reception,1,2023-11-16 16:12:57,userapi,2023-11-16 16:15:46,elton,None,None,None,None,2023-11-16 16:15:46,elton,None,None,168,0,None,None
+A008,A,008,KB,Reception,1,2023-11-16 16:14:24,userapi,2023-11-16 16:16:35,elton,None,None,None,None,2023-11-16 16:16:36,elton,None,None,131,0,None,None
+A009,A,009,KB,Reception,1,2023-11-16 16:14:25,userapi,2023-11-16 16:16:37,elton,None,None,None,None,2023-11-16 16:16:38,elton,None,None,132,0,None,None
+A010,A,010,KB,Reception,1,2023-11-16 16:14:25,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+B001,B,001,KB,Reception,1,2023-11-16 16:14:33,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+B002,B,002,KB,Reception,1,2023-11-16 16:14:33,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+B003,B,003,KB,Reception,1,2023-11-16 16:14:34,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+B004,B,004,KB,Reception,1,2023-11-16 16:14:34,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+B005,B,005,KB,Reception,1,2023-11-16 16:14:35,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+B006,B,006,KB,Reception,1,2023-11-16 16:14:36,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+B007,B,007,KB,Reception,1,2023-11-16 16:14:36,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+C001,C,001,KB,Reception,1,2023-11-16 16:14:40,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+C002,C,002,KB,Reception,1,2023-11-16 16:14:41,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+C003,C,003,KB,Reception,1,2023-11-16 16:14:42,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+C004,C,004,KB,Reception,1,2023-11-16 16:14:43,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None
+C005,C,005,KB,Reception,1,2023-11-16 16:14:43,userapi,None,None,None,None,None,None,None,None,None,None,None,None,None,None

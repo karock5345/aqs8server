@@ -188,14 +188,15 @@ MESSAGE_TAGS = {
 ASGI_APPLICATION = 'aqs.asgi.application'
 
 # REDIS_HOST = '192.168.85.135'
-REDIS_HOST = '192.168.1.4'
+# REDIS_HOST = '192.168.1.4'
+REDIS_HOST = 'localhost'
 CHANNEL_LAYERS = {
     'default':{
         'BACKEND':'channels_redis.core.RedisChannelLayer',
         # 'BACKEND':'channels_redis.pubsub.RedisPubSubChannelLayer',
         'CONFIG': {
             # 'hosts':[('127.0.0.1', '6379')],
-            'hosts':[(REDIS_HOST, '6379')],      # vm
+            'hosts':[(REDIS_HOST, '6379')],
         # "channel_capacity": {
         #         "http.request": 200,
         #         "http.response!*": 10,
