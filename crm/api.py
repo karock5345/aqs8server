@@ -18,6 +18,27 @@ import xml.etree.ElementTree as ET
 # Member token expire hours
 tokenexpire_hours = 24
 
+
+@api_view(['POST'])
+def crmMemberVerificationView(request):
+    datetime_now_utc = datetime.now(timezone.utc)
+    status = {}
+    data = {}
+    rx_ccode = ''
+    rx_member_username = ''
+    rx_verify_code = ''
+    error = ''
+    company = None
+    member = None
+
+    rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
+    rx_ccode = request.GET.get('ccode') if request.GET.get('ccode') != None else ''
+    rx_member_username = request.GET.get('username') if request.GET.get('username') != None else ''
+    # username is lowercase, auto convert to lowercase
+    rx_member_username = rx_member_username.lower()
+
+    pass
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def crmMemberRegistrationView(request):

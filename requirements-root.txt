@@ -9,10 +9,13 @@ django-crequest==2018.5.11
 django-recaptcha==3.0.0
 djangorestframework-simplejwt==5.3.1
 pipdeptree
-psycopg2==2.9.7
+# MacOS cannot install from source code
+# psycopg2==2.9.9
+psycopg2-binary==2.9.9
 pyOpenSSL==23.3.0
 pytz-deprecation-shim==0.1.0.post0
 redis==5.0.1
 service-identity==23.1.0
 wheel==0.42.0
 zope.interface==6.1
+phonenumbers
