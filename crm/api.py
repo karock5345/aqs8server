@@ -1,4 +1,5 @@
 from rest_framework.response import Response
+from django.shortcuts import render
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from crm.models import Member, Company, MemberItem, CRMAdmin
@@ -12,14 +13,33 @@ import re
 import phonenumbers
 import phonenumbers.timezone
 import xml.etree.ElementTree as ET
-
+from django.core.mail import EmailMessage
+from django.conf import settings
+from django.template.loader import render_to_string
+# from django.utils.safestring import mark_safe
+# from django.utils.html import format_html, escape
 # from phonenumbers import timezone
 
 # Member token expire hours
 tokenexpire_hours = 24
 
 
-@api_view(['POST'])
+def sendemail(subject, message, toemail):
+    email = EmailMessage(
+        subject,
+        message,
+        settings.EMAIL_HOST_USER,
+        [toemail],
+        ['sales@tsvd.com.hk'],
+        # cc=['elton@tsvd.com.hk'],
+        # bcc=['sales@tsvd.com.hk'],
+        reply_to=['sales@tsvd.com.hk'],
+    )
+    email.fail_silently = False
+    email.send()
+
+
+@api_view(['GET'])
 def crmMemberVerificationView(request):
     datetime_now_utc = datetime.now(timezone.utc)
     status = {}
@@ -36,8 +56,48 @@ def crmMemberVerificationView(request):
     rx_member_username = request.GET.get('username') if request.GET.get('username') != None else ''
     # username is lowercase, auto convert to lowercase
     rx_member_username = rx_member_username.lower()
+    rx_verify_code = request.GET.get('verifycode') if request.GET.get('verifycode') != None else ''
 
-    pass
+    # check miss parameters
+    if error == '':
+        if rx_ccode == '' or rx_member_username == '' or rx_verify_code == '' :
+            error = 'Missing parameters'
+
+    # check ccode
+    if error == '':
+        try:
+            company = Company.objects.get(ccode=rx_ccode)
+        except :
+            error = 'company not found failed'
+            
+    if error == '':
+        try:
+            member = Member.objects.get(username=rx_member_username, company=company)            
+        except :
+            error = 'Member not exists'
+    if error == '':
+        if member.enabled == False:
+            error = 'Member is deactivated'    
+    
+    if error == '':
+        if member.verifycode != rx_verify_code:
+            # if verify code is incorrect, member will be deactivated
+            error = 'Verify code is incorrect'
+            # member.enabled = False
+            # member.save()
+
+    if error == '':
+        # member.verified = True
+        member.verifycode_date = datetime_now_utc
+        member.save()
+        status = {'status':'success', 'msg':'Successfully!'}
+        content = {'company':company, 'member':member, }
+        return render(request, 'crm/verify_pass.html', content)
+    else:
+        status = {'status':'failed', 'msg':error}        
+        # return Response(status | data )
+        return render(request, 'crm/verify_fail.html', status)
+
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
@@ -287,6 +347,19 @@ def crmMemberRegistrationView(request):
         crmadmin.save()
 
         print('Link:' + verify_link)
+        # send email
+        subject = 'Welcome! Please Verify Your Account - ' + company.name
+        message = render_to_string('crm/email_verify.html', {
+            'company': company,
+            'member': member,
+            'url': verify_link,
+        })
+        print(message)
+        message = message.replace('amp;', '')
+        print(message)
+        # message = escape(mark_safe(message))
+        toemail = rx_email
+        sendemail(subject, message, toemail)
 
         status = {'status':'success', 'msg':'Successfully! Please check your email to activate your account.' +  ' In development mode: ' + verify_link }
     else:

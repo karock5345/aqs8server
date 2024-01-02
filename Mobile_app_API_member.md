@@ -291,7 +291,7 @@ Or if failed
 
 ### Request (no need jwt token, this API link is in the member email)
 ```http
-POST [Server IP or DN]/api/crm/verify/?app=email&username=xxx&ccode=xxx&verifycode=xxx
+GET [Server IP or DN]/api/crm/verify/?app=email&username=xxx&ccode=xxx&verifycode=xxx
 ```
 
 | Key | Type | Description |
