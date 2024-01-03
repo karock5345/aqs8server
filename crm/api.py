@@ -18,26 +18,65 @@ from django.conf import settings
 from django.template.loader import render_to_string
 # from django.utils.safestring import mark_safe
 # from django.utils.html import format_html, escape
-# from phonenumbers import timezone
 
 # Member token expire hours
 tokenexpire_hours = 24
 
 
 def sendemail(subject, message, toemail):
+    # plain_message = strip_tags(message)
+
     email = EmailMessage(
         subject,
         message,
-        settings.EMAIL_HOST_USER,
-        [toemail],
-        ['sales@tsvd.com.hk'],
+        from_email=settings.EMAIL_HOST_USER,
+        to=[toemail],
         # cc=['elton@tsvd.com.hk'],
         # bcc=['sales@tsvd.com.hk'],
-        reply_to=['sales@tsvd.com.hk'],
+        reply_to=['sales@tsvd.com.hk'],        
     )
+    email.content_subtype = "html"
     email.fail_silently = False
     email.send()
 
+
+# del member for test
+@api_view(['DELETE'])
+def crmMemberDelView(request):
+    datetime_now_utc = datetime.now(timezone.utc)
+    status = {}
+    data = {}
+    rx_ccode = ''
+    rx_member_username = ''
+    error = ''
+    company = None
+    member = None
+
+    rx_ccode = request.GET.get('ccode') if request.GET.get('ccode') != None else ''
+    rx_member_username = request.GET.get('username') if request.GET.get('username') != None else ''
+    # username is lowercase, auto convert to lowercase
+    rx_member_username = rx_member_username.lower()
+
+    # check miss parameters
+    if error == '':
+        if rx_ccode == '' or rx_member_username == '' :
+            error = 'Missing parameters'
+    if error == '':
+        try:
+            company = Company.objects.get(ccode=rx_ccode)
+        except :
+            error = 'company not found failed'
+    if error == '':
+        try:
+            member = Member.objects.get(username=rx_member_username, company=company)
+        except :
+            error = 'Member not exists'
+    if error == '':
+        member.delete()
+        status = {'status':'success', 'msg':'Successfully!'}
+    else:
+        status = {'status':'failed', 'msg':error}
+    return Response(status | data )
 
 @api_view(['GET'])
 def crmMemberVerificationView(request):
@@ -87,7 +126,7 @@ def crmMemberVerificationView(request):
             # member.save()
 
     if error == '':
-        # member.verified = True
+        member.verified = True
         member.verifycode_date = datetime_now_utc
         member.save()
         status = {'status':'success', 'msg':'Successfully!'}
@@ -180,7 +219,7 @@ def crmMemberRegistrationView(request):
     if error == '':
         if len(rx_mobile) == 8 and rx_mobile.isdigit() == True:
             rx_mobile = '+852' + rx_mobile
-            print('Received phone number:' + rx_mobile)
+            # print('Received phone number:' + rx_mobile)
     if error == '':
         # check mobile first 3 digits is '852'
         if rx_mobile[0:3] == '852':
@@ -321,7 +360,7 @@ def crmMemberRegistrationView(request):
 
         # get the http host
         http_host = request.META['HTTP_HOST']
-        verify_link = http_host + '/crm/api/verify/?app=email&username=' + rx_member_username + '&ccode=' + company.ccode +  '&verifycode=' + verifycode
+        verify_link ='http://' + http_host + '/crm/api/verify/?app=email&username=' + rx_member_username + '&ccode=' + company.ccode +  '&verifycode=' + verifycode
 
         # genrate member number
 
@@ -346,7 +385,7 @@ def crmMemberRegistrationView(request):
         crmadmin.membernumber_next = crmadmin.membernumber_next + 1
         crmadmin.save()
 
-        print('Link:' + verify_link)
+        # print('Link:' + verify_link)
         # send email
         subject = 'Welcome! Please Verify Your Account - ' + company.name
         message = render_to_string('crm/email_verify.html', {
@@ -354,9 +393,9 @@ def crmMemberRegistrationView(request):
             'member': member,
             'url': verify_link,
         })
-        print(message)
+        # print(message)
         message = message.replace('amp;', '')
-        print(message)
+        # print(message)
         # message = escape(mark_safe(message))
         toemail = rx_email
         sendemail(subject, message, toemail)
@@ -554,6 +593,7 @@ def crmMemberLoginView(request):
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_username = request.GET.get('username') if request.GET.get('username') != None else ''
+    rx_username = rx_username.lower()
     rx_password = request.GET.get('password') if request.GET.get('password') != None else ''
     rx_ccode = request.GET.get('ccode') if request.GET.get('ccode') != None else ''
 
@@ -606,18 +646,21 @@ def MemberLogin(username, password, ccode, datetime_now_utc):
         except :
             error = 'Login failed'
     if error == '' :
-        if member.enabled == True :
-            member_no = member.number
-            # generate token ramdom 114 chars
-            member_token = random.choices(string.ascii_uppercase + string.ascii_lowercase + string.digits, k=4) #k=114)
-            member_token = ''.join(member_token)
-            member.token = member_token
-            member.tokendate = datetime_now_utc
-            member.login = True
-            member.save()
-        else:
+        if member.enabled == False :
             error = 'Member is deactivated'
+    if error == '' :
+        if member.verified == False :
+            error = 'Member is not verified, please check your email'
 
+    if error == '' :
+        member_no = member.number
+        # generate token ramdom 114 chars
+        member_token = random.choices(string.ascii_uppercase + string.ascii_lowercase + string.digits, k=4) #k=114)
+        member_token = ''.join(member_token)
+        member.token = member_token
+        member.tokendate = datetime_now_utc
+        member.login = True
+        member.save()
     return error, member_no, member_token, company
 
 def checkmember(rx_member_no, rx_member_token, company, datetime_now_utc):

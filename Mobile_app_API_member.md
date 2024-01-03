@@ -284,7 +284,7 @@ Or if failed
 }
 ```
 
-# 6. Member verify API (Member APP)
+# 6. Member verify API (backend auto send email to member email address with the link to activate the member account) 
 
 ### When the registration is successful, the system will send an email to the member's email address. The email contains a link to activate the member's account. In development mode the verify code is 1234. 
 
@@ -303,3 +303,37 @@ GET [Server IP or DN]/api/crm/verify/?app=email&username=xxx&ccode=xxx&verifycod
 
 ### Response
 HTML page
+
+
+# 7. Member del API (Testing only)
+
+### Remove member from the system, this API is for testing only
+
+
+### Request
+```http
+DELETE [Server IP or DN]/api/crm/remove/?ccode=xxx&username=xxx
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `ccode` | `string` | **Required**. provided by TSVD |
+| `username` | `string` | **Required**. Min. 3 char |
+
+
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Successfully!"
+}
+```
+Or if failed
+```javascript
+{
+    "status": "failed",
+    "msg": "Username is existing"
+}
+```
