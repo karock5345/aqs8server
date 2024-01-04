@@ -197,10 +197,10 @@ CHANNEL_LAYERS = {
         'CONFIG': {
             # 'hosts':[('127.0.0.1', '6379')],
             'hosts':[(REDIS_HOST, '6379')],
-        # "channel_capacity": {
-        #         "http.request": 200,
-        #         "http.response!*": 10,
-        #         re.compile(r"^websocket.send\!.+"): 20,
+        # 'channel_capacity': {
+        #         'http.request': 200,
+        #         'http.response!*': 10,
+        #         re.compile(r'^websocket.send\!.+'): 20,
         #     },
         },
     }
@@ -283,31 +283,28 @@ LOGGING = {
             'maxBytes': 1024*1024*5, # 5 MB
         },
     },
-
-
 }
 
 
 SIMPLE_JWT = {
     # Debug mode set 120 minutes, otherwise 5 minutes    
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=999),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=999),
     # Debug mode set 30 minutes, otherwise days=1
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
-    "ROTATE_REFRESH_TOKENS": False,
-    "BLACKLIST_AFTER_ROTATION": False,
-    "UPDATE_LAST_LOGIN": False,
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': False,
+    'UPDATE_LAST_LOGIN': False,
 
-    "ALGORITHM": "HS256",
-    "SIGNING_KEY": SECRET_KEY,
-    "VERIFYING_KEY": None,
-    "AUDIENCE": None,
-    "ISSUER": None,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY,
+    'VERIFYING_KEY': None,
+    'AUDIENCE': None,
+    'ISSUER': None,
    
-    "AUTH_HEADER_TYPES": ("Bearer",),
-   
+    'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
-# SMTP settings
+# SMTP email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mail.us-east-1.awsapps.com'
 EMAIL_PORT = 465

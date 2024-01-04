@@ -107,7 +107,7 @@
                         font-weight: bold;
                 }
 
-                a {
+                .link {
                 font-family: 'Courier New', monospace;
                 color: #0867ec;
                 text-decoration: underline;
@@ -317,7 +317,7 @@
                       <!-- START MAIN CONTENT AREA -->
                       <tr>
                         <td class="wrapper">
-                                <p class="title">Dear {{ member.username }},</p>
+                                <p class="title">Dear {{ member.nickname }} ({{ member.username }}),</p>
                                 <p>Thank you for registering with us! We're excited to have you join our community. To ensure the security of your account, we need to verify your email address.
 
                                 <p>Please click the link below to verify your account:</p>
@@ -325,7 +325,7 @@
                                 <p>Verify Your Account</p>
                         
                                 <p>If the link doesn't work, you can also copy and paste the following URL into your web browser:</p>
-                                <p><a href="{{ url }}">{{ url }}</a></p>
+                                <p class="link">{{ url }}</p>
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                                         <tbody>
                                                 <tr>

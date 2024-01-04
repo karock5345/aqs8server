@@ -100,6 +100,8 @@ POST [Server IP or DN]/api/token/refresh/
 ### 3. Member items list API
 ### 4. Member logout API
 ### 5. Member register API
+### 6. Member verify API (backend auto send email to member email address with the link to activate the member account)
+### 7. Member del API (Testing only)
 
 # 1. Member login API (Member APP)
 
@@ -310,7 +312,7 @@ HTML page
 ### Remove member from the system, this API is for testing only
 
 
-### Request
+### Request (no need jwt token)
 ```http
 DELETE [Server IP or DN]/api/crm/remove/?ccode=xxx&username=xxx
 ```
