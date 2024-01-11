@@ -45,6 +45,7 @@ python manage.py runserver 0.0.0.0:8000
 - Settings page will be split to 3 pages for different user auth (Settings, Advanced settings, Admin settings)
 - Fixed bug : Web Touch panel can not redirect to e-ticket page
 - Fixed bug : Softkey_cc WS queue list update not correct
+- APIs for Memberships (CRM) APP
 
 ### <span style="color:orange;">**Version 8.1.5**</span>
 - Romove API function for migrate DB for HHT 
@@ -555,11 +556,12 @@ DATABASES = {
 ```
 
 ```bash
-source .env/bin/activate
+source ./env/bin/activate
 python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 ```
+RVD superuser : supertim5345 /// viWu@h0spewon7c@9spI
 supertim /// YtZqEIpk5345
 
 Test the Postgres DB:
@@ -790,6 +792,14 @@ then it will fail (as does the stat command in your log). Make sure the www-data
 cd all the way to the /username/test/static. You can confirm that the stat will fail or succeed by running
 
 >sudo -u www-data stat /home/ubuntu/aqs8server/static_deploy will fail
+
+```bash
+# try this:
+sudo gpasswd -a www-data ubuntu
+sudo chmod g+x /home/ubuntu/aqs8server/ && chmod g+x /home/ubuntu/aqs8server/static_deploy
+sudo nginx -s reload
+```
+
 ```bash
 sudo gpasswd -a www-data ubuntu
 sudo chmod g+x /home/ubuntu && chmod g+x /home/ubuntu/aqs8server/ && chmod g+x /home/ubuntu/aqs8server/static_deploy
