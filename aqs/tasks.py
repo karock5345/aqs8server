@@ -36,8 +36,10 @@ def long_running_task():
     return "Long-running task completed!"
 
 @shared_task
-def export_raw(quesrystr, reporttitle1, reporttitle2, reporttitle3, reporttitle4, reporttitle5 ):
+def export_raw(quesrystr, reporttitle1, reporttitle2, reporttitle3, reporttitle4, reporttitle5, bcode ):
     from celery import  current_task
+
+
     report_str = ''
     # Get my task ID
     my_id = current_task.request.id
@@ -71,7 +73,7 @@ def export_raw(quesrystr, reporttitle1, reporttitle2, reporttitle3, reporttitle4
     # writer.writerow(['Ticket', 'Branch', 'Counter Type', 'Step', 'Start Time', 'Start by', 'Call Time', 'Call by', 'Process Time', 'Process by', 'Done Time', 'Done by', 'No Show Time', 'No Show by', 'Void Time', 'Void by', 'Waiting Time (s)', 'Walking time (s)', 'Process time (s)', 'Total time (s)'])
     
     # get branch code
-    bcode = table[0].branch.bcode
+    #bcode = table[0].branch.bcode
     # get django static path
     save_path = static_root + '/download/' + bcode + '/raw_' + my_id +'.csv'
     logger.info(f'Full path of save file: {save_path}')

@@ -5,8 +5,10 @@
 3. Run celery
 4. Run django server
 ```bash
-# Start virtual env
+# Start virtual env (Windows)
 .\env\Scripts\activate
+# Start virtual env (Linux or Mac)
+source ./env/bin/activate
 # run celery
 celery -A aqs.celery:app worker --loglevel=info --pool=solo
 # open new terminal
@@ -46,6 +48,8 @@ python manage.py runserver 0.0.0.0:8000
 - Fixed bug : Web Touch panel can not redirect to e-ticket page
 - Fixed bug : Softkey_cc WS queue list update not correct
 - APIs for Memberships (CRM) APP
+- Fixed bug : Raw data report No data (aqs -> tasks.py -> export_raw) line 78, in export_raw bcode = table[0].branch.bcode 1. remove line 78, 2. modify line 39 def export_raw(quesrystr, reporttitle1, reporttitle2, reporttitle3, reporttitle4, reporttitle5, bcode ): 3. modify (base -> views.py ) line 1367 : task = export_raw.apply_async(args=[querystr,report_result1,report_result2,report_result3,report_result4,report_result5], countdown=0)
+
 
 ### <span style="color:orange;">**Version 8.1.5**</span>
 - Romove API function for migrate DB for HHT 

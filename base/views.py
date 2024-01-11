@@ -1364,7 +1364,7 @@ def Report_RAW_Result(request):
                 # print('is same?' + str(table2 == table))
 
                 # print(querystr)
-                task = export_raw.apply_async(args=[querystr,report_result1,report_result2,report_result3,report_result4,report_result5], countdown=0)  # 'countdown' time delay in second before execute
+                task = export_raw.apply_async(args=[querystr,report_result1,report_result2,report_result3,report_result4,report_result5, bcode], countdown=0)  # 'countdown' time delay in second before execute
                 task_id = task.id
                 ptask_id = task_id.replace('-', '_')
 
