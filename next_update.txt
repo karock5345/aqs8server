@@ -1,5 +1,5 @@
 OK      New DB table (TicketArchive) to backup the table Ticket data, and keep table Ticket small size
-        Softkey chat
+        Chat function
 OK      admin supervisior add printer status
 OK      admin can edit TV scrolling text
 OK      ticket add source : touch panel / web / api / app
@@ -10,8 +10,11 @@ OK      online view ticket status for everyone (TV disp web version)
 OK      online view ticket (channels version)
 OK      online get ticket
 OK      support channels to save data traffic        
-        paper roll count total number of ticket per roll 
         base/sch/views.py -> function job_shutdown change to async
-OK      auto logout for web 
-        
+OK      auto logout for web         
 OK      new Django for TV disp web (Q. server is local, TV / get ticket function is web version)
+        Modify "Total ticket report" for v8.2 from PCCW
+        Modify "Staff performance report" for v8.2 from PCCW
+        Protect apiuser password for every Client software (including Softkey, Touch Panel, Display Panel, Printer Control, etc.)
+        Improve HTML UI for "Form" do not cover error message 
+        Counting tickets per "paper roll"

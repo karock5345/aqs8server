@@ -1,34 +1,14 @@
-# AQS version 8
-* Run development server:
-1. Run redis server (vmware / 192.168.1.4)
-2. Start virtual env
-3. Run celery
-4. Run django server
-```bash
-# Start virtual env (Windows)
-.\env\Scripts\activate
-# Start virtual env (Linux or Mac)
-source ./env/bin/activate
-# run celery
-celery -A aqs.celery:app worker --loglevel=info --pool=solo
-# open new terminal
-python manage.py runserver 0.0.0.0:8000
-```
+# AQS version 8.3.0
 
-### <span style="color:orange;">**Coming up Version 8.2.1**</span>
-- Modify "Total ticket report" for v8.2 from PCCW
-- Modify "Staff performance report" for v8.2 from PCCW
-- Protect apiuser password for every Client software (including Softkey, Touch Panel, Display Panel, Printer Control, etc.)
-- Improve HTML UI for "Form" do not cover error message 
-- Counting tickets per "paper roll"
+<h3 style="color:orange;">Version 8.3.0</h3>
 
+- Booking System (Appointment system) Initial
+- New table timeslot, columes: branch, booking_date, room, show_date, show_end_date, user, name, phone, email, status, remark, created_at, updated_at
 
+<h3 style="color:orange;">Version 8.2.0</h3>
 
-
-
-### <span style="color:orange;">**Version 8.2.0**</span>
+- CRM System (Customer Relationship Management) Initial
 - Upgrade Django to 4.2.x
-- CRM function (Customer Relationship Management) Initial
 - Run sch_shutdown() (Schudule task) when the branch settings is saved, so the branch will be update and schedule task time.
 - Secure all existing Websocket connection protect use the session Cookie
 - Change webtv Websocket for Web and client software, using 2 routes to separate public (ws/wtv/<bcode>/<ct>) and internal (ws/webtv/<bcode>/<ct>)
@@ -51,11 +31,14 @@ python manage.py runserver 0.0.0.0:8000
 - Fixed bug : Raw data report No data (aqs -> tasks.py -> export_raw) line 78, in export_raw bcode = table[0].branch.bcode 1. remove line 78, 2. modify line 39 def export_raw(quesrystr, reporttitle1, reporttitle2, reporttitle3, reporttitle4, reporttitle5, bcode ): 3. modify (base -> views.py ) line 1367 : task = export_raw.apply_async(args=[querystr,report_result1,report_result2,report_result3,report_result4,report_result5], countdown=0)
 
 
-### <span style="color:orange;">**Version 8.1.5**</span>
+<h3 style="color:orange;">Version 8.1.5</h3>
+
 - Romove API function for migrate DB for HHT 
 - Fixed bug : deploy to production server, the static_deploy folder is not correct 
 for download CSV file (aqs/tasks.py -> export_raw)
-### <span style="color:orange;">**Version 8.1.4**</span>
+
+<h3 style="color:orange;">Version 8.1.4</h3>
+
 - Fixed bug : Callcentre mode, auto call ticket the counter sequence is not correct
 - Add function : Update user add "reset password"
 - Add new API function for migrate HHT old DB to new server (http://127.0.0.1:8000/api/db_tst/?app=postman&version=8.1)
@@ -71,11 +54,14 @@ for download CSV file (aqs/tasks.py -> export_raw)
 - Web softkey ticket queue list add 'Call' button for each ticket
 - Re-design "New User" page and change to 4 steps
 - Add new page for "User List"
-### <span style="color:orange;">**Version 8.1.3**</span>
+
+<h3 style="color:orange;">Version 8.1.3</h3>
+
 - Report function (1. Staff performance report, 2. Total ticket report)
 - Add new API function for migrate 2 branchs (SCP, WTT) old DB to new server (http://127.0.0.1:8000/api/db2/?app=postman&version=8.1)
 
-### <span style="color:orange;">**Version 8.1.2**</span>
+<h3 style="color:orange;">Version 8.1.2</h3>
+
 - Add 'force logout' function for supervise.html
 - New API for shutdown branch and run INIT_SCH : /sch/shutdown/?bcode=KB&app=postman&version=8.1
 ```bash
@@ -88,12 +74,18 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 - New API for Display Panel get latest 5 tickets 
 - Websocket disp_ for Display Panel replace from webtv_, websocket webtv_ only for HTML online ticket number
 - Websocket disp_ new commands: call, removeall, wait
-### <span style="color:orange;">**Version 8.1.1**</span>
+
+<h3 style="color:orange;">Version 8.1.1</h3>
+
 - Fixed bug : Counter can not logout and Counter status is not correct (waiting) in Call Centre mode when reset branch, if counter still login then.
-### <span style="color:orange;">**Version 8.1.1 for PCCW 2023**</span>
+
+<h3 style="color:orange;">Version 8.1.1 for PCCW 2023</h3>
+
 - New Ticket Format, Ticket Type should be 2 letters and should be uppercase
-- User group 'frontline' 'support' 'admin' 'manager' for PCCW 2023 
-### <span style="color:orange;">**Version 8.1.0**</span>
+- User group 'frontline' 'support' 'admin' 'manager' for PCCW 2023
+
+<h3 style="color:orange;">Version 8.1.0</h3>
+
 - API Support JWT
 - All API request.user should be user group 'api'
 - Separete Touch Panel API functions to new file : v_touch.py
@@ -115,12 +107,18 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 - Improve HTML: Branch list, Ticket Format list, Ticket Route list, Supervisor list (Show red color when disabled)
 - Fixed number not correct in m-menu for mobile version (base/views -> MenuView)
 - Improve HTML UI for Branch settings
-### <span style="color:orange;">**Version 8.0.3**</span>
+
+<h3 style="color:orange;">Version 8.0.3</h3>
+
 - fixed Print replaced by Django Log for debug on server
-### <span style="color:orange;">**Version 8.0.2**</span>
+
+<h3 style="color:orange;">Version 8.0.2</h3>
+
 - Support SMS Module
 - Softkey web version
-### <span style="color:orange;">**Version 8.0.1**</span>
+
+<h3 style="color:orange;">Version 8.0.1</h3>
+
 - Admin can edit TV scrolling text
 - New 3 APIs for Roche
 - Admin Supervise add Printer Status with color
@@ -136,11 +134,30 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 - fixed waiting on queue (TicketRoute) show on TV / WebTV
 - Deploy to Production Server with Websocket + SSL is work
 - WebTV (HTML) is support WS
-### <span style="color:orange;">**Version 8.0.0**</span>
+
+<h3 style="color:orange;">Version 8.0.0</h3>
+
 - First Django version for Queuing Server
 
+# Run development server:
+1. Docker Desktop install and run 'redis:latest' Or Run redis server (vmware / 192.168.1.4)
+2. Start virtual env
+3. Run celery
+4. Run django server
+```bash
+# Start virtual env (Windows)
+.\env\Scripts\activate
+# Start virtual env (Linux or Mac)
+source ./env/bin/activate
+# run celery
+celery -A aqs.celery:app worker --loglevel=info --pool=solo
+# open new terminal
+python manage.py runserver 0.0.0.0:8000
+```
+
 # Development env setup
-### <span style="color:orange;">**Setup python: :**</span>
+<h3 style="color:orange;">Setup python :</h3>
+
 install python for all users
 
 find the python path
@@ -150,16 +167,19 @@ Windows add PATH for exe
 
 Right click on My Computer ->Properties ->Advanced System setting ->Environment Variable ->New
 
-### <span style="color:orange;">**New Django project with Virtual Env setup:**</span>
+<h3 style="color:orange;">New Django project with Virtual Env setup:</h3>
+
 ```sh
 pip install virtualenv
 # New virtual Env:
-cd '\Projects\'
-virtualenv env
-# or
+cd \Projects\
 python -m virtualenv env
+# or
+virtualenv env
 # activate virtual env:
 .\env\scripts\activate
+# or
+source ./env/bin/activate
 # install your packages e.g. 
 python -m pip install -r requirements.txt
 # new project: 
@@ -188,7 +208,15 @@ celery -A aqs.celery:app worker --loglevel=info --pool=solo
 ```
 try http://127.0.0.1:8000/
 
-### <span style="color:orange;">**Setup Linux VM for development**</span>
+<h3 style="color:orange;">Setup Redis server for development</h3>
+
+#### Docker or VM
+#### Docker
+- Install Docker Desktop
+- Add Redis Image (redis:latest)
+- Run it and set the port 6379
+
+#### MV
 >Windows install VMware
 
 >Download Ubuntu ISO and install on VMware
@@ -219,13 +247,17 @@ Install Redis version 5
 ```bash
 sudo docker run -p 6379:6379 -d redis:5
 ```
-# Linux server setup
-### <span style="color:orange;">**AWS vm**</span>
+
+# Production Linux server setup 
+### For example : qs123.tsvd.com.hk
+
+<h3 style="color:orange;">AWS vm</h3>
+
 AWS EC2 : AQS8_Server_RVD, key=aws_rvd_server_key, Security Group = aqs_security
 
-AWS Route53 : add sub domain rvd.tsvd.com.hk, www.rvd.tsvd.com.hk
+AWS Route53 : add sub domain qs123.tsvd.com.hk, www.qs123.tsvd.com.hk
 
-## AWS cost:
+### AWS cost:
 RVD + Test + CF = $2.02 
 
 RVD $1.46   
@@ -246,7 +278,8 @@ CF $0.28 (Install at 2023-5-2)
 - HD-24G 
 - us-east-1e
 
-### <span style="color:orange;">**Local server (Ubuntu Linux server)**</span>
+<h3 style="color:orange;">Local server (Ubuntu Linux server)</h3>
+
 network:
 
 show ip address :
@@ -279,7 +312,7 @@ network:
         addresses: [8.8.8.8, 1.1.1.1]
   version: 2
 ```
-edit (db server): 
+edit (Optional db server): 
 ```sh
 # This is the network config written by 'subiquity'
 network:
@@ -308,9 +341,12 @@ sudo adduser htopuser
 # change password
 sudo passwd htopuser
 ```
-2. Install bashtop
+2. Install bashtop or htop
 ```sh
 sudo apt-get install -y bashtop btop
+```
+```sh
+sudo apt-get install -y htop
 ```
 3. Setup auto login for user htopuser
 ```sh
@@ -341,7 +377,7 @@ logout
 
 > Ctrl+Alt+F2
 
-## Auto power off script (for Ubuntu Desktop / Raspberry Pi Window OS):
+### Auto power off script (for Ubuntu Desktop / Raspberry Pi Window OS):
 ```bash
 sudo nano /home/ubuntu/.config/autostart/autooff.desktop
 ```
@@ -352,10 +388,12 @@ sudo nano /home/ubuntu/.config/autostart/autooff.desktop
 	Exec=sh -c "shutdown -h 23:55"
 ```
 - Restart Pi:
+
 ```bash
 sudo reboot
 ```
-## Auto power off script (for Linux server)
+
+### Auto power off script (for Linux server)
 ```bash
 cd /etc/systemd/system/
 sudo nano autorun.service
@@ -406,7 +444,7 @@ chmod +x /home/ubuntu/autorun.sh
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
 ```
 
-### <span style="color:orange;">**Locate PuTTY setup (for AWS):**</span>
+<h3 style="color:orange;">Locate PuTTY setup (for AWS):</h3>
 
 Download the key (aws_rvd_server_key) from AWS
 
@@ -445,7 +483,8 @@ sudo ufw status verbose
 
 
 # SETUP SOURCE CODE
-### <span style="color:orange;">**Copy / git source code to home dir**</span>
+<h3 style="color:orange;">Copy / git source code to home dir</h3>
+
 Preparation:
 - Backup previous version settings.py : cp ~/aqs8server/aqs/settings.py ~/settings.py.bak
 - Remove previous version : sudo rm -r ~/aqs8server/
@@ -464,9 +503,11 @@ sudo apt-get install -y virtualenv
 cd to project folder
 virtualenv env
 source env/bin/activate
+mv ~/aqs8server ~/qs123
 ```
 
 - OR download private repo
+
 ```bash
 # Generate SSH key (optional): If you haven't already, you can generate an SSH key pair to securely authenticate with GitHub. Run the following command to generate an SSH key:
 
@@ -503,7 +544,7 @@ deactivate
 ```
 
 
-# SETUP DB (PostgreSQL) in this Project we use other server for DB
+# SETUP DB (PostgreSQL)
 ```bash
 sudo systemctl reload postgresql.service
 sudo su -l postgres
@@ -511,7 +552,7 @@ psql
 ```
 PostgreSQL command:
 ```sql
-CREATE DATABASE aqsdb8;
+CREATE DATABASE aqsdb8_qs123;
 CREATE USER aqsdbuser WITH PASSWORD 'dbpassword-Dlcg1dwMOXSKIAIM';
 ALTER ROLE aqsdbuser SET client_encoding TO 'utf8';
 ALTER ROLE aqsdbuser SET default_transaction_isolation TO 'read committed';
@@ -519,11 +560,11 @@ SHOW TIMEZONE;
 SET TIMEZONE='UTC';
 SHOW TIMEZONE;
 ALTER ROLE aqsdbuser SET timezone TO 'UTC';
-GRANT ALL PRIVILEGES ON DATABASE aqsdb8 TO aqsdbuser;
+GRANT ALL PRIVILEGES ON DATABASE aqsdb8_qs123 TO aqsdbuser;
 \q
 exit
 ```
-Allow remote access to PostgreSQL server
+If DB server is independence, Allow remote access to PostgreSQL server
 ```bash
 nano /etc/postgresql/14/main/postgresql.conf
 # Edit: search (CTRL + W) listen_addresses
@@ -535,7 +576,7 @@ sudo nano /path/to/pg_hba.conf
 # this case:
 sudo nano /etc/postgresql/14/main/pg_hba.conf
 # add line:
-host    aqsdb8    aqsdbuser    10.95.157.237/32    md5
+host    aqsdb8_qs123    aqsdbuser    10.95.157.237/32    md5
 ```
 
 ```bash
@@ -550,9 +591,11 @@ DEBUG = False
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'aqsdb8',
+        'NAME': 'aqsdb8_qs123',
         'USER': 'aqsdbuser',
         'PASSWORD': 'dbpassword-Dlcg1dwMOXSKIAIM',
+		'HOST': '127.0.0.1',
+		# or Independence DB server
         'HOST': '192.168.1.173',
         'PORT': '5432',
     }
@@ -575,62 +618,65 @@ python manage.py runserver 0.0.0.0:8000
 
 # SECRET KEY
 
-### <span style="color:orange;">**Django secret key**</span>
+<h3 style="color:orange;">Django secret key</h3>
 
 Save the SECRET_KEY from settings.py to text file (e.g. : django-insecure-BITRaxa&rupHUGo&rab@JaRe4iT@amuQlDroFunljib$duxogO):
 
 ```bash
-sudo touch /etc/secret_key.txt
-sudo nano /etc/secret_key.txt
+sudo touch /etc/secret_key_qs123.txt
+sudo nano /etc/secret_key_qs123.txt
 ```
 
 Remove SECRET_KEY in settings.py and change to load file
 ```
-with open('/etc/secret_key.txt') as f:
+with open('/etc/secret_key_qs123.txt') as f:
     SECRET_KEY = f.read().strip()
 ```
-### <span style="color:orange;">**ReCaptcha secret key**</span>
+<h3 style="color:orange;">ReCaptcha secret key</h3>
 
 Save the RECAPTCHA_PRIVATE_KEY to text file (6LflOq0iAAAAAFAKsEWvj1ZY_JFKihRaxUR_vlqG):
 ```bash
-sudo touch /etc/recaptcha_key.txt
-sudo nano /etc/recaptcha_key.txt
+sudo touch /etc/recaptcha_key_qs123.txt
+sudo nano /etc/recaptcha_key_qs123.txt
 ```
 Remove RECAPTCHA_PRIVATE_KEY in settings.py and change to load file
 ```
-with open('/etc/recaptcha_key.txt') as f:
+with open('/etc/recaptcha_key_qs123.txt') as f:
     RECAPTCHA_PRIVATE_KEY = f.read().strip()
 ```
 close and save
 
 > Disable Recaptcha for debug / test
 ```bash
-nano ~/aqs8server/base/views.py    
+nano ~/qs123/base/views.py    
  ```   
 >enable_captcha = False
 
 # INIT AND SETUP the AQS8
 
-### <span style="color:orange;">**Please note that, new version is skip this:**</span>
+<h3 style="color:orange;">Please note that, new version is skip this:</h3>
+
 ~~If use sql lite should disable 'SCH' function:~~
 
 ~~remark base/sch/urls.py ->~~
 ```bash
 # init_branch_reset()
 ```
-### <span style="color:orange;">**Change the Member.email at crm/models.py**</span>
+<h3 style="color:orange;">Change the Member.email at crm/models.py</h3>
+
 ```py
 email = models.EmailField(null=False, blank=False, unique=True) # unique=True for production
 ```
 
-### <span style="color:orange;">**Change the token_api at base/api/views.py**</span>
+<h3 style="color:orange;">Change the token_api at base/api/views.py</h3>
+
 ```bash
 sudo nano base/api/views.py 
 token_api = 'WrE-1t7IdrU2iB3a0e'
 ```
 
 
-### <span style="color:orange;">**SETUP nginx + gunicorn**</span>
+<h3 style="color:orange;">SETUP nginx + gunicorn</h3>
 
 ```bash
 nano ./aqs/settings.py
@@ -676,17 +722,17 @@ gunicorn --bind 0.0.0.0:8000 aqs.wsgi
 
 ```bash
 deactivate
-sudo touch /etc/systemd/system/gunicorn.socket
-sudo nano /etc/systemd/system/gunicorn.socket
+sudo touch /etc/systemd/system/gunicorn_qs123.socket
+sudo nano /etc/systemd/system/gunicorn_qs123.socket
 ```
 
 edit :
 ```bash
 [Unit]
-Description=gunicorn socket
+Description=gunicorn_qs123 socket
 
 [Socket]
-ListenStream=/run/gunicorn.sock
+ListenStream=/run/gunicorn_qs123.sock
 # Our service won't need permissions for the socket, since it
 # inherits the file descriptor by socket activation
 # only the nginx daemon will need access to the socket
@@ -698,14 +744,13 @@ SocketUser=www-data
 WantedBy=sockets.target
 ```
 ```bash
-sudo touch /etc/systemd/system/gunicorn.service
-sudo nano /etc/systemd/system/gunicorn.service
+sudo nano /etc/systemd/system/gunicorn_qs123.service
 ```
 edit:
 ```bash
 [Unit]
-Description=gunicorn daemon
-Requires=gunicorn.socket
+Description=gunicorn_qs123 daemon
+Requires=gunicorn_qs123.socket
 After=network.target
 
 [Service]
@@ -716,9 +761,12 @@ User=ubuntu
 # another option for an even more restricted service is
 # DynamicUser=yes
 # see http://0pointer.net/blog/dynamic-users-with-systemd.html
-RuntimeDirectory=gunicorn
-WorkingDirectory=/home/ubuntu/aqs8server
-ExecStart=/home/ubuntu/aqs8server/env/bin/gunicorn aqs.wsgi
+RuntimeDirectory=gunicorn_qs123
+WorkingDirectory=/home/ubuntu/qs123
+ExecStart=/home/ubuntu/qs123/env/bin/gunicorn \
+	--workers 3 \
+	--bind unix:/run/gunicorn_qs123.sock \
+	aqs.wsgi:application
 ExecReload=/bin/kill -s HUP $MAINPID
 KillMode=mixed
 TimeoutStopSec=5
@@ -729,54 +777,54 @@ WantedBy=multi-user.target
 ```
 ****ubuntu should be changed you user**
 ```bash
-sudo systemctl start gunicorn.socket
-sudo systemctl enable gunicorn.socket
-sudo systemctl status gunicorn.socket
-file /run/gunicorn.sock
-# Output: /run/gunicorn.sock: socket
-sudo systemctl status gunicorn
+sudo systemctl start gunicorn_qs123.socket
+sudo systemctl enable gunicorn_qs123.socket
+sudo systemctl status gunicorn_qs123.socket
+file /run/gunicorn_qs123.sock
+# Output: /run/gunicorn_qs123.sock: socket
+sudo systemctl status gunicorn_qs123
 #Output :
-● gunicorn.service - gunicorn daemon
-   Loaded: loaded (/etc/systemd/system/gunicorn.service; disabled; vendor preset: enabled)
+● gunicorn_qs123.service - gunicorn daemon
+   Loaded: loaded (/etc/systemd/system/gunicorn_qs123.service; disabled; vendor preset: enabled)
    Active: inactive (dead)
-curl --unix-socket /run/gunicorn.sock localhost
+curl --unix-socket /run/gunicorn_qs123.sock localhost
 #You should see the HTML output (have not output)
 #If the output from curl or the output of systemctl status indicates that a problem occurred, check the logs for additional details:
 #and Check the /etc/systemd/system/gunicorn.service file for problems.
-sudo journalctl -u gunicorn
+sudo journalctl -u gunicorn_qs123
 sudo systemctl daemon-reload
-sudo systemctl restart gunicorn
+sudo systemctl restart gunicorn_qs123
 ```
 Uninstall Apache 
 ```bash
 sudo systemctl stop apache2 ; sudo systemctl disable apache2 ; sudo apt remove apache2
 ```
-### <span style="color:orange;">**NGINX**</span>
+<h3 style="color:orange;">NGINX</h3>
 
 ```bash
-sudo touch /etc/nginx/sites-available/aqs8server
-sudo nano /etc/nginx/sites-available/aqs8server
+sudo touch /etc/nginx/sites-available/qs123
+sudo nano /etc/nginx/sites-available/qs123
 ```
 edit:
 ```python
 server {
-    server_name localhost 127.0.0.1 rvd.tsvd.com.hk www.rvd.tsvd.com.hk;
+    server_name localhost 127.0.0.1 qs123.tsvd.com.hk www.qs123.tsvd.com.hk;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
         autoindex on;
-        alias /home/**ubuntu/aqs8server/static_deploy/;
+        alias /home/**ubuntu/qs123/static_deploy/;
     }
 
     location / {
         include proxy_params;
-        proxy_pass http://unix:/run/gunicorn.sock;
+        proxy_pass http://unix:/run/gunicorn_qs123.sock;
     }
 }
 ```
 ****ubuntu should be changed you user**
 ```bash
-sudo ln -s /etc/nginx/sites-available/aqs8server /etc/nginx/sites-enabled
+sudo ln -s /etc/nginx/sites-available/qs123 /etc/nginx/sites-enabled
 # Test the Nginx configuration for syntax errors by using the following command
 sudo nginx -t
 sudo systemctl restart nginx
@@ -795,21 +843,22 @@ then it will fail (as does the stat command in your log). Make sure the www-data
 
 cd all the way to the /username/test/static. You can confirm that the stat will fail or succeed by running
 
->sudo -u www-data stat /home/ubuntu/aqs8server/static_deploy will fail
+>sudo -u www-data stat /home/ubuntu/qs123/static_deploy will fail
 
 ```bash
 # try this:
 sudo gpasswd -a www-data ubuntu
-sudo chmod g+x /home/ubuntu/aqs8server/ && chmod g+x /home/ubuntu/aqs8server/static_deploy
+sudo chmod g+x /home/ubuntu/qs123/ && chmod g+x /home/ubuntu/qs123/static_deploy
 sudo nginx -s reload
 ```
 
 ```bash
 sudo gpasswd -a www-data ubuntu
-sudo chmod g+x /home/ubuntu && chmod g+x /home/ubuntu/aqs8server/ && chmod g+x /home/ubuntu/aqs8server/static_deploy
+sudo chmod g+x /home/ubuntu && chmod g+x /home/ubuntu/qs123/ && chmod g+x /home/ubuntu/qs123/static_deploy
 sudo nginx -s reload
 ```
-### <span style="color:orange;">**Init the DB**</span>
+<h3 style="color:orange;">Init the DB</h3>
+
 ```bash
 source env/bin/activate
 python manage.py makemigrations
@@ -902,7 +951,7 @@ sudo -u postgres pg_basebackup -h 192.168.5.131 -D /var/lib/postgresql/14/main -
 nano /etc/postgresql/14/main/postgresql.conf
 ```
 Edit:
-> listen_addresses = '*'          
+> listen_addresses = '*'
 
 What IP address(es) to listen on;
 
@@ -923,14 +972,14 @@ Insert data to Primary DB for Testing
 ```
 sudo su -l postgres
 psql
-\c aqsdb8
+\c aqsdb8_qs123
 INSERT INTO base_testingModel(name, des) VALUES ('David','is good guy');
 ```
 View data from postgres
 ```
 sudo su -l postgres
 psql
-\c aqsdb8
+\c aqsdb8_qs123
 \dt
 TABLE base_userprofile;
 TABLE base_testingModel;
@@ -939,7 +988,7 @@ INSERT INTO base_testingModel(name, des) VALUES ('David','is good guy');
 logout
 ```
 
-### <span style="color:orange;">**Check the server stat**</span>
+<h3 style="color:orange;">Check the server stat</h3>
 
 ```
 sudo su -l postgres
@@ -947,7 +996,7 @@ psql
 \x
 select * from pg_stat_replication;
 ```
-### <span style="color:orange;">**check slot at main server**</span>
+<h3 style="color:orange;">check slot at main server</h3>
 
 ```
 select * from pg_replication_slots;
@@ -959,11 +1008,11 @@ remove slot from main server
 select pg_drop_replication_slot('some_name');
 \x
 ```
-### <span style="color:orange;">**Troubleshoot:**</span>
+<h3 style="color:orange;">Troubleshoot:</h3>
 
 Check error : Django code run on Gunicorn
 ```
-sudo systemctl status gunicorn
+sudo systemctl status gunicorn_qs123
 ```
 ```bash
 # check PSQL status
@@ -977,29 +1026,32 @@ sudo service postgresql stop
 ```
 
 # Setup Redis Server (Websocket)
-### <span style="color:orange;">**Change Redis server IP**</span>
+
+<h3 style="color:orange;">Change Redis server IP</h3>
+
 > edit settings.py
 ```bash
-nano ~/aqs8server/aqs/settings.py
+nano ~/qs123/aqs/settings.py
 ```
 ```python
 REDIS_HOST = '127.0.0.1'
 ```
-sudo nano /etc/nginx/sites-available/aqs8server
-```nginx
+sudo nano /etc/nginx/sites-available/qs123
+
+```sh
 server {
     listen 80;
-    server_name localhost 127.0.0.1 34.207.57.210 test.tsvd.com.hk www.test.tsvd.com.hk;
+    server_name localhost 127.0.0.1 34.207.57.210 qs123.tsvd.com.hk www.qs123.tsvd.com.hk;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
         autoindex on;
-        alias /home/**ubuntu/aqs8server/static_deploy;
+        alias /home/**ubuntu/qs123/static_deploy;
     }
 
     location / {
         include proxy_params;
-        proxy_pass http://unix:/run/gunicorn.sock;
+        proxy_pass http://unix:/run/gunicorn_qs123.sock;
     }
 	location /ws/ {
         proxy_http_version 1.1;
@@ -1021,7 +1073,8 @@ Test your Nginx configuration for syntax errors by typing
 sudo nginx -t
 ```
 
-### <span style="color:orange;">**Install Redis Server**</span>
+<h3 style="color:orange;">Install Redis Server</h3>
+
 ```bash
 sudo apt install redis-server -y
 ```
@@ -1043,32 +1096,32 @@ sudo netstat -lnp | grep redis
 sudo systemctl restart redis.service
 ```
 ```bash
-nano ~/aqs8server/aqs/asgi.py
+nano ~/qs123/aqs/asgi.py
 ```
 Add under "import base.routing":
 ```python
 import django
 django.setup()
 ```
-Install Daphne 
+Install Daphne
 ```bash
 sudo apt install daphne -y
 # And install it in your project virtual enviroment.
-source ~/aqs8server/env/bin/activate
+source ~/qs123/env/bin/activate
 pip3 install daphne
 deactivate
-sudo nano /etc/systemd/system/daphne.service
+sudo nano /etc/systemd/system/daphne_qs123.service
 ```
 ```nano
 [Unit]
-Description=Daphne service
+Description=Daphne_qs123 service
 After=network.target
 
 [Service]
 Type=simple
 User=ubuntu
-WorkingDirectory=/home/ubuntu/aqs8server
-ExecStart=/home/ubuntu/aqs8server/env/bin/python /home/ubuntu/aqs8server/env/bin/daphne -b 0.0.0.0 -p 8001 aqs.asgi:application
+WorkingDirectory=/home/ubuntu/qs123
+ExecStart=/home/ubuntu/qs123/env/bin/python /home/ubuntu/qs123/env/bin/daphne -b 0.0.0.0 -p 8001 aqs.asgi:application
 Restart=always
 StartLimitBurst=2
 
@@ -1081,18 +1134,19 @@ WantedBy=multi-user.target
 ```
 ****ubuntu should be changed you user**
 
-After we need to start daphne.service .
+After we need to start daphne_qs123.service .
 ```bash
 sudo systemctl daemon-reload
 
-sudo systemctl start daphne.service
+sudo systemctl start daphne_qs123.service
 #If you want to check status of daphne then use.
 
-sudo systemctl status daphne.service
+sudo systemctl status daphne_qs123.service
 ```
-### <span style="color:orange;">**Starting the daphne Service when Server boots**</span>
+<h3 style="color:orange;">Starting the daphne Service when Server boots</h3>
+
 ```
-sudo systemctl enable daphne.service
+sudo systemctl enable daphne_qs123.service
 ```
 
 
@@ -1102,9 +1156,9 @@ sudo systemctl enable daphne.service
 ```bash
 sudo groupadd celery ;
 sudo useradd -g celery celery ;
-sudo mkdir /var/run/celery ;
-sudo chown -R celery:celery /var/run/celery/ ;
-sudo chmod o+w /var/run/celery ;
+sudo mkdir /var/run/celery_qs123 ;
+sudo chown -R celery:celery /var/run/celery_qs123/ ;
+sudo chmod o+w /var/run/celery_qs123 ;
 sudo mkdir /var/log/celery ;
 sudo chown -R celery:celery /var/log/celery/ ;
 sudo chmod o+w /var/log/celery
@@ -1114,13 +1168,13 @@ sudo chmod o+w /var/log/celery
 Create a Celery configuration file (e.g., `celeryd`) in the `/etc/default/` directory:
 
 ```bash
-sudo nano /etc/default/celeryd
+sudo nano /etc/default/celeryd_qs123
 ```
 
 Add the following content to the `celeryd` file. Modify the values for your specific setup:
 
 ```ini
-# /etc/default/celeryd
+# /etc/default/celeryd_qs123
 #   most people will only start one node:
 CELERYD_NODES="worker1"
 #   but you can also start multiple and configure settings
@@ -1130,7 +1184,7 @@ CELERYD_NODES="worker1"
 #CELERYD_NODES=10
 
 # Absolute or relative path to the 'celery' command:
-CELERY_BIN="/home/ubuntu/aqs8server/env/bin/celery"
+CELERY_BIN="/home/ubuntu/qs123/env/bin/celery"
 #CELERY_BIN="/virtualenvs/def/bin/celery"
 
 # App instance to use
@@ -1140,7 +1194,7 @@ CELERY_APP="aqs.celery:app"
 #CELERY_APP="proj.tasks:app"
 
 # Where to chdir at start.
-CELERYD_CHDIR="/home/ubuntu/aqs8server"
+CELERYD_CHDIR="/home/ubuntu/qs123"
 
 # Extra command-line arguments to the worker
 CELERYD_OPTS="--time-limit=300 --concurrency=8"
@@ -1151,8 +1205,8 @@ CELERYD_OPTS="--time-limit=300 --concurrency=8"
 #CELERYD_LOG_LEVEL="DEBUG"
 
 # %n will be replaced with the first part of the node name.
-CELERYD_LOG_FILE="/var/log/celery/%n%I.log"
-CELERYD_PID_FILE="/var/run/celery/%n.pid"
+CELERYD_LOG_FILE="/var/log/celery/qs123%n%I.log"
+CELERYD_PID_FILE="/var/run/celery_qs123/qs123%n.pid"
 
 # Workers should run as an unprivileged user.
 #   You need to create this user manually (or you can choose
@@ -1172,15 +1226,15 @@ Replace the placeholders (`<your_django_user>`, `<your_django_group>`, `your_pro
 Create a Systemd service file (e.g., `celery.service`) in the `/etc/systemd/system/` directory:
 
 ```bash
-sudo nano /etc/systemd/system/celery.service
+sudo nano /etc/systemd/system/celery_qs123.service
 ```
 
-Add the following content to the `celery.service` file:
+Add the following content to the `celery_qs123.service` file:
 
 ```ini
-# /etc/systemd/system/celery.service
+# /etc/systemd/system/celery_qs123.service
 [Unit]
-Description=Celery Service
+Description=Celery_qs123 Service
 After=network.target
 
 [Service]
@@ -1188,14 +1242,14 @@ Type=forking
 User=ubuntu
 Group=ubuntu
 
-EnvironmentFile=/etc/default/celeryd
-WorkingDirectory=/home/ubuntu/aqs8server
-ExecStart=/home/ubuntu/aqs8server/env/bin/celery multi start ${CELERYD_NODES} \
+EnvironmentFile=/etc/default/celeryd_qs123
+WorkingDirectory=/home/ubuntu/qs123
+ExecStart=/home/ubuntu/qs123/env/bin/celery multi start ${CELERYD_NODES} \
   -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} \
   --logfile=${CELERYD_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL} ${CELERYD_OPTS}
-ExecStop=/home/ubuntu/aqs8server/env/bin/celery multi stopwait ${CELERYD_NODES} \
+ExecStop=/home/ubuntu/qs123/env/bin/celery multi stopwait ${CELERYD_NODES} \
   --pidfile=${CELERYD_PID_FILE}
-ExecReload=/home/ubuntu/aqs8server/env/bin/celery multi restart ${CELERYD_NODES} \
+ExecReload=/home/ubuntu/qs123/env/bin/celery multi restart ${CELERYD_NODES} \
   -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} \
   --logfile=${CELERYD_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL} ${CELERYD_OPTS}
 
@@ -1209,8 +1263,8 @@ WantedBy=multi-user.target
 Now that you have created the configuration and service files, enable and start the Celery service:
 
 ```bash
-sudo systemctl enable celery
-sudo systemctl start celery
+sudo systemctl enable celery_qs123
+sudo systemctl start celery_qs123
 ```
 
 The `enable` command ensures that the Celery service starts automatically during server startup.
@@ -1223,9 +1277,9 @@ Add following script:
 ```bash
 # For Celery
 # The dir will auto deleted when every time reboot.
-mkdir /var/run/celery
-chown -R celery:celery /var/run/celery/
-chmod o+w /var/run/celery
+mkdir /var/run/celery_qs123
+chown -R celery:celery /var/run/celery_qs123/
+chmod o+w /var/run/celery_qs123
 ```
 
 ### Step 6: Check the Celery Service Status
@@ -1233,7 +1287,7 @@ chmod o+w /var/run/celery
 You can check the status of the Celery service to ensure it is running:
 
 ```bash
-sudo systemctl status celery
+sudo systemctl status celery_qs123
 ```
 
 This command will display the current status and any logs related to the Celery service.
@@ -1247,6 +1301,7 @@ That's it! Your Celery worker is now set up as a Systemd service and will start 
 
 
 # SSL
+### First domain
 Before setup SSL, server must have domain name
 
 ```bash
@@ -1266,7 +1321,7 @@ Refer to : https://www.youtube.com/watch?v=dYdv6pkCufk
 
 >**Update source code all HTML from ws:// to wss://**
 ```bash
-nano ~/aqs8server/base/ws.py
+nano ~/qs123/base/ws.py
 # change :
 wsHypertext = 'ws://'
 # to :
@@ -1277,14 +1332,18 @@ Reboot the server
 ```bash
 sudo reboot
 ```
-
+### Second domain
+```sh
+sudo certbot --nginx --expand -d second.domain.com
+```
 
 # Setup google reCaptcha
-### <span style="color:orange;">**Use reCaptcha**</span>
+<h3 style="color:orange;">Use reCaptcha</h3>
+
 Open new reCaptcha:
 Create new reCaptcha on [google.com/recaptcha](https://www.google.com/recaptcha)
 
-creat new file /etc/recaptcha_key.txt
+create new file /etc/recaptcha_key_qs123.txt
 
 and save the private key to the file.
 
@@ -1292,24 +1351,24 @@ Edit .\aqs\settings.py
 
 ```python
 RECAPTCHA_PUBLIC_KEY = 'xxx'
-with open('/etc/recaptcha_key.txt') as f:
+with open('/etc/recaptcha_key_qs123.txt') as f:
     RECAPTCHA_PRIVATE_KEY = f.read().strip()
 RECAPTCHA_REQUIRED_SCORE = 0.85
 ```
-### <span style="color:orange;">**Enable / Disable reCaptcha**</span>
+<h3 style="color:orange;">Enable / Disable reCaptcha</h3>
 
-nano ~\aqs8server\aqs\views.py
+nano ~\qs123\aqs\views.py
 
 > enable_captcha = False
 
 
 # Setup new git repo
-### <span style="color:orange;">**Create new repo on [github.com](http://github.com)**</span>
+<h3 style="color:orange;">Create new repo on [github.com](http://github.com)</h3>
 
 Open the web browser login github.com
 
 New the repo named e.g. aqs8server
-### <span style="color:orange;">**Local source code prepare**</span>
+<h3 style="color:orange;">Local source code prepare</h3>
 
 Download and install git: https://git-scm.com/downloads
 ```bash
@@ -1320,7 +1379,7 @@ git config --global user.name "xxx"
 git config --global user.email "xxx.email.com"
 git config --global user.password "xxx"
 ```
-### <span style="color:orange;">**Upload your first commit:**</span>
+<h3 style="color:orange;">Upload your first commit:</h3>
 
 ```bash
 # Create local Git repo:
@@ -1344,7 +1403,7 @@ git push -u origin main
 
 # change 'origin' -> other remote name e.g. 'remote-rvd'
 ```
-### <span style="color:orange;">**Commit new version to github**</span>
+<h3 style="color:orange;">Commit new version to github</h3>
 
 Open vscode -> open the project -> Source Control (Crtl + Shift + G) -> add some text on "Message" e.g. fixed bug xxx -> ... -> commit -> commit all
 
@@ -1361,7 +1420,8 @@ Edit
 ZSH_THEME="agnoster"
 ```
 
-### <span style="color:orange;">**Setup Putty**</span>
+<h3 style="color:orange;">Setup Putty</h3>
+
 Download and install font on your Windows:
 https://github.com/powerline/fonts/tree/master/DejaVuSansMono
 
