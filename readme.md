@@ -1,13 +1,13 @@
-# AQS version 8.3.0
-
-<h3 style="color:orange;">Version 8.3.0</h3>
-
-- Booking System (Appointment system) Initial
-- New table timeslot, columes: branch, booking_date, room, show_date, show_end_date, user, name, phone, email, status, remark, created_at, updated_at
+# AQS version 8.2.0
 
 <h3 style="color:orange;">Version 8.2.0</h3>
 
 - CRM System (Customer Relationship Management) Initial
+- Booking System (Appointment system) Initial
+- New table timeslot, columes: branch, booking_date, room, show_date, show_end_date, user, name, phone, email, status, remark, created_at, updated_at
+
+<h3 style="color:orange;">Version 8.1.6</h3>
+
 - Upgrade Django to 4.2.x
 - Run sch_shutdown() (Schudule task) when the branch settings is saved, so the branch will be update and schedule task time.
 - Secure all existing Websocket connection protect use the session Cookie
