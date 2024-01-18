@@ -1,14 +1,14 @@
 # AQS version 8 For PCCW 2023
 ## Main Server (Causeway Bay)
 - Linux main server (DELL 13th i5) 
-- IP : 10.95.157.237
+- IP : 10.202.2.108
 - Linux server su: ubuntu /// wert2206EDC5345 (change password cmd:passwd)
 - Django SU : supertim /// YtZqEIpk5345 ,  admin : pccwadmin /// YEjLZBYGF4
 - Network enp0s31f6
 
 ## DB server
 - Linux DB server (DELL 12th i3) 
-- IP : 10.95.157.236
+- IP : 10.202.2.109
 - Linux server su: ubuntu /// wert2206EDC5345 
 - Network enp1s0
 
@@ -1348,7 +1348,10 @@ User=ubuntu
 # see http://0pointer.net/blog/dynamic-users-with-systemd.html
 RuntimeDirectory=gunicorn
 WorkingDirectory=/home/ubuntu/aqs8server
-ExecStart=/home/ubuntu/aqs8server/env/bin/gunicorn aqs.wsgi
+ExecStart=/home/ubuntu/aqs8server/env/bin/gunicorn \
+	--workers 10 \
+	--bind unix:/run/gunicorn.sock \
+	aqs.wsgi:application
 ExecReload=/bin/kill -s HUP $MAINPID
 KillMode=mixed
 TimeoutStopSec=5
