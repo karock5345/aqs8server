@@ -2884,3 +2884,766 @@ INFO 2024-01-18 15:53:16,151 base>consumers>connect Error:Branch not found.
 INFO 2024-01-18 15:53:16,218 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=kb&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.176:50141][0m
 INFO 2024-01-18 15:53:16,559 runserver>log_action WebSocket DISCONNECT /ws/voice/KB/c/ [192.168.1.176:49728]
 INFO 2024-01-18 15:53:16,673 runserver>log_action WebSocket DISCONNECT /ws/print/kb/ [192.168.1.176:50140]
+INFO 2024-01-19 15:02:51,003 base>apps>ready    *** Queuing System Started ***
+INFO 2024-01-19 15:02:51,134 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-01-19 15:02:51,134 base>views><module> -SCH- Now:01/19/2024, 07:02:51
+INFO 2024-01-19 15:02:51,203 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-01-19 16:42:00 Local:2024-01-20 00:42:00
+INFO 2024-01-19 15:02:51,204 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2024-01-19 15:02:51,204 base>views>sch_shutdown    -SCH- 2024-01-19 16:42:00 > 2024-01-19 07:02:51 [Yes]
+INFO 2024-01-19 15:02:51,224 base>views>sch_shutdown  -SCH- Next reset [MK]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:02:51,224 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:02:51,224 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:02:51 [Yes]
+INFO 2024-01-19 15:02:51,229 base>views>sch_shutdown  -SCH- Next reset [HY]: 2024-01-19 18:00:00 Local:2024-01-20 02:00:00
+INFO 2024-01-19 15:02:51,229 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2024-01-19 15:02:51,230 base>views>sch_shutdown    -SCH- 2024-01-19 18:00:00 > 2024-01-19 07:02:51 [Yes]
+INFO 2024-01-19 15:02:51,236 base>views>sch_shutdown  -SCH- Next reset [SW]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:02:51,236 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:02:51,236 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:02:51 [Yes]
+INFO 2024-01-19 15:02:51,242 base>views>sch_shutdown  -SCH- Next reset [TST]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:02:51,242 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:02:51,243 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:02:51 [Yes]
+INFO 2024-01-19 15:02:51,245 base>views>sch_shutdown  -SCH- Next reset [ST]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:02:51,245 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:02:51,245 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:02:51 [Yes]
+INFO 2024-01-19 15:02:57,167 base>apps>ready    *** Queuing System Started ***
+INFO 2024-01-19 15:02:58,123 base>apps>ready    *** Queuing System Started ***
+INFO 2024-01-19 15:02:58,128 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-01-19 15:02:58,242 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-01-19 15:02:58,243 base>views><module> -SCH- Now:01/19/2024, 07:02:58
+INFO 2024-01-19 15:02:58,303 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-01-19 16:42:00 Local:2024-01-20 00:42:00
+INFO 2024-01-19 15:02:58,303 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2024-01-19 15:02:58,303 base>views>sch_shutdown    -SCH- 2024-01-19 16:42:00 > 2024-01-19 07:02:58 [Yes]
+INFO 2024-01-19 15:02:58,330 base>views>sch_shutdown  -SCH- Next reset [MK]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:02:58,331 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:02:58,332 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:02:58 [Yes]
+INFO 2024-01-19 15:02:58,336 base>views>sch_shutdown  -SCH- Next reset [HY]: 2024-01-19 18:00:00 Local:2024-01-20 02:00:00
+INFO 2024-01-19 15:02:58,336 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2024-01-19 15:02:58,337 base>views>sch_shutdown    -SCH- 2024-01-19 18:00:00 > 2024-01-19 07:02:58 [Yes]
+INFO 2024-01-19 15:02:58,339 base>views>sch_shutdown  -SCH- Next reset [SW]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:02:58,339 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:02:58,339 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:02:58 [Yes]
+INFO 2024-01-19 15:02:58,349 base>views>sch_shutdown  -SCH- Next reset [TST]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:02:58,349 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:02:58,349 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:02:58 [Yes]
+INFO 2024-01-19 15:02:58,354 base>views>sch_shutdown  -SCH- Next reset [ST]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:02:58,354 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:02:58,354 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:02:58 [Yes]
+INFO 2024-01-19 15:03:00,912 runserver>log_action [mHTTP POST /api/token/ 200 [0.17, 192.168.1.172:49170][0m
+INFO 2024-01-19 15:03:02,151 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.1.0.1 200 [0.02, 192.168.1.172:49172][0m
+INFO 2024-01-19 15:03:19,214 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:03:19,222 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:03:19,223 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:03:19,225 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:03:19,227 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:03:19,229 base>ws>wssendql ...Done
+INFO 2024-01-19 15:03:19,231 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:03:19,235 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:03:19,235 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:03:19,244 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.12, 192.168.1.172:49173][0m
+INFO 2024-01-19 15:03:55,070 runserver>log_action [mHTTP POST /api/token/ 200 [0.16, 192.168.1.172:49174][0m
+INFO 2024-01-19 15:03:55,187 runserver>log_action [mHTTP POST /api/token/ 200 [0.15, 192.168.1.172:49175][0m
+INFO 2024-01-19 15:03:55,697 runserver>log_action [mHTTP GET /api/?app=Voice%20COMP&version=8.1.0.2 200 [0.02, 192.168.1.172:49176][0m
+INFO 2024-01-19 15:03:57,363 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49177][0m
+INFO 2024-01-19 15:04:00,731 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49178][0m
+INFO 2024-01-19 15:04:02,386 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49179][0m
+INFO 2024-01-19 15:04:02,528 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=075&tickettime=2024-01-19T07:03:19.119483Z 200 [0.04, 192.168.1.172:49180][0m
+INFO 2024-01-19 15:04:02,782 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:04:02,787 base>ws>wssendprinterstatus ...Done
+INFO 2024-01-19 15:04:02,788 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 192.168.1.172:49181][0m
+INFO 2024-01-19 15:04:05,845 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49182][0m
+INFO 2024-01-19 15:04:07,516 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49183][0m
+INFO 2024-01-19 15:04:10,867 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49184][0m
+INFO 2024-01-19 15:04:12,517 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49185][0m
+INFO 2024-01-19 15:04:15,860 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49186][0m
+INFO 2024-01-19 15:04:17,521 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.00, 192.168.1.172:49187][0m
+INFO 2024-01-19 15:04:20,859 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49188][0m
+INFO 2024-01-19 15:04:22,535 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49189][0m
+INFO 2024-01-19 15:04:25,869 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49190][0m
+INFO 2024-01-19 15:04:27,537 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.00, 192.168.1.172:49192][0m
+INFO 2024-01-19 15:04:30,870 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.00, 192.168.1.172:49193][0m
+INFO 2024-01-19 15:04:32,556 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.03, 192.168.1.172:49194][0m
+INFO 2024-01-19 15:04:35,894 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49195][0m
+INFO 2024-01-19 15:04:37,556 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49196][0m
+INFO 2024-01-19 15:04:40,901 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49197][0m
+INFO 2024-01-19 15:04:42,568 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49198][0m
+INFO 2024-01-19 15:04:45,896 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49199][0m
+INFO 2024-01-19 15:04:47,586 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49200][0m
+INFO 2024-01-19 15:04:50,913 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49201][0m
+INFO 2024-01-19 15:04:52,570 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.00, 192.168.1.172:49202][0m
+INFO 2024-01-19 15:04:55,919 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49203][0m
+INFO 2024-01-19 15:04:57,585 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49204][0m
+INFO 2024-01-19 15:05:00,924 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49205][0m
+INFO 2024-01-19 15:05:02,587 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49206][0m
+INFO 2024-01-19 15:05:05,930 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49207][0m
+INFO 2024-01-19 15:05:07,602 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49208][0m
+INFO 2024-01-19 15:05:10,944 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.03, 192.168.1.172:49209][0m
+INFO 2024-01-19 15:05:12,616 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.03, 192.168.1.172:49210][0m
+INFO 2024-01-19 15:05:15,946 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49211][0m
+INFO 2024-01-19 15:05:17,619 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49212][0m
+INFO 2024-01-19 15:05:20,961 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49213][0m
+INFO 2024-01-19 15:05:22,625 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49214][0m
+INFO 2024-01-19 15:05:25,958 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.01, 192.168.1.172:49215][0m
+INFO 2024-01-19 15:05:27,622 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.00, 192.168.1.172:49216][0m
+INFO 2024-01-19 15:05:27,919 runserver>log_action [32mHTTP GET /routes/ 302 [0.02, 127.0.0.1:54991][0m
+INFO 2024-01-19 15:05:27,938 runserver>log_action [mHTTP GET /login/ 200 [0.02, 127.0.0.1:54991][0m
+INFO 2024-01-19 15:05:27,958 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:54991][0m
+INFO 2024-01-19 15:05:27,970 runserver>log_action [36mHTTP GET /static/images/avatar.svg 304 [0.00, 127.0.0.1:54991][0m
+INFO 2024-01-19 15:05:30,962 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.00, 192.168.1.172:49217][0m
+INFO 2024-01-19 15:05:32,633 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49218][0m
+INFO 2024-01-19 15:05:35,978 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.01, 192.168.1.172:49219][0m
+INFO 2024-01-19 15:05:37,658 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49220][0m
+INFO 2024-01-19 15:05:40,988 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.01, 192.168.1.172:49221][0m
+INFO 2024-01-19 15:05:42,654 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49222][0m
+INFO 2024-01-19 15:05:45,997 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49223][0m
+INFO 2024-01-19 15:05:47,672 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49224][0m
+INFO 2024-01-19 15:05:51,004 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49225][0m
+INFO 2024-01-19 15:05:51,076 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:05:51,096 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:05:51,097 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:05:51,098 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:05:51,101 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:05:51,102 base>ws>wssendql ...Done
+INFO 2024-01-19 15:05:51,103 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:05:51,106 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:05:51,106 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:05:51,115 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.08, 192.168.1.172:49226][0m
+INFO 2024-01-19 15:05:52,676 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49227][0m
+INFO 2024-01-19 15:05:52,717 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=076&tickettime=2024-01-19T07:05:51.033823Z 200 [0.02, 192.168.1.172:49228][0m
+INFO 2024-01-19 15:05:56,012 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49229][0m
+INFO 2024-01-19 15:05:57,669 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49230][0m
+INFO 2024-01-19 15:06:01,009 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49231][0m
+INFO 2024-01-19 15:06:02,687 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49232][0m
+INFO 2024-01-19 15:06:06,023 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49233][0m
+INFO 2024-01-19 15:06:07,690 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49234][0m
+INFO 2024-01-19 15:06:11,030 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49235][0m
+INFO 2024-01-19 15:06:12,689 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.00, 192.168.1.172:49236][0m
+INFO 2024-01-19 15:06:14,085 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:06:14,092 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:06:14,093 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:06:14,094 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:06:14,097 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:06:14,099 base>ws>wssendql ...Done
+INFO 2024-01-19 15:06:14,100 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:06:14,103 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:06:14,103 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:06:14,111 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.07, 192.168.1.172:49237][0m
+INFO 2024-01-19 15:06:16,037 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.01, 192.168.1.172:49238][0m
+INFO 2024-01-19 15:06:17,708 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49239][0m
+INFO 2024-01-19 15:06:17,743 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=077&tickettime=2024-01-19T07:06:14.038650Z 200 [0.04, 192.168.1.172:49240][0m
+INFO 2024-01-19 15:06:21,045 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49241][0m
+INFO 2024-01-19 15:06:22,715 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49242][0m
+INFO 2024-01-19 15:06:24,124 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:06:24,140 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:06:24,140 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:06:24,143 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:06:24,145 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:06:24,147 base>ws>wssendql ...Done
+INFO 2024-01-19 15:06:24,148 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:06:24,150 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:06:24,151 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:06:24,158 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.08, 192.168.1.172:49243][0m
+INFO 2024-01-19 15:06:26,056 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49244][0m
+INFO 2024-01-19 15:06:27,727 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49245][0m
+INFO 2024-01-19 15:06:27,760 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=078&tickettime=2024-01-19T07:06:24.076756Z 200 [0.03, 192.168.1.172:49246][0m
+INFO 2024-01-19 15:06:31,059 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49247][0m
+INFO 2024-01-19 15:06:32,734 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49248][0m
+INFO 2024-01-19 15:06:36,071 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.03, 192.168.1.172:49249][0m
+INFO 2024-01-19 15:06:37,741 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49250][0m
+INFO 2024-01-19 15:06:41,079 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49251][0m
+INFO 2024-01-19 15:06:42,749 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49252][0m
+INFO 2024-01-19 15:06:46,073 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49253][0m
+INFO 2024-01-19 15:06:47,750 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49254][0m
+INFO 2024-01-19 15:06:51,079 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.00, 192.168.1.172:49255][0m
+INFO 2024-01-19 15:06:52,750 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49256][0m
+INFO 2024-01-19 15:06:56,114 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49257][0m
+INFO 2024-01-19 15:06:57,758 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49258][0m
+INFO 2024-01-19 15:07:01,105 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49259][0m
+INFO 2024-01-19 15:07:02,778 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49260][0m
+INFO 2024-01-19 15:07:06,112 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49261][0m
+INFO 2024-01-19 15:07:07,797 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49262][0m
+INFO 2024-01-19 15:07:11,113 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.01, 192.168.1.172:49263][0m
+INFO 2024-01-19 15:07:12,795 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49264][0m
+INFO 2024-01-19 15:07:26,761 base>apps>ready    *** Queuing System Started ***
+INFO 2024-01-19 15:07:27,723 base>apps>ready    *** Queuing System Started ***
+INFO 2024-01-19 15:07:27,726 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-01-19 15:07:27,825 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-01-19 15:07:27,826 base>views><module> -SCH- Now:01/19/2024, 07:07:27
+INFO 2024-01-19 15:07:27,893 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-01-19 16:42:00 Local:2024-01-20 00:42:00
+INFO 2024-01-19 15:07:27,893 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2024-01-19 15:07:27,893 base>views>sch_shutdown    -SCH- 2024-01-19 16:42:00 > 2024-01-19 07:07:27 [Yes]
+INFO 2024-01-19 15:07:27,908 base>views>sch_shutdown  -SCH- Next reset [MK]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:07:27,908 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:07:27,908 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:07:27 [Yes]
+INFO 2024-01-19 15:07:27,917 base>views>sch_shutdown  -SCH- Next reset [HY]: 2024-01-19 18:00:00 Local:2024-01-20 02:00:00
+INFO 2024-01-19 15:07:27,917 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2024-01-19 15:07:27,918 base>views>sch_shutdown    -SCH- 2024-01-19 18:00:00 > 2024-01-19 07:07:27 [Yes]
+INFO 2024-01-19 15:07:27,922 base>views>sch_shutdown  -SCH- Next reset [SW]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:07:27,922 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:07:27,923 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:07:27 [Yes]
+INFO 2024-01-19 15:07:27,923 base>views>sch_shutdown  -SCH- Next reset [TST]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:07:27,923 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:07:27,929 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:07:27 [Yes]
+INFO 2024-01-19 15:07:27,933 base>views>sch_shutdown  -SCH- Next reset [ST]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:07:27,934 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:07:27,934 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:07:27 [Yes]
+INFO 2024-01-19 15:08:05,258 runserver>log_action [mHTTP POST /api/token/ 200 [0.17, 192.168.1.172:49160][0m
+INFO 2024-01-19 15:08:05,290 runserver>log_action [mHTTP POST /api/token/ 200 [0.17, 192.168.1.172:49161][0m
+INFO 2024-01-19 15:08:06,141 runserver>log_action [mHTTP GET /api/?app=Voice%20COMP&version=8.1.0.2 200 [0.02, 192.168.1.172:49162][0m
+INFO 2024-01-19 15:08:08,559 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49166][0m
+INFO 2024-01-19 15:08:11,171 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49170][0m
+INFO 2024-01-19 15:08:13,592 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49174][0m
+INFO 2024-01-19 15:08:14,545 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:08:14,553 base>ws>wssendprinterstatus ...Done
+INFO 2024-01-19 15:08:14,554 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.05, 192.168.1.172:49175][0m
+INFO 2024-01-19 15:08:16,296 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49176][0m
+INFO 2024-01-19 15:08:18,706 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.03, 192.168.1.172:49177][0m
+INFO 2024-01-19 15:08:21,311 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49178][0m
+INFO 2024-01-19 15:08:23,717 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49179][0m
+INFO 2024-01-19 15:08:26,308 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49180][0m
+INFO 2024-01-19 15:08:28,725 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49181][0m
+INFO 2024-01-19 15:08:29,203 runserver>log_action [mHTTP POST /api/token/ 200 [0.17, 192.168.1.172:49182][0m
+INFO 2024-01-19 15:08:30,048 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.1.0.1 200 [0.02, 192.168.1.172:49183][0m
+INFO 2024-01-19 15:08:31,320 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49184][0m
+INFO 2024-01-19 15:08:33,728 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49186][0m
+INFO 2024-01-19 15:08:36,332 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49187][0m
+INFO 2024-01-19 15:08:38,733 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49188][0m
+INFO 2024-01-19 15:08:41,329 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.01, 192.168.1.172:49189][0m
+INFO 2024-01-19 15:08:43,736 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49190][0m
+INFO 2024-01-19 15:08:46,350 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49191][0m
+INFO 2024-01-19 15:08:48,319 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:08:48,333 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:08:48,334 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:08:48,335 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:08:48,338 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:08:48,340 base>ws>wssendql ...Done
+INFO 2024-01-19 15:08:48,342 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:08:48,345 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:08:48,346 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:08:48,354 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.08, 192.168.1.172:49192][0m
+INFO 2024-01-19 15:08:48,756 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49193][0m
+INFO 2024-01-19 15:08:48,835 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=079&tickettime=2024-01-19T07:08:48.272427Z 200 [0.03, 192.168.1.172:49194][0m
+INFO 2024-01-19 15:08:51,346 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49195][0m
+INFO 2024-01-19 15:08:53,762 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49196][0m
+INFO 2024-01-19 15:08:56,361 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49197][0m
+INFO 2024-01-19 15:08:57,226 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:08:57,238 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:08:57,239 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:08:57,241 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:08:57,243 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:08:57,246 base>ws>wssendql ...Done
+INFO 2024-01-19 15:08:57,248 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:08:57,251 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:08:57,252 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:08:57,261 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.08, 192.168.1.172:49198][0m
+INFO 2024-01-19 15:08:58,764 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49199][0m
+INFO 2024-01-19 15:08:58,817 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=080&tickettime=2024-01-19T07:08:57.179147Z 200 [0.03, 192.168.1.172:49200][0m
+INFO 2024-01-19 15:09:01,365 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49201][0m
+INFO 2024-01-19 15:09:03,765 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49202][0m
+INFO 2024-01-19 15:09:06,378 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49203][0m
+INFO 2024-01-19 15:09:07,085 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:09:07,091 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:09:07,092 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:09:07,094 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:09:07,097 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:09:07,100 base>ws>wssendql ...Done
+INFO 2024-01-19 15:09:07,102 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:09:07,106 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:09:07,106 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:09:07,117 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.09, 192.168.1.172:49204][0m
+INFO 2024-01-19 15:09:08,781 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49205][0m
+INFO 2024-01-19 15:09:08,821 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=081&tickettime=2024-01-19T07:09:07.041213Z 200 [0.04, 192.168.1.172:49206][0m
+INFO 2024-01-19 15:09:11,374 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49207][0m
+INFO 2024-01-19 15:09:13,785 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49208][0m
+INFO 2024-01-19 15:09:16,393 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49209][0m
+INFO 2024-01-19 15:09:18,794 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49210][0m
+INFO 2024-01-19 15:09:21,392 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49211][0m
+INFO 2024-01-19 15:09:23,797 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49212][0m
+INFO 2024-01-19 15:09:26,410 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49213][0m
+INFO 2024-01-19 15:09:28,813 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49214][0m
+INFO 2024-01-19 15:09:31,408 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49215][0m
+INFO 2024-01-19 15:09:33,818 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49216][0m
+INFO 2024-01-19 15:09:36,425 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49217][0m
+INFO 2024-01-19 15:09:38,818 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49218][0m
+INFO 2024-01-19 15:09:41,424 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49219][0m
+INFO 2024-01-19 15:09:43,835 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49220][0m
+INFO 2024-01-19 15:09:46,440 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49221][0m
+INFO 2024-01-19 15:09:48,844 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49222][0m
+INFO 2024-01-19 15:09:51,456 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49223][0m
+INFO 2024-01-19 15:09:53,851 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49224][0m
+INFO 2024-01-19 15:09:56,458 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.03, 192.168.1.172:49225][0m
+INFO 2024-01-19 15:09:58,846 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49227][0m
+INFO 2024-01-19 15:10:01,457 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49228][0m
+INFO 2024-01-19 15:10:03,852 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49229][0m
+INFO 2024-01-19 15:10:06,474 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.03, 192.168.1.172:49230][0m
+INFO 2024-01-19 15:10:08,873 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49231][0m
+INFO 2024-01-19 15:10:11,474 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49232][0m
+INFO 2024-01-19 15:10:13,870 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49233][0m
+INFO 2024-01-19 15:10:16,473 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49234][0m
+INFO 2024-01-19 15:10:18,881 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49235][0m
+INFO 2024-01-19 15:10:21,489 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49236][0m
+INFO 2024-01-19 15:10:23,903 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49237][0m
+INFO 2024-01-19 15:10:26,494 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.01, 192.168.1.172:49238][0m
+INFO 2024-01-19 15:10:28,898 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49239][0m
+INFO 2024-01-19 15:10:31,516 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49240][0m
+INFO 2024-01-19 15:10:33,918 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49241][0m
+INFO 2024-01-19 15:10:36,521 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.03, 192.168.1.172:49242][0m
+INFO 2024-01-19 15:10:38,923 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49243][0m
+INFO 2024-01-19 15:10:41,525 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49244][0m
+INFO 2024-01-19 15:10:43,928 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49245][0m
+INFO 2024-01-19 15:10:46,521 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49246][0m
+INFO 2024-01-19 15:10:48,944 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49247][0m
+INFO 2024-01-19 15:10:51,539 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49248][0m
+INFO 2024-01-19 15:10:53,940 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49249][0m
+INFO 2024-01-19 15:10:56,549 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49250][0m
+INFO 2024-01-19 15:10:58,946 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49251][0m
+INFO 2024-01-19 15:11:01,556 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49252][0m
+INFO 2024-01-19 15:11:03,960 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49253][0m
+INFO 2024-01-19 15:11:06,557 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49254][0m
+INFO 2024-01-19 15:11:08,963 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49255][0m
+INFO 2024-01-19 15:11:11,561 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49256][0m
+INFO 2024-01-19 15:11:13,965 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49257][0m
+INFO 2024-01-19 15:11:16,569 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49258][0m
+INFO 2024-01-19 15:11:18,971 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49259][0m
+INFO 2024-01-19 15:11:21,574 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49260][0m
+INFO 2024-01-19 15:11:23,978 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49261][0m
+INFO 2024-01-19 15:11:26,586 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.01, 192.168.1.172:49262][0m
+INFO 2024-01-19 15:11:28,995 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49263][0m
+INFO 2024-01-19 15:11:31,587 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49264][0m
+INFO 2024-01-19 15:11:34,003 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49265][0m
+INFO 2024-01-19 15:11:36,603 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.01, 192.168.1.172:49266][0m
+INFO 2024-01-19 15:11:39,015 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49267][0m
+INFO 2024-01-19 15:11:41,617 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49268][0m
+INFO 2024-01-19 15:11:44,023 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49269][0m
+INFO 2024-01-19 15:11:46,617 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.01, 192.168.1.172:49270][0m
+INFO 2024-01-19 15:11:49,018 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49271][0m
+INFO 2024-01-19 15:11:51,636 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49272][0m
+INFO 2024-01-19 15:11:54,027 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49273][0m
+INFO 2024-01-19 15:11:56,635 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49274][0m
+INFO 2024-01-19 15:11:59,036 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49275][0m
+INFO 2024-01-19 15:12:01,630 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.01, 192.168.1.172:49276][0m
+INFO 2024-01-19 15:12:04,041 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49277][0m
+INFO 2024-01-19 15:12:06,644 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49278][0m
+INFO 2024-01-19 15:12:09,045 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.00, 192.168.1.172:49279][0m
+INFO 2024-01-19 15:12:11,650 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49280][0m
+INFO 2024-01-19 15:12:14,057 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49281][0m
+INFO 2024-01-19 15:12:16,651 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.00, 192.168.1.172:49282][0m
+INFO 2024-01-19 15:12:19,065 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49283][0m
+INFO 2024-01-19 15:12:21,664 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49284][0m
+INFO 2024-01-19 15:12:24,072 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49285][0m
+INFO 2024-01-19 15:12:26,670 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49286][0m
+INFO 2024-01-19 15:12:29,083 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49287][0m
+INFO 2024-01-19 15:12:31,684 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49288][0m
+INFO 2024-01-19 15:12:34,103 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.03, 192.168.1.172:49289][0m
+INFO 2024-01-19 15:12:36,684 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49290][0m
+INFO 2024-01-19 15:12:39,096 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49291][0m
+INFO 2024-01-19 15:12:41,699 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49292][0m
+INFO 2024-01-19 15:12:44,096 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49293][0m
+INFO 2024-01-19 15:12:46,702 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49294][0m
+INFO 2024-01-19 15:12:49,112 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49295][0m
+INFO 2024-01-19 15:12:51,707 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.00, 192.168.1.172:49296][0m
+INFO 2024-01-19 15:12:54,121 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49297][0m
+INFO 2024-01-19 15:12:56,726 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49298][0m
+INFO 2024-01-19 15:12:59,118 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49299][0m
+INFO 2024-01-19 15:13:00,072 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.02, 192.168.1.172:49300][0m
+INFO 2024-01-19 15:13:00,199 runserver>log_action [mHTTP POST /api/token/refresh/ 200 [0.00, 192.168.1.172:49301][0m
+INFO 2024-01-19 15:13:01,727 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49302][0m
+INFO 2024-01-19 15:13:04,133 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49303][0m
+INFO 2024-01-19 15:13:08,497 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:13:08,507 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:13:08,507 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:13:08,509 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:13:08,511 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:13:08,514 base>ws>wssendql ...Done
+INFO 2024-01-19 15:13:08,516 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:13:08,519 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:13:08,520 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:13:08,528 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=B&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.08, 192.168.1.172:49304][0m
+INFO 2024-01-19 15:13:08,882 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:13:08,887 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:13:08,887 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:13:08,889 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:13:08,891 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:13:08,893 base>ws>wssendql ...Done
+INFO 2024-01-19 15:13:08,895 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:13:08,898 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:13:08,898 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:13:08,905 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=B&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.07, 192.168.1.172:49305][0m
+INFO 2024-01-19 15:13:47,600 runserver>log_action [mHTTP POST /api/token/ 200 [0.17, 192.168.1.172:49307][0m
+INFO 2024-01-19 15:13:50,955 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49308][0m
+INFO 2024-01-19 15:13:55,983 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49309][0m
+INFO 2024-01-19 15:13:56,103 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=B&ticketnumber=002&tickettime=2024-01-19T07:13:08.453525Z 200 [0.04, 192.168.1.172:49310][0m
+INFO 2024-01-19 15:13:56,131 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=B&ticketnumber=003&tickettime=2024-01-19T07:13:08.839653Z 200 [0.05, 192.168.1.172:49311][0m
+INFO 2024-01-19 15:13:56,308 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:13:56,327 base>ws>wssendprinterstatus ...Done
+INFO 2024-01-19 15:13:56,329 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.04, 192.168.1.172:49312][0m
+INFO 2024-01-19 15:14:01,104 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49313][0m
+INFO 2024-01-19 15:14:06,113 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49314][0m
+INFO 2024-01-19 15:14:11,120 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49315][0m
+INFO 2024-01-19 15:14:16,121 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49316][0m
+INFO 2024-01-19 15:14:21,122 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49317][0m
+INFO 2024-01-19 15:14:26,142 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49318][0m
+INFO 2024-01-19 15:14:31,149 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.03, 192.168.1.172:49319][0m
+INFO 2024-01-19 15:14:36,158 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.03, 192.168.1.172:49320][0m
+INFO 2024-01-19 15:14:41,166 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.03, 192.168.1.172:49321][0m
+INFO 2024-01-19 15:14:46,173 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49322][0m
+INFO 2024-01-19 15:14:51,171 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49323][0m
+INFO 2024-01-19 15:14:56,187 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49324][0m
+INFO 2024-01-19 15:15:01,191 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49325][0m
+INFO 2024-01-19 15:15:06,204 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49326][0m
+INFO 2024-01-19 15:15:11,248 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.04, 192.168.1.172:49327][0m
+INFO 2024-01-19 15:15:16,215 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49328][0m
+INFO 2024-01-19 15:15:21,233 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49329][0m
+INFO 2024-01-19 15:15:26,231 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.00, 192.168.1.172:49330][0m
+INFO 2024-01-19 15:15:31,248 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49331][0m
+INFO 2024-01-19 15:15:36,255 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49332][0m
+INFO 2024-01-19 15:15:41,262 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49333][0m
+INFO 2024-01-19 15:15:46,256 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.00, 192.168.1.172:49334][0m
+INFO 2024-01-19 15:15:51,268 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49336][0m
+INFO 2024-01-19 15:15:56,278 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49337][0m
+INFO 2024-01-19 15:16:01,285 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49338][0m
+INFO 2024-01-19 15:16:06,298 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49339][0m
+INFO 2024-01-19 15:16:11,959 runserver>log_action [mHTTP POST /api/token/ 200 [0.16, 192.168.1.172:49341][0m
+INFO 2024-01-19 15:16:15,439 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49342][0m
+INFO 2024-01-19 15:16:20,459 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49343][0m
+INFO 2024-01-19 15:16:20,802 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:16:20,811 base>ws>wssendprinterstatus ...Done
+INFO 2024-01-19 15:16:20,812 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 192.168.1.172:49344][0m
+INFO 2024-01-19 15:16:25,586 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49345][0m
+INFO 2024-01-19 15:16:30,592 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49346][0m
+INFO 2024-01-19 15:16:35,595 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.00, 192.168.1.172:49347][0m
+INFO 2024-01-19 15:16:40,607 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49348][0m
+INFO 2024-01-19 15:16:45,620 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49349][0m
+INFO 2024-01-19 15:16:50,613 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49350][0m
+INFO 2024-01-19 15:16:55,630 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49351][0m
+INFO 2024-01-19 15:17:00,665 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49352][0m
+INFO 2024-01-19 15:17:05,651 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49353][0m
+INFO 2024-01-19 15:17:10,653 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49354][0m
+INFO 2024-01-19 15:17:15,656 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49355][0m
+INFO 2024-01-19 15:17:20,657 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49356][0m
+INFO 2024-01-19 15:17:25,672 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49357][0m
+INFO 2024-01-19 15:17:30,684 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49358][0m
+INFO 2024-01-19 15:17:35,679 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49359][0m
+INFO 2024-01-19 15:17:40,698 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49360][0m
+INFO 2024-01-19 15:17:45,701 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49361][0m
+INFO 2024-01-19 15:17:48,335 runserver>log_action [mHTTP POST /api/token/ 200 [0.16, 192.168.1.172:49362][0m
+INFO 2024-01-19 15:17:49,041 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.1.0.1 200 [0.01, 192.168.1.172:49363][0m
+INFO 2024-01-19 15:17:50,718 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49364][0m
+INFO 2024-01-19 15:17:55,724 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49365][0m
+INFO 2024-01-19 15:17:57,965 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:17:57,973 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:17:57,973 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:17:57,976 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:17:57,979 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:17:57,982 base>ws>wssendql ...Done
+INFO 2024-01-19 15:17:57,984 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:17:57,986 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:17:57,986 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:17:57,995 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.08, 192.168.1.172:49366][0m
+INFO 2024-01-19 15:18:00,740 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49367][0m
+INFO 2024-01-19 15:18:00,822 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=082&tickettime=2024-01-19T07:17:57.918715Z 200 [0.03, 192.168.1.172:49368][0m
+INFO 2024-01-19 15:18:04,784 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:18:04,796 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:18:04,797 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:18:04,799 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:18:04,802 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:18:04,805 base>ws>wssendql ...Done
+INFO 2024-01-19 15:18:04,807 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:18:04,811 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:18:04,811 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:18:04,820 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.08, 192.168.1.172:49369][0m
+INFO 2024-01-19 15:18:05,740 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49370][0m
+INFO 2024-01-19 15:18:05,779 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=083&tickettime=2024-01-19T07:18:04.737405Z 200 [0.04, 192.168.1.172:49371][0m
+INFO 2024-01-19 15:18:09,187 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:18:09,192 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:18:09,192 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:18:09,194 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:18:09,196 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:18:09,198 base>ws>wssendql ...Done
+INFO 2024-01-19 15:18:09,199 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:18:09,202 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:18:09,202 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:18:09,211 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.07, 192.168.1.172:49372][0m
+INFO 2024-01-19 15:18:10,743 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49373][0m
+INFO 2024-01-19 15:18:10,840 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=084&tickettime=2024-01-19T07:18:09.144864Z 200 [0.05, 192.168.1.172:49374][0m
+INFO 2024-01-19 15:18:15,760 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49375][0m
+INFO 2024-01-19 15:18:20,763 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49376][0m
+INFO 2024-01-19 15:18:25,765 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49377][0m
+INFO 2024-01-19 15:18:38,770 runserver>log_action [mHTTP POST /api/token/ 200 [0.15, 192.168.1.172:49379][0m
+INFO 2024-01-19 15:18:39,722 runserver>log_action [mHTTP POST /api/token/ 200 [0.14, 192.168.1.172:49380][0m
+INFO 2024-01-19 15:18:40,453 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.1.0.1 200 [0.02, 192.168.1.172:49381][0m
+INFO 2024-01-19 15:18:42,258 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.1 200 [0.00, 192.168.1.172:49382][0m
+INFO 2024-01-19 15:18:47,294 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49383][0m
+INFO 2024-01-19 15:18:47,451 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:18:47,458 base>ws>wssendprinterstatus ...Done
+INFO 2024-01-19 15:18:47,460 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 192.168.1.172:49384][0m
+INFO 2024-01-19 15:18:52,420 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49385][0m
+INFO 2024-01-19 15:18:57,428 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49386][0m
+INFO 2024-01-19 15:19:02,422 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49387][0m
+INFO 2024-01-19 15:19:07,441 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49388][0m
+INFO 2024-01-19 15:19:12,440 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49389][0m
+INFO 2024-01-19 15:19:17,461 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49390][0m
+INFO 2024-01-19 15:19:22,463 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49391][0m
+INFO 2024-01-19 15:19:23,164 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:19:23,173 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:19:23,174 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:19:23,175 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:19:23,178 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:19:23,181 base>ws>wssendql ...Done
+INFO 2024-01-19 15:19:23,182 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:19:23,184 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:19:23,184 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:19:23,192 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.07, 192.168.1.172:49392][0m
+INFO 2024-01-19 15:19:27,472 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49393][0m
+INFO 2024-01-19 15:19:27,567 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=085&tickettime=2024-01-19T07:19:23.128359Z 200 [0.02, 192.168.1.172:49394][0m
+INFO 2024-01-19 15:19:32,474 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49395][0m
+INFO 2024-01-19 15:19:37,508 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49396][0m
+INFO 2024-01-19 15:19:42,494 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49397][0m
+INFO 2024-01-19 15:19:47,498 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49398][0m
+INFO 2024-01-19 15:19:52,498 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49399][0m
+INFO 2024-01-19 15:19:57,519 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49400][0m
+INFO 2024-01-19 15:20:02,517 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49401][0m
+INFO 2024-01-19 15:20:07,528 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49402][0m
+INFO 2024-01-19 15:20:12,534 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49403][0m
+INFO 2024-01-19 15:20:17,534 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49404][0m
+INFO 2024-01-19 15:20:22,547 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49405][0m
+INFO 2024-01-19 15:20:27,559 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49406][0m
+INFO 2024-01-19 15:20:32,556 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49407][0m
+INFO 2024-01-19 15:20:37,565 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49408][0m
+INFO 2024-01-19 15:20:42,562 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49409][0m
+INFO 2024-01-19 15:20:47,589 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49410][0m
+INFO 2024-01-19 15:20:52,583 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49411][0m
+INFO 2024-01-19 15:20:57,611 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.03, 192.168.1.172:49412][0m
+INFO 2024-01-19 15:21:03,662 runserver>log_action [mHTTP POST /api/token/ 200 [0.14, 192.168.1.172:49414][0m
+INFO 2024-01-19 15:21:04,627 runserver>log_action [mHTTP POST /api/token/ 200 [0.16, 192.168.1.172:49415][0m
+INFO 2024-01-19 15:21:05,328 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.1.0.1 200 [0.02, 192.168.1.172:49416][0m
+INFO 2024-01-19 15:21:06,821 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:06,827 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:21:06,827 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:06,829 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:21:06,831 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:06,833 base>ws>wssendql ...Done
+INFO 2024-01-19 15:21:06,834 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:06,836 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:21:06,837 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:21:06,844 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.07, 192.168.1.172:49417][0m
+INFO 2024-01-19 15:21:07,153 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49418][0m
+INFO 2024-01-19 15:21:12,182 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49419][0m
+INFO 2024-01-19 15:21:12,312 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=086&tickettime=2024-01-19T07:21:06.774413Z 200 [0.02, 192.168.1.172:49420][0m
+INFO 2024-01-19 15:21:12,413 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:12,418 base>ws>wssendprinterstatus ...Done
+INFO 2024-01-19 15:21:12,420 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 192.168.1.172:49421][0m
+INFO 2024-01-19 15:21:13,542 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:13,559 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:21:13,559 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:13,560 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:21:13,563 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:13,565 base>ws>wssendql ...Done
+INFO 2024-01-19 15:21:13,567 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:13,568 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:21:13,568 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:21:13,575 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.08, 192.168.1.172:49422][0m
+INFO 2024-01-19 15:21:17,299 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49423][0m
+INFO 2024-01-19 15:21:17,346 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=087&tickettime=2024-01-19T07:21:13.511509Z 200 [0.03, 192.168.1.172:49424][0m
+INFO 2024-01-19 15:21:18,039 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:18,046 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:21:18,047 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:18,050 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:21:18,054 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:18,059 base>ws>wssendql ...Done
+INFO 2024-01-19 15:21:18,061 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:18,064 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:21:18,065 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:21:18,076 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.10, 192.168.1.172:49425][0m
+INFO 2024-01-19 15:21:21,801 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:21,820 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:21:21,821 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:21,823 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:21:21,826 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:21,828 base>ws>wssendql ...Done
+INFO 2024-01-19 15:21:21,829 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:21,831 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:21:21,831 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:21:21,841 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.09, 192.168.1.172:49426][0m
+INFO 2024-01-19 15:21:22,309 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49427][0m
+INFO 2024-01-19 15:21:22,354 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=088&tickettime=2024-01-19T07:21:17.978890Z 200 [0.03, 192.168.1.172:49428][0m
+INFO 2024-01-19 15:21:22,386 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=089&tickettime=2024-01-19T07:21:21.751703Z 200 [0.05, 192.168.1.172:49429][0m
+INFO 2024-01-19 15:21:25,138 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:25,148 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:21:25,148 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:25,150 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:21:25,152 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:25,154 base>ws>wssendql ...Done
+INFO 2024-01-19 15:21:25,156 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:25,159 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:21:25,160 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:21:25,170 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.08, 192.168.1.172:49430][0m
+INFO 2024-01-19 15:21:27,315 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49431][0m
+INFO 2024-01-19 15:21:27,355 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=090&tickettime=2024-01-19T07:21:25.103659Z 200 [0.02, 192.168.1.172:49432][0m
+INFO 2024-01-19 15:21:32,316 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49433][0m
+INFO 2024-01-19 15:21:37,351 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49434][0m
+INFO 2024-01-19 15:21:42,331 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49435][0m
+INFO 2024-01-19 15:21:43,556 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:43,574 base>ws>wssendwebtv ...Done
+INFO 2024-01-19 15:21:43,575 base>ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:43,576 base>ws>wssenddispwait ...Done
+INFO 2024-01-19 15:21:43,579 base>ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:43,581 base>ws>wssendql ...Done
+INFO 2024-01-19 15:21:43,582 base>ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:21:43,584 base>ws>wsSendPrintTicket ...Done
+INFO 2024-01-19 15:21:43,585 base>v_roche>rocheSMS SMS disabled
+INFO 2024-01-19 15:21:43,592 runserver>log_action [mHTTP POST /api/ticketkey/?branchcode=KB&tickettype=A&printernumber=%3CPNO%3EP1%3C/PNO%3E&app=Touch%20Panel&version=8.1.0.1 200 [0.07, 192.168.1.172:49436][0m
+INFO 2024-01-19 15:21:47,356 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49437][0m
+INFO 2024-01-19 15:21:47,395 runserver>log_action [mHTTP POST /api/printed/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&tickettype=A&ticketnumber=091&tickettime=2024-01-19T07:21:43.525004Z 200 [0.03, 192.168.1.172:49438][0m
+INFO 2024-01-19 15:21:52,359 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49439][0m
+INFO 2024-01-19 15:21:57,358 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49440][0m
+INFO 2024-01-19 15:22:02,362 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49441][0m
+INFO 2024-01-19 15:22:07,413 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49442][0m
+INFO 2024-01-19 15:22:14,534 runserver>log_action [mHTTP POST /api/token/ 200 [0.16, 192.168.1.172:49444][0m
+INFO 2024-01-19 15:22:18,062 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49445][0m
+INFO 2024-01-19 15:22:23,095 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49446][0m
+INFO 2024-01-19 15:22:23,199 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:22:23,208 base>ws>wssendprinterstatus ...Done
+INFO 2024-01-19 15:22:23,209 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.1&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 192.168.1.172:49447][0m
+INFO 2024-01-19 15:22:28,192 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49448][0m
+INFO 2024-01-19 15:22:33,211 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49449][0m
+INFO 2024-01-19 15:22:38,213 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49450][0m
+INFO 2024-01-19 15:22:43,216 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49451][0m
+INFO 2024-01-19 15:22:48,233 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49452][0m
+INFO 2024-01-19 15:22:53,237 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49453][0m
+INFO 2024-01-19 15:22:58,250 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.01, 192.168.1.172:49454][0m
+INFO 2024-01-19 15:23:03,254 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49455][0m
+INFO 2024-01-19 15:23:08,257 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49456][0m
+INFO 2024-01-19 15:23:13,274 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49457][0m
+INFO 2024-01-19 15:23:18,308 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.1 200 [0.02, 192.168.1.172:49458][0m
+INFO 2024-01-19 15:31:07,763 base>apps>ready    *** Queuing System Started ***
+INFO 2024-01-19 15:31:07,841 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-01-19 15:31:07,841 base>views><module> -SCH- Now:01/19/2024, 07:31:07
+INFO 2024-01-19 15:31:07,907 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-01-19 16:42:00 Local:2024-01-20 00:42:00
+INFO 2024-01-19 15:31:07,908 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2024-01-19 15:31:07,908 base>views>sch_shutdown    -SCH- 2024-01-19 16:42:00 > 2024-01-19 07:31:07 [Yes]
+INFO 2024-01-19 15:31:07,925 base>views>sch_shutdown  -SCH- Next reset [MK]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:31:07,925 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:31:07,926 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:31:07 [Yes]
+INFO 2024-01-19 15:31:07,932 base>views>sch_shutdown  -SCH- Next reset [HY]: 2024-01-19 18:00:00 Local:2024-01-20 02:00:00
+INFO 2024-01-19 15:31:07,932 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2024-01-19 15:31:07,933 base>views>sch_shutdown    -SCH- 2024-01-19 18:00:00 > 2024-01-19 07:31:07 [Yes]
+INFO 2024-01-19 15:31:07,938 base>views>sch_shutdown  -SCH- Next reset [SW]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:31:07,938 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:31:07,938 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:31:07 [Yes]
+INFO 2024-01-19 15:31:07,944 base>views>sch_shutdown  -SCH- Next reset [TST]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:31:07,944 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:31:07,944 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:31:07 [Yes]
+INFO 2024-01-19 15:31:07,963 base>views>sch_shutdown  -SCH- Next reset [ST]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:31:07,964 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:31:07,964 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:31:07 [Yes]
+INFO 2024-01-19 15:31:11,474 base>apps>ready    *** Queuing System Started ***
+INFO 2024-01-19 15:31:12,353 base>apps>ready    *** Queuing System Started ***
+INFO 2024-01-19 15:31:12,353 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-01-19 15:31:12,463 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-01-19 15:31:12,463 base>views><module> -SCH- Now:01/19/2024, 07:31:12
+INFO 2024-01-19 15:31:12,527 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-01-19 16:42:00 Local:2024-01-20 00:42:00
+INFO 2024-01-19 15:31:12,527 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2024-01-19 15:31:12,527 base>views>sch_shutdown    -SCH- 2024-01-19 16:42:00 > 2024-01-19 07:31:12 [Yes]
+INFO 2024-01-19 15:31:12,544 base>views>sch_shutdown  -SCH- Next reset [MK]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:31:12,544 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:31:12,547 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:31:12 [Yes]
+INFO 2024-01-19 15:31:12,551 base>views>sch_shutdown  -SCH- Next reset [HY]: 2024-01-19 18:00:00 Local:2024-01-20 02:00:00
+INFO 2024-01-19 15:31:12,553 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2024-01-19 15:31:12,553 base>views>sch_shutdown    -SCH- 2024-01-19 18:00:00 > 2024-01-19 07:31:12 [Yes]
+INFO 2024-01-19 15:31:12,558 base>views>sch_shutdown  -SCH- Next reset [SW]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:31:12,559 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:31:12,559 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:31:12 [Yes]
+INFO 2024-01-19 15:31:12,565 base>views>sch_shutdown  -SCH- Next reset [TST]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:31:12,565 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:31:12,566 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:31:12 [Yes]
+INFO 2024-01-19 15:31:12,570 base>views>sch_shutdown  -SCH- Next reset [ST]: 2024-01-19 15:59:59 Local:2024-01-19 23:59:59
+INFO 2024-01-19 15:31:12,571 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-19 15:31:12,571 base>views>sch_shutdown    -SCH- 2024-01-19 15:59:59 > 2024-01-19 07:31:12 [Yes]
+INFO 2024-01-19 15:36:38,966 runserver>log_action [mHTTP POST /api/token/ 200 [0.16, 192.168.1.172:49201][0m
+INFO 2024-01-19 15:36:40,506 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.2 200 [0.00, 192.168.1.172:49203][0m
+INFO 2024-01-19 15:36:40,570 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49204][0m
+INFO 2024-01-19 15:36:40,879 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:36:40,887 base>ws>wssendprinterstatus ...Done
+INFO 2024-01-19 15:36:40,888 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.2&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.05, 192.168.1.172:49205][0m
+INFO 2024-01-19 15:36:45,658 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49207][0m
+INFO 2024-01-19 15:36:50,659 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49208][0m
+INFO 2024-01-19 15:36:54,605 runserver>log_action [mHTTP POST /api/token/ 200 [0.16, 192.168.1.172:49209][0m
+INFO 2024-01-19 15:36:55,347 runserver>log_action [mHTTP POST /api/touchkeys/?branchcode=KB&app=Touch%20Panel&version=8.1.0.1 200 [0.02, 192.168.1.172:49210][0m
+INFO 2024-01-19 15:36:55,669 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49211][0m
+INFO 2024-01-19 15:37:00,673 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.00, 192.168.1.172:49213][0m
+INFO 2024-01-19 15:37:05,690 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49214][0m
+INFO 2024-01-19 15:37:10,703 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49215][0m
+INFO 2024-01-19 15:37:15,701 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49216][0m
+INFO 2024-01-19 15:37:20,707 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49217][0m
+INFO 2024-01-19 15:37:25,716 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49218][0m
+INFO 2024-01-19 15:37:30,716 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.00, 192.168.1.172:49219][0m
+INFO 2024-01-19 15:37:31,011 runserver>log_action [mHTTP POST /api/token/ 200 [0.14, 192.168.1.172:49220][0m
+INFO 2024-01-19 15:37:31,499 runserver>log_action [mHTTP GET /api/?app=Voice%20COMP&version=8.1.0.2 200 [0.02, 192.168.1.172:49221][0m
+INFO 2024-01-19 15:37:35,727 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49222][0m
+INFO 2024-01-19 15:37:36,514 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49223][0m
+INFO 2024-01-19 15:37:41,631 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49224][0m
+INFO 2024-01-19 15:37:46,625 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.00, 192.168.1.172:49225][0m
+INFO 2024-01-19 15:37:51,634 runserver>log_action [mHTTP GET /api/voice/?app=Voice%20COMP&version=8.1.0.2&branchcode=KB&countername=c 200 [0.02, 192.168.1.172:49226][0m
+INFO 2024-01-19 15:38:23,624 runserver>log_action [mHTTP POST /api/token/ 200 [0.16, 192.168.1.172:49228][0m
+INFO 2024-01-19 15:38:27,170 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49229][0m
+INFO 2024-01-19 15:38:27,205 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49230][0m
+INFO 2024-01-19 15:38:27,314 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:38:27,319 base>ws>wssendprinterstatus ...Done
+INFO 2024-01-19 15:38:27,320 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.2&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 192.168.1.172:49231][0m
+INFO 2024-01-19 15:38:32,306 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49232][0m
+INFO 2024-01-19 15:38:37,318 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49233][0m
+INFO 2024-01-19 15:38:42,323 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49234][0m
+INFO 2024-01-19 15:38:47,321 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49235][0m
+INFO 2024-01-19 15:38:52,371 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49236][0m
+INFO 2024-01-19 15:38:57,350 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49237][0m
+INFO 2024-01-19 15:39:02,351 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49238][0m
+INFO 2024-01-19 15:39:07,354 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49239][0m
+INFO 2024-01-19 15:39:12,367 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49240][0m
+INFO 2024-01-19 15:39:17,381 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49241][0m
+INFO 2024-01-19 15:39:22,377 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49242][0m
+INFO 2024-01-19 15:39:27,379 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.00, 192.168.1.172:49243][0m
+INFO 2024-01-19 15:39:32,393 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49244][0m
+INFO 2024-01-19 15:39:37,409 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49245][0m
+INFO 2024-01-19 15:39:42,409 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49246][0m
+INFO 2024-01-19 15:39:47,424 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49247][0m
+INFO 2024-01-19 15:39:52,426 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49248][0m
+INFO 2024-01-19 15:39:57,439 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49249][0m
+INFO 2024-01-19 15:40:02,448 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49250][0m
+INFO 2024-01-19 15:40:07,452 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49251][0m
+INFO 2024-01-19 15:40:12,470 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.03, 192.168.1.172:49252][0m
+INFO 2024-01-19 15:40:17,487 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49253][0m
+INFO 2024-01-19 15:40:22,476 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49254][0m
+INFO 2024-01-19 15:40:27,484 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49255][0m
+INFO 2024-01-19 15:40:32,486 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49256][0m
+INFO 2024-01-19 15:40:37,499 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49257][0m
+INFO 2024-01-19 15:40:42,495 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49258][0m
+INFO 2024-01-19 15:40:47,506 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49259][0m
+INFO 2024-01-19 15:40:52,522 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49260][0m
+INFO 2024-01-19 15:40:57,537 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.03, 192.168.1.172:49261][0m
+INFO 2024-01-19 15:41:02,544 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49262][0m
+INFO 2024-01-19 15:41:07,548 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49263][0m
+INFO 2024-01-19 15:41:12,560 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49264][0m
+INFO 2024-01-19 15:41:17,564 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49265][0m
+INFO 2024-01-19 15:41:22,575 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49266][0m
+INFO 2024-01-19 15:41:27,576 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49267][0m
+INFO 2024-01-19 15:41:32,586 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49268][0m
+INFO 2024-01-19 15:41:37,593 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49269][0m
+INFO 2024-01-19 15:41:42,604 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49270][0m
+INFO 2024-01-19 15:41:47,609 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49271][0m
+INFO 2024-01-19 15:41:52,627 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49272][0m
+INFO 2024-01-19 15:41:57,623 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.01, 192.168.1.172:49273][0m
+INFO 2024-01-19 15:42:02,639 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49274][0m
+INFO 2024-01-19 15:42:07,643 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49275][0m
+INFO 2024-01-19 15:42:12,651 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49276][0m
+INFO 2024-01-19 15:42:17,657 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49277][0m
+INFO 2024-01-19 15:42:22,666 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 192.168.1.172:49278][0m
+INFO 2024-01-19 15:42:31,962 runserver>log_action [mHTTP POST /api/token/ 200 [0.18, 127.0.0.1:56624][0m
+INFO 2024-01-19 15:42:35,742 runserver>log_action [mHTTP GET /api/?app=Printer%20Control&version=8.1.0.2 200 [0.01, 127.0.0.1:56630][0m
+INFO 2024-01-19 15:42:35,751 runserver>log_action WebSocket HANDSHAKING /ws/print/KB/ [127.0.0.1:56634]
+INFO 2024-01-19 15:42:35,753 base>consumers>connect connecting:print_KB
+INFO 2024-01-19 15:42:35,763 runserver>log_action WebSocket CONNECT /ws/print/KB/ [127.0.0.1:56634]
+INFO 2024-01-19 15:42:35,769 runserver>log_action [mHTTP GET /api/firstprint/?branchcode=KB&app=Printer%20Control&version=8.1.0.2 200 [0.02, 127.0.0.1:56633][0m
+INFO 2024-01-19 15:42:36,650 base>ws>wssendprinterstatus channel_group_name:printerstatus_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-19 15:42:36,655 base>ws>wssendprinterstatus ...Done
+INFO 2024-01-19 15:42:36,657 runserver>log_action [mHTTP POST /api/updateprinter/?app=Printer%20Control&version=8.1.0.2&branchcode=KB&printernumber=P1&status=%3CP_FINE%3E&statustext=Paper%20ready 200 [0.03, 127.0.0.1:56639][0m
+INFO 2024-01-19 15:42:58,083 runserver>log_action WebSocket DISCONNECT /ws/print/KB/ [127.0.0.1:56634]
