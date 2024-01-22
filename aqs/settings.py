@@ -39,6 +39,7 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 50000 # higher than the count of fields (default
 INSTALLED_APPS = [
     'base',
     'crm',
+    'booking',
 
     'django.contrib.admin',
     'django.contrib.auth',

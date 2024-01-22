@@ -198,9 +198,8 @@ def sch_shutdown(branch_input, nowUTC):
     sch.add_job(job_shutdown, 'date', run_date=nextreset, id=branch.bcode, args=[branch])
 
 
-def job_shutdown(branch_input):    
+def job_shutdown(branch):    
     datetime_now =timezone.now()
-    branch = Branch.objects.get(id=branch_input.id)
     localtime_now = funUTCtoLocaltime(datetime_now, branch.timezone )
     bcode = branch.bcode
 

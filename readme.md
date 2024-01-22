@@ -4,7 +4,6 @@
 
 - CRM System (Customer Relationship Management) Initial
 - Booking System (Appointment system) Initial
-- New table timeslot, columes: branch, booking_date, room, show_date, show_end_date, user, name, phone, email, status, remark, created_at, updated_at
 
 <h3 style="color:orange;">Version 8.1.6</h3>
 
