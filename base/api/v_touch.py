@@ -13,6 +13,10 @@ import random
 from .v_softkey_sub import cc_autocall
 from .serializers import touchkeysSerivalizer
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 def gensecuritycode():
     sc = ''
   
@@ -108,7 +112,8 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
         # waiting on queue +1
         route.waiting = route.waiting + 1
         route.save()
-        
+        logger.info(route.branch.bcode + '-' + route.countertype.name + '-' + route.tickettype + ' (+1) route.waiting = ' + str(route.waiting))
+                
         # -if user is not None:
         # -    return Response(user.username) 
         # add DB -> Ticket, TicketLog, TicketData

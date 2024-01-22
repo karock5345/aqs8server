@@ -208,6 +208,8 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
                 ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
                 ticket.ticketroute.save()
                 ticket.save()
+                logger.info(ticket.ticketroute.branch.bcode + '-' + ticket.ticketroute.countertype.name + '-' +  ticket.ticketroute.tickettype + ' (-1) route.waiting = ' + str(ticket.ticketroute.waiting))
+                
 
                 # add ticketlog
                 TicketLog.objects.create(
@@ -387,6 +389,7 @@ def funCounterComplete(user, branch, countertype, counterstatus, logtext, rx_app
             route = routeobj[0] 
             route.waiting = route.waiting + 1
             route.save()
+            logger.info(route.branch.bcode + '-' + route.countertype.name + '-' + route.tickettype + ' (+1) route.waiting = ' + str(route.waiting))
 
             countertype = route.countertype
             ticket.countertype = countertype
@@ -671,6 +674,8 @@ def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, co
         if ticket.status == 'waiting':
             ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
             ticket.ticketroute.save()
+            route = ticket.ticketroute
+            logger.info(route.branch.bcode + '-' + route.countertype.name + '-' + route.tickettype + ' (-1) route.waiting = ' + str(route.waiting))
             # websocket to softkey (update Queue List)
             wssendql(branch.bcode, countertype.name, ticket, 'del')
         ticket.user = user
@@ -886,6 +891,8 @@ def funVoid(user, tickett, td, datetime_now):
     if tickett.status == 'waiting':
         tickett.ticketroute.waiting = tickett.ticketroute.waiting - 1
         tickett.ticketroute.save()
+        route = tickett.ticketroute
+        logger.info(route.branch.bcode + '-' + route.countertype.name + '-' + route.tickettype + ' (-1) route.waiting = ' + str(route.waiting))
     tickett.user = user
     tickett.status = 'void'
     tickett.save()
