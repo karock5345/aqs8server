@@ -190,6 +190,19 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
                     msg =  dict({'msg':'TicketData not found ' }) 
 
             if status == dict({}) :
+                # lcounterstatus = [
+                # 'waiting',
+                # 'calling',
+                # 'processing',
+                # 'done',
+                # 'miss',
+                # 'void',
+                # 'ACW',
+                # 'AUX',
+                # 'ready',
+                # 'login',
+                # 'walking',               
+                # ]
                 td.calltime = datetime_now
                 td.calluser = user
                 time_diff = datetime_now - td.starttime
@@ -208,7 +221,9 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
                 ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
                 ticket.ticketroute.save()
                 ticket.save()
-                logger.info(ticket.ticketroute.branch.bcode + '-' + ticket.ticketroute.countertype.name + '-' +  ticket.ticketroute.tickettype + ' (-1) route.waiting = ' + str(ticket.ticketroute.waiting))
+                route = ticket.ticketroute
+                logger.info(route.branch.bcode + '-' + route.countertype.name + '-' + route.tickettype + ' (-1) route.waiting = ' + str(route.waiting))
+
                 
 
                 # add ticketlog

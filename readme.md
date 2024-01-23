@@ -1853,6 +1853,9 @@ Window -> Color -> Default Blue -> Red 44 Green 123 Blue 201
 # Copy file from PC to Linux server
 pscp c:/music.mp3  ubuntu@192.168.1.222:/home/ubuntu/
 
+# Copy file from Mac to Linux server
+scp -rp /path/to/local/dir usrname@orgname.edu:/path/to/remote/dir
+
 # Network (Internet) speed test
 ```bash
 sudo apt install speedtest-cli
