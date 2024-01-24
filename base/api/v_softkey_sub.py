@@ -1006,7 +1006,7 @@ def cc_ready(user, branch, countertype, counterstatus, logtext, rx_app, rx_versi
 
     # if counter status is 'processing' then complete the ticket
     if counterstatus.status == lcounterstatus[lcounterstatus.index('processing')] :
-        status, msg = funCounterComplete(user, branch, countertype, counterstatus, 'Ticket completed by SK:Ready', rx_app, rx_version, datetime_now)
+        status, msg = funCounterComplete(user, branch, countertype, counterstatus, 'Ticket completed by SK:Ready ', rx_app, rx_version, datetime_now)
         logger.warning('cc_ready status = ' + str(status) + ' msg = ' + str(msg))
         
     if counterstatus.status == lcounterstatus[lcounterstatus.index('ACW')] :
@@ -1062,17 +1062,32 @@ def cc_aux(user, branch, countertype, counterstatus, logtext, rx_app, rx_version
         if objusl.count() > 0 :
             for usl in objusl:
                 usl.endtime = datetime_now
-                usl.save()         
-    if counterstatus.status == lcounterstatus[lcounterstatus.index('ready')] :
+                usl.save()
+        
+        # When counter have ticket with ACW status then remove it
+        if counterstatus.tickettemp != None:
+            ticket = counterstatus.tickettemp
+            # add ticketlog
+            TicketLog.objects.create(
+                tickettemp=ticket,
+                logtime=datetime_now,
+                app = rx_app,
+                version = rx_version,
+                logtext='ACW completed by SK:AUX '  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + ticket.tickettime.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+                user=user,
+            )
+            counterstatus.tickettemp = None
+            counterstatus.save()
+        
+    elif counterstatus.status == lcounterstatus[lcounterstatus.index('ready')] :
         # user status log for ready status
         objusl = UserStatusLog.objects.filter( Q(user=user) & Q(endtime=None) & Q(status=lcounterstatus[lcounterstatus.index('ready')]) )
         if objusl.count() > 0 :
             for usl in objusl:
                 usl.endtime = datetime_now
                 usl.save()  
-    if counterstatus.status == lcounterstatus[lcounterstatus.index('processing')] :
-        status, msg = funCounterComplete(user, branch, countertype, counterstatus, 'Ticket completed by SK:AUX', rx_app, rx_version, datetime_now)
-
+    elif counterstatus.status == lcounterstatus[lcounterstatus.index('processing')] :
+        status, msg = funCounterComplete(user, branch, countertype, counterstatus, 'Ticket completed by SK:AUX ', rx_app, rx_version, datetime_now)
 
     # change status to AUX
     counterstatus.status = lcounterstatus[lcounterstatus.index('AUX')]
@@ -1108,7 +1123,7 @@ def cc_acw(user, branch, countertype, counterstatus, logtext, rx_app, rx_version
     if counterstatus.status == lcounterstatus[lcounterstatus.index('processing')] :
         tticket = counterstatus.tickettemp
         ticket = counterstatus.tickettemp.ticket
-        status, msg = funCounterComplete(user, branch, countertype, counterstatus, 'Ticket completed by SK:ACW', rx_app, rx_version, datetime_now)
+        status, msg = funCounterComplete(user, branch, countertype, counterstatus, 'Ticket completed by SK:ACW ', rx_app, rx_version, datetime_now)
         # counter status add ticket back
         counterstatus.tickettemp = tticket
         counterstatus.save()

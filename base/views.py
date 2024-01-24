@@ -289,7 +289,7 @@ def SoftkeyView(request, pk):
                 getticket = getform['ticketnumber'].value()
                 
                 if error == '':
-                    status, msg, context_get = funCounterGet(getticket, '', '', request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket :', 'Softkey-web', softkey_version, datetime_now)
+                    status, msg, context_get = funCounterGet(getticket, '', '', request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket ', 'Softkey-web', softkey_version, datetime_now)
                     if status['status'] == 'Error':
                         messages.error(request, msg['msg'] + ' ' + getticket)
                     context = context | context_counter | {'pk':pk} | context_get
@@ -299,21 +299,21 @@ def SoftkeyView(request, pk):
                 return redirect('softkey', pk=pk)
                 # return render(request, 'base/softkey.html', context)
             elif action == 'call':
-                status, msg, context_call = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket :', 'Softkey-web', softkey_version, datetime_now)
+                status, msg, context_call = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
                 if status['status'] == 'Error':
                     messages.error(request, msg['msg'])
                 if status['status'] == 'OK' and context_call == {'data': {}} :
                     messages.success(request, 'No ticket to call.')
             elif action == 'recall':
-                status, msg = funCounterRecall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Recall ticket :', 'Softkey-web', softkey_version, datetime_now)
+                status, msg = funCounterRecall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Recall ticket ', 'Softkey-web', softkey_version, datetime_now)
                 if status['status'] == 'OK' :
                     messages.success(request, 'Recall ticket success.')
             elif action == 'process':
-                status, msg = funCounterProcess(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Process ticket :', 'Softkey-web', softkey_version, datetime_now)
+                status, msg = funCounterProcess(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Process ticket ', 'Softkey-web', softkey_version, datetime_now)
             elif action == 'done':
-                status, msg = funCounterComplete(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Done ticket :', 'Softkey-web', softkey_version, datetime_now)
+                status, msg = funCounterComplete(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Done ticket ', 'Softkey-web', softkey_version, datetime_now)
             elif action == 'miss':
-                status, msg = funCounterMiss(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Miss ticket :', 'Softkey-web', softkey_version, datetime_now)
+                status, msg = funCounterMiss(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Miss ticket ', 'Softkey-web', softkey_version, datetime_now)
             # elif action == 'void':
             #     voidform = voidForm(request.POST)
             #     voidttype = voidform['tickettype'].value()

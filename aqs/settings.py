@@ -15,7 +15,7 @@ from django.contrib.messages import constants as messages
 from datetime import timedelta
 from celery import Celery
 
-aqs_version = '8.2.0'
+aqs_version = '8.2.1'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
