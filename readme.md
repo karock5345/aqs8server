@@ -101,6 +101,8 @@ sudo systemctl reload postgresql.service
 
 ## Upgrade Server v8.1.5 (Phase 4)
 - Switch to new server
+- Fixed bug : base > v_softkey_sub.py > cc_aux : Counter can not call ticket when counter is hold a ticket > ACW > AUX > Ready
+- gUnicorn workers = 1 for production server
 
 ## Upgrade Server v8.1.4 (Phase 3)
 - new Python lib : django-crequest (for raw data report)
