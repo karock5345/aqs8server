@@ -113,7 +113,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
         route.waiting = route.waiting + 1
         route.save()
 
-        logger.info(route.branch.bcode + '-' + route.countertype.name + '-' + route.tickettype + ' (+1) route.waiting = ' + str(route.waiting))
+        # logger.info(route.branch.bcode + '-' + route.countertype.name + '-' + route.tickettype + ' (+1) route.waiting = ' + str(route.waiting))
                 
         # -if user is not None:
         # -    return Response(user.username) 

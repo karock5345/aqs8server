@@ -233,8 +233,8 @@ def job_shutdown(branch):
         tr.displastcounter = ''
         tr.waiting = 0        
         tr.save()
-        route = tr
-        logger.info(route.branch.bcode + '-' + route.countertype.name + '-' + route.tickettype + ' (reset 0) route.waiting = ' + str(route.waiting))
+        # route = tr
+        # logger.info(route.branch.bcode + '-' + route.countertype.name + '-' + route.tickettype + ' (reset 0) route.waiting = ' + str(route.waiting))
 
     # all ticket .locked=ture
     ttobj = TicketTemp.objects.filter( Q(branch=branch))
