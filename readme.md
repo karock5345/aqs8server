@@ -641,6 +641,7 @@ for download CSV file (aqs/tasks.py -> export_raw)
 
 - Fixed bug : base > v_softkey_sub.py > cc_aux : Counter can not call ticket when counter is hold a ticket > ACW > AUX > Ready
 - gUnicorn workers = 1 for production (because of the call Ticket function is not work when workers > 1)
+- Softkey web cc version release waiting list, only 'void' with the list and 'call' is disabled
 
 # For Project PCCW 2023
 ## Main Server (WTT)
