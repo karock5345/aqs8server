@@ -610,12 +610,12 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 - New API for Display Panel get latest 5 tickets 
 - Websocket disp_ for Display Panel replace from webtv_, websocket webtv_ only for HTML online ticket number
 - Websocket disp_ new commands: call, removeall, wait
-### <span style="color:orange;">**Version 8.1.3 (pccw223_v2)**</span>
+### <span style="color:orange;">**Version 8.1.3 (pccw2023_v2)**</span>
 - Report function (1. Staff performance report, 2. Total ticket report)
 - Add new API function for migrate 2 branchs (SCP, WTT) old DB to new server (http://127.0.0.1:8000/api/db2/?app=postman&version=8.1)
 
 
-### <span style="color:orange;">**Version 8.1.4 (pccw223_v3)**</span>
+### <span style="color:orange;">**Version 8.1.4 (pccw2023_v3)**</span>
 - Fixed bug : Callcentre mode, auto call ticket the counter sequence is not correct
 - Add function : Update user add "reset password"
 - Add new API function for migrate HHT old DB to new server (http://127.0.0.1:8000/api/db_tst/?app=postman&version=8.1)
@@ -632,12 +632,12 @@ curl -X GET http://127.0.0.1/sch/shutdown/?bcode=<branch code>&app=curl&version=
 - Re-design "New User" page and change to 4 steps
 - Add new page for "User List"
 
-### <span style="color:orange;">**Version 8.1.5 (pccw223_v4)**</span>
+### <span style="color:orange;">**Version 8.1.5 (pccw2023_v4)**</span>
 - Romove API function for migrate DB for HHT 
 - Fixed bug : deploy to production server, the static_deploy folder is not correct 
 for download CSV file (aqs/tasks.py -> export_raw)
 
-<h3 style="color:orange;">Version 8.1.6 (pccw223_v5)</h3>
+<h3 style="color:orange;">Version 8.1.6 (pccw2023_v5)</h3>
 
 - Fixed bug : base > v_softkey_sub.py > cc_aux : Counter can not call ticket when counter is hold a ticket > ACW > AUX > Ready
 - gUnicorn workers = 1 for production (because of the call Ticket function is not work when workers > 1)
