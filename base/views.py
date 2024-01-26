@@ -243,7 +243,7 @@ def SoftkeyView(request, pk):
                 # check if tr.tickettype in l_userttype
                 if tr.tickettype in l_userttype:
                     b_userttype = True
-                    print (tr.tickettype + ' in ' + str(l_userttype))
+                    # print (tr.tickettype + ' in ' + str(l_userttype))
                 # if context_counter['data']['userttype'].find(tr.tickettype + ',') != -1:
                 #     b_userttype = True
                 newrow = {

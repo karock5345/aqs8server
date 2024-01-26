@@ -35346,3 +35346,254 @@ INFO 2024-01-25 06:04:21,231 runserver>log_action WebSocket CONNECT /ws/cs/31/ [
 INFO 2024-01-25 06:04:21,233 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:50169]
 INFO 2024-01-25 06:04:21,234 base>consumers>connect connecting:ql_ST_c
 INFO 2024-01-25 06:04:21,237 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:50169]
+INFO 2024-01-26 18:34:41,326 base>apps>ready    *** Queuing System Started ***
+INFO 2024-01-26 18:34:42,310 base>apps>ready    *** Queuing System Started ***
+INFO 2024-01-26 18:34:42,316 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-01-26 18:34:42,845 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-01-26 18:34:42,846 base>views><module> -SCH- Now:01/26/2024, 10:34:42
+INFO 2024-01-26 18:34:42,923 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-01-26 16:42:00 Local:2024-01-27 00:42:00
+INFO 2024-01-26 18:34:42,924 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2024-01-26 18:34:42,924 base>views>sch_shutdown    -SCH- 2024-01-26 16:42:00 > 2024-01-26 10:34:42 [Yes]
+INFO 2024-01-26 18:34:42,943 base>views>sch_shutdown  -SCH- Next reset [MK]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:34:42,943 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:34:42,943 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:34:42 [Yes]
+INFO 2024-01-26 18:34:42,948 base>views>sch_shutdown  -SCH- Next reset [HY]: 2024-01-26 18:00:00 Local:2024-01-27 02:00:00
+INFO 2024-01-26 18:34:42,949 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2024-01-26 18:34:42,949 base>views>sch_shutdown    -SCH- 2024-01-26 18:00:00 > 2024-01-26 10:34:42 [Yes]
+INFO 2024-01-26 18:34:42,954 base>views>sch_shutdown  -SCH- Next reset [SW]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:34:42,955 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:34:42,955 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:34:42 [Yes]
+INFO 2024-01-26 18:34:42,960 base>views>sch_shutdown  -SCH- Next reset [TST]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:34:42,961 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:34:42,961 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:34:42 [Yes]
+INFO 2024-01-26 18:34:42,966 base>views>sch_shutdown  -SCH- Next reset [ST]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:34:42,967 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:34:42,967 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:34:42 [Yes]
+INFO 2024-01-26 18:34:45,137 runserver>log_action [32mHTTP GET /softkey/32/ 302 [0.03, 127.0.0.1:58321][0m
+INFO 2024-01-26 18:34:45,173 runserver>log_action [mHTTP GET /login/ 200 [0.03, 127.0.0.1:58321][0m
+INFO 2024-01-26 18:34:45,391 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:58321][0m
+INFO 2024-01-26 18:34:45,399 runserver>log_action [36mHTTP GET /static/images/avatar.svg 304 [0.00, 127.0.0.1:58321][0m
+INFO 2024-01-26 18:34:49,259 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:58321][0m
+INFO 2024-01-26 18:34:50,453 runserver>log_action [32mHTTP GET /admin/base/ticketlog/ 302 [0.02, 127.0.0.1:58321][0m
+INFO 2024-01-26 18:34:50,513 runserver>log_action [mHTTP GET /admin/login/?next=/admin/base/ticketlog/ 200 [0.06, 127.0.0.1:58321][0m
+INFO 2024-01-26 18:34:50,619 runserver>log_action [36mHTTP GET /static/admin/css/base.css 304 [0.00, 127.0.0.1:58321][0m
+INFO 2024-01-26 18:34:50,624 runserver>log_action [36mHTTP GET /static/admin/css/nav_sidebar.css 304 [0.00, 127.0.0.1:58321][0m
+INFO 2024-01-26 18:34:50,626 runserver>log_action [36mHTTP GET /static/admin/css/dark_mode.css 304 [0.00, 127.0.0.1:58322][0m
+INFO 2024-01-26 18:34:50,631 runserver>log_action [36mHTTP GET /static/admin/css/login.css 304 [0.00, 127.0.0.1:58322][0m
+INFO 2024-01-26 18:34:50,634 runserver>log_action [36mHTTP GET /static/admin/css/responsive.css 304 [0.00, 127.0.0.1:58322][0m
+INFO 2024-01-26 18:34:50,636 runserver>log_action [36mHTTP GET /static/admin/js/nav_sidebar.js 304 [0.00, 127.0.0.1:58321][0m
+WARNING 2024-01-26 18:34:50,701 log>log_response Not Found: /favicon.ico
+WARNING 2024-01-26 18:34:50,701 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.04, 127.0.0.1:58321][0m
+INFO 2024-01-26 18:34:51,365 runserver>log_action [mHTTP GET /my/KB/A/006/0eg/ 200 [0.02, 127.0.0.1:58322][0m
+INFO 2024-01-26 18:34:51,366 runserver>log_action [mHTTP GET /webtv/KB/Reception/ 200 [0.02, 127.0.0.1:58321][0m
+INFO 2024-01-26 18:34:51,531 runserver>log_action [36mHTTP GET /static/styles/styletv.css 304 [0.00, 127.0.0.1:58321][0m
+INFO 2024-01-26 18:34:51,533 runserver>log_action [36mHTTP GET /static/icofont/icofont.min.css 304 [0.00, 127.0.0.1:58322][0m
+INFO 2024-01-26 18:34:51,535 runserver>log_action [36mHTTP GET /static/images/logo_ts.png 304 [0.00, 127.0.0.1:58362][0m
+INFO 2024-01-26 18:34:51,655 runserver>log_action WebSocket HANDSHAKING /ws/webtv/KB/Reception/ [127.0.0.1:58363]
+INFO 2024-01-26 18:34:51,730 base>consumers>connect connecting:webtv_KB_Reception
+INFO 2024-01-26 18:34:51,733 runserver>log_action [36mHTTP GET /static/icofont/fonts/icofont.woff2 304 [0.00, 127.0.0.1:58362][0m
+INFO 2024-01-26 18:34:54,419 runserver>log_action WebSocket DISCONNECT /ws/webtv/KB/Reception/ [127.0.0.1:58363]
+INFO 2024-01-26 18:37:43,499 runserver>log_action [32mHTTP POST /login/ 302 [0.17, 127.0.0.1:58473][0m
+INFO 2024-01-26 18:37:43,533 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:58473][0m
+INFO 2024-01-26 18:39:45,664 base>apps>ready    *** Queuing System Started ***
+INFO 2024-01-26 18:39:45,749 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-01-26 18:39:45,750 base>views><module> -SCH- Now:01/26/2024, 10:39:45
+INFO 2024-01-26 18:39:45,815 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-01-26 16:42:00 Local:2024-01-27 00:42:00
+INFO 2024-01-26 18:39:45,816 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2024-01-26 18:39:45,816 base>views>sch_shutdown    -SCH- 2024-01-26 16:42:00 > 2024-01-26 10:39:45 [Yes]
+INFO 2024-01-26 18:39:45,833 base>views>sch_shutdown  -SCH- Next reset [MK]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:39:45,833 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:39:45,833 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:39:45 [Yes]
+INFO 2024-01-26 18:39:45,837 base>views>sch_shutdown  -SCH- Next reset [HY]: 2024-01-26 18:00:00 Local:2024-01-27 02:00:00
+INFO 2024-01-26 18:39:45,837 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2024-01-26 18:39:45,838 base>views>sch_shutdown    -SCH- 2024-01-26 18:00:00 > 2024-01-26 10:39:45 [Yes]
+INFO 2024-01-26 18:39:45,842 base>views>sch_shutdown  -SCH- Next reset [SW]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:39:45,843 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:39:45,843 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:39:45 [Yes]
+INFO 2024-01-26 18:39:45,848 base>views>sch_shutdown  -SCH- Next reset [TST]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:39:45,849 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:39:45,849 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:39:45 [Yes]
+INFO 2024-01-26 18:39:45,855 base>views>sch_shutdown  -SCH- Next reset [ST]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:39:45,855 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:39:45,855 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:39:45 [Yes]
+INFO 2024-01-26 18:41:24,841 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.03, 127.0.0.1:59665][0m
+INFO 2024-01-26 18:41:26,724 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.03, 127.0.0.1:59665][0m
+INFO 2024-01-26 18:41:28,373 runserver>log_action [mHTTP GET /softkey/32/ 200 [0.03, 127.0.0.1:59665][0m
+INFO 2024-01-26 18:41:28,394 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:59676]
+INFO 2024-01-26 18:41:28,400 base>consumers>connect connecting:printerstatus_ST
+INFO 2024-01-26 18:41:28,408 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:59676]
+INFO 2024-01-26 18:41:28,434 runserver>log_action WebSocket HANDSHAKING /ws/cs/32/ [127.0.0.1:59679]
+INFO 2024-01-26 18:41:28,438 base>consumers>connect connecting:cs_32
+INFO 2024-01-26 18:41:28,443 runserver>log_action WebSocket CONNECT /ws/cs/32/ [127.0.0.1:59679]
+INFO 2024-01-26 18:41:28,465 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:59680]
+INFO 2024-01-26 18:41:28,469 base>consumers>connect connecting:ql_ST_c
+INFO 2024-01-26 18:41:28,473 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:59680]
+INFO 2024-01-26 18:41:30,422 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_ST_AA319_38U sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-26 18:41:30,428 base>ws>wsSendTicketStatus ...Done
+INFO 2024-01-26 18:41:30,428 base>ws>wscounterstatus channel_group_name:cs_32 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-26 18:41:30,431 base>ws>wscounterstatus ...Done
+WARNING 2024-01-26 18:41:30,431 base>v_softkey_sub>cc_ready cc_ready status = {'status': 'OK'} msg = {'msg': 'Ticket done.'}
+INFO 2024-01-26 18:41:30,452 base>ws>wscounterstatus channel_group_name:cs_32 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-26 18:41:30,455 base>ws>wscounterstatus ...Done
+INFO 2024-01-26 18:41:30,518 base>ws>wssendwebtv channel_group_name:webtv_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-26 18:41:30,520 base>ws>wssendwebtv ...Done
+INFO 2024-01-26 18:41:30,520 base>ws>wssenddispcall channel_group_name:disp_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-26 18:41:30,522 base>ws>wssenddispcall ...Done
+INFO 2024-01-26 18:41:30,524 base>ws>wssendql channel_group_name:ql_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-26 18:41:30,528 base>ws>wssendql ...Done
+INFO 2024-01-26 18:41:30,532 base>ws>wsSendTicketStatus channel_group_name:ticketstatus_ST_AA323_ijc sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-26 18:41:30,534 base>ws>wsSendTicketStatus ...Done
+INFO 2024-01-26 18:41:30,535 base>ws>wssendvoice channel_group_name:voice_ST_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-26 18:41:30,537 base>ws>wssendvoice ...Done
+INFO 2024-01-26 18:41:30,537 base>ws>wssendflashlight channel_group_name:flashlight_ST sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-26 18:41:30,538 base>ws>wssendflashlight ...Done
+INFO 2024-01-26 18:41:30,539 base>ws>wscounterstatus channel_group_name:cs_32 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'address': ('127.0.0.1', '6379')}])
+INFO 2024-01-26 18:41:30,543 base>ws>wscounterstatus ...Done
+WARNING 2024-01-26 18:41:30,543 base>v_softkey_sub>cc_ready cc_ready status = {'status': 'OK'} msg = {} context_call = {'data': {'priority': 'time', 'mask': 'AA,BA,CA,DA,EA,', 'tickettype': 'AA', 'ticketnumber': '323', 'tickettime': datetime.datetime(2024, 1, 25, 6, 3, 59, 897622, tzinfo=datetime.timezone.utc)}}
+INFO 2024-01-26 18:41:30,556 runserver>log_action [32mHTTP POST /softkey/32/ 302 [0.23, 127.0.0.1:59665][0m
+INFO 2024-01-26 18:41:30,597 runserver>log_action [mHTTP GET /softkey/32/ 200 [0.04, 127.0.0.1:59665][0m
+INFO 2024-01-26 18:41:30,604 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:59676]
+INFO 2024-01-26 18:41:30,605 runserver>log_action WebSocket DISCONNECT /ws/cs/32/ [127.0.0.1:59679]
+INFO 2024-01-26 18:41:30,606 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:59680]
+INFO 2024-01-26 18:41:30,624 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:59689]
+INFO 2024-01-26 18:41:30,628 base>consumers>connect connecting:printerstatus_ST
+INFO 2024-01-26 18:41:30,634 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:59689]
+INFO 2024-01-26 18:41:30,653 runserver>log_action WebSocket HANDSHAKING /ws/cs/32/ [127.0.0.1:59690]
+INFO 2024-01-26 18:41:30,657 base>consumers>connect connecting:cs_32
+INFO 2024-01-26 18:41:30,661 runserver>log_action WebSocket CONNECT /ws/cs/32/ [127.0.0.1:59690]
+INFO 2024-01-26 18:41:30,683 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:59691]
+INFO 2024-01-26 18:41:30,686 base>consumers>connect connecting:ql_ST_c
+INFO 2024-01-26 18:41:30,691 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:59691]
+INFO 2024-01-26 18:52:13,413 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.02, 127.0.0.1:60045][0m
+INFO 2024-01-26 18:52:13,434 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:59689]
+INFO 2024-01-26 18:52:13,435 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:59691]
+INFO 2024-01-26 18:52:13,435 runserver>log_action WebSocket DISCONNECT /ws/cs/32/ [127.0.0.1:59690]
+INFO 2024-01-26 18:52:16,821 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.02, 127.0.0.1:60045][0m
+INFO 2024-01-26 18:52:19,736 runserver>log_action [mHTTP GET /softkey/32/ 200 [0.03, 127.0.0.1:60045][0m
+INFO 2024-01-26 18:52:19,761 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:60056]
+INFO 2024-01-26 18:52:19,765 base>consumers>connect connecting:printerstatus_ST
+INFO 2024-01-26 18:52:19,770 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:60056]
+INFO 2024-01-26 18:52:19,785 runserver>log_action WebSocket HANDSHAKING /ws/cs/32/ [127.0.0.1:60057]
+INFO 2024-01-26 18:52:19,789 base>consumers>connect connecting:cs_32
+INFO 2024-01-26 18:52:19,792 runserver>log_action WebSocket CONNECT /ws/cs/32/ [127.0.0.1:60057]
+INFO 2024-01-26 18:52:19,816 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:60058]
+INFO 2024-01-26 18:52:19,820 base>consumers>connect connecting:ql_ST_c
+INFO 2024-01-26 18:52:19,823 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:60058]
+INFO 2024-01-26 18:52:35,876 runserver>log_action [mHTTP GET /softkey/32/ 200 [0.03, 127.0.0.1:60045][0m
+INFO 2024-01-26 18:52:35,882 runserver>log_action WebSocket DISCONNECT /ws/cs/32/ [127.0.0.1:60057]
+INFO 2024-01-26 18:52:35,883 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:60056]
+INFO 2024-01-26 18:52:35,884 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:60058]
+INFO 2024-01-26 18:52:35,893 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:60071]
+INFO 2024-01-26 18:52:35,897 base>consumers>connect connecting:printerstatus_ST
+INFO 2024-01-26 18:52:35,903 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:60071]
+INFO 2024-01-26 18:52:35,926 runserver>log_action WebSocket HANDSHAKING /ws/cs/32/ [127.0.0.1:60072]
+INFO 2024-01-26 18:52:35,929 base>consumers>connect connecting:cs_32
+INFO 2024-01-26 18:52:35,935 runserver>log_action WebSocket CONNECT /ws/cs/32/ [127.0.0.1:60072]
+INFO 2024-01-26 18:52:35,957 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:60073]
+INFO 2024-01-26 18:52:35,960 base>consumers>connect connecting:ql_ST_c
+INFO 2024-01-26 18:52:35,964 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:60073]
+INFO 2024-01-26 18:55:13,732 autoreload>trigger_reload D:\Projects\PCCW2023\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2024-01-26 18:55:14,887 base>apps>ready    *** Queuing System Started ***
+INFO 2024-01-26 18:55:14,892 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-01-26 18:55:15,009 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-01-26 18:55:15,010 base>views><module> -SCH- Now:01/26/2024, 10:55:15
+INFO 2024-01-26 18:55:15,074 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-01-26 16:42:00 Local:2024-01-27 00:42:00
+INFO 2024-01-26 18:55:15,074 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2024-01-26 18:55:15,074 base>views>sch_shutdown    -SCH- 2024-01-26 16:42:00 > 2024-01-26 10:55:15 [Yes]
+INFO 2024-01-26 18:55:15,092 base>views>sch_shutdown  -SCH- Next reset [MK]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:55:15,092 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:55:15,092 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:55:15 [Yes]
+INFO 2024-01-26 18:55:15,098 base>views>sch_shutdown  -SCH- Next reset [HY]: 2024-01-26 18:00:00 Local:2024-01-27 02:00:00
+INFO 2024-01-26 18:55:15,099 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2024-01-26 18:55:15,099 base>views>sch_shutdown    -SCH- 2024-01-26 18:00:00 > 2024-01-26 10:55:15 [Yes]
+INFO 2024-01-26 18:55:15,106 base>views>sch_shutdown  -SCH- Next reset [SW]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:55:15,107 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:55:15,107 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:55:15 [Yes]
+INFO 2024-01-26 18:55:15,113 base>views>sch_shutdown  -SCH- Next reset [TST]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:55:15,113 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:55:15,114 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:55:15 [Yes]
+INFO 2024-01-26 18:55:15,119 base>views>sch_shutdown  -SCH- Next reset [ST]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:55:15,119 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:55:15,120 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:55:15 [Yes]
+INFO 2024-01-26 18:55:20,245 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.04, 127.0.0.1:60163][0m
+INFO 2024-01-26 18:55:21,672 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.03, 127.0.0.1:60163][0m
+INFO 2024-01-26 18:55:23,206 runserver>log_action [mHTTP GET /softkey/32/ 200 [0.03, 127.0.0.1:60163][0m
+INFO 2024-01-26 18:55:23,229 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:60172]
+INFO 2024-01-26 18:55:23,255 base>consumers>connect connecting:printerstatus_ST
+INFO 2024-01-26 18:55:23,262 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:60172]
+INFO 2024-01-26 18:55:23,287 runserver>log_action WebSocket HANDSHAKING /ws/cs/32/ [127.0.0.1:60175]
+INFO 2024-01-26 18:55:23,291 base>consumers>connect connecting:cs_32
+INFO 2024-01-26 18:55:23,295 runserver>log_action WebSocket CONNECT /ws/cs/32/ [127.0.0.1:60175]
+INFO 2024-01-26 18:55:23,318 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:60176]
+INFO 2024-01-26 18:55:23,321 base>consumers>connect connecting:ql_ST_c
+INFO 2024-01-26 18:55:23,326 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:60176]
+INFO 2024-01-26 18:55:44,313 autoreload>trigger_reload D:\Projects\PCCW2023\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2024-01-26 18:55:45,468 base>apps>ready    *** Queuing System Started ***
+INFO 2024-01-26 18:55:45,473 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-01-26 18:55:45,594 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-01-26 18:55:45,594 base>views><module> -SCH- Now:01/26/2024, 10:55:45
+INFO 2024-01-26 18:55:45,659 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-01-26 16:42:00 Local:2024-01-27 00:42:00
+INFO 2024-01-26 18:55:45,659 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2024-01-26 18:55:45,660 base>views>sch_shutdown    -SCH- 2024-01-26 16:42:00 > 2024-01-26 10:55:45 [Yes]
+INFO 2024-01-26 18:55:45,677 base>views>sch_shutdown  -SCH- Next reset [MK]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:55:45,678 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:55:45,678 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:55:45 [Yes]
+INFO 2024-01-26 18:55:45,683 base>views>sch_shutdown  -SCH- Next reset [HY]: 2024-01-26 18:00:00 Local:2024-01-27 02:00:00
+INFO 2024-01-26 18:55:45,683 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2024-01-26 18:55:45,684 base>views>sch_shutdown    -SCH- 2024-01-26 18:00:00 > 2024-01-26 10:55:45 [Yes]
+INFO 2024-01-26 18:55:45,689 base>views>sch_shutdown  -SCH- Next reset [SW]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:55:45,689 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:55:45,690 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:55:45 [Yes]
+INFO 2024-01-26 18:55:45,696 base>views>sch_shutdown  -SCH- Next reset [TST]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:55:45,696 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:55:45,697 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:55:45 [Yes]
+INFO 2024-01-26 18:55:45,702 base>views>sch_shutdown  -SCH- Next reset [ST]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:55:45,702 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:55:45,702 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:55:45 [Yes]
+INFO 2024-01-26 18:55:46,025 runserver>log_action [mHTTP GET /branch/ 200 [0.06, 127.0.0.1:60188][0m
+INFO 2024-01-26 18:55:47,534 runserver>log_action [mHTTP GET /user/ 200 [0.05, 127.0.0.1:60188][0m
+INFO 2024-01-26 18:55:48,666 runserver>log_action [mHTTP GET /update-user/1/ 200 [0.11, 127.0.0.1:60188][0m
+INFO 2024-01-26 18:55:54,221 runserver>log_action [32mHTTP POST /update-user/1/ 302 [0.12, 127.0.0.1:60188][0m
+INFO 2024-01-26 18:55:54,267 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:60188][0m
+INFO 2024-01-26 18:55:59,688 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.02, 127.0.0.1:60188][0m
+INFO 2024-01-26 18:56:01,505 runserver>log_action [mHTTP GET /softkey_login/6/ 200 [0.03, 127.0.0.1:60188][0m
+INFO 2024-01-26 18:56:03,635 runserver>log_action [mHTTP GET /softkey/32/ 200 [0.03, 127.0.0.1:60188][0m
+INFO 2024-01-26 18:56:03,657 runserver>log_action WebSocket HANDSHAKING /ws/pstatus/ST/ [127.0.0.1:60222]
+INFO 2024-01-26 18:56:03,685 base>consumers>connect connecting:printerstatus_ST
+INFO 2024-01-26 18:56:03,693 runserver>log_action WebSocket CONNECT /ws/pstatus/ST/ [127.0.0.1:60222]
+INFO 2024-01-26 18:56:03,720 runserver>log_action WebSocket HANDSHAKING /ws/cs/32/ [127.0.0.1:60225]
+INFO 2024-01-26 18:56:03,725 base>consumers>connect connecting:cs_32
+INFO 2024-01-26 18:56:03,729 runserver>log_action WebSocket CONNECT /ws/cs/32/ [127.0.0.1:60225]
+INFO 2024-01-26 18:56:03,751 runserver>log_action WebSocket HANDSHAKING /ws/ql/ST/c/ [127.0.0.1:60226]
+INFO 2024-01-26 18:56:03,756 base>consumers>connect connecting:ql_ST_c
+INFO 2024-01-26 18:56:03,762 runserver>log_action WebSocket CONNECT /ws/ql/ST/c/ [127.0.0.1:60226]
+INFO 2024-01-26 18:56:08,829 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:60188][0m
+INFO 2024-01-26 18:56:08,854 runserver>log_action WebSocket DISCONNECT /ws/cs/32/ [127.0.0.1:60225]
+INFO 2024-01-26 18:56:08,856 runserver>log_action WebSocket DISCONNECT /ws/ql/ST/c/ [127.0.0.1:60226]
+INFO 2024-01-26 18:56:08,856 runserver>log_action WebSocket DISCONNECT /ws/pstatus/ST/ [127.0.0.1:60222]
+INFO 2024-01-26 18:56:09,716 runserver>log_action [mHTTP GET /update-user/1/ 200 [0.10, 127.0.0.1:60188][0m
+INFO 2024-01-26 18:56:14,763 runserver>log_action [32mHTTP POST /update-user/1/ 302 [0.12, 127.0.0.1:60188][0m
+INFO 2024-01-26 18:56:14,807 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:60188][0m
+INFO 2024-01-26 18:56:33,438 autoreload>trigger_reload D:\Projects\PCCW2023\AQS8.1\server\aqs\base\views.py changed, reloading.
+INFO 2024-01-26 18:56:34,462 base>apps>ready    *** Queuing System Started ***
+INFO 2024-01-26 18:56:34,467 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-01-26 18:56:34,590 base>views><module> -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-01-26 18:56:34,590 base>views><module> -SCH- Now:01/26/2024, 10:56:34
+INFO 2024-01-26 18:56:34,662 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-01-26 16:42:00 Local:2024-01-27 00:42:00
+INFO 2024-01-26 18:56:34,662 base>views>sch_shutdown    -SCH- reset time: 16:42:00 Local Time: 00:42:00
+INFO 2024-01-26 18:56:34,663 base>views>sch_shutdown    -SCH- 2024-01-26 16:42:00 > 2024-01-26 10:56:34 [Yes]
+INFO 2024-01-26 18:56:34,683 base>views>sch_shutdown  -SCH- Next reset [MK]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:56:34,683 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:56:34,684 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:56:34 [Yes]
+INFO 2024-01-26 18:56:34,689 base>views>sch_shutdown  -SCH- Next reset [HY]: 2024-01-26 18:00:00 Local:2024-01-27 02:00:00
+INFO 2024-01-26 18:56:34,690 base>views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2024-01-26 18:56:34,690 base>views>sch_shutdown    -SCH- 2024-01-26 18:00:00 > 2024-01-26 10:56:34 [Yes]
+INFO 2024-01-26 18:56:34,695 base>views>sch_shutdown  -SCH- Next reset [SW]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:56:34,695 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:56:34,695 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:56:34 [Yes]
+INFO 2024-01-26 18:56:34,701 base>views>sch_shutdown  -SCH- Next reset [TST]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:56:34,701 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:56:34,701 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:56:34 [Yes]
+INFO 2024-01-26 18:56:34,706 base>views>sch_shutdown  -SCH- Next reset [ST]: 2024-01-26 15:59:59 Local:2024-01-26 23:59:59
+INFO 2024-01-26 18:56:34,706 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-01-26 18:56:34,707 base>views>sch_shutdown    -SCH- 2024-01-26 15:59:59 > 2024-01-26 10:56:34 [Yes]
