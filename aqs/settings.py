@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'django_apscheduler',
     'captcha',
     'rest_framework_simplejwt',
-
+    'django_q',
 ]
 
 

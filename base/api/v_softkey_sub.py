@@ -4,6 +4,7 @@ from .v_display import newdisplayvoice
 from base.models import CounterStatus, CounterType, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus, UserStatusLog
 from base.ws import *
 import logging
+from django_q.tasks import async_task
 
 logger = logging.getLogger(__name__)
 softkey_version = '8.1.0.0'
@@ -750,19 +751,6 @@ def funCounterLogout(counterstatus, datetime_now):
         msg =  dict({'msg':logoutOK})  
     return status, msg
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber, countertype):
     status = dict({})
     msg = dict({})
@@ -901,7 +889,6 @@ def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber,
     context = dict({'data':context})
     return status, msg, context
 
-
 def funVoid(user, tickett, td, datetime_now):
     # update ticket 
     # waiting on queue
@@ -930,7 +917,6 @@ def funVoid(user, tickett, td, datetime_now):
     wssenddispwait(tickett.branch, tickett.countertype, tickett)
     # websocket to web my ticket
     wsSendTicketStatus(tickett.branch.bcode, tickett.tickettype, tickett.ticketnumber, tickett.securitycode)
-
 
 def logcounterlogout (user, countertype, counternumber, logintime, logouttime) -> str :
     sOut = 'Error'
@@ -1023,8 +1009,6 @@ def cc_autocall(countertype, rx_app, rx_version, datetime_now):
     #     print('Counter:' + cs.counternumber)
     #     print('Next counter = ' + str(countertype.nextcounter))
         
-
-
 def cc_ready(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     # Softkey pass 'Ready' button
 

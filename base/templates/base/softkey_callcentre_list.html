@@ -171,24 +171,24 @@
             {% endfor %}
           </div>
 
-          <!-- <div id="qlshow_header" class="qlist_item qlist_header">              
+          <div id="qlshow_header" class="qlist_item qlist_header">              
             <button id="qlistshow_btn" class="btn btn--main btn--pill">Show list</button>
-          </div> -->
-          <!-- <div id="qlhide_header" class="qlist_item qlist_header">              
+          </div>
+          <div id="qlhide_header" class="qlist_item qlist_header">              
             <button id="qlisthide_btn" class="btn btn--main btn--pill">Hide list</button>
-          </div>           -->
-          <!-- <div id="qlist_area" class="qlist_container">       
+          </div>          
+          <div id="qlist_area" class="qlist_container">       
             {% for ticket in qlist %}
               <div id="ticket_{{ticket.tickettype}}{{ticket.ticketnumber}}{{ticket.tickettime}}" class="qlist_item">
                 <div class="qlist_ticketnumber">{{ticket.tickettype}}{{ticket.ticketnumber}}</div>
                 <div class="qlist_tickettime">{{ticket.tickettime_local}}</div>
                 <div>
-                  <a class="btn btn--main" href="{% url 'softkeyget' pk ticket.id %}">Call</a>
+                  <!-- <a class="btn btn--main" href="{% url 'softkeyget' pk ticket.id %}">Call</a> -->
                   <a class="btn btn--del" href="{% url 'softkeyvoid' pk ticket.id %}">Void</a>
                 </div>
               </div>
             {% endfor %}
-          </div> -->
+          </div>
 
           <div class="qlist_item qlist_footer">
               
@@ -230,8 +230,8 @@
         // var get_area_html = document.getElementById('get_area').innerHTML;
         var hidden = true;
         var listshow = null;
-        // var btn_listshow = document.getElementById('qlistshow_btn');
-        // var btn_listhide = document.getElementById('qlisthide_btn');
+        var btn_listshow = document.getElementById('qlistshow_btn');
+        var btn_listhide = document.getElementById('qlisthide_btn');
         var btn_max = document.getElementById('btn_max');
         var maxwin = null;
         var html_m_menu = document.getElementById('id_mobile-menu').innerHTML;
@@ -271,36 +271,36 @@
 
 
 
-        // // var can hold data when refresh page
-        // listshow = localStorage.getItem("key_listshow");
-        // if (listshow == null) {
-        //   listshow = "show";
-        // }
-        // showorhideqlist();
+        // var can hold data when refresh page
+        listshow = localStorage.getItem("key_listshow");
+        if (listshow == null) {
+          listshow = "show";
+        }
+        showorhideqlist();
 
-        // btn_listhide.addEventListener('click', function() {
-        //   listshow = "hide";
-        //   showorhideqlist();
-        // });
-        // btn_listshow.addEventListener('click', function() {
-        //   listshow = "show";
-        //   showorhideqlist();
-        // });
+        btn_listhide.addEventListener('click', function() {
+          listshow = "hide";
+          showorhideqlist();
+        });
+        btn_listshow.addEventListener('click', function() {
+          listshow = "show";
+          showorhideqlist();
+        });
   
-        // function showorhideqlist(){
-        //   if (listshow == "hide") {
-        //     document.getElementById('qlist_area').style.display = "none";
-        //     document.getElementById('qlhide_header').style.display = "none";
-        //     document.getElementById('qlshow_header').style.display = "block";
-        //     // document.getElementById('qlshow_header').hidden = false; why not work?
+        function showorhideqlist(){
+          if (listshow == "hide") {
+            document.getElementById('qlist_area').style.display = "none";
+            document.getElementById('qlhide_header').style.display = "none";
+            document.getElementById('qlshow_header').style.display = "block";
+            // document.getElementById('qlshow_header').hidden = false; why not work?
 
-        //   } else {
-        //     document.getElementById('qlist_area').style.display = "block";
-        //     document.getElementById('qlhide_header').style.display = "block";
-        //     document.getElementById('qlshow_header').style.display = "none";
-        //   }
-        //   localStorage.setItem("key_listshow", listshow);
-        // }
+          } else {
+            document.getElementById('qlist_area').style.display = "block";
+            document.getElementById('qlhide_header').style.display = "block";
+            document.getElementById('qlshow_header').style.display = "none";
+          }
+          localStorage.setItem("key_listshow", listshow);
+        }
 
 
         // new funcition to change the status (input status, ticket type, ticket number)
@@ -534,25 +534,25 @@
                   // 
                   subtotal = 1;
                   // add to list
-                  // document.getElementById("qlist_area").innerHTML = document.getElementById("qlist_area").innerHTML + 
-                  // `
-                  // <div id="ticket_` + ttype + tno + ttime + `" class="qlist_item">
-                  //   <div class="qlist_ticketnumber">` + ttype + tno + `</div>
-                  //   <div class="qlist_tickettime">` + ttime_local + `</div>
-                  //   <a class="btn btn--del" href=` + 
-                  //   `/softkey_void/` +
-                  //   c_pk + 
-                  //   `/` +
-                  //   ttid + `/` +
-                  //   `>Void</a>
-                  // </div>
-                  // `
+                  document.getElementById("qlist_area").innerHTML = document.getElementById("qlist_area").innerHTML + 
+                  `
+                  <div id="ticket_` + ttype + tno + ttime + `" class="qlist_item">
+                    <div class="qlist_ticketnumber">` + ttype + tno + `</div>
+                    <div class="qlist_tickettime">` + ttime_local + `</div>
+                    <a class="btn btn--del" href=` + 
+                    `/softkey_void/` +
+                    c_pk + 
+                    `/` +
+                    ttid + `/` +
+                    `>Void</a>
+                  </div>
+                  `
            
 
                 } else if (cmd == 'del') {
                   subtotal = -1;
                   // remove from list
-                  // document.getElementById("ticket_" + ttype + tno + ttime).outerHTML = '';
+                  document.getElementById("ticket_" + ttype + tno + ttime).outerHTML = '';
                 }
                 
                 // update subtotal
