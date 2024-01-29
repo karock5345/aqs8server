@@ -53,6 +53,7 @@ class Branch(models.Model):
        null=False,
     )
     queuemask =  models.CharField(default='A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,', max_length=200, null=False)
+    websoftkey_show_waitinglist = models.BooleanField(default=True)
 
     # ticket settings
     tickettimestart = models.TimeField(default=datetime.time(8, 0, 0))

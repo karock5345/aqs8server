@@ -1,3 +1,4 @@
+  const c_waitinglist_show = JSON.parse(document.getElementById('js-waitinglist_show').textContent);
   const c_wsh = JSON.parse(document.getElementById('js-wsh').textContent);
   const c_pk = JSON.parse(document.getElementById('js-pk').textContent);
   const c_bcode = JSON.parse(document.getElementById('js-bcode').textContent);
@@ -279,33 +280,37 @@
             // 
             subtotal = 1;
             // add to list
-            document.getElementById("qlist_area").innerHTML = document.getElementById("qlist_area").innerHTML + 
-            `
-            <div id="ticket_` + ttype + tno + ttime + `" class="qlist_item">
-              <div class="qlist_ticketnumber">` + ttype + tno + `</div>
-              <div class="qlist_tickettime">` + ttime_local_short + `</div>
-              <div>
-                <a class="btn btn--main" href=` + 
-                `/softkey_get/` +
-                c_pk + 
-                `/` +
-                ttid + `/` +
-                `>Call</a>
-                <a class="btn btn--del" href=` + 
-                `/softkey_void/` +
-                c_pk + 
-                `/` +
-                ttid + `/` +
-                `>Void</a>
+            if (c_waitinglist_show == true) {
+              document.getElementById("qlist_area").innerHTML = document.getElementById("qlist_area").innerHTML + 
+              `
+              <div id="ticket_` + ttype + tno + ttime + `" class="qlist_item">
+                <div class="qlist_ticketnumber">` + ttype + tno + `</div>
+                <div class="qlist_tickettime">` + ttime_local_short + `</div>
+                <div>
+                  <a class="btn btn--main" href=` + 
+                  `/softkey_get/` +
+                  c_pk + 
+                  `/` +
+                  ttid + `/` +
+                  `>Call</a>
+                  <a class="btn btn--del" href=` + 
+                  `/softkey_void/` +
+                  c_pk + 
+                  `/` +
+                  ttid + `/` +
+                  `>Void</a>
+                </div>
               </div>
-            </div>
-            `
+              `
+            };
 
 
           } else if (cmd == 'del') {
             subtotal = -1;
             // remove from list
-            document.getElementById("ticket_" + ttype + tno + ttime).outerHTML = '';
+            if (c_waitinglist_show == true) {
+              document.getElementById("ticket_" + ttype + tno + ttime).outerHTML = '';
+            };
           }
           
           // update subtotal

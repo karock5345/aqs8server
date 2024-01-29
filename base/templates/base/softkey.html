@@ -160,23 +160,33 @@
             {% endfor %}
           </div>
 
-          <div id="qlshow_header" class="qlist_item qlist_header">              
-            <button id="qlistshow_btn" class="btn btn--main btn--pill">Show list</button>
+          <div id="qlshow_header" class="qlist_item qlist_header">
+            {% if waitinglist_show == True %}
+              <button id="qlistshow_btn" class="btn btn--main btn--pill">Show list</button>
+            {% else %}
+              <button id="qlistshow_btn" style="display: none;">Show list</button>
+            {% endif %}
           </div>
-          <div id="qlhide_header" class="qlist_item qlist_header">              
-            <button id="qlisthide_btn" class="btn btn--main btn--pill">Hide list</button>
+          <div id="qlhide_header" class="qlist_item qlist_header">
+            {% if waitinglist_show == True %}
+              <button id="qlisthide_btn" class="btn btn--main btn--pill">Hide list</button>
+            {% else %}
+              <button id="qlisthide_btn" style="display: none;">Hide list</button>
+            {% endif %}
           </div>          
-          <div id="qlist_area" class="qlist_container">       
-            {% for ticket in qlist %}
-              <div id="ticket_{{ticket.tickettype}}{{ticket.ticketnumber}}{{ticket.tickettime}}" class="qlist_item">
-                <div class="qlist_ticketnumber">{{ticket.tickettype}}{{ticket.ticketnumber}}</div>
-                <div class="qlist_tickettime">{{ticket.tickettime_local_short}}</div>
-                <div>
-                  <a class="btn btn--main" href="{% url 'softkeyget' pk ticket.id %}">Call</a>
-                  <a class="btn btn--del" href="{% url 'softkeyvoid' pk ticket.id %}">Void</a>
+          <div id="qlist_area" class="qlist_container">
+            {% if waitinglist_show == True %}
+              {% for ticket in qlist %}
+                <div id="ticket_{{ticket.tickettype}}{{ticket.ticketnumber}}{{ticket.tickettime}}" class="qlist_item">
+                  <div class="qlist_ticketnumber">{{ticket.tickettype}}{{ticket.ticketnumber}}</div>
+                  <div class="qlist_tickettime">{{ticket.tickettime_local_short}}</div>
+                  <div>
+                    <a class="btn btn--main" href="{% url 'softkeyget' pk ticket.id %}">Call</a>
+                    <a class="btn btn--del" href="{% url 'softkeyvoid' pk ticket.id %}">Void</a>
+                  </div>
                 </div>
-              </div>
-            {% endfor %}
+              {% endfor %}
+            {% endif %}
           </div>
 
           <div class="qlist_item qlist_footer">
@@ -195,6 +205,7 @@
       {{ data.countertype|json_script:"js-countertype"}}
       {{ data.tickettype|json_script:"js-tickettype" }}
       {{ data.ticketnumber|json_script:"js-ticketnumber" }}
+      {{ waitinglist_show|json_script:"js-waitinglist_show" }}
       <script src="{% static 'js/softkey.js' %}"></script>
     </main>
 

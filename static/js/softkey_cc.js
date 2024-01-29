@@ -1,4 +1,4 @@
-
+        const c_waitinglist_show = JSON.parse(document.getElementById('js-waitinglist_show').textContent);
         const c_wsh = JSON.parse(document.getElementById('js-wsh').textContent);
         const c_pk = JSON.parse(document.getElementById('js-pk').textContent);
         const c_bcode = JSON.parse(document.getElementById('js-bcode').textContent);
@@ -285,15 +285,15 @@
         };
 
 
-        // websocket for Q list
+        // websocket for Q list        
         const QListSocket = new WebSocket(
-            c_wsh
-            + window.location.host
-            + '/ws/ql/'
-            + c_bcode
-            + '/'
-            + c_ct
-            + '/'
+          c_wsh
+          + window.location.host
+          + '/ws/ql/'
+          + c_bcode
+          + '/'
+          + c_ct
+          + '/'
         );
         QListSocket.onmessage = function(e) {
             // # {"cmd":"add",
@@ -332,25 +332,27 @@
                   // 
                   subtotal = 1;
                   // add to list
-                  document.getElementById("qlist_area").innerHTML = document.getElementById("qlist_area").innerHTML + 
-                  `
-                  <div id="ticket_` + ttype + tno + ttime + `" class="qlist_item">
-                    <div class="qlist_ticketnumber">` + ttype + tno + `</div>
-                    <div class="qlist_tickettime">` + ttime_local_short + `</div>
-                    <a class="btn btn--del" href=` + 
-                    `/softkey_void/` +
-                    c_pk + 
-                    `/` +
-                    ttid + `/` +
-                    `>Void</a>
-                  </div>
-                  `
-           
-
+                  if (c_waitinglist_show == true) {
+                    document.getElementById("qlist_area").innerHTML = document.getElementById("qlist_area").innerHTML + 
+                    `
+                    <div id="ticket_` + ttype + tno + ttime + `" class="qlist_item">
+                      <div class="qlist_ticketnumber">` + ttype + tno + `</div>
+                      <div class="qlist_tickettime">` + ttime_local_short + `</div>
+                      <a class="btn btn--del" href=` + 
+                      `/softkey_void/` +
+                      c_pk + 
+                      `/` +
+                      ttid + `/` +
+                      `>Void</a>
+                    </div>
+                    `
+                  };
                 } else if (cmd == 'del') {
                   subtotal = -1;
                   // remove from list
-                  document.getElementById("ticket_" + ttype + tno + ttime).outerHTML = '';
+                  if (c_waitinglist_show == true) {
+                    document.getElementById("ticket_" + ttype + tno + ttime).outerHTML = '';
+                  };
                 }
                 
                 // update subtotal
@@ -364,4 +366,6 @@
         QListSocket.onclose = function(e) {
             console.error('Q List socket closed unexpectedly');
         };
+        
+        
 

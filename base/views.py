@@ -203,14 +203,16 @@ def SoftkeyView(request, pk):
     auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
     context = {
     'aqs_version':aqs_version, 
-    'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
+    'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes,
     }
 
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
         datetime_now_local = funUTCtoLocal(datetime_now, counterstatus.countertype.branch.timezone)
         str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
-  
+        context = context | {
+            'waitinglist_show':counterstatus.countertype.branch.websoftkey_show_waitinglist,
+            }
     except:
         error = 'CounterStatus not found.'
     if counterstatus == None:
@@ -2487,7 +2489,7 @@ def SettingsUpdateView(request, pk):
     else:
         userright = 'counter'
 
-    print(userright)
+    # print(userright)
     if request.method == 'POST':
         if userright == 'admin':
             branchsettingsform = BranchSettingsForm_Admin(request.POST, instance=branch, prefix='branchsettingsform')

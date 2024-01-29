@@ -61,6 +61,7 @@ class BranchSettingsForm_Admin(ModelForm):
     usersinglelogin = forms.fields.BooleanField(label='User single login', required=False)
     enabledsms = forms.fields.BooleanField(label='Enable SMS', required=False)
     smsmsg = forms.fields.CharField(label='SMS Message', required=False)
+    websoftkey_show_waitinglist = forms.fields.BooleanField(label='Web-Softkey show waiting list', required=False)
 
     class Meta:
         model = Branch
@@ -70,7 +71,7 @@ class BranchSettingsForm_Admin(ModelForm):
                   'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
                   'displayenabled', 'displayflashtime', 
                   'voiceenabled', 'language1', 'language2', 'language3', 'language4', 
-                  'usersinglelogin', 'enabledsms', 'smsmsg']
+                  'usersinglelogin', 'enabledsms', 'smsmsg', 'websoftkey_show_waitinglist']
 
     def __init__(self, *args, **kwargs):
         super(BranchSettingsForm_Admin, self).__init__(*args, **kwargs)
@@ -115,6 +116,7 @@ class BranchSettingsForm_Adv(ModelForm):
     usersinglelogin = forms.fields.BooleanField(label='User single login', required=False)
     # enabledsms = forms.fields.BooleanField(label='Enable SMS', required=False)
     # smsmsg = forms.fields.CharField(label='SMS Message', required=False)
+    websoftkey_show_waitinglist = forms.fields.BooleanField(label='Web-Softkey show waiting list', required=False)
 
     class Meta:
         model = Branch
@@ -131,7 +133,7 @@ class BranchSettingsForm_Adv(ModelForm):
                   'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
                   'displayenabled', 'displayflashtime', 
                   'voiceenabled', 'language1', 'language2', 'language3', 'language4', 
-                  'usersinglelogin']
+                  'usersinglelogin', 'websoftkey_show_waitinglist']
     def __init__(self, *args, **kwargs):
         super(BranchSettingsForm_Adv, self).__init__(*args, **kwargs)
         # change time from DB utc to local time
