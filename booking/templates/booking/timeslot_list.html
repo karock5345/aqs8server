@@ -1,0 +1,54 @@
+{% load static %}
+<div class="roomArea">
+{% for ts in timeslots %}
+    {% if ts.active == True %}
+    <a href="{% url 'update-user' user.id %}" >
+    <div class="roomListRoom" >
+    {% else %}
+    <a href="{% url 'update-user' user.id %}">
+    <div class="roomListRoom__hide">
+    {% endif %}
+
+        <div class="roomListRoom__header">
+            <div class="roomListRoom__author">               
+                
+                    <div class="avatar avatar--small active">
+                        <img src="{% static 'images/avatar.svg' %}" />
+                    </div>
+                    <span>{{ts.booking_date}}</span>
+               
+            </div>
+            <div class="roomListRoom__actions">
+                <span>Slots: {{ts.slot_available}} / {{ts.slot_total}}</span>
+            </div>
+        </div>
+        <div class="roomListRoom__content">
+            Show from:{{ts.show_date}} to:{{ts.show_end_date}} 
+
+        </div>
+        <div class="roomListRoom__meta">
+            <div class="roomListRoom__joined">
+
+                {% include 'base/images/branch.svg' %}
+
+                Branch:
+                {{ts.branch.bcode}}
+            </div>
+
+            {% if ts.active == False %}
+                <p class="roomListRoom__topic_red">
+                    Dis-active
+                </p>
+            {% else %}
+                <p class="roomListRoom__topic">
+                    Active
+                </p>
+            {% endif %}            
+        </div>
+    </div>
+    </a>
+
+{% endfor %}
+
+
+</div>

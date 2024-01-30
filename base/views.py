@@ -15,6 +15,7 @@ from base.decorators import *
 from django.urls import reverse_lazy
 
 from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch, Ticket, UserStatusLog
+from booking.models import TimeSlot, Booking, BookingLog
 from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, resetForm
 from .forms import BranchSettingsForm_Admin, BranchSettingsForm_Adv, BranchSettingsForm_Basic
 from .forms import CaptchaForm, getForm, voidForm, newTicketTypeForm, UserFormSuper, UserFormManager, UserFormSupport, UserFormAdminSelf
@@ -40,6 +41,7 @@ from django.templatetags.static import static
 from celery.result import AsyncResult
 from django.conf import settings
 from base.sch.views import sch_shutdown
+from django.db.models import BooleanField, Value
 
 logger = logging.getLogger(__name__)
 
@@ -3141,7 +3143,7 @@ def MenuView(request):
     # return render (request, 'base/m-menu.html', context)
 
 def auth_data(user):
-
+    datetime_now =timezone.now()
     if user.is_superuser == True :
         auth_profilelist = UserProfile.objects.all()
         auth_userlist = User.objects.all()
@@ -3152,6 +3154,15 @@ def auth_data(user):
         auth_ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
         auth_routes = TicketRoute.objects.all().order_by('branch','countertype', 'tickettype', 'step')
         auth_countertype = CounterType.objects.all()
+        
+        # add column for active to True
+        auth_timeslots_active = TimeSlot.objects.filter(Q(booking_date__gte=datetime_now))\
+            .annotate(active=Value(True, output_field=BooleanField()))
+        # add column for active to False
+        auth_timeslots_disactive = TimeSlot.objects.filter(Q(booking_date__lt=datetime_now))\
+            .annotate(active=Value(False, output_field=BooleanField()))
+        auth_timeslots =  auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'booking_date')
+
     elif user.groups.filter(name='admin').exists() == True:
         auth_profilelist = UserProfile.objects.all()
         auth_userlist = User.objects.all().exclude(Q(is_superuser=True))
@@ -3310,7 +3321,16 @@ def auth_data(user):
         auth_grouplist = Group.objects.filter(name__in=grouplist)
         # sort auth_grouplist by name
         auth_grouplist = auth_grouplist.order_by('name')
-    return(auth_branchs, auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats, auth_routes, auth_countertype)
+        
+    return(auth_branchs, 
+           auth_userlist, auth_userlist_active,
+           auth_grouplist, 
+           auth_profilelist, 
+           auth_ticketformats, 
+           auth_routes, 
+           auth_countertype, 
+           auth_timeslots,
+           )
 
 
 def checkticketrouteform(form):
