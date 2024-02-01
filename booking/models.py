@@ -17,13 +17,13 @@ A_REJECT = 'reject'
 A_NOSHOW = 'noshow'
 A_COMPLETE = 'complete'
 ACTION = [
-    (A_NEW, ('New booking')),
-    (A_CHANGE, ('Change booking')),
-    (A_CANCEL, ('Cancel booking')),
-    (A_CONFIRM, ('Confirm booking')),
-    (A_REJECT, ('Reject booking')),
+    (A_NEW, ('New')),
+    (A_CHANGE, ('Change')),
+    (A_CANCEL, ('Cancel')),
+    (A_CONFIRM, ('Confirm')),
+    (A_REJECT, ('Reject')),
     (A_NOSHOW, ('No show')),
-    (A_COMPLETE, ('Completed booking')),
+    (A_COMPLETE, ('Completed')),
 ]
 
 S_PENDING = 'pending'
@@ -73,17 +73,13 @@ class Booking(models.Model):
         return self.name
     
 class BookingLog(models.Model):
-    booking = models.ForeignKey(Booking, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    member = models.ForeignKey(Member, on_delete=models.CASCADE)
-    name = models.CharField(max_length=100)
-    email = models.EmailField(null=True, blank=True)
-    mobilephone_country = models.CharField(max_length=200, null=True, blank=True)
-    mobilephone = models.CharField(max_length=200, null=True, blank=True)
+    timeslot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE, null=True)
+    booking = models.ForeignKey(Booking, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    member = models.ForeignKey(Member, on_delete=models.CASCADE, null=True)
+    logtext = models.TextField(max_length=200, null=True, blank=True)
 
     action = models.CharField(max_length=100, default=A_NEW, choices=ACTION,) # new, change, cancel, confirm, reject, complete
     remark = models.TextField(max_length=200, null=True, blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
-    def __str__(self):
-        return self.booking.name + ' ' + self.action

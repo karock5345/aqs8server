@@ -1,29 +1,32 @@
 {% load static %}
+{% load tz %}
 <div class="roomArea">
 {% for ts in timeslots %}
     {% if ts.active == True %}
-    <a href="{% url 'update-user' user.id %}" >
+    <a href="{% url 'ts-update' ts.id %}" >
     <div class="roomListRoom" >
     {% else %}
-    <a href="{% url 'update-user' user.id %}">
+    <a href="{% url 'ts-update' ts.id %}">
     <div class="roomListRoom__hide">
     {% endif %}
 
         <div class="roomListRoom__header">
+            
             <div class="roomListRoom__author">               
                 
-                    <div class="avatar avatar--small active">
-                        <img src="{% static 'images/avatar.svg' %}" />
-                    </div>
-                    <span>{{ts.booking_date}}</span>
-               
+                <div class="list__svg">
+                    {% include 'base/images/timeslot.svg' %}
+                </div>
+                   
+                <span>{{ts.booking_date|timezone:ts.branch.timezone|date:'Y-m-d H:i' }}</span>
+                    
             </div>
             <div class="roomListRoom__actions">
-                <span>Slots: {{ts.slot_available}} / {{ts.slot_total}}</span>
+                <span>Slots: {{ ts.slot_available }} / {{ts.slot_total}}</span>
             </div>
         </div>
         <div class="roomListRoom__content">
-            Show from:{{ts.show_date}} to:{{ts.show_end_date}} 
+            Show from: {{ts.show_date|timezone:ts.branch.timezone|date:'Y-m-d H:i'}} >> {{ts.show_end_date|timezone:ts.branch.timezone|date:'Y-m-d H:i'}} 
 
         </div>
         <div class="roomListRoom__meta">

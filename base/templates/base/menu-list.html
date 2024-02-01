@@ -27,16 +27,28 @@
       </a>   
     </li>
     <li>
-      <a href="{% url 'settingssummary' %}" class="active">
+      <a href="{% url 'supersummary' %}" class="active">
         <div class="header__logo">
           <div class="list__svg">
-            {% include 'base/images/settings.svg' %}
+            {% include 'base/images/branch.svg' %}
           </div>
-          <div>Settings</div>
-        </div>      
+          <div>Supervisor</div>
+        </div> 
         <span>{{ branchs.count }}</span>
       </a>
     </li>
+    <li>
+      <a href="{% url 'reports' %}" class="active">
+        <div class="header__logo">
+          <div class="list__svg">
+            {% include 'base/images/table.svg' %}
+          </div>
+          <div>Data log</div>
+        </div> 
+        <span>3</span>
+      </a>
+    </li>    
+    
     <li>
       <a href="{% url 'tfsummary' %}" class="active">
         <div class="header__logo">
@@ -58,27 +70,27 @@
         </div> 
         <span>{{ routes.count }}</span>
       </a>
-    </li>        
-    <li>
-      <a href="{% url 'supersummary' %}" class="active">
-        <div class="header__logo">
-          <div class="list__svg">
-            {% include 'base/images/branch.svg' %}
-          </div>
-          <div>Supervisor</div>
-        </div> 
-        <span>{{ branchs.count }}</span>
-      </a>
     </li>
     <li>
-      <a href="{% url 'reports' %}" class="active">
+      <a href="{% url 'bookingtimeslot' %}" class="active">
         <div class="header__logo">
           <div class="list__svg">
-            {% include 'base/images/table.svg' %}
+            {% include 'base/images/timeslot.svg' %}
           </div>
-          <div>Data log</div>
+          <div>TimeSlots</div>
         </div> 
-        <span>3</span>
+        <span>{{ timeslots.count }}</span>
+      </a>
+    </li>    
+    <li>
+      <a href="{% url 'settingssummary' %}" class="active">
+        <div class="header__logo">
+          <div class="list__svg">
+            {% include 'base/images/settings.svg' %}
+          </div>
+          <div>Settings</div>
+        </div>      
+        <span>{{ branchs.count }}</span>
       </a>
     </li>
   {% elif request.user.groups.all.0.name == 'support' or request.user.groups.all.0.name == 'supervisor' or request.user.groups.all.0.name == 'manager' %}  
@@ -93,17 +105,7 @@
         <span>{{ users.count }}</span>
       </a>   
     </li>
-    <li>
-      <a href="{% url 'settingssummary' %}" class="active">
-        <div class="header__logo">
-          <div class="list__svg">
-            {% include 'base/images/settings.svg' %}
-          </div>
-          <div>Settings</div>
-        </div>      
-        <span>{{ branchs.count }}</span>
-      </a>
-    </li>
+
     
     <li>
       <a href="{% url 'supersummary' %}" class="active">
@@ -127,20 +129,31 @@
         <span>3</span>
       </a>
     </li>
-    
+    <li>
+      <a href="{% url 'bookingtimeslot' %}" class="active">
+        <div class="header__logo">
+          <div class="list__svg">
+            {% include 'base/images/timeslot.svg' %}
+          </div>
+          <div>TimeSlots</div>
+        </div> 
+        <span>{{ timeslots.count }}</span>
+      </a>
+    </li>     
+    <li>
+      <a href="{% url 'settingssummary' %}" class="active">
+        <div class="header__logo">
+          <div class="list__svg">
+            {% include 'base/images/settings.svg' %}
+          </div>
+          <div>Settings</div>
+        </div>      
+        <span>{{ branchs.count }}</span>
+      </a>
+    </li>
   {% elif request.user.groups.all.0.name == 'reporter' %}
 
-    <li>
-      <a href="{% url 'settingssummary' %}" class="active">
-        <div class="header__logo">
-          <div class="list__svg">
-            {% include 'base/images/settings.svg' %}
-          </div>
-          <div>Settings</div>
-        </div>      
-        <span>{{ branchs.count }}</span>
-      </a>
-    </li>
+
     <li>
       <a href="{% url 'supersummary' %}" class="active">
         <div class="header__logo">
@@ -161,6 +174,17 @@
           <div>Data log</div>
         </div> 
         <span>3</span>
+      </a>
+    </li>
+    <li>
+      <a href="{% url 'settingssummary' %}" class="active">
+        <div class="header__logo">
+          <div class="list__svg">
+            {% include 'base/images/settings.svg' %}
+          </div>
+          <div>Settings</div>
+        </div>      
+        <span>{{ branchs.count }}</span>
       </a>
     </li>
   {% endif %}

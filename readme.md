@@ -5,6 +5,7 @@
 - Fixed bug : base > v_softkey_sub.py > cc_aux : Counter can not call ticket when counter is hold a ticket > ACW > AUX > Ready
 - gUnicorn workers = 1 for production (because of the call Ticket function is not work when workers > 1)
 - Web Softkey (include Call Centre) waiting list can be hide by Admin, Support, Manager
+- Fixed bug : web User -> click 'Show All' only one hiden user per click
 
 <h3 style="color:orange;">Version 8.2.0</h3>
 

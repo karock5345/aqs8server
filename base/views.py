@@ -202,10 +202,20 @@ def SoftkeyView(request, pk):
     str_now = '--:--'
     datetime_now =timezone.now()
 
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
     context = {
     'aqs_version':aqs_version, 
-    'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes,
+    'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
     }
 
     try:
@@ -396,7 +406,16 @@ def SoftkeyLoginBranchView(request):
     error = ''
     context = {}
 
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
 
     user = request.user
     # get user auth branchs
@@ -416,7 +435,7 @@ def SoftkeyLoginBranchView(request):
                 counterstatus.append(cs)
         context = {
         'aqs_version':aqs_version, 
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes,
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         'counterstatus':counterstatus,
         }
 
@@ -429,7 +448,16 @@ def SoftkeyLoginView(request, pk):
     error = ''
     context = {}
 
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
 
     branch = Branch.objects.get(id=pk)
 
@@ -466,7 +494,7 @@ def SoftkeyLoginView(request, pk):
 
         context = {
         'aqs_version':aqs_version, 
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes,
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         'counterstatus':counterstatus,
         }
 
@@ -479,9 +507,20 @@ def SoftkeyLogoutView(request, pk):
     error = ''
     context = {}
     datetime_now =timezone.now()
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
     context = {
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         }
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
@@ -510,11 +549,21 @@ def SoftkeyCallView(request, pk):
     error = ''
     context = {}
     datetime_now =timezone.now()
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)    
 
     context = {
         'aqs_version':aqs_version, 
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         }
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
@@ -545,10 +594,21 @@ def SoftkeyProcessView(request, pk):
     error = ''
     context = {}
     datetime_now =timezone.now()
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+    
     context = {
         'aqs_version':aqs_version, 
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         }
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
@@ -575,10 +635,21 @@ def SoftkeyMissView(request, pk):
     error = ''
     context = {}
     datetime_now =timezone.now()
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
     context = {
         'aqs_version':aqs_version, 
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         }
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
@@ -604,10 +675,21 @@ def SoftkeyRecallView(request, pk):
     error = ''
     context = {}
     datetime_now =timezone.now()
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
     context = {
         'aqs_version':aqs_version, 
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         }
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
@@ -635,10 +717,21 @@ def SoftkeyDoneView(request, pk):
     error = ''
     context = {}
     datetime_now =timezone.now()
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
     context = {
         'aqs_version':aqs_version, 
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         }
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
@@ -1689,7 +1782,18 @@ def Report_Staff_Result(request):
         if selected_user != None  :
             report_result5 ='User:' + selected_user.username
         report_result = report_result1 + '\n' + report_result2 + '\n' + report_result3 + '\n' + report_result4 + '\n' + report_result5
-        auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+        
+        auth_branchs , \
+        auth_userlist, \
+        auth_userlist_active, \
+        auth_grouplist, \
+        auth_profilelist, \
+        auth_ticketformats , \
+        auth_routes, \
+        auth_countertype, \
+        auth_timeslots, \
+        = auth_data(request.user)
+
         # convert queryset to string
         querystr_auth_userlist = pickle.dumps(auth_userlist.query)
 
@@ -1770,7 +1874,18 @@ def Report_Staff_Result(request):
         '''
 
         if user == None  :
-            auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+            
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
           
             for user in auth_userlist:
                 userlogobj = UserStatusLog.objects.filter(
@@ -1895,7 +2010,18 @@ def Report_Staff_Result(request):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def Reports(request):
 
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))    
     # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
     # routes = TicketRoute.objects.all().order_by('branch','tickettype','step')
@@ -1910,7 +2036,7 @@ def Reports(request):
     'branchs':auth_branchs,  
     'ticketformats':auth_ticketformats, 
     'routes':auth_routes,
-    'countertypes':auth_countertype,
+    'countertypes':auth_countertype, 'timeslots':auth_timeslots,
     }
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/r-main.html', context)
@@ -1963,7 +2089,18 @@ def SuperVisorView(request, pk):
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def SuperVisorListView(request):  
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
  
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
     #users = User.objects.exclude( Q(is_superuser=True) )
@@ -1974,7 +2111,7 @@ def SuperVisorListView(request):
     # profiles = UserProfile.objects.filter(Q(user=users.user))
     #profiles = users.userprofile_set.all()
     
-    context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,}
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/supervisors.html', context)
 
@@ -1990,28 +2127,7 @@ def TicketRouteNewView(request):
     if request.method == 'POST':
         error = ''
         form = trForm(request.POST, auth_branchs=auth_branchs)
-        error, newroute = checkticketrouteform(form)
-                            # if error == '':
-                            #     if form.is_valid() == False:
-                            #         error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
-                            #         error = 'An error occurcd during registration: '+ error_string
-                            # # newroute.tickettype  = newroute.tickettype.upper()
-                            # if error == '':
-                            #     newroute = form.save(commit=False)
-                            #     if newroute.branch == None :
-                            #         error = 'An error occurcd : Branch is blank'
-                            # if error == '':
-                            #     if newroute.countertype == None :
-                            #         error = 'An error occurcd : Counter Type is blank'
-                            # if error == '' :
-                            #     #check ticket type should be letter
-                            #     if newroute.tickettype.isalpha() == False :
-                            #         error = 'An error occurcd : Ticket Type should be letter'
-                            # # newroute.step is int so no need to check
-                            # # if error == '' :
-                            #     #check step should be number
-                            #     # if newroute.step.isnumeric() == False :
-                            #     #     error = 'An error occurcd : Step should be number'
+        error, newroute = checkticketrouteform(form)                           
         if error == '':
             try:
                 newroute.save()
@@ -2076,14 +2192,25 @@ def TicketRouteUpdateView(request, pk):
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketRouteSummaryView(request):  
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
  
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
     # branchs = Branch.objects.all()
     # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
     # routes = TicketRoute.objects.all().order_by('branch','tickettype','step')
 
-    context = {'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    context = {'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,}
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/routes.html', context)
 
@@ -2171,7 +2298,7 @@ def TicketFormatUpdateView(request, pk):
         if error != '':
             messages.error(request, error )
     else:
-        tfform = TicketFormatForm(instance=ticketformat, prefix='tfform', auth_branchs=auth_branchs)        
+        tfform = TicketFormatForm(instance=ticketformat, prefix='tfform', auth_branchs=auth_branchs)
     context =  {'tfform':tfform, 'ticketformat':ticketformat, }
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/tf-update.html', context)
@@ -2179,13 +2306,24 @@ def TicketFormatUpdateView(request, pk):
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketFormatSummaryView(request):
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
   
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
     # branchs = Branch.objects.all()
     # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
     # routes = TicketRoute.objects.all()
-    context = {'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    context = {'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes,  'timeslots':auth_timeslots,}
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/tfs.html', context)
 
@@ -2473,8 +2611,7 @@ def SettingsUpdateView(request, pk):
     subend = branch.subend
     subend = funUTCtoLocal(subend, branch.timezone).strftime('%Y-%m-%d %H:%M:%S')
     subscribe = branch.subscribe
-    # auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
-
+    
     userright = 'counter'
     if request.user.is_superuser == True :
         userright = 'admin'
@@ -2544,17 +2681,39 @@ def SettingsSummaryView(request):
     # routes = TicketRoute.objects.all()
     # profiles = UserProfile.objects.filter(Q(user=users.user))
     #profiles = users.userprofile_set.all()
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
 
 
-    context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+
+    context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,}
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/settings.html', context)
 
 @unauth_user
 def homeView(request):
     
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
 
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
     # branchs = Branch.objects.all()
@@ -2566,16 +2725,27 @@ def homeView(request):
 
 
 
-    context =  {'users':auth_userlist , 'users_active':auth_userlist_active, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    context =  {'users':auth_userlist , 'users_active':auth_userlist_active, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,}
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/home.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserSummaryView(request):     
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
  
-    context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,}
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/user.html', context)
 
@@ -2591,7 +2761,18 @@ def UserSummaryListView(request):
     q_group = request.GET.get('qgroup') if request.GET.get('qgroup') != None else 'all'
     q_sort = request.GET.get('sort') if request.GET.get('sort') != None else ''
 
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
 
     result_userlist = auth_userlist
     # print(result_userlist.count())
@@ -2668,7 +2849,7 @@ def UserSummaryListView(request):
         result_userlist = result_userlist.order_by(direct + 'userprofile__mobilephone')
 
 
-    context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'auth_grouplist':auth_grouplist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'auth_grouplist':auth_grouplist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,}
     context = context | {'q':q}
     context = context | {'qactive':q_active}
     context = context | {'qbranch':q_branch}
@@ -2729,7 +2910,18 @@ def UserLoginView(request):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserUpdateView(request, pk):
 
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
 
 
     user = User.objects.get(id=pk)
@@ -2918,7 +3110,18 @@ def UserNewView2(request, pk):
     userp = UserProfile.objects.get(user__exact=user)
 
     # check user group auth
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
 
     if request.method == 'POST':
         if request.user.is_superuser == True :
@@ -2972,7 +3175,18 @@ def UserNewView3(request, pk):
     userp = UserProfile.objects.get(user__exact=user)
 
     # check user group auth
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
 
 
     ticketformat = TicketFormat.objects.all().order_by('ttype')
@@ -3088,7 +3302,18 @@ def UserResetView(request, pk):
         return redirect('usersummary')   
 
     # check user group auth
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
     if user in auth_userlist :
         # print('Request user:' + request.user.username)
         # for iuser in auth_userlist :
@@ -3116,9 +3341,20 @@ def UserResetView(request, pk):
 
 def MenuView(request):
 
-    auth_branchs , auth_userlist, auth_userlist_active, auth_grouplist, auth_profilelist, auth_ticketformats , auth_routes, auth_countertype = auth_data(request.user)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
         
-    context =  {'users':auth_userlist , 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes}
+    context =  {'users':auth_userlist , 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,}
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/m-menu.html', context)
 
@@ -3161,7 +3397,7 @@ def auth_data(user):
         # add column for active to False
         auth_timeslots_disactive = TimeSlot.objects.filter(Q(booking_date__lt=datetime_now))\
             .annotate(active=Value(False, output_field=BooleanField()))
-        auth_timeslots =  auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'booking_date')
+        auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'booking_date')
 
     elif user.groups.filter(name='admin').exists() == True:
         auth_profilelist = UserProfile.objects.all()
@@ -3173,69 +3409,13 @@ def auth_data(user):
         auth_ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
         auth_routes = TicketRoute.objects.all().order_by('branch','countertype', 'tickettype', 'step')
         auth_countertype = CounterType.objects.all()
-        '''
-        elif user.groups.filter(name='admin').exists() == True or user.groups.filter(name='support').exists() == True:
-            profiles = UserProfile.objects.all()
-            auth_branchs = Branch.objects.all()
-
-            # profid_list = []
-            # userid_list = []
-            # for prof in profiles :
-            #     not_auth = False
-            #     for b in prof.branchs.all():
-            #         if (b in auth_branchs) == True :
-            #             pass                
-            #         else :
-            #             not_auth = True
-            #     if not_auth == False :
-            #         if prof.user.is_superuser == False :
-            #             if ('api' in prof.user.groups.all()) == False :
-            #                 if ('web' in prof.user.groups.all()) == False :
-            #                     profid_list.append(prof.id)
-            #                     userid_list.append(prof.user.id)
-                            
-            # rewrote by below
-            # userid_list only include user.group = frontline,  manager
-            # profid_list only include user.group = frontline,  manager
-            profid_list = []
-            userid_list = []
-            auth_grouplist = []
-            if user.groups.filter(name='admin').exists() == True :
-                auth_grouplist.append('admin')
-                auth_grouplist.append('support')
-                auth_grouplist.append('manager')
-                auth_grouplist.append('frontline')
-            elif user.groups.filter(name='support').exists() == True :
-                auth_grouplist.append('support')
-                auth_grouplist.append('manager')
-                auth_grouplist.append('frontline')
-            elif user.groups.filter(name='manager').exists() == True :
-                auth_grouplist.append('manager')
-                auth_grouplist.append('frontline')
-            
-            for prof in profiles :
-                not_auth = False
-                for b in prof.branchs.all():
-                    if (b in auth_branchs) == True :
-                        pass                
-                    else :
-                        not_auth = True
-                if not_auth == False :
-                    if prof.user.is_superuser == False :
-                        for usergroup in prof.user.groups.all() :
-                            if (usergroup.name in auth_grouplist) == True :                   
-                                profid_list.append(prof.id)
-                                userid_list.append(prof.user.id)
-                                break
-
-
-
-            auth_userlist = User.objects.filter(id__in=userid_list)
-            auth_profilelist = UserProfile.objects.filter(id__in=profid_list)
-            auth_ticketformats = TicketFormat.objects.filter(branch__in=auth_branchs).order_by('branch','ttype')
-            auth_routes = TicketRoute.objects.filter(branch__in=auth_branchs).order_by('branch','countertype', 'tickettype', 'step')
-            auth_countertype = CounterType.objects.filter(branch__in=auth_branchs)
-        '''
+        # add column for active to True
+        auth_timeslots_active = TimeSlot.objects.filter(Q(booking_date__gte=datetime_now))\
+            .annotate(active=Value(True, output_field=BooleanField()))
+        # add column for active to False
+        auth_timeslots_disactive = TimeSlot.objects.filter(Q(booking_date__lt=datetime_now))\
+            .annotate(active=Value(False, output_field=BooleanField()))
+        auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'booking_date')
     else : 
         profid_list = []
         userid_list = []
@@ -3321,6 +3501,14 @@ def auth_data(user):
         auth_grouplist = Group.objects.filter(name__in=grouplist)
         # sort auth_grouplist by name
         auth_grouplist = auth_grouplist.order_by('name')
+
+        # add column for active to True
+        auth_timeslots_active = TimeSlot.objects.filter(Q(booking_date__gte=datetime_now),Q(branch__in=auth_branchs))\
+            .annotate(active=Value(True, output_field=BooleanField()))
+        # add column for active to False
+        auth_timeslots_disactive = TimeSlot.objects.filter(Q(booking_date__lt=datetime_now),Q(branch__in=auth_branchs))\
+            .annotate(active=Value(False, output_field=BooleanField()))
+        auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'booking_date')
         
     return(auth_branchs, 
            auth_userlist, auth_userlist_active,
