@@ -35,8 +35,8 @@ STATUS = [
     (S_FULL, ('Full')),
 ]
 class TimeSlot(models.Model):
-    # TimeSlot
-    branch = models.ForeignKey(Branch, on_delete=models.CASCADE)
+    # TimeSlot if branch is deleted, timeslot should be deleted
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)    
     # |show_date---show_end_date|---booking_date---| 
     # show_date should be < show_end_date < booking_date
     booking_date = models.DateTimeField()
@@ -46,7 +46,7 @@ class TimeSlot(models.Model):
     slot_available = models.IntegerField(default=1)
     show_date = models.DateTimeField()
     show_end_date = models.DateTimeField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True, blank=True)
     created_by_temp = models.BooleanField(default=False)
     
     updated = models.DateTimeField(auto_now=True)
@@ -56,8 +56,8 @@ class TimeSlot(models.Model):
 
 class Booking(models.Model):
     timeslot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    member = models.ForeignKey(Member, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True, blank=True)
+    member = models.ForeignKey(Member, on_delete=models.DO_NOTHING, null=True, blank=True)
 
     status = models.CharField(max_length=100, default='pending')
     name = models.CharField(max_length=100)
@@ -73,10 +73,10 @@ class Booking(models.Model):
         return self.name
     
 class BookingLog(models.Model):
-    timeslot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE, null=True)
-    booking = models.ForeignKey(Booking, on_delete=models.CASCADE, null=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    member = models.ForeignKey(Member, on_delete=models.CASCADE, null=True)
+    timeslot = models.ForeignKey(TimeSlot, on_delete=models.DO_NOTHING, null=True, blank=True)
+    booking = models.ForeignKey(Booking, on_delete=models.DO_NOTHING, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING, null=True, blank=True)
+    member = models.ForeignKey(Member, on_delete=models.DO_NOTHING, null=True, blank=True)
     logtext = models.TextField(max_length=200, null=True, blank=True)
 
     action = models.CharField(max_length=100, default=A_NEW, choices=ACTION,) # new, change, cancel, confirm, reject, complete

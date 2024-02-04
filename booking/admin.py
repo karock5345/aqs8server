@@ -11,7 +11,7 @@ class BookingView(admin.ModelAdmin):
     ordering = ('-updated', '-created')
 
 class BookingLogView(admin.ModelAdmin):
-    list_display =('created', 'timeslot', 'booking', 'user', 'member', 'logtext', )
+    list_display =('created', 'timeslot', 'booking', 'user', 'member', 'action', 'logtext', )
     ordering = ('booking', '-created')
 
 admin.site.register(TimeSlot, TimeSlotView)

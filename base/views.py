@@ -2161,12 +2161,19 @@ def TicketRouteDelView(request, pk):
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketRouteUpdateView(request, pk):
-    if request.user.is_superuser == True :
-        auth_branchs = Branch.objects.all()
-    else :
-        auth_userp = UserProfile.objects.get(user__exact=request.user)
-        auth_branchs = auth_userp.branchs.all()
-    route = TicketRoute.objects.get(id=pk)    
+    route = TicketRoute.objects.get(id=pk)
+    
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
     if request.method == 'POST':
         error = ''
         trform = trForm(request.POST, instance=route, prefix='trform', auth_branchs=auth_branchs)
@@ -2218,11 +2225,17 @@ def TicketRouteSummaryView(request):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketFormatNewView(request):
 
-    if request.user.is_superuser == True :
-        auth_branchs = Branch.objects.all()
-    else :
-        auth_userp = UserProfile.objects.get(user__exact=request.user)
-        auth_branchs = auth_userp.branchs.all()
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
     form = TicketFormatForm(auth_branchs=auth_branchs)
     if request.method == 'POST':
         form = TicketFormatForm(request.POST, auth_branchs=auth_branchs)
@@ -2276,12 +2289,18 @@ def TicketFormatDelView(request, pk):
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketFormatUpdateView(request, pk):
-    ticketformat = TicketFormat.objects.get(id=pk)    
-    if request.user.is_superuser == True :
-        auth_branchs = Branch.objects.all()
-    else :
-        auth_userp = UserProfile.objects.get(user__exact=request.user)
-        auth_branchs = auth_userp.branchs.all()
+    ticketformat = TicketFormat.objects.get(id=pk)
+
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
 
     if request.method == 'POST':
         tfform = TicketFormatForm(request.POST, instance=ticketformat, prefix='tfform',  auth_branchs=auth_branchs)

@@ -9,7 +9,7 @@ from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 # from datetime import datetime
 from base.decorators import *
 # from django.contrib.auth.views import PasswordChangeView
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 
 from .models import *
 from base.models import UserProfile, Branch
@@ -27,15 +27,71 @@ from datetime import datetime
 
 logger = logging.getLogger(__name__)
 
+
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
+def TimeSlotNewView(request):
+
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
+
+    tsform = TimeSlotForm(auth_branchs=auth_branchs)
+
+    if request.method == 'POST':
+        tsform = TimeSlotForm(request.POST, auth_branchs=auth_branchs)
+        
+        error = ''
+        error, newform = checktimeslotform(tsform)
+        
+        if error == '' :
+            try:
+                newform.save()
+                # change user to current user
+                newform.user = request.user
+                newform.save()
+
+                # get the new timeslot and create a log
+                timeslot = TimeSlot.objects.get(id=newform.id)
+                funBookingLog(timeslot, None, A_NEW)
+
+                messages.success(request, 'Created new Time Slot.')
+            except:
+                error = 'An error occurcd during new Time Slot creation'          
+
+            return redirect('bookingtimeslot')
+        if error != '':
+            messages.error(request, error)
+    # get the url of 'bookingtimeslot'
+    back_url = reverse('bookingtimeslot')
+    context = {'form':tsform}
+    context = {'aqs_version':aqs_version, 'title':'New Time Slot', 'back_url':back_url, } | context 
+    return render(request, 'booking/new.html', context)
+
+
+
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TimeSlotUpdateView(request, pk):
     timeslot = TimeSlot.objects.get(id=pk)    
-    if request.user.is_superuser == True :
-        auth_branchs = Branch.objects.all()
-    else :
-        auth_userp = UserProfile.objects.get(user__exact=request.user)
-        auth_branchs = auth_userp.branchs.all()
+
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    = auth_data(request.user)
 
     if request.method == 'POST':
         tsform = TimeSlotForm(request.POST, instance=timeslot, prefix='timeslotform', auth_branchs=auth_branchs)

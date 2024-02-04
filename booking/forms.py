@@ -26,13 +26,16 @@ class TimeSlotForm(ModelForm):
         self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs)
         self.fields['user'].widget.attrs['disabled'] = 'disabled'
         self.fields['created_by_temp'].widget.attrs['disabled'] = 'disabled'
-
-        ts = self.instance
-        timezone = ts.branch.timezone
-        self.initial['show_date'] = funUTCtoLocal(ts.show_date, timezone)
-        self.initial['show_end_date'] = funUTCtoLocal(ts.show_end_date, timezone)
-        self.initial['booking_date'] = funUTCtoLocal(ts.booking_date, timezone)
-
+    
+        try:            
+            ts = self.instance
+            timezone = ts.branch.timezone
+            self.initial['show_date'] = funUTCtoLocal(ts.show_date, timezone)
+            self.initial['show_end_date'] = funUTCtoLocal(ts.show_end_date, timezone)
+            self.initial['booking_date'] = funUTCtoLocal(ts.booking_date, timezone)
+        except:
+            # For new form initial value of Branch is null
+            pass
         self.fields['show_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
         self.fields['show_end_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
         self.fields['booking_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
