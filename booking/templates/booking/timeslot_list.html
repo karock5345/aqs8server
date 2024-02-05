@@ -17,12 +17,16 @@
                 <div class="list__svg">
                     {% include 'base/images/timeslot.svg' %}
                 </div>
-                   
-                <span>{{ts.booking_date|timezone:ts.branch.timezone|date:'Y-m-d H:i' }}</span>
+                
+                {% if ts.enabled == True %}
+                    <span>{{ts.start_date|timezone:ts.branch.timezone|date:'Y-m-d H:i' }}</span>
+                {% else %}
+                    <span>{{ts.start_date|timezone:ts.branch.timezone|date:'Y-m-d H:i' }} (Disabled)</span>
+                {% endif %}
                     
             </div>
             <div class="roomListRoom__actions">
-                <span>Slots: {{ ts.slot_available }} / {{ts.slot_total}}</span>
+                <span>Slots: {{ ts.slot_using }} / {{ts.slot_total}}</span>
             </div>
         </div>
         <div class="roomListRoom__content">

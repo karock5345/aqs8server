@@ -22,11 +22,31 @@ from base.views import auth_data
 import logging
 from aqs.tasks import *
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
-from .models import ACTION 
+from .models import ACTION
 from datetime import datetime
 
 logger = logging.getLogger(__name__)
 
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
+def TimeSlotDelView(request, pk):
+ 
+    timeslot = TimeSlot.objects.get(id=pk) 
+  
+    if request.method =='POST':
+        # change user to current user
+        timeslot.user = request.user
+        timeslot.save()
+
+        # get the new timeslot and create a log
+        funBookingLog(timeslot, None, A_DELETE)
+
+        timeslot.delete()       
+        messages.success(request, 'Time Slot was successfully deleted!') 
+        return redirect('bookingtimeslot')
+    context = {'obj':timeslot, 'text':'Warning: This action will delete the Time Slot and all related data. Recommanded to use "Disable" instead of "Delete".'}
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'base/delete.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
@@ -73,7 +93,7 @@ def TimeSlotNewView(request):
     back_url = reverse('bookingtimeslot')
     context = {'form':tsform}
     context = {'aqs_version':aqs_version, 'title':'New Time Slot', 'back_url':back_url, } | context 
-    return render(request, 'booking/new.html', context)
+    return render(request, 'base/new.html', context)
 
 
 
@@ -161,9 +181,14 @@ def checktimeslotform(form):
         newform = form.save(commit=False)
     if error == '':
         try:
-            newform.booking_date = funLocaltoUTC(newform.booking_date, newform.branch.timezone)
+            newform.start_date = funLocaltoUTC(newform.start_date, newform.branch.timezone)
         except:
             error = 'An error occurcd : Booking date is not correct'
+    if error == '':
+        try:
+            newform.end_date = funLocaltoUTC(newform.end_date, newform.branch.timezone)
+        except:
+            error = 'An error occurcd : Booking date is not correct'            
     if error == '':
         try:
             newform.show_date = funLocaltoUTC(newform.show_date, newform.branch.timezone)
@@ -179,29 +204,36 @@ def checktimeslotform(form):
             # Error branch is None
             error = 'Error Branch is blank'
     if error == '' :
-        #  show_date < show_date_end <= booking_date
+        #  end_date < start_date
+        if newform.end_date < newform.start_date :
+            error = 'Booking END date should be greater than Booking START date'            
+    if error == '' :
+        #  show_date < show_date_end <= start_date
         if newform.show_date > newform.show_end_date :
             error = 'Show date end should be greater than show date'
     if error == '' :
-        if newform.show_end_date > newform.booking_date :
+        if newform.show_end_date > newform.start_date :
             error = 'Booking date should be greater than show date end'        
     if error == '' :
         if newform.slot_total < 0:
             error = 'Slot total should be => 0' 
     if error == '' :
         if newform.slot_available < 0 :
-            error = 'Slot available should be => 0'                
+            error = 'Slot available should be => 0'
+
     return (error, newform)
 
 
 def funBookingLog(timeslot, booking, action):
     if timeslot != None :
-        bookingdate_str = funUTCtoLocal(timeslot.booking_date, timeslot.branch.timezone).strftime('%Y-%m-%d %H:%M:%S' )
+        bookingstart_str = funUTCtoLocal(timeslot.start_date, timeslot.branch.timezone).strftime('%Y-%m-%d %H:%M:%S' )
+        bookingend_str = funUTCtoLocal(timeslot.end_date, timeslot.branch.timezone).strftime('%Y-%m-%d %H:%M:%S' )
         show_date_str = funUTCtoLocal(timeslot.show_date, timeslot.branch.timezone).strftime('%Y-%m-%d %H:%M:%S' )
         show_end_date_str = funUTCtoLocal(timeslot.show_end_date, timeslot.branch.timezone).strftime('%Y-%m-%d %H:%M:%S' )
         logtext = \
             'Branch:' + timeslot.branch.bcode + '\n' + \
-            'Booking Date (local time):' + bookingdate_str + '\n' + \
+            'Booking Start Date (local time):' + bookingstart_str + '\n' + \
+            'Booking End Date (local time):' + bookingend_str + '\n' + \
             'Show Date (local time):' + show_date_str + '\n' + \
             'Show End Date (local time):' + show_end_date_str + '\n' + \
             'Slot Total:' + str(timeslot.slot_total) + '\n' + \

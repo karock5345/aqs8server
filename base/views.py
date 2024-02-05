@@ -3411,12 +3411,12 @@ def auth_data(user):
         auth_countertype = CounterType.objects.all()
         
         # add column for active to True
-        auth_timeslots_active = TimeSlot.objects.filter(Q(booking_date__gte=datetime_now))\
+        auth_timeslots_active = TimeSlot.objects.filter(Q(start_date__gte=datetime_now))\
             .annotate(active=Value(True, output_field=BooleanField()))
         # add column for active to False
-        auth_timeslots_disactive = TimeSlot.objects.filter(Q(booking_date__lt=datetime_now))\
+        auth_timeslots_disactive = TimeSlot.objects.filter(Q(start_date__lt=datetime_now))\
             .annotate(active=Value(False, output_field=BooleanField()))
-        auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'booking_date')
+        auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'start_date')
 
     elif user.groups.filter(name='admin').exists() == True:
         auth_profilelist = UserProfile.objects.all()
@@ -3429,12 +3429,12 @@ def auth_data(user):
         auth_routes = TicketRoute.objects.all().order_by('branch','countertype', 'tickettype', 'step')
         auth_countertype = CounterType.objects.all()
         # add column for active to True
-        auth_timeslots_active = TimeSlot.objects.filter(Q(booking_date__gte=datetime_now))\
+        auth_timeslots_active = TimeSlot.objects.filter(Q(start_date__gte=datetime_now))\
             .annotate(active=Value(True, output_field=BooleanField()))
         # add column for active to False
-        auth_timeslots_disactive = TimeSlot.objects.filter(Q(booking_date__lt=datetime_now))\
+        auth_timeslots_disactive = TimeSlot.objects.filter(Q(start_date__lt=datetime_now))\
             .annotate(active=Value(False, output_field=BooleanField()))
-        auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'booking_date')
+        auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'start_date')
     else : 
         profid_list = []
         userid_list = []
@@ -3522,12 +3522,12 @@ def auth_data(user):
         auth_grouplist = auth_grouplist.order_by('name')
 
         # add column for active to True
-        auth_timeslots_active = TimeSlot.objects.filter(Q(booking_date__gte=datetime_now),Q(branch__in=auth_branchs))\
+        auth_timeslots_active = TimeSlot.objects.filter(Q(start_date__gte=datetime_now),Q(branch__in=auth_branchs))\
             .annotate(active=Value(True, output_field=BooleanField()))
         # add column for active to False
-        auth_timeslots_disactive = TimeSlot.objects.filter(Q(booking_date__lt=datetime_now),Q(branch__in=auth_branchs))\
+        auth_timeslots_disactive = TimeSlot.objects.filter(Q(start_date__lt=datetime_now),Q(branch__in=auth_branchs))\
             .annotate(active=Value(False, output_field=BooleanField()))
-        auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'booking_date')
+        auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'start_date')
         
     return(auth_branchs, 
            auth_userlist, auth_userlist_active,

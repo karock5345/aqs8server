@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import TimeSlotSummaryView, TimeSlotUpdateView, TimeSlotNewView
+from .views import TimeSlotSummaryView, TimeSlotUpdateView, TimeSlotNewView, TimeSlotDelView
 
 
 urlpatterns = [
@@ -11,5 +11,6 @@ urlpatterns = [
     path('timeslot/', TimeSlotSummaryView, name='bookingtimeslot'),
     path('timeslot-update/<str:pk>/', TimeSlotUpdateView, name='ts-update'),
     path('timeslot-new/', TimeSlotNewView, name='ts-new'),
+    path('timeslot-del/<str:pk>/', TimeSlotDelView, name='ts-delete')
     
 ]

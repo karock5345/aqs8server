@@ -3,8 +3,8 @@ from .models import TimeSlot, Booking, BookingLog
 
 # Register your models here.
 class TimeSlotView(admin.ModelAdmin):
-    list_display =('branch', 'booking_date', 'slot_available', 'status', 'enabled')
-    ordering = ('branch', 'booking_date',)
+    list_display =('branch', 'start_date', 'slot_using', 'slot_available', 'slot_total', 'enabled')
+    ordering = ('branch', 'start_date',)
 
 class BookingView(admin.ModelAdmin):
     list_display =('timeslot', 'user', 'member', 'status', 'name', 'email', 'mobilephone', 'remark', 'created')

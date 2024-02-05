@@ -16,7 +16,7 @@ from captcha.widgets import ReCaptchaV2Checkbox
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 import pytz
 from django.utils.timezone import localtime, get_current_timezone
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 class TimeSlotForm(ModelForm):
@@ -30,17 +30,36 @@ class TimeSlotForm(ModelForm):
         try:            
             ts = self.instance
             timezone = ts.branch.timezone
+            self.initial['start_date'] = funUTCtoLocal(ts.start_date, timezone)
+            self.initial['end_date'] = funUTCtoLocal(ts.end_date, timezone)
+
             self.initial['show_date'] = funUTCtoLocal(ts.show_date, timezone)
             self.initial['show_end_date'] = funUTCtoLocal(ts.show_end_date, timezone)
-            self.initial['booking_date'] = funUTCtoLocal(ts.booking_date, timezone)
+
         except:
             # For new form initial value of Branch is null
+            datetime_now = datetime.now()
+  
+            # |show_date---show_end_date|---start_date---| 
+            # show_date should be < show_end_date < start_date    
+            start_date_default = datetime_now + timedelta(days=7)
+            # start_date_default change seconds to '00'
+            start_date_default = start_date_default.replace(second=0, microsecond=0)
+            self.initial['start_date'] = start_date_default
+            end_date_default = start_date_default + timedelta(minutes=30)
+            self.initial['end_date'] = end_date_default
+
+            show_date_default = start_date_default - timedelta(days=7)
+            self.initial['show_date'] = show_date_default
+            show_date_end_default = start_date_default - timedelta(minutes=60)
+            self.initial['show_end_date'] = show_date_end_default
             pass
         self.fields['show_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
         self.fields['show_end_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
-        self.fields['booking_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
+        self.fields['start_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
+        self.fields['end_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
 
     class Meta:
         model = TimeSlot
-        fields = ['enabled', 'branch', 'booking_date','show_date', 'show_end_date',  'status', 'slot_total', 'slot_available',  'user', 'created_by_temp']
+        fields = ['enabled', 'branch', 'start_date', 'end_date', 'show_date', 'show_end_date','slot_using', 'slot_available', 'slot_total',  'user', 'created_by_temp']
 

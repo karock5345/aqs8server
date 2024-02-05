@@ -38,7 +38,7 @@
                                 <div class="form__group">
                                     <label for="profile_pic">{{field.label}} (Read only) : {{field}}</label>
                                 </div>
-                            {% elif field.name == "booking_date" %}                                
+                            {% elif field.name == "start_date" %}                                
                             <div class="form__group">
                                 <label for="profile_pic">{{field.label}} : {{field}}</label>                            
                             </div>
@@ -50,7 +50,7 @@
                         {% endfor %}
                         
                         <div class="form__action">
-                            <a class="btn btn--del" href="{-% url 'delete-tf' ticketformat.id %}">Delete</a>
+                            <a class="btn btn--del" href="{% url 'ts-delete' timeslot.id %}">Delete</a>
                             <a class="btn btn--dark" href="{% url 'bookingtimeslot' %}">Cancel</a>
                             <button class="btn btn--main" type="submit">Update</button>
                         </div>
