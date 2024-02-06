@@ -24,8 +24,81 @@ from aqs.tasks import *
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 from .models import ACTION
 from datetime import datetime
+from base.ws import wsHypertext, wscounterstatus, wssendflashlight
 
 logger = logging.getLogger(__name__)
+
+
+def webAppointmentView(request, bcode):
+    # WebSocket version
+    # http://127.0.0.1:8000/booking/KB/
+    context = {}
+    error = ''
+    str_now = '---'
+    logofile = ''
+
+    branch = None
+    if error == '' :        
+        branchobj = Branch.objects.filter( Q(bcode=bcode) )
+        if branchobj.count() == 1:
+            branch = branchobj[0]
+            logofile = branch.webtvlogolink
+            css = branch.webtvcsslink
+            datetime_now = timezone.now()
+            datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+            str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
+        else :
+            error = 'Branch not found.'
+
+
+    if error == '' :
+        # displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
+        # wdserializers  = displaylistSerivalizer(displaylist, many=True)
+        
+        timeslotlist = TimeSlot.objects.filter(branch=branch).order_by('start_date')
+        # timeslotlist.data : 
+        # [OrderedDict(
+        # [
+        #   ('tickettype', 'A'), 
+        #   ('ticketnumber', '098'), 
+        #   ('tickettime', '2024-01-29T09:05:12.591663Z'), 
+        #   ('displaytime', '2024-02-06T04:26:21.688347Z'), 
+        #   ('counternumber', '1'), ('wait', '4'), ('flashtime', 3), 
+        #   ('ct_lang1', 'Reception'), ('ct_lang2', '接待處'), ('ct_lang3', '---'), ('ct_lang4', '---'), ('t_lang1', '一般查詢'), ('t_lang2', 'General Enquiry'), ('t_lang3', '-'), ('t_lang4', '-')
+        # ]), 
+        # OrderedDict([('tickettype', 'B'), ('ticketnumber', '027'), ('tickettime', '2024-01-29T09:03:36.445364Z'), ('displaytime', '2024-01-29T09:04:45.894786Z'), ('counternumber', '1'), ('wait', '0'), ('flashtime', 3), ('ct_lang1', 'Reception'), ('ct_lang2', '接待處'), ('ct_lang3', '---'), ('ct_lang4', '---'), ('t_lang1', '交費'), ('t_lang2', 'Payment'), ('t_lang3', '-'), ('t_lang4', '-')]), OrderedDict([('tickettype', 'A'), ('ticketnumber', '097'), ('tickettime', '2024-01-29T09:04:39.232049Z'), ('displaytime', '2024-01-29T09:04:42.834555Z'), ('counternumber', '1'), ('wait', '4'), ('flashtime', 3), ('ct_lang1', 'Reception'), ('ct_lang2', '接待處'), ('ct_lang3', '---'), ('ct_lang4', '---'), ('t_lang1', '一般查詢'), ('t_lang2', 'General Enquiry'), ('t_lang3', '-'), ('t_lang4', '-')]), OrderedDict([('tickettype', 'B'), ('ticketnumber', '025'), ('tickettime', '2024-01-29T08:52:20.906778Z'), ('displaytime', '2024-01-29T09:03:08.508514Z'), ('counternumber', '1'), ('wait', '0'), ('flashtime', 3), ('ct_lang1', 'Reception'), ('ct_lang2', '接待處'), ('ct_lang3', '---'), ('ct_lang4', '---'), ('t_lang1', '交費'), ('t_lang2', 'Payment'), ('t_lang3', '-'), ('t_lang4', '-')]), OrderedDict([('tickettype', 'B'), ('ticketnumber', '024'), ('tickettime', '2024-01-29T08:51:00.320026Z'), ('displaytime', '2024-01-29T09:03:07.329008Z'), ('counternumber', '1'), ('wait', '0'), ('flashtime', 3), ('ct_lang1', 'Reception'), ('ct_lang2', '接待處'), ('ct_lang3', '---'), ('ct_lang4', '---'), ('t_lang1', '交費'), ('t_lang2', 'Payment'), ('t_lang3', '-'), ('t_lang4', '-')])]
+
+        context = {
+        'wsh' : wsHypertext,
+        'lastupdate' : str_now,
+        # 'ticketlist' : wdserializers.data,
+        'logofile' : logofile,
+        'css' : css,
+        # 'scroll':countertype.displayscrollingtext,
+        'scroll': 'Appointment scrolling text ...'
+        }
+        # print (wdserializers.data[0].wait)
+        pass
+    else :
+        context = {
+        'lastupdate' : str_now,
+        'errormsg' : error,
+        'logofile' : logofile,
+        'css' : 'styles/styletv.css',
+        }
+        messages.error(request, error)
+
+
+
+
+    context = context | {
+    'bcode' :  bcode ,
+    }
+    
+    context = {'aqs_version':aqs_version} | context 
+    return render(request , 'booking/appointment.html', context)
+
+
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])

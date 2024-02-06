@@ -1302,10 +1302,7 @@ def webtv(request, bcode, ct):
     if error == '' : 
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
         wdserializers  = displaylistSerivalizer(displaylist, many=True)
-        # displaylist = ({'ticketlist':wdserializers.data})
-
-        datetime_now = timezone.now()
-        datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+        print('wd:' + str(wdserializers.data))
 
         context = {
         'wsh' : wsHypertext,
