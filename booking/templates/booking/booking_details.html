@@ -1,0 +1,30 @@
+
+
+
+<div>{{id}}</div>
+<div>{{date}}</div>
+<div>{{time}}</div>
+<div>{{week}}</div>
+<div>{{sometext}}</div>
+
+
+<form class="form" action="" method="POST" >
+    {% csrf_token %}
+    <div class="layout__body">
+        <div class="form__group">
+            <label for="name">Your name :</label>
+            <input type="text" name="name" value="Mr. Chan">
+        </div>
+        <div class="form__group">
+            <label for="mphone">Mobile phone:</label>
+            <input type="text" name="mphone" value="92127299">
+        </div>
+        <div class="form__group">
+            <label for="email">email:</label>
+            <input type="text" name="email" value="tim@tsvd.com.hk">
+        </div>
+        <div class="form__action">
+            <button type="submit" name="action" value="submit_booknow" class="softkey_btn softkey_btn--submit btn--main" >Confirm</button>
+        </div>
+    </div>
+</form>

@@ -52,9 +52,9 @@
                 
             </div>
             <div class="booking">
-                <div class="buttonbooking">
+                <a href="{% url 'appointment-details' ts.id %}" class="buttonbooking">
                     <div class="buttonbooking_text">預約</div>                
-                </div>
+                </a>
             </div>
         </div>
     {% endfor %}

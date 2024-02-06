@@ -582,7 +582,7 @@ body {
 }
 .booking {
     background: none;
-    margin-top: 8px;
+    margin-top: 4px;
     padding-right:0px;
     justify-content:space-between;
     display: flex;
@@ -618,7 +618,9 @@ body {
     color: rgb(255, 255, 255);
     background-color: var(--color_calling_text);
     border-radius:8px;
-    margin-top: 30px;
+    margin-top: 34px;
+    text-decoration: none;
+
     
 }
 .buttonbooking:hover {
@@ -634,4 +636,5 @@ body {
     margin-top: -6px;
     text-decoration: none;
     background: none;
+
 }

@@ -13,7 +13,7 @@ from django.urls import reverse_lazy, reverse
 
 from .models import *
 from base.models import UserProfile, Branch
-from .forms import TimeSlotForm
+from .forms import TimeSlotForm, DetailsForm
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
 from django.utils import timezone
@@ -26,11 +26,52 @@ from .models import ACTION
 from datetime import datetime
 from .serializers import tsSerializer
 
-
 logger = logging.getLogger(__name__)
 
+def Appointment_DetailsView(request, pk):
+    error = ''
+    context = {}
 
-def webAppointmentView(request, bcode):
+    try:
+        timeslot = TimeSlot.objects.get(id=pk)
+    except:
+        error = 'TimeSlot not found'
+
+    if error != '':
+        return HttpResponse(error)    
+    if error == '':
+        if request.method == 'POST':
+            action = request.POST.get('action')
+            if action == 'submit_booknow':
+                form = DetailsForm(request.POST)
+                name = form['name'].value()
+                mphone = form['mphone'].value()
+                email = form['email'].value()
+                print(pk, name, mphone, email)
+
+                # check input data
+                
+
+
+        startdate = funUTCtoLocal(timeslot.start_date, timeslot.branch.timezone)
+        date_str = startdate.strftime('%Y-%m-%d' )
+        time_str = startdate.strftime('%H:%M' )
+        week_str = funWeekStr(startdate)
+
+        sometext = 'This is a test'
+        context = {
+            'id':timeslot.id,
+            'date':date_str,
+            'time':time_str,
+            'week':week_str,
+            'sometext':sometext,
+        }
+
+        context = {'aqs_version':aqs_version} | context
+        return render(request, 'booking/booking_details.html', context)
+
+
+def AppointmentView(request, bcode):
     # http://127.0.0.1:8000/booking/KB/
     context = {}
     error = ''
@@ -53,9 +94,9 @@ def webAppointmentView(request, bcode):
 
     if error == '' :
         now_utc = timezone.now()
-        print(now_utc)
+
         tslist = TimeSlot.objects.filter(Q(branch=branch) & Q(enabled=True) & Q(slot_available__gt=0) & Q(show_end_date__gte=now_utc) & Q(show_date__lte=now_utc)).order_by('start_date')
-        #tslist= []
+
         tsserializers  = tsSerializer(tslist, many=True)
         timeslots = tsserializers.data
         
@@ -312,3 +353,22 @@ def funBookingLog(timeslot, booking, action):
             remark = None,
             )
     return
+
+def funWeekStr(inputdate:datetime) -> str:
+    iWeek = inputdate.strftime('%w')
+    week_str = ''
+    if iWeek == '0':
+        week_str = '星期日 Sun'
+    elif iWeek == '1':
+        week_str = '星期一 Mon'
+    elif iWeek == '2':
+        week_str = '星期二 Tue'
+    elif iWeek == '3':
+        week_str = '星期三 Wed'
+    elif iWeek == '4':
+        week_str = '星期四 Thu'
+    elif iWeek == '5':
+        week_str = '星期五 Fri'
+    elif iWeek == '6':
+        week_str = '星期六 Sat'
+    return week_str

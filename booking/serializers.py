@@ -4,6 +4,7 @@ from base.models import Branch, DisplayAndVoice, PrinterStatus, TicketFormat, Ti
 from booking.models import TimeSlot
 from base.api.views import funUTCtoLocal
 
+
 class tsSerializer(ModelSerializer):
     
     date = serializers.SerializerMethodField()
@@ -23,23 +24,10 @@ class tsSerializer(ModelSerializer):
         start_date = funUTCtoLocal(start_date, obj.branch.timezone)
         time_str = start_date.strftime('%I:%M %p')
         return time_str
-    def get_week(self, obj):
+    def get_week(self, obj,):
+        from booking.views import funWeekStr
         start_date = obj.start_date
         start_date = funUTCtoLocal(start_date, obj.branch.timezone)
-        iWeek = start_date.strftime('%w')
-        week_str = ''
-        if iWeek == '0':
-            week_str = '星期日 Sun'
-        elif iWeek == '1':
-            week_str = '星期一 Mon'
-        elif iWeek == '2':
-            week_str = '星期二 Tue'
-        elif iWeek == '3':
-            week_str = '星期三 Wed'
-        elif iWeek == '4':
-            week_str = '星期四 Thu'
-        elif iWeek == '5':
-            week_str = '星期五 Fri'
-        elif iWeek == '6':
-            week_str = '星期六 Sat'
-        return week_str
+        out = funWeekStr(start_date)
+        return out
+        

@@ -18,6 +18,10 @@ import pytz
 from django.utils.timezone import localtime, get_current_timezone
 from datetime import datetime, timedelta
 
+class DetailsForm(forms.Form):
+    name = forms.CharField(label='稱呼', max_length=100)
+    mphone = forms.CharField(label='手提電話', max_length=100)
+    email = forms.EmailField(label='電郵地址')
 
 class TimeSlotForm(ModelForm):
     def __init__(self, *args,**kwargs):
