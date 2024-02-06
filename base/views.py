@@ -1302,8 +1302,7 @@ def webtv(request, bcode, ct):
     if error == '' : 
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
         wdserializers  = displaylistSerivalizer(displaylist, many=True)
-        print('wd:' + str(wdserializers.data))
-
+        
         context = {
         'wsh' : wsHypertext,
         'lastupdate' : str_now,

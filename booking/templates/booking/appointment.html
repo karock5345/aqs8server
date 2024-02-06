@@ -6,12 +6,17 @@
         <marquee class="vertical-center" behavior="scroll" direction="left">{{scroll}}</marquee>
     </div>
     <div class="status">
-         <div class="vertical-center">
-            輪候狀況 Queue Status
+        <div class="vertical-center">
+            選擇預約 Select appointment
+        </div>
+    </div>
+    
+    <div class="status">
+        <div class="vertical-center">
+            現在時間: {{lastupdate}}
         </div>
     </div>
 
-   
     <div id="calling_area">
     {% for ticketrow in ticketlist %}     
    
@@ -36,104 +41,28 @@
         </div>
 
     {% endfor %}
-    </div>
-  
+    {% for ts in timeslots %}
+        <div class="container_booking">
+            <div class="booking">
+                <div class="bookingtype" >
+                    <div class="bookingtext">{{ts.date}}</div>
+                    <div class="bookingtext right">{{ts.week}}</div>
+                    <div class="counternumber">{{ts.time}}</div>
+                </div>
+                
+            </div>
+            <div class="booking">
+                <div class="buttonbooking">
+                    <div class="buttonbooking_text">預約</div>                
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+     
 
     <div class="powered">Powered by tsvd.com.hk</div>
 
-    {{ wsh|json_script:"js-wsh" }}
-    {{ bcode|json_script:"js-bcode" }}
-    {{ ct|json_script:"js-ct" }}
-    <script>
-        var ticketlist = [];
-        const c_wsh = JSON.parse(document.getElementById('js-wsh').textContent);
-        const c_bcode = JSON.parse(document.getElementById('js-bcode').textContent);
-        const c_ct = JSON.parse(document.getElementById('js-ct').textContent);
-        var cmd = "";
-        // document.querySelectorAll(".status > .vertical-center")[0].innerHTML =window.location.host ;
-        //document.querySelectorAll(".status")[0].innerHTML =<marquee behavior="scroll" direction="left">window.location.host</marquee> ;
-        // const containers = document.getElementsByClassName("container_calling");
-        // const numContainers = containers.length;
-        // console.log(numContainers); // Output: 3
-
-        // var cc1 = document.getElementsByClassName('container_calling')[0].innerHTML;
-        // console.log(cc1);
-
-        const chatSocket = new WebSocket(
-            c_wsh
-            + window.location.host
-            + '/ws/wtv/'
-            + c_bcode
-            + '/'
-            + c_ct
-            + '/'
-        );
-
-        chatSocket.onmessage = function(e) {
-            // console.log('Received data:', e.data);
-            const rxdata = JSON.parse(e.data);
-            // console.log('Parsed data:', data);
-            // document.querySelectorAll(".status > .vertical-center")[0].innerHTML = data.lastupdate;
-            cmd = rxdata.cmd;
-            if (cmd == 'list5') {
-                const data = rxdata.data;
-
-                document.querySelectorAll(".scroll > .vertical-center")[0].innerHTML = data.scroll;
-                document.querySelector('#ws-lastupdate').innerHTML = data.lastupdate;
-                document.querySelector('#calling_area').innerHTML = ``;
-
-                // ticketlist = JSON.parse(data.ticketlist);
-                ticketlist = data.ticketlist;
-                // console.log(ticketlist);
-                for (var i = 0; i < ticketlist.length; i++) {
-                    var obj = ticketlist[i];
-                    // console.log("Ticket Type: " + obj.tickettype);
-                    // console.log("Ticket Number: " + obj.ticketnumber);
-                    // console.log("Language 1: " + obj.lang1);
-                    // console.log("Language 2: " + obj.lang2);
-                    // console.log("Counter Number: " + obj.counternumber);
-                    // console.log("Wait Time: " + obj.wait);
-
-                    document.querySelector('#calling_area').innerHTML = 
-                    document.querySelector('#calling_area').innerHTML +
-                    `<div class="container_calling">
-                        <div class="ticketno">` + 
-                            obj.tickettype + obj.ticketnumber +
-                        `</div>
-
-                        <i class="arrow icofont-circled-right icofont-3x"></i>
-
-                        <div class="counter">
-                            <div class="countertype" >
-                                <div class="countertext">`
-                                    + obj.ct_lang1 +
-                                `</div> 
-                                <div class="countertext">`
-                                    + obj.ct_lang2 +
-                                `</div>
-                            </div>
-                            <div class="counternumber">`
-                                + obj.counternumber +
-                            `</div>
-                        </div>
-
-
-                        <div class="numberCircle">` +
-                            obj.wait +
-                        `</div>
-                    </div>`;
-
-                }
-                // document.querySelector('#chat-log').value += ('testing' + '\n');
-            }
-            
-        };
-
-        chatSocket.onclose = function(e) {
-            console.error('Chat socket closed unexpectedly');
-        };        
-    </script>
-
+    
 
 
 {% endblock content %}

@@ -231,6 +231,7 @@ body {
 
     /* margin-bottom: -10px; */
 }
+
 .countertext {
     color:var(--color_countertype_text);
     background: none;
@@ -239,6 +240,7 @@ body {
     font-weight: 400;
     font-size: 14px;
 }
+
 .counternumber {
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 700;
@@ -566,3 +568,70 @@ body {
 /* .buttontouchkey:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   } */
+
+.container_booking {
+    height:140px;
+    width:100%;
+    margin: 5px 0px 5px 0;
+    background-color: var(--color_calling_background);
+    justify-content:space-between;
+    padding: 0px 4px 0px 4px;
+
+    display: flex;
+    position:relative;
+}
+.booking {
+    background: none;
+    margin-top: 8px;
+    padding-right:0px;
+    justify-content:space-between;
+    display: flex;
+    position:relative;
+}
+.bookingtype {
+    text-decoration: none;
+    /* text-align: center; */
+    color:var(--color_countertype_text);
+    /* background-color: var(--color_calling_background); */
+    background: none;
+    /* margin-top: -12px; */
+    /* margin-right: 12px; */
+
+    /* margin-bottom: -10px; */
+}
+
+.bookingtext {
+    color:var(--color_countertype_text);
+    background: none;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+}
+.right {
+    text-align: right;
+}
+
+.buttonbooking  {
+    width: 150px;
+    height: 60px;
+    cursor:pointer;
+    color: rgb(255, 255, 255);
+    background-color: var(--color_calling_text);
+    border-radius:8px;
+    margin-top: 30px;
+    
+}
+.buttonbooking:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+.buttonbooking_text {
+
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 46px;
+    text-align: center;
+
+    margin-top: -6px;
+    text-decoration: none;
+    background: none;
+}

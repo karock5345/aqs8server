@@ -24,13 +24,13 @@ from aqs.tasks import *
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 from .models import ACTION
 from datetime import datetime
-from base.ws import wsHypertext, wscounterstatus, wssendflashlight
+from .serializers import tsSerializer
+
 
 logger = logging.getLogger(__name__)
 
 
 def webAppointmentView(request, bcode):
-    # WebSocket version
     # http://127.0.0.1:8000/booking/KB/
     context = {}
     error = ''
@@ -52,32 +52,21 @@ def webAppointmentView(request, bcode):
 
 
     if error == '' :
-        # displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
-        # wdserializers  = displaylistSerivalizer(displaylist, many=True)
+        now_utc = timezone.now()
+        print(now_utc)
+        tslist = TimeSlot.objects.filter(Q(branch=branch) & Q(enabled=True) & Q(slot_available__gt=0) & Q(show_end_date__gte=now_utc) & Q(show_date__lte=now_utc)).order_by('start_date')
+        #tslist= []
+        tsserializers  = tsSerializer(tslist, many=True)
+        timeslots = tsserializers.data
         
-        timeslotlist = TimeSlot.objects.filter(branch=branch).order_by('start_date')
-        # timeslotlist.data : 
-        # [OrderedDict(
-        # [
-        #   ('tickettype', 'A'), 
-        #   ('ticketnumber', '098'), 
-        #   ('tickettime', '2024-01-29T09:05:12.591663Z'), 
-        #   ('displaytime', '2024-02-06T04:26:21.688347Z'), 
-        #   ('counternumber', '1'), ('wait', '4'), ('flashtime', 3), 
-        #   ('ct_lang1', 'Reception'), ('ct_lang2', '接待處'), ('ct_lang3', '---'), ('ct_lang4', '---'), ('t_lang1', '一般查詢'), ('t_lang2', 'General Enquiry'), ('t_lang3', '-'), ('t_lang4', '-')
-        # ]), 
-        # OrderedDict([('tickettype', 'B'), ('ticketnumber', '027'), ('tickettime', '2024-01-29T09:03:36.445364Z'), ('displaytime', '2024-01-29T09:04:45.894786Z'), ('counternumber', '1'), ('wait', '0'), ('flashtime', 3), ('ct_lang1', 'Reception'), ('ct_lang2', '接待處'), ('ct_lang3', '---'), ('ct_lang4', '---'), ('t_lang1', '交費'), ('t_lang2', 'Payment'), ('t_lang3', '-'), ('t_lang4', '-')]), OrderedDict([('tickettype', 'A'), ('ticketnumber', '097'), ('tickettime', '2024-01-29T09:04:39.232049Z'), ('displaytime', '2024-01-29T09:04:42.834555Z'), ('counternumber', '1'), ('wait', '4'), ('flashtime', 3), ('ct_lang1', 'Reception'), ('ct_lang2', '接待處'), ('ct_lang3', '---'), ('ct_lang4', '---'), ('t_lang1', '一般查詢'), ('t_lang2', 'General Enquiry'), ('t_lang3', '-'), ('t_lang4', '-')]), OrderedDict([('tickettype', 'B'), ('ticketnumber', '025'), ('tickettime', '2024-01-29T08:52:20.906778Z'), ('displaytime', '2024-01-29T09:03:08.508514Z'), ('counternumber', '1'), ('wait', '0'), ('flashtime', 3), ('ct_lang1', 'Reception'), ('ct_lang2', '接待處'), ('ct_lang3', '---'), ('ct_lang4', '---'), ('t_lang1', '交費'), ('t_lang2', 'Payment'), ('t_lang3', '-'), ('t_lang4', '-')]), OrderedDict([('tickettype', 'B'), ('ticketnumber', '024'), ('tickettime', '2024-01-29T08:51:00.320026Z'), ('displaytime', '2024-01-29T09:03:07.329008Z'), ('counternumber', '1'), ('wait', '0'), ('flashtime', 3), ('ct_lang1', 'Reception'), ('ct_lang2', '接待處'), ('ct_lang3', '---'), ('ct_lang4', '---'), ('t_lang1', '交費'), ('t_lang2', 'Payment'), ('t_lang3', '-'), ('t_lang4', '-')])]
 
         context = {
-        'wsh' : wsHypertext,
         'lastupdate' : str_now,
-        # 'ticketlist' : wdserializers.data,
+        'timeslots' : timeslots,
         'logofile' : logofile,
         'css' : css,
-        # 'scroll':countertype.displayscrollingtext,
-        'scroll': 'Appointment scrolling text ...'
+        'scroll': '維修請帶發票'
         }
-        # print (wdserializers.data[0].wait)
         pass
     else :
         context = {
