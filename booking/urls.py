@@ -1,6 +1,7 @@
 from django.urls import path
 
-from .views import TimeSlotSummaryView, TimeSlotUpdateView, TimeSlotNewView, TimeSlotDelView, AppointmentView, Appointment_DetailsView
+from .views import TimeSlotSummaryView, TimeSlotUpdateView, TimeSlotNewView, TimeSlotDelView 
+from .views import BookingView, Booking_DetailsView
 
 
 urlpatterns = [
@@ -13,6 +14,7 @@ urlpatterns = [
     path('timeslot-new/', TimeSlotNewView, name='ts-new'),
     path('timeslot-del/<str:pk>/', TimeSlotDelView, name='ts-delete'),
     # http://127.0.0.1:8000/booking/KB/
-    path('<str:bcode>/', AppointmentView),
-    path('details/<str:pk>/', Appointment_DetailsView, name='appointment-details'),
+    path('<str:bcode>/', BookingView, name='booking'),
+    path('details/<str:pk>/', Booking_DetailsView, name='booking-details'),
+    # path('success/', None, name='booking-success'),
 ]

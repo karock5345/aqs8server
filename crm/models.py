@@ -5,26 +5,11 @@ from datetime import timedelta
 import django.utils.html
 from django.utils.html import format_html, escape
 from django.utils.safestring import mark_safe
+from django.utils.translation import gettext_lazy as _
+
 # Create your models here.
 
-item_status_choices = [('active', ('active')),
-                        ('inactive', ('inactive')),
-                        ('deleted', ('deleted')),
-                        ('soldout', ('soldout')),
-                        ('outofstock', ('outofstock')),
-                        ('reserved', ('reserved')),
-                        ('pending', ('pending'))
-                        ]
-q_status_choices = [('free', ('When a quote is created, the status is Free')),
-                    ('approved', ('When the quote is approved internally, the status is set to Approved. The quote can be printed and sent to the customer')),
-                    ('printed', ('When a quote is printed as an external document and sent to a customer for review, the status of the quote is changed to Printed')),
-                    ('negotiating', ('Indicates that the negotiations about the selected quote are in progress. This status must be set manually')),
-                    ('accepted', ('After the customer accepts the quote, the status of the quote changes to Accepted')),
-                    ('rejected', ('Indicates that the proposed Quote has been rejected by the customer')),
-                    ('processed', ('After the customer accepts the proposal, use the option Process in the appropriate menu to create a maintenance sales order from the quote data. The status of the quote changes to Processed. All the quote lines that are linked to the quote are copied to the maintenance sales order as Part Maintenance Lines')),
-                    ('canceled', ('Indicates that the quote is cancelled. Only the quotes with the status Free, Printed or Negotiating can be cancelled')),
-                    ('lost', ('Indicates that the customer has selected another supplier. This status must be set manually. This status is applicable only for Quotes that are not generated from another object')),
-                    ]
+
 
 class Company(models.Model):
     ccode = models.CharField(max_length=200, null=False, unique=True)
@@ -73,13 +58,31 @@ class Supplier(models.Model):
 
 # Model for Products and Services
 class Product(models.Model):
+    class STATUS(models.TextChoices):
+        ACTIVE = 'active', _('Active')
+        INACTIVE = 'inactive', _('Inactive')
+        DELETED = 'deleted', _('Deleted')
+        SOLDOUT = 'soldout', _('Sold out')
+        OUTOFSTOCK = 'outofstock', _('Out of stock')
+        RESERVED = 'reserved', _('Reserved')
+        PENDING = 'pending', _('Pending')
+
+
+    # item_status_choices = [('active', ('active')),
+    #                     ('inactive', ('inactive')),
+    #                     ('deleted', ('deleted')),
+    #                     ('soldout', ('soldout')),
+    #                     ('outofstock', ('outofstock')),
+    #                     ('reserved', ('reserved')),
+    #                     ('pending', ('pending'))
+    #                     ]
     company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True, default='')
     product_type = models.ForeignKey(Product_Type, on_delete=models.SET_NULL, null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
     supplier = models.ForeignKey(Supplier, on_delete=models.SET_NULL, null=True, blank=True)
-    status = models.CharField(max_length=200, choices=item_status_choices, default='active')
+    status = models.CharField(max_length=200, choices=STATUS.choices, default=STATUS.ACTIVE)
     price = models.FloatField(default=0.0)
     duration = models.DurationField(default=timedelta(days=0))
     barcode = models.CharField(max_length=20, blank=True, null=True)
@@ -107,7 +110,7 @@ class MemberItem(models.Model):
     qty = models.IntegerField(default=0)
     total_qty = models.IntegerField(default=0)
     duration = models.DurationField(default=timedelta(days=0))
-    status = models.CharField(max_length=200, choices=item_status_choices, default='active')
+    status = models.CharField(max_length=50, choices=Product.STATUS.choices, default=Product.STATUS.ACTIVE)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
 
@@ -202,11 +205,24 @@ class Customer(models.Model):
         return self.company
 
 class Quotation(models.Model):
+    class STATUS(models.TextChoices):
+        FREE = 'free', _('Free, when a quote is created')
+        APPROVED = 'approved', _('Approved, when the quote is approved internally. The quote can be printed and sent to the customer')
+        PRINTED = 'printed', _('Printed, When a quote is printed as an external document and sent to a customer for review.')
+        NEGOTIATING = 'negotiating', _('Indicates that the negotiations about the selected quote are in progress. This status must be set manually')
+        ACCEPTED = 'accepted', _('Accepted, after the customer accepts the quote.')
+        REJECTED = 'rejected', _('Rejected, indicates that the proposed Quote has been rejected by the customer')
+        PROCESSED = 'processed', _('Processed, after the customer accepts the proposal, use the option Process in the appropriate menu to create a maintenance sales order from the quote data.')
+        CANCELED = 'canceled', _('Canceled, indicates that the quote is cancelled. Only the quotes with the status Free, Printed or Negotiating can be cancelled')
+        LOST = 'lost', _('Lost, indicates that the customer has selected another supplier. This status must be set manually.')
+
+
+
     company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
     number = models.CharField(max_length=200)
     version = models.CharField(max_length=200, null=True, blank=True)
     quotation_date = models.DateTimeField(auto_now_add=True)    
-    quotation_status = models.CharField(max_length=200, choices=q_status_choices, default='active')
+    quotation_status = models.CharField(max_length=200, choices=STATUS.choices, default=STATUS.FREE)
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
     customer_company = models.CharField(max_length=200, null=True, blank=True)
     customer_contact = models.CharField(max_length=200, null=True, blank=True)
@@ -244,7 +260,7 @@ class Inventory(models.Model):
     quantity = models.IntegerField()
     min_quantity = models.IntegerField()
     max_quantity = models.IntegerField()
-    status = models.CharField(max_length=200, choices=item_status_choices, default='active')
+    status = models.CharField(max_length=200, choices=Product.STATUS.choices, default=Product.STATUS.ACTIVE)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
     updated = models.DateTimeField(auto_now=True)
 

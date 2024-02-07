@@ -22,20 +22,54 @@ from base.views import auth_data
 import logging
 from aqs.tasks import *
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
-from .models import ACTION
 from datetime import datetime
 from .serializers import tsSerializer
+import phonenumbers
+import phonenumbers.timezone
+import re
 
 logger = logging.getLogger(__name__)
 
-def Appointment_DetailsView(request, pk):
+def chainBookNow(timeslot, name, phone_number:phonenumbers, email):
+    # check slot
     error = ''
+    error_TC = ''
+    if error == '':
+        if timeslot.slot_available <= 0:
+            error = 'No slot available'
+            error_TC = '沒有可用時段, 請選擇其他時段'
+    if error == '':
+        timeslot.slot_available = timeslot.slot_available - 1
+        timeslot.slot_using = timeslot.slot_using + 1
+        timeslot.save()
+
+        booking =Booking.objects.create(
+            timeslot=timeslot,
+            user=None,
+            member = None,
+            
+            status = Booking.STATUS.PENDING,
+
+            name=name, 
+            email=email, 
+            mobilephone_country=str(phone_number.country_code), 
+            mobilephone=phone_number.national_number,
+            )
+        print(booking.status)
+        # get the new timeslot and create a log
+        funBookingLog(timeslot, booking, BookingLog.ACTION.NEW)
+    return error, error_TC
+
+def Booking_DetailsView(request, pk):
+    error = ''
+    error_TC = ''
     context = {}
 
     try:
         timeslot = TimeSlot.objects.get(id=pk)
     except:
         error = 'TimeSlot not found'
+        error_TC = '沒有找到時段'
 
     if error != '':
         return HttpResponse(error)    
@@ -47,11 +81,93 @@ def Appointment_DetailsView(request, pk):
                 name = form['name'].value()
                 mphone = form['mphone'].value()
                 email = form['email'].value()
+
                 print(pk, name, mphone, email)
 
                 # check input data
+                if error == '':
+                    if email + mphone == '' :
+                        error = 'Mobile or Email are required'
+                        error_TC = '手提電話或電郵地址是必需的'
+                
+                if error == '':
+                    if mphone != '':
+                        if len(mphone) == 8 and mphone.isdigit() == True:
+                            mphone = '+852' + mphone
+                        # check mobile first 3 digits is '852'
+                        if mphone[0:3] == '852':
+                            # add '+' from mobile
+                            mphone = '+' + mphone                
+                        try:
+                            phone_number = phonenumbers.parse(mphone)
+                        except:
+                            error = 'Mobile format is incorrect'
+                            error_TC = '手提電話格式不正確'
+                        if error == '':
+                            if phonenumbers.is_valid_number(phone_number) == False:
+                                error = 'Mobile format is incorrect'
+                                error_TC = '手提電話格式不正確'
+                        if error == '':
+                            if phone_number.country_code != 852:
+                                error = 'Mobile should be Hong Kong number'
+                                error_TC = '手提電話必須是香港號碼'
+                
                 
 
+                
+                if error == '':
+                    if email != '':
+                    # check email format
+                        regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+                        if(re.fullmatch(regex, email)):
+                            pass       
+                        else:
+                            error = 'Email format is incorrect'
+                            error_TC = '電郵地址格式不正確'
+
+                if error == '':
+                    error, error_TC = chainBookNow(timeslot, name, phone_number, email)
+
+                if error == '':
+                    # send SMS to customer
+
+                    # send email to customer
+
+                    # send email to admin
+
+                    # redirect to success page
+                    success_str = ''
+                    if name != '':
+                        success_str = '你好 ' + name + ' :' + '\n' + '\n'
+                    success_str += '請帶發票在預約時間到維修中心' + '\n' + \
+                    '地址: 彌敦道9號' + '\n' + \
+                    '如需要更改時間/取消預約請盡早打電話給我們91234567' + '\n' + \
+                    '' + '\n' + \
+                    '這個訊息會發送去你的電郵或者手機短訊。' + '\n' + \
+                    '' + '\n' + \
+                    'TSVD'
+                    
+                    context = {
+                        'aqs_version':aqs_version,
+                        'text':success_str
+                        }
+                    return render(request, 'booking/booking_success.html', context)
+                    pass
+
+                if error != '':
+
+                    # if error == 'No slot available' redirect to 'appointment' branch.bcode
+
+                    # Error message
+                    messages.error(request, error)
+                    pass
+
+                if phone_number != '':
+                    print(phonenumbers.is_valid_number(phone_number))
+                    print(phonenumbers.timezone.time_zones_for_number(phone_number))
+                    print('Country code:' + str(phone_number.country_code))
+                    print('National number:' + str(phone_number.national_number))
+                print('error:', error)
 
         startdate = funUTCtoLocal(timeslot.start_date, timeslot.branch.timezone)
         date_str = startdate.strftime('%Y-%m-%d' )
@@ -69,9 +185,10 @@ def Appointment_DetailsView(request, pk):
 
         context = {'aqs_version':aqs_version} | context
         return render(request, 'booking/booking_details.html', context)
+        
 
 
-def AppointmentView(request, bcode):
+def BookingView(request, bcode):
     # http://127.0.0.1:8000/booking/KB/
     context = {}
     error = ''
@@ -126,7 +243,7 @@ def AppointmentView(request, bcode):
     }
     
     context = {'aqs_version':aqs_version} | context 
-    return render(request , 'booking/appointment.html', context)
+    return render(request , 'booking/booking.html', context)
 
 
 
@@ -142,7 +259,7 @@ def TimeSlotDelView(request, pk):
         timeslot.save()
 
         # get the new timeslot and create a log
-        funBookingLog(timeslot, None, A_DELETE)
+        funBookingLog(timeslot, None, BookingLog.ACTION.DELETE)
 
         timeslot.delete()       
         messages.success(request, 'Time Slot was successfully deleted!') 
@@ -183,7 +300,7 @@ def TimeSlotNewView(request):
 
                 # get the new timeslot and create a log
                 timeslot = TimeSlot.objects.get(id=newform.id)
-                funBookingLog(timeslot, None, A_NEW)
+                funBookingLog(timeslot, None, BookingLog.ACTION.NEW)
 
                 messages.success(request, 'Created new Time Slot.')
             except:
@@ -227,7 +344,7 @@ def TimeSlotUpdateView(request, pk):
                 timeslot.user = request.user
                 timeslot.save()
                 messages.success(request, 'TimeSlot was successfully updated!')
-                funBookingLog(timeslot, None, A_CHANGE)
+                funBookingLog(timeslot, None, BookingLog.ACTION.CHANGE)
                 
                 return redirect('bookingtimeslot')
             except:
@@ -328,30 +445,52 @@ def checktimeslotform(form):
 
 
 def funBookingLog(timeslot, booking, action):
+
+    logtext = ''
+    logtext_t = ''
+    logtext_b:str = ''
     if timeslot != None :
         bookingstart_str = funUTCtoLocal(timeslot.start_date, timeslot.branch.timezone).strftime('%Y-%m-%d %H:%M:%S' )
         bookingend_str = funUTCtoLocal(timeslot.end_date, timeslot.branch.timezone).strftime('%Y-%m-%d %H:%M:%S' )
         show_date_str = funUTCtoLocal(timeslot.show_date, timeslot.branch.timezone).strftime('%Y-%m-%d %H:%M:%S' )
         show_end_date_str = funUTCtoLocal(timeslot.show_end_date, timeslot.branch.timezone).strftime('%Y-%m-%d %H:%M:%S' )
-        logtext = \
-            'Branch:' + timeslot.branch.bcode + '\n' + \
-            'Booking Start Date (local time):' + bookingstart_str + '\n' + \
-            'Booking End Date (local time):' + bookingend_str + '\n' + \
-            'Show Date (local time):' + show_date_str + '\n' + \
-            'Show End Date (local time):' + show_end_date_str + '\n' + \
-            'Slot Total:' + str(timeslot.slot_total) + '\n' + \
-            'Slot Available:' + str(timeslot.slot_available) 
-        
 
-        BookingLog.objects.create(
-            timeslot=timeslot, 
-            booking=booking, 
-            user=timeslot.user, 
-            member = None,
-            logtext = logtext,
-            action=action, 
-            remark = None,
-            )
+        logtext_t = 'Branch:' + timeslot.branch.bcode + '\n'
+        logtext_t += 'Booking Start Date (local time):' + bookingstart_str + '\n'
+        logtext_t += 'Booking End Date (local time):' + bookingend_str + '\n'
+        logtext_t += 'Show Date (local time):' + show_date_str + '\n'
+        logtext_t += 'Show End Date (local time):' + show_end_date_str + '\n'
+        logtext_t += 'Slot Using:' + str(timeslot.slot_using) + '\n'
+        logtext_t += 'Slot Available:' + str(timeslot.slot_available) + '\n'
+        logtext_t += 'Slot Total:' + str(timeslot.slot_total) + '\n' + '\n'
+
+    if booking != None :
+        user_str = 'None'
+        if booking.user != None:
+            user_str = booking.user.username
+        member_str = 'None'
+        if booking.member != None:
+            member_str = booking.member.username
+
+        logtext_b = 'Status : ' + booking.status + '\n'
+        logtext_b += 'Booking User : ' + user_str + '\n' 
+        logtext_b += 'Booking Member : ' + member_str + '\n'
+        logtext_b += 'Name : ' + booking.name + '\n'
+        logtext_b += 'Email : ' + booking.email + '\n'
+        logtext_b += 'Mobile : ' + str(booking.mobilephone_country) + ' ' + str(booking.mobilephone) + '\n'
+        logtext_b += 'People : ' + str(booking.people) + '\n'
+        logtext_b += 'Remark : ' + booking.remark + '\n'
+
+    logtext = logtext_t + logtext_b
+    BookingLog.objects.create(
+        timeslot = timeslot, 
+        booking = booking, 
+        user = timeslot.user, 
+        member = None,
+        logtext = logtext,
+        action = action, 
+        remark = None,
+        )        
     return
 
 def funWeekStr(inputdate:datetime) -> str:
