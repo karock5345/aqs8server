@@ -27,11 +27,16 @@ class TimeSlotForm(ModelForm):
     def __init__(self, *args,**kwargs):
         self.auth_branchs = kwargs.pop('auth_branchs')
         super().__init__(*args,**kwargs)
+        
         self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs)
         self.fields['user'].widget.attrs['disabled'] = 'disabled'
         self.fields['created_by_temp'].widget.attrs['disabled'] = 'disabled'
-    
-        try:            
+        self.fields['show_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
+        self.fields['show_end_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
+        self.fields['start_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
+        self.fields['end_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
+        
+        if self.instance.pk is not None:
             ts = self.instance
             timezone = ts.branch.timezone
             self.initial['start_date'] = funUTCtoLocal(ts.start_date, timezone)
@@ -39,8 +44,7 @@ class TimeSlotForm(ModelForm):
 
             self.initial['show_date'] = funUTCtoLocal(ts.show_date, timezone)
             self.initial['show_end_date'] = funUTCtoLocal(ts.show_end_date, timezone)
-
-        except:
+        else:
             # For new form initial value of Branch is null
             datetime_now = datetime.now()
   
@@ -49,6 +53,7 @@ class TimeSlotForm(ModelForm):
             start_date_default = datetime_now + timedelta(days=7)
             # start_date_default change seconds to '00'
             start_date_default = start_date_default.replace(second=0, microsecond=0)
+            # start_date_default = funUTCtoLocal(start_date_default, timezone)
             self.initial['start_date'] = start_date_default
             end_date_default = start_date_default + timedelta(minutes=30)
             self.initial['end_date'] = end_date_default
@@ -57,11 +62,42 @@ class TimeSlotForm(ModelForm):
             self.initial['show_date'] = show_date_default
             show_date_end_default = start_date_default - timedelta(minutes=60)
             self.initial['show_end_date'] = show_date_end_default
-            pass
-        self.fields['show_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
-        self.fields['show_end_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
-        self.fields['start_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
-        self.fields['end_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
+
+
+            self.fields['slot_using'].label = str('hidden')
+        # try:            
+        #     ts = self.instance
+        #     timezone = ts.branch.timezone
+        #     self.initial['start_date'] = funUTCtoLocal(ts.start_date, timezone)
+        #     self.initial['end_date'] = funUTCtoLocal(ts.end_date, timezone)
+
+        #     self.initial['show_date'] = funUTCtoLocal(ts.show_date, timezone)
+        #     self.initial['show_end_date'] = funUTCtoLocal(ts.show_end_date, timezone)
+
+        # except:
+        #     # For new form initial value of Branch is null
+        #     datetime_now = datetime.now()
+  
+        #     # |show_date---show_end_date|---start_date---| 
+        #     # show_date should be < show_end_date < start_date    
+        #     start_date_default = datetime_now + timedelta(days=7)
+        #     # start_date_default change seconds to '00'
+        #     start_date_default = start_date_default.replace(second=0, microsecond=0)
+        #     self.initial['start_date'] = start_date_default
+        #     end_date_default = start_date_default + timedelta(minutes=30)
+        #     self.initial['end_date'] = end_date_default
+
+        #     show_date_default = start_date_default - timedelta(days=7)
+        #     self.initial['show_date'] = show_date_default
+        #     show_date_end_default = start_date_default - timedelta(minutes=60)
+        #     self.initial['show_end_date'] = show_date_end_default
+            
+            # hide slot_using, slot_available
+            # self.fields['slot_using'].attrs['hidden'] = True
+            # self.fields['slot_available'].widget = forms.HiddenInput()
+            
+            # add tag to 'slot_using', 'slot_available' is hidden
+       
 
     class Meta:
         model = TimeSlot

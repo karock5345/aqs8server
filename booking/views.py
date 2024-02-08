@@ -63,6 +63,10 @@ def chainBookNow(timeslot, name, phone_number:phonenumbers, email):
 def Booking_DetailsView(request, pk):
     error = ''
     error_TC = ''
+    name = ''
+    mphone = ''
+    email = ''
+    phone_number =''
     context = {}
 
     try:
@@ -181,6 +185,9 @@ def Booking_DetailsView(request, pk):
             'time':time_str,
             'week':week_str,
             'sometext':sometext,
+            'name':name,
+            'mphone':mphone,
+            'email':email,
         }
 
         context = {'aqs_version':aqs_version} | context
