@@ -1,27 +1,53 @@
-<div>{{id}}</div>
-<div>{{date}}</div>
-<div>{{time}}</div>
-<div>{{week}}</div>
-<div>{{sometext}}</div>
-
-
-<form class="form" action="" method="POST" >
-    {% csrf_token %}
-    <div class="layout__body">
-        <div class="form__group">
-            <label for="name">Your name :</label>
-            <input type="text" name="name" value="{{name}}">
-        </div>
-        <div class="form__group">
-            <label for="mphone">Mobile phone:</label>
-            <input type="text" name="mphone" value="{{mphone}}">
-        </div>
-        <div class="form__group">
-            <label for="email">email:</label>
-            <input type="text" name="email" value="{{email}}">
-        </div>
-        <div class="form__action">
-            <button type="submit" name="action" value="submit_booknow" class="softkey_btn softkey_btn--submit btn--main" >Confirm</button>
+{% extends 'base/webtv_header.html'%}
+{% block content %}
+    <div class="scroll">
+        <marquee class="vertical-center" behavior="scroll" direction="left">{{scroll}}</marquee>
+    </div>
+    <div class="status">
+        <div class="vertical-center">
+            預約時間 Appointment time
         </div>
     </div>
-</form>
+
+    <div class="container_booking_detail">
+        <div class="booking"></div>
+        <div class="booking">
+            <div class="bookingtype" >
+                <div class="bookingtext">{{date}}</div>
+                <div class="bookingtext right">{{week}}</div>                
+            </div>
+            <div class="bookingtime">{{time}}</div>
+        </div>
+        <div class="booking"></div>
+    </div>
+
+    <div class="booking_text_container">
+        <label class="booking_text">{{text}}</label>
+    </div>
+
+    <form class="form" action="" method="POST" >
+        {% csrf_token %}
+        <div class="layout__body">
+            <div class="form__group">
+                <label for="name">稱呼 :</label>
+                <input type="text" name="name" value="{{name}}">
+            </div>
+            <div class="form__group">
+                <label for="mphone">手機號碼 :</label>
+                <input type="text" name="mphone" value="{{mphone}}">
+            </div>
+            <div class="form__group">
+                <label for="email">電郵 :</label>
+                <input type="text" name="email" value="{{email}}">
+            </div>
+            <div class="form__action">
+                <a class="button_form"  href="{% url 'booking' bcode %}" >取消</a>
+                <button class="button_form"  type="submit" name="action" value="submit_booknow"  >確定</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="powered">Powered by tsvd.com.hk</div>
+
+{% endblock content %}
+

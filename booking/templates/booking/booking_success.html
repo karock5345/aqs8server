@@ -1,2 +1,20 @@
-<div>Successfully</div>
-<div style="white-space: pre-wrap;" >{{ text }}</div>
+{% extends 'base/webtv_header.html'%}
+{% block content %}
+
+
+    <div class="status">
+        <div class="vertical-center">
+            預約成功
+        </div>
+    </div>
+    <div class="layout__body">
+    <div class="booking_text_container">
+        <label class="booking_text">{{text}}</label>
+    </div>
+    </div>
+    
+    <div class="powered">Powered by tsvd.com.hk</div>
+
+{% endblock content %}
+
+

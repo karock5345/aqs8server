@@ -24,8 +24,7 @@
                         
                         {% csrf_token %}
                         
-                        {% for field in tsform %}
-                            {% if field.name !=  "slot_using" %}
+                        {% for field in tsform  %}
                                 {% if field.name == "enabled" %}
                                     <div class="form__group_checkbox">
                                         {{field}}<label></label>&nbsp;{{field.label}}</label>
@@ -47,7 +46,6 @@
                                         <label for="profile_pic">{{field.label}} : {{field}}</label>                            
                                     </div>
                                 {% endif %}
-                            {% endif %}
                         {% endfor %}
                         
                         <div class="form__action">

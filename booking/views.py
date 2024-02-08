@@ -13,7 +13,7 @@ from django.urls import reverse_lazy, reverse
 
 from .models import *
 from base.models import UserProfile, Branch
-from .forms import TimeSlotForm, DetailsForm
+from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
 from django.utils import timezone
@@ -43,6 +43,11 @@ def chainBookNow(timeslot, name, phone_number:phonenumbers, email):
         timeslot.slot_using = timeslot.slot_using + 1
         timeslot.save()
 
+        phone_number_national = ''
+        phone_number_country = ''
+        if phone_number != '':
+            phone_number_national = phone_number.national_number
+            phone_number_country = str(phone_number.country_code)
         booking =Booking.objects.create(
             timeslot=timeslot,
             user=None,
@@ -52,10 +57,10 @@ def chainBookNow(timeslot, name, phone_number:phonenumbers, email):
 
             name=name, 
             email=email, 
-            mobilephone_country=str(phone_number.country_code), 
-            mobilephone=phone_number.national_number,
+            mobilephone_country = phone_number_country,
+            mobilephone = phone_number_national,
             )
-        print(booking.status)
+        # print(booking.status)
         # get the new timeslot and create a log
         funBookingLog(timeslot, booking, BookingLog.ACTION.NEW)
     return error, error_TC
@@ -68,9 +73,24 @@ def Booking_DetailsView(request, pk):
     email = ''
     phone_number =''
     context = {}
+    logofile = ''
+    css = ''
+    bcode = ''
+    
+    booking_str = \
+    '請輸入 電郵 或 手機號碼(香港)' + '\n' + \
+    '我們發送確認信給你'
 
     try:
         timeslot = TimeSlot.objects.get(id=pk)
+        logofile = timeslot.branch.webtvlogolink
+        css = timeslot.branch.webtvcsslink
+        bcode = timeslot.branch.bcode
+
+        startdate = funUTCtoLocal(timeslot.start_date, timeslot.branch.timezone)
+        date_str = startdate.strftime('%Y-%m-%d' )
+        time_str = startdate.strftime('%I:%M %p')
+        week_str = funWeekStr(startdate)
     except:
         error = 'TimeSlot not found'
         error_TC = '沒有找到時段'
@@ -86,7 +106,7 @@ def Booking_DetailsView(request, pk):
                 mphone = form['mphone'].value()
                 email = form['email'].value()
 
-                print(pk, name, mphone, email)
+                # print(pk, name, mphone, email)
 
                 # check input data
                 if error == '':
@@ -116,9 +136,6 @@ def Booking_DetailsView(request, pk):
                                 error = 'Mobile should be Hong Kong number'
                                 error_TC = '手提電話必須是香港號碼'
                 
-                
-
-                
                 if error == '':
                     if email != '':
                     # check email format
@@ -143,9 +160,13 @@ def Booking_DetailsView(request, pk):
                     success_str = ''
                     if name != '':
                         success_str = '你好 ' + name + ' :' + '\n' + '\n'
-                    success_str += '請帶發票在預約時間到維修中心' + '\n' + \
+                    success_str += \
+                    '你的預約時間：' + '\n' + \
+                    date_str + ' ' + week_str + '\n' + \
+                    time_str + '\n' + \
+                    '請帶發票在預約時間到維修中心' + '\n' + \
                     '地址: 彌敦道9號' + '\n' + \
-                    '如需要更改時間/取消預約請盡早打電話給我們91234567' + '\n' + \
+                    '如需要更改時間/取消預約請盡早打電話給我們 91234567' + '\n' + \
                     '' + '\n' + \
                     '這個訊息會發送去你的電郵或者手機短訊。' + '\n' + \
                     '' + '\n' + \
@@ -153,33 +174,37 @@ def Booking_DetailsView(request, pk):
                     
                     context = {
                         'aqs_version':aqs_version,
-                        'text':success_str
+                        'logofile' : logofile,
+                        'css' : css,
+                        'text':success_str,
                         }
                     return render(request, 'booking/booking_success.html', context)
-                    pass
+                    
 
                 if error != '':
 
                     # if error == 'No slot available' redirect to 'appointment' branch.bcode
 
                     # Error message
+                    messages.error(request, error_TC)
                     messages.error(request, error)
-                    pass
-
-                if phone_number != '':
-                    print(phonenumbers.is_valid_number(phone_number))
-                    print(phonenumbers.timezone.time_zones_for_number(phone_number))
-                    print('Country code:' + str(phone_number.country_code))
-                    print('National number:' + str(phone_number.national_number))
+                    
+                print(phone_number)
+                # if phone_number != '' :
+                #     print(phonenumbers.is_valid_number(phone_number))
+                #     print(phonenumbers.timezone.time_zones_for_number(phone_number))
+                #     print('Country code:' + str(phone_number.country_code))
+                #     print('National number:' + str(phone_number.national_number))
                 print('error:', error)
 
-        startdate = funUTCtoLocal(timeslot.start_date, timeslot.branch.timezone)
-        date_str = startdate.strftime('%Y-%m-%d' )
-        time_str = startdate.strftime('%H:%M' )
-        week_str = funWeekStr(startdate)
+
 
         sometext = 'This is a test'
         context = {
+            'logofile' : logofile,
+            'css' : css,
+            'scroll': '維修請帶發票',
+            'text': booking_str,
             'id':timeslot.id,
             'date':date_str,
             'time':time_str,
@@ -188,6 +213,7 @@ def Booking_DetailsView(request, pk):
             'name':name,
             'mphone':mphone,
             'email':email,
+            'bcode':bcode,
         }
 
         context = {'aqs_version':aqs_version} | context
@@ -201,6 +227,12 @@ def BookingView(request, bcode):
     error = ''
     str_now = '---'
     logofile = ''
+
+    booking_str = \
+    '多謝你預約我們的維修中心' + '\n' + \
+    '請帶發票在預約時間到維修中心' + '\n' + \
+    '地址: 彌敦道9號'
+
 
     branch = None
     if error == '' :        
@@ -230,7 +262,8 @@ def BookingView(request, bcode):
         'timeslots' : timeslots,
         'logofile' : logofile,
         'css' : css,
-        'scroll': '維修請帶發票'
+        'scroll': '維修請帶發票',
+        'text': booking_str,
         }
         pass
     else :
@@ -290,10 +323,10 @@ def TimeSlotNewView(request):
     auth_timeslots, \
     = auth_data(request.user)
 
-    tsform = TimeSlotForm(auth_branchs=auth_branchs)
+    tsform = TimeSlotNewForm(auth_branchs=auth_branchs)
 
     if request.method == 'POST':
-        tsform = TimeSlotForm(request.POST, auth_branchs=auth_branchs)
+        tsform = TimeSlotNewForm(request.POST, auth_branchs=auth_branchs)
         
         error = ''
         error, newform = checktimeslotform(tsform)
@@ -303,6 +336,10 @@ def TimeSlotNewView(request):
                 newform.save()
                 # change user to current user
                 newform.user = request.user
+
+                newform.slot_using = 0
+                newform.slot_available = newform.slot_total
+
                 newform.save()
 
                 # get the new timeslot and create a log
@@ -316,6 +353,7 @@ def TimeSlotNewView(request):
             return redirect('bookingtimeslot')
         if error != '':
             messages.error(request, error)
+
     # get the url of 'bookingtimeslot'
     back_url = reverse('bookingtimeslot')
     context = {'form':tsform}

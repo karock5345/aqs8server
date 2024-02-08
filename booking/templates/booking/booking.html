@@ -1,13 +1,14 @@
 {% extends 'base/webtv_header.html'%}
 {% block content %}
-
-
     <div class="scroll">
         <marquee class="vertical-center" behavior="scroll" direction="left">{{scroll}}</marquee>
     </div>
+    <div class="booking_text_container">
+        <label class="booking_text">{{text}}</label>
+    </div>
     <div class="status">
         <div class="vertical-center">
-            選擇預約 Select appointment
+            選擇時間 Select time
         </div>
     </div>
     
@@ -17,30 +18,7 @@
         </div>
     </div>
 
-    <div id="calling_area">
-    {% for ticketrow in ticketlist %}     
-   
-        <div class="container_calling">
-            <div class="ticketno">
-                {{ticketrow.tickettype}}{{ticketrow.ticketnumber}}
-            </div>
-
-            <i class="arrow icofont-circled-right icofont-3x"></i>
-          
-            <div class="counter">
-                <div class="countertype" >
-                    <div class="countertext">{{ticketrow.ct_lang1}}</div>
-                    <div class="countertext">{{ticketrow.ct_lang2}}</div>
-                </div>
-                <div class="counternumber">{{ticketrow.counternumber}}</div>
-            </div>
-            
-            <div class="numberCircle">
-                {{ticketrow.wait}}
-            </div>  
-        </div>
-
-    {% endfor %}
+    
     {% for ts in timeslots %}
         <div class="container_booking">
             <div class="booking">
@@ -58,11 +36,7 @@
             </div>
         </div>
     {% endfor %}
-     
 
     <div class="powered">Powered by tsvd.com.hk</div>
-
-    
-
 
 {% endblock content %}
