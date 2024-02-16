@@ -13,9 +13,8 @@ import re
 import phonenumbers
 import phonenumbers.timezone
 import xml.etree.ElementTree as ET
-from django.core.mail import EmailMessage
-from django.conf import settings
 from django.template.loader import render_to_string
+from aqs.tasks import sendemail
 # from django.utils.safestring import mark_safe
 # from django.utils.html import format_html, escape
 
@@ -23,21 +22,7 @@ from django.template.loader import render_to_string
 tokenexpire_hours = 24
 
 
-def sendemail(subject, message, toemail):
-    # plain_message = strip_tags(message)
 
-    email = EmailMessage(
-        subject,
-        message,
-        from_email=settings.EMAIL_HOST_USER,
-        to=[toemail],
-        # cc=['elton@tsvd.com.hk'],
-        # bcc=['sales@tsvd.com.hk'],
-        reply_to=['sales@tsvd.com.hk'],        
-    )
-    email.content_subtype = "html"
-    email.fail_silently = False
-    email.send()
 
 
 # del member for test
@@ -398,7 +383,7 @@ def crmMemberRegistrationView(request):
         # print(message)
         # message = escape(mark_safe(message))
         toemail = rx_email
-        sendemail(subject, message, toemail)
+        sendemail.delay(subject, message, toemail)
 
         status = {'status':'success', 'msg':'Successfully! Please check your email to activate your account.' +  ' In development mode: ' + verify_link }
     else:

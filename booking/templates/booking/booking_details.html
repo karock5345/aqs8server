@@ -22,12 +22,14 @@
     </div>
 
     <div class="booking_text_container">
-        <label class="booking_text">{{text}}</label>
+        <div class="booking_text_container_sub">
+            <label class="booking_text booking_text_color">{{text}}</label>
+        </div>
     </div>
 
     <form class="form" action="" method="POST" >
         {% csrf_token %}
-        <div class="layout__body">
+        <div class="booking_form_container">
             <div class="form__group">
                 <label for="name">稱呼 :</label>
                 <input type="text" name="name" value="{{name}}">

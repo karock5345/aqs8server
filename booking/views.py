@@ -27,6 +27,8 @@ from .serializers import tsSerializer
 import phonenumbers
 import phonenumbers.timezone
 import re
+from aqs.tasks import sendemail
+from django.template.loader import render_to_string
 
 logger = logging.getLogger(__name__)
 
@@ -48,20 +50,21 @@ def chainBookNow(timeslot, name, phone_number:phonenumbers, email):
         if phone_number != '':
             phone_number_national = phone_number.national_number
             phone_number_country = str(phone_number.country_code)
-        booking =Booking.objects.create(
-            timeslot=timeslot,
-            user=None,
+        booking = Booking.objects.create(
+            branch = timeslot.branch,
+            timeslot = timeslot,
+            user = None,
             member = None,
             
             status = Booking.STATUS.PENDING,
 
-            name=name, 
-            email=email, 
+            name = name, 
+            email = email, 
             mobilephone_country = phone_number_country,
             mobilephone = phone_number_national,
             )
         # print(booking.status)
-        # get the new timeslot and create a log
+        # aget the new timeslot and create a log
         funBookingLog(timeslot, booking, BookingLog.ACTION.NEW)
     return error, error_TC
 
@@ -76,7 +79,7 @@ def Booking_DetailsView(request, pk):
     logofile = ''
     css = ''
     bcode = ''
-    
+
     booking_str = \
     '請輸入 電郵 或 手機號碼(香港)' + '\n' + \
     '我們發送確認信給你'
@@ -147,16 +150,62 @@ def Booking_DetailsView(request, pk):
                             error_TC = '電郵地址格式不正確'
 
                 if error == '':
-                    error, error_TC = chainBookNow(timeslot, name, phone_number, email)
+                    # error, error_TC = chainBookNow(timeslot, name, phone_number, email)
+                    pass
 
                 if error == '':
-                    # send SMS to customer
-
                     # send email to customer
+                    if email != '':
+                        subject = '你的預約已經確認 - ' + timeslot.branch.name
+                        success_str = ''
+                        if name != '':
+                            success_str = '你好 ' + name + ' :' + '\n' + '\n'
+                        success_str += \
+                        '你的預約時間：' + '\n' + \
+                        date_str + ' ' + week_str + '\n' + \
+                        time_str + '\n' + \
+                        '請帶發票在預約時間到維修中心' + '\n' + \
+                        '地址: 彌敦道9號' + '\n' + \
+                        '如需要更改時間/取消預約請盡早打電話給我們 91234567' + '\n' + \
+                        '' + '\n' + \
+                        '這個訊息會發送去你的電郵或者手機短訊。' + '\n' + \
+                        '' + '\n' + \
+                        timeslot.branch.name
+
+                        message = render_to_string('booking/email_booking_confirmed.html', {
+                            'title': subject,
+                            'body': success_str,                        
+                        })
+                        message = message.replace('amp;', '')
+                        sendemail.delay(subject, message, email,)
 
                     # send email to admin
 
-                    # redirect to success page
+
+                    # send SMS to customer
+                    if timeslot.branch.SMSenabled == True and timeslot.branch.bookingSMS == True:
+                        if timeslot.branch.bookingenabled == True:
+                            if phone_number != '':
+                                mphone_sms = str(phone_number.country_code) + str(phone_number.national_number)
+                                subject = '你的預約已經確認 - ' + timeslot.branch.name
+                                success_str = ''
+                                if name != '':
+                                    success_str = '你好 ' + name + ' :' + '\n' + '\n'
+                                success_str += \
+                                '你的預約時間：' + '\n' + \
+                                date_str + ' ' + week_str + '\n' + \
+                                time_str + '\n' + \
+                                '請帶發票在預約時間到維修中心' + '\n' + \
+                                '地址: 彌敦道9號' + '\n' + \
+                                '如需要更改時間/取消預約請盡早打電話給我們 91234567' + '\n' + \
+                                '' + '\n' + \
+                                '這個訊息會發送去你的電郵或者手機短訊。' + '\n' + \
+                                '' + '\n' + \
+                                timeslot.branch.name
+                                msg_sms = subject + '\n' + '\n' + success_str
+
+                                sendSMS.delay(mphone_sms, msg_sms, timeslot.branch.bcode, 'Booking Confirmation')
+
                     success_str = ''
                     if name != '':
                         success_str = '你好 ' + name + ' :' + '\n' + '\n'
@@ -170,8 +219,7 @@ def Booking_DetailsView(request, pk):
                     '' + '\n' + \
                     '這個訊息會發送去你的電郵或者手機短訊。' + '\n' + \
                     '' + '\n' + \
-                    'TSVD'
-                    
+                    timeslot.branch.name                    
                     context = {
                         'aqs_version':aqs_version,
                         'logofile' : logofile,
@@ -227,12 +275,7 @@ def BookingView(request, bcode):
     error = ''
     str_now = '---'
     logofile = ''
-
-    booking_str = \
-    '多謝你預約我們的維修中心' + '\n' + \
-    '請帶發票在預約時間到維修中心' + '\n' + \
-    '地址: 彌敦道9號'
-
+    booking_str = ''
 
     branch = None
     if error == '' :        
@@ -244,6 +287,9 @@ def BookingView(request, bcode):
             datetime_now = timezone.now()
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
+
+            booking_str = branch.bookingTextHTMLpage1
+            booking_str = booking_str.replace( '[[ADDR]]', branch.address)
         else :
             error = 'Branch not found.'
 
@@ -331,6 +377,9 @@ def TimeSlotNewView(request):
         error = ''
         error, newform = checktimeslotform(tsform)
         
+        if error == '' :
+            if timeslot.branch.bookingenabled == True:
+                error = 'Booking function is disabled'
         if error == '' :
             try:
                 newform.save()
@@ -494,7 +543,9 @@ def funBookingLog(timeslot, booking, action):
     logtext = ''
     logtext_t = ''
     logtext_b:str = ''
+    branch = None
     if timeslot != None :
+        branch = timeslot.branch
         bookingstart_str = funUTCtoLocal(timeslot.start_date, timeslot.branch.timezone).strftime('%Y-%m-%d %H:%M:%S' )
         bookingend_str = funUTCtoLocal(timeslot.end_date, timeslot.branch.timezone).strftime('%Y-%m-%d %H:%M:%S' )
         show_date_str = funUTCtoLocal(timeslot.show_date, timeslot.branch.timezone).strftime('%Y-%m-%d %H:%M:%S' )
@@ -510,6 +561,7 @@ def funBookingLog(timeslot, booking, action):
         logtext_t += 'Slot Total:' + str(timeslot.slot_total) + '\n' + '\n'
 
     if booking != None :
+        branch = booking.branch
         user_str = 'None'
         if booking.user != None:
             user_str = booking.user.username
@@ -528,6 +580,7 @@ def funBookingLog(timeslot, booking, action):
 
     logtext = logtext_t + logtext_b
     BookingLog.objects.create(
+        branch = branch,
         timeslot = timeslot, 
         booking = booking, 
         user = timeslot.user, 

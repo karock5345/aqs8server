@@ -207,11 +207,20 @@ CHANNEL_LAYERS = {
     }
 }
 
+# CELERY SETTINGS
 CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':6379/0'
+CELERY_ACCEPT_CONTENT = {'application/json'}
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+# CELERY_RESULT_BACKEND = 'django-db'
+CELERY_RESULT_EXTENDED = True
 CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':6379/0'
 CELERY_TASK_LOG_LEVEL = 'DEBUG'
 # set the celery timezone
 CELERY_TIMEZONE = 'UTC'
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 
 LOGGING = {
     'version': 1,
@@ -230,7 +239,10 @@ LOGGING = {
             'handlers': ['console_base', 'logfile_base'],
             'level': 'INFO',
         },
-
+        'booking' : {
+            'handlers': ['console_booking', 'logfile_base'],
+            'level': 'INFO',
+        },
     },
     'formatters': {
         'simple': {
@@ -243,6 +255,10 @@ LOGGING = {
         },
         'simple_aqs': {
             'format': '{levelname} {asctime} aqs>{module}>{funcName} {message}',
+            'style': '{',
+        },
+        'simple_booking': {
+            'format': '{levelname} {asctime} booking>{module}>{funcName} {message}',
             'style': '{',
         },
     },
@@ -283,6 +299,18 @@ LOGGING = {
             'formatter': 'simple_aqs',
             'maxBytes': 1024*1024*5, # 5 MB
         },
+        'console_booking': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple_booking',
+        },
+        'logfile_booking': {
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': f'{BASE_DIR}/logs/aqs.log',
+            'mode': 'a',
+            'encoding': 'utf-8',
+            'formatter': 'simple_aqs',
+            'maxBytes': 1024*1024*5, # 5 MB
+        },        
     },
 }
 
@@ -313,4 +341,7 @@ EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'tim@tsvd.com.hk'
 EMAIL_HOST_PASSWORD = 'happy@5345'
 
-
+# SMS settings
+SMS_ACCOUNT_NAME = 'tsvd@u3.ufosend.com'
+SMS_API_KEY = '4a49b8f67965e61e'
+SMS_SENDER = 'TSVD'

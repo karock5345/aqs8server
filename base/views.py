@@ -2563,7 +2563,7 @@ def Settings_Save(request, pk):
 
     s_smsenabled = 'off'
     try:
-        s_smsenabled = request.GET['enabledsms']
+        s_smsenabled = request.GET['SMSenabled']
     except:
         s_smsenabled = 'off'   
     if s_smsenabled == 'on':
@@ -2571,7 +2571,7 @@ def Settings_Save(request, pk):
     else:
         new_smsenabled  = False  
 
-    new_smsmsg = request.GET['smsmsg']
+    new_SMSmsg = request.GET['SMSmsg']
     if result == '' :
         # branch.enabled = new_branchenabled
         branch.name = new_branchname
@@ -2595,8 +2595,8 @@ def Settings_Save(request, pk):
         branch.language3 = new_language3
         branch.language4 = new_language4
         branch.usersinglelogin = new_usersinglelogin
-        branch.enabledsms = new_smsenabled
-        branch.smsmsg = new_smsmsg
+        branch.SMSenabled = new_smsenabled
+        branch.SMSmsg = new_SMSmsg
         
     if result == '' :
         branch.save()

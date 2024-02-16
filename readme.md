@@ -1,5 +1,10 @@
 # AQS version 8.2.1
 
+Coming up:
+Reset SMS quota
+send quota is full email to admin
+send 'New booking' email to manager
+
 <h3 style="color:orange;">Version 8.2.1</h3>
 
 - Fixed bug : base > v_softkey_sub.py > cc_aux : Counter can not call ticket when counter is hold a ticket > ACW > AUX > Ready

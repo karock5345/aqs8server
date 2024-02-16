@@ -33,14 +33,14 @@
                     {% csrf_token %}
                     
                     {% for field in branchsettingsform %}
-                        {% if field.name == "enabled" or field.name == "subscribe" or field.name == "ticketrepeatnumber" or field.name == "displayenabled" or field.name == "voiceenabled" or field.name == "usersinglelogin" or field.name == "enabledsms" or field.name == "ticketrepeatnumber" or field.name == "websoftkey_show_waitinglist" %}
+                        {% if field.name == "enabled" or field.name == "subscribe" or field.name == "ticketrepeatnumber" or field.name == "displayenabled" or field.name == "voiceenabled" or field.name == "usersinglelogin" or field.name == "SMSenabled" or field.name == "ticketrepeatnumber" or field.name == "websoftkey_show_waitinglist" or field.name == "bookingenabled" %}
                             <div class="form__group_checkbox">
                                 <label class="profile_pic">{{field}} {{field.label}}</label><br>
                             </div>
 
                         {% else %}
                             <div class="form__group">
-                                <label class="profile_pic">{{field.label}}{{field}}</label>
+                                <label class="profile_pic">{{field.label}}{{field}}{{field.help_text}}</label>
                             </div>
                         {% endif %}
                     {% endfor %}

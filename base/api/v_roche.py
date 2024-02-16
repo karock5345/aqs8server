@@ -20,10 +20,10 @@ logger = logging.getLogger(__name__)
 def rocheSMS(branch, tticket):
     error = ''
     if error == '':
-        if branch.enabledsms == False:
+        if branch.SMSenabled == False:
             error = 'SMS disabled'
     if error == '':
-        if branch.smsmsg == None or branch.smsmsg == '' :
+        if branch.SMSmsg == None or branch.SMSmsg == '' :
             error = 'SMS message is blank'
     
     if error == '':
@@ -31,8 +31,8 @@ def rocheSMS(branch, tticket):
         objpuser = UserProfile.objects.filter(branchs=branch, tickettype__contains=ttype).exclude(mobilephone=None).exclude(mobilephone='')
         for puser in objpuser:
             if puser.user.is_active == True:
-                smsmsg = branch.smsmsg.replace('<TICKET>', tticket.tickettype + tticket.ticketnumber)
-                wsrochesms(branch.bcode, puser.mobilephone, smsmsg)
+                SMSmsg = branch.SMSmsg.replace('<TICKET>', tticket.tickettype + tticket.ticketnumber)
+                wsrochesms(branch.bcode, puser.mobilephone, SMSmsg)
 
                 pass
     else:

@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from base.models import Branch
+from base.models import Branch, Ticket, TicketTemp
 from crm.models import Member
 from datetime import timedelta
 from django.utils.html import format_html, escape
@@ -22,7 +22,7 @@ from django.utils.translation import gettext_lazy as _
 
 class TimeSlot(models.Model):
     # TimeSlot if branch is deleted, timeslot should be deleted
-    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)    
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
     # |show_date---show_end_date|---start_date---| 
     # show_date should be < show_end_date < start_date    
     start_date = models.DateTimeField(null=False, blank=False  )
@@ -39,6 +39,9 @@ class TimeSlot(models.Model):
     
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
+
+
+
     def __str__(self):
         return self.branch.bcode + ' ' + self.start_date.strftime('%Y-%m-%d_%H:%M')
 
@@ -52,8 +55,8 @@ class Booking(models.Model):
         REJECTED = 'rejected', _('Rejected by Admin')
         CANCELLED = 'cancelled', _('Cancelled by Customer')
 
-
-
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
+    # branch = models.ForeignKey(Branch, on_delete=models.CASCADE, default=Branch.get_default_pk)
     timeslot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, blank=True)
@@ -88,9 +91,11 @@ class BookingLog(models.Model):
         COMPLETE = 'complete', _('Completed')
         DELETE = 'delete', _('Delete')
 
-
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
+    # branch = models.ForeignKey(Branch, on_delete=models.CASCADE, default=Branch.get_default_pk)
     timeslot = models.ForeignKey(TimeSlot, on_delete=models.SET_NULL, null=True, blank=True)
     booking = models.ForeignKey(Booking, on_delete=models.SET_NULL, null=True, blank=True)
+    
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, blank=True)
     logtext = models.TextField(max_length=200, null=True, blank=True)
@@ -99,3 +104,19 @@ class BookingLog(models.Model):
     remark = models.TextField(max_length=200, null=True, blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
+
+
+class SMS_Log(models.Model):
+    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    phone = models.CharField(max_length=20, blank=True, null=True)
+    sent = models.BooleanField(default=False)
+    numSMS = models.IntegerField(default=0)
+    ref = models.CharField(max_length=200, blank=True, null=True)
+    status = models.IntegerField(default=models.SET_NULL, blank=True, null=True)
+    return_code = models.IntegerField(default=models.SET_NULL, blank=True, null=True)
+    msg_for = models.CharField(max_length=200, blank=True, null=True)
+    errormsg = models.CharField(max_length=200, blank=True, null=True)
+
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created
+

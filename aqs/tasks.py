@@ -8,14 +8,148 @@ from django.utils import timezone
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 import pickle
 from base.models import TicketData, TicketFormat, Ticket, Branch, UserStatusLog
+from booking.models import SMS_Log
 from django.contrib.auth.models import User
 from django.db.models import Q
 import logging
 # from celery import Celery
 # app = Celery()
 from django.conf import settings
+# from django.core.mail import send_mail
+from django.core.mail import EmailMessage
+import requests
+from django.http import JsonResponse
 
 logger = logging.getLogger(__name__)
+
+@shared_task(bind = True,)
+def sendSMS(self, tophone, message, bcode, msg_for):
+
+    error = ''
+    output = ''
+    branch = None
+
+    if error == '' :
+        if tophone == '':
+            error = 'No phone number'
+    if error == '' :
+        if message == '':
+            error = 'No message'
+    if error == '' :
+        if bcode == '':
+            error = 'No branch code'
+    if error == '' :
+        branch = Branch.objects.get(bcode=bcode)
+        if branch == None:
+            error = 'Branch not found'
+
+    if error == '':
+        # get the message length and check how many SMS will be sent
+        # Max. is 160 characters / 70 characters (Unicode) per SMS
+        lenpersms = 70
+        if message.isascii() == True:
+            lenpersms = 160
+        # get the message length
+        lenmessage = len(message) - 1
+        # get the number of SMS
+        numsms = int(lenmessage / lenpersms) + 1
+        
+        # check SMS quota
+        used = branch.SMSUsed + numsms
+        if used > branch.SMSQuota:
+            error = 'SMS Quota exceeded'
+
+                                
+    if error != '':
+        output = error
+        # save error to DB
+        SMS_Log.objects.create(
+            branch = branch,
+            phone = tophone,
+            sent = False,
+            msg_for = msg_for,
+        )
+
+
+
+    if error == '':
+        # SMS provider: UFO
+        url = 'https://api3.ufosend.com/v3.0/sms_connect.php?'
+    
+        url += 'account_name=' + settings.SMS_ACCOUNT_NAME
+        url += '&api_key=' + settings.SMS_API_KEY
+        url += '&sender=' + settings.SMS_SENDER
+        url += '&mobile=' + tophone
+        url += '&sms_content=' + message
+
+        response = requests.get(url)
+
+        # response converted to json
+        json = response.json()
+        try:
+            # get the 'ref' from json
+            ref = json['ref']
+        except:
+            pass
+        try:
+            # get the 'status' from json
+            status = json['status']
+        except:
+            pass
+        try:            
+            # get ret
+            return_code = json['return_code']
+        except:
+            pass
+        try:
+            test = json['test']
+        except:
+            pass
+        # logger.info(f'SMS sent to: {tophone} ref: {ref} status: {status} return_code: {return_code}')
+
+        output = response.text
+
+
+        if status == 1 and return_code == 100 :
+            # Success
+            branch.SMSUsed = branch.SMSUsed + numsms
+            branch.save()
+        # save to DB
+        SMS_Log.objects.create(
+            branch = branch,
+            phone = tophone,
+            sent = True,
+            numSMS = numsms,
+            ref = ref,
+            status = status,
+            return_code = return_code,
+            msg_for = msg_for,
+        )
+    return output
+
+@shared_task(bind=True)
+def sendemail(self, subject, message, toemail):
+
+    email = EmailMessage(
+        subject,
+        message,
+        from_email=settings.EMAIL_HOST_USER,
+        to=[toemail],
+        # cc=['elton@tsvd.com.hk'],
+        # bcc=['sales@tsvd.com.hk'],
+        reply_to=['sales@tsvd.com.hk'],
+    )
+    email.content_subtype = "html"
+    email.fail_silently = True
+
+    # task_id = self.request.id
+    # task_name = self.name
+    # logger.info(f'Email sending To: {toemail}')
+    result = email.send()
+    # logger.info(f'Email sent To: {toemail} Result: {result}')
+    # logger.info(f'Email sending Task id: {task_id} Task name: {task_name} To: {toemail}')
+
+    return 'Email sent'
 
 @shared_task
 def long_running_task():

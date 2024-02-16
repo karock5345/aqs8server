@@ -59,9 +59,13 @@ class BranchSettingsForm_Admin(ModelForm):
     language3 = forms.fields.CharField(label='3rd Language (0-4), 0 is not used')
     language4 = forms.fields.CharField(label='4th Language (0-4), 0 is not used')
     usersinglelogin = forms.fields.BooleanField(label='User single login', required=False)
-    enabledsms = forms.fields.BooleanField(label='Enable SMS', required=False)
-    smsmsg = forms.fields.CharField(label='SMS Message', required=False)
+    SMSenabled = forms.fields.BooleanField(label='Enable SMS', required=False)
+    SMSmsg = forms.fields.CharField(label='SMS Message', required=False)
     websoftkey_show_waitinglist = forms.fields.BooleanField(label='Web-Softkey show waiting list', required=False)
+    
+    # Booking settings
+    bookingenabled = forms.fields.BooleanField(label='Enable Booking Function', required=False)
+    bookingTextHTMLpage1 = forms.fields.CharField(label='Booking Text HTML page 1', help_text='Booking HTML page 1 text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea(attrs={'rows': 5, 'cols': 40}))
 
     class Meta:
         model = Branch
@@ -71,7 +75,9 @@ class BranchSettingsForm_Admin(ModelForm):
                   'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
                   'displayenabled', 'displayflashtime', 
                   'voiceenabled', 'language1', 'language2', 'language3', 'language4', 
-                  'usersinglelogin', 'enabledsms', 'smsmsg', 'websoftkey_show_waitinglist']
+                  'usersinglelogin', 'SMSenabled', 'SMSmsg', 'websoftkey_show_waitinglist',
+                  'bookingenabled', 'bookingTextHTMLpage1',
+                  ]
 
     def __init__(self, *args, **kwargs):
         super(BranchSettingsForm_Admin, self).__init__(*args, **kwargs)
@@ -114,8 +120,8 @@ class BranchSettingsForm_Adv(ModelForm):
     language3 = forms.fields.CharField(label='3rd Language (0-4), 0 is not used')
     language4 = forms.fields.CharField(label='4th Language (0-4), 0 is not used')
     usersinglelogin = forms.fields.BooleanField(label='User single login', required=False)
-    # enabledsms = forms.fields.BooleanField(label='Enable SMS', required=False)
-    # smsmsg = forms.fields.CharField(label='SMS Message', required=False)
+    # SMSenabled = forms.fields.BooleanField(label='Enable SMS', required=False)
+    # SMSmsg = forms.fields.CharField(label='SMS Message', required=False)
     websoftkey_show_waitinglist = forms.fields.BooleanField(label='Web-Softkey show waiting list', required=False)
 
     class Meta:
@@ -126,7 +132,7 @@ class BranchSettingsForm_Adv(ModelForm):
         #           'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
         #           'displayenabled', 'displayflashtime', 
         #           'voiceenabled', 'language1', 'language2', 'language3', 'language4', 
-        #           'usersinglelogin', 'enabledsms', 'smsmsg']
+        #           'usersinglelogin', 'SMSenabled', 'SMSmsg']
         fields = [
                   'name', 'address', 'gps', 
                   'timezone', 'officehourstart', 'officehourend', 'tickettimestart', 'tickettimeend', 
@@ -176,8 +182,8 @@ class BranchSettingsForm_Basic(ModelForm):
     # language3 = forms.fields.CharField(label='3rd Language (0-4), 0 is not used')
     # language4 = forms.fields.CharField(label='4th Language (0-4), 0 is not used')
     # usersinglelogin = forms.fields.BooleanField(label='User single login', required=False)
-    # enabledsms = forms.fields.BooleanField(label='Enable SMS', required=False)
-    # smsmsg = forms.fields.CharField(label='SMS Message', required=False)
+    # SMSenabled = forms.fields.BooleanField(label='Enable SMS', required=False)
+    # SMSmsg = forms.fields.CharField(label='SMS Message', required=False)
 
     class Meta:
         model = Branch
@@ -187,7 +193,7 @@ class BranchSettingsForm_Basic(ModelForm):
         #           'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
         #           'displayenabled', 'displayflashtime', 
         #           'voiceenabled', 'language1', 'language2', 'language3', 'language4', 
-        #           'usersinglelogin', 'enabledsms', 'smsmsg']
+        #           'usersinglelogin', 'SMSenabled', 'SMSmsg']
         fields = ['name', 'address', 'gps', 
                   'officehourstart', 'officehourend', 'tickettimestart', 'tickettimeend',                   
                   ]

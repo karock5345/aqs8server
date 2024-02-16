@@ -641,19 +641,7 @@ body {
 }
 
 
-.layout__body {
-    /* margin: 1rem; */
-    padding: 1rem 1rem 2rem 1rem;
-    display:grid ;
-    /* justify-content: space-evenly; */
-    height: auto;
-    position: relative;
-    background-color:var(--color_form_background);
-    width: 100%;
-    /* margin: 0% 0% 0% 5%; */
-    
 
-  }
 .form__group {
     /* margin-bottom: 2rem; */
     /* margin-top: auto; */
@@ -750,6 +738,10 @@ body {
 }
 
 .booking_text_container {
+    width:100%;
+    background-color: var(--color_header_background);
+}
+.booking_text_container_sub {
     width:96%;
     margin: 0% 0% 0% 2%;
     background: none;
@@ -758,9 +750,24 @@ body {
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 400;
     font-size: 20px;
-    text-decoration: none;    
-    color: var(--color_calling_background);
+    text-decoration: none;
     background: none;
     white-space: pre-wrap;
-
 }
+.booking_text_color {
+    color: var(--color_countertype_text);
+}
+.booking_success_text_color {
+    color: var(--color_header_background);
+}
+.booking_form_container {
+    /* margin: 1rem; */
+    padding: 1rem 1rem 2rem 1rem;
+    display:grid ;
+    /* justify-content: space-evenly; */
+    height: auto;
+    position: relative;
+    background-color:var(--color_form_background);
+    width: 100%;
+    /* margin: 0% 0% 0% 5%; */
+  }

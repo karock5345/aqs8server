@@ -2,7 +2,6 @@ import datetime
 from django.db import models
 from django.contrib.auth.models import User
 
-
 # Create your models here.
 
 lcounterstatus = [
@@ -79,12 +78,42 @@ class Branch(models.Model):
     usersinglelogin = models.BooleanField(default=False)
     webtvcsslink = models.TextField(default='styles/styletv.css')
     webtvlogolink = models.TextField(default='images/logo_ts.png')
-    enabledsms = models.BooleanField(default=False)
-    smsmsg = models.TextField(max_length=70, null=True, blank=True)
-    
+
+    # SMS settings
+    SMSenabled = models.BooleanField(default=False)
+    SMSmsg = models.TextField(max_length=70, null=True, blank=True)
+    SMSQuota = models.IntegerField(default=500, help_text='Total no. of SMS per month')
+    SMSUsed = models.IntegerField(default=0, help_text='Total no. of SMS used')
+    SMSResetDay = models.IntegerField(default=1, help_text='SMS reset day of the month (1-28)')
+
+    # Booking settings
+    bookingenabled = models.BooleanField(default=True)
+    bookingSMS = models.BooleanField(default=True)
+    bookingSMSconfirm = models.TextField(null=True, blank=True, help_text='SMS message for booking confirmation, [[DATE]] is booking start date, [[TIME]] is booking start time. 160 characters / 70 characters (Unicode) per one SMS')
+    bookingTextHTMLpage1 = models.TextField(null=True, 
+                                            blank=True, 
+                                            default= \
+                                                    '多謝你預約我們的維修中心' + '\n' + \
+                                                    '請帶發票在預約時間到維修中心' + '\n' + \
+                                                    '地址: [[ADDR]]',
+                                            help_text='Booking HTML page 1 text, [[ADDR]] is branch.address.')
+
     # branch status
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+
+
+    # some time add a new field for foreign key, migrate will fail,
+    # we need to add a default value
+    # branch = models.ForeignKey(Branch, on_delete=models.CASCADE, default=Branch.get_default_pk)
+    @classmethod
+    def get_default_pk(cls):
+        kb = cls.objects.get_or_create(
+            bcode='KB'
+        )
+        return kb[0].pk
+
+
     def __str__(self):
         return self.bcode
     
