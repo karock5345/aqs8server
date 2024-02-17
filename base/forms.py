@@ -65,7 +65,8 @@ class BranchSettingsForm_Admin(ModelForm):
     
     # Booking settings
     bookingenabled = forms.fields.BooleanField(label='Enable Booking Function', required=False)
-    bookingTextHTMLpage1 = forms.fields.CharField(label='Booking Text HTML page 1', help_text='Booking HTML page 1 text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea(attrs={'rows': 5, 'cols': 40}))
+    bookingPage1Text = forms.fields.CharField(label='Booking HTML page 1 Text', help_text='Booking HTML page 1 Text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea(attrs={'rows': 5, 'cols': 40}))
+    bookingPage1ScrollingText = forms.fields.CharField(label='Booking HTML page 1 Scrolling Text', help_text='Booking HTML page 1 Scrolling Text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea(attrs={'rows': 5, 'cols': 40}))
 
     class Meta:
         model = Branch
@@ -76,7 +77,7 @@ class BranchSettingsForm_Admin(ModelForm):
                   'displayenabled', 'displayflashtime', 
                   'voiceenabled', 'language1', 'language2', 'language3', 'language4', 
                   'usersinglelogin', 'SMSenabled', 'SMSmsg', 'websoftkey_show_waitinglist',
-                  'bookingenabled', 'bookingTextHTMLpage1',
+                  'bookingenabled', 'bookingPage1Text', 'bookingPage1ScrollingText',
                   ]
 
     def __init__(self, *args, **kwargs):

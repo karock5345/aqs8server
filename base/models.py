@@ -90,13 +90,14 @@ class Branch(models.Model):
     bookingenabled = models.BooleanField(default=True)
     bookingSMS = models.BooleanField(default=True)
     bookingSMSconfirm = models.TextField(null=True, blank=True, help_text='SMS message for booking confirmation, [[DATE]] is booking start date, [[TIME]] is booking start time. 160 characters / 70 characters (Unicode) per one SMS')
-    bookingTextHTMLpage1 = models.TextField(null=True, 
+    bookingPage1Text = models.TextField(null=True, 
                                             blank=True, 
                                             default= \
                                                     '多謝你預約我們的維修中心' + '\n' + \
                                                     '請帶發票在預約時間到維修中心' + '\n' + \
                                                     '地址: [[ADDR]]',
                                             help_text='Booking HTML page 1 text, [[ADDR]] is branch.address.')
+    bookingPage1ScrollingText = models.TextField(null=True, blank=True, default='Scrolling text 1', help_text='Booking HTML page 1 Scrolling text, [[ADDR]] is branch.address.')
 
     # branch status
     updated = models.DateTimeField(auto_now=True)

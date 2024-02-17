@@ -150,7 +150,7 @@ def Booking_DetailsView(request, pk):
                             error_TC = '電郵地址格式不正確'
 
                 if error == '':
-                    # error, error_TC = chainBookNow(timeslot, name, phone_number, email)
+                    error, error_TC = chainBookNow(timeslot, name, phone_number, email)
                     pass
 
                 if error == '':
@@ -276,6 +276,7 @@ def BookingView(request, bcode):
     str_now = '---'
     logofile = ''
     booking_str = ''
+    scrolling = ''
 
     branch = None
     if error == '' :        
@@ -287,8 +288,11 @@ def BookingView(request, bcode):
             datetime_now = timezone.now()
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
+            
+            scrolling = branch.bookingPage1ScrollingText
+            scrolling = scrolling.replace( '[[ADDR]]', branch.address)
 
-            booking_str = branch.bookingTextHTMLpage1
+            booking_str = branch.bookingPage1Text
             booking_str = booking_str.replace( '[[ADDR]]', branch.address)
         else :
             error = 'Branch not found.'
@@ -301,14 +305,14 @@ def BookingView(request, bcode):
 
         tsserializers  = tsSerializer(tslist, many=True)
         timeslots = tsserializers.data
-        
+
 
         context = {
         'lastupdate' : str_now,
         'timeslots' : timeslots,
         'logofile' : logofile,
         'css' : css,
-        'scroll': '維修請帶發票',
+        'scroll': scrolling,
         'text': booking_str,
         }
         pass
@@ -377,9 +381,7 @@ def TimeSlotNewView(request):
         error = ''
         error, newform = checktimeslotform(tsform)
         
-        if error == '' :
-            if timeslot.branch.bookingenabled == True:
-                error = 'Booking function is disabled'
+
         if error == '' :
             try:
                 newform.save()
@@ -493,6 +495,14 @@ def checktimeslotform(form):
     
     if error == '' :
         newform = form.save(commit=False)
+
+    if error == '' :
+        if newform.branch == None :
+            # Error branch is None
+            error = 'Error Branch is blank'
+    if error == '' :
+        if newform.branch.bookingenabled == False:
+            error = 'Booking function is disabled'
     if error == '':
         try:
             newform.start_date = funLocaltoUTC(newform.start_date, newform.branch.timezone)
@@ -513,10 +523,7 @@ def checktimeslotform(form):
             newform.show_end_date = funLocaltoUTC(newform.show_end_date, newform.branch.timezone)
         except:
             error = 'An error occurcd : Show_end date is not correct'            
-    if error == '' :
-        if newform.branch == None :
-            # Error branch is None
-            error = 'Error Branch is blank'
+
     if error == '' :
         #  end_date < start_date
         if newform.end_date < newform.start_date :
