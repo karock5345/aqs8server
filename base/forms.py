@@ -67,6 +67,9 @@ class BranchSettingsForm_Admin(ModelForm):
     bookingenabled = forms.fields.BooleanField(label='Enable Booking Function', required=False)
     bookingPage1Text = forms.fields.CharField(label='Booking HTML page 1 Text', help_text='Booking HTML page 1 Text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea(attrs={'rows': 5, 'cols': 40}))
     bookingPage1ScrollingText = forms.fields.CharField(label='Booking HTML page 1 Scrolling Text', help_text='Booking HTML page 1 Scrolling Text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea(attrs={'rows': 5, 'cols': 40}))
+    bookingPage2Text = forms.fields.CharField(label='Booking HTML page 2 Text', help_text='Booking HTML page 1 Text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea(attrs={'rows': 5, 'cols': 40}))
+    bookingPage2ScrollingText = forms.fields.CharField(label='Booking HTML page 1 Scrolling Text', help_text='Booking HTML page 2 Scrolling Text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea(attrs={'rows': 5, 'cols': 40}))
+    bookingPage3Text = forms.fields.CharField(label='Booking HTML Success Text', help_text='Booking success text, [[ADDR]] is branch address, [[NAME]] is customer name, [[DATE]] is booking start date, [[TIME]] is booking start time. [[WEEK]] is week.', required=False, widget=forms.Textarea(attrs={'rows': 5, 'cols': 40}))
 
     class Meta:
         model = Branch
@@ -77,7 +80,7 @@ class BranchSettingsForm_Admin(ModelForm):
                   'displayenabled', 'displayflashtime', 
                   'voiceenabled', 'language1', 'language2', 'language3', 'language4', 
                   'usersinglelogin', 'SMSenabled', 'SMSmsg', 'websoftkey_show_waitinglist',
-                  'bookingenabled', 'bookingPage1Text', 'bookingPage1ScrollingText',
+                  'bookingenabled', 'bookingPage1ScrollingText', 'bookingPage1Text', 'bookingPage2ScrollingText', 'bookingPage2Text', 'bookingPage3Text',
                   ]
 
     def __init__(self, *args, **kwargs):

@@ -79,21 +79,28 @@ def Booking_DetailsView(request, pk):
     logofile = ''
     css = ''
     bcode = ''
+    scrolling = ''
+    booking_str = ''
+    success_str = ''
 
-    booking_str = \
-    '請輸入 電郵 或 手機號碼(香港)' + '\n' + \
-    '我們發送確認信給你'
+    # booking_str = \
+    # '請輸入 電郵 或 手機號碼(香港)' + '\n' + \
+    # '我們發送確認信給你'
 
     try:
         timeslot = TimeSlot.objects.get(id=pk)
         logofile = timeslot.branch.webtvlogolink
         css = timeslot.branch.webtvcsslink
         bcode = timeslot.branch.bcode
+        booking_str = timeslot.branch.bookingPage2Text
+        scrolling = timeslot.branch.bookingPage2ScrollingText
 
         startdate = funUTCtoLocal(timeslot.start_date, timeslot.branch.timezone)
         date_str = startdate.strftime('%Y-%m-%d' )
         time_str = startdate.strftime('%I:%M %p')
         week_str = funWeekStr(startdate)
+
+        success_str = timeslot.branch.bookingPage3Text
     except:
         error = 'TimeSlot not found'
         error_TC = '沒有找到時段'
@@ -157,10 +164,10 @@ def Booking_DetailsView(request, pk):
                     # send email to customer
                     if email != '':
                         subject = '你的預約已經確認 - ' + timeslot.branch.name
-                        success_str = ''
+                        email_str = ''
                         if name != '':
-                            success_str = '你好 ' + name + ' :' + '\n' + '\n'
-                        success_str += \
+                            email_str = '你好 ' + name + ' :' + '\n' + '\n'
+                        email_str += \
                         '你的預約時間：' + '\n' + \
                         date_str + ' ' + week_str + '\n' + \
                         time_str + '\n' + \
@@ -174,7 +181,7 @@ def Booking_DetailsView(request, pk):
 
                         message = render_to_string('booking/email_booking_confirmed.html', {
                             'title': subject,
-                            'body': success_str,                        
+                            'body': email_str,                        
                         })
                         message = message.replace('amp;', '')
                         sendemail.delay(subject, message, email,)
@@ -188,10 +195,10 @@ def Booking_DetailsView(request, pk):
                             if phone_number != '':
                                 mphone_sms = str(phone_number.country_code) + str(phone_number.national_number)
                                 subject = '你的預約已經確認 - ' + timeslot.branch.name
-                                success_str = ''
+                                sms_str = ''
                                 if name != '':
-                                    success_str = '你好 ' + name + ' :' + '\n' + '\n'
-                                success_str += \
+                                    sms_str = '你好 ' + name + ' :' + '\n' + '\n'
+                                sms_str += \
                                 '你的預約時間：' + '\n' + \
                                 date_str + ' ' + week_str + '\n' + \
                                 time_str + '\n' + \
@@ -202,24 +209,16 @@ def Booking_DetailsView(request, pk):
                                 '這個訊息會發送去你的電郵或者手機短訊。' + '\n' + \
                                 '' + '\n' + \
                                 timeslot.branch.name
-                                msg_sms = subject + '\n' + '\n' + success_str
+                                msg_sms = subject + '\n' + '\n' + sms_str
 
                                 sendSMS.delay(mphone_sms, msg_sms, timeslot.branch.bcode, 'Booking Confirmation')
 
-                    success_str = ''
-                    if name != '':
-                        success_str = '你好 ' + name + ' :' + '\n' + '\n'
-                    success_str += \
-                    '你的預約時間：' + '\n' + \
-                    date_str + ' ' + week_str + '\n' + \
-                    time_str + '\n' + \
-                    '請帶發票在預約時間到維修中心' + '\n' + \
-                    '地址: 彌敦道9號' + '\n' + \
-                    '如需要更改時間/取消預約請盡早打電話給我們 91234567' + '\n' + \
-                    '' + '\n' + \
-                    '這個訊息會發送去你的電郵或者手機短訊。' + '\n' + \
-                    '' + '\n' + \
-                    timeslot.branch.name                    
+                    success_str = success_str.replace( '[[ADDR]]', timeslot.branch.address)
+                    success_str = success_str.replace( '[[NAME]]', name)
+                    success_str = success_str.replace( '[[DATE]]', date_str)
+                    success_str = success_str.replace( '[[WEEK]]', week_str)
+                    success_str = success_str.replace( '[[TIME]]', time_str)
+                    
                     context = {
                         'aqs_version':aqs_version,
                         'logofile' : logofile,
@@ -251,7 +250,7 @@ def Booking_DetailsView(request, pk):
         context = {
             'logofile' : logofile,
             'css' : css,
-            'scroll': '維修請帶發票',
+            'scroll': scrolling,
             'text': booking_str,
             'id':timeslot.id,
             'date':date_str,

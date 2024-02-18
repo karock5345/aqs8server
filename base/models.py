@@ -85,6 +85,7 @@ class Branch(models.Model):
     SMSQuota = models.IntegerField(default=500, help_text='Total no. of SMS per month')
     SMSUsed = models.IntegerField(default=0, help_text='Total no. of SMS used')
     SMSResetDay = models.IntegerField(default=1, help_text='SMS reset day of the month (1-28)')
+    SMSResetLast = models.CharField(max_length=200, null=True, blank=True, help_text='Last reset date of SMS')
 
     # Booking settings
     bookingenabled = models.BooleanField(default=True)
@@ -97,8 +98,29 @@ class Branch(models.Model):
                                                     '請帶發票在預約時間到維修中心' + '\n' + \
                                                     '地址: [[ADDR]]',
                                             help_text='Booking HTML page 1 text, [[ADDR]] is branch.address.')
-    bookingPage1ScrollingText = models.TextField(null=True, blank=True, default='Scrolling text 1', help_text='Booking HTML page 1 Scrolling text, [[ADDR]] is branch.address.')
-
+    bookingPage1ScrollingText = models.TextField(null=True, blank=True, default='Scrolling text 1', help_text='Booking HTML page 1 Scrolling text, [[ADDR]] is branch address.')
+    bookingPage2Text = models.TextField(null=True, 
+                                            blank=True, 
+                                            default= \
+                                                    '請輸入 電郵 或 手機號碼(香港)' + '\n' + \
+                                                    '我們發送確認信給你',
+                                            help_text='Booking HTML page 2 text, [[ADDR]] is branch.address.')
+    bookingPage2ScrollingText = models.TextField(null=True, blank=True, default='Scrolling text 2', help_text='Booking HTML page 2 Scrolling text, [[ADDR]] is branch.address.')
+    bookingPage3Text = models.TextField(null=True,
+                                            blank=True,
+                                            default= \
+                                                '你好 [[NAME]] :' + '\n' + '\n' + \
+                                                '你的預約時間：' + '\n' + \
+                                                '[[DATE]] [[WEEK]]' + '\n' + \
+                                                '[[TIME]]' + '\n' + \
+                                                '請帶發票在預約時間到維修中心' + '\n' + \
+                                                '地址: [[ADDR]]' + '\n' + \
+                                                '如需要更改時間/取消預約請盡早打電話給我們 12345678' + '\n' + \
+                                                '' + '\n' + \
+                                                '這個訊息會發送去你的電郵或者手機短訊。' + '\n' + \
+                                                '' + '\n' + \
+                                                'TSVD',
+                                            help_text='Booking success text, [[ADDR]] is branch address, [[NAME]] is customer name, [[DATE]] is booking start date, [[TIME]] is booking start time. [[WEEK]] is week.')
     # branch status
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
