@@ -665,7 +665,10 @@ a {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   border: 1px solid var(--color-dark-light);
+  margin-left: 2rem; 
 }
+
+
 
 .form__group input,
 .form__group textarea,
@@ -678,6 +681,18 @@ a {
   color: var(--color-light);
   font-weight: 500;
   outline: none;
+  margin-left: 2rem; 
+}
+
+.form__group .label__name,
+.form__group_checkbox .label__name {
+  color: var(--color-light);
+  font-weight: 700;
+}
+
+.form__group .help__text,
+.form__group_checkbox .help__text {
+  margin-left: 2rem; 
 }
 
 .form__group input:focus,

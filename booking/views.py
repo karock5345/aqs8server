@@ -112,7 +112,7 @@ def Booking_DetailsView(request, pk):
             action = request.POST.get('action')
             if action == 'submit_booknow':
                 form = DetailsForm(request.POST)
-                name = form['name'].value()
+                name:str = form['name'].value()
                 mphone = form['mphone'].value()
                 email = form['email'].value()
 
@@ -123,7 +123,13 @@ def Booking_DetailsView(request, pk):
                     if email + mphone == '' :
                         error = 'Mobile or Email are required'
                         error_TC = '手提電話或電郵地址是必需的'
-                
+                if error == '':
+                    maxlen = 10
+                    if name.isascii() == True:
+                        maxlen = 20
+                    if len(name) > maxlen:
+                        error = 'Name is too long (max. 20 characters)'
+                        error_TC = '名字太長 (中文最多10個字元)'
                 if error == '':
                     if mphone != '':
                         if len(mphone) == 8 and mphone.isdigit() == True:
@@ -163,21 +169,19 @@ def Booking_DetailsView(request, pk):
                 if error == '':
                     # send email to customer
                     if email != '':
-                        subject = '你的預約已經確認 - ' + timeslot.branch.name
-                        email_str = ''
-                        if name != '':
-                            email_str = '你好 ' + name + ' :' + '\n' + '\n'
-                        email_str += \
-                        '你的預約時間：' + '\n' + \
-                        date_str + ' ' + week_str + '\n' + \
-                        time_str + '\n' + \
-                        '請帶發票在預約時間到維修中心' + '\n' + \
-                        '地址: 彌敦道9號' + '\n' + \
-                        '如需要更改時間/取消預約請盡早打電話給我們 91234567' + '\n' + \
-                        '' + '\n' + \
-                        '這個訊息會發送去你的電郵或者手機短訊。' + '\n' + \
-                        '' + '\n' + \
-                        timeslot.branch.name
+                        subject = timeslot.branch.bookingSuccessEmailSubject
+                        subject = subject.replace( '[[ADDR]]', timeslot.branch.address)
+                        subject = subject.replace( '[[NAME]]', name)
+                        subject = subject.replace( '[[DATE]]', date_str)
+                        subject = subject.replace( '[[WEEK]]', week_str)
+                        subject = subject.replace( '[[TIME]]', time_str)
+                        
+                        email_str = timeslot.branch.bookingSuccessEmailBody
+                        email_str = email_str.replace( '[[ADDR]]', timeslot.branch.address)
+                        email_str = email_str.replace( '[[NAME]]', name)
+                        email_str = email_str.replace( '[[DATE]]', date_str)
+                        email_str = email_str.replace( '[[WEEK]]', week_str)
+                        email_str = email_str.replace( '[[TIME]]', time_str)
 
                         message = render_to_string('booking/email_booking_confirmed.html', {
                             'title': subject,
@@ -190,28 +194,15 @@ def Booking_DetailsView(request, pk):
 
 
                     # send SMS to customer
-                    if timeslot.branch.SMSenabled == True and timeslot.branch.bookingSMS == True:
+                    if timeslot.branch.SMSenabled == True and timeslot.branch.bookingSMSSuccessEnabled == True:
                         if timeslot.branch.bookingenabled == True:
                             if phone_number != '':
                                 mphone_sms = str(phone_number.country_code) + str(phone_number.national_number)
-                                subject = '你的預約已經確認 - ' + timeslot.branch.name
-                                sms_str = ''
-                                if name != '':
-                                    sms_str = '你好 ' + name + ' :' + '\n' + '\n'
-                                sms_str += \
-                                '你的預約時間：' + '\n' + \
-                                date_str + ' ' + week_str + '\n' + \
-                                time_str + '\n' + \
-                                '請帶發票在預約時間到維修中心' + '\n' + \
-                                '地址: 彌敦道9號' + '\n' + \
-                                '如需要更改時間/取消預約請盡早打電話給我們 91234567' + '\n' + \
-                                '' + '\n' + \
-                                '這個訊息會發送去你的電郵或者手機短訊。' + '\n' + \
-                                '' + '\n' + \
-                                timeslot.branch.name
-                                msg_sms = subject + '\n' + '\n' + sms_str
+                                sms_str = timeslot.branch.bookingSMSSuccess
+                                sms_str = sms_str.replace( '[[DATE]]', date_str)
+                                sms_str = sms_str.replace( '[[TIME]]', time_str)
 
-                                sendSMS.delay(mphone_sms, msg_sms, timeslot.branch.bcode, 'Booking Confirmation')
+                                sendSMS.delay(mphone_sms, sms_str, timeslot.branch.bcode, 'Booking Confirmation')
 
                     success_str = success_str.replace( '[[ADDR]]', timeslot.branch.address)
                     success_str = success_str.replace( '[[NAME]]', name)
@@ -499,6 +490,9 @@ def checktimeslotform(form):
         if newform.branch == None :
             # Error branch is None
             error = 'Error Branch is blank'
+    if error == '' :
+        if newform.branch.enabled == False:
+            error = 'Branch is disabled'            
     if error == '' :
         if newform.branch.bookingenabled == False:
             error = 'Booking function is disabled'

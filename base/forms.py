@@ -29,47 +29,53 @@ class CaptchaForm(forms.Form):
     # captcha = ReCaptchaField()
 
 class BranchSettingsForm_Admin(ModelForm):
-    enabled = forms.fields.BooleanField(label='Enable Branch', required=False)
-    subscribe = forms.fields.BooleanField(label='Enable Subscribe', required=False)
-    substart = forms.fields.DateTimeField(label='Subscribe start date (local time)' , widget=forms.widgets.DateTimeInput( attrs={'type':'datetime-local', 'step':'1'}))
-    subend = forms.fields.DateTimeField(label='Subscribe end date (local time)', widget=forms.widgets.DateTimeInput( attrs={'type':'datetime-local', 'step':'1'}))
+    
+    # enabled = forms.fields.BooleanField(label='Enable Branch', required=False)
+    # subscribe = forms.fields.BooleanField(label='Enable Subscribe', required=False)
+    # substart = forms.fields.DateTimeField(label='Subscribe start date (local time)' , widget=forms.widgets.DateTimeInput( attrs={'type':'datetime-local', 'step':'1'}))
+    # subend = forms.fields.DateTimeField(label='Subscribe end date (local time)', widget=forms.widgets.DateTimeInput( attrs={'type':'datetime-local', 'step':'1'}))
 
-    name = forms.fields.CharField(label='Branch Name')
-    address = forms.fields.CharField(label='Branch Address')
-    gps = forms.fields.CharField(label='GPS', required=False)
-    officehourstart = forms.fields.TimeField(label='Office Hour open time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}))
-    officehourend = forms.fields.TimeField(label='Office Hour close time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}))
-    tickettimestart = forms.fields.TimeField(label='Ticket start time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}))
-    tickettimeend = forms.fields.TimeField(label='Ticket end time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}))
+    # name = forms.fields.CharField(label='Branch Name')
+    # address = forms.fields.CharField(label='Branch Address')
+    # gps = forms.fields.CharField(label='GPS', required=False)
+    # officehourstart = forms.fields.TimeField(label='Office Hour open time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}))
+    # officehourend = forms.fields.TimeField(label='Office Hour close time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}))
+    # tickettimestart = forms.fields.TimeField(label='Ticket start time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}))
+    # tickettimeend = forms.fields.TimeField(label='Ticket end time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}))
 
-    queuepriority = forms.fields.ChoiceField(label='Queue Priority', choices=Branch.PRIORITY)
-    queuemask = forms.fields.CharField(label='Queue Mask')
-    ticketmax = forms.fields.IntegerField(label='Ticket max number')
-    ticketnext = forms.fields.IntegerField(label='Ticket next number')
-    ticketnoformat = forms.fields.CharField(label='Ticket number format ("000" means: A001, B049)')
-    ticketrepeatnumber = forms.fields.BooleanField(label='Ticket repeat number (False: A001 -> B002 -> A003)', required=False)
+    # queuepriority = forms.fields.ChoiceField(label='Queue Priority', choices=Branch.PRIORITY)
+    # queuemask = forms.fields.CharField(label='Queue Mask')
+    # ticketmax = forms.fields.IntegerField(label='Ticket max number')
+    # ticketnext = forms.fields.IntegerField(label='Ticket next number')
+    # ticketnoformat = forms.fields.CharField(label='Ticket number format ("000" means: A001, B049)')
+    # ticketrepeatnumber = forms.fields.BooleanField(label='Ticket repeat number (False: A001 -> B002 -> A003)', required=False)
     
     
-    displayenabled = forms.fields.BooleanField(label='Enable display', required=False)
-    displayflashtime = forms.fields.IntegerField(label='Display flash time (0-50)')
+    # displayenabled = forms.fields.BooleanField(label='Enable display', required=False)
+    # displayflashtime = forms.fields.IntegerField(label='Display flash time (0-50)')
 
-    voiceenabled = forms.fields.BooleanField(label='Enable Voice announcement', required=False)
-    language1 = forms.fields.CharField(label='First Language (0-4), 0 is not used')
-    language2 = forms.fields.CharField(label='Second Language (0-4), 0 is not used')
-    language3 = forms.fields.CharField(label='3rd Language (0-4), 0 is not used')
-    language4 = forms.fields.CharField(label='4th Language (0-4), 0 is not used')
-    usersinglelogin = forms.fields.BooleanField(label='User single login', required=False)
-    SMSenabled = forms.fields.BooleanField(label='Enable SMS', required=False)
-    SMSmsg = forms.fields.CharField(label='SMS Message', required=False)
-    websoftkey_show_waitinglist = forms.fields.BooleanField(label='Web-Softkey show waiting list', required=False)
+    # voiceenabled = forms.fields.BooleanField(label='Enable Voice announcement', required=False)
+    # language1 = forms.fields.CharField(label='First Language (0-4), 0 is not used')
+    # language2 = forms.fields.CharField(label='Second Language (0-4), 0 is not used')
+    # language3 = forms.fields.CharField(label='3rd Language (0-4), 0 is not used')
+    # language4 = forms.fields.CharField(label='4th Language (0-4), 0 is not used')
+    # usersinglelogin = forms.fields.BooleanField(label='User single login', required=False)
+    # SMSenabled = forms.fields.BooleanField(label='Enable SMS', required=False)
+    # SMSmsg = forms.fields.CharField(label='SMS Message', required=False)
+    # websoftkey_show_waitinglist = forms.fields.BooleanField(label='Web-Softkey show waiting list', required=False)
     
-    # Booking settings
-    bookingenabled = forms.fields.BooleanField(label='Enable Booking Function', required=False)
-    bookingPage1Text = forms.fields.CharField(label='Booking HTML page 1 Text', help_text='Booking HTML page 1 Text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea(attrs={'rows': 5, 'cols': 40}))
-    bookingPage1ScrollingText = forms.fields.CharField(label='Booking HTML page 1 Scrolling Text', help_text='Booking HTML page 1 Scrolling Text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea(attrs={'rows': 5, 'cols': 40}))
-    bookingPage2Text = forms.fields.CharField(label='Booking HTML page 2 Text', help_text='Booking HTML page 1 Text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea(attrs={'rows': 5, 'cols': 40}))
-    bookingPage2ScrollingText = forms.fields.CharField(label='Booking HTML page 1 Scrolling Text', help_text='Booking HTML page 2 Scrolling Text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea(attrs={'rows': 5, 'cols': 40}))
-    bookingPage3Text = forms.fields.CharField(label='Booking HTML Success Text', help_text='Booking success text, [[ADDR]] is branch address, [[NAME]] is customer name, [[DATE]] is booking start date, [[TIME]] is booking start time. [[WEEK]] is week.', required=False, widget=forms.Textarea(attrs={'rows': 5, 'cols': 40}))
+    # # Booking settings
+    # bookingenabled = forms.fields.BooleanField(label='Enable Booking Function', required=False)
+    # bookingPage1Text = forms.fields.CharField(label='Booking HTML page 1 Text', help_text='Booking HTML page 1 Text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea())
+    # bookingPage1ScrollingText = forms.fields.CharField(label='Booking HTML page 1 Scrolling Text', help_text='Booking HTML page 1 Scrolling Text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea())
+    # bookingPage2Text = forms.fields.CharField(label='Booking HTML page 2 Text', help_text='Booking HTML page 1 Text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea())
+    # bookingPage2ScrollingText = forms.fields.CharField(label='Booking HTML page 1 Scrolling Text', help_text='Booking HTML page 2 Scrolling Text, [[ADDR]] is branch.address.', required=False, widget=forms.Textarea())
+    # bookingPage3Text = forms.fields.CharField(label='Booking HTML Success Text', help_text='Booking success text, [[ADDR]] is branch address, [[NAME]] is customer name, [[DATE]] is booking start date, [[TIME]] is booking start time. [[WEEK]] is week.', required=False, widget=forms.Textarea())
+    # # bookingSuccessEmailSubject = forms.fields.CharField(label='Booking Email Success Subject' , required=False)
+    
+    # bookingSuccessEmailBody = forms.fields.CharField(label='Booking Email Success Body' , required=False, widget=forms.Textarea())
+    # bookingSMS = forms.fields.BooleanField(label='Enable send SMS after booking success', required=False)
+    # bookingSMSSuccess = forms.fields.CharField(label='Booking SMS Text', required=False, widget=forms.Textarea())
 
     class Meta:
         model = Branch
@@ -79,8 +85,10 @@ class BranchSettingsForm_Admin(ModelForm):
                   'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
                   'displayenabled', 'displayflashtime', 
                   'voiceenabled', 'language1', 'language2', 'language3', 'language4', 
-                  'usersinglelogin', 'SMSenabled', 'SMSmsg', 'websoftkey_show_waitinglist',
+                  'usersinglelogin', 'websoftkey_show_waitinglist', 
+                  'SMSenabled', 'SMSmsg', 'SMSQuota', 'SMSUsed', 'SMSResetDay',
                   'bookingenabled', 'bookingPage1ScrollingText', 'bookingPage1Text', 'bookingPage2ScrollingText', 'bookingPage2Text', 'bookingPage3Text',
+                  'bookingSuccessEmailSubject', 'bookingSuccessEmailBody', 'bookingSMSSuccessEnabled', 'bookingSMSSuccess',
                   ]
 
     def __init__(self, *args, **kwargs):
@@ -93,6 +101,52 @@ class BranchSettingsForm_Admin(ModelForm):
         self.initial['tickettimeend'] = funUTCtoLocaltime(self.initial['tickettimeend'], timezone)
         self.initial['substart'] = funUTCtoLocal(self.initial['substart'], timezone)
         self.initial['subend'] = funUTCtoLocal(self.initial['subend'], timezone)
+        # enabled = forms.fields.BooleanField(label='Enable Branch', required=False)
+        self.fields['enabled'] = forms.fields.BooleanField(label='Enable Branch', required=False, help_text=self.fields['enabled'].help_text)
+        self.fields['subscribe'] = forms.fields.BooleanField(label='Enable Subscribe', required=False, help_text=self.fields['subscribe'].help_text)
+        self.fields['substart'] = forms.fields.DateTimeField(label='Subscribe start date (local time)' , widget=forms.widgets.DateTimeInput( attrs={'type':'datetime-local', 'step':'1'}), help_text=self.fields['substart'].help_text)
+        self.fields['subend'] = forms.fields.DateTimeField(label='Subscribe end date (local time)', widget=forms.widgets.DateTimeInput( attrs={'type':'datetime-local', 'step':'1'}), help_text=self.fields['subend'].help_text)
+        self.fields['name'] = forms.fields.CharField(label='Branch Name', help_text=self.fields['name'].help_text, widget=forms.widgets.TextInput())
+        self.fields['address'] = forms.fields.CharField(label='Branch Address', help_text=self.fields['address'].help_text)
+        self.fields['gps'] = forms.fields.CharField(label='GPS of the Branch', required=False, help_text=self.fields['gps'].help_text)
+        self.fields['timezone'] = forms.fields.ChoiceField(label='Timezone', choices=[(x, x) for x in pytz.all_timezones], help_text=self.fields['timezone'].help_text)
+        self.fields['officehourstart'] = forms.fields.TimeField(label='Office Hour open time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}), help_text=self.fields['officehourstart'].help_text)
+        self.fields['officehourend'] = forms.fields.TimeField(label='Office Hour close time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}), help_text=self.fields['officehourend'].help_text)
+        self.fields['tickettimestart'] = forms.fields.TimeField(label='Ticket start time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}), help_text=self.fields['tickettimestart'].help_text)
+        self.fields['tickettimeend'] = forms.fields.TimeField(label='Ticket end time (local time)', widget=forms.widgets.TimeInput( attrs={'type':'time', 'step':'1'}), help_text=self.fields['tickettimeend'].help_text)
+        self.fields['queuepriority'] = forms.fields.ChoiceField(label='Queue Priority', choices=Branch.PRIORITY, help_text=self.fields['queuepriority'].help_text)
+        self.fields['queuemask'] = forms.fields.CharField(label='Queue Mask', help_text=self.fields['queuemask'].help_text)
+        self.fields['ticketmax'] = forms.fields.IntegerField(label='Ticket max number', help_text=self.fields['ticketmax'].help_text)
+        self.fields['ticketnext'] = forms.fields.IntegerField(label='Ticket next number', help_text=self.fields['ticketnext'].help_text)
+        self.fields['ticketnoformat'] = forms.fields.CharField(label='Ticket number format ("000" means: A001, B049)', help_text=self.fields['ticketnoformat'].help_text)
+        self.fields['ticketrepeatnumber'] = forms.fields.BooleanField(label='Ticket repeat number (False: A001 -> B002 -> A003)', required=False, help_text=self.fields['ticketrepeatnumber'].help_text)
+        self.fields['displayenabled'] = forms.fields.BooleanField(label='Enable display', required=False, help_text=self.fields['displayenabled'].help_text)
+        self.fields['displayflashtime'] = forms.fields.IntegerField(label='Display flash time (0-50)', help_text=self.fields['displayflashtime'].help_text)
+        self.fields['voiceenabled'] = forms.fields.BooleanField(label='Enable Voice announcement', required=False, help_text=self.fields['voiceenabled'].help_text)
+        self.fields['language1'] = forms.fields.CharField(label='First Language (0-4), 0 is not used', help_text=self.fields['language1'].help_text)
+        self.fields['language2'] = forms.fields.CharField(label='Second Language (0-4), 0 is not used', help_text=self.fields['language2'].help_text)
+        self.fields['language3'] = forms.fields.CharField(label='3rd Language (0-4), 0 is not used', help_text=self.fields['language3'].help_text)
+        self.fields['language4'] = forms.fields.CharField(label='4th Language (0-4), 0 is not used', help_text=self.fields['language4'].help_text)
+        self.fields['usersinglelogin'] = forms.fields.BooleanField(label='User single login', required=False, help_text=self.fields['usersinglelogin'].help_text)
+        self.fields['SMSenabled'] = forms.fields.BooleanField(label='Enable SMS', required=False, help_text=self.fields['SMSenabled'].help_text)
+        self.fields['SMSmsg'] = forms.fields.CharField(label='SMS Message', required=False, help_text=self.fields['SMSmsg'].help_text)
+        self.fields['websoftkey_show_waitinglist'] = forms.fields.BooleanField(label='Web-Softkey show waiting list', required=False, help_text=self.fields['websoftkey_show_waitinglist'].help_text)
+        self.fields['bookingenabled'] = forms.fields.BooleanField(label='Enable Booking Function', required=False, help_text=self.fields['bookingenabled'].help_text)
+        self.fields['bookingPage1Text'] = forms.fields.CharField(label='Booking HTML page 1 Text', help_text=self.fields['bookingPage1Text'].help_text, required=False, widget=forms.Textarea(),)
+        self.fields['bookingPage1ScrollingText'] = forms.fields.CharField(label='Booking HTML page 1 Scrolling Text', help_text=self.fields['bookingPage1ScrollingText'].help_text, required=False, widget=forms.Textarea())
+        self.fields['bookingPage2Text'] = forms.fields.CharField(label='Booking HTML page 2 Text', help_text=self.fields['bookingPage2Text'].help_text, required=False, widget=forms.Textarea())
+        self.fields['bookingPage2ScrollingText'] = forms.fields.CharField(label='Booking HTML page 1 Scrolling Text', help_text=self.fields['bookingPage2ScrollingText'].help_text, required=False, widget=forms.Textarea())
+        self.fields['bookingPage3Text'] = forms.fields.CharField(label='Booking HTML Success Text', help_text=self.fields['bookingPage3Text'].help_text, required=False, widget=forms.Textarea())
+        self.fields['bookingSuccessEmailSubject'] = forms.fields.CharField(label='Booking Email Success Subject' , required=False, widget=forms.TextInput(), help_text=self.fields['bookingSuccessEmailSubject'].help_text)
+        self.fields['bookingSuccessEmailBody'] = forms.fields.CharField(label='Booking Email Success Body' , required=False, widget=forms.Textarea(), help_text=self.fields['bookingSuccessEmailBody'].help_text)
+        self.fields['bookingSMSSuccessEnabled'] = forms.fields.BooleanField(label='Enable send SMS after booking success', required=False, help_text=self.fields['bookingSMSSuccessEnabled'].help_text)
+        self.fields['bookingSMSSuccess'] = forms.fields.CharField(label='Booking SMS Text', required=False, widget=forms.Textarea(), help_text=self.fields['bookingSMSSuccess'].help_text)
+
+
+
+        
+        
+        
 class BranchSettingsForm_Adv(ModelForm):
     # enabled = forms.fields.BooleanField(label='Enable Branch', required=False)
     # subscribe = forms.fields.BooleanField(label='Enable Subscribe', required=False)

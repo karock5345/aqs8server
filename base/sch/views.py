@@ -147,8 +147,19 @@ def init_branch_reset():
     if branch_count > 0:
         for branch in branchobj:
             sch_shutdown(branch, datetime_now)
+            Reset_SMS(branch, datetime_now)
 
 
+def Reset_SMS(branch, datetime_now):
+
+    now_local:datetime = funUTCtoLocal(datetime_now, branch.timezone )
+    now_str = now_local.strftime('%Y-%m-') + str(branch.SMSResetDay)
+    if branch.SMSResetLast != now_str:
+        branch.SMSResetLast = now_str        
+        branch.SMSUsed = 0
+        branch.save()
+        logger.info('-SCH- Reset SMS Used to 0 [' + branch.bcode + '] -SCH-')
+        
 def sch_shutdown(branch_input, nowUTC):
     branch = Branch.objects.get(id=branch_input.id)
 

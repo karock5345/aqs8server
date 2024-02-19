@@ -33,14 +33,24 @@
                     {% csrf_token %}
                     
                     {% for field in branchsettingsform %}
-                        {% if field.name == "enabled" or field.name == "subscribe" or field.name == "ticketrepeatnumber" or field.name == "displayenabled" or field.name == "voiceenabled" or field.name == "usersinglelogin" or field.name == "SMSenabled" or field.name == "ticketrepeatnumber" or field.name == "websoftkey_show_waitinglist" or field.name == "bookingenabled" %}
+                        {% if field.name == "enabled" or field.name == "subscribe" or field.name == "ticketrepeatnumber" or field.name == "displayenabled" or field.name == "voiceenabled" or field.name == "usersinglelogin" or field.name == "SMSenabled" or field.name == "ticketrepeatnumber" or field.name == "websoftkey_show_waitinglist" or field.name == "bookingenabled" or field.name == "bookingSMSSuccessEnabled" %}
                             <div class="form__group_checkbox">
-                                <label class="profile_pic">{{field}} {{field.label}}</label><br>
+                                <label class="profile_pic" id="{{ field.name }}"> <p class="label__name">{{field}} {{field.label}}</p></label><br>
                             </div>
 
                         {% else %}
                             <div class="form__group">
-                                <label class="profile_pic">{{field.label}}{{field}}{{field.help_text}}</label>
+                                <label class="profile_pic" id="{{ field.name }}">
+                                    <p class="label__name">
+                                        {{field.label}}
+                                    </p>
+                                    {{field}}
+                                    <p class="help__text" id="{{ field.name }}-add-text">
+                                    </p>
+                                    <p class="help__text">
+                                        {{field.help_text}}
+                                    </p>
+                                </label>
                             </div>
                         {% endif %}
                     {% endfor %}
@@ -63,4 +73,28 @@
     </div>
   </div>
 </main>
+
+<!-- add js for change textarea of id=id_branchsettingsform-bookingSMSSuccess, show number of chars on help_text -->
+<script>
+    var textArea = document.getElementById('id_branchsettingsform-bookingSMSSuccess');
+    var message = document.getElementById('bookingSMSSuccess-add-text');
+    textArea.addEventListener('input', function() {
+        var text = textArea.value;
+        var textLength = text.length;
+        // find '[[DATE]]' in text
+        var dateCount = (text.match(/\[\[DATE\]\]/g) || []).length;
+        //  and textLength  +2 (+ 10[2000-01-01] - 8) for each [[DATE]]
+        textLength = textLength + (dateCount * 2);
+        
+        // find '[[TIME]]' in text
+        //var timeCount = (text.match(/\[\[TIME\]\]/g) || []).length;
+        //  and textLength  +0 (+ 8[15:59 AM] - 8) for each [[TIME]]
+        // textLength = textLength + (timeCount * 0);
+
+
+
+        message.textContent = textLength + ' characters';
+    });
+</script>
+
 {% endblock content %}
