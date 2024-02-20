@@ -1,8 +1,11 @@
 # AQS version 8.2.1
 
 Coming up:
-Reset SMS quota
-send quota is full email to admin
+~~Reset SMS quota~~
+Booking Management
+Booking to Queue Function 
+send SMS quota is full email to managerm and admin
+Send email to TSVD when SMS api is error (maybe down or quota is full)
 send 'New booking' email to manager
 
 <h3 style="color:orange;">Version 8.2.1</h3>

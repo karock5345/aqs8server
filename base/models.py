@@ -152,8 +152,9 @@ class Branch(models.Model):
                                             '預約時間：' + '\n' + \
                                             '[[DATE]]' + '\n' + \
                                             '[[TIME]]' + '\n' + \
-                                            '如需要更改/取消預約請盡早致電 12345678' ,                            
-                                        help_text='SMS message for booking success, [[DATE]] is booking start date, [[TIME]] is booking start time. 160 characters / 70 characters (Unicode) per one SMS',
+                                            '如需要更改/取消預約請盡早致電 12345678' ,  
+                                        verbose_name='Booking success SMS',
+                                        help_text='SMS text body for booking success, [[DATE]] is booking start date, [[TIME]] is booking start time. 160 characters / 70 characters (Unicode) per one SMS',
                                         )
     # branch status
     updated = models.DateTimeField(auto_now=True)
