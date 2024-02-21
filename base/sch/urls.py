@@ -13,4 +13,4 @@ urlpatterns = [
 
 # job_testing(10, '10 Seconds', ' 0')
 
-# init_branch_reset()
+init_branch_reset()
