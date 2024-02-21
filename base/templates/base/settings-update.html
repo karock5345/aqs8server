@@ -58,7 +58,12 @@
                     <div class="form__group_title">TV Scrolling text</div>
                     {% for ct in countertypes %}
                         <div class="form__group">
-                            <label class="profile_pic">Counter Type - {{ ct.name }} : <input type="text" name="{{ct.branch.bcode}}-{{ct.name}}" value="{{ct.displayscrollingtext}}" maxlength="200"></label>
+                            <label class="profile_pic">
+                                <p class="label__name">
+                                    Counter Type - {{ ct.name }} : 
+                                </p>
+                                <input type="text" name="{{ct.branch.bcode}}-{{ct.name}}" value="{{ct.displayscrollingtext}}" maxlength="200">
+                            </label>
                             <!-- Counter Type - {{ ct.name }} : <input type="text" name="{{ct.branch.bcode}}-{{ct.name}}" value="{{ct.displayscrollingtext}}" maxlength="200"> -->
                         </div>
                     {% endfor %}

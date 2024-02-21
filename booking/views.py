@@ -56,7 +56,7 @@ def chainBookNow(timeslot, name, phone_number:phonenumbers, email):
             user = None,
             member = None,
             
-            status = Booking.STATUS.PENDING,
+            status = Booking.STATUS.NEW,
 
             name = name, 
             email = email, 
@@ -65,7 +65,7 @@ def chainBookNow(timeslot, name, phone_number:phonenumbers, email):
             )
         # print(booking.status)
         # aget the new timeslot and create a log
-        funBookingLog(timeslot, booking, BookingLog.ACTION.NEW)
+        funBookingLog(timeslot, booking, BookingLog.ACTION.NULL, Booking.STATUS.NEW)
     return error, error_TC
 
 def Booking_DetailsView(request, pk):
@@ -216,7 +216,7 @@ def Booking_DetailsView(request, pk):
                         'css' : css,
                         'text':success_str,
                         }
-                    return render(request, 'booking/booking_success.html', context)
+                    return render(request, 'booking/booking_success_client.html', context)
                     
 
                 if error != '':
@@ -255,7 +255,7 @@ def Booking_DetailsView(request, pk):
         }
 
         context = {'aqs_version':aqs_version} | context
-        return render(request, 'booking/booking_details.html', context)
+        return render(request, 'booking/booking_details_client.html', context)
         
 
 
@@ -323,7 +323,7 @@ def BookingView(request, bcode):
     }
     
     context = {'aqs_version':aqs_version} | context 
-    return render(request , 'booking/booking.html', context)
+    return render(request , 'booking/booking_client.html', context)
 
 
 
@@ -339,7 +339,7 @@ def TimeSlotDelView(request, pk):
         timeslot.save()
 
         # get the new timeslot and create a log
-        funBookingLog(timeslot, None, BookingLog.ACTION.DELETE)
+        funBookingLog(timeslot, None, BookingLog.ACTION.DELETE, Booking.STATUS.NULL)
 
         timeslot.delete()       
         messages.success(request, 'Time Slot was successfully deleted!') 
@@ -385,7 +385,7 @@ def TimeSlotNewView(request):
 
                 # get the new timeslot and create a log
                 timeslot = TimeSlot.objects.get(id=newform.id)
-                funBookingLog(timeslot, None, BookingLog.ACTION.NEW)
+                funBookingLog(timeslot, None, BookingLog.ACTION.NEW,  Booking.STATUS.NULL)
 
                 messages.success(request, 'Created new Time Slot.')
             except:
@@ -430,7 +430,7 @@ def TimeSlotUpdateView(request, pk):
                 timeslot.user = request.user
                 timeslot.save()
                 messages.success(request, 'TimeSlot was successfully updated!')
-                funBookingLog(timeslot, None, BookingLog.ACTION.CHANGE)
+                funBookingLog(timeslot, None, BookingLog.ACTION.CHANGE, Booking.STATUS.NULL)
                 
                 return redirect('bookingtimeslot')
             except:
@@ -538,7 +538,7 @@ def checktimeslotform(form):
     return (error, newform)
 
 
-def funBookingLog(timeslot, booking, action):
+def funBookingLog(timeslot, booking, action, status):
 
     logtext = ''
     logtext_t = ''
@@ -587,6 +587,7 @@ def funBookingLog(timeslot, booking, action):
         member = None,
         logtext = logtext,
         action = action, 
+        status = status,
         remark = None,
         )        
     return

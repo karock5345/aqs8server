@@ -7,8 +7,8 @@
         <div class="container" id="id_area_main">
             <div class="layout__box__form">
                 <div class="layout__boxHeader">
-                    <div class="layout__boxTitle">
-                        <a href="{{request.META.HTTP_REFERER}}">
+                    <a href="{{request.META.HTTP_REFERER}}" >
+                        <div class="layout__boxTitle">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                                 viewBox="0 0 32 32">
                                 <title>Back</title>
@@ -16,14 +16,16 @@
                                     d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
                                 </path>
                             </svg>
-                        </a>
-                        <h3>Edit profile</h3>
-                    </div>
+                            <h3>Edit profile - Username : {{user.username}}</h3>
+                        </div>
+                    </a>
                 </div>
                 <div class="layout__body">
-
-                    <h1>Username : {{user.username}}</h1>
-
+                    <div class="form__group">
+                        <label class="profile_pic">
+                            <p class="label__name">Username : {{user.username}}</p>
+                        </label>
+                    </div>
                     <form class="form" action="" method="POST" prefix="profileform">
                         {% csrf_token %}
                         {% for field in userform %}

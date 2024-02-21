@@ -1,12 +1,15 @@
 # AQS version 8.2.1
 
-Coming up:
-~~Reset SMS quota~~
-Booking Management
-Booking to Queue Function 
-send SMS quota is full email to managerm and admin
-Send email to TSVD when SMS api is error (maybe down or quota is full)
-send 'New booking' email to manager
+<h3 style="color:orange;">Coming up:</h3>
+
+- ~~Reset SMS quota~~
+- Booking Management
+- Booking to Queue Function 
+- send SMS quota is full email to managerm and admin
+- Send email to TSVD when SMS api is error (maybe down or quota is full)
+- send 'New booking' email to manager
+- send email for user forgot password
+- change user profile mobile number to country code + national number
 
 <h3 style="color:orange;">Version 8.2.1</h3>
 
@@ -14,6 +17,7 @@ send 'New booking' email to manager
 - gUnicorn workers = 1 for production (because of the call Ticket function is not work when workers > 1)
 - Web Softkey (include Call Centre) waiting list can be hide by Admin, Support, Manager
 - Fixed bug : web User -> click 'Show All' only one hiden user per click
+- Disable Roche send SMS function (Send SMS to staff when new ticket issued)
 
 <h3 style="color:orange;">Version 8.2.0</h3>
 

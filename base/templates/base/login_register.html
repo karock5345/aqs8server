@@ -20,15 +20,19 @@
               {% csrf_token %}
 
               
-              <div class="form__group form__group">
-                <label for="room_name">Username</label>
-                <input id="username" name="username" type="text" placeholder="e.g. elton_lam" />
+              <div class="form__group">
+                <label class="profile_pic">
+                  <label for="room_name" class="label__name">Username</label>
+                  <input id="username" name="username" type="text" placeholder="e.g. anya" />
+                </label>
               </div>
               <div class="form__group">
-                <label for="password">Password</label>
-                <input id="password" name="password" type="password"
-                placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
-                />
+                <label class="profile_pic">
+                  <label for="password" class="label__name">Password</label>
+                  <input id="password" name="password" type="password"
+                  placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+                  />
+                </label>
               </div>
               {% for field in captcha_form %}
               <div class="form__group">

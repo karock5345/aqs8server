@@ -1,0 +1,44 @@
+{% extends 'base/webtv_header.html'%}
+{% block content %}
+    <div class="scroll">
+        <marquee class="vertical-center" behavior="scroll" direction="left">{{scroll}}</marquee>
+    </div>
+    <div class="booking_text_container">
+        <div class="booking_text_container_sub">
+            <label class="booking_text booking_text_color">{{text}}</label>
+        </div>
+    </div>
+    <div class="status">
+        <div class="vertical-center">
+            選擇時間 Select time
+        </div>
+    </div>
+    
+    <div class="status">
+        <div class="vertical-center">
+            現在時間: {{lastupdate}}
+        </div>
+    </div>
+
+    
+    {% for ts in timeslots %}
+        <div class="container_booking">
+            <div class="booking">
+                <div class="bookingtype" >
+                    <div class="bookingtext">{{ts.date}}</div>
+                    <div class="bookingtext right">{{ts.week}}</div>
+                    <div class="counternumber">{{ts.time}}</div>
+                </div>
+                
+            </div>
+            <div class="booking">
+                <a href="{% url 'booking-details' ts.id %}" class="buttonbooking">
+                    <div class="buttonbooking_text">預約</div>                
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="powered">Powered by tsvd.com.hk</div>
+
+{% endblock content %}

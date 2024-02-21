@@ -10,11 +10,11 @@ from django.utils.translation import gettext_lazy as _
 # Create your models here.
 
 
-# status : pending (new) -> confirmed : confirmed by admin -> completed : completed by admin
-#                                                          -> late : late by customer
-#                                                          -> noshow : customer no show
-#                        -> rejected : rejected by admin
-#                        -> cancelled : cancelled by customer
+# status : New -> confirmed : confirmed by admin -> completed : completed by admin
+#                                                -> late : late by customer
+#                                                -> noshow : customer no show
+#              -> rejected : rejected by admin
+#              -> cancelled : cancelled by customer
 
     
     
@@ -47,7 +47,8 @@ class TimeSlot(models.Model):
 
 class Booking(models.Model):
     class STATUS(models.TextChoices):
-        PENDING = 'pending', _('Pending (new booking)')
+        NULL = 'null', _('---')
+        NEW = 'new', _('New booking')
         CONFIRMED = 'confirmed', _('Confirmed')
         COMPLETED = 'completed', _('Completed')
         LATE = 'late', _('Late')
@@ -61,12 +62,12 @@ class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, blank=True)
 
-    # status : pending (new) -> confirmed : confirmed by admin -> completed : completed by admin
-    #                                                          -> late : late by customer
-    #                                                          -> noshow : customer no show
-    #                        -> rejected : rejected by admin
-    #                        -> cancelled : cancelled by customer
-    status = models.CharField(max_length=100, choices=STATUS.choices, default=STATUS.PENDING)
+    # status : New -> confirmed : confirmed by admin -> completed : completed by admin
+    #                                                -> late : late by customer
+    #                                                -> noshow : customer no show
+    #              -> rejected : rejected by admin
+    #              -> cancelled : cancelled by customer
+    status = models.CharField(max_length=100, choices=STATUS.choices, default=STATUS.NEW, null=True, blank=True, verbose_name='Booking Status')
     name = models.CharField(max_length=100, default='')
     email = models.EmailField(null=True, blank=True, default='')
     mobilephone_country = models.CharField(max_length=200, null=True, blank=True, default='')
@@ -80,8 +81,10 @@ class Booking(models.Model):
         return self.name
     
 class BookingLog(models.Model):
-# BookingLog -> action : new, change, cancel, confirm, reject, noshow, complete
+# BookingLog -> Time slot action : new, change, cancel, confirm, reject, noshow, complete
     class ACTION(models.TextChoices):
+        # this is for timeslot
+        NULL = 'null', _('---')
         NEW = 'new', _('New')
         CHANGE = 'change', _('Change')
         CANCEL = 'cancel', _('Cancel')
@@ -100,7 +103,8 @@ class BookingLog(models.Model):
     member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, blank=True)
     logtext = models.TextField(max_length=200, null=True, blank=True)
 
-    action = models.CharField(max_length=100, choices=ACTION.choices, default=ACTION.NEW, ) 
+    action = models.CharField(max_length=100, choices=ACTION.choices, default=ACTION.NULL, verbose_name='Time Slot Action')
+    status = models.CharField(max_length=100, choices=Booking.STATUS.choices, default=Booking.STATUS.NULL, verbose_name='Booking Status')
     remark = models.TextField(max_length=200, null=True, blank=True)
 
     created = models.DateTimeField(auto_now_add=True)

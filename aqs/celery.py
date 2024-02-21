@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'aqs.settings')
 
 # Create a Celery instance and configure it to use the Django settings
-app = Celery('aqs')
+app = Celery('aqs_qs1.tsvd.com.hk')
 
 # Load task modules from all registered Django app configs.
 app.config_from_object('django.conf:settings', namespace='CELERY')

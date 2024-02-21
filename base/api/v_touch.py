@@ -175,7 +175,9 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
         wssenddispwait(branch, countertype, ticket)
         wssendql(branch.bcode, countertype.name,tickettemp,'add')
         wsSendPrintTicket(branch.bcode, ttype, ticketno_str, datetime_now, tickettext, pno)
-        rocheSMS(branch, tickettemp)
+        
+        # for Roche send SMS to staff when new ticket issued
+        # rocheSMS(branch, tickettemp)
 
         # call centre mode auto send ticket to counter
         if countertype.countermode == 'cc':
