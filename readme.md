@@ -1082,6 +1082,8 @@ server {
 ```
 ****ubuntu should be changed you user**
 
+****port should be changed for different application start from 8001 -> 8xxx**
+
 Restart nginx and allow the changes to take place
 ```bash
 sudo systemctl restart nginx
@@ -1152,6 +1154,8 @@ WantedBy=multi-user.target
 ```
 ****ubuntu should be changed you user**
 
+****port should be changed for different application start from 8001 -> 8xxx**
+
 After we need to start daphne_qs123.service .
 ```bash
 sudo systemctl daemon-reload
@@ -1177,9 +1181,9 @@ sudo useradd -g celery celery ;
 sudo mkdir /var/run/celery_qs123 ;
 sudo chown -R celery:celery /var/run/celery_qs123/ ;
 sudo chmod o+w /var/run/celery_qs123 ;
-sudo mkdir /var/log/celery ;
-sudo chown -R celery:celery /var/log/celery/ ;
-sudo chmod o+w /var/log/celery
+sudo mkdir /var/log/celery_qs123 ;
+sudo chown -R celery:celery /var/log/celery_qs123/ ;
+sudo chmod o+w /var/log/celery_qs123
 ```
 ### Step 2: Create the Celery Worker Configuration File
 
@@ -1223,8 +1227,8 @@ CELERYD_OPTS="--time-limit=300 --concurrency=8"
 #CELERYD_LOG_LEVEL="DEBUG"
 
 # %n will be replaced with the first part of the node name.
-CELERYD_LOG_FILE="/var/log/celery/qs123%n%I.log"
-CELERYD_PID_FILE="/var/run/celery_qs123/qs123%n.pid"
+CELERYD_LOG_FILE="/var/log/celery_qs123/%n%I.log"
+CELERYD_PID_FILE="/var/run/celery_qs123/%n.pid"
 
 # Workers should run as an unprivileged user.
 #   You need to create this user manually (or you can choose

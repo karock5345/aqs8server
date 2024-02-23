@@ -32,6 +32,38 @@ from django.template.loader import render_to_string
 
 logger = logging.getLogger(__name__)
 
+
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
+def BookingSummaryView(request):
+   
+
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    = auth_data(request.user)
+ 
+    context = {
+        'users':auth_userlist, 
+        'users_active':auth_userlist_active, 
+        'profiles':auth_profilelist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes,
+        'timeslots':auth_timeslots,
+        'bookings':auth_bookings,
+        }
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'booking/booking.html', context)
+
+
 def chainBookNow(timeslot, name, phone_number:phonenumbers, email):
     # check slot
     error = ''
@@ -68,7 +100,7 @@ def chainBookNow(timeslot, name, phone_number:phonenumbers, email):
         funBookingLog(timeslot, booking, BookingLog.ACTION.NULL, Booking.STATUS.NEW)
     return error, error_TC
 
-def Booking_DetailsView(request, pk):
+def Booking_Details_ClientView(request, pk):
     error = ''
     error_TC = ''
     name = ''
@@ -259,7 +291,7 @@ def Booking_DetailsView(request, pk):
         
 
 
-def BookingView(request, bcode):
+def BookingClientView(request, bcode):
     # http://127.0.0.1:8000/booking/KB/
     context = {}
     error = ''
@@ -361,6 +393,7 @@ def TimeSlotNewView(request):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
     tsform = TimeSlotNewForm(auth_branchs=auth_branchs)
@@ -417,6 +450,7 @@ def TimeSlotUpdateView(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -461,6 +495,7 @@ def TimeSlotSummaryView(request):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
  
     context = {

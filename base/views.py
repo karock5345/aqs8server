@@ -211,6 +211,7 @@ def SoftkeyView(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
     context = {
@@ -415,6 +416,7 @@ def SoftkeyLoginBranchView(request):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
     user = request.user
@@ -457,6 +459,7 @@ def SoftkeyLoginView(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
     branch = Branch.objects.get(id=pk)
@@ -517,6 +520,7 @@ def SoftkeyLogoutView(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
     context = {
@@ -559,6 +563,7 @@ def SoftkeyCallView(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)    
 
     context = {
@@ -604,6 +609,7 @@ def SoftkeyProcessView(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
     
     context = {
@@ -645,6 +651,7 @@ def SoftkeyMissView(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
     context = {
@@ -685,6 +692,7 @@ def SoftkeyRecallView(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
     context = {
@@ -727,6 +735,7 @@ def SoftkeyDoneView(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
     context = {
@@ -761,7 +770,7 @@ def SoftkeyDoneView(request, pk):
 
 
 def repair(request):
-    # 127.0.0.1:8000/repair?bc=KB&note=R000123
+    # 127.0.0.1:8000/repair?bc=HY&note=R002301
     context = None
     error = ''
     bcode = ''
@@ -1880,6 +1889,7 @@ def Report_Staff_Result(request):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
           
@@ -2016,6 +2026,7 @@ def Reports(request):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))    
@@ -2095,6 +2106,7 @@ def SuperVisorListView(request):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
  
@@ -2168,6 +2180,7 @@ def TicketRouteUpdateView(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -2205,6 +2218,7 @@ def TicketRouteSummaryView(request):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
  
@@ -2230,6 +2244,7 @@ def TicketFormatNewView(request):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
     form = TicketFormatForm(auth_branchs=auth_branchs)
@@ -2296,6 +2311,7 @@ def TicketFormatUpdateView(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -2331,6 +2347,7 @@ def TicketFormatSummaryView(request):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
   
@@ -2706,6 +2723,7 @@ def SettingsSummaryView(request):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
 
@@ -2727,6 +2745,7 @@ def homeView(request):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
 
@@ -2757,6 +2776,7 @@ def UserSummaryView(request):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
  
@@ -2786,6 +2806,7 @@ def UserSummaryListView(request):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
 
@@ -2935,6 +2956,7 @@ def UserUpdateView(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
 
@@ -3135,6 +3157,7 @@ def UserNewView2(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
 
@@ -3200,6 +3223,7 @@ def UserNewView3(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
 
@@ -3327,6 +3351,7 @@ def UserResetView(request, pk):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
     if user in auth_userlist :
@@ -3366,6 +3391,7 @@ def MenuView(request):
     auth_routes, \
     auth_countertype, \
     auth_timeslots, \
+    auth_bookings, \
     = auth_data(request.user)
 
         
@@ -3414,6 +3440,8 @@ def auth_data(user):
             .annotate(active=Value(False, output_field=BooleanField()))
         auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'start_date')
 
+        auth_bookings = Booking.objects.all()
+
     elif user.groups.filter(name='admin').exists() == True:
         auth_profilelist = UserProfile.objects.all()
         auth_userlist = User.objects.all().exclude(Q(is_superuser=True))
@@ -3431,6 +3459,8 @@ def auth_data(user):
         auth_timeslots_disactive = TimeSlot.objects.filter(Q(start_date__lt=datetime_now))\
             .annotate(active=Value(False, output_field=BooleanField()))
         auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'start_date')
+
+        auth_bookings = Booking.objects.all()
     else : 
         profid_list = []
         userid_list = []
@@ -3524,16 +3554,20 @@ def auth_data(user):
         auth_timeslots_disactive = TimeSlot.objects.filter(Q(start_date__lt=datetime_now),Q(branch__in=auth_branchs))\
             .annotate(active=Value(False, output_field=BooleanField()))
         auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'start_date')
+
+        auth_bookings = Booking.objects.filter(Q(branch__in=auth_branchs)).order_by('timeslot.start_date')
         
-    return(auth_branchs, 
-           auth_userlist, auth_userlist_active,
-           auth_grouplist, 
-           auth_profilelist, 
-           auth_ticketformats, 
-           auth_routes, 
-           auth_countertype, 
-           auth_timeslots,
-           )
+    return(
+            auth_branchs, 
+            auth_userlist, auth_userlist_active,
+            auth_grouplist, 
+            auth_profilelist, 
+            auth_ticketformats, 
+            auth_routes, 
+            auth_countertype, 
+            auth_timeslots,
+            auth_bookings,
+            )
 
 
 def checkticketrouteform(form):

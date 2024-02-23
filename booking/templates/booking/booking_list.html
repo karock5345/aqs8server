@@ -1,0 +1,36 @@
+{% load static %}
+{% load tz %}
+<div class="roomArea">
+{% for bk in bookings %}
+
+    <div>
+        <div>
+            {{ bk.timeslot.start_date|timezone:bk.branch.timezone|date:'Y-m-d H:i' }}
+        </div>
+        <div>
+            {{ bk.name }}
+        </div>
+        <div>
+            {{ bk.mobilephone }}
+        </div>
+        <div>
+            {{ bk.status }}
+        </div>
+        <div>
+            <div>
+                <button>Confirm</button>
+            </div>
+            <div>
+                <button>Reject</button>
+            </div>
+            <div>
+                <button>Start</button>
+            </div>            
+        </div>
+    </div>
+
+
+{% endfor %}
+
+
+</div>

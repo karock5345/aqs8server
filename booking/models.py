@@ -10,8 +10,9 @@ from django.utils.translation import gettext_lazy as _
 # Create your models here.
 
 
-# status : New -> confirmed : confirmed by admin -> completed : completed by admin
-#                                                -> late : late by customer
+# status : New -> confirmed : confirmed by admin -> Start Service             -> completed : completed by admin
+#                                                -> late : late by customer   -> completed : completed by admin
+#                                                -> queue : change to queue   -> queue system status : 1. Queue done, 2. Ticket void, 3. Ticket no show
 #                                                -> noshow : customer no show
 #              -> rejected : rejected by admin
 #              -> cancelled : cancelled by customer
