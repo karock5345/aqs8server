@@ -1,9 +1,9 @@
 {% load static %}
 {% load tz %}
-<div class="roomArea">
+<div id="booking_list" class="roomArea">
 {% for bk in bookings %}
 
-    <div>
+    <div id="booking-{{ bk.pk }}" class="booking_row">
         <div>
             {{ bk.timeslot.start_date|timezone:bk.branch.timezone|date:'Y-m-d H:i' }}
         </div>
@@ -13,24 +13,84 @@
         <div>
             {{ bk.mobilephone }}
         </div>
-        <div>
+        <div id="status-{{ bk.pk }}">
             {{ bk.status }}
         </div>
-        <div>
-            <div>
-                <button>Confirm</button>
-            </div>
-            <div>
-                <button>Reject</button>
-            </div>
-            <div>
-                <button>Start</button>
-            </div>            
+        <div id="key_area-{{ bk.pk }}" class="qlist_container">
+
         </div>
     </div>
 
 
 {% endfor %}
-
-
 </div>
+
+
+<script>
+    var status_new_key_html = `
+            <div>
+                <button type="submit" name="confirm" value="[[pk]]" >Confirm</button>
+            </div>
+            <div>
+                <button type="submit" name="reject" value="[[pk]]" >Reject</button>
+            </div>
+    `
+    var status_confirmed_key_html = `
+            <div>
+                <button>Start</button>
+            </div>
+            <div>
+                <button>Late</button>
+            </div>
+            <div>
+                <button>No Show</button>
+            </div>
+            <div>
+                <button>Queue</button>
+            </div>
+    `
+
+    var status_null_key_html = `
+            <div>
+                <div>Null</div>
+            </div>
+            
+    `
+//    get all id is key_area_{{ bk.pk }} and get the {{ bk.pk }}
+    var booking_list = document.getElementById("booking_list");
+    var rows = document.getElementsByClassName("booking_row");
+    // var bk_pk = new Array(rows.length);
+    
+    for (var i = 0; i < rows.length; i++) {
+        var pk = rows[i].id.split("-")[1];
+        var status = document.getElementById("status-" + pk).innerHTML;
+        // remove all spaces in status
+        status = status.replace(/\s/g, '');
+        // bk_pk[i] = pk;
+        
+        var key_area = "";
+        if (status == "new") {
+            key_area = status_new_key_html ;
+        } else if (status == "confirmed") {
+            key_area = status_confirmed_key_html ;
+        } else {
+            key_area = status_null_key_html ;
+        }
+        key_area = key_area.replace("[[pk]]", pk);
+
+        document.getElementById("key_area-" + pk).innerHTML = key_area;
+    }
+
+
+
+
+
+
+
+    // var qlist = document.getElementsByClassName("qlist_container");
+
+
+    // for (var i = 0; i < qlist.length; i++) {
+    //     qlist[i].style.display = "none";
+    // }
+</script>

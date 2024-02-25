@@ -63,11 +63,13 @@ class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, blank=True)
 
-    # status : New -> confirmed : confirmed by admin -> completed : completed by admin
-    #                                                -> late : late by customer
-    #                                                -> noshow : customer no show
-    #              -> rejected : rejected by admin
-    #              -> cancelled : cancelled by customer
+# status : New -> confirmed : confirmed by admin -> Start Service             -> completed : completed by admin
+#                                                -> late : late by customer   -> completed : completed by admin
+#                                                -> queue : change to queue   -> queue system status : 1. Queue done, 2. Ticket void, 3. Ticket no show
+#                                                -> noshow : customer no show
+#              -> rejected : rejected by admin
+#              -> cancelled : cancelled by customer
+
     status = models.CharField(max_length=100, choices=STATUS.choices, default=STATUS.NEW, null=True, blank=True, verbose_name='Booking Status')
     name = models.CharField(max_length=100, default='')
     email = models.EmailField(null=True, blank=True, default='')
