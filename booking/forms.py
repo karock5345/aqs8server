@@ -10,13 +10,39 @@ from django.contrib.auth.models import User, Group
 from django.db.models import Q
 from django.forms.utils import ErrorList
 from base.models import TicketFormat, TicketRoute, UserProfile, Branch, CounterType
-from .models import TimeSlot
+from .models import TimeSlot, Booking
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 import pytz
 from django.utils.timezone import localtime, get_current_timezone
 from datetime import datetime, timedelta
+
+class BookingForm(ModelForm):
+    start_date = forms.DateTimeField(label='Start Date', input_formats=['%Y-%m-%d %H:%M'], widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', ))
+    def __init__(self, *args,**kwargs):
+        self.auth_branchs = kwargs.pop('auth_branchs')
+
+        super().__init__(*args,**kwargs)        
+
+        bk = self.instance
+        timezone = bk.branch.timezone
+        self.initial['start_date'] = funUTCtoLocal(bk.timeslot.start_date, timezone)
+        # self.fields['start_date'].widget.attrs['disabled'] = 'disabled'
+       
+        self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs)
+        self.fields['user'].widget.attrs['disabled'] = 'disabled'
+        self.fields['member'].widget.attrs['disabled'] = 'disabled'
+        self.fields['timeslot'].widget.attrs['hidden'] = 'hidden'
+
+
+
+
+        
+    class Meta:        
+        model = Booking
+        fields = ['branch', 'start_date', 'timeslot', 'user', 'member','status', 'name', 'email',  'user', 'mobilephone_country', 'mobilephone', 'people', 'remark']
+
 
 class DetailsForm(forms.Form):
     name = forms.CharField(label='稱呼', max_length=100)

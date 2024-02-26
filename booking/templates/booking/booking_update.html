@@ -1,0 +1,66 @@
+{% extends 'main.html' %}
+{% load tz %}
+{% block content %}
+
+    <main class="update-account layout">
+        <div class="container">
+            <div class="layout__box__form">
+                <div class="layout__boxHeader">
+                    <div class="layout__boxTitle">
+                        <a href="{% url 'bookingsummary' %}">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 32 32">                                
+                                <path
+                                    d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                                </path>
+                            </svg>
+                        </a>
+                        <h3>Edit Booking</h3>
+                    </div>
+                </div>
+                <div class="layout__body">
+
+                    <form class="form" action="" method="POST" prefix="bookingform">
+                        
+                        {% csrf_token %}
+                        
+                        {% for field in bookingform  %}
+                                {% if field.name == "timeslot" %}
+                                    <div hidden>
+                                        <label for="profile_pic">{{field.label}} : {{field}}</label>                            
+                                    </div>
+                                {% elif field.name == "created_by_temp" %}
+                                    <div class="form__group_checkbox">
+                                        {{field}}<label>&nbsp;{{field.label}}</label>
+                                    </div>
+                               
+                                {% elif field.name == "start_date" %}                                
+                                    <div class="form__group">
+                                        
+                                        <label for="profile_pic">
+                                            {{field.label}} :
+                                            <a href="{% url 'bookingsummary' %}">
+                                                {{field}}
+                                            </a>
+                                        </label>
+                                                                
+                                    </div>
+                                {% else %}
+                                    <div class="form__group">
+                                        <label for="profile_pic">{{field.label}} : {{field}}</label>                            
+                                    </div>
+                                {% endif %}
+                        {% endfor %}
+                        
+                        <div class="form__action">
+                            <a class="btn btn--del" href="{-% u-rl 'ts-delete' timeslot.id %}">Delete</a>
+                            <a class="btn btn--dark" href="{% url 'bookingsummary' %}">Cancel</a>
+                            <button class="btn btn--main" type="submit">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </main>
+    {% endblock content %}

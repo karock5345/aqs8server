@@ -13,7 +13,7 @@ from django.urls import reverse_lazy, reverse
 
 from .models import *
 from base.models import UserProfile, Branch
-from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm
+from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm, BookingForm
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
 from django.utils import timezone
@@ -34,10 +34,52 @@ logger = logging.getLogger(__name__)
 
 
 @unauth_user
-@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
-def BookingSummaryView(request):
-   
+def BookingUpdateView(request, pk):
+    booking = Booking.objects.get(id=pk)    
 
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    = auth_data(request.user)
+
+    if request.method == 'POST':
+        bookingform = BookingForm(request.POST, instance=booking, prefix='bookingform', auth_branchs=auth_branchs)
+        error = ''
+        # error, newform = checktimeslotform(bookingform)
+        newform =bookingform
+        if error == '' :         
+            try :
+                newform.save()
+                # change user to current user
+                # timeslot.user = request.user
+                # timeslot.save()
+                messages.success(request, 'Booking was successfully updated!')
+                # funBookingLog(timeslot, None, BookingLog.ACTION.CHANGE, Booking.STATUS.NULL)
+                
+                return redirect('bookingsummary')
+            except:
+                error = 'An error occurcd during updating Booking'
+
+            
+
+        if error != '':
+            messages.error(request, error )
+                
+    else:
+        bookingform = BookingForm(instance=booking, prefix='bookingform', auth_branchs=auth_branchs)
+    context =  {'bookingform':bookingform, 'booking':booking, }
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'booking/booking_update.html', context)
+
+@unauth_user
+def BookingSummaryView(request):
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -60,6 +102,77 @@ def BookingSummaryView(request):
         'timeslots':auth_timeslots,
         'bookings':auth_bookings,
         }
+    
+    if request.method == 'POST':
+        action = None
+        pk = None
+        booking = None
+        action_list = ['confirm', 'reject', 'start', 'late', 'noshow', 'queue', 'complete']
+        error = ''
+        for a in action_list:
+            if request.POST.get(a) != None:
+                action = a
+                pk = request.POST.get(a)
+                try:
+                    booking = Booking.objects.get(id=pk)
+                except:
+                    error = 'Booking not found'
+                break
+        if error == '':
+            if action == None:
+                error = 'No action selected'
+        if error == '':
+            if pk == None:
+                error = 'No booking index'
+        if error == '':
+            if action == 'confirm':
+                booking = Booking.objects.get(id=pk)
+                booking.status = Booking.STATUS.CONFIRMED
+                booking.save()
+                # get the new timeslot and create a log
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.CONFIRMED)
+            elif action == 'reject':
+                booking = Booking.objects.get(id=pk)
+                booking.status = Booking.STATUS.REJECTED
+                booking.save()
+                # get the new timeslot and create a log
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.REJECTED)
+            elif action == 'start':
+                booking = Booking.objects.get(id=pk)
+                booking.status = Booking.STATUS.STARTED
+                booking.save()
+                # get the new timeslot and create a log
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.STARTED)
+            elif action == 'late':
+                booking = Booking.objects.get(id=pk)
+                booking.status = Booking.STATUS.LATE
+                booking.save()
+                # get the new timeslot and create a log
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.LATE)
+            elif action == 'noshow':
+                booking = Booking.objects.get(id=pk)
+                booking.status = Booking.STATUS.NOSHOW
+                booking.save()
+                # get the new timeslot and create a log
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NOSHOW)
+            elif action == 'queue':
+                booking = Booking.objects.get(id=pk)
+                booking.status = Booking.STATUS.QUEUE
+                booking.save()
+                # get the new timeslot and create a log
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.QUEUE)
+            elif action == 'complete':
+                booking = Booking.objects.get(id=pk)
+                booking.status = Booking.STATUS.COMPLETED
+                booking.save()
+                # get the new timeslot and create a log
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.COMPLETED)
+            
+
+        if error != '': 
+            messages.error(request, error)
+            
+            
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'booking/booking.html', context)
 
@@ -97,7 +210,7 @@ def chainBookNow(timeslot, name, phone_number:phonenumbers, email):
             )
         # print(booking.status)
         # aget the new timeslot and create a log
-        funBookingLog(timeslot, booking, BookingLog.ACTION.NULL, Booking.STATUS.NEW)
+        funBookingLog(timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NEW)
     return error, error_TC
 
 def Booking_Details_ClientView(request, pk):
@@ -506,6 +619,7 @@ def TimeSlotSummaryView(request):
         'ticketformats':auth_ticketformats, 
         'routes':auth_routes,
         'timeslots':auth_timeslots,
+        'bookings':auth_bookings,
         }
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'booking/timeslot.html', context)

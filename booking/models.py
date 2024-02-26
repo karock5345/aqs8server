@@ -9,11 +9,11 @@ from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 
-
-# status : New -> confirmed : confirmed by admin -> Start Service             -> completed : completed by admin
+# Booking status:
+# status : New -> confirmed : confirmed by admin -> start : Start Service     -> completed : completed by admin
 #                                                -> late : late by customer   -> completed : completed by admin
-#                                                -> queue : change to queue   -> queue system status : 1. Queue done, 2. Ticket void, 3. Ticket no show
 #                                                -> noshow : customer no show
+#                                                -> queue : change to queue   -> queue system status : 1. Queue done, 2. Ticket void, 3. Ticket no show
 #              -> rejected : rejected by admin
 #              -> cancelled : cancelled by customer
 
@@ -22,6 +22,18 @@ from django.utils.translation import gettext_lazy as _
 # datetime_now_local = funUTCtoLocal(datetime_now, cs.countertype.branch.timezone)
 
 class TimeSlot(models.Model):
+    # Time slot action : new, change, delete, full, disable, enable
+    class ACTION(models.TextChoices):
+        # this is for timeslot
+        NULL = 'null', _('---')
+        NEW = 'new', _('New')
+        CHANGE = 'change', _('Change')
+        CANCEL = 'cancel', _('Cancel')
+        CONFIRM = 'confirm', _('Confirm')
+        REJECT = 'reject', _('Reject')
+        NOSHOW = 'noshow', _('No show')
+        COMPLETE = 'complete', _('Completed')
+        DELETE = 'delete', _('Delete')    
     # TimeSlot if branch is deleted, timeslot should be deleted
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
     # |show_date---show_end_date|---start_date---| 
@@ -50,12 +62,19 @@ class Booking(models.Model):
     class STATUS(models.TextChoices):
         NULL = 'null', _('---')
         NEW = 'new', _('New booking')
+
         CONFIRMED = 'confirmed', _('Confirmed')
-        COMPLETED = 'completed', _('Completed')
-        LATE = 'late', _('Late')
-        NOSHOW = 'noshow', _('Customer No show')
         REJECTED = 'rejected', _('Rejected by Admin')
         CANCELLED = 'cancelled', _('Cancelled by Customer')
+
+        STARTED = 'started', _('Start Service')
+        LATE = 'late', _('Late')
+        NOSHOW = 'noshow', _('Customer No show')
+        QUEUE = 'queue', _('Queue')
+
+        COMPLETED = 'completed', _('Completed')
+
+        
 
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
     # branch = models.ForeignKey(Branch, on_delete=models.CASCADE, default=Branch.get_default_pk)
@@ -84,18 +103,7 @@ class Booking(models.Model):
         return self.name
     
 class BookingLog(models.Model):
-# BookingLog -> Time slot action : new, change, cancel, confirm, reject, noshow, complete
-    class ACTION(models.TextChoices):
-        # this is for timeslot
-        NULL = 'null', _('---')
-        NEW = 'new', _('New')
-        CHANGE = 'change', _('Change')
-        CANCEL = 'cancel', _('Cancel')
-        CONFIRM = 'confirm', _('Confirm')
-        REJECT = 'reject', _('Reject')
-        NOSHOW = 'noshow', _('No show')
-        COMPLETE = 'complete', _('Completed')
-        DELETE = 'delete', _('Delete')
+
 
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
     # branch = models.ForeignKey(Branch, on_delete=models.CASCADE, default=Branch.get_default_pk)
@@ -106,7 +114,7 @@ class BookingLog(models.Model):
     member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, blank=True)
     logtext = models.TextField(max_length=200, null=True, blank=True)
 
-    action = models.CharField(max_length=100, choices=ACTION.choices, default=ACTION.NULL, verbose_name='Time Slot Action')
+    action = models.CharField(max_length=100, choices=TimeSlot.ACTION.choices, default=TimeSlot.ACTION.NULL, verbose_name='Time Slot Action')
     status = models.CharField(max_length=100, choices=Booking.STATUS.choices, default=Booking.STATUS.NULL, verbose_name='Booking Status')
     remark = models.TextField(max_length=200, null=True, blank=True)
 

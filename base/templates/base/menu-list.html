@@ -72,6 +72,17 @@
       </a>
     </li>
     <li>
+      <a href="{% url 'bookingsummary' %}" class="active">
+        <div class="header__logo">
+          <div class="list__svg">
+            {% include 'base/images/booking.svg' %}
+          </div>
+          <div>Bookings</div>
+        </div> 
+        <span>{{ bookings.count }}</span>
+      </a>
+    </li>    
+    <li>
       <a href="{% url 'bookingtimeslot' %}" class="active">
         <div class="header__logo">
           <div class="list__svg">
@@ -81,7 +92,7 @@
         </div> 
         <span>{{ timeslots.count }}</span>
       </a>
-    </li>    
+    </li>
     <li>
       <a href="{% url 'settingssummary' %}" class="active">
         <div class="header__logo">
@@ -130,6 +141,17 @@
       </a>
     </li>
     <li>
+      <a href="{% url 'bookingsummary' %}" class="active">
+        <div class="header__logo">
+          <div class="list__svg">
+            {% include 'base/images/booking.svg' %}
+          </div>
+          <div>Bookings</div>
+        </div> 
+        <span>{{ bookings.count }}</span>
+      </a>
+    </li>      
+    <li>
       <a href="{% url 'bookingtimeslot' %}" class="active">
         <div class="header__logo">
           <div class="list__svg">
@@ -152,7 +174,17 @@
       </a>
     </li>
   {% elif request.user.groups.all.0.name == 'reporter' %}
-
+    <li>
+      <a href="{% url 'bookingsummary' %}" class="active">
+        <div class="header__logo">
+          <div class="list__svg">
+            {% include 'base/images/booking.svg' %}
+          </div>
+          <div>Bookings</div>
+        </div> 
+        <span>{{ bookings.count }}</span>
+      </a>
+    </li>  
 
     <li>
       <a href="{% url 'supersummary' %}" class="active">

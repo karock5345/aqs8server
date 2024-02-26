@@ -1,61 +1,105 @@
 {% load static %}
 {% load tz %}
 <div id="booking_list" class="roomArea">
-{% for bk in bookings %}
+    <form class="booking_form" action="" method="POST">
+        {% csrf_token %}       
+            {% for bk in bookings %}
+                <a id="booking-{{ bk.pk }}" class="booking_row" href="{% url 'bookingupdate' bk.pk %}">
+                    <div>
+                        <div class="booking_date_text">
+                            {{ bk.timeslot.start_date|timezone:bk.branch.timezone|date:'Y-m-d' }}                        
+                        </div>
+                        <div class="booking_date_text">
+                            {{ bk.timeslot.start_date|timezone:bk.branch.timezone|date:'H:i' }}
+                            {{ bk.timeslot.start_date|timezone:bk.branch.timezone|date:'(D)' }}
+                        </div>
+                    </div>
+                    <div class="booking_branch_text">
+                        {{ bk.branch.name }}
+                    </div>
+                    <div class="booking_branch_text">
+                        {{ bk.name }}
+                    </div>
+                    <div class="booking_branch_text">
+                        {{ bk.mobilephone }}
+                        {{ bk.email }}
+                    </div>
+                    <div id="status-{{ bk.pk }}" hidden>
+                        {{ bk.status }}
+                    </div>
+                    <div id="key_area-{{ bk.pk }}" class="booking_key_area">
 
-    <div id="booking-{{ bk.pk }}" class="booking_row">
-        <div>
-            {{ bk.timeslot.start_date|timezone:bk.branch.timezone|date:'Y-m-d H:i' }}
-        </div>
-        <div>
-            {{ bk.name }}
-        </div>
-        <div>
-            {{ bk.mobilephone }}
-        </div>
-        <div id="status-{{ bk.pk }}">
-            {{ bk.status }}
-        </div>
-        <div id="key_area-{{ bk.pk }}" class="qlist_container">
-
-        </div>
-    </div>
-
-
-{% endfor %}
+                    </div>
+                </a>
+            {% endfor %}
+    </form>
 </div>
 
 
 <script>
-    var status_new_key_html = `
-            <div>
-                <button type="submit" name="confirm" value="[[pk]]" >Confirm</button>
-            </div>
-            <div>
-                <button type="submit" name="reject" value="[[pk]]" >Reject</button>
-            </div>
-    `
-    var status_confirmed_key_html = `
-            <div>
-                <button>Start</button>
-            </div>
-            <div>
-                <button>Late</button>
-            </div>
-            <div>
-                <button>No Show</button>
-            </div>
-            <div>
-                <button>Queue</button>
-            </div>
-    `
-
     var status_null_key_html = `
             <div>
                 <div>Null</div>
             </div>
-            
     `
+    var status_new_key_html = `
+            <div class="booking_new">
+                New
+            </div>
+            <div>
+                <button type="submit" name="confirm" value="[[pk]]" class="booking_key" >Confirm</button>
+            </div>
+            <div>
+                <button type="submit" name="reject" value="[[pk]]"  class="booking_key" >Reject</button>
+            </div>
+    `
+    var status_confirmed_key_html = `
+            <div>
+                <button type="submit" name="start" value="[[pk]]" class="booking_key"  >Start</button>
+            </div>
+            <div>
+                <button type="submit" name="late" value="[[pk]]" class="booking_key"  >Late</button>
+            </div>
+            <div>
+                <button type="submit" name="noshow" value="[[pk]]" class="booking_key"  >No Show</button>
+            </div>
+            <div>
+                <button type="submit" name="queue" value="[[pk]]" class="booking_key"  >Queue</button>
+            </div>
+    `
+    var status_started_key_html = `
+            <div>
+                <div>
+                    <button type="submit" name="complete" value="[[pk]]" class="booking_key"  >Complete</button>
+                </div>
+            </div>
+    `
+    var status_noshow_key_html = `
+            <div>
+                <div>No Show</div>
+            </div>
+    `
+    var status_queue_key_html = `
+            <div>
+                <div>On queue</div>
+            </div>
+    `    
+    var status_rejected_key_html = `
+            <div>
+                <div>Rejected</div>
+            </div>
+    `
+    var status_cancelled_key_html = `
+            <div>
+                <div>Cancelled by customer</div>
+            </div>
+    `
+    var status_completed_key_html = `
+            <div>
+                <div>Completed</div>
+            </div>
+    `
+
 //    get all id is key_area_{{ bk.pk }} and get the {{ bk.pk }}
     var booking_list = document.getElementById("booking_list");
     var rows = document.getElementsByClassName("booking_row");
@@ -73,12 +117,26 @@
             key_area = status_new_key_html ;
         } else if (status == "confirmed") {
             key_area = status_confirmed_key_html ;
+        } else if (status == "rejected") {
+            key_area = status_rejected_key_html ;
+        } else if (status == "cancelled") {
+            key_area = status_cancelled_key_html ;
+        } else if (status == "completed") {
+            key_area = status_completed_key_html ;
+        } else if (status == "started" || status == "late") {
+            key_area = status_started_key_html ;
+        } else if (status == "noshow") {
+            key_area = status_noshow_key_html ;
+        } else if (status == "queue") {
+            key_area = status_queue_key_html ;
         } else {
-            key_area = status_null_key_html ;
+            key_area = status_null_key_html ;            
         }
-        key_area = key_area.replace("[[pk]]", pk);
+        // replace all [[pk]] to pk
+        key_area = key_area.replace(/\[\[pk\]\]/g, pk);
 
         document.getElementById("key_area-" + pk).innerHTML = key_area;
+        
     }
 
 
