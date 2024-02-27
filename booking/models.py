@@ -6,12 +6,13 @@ from datetime import timedelta
 from django.utils.html import format_html, escape
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
+from base.api.views import funUTCtoLocal
 
 # Create your models here.
 
 # Booking status:
 # status : New -> confirmed : confirmed by admin -> start : Start Service     -> completed : completed by admin
-#                                                -> late : late by customer   -> completed : completed by admin
+#                                                -> late : customer is late   -> completed : completed by admin
 #                                                -> noshow : customer no show
 #                                                -> queue : change to queue   -> queue system status : 1. Queue done, 2. Ticket void, 3. Ticket no show
 #              -> rejected : rejected by admin
@@ -27,13 +28,13 @@ class TimeSlot(models.Model):
         # this is for timeslot
         NULL = 'null', _('---')
         NEW = 'new', _('New')
-        CHANGE = 'change', _('Change')
-        CANCEL = 'cancel', _('Cancel')
-        CONFIRM = 'confirm', _('Confirm')
-        REJECT = 'reject', _('Reject')
+        CHANGED = 'change', _('Change')
+        CANCELLED = 'cancel', _('Cancel')
+        CONFIRMED = 'confirm', _('Confirm')
+        REJECTED = 'reject', _('Reject')
         NOSHOW = 'noshow', _('No show')
-        COMPLETE = 'complete', _('Completed')
-        DELETE = 'delete', _('Delete')    
+        COMPLETED = 'complete', _('Completed')
+        DELETED = 'delete', _('Delete')    
     # TimeSlot if branch is deleted, timeslot should be deleted
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
     # |show_date---show_end_date|---start_date---| 
@@ -68,11 +69,13 @@ class Booking(models.Model):
         CANCELLED = 'cancelled', _('Cancelled by Customer')
 
         STARTED = 'started', _('Start Service')
-        LATE = 'late', _('Late')
+        LATED = 'late', _('Late')
         NOSHOW = 'noshow', _('Customer No show')
         QUEUE = 'queue', _('Queue')
 
         COMPLETED = 'completed', _('Completed')
+        CHANGED = 'changed', _('Changed')
+        DELETED = 'deleted', _('Deleted') # this is for booking fake delete
 
         
 
@@ -82,12 +85,7 @@ class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, blank=True)
 
-# status : New -> confirmed : confirmed by admin -> Start Service             -> completed : completed by admin
-#                                                -> late : late by customer   -> completed : completed by admin
-#                                                -> queue : change to queue   -> queue system status : 1. Queue done, 2. Ticket void, 3. Ticket no show
-#                                                -> noshow : customer no show
-#              -> rejected : rejected by admin
-#              -> cancelled : cancelled by customer
+
 
     status = models.CharField(max_length=100, choices=STATUS.choices, default=STATUS.NEW, null=True, blank=True, verbose_name='Booking Status')
     name = models.CharField(max_length=100, default='')
@@ -99,8 +97,14 @@ class Booking(models.Model):
 
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
+
+    
+    
+
     def __str__(self):
-        return self.name
+        start_date_local = self.timeslot.start_date
+        start_date_local = funUTCtoLocal(start_date_local, self.branch.timezone)
+        return self.name + '-' + start_date_local.strftime('%Y-%m-%d_%H:%M')
     
 class BookingLog(models.Model):
 

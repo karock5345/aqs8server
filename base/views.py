@@ -3441,7 +3441,7 @@ def auth_data(user):
             .annotate(active=Value(False, output_field=BooleanField()))
         auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'start_date')
 
-        auth_bookings = Booking.objects.all()
+        auth_bookings = Booking.objects.filter(~Q(status=Booking.STATUS.DELETED))
 
     elif user.groups.filter(name='admin').exists() == True:
         auth_profilelist = UserProfile.objects.all()
@@ -3461,7 +3461,7 @@ def auth_data(user):
             .annotate(active=Value(False, output_field=BooleanField()))
         auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'start_date')
 
-        auth_bookings = Booking.objects.all()
+        auth_bookings = Booking.objects.filter(~Q(status=Booking.STATUS.DELETED))
     else : 
         profid_list = []
         userid_list = []
@@ -3556,7 +3556,7 @@ def auth_data(user):
             .annotate(active=Value(False, output_field=BooleanField()))
         auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'start_date')
 
-        auth_bookings = Booking.objects.filter(Q(branch__in=auth_branchs))
+        auth_bookings = Booking.objects.filter(Q(branch__in=auth_branchs), ~Q(status=Booking.STATUS.DELETED))
         # auth_bookings = Booking.objects.filter(Q(branch__in=auth_branchs)).order_by('timeslot.start_date')
         
     return(

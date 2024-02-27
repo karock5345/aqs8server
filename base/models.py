@@ -122,6 +122,8 @@ class Branch(models.Model):
                                                 'TSVD',
                                             help_text='Booking success text, [[ADDR]] is branch address, [[NAME]] is customer name, [[DATE]] is booking start date, [[TIME]] is booking start time. [[WEEK]] is week.',
                                             )
+    # booking success email settings
+    bookingSuccessEmailEnabled = models.BooleanField(default=True, verbose_name='Booking success email enabled')
     bookingSuccessEmailSubject = models.TextField(
                                                     null=True, 
                                                     blank=True, 

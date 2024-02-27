@@ -2,7 +2,7 @@ from django.urls import path
 
 from .views import TimeSlotSummaryView, TimeSlotUpdateView, TimeSlotNewView, TimeSlotDelView 
 from .views import BookingClientView, Booking_Details_ClientView
-from .views import BookingSummaryView, BookingUpdateView
+from .views import BookingSummaryView, BookingUpdateView, BookingDelView
 
 
 urlpatterns = [
@@ -12,6 +12,8 @@ urlpatterns = [
     # Booking html pages
     path('booking/', BookingSummaryView, name='bookingsummary'),
     path('booking-update/<str:pk>/', BookingUpdateView, name='bookingupdate'),
+    path('booking-del/<str:pk>/', BookingDelView, name='bookingdelete'),
+
     path('timeslot/', TimeSlotSummaryView, name='bookingtimeslot'),
     path('timeslot-update/<str:pk>/', TimeSlotUpdateView, name='ts-update'),
     path('timeslot-new/', TimeSlotNewView, name='ts-new'),

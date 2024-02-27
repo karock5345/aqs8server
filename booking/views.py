@@ -13,7 +13,7 @@ from django.urls import reverse_lazy, reverse
 
 from .models import *
 from base.models import UserProfile, Branch
-from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm, BookingForm
+from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm, BookingForm, BookingNewForm
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
 from django.utils import timezone
@@ -32,7 +32,78 @@ from django.template.loader import render_to_string
 
 logger = logging.getLogger(__name__)
 
+@unauth_user
+def BookingNewView(request):
 
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    = auth_data(request.user)
+
+    form = BookingNewForm(auth_branchs=auth_branchs)
+
+    if request.method == 'POST':
+        form = TimeSlotNewForm(request.POST, auth_branchs=auth_branchs)
+        
+        error = ''
+        error, newform = checktimeslotform(form)
+        
+
+        if error == '' :
+            try:
+                newform.save()
+                # change user to current user
+                newform.user = request.user
+
+                newform.slot_using = 0
+                newform.slot_available = newform.slot_total
+
+                newform.save()
+
+                # get the new timeslot and create a log
+                timeslot = TimeSlot.objects.get(id=newform.id)
+                funBookingLog(timeslot, None, TimeSlot.ACTION.NEW,  Booking.STATUS.NULL, request.user, None)
+
+                messages.success(request, 'Created new Time Slot.')
+            except:
+                error = 'An error occurcd during new Time Slot creation'          
+
+            return redirect('bookingtimeslot')
+        if error != '':
+            messages.error(request, error)
+
+    # get the url of 'bookingtimeslot'
+    back_url = reverse('bookingsummary')
+    context = {'form':form}
+    context = {'aqs_version':aqs_version, 'title':'New Booking', 'back_url':back_url, } | context 
+    return render(request, 'base/new.html', context)
+
+@unauth_user
+def BookingDelView(request, pk):
+ 
+    booking = Booking.objects.get(id=pk) 
+  
+    if request.method =='POST':
+        # the is fake delete, the booking will be set to 'deleted' status
+        booking.status = Booking.STATUS.DELETED
+        booking.save()
+
+        # get the new timeslot and create a log
+        funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NULL, request.user, None)
+
+              
+        messages.success(request, 'Time Slot was successfully deleted!') 
+        return redirect('bookingsummary')
+    context = {'obj':booking, 'text':'Warning: This action will delete the Booking.'}
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'base/delete.html', context)
 @unauth_user
 def BookingUpdateView(request, pk):
     booking = Booking.objects.get(id=pk)    
@@ -52,8 +123,9 @@ def BookingUpdateView(request, pk):
     if request.method == 'POST':
         bookingform = BookingForm(request.POST, instance=booking, prefix='bookingform', auth_branchs=auth_branchs)
         error = ''
-        # error, newform = checktimeslotform(bookingform)
-        newform =bookingform
+        # check the form
+        error, newform = checkbookingform(bookingform)
+        
         if error == '' :         
             try :
                 newform.save()
@@ -61,7 +133,7 @@ def BookingUpdateView(request, pk):
                 # timeslot.user = request.user
                 # timeslot.save()
                 messages.success(request, 'Booking was successfully updated!')
-                # funBookingLog(timeslot, None, BookingLog.ACTION.CHANGE, Booking.STATUS.NULL)
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.CHANGED, request.user, None)
                 
                 return redirect('bookingsummary')
             except:
@@ -91,6 +163,8 @@ def BookingSummaryView(request):
     auth_timeslots, \
     auth_bookings, \
     = auth_data(request.user)
+
+
  
     context = {
         'users':auth_userlist, 
@@ -130,43 +204,49 @@ def BookingSummaryView(request):
                 booking.status = Booking.STATUS.CONFIRMED
                 booking.save()
                 # get the new timeslot and create a log
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.CONFIRMED)
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.CONFIRMED, request.user, None)
             elif action == 'reject':
                 booking = Booking.objects.get(id=pk)
                 booking.status = Booking.STATUS.REJECTED
                 booking.save()
-                # get the new timeslot and create a log
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.REJECTED)
+
+                # release the slot
+                booking.timeslot.slot_available = booking.timeslot.slot_available + 1
+                booking.timeslot.slot_using = booking.timeslot.slot_using - 1
+                booking.timeslot.save()
+
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.REJECTED, Booking.STATUS.REJECTED, request.user, None)
             elif action == 'start':
                 booking = Booking.objects.get(id=pk)
                 booking.status = Booking.STATUS.STARTED
                 booking.save()
                 # get the new timeslot and create a log
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.STARTED)
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.STARTED, request.user, None)
+
             elif action == 'late':
                 booking = Booking.objects.get(id=pk)
-                booking.status = Booking.STATUS.LATE
+                booking.status = Booking.STATUS.LATED
                 booking.save()
                 # get the new timeslot and create a log
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.LATE)
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.LATED, request.user, None)
             elif action == 'noshow':
                 booking = Booking.objects.get(id=pk)
                 booking.status = Booking.STATUS.NOSHOW
                 booking.save()
                 # get the new timeslot and create a log
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NOSHOW)
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NOSHOW, request.user, None)
             elif action == 'queue':
                 booking = Booking.objects.get(id=pk)
                 booking.status = Booking.STATUS.QUEUE
                 booking.save()
                 # get the new timeslot and create a log
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.QUEUE)
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.QUEUE, request.user, None)
             elif action == 'complete':
                 booking = Booking.objects.get(id=pk)
                 booking.status = Booking.STATUS.COMPLETED
                 booking.save()
                 # get the new timeslot and create a log
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.COMPLETED)
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.COMPLETED, request.user, None)
             
 
         if error != '': 
@@ -177,7 +257,7 @@ def BookingSummaryView(request):
     return render(request, 'booking/booking.html', context)
 
 
-def chainBookNow(timeslot, name, phone_number:phonenumbers, email):
+def chainBookNow(timeslot, name, phone_number:phonenumbers, email, user, member):
     # check slot
     error = ''
     error_TC = ''
@@ -210,7 +290,7 @@ def chainBookNow(timeslot, name, phone_number:phonenumbers, email):
             )
         # print(booking.status)
         # aget the new timeslot and create a log
-        funBookingLog(timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NEW)
+        funBookingLog(timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NEW, user, member)
     return error, error_TC
 
 def Booking_Details_ClientView(request, pk):
@@ -308,7 +388,7 @@ def Booking_Details_ClientView(request, pk):
                             error_TC = '電郵地址格式不正確'
 
                 if error == '':
-                    error, error_TC = chainBookNow(timeslot, name, phone_number, email)
+                    error, error_TC = chainBookNow(timeslot, name, phone_number, email, request.user, None)
                     pass
 
                 if error == '':
@@ -333,7 +413,8 @@ def Booking_Details_ClientView(request, pk):
                             'body': email_str,                        
                         })
                         message = message.replace('amp;', '')
-                        sendemail.delay(subject, message, email,)
+                        if timeslot.branch.bookingSuccessEmailEnabled == True:
+                            sendemail.delay(subject, message, email,)
 
                     # send email to admin
 
@@ -371,14 +452,13 @@ def Booking_Details_ClientView(request, pk):
                     # Error message
                     messages.error(request, error_TC)
                     messages.error(request, error)
-                    
-                print(phone_number)
+        
                 # if phone_number != '' :
                 #     print(phonenumbers.is_valid_number(phone_number))
                 #     print(phonenumbers.timezone.time_zones_for_number(phone_number))
                 #     print('Country code:' + str(phone_number.country_code))
                 #     print('National number:' + str(phone_number.national_number))
-                print('error:', error)
+                
 
 
 
@@ -484,7 +564,7 @@ def TimeSlotDelView(request, pk):
         timeslot.save()
 
         # get the new timeslot and create a log
-        funBookingLog(timeslot, None, BookingLog.ACTION.DELETE, Booking.STATUS.NULL)
+        funBookingLog(timeslot, None, TimeSlot.ACTION.DELETED, Booking.STATUS.NULL, request.user, None)
 
         timeslot.delete()       
         messages.success(request, 'Time Slot was successfully deleted!') 
@@ -531,7 +611,7 @@ def TimeSlotNewView(request):
 
                 # get the new timeslot and create a log
                 timeslot = TimeSlot.objects.get(id=newform.id)
-                funBookingLog(timeslot, None, BookingLog.ACTION.NEW,  Booking.STATUS.NULL)
+                funBookingLog(timeslot, None, TimeSlot.ACTION.NEW,  Booking.STATUS.NULL, request.user, None)
 
                 messages.success(request, 'Created new Time Slot.')
             except:
@@ -577,7 +657,7 @@ def TimeSlotUpdateView(request, pk):
                 timeslot.user = request.user
                 timeslot.save()
                 messages.success(request, 'TimeSlot was successfully updated!')
-                funBookingLog(timeslot, None, BookingLog.ACTION.CHANGE, Booking.STATUS.NULL)
+                funBookingLog(timeslot, None, TimeSlot.ACTION.CHANGED, Booking.STATUS.NULL, request.user, None)
                 
                 return redirect('bookingtimeslot')
             except:
@@ -684,10 +764,63 @@ def checktimeslotform(form):
         if newform.slot_available < 0 :
             error = 'Slot available should be => 0'
 
-    return (error, newform)
+    return error, newform
+
+def checkbookingform(form):
+    error = ''
+    errorTC = ''
+    newform = None
+
+    if form.is_valid() == False:
+        error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
+        error = 'An error occurcd during registration: '+ error_string
+    
+    if error == '' :
+        newform = form.save(commit=False)
+
+    if error == '' :
+        if newform.branch == None :
+            # Error branch is None
+            error = 'Error Branch is blank'
+    if error == '' :
+        if newform.mobilephone_country == '' and newform.mobilephone == '':
+            pass
+        else:
+            if newform.mobilephone_country == None :
+                newform.mobilephone_country = ''
+                newform.save()
+            if newform.mobilephone == None :
+                newform.mobilephone = ''
+                newform.save()
+            if newform.mobilephone_country + newform.mobilephone != '':
+                error, errorTC, newphone_country, newphone = checkMphone(newform.mobilephone_country + newform.mobilephone)
+
+                if error == '' :
+                    newform.mobilephone_country = newphone_country
+                    newform.mobilephone = newphone
+                    newform.save()
 
 
-def funBookingLog(timeslot, booking, action, status):
+    if error == '':
+        if not(newform.email == '' or newform.email == None) :
+        # check email format
+            regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+            if(re.fullmatch(regex, newform.email)):
+                pass       
+            else:
+                error = 'Email format is incorrect'
+                error_TC = '電郵地址格式不正確'
+
+    if error == '' :
+        if newform.people < 1:
+            error = 'People should be => 1'
+    if error == '' :
+        if newform.people > 100:
+            error = 'People should be <= 100'
+    
+    return error, newform
+
+def funBookingLog(timeslot, booking, action, status, user, member):
 
     logtext = ''
     logtext_t = ''
@@ -709,14 +842,18 @@ def funBookingLog(timeslot, booking, action, status):
         logtext_t += 'Slot Available:' + str(timeslot.slot_available) + '\n'
         logtext_t += 'Slot Total:' + str(timeslot.slot_total) + '\n' + '\n'
 
+        if user == None:
+            user = timeslot.user
     if booking != None :
         branch = booking.branch
         user_str = 'None'
         if booking.user != None:
             user_str = booking.user.username
+            user = booking.user
         member_str = 'None'
         if booking.member != None:
             member_str = booking.member.username
+            member = booking.member
 
         logtext_b = 'Status : ' + booking.status + '\n'
         logtext_b += 'Booking User : ' + user_str + '\n' 
@@ -732,8 +869,8 @@ def funBookingLog(timeslot, booking, action, status):
         branch = branch,
         timeslot = timeslot, 
         booking = booking, 
-        user = timeslot.user, 
-        member = None,
+        user = user, 
+        member = member,
         logtext = logtext,
         action = action, 
         status = status,
@@ -759,3 +896,36 @@ def funWeekStr(inputdate:datetime) -> str:
     elif iWeek == '6':
         week_str = '星期六 Sat'
     return week_str
+
+def checkMphone(mphone):
+    error = ''
+    error_TC = ''
+    phone_number_national = ''
+    phone_number_country = ''
+
+    if mphone != '':
+        if len(mphone) == 8 and mphone.isdigit() == True:
+            mphone = '+852' + mphone
+        # check mobile first 3 digits is '852'
+        if mphone[0:3] == '852':
+            # add '+' from mobile
+            mphone = '+' + mphone                
+        try:
+            phone_number = phonenumbers.parse(mphone)
+        except:
+            error = 'Mobile format is incorrect'
+            error_TC = '手提電話格式不正確'
+        if error == '':
+            if phonenumbers.is_valid_number(phone_number) == False:
+                error = 'Mobile format is incorrect'
+                error_TC = '手提電話格式不正確'
+        if error == '':
+            if phone_number.country_code != 852:
+                error = 'Mobile should be Hong Kong number'
+                error_TC = '手提電話必須是香港號碼'
+        if error == '':
+            phone_number_country = str(phone_number.country_code)
+            phone_number_national = str(phone_number.national_number)
+
+
+    return error, error_TC, phone_number_country, phone_number_national

@@ -53,7 +53,7 @@
                         {% endfor %}
                         
                         <div class="form__action">
-                            <a class="btn btn--del" href="{-% u-rl 'ts-delete' timeslot.id %}">Delete</a>
+                            <a class="btn btn--del" href="{% url 'bookingdelete' booking.id %}">Delete</a>
                             <a class="btn btn--dark" href="{% url 'bookingsummary' %}">Cancel</a>
                             <button class="btn btn--main" type="submit">Update</button>
                         </div>
