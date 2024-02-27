@@ -788,17 +788,14 @@ def checkbookingform(form):
         else:
             if newform.mobilephone_country == None :
                 newform.mobilephone_country = ''
-                newform.save()
             if newform.mobilephone == None :
                 newform.mobilephone = ''
-                newform.save()
             if newform.mobilephone_country + newform.mobilephone != '':
                 error, errorTC, newphone_country, newphone = checkMphone(newform.mobilephone_country + newform.mobilephone)
 
                 if error == '' :
                     newform.mobilephone_country = newphone_country
                     newform.mobilephone = newphone
-                    newform.save()
 
 
     if error == '':
