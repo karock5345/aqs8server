@@ -292,6 +292,8 @@ def SoftkeyView(request, pk):
             # context_ql[i]['tickettime_local'] = funUTCtoLocal(utctt, counterstatus.countertype.branch.timezone)
             context_ql[i]['tickettime_local'] = tickettime_local.strftime('%H:%M:%S %Y-%m-%d')
             context_ql[i]['tickettime_local_short'] = tickettime_local.strftime('%H:%M:%S %m-%d')
+            context_ql[i]['tickettime_local_date'] = tickettime_local.strftime('%Y-%m-%d')
+            context_ql[i]['tickettime_local_time'] = tickettime_local.strftime('%H:%M:%S')
 
     if error == '':
         printerobj = PrinterStatus.objects.filter(Q(branch=counterstatus.countertype.branch))

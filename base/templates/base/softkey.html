@@ -179,10 +179,17 @@
               {% for ticket in qlist %}
                 <div id="ticket_{{ticket.tickettype}}{{ticket.ticketnumber}}{{ticket.tickettime}}" class="qlist_item">
                   <div class="qlist_ticketnumber">{{ticket.tickettype}}{{ticket.ticketnumber}}</div>
-                  <div class="qlist_tickettime">{{ticket.tickettime_local_short}}</div>
+                  <div class="qlist_tickettime">
+                    <div class="qlist_tickettime_1">
+                      {{ticket.tickettime_local_time}}
+                    </div>
+                    <div class="qlist_tickettime_2">
+                      {{ticket.tickettime_local_date}}
+                    </div>
+                  </div>
                   <div>
-                    <a class="btn btn--main" href="{% url 'softkeyget' pk ticket.id %}">Call</a>
-                    <a class="btn btn--del" href="{% url 'softkeyvoid' pk ticket.id %}">Void</a>
+                    <a class="btn btn-call" href="{% url 'softkeyget' pk ticket.id %}">Call</a>
+                    <a class="btn btn-void" href="{% url 'softkeyvoid' pk ticket.id %}">Void</a>
                   </div>
                 </div>
               {% endfor %}

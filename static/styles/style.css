@@ -100,8 +100,9 @@ a {
 .btn {
   background-color: transparent;
   border: none;
-  display: inline-flex;
+  display: inline-flex;  
   align-items: center;
+  text-align: center;
   gap: 1rem;
   cursor: pointer;
   transition: all ease-in-out 0.3s;
@@ -109,8 +110,23 @@ a {
   border-radius: 5px;
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
   font-weight: 500;
+  font-size: 1.5rem;
+  justify-content: center;
 }
-
+.btn-call {
+  background-color: var(--color-main);
+  color: var(--color-dark);
+  width: 8rem;
+  font-size: 2rem;
+  height: 4.5rem;
+}
+.btn-void {
+  background-color: var(--color-error);
+  color: var(--color-light);
+  width: 8rem;
+  font-size: 2rem;
+  height: 4.5rem;
+}
 .softkey_btn {
   height: 5rem;
   background-color: transparent;
@@ -1847,9 +1863,20 @@ color: var(--color-light);
 
 }
 .qlist_tickettime {
+
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.qlist_tickettime_1 {
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.8rem;
-  margin-top: 0.6rem;
+  margin-top: -0.4rem;
+}
+.qlist_tickettime_2 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.8rem;
+  margin-top: -1rem;
+
 }
 .qlist_header {
   display: flex;
