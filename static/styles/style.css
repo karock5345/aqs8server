@@ -1863,21 +1863,41 @@ color: var(--color-light);
 
 }
 .qlist_tickettime {
-
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap : 1rem;
 }
 .qlist_tickettime_1 {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 1.8rem;
+  font-size: 3rem;
   margin-top: -0.4rem;
 }
 .qlist_tickettime_2 {
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.8rem;
-  margin-top: -1rem;
-
+  margin-top: 0.5rem;
 }
+
+@media screen and (max-width: 600px) {
+  .qlist_tickettime {
+    
+    grid-template-columns: 1fr;
+  }
+  .qlist_tickettime_1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5rem;
+    margin-top: 0.2rem;
+  }
+  .qlist_tickettime_2 {
+    display: none;
+    /* font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8rem;
+    margin-top: -1rem; */
+  }
+}
+
+
+
 .qlist_header {
   display: flex;
   justify-content: left;

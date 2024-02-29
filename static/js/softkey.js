@@ -272,6 +272,8 @@
           var ttime = data.tickettime;
           var ttime_local = data.tickettime_local;
           var ttime_local_short = data.tickettime_local_short;
+          var ttime_local_time = data.tickettime_local_time;
+          var ttime_local_date = data.tickettime_local_date;
           var ttid = data.ttid;
 
           // check cmd add or del
@@ -285,15 +287,24 @@
               `
               <div id="ticket_` + ttype + tno + ttime + `" class="qlist_item">
                 <div class="qlist_ticketnumber">` + ttype + tno + `</div>
-                <div class="qlist_tickettime">` + ttime_local_short + `</div>
+
+                <div class="qlist_tickettime">
+                  <div class="qlist_tickettime_1">`
+                    + ttime_local_time + `
+                  </div>
+                  <div class="qlist_tickettime_2">`
+                    + ttime_local_date + `
+                  </div>
+                </div>                
+
                 <div>
-                  <a class="btn btn--main" href=` + 
+                  <a class="btn btn-call" href=` + 
                   `/softkey_get/` +
                   c_pk + 
                   `/` +
                   ttid + `/` +
                   `>Call</a>
-                  <a class="btn btn--del" href=` + 
+                  <a class="btn btn-void" href=` + 
                   `/softkey_void/` +
                   c_pk + 
                   `/` +
