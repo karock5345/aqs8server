@@ -127,6 +127,15 @@ a {
   font-size: 2rem;
   height: 4.5rem;
 }
+@media screen and (max-width: 600px) {
+  .btn-call{
+    width: 6.5rem;
+  }
+  .btn-void{
+    width: 6.5rem;
+  }
+  
+}
 .softkey_btn {
   height: 5rem;
   background-color: transparent;
@@ -1880,7 +1889,6 @@ color: var(--color-light);
 
 @media screen and (max-width: 600px) {
   .qlist_tickettime {
-    
     grid-template-columns: 1fr;
   }
   .qlist_tickettime_1 {
@@ -1890,9 +1898,6 @@ color: var(--color-light);
   }
   .qlist_tickettime_2 {
     display: none;
-    /* font-family: 'Courier New', Courier, monospace;
-    font-size: 1.8rem;
-    margin-top: -1rem; */
   }
 }
 
