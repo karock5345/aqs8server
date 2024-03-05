@@ -19,7 +19,6 @@ from django.utils.timezone import localtime, get_current_timezone
 from datetime import datetime, timedelta
 
 class BookingNewForm(ModelForm):
-    # start_date = forms.DateTimeField(label='Start Date', input_formats=['%Y-%m-%d %H:%M'], widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', ))
     def __init__(self, *args,**kwargs):
         self.auth_branchs = kwargs.pop('auth_branchs')
 
@@ -31,14 +30,17 @@ class BookingNewForm(ModelForm):
         # self.fields['start_date'].widget.attrs['disabled'] = 'disabled'
        
         self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs)
-        self.fields['user'].widget.attrs['disabled'] = 'disabled'
-        self.fields['member'].widget.attrs['disabled'] = 'disabled'
-        self.fields['status'] = forms.ChoiceField(choices=Booking.STATUS, widget=forms.Select(attrs={'class': 'form-control'}))
-  
-        
+        # set initial value of branch to first branch
+        self.initial['branch'] = self.auth_branchs[0]
+        self.fields['timeslot'].queryset = TimeSlot.objects.filter(Q(branch__in=self.auth_branchs), Q(enabled=True), Q(slot_available__gt=0) )
+        self.fields['status'].queryset = forms.ChoiceField(choices=Booking.STATUS, widget=forms.Select(attrs={'class': 'form-control'}))
+        self.initial['status'] = Booking.STATUS.NEW
+
+    
     class Meta:        
         model = Booking
-        fields = ['branch', 'timeslot', 'user', 'member','status', 'name', 'email',  'user', 'mobilephone_country', 'mobilephone', 'people', 'remark']
+        fields = ['branch', 'timeslot', 'status', 'name', 'email', 'mobilephone_country', 'mobilephone', 'people', 'remark']
+        # fields = ['branch','timeslot', 'status',]
 
 
 class BookingForm(ModelForm):

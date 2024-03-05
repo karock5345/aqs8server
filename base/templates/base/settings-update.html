@@ -33,7 +33,7 @@
                     {% csrf_token %}
                     
                     {% for field in branchsettingsform %}
-                        {% if field.name == "enabled" or field.name == "subscribe" or field.name == "ticketrepeatnumber" or field.name == "displayenabled" or field.name == "voiceenabled" or field.name == "usersinglelogin" or field.name == "SMSenabled" or field.name == "ticketrepeatnumber" or field.name == "websoftkey_show_waitinglist" or field.name == "bookingenabled" or field.name == "bookingSMSSuccessEnabled" or field.name == "bookingSuccessEmailEnabled" %}
+                        {% if field.name == "enabled" or field.name == "subscribe" or field.name == "ticketrepeatnumber" or field.name == "displayenabled" or field.name == "voiceenabled" or field.name == "usersinglelogin" or field.name == "SMSenabled" or field.name == "ticketrepeatnumber" or field.name == "websoftkey_show_waitinglist" or field.name == "bookingenabled" or field.name == "bookingSMSSuccessEnabled" or field.name == "bookingSuccessEmailEnabled" or field.name == "queueenabled" %}
                             <div class="form__group_checkbox">
                                 <label class="profile_pic" id="{{ field.name }}"> <p class="label__name">{{field}} {{field.label}}</p></label><br>
                             </div>

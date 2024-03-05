@@ -36,6 +36,7 @@ class Branch(models.Model):
     # General settings
     bcode = models.CharField(max_length=200,unique=True, null=False, blank=False) # branch code
     enabled = models.BooleanField(default=True)
+    queueenabled = models.BooleanField(default=True, verbose_name='Enabled Queuing System')
     subscribe = models.BooleanField(default=False)
     substart = models.DateTimeField(default=datetime.datetime.strptime('2000-01-01 00:00:00', '%Y-%m-%d %H:%M:%S') )
     subend = models.DateTimeField(default=datetime.datetime.strptime('2000-01-01 00:00:00', '%Y-%m-%d %H:%M:%S') )
@@ -88,7 +89,7 @@ class Branch(models.Model):
     SMSResetLast = models.CharField(max_length=200, null=True, blank=True, help_text='Last reset date of SMS')
 
     # Booking settings
-    bookingenabled = models.BooleanField(default=True)
+    bookingenabled = models.BooleanField(default=True, verbose_name='Enabled Booking system')
 
     bookingPage1Text = models.TextField(null=True, 
                                             blank=True, 
@@ -206,6 +207,11 @@ class UserProfile(models.Model):
     # room = models.ForeignKey(Room, on_delete=models.CASCADE)
     # body = models.TextField()
     mobilephone = models.CharField(max_length=20, null=True, blank=True, help_text='Mobile phone', )
+    
+    enabled_queue = models.BooleanField(default=False, verbose_name='Queue enabled')
+    enabled_crm = models.BooleanField(default=False, verbose_name='CRM enabled')
+    enabled_booking = models.BooleanField(default=False, verbose_name='Booking enabled')
+
     updated = models.DateTimeField(auto_now=True,)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
 

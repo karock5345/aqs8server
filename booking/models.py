@@ -57,7 +57,12 @@ class TimeSlot(models.Model):
 
 
     def __str__(self):
-        return self.branch.bcode + ' ' + self.start_date.strftime('%Y-%m-%d_%H:%M')
+        start_date_local = self.start_date
+        start_date_local = funUTCtoLocal(start_date_local, self.branch.timezone)
+        return self.branch.bcode + ' ' + start_date_local.strftime('%Y-%m-%d_%H:%M')
+
+
+
 
 class Booking(models.Model):
     class STATUS(models.TextChoices):
@@ -84,8 +89,6 @@ class Booking(models.Model):
     timeslot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, blank=True)
-
-
 
     status = models.CharField(max_length=100, choices=STATUS.choices, default=STATUS.NEW, null=True, blank=True, verbose_name='Booking Status')
     name = models.CharField(max_length=100, default='')

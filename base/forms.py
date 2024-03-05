@@ -82,6 +82,7 @@ class BranchSettingsForm_Admin(ModelForm):
         fields = ['enabled', 'subscribe', 'substart', 'subend',
                   'name', 'address', 'gps', 
                   'timezone', 'officehourstart', 'officehourend', 'tickettimestart', 'tickettimeend', 
+                  'queueenabled',
                   'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
                   'displayenabled', 'displayflashtime', 
                   'voiceenabled', 'language1', 'language2', 'language3', 'language4', 

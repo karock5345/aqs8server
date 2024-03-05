@@ -35,6 +35,9 @@ logger = logging.getLogger(__name__)
 @unauth_user
 def BookingNewView(request):
 
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -50,39 +53,50 @@ def BookingNewView(request):
     form = BookingNewForm(auth_branchs=auth_branchs)
 
     if request.method == 'POST':
-        form = TimeSlotNewForm(request.POST, auth_branchs=auth_branchs)
+        form = BookingNewForm(request.POST, auth_branchs=auth_branchs)
         
         error = ''
-        error, newform = checktimeslotform(form)
+        error, newform = checkbookingform(form)
         
+        
+        if error == '':
+            if newform.timeslot.slot_available > 0 :
+                pass
+            else :
+                error = 'No slot available'
 
         if error == '' :
             try:
                 newform.save()
                 # change user to current user
                 newform.user = request.user
-
-                newform.slot_using = 0
-                newform.slot_available = newform.slot_total
-
                 newform.save()
 
                 # get the new timeslot and create a log
-                timeslot = TimeSlot.objects.get(id=newform.id)
-                funBookingLog(timeslot, None, TimeSlot.ACTION.NEW,  Booking.STATUS.NULL, request.user, None)
+                booking = Booking.objects.get(id=newform.id)
+                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL,  Booking.STATUS.NEW, request.user, None)
 
-                messages.success(request, 'Created new Time Slot.')
+                
+                booking.timeslot.slot_available = booking.timeslot.slot_available - 1
+                booking.timeslot.slot_using = booking.timeslot.slot_using + 1
+                booking.timeslot.save()
+
+                messages.success(request, 'Created new Booking.')
             except:
-                error = 'An error occurcd during new Time Slot creation'          
+                error = 'An error occurcd during new Booking creation'          
 
-            return redirect('bookingtimeslot')
+            return redirect('bookingsummary')
         if error != '':
             messages.error(request, error)
 
     # get the url of 'bookingtimeslot'
     back_url = reverse('bookingsummary')
     context = {'form':form}
-    context = {'aqs_version':aqs_version, 'title':'New Booking', 'back_url':back_url, } | context 
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+                'title':'New Booking', 'back_url':back_url, 
+                } | context 
     return render(request, 'base/new.html', context)
 
 @unauth_user
@@ -108,6 +122,9 @@ def BookingDelView(request, pk):
 def BookingUpdateView(request, pk):
     booking = Booking.objects.get(id=pk)    
 
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -147,11 +164,17 @@ def BookingUpdateView(request, pk):
     else:
         bookingform = BookingForm(instance=booking, prefix='bookingform', auth_branchs=auth_branchs)
     context =  {'bookingform':bookingform, 'booking':booking, }
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context 
     return render(request, 'booking/booking_update.html', context)
 
 @unauth_user
 def BookingSummaryView(request):
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -253,7 +276,10 @@ def BookingSummaryView(request):
             messages.error(request, error)
             
             
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context 
     return render(request, 'booking/booking.html', context)
 
 
@@ -577,6 +603,9 @@ def TimeSlotDelView(request, pk):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TimeSlotNewView(request):
 
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -624,7 +653,11 @@ def TimeSlotNewView(request):
     # get the url of 'bookingtimeslot'
     back_url = reverse('bookingtimeslot')
     context = {'form':tsform}
-    context = {'aqs_version':aqs_version, 'title':'New Time Slot', 'back_url':back_url, } | context 
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context     
+    context = {'title':'New Time Slot', 'back_url':back_url, } | context 
     return render(request, 'base/new.html', context)
 
 
@@ -634,6 +667,9 @@ def TimeSlotNewView(request):
 def TimeSlotUpdateView(request, pk):
     timeslot = TimeSlot.objects.get(id=pk)    
 
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -671,7 +707,10 @@ def TimeSlotUpdateView(request, pk):
     else:
         tsform = TimeSlotForm(instance=timeslot, prefix='timeslotform', auth_branchs=auth_branchs)
     context =  {'tsform':tsform, 'timeslot':timeslot, }
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context 
     return render(request, 'booking/timeslot_update.html', context)
 
 @unauth_user
@@ -679,6 +718,9 @@ def TimeSlotUpdateView(request, pk):
 def TimeSlotSummaryView(request):
    
 
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -701,7 +743,10 @@ def TimeSlotSummaryView(request):
         'timeslots':auth_timeslots,
         'bookings':auth_bookings,
         }
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context 
     return render(request, 'booking/timeslot.html', context)
 
 def checktimeslotform(form):

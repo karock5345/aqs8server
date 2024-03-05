@@ -42,6 +42,7 @@ from celery.result import AsyncResult
 from django.conf import settings
 from base.sch.views import sch_shutdown
 from django.db.models import BooleanField, Value
+from crm.models import CRMAdmin
 
 logger = logging.getLogger(__name__)
 
@@ -58,7 +59,27 @@ context_login = {}
 
 sort_direction = {}
 
-
+def funRegenUserFunctions(user):
+    userpobj = UserProfile.objects.filter(user=user)
+    for userp in userpobj:
+        branchs = userp.branchs.all()
+        en_queue = False
+        en_crm = False
+        en_booking = False
+        for branch in branchs:
+            if branch.queueenabled == True:
+                en_queue = True
+            if branch.bookingenabled == True:
+                en_booking = True
+            if en_queue == True and en_booking == True:
+                break
+        # CRM enabled should be check from CRMAdmin
+                
+        userp.enabled_queue = en_queue
+        userp.enabled_crm = en_crm
+        userp.enabled_booking = en_booking
+        userp.save()
+    pass
 
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 @unauth_user
@@ -202,6 +223,9 @@ def SoftkeyView(request, pk):
     str_now = '--:--'
     datetime_now =timezone.now()
 
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -216,6 +240,7 @@ def SoftkeyView(request, pk):
 
     context = {
     'aqs_version':aqs_version, 
+    'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
     'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,
     }
 
@@ -409,6 +434,9 @@ def SoftkeyLoginBranchView(request):
     error = ''
     context = {}
 
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -439,6 +467,7 @@ def SoftkeyLoginBranchView(request):
                 counterstatus.append(cs)
         context = {
         'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,
         'counterstatus':counterstatus,
         }
@@ -452,6 +481,9 @@ def SoftkeyLoginView(request, pk):
     error = ''
     context = {}
 
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -499,6 +531,7 @@ def SoftkeyLoginView(request, pk):
 
         context = {
         'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,
         'counterstatus':counterstatus,
         }
@@ -513,6 +546,9 @@ def SoftkeyLogoutView(request, pk):
     context = {}
     datetime_now =timezone.now()
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -526,6 +562,7 @@ def SoftkeyLogoutView(request, pk):
     = auth_data(request.user)
 
     context = {
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         }
     try:
@@ -556,6 +593,9 @@ def SoftkeyCallView(request, pk):
     context = {}
     datetime_now =timezone.now()
 
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -570,6 +610,7 @@ def SoftkeyCallView(request, pk):
 
     context = {
         'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         }
     try:
@@ -602,6 +643,9 @@ def SoftkeyProcessView(request, pk):
     context = {}
     datetime_now =timezone.now()
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -616,6 +660,7 @@ def SoftkeyProcessView(request, pk):
     
     context = {
         'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         }
     try:
@@ -644,6 +689,9 @@ def SoftkeyMissView(request, pk):
     context = {}
     datetime_now =timezone.now()
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -658,6 +706,7 @@ def SoftkeyMissView(request, pk):
 
     context = {
         'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         }
     try:
@@ -685,6 +734,9 @@ def SoftkeyRecallView(request, pk):
     context = {}
     datetime_now =timezone.now()
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -699,6 +751,7 @@ def SoftkeyRecallView(request, pk):
 
     context = {
         'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         }
     try:
@@ -728,6 +781,9 @@ def SoftkeyDoneView(request, pk):
     context = {}
     datetime_now =timezone.now()
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -742,6 +798,7 @@ def SoftkeyDoneView(request, pk):
 
     context = {
         'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         }
     try:
@@ -1882,6 +1939,9 @@ def Report_Staff_Result(request):
 
         if user == None  :
             
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -2019,6 +2079,9 @@ def Report_Staff_Result(request):
 def Reports(request):
 
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -2040,6 +2103,7 @@ def Reports(request):
     snow_l = now_l.strftime('%Y-%m-%dT%H:%M:%S')
 
     context = {
+    'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
     'now':snow_l,
     'users':auth_userlist,
     'branchs':auth_branchs,  
@@ -2100,6 +2164,9 @@ def SuperVisorView(request, pk):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def SuperVisorListView(request):  
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -2123,7 +2190,10 @@ def SuperVisorListView(request):
     #profiles = users.userprofile_set.all()
     
     context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,}
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+        'aqs_version':aqs_version,
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        } | context 
     return render(request, 'base/supervisors.html', context)
 
 @unauth_user
@@ -2174,6 +2244,9 @@ def TicketRouteDelView(request, pk):
 def TicketRouteUpdateView(request, pk):
     route = TicketRoute.objects.get(id=pk)
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -2204,7 +2277,10 @@ def TicketRouteUpdateView(request, pk):
         trform = trForm(instance=route, prefix='trform', auth_branchs=auth_branchs)
        
     context =  {'route':route, 'trform':trform }
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+        'aqs_version':aqs_version,
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        } | context 
     return render(request, 'base/route-update.html', context)
 
 
@@ -2212,6 +2288,9 @@ def TicketRouteUpdateView(request, pk):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketRouteSummaryView(request):  
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -2231,13 +2310,19 @@ def TicketRouteSummaryView(request):
     # routes = TicketRoute.objects.all().order_by('branch','tickettype','step')
 
     context = {'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,}
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+        'aqs_version':aqs_version,
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        } | context 
     return render(request, 'base/routes.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketFormatNewView(request):
 
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -2283,7 +2368,10 @@ def TicketFormatNewView(request):
         if error != '':
             messages.error(request, error)
     context = {'form':form}
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+        'aqs_version':aqs_version,
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        } | context 
     return render(request, 'base/tfnew.html', context)
 
 @unauth_user
@@ -2305,6 +2393,9 @@ def TicketFormatDelView(request, pk):
 def TicketFormatUpdateView(request, pk):
     ticketformat = TicketFormat.objects.get(id=pk)
 
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -2334,13 +2425,19 @@ def TicketFormatUpdateView(request, pk):
     else:
         tfform = TicketFormatForm(instance=ticketformat, prefix='tfform', auth_branchs=auth_branchs)
     context =  {'tfform':tfform, 'ticketformat':ticketformat, }
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+        'aqs_version':aqs_version,
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        } | context 
     return render(request, 'base/tf-update.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketFormatSummaryView(request):
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -2359,7 +2456,10 @@ def TicketFormatSummaryView(request):
     # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
     # routes = TicketRoute.objects.all()
     context = {'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes,  'timeslots':auth_timeslots, 'bookings':auth_bookings,}
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+        'aqs_version':aqs_version,
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        } | context 
     return render(request, 'base/tfs.html', context)
 
 @unauth_user
@@ -2680,6 +2780,12 @@ def SettingsUpdateView(request, pk):
                 sch_shutdown(branch, datetime_now)
             except:
                 error = 'An error occurcd during updating Branch settings'
+        # regenrate user auth function : Queue, CRM, Booking
+        userps = UserProfile.objects.all()
+        for userp in userps:
+            branchs = userp.branchs.all()
+            if branch in branchs:                
+                funRegenUserFunctions(userp.user)
         if error == '':
             countertypes = CounterType.objects.filter(Q(branch=branch))
             for ct in countertypes:
@@ -2717,6 +2823,9 @@ def SettingsSummaryView(request):
     # profiles = UserProfile.objects.filter(Q(user=users.user))
     #profiles = users.userprofile_set.all()
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -2732,13 +2841,19 @@ def SettingsSummaryView(request):
 
 
     context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,}
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+        'aqs_version':aqs_version,
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        } | context 
     return render(request, 'base/settings.html', context)
 
 @unauth_user
 def homeView(request):
     
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -2763,13 +2878,19 @@ def homeView(request):
 
 
     context =  {'users':auth_userlist , 'users_active':auth_userlist_active, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,}
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+        'aqs_version':aqs_version,
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        } | context 
     return render(request, 'base/home.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserSummaryView(request):     
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -2784,7 +2905,10 @@ def UserSummaryView(request):
 
  
     context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,}
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+        'aqs_version':aqs_version,
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        } | context 
     return render(request, 'base/user.html', context)
 
 @unauth_user
@@ -2800,6 +2924,9 @@ def UserSummaryListView(request):
     q_sort = request.GET.get('sort') if request.GET.get('sort') != None else ''
 
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -2896,7 +3023,10 @@ def UserSummaryListView(request):
     context = context | {'qgroup':q_group}
     context = context | {'result_users':result_userlist}
     
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context 
     return render(request, 'base/user_details.html', context)
 
 def UserLogoutView(request):   
@@ -2950,6 +3080,9 @@ def UserLoginView(request):
 def UserUpdateView(request, pk):
 
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -3071,6 +3204,10 @@ def UserUpdateView(request, pk):
             profileform.save()            
             # profileform_temp.tickettype = profileform_temp.tickettype.upper()
             profileform_temp.save()
+
+            # regenrate user auth function : Queue, CRM, Booking
+            funRegenUserFunctions(user)
+
             # profileform_temp = profileform.save(commit=False)
             # profileform_temp.tickettype = profileform_temp.tickettype.upper()
             # profileform_temp.branchs = profileform.branchs
@@ -3082,7 +3219,10 @@ def UserUpdateView(request, pk):
             messages.error(request, error)
 
     context =  {'userform':userform , 'profileform':profileform, 'user':user, 'userp':userp,'ticketformat':ticketformat2,'userptt':listusertt, }
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context 
     return render(request, 'base/user-update.html', context)
 
 @unauth_user
@@ -3151,6 +3291,9 @@ def UserNewView2(request, pk):
 
     # check user group auth
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -3206,7 +3349,10 @@ def UserNewView2(request, pk):
 
         profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
     context =  {'user':user , 'userp':userp, 'userform':userform, 'profileform':profileform, 'auth_grouplist':auth_grouplist}
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+            'aqs_version':aqs_version,
+            'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+            } | context 
     return render(request, 'base/usernew2.html', context)
 
 @unauth_user
@@ -3217,6 +3363,9 @@ def UserNewView3(request, pk):
 
     # check user group auth
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -3289,7 +3438,10 @@ def UserNewView3(request, pk):
     else:
         profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
     context =  {'profileform':profileform, 'user':user, 'userp':userp,'ticketformat':ticketformat2,'userptt':listusertt, }
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+            'aqs_version':aqs_version,
+            'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+            } | context 
     return render(request, 'base/usernew3.html', context)
 
 
@@ -3345,6 +3497,9 @@ def UserResetView(request, pk):
 
     # check user group auth
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -3378,13 +3533,19 @@ def UserResetView(request, pk):
         messages.success(request, 'Reset password successfully.')
         return redirect('usersummary')
     context = {'obj':user}
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context 
     return render(request, 'base/reset.html', context)
 
 
 def MenuView(request):
 
     
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -3399,7 +3560,10 @@ def MenuView(request):
 
         
     context =  {'users':auth_userlist , 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings, }
-    context = {'aqs_version':aqs_version} | context 
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context 
     return render(request, 'base/m-menu.html', context)
 
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
@@ -3424,7 +3588,17 @@ def MenuView(request):
 
 def auth_data(user):
     datetime_now =timezone.now()
+    userprofile = UserProfile.objects.get(user=user)
+    auth_en_queue = userprofile.enabled_queue
+    auth_en_crm = userprofile.enabled_crm
+    auth_en_booking = userprofile.enabled_booking
+
+
     if user.is_superuser == True :
+        auth_en_queue = True
+        auth_en_crm = True
+        auth_en_booking = True
+
         auth_profilelist = UserProfile.objects.all()
         auth_userlist = User.objects.all()
         auth_grouplist = Group.objects.all()
@@ -3562,6 +3736,9 @@ def auth_data(user):
         # auth_bookings = Booking.objects.filter(Q(branch__in=auth_branchs)).order_by('timeslot.start_date')
         
     return(
+            auth_en_queue,
+            auth_en_crm,
+            auth_en_booking,
             auth_branchs, 
             auth_userlist, auth_userlist_active,
             auth_grouplist, 
