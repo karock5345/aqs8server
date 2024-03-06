@@ -3,7 +3,7 @@
 <h3 style="color:orange;">Coming up:</h3>
 
 - ~~Reset SMS quota~~
-- Booking Management
+- ~~Booking Management~~
 - Booking to Queue Function 
 - send SMS quota is full email to managerm and admin
 - Send email to TSVD when SMS api is error (maybe down or quota is full)
@@ -18,6 +18,8 @@
 - Web Softkey (include Call Centre) waiting list can be hide by Admin, Support, Manager
 - Fixed bug : web User -> click 'Show All' only one hiden user per click
 - Disable Roche send SMS function (Send SMS to staff when new ticket issued)
+- Reset SMS quota per month
+- Booking Management
 
 <h3 style="color:orange;">Version 8.2.0</h3>
 

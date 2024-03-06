@@ -56,35 +56,15 @@ def BookingNewView(request):
         form = BookingNewForm(request.POST, auth_branchs=auth_branchs)
         
         error = ''
+        errorTC = ''
         error, newform = checkbookingform(form)
-        
-        
-        if error == '':
-            if newform.timeslot.slot_available > 0 :
-                pass
-            else :
-                error = 'No slot available'
-
+            
         if error == '' :
-            try:
-                newform.save()
-                # change user to current user
-                newform.user = request.user
-                newform.save()
-
-                # get the new timeslot and create a log
-                booking = Booking.objects.get(id=newform.id)
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL,  Booking.STATUS.NEW, request.user, None)
-
-                
-                booking.timeslot.slot_available = booking.timeslot.slot_available - 1
-                booking.timeslot.slot_using = booking.timeslot.slot_using + 1
-                booking.timeslot.save()
-
-                messages.success(request, 'Created new Booking.')
-            except:
-                error = 'An error occurcd during new Booking creation'          
-
+            phone_number = phonenumbers.parse('+' + newform.mobilephone_country + newform.mobilephone)
+            # add booking by user (not customer), it is no email and SMS to customer confirm
+            error, errorTC = chainBookNow(newform.timeslot, newform.name, phone_number, newform.email, request.user, None)
+        if error == '' :
+            messages.success(request, 'Created new Booking.')
             return redirect('bookingsummary')
         if error != '':
             messages.error(request, error)
@@ -304,8 +284,8 @@ def chainBookNow(timeslot, name, phone_number:phonenumbers, email, user, member)
         booking = Booking.objects.create(
             branch = timeslot.branch,
             timeslot = timeslot,
-            user = None,
-            member = None,
+            user = user,
+            member = member,
             
             status = Booking.STATUS.NEW,
 

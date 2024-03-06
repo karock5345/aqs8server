@@ -90,6 +90,7 @@ class BranchSettingsForm_Admin(ModelForm):
                   'SMSenabled', 'SMSmsg', 'SMSQuota', 'SMSUsed', 'SMSResetDay',
                   'bookingenabled', 'bookingPage1ScrollingText', 'bookingPage1Text', 'bookingPage2ScrollingText', 'bookingPage2Text', 'bookingPage3Text',
                   'bookingSuccessEmailEnabled', 'bookingSuccessEmailSubject', 'bookingSuccessEmailBody', 'bookingSMSSuccessEnabled', 'bookingSMSSuccess',
+                  'bookingNewEmailEnabled', 'bookingNewEmailUser', 'bookingNewEmailSubject', 'bookingNewEmailBody',
                   ]
 
     def __init__(self, *args, **kwargs):
@@ -142,7 +143,7 @@ class BranchSettingsForm_Admin(ModelForm):
         self.fields['bookingSuccessEmailBody'] = forms.fields.CharField(label='Booking Email Success Body' , required=False, widget=forms.Textarea(), help_text=self.fields['bookingSuccessEmailBody'].help_text)
         self.fields['bookingSMSSuccessEnabled'] = forms.fields.BooleanField(label='Enable send SMS after booking success', required=False, help_text=self.fields['bookingSMSSuccessEnabled'].help_text)
         # self.fields['bookingSMSSuccess'] = forms.fields.CharField(label='Booking SMS Text', required=False, widget=forms.Textarea(), help_text=self.fields['bookingSMSSuccess'].help_text)
-
+        self.fields['bookingNewEmailSubject'] = forms.fields.CharField(required=False, widget=forms.TextInput(), help_text=self.fields['bookingNewEmailSubject'].help_text)
 
 
         

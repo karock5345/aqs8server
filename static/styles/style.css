@@ -2156,20 +2156,36 @@ color: var(--color-light);
 .booking_key_area {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 2px;
 }
 
 .booking_key {
-  width: 10rem;
-  height: 3rem;
+  background-color: transparent;
+  border: none;
+  display: inline-flex;  
+  align-items: center;
+  text-align: center;
+  /* gap: 1rem; */
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+  /* padding: 1rem 2rem; */
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  font-weight: 300;
   font-size: 1.5rem;
-  background-color: var(--color-dark-light);
-  color: var(--color-light);
-  font-weight: 500;
-  margin-right: 1rem;
-  border-radius: 1rem;
+  justify-content: center;
+
+  width: 10rem;
+  height: 2.6rem;
+  background-color: var(--color-main);
+  color: var(--color-dark);
+
 }
 .booking_key:hover {
-  background-color: var(--color-dark);
-  color: var(--color-main);
+  opacity: 0.9;  
   cursor: pointer;
+}
+.booking_key_reject {
+  background-color: var(--color-error);
+  color: var(--color-light);
 }

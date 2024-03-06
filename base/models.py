@@ -146,6 +146,7 @@ class Branch(models.Model):
                                                             'TSVD',
                                                 help_text='Booking success email text, [[ADDR]] is branch address, [[NAME]] is customer name, [[DATE]] is booking start date, [[TIME]] is booking start time. [[WEEK]] is week.',
                                                 )
+    # Booking Success SMS settings
     bookingSMSSuccessEnabled = models.BooleanField(default=True)
     bookingSMSSuccess = models.TextField(
                                         null=True,
@@ -159,6 +160,36 @@ class Branch(models.Model):
                                         verbose_name='Booking success SMS',
                                         help_text='SMS text body for booking success, [[DATE]] is booking start date, [[TIME]] is booking start time. 160 characters / 70 characters (Unicode) per one SMS',
                                         )
+    # New booking email notification to admin settings
+    bookingNewEmailEnabled = models.BooleanField(default=True, verbose_name='Enabled New Booking email notification')
+    bookingNewEmailUser = models.ManyToManyField(User, related_name='users',  blank=True, 
+                                                 verbose_name='New Booking email list',
+                                                 )
+    bookingNewEmailSubject = models.TextField(
+                                                    null=True, 
+                                                    blank=True, 
+                                                    default= '你有新預約 - TSVD',
+                                                    verbose_name='Email subject for New Booking',
+                                                    help_text='[[ADDR]] is branch address, [[NAME]] is customer name, [[DATE]] is booking start date, [[TIME]] is booking start time, [[WEEK]] is week, [[PHONE]] is customer phone, [[EMAIL]] is customer email.',
+                                                    )
+    bookingNewEmailBody = models.TextField(
+                                                null=True, 
+                                                blank=True, 
+                                                default= \
+                                                            '恭喜，你有新預約' + '\n' + '\n' + \
+                                                            '客人名稱：[[NAME]]' + '\n' + \
+                                                            '預約時間：' + '\n' + \
+                                                            '[[DATE]] [[WEEK]]' + '\n' + \
+                                                            '[[TIME]]' + '\n' + \
+                                                            '地址: [[ADDR]]' + '\n' + \
+                                                            '客人電話：[[PHONE]]' + '\n' + \
+                                                            '客人電郵：[[EMAIL]]' + '\n' + \
+                                                            '' + '\n' + \
+                                                            'TSVD',
+                                                verbose_name='Email body for New Booking',
+                                                help_text='[[ADDR]] is branch address, [[NAME]] is customer name, [[DATE]] is booking start date, [[TIME]] is booking start time, [[WEEK]] is week, [[PHONE]] is customer phone, [[EMAIL]] is customer email.',
+                                                )    
+
     # branch status
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
