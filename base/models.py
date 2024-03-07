@@ -162,7 +162,7 @@ class Branch(models.Model):
                                         )
     # New booking email notification to admin settings
     bookingNewEmailEnabled = models.BooleanField(default=True, verbose_name='Enabled New Booking email notification')
-    bookingNewEmailUser = models.ManyToManyField(User, related_name='users',  blank=True, 
+    bookingNewEmailUser = models.ManyToManyField(User,  blank=True, 
                                                  verbose_name='New Booking email list',
                                                  )
     bookingNewEmailSubject = models.TextField(
@@ -170,7 +170,7 @@ class Branch(models.Model):
                                                     blank=True, 
                                                     default= '你有新預約 - TSVD',
                                                     verbose_name='Email subject for New Booking',
-                                                    help_text='[[ADDR]] is branch address, [[NAME]] is customer name, [[DATE]] is booking start date, [[TIME]] is booking start time, [[WEEK]] is week, [[PHONE]] is customer phone, [[EMAIL]] is customer email.',
+                                                    help_text='[[ADDR]] is branch address, [[NAME]] is customer name, [[DATE]] is booking start date, [[TIME]] is booking start time, [[WEEK]] is week, [[PHONE]] is customer phone, [[EMAIL]] is customer email, [[BNAME]] is branch name, [[BCODE]] is branch code, [[USER]] is user first name.',
                                                     )
     bookingNewEmailBody = models.TextField(
                                                 null=True, 
@@ -187,7 +187,7 @@ class Branch(models.Model):
                                                             '' + '\n' + \
                                                             'TSVD',
                                                 verbose_name='Email body for New Booking',
-                                                help_text='[[ADDR]] is branch address, [[NAME]] is customer name, [[DATE]] is booking start date, [[TIME]] is booking start time, [[WEEK]] is week, [[PHONE]] is customer phone, [[EMAIL]] is customer email.',
+                                                help_text='[[ADDR]] is branch address, [[NAME]] is customer name, [[DATE]] is booking start date, [[TIME]] is booking start time, [[WEEK]] is week, [[PHONE]] is customer phone, [[EMAIL]] is customer email, [[BNAME]] is branch name, [[BCODE]] is branch code, [[USER]] is user first name.',
                                                 )    
 
     # branch status

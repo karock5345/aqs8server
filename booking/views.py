@@ -399,31 +399,67 @@ def Booking_Details_ClientView(request, pk):
 
                 if error == '':
                     # send email to customer
-                    if email != '':
-                        subject = timeslot.branch.bookingSuccessEmailSubject
-                        subject = subject.replace( '[[ADDR]]', timeslot.branch.address)
-                        subject = subject.replace( '[[NAME]]', name)
-                        subject = subject.replace( '[[DATE]]', date_str)
-                        subject = subject.replace( '[[WEEK]]', week_str)
-                        subject = subject.replace( '[[TIME]]', time_str)
-                        
-                        email_str = timeslot.branch.bookingSuccessEmailBody
-                        email_str = email_str.replace( '[[ADDR]]', timeslot.branch.address)
-                        email_str = email_str.replace( '[[NAME]]', name)
-                        email_str = email_str.replace( '[[DATE]]', date_str)
-                        email_str = email_str.replace( '[[WEEK]]', week_str)
-                        email_str = email_str.replace( '[[TIME]]', time_str)
+                    if timeslot.branch.bookingSuccessEmailEnabled == True:
+                        if email != '':
+                            subject = timeslot.branch.bookingSuccessEmailSubject
+                            subject = subject.replace( '[[ADDR]]', timeslot.branch.address)
+                            subject = subject.replace( '[[NAME]]', name)
+                            subject = subject.replace( '[[DATE]]', date_str)
+                            subject = subject.replace( '[[WEEK]]', week_str)
+                            subject = subject.replace( '[[TIME]]', time_str)
+                            
+                            email_str = timeslot.branch.bookingSuccessEmailBody
+                            email_str = email_str.replace( '[[ADDR]]', timeslot.branch.address)
+                            email_str = email_str.replace( '[[NAME]]', name)
+                            email_str = email_str.replace( '[[DATE]]', date_str)
+                            email_str = email_str.replace( '[[WEEK]]', week_str)
+                            email_str = email_str.replace( '[[TIME]]', time_str)
 
-                        message = render_to_string('booking/email_booking_confirmed.html', {
-                            'title': subject,
-                            'body': email_str,                        
-                        })
-                        message = message.replace('amp;', '')
-                        if timeslot.branch.bookingSuccessEmailEnabled == True:
+                            message = render_to_string('booking/email_booking_confirmed.html', {
+                                'title': subject,
+                                'body': email_str,                        
+                            })
+                            message = message.replace('amp;', '')
+
                             sendemail.delay(subject, message, email,)
 
                     # send email to admin
+                    if timeslot.branch.bookingNewEmailEnabled == True:
+                        users = timeslot.branch.bookingNewEmailUser
+                        for u in users.all():
+                            if u.email == '' or u.email == None:
+                                pass
+                            else :
+                                subject = timeslot.branch.bookingNewEmailSubject
+                                subject = subject.replace( '[[ADDR]]', timeslot.branch.address)
+                                subject = subject.replace( '[[NAME]]', name)
+                                subject = subject.replace( '[[DATE]]', date_str)
+                                subject = subject.replace( '[[WEEK]]', week_str)
+                                subject = subject.replace( '[[TIME]]', time_str)
+                                subject = subject.replace( '[[PHONE]]', mphone)
+                                subject = subject.replace( '[[EMAIL]]', email)
+                                subject = subject.replace( '[[BNAME]]', timeslot.branch.name)
+                                subject = subject.replace( '[[BCODE]]', timeslot.branch.bcode)
+                                subject = subject.replace( '[[USER]]', u.first_name)
+                                
+                                email_str = timeslot.branch.bookingNewEmailBody
+                                email_str = email_str.replace( '[[ADDR]]', timeslot.branch.address)
+                                email_str = email_str.replace( '[[NAME]]', name)
+                                email_str = email_str.replace( '[[DATE]]', date_str)
+                                email_str = email_str.replace( '[[WEEK]]', week_str)
+                                email_str = email_str.replace( '[[TIME]]', time_str)
+                                email_str = email_str.replace( '[[PHONE]]', mphone)
+                                email_str = email_str.replace( '[[EMAIL]]', email)
+                                email_str = email_str.replace( '[[BNAME]]', timeslot.branch.name)
+                                email_str = email_str.replace( '[[BCODE]]', timeslot.branch.bcode)
+                                email_str = email_str.replace( '[[USER]]', u.first_name)                        
 
+                                message = render_to_string('booking/email_booking_new.html', {
+                                    'title': subject,
+                                    'body': email_str,                        
+                                })
+                                message = message.replace('amp;', '')
+                                sendemail.delay(subject, message, u.email,)
 
                     # send SMS to customer
                     if timeslot.branch.SMSenabled == True and timeslot.branch.bookingSMSSuccessEnabled == True:
