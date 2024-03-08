@@ -77,21 +77,7 @@ class BranchSettingsForm_Admin(ModelForm):
     # bookingSMS = forms.fields.BooleanField(label='Enable send SMS after booking success', required=False)
     # bookingSMSSuccess = forms.fields.CharField(label='Booking SMS Text', required=False, widget=forms.Textarea())
 
-    class Meta:
-        model = Branch
-        fields = ['enabled', 'subscribe', 'substart', 'subend',
-                  'name', 'address', 'gps', 
-                  'timezone', 'officehourstart', 'officehourend', 'tickettimestart', 'tickettimeend', 
-                  'queueenabled',
-                  'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
-                  'displayenabled', 'displayflashtime', 
-                  'voiceenabled', 'language1', 'language2', 'language3', 'language4', 
-                  'usersinglelogin', 'websoftkey_show_waitinglist', 
-                  'SMSenabled', 'SMSmsg', 'SMSQuota', 'SMSUsed', 'SMSResetDay',
-                  'bookingenabled', 'bookingPage1ScrollingText', 'bookingPage1Text', 'bookingPage2ScrollingText', 'bookingPage2Text', 'bookingPage3Text',
-                  'bookingSuccessEmailEnabled', 'bookingSuccessEmailSubject', 'bookingSuccessEmailBody', 'bookingSMSSuccessEnabled', 'bookingSMSSuccess',
-                  'bookingNewEmailEnabled', 'bookingNewEmailUser', 'bookingNewEmailSubject', 'bookingNewEmailBody',
-                  ]
+
 
     def __init__(self, *args, **kwargs):
         super(BranchSettingsForm_Admin, self).__init__(*args, **kwargs)
@@ -144,9 +130,23 @@ class BranchSettingsForm_Admin(ModelForm):
         self.fields['bookingSMSSuccessEnabled'] = forms.fields.BooleanField(label='Enable send SMS after booking success', required=False, help_text=self.fields['bookingSMSSuccessEnabled'].help_text)
         # self.fields['bookingSMSSuccess'] = forms.fields.CharField(label='Booking SMS Text', required=False, widget=forms.Textarea(), help_text=self.fields['bookingSMSSuccess'].help_text)
         self.fields['bookingNewEmailSubject'] = forms.fields.CharField(required=False, widget=forms.TextInput(), help_text=self.fields['bookingNewEmailSubject'].help_text)
-
-
-        
+        # self.fields['bookingNewEmailUser'] = forms.fields.MultipleChoiceField( widget=forms.CheckboxSelectMultiple(), choices=User.objects.all().values_list('id', 'username'), help_text=self.fields['bookingNewEmailUser'].help_text)
+        # self.initial['bookingNewEmailUser'] = self.instance.bookingNewEmailUser.all().values_list('id', flat=True)
+    class Meta:
+        model = Branch
+        fields = ['enabled', 'subscribe', 'substart', 'subend',
+                  'name', 'address', 'gps', 
+                  'timezone', 'officehourstart', 'officehourend', 'tickettimestart', 'tickettimeend', 
+                  'queueenabled',
+                  'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
+                  'displayenabled', 'displayflashtime', 
+                  'voiceenabled', 'language1', 'language2', 'language3', 'language4', 
+                  'usersinglelogin', 'websoftkey_show_waitinglist', 
+                  'SMSenabled', 'SMSmsg', 'SMSQuota', 'SMSUsed', 'SMSResetDay',
+                  'bookingenabled', 'bookingPage1ScrollingText', 'bookingPage1Text', 'bookingPage2ScrollingText', 'bookingPage2Text', 'bookingPage3Text',
+                  'bookingSuccessEmailEnabled', 'bookingSuccessEmailSubject', 'bookingSuccessEmailBody', 'bookingSMSSuccessEnabled', 'bookingSMSSuccess',
+                  'bookingNewEmailEnabled', 'bookingNewEmailUser', 'bookingNewEmailSubject', 'bookingNewEmailBody',
+                  ]        
         
         
 class BranchSettingsForm_Adv(ModelForm):

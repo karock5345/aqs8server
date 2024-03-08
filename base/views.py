@@ -2767,15 +2767,30 @@ def SettingsUpdateView(request, pk):
     if request.method == 'POST':
         if userright == 'admin':
             branchsettingsform = BranchSettingsForm_Admin(request.POST, instance=branch, prefix='branchsettingsform')
+            # print('branchsettingsform.bookingNewEmailUser.all()')
+            # print(branchsettingsform.fields['bookingNewEmailUser'].value.values_list('username', flat=True))
         elif userright == 'support' or userright == 'manager':
             branchsettingsform = BranchSettingsForm_Adv(request.POST, instance=branch, prefix='branchsettingsform')
         else:
             branchsettingsform = BranchSettingsForm_Basic(request.POST, instance=branch, prefix='branchsettingsform')
         error = ''
         error, bsf = checkbranchsettingsform(branchsettingsform)
+        
+        # print branch.bookingNewEmailUser list username
+        # print(branch.bookingNewEmailUser.all().values_list('username', flat=True))
+
+        # print bsf bookingNewEmailUser list username
+        # print(bsf.bookingNewEmailUser.all().values_list('username', flat=True))
+
+
         if error == '':
             try:
+                
                 bsf.save()
+                branchsettingsform.save_m2m()
+                # print bsf bookingNewEmailUser list username
+                # print(branch.bookingNewEmailUser.all().values_list('username', flat=True))
+
                 datetime_now = timezone.now()
                 sch_shutdown(branch, datetime_now)
             except:
