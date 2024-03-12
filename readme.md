@@ -1,21 +1,15 @@
 # AQS version 8.2.1
 
-AWS -> QS1
+<h3 style="color:orange;">Coming up:</h3>
 
-- DB aqsdb8_qs1test821 
-   - USER: aqsdbuser
-   - 'PASSWORD': 'dbpassword-72ustepRegLqeWO1estephoF4xiwretU',
-
-- Django superuser : supertim /// asdf
-   - change later : ta0lTAKuklml71ni
-
-- userapi /// klylpRUxlsTl3hispa92draZAsldr6fr (group:api)
-
-- Web socket ports:
-   - Qs1test821 : 8001
-   - Towngas : 8002
-
-
+- ~~Reset SMS quota~~
+- ~~Booking Management~~
+- Booking to Queue Function 
+- send SMS quota is full email to managerm and admin
+- Send email to TSVD when SMS api is error (maybe down or quota is full)
+- send 'New booking' email to manager
+- send email for user forgot password
+- change user profile mobile number to country code + national number
 
 <h3 style="color:orange;">Version 8.2.1</h3>
 
@@ -276,20 +270,20 @@ sudo docker run -p 6379:6379 -d redis:5
 ```
 
 # Production Linux server setup 
-### Domain name : qs1test821.tsvd.com.hk
+### For example : qs123.tsvd.com.hk
 
 <h3 style="color:orange;">AWS vm</h3>
 
-AWS EC2 : QS1, key=aws_qs1, Security Group = aqs_security
+AWS EC2 : AQS8_Server_RVD, key=aws_rvd_server_key, Security Group = aqs_security
 
-AWS Route53 : add sub domain qs1test821.tsvd.com.hk
+AWS Route53 : add sub domain qs123.tsvd.com.hk, www.qs123.tsvd.com.hk
 
 ### AWS cost:
 RVD + Test + CF = $2.02 
 
 RVD $1.46   
 - t2.medium 
-- vCPUs-2	
+- vCPUs-2 
 - HD-50G 
 - us-east-1b
 
@@ -304,13 +298,6 @@ CF $0.28 (Install at 2023-5-2)
 - vCPUs-1
 - HD-24G 
 - us-east-1e
-
-
-QS1 $? (Install at 2024-3-12)
-- t4g.small
-- vCPUs-2
-- HD-30G 
-- us-east-1b
 
 <h3 style="color:orange;">Local server (Ubuntu Linux server)</h3>
 
@@ -416,10 +403,10 @@ logout
 sudo nano /home/ubuntu/.config/autostart/autooff.desktop
 ```
 ```ini
-	[Desktop Entry]
-	Type=Application
-	Name=Auto Power Off at 23:55
-	Exec=sh -c "shutdown -h 23:55"
+  [Desktop Entry]
+  Type=Application
+  Name=Auto Power Off at 23:55
+  Exec=sh -c "shutdown -h 23:55"
 ```
 - Restart Pi:
 
@@ -429,8 +416,7 @@ sudo reboot
 
 ### Auto power off script (for Linux server)
 ```bash
-cd /etc/systemd/system/
-sudo nano autorun.service
+sudo nano  /etc/systemd/system/autorun.service
 ```
 - add line:
 ```ini
@@ -458,6 +444,8 @@ nano /home/ubuntu/autorun.sh
 ```bash
 # Auto shutdown at 00:30
 shutdown -h 00:30
+# Auto reboot at 02:30
+shutdown -r 02:30
 # Change the COM Port permission for Control Box
 sudo chmod 666 /dev/ttyS0
 # auto run Control box program
@@ -466,7 +454,7 @@ cd /home/ubuntu/cb
 ```
 
 ```bash
-chmod +x /home/ubuntu/autorun.sh
+sudo chmod +x /home/ubuntu/autorun.sh
 ```
 - Save and exit
 
@@ -491,10 +479,10 @@ PuTTY -> Data -> Auto-login username (ubuntu) -> Session -> Save
 # Basic server settings
 
 ```sh
-sudo timedatectl set-timezone Asia/Hong_Kong ;
-sudo hwclock -w ;
-sudo apt-get update ; sudo apt-get upgrade -y ;
-sudo apt-get install -y python3 python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx git ;
+sudo timedatectl set-timezone Asia/Hong_Kong
+sudo hwclock -w
+sudo apt-get update ; sudo apt-get upgrade -y
+sudo apt-get install -y python3 python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx git 
 sudo nano ~/.bashrc
 ```
 
@@ -528,14 +516,14 @@ Preparation:
 ```bash
 git clone https://github.com/karock5345/aqs8server.git
 # or
-git clone --branch qs1test821 https://github.com/karock5345/aqs8server.git
+git clone --branch pccw2023 https://github.com/karock5345/aqs8server.git
 # remove .git folder
 sudo rm -r ~/aqs8server/.git
 # remove readme.md (it stores password and other sensitive info)
 sudo rm ~/aqs8server/readme.md
+mv ~/aqs8server ~/qs123
 sudo apt-get install -y virtualenv
-mv ~/aqs8server ~/qs1test821
-cd ~/qs1test821
+cd ~/qs123
 virtualenv env
 source env/bin/activate
 
@@ -587,15 +575,15 @@ psql
 ```
 PostgreSQL command:
 ```sql
-CREATE DATABASE aqsdb8_qs1test821;
-CREATE USER aqsdbuser WITH PASSWORD 'dbpassword-72ustepRegLqeWO1estephoF4xiwretU';
+CREATE DATABASE aqsdb8_qs123;
+CREATE USER aqsdbuser WITH PASSWORD 'dbpassword-Dlcg1dwMOXSKIAIM';
 ALTER ROLE aqsdbuser SET client_encoding TO 'utf8';
 ALTER ROLE aqsdbuser SET default_transaction_isolation TO 'read committed';
 SHOW TIMEZONE;
 SET TIMEZONE='UTC';
 SHOW TIMEZONE;
 ALTER ROLE aqsdbuser SET timezone TO 'UTC';
-GRANT ALL PRIVILEGES ON DATABASE aqsdb8_qs1test821 TO aqsdbuser;
+GRANT ALL PRIVILEGES ON DATABASE aqsdb8_qs123 TO aqsdbuser;
 \q
 exit
 ```
@@ -611,7 +599,7 @@ sudo nano /path/to/pg_hba.conf
 # this case:
 sudo nano /etc/postgresql/14/main/pg_hba.conf
 # add line:
-host    aqsdb8_qs1test821    aqsdbuser    10.95.157.237/32    md5
+host    aqsdb8_qs123    aqsdbuser    10.95.157.237/32    md5
 ```
 
 ```bash
@@ -619,17 +607,19 @@ sudo systemctl reload postgresql.service
 ```
 Edit settings.py
 ```bash
-sudo nano ~/qs1test821/aqs/settings.py
+sudo nano ~/aqs8server/aqs/settings.py
 ```
 ```
 DEBUG = False
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'aqsdb8_qs1test821',
+        'NAME': 'aqsdb8_qs123',
         'USER': 'aqsdbuser',
-        'PASSWORD': 'dbpassword-72ustepRegLqeWO1estephoF4xiwretU',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'dbpassword-Dlcg1dwMOXSKIAIM',
+    'HOST': '127.0.0.1',
+    # or Independence DB server
+        'HOST': '192.168.1.173',
         'PORT': '5432',
     }
 }
@@ -641,8 +631,8 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 ```
-qs1test821 superuser : supertim /// asdf
-change later : ta0lTAKuklml71ni
+RVD superuser : supertim5345 /// viWu@h0spewon7c@9spI
+supertim /// YtZqEIpk5345
 
 Test the Postgres DB:
 ```bash
@@ -653,35 +643,35 @@ python manage.py runserver 0.0.0.0:8000
 
 <h3 style="color:orange;">Django secret key</h3>
 
-Save the SECRET_KEY from settings.py to text file (e.g. : django-insecure-phldu6Ekaroxo9UzUs9adrif!5LkIsWoK4piXlcr70lBroPaWaqoh93pAThaxECr
+Save the SECRET_KEY from settings.py to text file (e.g. : django-insecure-BITRaxa&rupHUGo&rab@JaRe4iT@amuQlDroFunljib$duxogO):
 
 ```bash
-sudo touch /etc/secret_key_qs1test821.txt
-sudo nano /etc/secret_key_qs1test821.txt
+sudo touch /etc/secret_key_qs123.txt
+sudo nano /etc/secret_key_qs123.txt
 ```
 
 Remove SECRET_KEY in settings.py and change to load file
 ```
-with open('/etc/secret_key_qs1test821.txt') as f:
+with open('/etc/secret_key_qs123.txt') as f:
     SECRET_KEY = f.read().strip()
 ```
 <h3 style="color:orange;">ReCaptcha secret key</h3>
 
 Save the RECAPTCHA_PRIVATE_KEY to text file (6LflOq0iAAAAAFAKsEWvj1ZY_JFKihRaxUR_vlqG):
 ```bash
-sudo touch /etc/recaptcha_key_qs1test821.txt
-sudo nano /etc/recaptcha_key_qs1test821.txt
+sudo touch /etc/recaptcha_key_qs123.txt
+sudo nano /etc/recaptcha_key_qs123.txt
 ```
 Remove RECAPTCHA_PRIVATE_KEY in settings.py and change to load file
 ```
-with open('/etc/recaptcha_key_qs1test821.txt') as f:
+with open('/etc/recaptcha_key_qs123.txt') as f:
     RECAPTCHA_PRIVATE_KEY = f.read().strip()
 ```
 close and save
 
 > Disable Recaptcha for debug / test
 ```bash
-nano ~/qs1test821/base/views.py    
+nano ~/qs123/base/views.py    
  ```   
 >enable_captcha = False
 
@@ -747,28 +737,6 @@ python3 manage.py collectstatic
 # for upload new files to static_deploy/
 # python3 manage.py collectstatic --clear
 ```
-If can not show files in static/
-
-Nginx operates within the directory, so if you can't cd to that directory from the nginx user 
-
-then it will fail (as does the stat command in your log). Make sure the www-data can 
-
-cd all the way to the /username/test/static. You can confirm that the stat will fail or succeed by running
-
->sudo -u www-data stat /home/ubuntu/qs1test821/static_deploy will fail
-
-```bash
-# try this:
-sudo gpasswd -a www-data ubuntu
-sudo chmod g+x /home/ubuntu/qs1test821/ && chmod g+x /home/ubuntu/qs1test821/static_deploy
-sudo nginx -s reload
-```
-
-```bash
-sudo gpasswd -a www-data ubuntu
-sudo chmod g+x /home/ubuntu && chmod g+x /home/ubuntu/qs1test821/ && chmod g+x /home/ubuntu/qs1test821/static_deploy
-sudo nginx -s reload
-```
 
 Try Gunicorn. The only difference is we are not doing startserver command from Django, instead Gunicorn will take care of that.
 ```bash
@@ -777,17 +745,17 @@ gunicorn --bind 0.0.0.0:8000 aqs.wsgi
 
 ```bash
 deactivate
-sudo touch /etc/systemd/system/gunicorn_qs1test821.socket
-sudo nano /etc/systemd/system/gunicorn_qs1test821.socket
+sudo touch /etc/systemd/system/gunicorn_qs123.socket
+sudo nano /etc/systemd/system/gunicorn_qs123.socket
 ```
 
 edit :
 ```bash
 [Unit]
-Description=gunicorn_qs1test821 socket
+Description=gunicorn_qs123 socket
 
 [Socket]
-ListenStream=/run/gunicorn_qs1test821.sock
+ListenStream=/run/gunicorn_qs123.sock
 # Our service won't need permissions for the socket, since it
 # inherits the file descriptor by socket activation
 # only the nginx daemon will need access to the socket
@@ -799,13 +767,13 @@ SocketUser=www-data
 WantedBy=sockets.target
 ```
 ```bash
-sudo nano /etc/systemd/system/gunicorn_qs1test821.service
+sudo nano /etc/systemd/system/gunicorn_qs123.service
 ```
 edit:
 ```bash
 [Unit]
-Description=gunicorn_qs1test821 daemon
-Requires=gunicorn_qs1test821.socket
+Description=gunicorn_qs123 daemon
+Requires=gunicorn_qs123.socket
 After=network.target
 
 [Service]
@@ -816,12 +784,12 @@ User=ubuntu
 # another option for an even more restricted service is
 # DynamicUser=yes
 # see http://0pointer.net/blog/dynamic-users-with-systemd.html
-RuntimeDirectory=gunicorn_qs1test821
-WorkingDirectory=/home/ubuntu/qs1test821
-ExecStart=/home/ubuntu/qs1test821/env/bin/gunicorn \
-	--workers 3 \
-	--bind unix:/run/gunicorn_qs1test821.sock \
-	aqs.wsgi:application
+RuntimeDirectory=gunicorn_qs123
+WorkingDirectory=/home/ubuntu/qs123
+ExecStart=/home/ubuntu/qs123/env/bin/gunicorn \
+  --workers 3 \
+  --bind unix:/run/gunicorn_qs123.sock \
+  aqs.wsgi:application
 ExecReload=/bin/kill -s HUP $MAINPID
 KillMode=mixed
 TimeoutStopSec=5
@@ -832,23 +800,23 @@ WantedBy=multi-user.target
 ```
 ****ubuntu should be changed you user**
 ```bash
-sudo systemctl start gunicorn_qs1test821.socket
-sudo systemctl enable gunicorn_qs1test821.socket
-sudo systemctl status gunicorn_qs1test821.socket
-file /run/gunicorn_qs1test821.sock
-# Output: /run/gunicorn_qs1test821.sock: socket
-sudo systemctl status gunicorn_qs1test821
+sudo systemctl start gunicorn_qs123.socket
+sudo systemctl enable gunicorn_qs123.socket
+sudo systemctl status gunicorn_qs123.socket
+file /run/gunicorn_qs123.sock
+# Output: /run/gunicorn_qs123.sock: socket
+sudo systemctl status gunicorn_qs123
 #Output :
-● gunicorn_qs1test821.service - gunicorn daemon
-   Loaded: loaded (/etc/systemd/system/gunicorn_qs1test821.service; disabled; vendor preset: enabled)
+● gunicorn_qs123.service - gunicorn daemon
+   Loaded: loaded (/etc/systemd/system/gunicorn_qs123.service; disabled; vendor preset: enabled)
    Active: inactive (dead)
-curl --unix-socket /run/gunicorn_qs1test821.sock localhost
+curl --unix-socket /run/gunicorn_qs123.sock localhost
 #You should see the HTML output (have not output)
 #If the output from curl or the output of systemctl status indicates that a problem occurred, check the logs for additional details:
 #and Check the /etc/systemd/system/gunicorn.service file for problems.
-sudo journalctl -u gunicorn_qs1test821
+sudo journalctl -u gunicorn_qs123
 sudo systemctl daemon-reload
-sudo systemctl restart gunicorn_qs1test821
+sudo systemctl restart gunicorn_qs123
 ```
 Uninstall Apache 
 ```bash
@@ -857,29 +825,29 @@ sudo systemctl stop apache2 ; sudo systemctl disable apache2 ; sudo apt remove a
 <h3 style="color:orange;">NGINX</h3>
 
 ```bash
-sudo touch /etc/nginx/sites-available/qs1test821
-sudo nano /etc/nginx/sites-available/qs1test821
+sudo touch /etc/nginx/sites-available/qs123
+sudo nano /etc/nginx/sites-available/qs123
 ```
 edit:
 ```python
 server {
-    server_name qs1test821.tsvd.com.hk;
+    server_name localhost 127.0.0.1 qs123.tsvd.com.hk www.qs123.tsvd.com.hk;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
         autoindex on;
-        alias /home/ubuntu/qs1test821/static_deploy/;
+        alias /home/**ubuntu/qs123/static_deploy/;
     }
 
     location / {
         include proxy_params;
-        proxy_pass http://unix:/run/gunicorn_qs1test821.sock;
+        proxy_pass http://unix:/run/gunicorn_qs123.sock;
     }
 }
 ```
 ****ubuntu should be changed you user**
 ```bash
-sudo ln -s /etc/nginx/sites-available/qs1test821 /etc/nginx/sites-enabled
+sudo ln -s /etc/nginx/sites-available/qs123 /etc/nginx/sites-enabled
 # Test the Nginx configuration for syntax errors by using the following command
 sudo nginx -t
 sudo systemctl restart nginx
@@ -890,7 +858,28 @@ sudo ufw allow 'Nginx Full'
 ```
 
 
+If can not show files in static/
 
+Nginx operates within the directory, so if you can't cd to that directory from the nginx user 
+
+then it will fail (as does the stat command in your log). Make sure the www-data can 
+
+cd all the way to the /username/test/static. You can confirm that the stat will fail or succeed by running
+
+>sudo -u www-data stat /home/ubuntu/qs123/static_deploy will fail
+
+```bash
+# try this:
+sudo gpasswd -a www-data ubuntu
+sudo chmod g+x /home/ubuntu/qs123/ && chmod g+x /home/ubuntu/qs123/static_deploy
+sudo nginx -s reload
+```
+
+```bash
+sudo gpasswd -a www-data ubuntu
+sudo chmod g+x /home/ubuntu && chmod g+x /home/ubuntu/qs123/ && chmod g+x /home/ubuntu/qs123/static_deploy
+sudo nginx -s reload
+```
 <h3 style="color:orange;">Init the DB</h3>
 
 ```bash
@@ -899,7 +888,7 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 ```
-Superuser: supertim /// asdf
+Superuser: tim /// asdf
 
 Open web browser http://[ip address]/admin
 
@@ -907,7 +896,7 @@ create settings : Name=global, Branch=---, disabled API log
 
 create user groups : api web admin support supervisor manager reporter and counter
 
-create user : userapi /// klylpRUxlsTl3hispa92draZAsldr6fr (group:api)
+create user : userapi /// asdf2206 (group:api)
 
 create user : userweb /// asdf2206 (group:web, set:in-active)
 
@@ -1006,14 +995,14 @@ Insert data to Primary DB for Testing
 ```
 sudo su -l postgres
 psql
-\c aqsdb8_qs1test821
+\c aqsdb8_qs123
 INSERT INTO base_testingModel(name, des) VALUES ('David','is good guy');
 ```
 View data from postgres
 ```
 sudo su -l postgres
 psql
-\c aqsdb8_qs1test821
+\c aqsdb8_qs123
 \dt
 TABLE base_userprofile;
 TABLE base_testingModel;
@@ -1046,7 +1035,7 @@ select pg_drop_replication_slot('some_name');
 
 Check error : Django code run on Gunicorn
 ```
-sudo systemctl status gunicorn_qs1test821
+sudo systemctl status gunicorn_qs123
 ```
 ```bash
 # check PSQL status
@@ -1065,29 +1054,29 @@ sudo service postgresql stop
 
 > edit settings.py
 ```bash
-nano ~/qs1test821/aqs/settings.py
+nano ~/qs123/aqs/settings.py
 ```
 ```python
 REDIS_HOST = '127.0.0.1'
 ```
-sudo nano /etc/nginx/sites-available/qs1test821
+sudo nano /etc/nginx/sites-available/qs123
 
 ```sh
 server {
     listen 80;
-    server_name localhost 127.0.0.1 34.207.57.210 qs1test821.tsvd.com.hk ;
+    server_name localhost 127.0.0.1 34.207.57.210 qs123.tsvd.com.hk www.qs123.tsvd.com.hk;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
         autoindex on;
-        alias /home/**ubuntu/qs1test821/static_deploy;
+        alias /home/**ubuntu/qs123/static_deploy;
     }
 
     location / {
         include proxy_params;
-        proxy_pass http://unix:/run/gunicorn_qs1test821.sock;
+        proxy_pass http://unix:/run/gunicorn_qs123.sock;
     }
-	location /ws/ {
+  location /ws/ {
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
@@ -1120,7 +1109,7 @@ sudo nano /etc/redis/redis.conf
 
 CTRL+W to find 'supervised no' and replace with ‘supervised systemd’ and SAVE .
 ```bash
-sudo systemctl restart redis.service &&
+sudo systemctl restart redis.service
 sudo systemctl status redis
 ```
 Press CTRL+C to exit.
@@ -1132,7 +1121,7 @@ sudo netstat -lnp | grep redis
 sudo systemctl restart redis.service
 ```
 ```bash
-nano ~/qs1test821/aqs/asgi.py
+nano ~/qs123/aqs/asgi.py
 ```
 Add under "import base.routing":
 ```python
@@ -1143,21 +1132,21 @@ Install Daphne
 ```bash
 sudo apt install daphne -y
 # And install it in your project virtual enviroment.
-source ~/qs1test821/env/bin/activate
+source ~/qs123/env/bin/activate
 pip3 install daphne
 deactivate
-sudo nano /etc/systemd/system/daphne_qs1test821.service
+sudo nano /etc/systemd/system/daphne_qs123.service
 ```
 ```nano
 [Unit]
-Description=Daphne_qs1test821 service
+Description=Daphne_qs123 service
 After=network.target
 
 [Service]
 Type=simple
 User=ubuntu
-WorkingDirectory=/home/ubuntu/qs1test821
-ExecStart=/home/ubuntu/qs1test821/env/bin/python /home/ubuntu/qs1test821/env/bin/daphne -b 0.0.0.0 -p 8001 aqs.asgi:application
+WorkingDirectory=/home/ubuntu/qs123
+ExecStart=/home/ubuntu/qs123/env/bin/python /home/ubuntu/qs123/env/bin/daphne -b 0.0.0.0 -p 8001 aqs.asgi:application
 Restart=always
 StartLimitBurst=2
 
@@ -1172,19 +1161,19 @@ WantedBy=multi-user.target
 
 ****port should be changed for different application start from 8001 -> 8xxx**
 
-After we need to start daphne_qs1test821.service .
+After we need to start daphne_qs123.service .
 ```bash
 sudo systemctl daemon-reload
 
-sudo systemctl start daphne_qs1test821.service
+sudo systemctl start daphne_qs123.service
 #If you want to check status of daphne then use.
 
-sudo systemctl status daphne_qs1test821.service
+sudo systemctl status daphne_qs123.service
 ```
 <h3 style="color:orange;">Starting the daphne Service when Server boots</h3>
 
 ```
-sudo systemctl enable daphne_qs1test821.service
+sudo systemctl enable daphne_qs123.service
 ```
 
 
@@ -1194,25 +1183,25 @@ sudo systemctl enable daphne_qs1test821.service
 ```bash
 sudo groupadd celery ;
 sudo useradd -g celery celery ;
-sudo mkdir /var/run/celery_qs1test821 ;
-sudo chown -R celery:celery /var/run/celery_qs1test821/ ;
-sudo chmod o+w /var/run/celery_qs1test821 ;
-sudo mkdir /var/log/celery_qs1test821 ;
-sudo chown -R celery:celery /var/log/celery_qs1test821/ ;
-sudo chmod o+w /var/log/celery_qs1test821
+sudo mkdir /var/run/celery_qs123 ;
+sudo chown -R celery:celery /var/run/celery_qs123/ ;
+sudo chmod o+w /var/run/celery_qs123 ;
+sudo mkdir /var/log/celery_qs123 ;
+sudo chown -R celery:celery /var/log/celery_qs123/ ;
+sudo chmod o+w /var/log/celery_qs123
 ```
 ### Step 2: Create the Celery Worker Configuration File
 
 Create a Celery configuration file (e.g., `celeryd`) in the `/etc/default/` directory:
 
 ```bash
-sudo nano /etc/default/celeryd_qs1test821
+sudo nano /etc/default/celeryd_qs123
 ```
 
 Add the following content to the `celeryd` file. Modify the values for your specific setup:
 
 ```ini
-# /etc/default/celeryd_qs1test821
+# /etc/default/celeryd_qs123
 #   most people will only start one node:
 CELERYD_NODES="worker1"
 #   but you can also start multiple and configure settings
@@ -1222,7 +1211,7 @@ CELERYD_NODES="worker1"
 #CELERYD_NODES=10
 
 # Absolute or relative path to the 'celery' command:
-CELERY_BIN="/home/ubuntu/qs1test821/env/bin/celery"
+CELERY_BIN="/home/ubuntu/qs123/env/bin/celery"
 #CELERY_BIN="/virtualenvs/def/bin/celery"
 
 # App instance to use
@@ -1232,7 +1221,7 @@ CELERY_APP="aqs.celery:app"
 #CELERY_APP="proj.tasks:app"
 
 # Where to chdir at start.
-CELERYD_CHDIR="/home/ubuntu/qs1test821"
+CELERYD_CHDIR="/home/ubuntu/qs123"
 
 # Extra command-line arguments to the worker
 CELERYD_OPTS="--time-limit=300 --concurrency=8"
@@ -1243,8 +1232,8 @@ CELERYD_OPTS="--time-limit=300 --concurrency=8"
 #CELERYD_LOG_LEVEL="DEBUG"
 
 # %n will be replaced with the first part of the node name.
-CELERYD_LOG_FILE="/var/log/celery_qs1test821/%n%I.log"
-CELERYD_PID_FILE="/var/run/celery_qs1test821/%n.pid"
+CELERYD_LOG_FILE="/var/log/celery_qs123/%n%I.log"
+CELERYD_PID_FILE="/var/run/celery_qs123/%n.pid"
 
 # Workers should run as an unprivileged user.
 #   You need to create this user manually (or you can choose
@@ -1264,15 +1253,15 @@ Replace the placeholders (`<your_django_user>`, `<your_django_group>`, `your_pro
 Create a Systemd service file (e.g., `celery.service`) in the `/etc/systemd/system/` directory:
 
 ```bash
-sudo nano /etc/systemd/system/celery_qs1test821.service
+sudo nano /etc/systemd/system/celery_qs123.service
 ```
 
-Add the following content to the `celery_qs1test821.service` file:
+Add the following content to the `celery_qs123.service` file:
 
 ```ini
-# /etc/systemd/system/celery_qs1test821.service
+# /etc/systemd/system/celery_qs123.service
 [Unit]
-Description=Celery_qs1test821 Service
+Description=Celery_qs123 Service
 After=network.target
 
 [Service]
@@ -1280,14 +1269,14 @@ Type=forking
 User=ubuntu
 Group=ubuntu
 
-EnvironmentFile=/etc/default/celeryd_qs1test821
-WorkingDirectory=/home/ubuntu/qs1test821
-ExecStart=/home/ubuntu/qs1test821/env/bin/celery multi start ${CELERYD_NODES} \
+EnvironmentFile=/etc/default/celeryd_qs123
+WorkingDirectory=/home/ubuntu/qs123
+ExecStart=/home/ubuntu/qs123/env/bin/celery multi start ${CELERYD_NODES} \
   -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} \
   --logfile=${CELERYD_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL} ${CELERYD_OPTS}
-ExecStop=/home/ubuntu/qs1test821/env/bin/celery multi stopwait ${CELERYD_NODES} \
+ExecStop=/home/ubuntu/qs123/env/bin/celery multi stopwait ${CELERYD_NODES} \
   --pidfile=${CELERYD_PID_FILE}
-ExecReload=/home/ubuntu/qs1test821/env/bin/celery multi restart ${CELERYD_NODES} \
+ExecReload=/home/ubuntu/qs123/env/bin/celery multi restart ${CELERYD_NODES} \
   -A ${CELERY_APP} --pidfile=${CELERYD_PID_FILE} \
   --logfile=${CELERYD_LOG_FILE} --loglevel=${CELERYD_LOG_LEVEL} ${CELERYD_OPTS}
 
@@ -1301,8 +1290,8 @@ WantedBy=multi-user.target
 Now that you have created the configuration and service files, enable and start the Celery service:
 
 ```bash
-sudo systemctl enable celery_qs1test821
-sudo systemctl start celery_qs1test821
+sudo systemctl enable celery_qs123
+sudo systemctl start celery_qs123
 ```
 
 The `enable` command ensures that the Celery service starts automatically during server startup.
@@ -1315,17 +1304,44 @@ Add following script:
 ```bash
 # For Celery
 # The dir will auto deleted when every time reboot.
-mkdir /var/run/celery_qs1test821
-chown -R celery:celery /var/run/celery_qs1test821/
-chmod o+w /var/run/celery_qs1test821
+mkdir /var/run/celery_qs123
+chown -R celery:celery /var/run/celery_qs123/
+chmod o+w /var/run/celery_qs123
 ```
+### Auto power off script (for Linux server)
+```bash
+sudo nano  /etc/systemd/system/autorun.service
+```
+- add line:
+```ini
+[Unit]
+Description=Autorun
+After=network.target
+
+[Service]
+ExecStart=/bin/bash /home/ubuntu/autorun.sh
+
+[Install]
+WantedBy=default.target
+```
+- Save and exit
+
+```bash
+sudo systemctl enable autorun.service
+sudo systemctl start autorun.service
+```
+
+```bash
+sudo chmod +x /home/ubuntu/autorun.sh
+```
+- Save and exit
 
 ### Step 6: Check the Celery Service Status
 
 You can check the status of the Celery service to ensure it is running:
 
 ```bash
-sudo systemctl status celery_qs1test821
+sudo systemctl status celery_qs123
 ```
 
 This command will display the current status and any logs related to the Celery service.
@@ -1359,7 +1375,7 @@ Refer to : https://www.youtube.com/watch?v=dYdv6pkCufk
 
 >**Update source code all HTML from ws:// to wss://**
 ```bash
-nano ~/qs1test821/base/ws.py
+nano ~/qs123/base/ws.py
 # change :
 wsHypertext = 'ws://'
 # to :
@@ -1381,7 +1397,7 @@ sudo certbot --nginx --expand -d second.domain.com
 Open new reCaptcha:
 Create new reCaptcha on [google.com/recaptcha](https://www.google.com/recaptcha)
 
-create new file /etc/recaptcha_key_qs1test821.txt
+create new file /etc/recaptcha_key_qs123.txt
 
 and save the private key to the file.
 
@@ -1389,13 +1405,13 @@ Edit .\aqs\settings.py
 
 ```python
 RECAPTCHA_PUBLIC_KEY = 'xxx'
-with open('/etc/recaptcha_key_qs1test821.txt') as f:
+with open('/etc/recaptcha_key_qs123.txt') as f:
     RECAPTCHA_PRIVATE_KEY = f.read().strip()
 RECAPTCHA_REQUIRED_SCORE = 0.85
 ```
 <h3 style="color:orange;">Enable / Disable reCaptcha</h3>
 
-nano ~\qs1test821\aqs\views.py
+nano ~\qs123\aqs\views.py
 
 > enable_captcha = False
 
@@ -1519,7 +1535,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'aqsdb8',
         'USER': 'aqsdbuser',
-        'PASSWORD': 'dbpassword-72ustepRegLqeWO1estephoF4xiwretU',
+        'PASSWORD': 'dbpassword-Dlcg1dwMOXSKIAIM',
         'HOST': '10.95.157.236',
         'PORT': '5432',
     }
