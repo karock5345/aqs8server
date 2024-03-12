@@ -3722,14 +3722,19 @@ def auth_data(user):
                             profid_list.append(prof.id)
                             userid_list.append(prof.user.id)
                             break
-        # take out superuser
-        for user in userid_list :
-            if User.objects.get(id=user).is_superuser == True :
-                userid_list.remove(user)
-                profid_list.remove(UserProfile.objects.get(user__exact=user).id)                
+        # take out superuser 
+        for pk in userid_list :
+            if User.objects.get(id=pk).is_superuser == True :
+                userid_list.remove(pk)
+                profid_list.remove(UserProfile.objects.get(user__exact=pk).id) 
+            # remove user is group 'web' in userlist
+            if User.objects.get(id=pk).groups.filter(name='web').exists() == True :
+                userid_list.remove(pk)
+                profid_list.remove(UserProfile.objects.get(user__exact=pk).id)
 
 
-        auth_userlist = User.objects.filter(id__in=userid_list)
+        # auth_userlist = User.objects.filter(id__in=userid_list).exclude(Q(Group__name='web'))
+        auth_userlist = User.objects.filter(id__in=userid_list)            
         auth_userlist_active = auth_userlist.filter(Q(is_active=True))
         auth_profilelist = UserProfile.objects.filter(id__in=profid_list)
         auth_ticketformats = TicketFormat.objects.filter(branch__in=auth_branchs).order_by('branch','ttype')

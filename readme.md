@@ -10,6 +10,7 @@
 - send 'New booking' email to manager
 - send email for user forgot password
 - change user profile mobile number to country code + national number
+- hide the userweb in user group (except admin and superuser)
 
 <h3 style="color:orange;">Version 8.2.1</h3>
 
@@ -732,6 +733,25 @@ SIMPLE_JWT = {
 }
 ```
 exit and save
+
+If can not show files in static/
+
+Nginx operates within the directory, so if you can't cd to that directory from the nginx user 
+
+then it will fail (as does the stat command in your log). Make sure the www-data can 
+
+cd all the way to the /username/test/static. You can confirm that the stat will fail or succeed by running
+
+>sudo -u www-data stat /home/ubuntu/qs123/static_deploy will fail
+
+```bash
+# try this:
+sudo gpasswd -a www-data ubuntu
+sudo chmod g+x /home/ubuntu/qs123/ && chmod g+x /home/ubuntu/qs123/static_deploy
+sudo nginx -s reload
+```
+
+
 ```bash
 python3 manage.py collectstatic
 # for upload new files to static_deploy/
@@ -858,22 +878,7 @@ sudo ufw allow 'Nginx Full'
 ```
 
 
-If can not show files in static/
 
-Nginx operates within the directory, so if you can't cd to that directory from the nginx user 
-
-then it will fail (as does the stat command in your log). Make sure the www-data can 
-
-cd all the way to the /username/test/static. You can confirm that the stat will fail or succeed by running
-
->sudo -u www-data stat /home/ubuntu/qs123/static_deploy will fail
-
-```bash
-# try this:
-sudo gpasswd -a www-data ubuntu
-sudo chmod g+x /home/ubuntu/qs123/ && chmod g+x /home/ubuntu/qs123/static_deploy
-sudo nginx -s reload
-```
 
 ```bash
 sudo gpasswd -a www-data ubuntu
