@@ -272,35 +272,35 @@ class BranchSettingsForm_Basic(ModelForm):
         # self.initial['subend'] = funUTCtoLocal(self.initial['subend'], timezone)
 
 
-# for PCCW manager Group only include frontline and manager
+# for PCCW manager Group only include counter and manager
 class UserFormManager(ModelForm):
     class Meta:
         model = User 
         fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
     def __init__(self, *args,**kwargs):
         super (UserFormManager,self ).__init__(*args,**kwargs)
-        self.fields['groups'].queryset = Group.objects.filter(Q(name='manager') | Q(name='frontline'))   # Q(groups__name='api')
+        self.fields['groups'].queryset = Group.objects.filter(Q(name='manager') | Q(name='counter'))   # Q(groups__name='api')
 
         
 
-# for PCCW manager Group only include frontline and manager and support
+# for PCCW manager Group only include counter and manager and support
 class UserFormSupport(ModelForm):
     class Meta:
         model = User 
         fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
     def __init__(self, *args,**kwargs):
         super (UserFormSupport,self ).__init__(*args,**kwargs)
-        self.fields['groups'].queryset = Group.objects.filter(Q(name='manager')| Q(name='frontline')| Q(name='support'))   # Q(groups__name='api')
+        self.fields['groups'].queryset = Group.objects.filter(Q(name='manager')| Q(name='counter')| Q(name='support'))   # Q(groups__name='api')
 
 
-# for PCCW manager Group only include frontline and manager and support and admin
+# for PCCW manager Group only include counter and manager and support and admin
 class UserFormAdmin(ModelForm):
     class Meta:
         model = User 
         fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
     def __init__(self, *args,**kwargs):
         super (UserFormAdmin,self ).__init__(*args,**kwargs)
-        self.fields['groups'].queryset = Group.objects.filter(Q(name='manager')| Q(name='frontline')| Q(name='support')| Q(name='admin'))   # Q(groups__name='api')
+        self.fields['groups'].queryset = Group.objects.filter(Q(name='manager')| Q(name='counter')| Q(name='support')| Q(name='admin'))   # Q(groups__name='api')
 
 class UserForm(ModelForm):
     class Meta:
