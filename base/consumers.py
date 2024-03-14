@@ -45,6 +45,7 @@ ws_connected_max = 200
 #   Channel : PrintStatusConsumer - 'printstatus' for internal Softkey use.
 #   Channel : QLConsumer - 'ql' for internal Softkey, admin use.
 #   Channel : WebTVConsumer - 'webtv' and 'wtv'. 'webtv' for web online tv public use, 'wtv' for interal Disp Penal use.
+#   Channel : DispPanelConsumer - 'disp' for internal Disp Penal use.
 # print('Count of KB webtv public:' + str(ws_connected_dict['KB']['webtv']['pub']['count']))
 # ws_connected_dict['KB']['webtv']['pub']['ip'].append('test')
 # print('IP list of KB webtv public:' + str(ws_connected_dict['KB']['webtv']['pub']['ip']))
@@ -63,6 +64,111 @@ def new_ws_connected_dict(bcode, ws):
     ws_connected_dict[bcode][ws]['int']['ip'] = []
 
     return ws_connected_dict
+
+class DispPanelConsumer(AsyncWebsocketConsumer):
+    async def connect(self):
+        @sync_to_async
+        def check_input():
+            error = ''
+            branch = None
+            # branchobj = await sync_to_async(Branch.objects.filter, thread_sensitive=True)( Q(bcode=self.bcode) )
+            branchobj = Branch.objects.filter(Q(bcode=self.bcode))
+
+            if branchobj.count() == 1:
+                branch = branchobj[0]
+                pass
+            else :
+                error = 'Branch not found.'
+
+            if error == '':
+                ctobj = CounterType.objects.filter( Q(branch=branch) & Q(name=self.ct) )
+                if ctobj.count() == 1:
+                    # ct = ctobj[0]
+                    pass
+                else :
+                    error = 'CounterType not found.'
+
+            return error
+                
+        error = ''
+        self.bcode = self.scope['url_route']['kwargs']['bcode']
+        self.ct = self.scope['url_route']['kwargs']['ct']
+        self.room_group_name = 'disp_' + self.bcode + '_' + self.ct
+        logger.info('connecting:' + self.room_group_name )
+
+        self.ws_str = 'disp'
+        # get the url route: 'webtv' or 'wtv'
+        self.route = self.scope['path'].split('/')[2]
+        self.bcode = self.scope['url_route']['kwargs']['bcode']
+        self.ct = self.scope['url_route']['kwargs']['ct']
+
+        if error == '':
+            if self.scope['user'].is_authenticated == False:
+                error = 'DispConsumer: User not authenticated.'
+
+
+        # check bcode and ct (countertype) is not exit do not accept connection
+        if error == '':
+            error = await check_input()       
+
+        if error == '':
+            exist = True        
+            if self.bcode not in ws_connected_dict :
+                exist = False
+            elif self.ws_str not in ws_connected_dict[self.bcode]:
+                exist = False
+            if exist == False:
+                new_ws_connected_dict(self.bcode, self.ws_str)
+
+        if error == '':        
+            await self.channel_layer.group_add(
+                self.room_group_name,
+                self.channel_name
+            )
+
+            await self.accept()
+
+            ip = self.scope['client'][0]
+            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
+            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
+            logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
+        else :
+            logger.info('Error:' + error )
+            await self.close()
+            
+
+    # Receive message from room group
+    async def broadcast_message(self, event):
+        str_tx = event['tx']
+
+        # Send message to WebSocket
+        try:
+            await self.send(text_data=str_tx)
+        except:
+            # If the channel layer is not available, send the data directly to all WebSocket connections in the group
+            for connection in await self.get_all_connections():
+                await connection.send_data_fallback(str_tx)
+    async def disconnect(self, close_code):
+        # Leave room group
+        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
+
+        ip = self.scope['client'][0]
+        ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
+        ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
+    async def send_data_fallback(self, data):
+        # Send the data directly to the WebSocket connection
+        await self.send(json.dumps(data, cls=DjangoJSONEncoder))
+    async def get_all_connections(self):
+        # Get all WebSocket connections in the group
+        group_channels = await self.channel_layer.group_channels(self.room_group_name)
+        connections = []
+        for channel_name in group_channels:
+            connection = self.__class__.for_channel(channel_name)
+            connections.append(connection)
+        return connections
+
+
 
 class ReportRaw_ProgressConsumer(AsyncWebsocketConsumer):
     async def connect(self):
