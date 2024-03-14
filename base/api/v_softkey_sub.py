@@ -6,7 +6,7 @@ from base.ws import *
 import logging
 
 logger = logging.getLogger(__name__)
-softkey_version = '8.1.0.0'
+softkey_version = '8.2.0.0'
 
 def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     status = dict({})
@@ -699,7 +699,9 @@ def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, co
         wscounterstatus(counterstatus)
         # websocket to web tv
         wssendwebtv(branch.bcode, countertype.name)
-        
+        # websocket to Display Panel display ticket
+        wssenddispcall(branch, counterstatus, countertype, ticket)
+
         context = {'tickettype': ticket.tickettype, 
                    'ticketnumber': ticket.ticketnumber , 
                    'tickettime': ticket.tickettime}
