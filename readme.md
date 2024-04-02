@@ -1,4 +1,4 @@
-# AQS version 8.2.1
+# AQS version 8.2.2
 
 <h3 style="color:orange;">Coming up:</h3>
 
@@ -11,6 +11,10 @@
 - send email for user forgot password
 - change user profile mobile number to country code + national number
 - hide the userweb in user group (except admin and superuser)
+
+<h3 style="color:orange;">Version 8.2.2</h3>
+- Secure Flashlight (Control Box) Websocket connection protect use the session Cookie
+- Vertical Display panel add show counter and show latest ticket number on API aqs\api\v_display.py -> getDisplay
 
 <h3 style="color:orange;">Version 8.2.1</h3>
 

@@ -282,6 +282,12 @@ class FlashLightConsumer(AsyncWebsocketConsumer):
         # self.ct = self.scope['url_route']['kwargs']['ct']
         self.room_group_name = 'flashlight_' + self.bcode
         self.ws_str = 'flashlight'
+
+        if error == '':
+            if self.scope['user'].is_authenticated == False:
+                error = 'FlashLightConsumer: User not authenticated.'
+
+
         logger.info('connecting:' + self.room_group_name )
         
         if error == '':
