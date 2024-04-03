@@ -286,22 +286,34 @@ AWS Route53 : add sub domain qs123.tsvd.com.hk, www.qs123.tsvd.com.hk
 ### AWS cost:
 RVD + Test + CF = $2.02 
 
-RVD $1.46   
+QS1 $???
+- Launch on 2024-03-12
+- t4g.small
+- vCPUs-2
+- HD-30G
+- RAM 2G
+- us-east-1b
+
+RVD $1.46    
+- Launch on 2024-03-12
 - t2.medium 
 - vCPUs-2 
 - HD-50G 
+- RAM 4G
 - us-east-1b
 
-Test $0.28
+Test $0.28 (cloesd)
 - t2.micro
 - vCPUs-1
 - HD-30G 
 - us-east-1e
 
-CF $0.28 (Install at 2023-5-2)
+CF $0.28
+- Launch on 2023-5-2
 - t2.micro
 - vCPUs-1
 - HD-24G 
+- RAM 1G
 - us-east-1e
 
 <h3 style="color:orange;">Local server (Ubuntu Linux server)</h3>
