@@ -8,3 +8,5 @@ user1 /// TejPKES3du
 user2 /// st6G2eUSWa
 user3 /// x4vL9sqKj4
 user4 /// beSpas9Ksw
+RECAPTCHA_PUBLIC_KEY = '6LeUoa8pAAAAAKqsmQjmqH57dQtthqpxoUFl_Q6f'
+RECAPTCHA_PRIVATE_KEY = '6LeUoa8pAAAAANmYudKCFKrmONV-XJhI_hypBfSN'

@@ -935,8 +935,9 @@ REST_FRAMEWORK = {
     )
 }
 
-RECAPTCHA_PUBLIC_KEY = '6Lff1ZsiAAAAAESuPub5qJCSN8Fo1cmhtjd8bdB8'
-RECAPTCHA_PRIVATE_KEY = '6Lff1ZsiAAAAAMbsSNu5KyIGWOxmjTOFHANffcAo'
+RECAPTCHA_PUBLIC_KEY = '6LeUoa8pAAAAAKqsmQjmqH57dQtthqpxoUFl_Q6f'
+with open('/etc/recaptcha_key_tg2024.txt') as f:
+    RECAPTCHA_PRIVATE_KEY = f.read().strip()
 RECAPTCHA_REQUIRED_SCORE = 0.85
 
 AUTO_LOGOUT = {
@@ -1163,14 +1164,14 @@ with open('/etc/secret_key_tg2024.txt') as f:
 ```
 <h3 style="color:orange;">ReCaptcha secret key</h3>
 
-Save the RECAPTCHA_PRIVATE_KEY to text file (6LflOq0iAAAAAFAKsEWvj1ZY_JFKihRaxUR_vlqG):
+Save the RECAPTCHA_PRIVATE_KEY to text file (6LeUoa8pAAAAANmYudKCFKrmONV-XJhI_hypBfSN):
 ```bash
-sudo touch /etc/recaptcha_key_qs123.txt
-sudo nano /etc/recaptcha_key_qs123.txt
+sudo touch /etc/recaptcha_key_tg2024.txt
+sudo nano /etc/recaptcha_key_tg2024.txt
 ```
 Remove RECAPTCHA_PRIVATE_KEY in settings.py and change to load file
 ```
-with open('/etc/recaptcha_key_qs123.txt') as f:
+with open('/etc/recaptcha_key_tg2024.txt') as f:
     RECAPTCHA_PRIVATE_KEY = f.read().strip()
 ```
 close and save
