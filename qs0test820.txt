@@ -1,4 +1,0 @@
-Server on AWS : https://qs0test820.tsvd.com.hk
-Superuser : supertim /// YtZqEIpk5345
-userapi : userapi /// BL13Xe7dP363t5U
-Member : mary /// 1234

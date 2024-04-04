@@ -3160,7 +3160,7 @@ def UserUpdateView(request, pk):
         # if request.user.is_superuser == True :
         #     userform = UserFormSuper(instance=user, prefix='uform')
         if user == request.user:
-            userform = UserFormAdminSelf(instance=user, prefix='uform')
+            userform = UserFormAdminSelf(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         # elif request.user.groups.filter(name='admin').exists() == True :
         #     userform = UserFormAdmin(instance=user, prefix='uform')
         # elif request.user.groups.filter(name='support').exists() == True :
@@ -3174,7 +3174,7 @@ def UserUpdateView(request, pk):
         # if request.user.is_superuser == True :
         #     userform = UserFormSuper(request.POST, instance=user, prefix='uform')
         if user == request.user:
-            userform = UserFormAdminSelf(request.POST, instance=user, prefix='uform')        
+            userform = UserFormAdminSelf(request.POST, instance=user, prefix='uform', auth_grouplist=auth_grouplist)        
         # elif request.user.groups.filter(name='admin').exists() == True :
         #     userform = UserFormAdmin(request.POST, instance=user, prefix='uform')
         # elif request.user.groups.filter(name='support').exists() == True :
@@ -3324,17 +3324,17 @@ def UserNewView2(request, pk):
 
     if request.method == 'POST':
         if request.user.is_superuser == True :
-            userform = UserFormSuper(request.POST, instance=user, prefix='uform')
+            userform = UserFormSuper(request.POST, instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         elif user == request.user:
-            userform = UserFormAdminSelf(request.POST, instance=user, prefix='uform')        
+            userform = UserFormAdminSelf(request.POST, instance=user, prefix='uform', auth_grouplist=auth_grouplist)        
         elif request.user.groups.filter(name='admin').exists() == True :
-            userform = UserFormAdmin(request.POST, instance=user, prefix='uform')            
+            userform = UserFormAdmin(request.POST, instance=user, prefix='uform', auth_grouplist=auth_grouplist)            
         elif request.user.groups.filter(name='support').exists() == True :
-            userform = UserFormSupport(request.POST, instance=user, prefix='uform')
+            userform = UserFormSupport(request.POST, instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         elif request.user.groups.filter(name='manager').exists() == True :
-            userform = UserFormManager(request.POST, instance=user, prefix='uform')
+            userform = UserFormManager(request.POST, instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         else :
-            userform = UserForm(request.POST, instance=user, prefix='uform')
+            userform = UserForm(request.POST, instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         
         profileform = UserProfileForm(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
         if (userform.is_valid() & profileform.is_valid()):
@@ -3722,8 +3722,9 @@ def auth_data(user):
                             profid_list.append(prof.id)
                             userid_list.append(prof.user.id)
                             break
-        # take out superuser 
-        for pk in userid_list :
+        temp_list = userid_list.copy()
+        for pk in temp_list :
+            # take out superuser
             if User.objects.get(id=pk).is_superuser == True :
                 userid_list.remove(pk)
                 profid_list.remove(UserProfile.objects.get(user__exact=pk).id) 
