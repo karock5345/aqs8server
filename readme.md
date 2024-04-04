@@ -1,20 +1,106 @@
 # AQS version 8.2.2
 
-<h3 style="color:orange;">Coming up:</h3>
-
-- ~~Reset SMS quota~~
-- ~~Booking Management~~
-- Booking to Queue Function 
-- send SMS quota is full email to managerm and admin
-- Send email to TSVD when SMS api is error (maybe down or quota is full)
-- send 'New booking' email to manager
-- send email for user forgot password
-- change user profile mobile number to country code + national number
-- hide the userweb in user group (except admin and superuser)
-
 <h3 style="color:orange;">Version 8.2.2</h3>
+
 - Secure Flashlight (Control Box) Websocket connection protect use the session Cookie
 - Vertical Display panel add show counter and show latest ticket number on API aqs\api\v_display.py -> getDisplay
+- Only 1 raw data report aqs/temp/r-main.html 
+   - backup to r-main3.html then remove other 2 reports from r-main.html
+   - replace <span>3 to <span>1 on aqs/temp/menu-list.html
+- Bug fixed manager, support, supervisor, reporter, counter can see API user
+   - /aqs/views.py -> auth_data (line 3734) add : 
+```py
+    # remove user is group 'api' in userlist
+    if User.objects.get(id=pk).groups.filter(name='api').exists() == True :
+        userid_list.remove(pk)
+        profid_list.remove(UserProfile.objects.get(user__exact=pk).id)
+```
+   - fixed add user step 2 (User authority) is not correct
+      - edit /base/views.py line 3352
+        ```py
+                if request.user.is_superuser == True :
+                    userform = UserFormSuper(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
+                elif user == request.user:
+                    userform = UserFormAdminSelf(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
+                elif request.user.groups.filter(name='admin').exists() == True :
+                    userform = UserFormAdmin(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
+                elif request.user.groups.filter(name='support').exists() == True :
+                    userform = UserFormSupport(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
+                elif request.user.groups.filter(name='manager').exists() == True :
+                    userform = UserFormManager(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
+                else :
+                    userform = UserForm(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
+        ```
+      - edit /base/forms.py line 275 to 340
+        ```py
+            # for PCCW manager Group only include counter and manager
+            class UserFormManager(ModelForm):
+                class Meta:
+                    model = User 
+                    fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
+                def __init__(self, *args,**kwargs):
+                    # get the auth_grouplist from kwargs
+                    self.auth_grouplist = kwargs.pop('auth_grouplist')
+                    super (UserFormManager,self ).__init__(*args,**kwargs)                
+                    self.fields['groups'].queryset = Group.objects.filter(id__in=self.auth_grouplist)   
+                    # self.fields['groups'].queryset = Group.objects.filter(Q(name='manager') | Q(name='counter'))   # Q(groups__name='api')
+
+
+
+            # for PCCW manager Group only include counter and manager and support
+            class UserFormSupport(ModelForm):
+                class Meta:
+                    model = User 
+                    fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
+                def __init__(self, *args,**kwargs):
+                    # get the auth_grouplist from kwargs
+                    self.auth_grouplist = kwargs.pop('auth_grouplist')
+                    super (UserFormSupport,self ).__init__(*args,**kwargs)                
+                    self.fields['groups'].queryset = Group.objects.filter(id__in=self.auth_grouplist)   
+                    # self.fields['groups'].queryset = Group.objects.filter(Q(name='manager')| Q(name='counter')| Q(name='support'))   # Q(groups__name='api')
+
+
+            # for PCCW manager Group only include counter and manager and support and admin
+            class UserFormAdmin(ModelForm):
+                class Meta:
+                    model = User 
+                    fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
+                def __init__(self, *args,**kwargs):
+                    # get the auth_grouplist from kwargs
+                    self.auth_grouplist = kwargs.pop('auth_grouplist')
+                    super (UserFormAdmin,self ).__init__(*args,**kwargs)                
+                    self.fields['groups'].queryset = Group.objects.filter(id__in=self.auth_grouplist) 
+                    # self.fields['groups'].queryset = Group.objects.filter(Q(name='manager')| Q(name='counter')| Q(name='support')| Q(name='admin'))   # Q(groups__name='api')
+
+            class UserForm(ModelForm):
+                class Meta:
+                    model = User 
+                    fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
+                def __init__(self, *args,**kwargs):
+                    auth_grouplist = kwargs.pop('auth_grouplist')
+                    super (UserForm, self).__init__(*args,**kwargs)
+                    self.fields['groups'].queryset = Group.objects.filter(id__in=auth_grouplist)   
+                    # self.fields['groups'].queryset = Group.objects.filter()   # Q(groups__name='api')
+                    # here we can filter the groups by user branchs
+                    
+            class UserFormAdminSelf(ModelForm):
+            # admin can not change himself group and cannot set is_active
+                class Meta:
+                    model = User
+                    fields = ['first_name', 'last_name', 'email']
+
+
+            class UserFormSuper(ModelForm):
+                class Meta:
+                    model = User 
+                    fields = ['is_active', 'is_active', 'first_name', 'last_name', 'email', 'groups']
+                def __init__(self, *args,**kwargs):
+                    auth_grouplist = kwargs.pop('auth_grouplist')
+                    super (UserFormSuper,self ).__init__(*args,**kwargs)
+                    self.fields['groups'].queryset = Group.objects.filter(id__in=auth_grouplist)   
+                    # self.fields['groups'].queryset = Group.objects.filter(~Q(name='web'))
+        ```
+
 
 <h3 style="color:orange;">Version 8.2.1</h3>
 

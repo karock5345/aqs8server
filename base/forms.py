@@ -278,10 +278,13 @@ class UserFormManager(ModelForm):
         model = User 
         fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
     def __init__(self, *args,**kwargs):
-        super (UserFormManager,self ).__init__(*args,**kwargs)
-        self.fields['groups'].queryset = Group.objects.filter(Q(name='manager') | Q(name='counter'))   # Q(groups__name='api')
+        # get the auth_grouplist from kwargs
+        self.auth_grouplist = kwargs.pop('auth_grouplist')
+        super (UserFormManager,self ).__init__(*args,**kwargs)                
+        self.fields['groups'].queryset = Group.objects.filter(id__in=self.auth_grouplist)   
+        # self.fields['groups'].queryset = Group.objects.filter(Q(name='manager') | Q(name='counter'))   # Q(groups__name='api')
 
-        
+
 
 # for PCCW manager Group only include counter and manager and support
 class UserFormSupport(ModelForm):
@@ -289,8 +292,11 @@ class UserFormSupport(ModelForm):
         model = User 
         fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
     def __init__(self, *args,**kwargs):
-        super (UserFormSupport,self ).__init__(*args,**kwargs)
-        self.fields['groups'].queryset = Group.objects.filter(Q(name='manager')| Q(name='counter')| Q(name='support'))   # Q(groups__name='api')
+        # get the auth_grouplist from kwargs
+        self.auth_grouplist = kwargs.pop('auth_grouplist')
+        super (UserFormSupport,self ).__init__(*args,**kwargs)                
+        self.fields['groups'].queryset = Group.objects.filter(id__in=self.auth_grouplist)   
+        # self.fields['groups'].queryset = Group.objects.filter(Q(name='manager')| Q(name='counter')| Q(name='support'))   # Q(groups__name='api')
 
 
 # for PCCW manager Group only include counter and manager and support and admin
@@ -299,8 +305,11 @@ class UserFormAdmin(ModelForm):
         model = User 
         fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
     def __init__(self, *args,**kwargs):
-        super (UserFormAdmin,self ).__init__(*args,**kwargs)
-        self.fields['groups'].queryset = Group.objects.filter(Q(name='manager')| Q(name='counter')| Q(name='support')| Q(name='admin'))   # Q(groups__name='api')
+        # get the auth_grouplist from kwargs
+        self.auth_grouplist = kwargs.pop('auth_grouplist')
+        super (UserFormAdmin,self ).__init__(*args,**kwargs)                
+        self.fields['groups'].queryset = Group.objects.filter(id__in=self.auth_grouplist) 
+        # self.fields['groups'].queryset = Group.objects.filter(Q(name='manager')| Q(name='counter')| Q(name='support')| Q(name='admin'))   # Q(groups__name='api')
 
 class UserForm(ModelForm):
     class Meta:
@@ -308,7 +317,7 @@ class UserForm(ModelForm):
         fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
     def __init__(self, *args,**kwargs):
         auth_grouplist = kwargs.pop('auth_grouplist')
-        super ().__init__(*args,**kwargs)
+        super (UserForm, self).__init__(*args,**kwargs)
         self.fields['groups'].queryset = Group.objects.filter(id__in=auth_grouplist)   
         # self.fields['groups'].queryset = Group.objects.filter()   # Q(groups__name='api')
         # here we can filter the groups by user branchs
@@ -325,8 +334,10 @@ class UserFormSuper(ModelForm):
         model = User 
         fields = ['is_active', 'is_active', 'first_name', 'last_name', 'email', 'groups']
     def __init__(self, *args,**kwargs):
+        auth_grouplist = kwargs.pop('auth_grouplist')
         super (UserFormSuper,self ).__init__(*args,**kwargs)
-        self.fields['groups'].queryset = Group.objects.filter(~Q(name='web'))  
+        self.fields['groups'].queryset = Group.objects.filter(id__in=auth_grouplist)   
+        # self.fields['groups'].queryset = Group.objects.filter(~Q(name='web'))
 
         
 class UserProfileForm(ModelForm):

@@ -3350,17 +3350,17 @@ def UserNewView2(request, pk):
                     messages.error(request, item + ' ' + field)
     else:
         if request.user.is_superuser == True :
-            userform = UserFormSuper(instance=user, prefix='uform')
+            userform = UserFormSuper(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         elif user == request.user:
-            userform = UserFormAdminSelf(instance=user, prefix='uform')
+            userform = UserFormAdminSelf(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         elif request.user.groups.filter(name='admin').exists() == True :
-            userform = UserFormAdmin(instance=user, prefix='uform')
+            userform = UserFormAdmin(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         elif request.user.groups.filter(name='support').exists() == True :
-            userform = UserFormSupport(instance=user, prefix='uform')
+            userform = UserFormSupport(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         elif request.user.groups.filter(name='manager').exists() == True :
-            userform = UserFormManager(instance=user, prefix='uform')
+            userform = UserFormManager(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         else :
-            userform = UserForm(instance=user, prefix='uform')
+            userform = UserForm(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
 
         profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
     context =  {'user':user , 'userp':userp, 'userform':userform, 'profileform':profileform, 'auth_grouplist':auth_grouplist}
@@ -3731,7 +3731,10 @@ def auth_data(user):
             if User.objects.get(id=pk).groups.filter(name='web').exists() == True :
                 userid_list.remove(pk)
                 profid_list.remove(UserProfile.objects.get(user__exact=pk).id)
-
+            # remove user is group 'api' in userlist
+            if User.objects.get(id=pk).groups.filter(name='api').exists() == True :
+                userid_list.remove(pk)
+                profid_list.remove(UserProfile.objects.get(user__exact=pk).id)
 
         # auth_userlist = User.objects.filter(id__in=userid_list).exclude(Q(Group__name='web'))
         auth_userlist = User.objects.filter(id__in=userid_list)            
