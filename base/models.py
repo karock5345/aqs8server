@@ -304,6 +304,10 @@ class CounterType(models.Model):
     displayscrollingtext = models.TextField(null=True, blank=True, default='Testing 123...')
     vert_showcounter = models.BooleanField(default=True)
     vert_showlatest = models.BooleanField(default=True)
+    vert_latestpagehold = models.IntegerField(default=10)
+    showcounter = models.BooleanField(default=True)
+    showlatest = models.BooleanField(default=True)
+    latestpagehold = models.IntegerField(default=6)
     countermode = models.CharField(max_length=200, null=False, blank=False, default='normal', verbose_name='Counter Mode', help_text='Normal mode=normal, Call Centre mode=cc, Restaurant mode=res') # normal, callcentre
     nextcounter = models.IntegerField(default=0)  # only for CallCentre mode system auto assign ticket to counter 
                                                   # this is NOT counter number, system will generate a list of counterstatus. 

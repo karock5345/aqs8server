@@ -452,8 +452,12 @@ def getDisplay(request):
         scrollingtext = dict({'scrollingtext' : countertype.displayscrollingtext})
         vert_showcounter = dict({'vert_showcounter' : countertype.vert_showcounter})
         vert_showlatest = dict({'vert_showlatest' : countertype.vert_showlatest})
+        vert_latestpagehold = dict({'vert_latestpagehold' : countertype.vert_latestpagehold})
+        showcounter = dict({'showcounter' : countertype.showcounter})
+        showlatest = dict({'showlatest' : countertype.showlatest})
+        latestpagehold = dict({'latestpagehold' : countertype.latestpagehold})
 
-        msg = servertime | scrollingtext | vert_showcounter | vert_showlatest
+        msg = servertime | scrollingtext | vert_showcounter | vert_showlatest | vert_latestpagehold | showcounter | showlatest | latestpagehold
 
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype, displaytime__range=[starttime, datetime_now] )
         serializers  = displaylistSerivalizer(displaylist, many=True)
