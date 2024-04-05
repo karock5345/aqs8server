@@ -13,8 +13,22 @@
 - hide the userweb in user group (except admin and superuser)
 
 <h3 style="color:orange;">Version 8.2.2</h3>
+
 - Secure Flashlight (Control Box) Websocket connection protect use the session Cookie
 - Vertical Display panel add show counter and show latest ticket number on API aqs\api\v_display.py -> getDisplay
+- Display Panel add show counter and show latest ticket number on API aqs\api\v_display.py -> getDisplay
+- Only 1 raw data report aqs/temp/r-main.html
+   - backup to r-main3.html then remove other 2 reports from r-main.html
+   - replace 3 to 1 on aqs/temp/menu-list.html
+- Bug fixed manager, support, supervisor, reporter, counter can see API user
+   - Detail see tg2024 Branch
+   - /aqs/views.py -> auth_data (line 3725) add : 
+- Bug fixed add user step 2 (User authority) is not correct
+   - Detail see tg2024 Branch
+   - edit /base/views.py line 3352   
+   - and line 3326 :
+   - and line 3159 :
+   - edit /base/forms.py line 275 to 340
 
 <h3 style="color:orange;">Version 8.2.1</h3>
 

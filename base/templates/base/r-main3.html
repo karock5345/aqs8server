@@ -29,9 +29,73 @@
           </div>
           <!-- add line -->
 
-         
+          <div class="layout__body">
+            <div class="roomList__header">
+              <div>
+                <h2>Total ticket report: </h2>
+              </div>
+            </div>
+            <form action="ticket">
+              Select Branch:
+              <select name="branch" id="id_branch">
+                <!-- <option value="">---</option> -->
+                {% for branch in branchs %}
+                  <option value={{branch.bcode}}>{{branch.name}}</option>
+                  {{branch}}<br>             
+                {% endfor %}
+              </select><br>
+              
+              Start date and time (Local time) : <input type="datetime-local" name="startdate" value={{now}} step="1" ><br>
+              End date and time (Local time) : <input type="datetime-local" name="enddate" value={{now}} step="1"><br>
+              
+              Select Ticket Type:
+              <select name="ticketformats" id="id_ticketformats">
+                <option value="">---All ticket type---</option>
+                {% for tf in ticketformats %}
+                  <option value={{tf.id}}>{{tf.ttype}}-{{tf.touchkey_lang1}}</option>
+                  <br>             
+                {% endfor %}
+              </select><br>
+
+              <input type="submit" value="Report" class="btn btn--main" >
+            </form>
+          </div>
           
+          <hr>
+
+          <div class="layout__body">
+            <div class="roomList__header">
+              <div>
+                <h2>Staff performance report: </h2>
+              </div>
+            </div>
+            <form action="staff">
+              Select Branch:
+              <select name="branch" id="id_branch">
+                <!-- <option value="">---</option> -->
+                {% for branch in branchs %}
+                  <option value={{branch.bcode}}>{{branch.name}}</option>
+                  {{branch}}<br>             
+                {% endfor %}
+              </select><br>
+              
+              Start date and time (Local time) : <input type="datetime-local" name="startdate" value={{now}} step="1" ><br>
+              End date and time (Local time) : <input type="datetime-local" name="enddate" value={{now}} step="1"><br>
+              
+              Select Ticket Type:
+              <select name="users" id="id_users">
+                <option value="">---All user---</option>
+                {% for user in users %}
+                  <option value={{user.id}}>{{user.first_name}} {{user.last_name}} ({{user.username}})</option>
+                  <br>             
+                {% endfor %}
+              </select><br>
+
+              <input type="submit" value="Report" class="btn btn--main" >
+            </form>
+          </div>
           
+          <hr>
 
           <div class="layout__body">
             <div class="roomList__header">
