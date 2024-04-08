@@ -32,7 +32,7 @@
         if request.user.is_superuser == True :
             userform = UserFormSuper(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         elif user == request.user:
-            userform = UserFormAdminSelf(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
+            userform = UserFormAdminSelf(instance=user, prefix='uform')
         elif request.user.groups.filter(name='admin').exists() == True :
             userform = UserFormAdmin(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         elif request.user.groups.filter(name='support').exists() == True :
@@ -47,7 +47,7 @@
         if request.user.is_superuser == True :
             userform = UserFormSuper(request.POST, instance=user, prefix='uform', auth_grouplist=auth_grouplist)
         elif user == request.user:
-            userform = UserFormAdminSelf(request.POST, instance=user, prefix='uform', auth_grouplist=auth_grouplist)        
+            userform = UserFormAdminSelf(request.POST, instance=user, prefix='uform')        
         elif request.user.groups.filter(name='admin').exists() == True :
             userform = UserFormAdmin(request.POST, instance=user, prefix='uform', auth_grouplist=auth_grouplist)            
         elif request.user.groups.filter(name='support').exists() == True :
@@ -63,7 +63,7 @@
             # if request.user.is_superuser == True :
             #     userform = UserFormSuper(instance=user, prefix='uform')
             if user == request.user:
-                userform = UserFormAdminSelf(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
+                userform = UserFormAdminSelf(instance=user, prefix='uform')
             # elif request.user.groups.filter(name='admin').exists() == True :
             #     userform = UserFormAdmin(instance=user, prefix='uform')
             # elif request.user.groups.filter(name='support').exists() == True :
@@ -77,7 +77,7 @@
             # if request.user.is_superuser == True :
             #     userform = UserFormSuper(request.POST, instance=user, prefix='uform')
             if user == request.user:
-                userform = UserFormAdminSelf(request.POST, instance=user, prefix='uform', auth_grouplist=auth_grouplist)        
+                userform = UserFormAdminSelf(request.POST, instance=user, prefix='uform')        
             # elif request.user.groups.filter(name='admin').exists() == True :
             #     userform = UserFormAdmin(request.POST, instance=user, prefix='uform')
             # elif request.user.groups.filter(name='support').exists() == True :
