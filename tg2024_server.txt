@@ -1,6 +1,7 @@
+Domain : tg.tsvd.com.hk
+
 Server on AWS : https://qs1.tsvd.com.hk
 Share with qs1test821
-Domain : tg.tsvd.com.hk
 Working folder : ~/tg2024
 Superuser : supertim5345 /// 6I2on!pewramLswAs?oMajACHuqod4WR
 userapi : userapi /// api0000teror7me68uxlph1pr6br4dostut4obrocruz1guphUtru4ra5o9utlxeTejequg
