@@ -1450,6 +1450,42 @@ nano ~\qs123\aqs\views.py
 
 > enable_captcha = False
 
+# Setup email
+<h3 style="color:orange;">Setup email sender</h3>
+
+create new file /etc/emailpw_qs123.txt
+
+and save the email password key to the file.
+
+Edit .\aqs\settings.py
+
+```python
+# SMTP email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mail.us-east-1.awsapps.com'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'tim@tsvd.com.hk'
+with open('/etc/emailpw_qs123.txt') as f:
+    EMAIL_HOST_PASSWORD = f.read().strip()
+```
+
+# Setup SMS
+<h3 style="color:orange;">Setup SMS</h3>
+
+create new file /etc/sms_key_qs123.txt
+
+and save the api key to the file.
+
+Edit .\aqs\settings.py
+
+```python
+# SMS settings
+SMS_ACCOUNT_NAME = 'tsvd@u3.ufosend.com'
+SMS_SENDER = 'TSVD'
+with open('/etc/sms_key_qs123.txt') as f:
+    SMS_API_KEY = f.read().strip()
+```
 
 # Setup new git repo
 <h3 style="color:orange;">Create new repo on [github.com](http://github.com)</h3>
