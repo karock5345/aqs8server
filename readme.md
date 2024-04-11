@@ -1,16 +1,33 @@
-# AQS version 8.2.2
+# AQS version 8.3.0
 
 <h3 style="color:orange;">Coming up:</h3>
 
 - ~~Reset SMS quota~~
 - ~~Booking Management~~
-- Booking to Queue Function 
+
 - send SMS quota is full email to managerm and admin
 - Send email to TSVD when SMS api is error (maybe down or quota is full)
-- send 'New booking' email to manager
+- ~~send 'New booking' email to manager~~
 - send email for user forgot password
 - change user profile mobile number to country code + national number
-- hide the userweb in user group (except admin and superuser)
+- ~~hide the userweb in user group (except admin and superuser)~~
+
+<h3 style="color:orange;">Version 8.3.0</h3>
+
+- Booking to Queue Function
+- Support multiple workers for Gunicorn (from django_q.tasks import async_chain, result_group)
+- Bug fixed : User update HTML js error (base/templates/base/user_update.html -> line 147)
+  ```js
+  // check tickettype do not have character "," then set to ""
+    if (tickettype == null) {
+        tickettype = "";
+    }
+    if ((tickettype.indexOf(",") == -1 || tickettype == "")) {
+        tickettype = "";
+        document.getElementById('id_a_tickettype').innerHTML = "No ticket type";
+        document.getElementById('id_text_tickettype').value = "";
+    }
+  ```
 
 <h3 style="color:orange;">Version 8.2.2</h3>
 

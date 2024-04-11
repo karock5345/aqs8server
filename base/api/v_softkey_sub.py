@@ -4,6 +4,7 @@ from .v_display import newdisplayvoice
 from base.models import CounterStatus, CounterType, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus, UserStatusLog
 from base.ws import *
 import logging
+from django_q.tasks import async_chain, result_group
 
 logger = logging.getLogger(__name__)
 softkey_version = '8.2.0.0'

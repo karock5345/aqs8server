@@ -56,7 +56,7 @@
                                         Ticket type
                                     </p>
                                 <!-- the field display but cannot edit-->
-                                    {% if field.value == "" %}
+                                    {% if field.value == "" or field.value == None %}
                                         <a id="id_a_tickettype" class="form" >No ticket type</a>
                                     {% else %}
                                         <a id="id_a_tickettype" class="form" >{{field}}</a>
@@ -145,7 +145,10 @@
         var btn_cancel = document.getElementById('id_tt_cancel');
 
         // check tickettype do not have character "," then set to ""
-        if ((!(tickettype.indexOf(",") > -1) || tickettype == "")) {
+        if (tickettype == null) {
+            tickettype = "";
+        }
+        if ((tickettype.indexOf(",") == -1 || tickettype == "")) {
             tickettype = "";
             document.getElementById('id_a_tickettype').innerHTML = "No ticket type";
             document.getElementById('id_text_tickettype').value = "";
