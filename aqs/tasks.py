@@ -19,8 +19,16 @@ from django.conf import settings
 from django.core.mail import EmailMessage
 import requests
 from django.http import JsonResponse
-
+import time
 logger = logging.getLogger(__name__)
+
+
+
+from base.models import CounterStatus, UserProfile, CounterType, TicketTemp, TicketLog, lcounterstatus
+from base.api.v_display import newdisplayvoice
+from base.api.v_touch import wssendwebtv,  wssendql
+from base.views import wsSendTicketStatus, wssenddispcall, wssendvoice, wssendflashlight, wscounterstatus
+
 
 @shared_task(bind = True,)
 def sendSMS(self, tophone, message, bcode, msg_for):

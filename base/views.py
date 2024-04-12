@@ -44,6 +44,7 @@ from base.sch.views import sch_shutdown
 from django.db.models import BooleanField, Value
 from crm.models import CRMAdmin
 
+
 logger = logging.getLogger(__name__)
 
 enable_captcha = False
@@ -341,7 +342,14 @@ def SoftkeyView(request, pk):
                 return redirect('softkey', pk=pk)
                 # return render(request, 'base/softkey.html', context)
             elif action == 'call':
-                status, msg, context_call = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
+                # status, msg, context_call = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
+                
+                newname = testing()  
+
+                
+                status = dict({'status': 'Error'})
+                msg =  dict({'msg':newname})  
+                context_call = {'data': {}}
                 if status['status'] == 'Error':
                     messages.error(request, msg['msg'])
                 if status['status'] == 'OK' and context_call == {'data': {}} :

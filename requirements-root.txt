@@ -20,4 +20,5 @@ zope.interface==6.1
 phonenumbers
 requests
 # django-crequest==2018.5.11 may not use
-gunicon
+gunicorn
+daphne==3.0.2

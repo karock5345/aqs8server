@@ -1,7 +1,8 @@
 # celery.py
 import os
-from celery import Celery
+from celery import Celery, chain
 import logging
+from aqs.settings import celery_name
 
 logger = logging.getLogger(__name__)
 
@@ -9,7 +10,7 @@ logger = logging.getLogger(__name__)
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'aqs.settings')
 
 # Create a Celery instance and configure it to use the Django settings
-app = Celery('aqs_qs1.tsvd.com.hk')
+app = Celery(celery_name)
 
 # Load task modules from all registered Django app configs.
 app.config_from_object('django.conf:settings', namespace='CELERY')
@@ -22,3 +23,7 @@ app.autodiscover_tasks()
 def debug_task(self):
     # print(f'Request: {self.request!r}')
     logger.info(f'Request: {self.request!r}')
+
+
+
+

@@ -1,13 +1,247 @@
+from django.contrib.auth.models import User
 from django.db.models import Q
 from .views import counteractive
 from .v_display import newdisplayvoice
 from base.models import CounterStatus, CounterType, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus, UserStatusLog
+from base.models import testingModel
 from base.ws import *
 import logging
-from django_q.tasks import async_chain, result_group
+from django.db import transaction
+import time
 
 logger = logging.getLogger(__name__)
 softkey_version = '8.2.0.0'
+
+
+def testing():
+    # delay for 5 seconds
+    # time.sleep(5)
+    output= ''
+    
+        
+
+    with transaction.atomic():     
+        try:
+            row = testingModel.objects.select_for_update().get(id=1)
+            time.sleep(5)
+    
+            row.name = row.name + ' ka'
+            row.save()
+            output = row.name
+        except Exception as e:
+            Exception('Unexpected error: {}'.format(e))
+            output = 'Unexpected error: {}'.format(e)
+
+        
+    return output
+
+
+# version 8.3.0 add transaction select_for_update for prevent 'double bookings' problem
+@transaction.atomic
+def funCounterCall_v830(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
+    status = dict({})
+    msg = dict({})
+    context = dict({})
+
+    # check call priority
+    # if priority = 'time' / 'umask' user mask / 'bmask' branch mask
+    priority = ''
+    mask = ''
+    if status == dict({}) :
+        userp = None
+        obj_userp = UserProfile.objects.filter(user__exact=user)
+        if obj_userp.count() == 1 :
+            userp = obj_userp[0]            
+        if userp == None:
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'User profile not found'})  
+    if status == dict({}) :
+        qp = userp.queuepriority
+        if qp == 'time':
+            mask = userp.tickettype
+            priority = 'time'
+        if qp == 'user':            
+            mask = userp.tickettype
+            priority = 'umask'
+        if qp == 'mask':
+            # branch mask               
+            mask = branch.queuemask
+            priority = 'bmask'
+        if qp == 'branch':
+            qp = branch.queuepriority
+            if qp == 'time':
+                priority = 'time'
+                mask = userp.tickettype
+            if qp == 'mask':
+                priority = 'bmask'
+                mask = branch.queuemask 
+            if qp == 'user':
+                priority = 'umask'
+                mask = userp.tickettype
+        if mask == '' or priority == '' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Queue priority not found (qp:' + qp + ') '+ mask + '<-mask , priority->' + priority})   
+        if mask != '' and priority == 'bmask' :
+            l_mask = mask.split(',')
+            new_mask=''
+            l_new_mask = []
+            mask_b = mask
+            # remove all space in mask_b
+            mask_b = mask_b.replace(' ', '')
+            u_tt = userp.tickettype
+            u_tt = u_tt.replace(' ', '')
+            l_mask_b = mask_b.split(',')
+            l_u_tt = u_tt.split(',')
+
+            # check user ticket type in branch mask
+            for tt in l_mask_b:
+                if tt in l_u_tt:
+                    new_mask = new_mask + tt + ','
+                    l_new_mask.append(tt)
+
+            # istart = 0
+            # # get text inside mask_b string format '{x}{y}{z}' -> x,y,z
+            # for i in range(len(mask_b)):
+            #     if mask_b[i] == '{':
+            #         for j in range(i+1, len(mask_b)):
+            #             if mask_b[j] == '}':
+            #                 tt = mask_b[i:j+1]
+            #                 istart = j + 1
+            #                 if u_tt.find(tt) != -1 :
+            #                     new_mask  = new_mask + tt
+            #                 break                   
+            mask = new_mask
+            l_mask = l_new_mask
+        if priority == 'bmask' or priority == 'umask' :
+            priority = 'mask'
+    if status == dict({}) :
+        # get the Counter type
+        ctypeobj = CounterType.objects.filter( Q(branch=branch) & Q(name=countertype.name) )
+        if not(ctypeobj.count() > 0) :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Counter Type not found'})  
+    if status == dict({}) :
+        countertype = ctypeobj[0]
+        cstatusobj = CounterStatus.objects.filter( Q(countertype=countertype) & Q(counternumber=counterstatus.counternumber) & Q(user=user))
+        if not(cstatusobj.count() > 0) :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Counter not found / User did not login'})  
+    if status == dict({}) :
+        counterstatus = cstatusobj[0]
+        counterstatus.lastactive = datetime_now
+        counterstatus.save()
+
+        # check counter status
+        if not(counterstatus.status == 'waiting' or counterstatus.status == 'ready') :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Counter status is not WAITING/READY'})  
+        elif counterstatus.tickettemp != None :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Counter still processing ticket:' + counterstatus.tickettemp.tickettype + counterstatus.tickettemp.ticketnumber})  
+
+
+
+    if status == dict({}) :
+        mask = mask.replace(' ', '')
+        l_mask = mask.split(',')
+        ticket = None
+
+        if priority== 'time':
+            # found the waiting ticket by time
+            ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')            
+            for ticket in ticketlist:
+                tt =  ticket.tickettype 
+                if ticket.tickettype in l_mask:
+                    # call this ticket
+                    context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
+                    break
+        elif priority == 'mask':
+            ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')
+
+            for tt in l_mask:
+                for ticket in ticketlist:
+                    if tt == ticket.tickettype:
+                        # call this ticket
+                        context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
+                        break
+                if context != dict({}):
+                    break
+         
+        if context != dict({}) and ticket != None :
+
+
+            # update ticketdata db
+            td = None
+            if status == dict({}) :
+                obj_td = TicketData.objects.filter(
+                    tickettemp=ticket,
+                    countertype=countertype,
+                    step=ticket.step,
+                    branch=branch,
+                )
+                if obj_td.count() == 1 :
+                    td = obj_td[0]
+                else:
+                    status = dict({'status': 'Error'})
+                    msg =  dict({'msg':'TicketData is multi ' })  
+                if td == None :
+                    status = dict({'status': 'Error'})
+                    msg =  dict({'msg':'TicketData not found ' }) 
+
+            if status == dict({}) :
+                td.calltime = datetime_now
+                td.calluser = user
+                time_diff = datetime_now - td.starttime
+                tsecs = int(time_diff.total_seconds())
+                td.waitingperiod = tsecs
+                td.save()
+
+                # update counterstatus db 
+                counterstatus.tickettemp = ticket
+                counterstatus.status = lcounterstatus[1]
+                counterstatus.save()
+
+                # update ticket 
+                ticket.user = user
+                ticket.status = lcounterstatus[1]
+                ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
+                ticket.ticketroute.save()
+                ticket.save()
+
+                # add ticketlog
+                TicketLog.objects.create(
+                    tickettemp=ticket,
+                    logtime=datetime_now,
+                    app = rx_app,
+                    version = rx_version,
+                    logtext= logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+                    user=user,
+                )
+
+                # do display and voice temp db
+                newdisplayvoice(branch, countertype, counterstatus.counternumber, ticket, datetime_now, user)
+
+                # websocket to web tv
+                wssendwebtv(branch.bcode ,countertype.name)
+                # websocket to Display Panel display ticket
+                wssenddispcall(branch,counterstatus, countertype, ticket)
+                # websocket to softkey (update Queue List)
+                wssendql(branch.bcode, countertype.name, ticket, 'del')
+                # websocket to web my ticket
+                wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
+                # websocket to voice com and flash light
+                wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+                wssendflashlight(branch, countertype, counterstatus, 'flash')
+
+                # websocket to web softkey for update counter status
+                wscounterstatus(counterstatus)
+
+        context = dict({'data':context})
+        status = dict({'status': 'OK'})
+        # msg =  dict({'msg':'Everything will be OK.'})        
+
+    return status, msg, context
+
 
 def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     status = dict({})
@@ -137,38 +371,7 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
                         break
                 if context != dict({}):
                     break
-            # for i in range(len(mask)):
-            #     if mask[i] == '{':
-            #         for j in range(i+1, len(mask)):
-            #             if mask[j] == '}':
-            #                 tt = mask[i:j+1]
-            #                 istart = j + 1
-            #                 for ticket in ticketlist:
-            #                     if tt == '{' + ticket.tickettype + '}':
-            #                         # call this ticket
-            #                         context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
-            #                         break
-            #                 if context != dict({}):
-            #                     break
-
-                    # tt = mask[istart:i+1] # tt = '{A}'
-                    # istart = i + 1
-                    # for ticket in ticketlist:
-                    #     if tt == ticket.tickettype + ',':
-                    #         # call this ticket
-                    #         context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
-                    #         break
-                    # if context != dict({}):
-                    #     break
-
-            # for tt in mask:
-            #     for ticket in ticketlist:
-            #         if tt == ticket.tickettype:
-            #             # call this ticket
-            #             context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
-            #             break
-            #     if context != dict({}):
-            #         break
+         
         if context != dict({}) and ticket != None :
 
 
