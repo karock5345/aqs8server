@@ -21,7 +21,8 @@ lcounterstatus = [
 class testingModel(models.Model):
     name = models.TextField(null=True, blank=True)
     des = models.TextField(null=True, blank=True)
-
+class testingModel2(models.Model):
+    total = models.IntegerField(default=0)
 
 class Branch(models.Model):
     BYTIME = 'time'

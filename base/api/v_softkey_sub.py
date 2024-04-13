@@ -17,9 +17,6 @@ def testing():
     # delay for 5 seconds
     # time.sleep(5)
     output= ''
-    
-        
-
     with transaction.atomic():     
         try:
             row = testingModel.objects.select_for_update().get(id=1)
@@ -31,10 +28,24 @@ def testing():
         except Exception as e:
             Exception('Unexpected error: {}'.format(e))
             output = 'Unexpected error: {}'.format(e)
-
-        
     return output
+@transaction.atomic
+def testing2():
+    # delay for 5 seconds
+    # time.sleep(5)
+    output= ''
+    row = testingModel.objects.select_for_update().get(id=1)
+    time.sleep(5)
 
+    row.name = row.name + ' ka'
+    try:
+        row.save()
+        output = row.name
+    except Exception as e:
+        Exception('Unexpected error: {}'.format(e))
+        output = 'Unexpected error: {}'.format(e)
+
+    return output
 
 # version 8.3.0 add transaction select_for_update for prevent 'double bookings' problem
 @transaction.atomic

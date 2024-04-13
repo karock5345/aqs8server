@@ -284,6 +284,8 @@ def SoftkeyView(request, pk):
 
                 b_userttype = False
                 userttype = context_counter['data']['userttype']
+                if userttype == None :
+                    userttype = ''
                 # convert userttype to list split by comma
                 l_userttype = []
                 l_userttype = userttype.split(',')

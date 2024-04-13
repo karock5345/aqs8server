@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db import models
 from django import forms
-from .models import TicketTemp, testingModel, Branch, CounterLoginLog, CounterStatus, DisplayAndVoice,  TicketFormat
+from .models import TicketTemp, testingModel, testingModel2, Branch, CounterLoginLog, CounterStatus, DisplayAndVoice,  TicketFormat
 from .models import UserProfile, CounterType, Ticket, TicketLog, TicketRoute, TicketData, APILog, Setting, PrinterStatus, SystemLog, WebTouch, UserStatusLog
 # Register your models here.
 
@@ -10,7 +10,10 @@ from .models import UserProfile, CounterType, Ticket, TicketLog, TicketRoute, Ti
 class testingView(admin.ModelAdmin):
     model = testingModel
     list_display =('name', 'des')
-
+class testingView2(admin.ModelAdmin):
+    model = testingModel2
+    list_display =('total',)
+    
 class BranchProfileView(admin.ModelAdmin):
     list_display =(  'bcode', 'name', 'address', 'enabled', )
     ordering = ('-updated', '-created')
@@ -125,6 +128,7 @@ class UserStatusLogView(admin.ModelAdmin):
     list_display = ('user', 'status', 'starttime', 'endtime', 'ticket')
 
 admin.site.register(testingModel, testingView)
+admin.site.register(testingModel2, testingView2)
 admin.site.register(Branch, BranchProfileView)
 
 admin.site.register(UserProfile, UserProfileView)

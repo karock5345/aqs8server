@@ -28,6 +28,7 @@
         document.getElementById('id_text_tickettype').value = "";
     }
   ```
+- Bug fixed : /base/views -> line 289, in SoftkeyView : l_userttype = userttype.split(',') Error : AttributeError: 'NoneType' object has no attribute 'split' **Details : When Superuser no Branch and no TT db TicketType is None**
 
 <h3 style="color:orange;">Version 8.2.2</h3>
 
@@ -273,6 +274,7 @@ try http://127.0.0.1:8000/
 - Add Redis Image (redis:latest)
 - Run it and set the port 6379
 
+
 #### MV
 >Windows install VMware
 
@@ -303,6 +305,13 @@ sudo docker run hello-world
 Install Redis version 5
 ```bash
 sudo docker run -p 6379:6379 -d redis:5
+```
+
+Install PostgreSQL version 14 image
+```sh
+sudo docker run -p 5432:5432 -e POSTGRES_PASSWORD=asdf -d postgres:14
+# or latest version
+sudo docker run -p 5432:5432 -e POSTGRES_PASSWORD=asdf -d postgres
 ```
 
 # Production Linux server setup 
@@ -632,6 +641,8 @@ SET TIMEZONE='UTC';
 SHOW TIMEZONE;
 ALTER ROLE aqsdbuser SET timezone TO 'UTC';
 GRANT ALL PRIVILEGES ON DATABASE aqsdb8_qs123 TO aqsdbuser;
+-- For Postgresql version 16
+ALTER DATABASE aqsdb8_qs123 OWNER TO aqsdbuser;
 \q
 exit
 ```
