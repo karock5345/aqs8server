@@ -77,4 +77,6 @@ urlpatterns = [
     # for Hypic
     path('repair/', views.repair ),
 
+
+
 ]

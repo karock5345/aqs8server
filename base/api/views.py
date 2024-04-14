@@ -15,11 +15,98 @@ from .serializers import branchSerivalizer, ticketlistSerivalizer
 from .thread import MigrateDBThread, MigrateDBThreadtst
 from rest_framework import status
 from rest_framework.authtoken.models import Token
+from base.models import testingModel, testingModel2
+import threading
+from django.db import transaction
 
 token_api = 'WrE-1t7IdrU2iB3a0e'
 # if the counter keep active > 6 minutes then auto logout and the counter replace the new user
 counteractive = 1
 
+@api_view(['GET'])
+def testing3(request):
+    item = testingModel.objects.get(id=1)
+    item.name = 'testing3'
+    item.save()
+    return Response('testing3 done')
+@transaction.atomic
+def testing_consistency_p1(delay=0.002): 
+    for i in range(0, 1):
+        error = ''
+        try:
+            # with transaction.atomic():
+            item = testingModel.objects.select_for_update(nowait=True).get(id=1)
+        except:
+            print('error +1')
+            error = 'error'
+        if error == '' :
+            time.sleep(delay)
+            item.price = item.price + 1
+            item.save()
+            # print(item.price.__str__())
+
+
+    try:
+        row = testingModel2.objects.get(id=1)
+        row.total = row.total + 1
+        row.save()         
+    except:
+        print('Transaction error +1')
+    print('data_consistency +1 done')
+@transaction.atomic
+def testing_consistency_m1(delay=0.005):
+
+
+    for i in range(0, 1):
+        error = ''
+        try:
+            # with transaction.atomic():
+            item = testingModel.objects.select_for_update(nowait=True).get(id=1)
+        except:
+            print('error -1')
+            error = 'error'
+        if error == '' :
+            time.sleep(delay)
+            item.price = item.price - 1
+            item.save()
+
+    try:
+        row = testingModel2.objects.get(id=1)
+        row.total = row.total -1
+        row.save()         
+    except:
+        print('Transaction error -1')
+    print('data_consistency -1 done')
+
+@api_view(['GET'])
+def data_consistency(request):
+    threading.Thread(target=testing_consistency_m1).start()
+    threading.Thread(target=testing_consistency_p1).start()
+    return Response('Starting test consistency ...')
+
+
+def testing_no_consistency_p1(delay=0.02):
+    for i in range(0, 1000):
+        item = testingModel2.objects.get(id=1)
+        time.sleep(delay)
+        item.total = item.total + 1
+        item.save()
+        
+    print('data_no_consistency +1 done')
+
+def testing_no_consistency_m1(delay=0.05):
+    for i in range(0, 1000):
+        item = testingModel2.objects.get(id=1)
+        time.sleep(delay)
+        item.total = item.total - 1
+        item.save()
+    print('data_no_consistency -1 done')
+
+@api_view(['GET'])
+def data_no_consistency(request):
+    threading.Thread(target=testing_no_consistency_p1).start()
+    threading.Thread(target=testing_no_consistency_m1).start()
+    return Response('Starting test NO consistency ...')
 
 @api_view(['POST'])
 def postLoginAPI(request):

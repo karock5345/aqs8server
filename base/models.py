@@ -21,6 +21,7 @@ lcounterstatus = [
 class testingModel(models.Model):
     name = models.TextField(null=True, blank=True)
     des = models.TextField(null=True, blank=True)
+    price = models.IntegerField(default=0)
 class testingModel2(models.Model):
     total = models.IntegerField(default=0)
 

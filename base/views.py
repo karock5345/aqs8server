@@ -60,6 +60,7 @@ context_login = {}
 
 sort_direction = {}
 
+
 def funRegenUserFunctions(user):
     userpobj = UserProfile.objects.filter(user=user)
     for userp in userpobj:
