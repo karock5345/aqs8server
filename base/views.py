@@ -345,13 +345,13 @@ def SoftkeyView(request, pk):
                 return redirect('softkey', pk=pk)
                 # return render(request, 'base/softkey.html', context)
             elif action == 'call':
-                # status, msg, context_call = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
+                status, msg, context_call = funCounterCall_v830(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
                 
-                newname = testing()  
+
 
                 
                 status = dict({'status': 'Error'})
-                msg =  dict({'msg':newname})  
+                msg =  dict({'msg':msg})  
                 context_call = {'data': {}}
                 if status['status'] == 'Error':
                     messages.error(request, msg['msg'])

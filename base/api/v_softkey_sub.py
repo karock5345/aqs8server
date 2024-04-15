@@ -10,42 +10,7 @@ from django.db import transaction
 import time
 
 logger = logging.getLogger(__name__)
-softkey_version = '8.2.0.0'
-
-
-def testing():
-    # delay for 5 seconds
-    # time.sleep(5)
-    output= ''
-    with transaction.atomic():     
-        try:
-            row = testingModel.objects.select_for_update().get(id=1)
-            time.sleep(5)
-    
-            row.name = row.name + ' ka'
-            row.save()
-            output = row.name
-        except Exception as e:
-            Exception('Unexpected error: {}'.format(e))
-            output = 'Unexpected error: {}'.format(e)
-    return output
-@transaction.atomic
-def testing2():
-    # delay for 5 seconds
-    # time.sleep(5)
-    output= ''
-    row = testingModel.objects.select_for_update().get(id=1)
-    time.sleep(5)
-
-    row.name = row.name + ' ka'
-    try:
-        row.save()
-        output = row.name
-    except Exception as e:
-        Exception('Unexpected error: {}'.format(e))
-        output = 'Unexpected error: {}'.format(e)
-
-    return output
+softkey_version = '8.3.0.0'
 
 # version 8.3.0 add transaction select_for_update for prevent 'double bookings' problem
 @transaction.atomic
@@ -89,9 +54,14 @@ def funCounterCall_v830(user, branch, countertype, counterstatus, logtext, rx_ap
             if qp == 'user':
                 priority = 'umask'
                 mask = userp.tickettype
-        if mask == '' or priority == '' :
+        if mask == None :
+            mask = ''
+        if mask == '' :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':'Queue priority not found (qp:' + qp + ') '+ mask + '<-mask , priority->' + priority})   
+            msg =  dict({'msg':'User no ticket type selected'})
+        if priority == '' :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Queue priority not found qp->[' + qp + '] priority->[' + priority +']'})
         if mask != '' and priority == 'bmask' :
             l_mask = mask.split(',')
             new_mask=''
@@ -177,12 +147,21 @@ def funCounterCall_v830(user, branch, countertype, counterstatus, logtext, rx_ap
                         break
                 if context != dict({}):
                     break
-         
+        
         if context != dict({}) and ticket != None :
+            try:
+                # lock the ticket
+                ticket = TicketTemp.objects.select_for_update(nowait=True).get(id=ticket.id)
+                # for testing
+                time.sleep(3)
+            except Exception as e:
+                status = dict({'status': 'Error'})
+                msg =  dict({'msg':'Ticket is locked by other user'})
 
-
+        if context != dict({}) and ticket != None :
             # update ticketdata db
             td = None
+
             if status == dict({}) :
                 obj_td = TicketData.objects.filter(
                     tickettemp=ticket,

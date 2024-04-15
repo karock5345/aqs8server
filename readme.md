@@ -792,6 +792,15 @@ SIMPLE_JWT = {
 ```
 exit and save
 
+
+
+
+```bash
+python3 manage.py collectstatic
+mkdir /home/ubuntu/qs123/static_deploy/download
+# for upload new files to static_deploy/
+# python3 manage.py collectstatic --clear
+```
 If can not show files in static/
 
 Nginx operates within the directory, so if you can't cd to that directory from the nginx user 
@@ -801,19 +810,11 @@ then it will fail (as does the stat command in your log). Make sure the www-data
 cd all the way to the /username/test/static. You can confirm that the stat will fail or succeed by running
 
 >sudo -u www-data stat /home/ubuntu/qs123/static_deploy will fail
-
 ```bash
 # try this:
 sudo gpasswd -a www-data ubuntu
 sudo chmod g+x /home/ubuntu/qs123/ && chmod g+x /home/ubuntu/qs123/static_deploy
 sudo nginx -s reload
-```
-
-
-```bash
-python3 manage.py collectstatic
-# for upload new files to static_deploy/
-# python3 manage.py collectstatic --clear
 ```
 
 Try Gunicorn. The only difference is we are not doing startserver command from Django, instead Gunicorn will take care of that.
@@ -943,7 +944,7 @@ sudo gpasswd -a www-data ubuntu
 sudo chmod g+x /home/ubuntu && chmod g+x /home/ubuntu/qs123/ && chmod g+x /home/ubuntu/qs123/static_deploy
 sudo nginx -s reload
 ```
-<h3 style="color:orange;">Init the DB</h3>
+<h3 style="color:orange;">Init DB</h3>
 
 ```bash
 source env/bin/activate
