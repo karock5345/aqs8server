@@ -639,16 +639,16 @@ psql
 PostgreSQL command:
 ```sql
 CREATE DATABASE aqsdb8_qs1test830;
-CREATE USER aqsdbuser WITH PASSWORD 'dbpassword-Dlcg1dwMOXSKIAIM';
-ALTER ROLE aqsdbuser SET client_encoding TO 'utf8';
-ALTER ROLE aqsdbuser SET default_transaction_isolation TO 'read committed';
+CREATE USER aqsdbuser_qs1test830 WITH PASSWORD 'dbpassword-Dlcg1dwMOXSKIAIM';
+ALTER ROLE aqsdbuser_qs1test830 SET client_encoding TO 'utf8';
+ALTER ROLE aqsdbuser_qs1test830 SET default_transaction_isolation TO 'read committed';
 SHOW TIMEZONE;
 SET TIMEZONE='UTC';
 SHOW TIMEZONE;
-ALTER ROLE aqsdbuser SET timezone TO 'UTC';
-GRANT ALL PRIVILEGES ON DATABASE aqsdb8_qs1test830 TO aqsdbuser;
+ALTER ROLE aqsdbuser_qs1test830 SET timezone TO 'UTC';
+GRANT ALL PRIVILEGES ON DATABASE aqsdb8_qs1test830 TO aqsdbuser_qs1test830;
 -- For Postgresql version 16
-ALTER DATABASE aqsdb8_qs1test830 OWNER TO aqsdbuser;
+-- ALTER DATABASE aqsdb8_qs1test830 OWNER TO aqsdbuser;
 \q
 exit
 ```

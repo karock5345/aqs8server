@@ -15,7 +15,7 @@ from django.contrib.messages import constants as messages
 from datetime import timedelta
 from celery import Celery
 
-aqs_version = '8.x.x'
+aqs_version = '8.3.0'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open('/etc/secret_key_qs123.txt') as f:
+with open('/etc/secret_key_qs1test830.txt') as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -100,9 +100,9 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'aqsdb8_qs123',
-        'USER': 'aqsdbuser_qs123',
-        'PASSWORD': 'dbpassword-cRexldld4cHoZiN9tR37',
+        'NAME': 'aqsdb8_qs1test830',
+        'USER': 'aqsdbuser_qs1test830',
+        'PASSWORD': 'dbpassword-Dlcg1dwMOXSKIAIM',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -164,7 +164,7 @@ REST_FRAMEWORK = {
 }
 
 RECAPTCHA_PUBLIC_KEY = '6LeUoa8pAAAAAKqsmQjmqH57dQtthqpxoUFl_Q6f'
-with open('/etc/recaptcha_key_qs123.txt') as f:
+with open('/etc/recaptcha_key_qs1test830.txt') as f:
     RECAPTCHA_PRIVATE_KEY = f.read().strip()
 RECAPTCHA_REQUIRED_SCORE = 0.85
 
@@ -313,7 +313,7 @@ LOGGING = {
 
 SIMPLE_JWT = {
     # Debug mode set 120 minutes, otherwise 5 minutes    
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=120),
     # Debug mode set 30 minutes, otherwise days=1
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': False,
@@ -335,12 +335,12 @@ EMAIL_HOST = 'smtp.mail.us-east-1.awsapps.com'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'tim@tsvd.com.hk'
-with open('/etc/emailpw_qs123.txt') as f:
+with open('/etc/emailpw_qs1test830.txt') as f:
     EMAIL_HOST_PASSWORD = f.read().strip()
 
 
 # SMS settings
 SMS_ACCOUNT_NAME = 'tsvd@u3.ufosend.com'
 SMS_SENDER = 'TSVD'
-with open('/etc/sms_key_qs123.txt') as f:
+with open('/etc/sms_key_qs1test830.txt') as f:
     SMS_API_KEY = f.read().strip()
