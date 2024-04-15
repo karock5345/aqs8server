@@ -155,8 +155,9 @@ def funCounterCall_v830(user, branch, countertype, counterstatus, logtext, rx_ap
                 # for testing
                 time.sleep(3)
             except Exception as e:
+                from base.views import str_db_locked
                 status = dict({'status': 'Error'})
-                msg =  dict({'msg':'Ticket is locked by other user'})
+                msg =  dict({'msg':str_db_locked})
 
         if context != dict({}) and ticket != None :
             # update ticketdata db
@@ -363,7 +364,8 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
                     break
          
         if context != dict({}) and ticket != None :
-
+            # for testing
+            time.sleep(3)
 
             # update ticketdata db
             td = None

@@ -59,7 +59,7 @@ except:
 context_login = {}
 
 sort_direction = {}
-
+str_db_locked = 'DB_locked'
 
 def funRegenUserFunctions(user):
     userpobj = UserProfile.objects.filter(user=user)
@@ -345,10 +345,21 @@ def SoftkeyView(request, pk):
                 return redirect('softkey', pk=pk)
                 # return render(request, 'base/softkey.html', context)
             elif action == 'call':
-                status, msg, context_call = funCounterCall_v830(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
+                # old version no database lock may be cause double call
+                status, msg, context_call = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
                 
-
-
+                # new version with database lock
+                # for i in range(0, 10):
+                #     status, msg, context_call = funCounterCall_v830(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
+                #     if status['status'] == 'OK':
+                #         break
+                #     else:
+                #         error = msg['msg']
+                #         if error == str_db_locked:
+                #             logger.warning('Database is locked. Retry ' + str(i) + ' base/views.py WebSoftkey Call')
+                #             time.sleep(0.05)
+                #         else:
+                #             break
                 
                 status = dict({'status': 'Error'})
                 msg =  dict({'msg':msg})  
