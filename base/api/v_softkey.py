@@ -146,7 +146,22 @@ def postCounterGet(request):
 
 
     if status == dict({}) :
-        status, msg, context = funCounterGet('', rx_ticketype, rx_ticketnumber, user, branch, countertype, counterstatus, 'Ticket Get API : ', rx_app, rx_version, datetime_now)
+        # old version no database lock may be cause double call
+        # status, msg, context = funCounterGet('', rx_ticketype, rx_ticketnumber, user, branch, countertype, counterstatus, 'Ticket Get API : ', rx_app, rx_version, datetime_now)
+        # new version with database lock
+        for i in range(0, 10):
+            status, msg, context = funCounterGet_v830('', rx_ticketype, rx_ticketnumber, user, branch, countertype, counterstatus, 'Ticket Get API : ', rx_app, rx_version, datetime_now)
+            if status['status'] == 'OK':
+                break
+            else:
+                error = msg['msg']
+                if error == str_db_locked:
+                    logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
+                    time.sleep(0.05)
+                    # for test
+                    time.sleep(0.5)
+                else:
+                    break
 
         # websocket to web tv
         wssendwebtv(rx_bcode,countertype.name)
@@ -1206,8 +1221,25 @@ def postCounterCall(request):
 
     if status == dict({}) :
         # function call ticket
-        status, msg, context = funCounterCall(user, branch, countertype, counterstatus, 'Calling ticket API : ', rx_app, rx_version, datetime_now)
-    
+
+        # old version no database lock may be cause double call
+        # status, msg, context = funCounterCall(user, branch, countertype, counterstatus, 'Calling ticket API : ', rx_app, rx_version, datetime_now)
+        # new version with database lock
+        for i in range(0, 10):
+            status, msg, context = funCounterCall_v830(user, branch, countertype, counterstatus, 'Calling ticket API : ', rx_app, rx_version, datetime_now)
+            if status['status'] == 'OK':
+                break
+            else:
+                error = msg['msg']
+                if error == str_db_locked:
+                    logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
+                    time.sleep(0.05)
+                    # for test
+                    time.sleep(0.5)
+                else:
+                    break
+
+
     output = status | msg | context
     print (output)
     return Response(output)

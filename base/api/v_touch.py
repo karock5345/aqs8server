@@ -12,6 +12,8 @@ from base.ws import wssendwebtv, wssendql, wsSendPrintTicket, wssenddispwait
 import random
 from .v_softkey_sub import cc_autocall
 from .serializers import touchkeysSerivalizer
+from django.db import transaction
+import time
 
 def gensecuritycode():
     sc = ''
@@ -20,6 +22,181 @@ def gensecuritycode():
         sc = sc + random.choice("abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
     return sc
+
+@transaction.atomic
+def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version):
+    ticketno_str = ''
+    countertype = None
+    tickettemp = None 
+    ticket = None
+    error = ''
+
+    if error == '' :
+        # ticket format
+        ticketobj = TicketFormat.objects.filter( Q(branch=branch) & Q(ttype=ttype) )
+        if not(ticketobj.count() == 1) :
+            error =  'TicketFormat not found'
+
+    if error == '' :
+        # Lock the ticket format nowait=False
+        try:
+            ticketformat = TicketFormat.objects.select_for_update().get(id=ticketobj[0].id)
+            # for test
+            time.sleep(3)
+        except Exception as e:
+            error = e.__str__()
+    
+    if error == '' :
+        if ticketformat.enabled == False :
+            error = 'Ticket disabled'
+
+    if error == '' :
+        # check ticket time
+        time_now = datetime_now.time()
+
+        btickettime = False    
+   
+        if branch.tickettimestart < branch.tickettimeend :
+            if (branch.tickettimestart <= time_now) & (time_now <= branch.tickettimeend) :
+                btickettime = True
+        else :
+            if not((branch.tickettimeend <= time_now) & (time_now <= branch.tickettimestart)) :
+                btickettime = True                        
+        if btickettime == False :  
+            error = 'Out of ticket time range'
+
+    if error == '' :         
+        # find out the countertype 
+        routeobj = TicketRoute.objects.filter(branch=branch, step=1, tickettype=ttype)                        
+        if routeobj.count() != 1 :
+            error = 'Ticket route not found'
+        else:
+            route = routeobj[0]             
+
+    if error == '' :
+
+        # create ticket - get next ticket number
+        if branch.ticketrepeatnumber == True :
+            ticketno = ticketformat.ticketnext
+            ticketformat.ticketnext = ticketformat.ticketnext + 1
+            if ticketformat.ticketnext > branch.ticketmax :
+                ticketformat.ticketnext = 1
+            ticketformat.save()
+        else:
+            ticketno = branch.ticketnext
+            branch.ticketnext = branch.ticketnext + 1
+            if branch.ticketnext > branch.ticketmax :
+                branch.ticketnext = 1
+            branch.save()
+        ticketnoformat = branch.ticketnoformat
+        ticketno_str = str(ticketno)
+        ticketno_str = ticketno_str.zfill(len(ticketnoformat))
+        sc = gensecuritycode()
+
+        # for myTicket old school
+        # base_url = reverse('myticket')
+        # query_string =  urlencode({
+        #                             'tt':ttype, 
+        #                             'no':ticketno_str, 
+        #                             'bc':branch.bcode, 
+        #                             'sc':sc,
+        #                             }) 
+        # url = '{}?{}'.format(base_url, query_string)  # 3 ip/my/?tt=A&no=003&bc=KB&sc=vVL
+
+        url = '/my/' + branch.bcode + '/' + ttype +'/' + ticketno_str + '/' + sc + '/'
+        # myticketlink =  ('{0}://{1}'.format(request.scheme, request.get_host()) +   url)
+        myticketlink = url
+        
+        # ticket text
+        tickettext = ticketformat.tformat
+        tickettext = tickettext.replace('<TICKET>','<TEXT>'+ ttype+ticketno_str)                        
+        localtime = funUTCtoLocal(datetime_now, branch.timezone)
+        localtime_str = localtime.strftime('%H:%M:%S %d-%m-%Y')
+        tickettext = tickettext.replace('<DATETIME>', '<TEXT>' + localtime_str)
+        tickettext = tickettext.replace('<MYTICKET>', myticketlink)
+
+        countertype = route.countertype
+        # waiting on queue +1
+        route.waiting = route.waiting + 1
+        route.save()
+        
+        # -if user is not None:
+        # -    return Response(user.username) 
+        # add DB -> Ticket, TicketLog, TicketData
+        # data : tickettext, datetime_now, ttype, ticketno_str
+        ticket = Ticket.objects.create(
+            tickettype=ttype, 
+            ticketnumber=ticketno_str, 
+            branch=branch, 
+            step=1,
+            countertype=countertype,
+            ticketroute=route,
+            ticketformat=ticketformat,
+            status=lcounterstatus[0] ,
+            tickettime=datetime_now, 
+            tickettext=tickettext,
+            printernumber=pno ,
+            printedtimes = 0 ,
+            user=user,
+            createdby=user,
+            remark=remark,
+        )
+       
+        tickettemp = TicketTemp.objects.create(
+            tickettype=ttype, 
+            ticketnumber=ticketno_str, 
+            branch=branch, 
+            step=1,
+            countertype=countertype,
+            ticketroute=route,
+            ticketformat=ticketformat,
+            status=lcounterstatus[0] ,
+            tickettime=datetime_now, 
+            tickettext=tickettext,
+            printernumber=pno ,
+            printedtimes = 0 ,
+            user=user,
+            createdby=user,
+            remark=remark,
+            ticket=ticket,
+            securitycode=sc,
+            myticketlink=myticketlink,
+        )
+
+        TicketData.objects.create(
+            tickettemp=tickettemp,
+            branch = branch,
+            countertype=countertype,
+            step=ticket.step,
+            starttime = datetime_now,
+            startuser=user,
+        )
+        TicketLog.objects.create(
+                ticket=ticket,
+                tickettemp=tickettemp,
+                logtime=datetime_now,
+                app = app,
+                version = version,
+                logtext='TicketKey API ticket created : '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pno ,
+                user=user,
+            )
+
+        wssendwebtv(branch.bcode, countertype.name)
+        # websocket to display panel for waiting ticket
+        wssenddispwait(branch, countertype, ticket)
+        wssendql(branch.bcode, countertype.name,tickettemp,'add')
+        wsSendPrintTicket(branch.bcode, ttype, ticketno_str, datetime_now, tickettext, pno)
+        
+        # for Roche send SMS to staff when new ticket issued
+        # rocheSMS(branch, tickettemp)
+
+        # call centre mode auto send ticket to counter
+        if countertype.countermode == 'cc':
+            cc_autocall(countertype,  app, version, datetime_now)
+
+    return ticketno_str, countertype, tickettemp, ticket, error
+
+
 
 def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
     ticketno_str = ''
@@ -277,9 +454,10 @@ def postTicket(request):
     #         msg =  dict({'msg':loginreply})   
          
     if status == dict({}) :
-        
-        ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, ttype, pno, remark, datetime_now, user, app, version)
-
+        # old version no database lock may be cause double ticket number
+        # ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, ttype, pno, remark, datetime_now, user, app, version)
+        # new version with database lock
+        ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version)
         if error == '' :
             TicketLog.objects.create(
                 ticket=ticket,

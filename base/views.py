@@ -26,7 +26,7 @@ from .api.serializers import displaylistSerivalizer, waitinglistSerivalizer
 from django.utils import timezone
 # from .api.v_softkey import funVoid
 from .api.v_softkey_sub import *
-from .api.v_touch import newticket
+from .api.v_touch import newticket, newticket_v830
 from base.ws import wsHypertext, wscounterstatus, wssendflashlight
 
 
@@ -189,7 +189,22 @@ def Softkey_GetView(request, pk, ttid):
     
     # no need to confirm
     if error == '':
-        status, msg, context_get = funCounterGet('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list', 'Softkey-web', softkey_version, datetime_now)
+        # old version no database lock may be cause double call
+        # status, msg, context_get = funCounterGet('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list', 'Softkey-web', softkey_version, datetime_now)
+        # new version with database lock
+        for i in range(0, 10):
+            status, msg, context_get = funCounterGet_v830('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list', 'Softkey-web', softkey_version, datetime_now)
+            if status['status'] == 'OK':
+                break
+            else:
+                error = msg['msg']
+                if error == str_db_locked:
+                    logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
+                    time.sleep(0.05)
+                    # for test
+                    time.sleep(0.5)
+                else:
+                    break        
         if status['status'] == 'Error':
             error = msg['msg'] + ' ' + tt.tickettype + tt.ticketnumber
     # # no need to confirm
@@ -335,7 +350,22 @@ def SoftkeyView(request, pk):
                 getticket = getform['ticketnumber'].value()
                 
                 if error == '':
-                    status, msg, context_get = funCounterGet(getticket, '', '', request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket ', 'Softkey-web', softkey_version, datetime_now)
+                    # old version no database lock may be cause double call
+                    # status, msg, context_get = funCounterGet(getticket, '', '', request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket ', 'Softkey-web', softkey_version, datetime_now)
+                    # new version with database lock
+                    for i in range(0, 10):
+                        status, msg, context_get = funCounterGet_v830(getticket, '', '', request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket ', 'Softkey-web', softkey_version, datetime_now)
+                        if status['status'] == 'OK':
+                            break
+                        else:
+                            error = msg['msg']
+                            if error == str_db_locked:
+                                logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
+                                time.sleep(0.05)
+                                # for test
+                                time.sleep(0.5)
+                            else:
+                                break
                     if status['status'] == 'Error':
                         messages.error(request, msg['msg'] + ' ' + getticket)
                     context = context | context_counter | {'pk':pk} | context_get
@@ -346,24 +376,22 @@ def SoftkeyView(request, pk):
                 # return render(request, 'base/softkey.html', context)
             elif action == 'call':
                 # old version no database lock may be cause double call
-                status, msg, context_call = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
-                
+                # status, msg, context_call = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)                
                 # new version with database lock
-                # for i in range(0, 10):
-                #     status, msg, context_call = funCounterCall_v830(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
-                #     if status['status'] == 'OK':
-                #         break
-                #     else:
-                #         error = msg['msg']
-                #         if error == str_db_locked:
-                #             logger.warning('Database is locked. Retry ' + str(i) + ' base/views.py WebSoftkey Call')
-                #             time.sleep(0.05)
-                #         else:
-                #             break
+                for i in range(0, 10):
+                    status, msg, context_call = funCounterCall_v830(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
+                    if status['status'] == 'OK':
+                        break
+                    else:
+                        error = msg['msg']
+                        if error == str_db_locked:
+                            logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
+                            time.sleep(0.05)
+                            # for test
+                            time.sleep(0.5)
+                        else:
+                            break
                 
-                status = dict({'status': 'Error'})
-                msg =  dict({'msg':msg})  
-                context_call = {'data': {}}
                 if status['status'] == 'Error':
                     messages.error(request, msg['msg'])
                 if status['status'] == 'OK' and context_call == {'data': {}} :
@@ -643,7 +671,23 @@ def SoftkeyCallView(request, pk):
         error = 'CounterStatus not found.'
 
     if error == '':
-        status, msg, context = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket:', 'Softkey-web', softkey_version, datetime_now)
+        # old version no database lock may be cause double call
+        # status, msg, context = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket:', 'Softkey-web', softkey_version, datetime_now)        
+        # new version with database lock
+        for i in range(0, 10):
+            status, msg, context = funCounterCall_v830(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket:', 'Softkey-web', softkey_version, datetime_now)
+            if status['status'] == 'OK':
+                break
+            else:
+                error = msg['msg']
+                if error == str_db_locked:
+                    logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
+                    time.sleep(0.05)
+                    # for test
+                    time.sleep(0.5)
+                else:
+                    break        
+        
         if status['status'] == 'Error':
             error = msg['msg']
 
@@ -1046,8 +1090,11 @@ def webtouchView(request):
             
             for key in touchkeylist:
                 if key.ttype in request.POST:
-      
-                    ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, key.ttype, '','', datetime_now, userweb, 'web', '8')
+                    # old version no database lock may be cause double ticket number
+                    # ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, key.ttype, '','', datetime_now, userweb, 'web', '8')
+                    # new version with database lock
+                    ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(branch, key.ttype, '','', datetime_now, userweb, 'web', '8.3.0')
+                    
                     if error == '' :
                         s_now= ''
                         try:
