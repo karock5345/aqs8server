@@ -59,7 +59,7 @@ except:
 context_login = {}
 
 sort_direction = {}
-str_db_locked = 'DB_locked'
+
 
 def funRegenUserFunctions(user):
     userpobj = UserProfile.objects.filter(user=user)
@@ -198,6 +198,7 @@ def Softkey_GetView(request, pk, ttid):
                 break
             else:
                 error = msg['msg']
+                from base.a_global import str_db_locked
                 if error == str_db_locked:
                     logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
                     time.sleep(0.05)
@@ -359,6 +360,7 @@ def SoftkeyView(request, pk):
                             break
                         else:
                             error = msg['msg']
+                            from base.a_global import str_db_locked
                             if error == str_db_locked:
                                 logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
                                 time.sleep(0.05)
@@ -384,6 +386,7 @@ def SoftkeyView(request, pk):
                         break
                     else:
                         error = msg['msg']
+                        from base.a_global import str_db_locked
                         if error == str_db_locked:
                             logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
                             time.sleep(0.05)
@@ -680,6 +683,7 @@ def SoftkeyCallView(request, pk):
                 break
             else:
                 error = msg['msg']
+                from base.a_global import str_db_locked
                 if error == str_db_locked:
                     logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
                     time.sleep(0.05)

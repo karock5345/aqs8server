@@ -8,7 +8,7 @@ from base.ws import *
 import logging
 from django.db import transaction
 import time
-from base.views import str_db_locked
+
 
 logger = logging.getLogger(__name__)
 softkey_version = '8.3.0.0'
@@ -156,7 +156,7 @@ def funCounterCall_v830(user, branch, countertype, counterstatus, logtext, rx_ap
                 # for testing
                 time.sleep(3)
             except Exception as e:
-                from base.views import str_db_locked
+                from base.a_global import str_db_locked
                 status = dict({'status': 'Error'})
                 msg =  dict({'msg':str_db_locked})
     if status == dict({}) :
@@ -835,7 +835,7 @@ def funCounterGet_v830(getticket, getttype, gettnumber, user, branch, countertyp
             # for testing
             time.sleep(3)
         except Exception as e:
-            from base.views import str_db_locked
+            from base.a_global import str_db_locked
             status = dict({'status': 'Error'})
             msg =  dict({'msg':str_db_locked})
         
@@ -1416,6 +1416,7 @@ def cc_ready(user, branch, countertype, counterstatus, logtext, rx_app, rx_versi
             break
         else:
             error = msg['msg']
+            from base.a_global import str_db_locked
             if error == str_db_locked:
                 logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
                 time.sleep(0.05)

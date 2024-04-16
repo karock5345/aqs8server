@@ -155,6 +155,7 @@ def postCounterGet(request):
                 break
             else:
                 error = msg['msg']
+                from base.a_global import str_db_locked
                 if error == str_db_locked:
                     logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
                     time.sleep(0.05)
@@ -1231,6 +1232,7 @@ def postCounterCall(request):
                 break
             else:
                 error = msg['msg']
+                from base.a_global import str_db_locked
                 if error == str_db_locked:
                     logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
                     time.sleep(0.05)

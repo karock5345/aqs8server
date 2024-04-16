@@ -1,0 +1,1 @@
+str_db_locked = 'DB_locked'
