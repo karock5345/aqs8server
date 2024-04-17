@@ -36,9 +36,10 @@ urlpatterns = [
 
     path('loginapi/', views.postLoginAPI),
 
-    path('test/', views.data_no_consistency),
-    path('test2/', views.data_consistency),
-    path('test3/', views.testing3),
+    # path('test/', views.data_no_consistency),
+    # path('test2/', views.data_consistency),
+    # path('test3/', views.testing3),
+    
     # path('db_tst/', views.getDBtst),
     # path('db2/', views.getDB2),
     # path('applogin/', v_roche.postRocheLogin),

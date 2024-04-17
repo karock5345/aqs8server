@@ -42,7 +42,7 @@ def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version)
         try:
             ticketformat = TicketFormat.objects.select_for_update().get(id=ticketobj[0].id)
             # for test
-            time.sleep(3)
+            # time.sleep(3)
         except Exception as e:
             error = e.__str__()
     

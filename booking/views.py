@@ -29,6 +29,7 @@ import phonenumbers.timezone
 import re
 from aqs.tasks import sendemail
 from django.template.loader import render_to_string
+from django.db import transaction
 
 logger = logging.getLogger(__name__)
 
@@ -262,11 +263,22 @@ def BookingSummaryView(request):
                } | context 
     return render(request, 'booking/booking.html', context)
 
-
+# version 8.3.0 add transaction select_for_update for prevent 'double bookings' problem
+@transaction.atomic
 def chainBookNow(timeslot, name, phone_number:phonenumbers, email, user, member):
     # check slot
     error = ''
     error_TC = ''
+
+    if error == '':
+        # Lock the timeslot nowait=False
+        try:
+            timeslot = TimeSlot.objects.select_for_update().get(id=timeslot.id)
+        except Exception as e:
+            error = e.__str__()
+            error_TC = e.__str__()
+       
+
     if error == '':
         if timeslot.slot_available <= 0:
             error = 'No slot available'

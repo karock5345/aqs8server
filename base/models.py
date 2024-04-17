@@ -271,7 +271,8 @@ class TicketFormat(models.Model):
 <CUT>'''
 
     enabled = models.BooleanField(default=True) 
-    ttype = models.CharField(max_length=10, null=False, blank=False) 
+    ttype = models.CharField(max_length=10, null=False, blank=False)
+    from_booking = models.BooleanField(default=False)
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
     
     # description1 = models.TextField()
@@ -341,7 +342,7 @@ class TicketRoute(models.Model):
         unique_together = ('branch', 'tickettype', 'step')
  
 class Ticket(models.Model):
-    tickettype = models.CharField(max_length=200)
+    tickettype = models.CharField(max_length=200)    
     ticketnumber = models.CharField(max_length=200)
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
     step = models.IntegerField(default=1)
@@ -360,11 +361,19 @@ class Ticket(models.Model):
     printernumber = models.TextField(default='', blank=True, null=True)  # format printer 1 and 2 print: <NO>1</NO><NO>2</NO> 
     printedtimes = models.IntegerField(default=0)
 
+
+    
     user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
 
     remark = models.TextField(default='', blank=True, null=True)
 
     createdby = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, default=None, related_name='createdby')
+
+    booking_tickettype = models.CharField(max_length=200, null=True, blank=True, default='')
+    booking_time = models.DateTimeField(null=True, blank=True)
+    booking_arrival = models.DateTimeField(null=True, blank=True)
+    booking_name = models.CharField(max_length=200, null=True, blank=True, default='')
+    booking_score = models.IntegerField(default=0)
 
     def __str__(self):
         return self.tickettype + self.ticketnumber

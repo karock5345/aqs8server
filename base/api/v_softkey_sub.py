@@ -154,7 +154,7 @@ def funCounterCall_v830(user, branch, countertype, counterstatus, logtext, rx_ap
                 # lock the ticket
                 ticket = TicketTemp.objects.select_for_update(nowait=True).get(id=ticket.id)
                 # for testing
-                time.sleep(3)
+                # time.sleep(3)
             except Exception as e:
                 from base.a_global import str_db_locked
                 status = dict({'status': 'Error'})
@@ -833,7 +833,7 @@ def funCounterGet_v830(getticket, getttype, gettnumber, user, branch, countertyp
         try:
             ticket = TicketTemp.objects.select_for_update(nowait=True).get(id=ticket.id)
             # for testing
-            time.sleep(3)
+            # time.sleep(3)
         except Exception as e:
             from base.a_global import str_db_locked
             status = dict({'status': 'Error'})
