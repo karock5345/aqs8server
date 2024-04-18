@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from base.models import Branch, Ticket, TicketTemp
+from base.models import Branch
 from crm.models import Member
 from datetime import timedelta
 from django.utils.html import format_html, escape

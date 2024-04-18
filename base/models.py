@@ -194,11 +194,16 @@ class Branch(models.Model):
 
     # Booking to queue settings
     bookingToQueueEnabled = models.BooleanField(default=True, verbose_name='Booking to Queue enabled')
-    # On time range, e.g. =10 means +-10 minutes of booking time is on time, booking_tickettype = 'A'
-    bookingToQueueOnTimeRange = models.IntegerField(default=10, verbose_name='Booking to Queue on time range')
-    # Late unit, e.g. =5 means 5 minute late is going to booking_tickettype = 'B'
-    # late 10 minutes is going to booking_tickettype = 'C'  ...
-    bookingToQueueLateUnit = models.IntegerField(default=5, verbose_name='Booking to Queue late unit')
+    # On time range, e.g. =10 means late within 10 minutes of booking time is on time, booking_tickettype = 'A'
+    bookingToQueueOnTimeRangeLate = models.IntegerField(default=10, verbose_name='Booking to Queue on time range late (1 to 15 minutes)')
+    # On time range, e.g. =-15 means early within 15 minutes of booking time is on time, booking_tickettype = 'A'
+    # Arrival time = Ticket Time (6:20) - Booking Time (06:30) = -10 minutes, so   10 (RangeLate) >= -10 >= -15 (RangeEarly)  => on time
+    bookingToQueueOnTimeRangeEarly = models.IntegerField(default=-15, verbose_name='Booking to Queue on time range early (-1 to -30 minutes)')
+    # Late unit, e.g. =5 means 10+1(11) to 10+5(15) minute late is going to booking_tickettype = 'B'
+    # late 10+5+1(16) to 10+5+5(20) is going to booking_tickettype = 'C'  ...
+    # Early case, e.g. early -15-1(-16) to -15-5(-20) is going to booking_tickettype = 'B'
+    # Early case, e.g. early -15-5-1(-21) to -15-5-5(-25) is going to booking_tickettype = 'C'
+    bookingToQueueLateUnit = models.IntegerField(default=5, verbose_name='Booking to Queue late unit (1 to 15 minutes)')
 
     # branch status
     updated = models.DateTimeField(auto_now=True)
@@ -219,7 +224,12 @@ class Branch(models.Model):
     def __str__(self):
         return self.bcode
     
-
+class BookingTicket(models.Model):
+    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    booking_tickettype = models.CharField(max_length=200)
+    next_ticketnumber = models.IntegerField(default=1)
+    def __str__(self):
+        return self.branch.bcode + '-' + self.booking_tickettype
 
 class UserProfile(models.Model):  
     BYBRANCH = 'branch'    
@@ -380,9 +390,12 @@ class Ticket(models.Model):
     booking_tickettype = models.CharField(max_length=200, null=True, blank=True, default='')
     booking_ticketnumber = models.CharField(max_length=200, null=True, blank=True, default='')
     booking_time = models.DateTimeField(null=True, blank=True)
-    booking_arrival = models.DateTimeField(null=True, blank=True)
+    # arrival time is ticket time
+    # booking_arrival = models.DateTimeField(null=True, blank=True) 
     booking_name = models.CharField(max_length=200, null=True, blank=True, default='')
+    # booking_score = Arrival time Ticket Time (6:20) - Booking Time (06:30) = -10 minutes (is early)
     booking_score = models.IntegerField(default=0)
+    booking_id = models.IntegerField(null=True, blank=True, default=models.SET_NULL)
 
     def __str__(self):
         return self.tickettype + self.ticketnumber
@@ -417,6 +430,16 @@ class TicketTemp(models.Model):
     
     createdby = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, default=None, related_name='createdbytemp')
     
+    booking_tickettype = models.CharField(max_length=200, null=True, blank=True, default='')
+    booking_ticketnumber = models.CharField(max_length=200, null=True, blank=True, default='')
+    booking_time = models.DateTimeField(null=True, blank=True)
+    # arrival time is ticket time
+    # booking_arrival = models.DateTimeField(null=True, blank=True) 
+    booking_name = models.CharField(max_length=200, null=True, blank=True, default='')
+    # booking_score = Arrival time Ticket Time (6:20) - Booking Time (06:30) = -10 minutes (is early)
+    booking_score = models.IntegerField(default=0)
+    booking_id = models.IntegerField(null=True, blank=True, default=models.SET_NULL)
+
     ticket = models.ForeignKey(Ticket, on_delete=models.SET_NULL, blank=True, null=True)
     def __str__(self):
         return self.tickettype + self.ticketnumber
