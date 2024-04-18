@@ -192,6 +192,14 @@ class Branch(models.Model):
                                                 help_text='[[ADDR]] is branch address, [[NAME]] is customer name, [[DATE]] is booking start date, [[TIME]] is booking start time, [[WEEK]] is week, [[PHONE]] is customer phone, [[EMAIL]] is customer email, [[BNAME]] is branch name, [[BCODE]] is branch code, [[USER]] is user first name.',
                                                 )    
 
+    # Booking to queue settings
+    bookingToQueueEnabled = models.BooleanField(default=True, verbose_name='Booking to Queue enabled')
+    # On time range, e.g. =10 means +-10 minutes of booking time is on time, booking_tickettype = 'A'
+    bookingToQueueOnTimeRange = models.IntegerField(default=10, verbose_name='Booking to Queue on time range')
+    # Late unit, e.g. =5 means 5 minute late is going to booking_tickettype = 'B'
+    # late 10 minutes is going to booking_tickettype = 'C'  ...
+    bookingToQueueLateUnit = models.IntegerField(default=5, verbose_name='Booking to Queue late unit')
+
     # branch status
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
@@ -370,6 +378,7 @@ class Ticket(models.Model):
     createdby = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, default=None, related_name='createdby')
 
     booking_tickettype = models.CharField(max_length=200, null=True, blank=True, default='')
+    booking_ticketnumber = models.CharField(max_length=200, null=True, blank=True, default='')
     booking_time = models.DateTimeField(null=True, blank=True)
     booking_arrival = models.DateTimeField(null=True, blank=True)
     booking_name = models.CharField(max_length=200, null=True, blank=True, default='')
