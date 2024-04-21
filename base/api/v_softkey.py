@@ -8,7 +8,7 @@ from .views import setting_APIlogEnabled, visitor_ip_address, loginapi_notoken, 
 from .v_display import newdisplayvoice
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
 from .serializers import waitinglistSerivalizer
-from base.ws import wssendwebtv, wssendql, wsSendTicketStatus, wssendvoice
+from base.ws import wssendwebtv
 from .v_softkey_sub import *
 
 @api_view(['POST'])

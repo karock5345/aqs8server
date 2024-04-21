@@ -288,6 +288,98 @@ def wsrochesms(bcode, tel, msg):
         logger.error(error_e)
 
 
+# For Voice version 8.3.0
+# /ws/voice830/BCode/Countertype/
+# Channel Group Name: voice830_BCode_Countertype
+# {
+# 	"lang":"[ENG]",
+# 	"voice":"[A],[0],[0],[5],[C3]"
+# }
+def wssendvoice830(bcode, countertypename, ttype, tno, cno):
+    context = None
+    error = ''
+
+    branch = None
+    if error == '' :        
+        branchobj = Branch.objects.filter( Q(bcode=bcode) )
+        if branchobj.count() == 1:
+            branch = branchobj[0]
+        else :
+            error = 'Branch not found.'
+    if error == '' :
+        if branch.voiceenabled == False :
+            error = 'Voice is not enabled.'
+            
+    # get the Counter type
+    countertype = None
+    if error == '' :    
+        if countertypename == '' :
+            ctypeobj = CounterType.objects.filter( Q(branch=branch) )
+        else:
+            ctypeobj = CounterType.objects.filter( Q(branch=branch) & Q(name=countertypename) )
+        if (ctypeobj.count() > 0) :
+            countertype = ctypeobj[0]
+        else :
+            error = 'Counter Type not found.' 
+
+
+    
+
+
+    if error == '' : 
+        lang_list = []
+        for i in range(1,100):
+            if branch.language1 == i:
+                lang_list.append('[ENG]')
+            if branch.language2 == i:
+                lang_list.append('[CAN]')
+            if branch.language3 == i:
+                lang_list.append('[MAN]')
+            if branch.language4 == i:
+                lang_list.append('[POR]')
+        print('lang_list:', lang_list)
+
+        # voice string
+        voice_str = ''
+        voice_oh_str = ''
+        for c in tno:
+            voice_str += '[' + c + '],'        
+        voice_oh_str = voice_str.replace('[0]', '[O]')                
+        # type sould be uppercase
+        voice_str = '[' + ttype.upper() + '],' + voice_str + '[C' + str(cno) + ']' 
+        voice_oh_str = '[' + ttype.upper() + '],' + voice_oh_str + '[C' + str(cno) + ']' 
+
+        for lang in lang_list:
+            json_tx = {'lang': lang,
+                'voice': voice_str,
+            }
+            if branch.O_Replace_Zero == True and lang == '[ENG]':
+                json_tx = {'lang': lang,
+                    'voice': voice_oh_str,
+                }
+            str_tx = json.dumps(json_tx)
+
+            context = {
+            'type':'broadcast_message',
+            'tx': str_tx,
+            }
+            
+            channel_layer = get_channel_layer()
+            channel_group_name = 'voice830_' + bcode + '_' + countertypename
+            logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+            try:
+                async_to_sync (channel_layer.group_send)(channel_group_name, context)
+                logger.info('...Done')
+            except Exception as e:
+                # error_e = 'WS send voice Error:' + str(e)
+                logger.error('...ERROR:Redis Server is down!')
+    if error != '':
+        error_e = 'WS send voice830 Error:' + error
+        logger.error(error_e)
+
+
+
+
 def wssendvoice(bcode, countertypename, ttype, tno, cno):
     # {"cmd":"voice",
     #  "data":

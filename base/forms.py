@@ -112,6 +112,7 @@ class BranchSettingsForm_Admin(ModelForm):
         self.fields['displayflashtime'] = forms.fields.IntegerField(label='Display flash time (0-50)', help_text=self.fields['displayflashtime'].help_text)
         self.fields['voiceenabled'] = forms.fields.BooleanField(label='Enable Voice announcement', required=False, help_text=self.fields['voiceenabled'].help_text)
         self.fields['language1'] = forms.fields.CharField(label='First Language (0-4), 0 is not used', help_text=self.fields['language1'].help_text)
+        self.fields['O_Replace_Zero'] = forms.fields.BooleanField(label='Replace to OH from Zero in ticket number', required=False, help_text=self.fields['O_Replace_Zero'].help_text)
         self.fields['language2'] = forms.fields.CharField(label='Second Language (0-4), 0 is not used', help_text=self.fields['language2'].help_text)
         self.fields['language3'] = forms.fields.CharField(label='3rd Language (0-4), 0 is not used', help_text=self.fields['language3'].help_text)
         self.fields['language4'] = forms.fields.CharField(label='4th Language (0-4), 0 is not used', help_text=self.fields['language4'].help_text)
@@ -140,7 +141,7 @@ class BranchSettingsForm_Admin(ModelForm):
                   'queueenabled',
                   'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
                   'displayenabled', 'displayflashtime', 
-                  'voiceenabled', 'language1', 'language2', 'language3', 'language4', 
+                  'voiceenabled', 'language1', 'O_Replace_Zero', 'language2', 'language3', 'language4', 
                   'usersinglelogin', 'websoftkey_show_waitinglist', 
                   'SMSenabled', 'SMSmsg', 'SMSQuota', 'SMSUsed', 'SMSResetDay',
                   'bookingenabled', 'bookingPage1ScrollingText', 'bookingPage1Text', 'bookingPage2ScrollingText', 'bookingPage2Text', 'bookingPage3Text',
@@ -176,6 +177,7 @@ class BranchSettingsForm_Adv(ModelForm):
 
     voiceenabled = forms.fields.BooleanField(label='Enable Voice announcement', required=False)
     language1 = forms.fields.CharField(label='First Language (0-4), 0 is not used')
+    O_Replace_Zero = forms.fields.BooleanField(label='Replace to OH from Zero in ticket number', required=False)
     language2 = forms.fields.CharField(label='Second Language (0-4), 0 is not used')
     language3 = forms.fields.CharField(label='3rd Language (0-4), 0 is not used')
     language4 = forms.fields.CharField(label='4th Language (0-4), 0 is not used')
@@ -198,7 +200,7 @@ class BranchSettingsForm_Adv(ModelForm):
                   'timezone', 'officehourstart', 'officehourend', 'tickettimestart', 'tickettimeend', 
                   'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
                   'displayenabled', 'displayflashtime', 
-                  'voiceenabled', 'language1', 'language2', 'language3', 'language4', 
+                  'voiceenabled', 'language1', 'O_Replace_Zero', 'language2', 'language3', 'language4', 
                   'usersinglelogin', 'websoftkey_show_waitinglist']
     def __init__(self, *args, **kwargs):
         super(BranchSettingsForm_Adv, self).__init__(*args, **kwargs)

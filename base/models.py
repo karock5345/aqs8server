@@ -73,10 +73,11 @@ class Branch(models.Model):
 
     # voice settings
     voiceenabled  = models.BooleanField(default=True) 
-    language1 = models.IntegerField(default=1)
-    language2 = models.IntegerField(default=0)
-    language3 = models.IntegerField(default=0)
-    language4 = models.IntegerField(default=0)
+    language1 = models.IntegerField(default=1, help_text='English')
+    O_Replace_Zero = models.BooleanField(default=True, help_text='Replace voice to [Oh] from [Zero]')
+    language2 = models.IntegerField(default=0, help_text='Cantonese')
+    language3 = models.IntegerField(default=0, help_text='Manadrin')
+    language4 = models.IntegerField(default=0, help_text='Portuguese')
 
     usersinglelogin = models.BooleanField(default=False)
     webtvcsslink = models.TextField(default='styles/styletv.css')
@@ -389,13 +390,13 @@ class Ticket(models.Model):
 
     booking_tickettype = models.CharField(max_length=200, null=True, blank=True, default='')
     booking_ticketnumber = models.CharField(max_length=200, null=True, blank=True, default='')
-    booking_time = models.DateTimeField(null=True, blank=True)
+    booking_time = models.DateTimeField(null=True, blank=True, default=None)
     # arrival time is ticket time
     # booking_arrival = models.DateTimeField(null=True, blank=True) 
     booking_name = models.CharField(max_length=200, null=True, blank=True, default='')
     # booking_score = Arrival time Ticket Time (6:20) - Booking Time (06:30) = -10 minutes (is early)
     booking_score = models.IntegerField(default=0)
-    booking_id = models.IntegerField(null=True, blank=True, default=models.SET_NULL)
+    booking_id = models.IntegerField(null=True, blank=True, default=None)
 
     def __str__(self):
         return self.tickettype + self.ticketnumber
@@ -432,13 +433,13 @@ class TicketTemp(models.Model):
     
     booking_tickettype = models.CharField(max_length=200, null=True, blank=True, default='')
     booking_ticketnumber = models.CharField(max_length=200, null=True, blank=True, default='')
-    booking_time = models.DateTimeField(null=True, blank=True)
+    booking_time = models.DateTimeField(null=True, blank=True, default=None)
     # arrival time is ticket time
     # booking_arrival = models.DateTimeField(null=True, blank=True) 
     booking_name = models.CharField(max_length=200, null=True, blank=True, default='')
     # booking_score = Arrival time Ticket Time (6:20) - Booking Time (06:30) = -10 minutes (is early)
     booking_score = models.IntegerField(default=0)
-    booking_id = models.IntegerField(null=True, blank=True, default=models.SET_NULL)
+    booking_id = models.IntegerField(null=True, blank=True, default=None)
 
     ticket = models.ForeignKey(Ticket, on_delete=models.SET_NULL, blank=True, null=True)
     def __str__(self):
