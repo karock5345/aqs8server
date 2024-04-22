@@ -295,7 +295,7 @@ def wsrochesms(bcode, tel, msg):
 # 	"lang":"[ENG]",
 # 	"voice":"[A],[0],[0],[5],[C3]"
 # }
-def wssendvoice830(bcode, countertypename, ttype, tno, cno):
+def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
     context = None
     error = ''
 
@@ -322,9 +322,11 @@ def wssendvoice830(bcode, countertypename, ttype, tno, cno):
         else :
             error = 'Counter Type not found.' 
 
-
-    
-
+    counterstatus = None
+    if error == '' :
+        counterstatus = CounterStatus.objects.get(id=counterstatus_id)
+        if counterstatus is None:
+            error = 'Counter Status not found.'
 
     if error == '' : 
         lang_list = []
@@ -337,7 +339,7 @@ def wssendvoice830(bcode, countertypename, ttype, tno, cno):
                 lang_list.append('[MAN]')
             if branch.language4 == i:
                 lang_list.append('[POR]')
-        print('lang_list:', lang_list)
+        # print('lang_list:', lang_list)
 
         # voice string
         voice_str = ''
@@ -346,8 +348,11 @@ def wssendvoice830(bcode, countertypename, ttype, tno, cno):
             voice_str += '[' + c + '],'        
         voice_oh_str = voice_str.replace('[0]', '[O]')                
         # type sould be uppercase
-        voice_str = '[' + ttype.upper() + '],' + voice_str + '[C' + str(cno) + ']' 
-        voice_oh_str = '[' + ttype.upper() + '],' + voice_oh_str + '[C' + str(cno) + ']' 
+        counter_voice =counterstatus.voice
+        if counter_voice == None:
+            counter_voice = ''
+        voice_str = '[' + ttype.upper() + '],' + voice_str + counter_voice
+        voice_oh_str = '[' + ttype.upper() + '],' + voice_oh_str + counter_voice
 
         for lang in lang_list:
             json_tx = {'lang': lang,

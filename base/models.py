@@ -514,9 +514,10 @@ class Setting(models.Model):
 class CounterStatus(models.Model):
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True) 
     counternumber = models.CharField(max_length=200, null=True)
+    voice = models.CharField(max_length=50, null=True, blank=True, default='[SC]', help_text='[SC] = Service Counter, [C1] = Counter one, [CASHIER] = Cashier, Blank = No voice')
     enabled = models.BooleanField(default=True) 
-    tickettemp = models.ForeignKey(TicketTemp, on_delete=models.SET_NULL, blank=True, null=True)
     status = models.TextField(default=lcounterstatus[0])
+    tickettemp = models.ForeignKey(TicketTemp, on_delete=models.SET_NULL, blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
     loged = models.BooleanField(default=False)
     logintime = models.DateTimeField(null=True, blank=True)

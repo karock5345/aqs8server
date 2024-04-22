@@ -225,7 +225,7 @@ def funCounterCall_v830(user, branch, countertype, counterstatus, logtext, rx_ap
         wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
-        wssendvoice830(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
         wssendflashlight(branch, countertype, counterstatus, 'flash')
 
         # websocket to web softkey for update counter status
@@ -432,7 +432,7 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
                 wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
                 # websocket to voice com and flash light
                 wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
-                wssendvoice830(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+                wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
                 wssendflashlight(branch, countertype, counterstatus, 'flash')
 
                 # websocket to web softkey for update counter status
@@ -745,7 +745,7 @@ def funCounterRecall(user, branch, countertype, counterstatus, logtext, rx_app, 
         wssenddispcall(branch, counterstatus, countertype, ticket)
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
-        wssendvoice830(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
         wssendflashlight(branch, countertype, counterstatus, 'flash')
 
         status = dict({'status': 'OK'})
@@ -906,7 +906,7 @@ def funCounterGet_v830(getticket, getttype, gettnumber, user, branch, countertyp
         wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
-        wssendvoice830(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
         wssendflashlight(branch, countertype, counterstatus, 'flash')
         # websocket to web softkey for update counter status
         wscounterstatus(counterstatus)
@@ -1067,7 +1067,7 @@ def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, co
         wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
-        wssendvoice830(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
         wssendflashlight(branch, countertype, counterstatus, 'flash')
         # websocket to web softkey for update counter status
         wscounterstatus(counterstatus)

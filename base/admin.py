@@ -91,8 +91,14 @@ class SettingsView(admin.ModelAdmin):
 
 class CounterStatusView(admin.ModelAdmin):
     model = CounterStatus
+    # hidden fields : logintime, lastactive
+    # exclude = ('logintime', 'lastactive')
+
+    # Fields : logintime, lastactive make it read only
+    readonly_fields = ('logintime', 'lastactive')
+
     ordering = ('countertype', 'counternumber' )
-    list_display =('countertype', 'counternumber', 'enabled', 'user', 'tickettemp', 'flashid' )
+    list_display =('countertype', 'counternumber', 'voice', 'enabled', 'tickettemp' )
 
 
 
