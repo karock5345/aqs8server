@@ -30,6 +30,7 @@
   ```
 - Bug fixed : /base/views -> line 289, in SoftkeyView : l_userttype = userttype.split(',') Error : AttributeError: 'NoneType' object has no attribute 'split' **Details : When Superuser no Branch and no TT db TicketType is None**
 - New WS for Voice 8.3.0 (/ws/voice830/) 
+- Display Panel add show counter and show latest ticket number on API aqs\api\v_display.py -> getDisplay5
 
 <h3 style="color:orange;">Version 8.2.2</h3>
 

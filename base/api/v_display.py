@@ -30,6 +30,13 @@ displaylist_x_mins = 3
        
   
 # http://127.0.0.1:8000/api/display5/?app=web&version=8&branchcode=KB&countername=Reception
+# version 8.3.0 and above, add :
+# "vert_showcounter": true,
+# "vert_showlatest": true,
+# "vert_latestpagehold": 10,
+# "showcounter": true,
+# "showlatest": true,
+# "latestpagehold": 6
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def getDisplay5(request):
@@ -111,11 +118,21 @@ def getDisplay5(request):
         servertime = dict({'servertime': datetime_now})
         scrollingtext = dict({'scroll' : countertype.displayscrollingtext})
 
+        vert_showcounter = dict({'vert_showcounter' : countertype.vert_showcounter})
+        vert_showlatest = dict({'vert_showlatest' : countertype.vert_showlatest})
+        vert_latestpagehold = dict({'vert_latestpagehold' : countertype.vert_latestpagehold})
+        showcounter = dict({'showcounter' : countertype.showcounter})
+        showlatest = dict({'showlatest' : countertype.showlatest})
+        latestpagehold = dict({'latestpagehold' : countertype.latestpagehold})
+
+        pars = servertime | scrollingtext | vert_showcounter | vert_showlatest | vert_latestpagehold | showcounter | showlatest | latestpagehold
+
+
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
         serializers = displaylistSerivalizer(displaylist, many=True)
 
         context = dict({'ticketlist':serializers.data})
-        context = servertime | scrollingtext | context
+        context = pars | context
         status = dict({'status': 'OK'})
 
     
@@ -368,6 +385,14 @@ def getWaiting(request):
     output = status | msg | context
     return Response(output)
 
+
+# version 8.3.0 and above, add :
+# "vert_showcounter": true,
+# "vert_showlatest": true,
+# "vert_latestpagehold": 10,
+# "showcounter": true,
+# "showlatest": true,
+# "latestpagehold": 6
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def getDisplay(request):
