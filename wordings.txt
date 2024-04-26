@@ -1,0 +1,15 @@
+<TEXT>若您的輪候票號已過，該票號將會無效<LINE>
+<TEXT>The ticket will be voided if your number has been called.<LINE>
+<DATETIME><LINE>
+<QR>https://qs1test821.tsvd.com.hk<MYTICKET><LINE>
+<TEXT>掃描二維碼查看您的排隊狀態<LINE>
+<TEXT>Scan QR code to check your queuing status<LINE>
+<CUT>
+櫃檯服務
+Counter Services
+
+悅秀理財
+Exceed Banking
+
+客戶服務
+Customer Services

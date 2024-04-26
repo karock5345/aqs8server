@@ -78,6 +78,10 @@ class Branch(models.Model):
     language2 = models.IntegerField(default=0, help_text='Cantonese')
     language3 = models.IntegerField(default=0, help_text='Manadrin')
     language4 = models.IntegerField(default=0, help_text='Portuguese')
+    before_enabled = models.BooleanField(default=False, help_text='Play effect sound Before calling ticket')
+    before_sound = models.CharField(max_length=100, default='[SUCCESS]')
+    after_enabled = models.BooleanField(default=False, help_text='Play effect sound After calling ticket')
+    after_sound = models.CharField(max_length=100, default='[NOTIFY]')
 
     usersinglelogin = models.BooleanField(default=False)
     webtvcsslink = models.TextField(default='styles/styletv.css')

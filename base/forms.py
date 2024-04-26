@@ -116,6 +116,13 @@ class BranchSettingsForm_Admin(ModelForm):
         self.fields['language2'] = forms.fields.CharField(label='Second Language (0-4), 0 is not used', help_text=self.fields['language2'].help_text)
         self.fields['language3'] = forms.fields.CharField(label='3rd Language (0-4), 0 is not used', help_text=self.fields['language3'].help_text)
         self.fields['language4'] = forms.fields.CharField(label='4th Language (0-4), 0 is not used', help_text=self.fields['language4'].help_text)
+        
+        self.fields['before_enabled'] = forms.fields.BooleanField(required=False, help_text=self.fields['before_enabled'].help_text)
+        self.fields['before_sound'] = forms.fields.CharField(label='Sound effect (before)', help_text=self.fields['before_sound'].help_text)
+
+        self.fields['after_enabled'] = forms.fields.BooleanField(required=False, help_text=self.fields['after_enabled'].help_text)
+        self.fields['after_sound'] = forms.fields.CharField(label='Sound effect (after)', help_text=self.fields['after_sound'].help_text)
+        
         self.fields['usersinglelogin'] = forms.fields.BooleanField(label='User single login', required=False, help_text=self.fields['usersinglelogin'].help_text)
         self.fields['SMSenabled'] = forms.fields.BooleanField(label='Enable SMS', required=False, help_text=self.fields['SMSenabled'].help_text)
         self.fields['SMSmsg'] = forms.fields.CharField(label='SMS Message', required=False, help_text=self.fields['SMSmsg'].help_text)
@@ -142,6 +149,7 @@ class BranchSettingsForm_Admin(ModelForm):
                   'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
                   'displayenabled', 'displayflashtime', 
                   'voiceenabled', 'language1', 'O_Replace_Zero', 'language2', 'language3', 'language4', 
+                  'before_enabled', 'before_sound', 'after_enabled', 'after_sound',
                   'usersinglelogin', 'websoftkey_show_waitinglist', 
                   'SMSenabled', 'SMSmsg', 'SMSQuota', 'SMSUsed', 'SMSResetDay',
                   'bookingenabled', 'bookingPage1ScrollingText', 'bookingPage1Text', 'bookingPage2ScrollingText', 'bookingPage2Text', 'bookingPage3Text',

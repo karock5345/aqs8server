@@ -299,6 +299,26 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
     context = None
     error = ''
 
+
+    def send(json_tx:str):
+        str_tx = json.dumps(json_tx)
+
+        context = {
+        'type':'broadcast_message',
+        'tx': str_tx,
+        }
+        
+        channel_layer = get_channel_layer()
+        channel_group_name = 'voice830_' + bcode + '_' + countertypename
+        logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        try:
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            logger.info('...Done')
+        except Exception as e:
+            # error_e = 'WS send voice Error:' + str(e)
+            logger.error('...ERROR:Redis Server is down!')
+
+
     branch = None
     if error == '' :        
         branchobj = Branch.objects.filter( Q(bcode=bcode) )
@@ -354,30 +374,50 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
         voice_str = '[' + ttype.upper() + '],' + voice_str + counter_voice
         voice_oh_str = '[' + ttype.upper() + '],' + voice_oh_str + counter_voice
 
+        # play effect sound
+        if len(lang_list) > 0:
+            if branch.before_enabled == True:
+                sound = branch.before_sound
+                if sound != '' or sound != None:
+                    json_tx = {'lang': '[SOUND]',
+                        'voice': sound,
+                    }
+                    send(json_tx)
+
         for lang in lang_list:
             json_tx = {'lang': lang,
                 'voice': voice_str,
-            }
+            }            
             if branch.O_Replace_Zero == True and lang == '[ENG]':
                 json_tx = {'lang': lang,
                     'voice': voice_oh_str,
                 }
-            str_tx = json.dumps(json_tx)
+            send(json_tx)
+            # str_tx = json.dumps(json_tx)
 
-            context = {
-            'type':'broadcast_message',
-            'tx': str_tx,
-            }
+            # context = {
+            # 'type':'broadcast_message',
+            # 'tx': str_tx,
+            # }
             
-            channel_layer = get_channel_layer()
-            channel_group_name = 'voice830_' + bcode + '_' + countertypename
-            logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
-            try:
-                async_to_sync (channel_layer.group_send)(channel_group_name, context)
-                logger.info('...Done')
-            except Exception as e:
-                # error_e = 'WS send voice Error:' + str(e)
-                logger.error('...ERROR:Redis Server is down!')
+            # channel_layer = get_channel_layer()
+            # channel_group_name = 'voice830_' + bcode + '_' + countertypename
+            # logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+            # try:
+            #     async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            #     logger.info('...Done')
+            # except Exception as e:
+            #     # error_e = 'WS send voice Error:' + str(e)
+            #     logger.error('...ERROR:Redis Server is down!')
+        # play effect sound after voice
+        if len(lang_list) > 0:
+            if branch.after_enabled == True:
+                sound = branch.after_sound
+                if sound != '' or sound != None:
+                    json_tx = {'lang': '[SOUND]',
+                        'voice': sound,
+                    }
+                    send(json_tx)                
     if error != '':
         error_e = 'WS send voice830 Error:' + error
         logger.error(error_e)
