@@ -32,6 +32,7 @@
 - New WS for Voice 8.3.0 (/ws/voice830/) 
 - Effect sound for voice announcement
 - Display Panel add show counter and show latest ticket number on API aqs\api\v_display.py -> getDisplay5
+- Bug fixed Web-softkey base/views.py line 305 and base/api/v_softkey.py line 1317 (add .order_by('tickettime')) ticket list is not order by TicketTime
 
 <h3 style="color:orange;">Version 8.2.2</h3>
 

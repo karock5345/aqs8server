@@ -1348,7 +1348,7 @@ def getCounterWaitingList(request):
         counterstatus.lastactive = datetime_now
         counterstatus.save()
 
-        ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False))
+        ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')
         serializers  = waitinglistSerivalizer(ticketlist, many=True)
         context = dict({'data':serializers.data})
         status = dict({'status': 'OK'})
