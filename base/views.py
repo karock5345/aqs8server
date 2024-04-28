@@ -302,7 +302,7 @@ def SoftkeyView(request, pk):
                 context_tr.append(newrow)
 
     if error == '':
-        ticketlist = TicketTemp.objects.filter( Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) & Q(locked=False))       
+        ticketlist = TicketTemp.objects.filter( Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')
         serializers  = waitinglistSerivalizer(ticketlist, many=True)       
         context_ql = serializers.data
         # add new column to context_ql (tickettime_local)
