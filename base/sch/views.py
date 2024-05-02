@@ -268,6 +268,14 @@ def job_shutdown(branch):
         ticket.printedtimes = tt.printedtimes
         ticket.user = tt.user
         ticket.remark = tt.remark
+
+        ticket.booking_tickettype = tt.booking_tickettype
+        ticket.booking_ticketnumber = tt.booking_ticketnumber
+        ticket.booking_time = tt.booking_time
+        ticket.booking_name = tt.booking_name
+        ticket.booking_score = tt.booking_score
+        ticket.booking_id = tt.booking_id
+
         ticket.save()
 
         # TicketData mark ticket

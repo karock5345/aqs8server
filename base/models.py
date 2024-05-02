@@ -597,6 +597,39 @@ class SubscribeOrder(models.Model):
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
 
 
+class Device(models.Model):
+    VOICECOMP = 'VC'
+    DISPPANEL = 'D'
+    PRINTERCONTROL = 'PRT'
+    DEVICETYPE = [
+       (VOICECOMP, ('Voice Component')),
+       (DISPPANEL, ('Display Panel')),
+       (PRINTERCONTROL, ('Printer Control')),
+    ]
+
+
+    device_id_end = models.CharField(max_length=200, null=False) # device ID end created by the device
+    device_id_given = models.CharField(max_length=200, null=False) # device ID given by the server
+    # device type : VoiceComp, Display, PrinterControl ...
+    device_type = models.CharField(
+       max_length=32,
+       choices=DEVICETYPE,
+       null=False,
+    )
+    device_ip = models.CharField(max_length=20, null=True, blank=True)
+    device_ip_int = models.CharField(max_length=20, null=True, blank=True)
+    version = models.CharField(max_length=20, null=True, blank=True)
+    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True)
+    lastactive = models.DateTimeField(null=True, blank=True, default=None) # last active time
+    settings = models.TextField(null=True, blank=True, default='') # settings for the device
+
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+
+    class Meta:
+        unique_together = ('device_id_end', 'device_id_given',)
+
 # class Room(models.Model):
 #     host =models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 #     topic =  models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
