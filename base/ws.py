@@ -374,6 +374,12 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
         voice_str = '[' + ttype.upper() + '],' + voice_str + counter_voice
         voice_oh_str = '[' + ttype.upper() + '],' + voice_oh_str + counter_voice
 
+        # volume
+        volume = branch.voice_volume
+        if volume <= 100 and volume >= 0:
+            json_tx = {'vol': volume}
+            send(json_tx)
+
         # play effect sound
         if len(lang_list) > 0:
             if branch.before_enabled == True:

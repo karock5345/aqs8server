@@ -72,7 +72,9 @@ class Branch(models.Model):
     flashlighttime = models.IntegerField(default=3)
 
     # voice settings
-    voiceenabled  = models.BooleanField(default=True) 
+    voiceenabled  = models.BooleanField(default=True)
+    #  volume range 0-100 (0 is mute)
+    voice_volume = models.IntegerField(default=50)
     language1 = models.IntegerField(default=1, help_text='English')
     O_Replace_Zero = models.BooleanField(default=True, help_text='Replace voice to [Oh] from [Zero]')
     language2 = models.IntegerField(default=0, help_text='Cantonese')
