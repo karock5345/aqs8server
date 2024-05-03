@@ -74,7 +74,7 @@ class Branch(models.Model):
     # voice settings
     voiceenabled  = models.BooleanField(default=True)
     #  volume range 0-100 (0 is mute)
-    voice_volume = models.IntegerField(default=50)
+    voice_volume = models.IntegerField(default=50, help_text='Volume range 0-100 (0 is mute)')
     language1 = models.IntegerField(default=1, help_text='English')
     O_Replace_Zero = models.BooleanField(default=True, help_text='Replace voice to [Oh] from [Zero]')
     language2 = models.IntegerField(default=0, help_text='Cantonese')

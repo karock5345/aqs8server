@@ -291,9 +291,17 @@ def wsrochesms(bcode, tel, msg):
 # For Voice version 8.3.0
 # /ws/voice830/BCode/Countertype/
 # Channel Group Name: voice830_BCode_Countertype
-# {
-# 	"lang":"[ENG]",
-# 	"voice":"[A],[0],[0],[5],[C3]"
+# voice command
+# { "cmd":"voice",
+#   "data":
+#     {
+# 	    "lang":"[ENG]",
+# 	    "voice_str":"[A],[0],[0],[5],[C3]"
+#     }
+# }
+# volume command
+# { "cmd":"vol",
+#   "data":50
 # }
 def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
     context = None
@@ -377,7 +385,10 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
         # volume
         volume = branch.voice_volume
         if volume <= 100 and volume >= 0:
-            json_tx = {'vol': volume}
+            json_tx = {
+                'cmd':'vol',
+                'data': volume
+            }
             send(json_tx)
 
         # play effect sound
@@ -385,18 +396,27 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
             if branch.before_enabled == True:
                 sound = branch.before_sound
                 if sound != '' or sound != None:
-                    json_tx = {'lang': '[SOUND]',
-                        'voice': sound,
+                    json_tx ={
+                        'cmd':'voice',
+                        'data': {
+                                'lang': '[SOUND]',
+                                'voice_str': sound,
+                                }
                     }
                     send(json_tx)
-
+        # play voice
         for lang in lang_list:
             json_tx = {'lang': lang,
                 'voice': voice_str,
             }            
             if branch.O_Replace_Zero == True and lang == '[ENG]':
-                json_tx = {'lang': lang,
-                    'voice': voice_oh_str,
+                json_tx = {
+                    'cmd':'voice',
+                    'data':
+                    {
+                    'lang': lang,
+                    'voice_str': voice_oh_str,
+                    }
                 }
             send(json_tx)
             # str_tx = json.dumps(json_tx)
@@ -420,8 +440,12 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
             if branch.after_enabled == True:
                 sound = branch.after_sound
                 if sound != '' or sound != None:
-                    json_tx = {'lang': '[SOUND]',
-                        'voice': sound,
+                    json_tx ={
+                        'cmd':'voice',
+                        'data': {
+                                'lang': '[SOUND]',
+                                'voice_str': sound,
+                                }
                     }
                     send(json_tx)                
     if error != '':

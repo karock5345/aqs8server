@@ -4002,4 +4002,7 @@ def checkbranchsettingsform(form):
     if error == '':
         if newform.substart > newform.subend :
             error = 'An error occurcd : subscribe start time should be earlier than sub end time.'
+    if error == '':
+        if newform.voice_volume < 0 or newform.voice_volume > 100 :
+            error = 'An error occurcd : Voice volume should be 0-100.'
     return (error, newform)

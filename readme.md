@@ -41,6 +41,7 @@
 - Display Panel add show counter and show latest ticket number on API aqs\api\v_display.py -> getDisplay5
 - Bug fixed Web-softkey base/views.py line 305 and base/api/v_softkey.py line 1317 (add .order_by('tickettime')) ticket list is not order by TicketTime
 - Add disable Admin page, for production  set ADMIN_ENABLED = False on change the aqs/settings.py
+- Add Voice volume cmd to VoiceComp via ws
 
 <h3 style="color:orange;">Version 8.2.2</h3>
 
