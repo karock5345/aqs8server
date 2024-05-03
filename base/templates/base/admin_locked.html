@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+    <main class="auth layout">
+      
+      <div class="container">
+        <div class="layout__box">
+          <div class="layout__boxHeader">
+            <div class="layout__boxTitle">
+              <h3>
+                <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                >
+                  <path
+                    d="M27 12h-1v-2c0-5.514-4.486-10-10-10s-10 4.486-10 10v2h-1c-0.553 0-1 0.447-1 1v18c0 0.553 0.447 1 1 1h22c0.553 0 1-0.447 1-1v-18c0-0.553-0.447-1-1-1zM8 10c0-4.411 3.589-8 8-8s8 3.589 8 8v2h-16v-2zM26 30h-20v-16h20v16z"
+                  ></path>
+                  <path
+                    d="M15 21.694v4.306h2v-4.306c0.587-0.348 1-0.961 1-1.694 0-1.105-0.895-2-2-2s-2 0.895-2 2c0 0.732 0.413 1.345 1 1.694z"
+                  ></path>
+                </svg>
+                Admin login LOCKED</h3>
+            </div>
+          </div>
+          <div class="layout__body">
+            <div class="form__group">
+              <label class="profile_pic">
+                <label class="label__name">The admin page is currently LOCKED.</label>
+                <label class="label__name">The Django admin application can use your models to automatically build a site area that you can use to create, view, update, and delete records. This can save you a lot of time during development, making it very easy to test your models and get a feel for whether you have the right data. The admin application can also be useful for managing data in production, depending on the type of website. The Django project recommends it only for internal data management (i.e. just for use by admins, or people internal to your organization), as the model-centric approach is not necessarily the best possible interface for all users, and exposes a lot of unnecessary detail about the models.</label>
+                <label class="label__name">Please contact the administration for assistance:</label>
+              </label>
+
+            </div>
+            <h2 class="auth__tagline">e-mail : admin@tsvd.com.hk</h2>
+            <h2 class="auth__tagline">Phone : +852 27578547</h2>
+          </div>
+        </div>
+      </div>
+      
+    </main>
+{% endblock content %}

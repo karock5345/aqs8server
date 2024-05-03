@@ -16,6 +16,10 @@ from datetime import timedelta
 
 aqs_version = '8.3.0'
 
+ADMIN_ENABLED = True
+# for production disable Admin page, set ADMIN_ENABLED = False
+# ADMIN_ENABLED = False
+
 celery_name = 'celery_aqs'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

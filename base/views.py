@@ -60,6 +60,8 @@ context_login = {}
 
 sort_direction = {}
 
+def adminlockedView(request,):
+    return render(request, 'base/admin_locked.html')
 
 def funRegenUserFunctions(user):
     userpobj = UserProfile.objects.filter(user=user)
