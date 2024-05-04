@@ -150,7 +150,7 @@ class BranchSettingsForm_Admin(ModelForm):
                   'queueenabled',
                   'queuepriority', 'queuemask', 'ticketmax', 'ticketnext', 'ticketnoformat', 'ticketrepeatnumber',
                   'displayenabled', 'displayflashtime', 
-                  'voiceenabled', 'voice_volume' 'language1', 'O_Replace_Zero', 'language2', 'language3', 'language4', 
+                  'voiceenabled', 'voice_volume', 'language1', 'O_Replace_Zero', 'language2', 'language3', 'language4', 
                   'before_enabled', 'before_sound', 'after_enabled', 'after_sound',
                   'usersinglelogin', 'websoftkey_show_waitinglist', 
                   'SMSenabled', 'SMSmsg', 'SMSQuota', 'SMSUsed', 'SMSResetDay',

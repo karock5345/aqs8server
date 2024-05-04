@@ -406,9 +406,14 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
                     send(json_tx)
         # play voice
         for lang in lang_list:
-            json_tx = {'lang': lang,
-                'voice': voice_str,
-            }            
+            json_tx = {
+                    'cmd':'voice',
+                    'data':
+                    {
+                    'lang': lang,
+                    'voice_str': voice_str,
+                    }
+                }
             if branch.O_Replace_Zero == True and lang == '[ENG]':
                 json_tx = {
                     'cmd':'voice',
