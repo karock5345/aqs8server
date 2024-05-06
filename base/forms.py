@@ -130,6 +130,9 @@ class BranchSettingsForm_Admin(ModelForm):
         self.fields['SMSmsg'] = forms.fields.CharField(label='SMS Message', required=False, help_text=self.fields['SMSmsg'].help_text)
         self.fields['websoftkey_show_waitinglist'] = forms.fields.BooleanField(label='Web-Softkey show waiting list', required=False, help_text=self.fields['websoftkey_show_waitinglist'].help_text)
         self.fields['bookingenabled'] = forms.fields.BooleanField(label='Enable Booking Function', required=False, help_text=self.fields['bookingenabled'].help_text)
+        self.fields['bookingToQueueEnabled'] = forms.fields.BooleanField(label='Enable Booking to Queue function', required=False, help_text=self.fields['bookingToQueueEnabled'].help_text)
+        
+        
         self.fields['bookingPage1Text'] = forms.fields.CharField(label='Booking HTML page 1 Text', help_text=self.fields['bookingPage1Text'].help_text, required=False, widget=forms.Textarea(),)
         self.fields['bookingPage1ScrollingText'] = forms.fields.CharField(label='Booking HTML page 1 Scrolling Text', help_text=self.fields['bookingPage1ScrollingText'].help_text, required=False, widget=forms.Textarea())
         self.fields['bookingPage2Text'] = forms.fields.CharField(label='Booking HTML page 2 Text', help_text=self.fields['bookingPage2Text'].help_text, required=False, widget=forms.Textarea())
@@ -154,7 +157,7 @@ class BranchSettingsForm_Admin(ModelForm):
                   'before_enabled', 'before_sound', 'after_enabled', 'after_sound',
                   'usersinglelogin', 'websoftkey_show_waitinglist', 
                   'SMSenabled', 'SMSmsg', 'SMSQuota', 'SMSUsed', 'SMSResetDay',
-                  'bookingenabled', 'bookingPage1ScrollingText', 'bookingPage1Text', 'bookingPage2ScrollingText', 'bookingPage2Text', 'bookingPage3Text',
+                  'bookingenabled','bookingToQueueEnabled', 'bookingPage1ScrollingText', 'bookingPage1Text', 'bookingPage2ScrollingText', 'bookingPage2Text', 'bookingPage3Text',
                   'bookingSuccessEmailEnabled', 'bookingSuccessEmailSubject', 'bookingSuccessEmailBody', 'bookingSMSSuccessEnabled', 'bookingSMSSuccess',
                   'bookingNewEmailEnabled', 'bookingNewEmailUser', 'bookingNewEmailSubject', 'bookingNewEmailBody',
                   ]        

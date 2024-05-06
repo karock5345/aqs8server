@@ -168,7 +168,6 @@ def BookingSummaryView(request):
     auth_bookings, \
     = auth_data(request.user)
 
-
  
     context = {
         'users':auth_userlist, 
