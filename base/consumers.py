@@ -383,7 +383,11 @@ class CounterStatusConsumer(AsyncWebsocketConsumer):
         pk = int(self.pk)
         
 
-        self.room_group_name = 'cs_' + self.pk
+        self.bcode = await get_bcode()
+        if self.bcode == None:
+            error = 'CounterStatusConsumer: Branch not found.'
+
+        self.room_group_name = 'cs_' + self.bcode + '_' + self.pk
         self.ws_str = 'cs'
         logger.info('connecting:' + self.room_group_name )
         
@@ -394,10 +398,6 @@ class CounterStatusConsumer(AsyncWebsocketConsumer):
         if error == '':
             # check bcode and ct (countertype) is not exit do not accept connection
             error = await check_input()      
-
-        self.bcode = await get_bcode()
-        if self.bcode == None:
-            error = 'CounterStatusConsumer: Branch not found.'
 
         if error == '':
             exist = True        
