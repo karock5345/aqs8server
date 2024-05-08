@@ -244,6 +244,9 @@ def BookingSummaryView(request):
                 booking.save()
                 # get the new timeslot and create a log
                 funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.QUEUE, request.user, None)
+
+                # new ticket for booking to queue
+                
             elif action == 'complete':
                 booking = Booking.objects.get(id=pk)
                 booking.status = Booking.STATUS.COMPLETED

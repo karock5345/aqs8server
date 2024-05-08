@@ -297,7 +297,7 @@ class TicketFormat(models.Model):
 
     enabled = models.BooleanField(default=True) 
     ttype = models.CharField(max_length=10, null=False, blank=False)
-    from_booking = models.BooleanField(default=False)
+    for_booking = models.BooleanField(default=False)
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
     
     # description1 = models.TextField()
@@ -319,6 +319,17 @@ class TicketFormat(models.Model):
         unique_together = ('ttype', 'branch',)  
     def __str__(self):
         return self.branch.bcode + '-' + self.ttype
+
+class SubTicket(models.Model):
+    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    booking_tickettype = models.CharField(max_length=20)
+    ticketnext = models.IntegerField(default=1)
+    
+    def __str__(self):
+        return self.branch.bcode + '-' + self.booking_tickettype
+    class Meta:
+        ordering = ['branch','booking_tickettype']
+        unique_together = ('branch', 'booking_tickettype')
 
 
 class CounterType(models.Model):
