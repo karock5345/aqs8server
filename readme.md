@@ -7,22 +7,11 @@
 - Bcode : CEN
 - Wifi : queuingsystem /// sw7vup2jDfedeT7tWsTz
 
-<h3 style="color:orange;">Coming up:</h3>
-
-- ~~Reset SMS quota~~
-- ~~Booking Management~~
-
-- send SMS quota is full email to managerm and admin
-- Send email to TSVD when SMS api is error (maybe down or quota is full)
-- ~~send 'New booking' email to manager~~
-- send email for user forgot password
-- change user profile mobile number to country code + national number
-- ~~hide the userweb in user group (except admin and superuser)~~
 
 <h3 style="color:orange;">Version 8.3.0</h3>
 
 - Booking to Queue Function
-- Support multiple workers for Gunicorn (from django_q.tasks import async_chain, result_group)
+- Support multiple workers for Gunicorn (@transaction.atomic)
 - Bug fixed : User update HTML js error (base/templates/base/user_update.html -> line 147)
   ```js
   // check tickettype do not have character "," then set to ""
@@ -42,7 +31,41 @@
 - Bug fixed Web-softkey base/views.py line 305 and base/api/v_softkey.py line 1317 (add .order_by('tickettime')) ticket list is not order by TicketTime
 - Add disable Admin page, for production  set ADMIN_ENABLED = False on change the aqs/settings.py
 - Add Voice volume cmd to VoiceComp via ws
-- Temporary bug fixed : base/consumers.py > CounterStatusConsumer > line 379 - 396
+- Temporary bug fixed WS will be mix up when the server is serving multiple apps
+  - base/consumers.py > CounterStatusConsumer > line 386 - 396
+    ``` py
+    self.bcode = await get_bcode()
+    if self.bcode == None:
+        error = 'CounterStatusConsumer: Branch not found.'
+
+    self.room_group_name = 'cs_' + self.bcode + '_' + self.pk
+    self.ws_str = 'cs'
+    logger.info('connecting:' + self.room_group_name )
+    ```
+  - base > routing.py > line 16
+    ```py
+    re_path(r'ws/cs/(?P<bcode>\w+)/(?P<pk>\w+)/$', consumers.CounterStatusConsumer.as_asgi()),
+    ```
+  - static > js > softkey.js > line 196 - 204
+  - static > js > softkey_cc.js > 247 -253
+    ```js
+    const CounterStatusSocket = new WebSocket(
+        c_wsh
+        + window.location.host
+        + '/ws/cs/'
+        + c_bcode
+        + '/'
+        + c_pk
+        + '/'
+    );
+    ```
+  - base > ws.py > wsconuterstatus > line 230
+    ```py
+      bcode = counterstatus.countertype.branch.bcode
+
+      channel_layer = get_channel_layer()
+      channel_group_name = 'cs_' + bcode + '_' + str(counterstatus.id)
+    ```
 
 <h3 style="color:orange;">Version 8.2.2</h3>
 

@@ -41,8 +41,6 @@ def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version)
         # Lock the ticket format nowait=False
         try:
             ticketformat = TicketFormat.objects.select_for_update().get(id=ticketobj[0].id)
-            # for test
-            # time.sleep(3)
         except Exception as e:
             error = e.__str__()
     
@@ -458,17 +456,7 @@ def postTicket(request):
         # ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, ttype, pno, remark, datetime_now, user, app, version)
         # new version with database lock
         ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version)
-        if error == '' :
-            TicketLog.objects.create(
-                ticket=ticket,
-                tickettemp=tickettemp,
-                logtime=datetime_now,
-                app = app,
-                version = version,
-                logtext='TicketKey API ticket created : '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pno ,
-                user=user,
-            )
-        else :
+        if error != '' :           
             status = dict({'status': 'Error'})
             msg =  dict({'msg':error})
         

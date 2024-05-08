@@ -204,10 +204,8 @@ def Softkey_GetView(request, pk, ttid):
                 if error == str_db_locked:
                     logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
                     time.sleep(0.05)
-                    # for test
-                    time.sleep(0.5)
                 else:
-                    break        
+                    break
         if status['status'] == 'Error':
             error = msg['msg'] + ' ' + tt.tickettype + tt.ticketnumber
     # # no need to confirm
@@ -366,8 +364,6 @@ def SoftkeyView(request, pk):
                             if error == str_db_locked:
                                 logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
                                 time.sleep(0.05)
-                                # for test
-                                time.sleep(0.5)
                             else:
                                 break
                     if status['status'] == 'Error':
@@ -392,8 +388,6 @@ def SoftkeyView(request, pk):
                         if error == str_db_locked:
                             logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
                             time.sleep(0.05)
-                            # for test
-                            time.sleep(0.5)
                         else:
                             break
                 
@@ -689,8 +683,6 @@ def SoftkeyCallView(request, pk):
                 if error == str_db_locked:
                     logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
                     time.sleep(0.05)
-                    # for test
-                    time.sleep(0.5)
                 else:
                     break        
         

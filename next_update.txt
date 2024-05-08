@@ -18,3 +18,11 @@ OK      new Django for TV disp web (Q. server is local, TV / get ticket function
         Protect apiuser password for every Client software (including Softkey, Touch Panel, Display Panel, Printer Control, etc.)
         Improve HTML UI for "Form" do not cover error message 
         Counting tickets per "paper roll"
+OK      Reset SMS quota
+OK      Booking Management
+        send SMS quota is full email to managerm and admin
+        Send email to TSVD when SMS api is error (maybe down or quota is full)
+OK      send 'New booking' email to manager
+        send email for user forgot password
+        change user profile mobile number to country code + national number
+OK      hide the userweb in user group (except admin and superuser)

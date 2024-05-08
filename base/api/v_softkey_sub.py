@@ -1,9 +1,9 @@
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from django.db.models import Q
 from .views import counteractive
 from .v_display import newdisplayvoice
 from base.models import CounterStatus, CounterType, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus, UserStatusLog
-from base.models import testingModel
+# from base.models import testingModel
 from base.ws import *
 import logging
 from django.db import transaction
@@ -368,9 +368,6 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
                     break
          
         if context != dict({}) and ticket != None :
-            # for testing
-            time.sleep(3)
-
             # update ticketdata db
             td = None
             if status == dict({}) :
@@ -1425,8 +1422,6 @@ def cc_ready(user, branch, countertype, counterstatus, logtext, rx_app, rx_versi
             if error == str_db_locked:
                 logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
                 time.sleep(0.05)
-                # for test
-                time.sleep(0.5)
             else:
                 break
     
