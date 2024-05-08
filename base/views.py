@@ -187,7 +187,21 @@ def Softkey_GetView(request, pk, ttid):
     
     # no need to confirm
     if error == '':
-        status, msg, context_get = funCounterGet('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list', 'Softkey-web', softkey_version, datetime_now)
+        # old version no database lock may be cause double call
+        # status, msg, context_get = funCounterGet('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list', 'Softkey-web', softkey_version, datetime_now)
+        # new version with database lock
+        for i in range(0, 10):
+            status, msg, context_get = funCounterGet_v830('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list', 'Softkey-web', softkey_version, datetime_now)
+            if status['status'] == 'OK':
+                break
+            else:
+                error = msg['msg']
+                from base.a_global import str_db_locked
+                if error == str_db_locked:
+                    logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
+                    time.sleep(0.05)
+                else:
+                    break        
         if status['status'] == 'Error':
             error = msg['msg'] + ' ' + tt.tickettype + tt.ticketnumber
     # # no need to confirm
@@ -331,7 +345,21 @@ def SoftkeyView(request, pk):
                 getticket = getform['ticketnumber'].value()
                 
                 if error == '':
-                    status, msg, context_get = funCounterGet(getticket, '', '', request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket ', 'Softkey-web', softkey_version, datetime_now)
+                    # old version no database lock may be cause double call
+                    # status, msg, context_get = funCounterGet(getticket, '', '', request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket ', 'Softkey-web', softkey_version, datetime_now)
+                    # new version with database lock
+                    for i in range(0, 10):
+                        status, msg, context_get = funCounterGet_v830(getticket, '', '', request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket ', 'Softkey-web', softkey_version, datetime_now)
+                        if status['status'] == 'OK':
+                            break
+                        else:
+                            error = msg['msg']
+                            from base.a_global import str_db_locked
+                            if error == str_db_locked:
+                                logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
+                                time.sleep(0.05)
+                            else:
+                                break
                     if status['status'] == 'Error':
                         messages.error(request, msg['msg'] + ' ' + getticket)
                     context = context | context_counter | {'pk':pk} | context_get
@@ -341,7 +369,22 @@ def SoftkeyView(request, pk):
                 return redirect('softkey', pk=pk)
                 # return render(request, 'base/softkey.html', context)
             elif action == 'call':
-                status, msg, context_call = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
+                # old version no database lock may be cause double call
+                # status, msg, context_call = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)                
+                # new version with database lock
+                for i in range(0, 10):
+                    status, msg, context_call = funCounterCall_v830(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
+                    if status['status'] == 'OK':
+                        break
+                    else:
+                        error = msg['msg']
+                        from base.a_global import str_db_locked
+                        if error == str_db_locked:
+                            logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
+                            time.sleep(0.05)
+                        else:
+                            break
+
                 if status['status'] == 'Error':
                     messages.error(request, msg['msg'])
                 if status['status'] == 'OK' and context_call == {'data': {}} :
@@ -621,7 +664,22 @@ def SoftkeyCallView(request, pk):
         error = 'CounterStatus not found.'
 
     if error == '':
-        status, msg, context = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket:', 'Softkey-web', softkey_version, datetime_now)
+        # old version no database lock may be cause double call
+        # status, msg, context = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket:', 'Softkey-web', softkey_version, datetime_now)        
+        # new version with database lock
+        for i in range(0, 10):
+            status, msg, context = funCounterCall_v830(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket:', 'Softkey-web', softkey_version, datetime_now)
+            if status['status'] == 'OK':
+                break
+            else:
+                error = msg['msg']
+                from base.a_global import str_db_locked
+                if error == str_db_locked:
+                    logger.warning('Database is locked. Retry ' + str(i + 1) + ' times.')
+                    time.sleep(0.05)
+                else:
+                    break  
+
         if status['status'] == 'Error':
             error = msg['msg']
 
@@ -3303,7 +3361,6 @@ def UserNewView(request):
 def UserNewView2(request, pk):
     user = User.objects.get(id=pk)
     userp = UserProfile.objects.get(user__exact=user)
-
     # check user group auth
     
     auth_en_queue, \

@@ -197,6 +197,8 @@
       c_wsh
       + window.location.host
       + '/ws/cs/'
+      + c_bcode
+      + '/'
       + c_pk
       + '/'
   );

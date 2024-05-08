@@ -13,7 +13,7 @@ websocket_urlpatterns = [
     re_path(r'ws/tstatus/(?P<bcode>\w+)/(?P<ttype>\w+)/(?P<tno>\w+)/(?P<sc>\w+)/$', consumers.TicketStatusConsumer.as_asgi()),
     re_path(r'ws/voice/(?P<bcode>\w+)/(?P<ct>\w+)/$', consumers.VoiceConsumer.as_asgi()),
     re_path(r'ws/sms/(?P<bcode>\w+)/$', consumers.SMSConsumer.as_asgi()),
-    re_path(r'ws/cs/(?P<pk>\w+)/$', consumers.CounterStatusConsumer.as_asgi()),
+    re_path(r'ws/cs/(?P<bcode>\w+)/(?P<pk>\w+)/$', consumers.CounterStatusConsumer.as_asgi()),
     re_path(r'ws/flashlight/(?P<bcode>\w+)/$', consumers.FlashLightConsumer.as_asgi()),
     re_path(r'ws/disp/(?P<bcode>\w+)/(?P<ct>\w+)/$', consumers.DispPanelConsumer.as_asgi()),
     re_path(r'ws/progress/(?P<task_id>\w+)/$', consumers.ReportRaw_ProgressConsumer.as_asgi()),    

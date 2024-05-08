@@ -227,8 +227,10 @@ def wscounterstatus(counterstatus):
     'tx': str_tx,
     }
     
+    bcode = counterstatus.countertype.branch.bcode
+
     channel_layer = get_channel_layer()
-    channel_group_name = 'cs_' + str(counterstatus.id)
+    channel_group_name = 'cs_' + bcode + '_' + str(counterstatus.id)
     logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
     try:
         async_to_sync (channel_layer.group_send)(channel_group_name, context)

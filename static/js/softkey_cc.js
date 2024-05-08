@@ -245,12 +245,15 @@
 
         // websocket for Counter status
         const CounterStatusSocket = new WebSocket(
-            c_wsh
-            + window.location.host
-            + '/ws/cs/'
-            + c_pk
-            + '/'
+          c_wsh
+          + window.location.host
+          + '/ws/cs/'
+          + c_bcode
+          + '/'
+          + c_pk
+          + '/'
         );
+        
         CounterStatusSocket.onmessage = function(e) {
             // # {
             // #    "cmd":"cs",
