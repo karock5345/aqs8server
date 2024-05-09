@@ -882,6 +882,7 @@ def funCounterGet_v830(getticket, getttype, gettnumber, user, branch, countertyp
             ticket.ticketroute.save()
             # websocket to softkey (update Queue List)
             wssendql(branch.bcode, countertype.name, ticket, 'del')
+         
         ticket.user = user
         ticket.status = 'calling'
         ticket.save()

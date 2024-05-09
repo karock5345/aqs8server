@@ -1,4 +1,4 @@
-from aqs.settings import aqs_version
+from aqs.settings import aqs_version, RECAPTCHA_ENABLED, APP_NAME
 from django.shortcuts import render, redirect, HttpResponse
 from django.urls import reverse
 from urllib.parse import urlencode
@@ -46,8 +46,6 @@ from crm.models import CRMAdmin
 
 
 logger = logging.getLogger(__name__)
-
-enable_captcha = False
 
 userweb = None
 try:
@@ -257,10 +255,11 @@ def SoftkeyView(request, pk):
     = auth_data(request.user)
 
     context = {
-    'aqs_version':aqs_version, 
-    'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-    'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,
-    }
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,
+        }
 
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
@@ -1035,7 +1034,7 @@ def webmyticket(request, bcode, ttype, tno, sc):
             'css' : css,
             }
         messages.error(request, error)
-    context = {'aqs_version':aqs_version} | context 
+    context = {'aqs_version':aqs_version} | {'app_name':APP_NAME} | context 
     return render(request , 'base/webmyticket.html', context)
 
 # Create your views here.
@@ -1439,20 +1438,20 @@ def webtv(request, bcode, ct):
         wdserializers  = displaylistSerivalizer(displaylist, many=True)
         
         context = {
-        'wsh' : wsHypertext,
-        'lastupdate' : str_now,
-        'ticketlist' : wdserializers.data,
-        'logofile' : logofile,
-        'css' : css,
-        'scroll':countertype.displayscrollingtext,
-        }
+            'wsh' : wsHypertext,
+            'lastupdate' : str_now,
+            'ticketlist' : wdserializers.data,
+            'logofile' : logofile,
+            'css' : css,
+            'scroll':countertype.displayscrollingtext,
+            }
         # print (wdserializers.data[0].wait)
     else :
         context = {
-        'lastupdate' : str_now,
-        'errormsg' : error,
-        'logofile' : logofile,
-        }
+            'lastupdate' : str_now,
+            'errormsg' : error,
+            'logofile' : logofile,
+            }
         messages.error(request, error)
 
 
@@ -1463,7 +1462,7 @@ def webtv(request, bcode, ct):
         'ct' : ct,
         } | context
     
-    context = {'aqs_version':aqs_version} | context 
+    context = {'aqs_version':aqs_version} | {'app_name':APP_NAME} | context 
     return render(request , 'base/webtv.html', context)
 
 
@@ -3126,7 +3125,7 @@ def UserLoginView(request):
         password = request.POST.get('password')
         human = True
 
-        if enable_captcha == True :
+        if RECAPTCHA_ENABLED == True :
             captchaform = CaptchaForm(request.POST)
             if captchaform.is_valid():
                 human = True
@@ -3147,12 +3146,12 @@ def UserLoginView(request):
             else:
                 messages.error(request, 'Username or password does not exist')
     else:
-        if enable_captcha == True :
+        if RECAPTCHA_ENABLED == True :
             captchaform = CaptchaForm()
         pass
 
     context = {'page':page} 
-    if enable_captcha == True :
+    if RECAPTCHA_ENABLED == True :
         context = context | {'captcha_form':captchaform}
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/login_register.html', context)

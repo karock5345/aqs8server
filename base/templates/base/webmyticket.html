@@ -145,7 +145,7 @@
 
     <div class="powered">Powered by tsvd.com.hk</div>
 
-    
+    {{ app_name|json_script:"js-app_name" }}
     {{ wsh|json_script:"js-wsh" }}
     {{ bcode|json_script:"js-bcode" }}
     {{ countertype.name|json_script:"js-ct" }}
@@ -154,6 +154,7 @@
     {{ tickettemp.securitycode|json_script:"js-sc" }}
     
     <script>
+        const c_app_name = JSON.parse(document.getElementById('js-app_name').textContent);
         var ticketlist = [];
         const c_wsh = JSON.parse(document.getElementById('js-wsh').textContent);
         const c_bcode = JSON.parse(document.getElementById('js-bcode').textContent);
@@ -179,7 +180,9 @@
         const WebTVSocket = new WebSocket(
             c_wsh
             + window.location.host
-            + '/ws/wtv/'
+            + '/ws/'
+            + c_app_name
+            + '/wtv/'
             + c_bcode
             + '/'
             + c_ct
@@ -236,11 +239,13 @@
         WebTVSocket.onclose = function(e) {
             console.error('WebTV socket closed unexpectedly');
         };
-        // ws://127.0.0.1:8000/ws/tstatus/KB/A/123/sc/
+        // ws://127.0.0.1:8000/ws/APP_NAME/tstatus/KB/A/123/sc/
         const ticketstatusSocket = new WebSocket(
             c_wsh
             + window.location.host
-            + '/ws/tstatus/'
+            + '/ws/'
+            + c_app_name
+            + '/tstatus/'
             + c_bcode
             + '/'
             + c_ttype

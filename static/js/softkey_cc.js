@@ -1,3 +1,4 @@
+        const c_app_name = JSON.parse(document.getElementById('js-app_name').textContent);
         const c_waitinglist_show = JSON.parse(document.getElementById('js-waitinglist_show').textContent);
         const c_wsh = JSON.parse(document.getElementById('js-wsh').textContent);
         const c_pk = JSON.parse(document.getElementById('js-pk').textContent);
@@ -186,7 +187,9 @@
         const PrintStatusSocket = new WebSocket(
             c_wsh
             + window.location.host
-            + '/ws/pstatus/'
+            + '/ws/' 
+            + c_app_name
+            + '/pstatus/'
             + c_bcode
             + '/'
         );
@@ -247,9 +250,13 @@
         const CounterStatusSocket = new WebSocket(
             c_wsh
             + window.location.host
-            + '/ws/cs/'
-            + c_pk
+            + '/ws/'
+            + c_app_name
+            + '/cs/'
+            + c_bcode
             + '/'
+            + c_pk
+            + '/'            
         );
         CounterStatusSocket.onmessage = function(e) {
             // # {
@@ -289,7 +296,9 @@
         const QListSocket = new WebSocket(
           c_wsh
           + window.location.host
-          + '/ws/ql/'
+          + '/ws/'
+          + c_app_name
+          + '/ql/'
           + c_bcode
           + '/'
           + c_ct

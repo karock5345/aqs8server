@@ -356,7 +356,7 @@ class FlashLightConsumer(AsyncWebsocketConsumer):
 
 
 class CounterStatusConsumer(AsyncWebsocketConsumer):
-    # ws://127.0.0.1:8000/ws/cs/1/
+    # ws://127.0.0.1:8000/ws/<APP_NAME>/cs/<BCODE>/1/
     async def connect(self):
         @sync_to_async
         def check_input():
@@ -367,22 +367,23 @@ class CounterStatusConsumer(AsyncWebsocketConsumer):
                 error = 'CounterStatus not found.'
            
             return error
-        @sync_to_async
-        def get_bcode():
-            bcode = None
-            try:
-                counterstatus = CounterStatus.objects.get(id=pk)
-                bcode = counterstatus.countertype.branch.bcode
-            except:
-                bcode = None
-            return bcode
+        # @sync_to_async
+        # def get_bcode():
+        #     bcode = None
+        #     try:
+        #         counterstatus = CounterStatus.objects.get(id=pk)
+        #         bcode = counterstatus.countertype.branch.bcode
+        #     except:
+        #         bcode = None
+        #     return bcode
         
         error = ''
         self.pk = self.scope['url_route']['kwargs']['pk']
+        self.bcode = self.scope['url_route']['kwargs']['bcode']
 
         pk = int(self.pk)
 
-        self.bcode = await get_bcode()
+        # self.bcode = await get_bcode()
         if self.bcode == None:
             error = 'CounterStatusConsumer: Branch not found.'
 

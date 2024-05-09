@@ -15,7 +15,8 @@ from django.contrib.messages import constants as messages
 from datetime import timedelta
 
 aqs_version = '8.3.0'
-
+# APP_NAME for ws://localhost:8000/ws/APP_NAME/...
+APP_NAME = 'aqs_app'
 ADMIN_ENABLED = True
 # for production disable Admin page, set ADMIN_ENABLED = False
 # ADMIN_ENABLED = False
@@ -173,6 +174,8 @@ REST_FRAMEWORK = {
     )
 }
 
+# Recaptcha settings
+RECAPTCHA_ENABLED = False
 RECAPTCHA_PUBLIC_KEY = '6Lff1ZsiAAAAAESuPub5qJCSN8Fo1cmhtjd8bdB8'
 RECAPTCHA_PRIVATE_KEY = '6Lff1ZsiAAAAAMbsSNu5KyIGWOxmjTOFHANffcAo'
 RECAPTCHA_REQUIRED_SCORE = 0.85

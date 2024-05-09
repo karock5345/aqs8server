@@ -32,40 +32,11 @@
 - Add disable Admin page, for production  set ADMIN_ENABLED = False on change the aqs/settings.py
 - Add Voice volume cmd to VoiceComp via ws
 - Temporary bug fixed WS will be mix up when the server is serving multiple apps
-  - base/consumers.py > CounterStatusConsumer > line 386 - 396
-    ``` py
-    self.bcode = await get_bcode()
-    if self.bcode == None:
-        error = 'CounterStatusConsumer: Branch not found.'
-
-    self.room_group_name = 'cs_' + self.bcode + '_' + self.pk
-    self.ws_str = 'cs'
-    logger.info('connecting:' + self.room_group_name )
-    ```
-  - base > routing.py > line 16
-    ```py
-    re_path(r'ws/cs/(?P<bcode>\w+)/(?P<pk>\w+)/$', consumers.CounterStatusConsumer.as_asgi()),
-    ```
-  - static > js > softkey.js > line 196 - 204
-  - static > js > softkey_cc.js > 247 -253
-    ```js
-    const CounterStatusSocket = new WebSocket(
-        c_wsh
-        + window.location.host
-        + '/ws/cs/'
-        + c_bcode
-        + '/'
-        + c_pk
-        + '/'
-    );
-    ```
-  - base > ws.py > wsconuterstatus > line 230
-    ```py
-      bcode = counterstatus.countertype.branch.bcode
-
-      channel_layer = get_channel_layer()
-      channel_group_name = 'cs_' + bcode + '_' + str(counterstatus.id)
-    ```
+  - Details see [Fix_temp_ws_mixup.md]
+- Instruction for upgrade Call/Get function support Multiple Workers (Not including "New Ticket" function) for version v8.2.x
+  - Details refer to [Fix_Call_multi-workers.md]
+- Move enable_captcha = True from base/views.py to settings.py
+- All WS links added APP_NAME to avoid conflict with other apps e.g. /ws/sms/<BCODE>/ -> /ws/<APP_NAME>/sms/<BCODE>/ 
 
 <h3 style="color:orange;">Version 8.2.2</h3>
 
@@ -767,9 +738,9 @@ close and save
 
 > Disable Recaptcha for debug / test
 ```bash
-nano ~/qs123/base/views.py    
+nano ~/qs123/aqs/settings.py    
  ```   
->enable_captcha = False
+>RECAPTCHA_ENABLED = False
 
 # INIT AND SETUP the AQS8
 
@@ -1512,9 +1483,9 @@ RECAPTCHA_REQUIRED_SCORE = 0.85
 ```
 <h3 style="color:orange;">Enable / Disable reCaptcha</h3>
 
-nano ~\qs123\aqs\views.py
+nano ~\qs123\aqs\settings.py
 
-> enable_captcha = False
+> RECAPTCHA_ENABLED = False
 
 # Setup email
 <h3 style="color:orange;">Setup email sender</h3>
