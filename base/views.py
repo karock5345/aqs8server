@@ -46,7 +46,7 @@ from crm.models import CRMAdmin
 
 logger = logging.getLogger(__name__)
 
-enable_captcha = False
+enable_captcha = True
 
 userweb = None
 try:

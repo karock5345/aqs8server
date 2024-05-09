@@ -5,6 +5,9 @@
 - New copy base\api\v_softkey.py to v_softkey.py.v830
 - Backup base\api\v_softkey_sub.py to v_softkey_sub.py.bu
 - New copy base\api\v_softkey_sub.py to v_softkey_sub.py.v830
+- Backup static_\routing.py to routing.py.bu
+- New copy base\routing.py to routing.py.v830
+
 - New base\a_global.py
 ```py
 str_db_locked = 'DB_locked'
@@ -156,6 +159,7 @@ str_db_locked = 'DB_locked'
 cd <project folder>
 cd base\
 cp views.py.v830 views.py
+cp routing.py.v830 routing.py
 cd api
 cp v_softkey_sub.py.v830 v_softkey_sub.py
 cp v_softkey.py.v830 v_softkey.py
