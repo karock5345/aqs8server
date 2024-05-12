@@ -239,13 +239,12 @@ def BookingSummaryView(request):
                 # get the new timeslot and create a log
                 funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NOSHOW, request.user, None)
             elif action == 'queue':
-                booking = Booking.objects.get(id=pk)
-                booking.status = Booking.STATUS.QUEUE
-                booking.save()
-                # get the new timeslot and create a log
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.QUEUE, request.user, None)
+                # Booking to queue
+                error, tickettempid = bookingtoqueue(booking, request.user)
+                if error == '':
+                    # get the new timeslot and create a log
+                    funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.QUEUE, request.user, None)
 
-                # new ticket for booking to queue
                 
             elif action == 'complete':
                 booking = Booking.objects.get(id=pk)
@@ -265,6 +264,71 @@ def BookingSummaryView(request):
                } | context 
     return render(request, 'booking/booking.html', context)
 
+@transaction.atomic
+def bookingtoqueue(booking:Booking, user):
+    error = ''
+    tickettempid = None
+    datetime_now = timezone.now()
+    datetime_now_local = funUTCtoLocal(datetime_now, booking.branch.timezone)
+    str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
+
+    if error == '':
+        if booking.branch.bookingenabled == False:
+            error = 'Booking function is disabled'
+    if error == '':
+        if booking.branch.queueenabled == False:
+            error = 'Queue function is disabled'
+    if error == '':
+        if booking.branch.bookingToQueueEnabled == False:
+            error = 'Booking to Queue function is disabled'
+    
+    if error == '' :
+        # ticket format
+        ticketobj = TicketFormat.objects.filter( Q(branch=booking.branch) & Q(for_booking=True))
+        if ticketobj.count() == 0:
+            error =  'TicketFormat not found (for_booking=True)'
+
+    if error == '':
+        # Lock the ticket format nowait=False
+        try:
+            ticketformat = TicketFormat.objects.select_for_update().get(id=ticketobj[0].id)
+        except Exception as e:
+            error = e.__str__()
+    if error == '' :
+        if ticketformat.enabled == False :
+            error = 'Ticket disabled'
+    
+    if error == '' :
+        # check booking status
+        if booking.status != Booking.STATUS.CONFIRMED:
+            error = 'Booking status is not confirmed'
+
+    if error == '':
+        # new ticket for booking to queue
+        
+        # lated is the time difference between now and booking timeslot start date by minutes
+        # lated > 0 is lated 
+        # lated = 0 is on time
+        # lated < 0 is early
+        lated = int((datetime_now - booking.timeslot.start_date).total_seconds() / 60.0)
+
+        if lated > 0:
+            # bookingToQueueOnTimeRangeLate (10 mins. default)
+            # bookingToQueueLateUnit (5 mins. default)
+            # if lated within bookingToQueueOnTimeRangeLate, the ticket not 'late'
+            
+
+
+        # change booking status to 'queue'
+        booking = Booking.objects.get(id=pk)
+        booking.status = Booking.STATUS.QUEUE
+        booking.save()
+
+
+
+
+    return error, tickettempid
+    
 # version 8.3.0 add transaction select_for_update for prevent 'double bookings' problem
 @transaction.atomic
 def chainBookNow(timeslot, name, phone_number:phonenumbers, email, user, member):

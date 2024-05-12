@@ -1,11 +1,6 @@
 # AQS version 8.3.0
 
-## Project CHB
-- Server on AWS : https://chb.tsvd.com.hk
-- Superuser : supertim /// 
-- userapi : userapi ///                                                                                 
-- Bcode : CEN
-- Wifi : queuingsystem /// sw7vup2jDfedeT7tWsTz
+
 
 
 <h3 style="color:orange;">Version 8.3.0</h3>

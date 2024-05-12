@@ -1,3 +1,13 @@
+## Project CHB
+- Server on AWS : https://chb.tsvd.com.hk
+- Superuser : supertim /// 
+- userapi : userapi ///                                                                                 
+- Bcode : CEN
+- Wifi : queuingsystem /// sw7vup2jDfedeT7tWsTz
+
+
+Wordings:
+
 <TEXT>若您的輪候票號已過，該票號將會無效<LINE>
 <TEXT>The ticket will be voided if your number has been called.<LINE>
 <DATETIME><LINE>
