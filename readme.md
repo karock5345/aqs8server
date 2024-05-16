@@ -1,12 +1,7 @@
-# AQS version 8.3.0
+# AQS version 8.3.1
 
+<h3 style="color:orange;">Version 8.3.1</h3>
 
-
-
-<h3 style="color:orange;">Version 8.3.0</h3>
-
-- Booking to Queue Function
-- Support multiple workers for Gunicorn (@transaction.atomic)
 - Bug fixed : User update HTML js error (base/templates/base/user_update.html -> line 147)
   ```js
   // check tickettype do not have character "," then set to ""
@@ -20,7 +15,7 @@
     }
   ```
 - Bug fixed : /base/views -> line 289, in SoftkeyView : l_userttype = userttype.split(',') Error : AttributeError: 'NoneType' object has no attribute 'split' **Details : When Superuser no Branch and no TT db TicketType is None**
-- New WS for Voice 8.3.0 (/ws/voice830/) 
+
 - Effect sound for voice announcement
 - Display Panel add show counter and show latest ticket number on API aqs\api\v_display.py -> getDisplay5
 - Bug fixed Web-softkey base/views.py line 305 and base/api/v_softkey.py line 1317 (add .order_by('tickettime')) ticket list is not order by TicketTime
@@ -31,6 +26,13 @@
 - Instruction for upgrade Call/Get function support Multiple Workers (Not including "New Ticket" function) for version v8.2.x
   - Details refer to [Fix_Call_multi-workers.md]
 - Move enable_captcha = True from base/views.py to settings.py
+
+
+<h3 style="color:orange;">Version 8.3.0</h3>
+
+- Booking to Queue Function
+- Support multiple workers for Gunicorn (@transaction.atomic)
+- New WS for Voice 8.3.0 (/ws/voice830/) 
 - All WS links added APP_NAME to avoid conflict with other apps e.g. /ws/sms/<BCODE>/ -> /ws/<APP_NAME>/sms/<BCODE>/ 
 
 <h3 style="color:orange;">Version 8.2.2</h3>

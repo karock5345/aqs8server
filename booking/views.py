@@ -316,13 +316,16 @@ def bookingtoqueue(booking:Booking, user):
             # bookingToQueueOnTimeRangeLate (10 mins. default)
             # bookingToQueueLateUnit (5 mins. default)
             # if lated within bookingToQueueOnTimeRangeLate, the ticket not 'late'
+            xdfvgcff
+            pass
             
 
 
         # change booking status to 'queue'
-        booking = Booking.objects.get(id=pk)
-        booking.status = Booking.STATUS.QUEUE
-        booking.save()
+        # booking = Booking.objects.get(id=pk)
+        # booking.status = Booking.STATUS.QUEUE
+        # booking.save()
+            
 
 
 
