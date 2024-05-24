@@ -175,7 +175,7 @@ def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version)
                 logtime=datetime_now,
                 app = app,
                 version = version,
-                logtext='TicketKey API ticket created : '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pno ,
+                logtext='TicketKey API ticket created '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pno ,
                 user=user,
             )
 
@@ -341,7 +341,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
                 logtime=datetime_now,
                 app = app,
                 version = version,
-                logtext='TicketKey API ticket created : '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pno ,
+                logtext='TicketKey API ticket created '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pno ,
                 user=user,
             )
 

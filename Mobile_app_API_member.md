@@ -174,7 +174,7 @@ Or if failed
 # 3. Member item list API (Member APP)
 ### Request
 ```http
-GET [Server IP or DN]/api/crm/items/?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&member_token=xxx&ccode=xxx
+GET [Server IP or DN]/crm/api/items/?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&member_token=xxx&ccode=xxx
 ```
 
 | Key | Type | Description |
@@ -223,7 +223,7 @@ Or if failed
 
 ### Request
 ```http
-POST [Server IP or DN]/api/crm/logout/?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&ccode=xxx
+POST [Server IP or DN]/crm/api/logout/?app=postman&version=8.2.0&member_no=xxx&member_token=xxx&ccode=xxx
 ```
 
 | Key | Type | Description |
@@ -252,7 +252,7 @@ Or if login failed
 # 5. Member register API (Member APP)
 ### Request
 ```http
-POST [Server IP or DN]/api/crm/reg/?app=postman&version=8.2.0&ccode=xxx&username=xxx&password=xxx&email=xxx&mobile=xxx&nickname=xxx&gender=xxx&dob=xxx
+POST [Server IP or DN]/crm/api/reg/?app=postman&version=8.2.0&ccode=xxx&username=xxx&password=xxx&email=xxx&mobile=xxx&nickname=xxx&gender=xxx&dob=xxx
 ```
 
 | Key | Type | Description |
@@ -293,7 +293,7 @@ Or if failed
 
 ### Request (no need jwt token, this API link is in the member email)
 ```http
-GET [Server IP or DN]/api/crm/verify/?app=email&username=xxx&ccode=xxx&verifycode=xxx
+GET [Server IP or DN]/crm/api/verify/?app=email&username=xxx&ccode=xxx&verifycode=xxx
 ```
 
 | Key | Type | Description |
@@ -314,7 +314,7 @@ HTML page
 
 ### Request (no need jwt token)
 ```http
-DELETE [Server IP or DN]/api/crm/remove/?ccode=xxx&username=xxx
+DELETE [Server IP or DN]/crm/api/remove/?ccode=xxx&username=xxx
 ```
 
 | Key | Type | Description |

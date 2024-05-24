@@ -190,10 +190,10 @@ def Softkey_GetView(request, pk, ttid):
     # no need to confirm
     if error == '':
         # old version no database lock may be cause double call
-        # status, msg, context_get = funCounterGet('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list', 'Softkey-web', softkey_version, datetime_now)
+        # status, msg, context_get = funCounterGet('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list ', 'Softkey-web', softkey_version, datetime_now)
         # new version with database lock
         for i in range(0, 10):
-            status, msg, context_get = funCounterGet_v830('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list', 'Softkey-web', softkey_version, datetime_now)
+            status, msg, context_get = funCounterGet_v830('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list ', 'Softkey-web', softkey_version, datetime_now)
             if status['status'] == 'OK':
                 break
             else:
@@ -213,7 +213,7 @@ def Softkey_GetView(request, pk, ttid):
     #     if request.method == 'POST':
     #         action = request.POST.get('action')
     #         if action == 'confirm':           
-    #             status, msg, context_get = funCounterGet('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list', 'Softkey-web', softkey_version, datetime_now)
+    #             status, msg, context_get = funCounterGet('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list ', 'Softkey-web', softkey_version, datetime_now)
     #             if status['status'] == 'Error':
     #                 error = msg['msg'] + ' ' + tt.tickettype + tt.ticketnumber
     # if error != '':

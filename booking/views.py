@@ -12,7 +12,7 @@ from base.decorators import *
 from django.urls import reverse_lazy, reverse
 
 from .models import *
-from base.models import UserProfile, Branch
+from base.models import UserProfile, Branch, SubTicket
 from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm, BookingForm, BookingNewForm
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
@@ -82,7 +82,7 @@ def BookingNewView(request):
 
 @unauth_user
 def BookingDelView(request, pk):
- 
+    utcnow = timezone.now()
     booking = Booking.objects.get(id=pk) 
   
     if request.method =='POST':
@@ -91,7 +91,7 @@ def BookingDelView(request, pk):
         booking.save()
 
         # get the new timeslot and create a log
-        funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NULL, request.user, None)
+        funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NULL, request.user, None)
 
               
         messages.success(request, 'Time Slot was successfully deleted!') 
@@ -101,6 +101,7 @@ def BookingDelView(request, pk):
     return render(request, 'base/delete.html', context)
 @unauth_user
 def BookingUpdateView(request, pk):
+    utcnow = timezone.now()
     booking = Booking.objects.get(id=pk)    
 
     auth_en_queue, \
@@ -131,7 +132,7 @@ def BookingUpdateView(request, pk):
                 # timeslot.user = request.user
                 # timeslot.save()
                 messages.success(request, 'Booking was successfully updated!')
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.CHANGED, request.user, None)
+                funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.CHANGED, request.user, None)
                 
                 return redirect('bookingsummary')
             except:
@@ -202,12 +203,13 @@ def BookingSummaryView(request):
             if pk == None:
                 error = 'No booking index'
         if error == '':
+            utcnow = timezone.now()
             if action == 'confirm':
                 booking = Booking.objects.get(id=pk)
                 booking.status = Booking.STATUS.CONFIRMED
                 booking.save()
                 # get the new timeslot and create a log
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.CONFIRMED, request.user, None)
+                funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.CONFIRMED, request.user, None)
             elif action == 'reject':
                 booking = Booking.objects.get(id=pk)
                 booking.status = Booking.STATUS.REJECTED
@@ -218,32 +220,33 @@ def BookingSummaryView(request):
                 booking.timeslot.slot_using = booking.timeslot.slot_using - 1
                 booking.timeslot.save()
 
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.REJECTED, Booking.STATUS.REJECTED, request.user, None)
+                funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.REJECTED, request.user, None)
             elif action == 'start':
                 booking = Booking.objects.get(id=pk)
                 booking.status = Booking.STATUS.STARTED
                 booking.save()
                 # get the new timeslot and create a log
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.STARTED, request.user, None)
-
+                funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.STARTED, request.user, None)
+                # member will marked as 'on time'
             elif action == 'late':
                 booking = Booking.objects.get(id=pk)
                 booking.status = Booking.STATUS.LATED
                 booking.save()
                 # get the new timeslot and create a log
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.LATED, request.user, None)
+                funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.LATED, request.user, None)
+                # member will marked as 'late'
             elif action == 'noshow':
                 booking = Booking.objects.get(id=pk)
                 booking.status = Booking.STATUS.NOSHOW
                 booking.save()
                 # get the new timeslot and create a log
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NOSHOW, request.user, None)
+                funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NOSHOW, request.user, None)
             elif action == 'queue':
                 # Booking to queue
-                error, tickettempid = bookingtoqueue(booking, request.user)
+                error, tickettempid = bookingtoqueue(utcnow, booking, request.user)
                 if error == '':
                     # get the new timeslot and create a log
-                    funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.QUEUE, request.user, None)
+                    funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.QUEUE, request.user, None)
 
                 
             elif action == 'complete':
@@ -251,7 +254,7 @@ def BookingSummaryView(request):
                 booking.status = Booking.STATUS.COMPLETED
                 booking.save()
                 # get the new timeslot and create a log
-                funBookingLog(booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.COMPLETED, request.user, None)
+                funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.COMPLETED, request.user, None)
             
 
         if error != '': 
@@ -265,12 +268,12 @@ def BookingSummaryView(request):
     return render(request, 'booking/booking.html', context)
 
 @transaction.atomic
-def bookingtoqueue(booking:Booking, user):
+def bookingtoqueue(utcnow, booking:Booking, user):
     error = ''
     tickettempid = None
-    datetime_now = timezone.now()
-    datetime_now_local = funUTCtoLocal(datetime_now, booking.branch.timezone)
-    str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
+    # datetime_now_local = funUTCtoLocal(datetime_now, booking.branch.timezone)
+    ticketformat = None
+    # str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
 
     if error == '':
         if booking.branch.bookingenabled == False:
@@ -306,20 +309,69 @@ def bookingtoqueue(booking:Booking, user):
     if error == '':
         # new ticket for booking to queue
         
+        itype = 0 # sub ticket type 0=A, 1=B, 2=C ...
+        booking_score = 0
+
         # lated is the time difference between now and booking timeslot start date by minutes
         # lated > 0 is lated 
         # lated = 0 is on time
         # lated < 0 is early
-        lated = int((datetime_now - booking.timeslot.start_date).total_seconds() / 60.0)
-
-        if lated > 0:
+        lated = int((utcnow - booking.timeslot.start_date).total_seconds() / 60.0)
+        if lated == 0:
+            itype = 0
+        elif lated > 0:
             # bookingToQueueOnTimeRangeLate (10 mins. default)
             # bookingToQueueLateUnit (5 mins. default)
             # if lated within bookingToQueueOnTimeRangeLate, the ticket not 'late'
-            xdfvgcff
-            pass
             
+            if lated > booking.branch.bookingToQueueOnTimeRangeLate:
+                itype = int((lated - booking.branch.bookingToQueueOnTimeRangeLate - 1) / booking.branch.bookingToQueueLateUnit) + 1
+                if itype < 0:
+                    itype = 0
+        elif lated < 0:
+            lated = lated * -1
+            if lated < booking.branch.bookingToQueueOnTimeRangeEarly:
+                itype = int((lated - booking.branch.bookingToQueueOnTimeRangeEarly - 1) / booking.branch.bookingToQueueLateUnit) + 1
+            lated = lated * -1
+        if itype > 25 :
+            itype = 25
 
+        # sub ticket type 0=A, 1=B, 2=C ...
+        subType = chr(itype + 65)
+        isubTicketNo = 0
+
+
+        # get the last ticket number
+        subticketobj = SubTicket.objects.filter(Q(branch=booking.branch) & Q(booking_tickettype=subType))
+        if subticketobj.count() == 0:
+            # create new sub ticket
+            subticket = SubTicket.objects.create(
+                branch = booking.branch,
+                booking_tickettype = subType,
+                ticketnext = 2,
+                )
+
+            isubTicketNo = 1
+        else:
+            subticket_id = subticketobj[0].pk
+            # Lock the sub ticket nowait=False
+            try:
+                subticket = SubTicket.objects.select_for_update().get(id=subticket_id)
+            except Exception as e:
+                error = e.__str__()
+            isubTicketNo = subticket.ticketnext
+            subticket.ticketnext = subticket.ticketnext + 1
+            subticket.save()
+      
+        # create new ticket
+        if error == '':
+            # isubTicketNo
+            # subType
+            # ticketformat
+            # booking_score
+            # booking.timeslot.start_date = booking time 
+            # utcnow = current time
+            pass
 
         # change booking status to 'queue'
         # booking = Booking.objects.get(id=pk)
@@ -338,6 +390,7 @@ def chainBookNow(timeslot, name, phone_number:phonenumbers, email, user, member)
     # check slot
     error = ''
     error_TC = ''
+    utcnow = timezone.now()
 
     if error == '':
         # Lock the timeslot nowait=False
@@ -377,7 +430,7 @@ def chainBookNow(timeslot, name, phone_number:phonenumbers, email, user, member)
             )
         # print(booking.status)
         # aget the new timeslot and create a log
-        funBookingLog(timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NEW, user, member)
+        funBookingLog(utcnow, timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NEW, user, member)
     return error, error_TC
 
 def Booking_Details_ClientView(request, pk):
@@ -678,7 +731,7 @@ def BookingClientView(request, bcode):
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TimeSlotDelView(request, pk):
- 
+    utcnow = timezone.now()
     timeslot = TimeSlot.objects.get(id=pk) 
   
     if request.method =='POST':
@@ -687,7 +740,7 @@ def TimeSlotDelView(request, pk):
         timeslot.save()
 
         # get the new timeslot and create a log
-        funBookingLog(timeslot, None, TimeSlot.ACTION.DELETED, Booking.STATUS.NULL, request.user, None)
+        funBookingLog(utcnow, timeslot, None, TimeSlot.ACTION.DELETED, Booking.STATUS.NULL, request.user, None)
 
         timeslot.delete()       
         messages.success(request, 'Time Slot was successfully deleted!') 
@@ -718,6 +771,7 @@ def TimeSlotNewView(request):
     tsform = TimeSlotNewForm(auth_branchs=auth_branchs)
 
     if request.method == 'POST':
+        utcnow = timezone.now()
         tsform = TimeSlotNewForm(request.POST, auth_branchs=auth_branchs)
         
         error = ''
@@ -737,7 +791,7 @@ def TimeSlotNewView(request):
 
                 # get the new timeslot and create a log
                 timeslot = TimeSlot.objects.get(id=newform.id)
-                funBookingLog(timeslot, None, TimeSlot.ACTION.NEW,  Booking.STATUS.NULL, request.user, None)
+                funBookingLog(utcnow, timeslot, None, TimeSlot.ACTION.NEW,  Booking.STATUS.NULL, request.user, None)
 
                 messages.success(request, 'Created new Time Slot.')
             except:
@@ -780,17 +834,18 @@ def TimeSlotUpdateView(request, pk):
     = auth_data(request.user)
 
     if request.method == 'POST':
+        utcnow = timezone.now()
         tsform = TimeSlotForm(request.POST, instance=timeslot, prefix='timeslotform', auth_branchs=auth_branchs)
         error = ''
         error, newform = checktimeslotform(tsform)
         if error == '' :         
-            try :
+            try :                
                 newform.save()
                 # change user to current user
                 timeslot.user = request.user
                 timeslot.save()
                 messages.success(request, 'TimeSlot was successfully updated!')
-                funBookingLog(timeslot, None, TimeSlot.ACTION.CHANGED, Booking.STATUS.NULL, request.user, None)
+                funBookingLog(utcnow, timeslot, None, TimeSlot.ACTION.CHANGED, Booking.STATUS.NULL, request.user, None)
                 
                 return redirect('bookingtimeslot')
             except:
@@ -959,7 +1014,7 @@ def checkbookingform(form):
     
     return error, newform
 
-def funBookingLog(timeslot, booking, action, status, user, member):
+def funBookingLog(now_time, timeslot, booking, action, status, user, member):
 
     logtext = ''
     logtext_t = ''
@@ -1005,14 +1060,15 @@ def funBookingLog(timeslot, booking, action, status, user, member):
 
     logtext = logtext_t + logtext_b
     BookingLog.objects.create(
+        logtime = now_time,
         branch = branch,
         timeslot = timeslot, 
         booking = booking, 
         user = user, 
         member = member,
         logtext = logtext,
-        action = action, 
-        status = status,
+        timeslot_action = action, 
+        booking_status = status,
         remark = None,
         )        
     return

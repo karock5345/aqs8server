@@ -12,7 +12,7 @@ class BookingView(admin.ModelAdmin):
     ordering = ('-updated', '-created')
 
 class BookingLogView(admin.ModelAdmin):
-    list_display =('created', 'branch', 'timeslot', 'booking', 'user', 'member', 'action', 'status', 'logtext', )
+    list_display =('logtime', 'branch', 'timeslot', 'booking', 'user', 'member', 'timeslot_action', 'booking_status', 'logtext', )
     ordering = ('booking', '-created')
 
 class SMSLogView(admin.ModelAdmin):

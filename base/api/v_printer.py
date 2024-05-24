@@ -186,7 +186,7 @@ def postTicketPrinted(request):
                     logtime=datetime_now,
                     app = app,
                     version = version,
-                    logtext='API Ticket Printed : ' + branch.bcode + '_' + ttype + '_'+ tnumber + '_' + stickettime,
+                    logtext='API Ticket Printed ' + branch.bcode + '_' + ttype + '_'+ tnumber + '_' + stickettime,
                     user=user,
                 )
                 context = dict({'Printed times': str(ticket.printedtimes)})

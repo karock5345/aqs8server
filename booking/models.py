@@ -11,10 +11,10 @@ from base.api.views import funUTCtoLocal
 # Create your models here.
 
 # Booking status:
-# status : New -> confirmed : confirmed by admin -> start : Start Service     -> completed : completed by admin
-#                                                -> late : customer is late   -> completed : completed by admin
-#                                                -> noshow : customer no show
-#                                                -> queue : change to queue   -> queue system status : 1. Queue done, 2. Ticket void, 3. Ticket no show
+# status : New -> confirmed : confirmed by admin -> Arrived -> start : Start Service     -> completed : completed by admin
+#                                                           -> late : customer is late   -> completed : completed by admin
+#                                                           -> noshow : customer no show
+#                                                           -> queue : change to queue   -> queue system status : 1. Queue done, 2. Ticket void, 3. Ticket no show
 #              -> rejected : rejected by admin
 #              -> cancelled : cancelled by customer
 
@@ -29,11 +29,11 @@ class TimeSlot(models.Model):
         NULL = 'null', _('---')
         NEW = 'new', _('New')
         CHANGED = 'change', _('Change')
-        CANCELLED = 'cancel', _('Cancel')
-        CONFIRMED = 'confirm', _('Confirm')
-        REJECTED = 'reject', _('Reject')
-        NOSHOW = 'noshow', _('No show')
-        COMPLETED = 'complete', _('Completed')
+        #CANCELLED = 'cancel', _('Cancel')
+        #CONFIRMED = 'confirm', _('Confirm')
+        #REJECTED = 'reject', _('Reject')
+        #NOSHOW = 'noshow', _('No show')
+        #COMPLETED = 'complete', _('Completed')
         DELETED = 'delete', _('Delete')    
     # TimeSlot if branch is deleted, timeslot should be deleted
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
@@ -73,12 +73,18 @@ class Booking(models.Model):
         REJECTED = 'rejected', _('Rejected by Admin')
         CANCELLED = 'cancelled', _('Cancelled by Customer')
 
-        STARTED = 'started', _('Start Service')
-        LATED = 'late', _('Late')
+        ARRIVED = 'arrived', _('Customer Arrived')
         NOSHOW = 'noshow', _('Customer No show')
+
+        # If arrived on time
+        STARTED = 'started', _('Start Service')
         QUEUE = 'queue', _('Queue')
+        # If arrived late
+        STARTED_ONTIME = 'started_ontime', _('Start Service (force on time)')
+        QUEUE_ONTIME = 'queue_ontime', _('Queue (force on time)')
 
         COMPLETED = 'completed', _('Completed')
+
         CHANGED = 'changed', _('Changed')
         DELETED = 'deleted', _('Deleted') # this is for booking fake delete
 
@@ -110,7 +116,7 @@ class Booking(models.Model):
         return self.name + '-' + start_date_local.strftime('%Y-%m-%d_%H:%M')
     
 class BookingLog(models.Model):
-
+    logtime = models.DateTimeField()
 
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
     # branch = models.ForeignKey(Branch, on_delete=models.CASCADE, default=Branch.get_default_pk)
@@ -121,8 +127,8 @@ class BookingLog(models.Model):
     member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, blank=True)
     logtext = models.TextField(max_length=200, null=True, blank=True)
 
-    action = models.CharField(max_length=100, choices=TimeSlot.ACTION.choices, default=TimeSlot.ACTION.NULL, verbose_name='Time Slot Action')
-    status = models.CharField(max_length=100, choices=Booking.STATUS.choices, default=Booking.STATUS.NULL, verbose_name='Booking Status')
+    timeslot_action = models.CharField(max_length=100, choices=TimeSlot.ACTION.choices, default=TimeSlot.ACTION.NULL, verbose_name='Time Slot Action')
+    booking_status = models.CharField(max_length=100, choices=Booking.STATUS.choices, default=Booking.STATUS.NULL, verbose_name='Booking Status')
     remark = models.TextField(max_length=200, null=True, blank=True)
 
     created = models.DateTimeField(auto_now_add=True)
