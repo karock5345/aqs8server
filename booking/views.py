@@ -153,6 +153,7 @@ def BookingUpdateView(request, pk):
     return render(request, 'booking/booking_update.html', context)
 
 @unauth_user
+@transaction.atomic
 def BookingSummaryView(request):
     auth_en_queue, \
     auth_en_crm, \
@@ -185,7 +186,7 @@ def BookingSummaryView(request):
         action = None
         pk = None
         booking = None
-        action_list = ['confirm', 'reject', 'start', 'late', 'noshow', 'queue', 'complete']
+        action_list = ['confirm', 'reject', 'start', 'arrive', 'noshow', 'queue', 'complete', 'queue_ontime', 'complete_ontime', ]
         error = ''
         for a in action_list:
             if request.POST.get(a) != None:
@@ -205,58 +206,79 @@ def BookingSummaryView(request):
         if error == '':
             utcnow = timezone.now()
             if action == 'confirm':
-                booking = Booking.objects.get(id=pk)
-                booking.status = Booking.STATUS.CONFIRMED
-                booking.save()
-                # get the new timeslot and create a log
-                funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.CONFIRMED, request.user, None)
+                booking = Booking.objects.select_for_update().get(id=pk)
+                if booking.status == Booking.STATUS.NEW:
+                    booking.status = Booking.STATUS.CONFIRMED
+                    booking.save()
+                    # get the new timeslot and create a log
+                    funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.CONFIRMED, request.user, None)
+                else:
+                    error = 'Booking status incorrect'
             elif action == 'reject':
-                booking = Booking.objects.get(id=pk)
-                booking.status = Booking.STATUS.REJECTED
-                booking.save()
+                booking = Booking.objects.select_for_update().get(id=pk)
+                if booking.status == Booking.STATUS.NEW:
+                    booking.status = Booking.STATUS.REJECTED
+                    booking.save()
 
-                # release the slot
-                booking.timeslot.slot_available = booking.timeslot.slot_available + 1
-                booking.timeslot.slot_using = booking.timeslot.slot_using - 1
-                booking.timeslot.save()
+                    # release the slot
+                    booking.timeslot.slot_available = booking.timeslot.slot_available + 1
+                    booking.timeslot.slot_using = booking.timeslot.slot_using - 1
+                    booking.timeslot.save()
 
-                funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.REJECTED, request.user, None)
-            elif action == 'start':
-                booking = Booking.objects.get(id=pk)
-                booking.status = Booking.STATUS.STARTED
-                booking.save()
-                # get the new timeslot and create a log
-                funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.STARTED, request.user, None)
-                # member will marked as 'on time'
-            elif action == 'late':
-                booking = Booking.objects.get(id=pk)
-                booking.status = Booking.STATUS.LATED
-                booking.save()
-                # get the new timeslot and create a log
-                funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.LATED, request.user, None)
-                # member will marked as 'late'
+                    funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.REJECTED, request.user, None)
+                else:
+                    error = 'Booking status incorrect'
+            elif action == 'arrive':
+                booking = Booking.objects.select_for_update().get(id=pk)
+                if booking.status == Booking.STATUS.CONFIRMED:
+                    booking.status = Booking.STATUS.ARRIVED
+                    booking.arrival_time = utcnow
+                    late = int((utcnow - booking.timeslot.start_date).total_seconds() / 60.0)
+                    booking.late = late
+                    booking.save()
+                    # get the new timeslot and create a log
+                    funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.ARRIVED, request.user, None)
+                else:
+                    error = 'Booking status incorrect'
             elif action == 'noshow':
-                booking = Booking.objects.get(id=pk)
-                booking.status = Booking.STATUS.NOSHOW
-                booking.save()
-                # get the new timeslot and create a log
-                funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NOSHOW, request.user, None)
+                booking = Booking.objects.select_for_update().get(id=pk)
+                if booking.status == Booking.STATUS.CONFIRMED:
+                    booking.status = Booking.STATUS.NOSHOW
+                    booking.save()
+                    # get the new timeslot and create a log
+                    funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NOSHOW, request.user, None)
+                else:
+                    error = 'Booking status incorrect'
+            elif action == 'start':
+                booking = Booking.objects.select_for_update().get(id=pk)
+                if booking.status == Booking.STATUS.ARRIVED:
+                    booking.status = Booking.STATUS.STARTED
+                    booking.save()
+                    # get the new timeslot and create a log
+                    funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.STARTED, request.user, None)
+                    # member will marked as 'on time'
+                else:
+                    error = 'Booking status incorrect'
+
             elif action == 'queue':
                 # Booking to queue
-                error, tickettempid = bookingtoqueue(utcnow, booking, request.user)
-                if error == '':
-                    # get the new timeslot and create a log
-                    funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.QUEUE, request.user, None)
-
-                
+                booking = Booking.objects.select_for_update().get(id=pk)
+                if booking.status == Booking.STATUS.CONFIRMED:
+                    error, tickettempid = bookingtoqueue(utcnow, booking, request.user)
+                    if error == '':
+                        # get the new timeslot and create a log
+                        funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.QUEUE, request.user, None)
+                else:
+                    error = 'Booking status incorrect'
             elif action == 'complete':
-                booking = Booking.objects.get(id=pk)
-                booking.status = Booking.STATUS.COMPLETED
-                booking.save()
-                # get the new timeslot and create a log
-                funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.COMPLETED, request.user, None)
-            
-
+                booking = Booking.objects.select_for_update().get(id=pk)
+                if booking.status == Booking.STATUS.STARTED:
+                    booking.status = Booking.STATUS.COMPLETED
+                    booking.save()
+                    # get the new timeslot and create a log
+                    funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.COMPLETED, request.user, None)
+                else:
+                    error = 'Booking status incorrect'
         if error != '': 
             messages.error(request, error)
             

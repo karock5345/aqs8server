@@ -201,6 +201,8 @@ class Branch(models.Model):
 
     # Booking to queue settings
     bookingToQueueEnabled = models.BooleanField(default=True, verbose_name='Booking to Queue enabled')
+    # Function for Booking was late / early force Booking to On time to Start Service or queue
+    bookingForceOnTime = models.BooleanField(default=True, verbose_name='Booking force on time', help_text='If booking is late or early, force to on time to start service or queue')
     # On time range, e.g. =10 means late within 10 minutes of booking time is on time, booking_tickettype = 'A'
     bookingToQueueOnTimeRangeLate = models.IntegerField(default=10, verbose_name='Booking to Queue on time range late (1 to 15 minutes)')
     # On time range, e.g. =-15 means early within 15 minutes of booking time is on time, booking_tickettype = 'A'

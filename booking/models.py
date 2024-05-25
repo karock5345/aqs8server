@@ -12,9 +12,11 @@ from base.api.views import funUTCtoLocal
 
 # Booking status:
 # status : New -> confirmed : confirmed by admin -> Arrived -> start : Start Service     -> completed : completed by admin
-#                                                           -> late : customer is late   -> completed : completed by admin
-#                                                           -> noshow : customer no show
 #                                                           -> queue : change to queue   -> queue system status : 1. Queue done, 2. Ticket void, 3. Ticket no show
+#                                                           If arrived not on time (compare with arrived time and timeslot start time)
+#                                                           -> start_ontime : Start Service (force on time) -> completed : completed by admin
+#                                                           -> queue_ontime : change to queue (force on time) -> (same as above)
+#                                                -> noshow : customer no show
 #              -> rejected : rejected by admin
 #              -> cancelled : cancelled by customer
 
@@ -103,6 +105,9 @@ class Booking(models.Model):
     mobilephone = models.CharField(max_length=200, null=True, blank=True, default='')
     people = models.IntegerField(default=1)
     remark = models.TextField(max_length=500, null=True, blank=True, default='')
+
+    arrival_time = models.DateTimeField(null=True, blank=True)
+    late = models.IntegerField(default=0) # in minutes, if + then late, if - then early
 
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
