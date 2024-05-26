@@ -186,7 +186,7 @@ def BookingSummaryView(request):
         action = None
         pk = None
         booking = None
-        action_list = ['confirm', 'reject', 'start', 'arrive', 'noshow', 'queue', 'complete', 'queue_ontime', 'complete_ontime', ]
+        action_list = ['confirm', 'reject', 'start', 'arrive', 'noshow', 'queue', 'complete', 'start_ontime', 'queue_ontime', ]
         error = ''
         for a in action_list:
             if request.POST.get(a) != None:

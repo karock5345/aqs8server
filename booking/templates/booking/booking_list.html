@@ -59,29 +59,46 @@
     `
     var status_confirmed_key_html = `
             <div>
-                <button type="submit" name="start" value="[[pk]]" class="booking_key"  >Start</button>
-            </div>
-            <div>
-                <button type="submit" name="late" value="[[pk]]" class="booking_key"  >Late</button>
+                <button type="submit" name="arrive" value="[[pk]]" class="booking_key"  >Arrive</button>
             </div>
             <div>
                 <button type="submit" name="noshow" value="[[pk]]" class="booking_key"  >No Show</button>
             </div>
+    `
+    var status_start_key_html = `
+            <div>
+                <button type="submit" name="start" value="[[pk]]" class="booking_key"  >Start</button>
+            </div>
+    `
+    var status_queue_key_html = `
             <div>
                 <button type="submit" name="queue" value="[[pk]]" class="booking_key"  >Queue</button>
             </div>
     `
-    var status_confirmed_noqueue_key_html = `
+    var status_startontime_key_html = `
+            <div>
+                <button type="submit" name="start_ontime" value="[[pk]]" class="booking_key"  >Start (force on time)</button>
+            </div>
+    `    
+    var status_queueontime_key_html = `
+            <div>
+                <button type="submit" name="queue_ontime" value="[[pk]]" class="booking_key"  >Queue (force on time)</button>
+            </div>
+    `    
+    var status_arrived_late_key_html = `
             <div>
                 <button type="submit" name="start" value="[[pk]]" class="booking_key"  >Start</button>
             </div>
             <div>
-                <button type="submit" name="late" value="[[pk]]" class="booking_key"  >Late</button>
+                <button type="submit" name="queue" value="[[pk]]" class="booking_key"  >Queue</button>
             </div>
             <div>
-                <button type="submit" name="noshow" value="[[pk]]" class="booking_key"  >No Show</button>
+                <button type="submit" name="start" value="[[pk]]" class="booking_key booking_key_reject"  >Start force Ontime</button>
             </div>
-    `    
+            <div>
+                <button type="submit" name="queue" value="[[pk]]" class="booking_key booking_key_reject"  >Queue force Ontime</button>
+            </div>            
+    `
     var status_started_key_html = `
             <div>
                 <div>
@@ -129,19 +146,33 @@
         var bookingtoqueue = document.getElementById("bookingtoqueue-" + pk).innerHTML;
         // remove all spaces in status
         bookingtoqueue = bookingtoqueue.replace(/\s/g, '');
+        var lated = document.getElementById("lated-" + pk).innerHTML;
+        // remove all spaces in status
+        lated = lated.replace(/\s/g, '');        
         // bk_pk[i] = pk;
         
         var key_area = "";
         if (status == "new") {
             key_area = status_new_key_html ;
         } else if (status == "confirmed") {
-            
-            if (bookingtoqueue == "True") {
-                key_area = status_confirmed_key_html ;
-            } else {
-                key_area = status_confirmed_noqueue_key_html ;
+
+            key_area = status_confirmed_key_html ;            
+            // if (bookingtoqueue == "True") {
+            //     key_area = status_confirmed_key_html ;
+            // } else {
+            //     key_area = status_confirmed_noqueue_key_html ;
+            // }
+        } else if (status == "arrived") {
+            key_area = status_start_key_html ;
+            if (bookingtoqueue == "False") {
+                key_area = key_area + status_queue_key_html ;
             }
-          
+            if (lated == "True") {
+                key_area = key_area + status_startonline_key_html ;
+                if (bookingtoqueue == "False") {
+                    key_area = key_area + status_queueonline_key_html ;                
+                }
+            }
         } else if (status == "rejected") {
             key_area = status_rejected_key_html ;
         } else if (status == "cancelled") {

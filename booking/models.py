@@ -107,7 +107,8 @@ class Booking(models.Model):
     remark = models.TextField(max_length=500, null=True, blank=True, default='')
 
     arrival_time = models.DateTimeField(null=True, blank=True)
-    late = models.IntegerField(default=0) # in minutes, if + then late, if - then early
+    lated = models.BooleanField(default=False) # if arrived late or early then True
+    late_min = models.IntegerField(default=0) # in minutes, if + then late, if - then early
 
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
