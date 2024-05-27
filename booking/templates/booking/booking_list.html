@@ -29,7 +29,17 @@
                     </div>
                     <div id="bookingtoqueue-{{ bk.pk }}" hidden>
                         {{ bk.bookingtoqueue }}
-                    </div>                    
+                    </div>
+                    <div id="lated-{{ bk.pk }}" hidden>
+                        {{ bk.lated }}
+                    </div>
+                    <div id="late_min-{{ bk.pk }}" hidden>
+                        {{ bk.late_min }}
+                    </div>
+                    <div id="forceontime-{{ bk.pk }}" hidden>
+                        {{ bk.bookingforceontime }}
+                    </div>
+                
                     <div id="key_area-{{ bk.pk }}" class="booking_key_area">
 
                     </div>
@@ -77,12 +87,12 @@
     `
     var status_startontime_key_html = `
             <div>
-                <button type="submit" name="start_ontime" value="[[pk]]" class="booking_key"  >Start (force on time)</button>
+                <button type="submit" name="start_ontime" value="[[pk]]" class="booking_key booking_key_reject"  >Start (Ontime)</button>
             </div>
     `    
     var status_queueontime_key_html = `
             <div>
-                <button type="submit" name="queue_ontime" value="[[pk]]" class="booking_key"  >Queue (force on time)</button>
+                <button type="submit" name="queue_ontime" value="[[pk]]" class="booking_key booking_key_reject"  >Queue (fast)</button>
             </div>
     `    
     var status_arrived_late_key_html = `
@@ -111,7 +121,7 @@
                 <div>No Show</div>
             </div>
     `
-    var status_queue_key_html = `
+    var status_queue_key_q_html = `
             <div>On queue</div>
             <div>
                 <button type="submit" name="softkey" value="[[pk]]" class="booking_key"  >Goto Softkey</button>
@@ -148,9 +158,16 @@
         bookingtoqueue = bookingtoqueue.replace(/\s/g, '');
         var lated = document.getElementById("lated-" + pk).innerHTML;
         // remove all spaces in status
-        lated = lated.replace(/\s/g, '');        
-        // bk_pk[i] = pk;
+        lated = lated.replace(/\s/g, '');
+        var late_min = document.getElementById("late_min-" + pk).innerHTML;
+        // remove all spaces in status
+        late_min = late_min.replace(/\s/g, '');        
+        var forceontime = document.getElementById("forceontime-" + pk).innerHTML;
+        // remove all spaces in status
+        forceontime = forceontime.replace(/\s/g, '');
         
+        // bk_pk[i] = pk;
+        console.log(late_min);
         var key_area = "";
         if (status == "new") {
             key_area = status_new_key_html ;
@@ -163,16 +180,24 @@
             //     key_area = status_confirmed_noqueue_key_html ;
             // }
         } else if (status == "arrived") {
-            key_area = status_start_key_html ;
-            if (bookingtoqueue == "False") {
+            key_area = status_start_key_html;
+            // how to change the string (key_area) to HTML
+            key_area = `<div class="booking_new">` + late_min + `</div>` + key_area;
+
+
+            
+            if (bookingtoqueue == "True") {
                 key_area = key_area + status_queue_key_html ;
             }
-            if (lated == "True") {
-                key_area = key_area + status_startonline_key_html ;
-                if (bookingtoqueue == "False") {
-                    key_area = key_area + status_queueonline_key_html ;                
+            if (forceontime == "True") {
+                if (lated == "True") {
+                    key_area = key_area + status_startontime_key_html ;
+                    if (bookingtoqueue == "True") {
+                        key_area = key_area + status_queueontime_key_html ;
+                    }
                 }
             }
+
         } else if (status == "rejected") {
             key_area = status_rejected_key_html ;
         } else if (status == "cancelled") {
@@ -192,6 +217,7 @@
         key_area = key_area.replace(/\[\[pk\]\]/g, pk);
 
         document.getElementById("key_area-" + pk).innerHTML = key_area;
+
         
     }
 

@@ -3675,13 +3675,17 @@ def  auth_data(user):
     auth_en_booking = userprofile.enabled_booking
 
     # add column for bookingtoqueue
-    auth_bookings = Booking.objects.filter(~Q(status=Booking.STATUS.DELETED)).annotate(bookingtoqueue=Value(False, output_field=BooleanField()))            
+    auth_bookings = Booking.objects.filter(~Q(status=Booking.STATUS.DELETED)).annotate(bookingtoqueue=Value(False, output_field=BooleanField()))
+    auth_bookings = auth_bookings.annotate(bookingforceontime=Value(False, output_field=BooleanField()))
     for booking in auth_bookings :
         booking.bookingtoqueue = True
         if booking.branch.queueenabled == False :
             booking.bookingtoqueue = False
         if booking.branch.bookingToQueueEnabled == False :
             booking.bookingtoqueue = False
+        booking.bookingforceontime = False
+        if booking.branch.bookingForceOnTime == True :
+            booking.bookingforceontime = True
     if user.is_superuser == True :
         auth_en_queue = True
         auth_en_crm = True

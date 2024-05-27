@@ -70,18 +70,18 @@
 <script>
   // <!-- globle variable : b_showall is bool -->
   var b_showall = false;
-  var btn_listshow = document.getElementById('id_showall');
+  // var btn_listshow = document.getElementById('id_showall');
 
-  btn_listshow.addEventListener('click', function() {
-          b_showall = true;
-          // replace all class="roomListRoom__hide" to class="roomListRoom"
-          var elementArray;
-          elementArray = document.getElementsByClassName("roomListRoom__hide");
-          while (elementArray.length) {
-            elementArray[0].className = "roomListRoom";
-          }
+  // btn_listshow.addEventListener('click', function() {
+  //         b_showall = true;
+  //         // replace all class="roomListRoom__hide" to class="roomListRoom"
+  //         var elementArray;
+  //         elementArray = document.getElementsByClassName("roomListRoom__hide");
+  //         while (elementArray.length) {
+  //           elementArray[0].className = "roomListRoom";
+  //         }
         
-      });
+  //     });
   
 </script>
 {% endblock %}      

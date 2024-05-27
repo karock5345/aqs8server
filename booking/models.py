@@ -109,6 +109,7 @@ class Booking(models.Model):
     arrival_time = models.DateTimeField(null=True, blank=True)
     lated = models.BooleanField(default=False) # if arrived late or early then True
     late_min = models.IntegerField(default=0) # in minutes, if + then late, if - then early
+    isubtype = models.IntegerField(default=0) # for integer sub ticket type
 
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)

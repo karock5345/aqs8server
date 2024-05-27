@@ -212,6 +212,9 @@ def BookingSummaryView(request):
                     booking.save()
                     # get the new timeslot and create a log
                     funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.CONFIRMED, request.user, None)
+
+                    # refresh the page
+                    return redirect('bookingsummary')
                 else:
                     error = 'Booking status incorrect'
             elif action == 'reject':
@@ -233,11 +236,45 @@ def BookingSummaryView(request):
                 if booking.status == Booking.STATUS.CONFIRMED:
                     booking.status = Booking.STATUS.ARRIVED
                     booking.arrival_time = utcnow
-                    late = int((utcnow - booking.timeslot.start_date).total_seconds() / 60.0)
-                    booking.late = late
+
+                    isubtype = 0
+                    # late_min is the time difference between now and booking timeslot start date by minutes
+                    # late_min > 0 is lated 
+                    # late_min = 0 is on time
+                    # late_min < 0 is early
+                    late_min = int((utcnow - booking.timeslot.start_date).total_seconds() / 60.0)
+                    if late_min == 0:
+                        isubtype = 0
+                    elif late_min > 0:
+                        # bookingToQueueOnTimeRangeLate (10 mins. default)
+                        # bookingToQueueLateUnit (5 mins. default)
+                        # if late_min within bookingToQueueOnTimeRangeLate, the ticket not 'late'
+                        
+                        if late_min > booking.branch.bookingToQueueOnTimeRangeLate:
+                            isubtype = int((late_min - booking.branch.bookingToQueueOnTimeRangeLate - 1) / booking.branch.bookingToQueueLateUnit) + 1
+                            if isubtype < 0:
+                                isubtype = 0
+                    elif late_min < 0:
+                        late_min = late_min * -1
+                        if late_min < booking.branch.bookingToQueueOnTimeRangeEarly:
+                            isubtype = int((late_min - booking.branch.bookingToQueueOnTimeRangeEarly - 1) / booking.branch.bookingToQueueLateUnit) + 1
+                        late_min = late_min * -1
+                    if isubtype > 25 :
+                        isubtype = 25
+
+                    booking.isubtype = isubtype
+                    if isubtype == 0:
+                        booking.lated = False
+                    else:
+                        booking.lated = True                        
+
+                    booking.late_min = late_min
                     booking.save()
                     # get the new timeslot and create a log
                     funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.ARRIVED, request.user, None)
+
+                    # refresh the page
+                    return redirect('bookingsummary')
                 else:
                     error = 'Booking status incorrect'
             elif action == 'noshow':
@@ -331,35 +368,10 @@ def bookingtoqueue(utcnow, booking:Booking, user):
     if error == '':
         # new ticket for booking to queue
         
-        itype = 0 # sub ticket type 0=A, 1=B, 2=C ...
         booking_score = 0
 
-        # lated is the time difference between now and booking timeslot start date by minutes
-        # lated > 0 is lated 
-        # lated = 0 is on time
-        # lated < 0 is early
-        lated = int((utcnow - booking.timeslot.start_date).total_seconds() / 60.0)
-        if lated == 0:
-            itype = 0
-        elif lated > 0:
-            # bookingToQueueOnTimeRangeLate (10 mins. default)
-            # bookingToQueueLateUnit (5 mins. default)
-            # if lated within bookingToQueueOnTimeRangeLate, the ticket not 'late'
-            
-            if lated > booking.branch.bookingToQueueOnTimeRangeLate:
-                itype = int((lated - booking.branch.bookingToQueueOnTimeRangeLate - 1) / booking.branch.bookingToQueueLateUnit) + 1
-                if itype < 0:
-                    itype = 0
-        elif lated < 0:
-            lated = lated * -1
-            if lated < booking.branch.bookingToQueueOnTimeRangeEarly:
-                itype = int((lated - booking.branch.bookingToQueueOnTimeRangeEarly - 1) / booking.branch.bookingToQueueLateUnit) + 1
-            lated = lated * -1
-        if itype > 25 :
-            itype = 25
-
         # sub ticket type 0=A, 1=B, 2=C ...
-        subType = chr(itype + 65)
+        subType = chr(booking.isubtype + 65)
         isubTicketNo = 0
 
 
