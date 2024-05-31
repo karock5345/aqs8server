@@ -13,7 +13,7 @@ psycopg2==2.9.9
 # psycopg2-binary==2.9.9
 pyOpenSSL==23.3.0
 pytz-deprecation-shim==0.1.0.post0
-redis==5.0.1
+redis==5.0.4
 service-identity==23.1.0
 wheel==0.42.0
 zope.interface==6.1

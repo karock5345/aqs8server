@@ -450,6 +450,9 @@ def loginapi(request, username, password, token, in_branch):
 
 # Convert UTC to Locate datetime
 def funUTCtoLocal(dInput, zone) -> datetime :
+
+    if dInput == None :
+        return None
     UTC_zone = tz.gettz('UTC')
     local_zone = tz.gettz(zone)
 

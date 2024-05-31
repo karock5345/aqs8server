@@ -182,7 +182,12 @@
         } else if (status == "arrived") {
             key_area = status_start_key_html;
             // how to change the string (key_area) to HTML
-            key_area = `<div class="booking_new">` + late_min + `</div>` + key_area;
+            if (lated == "True") {
+                key_area = `<div class="booking_latetime_text booking_latetime_text_lated">` + late_min + `</div>` + key_area;
+            } else {
+                key_area = `<div class="booking_latetime_text">` + late_min + `</div>` + key_area;
+            }
+           
 
 
             

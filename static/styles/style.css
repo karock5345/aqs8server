@@ -2147,6 +2147,28 @@ color: var(--color-light);
   /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   font-weight: 500;
 }
+.booking_latetime_text {
+  /* position float */
+  position: absolute;
+  top: 3rem;
+  left: 10rem;
+
+  font-size: 1.2rem;
+  color: var(--color-main);
+  background-color: var(--color-bg);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 20%;
+  text-align: center;
+  padding-top: 0.2rem;
+  border-width: 1px;
+  border-color: var(--color-main);
+  border-style: outset;
+}
+.booking_latetime_text_lated {
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
 .booking_branch_text {
   font-size: 1.5rem;
   color: var(--color-light-gray);

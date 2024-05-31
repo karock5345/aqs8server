@@ -53,16 +53,20 @@ class BookingForm(ModelForm):
         bk = self.instance
         timezone = bk.branch.timezone
         self.initial['start_date'] = funUTCtoLocal(bk.timeslot.start_date, timezone)
+        self.initial['arrival_time'] = funUTCtoLocal(bk.arrival_time, timezone)
+ 
         # self.fields['start_date'].widget.attrs['disabled'] = 'disabled'
        
         self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs)
         self.fields['user'].widget.attrs['disabled'] = 'disabled'
         self.fields['member'].widget.attrs['disabled'] = 'disabled'
+        self.fields['arrival_time'].widget.attrs['disabled'] = 'disabled'
+        self.fields['late_min'].widget.attrs['disabled'] = 'disabled'
         self.fields['timeslot'].widget.attrs['hidden'] = 'hidden'
         
     class Meta:        
         model = Booking
-        fields = ['branch', 'start_date', 'timeslot', 'user', 'member','status', 'name', 'email',  'user', 'mobilephone_country', 'mobilephone', 'people', 'remark']
+        fields = ['branch', 'start_date', 'arrival_time', 'late_min', 'timeslot', 'user', 'member','status', 'name', 'email',  'user', 'mobilephone_country', 'mobilephone', 'people', 'remark']
 
 
 class DetailsForm(forms.Form):

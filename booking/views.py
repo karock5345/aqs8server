@@ -262,12 +262,12 @@ def BookingSummaryView(request):
                     if isubtype > 25 :
                         isubtype = 25
 
-                    booking.isubtype = isubtype
+                   
                     if isubtype == 0:
                         booking.lated = False
                     else:
                         booking.lated = True                        
-
+                    booking.isubtype = isubtype
                     booking.late_min = late_min
                     booking.save()
                     # get the new timeslot and create a log
@@ -284,6 +284,8 @@ def BookingSummaryView(request):
                     booking.save()
                     # get the new timeslot and create a log
                     funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NOSHOW, request.user, None)
+                    # refresh the page
+                    return redirect('bookingsummary')
                 else:
                     error = 'Booking status incorrect'
             elif action == 'start':
@@ -294,6 +296,8 @@ def BookingSummaryView(request):
                     # get the new timeslot and create a log
                     funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.STARTED, request.user, None)
                     # member will marked as 'on time'
+                    # refresh the page
+                    return redirect('bookingsummary')
                 else:
                     error = 'Booking status incorrect'
 
@@ -305,6 +309,8 @@ def BookingSummaryView(request):
                     if error == '':
                         # get the new timeslot and create a log
                         funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.QUEUE, request.user, None)
+                        # refresh the page
+                        return redirect('bookingsummary')
                 else:
                     error = 'Booking status incorrect'
             elif action == 'complete':
@@ -314,8 +320,12 @@ def BookingSummaryView(request):
                     booking.save()
                     # get the new timeslot and create a log
                     funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.COMPLETED, request.user, None)
+                    # refresh the page
+                    return redirect('bookingsummary')
                 else:
                     error = 'Booking status incorrect'
+            else:
+                error = 'Action not found: ' + action
         if error != '': 
             messages.error(request, error)
             
@@ -405,6 +415,9 @@ def bookingtoqueue(utcnow, booking:Booking, user):
             # booking_score
             # booking.timeslot.start_date = booking time 
             # utcnow = current time
+            # def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version):
+            # ticketno_str, countertype, tickettemp, ticket, error = newticket_v830()
+            
             pass
 
         # change booking status to 'queue'
