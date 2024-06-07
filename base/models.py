@@ -201,13 +201,21 @@ class Branch(models.Model):
 
     # Booking to queue settings
     bookingToQueueEnabled = models.BooleanField(default=True, verbose_name='Booking to Queue enabled')
+    # printer number for booking to queue ticket
+    bookingPrinterNumber = models.CharField(max_length=200, null=True, blank=True, default='P1', help_text='Printer number can be multiple printer, e.g. P1,P2,P3,... And BLANK is no print.')
+    # booking ticket number digit, e.g. =3 means A001, B049 =2 means A01, B49
+    bookingTicketDigit = models.IntegerField(default=3, verbose_name='Booking ticket digit (1 to 4 digits)', help_text='Ticket number digit, e.g. =3 means A001, B049 =2 means A01, B49')
+    # booking ticket format 0=Ticket Type + Ticket Nubmber + Sub Ticket Type + sub Ticket number, 
+    #                       1=Ticket Type + Sub Ticket Type + sub Ticket number, 
+    #                       2=Sub Ticket Type + sub Ticket number, 
+    bookingTicketFormat = models.IntegerField(default=0, verbose_name='Booking ticket format', help_text='0=Full format (e.g. B003A02), 1=Short1 (e.g. BA02), 2=Short2 (e.g. A02)')
     # Function for Booking was late / early force Booking to On time to Start Service or queue
     bookingForceOnTime = models.BooleanField(default=True, verbose_name='Booking force on time', help_text='If booking is late or early, force to on time to start service or queue')
     # On time range, e.g. =10 means late within 10 minutes of booking time is on time, booking_tickettype = 'A'
     bookingToQueueOnTimeRangeLate = models.IntegerField(default=10, verbose_name='Booking to Queue on time range late (1 to 15 minutes)')
     # On time range, e.g. =-15 means early within 15 minutes of booking time is on time, booking_tickettype = 'A'
     # Arrival time = Ticket Time (6:20) - Booking Time (06:30) = -10 minutes, so   10 (RangeLate) >= -10 >= -15 (RangeEarly)  => on time
-    bookingToQueueOnTimeRangeEarly = models.IntegerField(default=-15, verbose_name='Booking to Queue on time range early (-1 to -30 minutes)')
+    bookingToQueueOnTimeRangeEarly = models.IntegerField(default=15, verbose_name='Booking to Queue on time range early (1 to 30 minutes)')
     # Late unit, e.g. =5 means 10+1(11) to 10+5(15) minute late is going to booking_tickettype = 'B'
     # late 10+5+1(16) to 10+5+5(20) is going to booking_tickettype = 'C'  ...
     # Early case, e.g. early -15-1(-16) to -15-5(-20) is going to booking_tickettype = 'B'
@@ -233,12 +241,6 @@ class Branch(models.Model):
     def __str__(self):
         return self.bcode
     
-class BookingTicket(models.Model):
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
-    booking_tickettype = models.CharField(max_length=200)
-    next_ticketnumber = models.IntegerField(default=1)
-    def __str__(self):
-        return self.branch.bcode + '-' + self.booking_tickettype
 
 class UserProfile(models.Model):  
     BYBRANCH = 'branch'    

@@ -95,6 +95,7 @@ class Booking(models.Model):
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
     # branch = models.ForeignKey(Branch, on_delete=models.CASCADE, default=Branch.get_default_pk)
     timeslot = models.ForeignKey(TimeSlot, on_delete=models.CASCADE)
+    # user is special user who are doing this booking
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, blank=True)
 

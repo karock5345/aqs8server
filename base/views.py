@@ -26,7 +26,7 @@ from .api.serializers import displaylistSerivalizer, waitinglistSerivalizer
 from django.utils import timezone
 # from .api.v_softkey import funVoid
 from .api.v_softkey_sub import *
-from .api.v_touch import newticket, newticket_v830
+from .api.v_touch import newticket, newticket_v830, printTicket
 from base.ws import wsHypertext, wscounterstatus, wssendflashlight
 
 
@@ -1090,9 +1090,10 @@ def webtouchView(request):
                     # old version no database lock may be cause double ticket number
                     # ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, key.ttype, '','', datetime_now, userweb, 'web', '8')
                     # new version with database lock
-                    ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(branch, key.ttype, '','', datetime_now, userweb, 'web', '8.3.0')
+                    ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(branch, key.ttype, '', '', datetime_now, userweb, 'web', aqs_version)
                     
                     if error == '' :
+                        printTicket(branch, tickettemp, tickettemp.ticketformat, datetime_now, '')
                         s_now= ''
                         try:
                             s_now = datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ')

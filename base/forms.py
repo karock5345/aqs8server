@@ -157,7 +157,8 @@ class BranchSettingsForm_Admin(ModelForm):
                   'before_enabled', 'before_sound', 'after_enabled', 'after_sound',
                   'usersinglelogin', 'websoftkey_show_waitinglist', 
                   'SMSenabled', 'SMSmsg', 'SMSQuota', 'SMSUsed', 'SMSResetDay',
-                  'bookingenabled','bookingToQueueEnabled', 'bookingForceOnTime', 'bookingPage1ScrollingText', 'bookingPage1Text', 'bookingPage2ScrollingText', 'bookingPage2Text', 'bookingPage3Text',
+                  'bookingenabled','bookingToQueueEnabled', 'bookingPrinterNumber', 'bookingTicketDigit', 'bookingTicketFormat',
+                  'bookingForceOnTime', 'bookingPage1ScrollingText', 'bookingPage1Text', 'bookingPage2ScrollingText', 'bookingPage2Text', 'bookingPage3Text',
                   'bookingSuccessEmailEnabled', 'bookingSuccessEmailSubject', 'bookingSuccessEmailBody', 'bookingSMSSuccessEnabled', 'bookingSMSSuccess',
                   'bookingNewEmailEnabled', 'bookingNewEmailUser', 'bookingNewEmailSubject', 'bookingNewEmailBody',
                   ]        

@@ -30,6 +30,7 @@ import re
 from aqs.tasks import sendemail
 from django.template.loader import render_to_string
 from django.db import transaction
+from base.api.v_touch import newticket_v830, printTicket
 
 logger = logging.getLogger(__name__)
 
@@ -63,7 +64,8 @@ def BookingNewView(request):
         if error == '' :
             phone_number = phonenumbers.parse('+' + newform.mobilephone_country + newform.mobilephone)
             # add booking by user (not customer), it is no email and SMS to customer confirm
-            error, errorTC = chainBookNow(newform.timeslot, newform.name, phone_number, newform.email, request.user, None)
+            # user is None, user is special user who are doing this booking
+            error, errorTC = chainBookNow(newform.timeslot, newform.name, phone_number, newform.email, None, None)
         if error == '' :
             messages.success(request, 'Created new Booking.')
             return redirect('bookingsummary')
@@ -256,7 +258,7 @@ def BookingSummaryView(request):
                                 isubtype = 0
                     elif late_min < 0:
                         late_min = late_min * -1
-                        if late_min < booking.branch.bookingToQueueOnTimeRangeEarly:
+                        if late_min > booking.branch.bookingToQueueOnTimeRangeEarly:
                             isubtype = int((late_min - booking.branch.bookingToQueueOnTimeRangeEarly - 1) / booking.branch.bookingToQueueLateUnit) + 1
                         late_min = late_min * -1
                     if isubtype > 25 :
@@ -304,7 +306,7 @@ def BookingSummaryView(request):
             elif action == 'queue':
                 # Booking to queue
                 booking = Booking.objects.select_for_update().get(id=pk)
-                if booking.status == Booking.STATUS.CONFIRMED:
+                if booking.status == Booking.STATUS.ARRIVED:
                     error, tickettempid = bookingtoqueue(utcnow, booking, request.user)
                     if error == '':
                         # get the new timeslot and create a log
@@ -372,8 +374,8 @@ def bookingtoqueue(utcnow, booking:Booking, user):
     
     if error == '' :
         # check booking status
-        if booking.status != Booking.STATUS.CONFIRMED:
-            error = 'Booking status is not confirmed'
+        if booking.status != Booking.STATUS.ARRIVED:
+            error = 'Booking status is not Arrived'
 
     if error == '':
         # new ticket for booking to queue
@@ -416,14 +418,35 @@ def bookingtoqueue(utcnow, booking:Booking, user):
             # booking.timeslot.start_date = booking time 
             # utcnow = current time
             # def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version):
-            # ticketno_str, countertype, tickettemp, ticket, error = newticket_v830()
+
+            ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(
+                                                                                    booking.branch, 
+                                                                                    ticketformat.ttype, 
+                                                                                    booking.branch.bookingPrinterNumber,
+                                                                                    '',
+                                                                                    utcnow,
+                                                                                    user,
+                                                                                    'web',
+                                                                                    aqs_version,
+                                                                                    )
             
+            if error == '':
+                tickettemp.booking_id = booking.id
+                # change isubTicketNo to 2-3 digits string
+                tickettemp.booking_ticketnumber = str(isubTicketNo).zfill(booking.branch.bookingTicketDigit)
+                tickettemp.booking_tickettype = subType
+                tickettemp.booking_name = booking.name
+                tickettemp.booking_score = booking_score
+                tickettemp.booking_time = booking.timeslot.start_date
+                tickettemp.save()
+
+                printTicket(booking.branch, tickettemp, tickettemp.ticketformat, utcnow, tickettemp.printernumber)
             pass
 
         # change booking status to 'queue'
         # booking = Booking.objects.get(id=pk)
-        # booking.status = Booking.STATUS.QUEUE
-        # booking.save()
+        booking.status = Booking.STATUS.QUEUE
+        booking.save()
             
 
 
@@ -575,7 +598,8 @@ def Booking_Details_ClientView(request, pk):
                             error_TC = '電郵地址格式不正確'
 
                 if error == '':
-                    error, error_TC = chainBookNow(timeslot, name, phone_number, email, request.user, None)
+                    # user is None, user is special user who are doing this booking
+                    error, error_TC = chainBookNow(timeslot, name, phone_number, email, None, None)
                     pass
 
                 if error == '':

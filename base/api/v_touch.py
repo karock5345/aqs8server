@@ -6,6 +6,7 @@ from django.db.models import Q
 
 from base.models import APILog, Branch, TicketFormat, Ticket, TicketTemp
 from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus
+from booking.models import Booking, TimeSlot
 from .views import setting_APIlogEnabled, visitor_ip_address, funUTCtoLocal, checkuser
 from .v_roche import rocheSMS
 from base.ws import wssendwebtv, wssendql, wsSendPrintTicket, wssenddispwait
@@ -24,7 +25,8 @@ def gensecuritycode():
     return sc
 
 @transaction.atomic
-def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version):
+# parameter 'pno' data changed from <PNO>P1</PNO> -> P1,P2, ... support multiple printers
+def newticket_v830(branch, ttype, pnos, remark, datetime_now, user, app, version):
     ticketno_str = ''
     countertype = None
     tickettemp = None 
@@ -33,7 +35,7 @@ def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version)
 
     if error == '' :
         # ticket format
-        ticketobj = TicketFormat.objects.filter( Q(branch=branch) & Q(ttype=ttype) )
+        ticketobj = TicketFormat.objects.filter(Q(branch=branch) & Q(ttype=ttype))
         if not(ticketobj.count() == 1) :
             error =  'TicketFormat not found'
 
@@ -105,13 +107,7 @@ def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version)
         # myticketlink =  ('{0}://{1}'.format(request.scheme, request.get_host()) +   url)
         myticketlink = url
         
-        # ticket text
-        tickettext = ticketformat.tformat
-        tickettext = tickettext.replace('<TICKET>','<TEXT>'+ ttype+ticketno_str)                        
-        localtime = funUTCtoLocal(datetime_now, branch.timezone)
-        localtime_str = localtime.strftime('%H:%M:%S %d-%m-%Y')
-        tickettext = tickettext.replace('<DATETIME>', '<TEXT>' + localtime_str)
-        tickettext = tickettext.replace('<MYTICKET>', myticketlink)
+
 
         countertype = route.countertype
         # waiting on queue +1
@@ -132,8 +128,8 @@ def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version)
             ticketformat=ticketformat,
             status=lcounterstatus[0] ,
             tickettime=datetime_now, 
-            tickettext=tickettext,
-            printernumber=pno ,
+            # tickettext=tickettext,
+            printernumber=pnos ,
             printedtimes = 0 ,
             user=user,
             createdby=user,
@@ -150,8 +146,8 @@ def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version)
             ticketformat=ticketformat,
             status=lcounterstatus[0] ,
             tickettime=datetime_now, 
-            tickettext=tickettext,
-            printernumber=pno ,
+            # tickettext=tickettext,
+            printernumber=pnos ,
             printedtimes = 0 ,
             user=user,
             createdby=user,
@@ -175,7 +171,7 @@ def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version)
                 logtime=datetime_now,
                 app = app,
                 version = version,
-                logtext='TicketKey API ticket created '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pno ,
+                logtext='TicketKey API ticket created '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pnos ,
                 user=user,
             )
 
@@ -183,7 +179,14 @@ def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version)
         # websocket to display panel for waiting ticket
         wssenddispwait(branch, countertype, ticket)
         wssendql(branch.bcode, countertype.name,tickettemp,'add')
-        wsSendPrintTicket(branch.bcode, ttype, ticketno_str, datetime_now, tickettext, pno)
+
+
+        # if pnos != '' and pnos != None:
+        #     pno_list = pnos.split(",")
+        #     for p in pno_list:
+        #         wsSendPrintTicket(branch.bcode, ttype, ticketno_str, datetime_now, tickettext, p)
+
+     
         
         # for Roche send SMS to staff when new ticket issued
         # rocheSMS(branch, tickettemp)
@@ -194,6 +197,55 @@ def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version)
 
     return ticketno_str, countertype, tickettemp, ticket, error
 
+def printTicket(branch:Branch, tickettemp:TicketTemp, ticketformat:TicketFormat, datetime_now, pnos):
+
+    if pnos != '' and pnos != None:
+        
+        p_ttype = tickettemp.tickettype
+        p_ticketno_str = tickettemp.ticketnumber
+        str_appointment_time = '- - -'
+        booking = None
+        if tickettemp.booking_id != None:
+            try:
+                booking = Booking.objects.get(id=tickettemp.booking_id)
+            except Booking.DoesNotExist:
+                booking = None
+            if booking != None:
+                timeslot = booking.timeslot
+                appointment_time = timeslot.start_date
+                appointment_time_local = funUTCtoLocal(appointment_time, branch.timezone)
+                str_appointment_time = appointment_time_local.strftime('%H:%M:%S %d-%m-%Y')
+            # booking to queue ticket
+
+            # booking ticket format 0=Ticket Type + Ticket Nubmber + Sub Ticket Type + sub Ticket number, 
+            #                       1=Ticket Type + Sub Ticket Type + sub Ticket number, 
+            #                       2=Sub Ticket Type + sub Ticket number,
+            if branch.bookingTicketFormat == 0 or branch.bookingTicketFormat == None:
+                # Full ticket format (e.g. B003A02)
+                p_ticketno_str = tickettemp.ticketnumber + tickettemp.booking_tickettype + tickettemp.booking_ticketnumber
+            elif branch.bookingTicketFormat == 1:
+                # Short(1) ticket format (e.g. BA02) 
+                p_ticketno_str = tickettemp.booking_tickettype + tickettemp.booking_ticketnumber
+            elif branch.bookingTicketFormat == 2:
+                # Short(2) ticket format (e.g. A02)
+                p_ttype = tickettemp.booking_tickettype
+                p_ticketno_str = tickettemp.booking_ticketnumber
+        # ticket text
+        tickettext = ticketformat.tformat
+        tickettext = tickettext.replace('<TICKET>','<TEXT>' + p_ttype + p_ticketno_str)                        
+        localtime = funUTCtoLocal(datetime_now, branch.timezone)
+        localtime_str = localtime.strftime('%H:%M:%S %d-%m-%Y')
+        tickettext = tickettext.replace('<DATETIME>', '<TEXT>' + localtime_str)
+        tickettext = tickettext.replace('<MYTICKET>', tickettemp.myticketlink)
+        tickettext = tickettext.replace('<APPOINTMENT>', '<TEXT>' + str_appointment_time)
+
+        tickettemp.tickettext = tickettext
+        tickettemp.save()
+        
+        pno_list = pnos.split(",")
+        for p in pno_list:
+            xmlp = '<PNO>' + p + '</PNO>'
+            wsSendPrintTicket(branch.bcode, tickettemp.tickettype , tickettemp.ticketnumber, datetime_now, tickettemp.tickettext, xmlp )
 
 
 def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
@@ -456,7 +508,9 @@ def postTicket(request):
         # ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, ttype, pno, remark, datetime_now, user, app, version)
         # new version with database lock
         ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version)
-        if error != '' :           
+        if error == '' :
+            printTicket(branch, tickettemp, tickettemp.ticketformat, datetime_now, tickettemp.printernumber)
+        if error != '' :            
             status = dict({'status': 'Error'})
             msg =  dict({'msg':error})
         
@@ -498,10 +552,7 @@ def postTouchKeys(request):
     #datetime_now = datetime.utcnow()
     datetime_now =timezone.now()
 
- 
-
     # check input
-   
     branch = None
     if status == dict({}) :        
         if bcode == '' :
@@ -519,7 +570,6 @@ def postTouchKeys(request):
                 if branch.enabled == False :
                     status = dict({'status': 'Error'})
                     msg =  dict({'msg':'Branch disabled'})
-    
 
      # Save Api Log
     if setting_APIlogEnabled(branch) == True :
@@ -531,20 +581,14 @@ def postTouchKeys(request):
             version = version,
             logtext = 'API Get Touch Keys',
         ) 
-
-   
-         
       
     if status == dict({}) :
 
-        objticketformat = TicketFormat.objects.filter(branch=branch, enabled=True).order_by('ttype')
+        objticketformat = TicketFormat.objects.filter(branch=branch, enabled=True, for_booking=False).order_by('ttype')
         serializers  = touchkeysSerivalizer(objticketformat, many=True)
         context = dict({'data':serializers.data})
        
         status = dict({'status': 'OK'})                     
-
-        
-
       
     output = status | msg | context
     return Response(output)  

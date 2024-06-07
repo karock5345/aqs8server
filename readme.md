@@ -26,7 +26,8 @@
 - Instruction for upgrade Call/Get function support Multiple Workers (Not including "New Ticket" function) for version v8.2.x
   - Details refer to [Fix_Call_multi-workers.md]
 - Move enable_captcha = True from base/views.py to settings.py
-
+- Touch API: api/ticketkey/ parameter 'printernumber' data changed from <PNO>P1</PNO> -> P1,P2, ... support multiple printers
+- Function : newticket_v830() change to no print ticket (websocket), it will be printed by new function
 
 <h3 style="color:orange;">Version 8.3.0</h3>
 
