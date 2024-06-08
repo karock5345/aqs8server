@@ -188,7 +188,7 @@ def BookingSummaryView(request):
         action = None
         pk = None
         booking = None
-        action_list = ['confirm', 'reject', 'start', 'arrive', 'noshow', 'queue', 'complete', 'start_ontime', 'queue_ontime', ]
+        action_list = ['confirm', 'reject', 'start', 'arrive', 'noshow', 'queue', 'complete', 'start_ontime', 'queue_ontime', 'softkey' ]
         error = ''
         for a in action_list:
             if request.POST.get(a) != None:
@@ -315,6 +315,10 @@ def BookingSummaryView(request):
                         return redirect('bookingsummary')
                 else:
                     error = 'Booking status incorrect'
+            elif action == 'softkey':
+                # redirect to softkey page
+                
+                return redirect('softkeylogin' , pk=booking.branch.pk)
             elif action == 'complete':
                 booking = Booking.objects.select_for_update().get(id=pk)
                 if booking.status == Booking.STATUS.STARTED:

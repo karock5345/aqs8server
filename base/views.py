@@ -3668,7 +3668,7 @@ def MenuView(request):
     # context = {'users':users, 'branchs':branchs, 'ticketformats':ticketformats, 'routes':routes, 'admin':adminuser, 'report':reportuser}
     # return render (request, 'base/m-menu.html', context)
 
-def  auth_data(user):
+def auth_data(user):
     datetime_now =timezone.now()
     userprofile = UserProfile.objects.get(user=user)
     auth_en_queue = userprofile.enabled_queue

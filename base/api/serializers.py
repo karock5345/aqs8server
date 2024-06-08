@@ -1,6 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 from rest_framework import serializers
 from base.models import Branch, DisplayAndVoice, PrinterStatus, TicketFormat, TicketRoute, TicketTemp
+import pytz
 # from base.api.views import funUTCtoLocal
 # from django.contrib.auth.models import User
 
@@ -22,10 +23,21 @@ from base.models import Branch, DisplayAndVoice, PrinterStatus, TicketFormat, Ti
 
 
 class waitinglistSerivalizer(ModelSerializer):
+    # create new field is_booking
+    booking_time_local = serializers.SerializerMethodField()
+
 
     class Meta:
         model = TicketTemp
-        fields = ('tickettype', 'ticketnumber', 'tickettime', 'id')
+        fields = ('tickettype', 'ticketnumber', 'tickettime', 'id', 'booking_id', 'booking_name', 'booking_time', 'booking_time_local')
+    def get_booking_time_local(self, obj):
+        date_str = None
+        bdate = obj.booking_time
+        if bdate is not None:             
+            local_tz = pytz.timezone(obj.branch.timezone)
+            local_datetime = bdate.replace(tzinfo=pytz.utc).astimezone(local_tz)
+            date_str = local_datetime.strftime('%H:%M %Y-%m-%d')
+        return date_str
         
 class branchSerivalizer(ModelSerializer):
     class Meta:
