@@ -1886,7 +1886,17 @@ color: var(--color-light);
   font-size: 1.8rem;
   margin-top: 0.5rem;
 }
+.qlist_bookingarea {
+  margin-top: -1rem;
 
+}
+.qlist_bookingname {
+  font-size: 1.8rem;
+}
+.qlist_bookingtime {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.8rem;
+}
 @media screen and (max-width: 600px) {
   .qlist_tickettime {
     grid-template-columns: 1fr;

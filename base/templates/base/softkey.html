@@ -198,7 +198,12 @@
                   <!-- booking info -->
                   {% if ticket.booking_id != None %}
                     <div class="qlist_item">
-                      <div>Appoint : {{ticket.booking_name}} {{ticket.booking_time_local}}</div>                     
+                      <div class="qlist_bookingarea">
+                      <span class="qlist_bookingname">Appoint : {{ticket.booking_name}} - </span>
+                      <!-- <div class="qlist_bookingname">Appoint : {{ticket.booking_name}}</div> -->
+                      <span class="qlist_bookingtime">{{ticket.booking_time_local}}</span>
+                      <!-- <span>123</span> -->
+                      </div>
                     </div>
                   {% endif %}
                   
