@@ -1862,6 +1862,20 @@ color: var(--color-light);
   border-bottom: 0;
   padding: 0.4rem 1rem 0 1rem;
 }
+.qlist_item_end {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-dark);
+  border-width: 1px;
+  border-style: inset;
+  border-color: var(--color-main);
+  /* border only left and right */
+  border-bottom: 0;
+  padding: 0.4rem 1rem 0 1rem;
+}
+.qlist_btn {
+  margin-top: -0.4rem;
+}
 .qlist_ticketnumber {
   font-family: 'Courier New', Courier, monospace;
   font-size: 4rem;
@@ -1896,6 +1910,7 @@ color: var(--color-light);
 .qlist_bookingtime {
   font-family: 'Courier New', Courier, monospace;
   font-size: 1.8rem;
+  color: var(--color-main);
 }
 @media screen and (max-width: 600px) {
   .qlist_tickettime {

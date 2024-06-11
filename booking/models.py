@@ -107,9 +107,13 @@ class Booking(models.Model):
     people = models.IntegerField(default=1)
     remark = models.TextField(max_length=500, null=True, blank=True, default='')
 
-    arrival_time = models.DateTimeField(null=True, blank=True)
+    arrival_time = models.DateTimeField(null=True, blank=True)    
     lated = models.BooleanField(default=False) # if arrived late or early then True
+    force_ontime = models.BooleanField(default=False) # True means Branch force change to ontime
     late_min = models.IntegerField(default=0) # in minutes, if + then late, if - then early
+    
+    booking_score = models.IntegerField(default=0)
+    
     isubtype = models.IntegerField(default=0) # for integer sub ticket type
 
     updated = models.DateTimeField(auto_now=True)

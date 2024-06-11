@@ -415,8 +415,6 @@ class Ticket(models.Model):
     # arrival time is ticket time
     # booking_arrival = models.DateTimeField(null=True, blank=True) 
     booking_name = models.CharField(max_length=200, null=True, blank=True, default='')
-    # booking_score = Arrival time Ticket Time (6:20) - Booking Time (06:30) = -10 minutes (is early)
-    booking_score = models.IntegerField(default=0)
     booking_id = models.IntegerField(null=True, blank=True, default=None)
 
     def __str__(self):
@@ -458,8 +456,6 @@ class TicketTemp(models.Model):
     # arrival time is ticket time
     # booking_arrival = models.DateTimeField(null=True, blank=True) 
     booking_name = models.CharField(max_length=200, null=True, blank=True, default='')
-    # booking_score = Arrival time Ticket Time (6:20) - Booking Time (06:30) = -10 minutes (is early)
-    booking_score = models.IntegerField(default=0)
     booking_id = models.IntegerField(null=True, blank=True, default=None)
 
     ticket = models.ForeignKey(Ticket, on_delete=models.SET_NULL, blank=True, null=True)

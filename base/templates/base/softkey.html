@@ -189,7 +189,7 @@
                         {{ticket.tickettime_local_date}}
                       </div>
                     </div>
-                    <div>
+                    <div class="qlist_btn">
                       <a class="btn btn-call" href="{% url 'softkeyget' pk ticket.id %}">Call</a>
                       <a class="btn btn-void" href="{% url 'softkeyvoid' pk ticket.id %}">Void</a>
                     </div>
@@ -199,14 +199,18 @@
                   {% if ticket.booking_id != None %}
                     <div class="qlist_item">
                       <div class="qlist_bookingarea">
-                      <span class="qlist_bookingname">Appoint : {{ticket.booking_name}} - </span>
+                      <span class="qlist_bookingname">Appoint : {{ticket.booking_name}} </span>
                       <!-- <div class="qlist_bookingname">Appoint : {{ticket.booking_name}}</div> -->
-                      <span class="qlist_bookingtime">{{ticket.booking_time_local}}</span>
+                      {% if ticket.late_min >= 0 %}
+                        <span class="qlist_bookingtime">{{ticket.booking_time_local}} ({{ticket.late_min}} min.)</span>
+                      {% else %}
+                        <span class="qlist_bookingtime">{{ticket.booking_time_local}} (early {{ticket.late_min}} min.)</span>
+                      {% endif %}
                       <!-- <span>123</span> -->
                       </div>
                     </div>
                   {% endif %}
-                  
+                  <div class="qlist_item_end"></div>
                 </div>
               {% endfor %}
             {% endif %}
