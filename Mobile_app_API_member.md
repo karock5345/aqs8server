@@ -1,4 +1,7 @@
 # Mobile APP for Member API specification version 1.0
+### Version: 1.1
+- Updated: 2024-06-13
+- API 2. Member info API (Member APP), added 'member_qr' field return
 
 ### Version: 1.0
 - Date: 2023-09-20
@@ -160,7 +163,8 @@ GET [Server IP or DN]/crm/api/info/?app=postman&version=8.2.0&member_no=xxx&memb
     "msg": "Successfully!",
     "nickname": "Hello Kitty",
     "member_level": "Gold",
-    "member_points": 1000
+    "member_points": 1000,
+    "member_qr": "http://192.168.1.22:8000/static/qr/TSVD/MEM2024002/TSVD_MEM2024002_qyHb.png"
 }
 ```
 Or if failed

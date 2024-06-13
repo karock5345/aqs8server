@@ -294,7 +294,7 @@ class TicketFormat(models.Model):
 <D_FONT><TICKET><LINE>
 <N_FONT>
 <DATETIME><LINE>
-<QR>http://192.168.1.22:8000<MYTICKET><LINE>
+<QR><MYTICKET><LINE>
 <TEXT>掃描QR查看您的網上飛仔<LINE>
 <TEXT>Scan QR code for your e-ticket<LINE>
 <CUT>'''

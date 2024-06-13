@@ -28,7 +28,9 @@
 - Move enable_captcha = True from base/views.py to settings.py
 - Touch API: api/ticketkey/ parameter 'printernumber' data changed from <PNO>P1</PNO> -> P1,P2, ... support multiple printers
 - Function : newticket_v830() change to no print ticket (websocket), it will be printed by new function
-
+- Mobile APP for Member API specification version 1.1
+  - API 2. Member info API (Member APP), added 'member_qr' field return
+  
 <h3 style="color:orange;">Version 8.3.0</h3>
 
 - Booking to Queue Function
@@ -773,7 +775,7 @@ Edit:
 ```python
 STATIC_URL = '/static/'
 STATICFILES_DIRS =[
-    BASE_DIR / 'static'
+    BASE_DIR / 'static_deploy'
 ]
 STATIC_ROOT = BASE_DIR / 'static_deploy'
 ```

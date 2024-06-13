@@ -22,3 +22,5 @@ requests
 # django-crequest==2018.5.11 may not use
 gunicorn
 daphne==3.0.2
+qrcode
+pillow

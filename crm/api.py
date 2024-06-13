@@ -17,11 +17,53 @@ from django.template.loader import render_to_string
 from aqs.tasks import sendemail
 # from django.utils.safestring import mark_safe
 # from django.utils.html import format_html, escape
+import os
+import qrcode
+from io import BytesIO
+from django.core.files import File
+from aqs.settings import STATICFILES_DIRS, STATIC_URL, DOMAIN
+import shutil
+import urllib.parse
 
 # Member token expire hours
 tokenexpire_hours = 24
 
 
+def genQRcode(member:Member):
+
+    path = ''
+    path = os.path.join(STATICFILES_DIRS[0], 'qr' , member.company.ccode , member.number)
+
+    # print('Folder removed:' + path)
+    if os.path.isdir(path):
+        # remove folder
+        shutil.rmtree(path)
+            
+    if not os.path.exists(path):
+        # create folder
+        os.makedirs(path)
+
+    qr_code = member.company.ccode + '_' + member.number + '_' + member.token
+    fname = member.company.ccode + '_' + member.number + '_' + member.token + '.png'
+    qrurl = urllib.parse.urljoin( DOMAIN , STATIC_URL)
+    qrurl = urllib.parse.urljoin( qrurl , 'qr' + '/')
+    qrurl = urllib.parse.urljoin( qrurl , member.company.ccode + '/')
+    qrurl = urllib.parse.urljoin( qrurl , member.number + '/')
+    qrurl = urllib.parse.urljoin( qrurl , fname )
+    # , 'qr', member.company.ccode , member.number , fname)
+    # canvas = Image.new('RGB', (300, 300), 'white')
+    qrcode_image = qrcode.make(qr_code)
+    # draw = ImageDraw.Draw(canvas)
+    path = os.path.join(path, fname)
+    # print('QR code path:' + path)
+    buffer = BytesIO()
+    # canvas.save(buffer, 'PNG')
+    qrcode_image.save(path, File(buffer), save=True)
+    # canvas.close()
+
+    # print('qr url:' + qrurl)
+
+    return qrurl
 
 
 
@@ -491,13 +533,16 @@ def crmMemberInfoView(request):
                 logtext = 'API call : CRM Member Info',
             )
 
-    if error == '' :        
+    if error == '' :
+        # gen QR code
+        qr_url = genQRcode(member)
         # member info:
         status = {'status':'success', 'msg':'Login success', }
         data = {
-                'nickname':member.nickname, 
-                'member_level':member.memberlevel ,
-                'member_points':member.memberpoints,
+                'nickname' : member.nickname, 
+                'member_level' : member.memberlevel ,
+                'member_points' : member.memberpoints,
+                'member_qr': qr_url,
                 }
     else:
         status = {'status':'failed', 'msg':error}

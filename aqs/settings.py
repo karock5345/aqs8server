@@ -17,10 +17,11 @@ from datetime import timedelta
 aqs_version = '8.3.1'
 # APP_NAME for ws://localhost:8000/ws/APP_NAME/...
 APP_NAME = 'aqs_app'
+DOMAIN = 'http://192.168.1.22:8000'
+
 ADMIN_ENABLED = True
 # for production disable Admin page, set ADMIN_ENABLED = False
 # ADMIN_ENABLED = False
-
 celery_name = 'celery_aqs'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -59,6 +60,7 @@ INSTALLED_APPS = [
     'captcha',
     'rest_framework_simplejwt',
     'channels',
+    'qrcode',
 ]
 
 
