@@ -221,6 +221,8 @@ class Branch(models.Model):
     # Early case, e.g. early -15-1(-16) to -15-5(-20) is going to booking_tickettype = 'B'
     # Early case, e.g. early -15-5-1(-21) to -15-5-5(-25) is going to booking_tickettype = 'C'
     bookingToQueueLateUnit = models.IntegerField(default=5, verbose_name='Booking to Queue late unit (1 to 15 minutes)')
+    bookingToQueueRatioNormal = models.IntegerField(default=3, verbose_name='Booking to Queue direction ratio [normal] (1 to 10)', help_text='Normal ratio for booking to queue, Default 3:1')
+    bookingToQueueRatioRev = models.IntegerField(default=1, verbose_name='Booking to Queue direction ratio [Reverse] (1 to 10)', help_text='Reverse ratio for booking to queue, Default 3:1')
 
     # branch status
     updated = models.DateTimeField(auto_now=True)
@@ -415,6 +417,7 @@ class Ticket(models.Model):
     # arrival time is ticket time
     # booking_arrival = models.DateTimeField(null=True, blank=True) 
     booking_name = models.CharField(max_length=200, null=True, blank=True, default='')
+    booking_user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, default=None, related_name='booking_user')
     booking_id = models.IntegerField(null=True, blank=True, default=None)
 
     def __str__(self):
@@ -456,6 +459,7 @@ class TicketTemp(models.Model):
     # arrival time is ticket time
     # booking_arrival = models.DateTimeField(null=True, blank=True) 
     booking_name = models.CharField(max_length=200, null=True, blank=True, default='')
+    booking_user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, default=None, related_name='booking_user_temp')
     booking_id = models.IntegerField(null=True, blank=True, default=None)
 
     ticket = models.ForeignKey(Ticket, on_delete=models.SET_NULL, blank=True, null=True)

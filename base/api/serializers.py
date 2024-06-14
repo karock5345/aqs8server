@@ -3,6 +3,7 @@ from rest_framework import serializers
 from base.models import Branch, DisplayAndVoice, PrinterStatus, TicketFormat, TicketRoute, TicketTemp
 import pytz
 
+
 # from base.api.views import funUTCtoLocal
 # from django.contrib.auth.models import User
 
@@ -29,10 +30,26 @@ class waitinglistSerivalizer(ModelSerializer):
     # create new field is_booking
     booking_time_local = serializers.SerializerMethodField()
     late_min = serializers.SerializerMethodField()
+    disp_tt = serializers.SerializerMethodField()
+    disp_tno = serializers.SerializerMethodField()
 
     class Meta:
         model = TicketTemp
-        fields = ('tickettype', 'ticketnumber', 'tickettime', 'id', 'booking_id', 'booking_name', 'booking_time', 'booking_time_local', 'booking_tickettype', 'booking_ticketnumber', 'late_min')
+        fields = ('disp_tt', 'disp_tno', 'tickettype', 'ticketnumber', 'tickettime', 'id', 'booking_id', 'booking_name', 'booking_time', 'booking_time_local', 'booking_tickettype', 'booking_ticketnumber', 'late_min')
+    def get_disp_tno(self, obj):
+        from base.api.v_touch import funGetTicketNumber
+        if obj.branch is None:
+            out = None
+        else:
+            temp , out = funGetTicketNumber(obj)
+        return out
+    def get_disp_tt(self, obj):
+        from base.api.v_touch import funGetTicketNumber
+        if obj.branch is None:
+            out = None
+        else:
+            out , temp = funGetTicketNumber(obj)
+        return out    
     def get_booking_time_local(self, obj):
         date_str = None
         bdate = obj.booking_time

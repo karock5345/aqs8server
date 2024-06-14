@@ -8,11 +8,57 @@ from base.ws import *
 import logging
 from django.db import transaction
 import time
-
+# from base.api.serializers import waitinglistSerivalizer
 
 logger = logging.getLogger(__name__)
 softkey_version = '8.3.0.0'
 
+QueueDirection = {}
+
+# if call = False, just get the next ticket for update the softkey
+def funCallTicketwithDirection(branch:Branch, call:bool, user:User):
+    global QueueDirection
+    ticket = None
+    
+    # check the waiting queue have any ticket from booking?
+
+    # booking ticket    
+    ticketlist_b = TicketTemp.objects.filter(~Q(booking_id=None) & (Q(booking_user=request.user) | Q(booking_user=None)) & Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('booking_tickettype', 'tickettime')
+
+        # non-booking ticket
+        ticketlist = TicketTemp.objects.filter(Q(booking_id=None) & Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')
+
+
+# if priority== 'time':
+#     # found the waiting ticket by time
+#     ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')            
+#     for ticket in ticketlist:
+#         tt =  ticket.tickettype 
+#         if ticket.tickettype in l_mask:
+#             # call this ticket
+#             context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
+#             break
+
+    # get the direct from QueueDirection
+    direction = QueueDirection[branch.bcode]
+    if direction == None:
+        direction = 1
+        QueueDirection = QueueDirection | {branch.bcode: direction}
+
+    if direction <= branch.bookingToQueueRatioNormal:
+        # Direction is normal
+        pass
+    else:
+        # Direction is reverse
+        pass
+
+    if call:
+        # next direction index
+        direction += 1
+        if direction > branch.bookingToQueueRatioNormal + branch.bookingToQueueRatioRev:
+            direction = 1
+
+    return ticket
 # version 8.3.0 add transaction select_for_update for prevent 'double bookings' problem
 @transaction.atomic
 def funCounterCall_v830(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
@@ -130,6 +176,7 @@ def funCounterCall_v830(user, branch, countertype, counterstatus, logtext, rx_ap
 
         if priority== 'time':
             # found the waiting ticket by time
+            s fsafsdf
             ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')            
             for ticket in ticketlist:
                 tt =  ticket.tickettype 

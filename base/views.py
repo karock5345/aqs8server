@@ -321,9 +321,13 @@ def SoftkeyView(request, pk):
                 context_tr.append(newrow)
 
     if error == '':
-        ticketlist = TicketTemp.objects.filter( Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')
-        serializers  = waitinglistSerivalizer(ticketlist, many=True)       
-        context_ql = serializers.data
+        # non-booking ticket
+        ticketlist = TicketTemp.objects.filter(Q(booking_id=None) & Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')
+        serializers  = waitinglistSerivalizer(ticketlist, many=True)
+        # booking ticket
+        ticketlist_b = TicketTemp.objects.filter(~Q(booking_id=None) & (Q(booking_user=request.user) | Q(booking_user=None)) & Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('booking_tickettype', 'tickettime')
+        serializers_b  = waitinglistSerivalizer(ticketlist_b, many=True)
+        context_ql = serializers_b.data + serializers.data
         # add new column to context_ql (tickettime_local)
         for i in range(len(context_ql)):
             # convert string context_ql[i]['tickettime'] to datetime

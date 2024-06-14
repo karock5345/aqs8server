@@ -273,6 +273,7 @@ def job_shutdown(branch):
         ticket.booking_ticketnumber = tt.booking_ticketnumber
         ticket.booking_time = tt.booking_time
         ticket.booking_name = tt.booking_name
+        ticket.booking_user = tt.booking_user
         ticket.booking_id = tt.booking_id
 
         ticket.save()

@@ -439,6 +439,7 @@ def bookingtoqueue(utcnow, booking:Booking, user):
                 tickettemp.booking_ticketnumber = str(isubTicketNo).zfill(booking.branch.bookingTicketDigit)
                 tickettemp.booking_tickettype = subType
                 tickettemp.booking_name = booking.name
+                tickettemp.booking_user = booking.user
                 tickettemp.booking_time = booking.timeslot.start_date
                 tickettemp.save()
 
@@ -1026,7 +1027,7 @@ def checktimeslotform(form):
             error = 'Show date end should be greater than show date'
     if error == '' :
         if newform.show_end_date > newform.start_date :
-            error = 'Booking date should be greater than show date end'        
+            error = 'Booking Start date should be greater than show date end'        
     if error == '' :
         if newform.slot_total < 0:
             error = 'Slot total should be => 0' 

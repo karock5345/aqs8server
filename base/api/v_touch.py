@@ -588,6 +588,10 @@ def postTouchKeys(request):
     output = status | msg | context
     return Response(output)  
 
+# If tickettemp is from booking, use booking ticket format (branch.bookingTicketFormat)
+# Full ticket format (e.g. B003A02)
+# Short(1) ticket format (e.g. BA02) 
+# Short(2) ticket format (e.g. A02)
 def funGetTicketNumber(tickettemp:TicketTemp) :
     p_ttype = tickettemp.tickettype
     p_ticketno_str = tickettemp.ticketnumber
