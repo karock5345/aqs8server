@@ -27,10 +27,12 @@ class testingModel2(models.Model):
 
 class Branch(models.Model):
     BYTIME = 'time'
+    BYTICKETTIME = 'tickettime'
     BYUSER = 'user'
     BYMASK = 'mask'
     PRIORITY = [
-       (BYTIME, ('By Ticket time')),
+       (BYTIME, ('Booking ticket first then by ticket time')),
+       (BYTICKETTIME, ('By Ticket time')),
        (BYUSER, ('By User priority')),
        (BYMASK, ('By Mask priority')),
     ]
@@ -247,11 +249,13 @@ class Branch(models.Model):
 class UserProfile(models.Model):  
     BYBRANCH = 'branch'    
     BYTIME = 'time'
+    BYTICKETTIME = 'tickettime'
     BYUSER = 'user'
     BYMASK = 'mask'
     PRIORITY = [
         (BYBRANCH, ('By Branch')),
-        (BYTIME, ('By Ticket time')),
+        (BYTIME, ('Booking ticket first then by ticket time')),
+        (BYTICKETTIME, ('By Ticket time')),
         (BYUSER, ('By User priority')),
         (BYMASK, ('By Branch mask priority')),
     ]
@@ -386,6 +390,11 @@ class TicketRoute(models.Model):
 class Ticket(models.Model):
     tickettype = models.CharField(max_length=200)    
     ticketnumber = models.CharField(max_length=200)
+    
+    # for display ticket type and ticket number, it is combined with booking_tickettype and booking_ticketnumber
+    tickettype_disp = models.CharField(max_length=200)
+    ticketnumber_disp = models.CharField(max_length=200)
+
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
     step = models.IntegerField(default=1)
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True)
@@ -426,6 +435,11 @@ class Ticket(models.Model):
 class TicketTemp(models.Model):
     tickettype = models.CharField(max_length=200)
     ticketnumber = models.CharField(max_length=200)
+
+    # for display ticket type and ticket number, it is combined with booking_tickettype and booking_ticketnumber
+    tickettype_disp = models.CharField(max_length=200)
+    ticketnumber_disp = models.CharField(max_length=200)
+
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
     step = models.IntegerField(default=1)
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True)

@@ -3,6 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.db.models import Q
 from base.models import Branch, CounterStatus, CounterType, Ticket, TicketFormat, TicketRoute, SystemLog, DisplayAndVoice, TicketTemp, TicketData, TicketLog, APILog, UserStatusLog
+from base.models import SubTicket
 # from .jobs import job_stop
 from datetime import datetime, timedelta
 import pytz
@@ -255,6 +256,9 @@ def job_shutdown(branch):
         # copy data from TicketTemp to Ticket
         ticket = tt.ticket
         ticket.tickettype = tt.tickettype
+        ticket.tickettype_disp = tt.tickettype_disp
+        ticket.ticketnumber_disp = tt.ticketnumber_disp
+
         ticket.ticketnumber = tt.ticketnumber
         ticket.branch = tt.branch        
         ticket.step = tt.step
@@ -289,6 +293,9 @@ def job_shutdown(branch):
         for tl in tlobj:
             tl.ticket = ticket
             tl.save() 
+
+    # remove SubTicket table
+    SubTicket.objects.filter(Q(branch=branch)).delete()
 
     # remove TicketTemp table
     ttobj = TicketTemp.objects.filter( Q(branch=branch) & Q(locked=True))

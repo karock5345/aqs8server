@@ -10,7 +10,7 @@ from django.contrib.auth.models import User, Group
 from django.db.models import Q
 import pytz
 from dateutil import tz
-from base.models import APILog, Branch, Setting, TicketFormat, Ticket, TicketRoute, TicketData, TicketLog, UserProfile, lcounterstatus
+from base.models import APILog, Branch, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, UserProfile, lcounterstatus
 from .serializers import branchSerivalizer, ticketlistSerivalizer
 from .thread import MigrateDBThread, MigrateDBThreadtst
 from rest_framework import status
@@ -19,9 +19,25 @@ from base.models import testingModel, testingModel2
 import threading
 from django.db import transaction
 
+
 token_api = 'WrE-1t7IdrU2iB3a0e'
 # if the counter keep active > 6 minutes then auto logout and the counter replace the new user
 counteractive = 1
+
+@api_view(['GET'])
+def testing4(request):
+    from base.api.v_touch import funGetDispTicketNumber
+
+    ticketobj = TicketTemp.objects.filter( Q(tickettype='B') & Q(ticketnumber='004'))
+    if ticketobj.count() > 0 :
+        ticket = ticketobj[0]
+        disp_tt, disp_tno = funGetDispTicketNumber(ticket)
+        print('disp_tt : ' + disp_tt + ' disp_tno : ' + disp_tno)
+        ticket.tickettype_disp = disp_tt
+        ticket.ticketnumber_disp = disp_tno
+        ticket.save()
+    
+    return Response('testing4 done')
 
 @api_view(['GET'])
 def testing3(request):

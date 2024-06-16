@@ -30,7 +30,7 @@ import re
 from aqs.tasks import sendemail
 from django.template.loader import render_to_string
 from django.db import transaction
-from base.api.v_touch import newticket_v830, printTicket
+from base.api.v_touch import newticket_v830, printTicket, funGetDispTicketNumber
 
 logger = logging.getLogger(__name__)
 
@@ -122,7 +122,7 @@ def BookingUpdateView(request, pk):
     = auth_data(request.user)
 
     if request.method == 'POST':
-        bookingform = BookingForm(request.POST, instance=booking, prefix='bookingform', auth_branchs=auth_branchs)
+        bookingform = BookingForm(request.POST, instance=booking, prefix='bookingform', auth_branchs=auth_branchs, auth_userlist=auth_userlist)
         error = ''
         # check the form
         error, newform = checkbookingform(bookingform)
@@ -146,7 +146,7 @@ def BookingUpdateView(request, pk):
             messages.error(request, error )
                 
     else:
-        bookingform = BookingForm(instance=booking, prefix='bookingform', auth_branchs=auth_branchs)
+        bookingform = BookingForm(instance=booking, prefix='bookingform', auth_branchs=auth_branchs, auth_userlist=auth_userlist)
     context =  {'bookingform':bookingform, 'booking':booking, }
     context = {
                 'aqs_version':aqs_version,
@@ -441,6 +441,11 @@ def bookingtoqueue(utcnow, booking:Booking, user):
                 tickettemp.booking_name = booking.name
                 tickettemp.booking_user = booking.user
                 tickettemp.booking_time = booking.timeslot.start_date
+                tickettemp.save()
+                # get display ticket number for Booking ticket
+                disp_tt, disp_tno = funGetDispTicketNumber(tickettemp)
+                tickettemp.tickettype_disp = disp_tt
+                tickettemp.ticketnumber_disp = disp_tno
                 tickettemp.save()
 
                 printTicket(booking.branch, tickettemp, tickettemp.ticketformat, utcnow, tickettemp.printernumber)

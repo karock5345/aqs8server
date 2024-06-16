@@ -47,6 +47,7 @@ class BookingForm(ModelForm):
     start_date = forms.DateTimeField(label='Start Date', input_formats=['%Y-%m-%d %H:%M'], widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', ))
     def __init__(self, *args,**kwargs):
         self.auth_branchs = kwargs.pop('auth_branchs')
+        self.auth_userlist = kwargs.pop('auth_userlist')
 
         super().__init__(*args,**kwargs)        
 
@@ -58,7 +59,8 @@ class BookingForm(ModelForm):
         # self.fields['start_date'].widget.attrs['disabled'] = 'disabled'
        
         self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs)
-        self.fields['user'].widget.attrs['disabled'] = 'disabled'
+        self.fields['user'].queryset = User.objects.filter(id__in=self.auth_userlist)
+        # self.fields['user'].widget.attrs['disabled'] = 'disabled'
         self.fields['member'].widget.attrs['disabled'] = 'disabled'
         self.fields['arrival_time'].widget.attrs['disabled'] = 'disabled'
         self.fields['late_min'].widget.attrs['disabled'] = 'disabled'

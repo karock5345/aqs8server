@@ -9,59 +9,91 @@ import logging
 from django.db import transaction
 import time
 # from base.api.serializers import waitinglistSerivalizer
+from booking.models import Booking
 
 logger = logging.getLogger(__name__)
-softkey_version = '8.3.0.0'
+softkey_version = '8.3.1.0'
 
 QueueDirection = {}
 
 # if call = False, just get the next ticket for update the softkey
-def funCallTicketwithDirection(branch:Branch, call:bool, user:User):
+def funCallTicketwithDirection(branch:Branch, call:bool, user, counterstatus:CounterStatus, l_mask:list):
     global QueueDirection
+
     ticket = None
     
     # check the waiting queue have any ticket from booking?
 
-    # booking ticket    
-    ticketlist_b = TicketTemp.objects.filter(~Q(booking_id=None) & (Q(booking_user=request.user) | Q(booking_user=None)) & Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('booking_tickettype', 'tickettime')
+    # booking ticket normal direction
+    ticketlist_b = TicketTemp.objects.filter(~Q(booking_id=None) & (Q(booking_user=user) | Q(booking_user=None)) & Q(branch=branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) 
+                                             & Q(locked=False)).order_by('booking_tickettype', 'tickettime')
 
-        # non-booking ticket
-        ticketlist = TicketTemp.objects.filter(Q(booking_id=None) & Q(branch=counterstatus.countertype.branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')
-
-
-# if priority== 'time':
-#     # found the waiting ticket by time
-#     ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')            
-#     for ticket in ticketlist:
-#         tt =  ticket.tickettype 
-#         if ticket.tickettype in l_mask:
-#             # call this ticket
-#             context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
-#             break
+    # non-booking ticket
+    ticketlist = TicketTemp.objects.filter(Q(booking_id=None) & Q(branch=branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')
 
     # get the direct from QueueDirection
-    direction = QueueDirection[branch.bcode]
+    direction = None
+    try:
+        direction = QueueDirection[branch.bcode]
+    except:
+        pass
     if direction == None:
         direction = 1
         QueueDirection = QueueDirection | {branch.bcode: direction}
 
-    if direction <= branch.bookingToQueueRatioNormal:
-        # Direction is normal
-        pass
-    else:
-        # Direction is reverse
-        pass
+    # print('QueueDirection:', QueueDirection)
+    # print('Direction:', direction)
+    # get the booking ticket first
+    if ticketlist_b.count() > 0:
+        if direction <= branch.bookingToQueueRatioNormal:
+            # Direction is normal
+            for t in ticketlist_b:
+                if t.tickettype in l_mask:
+                    # call this ticket
+                    ticket = t
+                    break
+            pass
+        else:
+            # Direction is reverse
+            ticketlist_b = TicketTemp.objects.filter(~Q(booking_id=None) & (Q(booking_user=user) | Q(booking_user=None)) & Q(branch=branch) & Q(countertype=counterstatus.countertype) & Q(status=lcounterstatus[0]) 
+                                                    & Q(locked=False)).order_by('-booking_tickettype', 'tickettime')
+            for t in ticketlist_b:
+                if t.tickettype in l_mask:
+                    # check the late ticket waiting time
+                    booking = Booking.objects.get(id=t.booking_id)
+                    late_min = booking.late_min
+                    # print('late_min:', late_min)
+                    waiting_min = int((datetime.now(timezone.utc) - t.tickettime).total_seconds() / 60)
+                    # print('waiting_min:', waiting_min)
 
-    if call:
-        # next direction index
-        direction += 1
-        if direction > branch.bookingToQueueRatioNormal + branch.bookingToQueueRatioRev:
-            direction = 1
-
+                    offset = waiting_min - late_min
+                    if late_min < 0:
+                        offset = waiting_min + late_min
+                    if offset >= 0:
+                        # call this ticket
+                        ticket = t
+                        break
+            pass
+        
+        if call == True and ticket != None:
+            # next direction index
+            direction += 1
+            if direction > branch.bookingToQueueRatioNormal + branch.bookingToQueueRatioRev:
+                direction = 1
+            QueueDirection = QueueDirection | {branch.bcode: direction}
+    if ticket == None:
+        # get the non-booking ticket
+        # found the waiting ticket by time
+        for t in ticketlist:
+            if t.tickettype in l_mask:
+                # call this ticket
+                ticket = t
+                break
     return ticket
+
 # version 8.3.0 add transaction select_for_update for prevent 'double bookings' problem
 @transaction.atomic
-def funCounterCall_v830(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
+def funCounterCall_v830(user, branch:Branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     status = dict({})
     msg = dict({})
     context = dict({})
@@ -83,22 +115,28 @@ def funCounterCall_v830(user, branch, countertype, counterstatus, logtext, rx_ap
         if qp == 'time':
             mask = userp.tickettype
             priority = 'time'
-        if qp == 'user':            
+        elif qp == 'tickettime':
+            mask = userp.tickettype
+            priority = 'tickettime'            
+        elif qp == 'user':            
             mask = userp.tickettype
             priority = 'umask'
-        if qp == 'mask':
+        elif qp == 'mask':
             # branch mask               
             mask = branch.queuemask
             priority = 'bmask'
-        if qp == 'branch':
+        elif qp == 'branch':
             qp = branch.queuepriority
             if qp == 'time':
                 priority = 'time'
                 mask = userp.tickettype
-            if qp == 'mask':
+            elif qp == 'tickettime':
+                priority = 'tickettime'
+                mask = userp.tickettype                
+            elif qp == 'mask':
                 priority = 'bmask'
                 mask = branch.queuemask 
-            if qp == 'user':
+            elif qp == 'user':
                 priority = 'umask'
                 mask = userp.tickettype
         if mask == None :
@@ -127,17 +165,7 @@ def funCounterCall_v830(user, branch, countertype, counterstatus, logtext, rx_ap
                     new_mask = new_mask + tt + ','
                     l_new_mask.append(tt)
 
-            # istart = 0
-            # # get text inside mask_b string format '{x}{y}{z}' -> x,y,z
-            # for i in range(len(mask_b)):
-            #     if mask_b[i] == '{':
-            #         for j in range(i+1, len(mask_b)):
-            #             if mask_b[j] == '}':
-            #                 tt = mask_b[i:j+1]
-            #                 istart = j + 1
-            #                 if u_tt.find(tt) != -1 :
-            #                     new_mask  = new_mask + tt
-            #                 break                   
+           
             mask = new_mask
             l_mask = l_new_mask
         if priority == 'bmask' or priority == 'umask' :
@@ -174,10 +202,18 @@ def funCounterCall_v830(user, branch, countertype, counterstatus, logtext, rx_ap
         l_mask = mask.split(',')
         ticket = None
 
-        if priority== 'time':
+        if priority == 'time':
+            # priority = 'time' , call booking ticket first
+            ticket = funCallTicketwithDirection(branch, True, user, counterstatus, l_mask)
+
+            # testing
+            print ('Calling ticket:', ticket.tickettype + ticket.ticketnumber)
+            ticket = None
+            # if ticket != None:
+            #     context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
+        elif priority == 'tickettime':
             # found the waiting ticket by time
-            s fsafsdf
-            ticketlist = TicketTemp.objects.filter( Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')            
+            ticketlist = TicketTemp.objects.filter(Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')            
             for ticket in ticketlist:
                 tt =  ticket.tickettype 
                 if ticket.tickettype in l_mask:

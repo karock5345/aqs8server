@@ -180,7 +180,7 @@
                 
                 <div id="ticket_{{ticket.tickettype}}{{ticket.ticketnumber}}{{ticket.tickettime}}" >
                   <div class="qlist_item">
-                    <div class="qlist_ticketnumber">{{ticket.disp_tt}}{{ticket.disp_tno}}</div>
+                    <div class="qlist_ticketnumber">{{ticket.tickettype_disp}}{{ticket.ticketnumber_disp}}</div>
                     <div class="qlist_tickettime">
                       <div class="qlist_tickettime_1">
                         {{ticket.tickettime_local_time}}
@@ -199,7 +199,7 @@
                   {% if ticket.booking_id != None %}
                     <div class="qlist_item">
                       <div class="qlist_bookingarea">
-                      <span class="qlist_bookingname">Appoint : {{ticket.booking_name}} </span>
+                      <span class="qlist_bookingname">{{ticket.booking_name}} </span>
                       <!-- <div class="qlist_bookingname">Appoint : {{ticket.booking_name}}</div> -->
                       {% if ticket.late_min >= 0 %}
                         <span class="qlist_bookingtime">{{ticket.booking_time_local}} ({{ticket.late_min}} min.)</span>

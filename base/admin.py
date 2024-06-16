@@ -2,10 +2,9 @@ from django.contrib import admin
 from django.db import models
 from django import forms
 from .models import TicketTemp, testingModel, testingModel2, Branch, CounterLoginLog, CounterStatus, DisplayAndVoice,  TicketFormat
-from .models import UserProfile, CounterType, Ticket, TicketLog, TicketRoute, TicketData, APILog, Setting, PrinterStatus, SystemLog, WebTouch, UserStatusLog
+from .models import UserProfile, CounterType, Ticket, TicketLog, TicketRoute, TicketData, APILog, Setting, PrinterStatus, SystemLog, WebTouch, UserStatusLog, SubTicket
+
 # Register your models here.
-
-
 
 class testingView(admin.ModelAdmin):
     model = testingModel
@@ -14,6 +13,12 @@ class testingView2(admin.ModelAdmin):
     model = testingModel2
     list_display =('total',)
     
+
+
+class SubTicketView(admin.ModelAdmin):
+    model = SubTicket
+    list_display =('branch', 'booking_tickettype', 'ticketnext')
+
 class BranchProfileView(admin.ModelAdmin):
     list_display =(  'bcode', 'name', 'address', 'enabled', )
     ordering = ('-updated', '-created')
@@ -21,15 +26,10 @@ class BranchProfileView(admin.ModelAdmin):
 class UserProfileView(admin.ModelAdmin):
     list_display =('user', 'tickettype')
     ordering = ('-updated', '-created')
-        
-
-
 
 class TicketFormatView(admin.ModelAdmin):
     list_display =( 'branch', 'ttype' ,'enabled')
     ordering=('branch', 'ttype')
-
-
 
 class CounterTypeView(admin.ModelAdmin):
     list_display =( 'name','enabled','branch',  'lang1', 'lang2', 'countermode')
@@ -154,3 +154,4 @@ admin.site.register(DisplayAndVoice, DispView)
 admin.site.register(SystemLog, SystemLogView)
 admin.site.register(WebTouch, WebTouchView)
 admin.site.register(UserStatusLog, UserStatusLogView)
+admin.site.register(SubTicket, SubTicketView)

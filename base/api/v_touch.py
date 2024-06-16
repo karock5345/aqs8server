@@ -202,8 +202,8 @@ def printTicket(branch:Branch, tickettemp:TicketTemp, ticketformat:TicketFormat,
 
     if pnos != '' and pnos != None:
         
-        p_ttype = tickettemp.tickettype
-        p_ticketno_str = tickettemp.ticketnumber
+        p_ttype = tickettemp.tickettype_disp
+        p_ticketno_str = tickettemp.ticketnumber_disp
         str_appointment_time = '- - -'
         booking = None
         if tickettemp.booking_id != None:
@@ -216,12 +216,7 @@ def printTicket(branch:Branch, tickettemp:TicketTemp, ticketformat:TicketFormat,
                 appointment_time = timeslot.start_date
                 appointment_time_local = funUTCtoLocal(appointment_time, branch.timezone)
                 str_appointment_time = appointment_time_local.strftime('%H:%M:%S %d-%m-%Y')
-            # booking to queue ticket
 
-            # booking ticket format 0=Ticket Type + Ticket Nubmber + Sub Ticket Type + sub Ticket number, 
-            #                       1=Ticket Type + Sub Ticket Type + sub Ticket number, 
-            #                       2=Sub Ticket Type + sub Ticket number,
-            p_ttype, p_ticketno_str = funGetTicketNumber(tickettemp)
             
         # ticket text
         tickettext = ticketformat.tformat
@@ -592,30 +587,30 @@ def postTouchKeys(request):
 # Full ticket format (e.g. B003A02)
 # Short(1) ticket format (e.g. BA02) 
 # Short(2) ticket format (e.g. A02)
-def funGetTicketNumber(tickettemp:TicketTemp) :
+def funGetDispTicketNumber(tickettemp:TicketTemp) :
     p_ttype = tickettemp.tickettype
     p_ticketno_str = tickettemp.ticketnumber
 
     booking = None
     if tickettemp.booking_id != None:
         try:
-            booking = Booking.objects.get(id=tickettemp.booking_id)
+            booking = Booking.objects.get(pk=tickettemp.booking_id)
         except Booking.DoesNotExist:
             booking = None
-
+        
     if booking != None:
         # booking to queue ticket
 
         # booking ticket format 0=Ticket Type + Ticket Nubmber + Sub Ticket Type + sub Ticket number, 
         #                       1=Ticket Type + Sub Ticket Type + sub Ticket number, 
         #                       2=Sub Ticket Type + sub Ticket number,
-        if booking.branch.bookingTicketFormat == 0 or booking.branch.bookingTicketFormat == None:
+        if tickettemp.branch.bookingTicketFormat == 0 or tickettemp.branch.bookingTicketFormat == None:
             # Full ticket format (e.g. B003A02)
             p_ticketno_str = tickettemp.ticketnumber + tickettemp.booking_tickettype + tickettemp.booking_ticketnumber
         elif booking.branch.bookingTicketFormat == 1:
-            # Short(1) ticket format (e.g. BA02) 
+            # tickettemp(1) ticket format (e.g. BA02) 
             p_ticketno_str = tickettemp.booking_tickettype + tickettemp.booking_ticketnumber
-        elif booking.branch.bookingTicketFormat == 2:
+        elif tickettemp.branch.bookingTicketFormat == 2:
             # Short(2) ticket format (e.g. A02)
             p_ttype = tickettemp.booking_tickettype
             p_ticketno_str = tickettemp.booking_ticketnumber
