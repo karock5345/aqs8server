@@ -223,7 +223,7 @@ class Branch(models.Model):
     # Early case, e.g. early -15-1(-16) to -15-5(-20) is going to booking_tickettype = 'B'
     # Early case, e.g. early -15-5-1(-21) to -15-5-5(-25) is going to booking_tickettype = 'C'
     bookingToQueueLateUnit = models.IntegerField(default=5, verbose_name='Booking to Queue late unit (1 to 15 minutes)')
-    bookingToQueueRatioNormal = models.IntegerField(default=3, verbose_name='Booking to Queue direction ratio [normal] (1 to 10)', help_text='Normal ratio for booking to queue, Default 3:1')
+    bookingToQueueRatioNormal = models.IntegerField(default=2, verbose_name='Booking to Queue direction ratio [normal] (1 to 10)', help_text='Normal ratio for booking to queue, Default 3:1')
     bookingToQueueRatioRev = models.IntegerField(default=1, verbose_name='Booking to Queue direction ratio [Reverse] (1 to 10)', help_text='Reverse ratio for booking to queue, Default 3:1')
 
     # branch status

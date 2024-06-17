@@ -207,10 +207,10 @@ def funCounterCall_v830(user, branch:Branch, countertype, counterstatus, logtext
             ticket = funCallTicketwithDirection(branch, True, user, counterstatus, l_mask)
 
             # testing
-            print ('Calling ticket:', ticket.tickettype + ticket.ticketnumber)
-            ticket = None
-            # if ticket != None:
-            #     context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
+            # print ('Calling ticket:', ticket.tickettype + ticket.ticketnumber)
+            # ticket = None
+            if ticket != None:
+                context = {'priority': priority, 'mask': mask, 'tickettype': ticket.tickettype, 'ticketnumber': ticket.ticketnumber , 'tickettime': ticket.tickettime}
         elif priority == 'tickettime':
             # found the waiting ticket by time
             ticketlist = TicketTemp.objects.filter(Q(branch=branch) & Q(countertype=countertype) & Q(status=lcounterstatus[0]) & Q(locked=False)).order_by('tickettime')            
@@ -305,7 +305,7 @@ def funCounterCall_v830(user, branch:Branch, countertype, counterstatus, logtext
         # websocket to softkey (update Queue List)
         wssendql(branch.bcode, countertype.name, ticket, 'del')
         # websocket to web my ticket
-        wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
+        wsSendTicketStatus(branch.bcode, ticket.tickettype_disp, ticket.ticketnumber_disp, ticket.securitycode)
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
         wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
@@ -833,7 +833,7 @@ def funCounterRecall(user, branch, countertype, counterstatus, logtext, rx_app, 
     return status, msg
 
 @transaction.atomic
-def funCounterGet_v830(getticket, getttype, gettnumber, user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
+def funCounterGet_v830(gettnumber, user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     status = dict({})
     msg = dict({})
     context = dict({})
@@ -841,46 +841,15 @@ def funCounterGet_v830(getticket, getttype, gettnumber, user, branch, countertyp
     gettt = ''
     gettno = ''
 
-    if getticket == '' :
-        gettt = getttype
-        gettno = gettnumber
-    else:
-        if status == dict({}) :
-            if getticket == '':
-                status = dict({'status': 'Error'})
-                msg =  dict({'msg':'Please input ticket'})
-        if status == dict({}) :
-            # split getticket to gettt and gettno
-            for i in range(len(getticket)):
-                if getticket[i].isalpha() == False:
-                    gettt = getticket[0:i]
-                    gettno = getticket[i:]
-                    break
-    if status == dict({}) :
-        if gettt == '':
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'Please input ticket type.'})
-    # check gettt is letter only
-    if status == dict({}) :
-        if gettt.isalpha() == False:
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'Ticket type must be letter only.'})
-    if status == dict({}) :
-        if gettno == '':
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'Please input ticket number.'})
-    if status == dict({}) :
-        # check gettno is number only
-        if gettno.isnumeric() == False:
-            status = dict({'status': 'Error'})
-            msg =  dict({'msg':'Ticket number must be number only.'})        
-    if status == dict({}) :
-        # change gettno to "000" format and convert to string
-        tformat = counterstatus.countertype.branch.ticketnoformat 
-        gettno = tformat + str(gettno)
-        # get gettno string right 3 char
-        gettno = gettno[-len(tformat):]
+    input_tno_list = []
+    input_tno_list = funTicketToList(gettnumber)
 
+    if status == dict({}) :
+        if input_tno_list == []:
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Please input ticket'})
+    
+    
     if status == dict({}) :
         if counterstatus.status != 'waiting':
             status = dict({'status': 'Error'})
@@ -890,26 +859,32 @@ def funCounterGet_v830(getticket, getttype, gettnumber, user, branch, countertyp
     if status == dict({}) :
         # find ticket in waiting list
         objt = TicketTemp.objects.filter(
-            tickettype=gettt,
-            ticketnumber=gettno,
             branch=branch,
             status='waiting',
             locked=False).order_by('-tickettime')
-        if objt.count() >= 1 :
-            ticket = objt[0]
-        else:
+
+        for t in objt:
+            tno = t.tickettype_disp + t.ticketnumber_disp
+            tno_list = funTicketToList(tno)
+            if input_tno_list == tno_list:
+                ticket = t
+                break
+        if ticket == None:
             # find ticket in miss list
             objt = TicketTemp.objects.filter(
-                tickettype=gettt,
-                ticketnumber=gettno,
                 branch=branch,
                 status='miss',
                 locked=False).order_by('-tickettime')
-            if objt.count() >= 1 :
-                ticket = objt[0]
+            for t in objt:
+                tno = t.tickettype_disp + t.ticketnumber_disp
+                tno_list = funTicketToList(tno)
+                if input_tno_list == tno_list:
+                    ticket = t
+                    break
         if ticket == None:
             status = dict({'status': 'Error'})
             msg =  dict({'msg':'Ticket not found'}) 
+    
 
     if status == dict({}) and ticket != None :
         # lock the ticket
@@ -1003,6 +978,28 @@ def funCounterGet_v830(getticket, getttype, gettnumber, user, branch, countertyp
         status = dict({'status': 'OK'})
         msg =  dict({'msg':'Ticket Get.'})
     return status, msg, context
+
+def funTicketToList(input:str):
+    out_list = []
+
+    if input == None:
+        pass
+    else:
+        i = 0
+        while i < len(input):
+            if input[i].isalpha():
+                if i > 0 and input[i-1].isalpha():
+                    out_list[-1] += input[i].upper()
+                else:
+                    out_list.append(input[i].upper())
+            elif input[i].isdigit():
+                if i > 0 and input[i-1].isdigit():
+                    out_list[-1] = int(str(out_list[-1]) + input[i])
+                else:
+                    out_list.append(int(input[i]))
+            i += 1
+
+    return out_list
 
 def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     status = dict({})
@@ -1254,8 +1251,8 @@ def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber,
                 msg =  dict({'msg':'Welcome back'})  
 
                 if counterstatus.tickettemp != None:
-                    ttype = counterstatus.tickettemp.tickettype
-                    tno = counterstatus.tickettemp.ticketnumber
+                    ttype = counterstatus.tickettemp.tickettype_disp
+                    tno = counterstatus.tickettemp.ticketnumber_disp
                     ttime = counterstatus.tickettemp.tickettime
 
                 # context = {'name': user.first_name + ' ' + user.last_name , 'ttype': userp.tickettype, 'timezone': branch.timezone,

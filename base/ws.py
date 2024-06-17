@@ -23,8 +23,8 @@ def wssenddispcall(branch, counterstatus, countertype, ticket):
     str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
 
     jticket = {
-            "tickettype": ticket.tickettype,
-            "ticketnumber": ticket.ticketnumber,
+            "tickettype": ticket.tickettype_disp,
+            "ticketnumber": ticket.ticketnumber_disp,
             "tickettime": ticket.tickettime.strftime('%Y-%m-%dT%H:%M:%S.%fZ'),
             "displaytime": datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ'),
             "counternumber": counterstatus.counternumber,

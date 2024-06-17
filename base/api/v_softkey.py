@@ -150,7 +150,7 @@ def postCounterGet(request):
         # status, msg, context = funCounterGet('', rx_ticketype, rx_ticketnumber, user, branch, countertype, counterstatus, 'Ticket Get API : ', rx_app, rx_version, datetime_now)
         # new version with database lock
         for i in range(0, 10):
-            status, msg, context = funCounterGet_v830('', rx_ticketype, rx_ticketnumber, user, branch, countertype, counterstatus, 'Ticket Get API : ', rx_app, rx_version, datetime_now)
+            status, msg, context = funCounterGet_v830(rx_ticketype + rx_ticketnumber, user, branch, countertype, counterstatus, 'Ticket Get API : ', rx_app, rx_version, datetime_now)
             if status['status'] == 'OK':
                 break
             else:

@@ -229,8 +229,8 @@
       if (cmd == 'cs') {
           const data = rxdata.data;
           var status = data.status;
-          var ttype = data.tickettype;
-          var tno = data.ticketnumber;
+          var ttype = data.tickettype_disp;
+          var tno = data.ticketnumber_disp;
           var loged = data.login;
 
           changeStatus(status, ttype, tno, loged);

@@ -82,8 +82,8 @@ class printerstatusSerivalizer(ModelSerializer):
 class displaylistSerivalizer(ModelSerializer):
     # bcode = serializers.CharField(source='branch.bcode')
     # countertype = serializers.CharField(source='countertype.name')
-    tickettype = serializers.CharField(source='tickettemp.tickettype')
-    ticketnumber = serializers.CharField(source='tickettemp.ticketnumber')
+    tickettype = serializers.CharField(source='tickettemp.tickettype_disp')
+    ticketnumber = serializers.CharField(source='tickettemp.ticketnumber_disp')
     tickettime = serializers.DateTimeField(source='tickettemp.tickettime')
     ct_lang1 = serializers.CharField(source='countertype.lang1')
     ct_lang2 = serializers.CharField(source='countertype.lang2')

@@ -276,7 +276,7 @@ def BookingSummaryView(request):
                     funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.ARRIVED, request.user, None)
                     
                     # calculate the booking score
-                    score = funBookingScore(booking)
+                    score = funBookingScore(booking, False)
                     # refresh the page
                     return redirect('bookingsummary')
                 else:
@@ -292,7 +292,7 @@ def BookingSummaryView(request):
                     return redirect('bookingsummary')
                 else:
                     error = 'Booking status incorrect'
-            elif action == 'start':
+            elif action == 'start' or action == 'start_ontime':
                 booking = Booking.objects.select_for_update().get(id=pk)
                 if booking.status == Booking.STATUS.ARRIVED:
                     booking.status = Booking.STATUS.STARTED
@@ -300,19 +300,28 @@ def BookingSummaryView(request):
                     # get the new timeslot and create a log
                     funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.STARTED, request.user, None)
                     # member will marked as 'on time'
+
+                    if action == 'start_ontime':
+                        score = funBookingScore(booking, True)
                     # refresh the page
                     return redirect('bookingsummary')
                 else:
                     error = 'Booking status incorrect'
 
-            elif action == 'queue':
+            elif action == 'queue' or action == 'queue_ontime' :
                 # Booking to queue
                 booking = Booking.objects.select_for_update().get(id=pk)
+
+                force_ontime = False
+                if action == 'queue_ontime':
+                    force_ontime = True
                 if booking.status == Booking.STATUS.ARRIVED:
-                    error, tickettempid = bookingtoqueue(utcnow, booking, request.user)
+                    error, tickettempid = bookingtoqueue(utcnow, booking, request.user, force_ontime)
                     if error == '':
                         # get the new timeslot and create a log
                         funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.QUEUE, request.user, None)
+                        if force_ontime == True:
+                            score = funBookingScore(booking, True)
                         # refresh the page
                         return redirect('bookingsummary')
                 else:
@@ -345,7 +354,7 @@ def BookingSummaryView(request):
     return render(request, 'booking/booking.html', context)
 
 @transaction.atomic
-def bookingtoqueue(utcnow, booking:Booking, user):
+def bookingtoqueue(utcnow, booking:Booking, user, force_ontime):
     error = ''
     tickettempid = None
     # datetime_now_local = funUTCtoLocal(datetime_now, booking.branch.timezone)
@@ -386,10 +395,14 @@ def bookingtoqueue(utcnow, booking:Booking, user):
     if error == '':
         # new ticket for booking to queue
         
+        
         # sub ticket type 0=A, 1=B, 2=C ...
         subType = chr(booking.isubtype + 65)
         isubTicketNo = 0
-
+        if force_ontime == True:
+            subType = 'A'
+            booking.isubtype = 0
+            booking.save()
 
         # get the last ticket number
         subticketobj = SubTicket.objects.filter(Q(branch=booking.branch) & Q(booking_tickettype=subType))
@@ -1204,7 +1217,7 @@ def checkMphone(mphone):
 
     return error, error_TC, phone_number_country, phone_number_national
 
-def funBookingScore(booking:Booking) -> int:
+def funBookingScore(booking:Booking, forceOntime) -> int:
     
     # Score 50 | .late_min = 0
     # Score 8  | is early
@@ -1222,6 +1235,7 @@ def funBookingScore(booking:Booking) -> int:
 
     score = None
     if booking.status == Booking.STATUS.ARRIVED:
+
         score = 0
         if booking.late_min == 0:
             score = 50
@@ -1247,6 +1261,10 @@ def funBookingScore(booking:Booking) -> int:
             score = 2
         elif booking.late_min <= 27:
             score = 1
+        
+        if forceOntime == True:
+            booking.force_ontime = True
+            score = 10
         booking.booking_score = score
         booking.save()
     return score

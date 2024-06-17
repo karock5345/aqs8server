@@ -193,7 +193,7 @@ def Softkey_GetView(request, pk, ttid):
         # status, msg, context_get = funCounterGet('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list ', 'Softkey-web', softkey_version, datetime_now)
         # new version with database lock
         for i in range(0, 10):
-            status, msg, context_get = funCounterGet_v830('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list ', 'Softkey-web', softkey_version, datetime_now)
+            status, msg, context_get = funCounterGet_v830(tt.tickettype + tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list ', 'Softkey-web', softkey_version, datetime_now)
             if status['status'] == 'OK':
                 break
             else:
@@ -358,7 +358,7 @@ def SoftkeyView(request, pk):
                     # status, msg, context_get = funCounterGet(getticket, '', '', request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket ', 'Softkey-web', softkey_version, datetime_now)
                     # new version with database lock
                     for i in range(0, 10):
-                        status, msg, context_get = funCounterGet_v830(getticket, '', '', request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket ', 'Softkey-web', softkey_version, datetime_now)
+                        status, msg, context_get = funCounterGet_v830(getticket, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket ', 'Softkey-web', softkey_version, datetime_now)
                         if status['status'] == 'OK':
                             break
                         else:
