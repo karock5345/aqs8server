@@ -1515,7 +1515,15 @@ color: var(--color-light);
   color: var(--color-light);
   background-color: var(--color-dark);
   font-family: helvetica;
-
+}
+.softkey_booking_text {
+  text-align: center;
+  width: 100%;
+  min-height: 2.8rem;
+  font-size: 1.8rem;
+  color: var(--color-main);
+  background-color: var(--color-dark);
+  font-family: helvetica;
 }
 .softkey_call_container{
   display: flex;

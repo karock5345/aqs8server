@@ -193,7 +193,7 @@ def Softkey_GetView(request, pk, ttid):
         # status, msg, context_get = funCounterGet('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list ', 'Softkey-web', softkey_version, datetime_now)
         # new version with database lock
         for i in range(0, 10):
-            status, msg, context_get = funCounterGet_v830(tt.tickettype + tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list ', 'Softkey-web', softkey_version, datetime_now)
+            status, msg, context_get = funCounterGet_v830(tt.tickettype_disp + tt.ticketnumber_disp, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list ', 'Softkey-web', softkey_version, datetime_now)
             if status['status'] == 'OK':
                 break
             else:
@@ -1094,7 +1094,7 @@ def webtouchView(request):
                     # old version no database lock may be cause double ticket number
                     # ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, key.ttype, '','', datetime_now, userweb, 'web', '8')
                     # new version with database lock
-                    ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(branch, key.ttype, '', '', datetime_now, userweb, 'web', aqs_version)
+                    ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(branch, key.ttype, '', '', datetime_now, userweb, 'web', aqs_version, None)
                     
                     if error == '' :
                         printTicket(branch, tickettemp, tickettemp.ticketformat, datetime_now, '')

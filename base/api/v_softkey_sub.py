@@ -9,7 +9,8 @@ import logging
 from django.db import transaction
 import time
 # from base.api.serializers import waitinglistSerivalizer
-from booking.models import Booking
+from booking.models import Booking, TimeSlot
+
 
 logger = logging.getLogger(__name__)
 softkey_version = '8.3.1.0'
@@ -308,7 +309,7 @@ def funCounterCall_v830(user, branch:Branch, countertype, counterstatus, logtext
         wsSendTicketStatus(branch.bcode, ticket.tickettype_disp, ticket.ticketnumber_disp, ticket.securitycode)
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
-        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
         wssendflashlight(branch, countertype, counterstatus, 'flash')
 
         # websocket to web softkey for update counter status
@@ -512,7 +513,7 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
                 wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
                 # websocket to voice com and flash light
                 wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
-                wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+                wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
                 wssendflashlight(branch, countertype, counterstatus, 'flash')
 
                 # websocket to web softkey for update counter status
@@ -570,6 +571,16 @@ def funCounterProcess(user, branch, countertype, counterstatus, logtext, rx_app,
         ticket.status = lcounterstatus[2]
         ticket.save()
         
+        # booking ticket
+        if ticket.booking_id != None:
+            from booking.views import funBookingLog
+
+            booking = Booking.objects.get(id=ticket.booking_id)
+            booking.status = Booking.STATUS.STARTED
+            booking.save()
+            # get the new timeslot and create a log
+            funBookingLog(datetime_now, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.STARTED, user, None)
+
         # add ticketlog
         TicketLog.objects.create(
             tickettemp=ticket,
@@ -647,6 +658,16 @@ def funCounterComplete(user, branch, countertype, counterstatus, logtext, rx_app
         step = ticket.step
         nextstep = step +1
         routeobj = TicketRoute.objects.filter(branch=branch, step=nextstep, tickettype=ticket.tickettype)       
+
+        # booking ticket 
+        if ticket.booking_id != None:
+            from booking.views import funBookingLog
+
+            booking = Booking.objects.get(id=ticket.booking_id)
+            booking.status = Booking.STATUS.COMPLETED
+            booking.save()
+            # get the new timeslot and create a log
+            funBookingLog(datetime_now, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.COMPLETED, user, None)
 
         if routeobj.count() != 1 :
             # no next step
@@ -774,6 +795,16 @@ def funCounterMiss(user, branch, countertype, counterstatus, logtext, rx_app, rx
             user=user,
         )
 
+        # booking ticket
+        if ticket.booking_id != None:
+            from booking.views import funBookingLog
+            
+            booking = Booking.objects.get(id=ticket.booking_id)
+            booking.status = Booking.STATUS.NOSHOW
+            booking.save()
+            # get the new timeslot and create a log
+            funBookingLog(datetime_now, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.NOSHOW, user, None)
+
 
         # Call Centre mode only
         if countertype.countermode == 'cc':
@@ -825,7 +856,7 @@ def funCounterRecall(user, branch, countertype, counterstatus, logtext, rx_app, 
         wssenddispcall(branch, counterstatus, countertype, ticket)
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
-        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
         wssendflashlight(branch, countertype, counterstatus, 'flash')
 
         status = dict({'status': 'OK'})
@@ -962,7 +993,7 @@ def funCounterGet_v830(gettnumber, user, branch, countertype, counterstatus, log
         wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
-        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
         wssendflashlight(branch, countertype, counterstatus, 'flash')
         # websocket to web softkey for update counter status
         wscounterstatus(counterstatus)
@@ -1145,7 +1176,7 @@ def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, co
         wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
-        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
         wssendflashlight(branch, countertype, counterstatus, 'flash')
         # websocket to web softkey for update counter status
         wscounterstatus(counterstatus)
@@ -1199,7 +1230,9 @@ def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber,
     status = dict({})
     msg = dict({})
     context = dict({})
-    
+    booking_time_local = ''
+    booking_id = None
+    booking_name = None    
 
     if status == dict({}) :
         # check the counter is enabled
@@ -1285,6 +1318,7 @@ def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber,
                             ttype = counterstatus.tickettemp.tickettype
                             tno = counterstatus.tickettemp.ticketnumber
                             ttime = counterstatus.tickettemp.tickettime
+                       
                     else:
                         status = dict({'status': 'Error'})
                         msg =  dict({'msg':'Counter auto logout fault'}) 
@@ -1308,13 +1342,21 @@ def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber,
         counterstatus.save()       
 
         logcounterlogin(user, countertype, rx_counternumber, datetime_now)
-        status = dict({'status': 'OK'})
-        msg =  dict({'msg':'Have a nice day'})  
 
         if counterstatus.tickettemp != None:
             ttype = counterstatus.tickettemp.tickettype
             tno = counterstatus.tickettemp.ticketnumber
             ttime = counterstatus.tickettemp.tickettime
+    if status == dict({}) or status.get('status') == 'OK': 
+        if counterstatus.tickettemp != None:
+            if counterstatus.tickettemp.booking_id != None:
+                booking_id = counterstatus.tickettemp.booking_id
+                booking_name = counterstatus.tickettemp.booking_name                
+                booking_time_local = funUTCtoLocal(counterstatus.tickettemp.booking_time, branch.timezone)
+                booking_time_local = booking_time_local.strftime('%Y-%m-%d %H:%M:%S')            
+        status = dict({'status': 'OK'})
+        msg =  dict({'msg':'Have a nice day'})  
+
 
     context = {
         'branch':branch.name,
@@ -1329,6 +1371,9 @@ def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber,
         'tickettype':ttype, 
         'ticketnumber':tno, 
         'tickettime':ttime,
+        'booking_id':booking_id,
+        'booking_name':booking_name,
+        'booking_time':booking_time_local,
         }
     context = dict({'data':context})
     return status, msg, context

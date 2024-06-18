@@ -39,6 +39,11 @@
           <div id="status_text" class="softkey_status_text anibackcolor">
             Status : Waiting to call
           </div>
+          {% if data.booking_id %}
+            <div class="softkey_booking_text anibackcolor">
+              {{data.booking_name}} {{data.booking_time}}
+            </div>
+          {% endif %}       
 
           <div id="key_area">
 
@@ -178,7 +183,7 @@
             {% if waitinglist_show == True %}
               {% for ticket in qlist %}
                 
-                <div id="ticket_{{ticket.tickettype}}{{ticket.ticketnumber}}{{ticket.tickettime}}" >
+                <div id="ticket_{{ticket.tickettype_disp}}{{ticket.ticketnumber_disp}}{{ticket.tickettime}}" >
                   <div class="qlist_item">
                     <div class="qlist_ticketnumber">{{ticket.tickettype_disp}}{{ticket.ticketnumber_disp}}</div>
                     <div class="qlist_tickettime">

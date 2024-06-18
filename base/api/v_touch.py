@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.db.models import Q
 
 from base.models import APILog, Branch, TicketFormat, Ticket, TicketTemp
-from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus
+from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus, SubTicket
 from booking.models import Booking, TimeSlot
 from .views import setting_APIlogEnabled, visitor_ip_address, funUTCtoLocal, checkuser
 from .v_roche import rocheSMS
@@ -27,7 +27,7 @@ def gensecuritycode():
 
 @transaction.atomic
 # parameter 'pno' data changed from <PNO>P1</PNO> -> P1,P2, ... support multiple printers
-def newticket_v830(branch, ttype, pnos, remark, datetime_now, user, app, version):
+def newticket_v830(branch, ttype, pnos, remark, datetime_now, user, app, version, booking:Booking):
     ticketno_str = ''
     countertype = None
     tickettemp = None 
@@ -138,6 +138,8 @@ def newticket_v830(branch, ttype, pnos, remark, datetime_now, user, app, version
         )
        
         tickettemp = TicketTemp.objects.create(
+            tickettype_disp=ttype, 
+            ticketnumber_disp=ticketno_str,             
             tickettype=ttype, 
             ticketnumber=ticketno_str, 
             branch=branch, 
@@ -158,6 +160,51 @@ def newticket_v830(branch, ttype, pnos, remark, datetime_now, user, app, version
             myticketlink=myticketlink,
         )
 
+        # For booking to queue ticket
+        if booking != None:
+            subType = chr(booking.isubtype + 65)
+            isubTicketNo = 0
+
+            # get the last ticket number
+            subticketobj = SubTicket.objects.filter(Q(branch=booking.branch) & Q(booking_tickettype=subType))
+            if subticketobj.count() == 0:
+                # create new sub ticket
+                subticket = SubTicket.objects.create(
+                    branch = booking.branch,
+                    booking_tickettype = subType,
+                    ticketnext = 2,
+                    )
+
+                isubTicketNo = 1
+            else:
+                subticket_id = subticketobj[0].pk
+                # Lock the sub ticket nowait=False
+                try:
+                    subticket = SubTicket.objects.select_for_update().get(id=subticket_id)
+                except Exception as e:
+                    error = e.__str__()
+                isubTicketNo = subticket.ticketnext
+
+                subticket.ticketnext = subticket.ticketnext + 1
+                maxticket = booking.branch.bookingTicketDigit
+                if subticket.ticketnext >= 10**maxticket:
+                    subticket.ticketnext = 1
+                subticket.save()
+
+            tickettemp.booking_id = booking.pk
+            # change isubTicketNo to 2-3 digits string
+            tickettemp.booking_ticketnumber = str(isubTicketNo).zfill(booking.branch.bookingTicketDigit)
+            tickettemp.booking_tickettype = subType
+            tickettemp.booking_name = booking.name
+            tickettemp.booking_user = booking.user
+            tickettemp.booking_time = booking.timeslot.start_date
+            tickettemp.save()
+            # get display ticket number for Booking ticket 
+            disp_tt, disp_tno = funGetDispTicketNumber(tickettemp)
+            tickettemp.tickettype_disp = disp_tt
+            tickettemp.ticketnumber_disp = disp_tno
+            tickettemp.save()
+        
         TicketData.objects.create(
             tickettemp=tickettemp,
             branch = branch,
@@ -497,7 +544,7 @@ def postTicket(request):
         # old version no database lock may be cause double ticket number
         # ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, ttype, pno, remark, datetime_now, user, app, version)
         # new version with database lock
-        ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version)
+        ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version, None)
         if error == '' :
             printTicket(branch, tickettemp, tickettemp.ticketformat, datetime_now, tickettemp.printernumber)
         if error != '' :            

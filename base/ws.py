@@ -7,6 +7,7 @@ from django.utils import timezone
 from django.db.models import Q
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, counteractive
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, PrinterStatus, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
+from booking.models import Booking
 from base.api.serializers import displaylistSerivalizer, printerstatusSerivalizer
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
@@ -215,8 +216,8 @@ def wscounterstatus(counterstatus):
             'lastupdate': str_now,
             'data': {
                 'status' : counterstatus.status,
-                'tickettype' : counterstatus.tickettemp.tickettype,
-                'ticketnumber' : counterstatus.tickettemp.ticketnumber,
+                'tickettype' : counterstatus.tickettemp.tickettype_disp,
+                'ticketnumber' : counterstatus.tickettemp.ticketnumber_disp,
                 'login' : counterstatus.loged,            
                 }
         }
@@ -817,21 +818,35 @@ def wssendql(bcode, countertypename, ticket, cmd):
         tickettime_local_date = temp_time.strftime('%Y-%m-%d')
         tickettime_local_time = temp_time.strftime('%H:%M:%S')
 
+        booking_time_local_str = ''
+        booking_late_min = 0
+        if ticket.booking_id != None:
+            booking = Booking.objects.get(id=ticket.booking_id)
+            booking_time_local = funUTCtoLocal(ticket.booking_time, ticket.branch.timezone)
+            booking_time_local_str = booking_time_local.strftime('%H:%M:%S %Y-%m-%d')
+            booking_late_min = booking.late_min
         json_tx = {
             'cmd': cmd,
             'lastupdate': str_now,
             'data': {
-                'tickettype' : ticket.tickettype,
-                'ticketnumber' : ticket.ticketnumber,
+                'tickettype' : ticket.tickettype_disp,
+                'ticketnumber' : ticket.ticketnumber_disp,
                 'tickettime' : stickettime,
                 'tickettime_local' : tickettime_local,
                 'tickettime_local_short' : tickettime_local_short,
                 'tickettime_local_date' : tickettime_local_date,
                 'tickettime_local_time' : tickettime_local_time,
                 'ttid' : ticket.id,
+
+                # booking 
+                'booking_id' : ticket.booking_id,
+                'booking_name' : ticket.booking_name,
+                'booking_time' : booking_time_local_str,
+                'booking_late_min' : booking_late_min,
                 }
         }
         str_tx = json.dumps(json_tx)
+        print(json_tx)
 
         context = {
         'type':'broadcast_message',

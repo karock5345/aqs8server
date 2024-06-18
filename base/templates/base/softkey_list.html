@@ -29,7 +29,7 @@
                 {% if counter.tickettemp == None %}
                     <td>---</td>
                 {% else %}
-                    <td>{{ counter.tickettemp }}</td>
+                    <td>{{ counter.tickettemp.tickettype_disp }}{{ counter.tickettemp.ticketnumber_disp }}</td>
                 {% endif %}
                 {% if counter.user == None %}
                     <td>---</td>

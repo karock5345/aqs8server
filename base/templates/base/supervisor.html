@@ -54,7 +54,7 @@
                 <tbody>
                 {% for ticket in table %}
                 <tr>
-                    <td>{{ticket.tickettype}}{{ticket.ticketnumber}}</td>                   
+                    <td>{{ticket.tickettype_disp}}{{ticket.ticketnumber_disp}}</td>                   
                     <td>{{ ticket.tickettime|timezone:localtimezone }}</td>
                 </tr>
                 {% endfor %}
@@ -91,7 +91,7 @@
                     {% if counter.tickettemp == None %}
                         <td>---</td>
                     {% else %}
-                        <td>{{ counter.tickettemp }}</td>
+                        <td>{{ counter.tickettemp.tickettype_disp }}{{ counter.tickettemp.ticketnumber_disp }}</td>
                     {% endif %}
                     {% if counter.user == None %}
                         <td>---</td>
@@ -122,7 +122,7 @@
             <tbody>
             {% for ticket in donelist %}
             <tr>
-                <td>{{ticket.tickettype}}{{ticket.ticketnumber}}</td>                   
+                <td>{{ticket.tickettype_disp}}{{ticket.ticketnumber_disp}}</td>                   
                 <td>{{ ticket.tickettime|timezone:localtimezone }}</td>
                 <td>{{ ticket.user }}</td>
             </tr>
@@ -145,7 +145,7 @@
             <tbody>
             {% for ticket in misslist %}
             <tr>
-                <td>{{ticket.tickettype}}{{ticket.ticketnumber}}</td>                   
+                <td>{{ticket.tickettype_disp}}{{ticket.ticketnumber_disp}}</td>                   
                 <td>{{ ticket.tickettime|timezone:localtimezone }}</td>
                 <td>{{ ticket.user }}</td>
                 <td>{{ ticket.status }}</td>

@@ -318,6 +318,10 @@ def BookingSummaryView(request):
                 if booking.status == Booking.STATUS.ARRIVED:
                     error, tickettempid = bookingtoqueue(utcnow, booking, request.user, force_ontime)
                     if error == '':
+                        # change booking status to 'queue'
+                        # booking = Booking.objects.get(id=pk)
+                        booking.status = Booking.STATUS.QUEUE
+                        booking.save()
                         # get the new timeslot and create a log
                         funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.QUEUE, request.user, None)
                         if force_ontime == True:
@@ -395,46 +399,12 @@ def bookingtoqueue(utcnow, booking:Booking, user, force_ontime):
     if error == '':
         # new ticket for booking to queue
         
-        
-        # sub ticket type 0=A, 1=B, 2=C ...
-        subType = chr(booking.isubtype + 65)
-        isubTicketNo = 0
         if force_ontime == True:
-            subType = 'A'
             booking.isubtype = 0
             booking.save()
-
-        # get the last ticket number
-        subticketobj = SubTicket.objects.filter(Q(branch=booking.branch) & Q(booking_tickettype=subType))
-        if subticketobj.count() == 0:
-            # create new sub ticket
-            subticket = SubTicket.objects.create(
-                branch = booking.branch,
-                booking_tickettype = subType,
-                ticketnext = 2,
-                )
-
-            isubTicketNo = 1
-        else:
-            subticket_id = subticketobj[0].pk
-            # Lock the sub ticket nowait=False
-            try:
-                subticket = SubTicket.objects.select_for_update().get(id=subticket_id)
-            except Exception as e:
-                error = e.__str__()
-            isubTicketNo = subticket.ticketnext
-            subticket.ticketnext = subticket.ticketnext + 1
-            subticket.save()
       
         # create new ticket
         if error == '':
-            # isubTicketNo
-            # subType
-            # ticketformat
-            # booking.timeslot.start_date = booking time 
-            # utcnow = current time
-            # def newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version):
-
             ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(
                                                                                     booking.branch, 
                                                                                     ticketformat.ttype, 
@@ -444,30 +414,14 @@ def bookingtoqueue(utcnow, booking:Booking, user, force_ontime):
                                                                                     user,
                                                                                     'web',
                                                                                     aqs_version,
+                                                                                    booking,
                                                                                     )
             
             if error == '':
-                tickettemp.booking_id = booking.id
-                # change isubTicketNo to 2-3 digits string
-                tickettemp.booking_ticketnumber = str(isubTicketNo).zfill(booking.branch.bookingTicketDigit)
-                tickettemp.booking_tickettype = subType
-                tickettemp.booking_name = booking.name
-                tickettemp.booking_user = booking.user
-                tickettemp.booking_time = booking.timeslot.start_date
-                tickettemp.save()
-                # get display ticket number for Booking ticket
-                disp_tt, disp_tno = funGetDispTicketNumber(tickettemp)
-                tickettemp.tickettype_disp = disp_tt
-                tickettemp.ticketnumber_disp = disp_tno
-                tickettemp.save()
-
                 printTicket(booking.branch, tickettemp, tickettemp.ticketformat, utcnow, tickettemp.printernumber)
             pass
 
-        # change booking status to 'queue'
-        # booking = Booking.objects.get(id=pk)
-        booking.status = Booking.STATUS.QUEUE
-        booking.save()
+
 
         tickettempid = None
         if error == '':

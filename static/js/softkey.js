@@ -229,8 +229,8 @@
       if (cmd == 'cs') {
           const data = rxdata.data;
           var status = data.status;
-          var ttype = data.tickettype_disp;
-          var tno = data.ticketnumber_disp;
+          var ttype = data.tickettype;
+          var tno = data.ticketnumber;
           var loged = data.login;
 
           changeStatus(status, ttype, tno, loged);
@@ -292,36 +292,58 @@
             subtotal = 1;
             // add to list
             if (c_waitinglist_show == true) {
-              document.getElementById("qlist_area").innerHTML = document.getElementById("qlist_area").innerHTML + 
+              var qitem = '';
+              qitem = 
               `
-              <div id="ticket_` + ttype + tno + ttime + `" class="qlist_item">
-                <div class="qlist_ticketnumber">` + ttype + tno + `</div>
+              <div id="ticket_` + ttype + tno + ttime + `">
+                  <div class="qlist_item">
+                    <div class="qlist_ticketnumber">` + ttype + tno + `</div>
 
-                <div class="qlist_tickettime">
-                  <div class="qlist_tickettime_1">`
-                    + ttime_local_time + `
-                  </div>
-                  <div class="qlist_tickettime_2">`
-                    + ttime_local_date + `
-                  </div>
-                </div>                
+                    <div class="qlist_tickettime">
+                      <div class="qlist_tickettime_1">`
+                        + ttime_local_time + `
+                      </div>
+                      <div class="qlist_tickettime_2">`
+                        + ttime_local_date + `
+                      </div>
+                    </div>                
 
-                <div>
-                  <a class="btn btn-call" href=` + 
-                  `/softkey_get/` +
-                  c_pk + 
-                  `/` +
-                  ttid + `/` +
-                  `>Call</a>
-                  <a class="btn btn-void" href=` + 
-                  `/softkey_void/` +
-                  c_pk + 
-                  `/` +
-                  ttid + `/` +
-                  `>Void</a>
-                </div>
-              </div>
-              `
+                    <div class="qlist_btn">
+                      <a class="btn btn-call" href=` + 
+                      `/softkey_get/` +
+                      c_pk + 
+                      `/` +
+                      ttid + `/` +
+                      `>Call</a>
+                      <a class="btn btn-void" href=` + 
+                      `/softkey_void/` +
+                      c_pk + 
+                      `/` +
+                      ttid + `/` +
+                      `>Void</a>
+                    </div>
+                  </div>
+                  `
+                  // booking
+                  if (data.booking_id != null) {
+                    qitem = qitem + 
+                    `
+                    <div class="qlist_item">
+                      <div class="qlist_bookingarea">
+                      <span class="qlist_bookingname">` + data.booking_name + ` </span>` 
+                      if (data.late_min >= 0) {
+                        qitem = qitem +                
+                        `<span class="qlist_bookingtime">` + data.booking_time + `(` +  data.booking_late_min + ` min.)</span>`
+                      } else {
+                        qitem = qitem +                
+                        `<span class="qlist_bookingtime">` + data.booking_time + `(early ` +  data.booking_late_min + ` min.)</span>`
+                      };
+                      qitem = qitem +                
+                      `</div></div>`
+                  }
+                  qitem = qitem + `<div class="qlist_item_end"></div>
+              </div>`
+              document.getElementById("qlist_area").innerHTML = document.getElementById("qlist_area").innerHTML + qitem
             };
 
 
