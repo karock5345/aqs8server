@@ -1,0 +1,82 @@
+{% load static %}
+{% load tz %}
+<div class="roomArea">
+{% for temp in templist %}
+    {% if temp.active == True %}
+    <a href="{% url 'temp-update' ts.id %}" >
+    <div class="roomListRoom" >
+    {% else %}
+    <a href="{% url 'temp-update' ts.id %}">
+    <div class="roomListRoom__hide">
+    {% endif %}
+
+        <div class="roomListRoom__header">
+            
+            <div class="roomListRoom__author">               
+                
+                <div class="list__svg">
+                    {% include 'base/images/timeslot.svg' %}
+                </div>
+                
+                {% if temp.enabled == True %}
+                    <span>{{temp.name }}</span>
+                    <span>{{temp.start_date|timezone:temp.branch.timezone|date:'Y-m-d H:i' }}</span>
+                {% else %}
+                    <span>{{temp.name}} (Disabled)</span>
+                    <span>{{temp.start_date|timezone:temp.branch.timezone|date:'Y-m-d H:i' }} (Disabled)</span>
+                {% endif %}
+                    
+            </div>
+            <div class="roomListRoom__actions">
+                <span>Items: {{ temp.items.count }}</span>
+            </div>
+        </div>
+        <div class="roomListRoom__content">
+            {% if temp.sunday == True %}
+                Sun,
+            {% endif %}
+            {% if temp.monday == True %}
+                Mon,
+            {% endif %}
+            {% if temp.tuesday == True %}
+                Tue,
+            {% endif %}
+            {% if temp.wednesday == True %}
+                Wed,
+            {% endif %}
+            {% if temp.thursday == True %}
+                Thu,
+            {% endif %}
+            {% if temp.friday == True %}
+                Fri,
+            {% endif %}
+            {% if temp.saturday == True %}
+                Sat,
+            {% endif %}
+        </div>
+        <div class="roomListRoom__meta">
+            <div class="roomListRoom__joined">
+
+                {% include 'base/images/branch.svg' %}
+
+                Branch:
+                {{temp.branch.bcode}}
+            </div>
+
+            {% if temp.active == False %}
+                <p class="roomListRoom__topic_red">
+                    Dis-active
+                </p>
+            {% else %}
+                <p class="roomListRoom__topic">
+                    Active
+                </p>
+            {% endif %}            
+        </div>
+    </div>
+    </a>
+
+{% endfor %}
+
+
+</div>
