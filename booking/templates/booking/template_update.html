@@ -1,0 +1,88 @@
+{% extends 'main.html' %}
+{% load tz %}
+{% block content %}
+
+    <main class="update-account layout">
+        <div class="container">
+            <div class="layout__box__form">
+                <div class="layout__boxHeader">
+                    <div class="layout__boxTitle">
+                        <a href="{% url 'timeslottemp' %}">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 32 32">                                
+                                <path
+                                    d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                                </path>
+                            </svg>
+                        </a>
+                        <h3>Edit TimeSlot Template</h3>
+                    </div>
+                </div>
+                <div class="layout__body">
+
+                    <form class="form" action="" method="POST" prefix="timeslottempform">
+                        
+                        {% csrf_token %}
+                        
+                        {% for field in form  %}
+                                {% if field.field.widget.input_type == 'checkbox' %}
+                                
+                                    <div class="form__group_checkbox">
+                                        <label class="profile_pic" id="{{ field.name }}"> <p class="label__name">{{field}} {{field.label}}</p></label><br>
+                                    </div>                                
+
+                                {% else %}
+                                    <div class="form__group">
+                                        <label class="profile_pic" id="{{ field.name }}">
+                                            <p class="label__name">
+                                                {{field.label}}
+                                            </p>
+                                            {{field}}
+                                            <p class="help__text" id="{{ field.name }}-add-text">
+                                            </p>
+                                            <p class="help__text">
+                                                {{field.help_text}}
+                                            </p>
+                                        </label>
+                                    </div>
+                                {% endif %}
+                        {% endfor %}
+
+                        <div>
+                            <button class="btn btn--main" >Add item</button>
+                        </div>
+                        {% for item in items %}
+                            <a class="booking_row">
+                                <div class="booking_date_text">
+                                    {{item.pk}}
+                                </div>
+                                <div class="booking_date_text">
+                                    {{item.start_time|time:'H:i'}}
+                                    <!-- {{item.start_time|timezone:item.branch.timezone|time:'H:i' }} -->
+                                </div>
+                                <div class="booking_date_text">
+                                    {{item.slot_total}}
+                                </div>
+                                <div>
+                                    {{item.service_hours}}:{{item.service_mins}}
+                                </div>
+
+                                <div class="booking_key_area">
+                                    <button class="booking_key" >Edit</button>
+                                    <button class="booking_key booking_key_reject" >Del</button>
+                                </div>
+                            </a>
+                        {% endfor %}
+                                    
+                        <div class="form__action">
+                            <a class="btn btn--del" href="{-% url 'ts-delete' timeslot.id %}">Delete</a>
+                            <a class="btn btn--dark" href="{% url 'timeslottemp' %}">Cancel</a>
+                            <button class="btn btn--main" type="submit">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </main>
+    {% endblock content %}

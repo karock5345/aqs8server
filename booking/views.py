@@ -13,7 +13,7 @@ from django.urls import reverse_lazy, reverse
 
 from .models import *
 from base.models import UserProfile, Branch, SubTicket
-from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm, BookingForm, BookingNewForm
+from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm, BookingForm, BookingNewForm, TimeSlotTempForm
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
 from django.utils import timezone
@@ -35,6 +35,110 @@ from base.api.v_touch import newticket_v830, printTicket, funGetDispTicketNumber
 logger = logging.getLogger(__name__)
 
 @unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
+def TimeSlotTempUpdateView(request, pk):
+    temp = TimeslotTemplate.objects.get(id=pk)
+    items = temp.items.all()
+
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    = auth_data(request.user)
+
+    if request.method == 'POST':
+        # utcnow = timezone.now()
+        # form = TimeSlotTemplateForm(request.POST, instance=temp, prefix='timeslottempform', auth_branchs=auth_branchs)
+        # error = ''
+        # error, newform = checktimeslotform(form)
+        # if error == '' :         
+        #     try :                
+        #         newform.save()
+        #         # change user to current user
+        #         timeslot.user = request.user
+        #         timeslot.save()
+        #         messages.success(request, 'TimeSlot was successfully updated!')
+        #         funBookingLog(utcnow, timeslot, None, TimeSlot.ACTION.CHANGED, Booking.STATUS.NULL, request.user, None)
+                
+        #         return redirect('bookingtimeslot')
+        #     except:
+        #         error = 'An error occurcd during updating TimeSlot'
+
+            
+
+        # if error != '':
+        #     messages.error(request, error )
+        pass
+    else:
+        form = TimeSlotTempForm(instance=temp, prefix='timeslottempform', auth_branchs=auth_branchs)
+    context =  {'form':form, 'temptimeslot':temp, 'items':items}
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context 
+    return render(request, 'booking/template_update.html', context)
+
+
+
+@unauth_user
+def TimeslotTempSummaryView(request):
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    = auth_data(request.user)
+
+ 
+    context = {
+        'users':auth_userlist, 
+        'users_active':auth_userlist_active, 
+        'profiles':auth_profilelist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes,
+        'timeslots':auth_timeslots,
+        'bookings':auth_bookings,
+        'timeslottemplist':auth_timeslottemplist,
+        }
+    print(auth_timeslottemplist)
+    if request.method == 'POST':
+
+        error = ''
+
+        if error == '':
+            utcnow = timezone.now()
+            
+        if error != '': 
+            messages.error(request, error)
+            
+            
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context 
+    return render(request, 'booking/template.html', context)
+
+@unauth_user
 def BookingNewView(request):
 
     auth_en_queue, \
@@ -50,6 +154,7 @@ def BookingNewView(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     form = BookingNewForm(auth_branchs=auth_branchs)
@@ -119,6 +224,7 @@ def BookingUpdateView(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -170,6 +276,7 @@ def BookingSummaryView(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
  
@@ -812,6 +919,7 @@ def TimeSlotNewView(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     tsform = TimeSlotNewForm(auth_branchs=auth_branchs)
@@ -877,6 +985,7 @@ def TimeSlotUpdateView(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -929,6 +1038,7 @@ def TimeSlotSummaryView(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
  
     context = {

@@ -65,7 +65,7 @@ class TimeSlot(models.Model):
 
 class TimeSlot_item(models.Model):
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
-    start_time = models.TimeField(null=False, blank=False)
+    start_time = models.TimeField(null=False, blank=False) # this is local time 
     service_hours = models.IntegerField(
         default=1,
         validators=[MaxValueValidator(12), MinValueValidator(0)]
@@ -86,7 +86,7 @@ class TimeSlot_item(models.Model):
         start_date_local = funUTCtoLocaltime(start_date_local, self.branch.timezone)
         return self.branch.bcode + ' ' + start_date_local.strftime('%H:%M')
 
-class BookingTemplate(models.Model):    
+class TimeslotTemplate(models.Model):    
     enabled = models.BooleanField(default=True)
 
     branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
@@ -100,18 +100,20 @@ class BookingTemplate(models.Model):
     friday = models.BooleanField(default=False)
     saturday = models.BooleanField(default=False)
 
-    items = models.ManyToManyField(TimeSlot_item, blank=True)
+    
     # e.g. Timeslot item time is 6-30 1:00 - 2:00, show_day_before=7, show_period=5, create_before=8
     # at 6-15 (30-7-8), auto create the booking, show between 6-23 to 6-28
     show_day_before = models.FloatField(default=7, help_text='Show the booking before start_date, 7 means 7 days before')
     show_period = models.FloatField(default=5, help_text='Show the booking period, 5 means 5 days')
     create_before = models.FloatField(default=8, help_text='Create the booking before show_day, e.g. booking:6-30 show_day_before=7 create_before=8, then create booking at 6-15')
 
+    items = models.ManyToManyField(TimeSlot_item, blank=True)
+
     def __str__(self):
         return self.branch.bcode + '-' + self.name
 
 class TempLog(models.Model):
-    bookingtemplate = models.ForeignKey(BookingTemplate, on_delete=models.CASCADE, null=False, blank=False)
+    bookingtemplate = models.ForeignKey(TimeslotTemplate, on_delete=models.CASCADE, null=False, blank=False)
     item = models.ForeignKey(TimeSlot_item, on_delete=models.CASCADE, null=False, blank=False)
     year = models.IntegerField(default=0)
     month = models.IntegerField(default=0)

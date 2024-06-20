@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TimeSlot, Booking, BookingLog, SMS_Log, TimeSlot_item, BookingTemplate, TempLog
+from .models import TimeSlot, Booking, BookingLog, SMS_Log, TimeSlot_item, TimeslotTemplate, TempLog
 
 
 # Register your models here.
@@ -22,7 +22,7 @@ class SMSLogView(admin.ModelAdmin):
 class TimeSlot_itemView(admin.ModelAdmin):
     list_display =('branch', 'start_time', 'service_hours', 'service_mins', 'slot_total', 'user', )
     ordering = ('branch', 'start_time',)
-class BookingTemplateView(admin.ModelAdmin):
+class TimeslotTemplateView(admin.ModelAdmin):
     list_display =('branch', 'name', )
     # ordering = ('name')
 class TempLogView(admin.ModelAdmin):
@@ -34,5 +34,5 @@ admin.site.register(Booking, BookingView)
 admin.site.register(BookingLog, BookingLogView)
 admin.site.register(SMS_Log, SMSLogView)
 admin.site.register(TimeSlot_item, TimeSlot_itemView)
-admin.site.register(BookingTemplate, BookingTemplateView)
+admin.site.register(TimeslotTemplate, TimeslotTemplateView)
 admin.site.register(TempLog, TempLogView)

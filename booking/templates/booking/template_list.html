@@ -1,14 +1,10 @@
 {% load static %}
 {% load tz %}
 <div class="roomArea">
-{% for temp in templist %}
-    {% if temp.active == True %}
-    <a href="{% url 'temp-update' ts.id %}" >
+{% for temp in timeslottemplist %}
+
+    <a href="{% url 'temp-update' temp.id %}" >
     <div class="roomListRoom" >
-    {% else %}
-    <a href="{% url 'temp-update' ts.id %}">
-    <div class="roomListRoom__hide">
-    {% endif %}
 
         <div class="roomListRoom__header">
             
@@ -20,10 +16,9 @@
                 
                 {% if temp.enabled == True %}
                     <span>{{temp.name }}</span>
-                    <span>{{temp.start_date|timezone:temp.branch.timezone|date:'Y-m-d H:i' }}</span>
                 {% else %}
                     <span>{{temp.name}} (Disabled)</span>
-                    <span>{{temp.start_date|timezone:temp.branch.timezone|date:'Y-m-d H:i' }} (Disabled)</span>
+                    <!-- <span>{{temp.start_date|timezone:temp.branch.timezone|date:'Y-m-d H:i' }} (Disabled)</span> -->
                 {% endif %}
                     
             </div>
@@ -63,13 +58,13 @@
                 {{temp.branch.bcode}}
             </div>
 
-            {% if temp.active == False %}
+            {% if temp.enabled == False %}
                 <p class="roomListRoom__topic_red">
-                    Dis-active
+                    Disabled
                 </p>
             {% else %}
                 <p class="roomListRoom__topic">
-                    Active
+                    Enabled
                 </p>
             {% endif %}            
         </div>

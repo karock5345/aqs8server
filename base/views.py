@@ -15,7 +15,7 @@ from base.decorators import *
 from django.urls import reverse_lazy
 
 from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch, Ticket, UserStatusLog
-from booking.models import TimeSlot, Booking, BookingLog
+from booking.models import TimeSlot, Booking, BookingLog, TimeslotTemplate
 from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, resetForm
 from .forms import BranchSettingsForm_Admin, BranchSettingsForm_Adv, BranchSettingsForm_Basic
 from .forms import CaptchaForm, getForm, voidForm, newTicketTypeForm, UserFormSuper, UserFormManager, UserFormSupport, UserFormAdminSelf
@@ -252,6 +252,7 @@ def SoftkeyView(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     context = {
@@ -499,6 +500,7 @@ def SoftkeyLoginBranchView(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     user = request.user
@@ -546,6 +548,7 @@ def SoftkeyLoginView(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     branch = Branch.objects.get(id=pk)
@@ -611,6 +614,7 @@ def SoftkeyLogoutView(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     context = {
@@ -658,6 +662,7 @@ def SoftkeyCallView(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)    
 
     context = {
@@ -723,6 +728,7 @@ def SoftkeyProcessView(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
     
     context = {
@@ -769,6 +775,7 @@ def SoftkeyMissView(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     context = {
@@ -814,6 +821,7 @@ def SoftkeyRecallView(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     context = {
@@ -861,6 +869,7 @@ def SoftkeyDoneView(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     context = {
@@ -2023,6 +2032,7 @@ def Report_Staff_Result(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
           
@@ -2163,6 +2173,7 @@ def Reports(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))    
@@ -2248,6 +2259,7 @@ def SuperVisorListView(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
  
@@ -2328,6 +2340,7 @@ def TicketRouteUpdateView(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -2372,6 +2385,7 @@ def TicketRouteSummaryView(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
  
@@ -2404,6 +2418,7 @@ def TicketFormatNewView(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     form = TicketFormatForm(auth_branchs=auth_branchs)
@@ -2477,6 +2492,7 @@ def TicketFormatUpdateView(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -2519,6 +2535,7 @@ def TicketFormatSummaryView(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
   
@@ -2922,6 +2939,7 @@ def SettingsSummaryView(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
 
@@ -2950,6 +2968,7 @@ def homeView(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
 
@@ -2987,6 +3006,7 @@ def UserSummaryView(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
  
@@ -3023,6 +3043,7 @@ def UserSummaryListView(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
 
@@ -3179,6 +3200,7 @@ def UserUpdateView(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
 
@@ -3390,6 +3412,7 @@ def UserNewView2(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
 
@@ -3462,6 +3485,7 @@ def UserNewView3(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
 
@@ -3596,6 +3620,7 @@ def UserResetView(request, pk):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
     if user in auth_userlist :
@@ -3642,6 +3667,7 @@ def MenuView(request):
     auth_countertype, \
     auth_timeslots, \
     auth_bookings, \
+    auth_timeslottemplist, \
     = auth_data(request.user)
 
         
@@ -3679,8 +3705,9 @@ def auth_data(user):
     auth_en_crm = userprofile.enabled_crm
     auth_en_booking = userprofile.enabled_booking
 
-    # add column for bookingtoqueue
+   
     auth_bookings = Booking.objects.filter(~Q(status=Booking.STATUS.DELETED)).annotate(bookingtoqueue=Value(False, output_field=BooleanField()))
+    # add column for bookingtoqueue
     auth_bookings = auth_bookings.annotate(bookingforceontime=Value(False, output_field=BooleanField()))
     for booking in auth_bookings :
         booking.bookingtoqueue = True
@@ -3715,7 +3742,7 @@ def auth_data(user):
         auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'start_date')
 
         # auth_bookings = Booking.objects.filter(~Q(status=Booking.STATUS.DELETED))
-
+        auth_timeslottemplist = TimeslotTemplate.objects.all()
     elif user.groups.filter(name='admin').exists() == True:
         auth_profilelist = UserProfile.objects.all()
         auth_userlist = User.objects.all().exclude(Q(is_superuser=True))
@@ -3733,6 +3760,8 @@ def auth_data(user):
         auth_timeslots_disactive = TimeSlot.objects.filter(Q(start_date__lt=datetime_now))\
             .annotate(active=Value(False, output_field=BooleanField()))
         auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'start_date')
+
+        auth_timeslottemplist = TimeslotTemplate.objects.all()
 
         # # add column for bookingtoqueue
         # auth_bookings = Booking.objects.filter(~Q(status=Booking.STATUS.DELETED)).annotate(bookingtoqueue=Value(False, output_field=BooleanField()))
@@ -3851,6 +3880,8 @@ def auth_data(user):
             .annotate(active=Value(False, output_field=BooleanField()))
         auth_timeslots = auth_timeslots_disactive.union(auth_timeslots_active).order_by('branch', 'start_date')
 
+        auth_timeslottemplist = TimeslotTemplate.objects.filter(Q(branch__in=auth_branchs))
+
         # auth_bookings = Booking.objects.filter(Q(branch__in=auth_branchs), ~Q(status=Booking.STATUS.DELETED))
 
         
@@ -3867,6 +3898,7 @@ def auth_data(user):
             auth_countertype, 
             auth_timeslots,
             auth_bookings,
+            auth_timeslottemplist,
             )
 
 

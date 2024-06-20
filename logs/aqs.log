@@ -5003,3 +5003,1444 @@ INFO 2024-06-19 18:56:22,614 base>views>main -SCH- Now:06/19/2024, 10:56:22
 INFO 2024-06-19 18:58:47,685 runserver>log_action [32mHTTP GET /booking/booking/ 302 [0.03, 127.0.0.1:50501][0m
 INFO 2024-06-19 18:58:47,696 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:50504][0m
 INFO 2024-06-19 18:58:47,748 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.04, 127.0.0.1:50504][0m
+INFO 2024-06-20 16:32:28,675 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:33:04,056 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\models.py changed, reloading.
+INFO 2024-06-20 16:33:05,073 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:33:05,082 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:33:32,184 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\admin.py changed, reloading.
+INFO 2024-06-20 16:33:33,184 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:33:33,193 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:33:51,041 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\admin.py changed, reloading.
+INFO 2024-06-20 16:33:52,059 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:33:52,099 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:33:52,125 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:33:52,127 base>views>main -SCH- Now:06/20/2024, 08:33:52
+INFO 2024-06-20 16:33:58,060 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\admin.py changed, reloading.
+INFO 2024-06-20 16:33:59,143 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:33:59,152 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:34:04,632 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\admin.py changed, reloading.
+INFO 2024-06-20 16:34:05,625 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:34:05,645 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:34:05,663 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:34:05,663 base>views>main -SCH- Now:06/20/2024, 08:34:05
+WARNING 2024-06-20 16:34:19,096 log>log_response Not Found: /timeslottemp
+WARNING 2024-06-20 16:34:19,097 runserver>log_action [33mHTTP GET /timeslottemp 404 [0.02, 127.0.0.1:55072][0m
+WARNING 2024-06-20 16:34:19,118 log>log_response Not Found: /favicon.ico
+WARNING 2024-06-20 16:34:19,119 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:55073][0m
+WARNING 2024-06-20 16:34:33,197 log>log_response Not Found: /timeslottemp/
+WARNING 2024-06-20 16:34:33,198 runserver>log_action [33mHTTP GET /timeslottemp/ 404 [0.01, 127.0.0.1:55072][0m
+INFO 2024-06-20 16:34:50,127 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.02, 127.0.0.1:55072][0m
+WARNING 2024-06-20 16:34:50,186 runserver>log_action [33mHTTP GET /static/ 404 [0.04, 127.0.0.1:55082][0m
+INFO 2024-06-20 16:34:50,521 runserver>log_action [36mHTTP GET /static/icofont/fonts/icofont.woff2 304 [0.00, 127.0.0.1:55082][0m
+INFO 2024-06-20 16:35:21,850 runserver>log_action [32mHTTP GET /booking/timeslot/ 302 [0.02, 127.0.0.1:55082][0m
+INFO 2024-06-20 16:35:21,857 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:55082][0m
+INFO 2024-06-20 16:35:21,886 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:55082][0m
+INFO 2024-06-20 16:35:33,208 runserver>log_action [32mHTTP POST /login/ 302 [0.26, 127.0.0.1:55082][0m
+INFO 2024-06-20 16:35:33,241 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:55082][0m
+WARNING 2024-06-20 16:36:17,325 log>log_response Not Found: /booking/
+WARNING 2024-06-20 16:36:17,325 runserver>log_action [33mHTTP GET /booking/ 404 [0.01, 127.0.0.1:55082][0m
+WARNING 2024-06-20 16:36:17,349 log>log_response Not Found: /favicon.ico
+WARNING 2024-06-20 16:36:17,350 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:55082][0m
+WARNING 2024-06-20 16:36:21,253 log>log_response Not Found: /booking
+WARNING 2024-06-20 16:36:21,253 runserver>log_action [33mHTTP GET /booking 404 [0.01, 127.0.0.1:55082][0m
+INFO 2024-06-20 16:36:26,513 runserver>log_action [mHTTP GET /booking/KB/ 200 [0.08, 127.0.0.1:55082][0m
+INFO 2024-06-20 16:36:26,523 runserver>log_action [mHTTP GET /static/images/logo_ts.png 200 [0.00, 127.0.0.1:55082][0m
+INFO 2024-06-20 16:36:38,970 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.01, 127.0.0.1:55082][0m
+WARNING 2024-06-20 16:36:38,985 runserver>log_action [33mHTTP GET /static/ 404 [0.00, 127.0.0.1:55082][0m
+INFO 2024-06-20 16:36:47,935 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\urls.py changed, reloading.
+INFO 2024-06-20 16:36:49,088 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:36:49,107 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:36:49,125 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:36:49,126 base>views>main -SCH- Now:06/20/2024, 08:36:49
+INFO 2024-06-20 16:36:50,771 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\urls.py changed, reloading.
+INFO 2024-06-20 16:36:51,822 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:36:51,840 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:36:51,859 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:36:51,859 base>views>main -SCH- Now:06/20/2024, 08:36:51
+INFO 2024-06-20 16:36:53,502 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\urls.py changed, reloading.
+INFO 2024-06-20 16:36:54,576 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:36:54,595 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:36:54,614 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:36:54,614 base>views>main -SCH- Now:06/20/2024, 08:36:54
+INFO 2024-06-20 16:37:03,693 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\urls.py changed, reloading.
+INFO 2024-06-20 16:37:04,781 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:37:04,800 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:37:04,818 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:37:04,819 base>views>main -SCH- Now:06/20/2024, 08:37:04
+INFO 2024-06-20 16:37:06,456 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\urls.py changed, reloading.
+INFO 2024-06-20 16:37:07,494 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:37:07,513 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:37:07,531 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:37:07,531 base>views>main -SCH- Now:06/20/2024, 08:37:07
+INFO 2024-06-20 16:37:08,541 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.06, 127.0.0.1:55152][0m
+INFO 2024-06-20 16:38:23,180 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\views.py changed, reloading.
+INFO 2024-06-20 16:38:24,283 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:38:24,302 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:38:24,319 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:38:24,319 base>views>main -SCH- Now:06/20/2024, 08:38:24
+ERROR 2024-06-20 16:38:25,553 log>log_response Internal Server Error: /booking/timeslottemp/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: booking_timeslottemplate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\booking\views.py", line 83, in TimeslotTempSummaryView
+    return render(request, 'booking/template.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 715, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 847, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 914, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\sql\query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\sql\query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: booking_timeslottemplate
+ERROR 2024-06-20 16:38:25,566 runserver>log_action [35;1mHTTP GET /booking/timeslottemp/ 500 [0.34, 127.0.0.1:55176][0m
+INFO 2024-06-20 16:40:39,177 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\views.py changed, reloading.
+INFO 2024-06-20 16:40:40,235 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:40:40,254 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:40:40,273 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:40:40,273 base>views>main -SCH- Now:06/20/2024, 08:40:40
+ERROR 2024-06-20 16:40:43,631 log>log_response Internal Server Error: /booking/timeslottemp/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: booking_timeslottemplate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\booking\views.py", line 67, in TimeslotTempSummaryView
+    print(auth_timeslottemplist)
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 374, in __repr__
+    data = list(self[: REPR_OUTPUT_SIZE + 1])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: booking_timeslottemplate
+ERROR 2024-06-20 16:40:43,638 runserver>log_action [35;1mHTTP GET /booking/timeslottemp/ 500 [0.13, 127.0.0.1:55204][0m
+INFO 2024-06-20 16:44:36,766 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\base\views.py changed, reloading.
+INFO 2024-06-20 16:44:37,780 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:44:37,799 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:44:37,833 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:44:37,834 base>views>main -SCH- Now:06/20/2024, 08:44:37
+ERROR 2024-06-20 16:44:40,166 log>log_response Internal Server Error: /booking/timeslottemp/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: booking_timeslottemplate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\booking\views.py", line 67, in TimeslotTempSummaryView
+    print(auth_timeslottemplist)
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 374, in __repr__
+    data = list(self[: REPR_OUTPUT_SIZE + 1])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: booking_timeslottemplate
+ERROR 2024-06-20 16:44:40,172 runserver>log_action [35;1mHTTP GET /booking/timeslottemp/ 500 [0.13, 127.0.0.1:55267][0m
+ERROR 2024-06-20 16:44:44,485 log>log_response Internal Server Error: /booking/timeslottemp/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: booking_timeslottemplate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\booking\views.py", line 67, in TimeslotTempSummaryView
+    print(auth_timeslottemplist)
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 374, in __repr__
+    data = list(self[: REPR_OUTPUT_SIZE + 1])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: booking_timeslottemplate
+ERROR 2024-06-20 16:44:44,490 runserver>log_action [35;1mHTTP GET /booking/timeslottemp/ 500 [0.06, 127.0.0.1:55267][0m
+INFO 2024-06-20 16:44:58,761 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\base\views.py changed, reloading.
+INFO 2024-06-20 16:44:59,848 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:44:59,867 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:44:59,904 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:44:59,904 base>views>main -SCH- Now:06/20/2024, 08:44:59
+INFO 2024-06-20 16:45:21,616 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\base\views.py changed, reloading.
+INFO 2024-06-20 16:45:22,640 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:45:22,659 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:45:22,691 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:45:22,691 base>views>main -SCH- Now:06/20/2024, 08:45:22
+ERROR 2024-06-20 16:45:29,701 log>log_response Internal Server Error: /booking/timeslottemp/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: booking_timeslottemplate
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\booking\views.py", line 67, in TimeslotTempSummaryView
+    print(auth_timeslottemplist)
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 374, in __repr__
+    data = list(self[: REPR_OUTPUT_SIZE + 1])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: booking_timeslottemplate
+ERROR 2024-06-20 16:45:29,709 runserver>log_action [35;1mHTTP GET /booking/timeslottemp/ 500 [0.15, 127.0.0.1:55293][0m
+INFO 2024-06-20 16:47:10,706 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:47:10,748 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:47:10,748 base>views>main -SCH- Now:06/20/2024, 08:47:10
+INFO 2024-06-20 16:47:25,450 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:47:25,490 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:47:25,490 base>views>main -SCH- Now:06/20/2024, 08:47:25
+INFO 2024-06-20 16:47:28,266 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:47:29,145 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:47:29,164 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:47:29,183 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:47:29,183 base>views>main -SCH- Now:06/20/2024, 08:47:29
+ERROR 2024-06-20 16:47:35,833 log>log_response Internal Server Error: /booking/timeslottemp/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\booking\views.py", line 83, in TimeslotTempSummaryView
+    return render(request, 'booking/template.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'temp-new' not found. 'temp-new' is not a valid view function or pattern name.
+ERROR 2024-06-20 16:47:35,841 runserver>log_action [35;1mHTTP GET /booking/timeslottemp/ 500 [0.35, 127.0.0.1:55360][0m
+ERROR 2024-06-20 16:48:01,462 log>log_response Internal Server Error: /booking/timeslottemp/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\booking\views.py", line 83, in TimeslotTempSummaryView
+    return render(request, 'booking/template.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'temp-update' not found. 'temp-update' is not a valid view function or pattern name.
+ERROR 2024-06-20 16:48:01,470 runserver>log_action [35;1mHTTP GET /booking/timeslottemp/ 500 [0.35, 127.0.0.1:55360][0m
+ERROR 2024-06-20 16:48:02,630 log>log_response Internal Server Error: /booking/timeslottemp/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\booking\views.py", line 83, in TimeslotTempSummaryView
+    return render(request, 'booking/template.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'temp-update' not found. 'temp-update' is not a valid view function or pattern name.
+ERROR 2024-06-20 16:48:02,639 runserver>log_action [35;1mHTTP GET /booking/timeslottemp/ 500 [0.34, 127.0.0.1:55360][0m
+ERROR 2024-06-20 16:48:33,424 log>log_response Internal Server Error: /booking/timeslottemp/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\booking\views.py", line 83, in TimeslotTempSummaryView
+    return render(request, 'booking/template.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 321, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'temp-update' not found. 'temp-update' is not a valid view function or pattern name.
+ERROR 2024-06-20 16:48:33,431 runserver>log_action [35;1mHTTP GET /booking/timeslottemp/ 500 [0.36, 127.0.0.1:55360][0m
+INFO 2024-06-20 16:48:34,238 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.03, 127.0.0.1:55360][0m
+INFO 2024-06-20 16:49:39,016 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\views.py changed, reloading.
+INFO 2024-06-20 16:49:40,182 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 16:49:40,201 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 16:49:40,220 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 16:49:40,222 base>views>main -SCH- Now:06/20/2024, 08:49:40
+INFO 2024-06-20 16:49:58,337 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.05, 127.0.0.1:55394][0m
+INFO 2024-06-20 16:49:59,113 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.03, 127.0.0.1:55394][0m
+INFO 2024-06-20 16:49:59,324 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.03, 127.0.0.1:55394][0m
+INFO 2024-06-20 16:50:00,887 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.03, 127.0.0.1:55394][0m
+INFO 2024-06-20 16:51:38,490 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.03, 127.0.0.1:55439][0m
+INFO 2024-06-20 16:52:05,372 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.03, 127.0.0.1:55439][0m
+INFO 2024-06-20 16:52:06,238 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.03, 127.0.0.1:55439][0m
+INFO 2024-06-20 16:52:06,855 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.03, 127.0.0.1:55439][0m
+WARNING 2024-06-20 16:52:26,984 log>log_response Not Found: /booking/timeslottemp/{-% url 'temp-update' ts.id %}
+WARNING 2024-06-20 16:52:26,985 runserver>log_action [33mHTTP GET /booking/timeslottemp/%7B-%%20url%20'temp-update'%20ts.id%20%%7D 404 [0.02, 127.0.0.1:55439][0m
+INFO 2024-06-20 16:56:22,023 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.03, 127.0.0.1:55515][0m
+INFO 2024-06-20 16:57:21,839 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.03, 127.0.0.1:55515][0m
+ERROR 2024-06-20 17:30:29,004 log>log_response Internal Server Error: /booking/timeslottemp/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\booking\views.py", line 83, in TimeslotTempSummaryView
+    return render(request, 'booking/template.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'temp-update' not found. 'temp-update' is not a valid view function or pattern name.
+ERROR 2024-06-20 17:30:29,014 runserver>log_action [35;1mHTTP GET /booking/timeslottemp/ 500 [0.40, 127.0.0.1:56112][0m
+INFO 2024-06-20 17:30:35,913 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.03, 127.0.0.1:56112][0m
+INFO 2024-06-20 17:41:12,317 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\views.py changed, reloading.
+INFO 2024-06-20 17:41:13,383 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 17:41:13,403 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 17:41:13,422 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 17:41:13,422 base>views>main -SCH- Now:06/20/2024, 09:41:13
+INFO 2024-06-20 17:41:34,101 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\views.py changed, reloading.
+INFO 2024-06-20 17:41:35,130 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 17:41:35,149 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 17:41:35,168 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 17:41:35,169 base>views>main -SCH- Now:06/20/2024, 09:41:35
+INFO 2024-06-20 18:01:54,712 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 18:01:55,576 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 18:01:55,595 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 18:01:55,612 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 18:01:55,612 base>views>main -SCH- Now:06/20/2024, 10:01:55
+INFO 2024-06-20 18:02:21,577 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\urls.py changed, reloading.
+INFO 2024-06-20 18:02:22,590 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 18:02:22,608 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 18:02:22,627 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 18:02:22,627 base>views>main -SCH- Now:06/20/2024, 10:02:22
+INFO 2024-06-20 18:02:24,997 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\urls.py changed, reloading.
+INFO 2024-06-20 18:02:25,961 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 18:02:25,979 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 18:02:25,997 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 18:02:25,997 base>views>main -SCH- Now:06/20/2024, 10:02:25
+INFO 2024-06-20 18:02:32,914 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\urls.py changed, reloading.
+INFO 2024-06-20 18:02:33,924 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 18:02:33,943 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 18:02:33,960 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 18:02:33,960 base>views>main -SCH- Now:06/20/2024, 10:02:33
+INFO 2024-06-20 18:02:37,396 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\urls.py changed, reloading.
+INFO 2024-06-20 18:02:38,394 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 18:02:38,413 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 18:02:38,430 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 18:02:38,431 base>views>main -SCH- Now:06/20/2024, 10:02:38
+INFO 2024-06-20 18:02:42,932 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\urls.py changed, reloading.
+INFO 2024-06-20 18:02:43,928 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 18:02:43,947 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 18:02:43,965 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 18:02:43,965 base>views>main -SCH- Now:06/20/2024, 10:02:43
+INFO 2024-06-20 18:02:55,278 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.05, 127.0.0.1:57503][0m
+ERROR 2024-06-20 18:02:56,197 log>log_response Internal Server Error: /booking/timeslottemp-update/1/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 505, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\booking\views.py", line 88, in TimeSlotTempUpdateView
+    return render(request, 'booking/template_update.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 55: 'endfor', expected 'elif', 'else' or 'endif'. Did you forget to register or load this tag?
+ERROR 2024-06-20 18:02:56,207 runserver>log_action [35;1mHTTP GET /booking/timeslottemp-update/1/ 500 [0.14, 127.0.0.1:57503][0m
+WARNING 2024-06-20 18:02:56,248 log>log_response Not Found: /favicon.ico
+INFO 2024-06-20 18:03:34,075 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57503][0m
+INFO 2024-06-20 18:03:51,823 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57503][0m
+INFO 2024-06-20 18:04:11,731 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57503][0m
+INFO 2024-06-20 18:05:01,184 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.04, 127.0.0.1:57503][0m
+INFO 2024-06-20 18:05:02,169 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57503][0m
+INFO 2024-06-20 18:07:34,221 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\forms.py changed, reloading.
+INFO 2024-06-20 18:07:35,281 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 18:07:35,300 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 18:07:35,318 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 18:07:35,319 base>views>main -SCH- Now:06/20/2024, 10:07:35
+INFO 2024-06-20 18:07:59,181 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\views.py changed, reloading.
+INFO 2024-06-20 18:08:00,235 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 18:08:00,254 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 18:08:00,271 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 18:08:00,272 base>views>main -SCH- Now:06/20/2024, 10:08:00
+INFO 2024-06-20 18:08:05,113 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\views.py changed, reloading.
+INFO 2024-06-20 18:08:06,180 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 18:08:06,199 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 18:08:06,217 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 18:08:06,217 base>views>main -SCH- Now:06/20/2024, 10:08:06
+INFO 2024-06-20 18:08:21,598 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\booking\views.py changed, reloading.
+INFO 2024-06-20 18:08:22,659 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 18:08:22,677 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 18:08:22,694 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 18:08:22,695 base>views>main -SCH- Now:06/20/2024, 10:08:22
+INFO 2024-06-20 18:12:13,598 runserver>log_action [mHTTP GET /booking/timeslottemp/ 200 [0.05, 127.0.0.1:57701][0m
+INFO 2024-06-20 18:12:14,447 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57701][0m
+INFO 2024-06-20 18:14:31,900 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57747][0m
+INFO 2024-06-20 18:14:51,949 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57747][0m
+INFO 2024-06-20 18:14:54,299 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:57747][0m
+INFO 2024-06-20 18:14:54,830 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:57747][0m
+INFO 2024-06-20 18:14:55,076 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:57747][0m
+ERROR 2024-06-20 18:15:22,010 log>log_response Internal Server Error: /booking/timeslottemp-update/1/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\booking\views.py", line 84, in TimeSlotTempUpdateView
+    context =  {'form':form, 'temptimeslot':temp, 'items':items}
+                       ^^^^
+UnboundLocalError: cannot access local variable 'form' where it is not associated with a value
+ERROR 2024-06-20 18:15:22,013 runserver>log_action [35;1mHTTP POST /booking/timeslottemp-update/1/ 500 [0.16, 127.0.0.1:57747][0m
+INFO 2024-06-20 18:15:23,669 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57747][0m
+ERROR 2024-06-20 18:15:30,433 log>log_response Internal Server Error: /booking/timeslottemp-update/1/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\booking\views.py", line 84, in TimeSlotTempUpdateView
+    context =  {'form':form, 'temptimeslot':temp, 'items':items}
+                       ^^^^
+UnboundLocalError: cannot access local variable 'form' where it is not associated with a value
+ERROR 2024-06-20 18:15:30,436 runserver>log_action [35;1mHTTP POST /booking/timeslottemp-update/1/ 500 [0.05, 127.0.0.1:57747][0m
+INFO 2024-06-20 18:15:35,044 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:57747][0m
+ERROR 2024-06-20 18:15:44,156 log>log_response Internal Server Error: /booking/timeslottemp-update/1/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\booking\views.py", line 84, in TimeSlotTempUpdateView
+    context =  {'form':form, 'temptimeslot':temp, 'items':items}
+                       ^^^^
+UnboundLocalError: cannot access local variable 'form' where it is not associated with a value
+ERROR 2024-06-20 18:15:44,160 runserver>log_action [35;1mHTTP POST /booking/timeslottemp-update/1/ 500 [0.05, 127.0.0.1:57747][0m
+INFO 2024-06-20 18:15:45,464 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:57747][0m
+INFO 2024-06-20 18:16:08,526 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57747][0m
+INFO 2024-06-20 18:16:29,266 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57747][0m
+INFO 2024-06-20 18:18:36,522 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57813][0m
+INFO 2024-06-20 18:18:56,957 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:57813][0m
+INFO 2024-06-20 18:18:58,284 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:57813][0m
+INFO 2024-06-20 18:18:58,818 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57813][0m
+INFO 2024-06-20 18:18:59,072 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:57813][0m
+INFO 2024-06-20 18:19:05,159 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57813][0m
+INFO 2024-06-20 18:19:05,677 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:57821][0m
+INFO 2024-06-20 18:19:05,722 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.04, 127.0.0.1:57821][0m
+INFO 2024-06-20 18:19:05,725 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.04, 127.0.0.1:57822][0m
+INFO 2024-06-20 18:19:05,726 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:57824][0m
+INFO 2024-06-20 18:19:05,728 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:57823][0m
+INFO 2024-06-20 18:19:05,821 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:57823][0m
+INFO 2024-06-20 18:21:27,869 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57854][0m
+INFO 2024-06-20 18:22:02,306 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:57854][0m
+INFO 2024-06-20 18:22:03,152 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:57854][0m
+INFO 2024-06-20 18:22:03,415 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57854][0m
+INFO 2024-06-20 18:22:04,660 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:57854][0m
+INFO 2024-06-20 18:22:19,606 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:57854][0m
+INFO 2024-06-20 18:22:20,823 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:57854][0m
+INFO 2024-06-20 18:22:20,966 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:57854][0m
+INFO 2024-06-20 18:35:30,581 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 18:35:31,477 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-20 18:35:31,497 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-20 18:35:31,515 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-20 18:35:31,515 base>views>main -SCH- Now:06/20/2024, 10:35:31
+INFO 2024-06-20 18:35:36,978 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.05, 127.0.0.1:58130][0m
+INFO 2024-06-20 18:35:37,032 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.04, 127.0.0.1:58130][0m
+INFO 2024-06-20 18:35:37,035 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.04, 127.0.0.1:58132][0m
+INFO 2024-06-20 18:35:37,037 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:58133][0m
+INFO 2024-06-20 18:35:37,039 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:58134][0m
+INFO 2024-06-20 18:35:37,116 runserver>log_action [mHTTP GET /static/images/favicon.ico 200 [0.00, 127.0.0.1:58133][0m
+INFO 2024-06-20 18:36:55,693 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:58170][0m
+INFO 2024-06-20 18:37:54,080 runserver>log_action [mHTTP GET / 200 [0.03, 127.0.0.1:58170][0m
+INFO 2024-06-20 18:37:56,794 runserver>log_action [mHTTP GET /booking/booking/ 200 [0.03, 127.0.0.1:58170][0m
+INFO 2024-06-20 18:39:07,846 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:58208][0m
+INFO 2024-06-20 18:41:00,710 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:58226][0m
+INFO 2024-06-20 18:41:06,097 runserver>log_action [mHTTP GET /admin/booking/templog/ 200 [0.11, 127.0.0.1:58226][0m
+INFO 2024-06-20 18:41:06,115 runserver>log_action [mHTTP GET /static/admin/css/base.css 200 [0.00, 127.0.0.1:58226][0m
+INFO 2024-06-20 18:41:06,127 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:58232][0m
+INFO 2024-06-20 18:41:06,147 runserver>log_action [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.00, 127.0.0.1:58232][0m
+INFO 2024-06-20 18:41:06,149 runserver>log_action [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.00, 127.0.0.1:58235][0m
+INFO 2024-06-20 18:42:07,013 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.02, 127.0.0.1:58273][0m
+INFO 2024-06-20 18:43:26,238 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:58293][0m
+INFO 2024-06-20 18:44:40,033 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:58322][0m
+INFO 2024-06-20 18:44:55,024 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:58322][0m
+INFO 2024-06-20 18:46:39,381 runserver>log_action [mHTTP GET /booking/timeslottemp-update/1/ 200 [0.03, 127.0.0.1:58340][0m

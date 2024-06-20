@@ -10,13 +10,29 @@ from django.contrib.auth.models import User, Group
 from django.db.models import Q
 from django.forms.utils import ErrorList
 from base.models import TicketFormat, TicketRoute, UserProfile, Branch, CounterType
-from .models import TimeSlot, Booking
+from .models import TimeSlot, Booking, TimeslotTemplate
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 import pytz
 from django.utils.timezone import localtime, get_current_timezone
 from datetime import datetime, timedelta
+
+
+class TimeSlotTempForm(ModelForm):
+    def __init__(self, *args,**kwargs):
+        self.auth_branchs = kwargs.pop('auth_branchs')
+
+        super().__init__(*args,**kwargs)        
+
+        temp = self.instance
+
+       
+        self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs)
+        
+    class Meta:        
+        model = TimeslotTemplate
+        fields = ['enabled', 'branch', 'name', 'sunday', 'monday', 'tuesday','wednesday', 'thursday', 'friday',  'saturday', 'show_day_before', 'show_period', 'create_before']
 
 class BookingNewForm(ModelForm):
     def __init__(self, *args,**kwargs):
