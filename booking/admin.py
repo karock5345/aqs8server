@@ -20,10 +20,10 @@ class SMSLogView(admin.ModelAdmin):
     ordering = ('-created',)
 
 class TimeSlot_itemView(admin.ModelAdmin):
-    list_display =('branch', 'start_time', 'service_hours', 'service_mins', 'slot_total', 'user', )
+    list_display =('branch', 'start_time', 'service_hours', 'service_mins', 'slot_total',  )
     ordering = ('branch', 'start_time',)
 class TimeslotTemplateView(admin.ModelAdmin):
-    list_display =('branch', 'name', )
+    list_display =('branch', 'name', 'user',)
     # ordering = ('name')
 class TempLogView(admin.ModelAdmin):
     list_display =('bookingtemplate', 'item', 'year', 'month', 'day' )

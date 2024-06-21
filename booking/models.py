@@ -24,6 +24,67 @@ from django.core.validators import MaxValueValidator, MinValueValidator
     
     
 # datetime_now_local = funUTCtoLocal(datetime_now, cs.countertype.branch.timezone)
+
+# for TimeSlot template item
+class TimeSlot_item(models.Model):
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
+    index = models.IntegerField(default=0)
+    start_time = models.TimeField(null=False, blank=False, default='12:00:00') # this is local time 
+    service_hours = models.IntegerField(
+        default=1,
+        validators=[MaxValueValidator(12), MinValueValidator(0)]
+     )
+    service_mins = models.IntegerField(
+        default=0,
+        validators=[MaxValueValidator(59), MinValueValidator(0)]
+     )
+
+    slot_total = models.IntegerField(default=1)
+
+     
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.branch.bcode + ' ' + self.start_time.strftime('%H:%M')
+
+class TimeslotTemplate(models.Model):    
+    enabled = models.BooleanField(default=True)
+
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
+    name = models.CharField(max_length=100, default='Template name')
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, help_text='Service provider')
+
+    sunday = models.BooleanField(default=False)
+    monday = models.BooleanField(default=True)
+    tuesday = models.BooleanField(default=False)
+    wednesday = models.BooleanField(default=False)
+    thursday = models.BooleanField(default=False)
+    friday = models.BooleanField(default=False)
+    saturday = models.BooleanField(default=False)
+
+    
+    # e.g. Timeslot item time is 6-30 1:00 - 2:00, show_day_before=7, show_period=5, create_before=8
+    # at 6-15 (30-7-8), auto create the booking, show between 6-23 to 6-28
+    show_day_before = models.FloatField(default=7, help_text='Show the booking before start_date, 7 means 7 days before')
+    show_period = models.FloatField(default=5, help_text='Show the booking period, 5 means 5 days')
+    create_before = models.FloatField(default=8, help_text='Create the booking before show_day, e.g. booking:6-30 show_day_before=7 create_before=8, then create booking at 6-15')
+
+
+    items = models.ManyToManyField(TimeSlot_item, blank=True)
+
+    def __str__(self):
+        return self.branch.bcode + '-' + self.name
+
+class TempLog(models.Model):
+    bookingtemplate = models.ForeignKey(TimeslotTemplate, on_delete=models.CASCADE, null=False, blank=False)
+    item = models.ForeignKey(TimeSlot_item, on_delete=models.CASCADE, null=False, blank=False)
+    year = models.IntegerField(default=0)
+    month = models.IntegerField(default=0)
+    day = models.IntegerField(default=0)
+    created = models.DateTimeField(auto_now_add=True)
+
+
 class TimeSlot(models.Model):
     # Time slot action : new, change, delete, full, disable, enable
     class ACTION(models.TextChoices):
@@ -62,63 +123,6 @@ class TimeSlot(models.Model):
         start_date_local = self.start_date
         start_date_local = funUTCtoLocal(start_date_local, self.branch.timezone)
         return self.branch.bcode + ' ' + start_date_local.strftime('%Y-%m-%d_%H:%M')
-
-class TimeSlot_item(models.Model):
-    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
-    start_time = models.TimeField(null=False, blank=False) # this is local time 
-    service_hours = models.IntegerField(
-        default=1,
-        validators=[MaxValueValidator(12), MinValueValidator(0)]
-     )
-    service_mins = models.IntegerField(
-        default=0,
-        validators=[MaxValueValidator(59), MinValueValidator(0)]
-     )
-
-    slot_total = models.IntegerField(default=1)
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-     
-    updated = models.DateTimeField(auto_now=True)
-    created = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        start_date_local = self.start_time
-        start_date_local = funUTCtoLocaltime(start_date_local, self.branch.timezone)
-        return self.branch.bcode + ' ' + start_date_local.strftime('%H:%M')
-
-class TimeslotTemplate(models.Model):    
-    enabled = models.BooleanField(default=True)
-
-    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, null=False, blank=False)
-    name = models.CharField(max_length=100, default='Booking Template')
-
-    sunday = models.BooleanField(default=False)
-    monday = models.BooleanField(default=True)
-    tuesday = models.BooleanField(default=False)
-    wednesday = models.BooleanField(default=False)
-    thursday = models.BooleanField(default=False)
-    friday = models.BooleanField(default=False)
-    saturday = models.BooleanField(default=False)
-
-    
-    # e.g. Timeslot item time is 6-30 1:00 - 2:00, show_day_before=7, show_period=5, create_before=8
-    # at 6-15 (30-7-8), auto create the booking, show between 6-23 to 6-28
-    show_day_before = models.FloatField(default=7, help_text='Show the booking before start_date, 7 means 7 days before')
-    show_period = models.FloatField(default=5, help_text='Show the booking period, 5 means 5 days')
-    create_before = models.FloatField(default=8, help_text='Create the booking before show_day, e.g. booking:6-30 show_day_before=7 create_before=8, then create booking at 6-15')
-
-    items = models.ManyToManyField(TimeSlot_item, blank=True)
-
-    def __str__(self):
-        return self.branch.bcode + '-' + self.name
-
-class TempLog(models.Model):
-    bookingtemplate = models.ForeignKey(TimeslotTemplate, on_delete=models.CASCADE, null=False, blank=False)
-    item = models.ForeignKey(TimeSlot_item, on_delete=models.CASCADE, null=False, blank=False)
-    year = models.IntegerField(default=0)
-    month = models.IntegerField(default=0)
-    day = models.IntegerField(default=0)
-    created = models.DateTimeField(auto_now_add=True)
 
 
 class Booking(models.Model):

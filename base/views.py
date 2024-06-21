@@ -259,7 +259,13 @@ def SoftkeyView(request, pk):
         'app_name':APP_NAME,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
         }
 
     try:
@@ -519,12 +525,21 @@ def SoftkeyLoginBranchView(request):
             for ct in countertypes :
                 cs = CounterStatus.objects.filter(Q(countertype=ct)).order_by('countertype', 'counternumber',).exclude(enabled=False)
                 counterstatus.append(cs)
+
         context = {
+        'app_name':APP_NAME,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,
-        'counterstatus':counterstatus,
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
         }
+        context = context | {'counterstatus':counterstatus}
+
 
         return render(request, 'base/softkey_lobby_branch.html', context)
     else :
@@ -581,15 +596,19 @@ def SoftkeyLoginView(request, pk):
             cs = CounterStatus.objects.filter(Q(countertype=ct)).order_by('countertype', 'counternumber',).exclude(enabled=False)
             counterstatus.append(cs)
 
-
-
-
         context = {
+        'app_name':APP_NAME,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,
-        'counterstatus':counterstatus,
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
         }
+        context = context | {'counterstatus':counterstatus}
 
         return render(request, 'base/softkey_lobby.html', context)
     else :
@@ -2185,16 +2204,19 @@ def Reports(request):
     snow_l = now_l.strftime('%Y-%m-%dT%H:%M:%S')
 
     context = {
-    'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-    'now':snow_l,
-    'users':auth_userlist,
-    'branchs':auth_branchs,  
-    'ticketformats':auth_ticketformats, 
-    'routes':auth_routes,
-    'countertypes':auth_countertype, 'timeslots':auth_timeslots,
-    'bookings':auth_bookings,
-    }
-    context = {'aqs_version':aqs_version} | context 
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
+        }
+    context = context | {'now':snow_l}
+
     return render(request, 'base/r-main.html', context)
 
 @unauth_user
@@ -2272,11 +2294,18 @@ def SuperVisorListView(request):
     # profiles = UserProfile.objects.filter(Q(user=users.user))
     #profiles = users.userprofile_set.all()
     
-    context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,}
     context = {
-        'aqs_version':aqs_version,
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        } | context 
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
+        }
     return render(request, 'base/supervisors.html', context)
 
 @unauth_user
@@ -2394,11 +2423,18 @@ def TicketRouteSummaryView(request):
     # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
     # routes = TicketRoute.objects.all().order_by('branch','tickettype','step')
 
-    context = {'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,}
     context = {
-        'aqs_version':aqs_version,
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        } | context 
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
+        }
     return render(request, 'base/routes.html', context)
 
 @unauth_user
@@ -2543,11 +2579,18 @@ def TicketFormatSummaryView(request):
     # branchs = Branch.objects.all()
     # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
     # routes = TicketRoute.objects.all()
-    context = {'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes,  'timeslots':auth_timeslots, 'bookings':auth_bookings,}
     context = {
-        'aqs_version':aqs_version,
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        } | context 
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
+        }
     return render(request, 'base/tfs.html', context)
 
 @unauth_user
@@ -2944,11 +2987,18 @@ def SettingsSummaryView(request):
 
 
 
-    context = {'users':auth_userlist, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,}
     context = {
-        'aqs_version':aqs_version,
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        } | context 
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
+        }
     return render(request, 'base/settings.html', context)
 
 @unauth_user
@@ -2982,7 +3032,7 @@ def homeView(request):
 
 
 
-    context =  {'users':auth_userlist , 'users_active':auth_userlist_active, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,}
+    context =  {'users':auth_userlist , 'users_active':auth_userlist_active, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,  'temp':auth_timeslottemplist}
     context = {
         'aqs_version':aqs_version,
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
@@ -3010,11 +3060,21 @@ def UserSummaryView(request):
     = auth_data(request.user)
 
  
-    context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,}
     context = {
-        'aqs_version':aqs_version,
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        } | context 
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
+        }
+    context = context | {'users_active':auth_userlist_active}
+    context = context | {'profiles':auth_profilelist}
+    context = context | {'auth_grouplist':auth_grouplist}
     return render(request, 'base/user.html', context)
 
 @unauth_user
@@ -3122,7 +3182,33 @@ def UserSummaryListView(request):
         result_userlist = result_userlist.order_by(direct + 'userprofile__mobilephone')
 
 
-    context = {'users':auth_userlist, 'users_active':auth_userlist_active, 'profiles':auth_profilelist, 'auth_grouplist':auth_grouplist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,}
+    context = {
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
+        }
+
+    # context = {'users':auth_userlist, 
+    #            'users_active':auth_userlist_active, 
+    #            'profiles':auth_profilelist, 
+    #            'auth_grouplist':auth_grouplist, 
+    #            'branchs':auth_branchs, 
+    #            'ticketformats':auth_ticketformats, 
+    #            'routes':auth_routes, 
+    #            'timeslots':auth_timeslots, 
+    #            'bookings':auth_bookings, 
+    #            'temp':auth_timeslottemplist,
+    #     }
+    context = context | {'users_active':auth_userlist_active}
+    context = context | {'profiles':auth_profilelist}
+    context = context | {'auth_grouplist':auth_grouplist}
     context = context | {'q':q}
     context = context | {'qactive':q_active}
     context = context | {'qbranch':q_branch}
@@ -3130,10 +3216,7 @@ def UserSummaryListView(request):
     context = context | {'qgroup':q_group}
     context = context | {'result_users':result_userlist}
     
-    context = {
-                'aqs_version':aqs_version,
-                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-               } | context 
+
     return render(request, 'base/user_details.html', context)
 
 def UserLogoutView(request):   
@@ -3671,7 +3754,7 @@ def MenuView(request):
     = auth_data(request.user)
 
         
-    context =  {'users':auth_userlist , 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings, }
+    context =  {'users':auth_userlist , 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings, 'temp':auth_timeslottemplist}
     context = {
                 'aqs_version':aqs_version,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,

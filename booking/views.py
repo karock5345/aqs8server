@@ -13,7 +13,7 @@ from django.urls import reverse_lazy, reverse
 
 from .models import *
 from base.models import UserProfile, Branch, SubTicket
-from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm, BookingForm, BookingNewForm, TimeSlotTempForm
+from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm, BookingForm, BookingNewForm, TimeSlotTempForm, TimeSlot_itemForm, TimeSlotTempNewForm
 from django.utils.timezone import localtime, get_current_timezone
 import pytz
 from django.utils import timezone
@@ -34,11 +34,48 @@ from base.api.v_touch import newticket_v830, printTicket, funGetDispTicketNumber
 
 logger = logging.getLogger(__name__)
 
+def checkitemform(form):
+    error = ''
+    newform = None
+
+    if form.is_valid() == False:
+        error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
+        error = 'An error occurcd during update: '+ error_string
+    
+    if error == '' :
+        newform = form.save(commit=False)
+
+    if error == '' :
+        if newform.service_hours + newform.service_mins <= 0 :
+            error = 'service time should be > 0'
+    if error == '' :
+        if newform.slot_total < 1 :
+            error = 'slot_total should be => 1'
+        
+
+    return error, newform
+
+
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
-def TimeSlotTempUpdateView(request, pk):
-    temp = TimeslotTemplate.objects.get(id=pk)
-    items = temp.items.all()
+def TimeSlotTempItemDelView(request, pk, tempid):
+    utcnow = timezone.now()
+    item = TimeSlot_item.objects.get(id=pk) 
+  
+    if request.method =='POST':
+
+        item.delete()
+
+        messages.success(request, ' Template Item was successfully deleted!') 
+        return redirect('temp-update', pk=tempid)
+    context = {'obj':item, 'text':'Warning: This action will delete the Template item.'}
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'base/delete.html', context)
+
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
+def TimeSlotTempItemUpdateView(request, pk, tempid):
+    item = TimeSlot_item.objects.get(id=pk)
 
     auth_en_queue, \
     auth_en_crm, \
@@ -58,35 +95,193 @@ def TimeSlotTempUpdateView(request, pk):
 
     if request.method == 'POST':
         # utcnow = timezone.now()
-        # form = TimeSlotTemplateForm(request.POST, instance=temp, prefix='timeslottempform', auth_branchs=auth_branchs)
-        # error = ''
-        # error, newform = checktimeslotform(form)
-        # if error == '' :         
-        #     try :                
-        #         newform.save()
-        #         # change user to current user
-        #         timeslot.user = request.user
-        #         timeslot.save()
-        #         messages.success(request, 'TimeSlot was successfully updated!')
-        #         funBookingLog(utcnow, timeslot, None, TimeSlot.ACTION.CHANGED, Booking.STATUS.NULL, request.user, None)
-                
-        #         return redirect('bookingtimeslot')
-        #     except:
-        #         error = 'An error occurcd during updating TimeSlot'
-
-            
-
-        # if error != '':
-        #     messages.error(request, error )
+        form = TimeSlot_itemForm(request.POST, instance=item, prefix='timeslotitemform')
+        error = ''
+        error, newform = checkitemform(form)
+        if error == '' :         
+            try :                
+                newform.save()
+                messages.success(request, 'TimeSlot Template Item was successfully updated!')                
+                return redirect('temp-update' , pk=tempid)
+            except:
+                error = 'An error occurcd during updating TimeSlot Template'
+        if error != '':
+            messages.error(request, error )
         pass
     else:
-        form = TimeSlotTempForm(instance=temp, prefix='timeslottempform', auth_branchs=auth_branchs)
+        form = TimeSlot_itemForm(instance=item, prefix='timeslotitemform')
+    context =  {'form':form, 'item':item, 'tempid':tempid}
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context 
+    return render(request, 'booking/tempitem_update.html', context)
+
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
+def TimeSlotTempDelView(request, pk):
+
+    temp = TimeslotTemplate.objects.get(id=pk) 
+  
+    if request.method =='POST':
+        # delete temp.items first
+        items = temp.items.all()
+        for item in items:
+            item.delete()
+
+        temp.delete()
+
+        messages.success(request, ' Template was successfully deleted!') 
+        return redirect('timeslottemp')
+    context = {'obj':temp, 'text':'Warning: This action will delete the Template.'}
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'base/delete.html', context)
+
+def checktemplateform(form):
+    error = ''
+    newform = None
+
+    if form.is_valid() == False:
+        error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
+        error = 'An error occurcd during update: '+ error_string
+    
+    if error == '' :
+        newform = form.save(commit=False)
+    if error == '' :
+        if newform.branch == None :
+            # Error branch is None
+            error = 'Error Branch is blank'
+    if error == '' :
+        if newform.branch.enabled == False:
+            error = 'Branch is disabled'            
+    if error == '' :
+        if newform.branch.bookingenabled == False:
+            error = 'Booking function is disabled'
+    if error == '' :
+        if newform.show_day_before < 0 :
+            error = 'show_day_before should be => 0'
+    if error == '' :
+        if newform.create_before < 0 :
+            error = 'create_before should be => 0'
+    if error == '' :
+        if newform.show_day_before < newform.show_period :
+            error = 'show_day_before should be greater than show_period'            
+
+    return error, newform
+
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
+def TimeSlotTempUpdateView(request, pk):
+    temp = TimeslotTemplate.objects.get(id=pk)
+    items = temp.items.all().order_by('index')
+
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    = auth_data(request.user)
+
+    
+    form = TimeSlotTempForm(instance=temp, prefix='timeslottempform', auth_branchs=auth_branchs, auth_userlist=auth_userlist)
+
+    if request.method == 'POST':
+        form = TimeSlotTempForm(request.POST, instance=temp, prefix='timeslottempform', auth_branchs=auth_branchs, auth_userlist=auth_userlist)
+        # check the submit button clicked
+        action = request.POST.get('action')
+        if action == 'update':
+            # utcnow = timezone.now()
+            error = ''
+            error, newform = checktemplateform(form)
+            if error == '' :         
+                try :                
+                    newform.save()
+                    items = temp.items.all()
+                    for item in items:
+                        item.branch = temp.branch
+                        item.save()
+
+
+                    messages.success(request, 'TimeSlot Template was successfully updated!')                
+                    return redirect('timeslottemp')
+                except:
+                    error = 'An error occurcd during updating TimeSlot Template'
+            if error != '':
+                messages.error(request, error )
+        elif action == 'additem':
+            item = TimeSlot_item.objects.create(branch=temp.branch)
+            temp.items.add(item)
+            return redirect('tempitem-update' , pk=item.id, tempid=temp.id) 
+        pass
+
     context =  {'form':form, 'temptimeslot':temp, 'items':items}
     context = {
                 'aqs_version':aqs_version,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context 
     return render(request, 'booking/template_update.html', context)
+
+
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
+def TimeSlotTempNewView(request):
+
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    = auth_data(request.user)
+
+    form = TimeSlotTempNewForm(auth_branchs=auth_branchs, auth_userlist=auth_userlist)
+
+    if request.method == 'POST':
+        utcnow = timezone.now()
+        form = TimeSlotTempNewForm(request.POST, auth_branchs=auth_branchs, auth_userlist=auth_userlist)
+        
+        error = ''
+        error, newform = checktemplateform(form)
+
+        if error == '' :
+            try:
+                newform.save()
+            except:
+                 error = 'An error occurcd during new Template creation'          
+
+            
+        if error != '':
+            messages.error(request, error)
+        if error == '':
+                messages.success(request, 'Created new Template.')
+                return redirect('temp-update' , pk=newform.pk)
+
+    # get the url of 'timeslottemp'
+    back_url = reverse('timeslottemp')
+    context = {'form':form}
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context     
+    context = {'title':'New Timeslot Template', 'back_url':back_url, } | context 
+    return render(request, 'base/new.html', context)
 
 
 
@@ -118,9 +313,9 @@ def TimeslotTempSummaryView(request):
         'routes':auth_routes,
         'timeslots':auth_timeslots,
         'bookings':auth_bookings,
-        'timeslottemplist':auth_timeslottemplist,
+        'temps':auth_timeslottemplist,
         }
-    print(auth_timeslottemplist)
+    # print(auth_timeslottemplist)
     if request.method == 'POST':
 
         error = ''
@@ -135,7 +330,8 @@ def TimeslotTempSummaryView(request):
     context = {
                 'aqs_version':aqs_version,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-               } | context 
+               } | context
+
     return render(request, 'booking/template.html', context)
 
 @unauth_user
@@ -289,6 +485,7 @@ def BookingSummaryView(request):
         'routes':auth_routes,
         'timeslots':auth_timeslots,
         'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
         }
     
     if request.method == 'POST':
@@ -1050,6 +1247,7 @@ def TimeSlotSummaryView(request):
         'routes':auth_routes,
         'timeslots':auth_timeslots,
         'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
         }
     context = {
                 'aqs_version':aqs_version,

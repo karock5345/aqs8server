@@ -2139,6 +2139,29 @@ color: var(--color-light);
   margin-bottom: 3rem;
 }
 
+.item_row {
+  position: relative;
+  height: 4rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns:  2fr 10fr 2fr 6fr ;
+  background-color: var(--color-dark-light);
+  align-items: center;
+  margin-bottom: 0rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+.item_header_row {
+  background-color: var(--color-dark);
+  border-width: 1px;
+  border-color: var(--color-dark-light);
+  border-style:solid;
+  margin-bottom: 0rem;
+  margin-top: 1rem;
+}
+
 .booking_row {
   position: relative;
   height: 6rem;

@@ -99,6 +99,17 @@
         <span>{{ timeslots.count }}</span>
       </a>
     </li>
+    <li>
+      <a href="{% url 'timeslottemp' %}" class="active">
+        <div class="header__logo">
+          <div class="list__svg">
+            {% include 'base/images/timeslot.svg' %}
+          </div>
+          <div>TimeSlot Templates</div>
+        </div> 
+        <span>{{ temps.count }}</span>
+      </a>
+    </li>    
     {% endif %}
     <li>
       <a href="{% url 'settingssummary' %}" class="active">
@@ -170,7 +181,18 @@
         </div> 
         <span>{{ timeslots.count }}</span>
       </a>
-    </li>     
+    </li>    
+    <li>
+      <a href="{% url 'timeslottemp' %}" class="active">
+        <div class="header__logo">
+          <div class="list__svg">
+            {% include 'base/images/timeslot.svg' %}
+          </div>
+          <div>TimeSlot Templates</div>
+        </div> 
+        <span>{{ temps.count }}</span>
+      </a>
+    </li>       
     {% endif %}
     <li>
       <a href="{% url 'settingssummary' %}" class="active">

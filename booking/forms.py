@@ -10,7 +10,7 @@ from django.contrib.auth.models import User, Group
 from django.db.models import Q
 from django.forms.utils import ErrorList
 from base.models import TicketFormat, TicketRoute, UserProfile, Branch, CounterType
-from .models import TimeSlot, Booking, TimeslotTemplate
+from .models import TimeSlot, Booking, TimeslotTemplate, TimeSlot_item
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
@@ -18,21 +18,49 @@ import pytz
 from django.utils.timezone import localtime, get_current_timezone
 from datetime import datetime, timedelta
 
+class TimeSlot_itemForm(ModelForm):
+
+    class Meta:        
+        model = TimeSlot_item
+        fields = ['start_time', 'service_hours', 'service_mins', 'slot_total']
+
 
 class TimeSlotTempForm(ModelForm):
     def __init__(self, *args,**kwargs):
         self.auth_branchs = kwargs.pop('auth_branchs')
-
+        self.auth_userlist = kwargs.pop('auth_userlist')
         super().__init__(*args,**kwargs)        
 
         temp = self.instance
 
        
         self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs)
+        self.fields['user'].queryset = User.objects.filter(id__in=self.auth_userlist)
+
         
     class Meta:        
         model = TimeslotTemplate
-        fields = ['enabled', 'branch', 'name', 'sunday', 'monday', 'tuesday','wednesday', 'thursday', 'friday',  'saturday', 'show_day_before', 'show_period', 'create_before']
+        fields = ['enabled', 'name', 'branch',  'user', 'sunday', 'monday', 'tuesday','wednesday', 'thursday', 'friday', 'saturday', 'show_day_before', 'show_period', 'create_before']
+
+class TimeSlotTempNewForm(ModelForm):
+    def __init__(self, *args,**kwargs):
+        self.auth_branchs = kwargs.pop('auth_branchs')
+        self.auth_userlist = kwargs.pop('auth_userlist')
+
+        super().__init__(*args,**kwargs)        
+        # For new form initial value of Branch is null
+        datetime_now = datetime.now()
+
+        self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs)
+        self.fields['user'].queryset = User.objects.filter(id__in=self.auth_userlist)
+       
+        # field 'branch' default value is first branch
+        self.initial['branch'] = self.auth_branchs[0]
+
+    class Meta:        
+        model = TimeslotTemplate
+        fields = ['enabled', 'branch', 'name', 'user', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'show_day_before', 'show_period', 'create_before']
+
 
 class BookingNewForm(ModelForm):
     def __init__(self, *args,**kwargs):

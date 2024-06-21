@@ -7,7 +7,7 @@
             <div class="layout__box__form">
                 <div class="layout__boxHeader">
                     <div class="layout__boxTitle">
-                        <a href="{% url 'timeslottemp' %}">
+                        <a href="{% url 'temp-update' tempid %}">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                                 viewBox="0 0 32 32">                                
                                 <path
@@ -15,12 +15,12 @@
                                 </path>
                             </svg>
                         </a>
-                        <h3>Edit TimeSlot Template</h3>
+                        <h3>Edit TimeSlot Item</h3>
                     </div>
                 </div>
                 <div class="layout__body">
 
-                    <form class="form" action="" method="POST" prefix="timeslottempform">
+                    <form class="form" action="" method="POST" prefix="timeslotitemform">
                         
                         {% csrf_token %}
                         
@@ -48,45 +48,11 @@
                                 {% endif %}
                         {% endfor %}
 
-                        <div>
-                            <button type="submit" name="action" value="additem" class="btn btn--main" >Add item</button>
-                        </div>
-                        <div class="item_row item_header_row">
-                            <div >
-                                Time
-                            </div>
-                            <div>
-                                Service period
-                            </div>                            
-                            <div >
-                                Slots
-                            </div>
-                            <div>
-
-                            </div>
-                        </div>                        
-                        {% for item in items %}
-                            <div class="item_row">
-                                <div class="booking_date_text">
-                                    {{item.start_time|time:'H:i'}}
-                                </div>
-                                <div class="booking_date_text">
-                                    {{item.service_hours}} hours {{item.service_mins}} min.
-                                </div>                                
-                                <div class="booking_date_text">
-                                    {{item.slot_total}}
-                                </div>
-                                <div class="booking_key_area">
-                                    <a class="booking_key" href="{% url 'tempitem-update' item.id temptimeslot.id %}">Edit</a>
-                                    <a class="booking_key booking_key_reject" href="{% url 'tempitem-delete' item.id temptimeslot.id %}">Del</a>                                    
-                                </div>
-                            </div>
-                        {% endfor %}
-                        <div style="height: 3rem;"></div>
+                                    
                         <div class="form__action">
-                            <a class="btn btn--del" href="{% url 'temp-delete' temptimeslot.id %}">Delete</a>
-                            <a class="btn btn--dark" href="{% url 'timeslottemp' %}">Cancel</a>
-                            <button class="btn btn--main" type="submit" name="action" value="update">Update</button>
+                            <a class="btn btn--del" href="{-% url 'ts-delete' timeslot.id %}">Delete</a>
+                            <a class="btn btn--dark" href="{% url 'temp-update' tempid %}">Cancel</a>
+                            <button class="btn btn--main" type="submit">Update</button>
                         </div>
                     </form>
                 </div>

@@ -23,17 +23,25 @@
                     <form class="form" action="" method="POST" prefix="newform">
                         {% csrf_token %}
                         {% for field in form %}
-                            {% if field.name == "enabled" %}
+                            {% if field.field.widget.input_type == 'checkbox' %}
+                                    
                                 <div class="form__group_checkbox">
-                                    {{field}}<label>&nbsp;{{field.label}}</label>
-                                </div>                        
-                            {% elif field.name == "created_by_temp" %}
-                                <div class="form__group_checkbox">
-                                    {{field}}<label>&nbsp;{{field.label}}</label>
-                                </div>                            
+                                    <label class="profile_pic" id="{{ field.name }}"> <p class="label__name">{{field}} {{field.label}}</p></label><br>
+                                </div>                                
+
                             {% else %}
                                 <div class="form__group">
-                                    <label for="profile_pic">{{field.label}} : {{field}}</label>
+                                    <label class="profile_pic" id="{{ field.name }}">
+                                        <p class="label__name">
+                                            {{field.label}}
+                                        </p>
+                                        {{field}}
+                                        <p class="help__text" id="{{ field.name }}-add-text">
+                                        </p>
+                                        <p class="help__text">
+                                            {{field.help_text}}
+                                        </p>
+                                    </label>
                                 </div>
                             {% endif %}
                         {% endfor %}
