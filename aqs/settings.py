@@ -14,7 +14,7 @@ from pathlib import Path
 from django.contrib.messages import constants as messages
 from datetime import timedelta
 
-aqs_version = '8.3.1'
+aqs_version = '8.3.2'
 # APP_NAME for ws://localhost:8000/ws/APP_NAME/...
 APP_NAME = 'aqs_app'
 DOMAIN = 'http://192.168.1.22:8000'

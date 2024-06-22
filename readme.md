@@ -1,4 +1,19 @@
-# AQS version 8.3.1
+# AQS version 8.3.2
+
+<h3 style="color:orange;">Version 8.3.2</h3>
+
+- Bug fixed : APScheduler some time the system is busy will cause the sch job missed - "Run time of job "xxx" was missed by"
+   ```py
+   # base/sch/views.py line 25
+  job_defaults = {
+      'coalesce': True,
+      'misfire_grace_time': None,
+      'daemon': True,
+      'max_instances': 50,
+  }
+  sch = BackgroundScheduler(job_defaults=job_defaults)
+  # sch = BackgroundScheduler(daemon=True)
+   ```
 
 <h3 style="color:orange;">Version 8.3.1</h3>
 
@@ -30,7 +45,8 @@
 - Function : newticket_v830() change to no print ticket (websocket), it will be printed by new function
 - Mobile APP for Member API specification version 1.1
   - API 2. Member info API (Member APP), added 'member_qr' field return
-  
+- New function Timeslot Template manager for Booking
+
 <h3 style="color:orange;">Version 8.3.0</h3>
 
 - Booking to Queue Function

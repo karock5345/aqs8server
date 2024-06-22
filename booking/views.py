@@ -205,16 +205,21 @@ def TimeSlotTempUpdateView(request, pk):
             if error == '' :         
                 try :                
                     newform.save()
+                except:
+                    error = 'An error occurcd during updating TimeSlot Template'
+
+                if error == '' :
+                    from base.sch.views import sub_booking_temp
+
                     items = temp.items.all()
                     for item in items:
                         item.branch = temp.branch
                         item.save()
 
-
+                    sub_booking_temp(None, temp)
                     messages.success(request, 'TimeSlot Template was successfully updated!')                
                     return redirect('timeslottemp')
-                except:
-                    error = 'An error occurcd during updating TimeSlot Template'
+
             if error != '':
                 messages.error(request, error )
         elif action == 'additem':

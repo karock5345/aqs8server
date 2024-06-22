@@ -3003,8 +3003,6 @@ def SettingsSummaryView(request):
 
 @unauth_user
 def homeView(request):
-    
-    
     auth_en_queue, \
     auth_en_crm, \
     auth_en_booking, \
@@ -3021,22 +3019,19 @@ def homeView(request):
     auth_timeslottemplist, \
     = auth_data(request.user)
 
-
-    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
-    # branchs = Branch.objects.all()
-    # ticketformats = TicketFormat.objects.all()
-    # routes = TicketRoute.objects.all()
-    # users = User.objects.exclude(is_superuser=True)
-
-
-
-
-
-    context =  {'users':auth_userlist , 'users_active':auth_userlist_active, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings,  'temp':auth_timeslottemplist}
     context = {
-        'aqs_version':aqs_version,
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        } | context 
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
+        }
+    context = context |{'users_active':auth_userlist_active, }
     return render(request, 'base/home.html', context)
 
 @unauth_user

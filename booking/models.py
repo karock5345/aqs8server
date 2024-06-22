@@ -82,6 +82,9 @@ class TempLog(models.Model):
     year = models.IntegerField(default=0)
     month = models.IntegerField(default=0)
     day = models.IntegerField(default=0)
+    hour = models.IntegerField(default=0)
+    min = models.IntegerField(default=0)
+    second = models.IntegerField(default=0)
     created = models.DateTimeField(auto_now_add=True)
 
 

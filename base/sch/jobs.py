@@ -1,13 +1,14 @@
 from datetime import datetime
-from apscheduler.schedulers.background import BackgroundScheduler
+# from apscheduler.schedulers.background import BackgroundScheduler
 import logging
+import time
 
 logger = logging.getLogger(__name__)
 
 # from .views import job_shutdown
 
-sch = BackgroundScheduler()
-sch.start()
+# sch = BackgroundScheduler()
+# sch.start()
 
 # def job_branch(branch):
 #     print('--- Start job branch_reset:' + branch +  ' ---')
@@ -16,10 +17,12 @@ sch.start()
 
 
 def job_testing(input, text, text2):
+    from .views import sch
+
     txt_job = 'job_' + text
     sch.add_job(job, 'interval', args=[text,text2], seconds=input, id=txt_job)
 
-    # time.sleep(15)
+
     # job2()
     
 
@@ -28,6 +31,7 @@ def job(text,text2):
     snow = now.strftime("%m/%d/%Y, %H:%M:%S")
     text_out = '---' +  snow + ' Testing job - ' + text + text2 + '---'
 
+    time.sleep(0.8)
     print ( text_out )    
     pass
 

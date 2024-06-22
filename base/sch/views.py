@@ -5,7 +5,7 @@ from django.db.models import Q
 from base.models import Branch, CounterStatus, CounterType, Ticket, TicketFormat, TicketRoute, SystemLog, DisplayAndVoice, TicketTemp, TicketData, TicketLog, APILog, UserStatusLog
 from base.models import SubTicket
 # from .jobs import job_stop
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import pytz
 from django.utils import timezone
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -21,35 +21,14 @@ from base.sch.jobs import  job_stopall, job_testing
 
 logger = logging.getLogger(__name__)
 
-sch = BackgroundScheduler(daemon=True)
-system_inited = False
-
-
-def main():
-    datetime_now = timezone.now()
-    now = timezone.now()
-    try:
-        SystemLog.objects.create(
-                logtime=datetime_now,
-                logtext =  'System started',
-            )
-        system_inited = True
-    except:
-        system_inited = False
-
-    logger.info('-SCH- Schedule INIT start @ base.sch.view.py -SCH-')
-
-    snow = now.strftime("%m/%d/%Y, %H:%M:%S")
-    logger.info('-SCH- Now:' + snow)
-
-    sch.start()
-
-    # job_testing(3, '3 Seconds', ' |')
-
-if __name__ != '__main__':
-    main()
-
-# Sch
+job_defaults = {
+    'coalesce': True,
+    'misfire_grace_time': None,
+    'daemon': True,
+    'max_instances': 50,
+}
+sch = BackgroundScheduler(job_defaults=job_defaults)
+# sch = BackgroundScheduler(daemon=True)
 
 # Shutdown the branch and run init_branch
 # http://127.0.0.1:8000/sch/shutdown/?bcode=KB
@@ -359,21 +338,200 @@ def job_shutdown(branch):
     # add delay 1 second for testing
     # time.sleep(1)
 
+    sub_booking_temp(branch, None)
+
     sch_shutdown(branch, datetime_now)
     
 
+def sch_bookingtemp(hours):
+    sch_id = 'sch_bookingtemp'
+    mins = 60 * hours
+    sch.add_job(job_booking_temp, 'interval', args=[None,None,mins], minutes=mins, id=sch_id)
+    logger.info('-SCH- Add job_booking_temp every ' + str(hours) + ' hours -SCH-')
 
-# def job(text,text2):    
-#     now = timezone.now()
-#     now_l = funUTCtoLocal(now, 8)
-#     snow = now_l.strftime("%m/%d/%Y, %H:%M:%S")
-#     snow2 = now.strftime("%m/%d/%Y, %H:%M:%S")
-#     text_out = '   -SCH- Now:' + snow2 + ' Local time:' +  snow + ' Testing job - ' + text + text2 + '-SCH-'
+def job_booking_temp(branch:Branch, input_temp, mins):
+    now = timezone.now()
+    # now_l = funUTCtoLocal(now, branch.timezone)
+    # snow = now_l.strftime("%m/%d/%Y, %H:%M:%S")
+    snow2 = now.strftime("%m/%d/%Y, %H:%M:%S")
+    # text_out = '   -SCH- Now:' + snow2 + ' Local time:' +  snow + ' Sch Booking Template - ' +  '-SCH-'
+    text_out = '   -SCH- Sch Booking Template (Loop every ' + str(mins) +  ' mins) -SCH-'
+    # print ( text_out )    
+    logger.info(text_out)
+    sub_booking_temp(branch, input_temp)
 
-#     # print ( text_out )    
-#     logger.info(text_out)
 
-# def job_testing(input, text, text2):
-#     txt_job = 'job_' + text
-#     sch.add_job(job, 'interval', args=[text,text2], seconds=input, id=txt_job)
+def sub_booking_temp(branch:Branch, input_temp):
+    from booking.models import TimeslotTemplate, TempLog, TimeSlot
 
+    if branch == None and input_temp == None:
+        temps = TimeslotTemplate.objects.all()
+    elif branch != None:
+        temps = TimeslotTemplate.objects.filter(branch=branch)
+    elif input_temp != None:
+        temps = TimeslotTemplate.objects.filter(id=input_temp.id)
+    for temp in temps:
+            error = ''
+            if error == '':
+                if temp.branch.enabled == False:
+                    error = 'Branch is disabled'
+            if error == '':
+                if temp.enabled == False:
+                    error = 'Timeslot is disabled'
+            if error == '':
+                if temp.branch.bookingenabled == False:
+                    error = 'Booking function is disabled'
+            if error == '':
+                items = temp.items.all()
+                for item in items:
+                    error = ''
+                    # check item is already make a booking
+                    hour = item.start_time.hour
+                    minute = item.start_time.minute
+                    second = item.start_time.second
+                    nowutc = datetime.now(timezone.utc)
+                    year = nowutc.year
+                    month = nowutc.month
+                    day = nowutc.day
+
+                    start_date = datetime(year, month, day, 0, 0, 0)
+                    start_date = start_date + timedelta(days=temp.show_day_before + temp.create_before)
+                    start_date = start_date + timedelta(hours=hour)
+                    start_date = start_date + timedelta(minutes=minute)
+                    start_date = start_date + timedelta(seconds=second)
+                    start_date = datetime(start_date.year, start_date.month, start_date.day, hour, minute, second)
+
+                    # print('start_date:', start_date)
+                    log = TempLog.objects.filter(
+                        Q(bookingtemplate=temp) &
+                        Q(item=item) &
+                        Q(year=year) &
+                        Q(month=month) &
+                        Q(day=day) &
+                        Q(hour=hour) &
+                        Q(min=minute) &
+                        Q(second=second)
+                    )
+
+                    if error == '':
+                        if log.count() > 0:
+                            error = 'Timeslot is already make a booking'
+
+
+                    if error == '':
+                        # print('start_time:', start_date)
+                        # Get the abbreviated day of the week
+                        day_of_week = start_date.strftime('%a')
+                        # print('day_of_week:', day_of_week)
+
+                        day_of_week_bool = False
+                        if day_of_week == 'Mon':
+                            if temp.monday == True:
+                                day_of_week_bool = True
+                        elif day_of_week == 'Tue':
+                            if temp.tuesday == True:
+                                day_of_week_bool = True
+                        elif day_of_week == 'Wed':
+                            if temp.wednesday == True:
+                                day_of_week_bool = True
+                        elif day_of_week == 'Thu':
+                            if temp.thursday == True:
+                                day_of_week_bool = True
+                        elif day_of_week == 'Fri':
+                            if temp.friday == True:
+                                day_of_week_bool = True
+                        elif day_of_week == 'Sat':
+                            if temp.saturday == True:
+                                day_of_week_bool = True
+                        elif day_of_week == 'Sun':
+                            if temp.sunday == True:
+                                day_of_week_bool = True
+                        if day_of_week_bool == False:
+                            error = 'Day of week is not selected'
+                        
+                    if error == '':
+                        # make a new timeslot
+                        # print('start_date:', start_date)
+                        # change to UTC datetime
+                        start_date = funLocaltoUTC(start_date, temp.branch.timezone)
+                        # print('start_date (UTC):', start_date)
+                        end_date = start_date + timedelta(minutes=(item.service_mins + (item.service_hours * 60)))                        
+                        # print('end_date (UTC):', end_date)
+                        # print('Minute:', minute)
+                        # print('Hour:', hour)
+                        # print('Total minute:', minute + (hour * 60))
+                        show_date = start_date - timedelta(days=temp.show_day_before)
+                        show_end_date = show_date + timedelta(days=temp.show_period)
+
+                        timeslot = TimeSlot.objects.create(
+                            branch = temp.branch,
+                            start_date = start_date,
+                            end_date = end_date,
+                            enabled = True,
+                            slot_total = item.slot_total,
+                            slot_available = item.slot_total,
+                            slot_using = 0,
+                            show_date = show_date,
+                            show_end_date = show_end_date,
+                            user = temp.user,
+                            created_by_temp = True,
+                        )
+
+                        # create new log
+                        TempLog.objects.create(
+                            bookingtemplate = temp,
+                            item = item,
+                            year = year,
+                            month = month,
+                            day = day,
+                            hour = hour,
+                            min = minute,
+                            second = second,
+                        )
+                    # if error != '':
+                    #     print('Error:', error)
+                    # else :
+                    #     print('Success')
+                    
+
+def main():
+    global system_inited
+    datetime_now = timezone.now()
+    now = timezone.now()
+    try:
+        SystemLog.objects.create(
+                logtime=datetime_now,
+                logtext =  'System started',
+            )
+        system_inited = True
+    except:
+        system_inited = False
+
+    logger.info('-SCH- Schedule INIT start @ base.sch.view.py -SCH-')
+
+    snow = now.strftime("%m/%d/%Y, %H:%M:%S")
+    logger.info('-SCH- Now:' + snow)
+
+    sch.start()
+
+
+
+    # Scheduler 6 hours run sch_bookingtemp
+    sch_bookingtemp(6)
+    sub_booking_temp(None, None)
+
+    init_branch_reset()
+
+    # for loop 1 - 20 add job_testing
+    # for i in range(1, 21):
+    #     job_testing(1, '1s - ' + str(i), ' |')
+
+    # job_testing(1, '1s - 1', ' |')
+    
+
+
+
+
+
+if __name__ != '__main__':
+    main()
