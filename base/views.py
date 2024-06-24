@@ -1501,6 +1501,143 @@ def webtv(request, bcode, ct):
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
+def Report_Ticket_details_Result(request):
+    result_task_id = ''
+    try:    
+        result_task_id = request.GET['result']
+    except:
+        pass
+
+    ticket_id = request.GET['id']
+
+    error = ''
+    ticket = None
+    branch = None
+
+    if error == '':
+        try:
+            ticket = Ticket.objects.get(id=ticket_id)
+        except:
+            error = 'Error : Ticket not found.'
+
+    if error == '':
+        # check the user authorization to access the branch
+        branch = ticket.branch
+        userp = UserProfile.objects.get(user=request.user)
+        if branch in userp.branchs.all():
+            pass
+        else:
+            error = 'Error : User not authorized to access the branch.'
+
+    if error == '':
+        # result_task_id = ''
+        # localtimezone = pytz.timezone(branch.timezone)
+        # table = TicketLog.objects.filter(
+        #     Q(ticket=ticket),
+        # ).order_by('logtime')
+        report_line1 = 'Ticket Details Report'
+        report_line2 = 'Ticket:' + ticket.tickettype + '(' + branch.bcode + ')'        
+        report_line3 = 'Branch:' + branch.name + '(' + branch.bcode + ')'
+        report_line4 = ''
+        report_line5 = ''
+        report_line6 = 'Total records: -'
+        
+        report_text = report_line1 + '\n' + report_line2 + '\n' + report_line3 + '\n' + report_line4 + '\n' + report_line5 + '\n' + report_line6
+        if result_task_id == '':
+            # run celery task for long process
+            localtimezone = pytz.timezone(branch.timezone)
+
+            task = report_ticketdetails.apply_async(args=[ticket_id,], countdown=0)  # 'countdown' time delay in second before execute
+            task_id = task.id
+            ptask_id = task_id.replace('-', '_')
+
+            # download path
+            url_download = ''
+            
+            
+            context = {'task_id': ptask_id}
+            context = context | {'app_name':APP_NAME}
+            context = context | {'wsh' : wsHypertext}
+            context = context | {'url_download': url_download}
+            context = {'aqs_version':aqs_version} | context 
+            return render(request, 'base/in_progress.html', context)
+        else :
+            # long process is done output result to HTML
+            # task id is result_task_id
+            task_id = result_task_id.replace('_', '-')
+            # print ('task_id', task_id)
+            task = AsyncResult(task_id, app=report_ticketdetails)
+            status, report_table, count = task.get()
+
+            print ('status:', status)
+            print ('report_table:', report_table)
+            print ('count:', count)
+
+            if request.method != 'POST':
+                localtimezone = pytz.timezone(branch.timezone)
+                # if ticketformat == None  :
+                #     report_result = 'Total ticket Report\n' + 'Branch:' + branch.name + '(' + branch.bcode + ')\n' +  'Start datetime:' + s_startdate + '\n' + 'End datetime:' + s_enddate + '\nTicket Type:ALL'
+                # else:
+                #     # report_result = 'Total ticket Report  Branch:' + branch.name + '(' + branch.bcode + ') Start datetime:' + s_startdate + ' End datetime:' + s_enddate + ' Ticket Type:' + ticketformat.ttype
+                #     report_result = 'Total ticket Report\n' + 'Branch:' + branch.name + '(' + branch.bcode + ')\n' +  'Start datetime:' + s_startdate + '\n' + 'End datetime:' + s_enddate + '\nTicket Type:' + ticketformat.ttype
+               
+                # report_result = status
+                report_line6 = 'Total records: ' + str(count)
+                report_text = report_line1 + '\n' + report_line2 + '\n' + report_line3 + '\n' + report_line4 + '\n' + report_line5 + '\n' + report_line6
+
+                # Pagination
+                table100 = None
+                page = request.GET.get('page') if request.GET.get('page') != None else '1'
+                page = int(page)
+                per_page = 100  # Number of items per page
+
+                paginator = Paginator(report_table, per_page)
+                try:
+                    table100 = paginator.page(page)
+                except PageNotAnInteger:
+                    table100 = paginator.page(1)
+                except EmptyPage:
+                    table100 = paginator.page(paginator.num_pages) 
+
+                context = {
+                'localtimezone':localtimezone,
+                'text':report_text,
+                'table':table100,        
+                }
+                context = {'aqs_version':aqs_version} | context 
+                return render(request, 'base/r-result.html', context)
+            # elif request.method == 'POST':
+            #     action = request.POST.get('action')
+            #     if action == 'excel':
+            #         # convert list (report_table) to string
+            #         querystr = pickle.dumps(report_table.query)
+                    
+            #         # print(querystr)
+            #         task = export_report.apply_async(args=[querystr,report_text,branch.bcode,filename], countdown=0)  # 'countdown' time delay in second before execute
+            #         task_id = task.id
+            #         ptask_id = task_id.replace('-', '_')
+            #         filename = 'details_' + task_id + '.csv'
+            #         # download path
+            #         url_download = static('download/'+ branch.bcode + '/' + filename)
+
+            #         context = {'task_id': ptask_id}
+            #         context = context | {'wsh' : wsHypertext}
+            #         context = context | {'url_download': url_download}
+            #         context = {'aqs_version':aqs_version} | context 
+            #         return render(request, 'base/in_progress.html', context)
+
+    if error != '':
+        messages.error(request, error)
+        context = {
+        'result':error,
+        }
+        return redirect('reports')
+    # context = {'aqs_version':aqs_version} | context 
+    # return render(request, 'base/r-result.html', context)
+
+
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def Report_RAW_Result(request):
     bcode = request.GET['branch']
     s_startdate = request.GET['startdate']

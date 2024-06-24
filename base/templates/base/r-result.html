@@ -1,0 +1,79 @@
+{% extends 'main.html' %}
+{% load tz %}
+
+{% block content %}
+
+<form class="form" action="" method="POST">
+    {% csrf_token %}
+    <div>
+        <!-- <button type="submit" name="action" value="pdf" class="btn btn--main">Export to PDF</button>  -->
+        <button type="submit" name="action" value="excel" class="btn btn--main">Export to Excel</button> 
+        <div><label style="white-space: pre-wrap">{{result}}<br></label></div>
+    </div>
+</form>
+
+{% if table.object_list.count > 0 %}
+<!-- Pagination links -->
+<div class="pagination">
+    {% if table.has_previous %}
+        <div class="lastcontainer" >
+            <a class="lasttext" href="{{ request.get_full_path }}&page=1">&laquo;&laquo; first</a>
+        </div>
+        <div class="lastcontainer" >
+            <a class="lasttext" href="{{ request.get_full_path }}&page={{ table.previous_page_number }}">&laquo; previous</a>
+        </div>
+    {% endif %}
+
+    {% for num in table.paginator.page_range %}
+        {% if num == table.number %}
+            <div class="pagenumcontainer current">
+                <a class="currentnum">{{ num }}</a>
+            </div>
+        {% else %}
+            <div class="pagenumcontainer" >
+                <a class="pagenum" href="{{ request.get_full_path }}&page={{ num }}">{{ num }}</a>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    {% if table.has_next %}
+        <div class="lastcontainer" >
+            <a class="lasttext" href="{{ request.get_full_path }}&page={{ table.next_page_number }}">next &raquo;</a>
+        </div>
+        <div class="lastcontainer" >
+            <a class="lasttext" href="{{ request.get_full_path }}&page={{ table.paginator.num_pages }}">last &raquo;&raquo;</a>
+        </div>
+    {% endif %}
+</div>
+
+<div>
+    <table id="table-style" class="table-style">
+        <thead>
+            <tr>
+                <th>Ticket</th>
+                <th>Type</th>
+                <th>No.</th>
+                <th>Branch</th>
+                <th>Counter Type</th>
+                <th>Step</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+        {% for row in table.object_list %}
+        <tr>
+            <!-- for loop in row -->
+             {% for item in row %}
+                <td>{{ item }}</td>
+            {% endfor %}
+           
+        </tr>
+
+
+        {% endfor %}
+        </tbody>
+    </table>
+</div>    
+{% endif %}
+
+{% endblock content %}

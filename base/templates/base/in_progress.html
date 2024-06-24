@@ -17,23 +17,65 @@
     </div>
 </div>
 
+{{ app_name|json_script:"js-app_name" }}
 <script>
+    const c_app_name = JSON.parse(document.getElementById('js-app_name').textContent);
     const c_wsh = "{{ wsh }}";        
     const task_id = "{{ task_id }}";
     const url_download = "{{ url_download }}";
 
     var area_download_html = document.getElementById('area_download').innerHTML;
 
-    const socket = new WebSocket(
+    // const socket = new WebSocket(
+    //     c_wsh 
+    //     + window.location.host 
+    //     + '/ws/progress/'
+    //     + task_id
+    //     + '/'
+    // );
+
+    // socket.onmessage = function(e) {
+    //     const data = JSON.parse(e.data);
+    //     const progress = data.progress;
+    //     console.log('Progress:', progress, '%');
+        
+    //     document.getElementById('area_download').hidden = true;
+
+    //     // Update the progress indicator on the page
+    //     document.getElementById('progress').innerText = `${progress}%`;
+        
+    //     // Check if the task is complete
+    //     if (data.task_complete) {
+    //         // Redirect to the result page or perform any other action
+    //         // window.location.href = '/result/';
+    //         // window.history.back();
+
+    //         if (url_download == '') {
+    //             // get the link of current page
+    //             var url = window.location.href;
+    //             console.log(url);
+    //             url = url + '&result=' + task_id;
+    //             // redirect to the link
+    //             location.href = url;
+    //         } else {
+    //             document.getElementById('area_download').hidden = false;
+    //             document.getElementById('progress_text').innerText = `Completed`;
+    //         }
+    //     }
+    // };
+
+    const socket_p = new WebSocket(
         c_wsh 
         + window.location.host 
-        + '/ws/progress/'
+        + '/ws/'
+        + c_app_name
+        + '/progress_process/'
         + task_id
         + '/'
     );
 
     // 
-    socket.onmessage = function(e) {
+    socket_p.onmessage = function(e) {
         const data = JSON.parse(e.data);
         const progress = data.progress;
         console.log('Progress:', progress, '%');
@@ -61,7 +103,7 @@
                 document.getElementById('progress_text').innerText = `Completed`;
             }
         }
-    };
+    };    
 </script>
 
 

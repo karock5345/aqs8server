@@ -16243,3 +16243,1966 @@ INFO 2024-06-22 17:57:25,641 runserver>log_action [mHTTP GET /update-user/4/ 20
 INFO 2024-06-22 17:57:27,286 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:54062][0m
 INFO 2024-06-22 17:57:29,134 runserver>log_action [mHTTP GET /update-user/5/ 200 [0.04, 127.0.0.1:54062][0m
 INFO 2024-06-22 17:57:32,032 runserver>log_action [mHTTP GET /user/ 200 [0.04, 127.0.0.1:54062][0m
+INFO 2024-06-24 09:09:19,376 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 09:09:19,833 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 09:09:19,840 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 09:09:19,862 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 09:09:19,862 base>views>main -SCH- Now:06/24/2024, 09:09:19
+INFO 2024-06-24 09:09:19,863 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 09:09:19,951 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 09:09:19,951 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 09:09:19,951 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 09:09:19 [Yes]
+INFO 2024-06-24 09:09:49,673 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 09:09:49,696 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 09:09:49,696 base>views>main -SCH- Now:06/24/2024, 09:09:49
+INFO 2024-06-24 09:09:49,696 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 09:09:49,702 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 09:09:49,702 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 09:09:49,702 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 09:09:49 [Yes]
+INFO 2024-06-24 09:10:16,308 runserver>log_action [32mHTTP GET /user/ 302 [0.14, 127.0.0.1:51844][0m
+INFO 2024-06-24 09:10:16,336 runserver>log_action [mHTTP GET /login/ 200 [0.02, 127.0.0.1:51844][0m
+INFO 2024-06-24 09:10:16,379 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:51844][0m
+INFO 2024-06-24 09:10:23,574 runserver>log_action [32mHTTP POST /login/ 302 [0.19, 127.0.0.1:51844][0m
+INFO 2024-06-24 09:10:23,595 runserver>log_action [mHTTP GET / 200 [0.02, 127.0.0.1:51844][0m
+INFO 2024-06-24 09:10:37,045 runserver>log_action [mHTTP GET /reports/ 200 [0.09, 127.0.0.1:51844][0m
+INFO 2024-06-24 09:10:48,194 runserver>log_action [32mHTTP GET /reports/raw?branch=KB&startdate=2024-01-24T09%3A10%3A36&enddate=2024-06-24T09%3A10%3A36&countertype= 301 [0.03, 127.0.0.1:51844][0m
+INFO 2024-06-24 09:10:48,248 runserver>log_action [mHTTP GET /reports/raw/?branch=KB&startdate=2024-01-24T09%3A10%3A36&enddate=2024-06-24T09%3A10%3A36&countertype= 200 [0.05, 127.0.0.1:51844][0m
+INFO 2024-06-24 09:15:59,994 runserver>log_action [mHTTP POST /api/token/ 200 [0.18, 127.0.0.1:52521][0m
+INFO 2024-06-24 09:16:29,041 base>views>job_shutdown    -SCH- Shutdown and reset branch :KB -SCH-
+INFO 2024-06-24 09:16:29,306 base>ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2024-06-24 09:16:29,320 base>ws>wssendwebtv ...Done
+INFO 2024-06-24 09:16:29,321 base>ws>wssenddispremoveall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2024-06-24 09:16:29,322 base>ws>wssenddispremoveall ...Done
+INFO 2024-06-24 09:16:29,329 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 09:16:29,329 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 09:16:29,329 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 09:16:29 [Yes]
+INFO 2024-06-24 09:16:29,331 runserver>log_action [mHTTP GET /sch/shutdown/?bcode=KB&app=postman&version=8.3 200 [0.31, 127.0.0.1:52521][0m
+INFO 2024-06-24 09:16:32,312 runserver>log_action [mHTTP GET /reports/raw/?branch=KB&startdate=2024-01-24T09%3A10%3A36&enddate=2024-06-24T09%3A10%3A36&countertype= 200 [0.15, 127.0.0.1:52582][0m
+INFO 2024-06-24 10:28:33,497 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:28:33,848 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:28:33,856 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:28:33,906 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:28:33,906 base>views>main -SCH- Now:06/24/2024, 10:28:33
+INFO 2024-06-24 10:28:33,907 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:28:33,912 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:28:33,912 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:28:33,912 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:28:33 [Yes]
+INFO 2024-06-24 10:32:42,989 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:32:43,864 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:32:43,879 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:32:46,057 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:32:46,555 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:32:46,562 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:32:46,622 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:32:46,622 base>views>main -SCH- Now:06/24/2024, 10:32:46
+INFO 2024-06-24 10:32:46,623 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:32:46,628 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:32:46,628 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:32:46,628 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:32:46 [Yes]
+INFO 2024-06-24 10:32:58,191 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:32:58,844 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:32:58,855 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:32:58,883 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:32:58,883 base>views>main -SCH- Now:06/24/2024, 10:32:58
+INFO 2024-06-24 10:32:58,884 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:32:58,889 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:32:58,889 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:32:58,889 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:32:58 [Yes]
+INFO 2024-06-24 10:33:12,496 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:33:13,199 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:33:13,209 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:33:13,238 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:33:13,238 base>views>main -SCH- Now:06/24/2024, 10:33:13
+INFO 2024-06-24 10:33:13,239 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:33:13,244 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:33:13,244 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:33:13,244 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:33:13 [Yes]
+INFO 2024-06-24 10:34:20,687 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:34:21,434 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:34:21,454 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:34:21,499 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:34:21,500 base>views>main -SCH- Now:06/24/2024, 10:34:21
+INFO 2024-06-24 10:34:21,502 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:34:21,510 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:34:21,510 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:34:21,510 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:34:21 [Yes]
+INFO 2024-06-24 10:34:26,813 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:34:27,732 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:34:27,743 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:34:27,774 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:34:27,774 base>views>main -SCH- Now:06/24/2024, 10:34:27
+INFO 2024-06-24 10:34:27,775 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:34:27,780 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:34:27,780 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:34:27,780 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:34:27 [Yes]
+INFO 2024-06-24 10:34:29,013 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:34:29,462 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:34:29,468 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:34:29,496 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:34:29,496 base>views>main -SCH- Now:06/24/2024, 10:34:29
+INFO 2024-06-24 10:34:29,496 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:34:29,501 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:34:29,501 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:34:29,502 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:34:29 [Yes]
+INFO 2024-06-24 10:34:53,496 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:34:54,423 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:34:54,440 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:34:54,473 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:34:54,473 base>views>main -SCH- Now:06/24/2024, 10:34:54
+INFO 2024-06-24 10:34:54,474 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:34:54,479 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:34:54,479 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:34:54,479 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:34:54 [Yes]
+INFO 2024-06-24 10:34:57,784 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:34:58,441 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:34:58,450 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:34:58,478 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:34:58,479 base>views>main -SCH- Now:06/24/2024, 10:34:58
+INFO 2024-06-24 10:34:58,479 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:34:58,483 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:34:58,483 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:34:58,484 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:34:58 [Yes]
+INFO 2024-06-24 10:34:59,680 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:35:00,144 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:35:00,150 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:35:00,176 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:35:00,176 base>views>main -SCH- Now:06/24/2024, 10:35:00
+INFO 2024-06-24 10:35:00,176 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:35:00,181 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:35:00,181 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:35:00,181 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:35:00 [Yes]
+INFO 2024-06-24 10:36:06,605 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:36:07,332 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:36:07,346 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:36:07,382 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:36:07,382 base>views>main -SCH- Now:06/24/2024, 10:36:07
+INFO 2024-06-24 10:36:07,383 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:36:07,391 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:36:07,391 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:36:07,391 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:36:07 [Yes]
+INFO 2024-06-24 10:36:18,944 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:36:19,887 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:36:19,898 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:36:19,929 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:36:19,929 base>views>main -SCH- Now:06/24/2024, 10:36:19
+INFO 2024-06-24 10:36:19,929 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:36:19,934 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:36:19,934 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:36:19,935 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:36:19 [Yes]
+INFO 2024-06-24 10:36:21,175 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:36:21,627 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:36:21,634 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:36:21,660 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:36:21,660 base>views>main -SCH- Now:06/24/2024, 10:36:21
+INFO 2024-06-24 10:36:21,660 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:36:21,664 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:36:21,664 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:36:21,664 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:36:21 [Yes]
+INFO 2024-06-24 10:36:23,878 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:36:24,308 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:36:24,314 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:36:24,340 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:36:24,340 base>views>main -SCH- Now:06/24/2024, 10:36:24
+INFO 2024-06-24 10:36:24,341 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:36:24,345 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:36:24,345 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:36:24,345 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:36:24 [Yes]
+INFO 2024-06-24 10:36:29,670 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:36:30,191 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:36:30,198 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:36:30,231 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:36:30,231 base>views>main -SCH- Now:06/24/2024, 10:36:30
+INFO 2024-06-24 10:36:30,232 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:36:30,240 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:36:30,240 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:36:30,240 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:36:30 [Yes]
+INFO 2024-06-24 10:49:01,816 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:49:02,729 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:49:02,746 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:49:02,787 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:49:02,788 base>views>main -SCH- Now:06/24/2024, 10:49:02
+INFO 2024-06-24 10:49:02,790 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:49:02,796 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:49:02,796 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:49:02,796 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:49:02 [Yes]
+INFO 2024-06-24 10:49:04,031 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:49:04,493 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:49:04,500 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:49:04,527 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 10:49:04,527 base>views>main -SCH- Now:06/24/2024, 10:49:04
+INFO 2024-06-24 10:49:04,527 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 10:49:04,531 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 10:49:04,532 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 10:49:04,532 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 10:49:04 [Yes]
+INFO 2024-06-24 10:49:05,734 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:49:06,212 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:49:06,219 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:49:13,562 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:49:14,177 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:49:14,185 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:49:29,787 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:49:30,481 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:49:30,496 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:50:38,929 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:50:39,714 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:50:39,730 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:50:43,968 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:50:44,515 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:50:44,522 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:51:47,659 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:51:48,354 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:51:48,368 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:51:52,605 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:51:53,091 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:51:53,097 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:51:58,338 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:51:58,859 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:51:58,866 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:52:03,067 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:52:03,525 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:52:03,531 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:52:06,701 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 10:52:07,132 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 10:52:07,139 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:52:11,360 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/booking/models.py changed, reloading.
+INFO 2024-06-24 10:52:11,964 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 10:52:13,229 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/booking/models.py changed, reloading.
+INFO 2024-06-24 10:52:13,643 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 11:56:49,545 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 11:57:00,975 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/booking/models.py changed, reloading.
+INFO 2024-06-24 11:57:01,704 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 11:57:01,717 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 11:57:01,741 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 11:57:01,741 base>views>main -SCH- Now:06/24/2024, 11:57:01
+INFO 2024-06-24 11:57:01,741 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 11:57:01,748 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 11:57:01,748 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 11:57:01,748 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 11:57:01 [Yes]
+INFO 2024-06-24 11:57:06,091 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 11:57:06,109 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 11:57:06,109 base>views>main -SCH- Now:06/24/2024, 11:57:06
+INFO 2024-06-24 11:57:06,110 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 11:57:06,115 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 11:57:06,115 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 11:57:06,115 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 11:57:06 [Yes]
+INFO 2024-06-24 11:57:52,509 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/urls.py changed, reloading.
+INFO 2024-06-24 11:57:53,314 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 11:57:53,330 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 11:57:53,350 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 11:57:53,350 base>views>main -SCH- Now:06/24/2024, 11:57:53
+INFO 2024-06-24 11:57:53,350 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 11:57:53,356 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 11:57:53,356 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 11:57:53,356 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 11:57:53 [Yes]
+INFO 2024-06-24 11:57:54,588 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/urls.py changed, reloading.
+INFO 2024-06-24 11:57:55,060 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 11:57:55,068 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 11:57:55,083 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 11:57:55,083 base>views>main -SCH- Now:06/24/2024, 11:57:55
+INFO 2024-06-24 11:57:55,084 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 11:57:55,088 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 11:57:55,088 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 11:57:55,088 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 11:57:55 [Yes]
+INFO 2024-06-24 11:57:56,161 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/urls.py changed, reloading.
+INFO 2024-06-24 11:57:56,627 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 11:57:56,634 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 11:57:56,674 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 11:57:56,674 base>views>main -SCH- Now:06/24/2024, 11:57:56
+INFO 2024-06-24 11:57:56,676 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 11:57:56,683 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 11:57:56,683 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 11:57:56,683 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 11:57:56 [Yes]
+INFO 2024-06-24 11:57:57,752 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/urls.py changed, reloading.
+INFO 2024-06-24 11:57:58,232 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 11:57:58,240 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 11:57:58,255 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 11:57:58,255 base>views>main -SCH- Now:06/24/2024, 11:57:58
+INFO 2024-06-24 11:57:58,255 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 11:57:58,260 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 11:57:58,260 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 11:57:58,261 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 11:57:58 [Yes]
+INFO 2024-06-24 11:57:59,336 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/urls.py changed, reloading.
+INFO 2024-06-24 11:57:59,777 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 11:57:59,784 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 11:57:59,800 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 11:57:59,800 base>views>main -SCH- Now:06/24/2024, 11:57:59
+INFO 2024-06-24 11:57:59,800 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 11:57:59,804 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 11:57:59,805 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 11:57:59,805 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 11:57:59 [Yes]
+INFO 2024-06-24 11:58:02,913 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/urls.py changed, reloading.
+INFO 2024-06-24 11:58:03,369 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 11:58:03,376 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 11:58:03,389 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 11:58:03,389 base>views>main -SCH- Now:06/24/2024, 11:58:03
+INFO 2024-06-24 11:58:03,389 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 11:58:03,394 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 11:58:03,394 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 11:58:03,394 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 11:58:03 [Yes]
+INFO 2024-06-24 11:58:07,622 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/urls.py changed, reloading.
+INFO 2024-06-24 11:58:08,154 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 11:58:08,162 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 11:58:08,177 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 11:58:08,177 base>views>main -SCH- Now:06/24/2024, 11:58:08
+INFO 2024-06-24 11:58:08,177 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 11:58:08,182 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 11:58:08,182 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 11:58:08,182 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 11:58:08 [Yes]
+INFO 2024-06-24 11:58:17,587 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/urls.py changed, reloading.
+INFO 2024-06-24 11:58:18,064 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 11:58:18,070 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 11:58:18,085 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 11:58:18,085 base>views>main -SCH- Now:06/24/2024, 11:58:18
+INFO 2024-06-24 11:58:18,085 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 11:58:18,089 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 11:58:18,089 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 11:58:18,089 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 11:58:18 [Yes]
+INFO 2024-06-24 11:58:44,956 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/urls.py changed, reloading.
+INFO 2024-06-24 11:58:45,623 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 11:58:45,638 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 11:58:45,658 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 11:58:45,659 base>views>main -SCH- Now:06/24/2024, 11:58:45
+INFO 2024-06-24 11:58:45,659 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 11:58:45,664 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 11:58:45,664 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 11:58:45,664 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 11:58:45 [Yes]
+INFO 2024-06-24 11:58:47,852 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/urls.py changed, reloading.
+INFO 2024-06-24 11:58:48,295 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 11:58:48,301 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 11:58:48,315 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 11:58:48,315 base>views>main -SCH- Now:06/24/2024, 11:58:48
+INFO 2024-06-24 11:58:48,316 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 11:58:48,320 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 11:58:48,320 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 11:58:48,320 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 11:58:48 [Yes]
+INFO 2024-06-24 11:58:53,578 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/urls.py changed, reloading.
+INFO 2024-06-24 11:58:54,019 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 11:58:54,025 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 11:58:54,039 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 11:58:54,039 base>views>main -SCH- Now:06/24/2024, 11:58:54
+INFO 2024-06-24 11:58:54,039 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 11:58:54,044 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 11:58:54,044 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 11:58:54,044 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 11:58:54 [Yes]
+INFO 2024-06-24 11:59:17,978 runserver>log_action [32mHTTP GET /reports/details/200/ 302 [0.06, 127.0.0.1:50307][0m
+INFO 2024-06-24 11:59:18,015 runserver>log_action [mHTTP GET /login/ 200 [0.02, 127.0.0.1:50307][0m
+INFO 2024-06-24 11:59:22,566 runserver>log_action [32mHTTP POST /login/ 302 [0.18, 127.0.0.1:50307][0m
+INFO 2024-06-24 11:59:22,586 runserver>log_action [mHTTP GET / 200 [0.02, 127.0.0.1:50307][0m
+WARNING 2024-06-24 11:59:24,032 log>log_response Not Found: /favicon.ico
+WARNING 2024-06-24 11:59:24,032 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.02, 127.0.0.1:50307][0m
+INFO 2024-06-24 11:59:24,825 runserver>log_action [mHTTP GET /reports/raw/?branch=KB&startdate=2024-01-24T09%3A10%3A36&enddate=2024-06-24T09%3A10%3A36&countertype= 200 [0.11, 127.0.0.1:50307][0m
+ERROR 2024-06-24 11:59:39,015 log>log_response Internal Server Error: /reports/details/200/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Report_Ticket_details_Result() got an unexpected keyword argument 'id'
+ERROR 2024-06-24 11:59:39,020 runserver>log_action [35;1mHTTP GET /reports/details/200/ 500 [0.05, 127.0.0.1:50307][0m
+WARNING 2024-06-24 12:01:27,681 log>log_response Not Found: /reports/details
+WARNING 2024-06-24 12:01:27,683 runserver>log_action [33mHTTP GET /reports/details?id=200/ 404 [0.03, 127.0.0.1:50411][0m
+INFO 2024-06-24 12:01:48,559 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/urls.py changed, reloading.
+INFO 2024-06-24 12:01:49,443 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 12:01:49,458 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 12:01:49,475 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 12:01:49,475 base>views>main -SCH- Now:06/24/2024, 12:01:49
+INFO 2024-06-24 12:01:49,475 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 12:01:49,480 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 12:01:49,480 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 12:01:49,480 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 12:01:49 [Yes]
+INFO 2024-06-24 12:01:50,240 runserver>log_action [32mHTTP GET /reports/details?id=200/ 301 [0.02, 127.0.0.1:50430][0m
+INFO 2024-06-24 12:01:50,268 runserver>log_action [32mHTTP GET /reports/details/?id=200/ 302 [0.02, 127.0.0.1:50430][0m
+INFO 2024-06-24 12:01:50,291 runserver>log_action [mHTTP GET /reports/ 200 [0.02, 127.0.0.1:50430][0m
+INFO 2024-06-24 12:02:05,279 runserver>log_action [32mHTTP GET /reports/details?=142 301 [0.02, 127.0.0.1:50430][0m
+ERROR 2024-06-24 12:02:05,303 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/utils/datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1506, in Report_Ticket_details_Result
+    ticket_id = request.GET['id']
+                ~~~~~~~~~~~^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/utils/datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'id'
+ERROR 2024-06-24 12:02:05,306 runserver>log_action [35;1mHTTP GET /reports/details/?=142 500 [0.02, 127.0.0.1:50430][0m
+ERROR 2024-06-24 12:02:12,058 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/utils/datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1506, in Report_Ticket_details_Result
+    ticket_id = request.GET['id']
+                ~~~~~~~~~~~^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/utils/datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'id'
+ERROR 2024-06-24 12:02:12,070 runserver>log_action [35;1mHTTP GET /reports/details/?=142 500 [0.05, 127.0.0.1:50430][0m
+INFO 2024-06-24 12:02:28,293 runserver>log_action [32mHTTP GET /reports/details?id=142 301 [0.02, 127.0.0.1:50430][0m
+ERROR 2024-06-24 12:02:28,322 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1521, in Report_Ticket_details_Result
+    if not request.user.profile.branch in branch:
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/utils/functional.py", line 268, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'profile'
+ERROR 2024-06-24 12:02:28,325 runserver>log_action [35;1mHTTP GET /reports/details/?id=142 500 [0.03, 127.0.0.1:50430][0m
+INFO 2024-06-24 12:03:08,489 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 12:03:09,264 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 12:03:09,278 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 12:03:09,310 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 12:03:09,310 base>views>main -SCH- Now:06/24/2024, 12:03:09
+INFO 2024-06-24 12:03:09,310 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 12:03:09,316 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 12:03:09,316 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 12:03:09,316 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 12:03:09 [Yes]
+ERROR 2024-06-24 12:03:10,868 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1521, in Report_Ticket_details_Result
+    if not request.user.profile.branchs in branch:
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/utils/functional.py", line 268, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'profile'
+ERROR 2024-06-24 12:03:10,872 runserver>log_action [35;1mHTTP GET /reports/details/?id=142 500 [0.03, 127.0.0.1:50464][0m
+INFO 2024-06-24 12:03:26,124 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 12:03:26,775 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 12:03:26,786 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 12:03:26,814 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 12:03:26,814 base>views>main -SCH- Now:06/24/2024, 12:03:26
+INFO 2024-06-24 12:03:26,815 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 12:03:26,820 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 12:03:26,820 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 12:03:26,820 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 12:03:26 [Yes]
+ERROR 2024-06-24 12:03:27,664 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1521, in Report_Ticket_details_Result
+    if not request.userprofile.branchs in branch:
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ASGIRequest' object has no attribute 'userprofile'
+ERROR 2024-06-24 12:03:27,666 runserver>log_action [35;1mHTTP GET /reports/details/?id=142 500 [0.03, 127.0.0.1:50501][0m
+INFO 2024-06-24 12:03:51,853 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 12:03:52,522 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 12:03:52,535 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 12:03:52,568 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 12:03:52,570 base>views>main -SCH- Now:06/24/2024, 12:03:52
+INFO 2024-06-24 12:03:52,571 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 12:03:52,578 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 12:03:52,578 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 12:03:52,578 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 12:03:52 [Yes]
+INFO 2024-06-24 12:03:57,872 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 12:03:58,372 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 12:03:58,378 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 12:03:58,403 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 12:03:58,403 base>views>main -SCH- Now:06/24/2024, 12:03:58
+INFO 2024-06-24 12:03:58,404 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 12:03:58,410 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 12:03:58,410 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 12:03:58,410 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 12:03:58 [Yes]
+INFO 2024-06-24 12:04:01,644 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 12:04:02,093 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 12:04:02,099 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 12:04:02,124 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 12:04:02,124 base>views>main -SCH- Now:06/24/2024, 12:04:02
+INFO 2024-06-24 12:04:02,124 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 12:04:02,128 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 12:04:02,128 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 12:04:02,128 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 12:04:02 [Yes]
+INFO 2024-06-24 12:04:10,436 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 12:04:10,953 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 12:04:10,960 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 12:04:10,985 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 12:04:10,985 base>views>main -SCH- Now:06/24/2024, 12:04:10
+INFO 2024-06-24 12:04:10,985 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 12:04:10,990 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 12:04:10,990 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 12:04:10,990 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 12:04:10 [Yes]
+INFO 2024-06-24 12:04:17,363 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 12:04:17,849 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 12:04:17,856 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 12:04:17,880 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 12:04:17,880 base>views>main -SCH- Now:06/24/2024, 12:04:17
+INFO 2024-06-24 12:04:17,880 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 12:04:17,885 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 12:04:17,885 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 12:04:17,885 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 12:04:17 [Yes]
+ERROR 2024-06-24 12:04:22,130 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1522, in Report_Ticket_details_Result
+    if not userp.branchs in branch:
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'Branch' is not iterable
+ERROR 2024-06-24 12:04:22,132 runserver>log_action [35;1mHTTP GET /reports/details/?id=142 500 [0.03, 127.0.0.1:50548][0m
+INFO 2024-06-24 12:06:29,548 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 12:06:30,389 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 12:06:30,403 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 12:06:30,430 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 12:06:30,431 base>views>main -SCH- Now:06/24/2024, 12:06:30
+INFO 2024-06-24 12:06:30,431 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 12:06:30,436 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 12:06:30,436 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 12:06:30,436 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 12:06:30 [Yes]
+INFO 2024-06-24 12:06:34,681 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 12:06:35,195 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 12:06:35,203 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 12:06:45,170 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 12:06:45,550 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 12:06:45,556 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 12:06:45,584 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 12:06:45,584 base>views>main -SCH- Now:06/24/2024, 12:06:45
+INFO 2024-06-24 12:06:45,585 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 12:06:45,589 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 12:06:45,589 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 12:06:45,589 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 12:06:45 [Yes]
+ERROR 2024-06-24 12:06:46,902 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1522, in Report_Ticket_details_Result
+    if not userp.branchs in branch:
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'Branch' is not iterable
+ERROR 2024-06-24 12:06:46,905 runserver>log_action [35;1mHTTP GET /reports/details/?id=142 500 [0.04, 127.0.0.1:50629][0m
+INFO 2024-06-24 12:06:54,016 runserver>log_action [32mHTTP GET /reports/details/?id=1420 302 [0.05, 127.0.0.1:50629][0m
+INFO 2024-06-24 12:06:54,044 runserver>log_action [mHTTP GET /reports/ 200 [0.03, 127.0.0.1:50629][0m
+INFO 2024-06-24 13:01:56,209 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 13:01:57,122 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:01:57,139 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 13:01:59,299 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 13:01:59,731 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:01:59,738 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 13:02:01,888 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 13:02:02,338 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:02:02,346 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 13:02:02,381 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 13:02:02,382 base>views>main -SCH- Now:06/24/2024, 13:02:02
+INFO 2024-06-24 13:02:02,382 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 13:02:02,387 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 13:02:02,387 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 13:02:02,387 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 13:02:02 [Yes]
+ERROR 2024-06-24 13:02:04,771 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1522, in Report_Ticket_details_Result
+    if not branch in userp.branchs:
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'ManyRelatedManager' is not iterable
+ERROR 2024-06-24 13:02:04,774 runserver>log_action [35;1mHTTP GET /reports/details/?id=142 500 [0.03, 127.0.0.1:52472][0m
+INFO 2024-06-24 13:02:15,189 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 13:02:15,804 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:02:15,815 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 13:02:15,842 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 13:02:15,842 base>views>main -SCH- Now:06/24/2024, 13:02:15
+INFO 2024-06-24 13:02:15,842 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 13:02:15,847 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 13:02:15,847 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 13:02:15,847 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 13:02:15 [Yes]
+INFO 2024-06-24 13:02:21,168 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 13:02:21,804 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:02:21,818 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 13:02:21,857 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 13:02:21,857 base>views>main -SCH- Now:06/24/2024, 13:02:21
+INFO 2024-06-24 13:02:21,858 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 13:02:21,864 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 13:02:21,864 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 13:02:21,864 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 13:02:21 [Yes]
+INFO 2024-06-24 13:02:25,097 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 13:02:25,657 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:02:25,665 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 13:02:27,816 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 13:02:28,318 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:02:28,326 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 13:02:30,436 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 13:02:30,893 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:02:30,902 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 13:02:30,934 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 13:02:30,934 base>views>main -SCH- Now:06/24/2024, 13:02:30
+INFO 2024-06-24 13:02:30,934 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 13:02:30,940 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 13:02:30,940 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 13:02:30,940 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 13:02:30 [Yes]
+INFO 2024-06-24 13:02:32,142 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 13:02:32,605 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:02:32,613 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 13:02:32,680 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 13:02:32,680 base>views>main -SCH- Now:06/24/2024, 13:02:32
+INFO 2024-06-24 13:02:32,681 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 13:02:32,686 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 13:02:32,686 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 13:02:32,686 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 13:02:32 [Yes]
+ERROR 2024-06-24 13:02:35,073 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1522, in Report_Ticket_details_Result
+    if branch in userp.branchs:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'ManyRelatedManager' is not iterable
+ERROR 2024-06-24 13:02:35,076 runserver>log_action [35;1mHTTP GET /reports/details/?id=142 500 [0.04, 127.0.0.1:52499][0m
+ERROR 2024-06-24 13:02:35,750 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1522, in Report_Ticket_details_Result
+    if branch in userp.branchs:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'ManyRelatedManager' is not iterable
+ERROR 2024-06-24 13:02:35,752 runserver>log_action [35;1mHTTP GET /reports/details/?id=142 500 [0.03, 127.0.0.1:52499][0m
+ERROR 2024-06-24 13:02:35,934 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1522, in Report_Ticket_details_Result
+    if branch in userp.branchs:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'ManyRelatedManager' is not iterable
+ERROR 2024-06-24 13:02:35,937 runserver>log_action [35;1mHTTP GET /reports/details/?id=142 500 [0.04, 127.0.0.1:52499][0m
+ERROR 2024-06-24 13:02:37,020 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1522, in Report_Ticket_details_Result
+    if branch in userp.branchs:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'ManyRelatedManager' is not iterable
+ERROR 2024-06-24 13:02:37,024 runserver>log_action [35;1mHTTP GET /reports/details/?id=142 500 [0.04, 127.0.0.1:52499][0m
+ERROR 2024-06-24 13:02:37,783 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1522, in Report_Ticket_details_Result
+    if branch in userp.branchs:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'ManyRelatedManager' is not iterable
+ERROR 2024-06-24 13:02:37,785 runserver>log_action [35;1mHTTP GET /reports/details/?id=142 500 [0.03, 127.0.0.1:52499][0m
+ERROR 2024-06-24 13:02:38,650 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1522, in Report_Ticket_details_Result
+    if branch in userp.branchs:
+       ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'ManyRelatedManager' is not iterable
+ERROR 2024-06-24 13:02:38,652 runserver>log_action [35;1mHTTP GET /reports/details/?id=142 500 [0.04, 127.0.0.1:52499][0m
+INFO 2024-06-24 13:03:01,855 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 13:03:02,692 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:03:02,708 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 13:03:02,737 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 13:03:02,737 base>views>main -SCH- Now:06/24/2024, 13:03:02
+INFO 2024-06-24 13:03:02,738 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 13:03:02,756 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 13:03:02,757 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 13:03:02,757 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 13:03:02 [Yes]
+INFO 2024-06-24 13:03:03,665 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.11, 127.0.0.1:52513][0m
+INFO 2024-06-24 13:03:03,696 runserver>log_action WebSocket HANDSHAKING /ws/progress/a9083f78_430b_4aba_88a9_44b5bb7223af/ [127.0.0.1:52518]
+INFO 2024-06-24 13:03:03,871 runserver>log_action WebSocket DISCONNECT /ws/progress/a9083f78_430b_4aba_88a9_44b5bb7223af/ [127.0.0.1:52518]
+INFO 2024-06-24 13:50:22,803 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:50:22,835 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 13:50:22,835 base>views>main -SCH- Now:06/24/2024, 13:50:22
+INFO 2024-06-24 13:50:22,836 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 13:50:22,842 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 13:50:22,842 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 13:50:22,842 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 13:50:22 [Yes]
+INFO 2024-06-24 13:50:25,445 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:50:25,794 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:50:25,800 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 13:50:25,815 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 13:50:25,815 base>views>main -SCH- Now:06/24/2024, 13:50:25
+INFO 2024-06-24 13:50:25,815 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 13:50:25,820 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 13:50:25,820 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 13:50:25,820 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 13:50:25 [Yes]
+INFO 2024-06-24 13:50:30,575 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.12, 127.0.0.1:54210][0m
+INFO 2024-06-24 13:50:30,627 runserver>log_action WebSocket HANDSHAKING /ws/progress/f2ce6082_5fb4_477f_a9f4_08e2d7ab1742/ [127.0.0.1:54218]
+INFO 2024-06-24 13:50:30,912 runserver>log_action WebSocket DISCONNECT /ws/progress/f2ce6082_5fb4_477f_a9f4_08e2d7ab1742/ [127.0.0.1:54218]
+INFO 2024-06-24 13:51:06,473 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 13:51:07,214 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:51:07,228 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 13:51:07,245 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 13:51:07,245 base>views>main -SCH- Now:06/24/2024, 13:51:07
+INFO 2024-06-24 13:51:07,246 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 13:51:07,250 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 13:51:07,250 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 13:51:07,250 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 13:51:07 [Yes]
+INFO 2024-06-24 13:51:13,370 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 13:51:13,384 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 13:51:13,384 base>views>main -SCH- Now:06/24/2024, 13:51:13
+INFO 2024-06-24 13:51:13,385 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 13:51:13,390 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 13:51:13,390 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 13:51:13,390 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 13:51:13 [Yes]
+INFO 2024-06-24 13:51:18,564 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.11, 127.0.0.1:54257][0m
+INFO 2024-06-24 13:51:18,580 runserver>log_action WebSocket HANDSHAKING /ws/progress/6e47e1c8_5989_4639_a52d_fe4bfa798eda/ [127.0.0.1:54262]
+INFO 2024-06-24 13:51:19,355 runserver>log_action WebSocket DISCONNECT /ws/progress/6e47e1c8_5989_4639_a52d_fe4bfa798eda/ [127.0.0.1:54262]
+INFO 2024-06-24 13:52:30,048 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.04, 127.0.0.1:54285][0m
+INFO 2024-06-24 13:52:30,066 runserver>log_action WebSocket HANDSHAKING /ws/progress/8275dab3_e39d_4c83_8c19_46b4822eecf5/ [127.0.0.1:54287]
+INFO 2024-06-24 13:52:30,429 runserver>log_action WebSocket DISCONNECT /ws/progress/8275dab3_e39d_4c83_8c19_46b4822eecf5/ [127.0.0.1:54287]
+INFO 2024-06-24 13:52:43,083 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.04, 127.0.0.1:54285][0m
+INFO 2024-06-24 13:52:51,786 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.04, 127.0.0.1:54285][0m
+INFO 2024-06-24 13:53:35,120 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.06, 127.0.0.1:54285][0m
+INFO 2024-06-24 13:53:51,725 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.04, 127.0.0.1:54285][0m
+INFO 2024-06-24 14:06:13,127 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:06:13,928 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:06:13,942 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:06:13,974 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:06:13,974 base>views>main -SCH- Now:06/24/2024, 14:06:13
+INFO 2024-06-24 14:06:13,975 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:06:13,980 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:06:13,980 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:06:13,980 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:06:13 [Yes]
+INFO 2024-06-24 14:06:37,999 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.13, 127.0.0.1:54737][0m
+INFO 2024-06-24 14:06:38,034 runserver>log_action WebSocket HANDSHAKING /ws/progress/50615773_40a6_4839_b549_3cdce93726db/ [127.0.0.1:54742]
+INFO 2024-06-24 14:06:38,093 runserver>log_action WebSocket DISCONNECT /ws/progress/50615773_40a6_4839_b549_3cdce93726db/ [127.0.0.1:54742]
+INFO 2024-06-24 14:06:47,058 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:06:47,080 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:06:47,080 base>views>main -SCH- Now:06/24/2024, 14:06:47
+INFO 2024-06-24 14:06:47,080 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:06:47,086 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:06:47,086 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:06:47,086 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:06:47 [Yes]
+INFO 2024-06-24 14:06:48,242 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.03, 127.0.0.1:54737][0m
+INFO 2024-06-24 14:06:48,265 runserver>log_action WebSocket HANDSHAKING /ws/progress/47b50b28_51fe_4f7e_88cb_d21298c25bbc/ [127.0.0.1:54758]
+INFO 2024-06-24 14:06:49,142 runserver>log_action WebSocket DISCONNECT /ws/progress/47b50b28_51fe_4f7e_88cb_d21298c25bbc/ [127.0.0.1:54758]
+INFO 2024-06-24 14:07:21,389 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:07:22,097 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:07:22,111 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:07:22,138 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:07:22,138 base>views>main -SCH- Now:06/24/2024, 14:07:22
+INFO 2024-06-24 14:07:22,138 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:07:22,144 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:07:22,144 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:07:22,144 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:07:22 [Yes]
+INFO 2024-06-24 14:07:24,355 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:07:24,961 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:07:24,969 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:07:24,996 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:07:24,996 base>views>main -SCH- Now:06/24/2024, 14:07:24
+INFO 2024-06-24 14:07:24,996 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:07:25,001 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:07:25,001 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:07:25,001 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:07:25 [Yes]
+INFO 2024-06-24 14:07:26,223 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:07:26,661 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:07:26,668 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:07:26,691 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:07:26,691 base>views>main -SCH- Now:06/24/2024, 14:07:26
+INFO 2024-06-24 14:07:26,691 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:07:26,695 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:07:26,695 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:07:26,695 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:07:26 [Yes]
+INFO 2024-06-24 14:07:27,926 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:07:28,351 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:07:28,357 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:07:28,380 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:07:28,380 base>views>main -SCH- Now:06/24/2024, 14:07:28
+INFO 2024-06-24 14:07:28,381 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:07:28,385 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:07:28,385 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:07:28,385 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:07:28 [Yes]
+INFO 2024-06-24 14:07:32,683 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:07:33,153 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:07:33,160 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:07:33,183 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:07:33,184 base>views>main -SCH- Now:06/24/2024, 14:07:33
+INFO 2024-06-24 14:07:33,184 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:07:33,189 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:07:33,189 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:07:33,189 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:07:33 [Yes]
+INFO 2024-06-24 14:07:35,380 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:07:35,880 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:07:35,888 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:07:35,914 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:07:35,914 base>views>main -SCH- Now:06/24/2024, 14:07:35
+INFO 2024-06-24 14:07:35,915 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:07:35,919 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:07:35,920 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:07:35,920 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:07:35 [Yes]
+INFO 2024-06-24 14:07:41,190 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:07:41,749 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:07:41,757 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:07:41,783 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:07:41,783 base>views>main -SCH- Now:06/24/2024, 14:07:41
+INFO 2024-06-24 14:07:41,783 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:07:41,788 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:07:41,788 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:07:41,788 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:07:41 [Yes]
+INFO 2024-06-24 14:07:43,036 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:07:43,480 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:07:43,486 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:07:43,510 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:07:43,510 base>views>main -SCH- Now:06/24/2024, 14:07:43
+INFO 2024-06-24 14:07:43,510 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:07:43,514 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:07:43,514 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:07:43,514 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:07:43 [Yes]
+INFO 2024-06-24 14:07:45,368 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.11, 127.0.0.1:54838][0m
+INFO 2024-06-24 14:07:45,391 runserver>log_action WebSocket HANDSHAKING /ws/progress/8ed067e2_1174_4f7a_bbdb_fec457a2cecd/ [127.0.0.1:54842]
+INFO 2024-06-24 14:07:45,591 runserver>log_action WebSocket DISCONNECT /ws/progress/8ed067e2_1174_4f7a_bbdb_fec457a2cecd/ [127.0.0.1:54842]
+INFO 2024-06-24 14:07:55,146 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.04, 127.0.0.1:54838][0m
+INFO 2024-06-24 14:07:55,176 runserver>log_action WebSocket HANDSHAKING /ws/progress/1e312166_7ef6_463e_80b9_570a34f6f2a9/ [127.0.0.1:54846]
+INFO 2024-06-24 14:07:55,601 runserver>log_action WebSocket DISCONNECT /ws/progress/1e312166_7ef6_463e_80b9_570a34f6f2a9/ [127.0.0.1:54846]
+INFO 2024-06-24 14:08:53,175 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:08:53,885 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:08:53,901 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:08:53,930 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:08:53,930 base>views>main -SCH- Now:06/24/2024, 14:08:53
+INFO 2024-06-24 14:08:53,931 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:08:53,935 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:08:53,935 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:08:53,935 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:08:53 [Yes]
+INFO 2024-06-24 14:08:57,193 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:08:57,650 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:08:57,658 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:08:57,692 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:08:57,692 base>views>main -SCH- Now:06/24/2024, 14:08:57
+INFO 2024-06-24 14:08:57,693 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:08:57,699 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:08:57,699 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:08:57,699 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:08:57 [Yes]
+INFO 2024-06-24 14:08:58,611 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.12, 127.0.0.1:54905][0m
+INFO 2024-06-24 14:08:58,629 runserver>log_action WebSocket HANDSHAKING /ws/progress/c69a1d46_0cbd_4611_a17b_68dd32ba60ef/ [127.0.0.1:54909]
+INFO 2024-06-24 14:08:58,775 runserver>log_action WebSocket DISCONNECT /ws/progress/c69a1d46_0cbd_4611_a17b_68dd32ba60ef/ [127.0.0.1:54909]
+INFO 2024-06-24 14:11:11,277 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:11:11,969 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:11:11,984 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:11:12,014 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:11:12,014 base>views>main -SCH- Now:06/24/2024, 14:11:12
+INFO 2024-06-24 14:11:12,015 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:11:12,020 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:11:12,021 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:11:12,021 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:11:12 [Yes]
+INFO 2024-06-24 14:11:21,849 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.09, 127.0.0.1:55023][0m
+INFO 2024-06-24 14:11:21,872 runserver>log_action WebSocket HANDSHAKING /ws/progress/9d9000ca_bc1c_43cf_9db5_bd104c8e3a0c/ [127.0.0.1:55029]
+INFO 2024-06-24 14:11:22,128 runserver>log_action WebSocket DISCONNECT /ws/progress/9d9000ca_bc1c_43cf_9db5_bd104c8e3a0c/ [127.0.0.1:55029]
+INFO 2024-06-24 14:11:24,100 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.03, 127.0.0.1:55023][0m
+INFO 2024-06-24 14:11:24,116 runserver>log_action WebSocket HANDSHAKING /ws/progress/869801d6_1751_44fe_8818_da3b00bdb71a/ [127.0.0.1:55032]
+INFO 2024-06-24 14:11:24,130 runserver>log_action WebSocket DISCONNECT /ws/progress/869801d6_1751_44fe_8818_da3b00bdb71a/ [127.0.0.1:55032]
+INFO 2024-06-24 14:11:42,493 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.05, 127.0.0.1:55023][0m
+INFO 2024-06-24 14:11:42,524 runserver>log_action WebSocket HANDSHAKING /ws/progress/af054269_9af0_4a15_bceb_90d15f5119d4/ [127.0.0.1:55043]
+INFO 2024-06-24 14:11:43,157 runserver>log_action WebSocket DISCONNECT /ws/progress/af054269_9af0_4a15_bceb_90d15f5119d4/ [127.0.0.1:55043]
+INFO 2024-06-24 14:11:43,409 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.02, 127.0.0.1:55023][0m
+INFO 2024-06-24 14:11:43,421 runserver>log_action WebSocket HANDSHAKING /ws/progress/7541e4af_97c8_4dbd_af60_0b9a40267744/ [127.0.0.1:55045]
+INFO 2024-06-24 14:11:44,162 runserver>log_action WebSocket DISCONNECT /ws/progress/7541e4af_97c8_4dbd_af60_0b9a40267744/ [127.0.0.1:55045]
+INFO 2024-06-24 14:14:10,356 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 14:14:11,193 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:14:11,208 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:14:11,235 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:14:11,235 base>views>main -SCH- Now:06/24/2024, 14:14:11
+INFO 2024-06-24 14:14:11,236 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:14:11,240 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:14:11,241 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:14:11,241 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:14:11 [Yes]
+INFO 2024-06-24 14:14:12,462 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 14:14:12,937 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:14:12,944 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:14:12,960 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:14:12,960 base>views>main -SCH- Now:06/24/2024, 14:14:12
+INFO 2024-06-24 14:14:12,960 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:14:12,964 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:14:12,964 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:14:12,964 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:14:12 [Yes]
+INFO 2024-06-24 14:14:16,190 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 14:14:16,700 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:14:16,707 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:14:16,723 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:14:16,723 base>views>main -SCH- Now:06/24/2024, 14:14:16
+INFO 2024-06-24 14:14:16,724 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:14:16,728 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:14:16,728 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:14:16,728 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:14:16 [Yes]
+INFO 2024-06-24 14:14:18,931 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 14:14:19,375 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:14:19,381 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:14:19,396 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:14:19,396 base>views>main -SCH- Now:06/24/2024, 14:14:19
+INFO 2024-06-24 14:14:19,396 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:14:19,401 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:14:19,401 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:14:19,401 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:14:19 [Yes]
+INFO 2024-06-24 14:14:30,553 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:14:30,568 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:14:30,568 base>views>main -SCH- Now:06/24/2024, 14:14:30
+INFO 2024-06-24 14:14:30,568 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:14:30,573 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:14:30,573 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:14:30,573 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:14:30 [Yes]
+INFO 2024-06-24 14:14:34,720 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.12, 127.0.0.1:55167][0m
+INFO 2024-06-24 14:14:34,756 runserver>log_action WebSocket HANDSHAKING /ws/progress/54962612_dd04_4890_8841_5075acd549dd/ [127.0.0.1:55174]
+INFO 2024-06-24 14:14:35,489 runserver>log_action WebSocket DISCONNECT /ws/progress/54962612_dd04_4890_8841_5075acd549dd/ [127.0.0.1:55174]
+INFO 2024-06-24 14:21:19,944 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:21:20,652 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:21:20,666 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:21:20,697 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:21:20,697 base>views>main -SCH- Now:06/24/2024, 14:21:20
+INFO 2024-06-24 14:21:20,697 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:21:20,703 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:21:20,704 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:21:20,704 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:21:20 [Yes]
+INFO 2024-06-24 14:21:33,269 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:21:33,910 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:21:33,921 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:21:33,948 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:21:33,948 base>views>main -SCH- Now:06/24/2024, 14:21:33
+INFO 2024-06-24 14:21:33,949 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:21:33,953 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:21:33,953 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:21:33,953 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:21:33 [Yes]
+INFO 2024-06-24 14:21:43,431 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:21:44,045 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:21:44,056 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:21:44,082 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:21:44,083 base>views>main -SCH- Now:06/24/2024, 14:21:44
+INFO 2024-06-24 14:21:44,083 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:21:44,088 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:21:44,088 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:21:44,088 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:21:44 [Yes]
+INFO 2024-06-24 14:21:47,935 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.12, 127.0.0.1:55391][0m
+INFO 2024-06-24 14:21:48,017 runserver>log_action WebSocket HANDSHAKING /ws/progress/e3178cb7_b3ca_40b9_820b_eb6a9bc402f9/ [127.0.0.1:55396]
+INFO 2024-06-24 14:21:48,187 runserver>log_action WebSocket DISCONNECT /ws/progress/e3178cb7_b3ca_40b9_820b_eb6a9bc402f9/ [127.0.0.1:55396]
+INFO 2024-06-24 14:21:49,534 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.02, 127.0.0.1:55391][0m
+INFO 2024-06-24 14:21:49,546 runserver>log_action WebSocket HANDSHAKING /ws/progress/fbc68bd0_8d9f_4844_bf77_f7bc5244d4a0/ [127.0.0.1:55399]
+INFO 2024-06-24 14:21:50,192 runserver>log_action WebSocket DISCONNECT /ws/progress/fbc68bd0_8d9f_4844_bf77_f7bc5244d4a0/ [127.0.0.1:55399]
+INFO 2024-06-24 14:21:50,802 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.03, 127.0.0.1:55391][0m
+INFO 2024-06-24 14:21:50,819 runserver>log_action WebSocket HANDSHAKING /ws/progress/b63c4101_c807_479d_a30b_6f85950c2a74/ [127.0.0.1:55401]
+INFO 2024-06-24 14:21:51,197 runserver>log_action WebSocket DISCONNECT /ws/progress/b63c4101_c807_479d_a30b_6f85950c2a74/ [127.0.0.1:55401]
+INFO 2024-06-24 14:21:51,416 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.03, 127.0.0.1:55391][0m
+INFO 2024-06-24 14:21:51,432 runserver>log_action WebSocket HANDSHAKING /ws/progress/159cb2d7_49a9_4c2c_873b_acc690cd42ca/ [127.0.0.1:55403]
+INFO 2024-06-24 14:21:52,200 runserver>log_action WebSocket DISCONNECT /ws/progress/159cb2d7_49a9_4c2c_873b_acc690cd42ca/ [127.0.0.1:55403]
+INFO 2024-06-24 14:28:34,284 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.05, 127.0.0.1:55638][0m
+INFO 2024-06-24 14:28:34,329 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:55640][0m
+INFO 2024-06-24 14:28:34,352 runserver>log_action WebSocket HANDSHAKING /ws/progress/c9f36a8c_b45f_4b8c_bbb8_b3e616058157/ [127.0.0.1:55644]
+INFO 2024-06-24 14:28:34,625 runserver>log_action WebSocket DISCONNECT /ws/progress/c9f36a8c_b45f_4b8c_bbb8_b3e616058157/ [127.0.0.1:55644]
+INFO 2024-06-24 14:31:08,188 runserver>log_action [mHTTP GET / 200 [0.05, 127.0.0.1:55717][0m
+INFO 2024-06-24 14:31:52,030 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 14:31:52,814 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 14:31:52,829 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 14:31:52,858 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 14:31:52,858 base>views>main -SCH- Now:06/24/2024, 14:31:52
+INFO 2024-06-24 14:31:52,859 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 14:31:52,864 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-24 15:59:59 Local:2024-06-24 23:59:59
+INFO 2024-06-24 14:31:52,864 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 14:31:52,864 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 14:31:52 [Yes]
+INFO 2024-06-24 14:31:57,886 runserver>log_action [mHTTP GET /reports/ 200 [0.06, 127.0.0.1:55753][0m
+INFO 2024-06-24 14:32:02,686 runserver>log_action [32mHTTP GET /reports/ticket?branch=KB&startdate=2024-06-24T14%3A31%3A57&enddate=2024-06-24T14%3A31%3A57&ticketformats= 301 [0.03, 127.0.0.1:55753][0m
+INFO 2024-06-24 14:32:02,786 runserver>log_action [mHTTP GET /reports/ticket/?branch=KB&startdate=2024-06-24T14%3A31%3A57&enddate=2024-06-24T14%3A31%3A57&ticketformats= 200 [0.10, 127.0.0.1:55753][0m
+INFO 2024-06-24 14:32:02,812 runserver>log_action WebSocket HANDSHAKING /ws/progress/1913b93a_59c2_4e60_b304_5e829f5f6b81/ [127.0.0.1:55759]
+INFO 2024-06-24 14:32:02,966 runserver>log_action WebSocket DISCONNECT /ws/progress/1913b93a_59c2_4e60_b304_5e829f5f6b81/ [127.0.0.1:55759]
+INFO 2024-06-24 14:32:11,440 runserver>log_action [32mHTTP GET /reports/staff?branch=KB&startdate=2024-06-24T14%3A31%3A57&enddate=2024-06-24T14%3A31%3A57&users= 301 [0.02, 127.0.0.1:55753][0m
+ERROR 2024-06-24 14:32:11,474 log>log_response Internal Server Error: /reports/staff/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 2084, in Report_Staff_Result
+    auth_branchs , \
+ValueError: too many values to unpack (expected 9)
+ERROR 2024-06-24 14:32:11,479 runserver>log_action [35;1mHTTP GET /reports/staff/?branch=KB&startdate=2024-06-24T14%3A31%3A57&enddate=2024-06-24T14%3A31%3A57&users= 500 [0.04, 127.0.0.1:55753][0m
+INFO 2024-06-24 14:32:14,445 runserver>log_action [mHTTP GET /reports/ticket/?branch=KB&startdate=2024-06-24T14%3A31%3A57&enddate=2024-06-24T14%3A31%3A57&ticketformats= 200 [0.03, 127.0.0.1:55753][0m
+INFO 2024-06-24 14:32:14,471 runserver>log_action WebSocket HANDSHAKING /ws/progress/69f514ee_cf9e_4b26_87fd_c4fe732d73a4/ [127.0.0.1:55765]
+INFO 2024-06-24 14:32:14,975 runserver>log_action WebSocket DISCONNECT /ws/progress/69f514ee_cf9e_4b26_87fd_c4fe732d73a4/ [127.0.0.1:55765]
+INFO 2024-06-24 16:36:49,008 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:36:49,344 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:36:49,350 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 16:36:49,385 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:36:49,385 base>views>main -SCH- Now:06/24/2024, 16:36:49
+INFO 2024-06-24 16:36:49,385 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:36:49,391 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:36:49,391 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:36:49,391 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:36:49 [No]
+INFO 2024-06-24 16:37:08,196 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:37:08,219 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:37:08,219 base>views>main -SCH- Now:06/24/2024, 16:37:08
+INFO 2024-06-24 16:37:08,220 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:37:08,225 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:37:08,225 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:37:08,225 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:37:08 [No]
+INFO 2024-06-24 16:37:16,454 runserver>log_action [mHTTP GET /booking/KB/ 200 [0.05, 127.0.0.1:60593][0m
+INFO 2024-06-24 16:37:47,261 runserver>log_action [32mHTTP GET /reports/ticket/?branch=SW&startdate=2023-01-24T15%3A06%3A40&enddate=2023-05-24T15%3A06%3A40&ticketformats= 302 [0.01, 127.0.0.1:60593][0m
+INFO 2024-06-24 16:37:47,276 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:60593][0m
+INFO 2024-06-24 16:37:51,562 runserver>log_action [32mHTTP POST /login/ 302 [0.18, 127.0.0.1:60593][0m
+INFO 2024-06-24 16:37:51,582 runserver>log_action [mHTTP GET / 200 [0.02, 127.0.0.1:60593][0m
+INFO 2024-06-24 16:39:41,834 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.12, 127.0.0.1:60689][0m
+INFO 2024-06-24 16:39:41,872 runserver>log_action WebSocket HANDSHAKING /ws/progress/3caede9c_fe4b_457d_9d47_cd198053bbf0/ [127.0.0.1:60694]
+INFO 2024-06-24 16:39:42,648 runserver>log_action WebSocket DISCONNECT /ws/progress/3caede9c_fe4b_457d_9d47_cd198053bbf0/ [127.0.0.1:60694]
+INFO 2024-06-24 16:39:42,653 runserver>log_action WebSocket HANDSHAKING /ws/progress_process/3caede9c_fe4b_457d_9d47_cd198053bbf0/ [127.0.0.1:60695]
+INFO 2024-06-24 16:39:43,652 runserver>log_action WebSocket DISCONNECT /ws/progress_process/3caede9c_fe4b_457d_9d47_cd198053bbf0/ [127.0.0.1:60695]
+INFO 2024-06-24 16:40:45,604 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.04, 127.0.0.1:60769][0m
+INFO 2024-06-24 16:40:45,638 runserver>log_action WebSocket HANDSHAKING /ws/progress_process/4a30468d_0dca_4c45_bd68_084cc753ca2a/ [127.0.0.1:60773]
+INFO 2024-06-24 16:40:45,716 runserver>log_action WebSocket DISCONNECT /ws/progress_process/4a30468d_0dca_4c45_bd68_084cc753ca2a/ [127.0.0.1:60773]
+INFO 2024-06-24 16:43:19,052 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.05, 127.0.0.1:60891][0m
+INFO 2024-06-24 16:43:19,078 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/ec81189d_24f3_4ee8_a515_3d2e148c7493/ [127.0.0.1:60893]
+INFO 2024-06-24 16:43:19,086 base>consumers>connect connecting:progress_p_ec81189d_24f3_4ee8_a515_3d2e148c7493
+INFO 2024-06-24 16:43:19,090 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/ec81189d_24f3_4ee8_a515_3d2e148c7493/ [127.0.0.1:60893]
+INFO 2024-06-24 16:43:21,229 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/progress_process/ec81189d_24f3_4ee8_a515_3d2e148c7493/ [127.0.0.1:60893]
+INFO 2024-06-24 16:43:21,270 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.04, 127.0.0.1:60891][0m
+INFO 2024-06-24 16:43:21,292 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/3c87c5c2_9a1a_48aa_94ff_15dd87220055/ [127.0.0.1:60902]
+INFO 2024-06-24 16:43:21,303 base>consumers>connect connecting:progress_p_3c87c5c2_9a1a_48aa_94ff_15dd87220055
+INFO 2024-06-24 16:43:21,310 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/3c87c5c2_9a1a_48aa_94ff_15dd87220055/ [127.0.0.1:60902]
+INFO 2024-06-24 16:43:22,308 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/progress_process/3c87c5c2_9a1a_48aa_94ff_15dd87220055/ [127.0.0.1:60902]
+INFO 2024-06-24 16:43:22,339 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.03, 127.0.0.1:60891][0m
+INFO 2024-06-24 16:43:22,359 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/d19d343c_f1b4_47be_9a8a_2f4cfda994a2/ [127.0.0.1:60908]
+INFO 2024-06-24 16:43:22,365 base>consumers>connect connecting:progress_p_d19d343c_f1b4_47be_9a8a_2f4cfda994a2
+INFO 2024-06-24 16:43:22,369 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/d19d343c_f1b4_47be_9a8a_2f4cfda994a2/ [127.0.0.1:60908]
+INFO 2024-06-24 16:43:23,340 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/progress_process/d19d343c_f1b4_47be_9a8a_2f4cfda994a2/ [127.0.0.1:60908]
+INFO 2024-06-24 16:43:23,369 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.03, 127.0.0.1:60891][0m
+INFO 2024-06-24 16:43:23,386 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/b29db5a5_e098_419f_b43e_b7ed3e1cb050/ [127.0.0.1:60913]
+INFO 2024-06-24 16:43:23,391 base>consumers>connect connecting:progress_p_b29db5a5_e098_419f_b43e_b7ed3e1cb050
+INFO 2024-06-24 16:43:23,395 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/b29db5a5_e098_419f_b43e_b7ed3e1cb050/ [127.0.0.1:60913]
+INFO 2024-06-24 16:48:15,703 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 16:48:16,516 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:48:16,531 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 16:48:16,568 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:48:16,568 base>views>main -SCH- Now:06/24/2024, 16:48:16
+INFO 2024-06-24 16:48:16,569 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:48:16,575 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:48:16,575 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:48:16,575 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:48:16 [No]
+INFO 2024-06-24 16:48:20,833 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 16:48:21,352 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:48:21,359 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 16:48:29,716 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 16:48:30,271 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:48:30,278 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 16:48:30,338 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:48:30,338 base>views>main -SCH- Now:06/24/2024, 16:48:30
+INFO 2024-06-24 16:48:30,339 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:48:30,350 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:48:30,350 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:48:30,350 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:48:30 [No]
+INFO 2024-06-24 16:48:36,705 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 16:48:37,306 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:48:37,313 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 16:48:37,347 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:48:37,348 base>views>main -SCH- Now:06/24/2024, 16:48:37
+INFO 2024-06-24 16:48:37,349 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:48:37,354 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:48:37,354 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:48:37,354 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:48:37 [No]
+INFO 2024-06-24 16:48:38,649 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 16:48:39,079 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:48:39,086 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 16:48:45,315 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 16:48:45,921 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:48:45,929 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 16:48:45,959 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:48:45,959 base>views>main -SCH- Now:06/24/2024, 16:48:45
+INFO 2024-06-24 16:48:45,959 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:48:45,964 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:48:45,964 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:48:45,964 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:48:45 [No]
+INFO 2024-06-24 16:49:23,507 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.16, 127.0.0.1:61140][0m
+INFO 2024-06-24 16:49:23,549 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/4f722e48_202d_4aee_8999_6e6e4c81299f/ [127.0.0.1:61145]
+INFO 2024-06-24 16:49:23,557 base>consumers>connect connecting:progress_p_4f722e48_202d_4aee_8999_6e6e4c81299f
+INFO 2024-06-24 16:49:23,564 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/4f722e48_202d_4aee_8999_6e6e4c81299f/ [127.0.0.1:61145]
+INFO 2024-06-24 16:49:28,591 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/progress_process/4f722e48_202d_4aee_8999_6e6e4c81299f/ [127.0.0.1:61145]
+INFO 2024-06-24 16:49:28,625 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.03, 127.0.0.1:61140][0m
+INFO 2024-06-24 16:49:28,648 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/f2bffc96_09f3_42d0_917f_3164f0a36c4a/ [127.0.0.1:61155]
+INFO 2024-06-24 16:49:28,654 base>consumers>connect connecting:progress_p_f2bffc96_09f3_42d0_917f_3164f0a36c4a
+INFO 2024-06-24 16:49:28,659 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/f2bffc96_09f3_42d0_917f_3164f0a36c4a/ [127.0.0.1:61155]
+INFO 2024-06-24 16:50:17,318 runserver>log_action [32mHTTP GET /reports/details/?id=142 302 [0.01, 127.0.0.1:61177][0m
+INFO 2024-06-24 16:51:06,728 runserver>log_action [32mHTTP GET /reports/details/?id=142 302 [0.01, 127.0.0.1:61217][0m
+INFO 2024-06-24 16:51:06,746 runserver>log_action [32mHTTP GET /login/ 302 [0.02, 127.0.0.1:61217][0m
+INFO 2024-06-24 16:52:05,325 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/progress_process/f2bffc96_09f3_42d0_917f_3164f0a36c4a/ [127.0.0.1:61155]
+INFO 2024-06-24 16:52:05,404 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.04, 127.0.0.1:61217][0m
+INFO 2024-06-24 16:52:05,440 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/ddcc32db_04cb_4a50_a1d5_a053a8802187/ [127.0.0.1:61237]
+INFO 2024-06-24 16:52:05,443 base>consumers>connect connecting:progress_p_ddcc32db_04cb_4a50_a1d5_a053a8802187
+INFO 2024-06-24 16:52:05,448 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/ddcc32db_04cb_4a50_a1d5_a053a8802187/ [127.0.0.1:61237]
+INFO 2024-06-24 16:52:05,456 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/progress_process/ddcc32db_04cb_4a50_a1d5_a053a8802187/ [127.0.0.1:61237]
+ERROR 2024-06-24 16:52:05,515 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1608, in Report_Ticket_details_Result
+    return render(request, 'base/r-result.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 953, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/base.py", line 484, in parse
+    raise self.error(token, e)
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/base.py", line 482, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/template/base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '[2]' from 'row[2]'
+ERROR 2024-06-24 16:52:05,519 runserver>log_action [35;1mHTTP GET /reports/details/?id=142&result=ddcc32db_04cb_4a50_a1d5_a053a8802187 500 [0.06, 127.0.0.1:61217][0m
+WARNING 2024-06-24 16:52:05,612 log>log_response Not Found: /favicon.ico
+WARNING 2024-06-24 16:52:05,613 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.01, 127.0.0.1:61217][0m
+INFO 2024-06-24 16:53:42,954 runserver>log_action [mHTTP GET /reports/details/?id=142&result=ddcc32db_04cb_4a50_a1d5_a053a8802187 200 [0.04, 127.0.0.1:61322][0m
+INFO 2024-06-24 16:54:20,321 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 16:54:21,007 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:54:21,021 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 16:54:21,042 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:54:21,042 base>views>main -SCH- Now:06/24/2024, 16:54:21
+INFO 2024-06-24 16:54:21,042 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:54:21,047 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:54:21,047 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:54:21,047 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:54:21 [No]
+INFO 2024-06-24 16:54:26,338 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 16:54:26,994 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:54:27,004 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 16:54:27,022 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:54:27,022 base>views>main -SCH- Now:06/24/2024, 16:54:27
+INFO 2024-06-24 16:54:27,022 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:54:27,026 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:54:27,026 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:54:27,027 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:54:27 [No]
+INFO 2024-06-24 16:54:28,730 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/ddcc32db_04cb_4a50_a1d5_a053a8802187/ [127.0.0.1:61353]
+INFO 2024-06-24 16:54:28,772 base>consumers>connect connecting:progress_p_ddcc32db_04cb_4a50_a1d5_a053a8802187
+INFO 2024-06-24 16:54:28,781 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/ddcc32db_04cb_4a50_a1d5_a053a8802187/ [127.0.0.1:61353]
+INFO 2024-06-24 16:54:28,803 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/progress_process/ddcc32db_04cb_4a50_a1d5_a053a8802187/ [127.0.0.1:61353]
+INFO 2024-06-24 16:54:28,862 runserver>log_action [mHTTP GET /reports/details/?id=142&result=ddcc32db_04cb_4a50_a1d5_a053a8802187 200 [0.06, 127.0.0.1:61351][0m
+INFO 2024-06-24 16:54:45,516 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.06, 127.0.0.1:61351][0m
+INFO 2024-06-24 16:54:45,559 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/5024c7c2_7a33_4bdb_90b2_b6c71ef60695/ [127.0.0.1:61368]
+INFO 2024-06-24 16:54:45,576 base>consumers>connect connecting:progress_p_5024c7c2_7a33_4bdb_90b2_b6c71ef60695
+INFO 2024-06-24 16:54:45,588 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/5024c7c2_7a33_4bdb_90b2_b6c71ef60695/ [127.0.0.1:61368]
+INFO 2024-06-24 16:54:45,606 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/progress_process/5024c7c2_7a33_4bdb_90b2_b6c71ef60695/ [127.0.0.1:61368]
+INFO 2024-06-24 16:54:45,628 runserver>log_action [mHTTP GET /reports/details/?id=142&result=5024c7c2_7a33_4bdb_90b2_b6c71ef60695 200 [0.02, 127.0.0.1:61351][0m
+INFO 2024-06-24 16:54:55,226 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:54:55,247 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:54:55,247 base>views>main -SCH- Now:06/24/2024, 16:54:55
+INFO 2024-06-24 16:54:55,248 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:54:55,252 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:54:55,252 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:54:55,253 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:54:55 [No]
+INFO 2024-06-24 16:54:58,145 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/5024c7c2_7a33_4bdb_90b2_b6c71ef60695/ [127.0.0.1:61385]
+INFO 2024-06-24 16:54:58,156 base>consumers>connect connecting:progress_p_5024c7c2_7a33_4bdb_90b2_b6c71ef60695
+INFO 2024-06-24 16:54:58,162 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/5024c7c2_7a33_4bdb_90b2_b6c71ef60695/ [127.0.0.1:61385]
+INFO 2024-06-24 16:54:58,166 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/progress_process/5024c7c2_7a33_4bdb_90b2_b6c71ef60695/ [127.0.0.1:61385]
+INFO 2024-06-24 16:54:58,193 runserver>log_action [mHTTP GET /reports/details/?id=142&result=5024c7c2_7a33_4bdb_90b2_b6c71ef60695 200 [0.03, 127.0.0.1:61351][0m
+INFO 2024-06-24 16:55:04,032 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.03, 127.0.0.1:61351][0m
+INFO 2024-06-24 16:55:04,073 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/cf52f642_c74d_4323_9d9e_b9b9eb895791/ [127.0.0.1:61394]
+INFO 2024-06-24 16:55:04,083 base>consumers>connect connecting:progress_p_cf52f642_c74d_4323_9d9e_b9b9eb895791
+INFO 2024-06-24 16:55:04,094 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/cf52f642_c74d_4323_9d9e_b9b9eb895791/ [127.0.0.1:61394]
+INFO 2024-06-24 16:55:04,120 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/progress_process/cf52f642_c74d_4323_9d9e_b9b9eb895791/ [127.0.0.1:61394]
+INFO 2024-06-24 16:55:04,153 runserver>log_action [mHTTP GET /reports/details/?id=142&result=cf52f642_c74d_4323_9d9e_b9b9eb895791 200 [0.02, 127.0.0.1:61351][0m
+INFO 2024-06-24 16:55:33,733 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 16:55:34,467 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:55:34,512 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 16:55:36,616 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 16:55:37,086 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:55:37,094 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 16:55:37,113 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:55:37,113 base>views>main -SCH- Now:06/24/2024, 16:55:37
+INFO 2024-06-24 16:55:37,113 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:55:37,118 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:55:37,118 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:55:37,118 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:55:37 [No]
+INFO 2024-06-24 16:55:40,407 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 16:55:40,901 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:55:40,907 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 16:55:40,923 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:55:40,923 base>views>main -SCH- Now:06/24/2024, 16:55:40
+INFO 2024-06-24 16:55:40,924 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:55:40,928 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:55:40,928 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:55:40,928 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:55:40 [No]
+INFO 2024-06-24 16:56:00,022 runserver>log_action [mHTTP GET /reports/details/?id=142&result=cf52f642_c74d_4323_9d9e_b9b9eb895791 200 [0.09, 127.0.0.1:61423][0m
+INFO 2024-06-24 16:56:08,841 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:56:08,862 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:56:08,863 base>views>main -SCH- Now:06/24/2024, 16:56:08
+INFO 2024-06-24 16:56:08,863 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:56:08,868 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:56:08,868 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:56:08,868 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:56:08 [No]
+INFO 2024-06-24 16:56:15,898 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.06, 127.0.0.1:61423][0m
+INFO 2024-06-24 16:56:15,930 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/52ddddc2_08c1_4a65_90e0_d9e608e7c53c/ [127.0.0.1:61464]
+INFO 2024-06-24 16:56:15,935 base>consumers>connect connecting:progress_p_52ddddc2_08c1_4a65_90e0_d9e608e7c53c
+INFO 2024-06-24 16:56:15,955 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/52ddddc2_08c1_4a65_90e0_d9e608e7c53c/ [127.0.0.1:61464]
+INFO 2024-06-24 16:56:15,963 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/progress_process/52ddddc2_08c1_4a65_90e0_d9e608e7c53c/ [127.0.0.1:61464]
+INFO 2024-06-24 16:56:15,981 runserver>log_action [mHTTP GET /reports/details/?id=142&result=52ddddc2_08c1_4a65_90e0_d9e608e7c53c 200 [0.01, 127.0.0.1:61423][0m
+INFO 2024-06-24 16:57:08,395 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 16:57:09,235 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:57:09,254 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 16:57:09,275 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:57:09,275 base>views>main -SCH- Now:06/24/2024, 16:57:09
+INFO 2024-06-24 16:57:09,276 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:57:09,280 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:57:09,280 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:57:09,280 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:57:09 [No]
+INFO 2024-06-24 16:57:20,839 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/base/views.py changed, reloading.
+INFO 2024-06-24 16:57:21,610 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:57:21,621 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 16:57:21,651 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:57:21,651 base>views>main -SCH- Now:06/24/2024, 16:57:21
+INFO 2024-06-24 16:57:21,651 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:57:21,656 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:57:21,656 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:57:21,656 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:57:21 [No]
+INFO 2024-06-24 16:57:25,696 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 16:57:25,710 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 16:57:25,710 base>views>main -SCH- Now:06/24/2024, 16:57:25
+INFO 2024-06-24 16:57:25,711 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 16:57:25,716 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 16:57:25,716 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 16:57:25,716 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 16:57:25 [No]
+INFO 2024-06-24 16:57:36,317 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.11, 127.0.0.1:61528][0m
+INFO 2024-06-24 16:57:36,395 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/3d43e1a8_6d72_49eb_8ebb_32d7e9ba7692/ [127.0.0.1:61536]
+INFO 2024-06-24 16:57:36,427 base>consumers>connect connecting:progress_p_3d43e1a8_6d72_49eb_8ebb_32d7e9ba7692
+INFO 2024-06-24 16:57:36,433 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/3d43e1a8_6d72_49eb_8ebb_32d7e9ba7692/ [127.0.0.1:61536]
+INFO 2024-06-24 16:57:37,444 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/progress_process/3d43e1a8_6d72_49eb_8ebb_32d7e9ba7692/ [127.0.0.1:61536]
+ERROR 2024-06-24 16:57:37,481 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1570, in Report_Ticket_details_Result
+    status, report_table, count = task.get()
+                                  ^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/celery/result.py", line 251, in get
+    return self.backend.wait_for_pending(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/celery/backends/asynchronous.py", line 223, in wait_for_pending
+    return result.maybe_throw(callback=callback, propagate=propagate)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/celery/result.py", line 365, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/celery/result.py", line 358, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/vine/promises.py", line 235, in throw
+    reraise(type(exc), exc, tb)
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/vine/utils.py", line 27, in reraise
+    raise value
+AttributeError: 'dict' object has no attribute 'logtime'
+ERROR 2024-06-24 16:57:37,484 runserver>log_action [35;1mHTTP GET /reports/details/?id=142&result=3d43e1a8_6d72_49eb_8ebb_32d7e9ba7692 500 [0.03, 127.0.0.1:61528][0m
+INFO 2024-06-24 17:00:24,691 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:00:25,488 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:00:25,502 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:00:25,521 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:00:25,521 base>views>main -SCH- Now:06/24/2024, 17:00:25
+INFO 2024-06-24 17:00:25,522 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:00:25,527 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:00:25,527 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:00:25,527 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:00:25 [No]
+INFO 2024-06-24 17:00:28,795 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:00:29,305 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:00:29,312 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:00:29,327 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:00:29,327 base>views>main -SCH- Now:06/24/2024, 17:00:29
+INFO 2024-06-24 17:00:29,328 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:00:29,332 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:00:29,332 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:00:29,332 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:00:29 [No]
+INFO 2024-06-24 17:01:13,287 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:01:14,149 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:01:14,165 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:01:15,318 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:01:15,772 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:01:15,779 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:01:15,795 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:01:15,795 base>views>main -SCH- Now:06/24/2024, 17:01:15
+INFO 2024-06-24 17:01:15,795 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:01:15,799 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:01:15,799 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:01:15,799 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:01:15 [No]
+INFO 2024-06-24 17:02:04,648 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:02:05,359 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:02:05,370 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:02:05,391 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:02:05,392 base>views>main -SCH- Now:06/24/2024, 17:02:05
+INFO 2024-06-24 17:02:05,392 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:02:05,398 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:02:05,398 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:02:05,398 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:02:05 [No]
+INFO 2024-06-24 17:02:06,617 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:02:07,172 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:02:07,182 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:02:10,344 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:02:10,859 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:02:10,866 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:02:15,064 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:02:15,508 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:02:15,514 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:02:15,533 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:02:15,533 base>views>main -SCH- Now:06/24/2024, 17:02:15
+INFO 2024-06-24 17:02:15,533 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:02:15,537 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:02:15,537 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:02:15,537 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:02:15 [No]
+INFO 2024-06-24 17:02:28,086 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:02:28,774 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:02:28,791 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:02:28,816 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:02:28,816 base>views>main -SCH- Now:06/24/2024, 17:02:28
+INFO 2024-06-24 17:02:28,817 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:02:28,822 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:02:28,823 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:02:28,823 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:02:28 [No]
+INFO 2024-06-24 17:02:31,031 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:02:31,523 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:02:31,531 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:02:31,547 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:02:31,547 base>views>main -SCH- Now:06/24/2024, 17:02:31
+INFO 2024-06-24 17:02:31,548 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:02:31,553 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:02:31,553 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:02:31,553 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:02:31 [No]
+INFO 2024-06-24 17:02:32,774 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:02:33,208 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:02:33,215 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:02:33,230 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:02:33,231 base>views>main -SCH- Now:06/24/2024, 17:02:33
+INFO 2024-06-24 17:02:33,231 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:02:33,235 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:02:33,236 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:02:33,236 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:02:33 [No]
+INFO 2024-06-24 17:02:39,590 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:02:40,101 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:02:40,170 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:02:41,303 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:02:41,765 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:02:41,772 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:02:46,018 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:02:46,489 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:02:46,496 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:02:49,623 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:02:50,126 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:02:50,134 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:02:50,153 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:02:50,154 base>views>main -SCH- Now:06/24/2024, 17:02:50
+INFO 2024-06-24 17:02:50,154 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:02:50,159 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:02:50,159 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:02:50,159 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:02:50 [No]
+INFO 2024-06-24 17:02:52,387 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:02:52,929 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:02:52,936 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:02:52,955 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:02:52,955 base>views>main -SCH- Now:06/24/2024, 17:02:52
+INFO 2024-06-24 17:02:52,955 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:02:52,960 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:02:52,960 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:02:52,960 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:02:52 [No]
+INFO 2024-06-24 17:02:56,195 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:02:56,689 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:02:56,696 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:02:56,712 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:02:56,712 base>views>main -SCH- Now:06/24/2024, 17:02:56
+INFO 2024-06-24 17:02:56,713 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:02:56,717 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:02:56,717 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:02:56,717 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:02:56 [No]
+INFO 2024-06-24 17:03:01,003 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:03:01,514 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:03:01,521 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:03:01,537 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:03:01,537 base>views>main -SCH- Now:06/24/2024, 17:03:01
+INFO 2024-06-24 17:03:01,537 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:03:01,542 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:03:01,542 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:03:01,542 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:03:01 [No]
+INFO 2024-06-24 17:03:41,162 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:03:41,236 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:03:41,236 base>views>main -SCH- Now:06/24/2024, 17:03:41
+INFO 2024-06-24 17:03:41,236 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:03:41,242 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:03:41,242 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:03:41,242 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:03:41 [No]
+INFO 2024-06-24 17:03:50,253 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.13, 127.0.0.1:62167][0m
+INFO 2024-06-24 17:03:50,321 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/76125277_c89e_4475_9f07_ff5d111f7aab/ [127.0.0.1:62174]
+INFO 2024-06-24 17:03:50,328 base>consumers>connect connecting:progress_p_76125277_c89e_4475_9f07_ff5d111f7aab
+INFO 2024-06-24 17:03:50,335 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/76125277_c89e_4475_9f07_ff5d111f7aab/ [127.0.0.1:62174]
+INFO 2024-06-24 17:03:51,348 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/progress_process/76125277_c89e_4475_9f07_ff5d111f7aab/ [127.0.0.1:62174]
+ERROR 2024-06-24 17:03:51,397 log>log_response Internal Server Error: /reports/details/
+Traceback (most recent call last):
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 534, in thread_handler
+    raise exc_info[1]
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/django/core/handlers/base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 479, in __call__
+    ret: _R = await loop.run_in_executor(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/asgiref/sync.py", line 538, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/decorators.py", line 34, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/base/views.py", line 1570, in Report_Ticket_details_Result
+    status, report_table, count = task.get()
+                                  ^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/celery/result.py", line 251, in get
+    return self.backend.wait_for_pending(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/celery/backends/asynchronous.py", line 223, in wait_for_pending
+    return result.maybe_throw(callback=callback, propagate=propagate)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/celery/result.py", line 365, in maybe_throw
+    self.throw(value, self._to_remote_traceback(tb))
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/celery/result.py", line 358, in throw
+    self.on_ready.throw(*args, **kwargs)
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/vine/promises.py", line 235, in throw
+    reraise(type(exc), exc, tb)
+  File "/Users/tim/projects/aqs8.2/aqs8server/env/lib/python3.11/site-packages/vine/utils.py", line 27, in reraise
+    raise value
+AttributeError: 'report_ticketdetails' object has no attribute 'progress'
+ERROR 2024-06-24 17:03:51,399 runserver>log_action [35;1mHTTP GET /reports/details/?id=142&result=76125277_c89e_4475_9f07_ff5d111f7aab 500 [0.04, 127.0.0.1:62167][0m
+INFO 2024-06-24 17:11:45,249 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:11:46,103 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:11:46,118 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:11:46,139 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:11:46,139 base>views>main -SCH- Now:06/24/2024, 17:11:46
+INFO 2024-06-24 17:11:46,140 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:11:46,145 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:11:46,145 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:11:46,145 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:11:46 [No]
+INFO 2024-06-24 17:11:55,667 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:11:56,520 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:11:56,531 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:11:56,619 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:11:56,619 base>views>main -SCH- Now:06/24/2024, 17:11:56
+INFO 2024-06-24 17:11:56,620 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:11:56,625 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:11:56,626 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:11:56,626 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:11:56 [No]
+INFO 2024-06-24 17:11:59,902 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:12:00,362 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:12:00,368 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:12:00,385 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:12:00,385 base>views>main -SCH- Now:06/24/2024, 17:12:00
+INFO 2024-06-24 17:12:00,385 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:12:00,389 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:12:00,389 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:12:00,389 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:12:00 [No]
+INFO 2024-06-24 17:12:02,594 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:12:03,046 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:12:03,052 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:12:03,067 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:12:03,067 base>views>main -SCH- Now:06/24/2024, 17:12:03
+INFO 2024-06-24 17:12:03,068 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:12:03,072 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:12:03,072 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:12:03,072 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:12:03 [No]
+INFO 2024-06-24 17:12:12,467 autoreload>trigger_reload /Users/tim/projects/aqs8.2/aqs8server/aqs/tasks.py changed, reloading.
+INFO 2024-06-24 17:12:13,055 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:12:13,067 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2024-06-24 17:12:13,085 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:12:13,086 base>views>main -SCH- Now:06/24/2024, 17:12:13
+INFO 2024-06-24 17:12:13,086 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:12:13,090 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:12:13,090 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:12:13,090 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:12:13 [No]
+INFO 2024-06-24 17:12:21,005 base>apps>ready    *** Queuing System Started ***
+INFO 2024-06-24 17:12:21,026 base>views>main -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2024-06-24 17:12:21,026 base>views>main -SCH- Now:06/24/2024, 17:12:21
+INFO 2024-06-24 17:12:21,027 base>views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2024-06-24 17:12:21,031 base>views>sch_shutdown  -SCH- Next reset [KB]: 2024-06-25 15:59:59 Local:2024-06-25 23:59:59
+INFO 2024-06-24 17:12:21,032 base>views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2024-06-24 17:12:21,032 base>views>sch_shutdown    -SCH- 2024-06-24 15:59:59 > 2024-06-24 17:12:21 [No]
+INFO 2024-06-24 17:12:28,027 runserver>log_action [mHTTP GET /reports/details/?id=142 200 [0.14, 127.0.0.1:63180][0m
+INFO 2024-06-24 17:12:28,079 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/progress_process/863f3454_fd75_4089_8d67_604726ed5af5/ [127.0.0.1:63188]
+INFO 2024-06-24 17:12:28,089 base>consumers>connect connecting:progress_p_863f3454_fd75_4089_8d67_604726ed5af5
+INFO 2024-06-24 17:12:28,105 runserver>log_action WebSocket CONNECT /ws/aqs_app/progress_process/863f3454_fd75_4089_8d67_604726ed5af5/ [127.0.0.1:63188]
+INFO 2024-06-24 17:12:33,142 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/progress_process/863f3454_fd75_4089_8d67_604726ed5af5/ [127.0.0.1:63188]
+INFO 2024-06-24 17:12:33,181 runserver>log_action [mHTTP GET /reports/details/?id=142&result=863f3454_fd75_4089_8d67_604726ed5af5 200 [0.03, 127.0.0.1:63180][0m

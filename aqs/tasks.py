@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from django.utils import timezone
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 import pickle
-from base.models import TicketData, TicketFormat, Ticket, Branch, UserStatusLog
+from base.models import TicketData, TicketFormat, Ticket, Branch, UserStatusLog, TicketLog
 from booking.models import SMS_Log
 from django.contrib.auth.models import User
 from django.db.models import Q
@@ -323,6 +323,103 @@ def export_raw(quesrystr, reporttitle1, reporttitle2, reporttitle3, reporttitle4
     return current_task.status
 
 @shared_task
+def export_report(quesrystr, report_text, bcode , filename):
+    from celery import current_task
+
+    report_str = ''
+    # Get my task ID
+    my_id = current_task.request.id
+    logger.info('Exporting report({filename}) task id: {my_id}')
+
+    # Get settings.py STATIC_ROOT
+    static_root = None
+    if settings.STATIC_ROOT != None:
+        # This is for production
+        static_root = str(settings.STATIC_ROOT)
+    if static_root == None:
+        # This is for development
+        static_root = str(settings.STATICFILES_DIRS[0])
+    # logger.info(f'Static Root: {static_root}')
+
+    current_task.status = 'PROGRESS'
+
+    per = -1
+
+    # Restore the queryset convert table (list) to DataManager[TicketData]
+    # table = TicketData.objects.all() 
+    # table.query = pickle.loads(quesrystr)
+
+    # table convert to csv
+    # response = HttpResponse(content_type='text/csv')
+    # response['Content-Disposition'] = 'attachment; filename="raw.csv"'
+    # writer = csv.writer(response)                
+    # add table header
+    # writer.writerow(['Ticket', 'Branch', 'Counter Type', 'Step', 'Start Time', 'Start by', 'Call Time', 'Call by', 'Process Time', 'Process by', 'Done Time', 'Done by', 'No Show Time', 'No Show by', 'Void Time', 'Void by', 'Waiting Time (s)', 'Walking time (s)', 'Process time (s)', 'Total time (s)'])
+    
+    # get branch code
+    #bcode = table[0].branch.bcode
+    # get django static path
+    save_path = static_root + '/download/' + bcode + '/' + filename
+    logger.info(f'Full path of save file: {save_path}')
+
+    # create new folder if not exist
+    # Directory 
+    newdir = 'download'               
+    # Path 
+    path = os.path.join(static_root, newdir) 
+    try:
+        os.mkdir(path)
+    except:
+        # logger.error('Error new "download" folder')
+        pass
+
+    # Directory 
+    newdir = bcode           
+    # Path 
+    path = os.path.join(static_root + '/download/', newdir) 
+    try:
+        os.mkdir(path)
+    except:
+        # logger.error('Error new "bcode" folder')
+        pass
+
+    
+
+    i = 0
+    for row in quesrystr:
+        i += 1
+        newper = int(i/ len(quesrystr) * 100)
+        if newper != per:
+            per = newper
+            # Set the progress in the task's state (for WebSocket consumer)
+            current_task.update_state(state='PROGRESS', meta={'progress': per})
+            # logger.info(f'Exporting raw data {per}%')
+
+        line_str = ''
+        for item in row:
+            line_str += str(item) + ','
+        report_str += line_str + '\n'
+
+    # save report_str to save_path    
+    with open(save_path, 'w') as f:
+        # add report title
+        f.write(report_text + '\n')
+
+        # add table header
+        # writer.writerow(['Ticket', 'Branch', 'Counter Type', 'Step', 'Start Time', 'Start by', 'Call Time', 'Call by', 'Process Time', 'Process by', 'Done Time', 'Done by', 'No Show Time', 'No Show by', 'Void Time', 'Void by', 'Waiting Time (s)', 'Walking time (s)', 'Process time (s)', 'Total time (s)']                
+        f.write(report_str)
+    f.close()
+
+    # with open(fstatic_path'static/download/{row.branch.bcode}/raw.csv', 'w') as f:
+    
+    
+    current_task.status = 'SUCCESS'
+
+
+
+    return current_task.status
+
+@shared_task
 def report_ticket(branch_id, ticketformat_id, startdate, enddate):
     from celery import current_task
     # Get my task ID
@@ -551,3 +648,76 @@ def report_staff(selected_user_id, querystr_auth_userlist, startdate, enddate):
     # print('report_table',current_task.table )
 
     return  current_task.status, current_task.table
+
+
+@shared_task
+def report_ticketdetails(ticket_id,  ):
+    from celery import current_task
+    report_table = []
+    error = ''
+
+    # Get my task ID
+    my_id = current_task.request.id
+    
+    current_task.status = 'PROGRESS'
+    current_task.table = []
+    count = 0
+    per = -1
+    # Restore the queryset convert table (list) to DataManager[TicketData]
+    # auth_userlist = User.objects.all() 
+    # auth_userlist.query = pickle.loads(querystr_auth_userlist)
+
+    if error == '' :
+        try:
+            ticket = Ticket.objects.get(pk=ticket_id)
+            print(ticket)
+        except:
+            error = 'Ticket not found'
+
+    per = 0
+    current_task.update_state(state='PROGRESS', meta={'progress': per})
+
+    if error == '' :
+        table = None
+        try:
+            table = TicketLog.objects.filter(ticket=ticket).values('ticket','logtime','logtext','user', 'app','version').order_by('logtime')
+            print(table)
+        except:
+            pass
+        
+        irow = 0
+        for row in table:
+            # for test
+            time.sleep(1)
+
+
+            logtime = funUTCtoLocal(row['logtime'], ticket.branch.timezone).strftime('%Y-%m-%d %H:%M:%S')
+            report_table.append([row['ticket'], logtime, row['logtext'], row['app'], row['version']])
+            
+            irow += 1
+            newper = int(irow/ len(table) * 100)
+            if per != newper:
+                current_task.update_state(state='PROGRESS', meta={'progress': newper})
+                per = newper
+        per = 100
+        current_task.update_state(state='PROGRESS', meta={'progress': per})
+
+        # convert table to list (current_task.table)
+        report_table = list(table)
+        header = ['Ticket', 'Log Time', 'Details', 'User', 'App', 'Version']
+        # add header to the first row of report_table
+        report_table.insert(0, header)
+        
+        current_task.table = report_table
+        current_task.status = 'SUCCESS'
+
+        # print('report_table',current_task.table )
+        count = 0
+        if error == '':
+            if table != None:
+                count = table.count()
+    
+
+    print('report_table',current_task.table )
+
+    return  current_task.status, current_task.table, count

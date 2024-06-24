@@ -48,6 +48,7 @@ urlpatterns = [
     path('reports/raw/', views.Report_RAW_Result , name='reportraw'),
     path('reports/ticket/', views.Report_Ticket_Result , name='reportticket'),
     path('reports/staff/', views.Report_Staff_Result , name='reportstaff'),
+    path('reports/details/', views.Report_Ticket_details_Result , name='reportdetails'),
 
     # http://127.0.0.1:8000/webtv/KB/Reception/
     path('webtv/<str:bcode>/<str:ct>/', views.webtv ),

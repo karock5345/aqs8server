@@ -19,5 +19,6 @@ websocket_urlpatterns = [
     re_path(r'ws/{}/cs/(?P<bcode>\w+)/(?P<pk>\w+)/$'.format(APP_NAME), consumers.CounterStatusConsumer.as_asgi()),
     re_path(r'ws/{}/flashlight/(?P<bcode>\w+)/$'.format(APP_NAME), consumers.FlashLightConsumer.as_asgi()),
     re_path(r'ws/{}/disp/(?P<bcode>\w+)/(?P<ct>\w+)/$'.format(APP_NAME), consumers.DispPanelConsumer.as_asgi()),
-    re_path(r'ws/{}/progress/(?P<task_id>\w+)/$'.format(APP_NAME), consumers.ReportRaw_ProgressConsumer.as_asgi()),    
+    re_path(r'ws/{}/progress/(?P<task_id>\w+)/$'.format(APP_NAME), consumers.ReportRaw_ProgressConsumer.as_asgi()),
+    re_path(r'ws/{}/progress_process/(?P<task_id>\w+)/$'.format(APP_NAME), consumers.Report_ProgressProcessConsumer.as_asgi()),    
 ]
