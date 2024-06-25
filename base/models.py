@@ -1,6 +1,7 @@
 import datetime
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.functions import Cast
 
 # Create your models here.
 
@@ -558,6 +559,7 @@ class CounterStatus(models.Model):
     logintime = models.DateTimeField(null=True, blank=True)
     lastactive = models.DateTimeField(null=True, blank=True)
     flashid = models.IntegerField(null=True, blank=True, default=1)
+
 
 class CounterLoginLog(models.Model) :
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True) 

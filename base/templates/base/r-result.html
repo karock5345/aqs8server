@@ -8,11 +8,12 @@
     <div>
         <!-- <button type="submit" name="action" value="pdf" class="btn btn--main">Export to PDF</button>  -->
         <button type="submit" name="action" value="excel" class="btn btn--main">Export to Excel</button> 
-        <div><label style="white-space: pre-wrap">{{result}}<br></label></div>
+        <div><label style="white-space: pre-wrap">{{text}}<br></label></div>
     </div>
 </form>
 
-{% if table.object_list.count > 0 %}
+
+{% if table.paginator.count > 0 %}
 <!-- Pagination links -->
 <div class="pagination">
     {% if table.has_previous %}
@@ -38,7 +39,7 @@
 
     {% if table.has_next %}
         <div class="lastcontainer" >
-            <a class="lasttext" href="{{ request.get_full_path }}&page={{ table.next_page_number }}">next &raquo;</a>
+            <a class="lasttext" href="{{ request.get_full_path }}&page={{ table.paginator.next_page_number }}">next &raquo;</a>
         </div>
         <div class="lastcontainer" >
             <a class="lasttext" href="{{ request.get_full_path }}&page={{ table.paginator.num_pages }}">last &raquo;&raquo;</a>
@@ -51,20 +52,24 @@
         <thead>
             <tr>
                 <th>Ticket</th>
-                <th>Type</th>
-                <th>No.</th>
-                <th>Branch</th>
-                <th>Counter Type</th>
-                <th>Step</th>
+                <th>Log Time</th>
+                <th>Log Text</th>
+                <th>User</th>
+                <th>App</th>
+                <th>Version</th>
                
             </tr>
         </thead>
         <tbody>
+
+        
+         
         {% for row in table.object_list %}
         <tr>
+      
             <!-- for loop in row -->
-             {% for item in row %}
-                <td>{{ item }}</td>
+            {% for key, value in row.items %}
+                <td>{{ value }}</td>
             {% endfor %}
            
         </tr>

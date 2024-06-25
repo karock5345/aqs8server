@@ -1569,9 +1569,9 @@ def Report_Ticket_details_Result(request):
             task = AsyncResult(task_id, app=report_ticketdetails)
             status, report_table, count = task.get()
 
-            print ('status:', status)
-            print ('report_table:', report_table)
-            print ('count:', count)
+            # print ('status:', status)
+            # print ('report_table:', report_table)
+            # print ('count:', count)
 
             if request.method != 'POST':
                 localtimezone = pytz.timezone(branch.timezone)
@@ -1585,11 +1585,13 @@ def Report_Ticket_details_Result(request):
                 report_line6 = 'Total records: ' + str(count)
                 report_text = report_line1 + '\n' + report_line2 + '\n' + report_line3 + '\n' + report_line4 + '\n' + report_line5 + '\n' + report_line6
 
+
                 # Pagination
                 table100 = None
                 page = request.GET.get('page') if request.GET.get('page') != None else '1'
                 page = int(page)
                 per_page = 100  # Number of items per page
+
 
                 paginator = Paginator(report_table, per_page)
                 try:
@@ -2369,9 +2371,10 @@ def SuperVisorView(request, pk):
         t = TicketTemp.objects.filter( Q(branch=branch) & Q(locked=False) & Q(status='waiting') & Q(countertype=ct)).order_by('tickettime')
         qlists.append(t)
 
-        cs = CounterStatus.objects.filter(Q(countertype=ct)).order_by('countertype', 'counternumber',)
+        cs = CounterStatus.objects.filter(Q(countertype=ct)).order_by('countertype', ) \
+        .extra(select={'casted_object_id': 'CAST(counternumber AS INTEGER)'}).extra(order_by = ['casted_object_id'])
         counterstatus.append(cs)
-        
+
     # qlists[0] = Ticket.objects.filter( Q(branch=branch) & Q(locked=False) & Q(status='waiting') & Q(countertype=countertypes[0]))
     # qlists[1] = Ticket.objects.filter( Q(branch=branch) & Q(locked=False) & Q(status='waiting') & Q(countertype=countertypes[1]))
     localtimezone = pytz.timezone(branch.timezone)

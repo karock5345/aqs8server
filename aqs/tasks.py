@@ -670,7 +670,6 @@ def report_ticketdetails(ticket_id,  ):
     if error == '' :
         try:
             ticket = Ticket.objects.get(pk=ticket_id)
-            print(ticket)
         except:
             error = 'Ticket not found'
 
@@ -680,19 +679,25 @@ def report_ticketdetails(ticket_id,  ):
     if error == '' :
         table = None
         try:
+            # table = TicketLog.objects.filter(ticket=ticket).values('id').order_by('logtime')
             table = TicketLog.objects.filter(ticket=ticket).values('ticket','logtime','logtext','user', 'app','version').order_by('logtime')
-            print(table)
+
         except:
             pass
         
         irow = 0
         for row in table:
             # for test
-            time.sleep(1)
-
+            # time.sleep(0.3)
 
             logtime = funUTCtoLocal(row['logtime'], ticket.branch.timezone).strftime('%Y-%m-%d %H:%M:%S')
-            report_table.append([row['ticket'], logtime, row['logtext'], row['app'], row['version']])
+            tno = ticket.tickettype + ticket.ticketnumber
+            user = User.objects.get(pk=row['user'])
+            row['user'] = user.first_name + ' ' + user.last_name + ' (' + user.username + ')'
+            
+            # for i in range(0,100):
+            report_table.append([tno, logtime, row['logtext'], row['user'], row['app'], row['version']])
+            # report_table.append(['ticket':row['ticket'] , logtime, row['logtext'], row['app'], row['version']])
             
             irow += 1
             newper = int(irow/ len(table) * 100)
@@ -703,10 +708,10 @@ def report_ticketdetails(ticket_id,  ):
         current_task.update_state(state='PROGRESS', meta={'progress': per})
 
         # convert table to list (current_task.table)
-        report_table = list(table)
-        header = ['Ticket', 'Log Time', 'Details', 'User', 'App', 'Version']
+        # report_table = list(table)
+        # header = {'Ticket', 'Log Time', 'Details', 'User', 'App', 'Version'}
         # add header to the first row of report_table
-        report_table.insert(0, header)
+        # report_table.insert(0, header)
         
         current_task.table = report_table
         current_task.status = 'SUCCESS'
@@ -715,9 +720,8 @@ def report_ticketdetails(ticket_id,  ):
         count = 0
         if error == '':
             if table != None:
-                count = table.count()
+                count = table.count() 
     
-
-    print('report_table',current_task.table )
+    print('report_table',current_task.table)
 
     return  current_task.status, current_task.table, count
