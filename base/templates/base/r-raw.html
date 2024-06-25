@@ -17,10 +17,10 @@
 <div class="pagination">
     {% if table.has_previous %}
         <div class="lastcontainer" >
-            <a class="lasttext" href="{{ request.get_full_path }}&page=1">&laquo;&laquo; first</a>
+            <a class="lasttext" href="{{ request.path }}?id={{id}}&result={{taskid}}&page=1">&laquo;&laquo; first</a>
         </div>
         <div class="lastcontainer" >
-            <a class="lasttext" href="{{ request.get_full_path }}&page={{ table.previous_page_number }}">&laquo; previous</a>
+            <a class="lasttext" href="{{ request.path }}?id={{id}}&result={{taskid}}&page={{ table.previous_page_number }}">&laquo; previous</a>
         </div>
     {% endif %}
 
@@ -31,17 +31,17 @@
             </div>
         {% else %}
             <div class="pagenumcontainer" >
-                <a class="pagenum" href="{{ request.get_full_path }}&page={{ num }}">{{ num }}</a>
+                <a class="pagenum" href="{{ request.path }}?id={{id}}&result={{taskid}}&page={{ num }}">{{ num }}</a>
             </div>
         {% endif %}
     {% endfor %}
 
     {% if table.has_next %}
         <div class="lastcontainer" >
-            <a class="lasttext" href="{{ request.get_full_path }}&page={{ table.next_page_number }}">next &raquo;</a>
+            <a class="lasttext" href="{{ request.path }}?id={{id}}&result={{taskid}}&page={{ table.next_page_number }}">next &raquo;</a>
         </div>
         <div class="lastcontainer" >
-            <a class="lasttext" href="{{ request.get_full_path }}&page={{ table.paginator.num_pages }}">last &raquo;&raquo;</a>
+            <a class="lasttext" href="{{ request.path }}?id={{id}}&result={{taskid}}&page={{ table.paginator.num_pages }}">last &raquo;&raquo;</a>
         </div>
     {% endif %}
 </div>
@@ -76,32 +76,30 @@
         </thead>
         <tbody>
         {% for row in table.object_list %}
-        <tr>
-            <td>{{ row.ticket.tickettype }}{{ row.ticket.ticketnumber }}</td>
-            <td>{{ row.ticket.tickettype }}</td>
-            <td>{{ row.ticket.ticketnumber }}</td>
-            <td>{{ row.branch.bcode }}</td>
-            <td>{{ row.countertype.name }}</td>
-            <td>{{ row.step }}</td>
-            <td>{{ row.starttime|timezone:localtimezone }}</td>
-            <td>{{ row.startuser }}</td>
-            <td>{{ row.calltime|timezone:localtimezone }}</td>
-            <td>{{ row.calluser }}</td>
-            <td>{{ row.processtime|timezone:localtimezone }}</td>
-            <td>{{ row.processuser }}</td>
-            <td>{{ row.donetime|timezone:localtimezone }}</td>
-            <td>{{ row.doneuser }}</td>
-            <td>{{ row.misstime|timezone:localtimezone }}</td>
-            <td>{{ row.missuser }}</td>
-            <td>{{ row.voidtime|timezone:localtimezone }}</td>
-            <td>{{ row.voiduser }}</td>
-            <td>{{ row.waitingperiod }}</td>
-            <td>{{ row.walkingperiod }}</td>
-            <td>{{ row.processingperiod }}</td>
-            <td>{{ row.totalperiod }}</td>
-        </tr>
-
-
+            <tr>
+                <td><a href="{% url 'reportdetails' %}?id={{row.ticket.pk}}" target ="_blank">{{ row.ticket.tickettype }}{{ row.ticket.ticketnumber }}</a></td>
+                <td>{{ row.ticket.tickettype }}</td>
+                <td>{{ row.ticket.ticketnumber }}</td>
+                <td>{{ row.branch.bcode }}</td>
+                <td>{{ row.countertype.name }}</td>
+                <td>{{ row.step }}</td>
+                <td>{{ row.starttime|timezone:localtimezone }}</td>
+                <td>{{ row.startuser }}</td>
+                <td>{{ row.calltime|timezone:localtimezone }}</td>
+                <td>{{ row.calluser }}</td>
+                <td>{{ row.processtime|timezone:localtimezone }}</td>
+                <td>{{ row.processuser }}</td>
+                <td>{{ row.donetime|timezone:localtimezone }}</td>
+                <td>{{ row.doneuser }}</td>
+                <td>{{ row.misstime|timezone:localtimezone }}</td>
+                <td>{{ row.missuser }}</td>
+                <td>{{ row.voidtime|timezone:localtimezone }}</td>
+                <td>{{ row.voiduser }}</td>
+                <td>{{ row.waitingperiod }}</td>
+                <td>{{ row.walkingperiod }}</td>
+                <td>{{ row.processingperiod }}</td>
+                <td>{{ row.totalperiod }}</td>
+            </tr>
         {% endfor %}
         </tbody>
     </table>

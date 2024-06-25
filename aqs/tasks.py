@@ -329,7 +329,10 @@ def export_report(quesrystr, report_text, bcode , filename):
     report_str = ''
     # Get my task ID
     my_id = current_task.request.id
-    logger.info('Exporting report({filename}) task id: {my_id}')
+
+    filename = filename + my_id.replace('-','_') + '.csv'
+
+    logger.info(f'Exporting report({filename}) task id: {my_id}')
 
     # Get settings.py STATIC_ROOT
     static_root = None
@@ -662,6 +665,7 @@ def report_ticketdetails(ticket_id,  ):
     current_task.status = 'PROGRESS'
     current_task.table = []
     count = 0
+    header = []
     per = -1
     # Restore the queryset convert table (list) to DataManager[TicketData]
     # auth_userlist = User.objects.all() 
@@ -688,7 +692,7 @@ def report_ticketdetails(ticket_id,  ):
         irow = 0
         for row in table:
             # for test
-            # time.sleep(0.3)
+            # time.sleep(1)
 
             logtime = funUTCtoLocal(row['logtime'], ticket.branch.timezone).strftime('%Y-%m-%d %H:%M:%S')
             tno = ticket.tickettype + ticket.ticketnumber
@@ -696,6 +700,8 @@ def report_ticketdetails(ticket_id,  ):
             row['user'] = user.first_name + ' ' + user.last_name + ' (' + user.username + ')'
             
             # for i in range(0,100):
+                # for test
+                # time.sleep(0.1)
             report_table.append([tno, logtime, row['logtext'], row['user'], row['app'], row['version']])
             # report_table.append(['ticket':row['ticket'] , logtime, row['logtext'], row['app'], row['version']])
             
@@ -705,11 +711,11 @@ def report_ticketdetails(ticket_id,  ):
                 current_task.update_state(state='PROGRESS', meta={'progress': newper})
                 per = newper
         per = 100
-        current_task.update_state(state='PROGRESS', meta={'progress': per})
+        current_task.update_state(state='PROGRESS', meta={'progress': 100})
 
         # convert table to list (current_task.table)
         # report_table = list(table)
-        # header = {'Ticket', 'Log Time', 'Details', 'User', 'App', 'Version'}
+        header = ['Ticket', 'Log Time', 'Details', 'User', 'App', 'Version']
         # add header to the first row of report_table
         # report_table.insert(0, header)
         
@@ -720,8 +726,7 @@ def report_ticketdetails(ticket_id,  ):
         count = 0
         if error == '':
             if table != None:
-                count = table.count() 
-    
-    print('report_table',current_task.table)
+                count = len(report_table)
 
-    return  current_task.status, current_task.table, count
+
+    return  current_task.status, header, current_task.table, count, 

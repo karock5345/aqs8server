@@ -1502,17 +1502,22 @@ def webtv(request, bcode, ct):
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def Report_Ticket_details_Result(request):
+    error = ''
+    ticket = None
+    branch = None
     result_task_id = ''
+
     try:    
         result_task_id = request.GET['result']
     except:
         pass
+    try:
+        ticket_id = request.GET['id']
+    except:
+        ticket_id = ''
+        error = 'Error : Ticket ID is blank.'
 
-    ticket_id = request.GET['id']
 
-    error = ''
-    ticket = None
-    branch = None
 
     if error == '':
         try:
@@ -1536,8 +1541,8 @@ def Report_Ticket_details_Result(request):
         #     Q(ticket=ticket),
         # ).order_by('logtime')
         report_line1 = 'Ticket Details Report'
-        report_line2 = 'Ticket:' + ticket.tickettype + '(' + branch.bcode + ')'        
-        report_line3 = 'Branch:' + branch.name + '(' + branch.bcode + ')'
+        report_line2 = 'Ticket: ' + ticket.tickettype + ticket.ticketnumber        
+        report_line3 = 'Branch: ' + branch.name + ' (' + branch.bcode + ')'
         report_line4 = ''
         report_line5 = ''
         report_line6 = 'Total records: -'
@@ -1567,7 +1572,7 @@ def Report_Ticket_details_Result(request):
             task_id = result_task_id.replace('_', '-')
             # print ('task_id', task_id)
             task = AsyncResult(task_id, app=report_ticketdetails)
-            status, report_table, count = task.get()
+            status, header, report_table, count = task.get()
 
             # print ('status:', status)
             # print ('report_table:', report_table)
@@ -1592,7 +1597,6 @@ def Report_Ticket_details_Result(request):
                 page = int(page)
                 per_page = 100  # Number of items per page
 
-
                 paginator = Paginator(report_table, per_page)
                 try:
                     table100 = paginator.page(page)
@@ -1602,31 +1606,37 @@ def Report_Ticket_details_Result(request):
                     table100 = paginator.page(paginator.num_pages) 
 
                 context = {
+                'app_name':APP_NAME,
+                'id':ticket_id,
+                'task_id': result_task_id,
                 'localtimezone':localtimezone,
                 'text':report_text,
+                'header':header,
                 'table':table100,        
                 }
                 context = {'aqs_version':aqs_version} | context 
                 return render(request, 'base/r-result.html', context)
-            # elif request.method == 'POST':
-            #     action = request.POST.get('action')
-            #     if action == 'excel':
-            #         # convert list (report_table) to string
-            #         querystr = pickle.dumps(report_table.query)
+            elif request.method == 'POST':
+                action = request.POST.get('action')
+                if action == 'excel':
+                    # convert list (report_table) to string
+                    # querystr = pickle.dumps(report_table.query)
                     
-            #         # print(querystr)
-            #         task = export_report.apply_async(args=[querystr,report_text,branch.bcode,filename], countdown=0)  # 'countdown' time delay in second before execute
-            #         task_id = task.id
-            #         ptask_id = task_id.replace('-', '_')
-            #         filename = 'details_' + task_id + '.csv'
-            #         # download path
-            #         url_download = static('download/'+ branch.bcode + '/' + filename)
+                    # print(querystr)
+                    filename = 'details_' 
+                    task = export_report.apply_async(args=[report_table,report_text,branch.bcode,filename], countdown=0)  # 'countdown' time delay in second before execute
+                    task_id = task.id
+                    ptask_id = task_id.replace('-', '_')
+                    filename = 'details_' + ptask_id + '.csv'
+                    
+                    # download path
+                    url_download = static('download/'+ branch.bcode + '/' + filename)
 
-            #         context = {'task_id': ptask_id}
-            #         context = context | {'wsh' : wsHypertext}
-            #         context = context | {'url_download': url_download}
-            #         context = {'aqs_version':aqs_version} | context 
-            #         return render(request, 'base/in_progress.html', context)
+                    context = {'task_id': ptask_id}
+                    context = context | {'wsh' : wsHypertext} 
+                    context = context | {'url_download': url_download}
+                    context = {'aqs_version':aqs_version} | {'app_name':APP_NAME} | context 
+                    return render(request, 'base/in_progress.html', context)
 
     if error != '':
         messages.error(request, error)
@@ -1772,6 +1782,7 @@ def Report_RAW_Result(request):
 
                 
                 context = {'task_id': ptask_id}
+                context = context | {'app_name':APP_NAME}
                 context = context | {'wsh' : wsHypertext}
                 context = context | {'url_download': url_download}
                 context = {'aqs_version':aqs_version} | context 
