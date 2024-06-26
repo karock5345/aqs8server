@@ -730,3 +730,99 @@ def report_ticketdetails(ticket_id,  ):
 
 
     return  current_task.status, header, current_task.table, count, 
+
+@shared_task
+def report_NoOfQueue(utc_startdate, utc_enddate, report_text, bcode, tickettype):
+    from celery import current_task
+    report_table = []
+    error = ''
+    branch  = None
+
+    # Get my task ID
+    my_id = current_task.request.id
+    
+    current_task.status = 'PROGRESS'
+    current_task.table = []
+    count = 0
+    header = []
+    per = -1
+
+    if error == '' :
+        try:
+            branch = Branch.objects.get(bcode=bcode)
+        except:
+            error = 'Branch not found'
+
+
+    if error == '' :
+        
+        filter_report = Q(tickettime__range=[utc_startdate, utc_enddate])
+        filter_report = filter_report & Q(branch__bcode=bcode)
+        if tickettype != '':
+            filter_report = filter_report & Q(tickettype=tickettype)
+        tickets = Ticket.objects.filter(filter_report).order_by('tickettime')
+
+        # Table
+        # 0          |Date       | 00:00 - 01:00 | 01:00 - 02:00 | ... | 22:00 - 23:00 | 23:00 - 00:00 | Total
+        # 1          |2021-01-01 | 10            | 20            | ... | 30            | 40            | 100
+        # 2          |2021-01-02 | 20            | 30            | ... | 40            | 50            | 140
+        # ...
+        # x          |Total      | 30            | 50            | ... | 70            | 90            | 240
+        i = 0
+        # prepare the dict for the table
+        table = {}
+        for ticket in tickets:
+            i += 1
+            newper = int(i/ len(tickets) * 50)
+            if newper != per:
+                per = newper
+                # Set the progress in the task's state (for WebSocket consumer)
+                current_task.update_state(state='PROGRESS', meta={'progress': per})
+
+            # get the local time of tickettime
+            local_time = funUTCtoLocal(ticket.tickettime, branch.timezone)
+            date = local_time.strftime('%Y-%m-%d')
+            hour = local_time.strftime('%H')
+            if date not in table:             
+                table[date] = {}
+                table[date]['Total'] = 0
+                for h in range(0,24):
+                    table[date][f'{h:02}'] = 0
+            table[date][hour] += 1
+            table[date]['Total'] += 1
+
+        # prepare the report_table
+        # add header
+        header = ['Date', '00:00 - 01:00', '01:00 - 02:00', '02:00 - 03:00', '03:00 - 04:00', '04:00 - 05:00', '05:00 - 06:00', '06:00 - 07:00', '07:00 - 08:00', '08:00 - 09:00', '09:00 - 10:00', '10:00 - 11:00', '11:00 - 12:00', '12:00 - 13:00', '13:00 - 14:00', '14:00 - 15:00', '15:00 - 16:00', '16:00 - 17:00', '17:00 - 18:00', '18:00 - 19:00', '19:00 - 20:00', '20:00 - 21:00', '21:00 - 22:00', '22:00 - 23:00', '23:00 - 00:00', 'Total']
+
+        # add data to report_table
+        i = 0
+        for date in table:
+            i += 1
+            newper = int(i/ len(table) * 50) + 50
+            if newper != per:
+                per = newper
+                # Set the progress in the task's state (for WebSocket consumer)
+                current_task.update_state(state='PROGRESS', meta={'progress': per})
+
+            row = [date]
+            for h in range(0,24):
+                row.append(table[date][f'{h:02}'])
+            row.append(table[date]['Total'])
+            report_table.append(row)
+
+        current_task.update_state(state='PROGRESS', meta={'progress': 100})
+        current_task.table = report_table
+        current_task.status = 'SUCCESS'
+
+        # print('report_table',current_task.table )
+        if error == '':
+            if table != None:
+                count = len(tickets)
+                report_text = report_text + '/n' + 'Total records: ' + str(count)
+            else:
+                report_text = report_text + '/n' + 'Total records: 0' 
+    if error != '':
+        print   ('Error:', error)
+
+    return  current_task.status, header, current_task.table, report_text, 

@@ -54,11 +54,12 @@
             // window.history.back();
 
             if (url_download == '') {
-                // get the link of current page
-                var url = window.location.href;                
+                // get the link of current page without query string
+                var url = window.location.href.split('?')[0];
                 url = url + '?result=' + task_id ;
                 // redirect to the link
                 location.href = url;
+
             } else {
                 document.getElementById('area_download').hidden = false;
                 document.getElementById('progress_text').innerText = `Completed`;
