@@ -47,7 +47,7 @@
 </div>
 
 <div>
-    <table id="table-style" class="table-style">
+    <table id="table-style" class="table-style table-style-userlist" >
         <thead>
             <tr>
                 <th>Ticket</th>
@@ -76,8 +76,8 @@
         </thead>
         <tbody>
         {% for row in table.object_list %}
-            <tr>
-                <td><a href="{% url 'reportdetails' %}?id={{row.ticket.pk}}" target ="_blank">{{ row.ticket.tickettype }}{{ row.ticket.ticketnumber }}</a></td>
+            <tr onclick="window.open('{% url 'reportdetails' row.ticket.pk %}', '_blank')"  >
+                <td>{{ row.ticket.tickettype }}{{ row.ticket.ticketnumber }}</td>
                 <td>{{ row.ticket.tickettype }}</td>
                 <td>{{ row.ticket.ticketnumber }}</td>
                 <td>{{ row.branch.bcode }}</td>
@@ -100,6 +100,7 @@
                 <td>{{ row.processingperiod }}</td>
                 <td>{{ row.totalperiod }}</td>
             </tr>
+       
         {% endfor %}
         </tbody>
     </table>

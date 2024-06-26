@@ -17,10 +17,10 @@
 <div class="pagination">
     {% if table.has_previous %}
         <div class="lastcontainer" >
-            <a class="lasttext" href="{{ request.path }}?id={{id}}&result={{taskid}}&page=1">&laquo;&laquo; first</a>
+            <a class="lasttext" href="{{ request.path }}?result={{task_id}}&page=1">&laquo;&laquo; first</a>
         </div>
         <div class="lastcontainer" >
-            <a class="lasttext" href="{{ request.path }}?id={{id}}&result={{taskid}}&page={{ table.previous_page_number }}">&laquo; previous</a>
+            <a class="lasttext" href="{{ request.path }}?result={{task_id}}&page={{ table.previous_page_number }}">&laquo; previous</a>
         </div>
     {% endif %}
 
@@ -31,17 +31,17 @@
             </div>
         {% else %}
             <div class="pagenumcontainer" >
-                <a class="pagenum" href="{{ request.path }}?id={{id}}&result={{taskid}}&page={{ num }}">{{ num }}</a>
+                <a class="pagenum" href="{{ request.path }}?result={{task_id}}&page={{ num }}">{{ num }}</a>
             </div>
         {% endif %}
     {% endfor %}
 
     {% if table.has_next %}
         <div class="lastcontainer" >
-            <a class="lasttext" href="{{ request.path }}?id={{id}}&result={{taskid}}&page={{ table.next_page_number }}">next &raquo;</a>
+            <a class="lasttext" href="{{ request.path }}?result={{task_id}}&page={{ table.next_page_number }}">next &raquo;</a>
         </div>
         <div class="lastcontainer" >
-            <a class="lasttext" href="{{ request.path }}?id={{id}}&result={{taskid}}&page={{ table.paginator.num_pages }}">last &raquo;&raquo;</a>
+            <a class="lasttext" href="{{ request.path }}?result={{task_id}}&page={{ table.paginator.num_pages }}">last &raquo;&raquo;</a>
         </div>
     {% endif %}
 </div>

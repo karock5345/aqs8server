@@ -1501,7 +1501,7 @@ def webtv(request, bcode, ct):
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
-def Report_Ticket_details_Result(request):
+def Report_Ticket_details_Result(request, pk):
     error = ''
     ticket = None
     branch = None
@@ -1511,11 +1511,12 @@ def Report_Ticket_details_Result(request):
         result_task_id = request.GET['result']
     except:
         pass
-    try:
-        ticket_id = request.GET['id']
-    except:
-        ticket_id = ''
-        error = 'Error : Ticket ID is blank.'
+    ticket_id = pk
+    # try:
+    #     ticket_id = request.GET['id']
+    # except:
+    #     ticket_id = ''
+    #     error = 'Error : Ticket ID is blank.'
 
 
 
@@ -1647,6 +1648,71 @@ def Report_Ticket_details_Result(request):
     # context = {'aqs_version':aqs_version} | context 
     # return render(request, 'base/r-result.html', context)
 
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
+def Report_NoOfQueue_Result(request):
+    # change code to if request.GET.get('x') != None else ''
+    bcode = request.GET.get('branch') if request.GET.get('branch') != None else ''
+    # bcode = request.GET['branch']
+    s_startdate = request.GET.get('startdate') if request.GET.get('startdate') != None else ''
+    # s_startdate = request.GET['startdate']
+    s_enddate = request.GET.get('enddate') if request.GET.get('enddate') != None else ''
+    # s_enddate = request.GET['enddate']
+    ticketformat_id = request.GET.get('ticketformats') if request.GET.get('ticketformats') != None else ''
+    # ticketformat_id = request.GET['ticketformats']
+    result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
+
+    s_startdate = s_startdate + ' 00:00:00.000000'
+    # convert to datetime
+    d_startdate = datetime.strptime(s_startdate, '%Y-%m-%d %H:%M:%S.%f')
+    s_enddate = s_enddate + ' 23:59:59.999999'
+    # convert to datetime
+    d_enddate = datetime.strptime(s_enddate, '%Y-%m-%d %H:%M:%S.%f')
+    # convert to UTC
+    utc_startdate = funLocaltoUTC(d_startdate, 'UTC')
+    utc_enddate = funLocaltoUTC(d_enddate, 'UTC')
+
+    # check input data
+    error = ''
+    if error == '':
+        if d_enddate < d_startdate :
+            error = 'Error : Start datetime > End datetime.'
+    if error == '':
+        if (d_enddate - d_startdate).days > 100 :
+            error = 'Error : Date range do not more then 100 days.'
+
+
+    if error == '':
+        auth_en_queue, \
+        auth_en_crm, \
+        auth_en_booking, \
+        auth_branchs , \
+        auth_userlist, \
+        auth_userlist_active, \
+        auth_grouplist, \
+        auth_profilelist, \
+        auth_ticketformats , \
+        auth_routes, \
+        auth_countertype, \
+        auth_timeslots, \
+        auth_bookings, \
+        auth_timeslottemplist, \
+        = auth_data(request.user)
+
+        filter_report = Q(tickettime__range=[utc_startdate, utc_enddate])
+        if bcode == '':
+            filter_report = filter_report | Q(branch__in=auth_branchs)
+        else:
+            filter_report = filter_report | Q(branch__bcode=bcode)
+        if ticketformat_id != '':
+            filter_report = filter_report & Q(ticketformat__id=ticketformat_id)
+        print (filter_report)
+        data = Ticket.objects.filter(filter_report).order_by('tickettime')
+        print ('data: ' + data.__str__())
+
+
+        
+    return HttpResponse('Report_NoOfQueue_Result\n' + 'Branch:' + bcode + '\nStart datetime:' + datetime.strftime(d_startdate, '%Y-%m-%d %H:%M:%S.%f') + '\nEnd datetime:' + datetime.strftime(d_enddate, '%Y-%m-%d %H:%M:%S.%f') + '\nTicket Type:' + ticketformat_id + '\nResult Task ID:' + result_task_id)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
@@ -2351,8 +2417,8 @@ def Reports(request):
     # countertypes = CounterType.objects.all()
 
     now_l = datetime.now()
-    snow_l = now_l.strftime('%Y-%m-%dT%H:%M:%S')
-
+    snow_l = now_l.strftime('%Y-%m-%d')
+    print(now_l)
     context = {
         'app_name':APP_NAME,
         'aqs_version':aqs_version, 
@@ -2367,7 +2433,7 @@ def Reports(request):
         }
     context = context | {'now':snow_l}
 
-    return render(request, 'base/r-main.html', context)
+    return render(request, 'base/r-main_standard.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])

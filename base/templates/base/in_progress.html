@@ -55,9 +55,8 @@
 
             if (url_download == '') {
                 // get the link of current page
-                var url = window.location.href;
-                console.log(url);
-                url = url + '&result=' + task_id;
+                var url = window.location.href;                
+                url = url + '?result=' + task_id ;
                 // redirect to the link
                 location.href = url;
             } else {
