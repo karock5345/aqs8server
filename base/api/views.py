@@ -1,7 +1,7 @@
 from aqs.settings import aqs_version
-from datetime import datetime, timedelta, date
+from datetime import datetime, timezone, timedelta
 import time
-from django.utils import timezone
+# from django.utils import timezone
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -174,7 +174,7 @@ def getDBtst(request):
 
     if setting_APIlogEnabled(None) == True :
         #datetime_now = datetime.utcnow()
-        datetime_now =timezone.now()    
+        datetime_now =datetime.now(timezone.utc)    
         APILog.objects.create(
             logtime=datetime_now,
             requeststr = request.build_absolute_uri() ,
@@ -219,7 +219,7 @@ def getDB2(request):
 
     if setting_APIlogEnabled(None) == True :
         #datetime_now = datetime.utcnow()
-        datetime_now =timezone.now()    
+        datetime_now =datetime.now(timezone.utc)    
         APILog.objects.create(
             logtime=datetime_now,
             requeststr = request.build_absolute_uri() ,
@@ -346,7 +346,7 @@ def getRoutes(request):
         app = request.GET.get('app') if request.GET.get('app') != None else ''
         version = request.GET.get('version') if request.GET.get('version') != None else ''
         #datetime_now = datetime.utcnow()
-        datetime_now =timezone.now()    
+        datetime_now =datetime.now(timezone.utc)    
         APILog.objects.create(
             logtime=datetime_now,
             requeststr = request.build_absolute_uri() ,
@@ -371,7 +371,7 @@ def getBranchs(request):
         app = request.GET.get('app') if request.GET.get('app') != None else ''
         version = request.GET.get('version') if request.GET.get('version') != None else ''
         #datetime_now = datetime.utcnow()
-        datetime_now =timezone.now()
+        datetime_now =datetime.now(timezone.utc)
         APILog.objects.create(
             logtime=datetime_now,
             requeststr = request.build_absolute_uri() ,

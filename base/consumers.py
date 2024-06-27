@@ -3,7 +3,7 @@ import json
 from channels.generic.websocket import AsyncWebsocketConsumer, WebsocketConsumer
 # from asgiref.sync import async_to_sync
 from django.db.models import Q
-from django.utils import timezone
+# from django.utils import timezone
 from .views import funUTCtoLocal
 from .models import Branch, CounterType, TicketTemp, CounterStatus
 from asgiref.sync import sync_to_async
@@ -1306,7 +1306,7 @@ class WebTVConsumer(AsyncWebsocketConsumer):
     # def chat_message(self):
     #     # message = event['coin_list']
 
-    #     datetime_now =timezone.now()
+    #     datetime_now =datetime.now(timezone.utc)
     #     datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
     #     lastupdate=json.dumps({
     #         'lastupdate':datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
@@ -1346,7 +1346,7 @@ class WebTVConsumer(AsyncWebsocketConsumer):
     #         # serializers  = webdisplaylistSerivalizer(displaylist, many=True)
     #         # context = dict({'ticketlist':serializers.data})
 
-    #         datetime_now =timezone.now()
+    #         datetime_now =datetime.now(timezone.utc)
     #         datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
 
     #         context = {

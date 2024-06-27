@@ -4,7 +4,7 @@ import os
 from celery import shared_task
 import csv
 from django.http import HttpResponse
-from django.utils import timezone
+# from django.utils import timezone
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 import pickle
 from base.models import TicketData, TicketFormat, Ticket, Branch, UserStatusLog, TicketLog
@@ -323,7 +323,7 @@ def export_raw(quesrystr, reporttitle1, reporttitle2, reporttitle3, reporttitle4
     return current_task.status
 
 @shared_task
-def export_report(quesrystr, report_text, bcode , filename):
+def export_report(header, quesrystr, report_text, bcode , filename):
     from celery import current_task
 
     report_str = ''
@@ -386,7 +386,10 @@ def export_report(quesrystr, report_text, bcode , filename):
         # logger.error('Error new "bcode" folder')
         pass
 
-    
+    # add header
+    for item in header:
+        report_str += item + ','
+    report_str += '\n'
 
     i = 0
     for row in quesrystr:
@@ -654,7 +657,7 @@ def report_staff(selected_user_id, querystr_auth_userlist, startdate, enddate):
 
 
 @shared_task
-def report_ticketdetails(ticket_id,  ):
+def report_ticketdetails(ticket_id, report_text):
     from celery import current_task
     report_table = []
     error = ''
@@ -727,12 +730,15 @@ def report_ticketdetails(ticket_id,  ):
         if error == '':
             if table != None:
                 count = len(report_table)
+                report_text = report_text + '\n' + 'Total records: ' + str(count)
+            else:
+                report_text = report_text + '\n' + 'Total records: 0'
 
-
-    return  current_task.status, header, current_task.table, count, 
+    return  current_task.status, header, current_task.table, report_text, 
 
 @shared_task
-def report_NoOfQueue(utc_startdate, utc_enddate, report_text, bcode, tickettype):
+def report_NoOfQueue(report, utc_startdate, utc_enddate, report_text, bcode, tickettype):
+    # this is 4 report, 'queue', 'miss', 'done', 'void'
     from celery import current_task
     report_table = []
     error = ''
@@ -756,12 +762,21 @@ def report_NoOfQueue(utc_startdate, utc_enddate, report_text, bcode, tickettype)
 
     if error == '' :
         
-        filter_report = Q(tickettime__range=[utc_startdate, utc_enddate])
-        filter_report = filter_report & Q(branch__bcode=bcode)
+        filter_report = Q(tickettime__range=[utc_startdate, utc_enddate]) & Q(locked=True) & Q(branch__bcode=bcode)
         if tickettype != '':
-            filter_report = filter_report & Q(tickettype=tickettype)
-        tickets = Ticket.objects.filter(filter_report).order_by('tickettime')
+            filter_report = filter_report & Q(tickettype=tickettype)        
+        
+        
+        if report == 'queue':
+            pass
+        elif report == 'miss':
+            filter_report = filter_report & (Q(status='miss') | Q(status='calling') | Q(status='waiting') | Q(status='processing'))
+        elif report == 'done':
+            filter_report = filter_report & Q(status='done')
+        elif report == 'void':
+            filter_report = filter_report & Q(status='void')
 
+        tickets = Ticket.objects.filter(filter_report).order_by('tickettime')
         # Table
         # 0          |Date       | 00:00 - 01:00 | 01:00 - 02:00 | ... | 22:00 - 23:00 | 23:00 - 00:00 | Total
         # 1          |2021-01-01 | 10            | 20            | ... | 30            | 40            | 100
@@ -819,10 +834,10 @@ def report_NoOfQueue(utc_startdate, utc_enddate, report_text, bcode, tickettype)
         if error == '':
             if table != None:
                 count = len(tickets)
-                report_text = report_text + '/n' + 'Total records: ' + str(count)
+                report_text = report_text + '\n' + 'Total records: ' + str(count)
             else:
-                report_text = report_text + '/n' + 'Total records: 0' 
+                report_text = report_text + '\n' + 'Total records: 0' 
     if error != '':
         print   ('Error:', error)
 
-    return  current_task.status, header, current_task.table, report_text, 
+    return current_task.status, header, current_task.table, report_text, bcode

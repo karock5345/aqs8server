@@ -1,5 +1,5 @@
-from datetime import datetime
-from django.utils import timezone
+from datetime import datetime, timezone, timedelta
+# from django.utils import timezone
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -40,7 +40,7 @@ def postCounterGet(request):
     rx_ticketnumber = request.GET.get('ticketnumber') if request.GET.get('ticketnumber') != None else ''
 #    rx_tickettime =request.GET.get('tickettime') if request.GET.get('tickettime') != None else ''
 
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
     # check input
     if status == dict({}) :
@@ -200,7 +200,7 @@ def postCounterVoid(request):
     rx_ticketnumber = request.GET.get('ticketnumber') if request.GET.get('ticketnumber') != None else ''
     rx_tickettime =request.GET.get('tickettime') if request.GET.get('tickettime') != None else ''
 
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
    
     # check input
     if status == dict({}) :
@@ -362,12 +362,13 @@ def postCounterVoid(request):
 
 
         # add ticketlog
+        localdate_now = funUTCtoLocal(datetime_now, branch.timezone)
         TicketLog.objects.create(
             tickettemp=tickett,
             logtime=datetime_now,
             app = rx_app,
             version = rx_version,
-            logtext='Ticket Void API : '  + branch.bcode + '_' + tickett.tickettype + '_'+ tickett.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+            logtext='Ticket Void API : '  + branch.bcode + '_' + tickett.tickettype + '_'+ tickett.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') ,
             user=user,
         )
 
@@ -411,7 +412,7 @@ def postCounterDone(request):
     rx_ticketnumber = request.GET.get('ticketnumber') if request.GET.get('ticketnumber') != None else ''
     rx_tickettime = request.GET.get('tickettime') if request.GET.get('tickettime') != None else ''
 
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
    
     # check input
     if status == dict({}) :
@@ -592,7 +593,7 @@ def postCounterMiss(request):
     rx_ticketnumber = request.GET.get('ticketnumber') if request.GET.get('ticketnumber') != None else ''
     rx_tickettime = request.GET.get('tickettime') if request.GET.get('tickettime') != None else ''
 
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
    
     # check input
     if status == dict({}) :
@@ -771,7 +772,7 @@ def postCounterProcess(request):
     rx_ticketnumber = request.GET.get('ticketnumber') if request.GET.get('ticketnumber') != None else ''
     rx_tickettime = request.GET.get('tickettime') if request.GET.get('tickettime') != None else ''
 
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
    
     # check input
     if status == dict({}) :
@@ -951,7 +952,7 @@ def postCounterRecall(request):
     rx_ticketnumber = request.GET.get('ticketnumber') if request.GET.get('ticketnumber') != None else ''
     rx_tickettime = request.GET.get('tickettime') if request.GET.get('tickettime') != None else ''
 
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
    
     # check input
     if status == dict({}) :
@@ -1137,7 +1138,7 @@ def postCounterCall(request):
     rx_countername = request.GET.get('countername') if request.GET.get('countername') != None else ''
     rx_counternumber = request.GET.get('counternumber') if request.GET.get('counternumber') != None else ''
 
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
    
     # check input
     if status == dict({}) :
@@ -1271,7 +1272,7 @@ def getCounterWaitingList(request):
     rx_countername = request.GET.get('countername') if request.GET.get('countername') != None else ''
     rx_counternumber = request.GET.get('counternumber') if request.GET.get('counternumber') != None else ''
 
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
    
     # check input
     if status == dict({}) :
@@ -1381,7 +1382,7 @@ def postCounterLogout(request):
     rx_countername = request.GET.get('countername') if request.GET.get('countername') != None else ''
     rx_counternumber = request.GET.get('counternumber') if request.GET.get('counternumber') != None else ''
 
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
     branch = None
     if status == dict({}) :
@@ -1492,7 +1493,7 @@ def postCounterLogin(request):
     rx_countername = request.GET.get('countername') if request.GET.get('countername') != None else ''
     rx_counternumber = request.GET.get('counternumber') if request.GET.get('counternumber') != None else ''
 
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
     branch = None
     if status == dict({}) :

@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login, logout, update_session_auth
 from django.contrib.auth.hashers import make_password
 from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
-# from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from base.decorators import *
 # from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy, reverse
@@ -15,14 +15,13 @@ from .models import *
 from base.models import UserProfile, Branch, SubTicket
 from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm, BookingForm, BookingNewForm, TimeSlotTempForm, TimeSlot_itemForm, TimeSlotTempNewForm
 from django.utils.timezone import localtime, get_current_timezone
-import pytz
-from django.utils import timezone
+# import pytz
+# from django.utils import timezone
 from base.views import auth_data
 
 import logging
 from aqs.tasks import *
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
-from datetime import datetime
 from .serializers import tsSerializer
 import phonenumbers
 import phonenumbers.timezone
@@ -59,7 +58,7 @@ def checkitemform(form):
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TimeSlotTempItemDelView(request, pk, tempid):
-    utcnow = timezone.now()
+    utcnow = datetime.now(timezone.utc)
     item = TimeSlot_item.objects.get(id=pk) 
   
     if request.method =='POST':
@@ -94,7 +93,7 @@ def TimeSlotTempItemUpdateView(request, pk, tempid):
     = auth_data(request.user)
 
     if request.method == 'POST':
-        # utcnow = timezone.now()
+        # utcnow = datetime.now(timezone.utc)
         form = TimeSlot_itemForm(request.POST, instance=item, prefix='timeslotitemform')
         error = ''
         error, newform = checkitemform(form)
@@ -199,7 +198,7 @@ def TimeSlotTempUpdateView(request, pk):
         # check the submit button clicked
         action = request.POST.get('action')
         if action == 'update':
-            # utcnow = timezone.now()
+            # utcnow = datetime.now(timezone.utc)
             error = ''
             error, newform = checktemplateform(form)
             if error == '' :         
@@ -259,7 +258,7 @@ def TimeSlotTempNewView(request):
     form = TimeSlotTempNewForm(auth_branchs=auth_branchs, auth_userlist=auth_userlist)
 
     if request.method == 'POST':
-        utcnow = timezone.now()
+        utcnow = datetime.now(timezone.utc)
         form = TimeSlotTempNewForm(request.POST, auth_branchs=auth_branchs, auth_userlist=auth_userlist)
         
         error = ''
@@ -326,7 +325,7 @@ def TimeslotTempSummaryView(request):
         error = ''
 
         if error == '':
-            utcnow = timezone.now()
+            utcnow = datetime.now(timezone.utc)
             
         if error != '': 
             messages.error(request, error)
@@ -390,7 +389,7 @@ def BookingNewView(request):
 
 @unauth_user
 def BookingDelView(request, pk):
-    utcnow = timezone.now()
+    utcnow = datetime.now(timezone.utc)
     booking = Booking.objects.get(id=pk) 
   
     if request.method =='POST':
@@ -409,7 +408,7 @@ def BookingDelView(request, pk):
     return render(request, 'base/delete.html', context)
 @unauth_user
 def BookingUpdateView(request, pk):
-    utcnow = timezone.now()
+    utcnow = datetime.now(timezone.utc)
     booking = Booking.objects.get(id=pk)    
 
     auth_en_queue, \
@@ -515,7 +514,7 @@ def BookingSummaryView(request):
             if pk == None:
                 error = 'No booking index'
         if error == '':
-            utcnow = timezone.now()
+            utcnow = datetime.now(timezone.utc)
             if action == 'confirm':
                 booking = Booking.objects.select_for_update().get(id=pk)
                 if booking.status == Booking.STATUS.NEW:
@@ -744,7 +743,7 @@ def chainBookNow(timeslot, name, phone_number:phonenumbers, email, user, member)
     # check slot
     error = ''
     error_TC = ''
-    utcnow = timezone.now()
+    utcnow = datetime.now(timezone.utc)
 
     if error == '':
         # Lock the timeslot nowait=False
@@ -1031,7 +1030,7 @@ def BookingClientView(request, bcode):
             branch = branchobj[0]
             logofile = branch.webtvlogolink
             css = branch.webtvcsslink
-            datetime_now = timezone.now()
+            datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
             
@@ -1045,7 +1044,7 @@ def BookingClientView(request, bcode):
 
 
     if error == '' :
-        now_utc = timezone.now()
+        now_utc = datetime.now(timezone.utc)
 
         tslist = TimeSlot.objects.filter(Q(branch=branch) & Q(enabled=True) & Q(slot_available__gt=0) & Q(show_end_date__gte=now_utc) & Q(show_date__lte=now_utc)).order_by('start_date')
 
@@ -1086,7 +1085,7 @@ def BookingClientView(request, bcode):
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TimeSlotDelView(request, pk):
-    utcnow = timezone.now()
+    utcnow = datetime.now(timezone.utc)
     timeslot = TimeSlot.objects.get(id=pk) 
   
     if request.method =='POST':
@@ -1127,7 +1126,7 @@ def TimeSlotNewView(request):
     tsform = TimeSlotNewForm(auth_branchs=auth_branchs)
 
     if request.method == 'POST':
-        utcnow = timezone.now()
+        utcnow = datetime.now(timezone.utc)
         tsform = TimeSlotNewForm(request.POST, auth_branchs=auth_branchs)
         
         error = ''
@@ -1191,7 +1190,7 @@ def TimeSlotUpdateView(request, pk):
     = auth_data(request.user)
 
     if request.method == 'POST':
-        utcnow = timezone.now()
+        utcnow = datetime.now(timezone.utc)
         tsform = TimeSlotForm(request.POST, instance=timeslot, prefix='timeslotform', auth_branchs=auth_branchs)
         error = ''
         error, newform = checktimeslotform(tsform)

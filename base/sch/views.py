@@ -7,7 +7,7 @@ from base.models import SubTicket
 # from .jobs import job_stop
 from datetime import datetime, timedelta, timezone
 import pytz
-from django.utils import timezone
+# from django.utils import timezone
 from apscheduler.schedulers.background import BackgroundScheduler
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, funLocaltoUTC, funLocaltoUTCtime, funUTCtoLocaltime
 from base.ws import wssendwebtv, wscounterstatus, wssenddispremoveall
@@ -18,6 +18,7 @@ from django.conf import settings
 import os
 import shutil
 from base.sch.jobs import  job_stopall, job_testing
+from aqs.settings import APP_NAME, aqs_version
 
 logger = logging.getLogger(__name__)
 
@@ -41,7 +42,7 @@ def getShutdown(request):
     rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
 
-    datetime_now = timezone.now()
+    datetime_now = datetime.now(timezone.utc)
     if error == '' :
         if bcode == '' :
             error ='Branch code is empty'
@@ -99,7 +100,7 @@ def getJobTesting(request):
     return Response('Job testing')
 
 def job_test_trigger():
-    now = timezone.now()
+    now = datetime.now(timezone.utc)
     now_u = funLocaltoUTC(now, 8)
     snow = now_u.strftime("%Y/%m/%d %H:%M:%S")
     logger.info(snow + '!!! Job run !!!')
@@ -111,7 +112,7 @@ def job_test_trigger():
 
 def init_branch_reset():
     branch_count = 0    
-    datetime_now = timezone.now()
+    datetime_now = datetime.now(timezone.utc)
 
     try:
         branchobj = Branch.objects.all()
@@ -143,16 +144,16 @@ def Reset_SMS(branch, datetime_now):
 def sch_shutdown(branch_input, nowUTC):
     branch = Branch.objects.get(id=branch_input.id)
 
-    now = timezone.now()
+    now = datetime.now(timezone.utc)
     datetime_now = nowUTC
     localtime_now = funUTCtoLocaltime(datetime_now, branch.timezone )      
     localtime = funUTCtoLocaltime( branch.officehourend, branch.timezone )
     
-    slocaltime = timezone.now().strftime('%Y-%m-%d ') + localtime.strftime('%H:%M:%S')
+    slocaltime = datetime.now(timezone.utc).strftime('%Y-%m-%d ') + localtime.strftime('%H:%M:%S')
     localtime = datetime.strptime(slocaltime, '%Y-%m-%d %H:%M:%S')
     localtime = pytz.utc.localize(localtime)
 
-    snextreset = timezone.now().strftime('%Y-%m-%d ') + branch.officehourend.strftime('%H:%M:%S')
+    snextreset = datetime.now(timezone.utc).strftime('%Y-%m-%d ') + branch.officehourend.strftime('%H:%M:%S')
     nextreset = datetime.strptime(snextreset, '%Y-%m-%d %H:%M:%S')
     nextreset = pytz.utc.localize(nextreset)
     
@@ -190,7 +191,7 @@ def sch_shutdown(branch_input, nowUTC):
 
 
 def job_shutdown(branch):    
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
     localtime_now = funUTCtoLocaltime(datetime_now, branch.timezone )
     bcode = branch.bcode
 
@@ -243,8 +244,34 @@ def job_shutdown(branch):
         ticket.step = tt.step
         ticket.countertype = tt.countertype
         ticket.ticketroute = tt.ticketroute
-        ticket.status = tt.status        
-        ticket.locked = tt.locked
+        
+        # Status = 'waiting', 'calling', 'processing' then force to 'miss' (no show)
+        # Final status = 'done', 'void', 'miss'
+        ticket.status = tt.status
+        if tt.status == 'done' or tt.status == 'void' or tt.status == 'miss':
+            pass
+        else:
+            ticket.status = 'miss'
+            # TicketData should be add misstime and add TicketLog
+            td = TicketData.objects.get(tickettemp=tt)
+            td.misstime = datetime_now
+            # cal waiting time between tickettime and misstime and add to td.waitingperiod
+            seconds = (td.misstime - td.starttime).total_seconds()
+            td.waitingperiod = seconds
+            td.save()
+            # add TicketLog
+            localdate_now = funUTCtoLocal(datetime_now, branch.timezone )
+            TicketLog.objects.create(
+                ticket = ticket,
+                tickettemp = tt,
+                app = APP_NAME,
+                version = aqs_version,
+                logtime = datetime_now,
+                logtext = 'Miss ticket by branch shutdown ' + tt.branch.bcode + '_' + tt.tickettype + '_'+ tt.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') ,
+                user = None,
+            )
+
+        ticket.locked = True
         ticket.tickettime = tt.tickettime
         ticket.tickettext = tt.tickettext
         ticket.printernumber = tt.printernumber
@@ -277,15 +304,10 @@ def job_shutdown(branch):
     SubTicket.objects.filter(Q(branch=branch)).delete()
 
     # remove TicketTemp table
-    ttobj = TicketTemp.objects.filter( Q(branch=branch) & Q(locked=True))
-    for ticket in ttobj:
-        ticket.delete()
-
+    ttobj = TicketTemp.objects.filter( Q(branch=branch) & Q(locked=True)).delete()
 
     # del all DisplayAndVoice branch=branch
-    dvobj = DisplayAndVoice.objects.filter( Q(branch=branch))
-    for dv in dvobj:
-        dv.delete()
+    DisplayAndVoice.objects.filter( Q(branch=branch)).delete()
 
     # websocket to web tv
     ctobj = CounterType.objects.filter(Q(branch=branch))
@@ -350,7 +372,7 @@ def sch_bookingtemp(hours):
     logger.info('-SCH- Add job_booking_temp every ' + str(hours) + ' hours -SCH-')
 
 def job_booking_temp(branch:Branch, input_temp, mins):
-    now = timezone.now()
+    now = datetime.now(timezone.utc)
     # now_l = funUTCtoLocal(now, branch.timezone)
     # snow = now_l.strftime("%m/%d/%Y, %H:%M:%S")
     snow2 = now.strftime("%m/%d/%Y, %H:%M:%S")
@@ -496,8 +518,8 @@ def sub_booking_temp(branch:Branch, input_temp):
 
 def main():
     global system_inited
-    datetime_now = timezone.now()
-    now = timezone.now()
+    datetime_now = datetime.now(timezone.utc)
+    now = datetime.now(timezone.utc)
     try:
         SystemLog.objects.create(
                 logtime=datetime_now,

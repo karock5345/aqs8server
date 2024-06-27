@@ -1,12 +1,11 @@
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from django.utils import timezone
+# from django.utils import timezone
 from django.urls import reverse
 from urllib.parse import urlencode
 from django.db.models import Q
-from datetime import datetime
-
+from datetime import datetime, timezone, timedelta
 from base.models import APILog, Branch, PrinterStatus,  TicketFormat, Ticket, TicketTemp
 from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus
 from .serializers import printerstatusSerivalizer, ticketlistSerivalizer
@@ -35,7 +34,7 @@ def getFirstPrint(request):
     bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
 
     #datetime_now = datetime.utcnow()
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
     branch = None
     if status == dict({}) :
@@ -103,7 +102,7 @@ def postTicketPrinted(request):
  
 
     #datetime_now = datetime.utcnow()
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
     # check input
     branch = None
@@ -181,12 +180,13 @@ def postTicketPrinted(request):
                 ticket.printedtimes = ticket.printedtimes +1
                 ticket.save()
                 status = dict({'status': 'OK'})
+                localdate_now = funUTCtoLocal(datetime_now, branch.timezone)
                 TicketLog.objects.create(
                     tickettemp=ticket,
                     logtime=datetime_now,
                     app = app,
                     version = version,
-                    logtext='API Ticket Printed ' + branch.bcode + '_' + ttype + '_'+ tnumber + '_' + stickettime,
+                    logtext='API Ticket Printed ' + branch.bcode + '_' + ttype + '_'+ tnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S'),
                     user=user,
                 )
                 context = dict({'Printed times': str(ticket.printedtimes)})
@@ -214,7 +214,7 @@ def postUpdatePrinter(request):
 
     rxprinternumber = rxprinternumber.upper()
     #datetime_now = datetime.utcnow()
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
     # check input
     branch = None
@@ -301,7 +301,7 @@ def getPrinterStatus(request):
     bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
 
     #datetime_now = datetime.utcnow()
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
     branch = None
     if status == dict({}) :

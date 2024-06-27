@@ -22,7 +22,7 @@
 ```python
 def init_branch_reset():
     branch_count = 0    
-    datetime_now = timezone.now()
+    datetime_now = datetime.now(timezone.utc)
 
     try:
         branchobj = Branch.objects.all()
@@ -46,16 +46,16 @@ def init_branch_reset():
 def sch_shutdown(branch_input, nowUTC):
     branch = Branch.objects.get(id=branch_input.id)
 
-    now = timezone.now()
+    now = datetime.now(timezone.utc)
     datetime_now = nowUTC
     localtime_now = funUTCtoLocaltime(datetime_now, branch.timezone )      
     localtime = funUTCtoLocaltime( branch.officehourend, branch.timezone )
     
-    slocaltime = timezone.now().strftime('%Y-%m-%d ') + localtime.strftime('%H:%M:%S')
+    slocaltime = datetime.now(timezone.utc).strftime('%Y-%m-%d ') + localtime.strftime('%H:%M:%S')
     localtime = datetime.strptime(slocaltime, '%Y-%m-%d %H:%M:%S')
     localtime = pytz.utc.localize(localtime)
 
-    snextreset = timezone.now().strftime('%Y-%m-%d ') + branch.officehourend.strftime('%H:%M:%S')
+    snextreset = datetime.now(timezone.utc).strftime('%Y-%m-%d ') + branch.officehourend.strftime('%H:%M:%S')
     nextreset = datetime.strptime(snextreset, '%Y-%m-%d %H:%M:%S')
     nextreset = pytz.utc.localize(nextreset)
     

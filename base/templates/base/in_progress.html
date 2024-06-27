@@ -49,9 +49,6 @@
         
         // Check if the task is complete
         if (data.task_complete) {
-            // Redirect to the result page or perform any other action
-            // window.location.href = '/result/';
-            // window.history.back();
 
             if (url_download == '') {
                 // get the link of current page without query string
@@ -66,47 +63,6 @@
             }
         }
     };
-
-    // const socket_p = new WebSocket(
-    //     c_wsh 
-    //     + window.location.host 
-    //     + '/ws/'
-    //     + c_app_name
-    //     + '/progress_process/'
-    //     + task_id
-    //     + '/'
-    // );
-
-    // // 
-    // socket_p.onmessage = function(e) {
-    //     const data = JSON.parse(e.data);
-    //     const progress = data.progress;
-    //     console.log('Progress:', progress, '%');
-        
-    //     document.getElementById('area_download').hidden = true;
-
-    //     // Update the progress indicator on the page
-    //     document.getElementById('progress').innerText = `${progress}%`;
-        
-    //     // Check if the task is complete
-    //     if (data.task_complete) {
-    //         // Redirect to the result page or perform any other action
-    //         // window.location.href = '/result/';
-    //         // window.history.back();
-
-    //         if (url_download == '') {
-    //             // get the link of current page
-    //             var url = window.location.href;
-    //             console.log(url);
-    //             url = url + '&result=' + task_id;
-    //             // redirect to the link
-    //             location.href = url;
-    //         } else {
-    //             document.getElementById('area_download').hidden = false;
-    //             document.getElementById('progress_text').innerText = `Completed`;
-    //         }
-    //     }
-    // };    
 </script>
 
 

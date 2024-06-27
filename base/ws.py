@@ -1,9 +1,9 @@
 import json
 from django.core import serializers
-from datetime import datetime, timedelta
+from datetime import datetime, timezone, timedelta
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from django.utils import timezone
+# from django.utils import timezone
 from django.db.models import Q
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, counteractive
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, PrinterStatus, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 # ws to Display Panel cmd call / recall a ticket
 def wssenddispcall(branch, counterstatus, countertype, ticket):
     str_now = '--:--'
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
     datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
     str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
 
@@ -71,7 +71,7 @@ def wssenddispcall(branch, counterstatus, countertype, ticket):
 # ws to Display Panel cmd clear all ticket
 def wssenddispremoveall(branch,  countertype):
     str_now = '--:--'
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
     datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
     str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
 
@@ -101,7 +101,7 @@ def wssenddispremoveall(branch,  countertype):
 # ws to Display Panel cmd waiting number of queue by TicketType 
 def wssenddispwait(branch,  countertype, ticket):
     str_now = '--:--'
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
     datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
     str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
 
@@ -196,7 +196,7 @@ def wscounterstatus(counterstatus):
     # }
     context = None
     str_now = '--:--'
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
     datetime_now_local = funUTCtoLocal(datetime_now, counterstatus.countertype.branch.timezone)
     str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
     if counterstatus.tickettemp is None:
@@ -712,7 +712,7 @@ def wssendprinterstatus(bcode):
         branchobj = Branch.objects.filter( Q(bcode=bcode) )
         if branchobj.count() == 1:
             branch = branchobj[0]
-            datetime_now = timezone.now()
+            datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
         else :
@@ -767,7 +767,7 @@ def wssendql(bcode, countertypename, ticket, cmd):
     context = None
     error = ''
     str_now = '--:--'
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
 
     branch = None
@@ -775,7 +775,7 @@ def wssendql(bcode, countertypename, ticket, cmd):
         branchobj = Branch.objects.filter( Q(bcode=bcode) )
         if branchobj.count() == 1:
             branch = branchobj[0]
-            datetime_now = timezone.now()
+            datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
         else :
@@ -878,7 +878,7 @@ def wssendwebtv(bcode, countertypename):
         branchobj = Branch.objects.filter( Q(bcode=bcode) )
         if branchobj.count() == 1:
             branch = branchobj[0]
-            datetime_now = timezone.now()
+            datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
         else :

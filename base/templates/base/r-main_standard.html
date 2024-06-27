@@ -19,7 +19,7 @@
                 <h2>Number of queue summary per day: </h2>
               </div>
             </div>
-            <form action="noofqueue" target="_blank">
+            <form action="{% url 'reportnoofqueue' 'queue' %}" target="_blank">
               Select Branch:
               <select name="branch" id="id_branch">
                 <!-- <option value="">---</option> -->
@@ -43,12 +43,53 @@
                 <option value="" selected="selected">---All ticket type---</option>
               </select><br>
 
-              <!-- <input type="submit" value="Report" action="r" class="btn btn--main" > -->
+              <!-- <button type="submit" name="action" value="excel" class="btn btn--main">Export to Excel</button>  -->
               <button type="submit" name="action" value="report_noofticket" class="btn btn--main" >Report</button>
+
             </form>
           </div>
           
           <hr>
+
+          <div class="layout__body">
+            <div class="roomList__header">
+              <div>
+                <h2>Number of No Show summary per day: </h2>
+              </div>
+            </div>
+            <form action="noofmiss" target="_blank">
+              Select Branch:
+              <select name="branch" id="id_branch">
+                <!-- <option value="">---</option> -->
+                {% for branch in branchs %}
+                  <option value={{branch.bcode}}>{{branch.name}}</option>
+                  {{branch}}<br>
+                {% endfor %}
+              </select><br>
+            
+
+              Start date and time (Local time) : <input type="date" name="startdate" value={{now}} step="1" ><br>
+              End date and time (Local time) : <input type="date" name="enddate" value={{now}} step="1"><br>
+              
+              Select Ticket Type:
+              <select name="ticketformats" id="id_ticketformats">
+                
+                {% for tf in ticketformats %}
+                  <option value={{tf.id}}>{{tf.ttype}}-{{tf.touchkey_lang1}}</option>
+                  <br>             
+                {% endfor %}
+                <option value="" selected="selected">---All ticket type---</option>
+              </select><br>
+
+              <!-- <button type="submit" name="action" value="excel" class="btn btn--main">Export to Excel</button>  -->
+              <button type="submit" name="action" value="report_noofmiss" class="btn btn--main" >Report</button>
+
+            </form>
+          </div>
+          
+          <hr>
+
+
 
           <div class="layout__body">
             <div class="roomList__header">
@@ -100,8 +141,8 @@
                 {% endfor %}
               </select><br>
               
-              Start date and time (Local time) : <input type="datetime-local" name="startdate" value={{now}} step="1" ><br>
-              End date and time (Local time) : <input type="datetime-local" name="enddate" value={{now}} step="1"><br>
+              Start date and time (Local time) : <input type="date" name="startdate" value={{now}} step="1" ><br>
+              End date and time (Local time) : <input type="date" name="enddate" value={{now}} step="1"><br>
               
               Select Counter Type:
               <select name="countertype" id="id_countertype">

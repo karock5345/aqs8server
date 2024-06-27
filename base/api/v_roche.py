@@ -1,5 +1,5 @@
-from datetime import timedelta
-from django.utils import timezone
+from datetime import datetime, timezone, timedelta
+# from django.utils import timezone
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.db.models import Q
@@ -67,7 +67,7 @@ def postRocheLogin(request):
     rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
     rx_bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
 
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
    
      
    
@@ -155,7 +155,7 @@ def getRocheFirstPrint(request):
     bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
 
     #datetime_now = datetime.utcnow()
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
     branch = None
     if status == dict({}) :
@@ -228,7 +228,7 @@ def getRocheFirstPrintTest(request):
         listlen = int(listlen)
 
     #datetime_now = datetime.utcnow()
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
     branch = None
     if status == dict({}) :

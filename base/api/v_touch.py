@@ -1,7 +1,8 @@
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from django.utils import timezone
+from datetime import datetime, timezone, timedelta
+# from django.utils import timezone
 from django.db.models import Q
 
 from base.models import APILog, Branch, TicketFormat, Ticket, TicketTemp
@@ -213,13 +214,14 @@ def newticket_v830(branch, ttype, pnos, remark, datetime_now, user, app, version
             starttime = datetime_now,
             startuser=user,
         )
+        localdate_now = funUTCtoLocal(datetime_now, branch.timezone)
         TicketLog.objects.create(
                 ticket=ticket,
                 tickettemp=tickettemp,
                 logtime=datetime_now,
                 app = app,
                 version = version,
-                logtext='TicketKey API ticket created '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pnos ,
+                logtext='TicketKey API ticket created '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') + ' Printer Number: ' + pnos ,
                 user=user,
             )
 
@@ -424,13 +426,14 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
             starttime = datetime_now,
             startuser=user,
         )
+        localdate_now = funUTCtoLocal(datetime_now, branch.timezone)
         TicketLog.objects.create(
                 ticket=ticket,
                 tickettemp=tickettemp,
                 logtime=datetime_now,
                 app = app,
                 version = version,
-                logtext='TicketKey API ticket created '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') + ' Printer Number: ' + pno ,
+                logtext='TicketKey API ticket created '  + branch.bcode + '_' + ttype + '_'+ ticketno_str + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') + ' Printer Number: ' + pno ,
                 user=user,
             )
 
@@ -474,7 +477,7 @@ def postTicket(request):
     remark = request.GET.get('remark') if request.GET.get('remark') != None else ''
 
     #datetime_now = datetime.utcnow()
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
  
 
@@ -587,7 +590,7 @@ def postTouchKeys(request):
     bcode = request.GET.get('branchcode') if request.GET.get('branchcode') != None else ''
     
     #datetime_now = datetime.utcnow()
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
     # check input
     branch = None

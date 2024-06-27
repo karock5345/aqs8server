@@ -1,10 +1,10 @@
 import json
 from django.core import serializers
-from datetime import datetime, timedelta
+from datetime import datetime, timezone, timedelta
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from django.utils import timezone
+# from django.utils import timezone
 from django.db.models import Q
 from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, counteractive, checkuser
 
@@ -56,7 +56,7 @@ def getDisplay5(request):
 
 
     #datetime_now = datetime.utcnow()
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
    
     # check input
@@ -205,7 +205,7 @@ def getVoice(request):
 
 
     #datetime_now = datetime.utcnow()
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
    
     # check input
@@ -309,7 +309,7 @@ def getWaiting(request):
 
 
     #datetime_now = datetime.utcnow()
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
    
     # check input
@@ -412,7 +412,7 @@ def getDisplay(request):
 
 
     #datetime_now = datetime.utcnow()
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
    
     # check input
@@ -514,7 +514,7 @@ def getLastDisplay(request):
 
 
     #datetime_now = datetime.utcnow()
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
    
     # check input

@@ -287,12 +287,13 @@ def funCounterCall_v830(user, branch:Branch, countertype, counterstatus, logtext
         ticket.save()
 
         # add ticketlog
+        localdate_now = funUTCtoLocal(datetime_now, branch.timezone)
         TicketLog.objects.create(
             tickettemp=ticket,
             logtime=datetime_now,
             app = rx_app,
             version = rx_version,
-            logtext= logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+            logtext= logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') ,
             user=user,
         )
 
@@ -491,12 +492,13 @@ def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx
                 ticket.save()
 
                 # add ticketlog
+                localdate_now = funUTCtoLocal(datetime_now, branch.timezone)
                 TicketLog.objects.create(
                     tickettemp=ticket,
                     logtime=datetime_now,
                     app = rx_app,
                     version = rx_version,
-                    logtext= logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+                    logtext= logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') ,
                     user=user,
                 )
 
@@ -582,12 +584,13 @@ def funCounterProcess(user, branch, countertype, counterstatus, logtext, rx_app,
             funBookingLog(datetime_now, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.STARTED, user, None)
 
         # add ticketlog
+        localdate_now = funUTCtoLocal(datetime_now, branch.timezone)
         TicketLog.objects.create(
             tickettemp=ticket,
             logtime=datetime_now,
             app = rx_app,
             version = rx_version,
-            logtext= logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+            logtext= logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') ,
             user=user,
         )
         # call centre mode only
@@ -675,12 +678,13 @@ def funCounterComplete(user, branch, countertype, counterstatus, logtext, rx_app
             ticket.save()
 
             # add ticketlog
+            localdate_now = funUTCtoLocal(datetime_now, branch.timezone)
             TicketLog.objects.create(
                 tickettemp=ticket,
                 logtime=datetime_now,
                 app = rx_app,
                 version = rx_version,
-                logtext=logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+                logtext=logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') ,
                 user=user,
             )
 
@@ -713,12 +717,13 @@ def funCounterComplete(user, branch, countertype, counterstatus, logtext, rx_app
             )
 
             # add ticketlog
+            localdate_now = funUTCtoLocal(datetime_now, branch.timezone)
             TicketLog.objects.create(
                 tickettemp=ticket,
                 logtime=datetime_now,
                 app = rx_app,
                 version = rx_version,
-                logtext= 'Next step ' + logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+                logtext= 'Next step ' + logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S'),
                 user=user,
             )
 
@@ -786,12 +791,13 @@ def funCounterMiss(user, branch, countertype, counterstatus, logtext, rx_app, rx
         
 
         # add ticketlog
+        localdate_now = funUTCtoLocal(datetime_now, branch.timezone)
         TicketLog.objects.create(
             tickettemp=ticket,
             logtime=datetime_now,
             app = rx_app,
             version = rx_version,
-            logtext=logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+            logtext=logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') ,
             user=user,
         )
 
@@ -839,12 +845,13 @@ def funCounterRecall(user, branch, countertype, counterstatus, logtext, rx_app, 
             msg =  dict({'msg':'No ticket to recall'})
             
     if status == dict({}) :
+        localdate_now = funUTCtoLocal(datetime_now, branch.timezone)
         TicketLog.objects.create(
             tickettemp=ticket,
             logtime=datetime_now,
             app = rx_app,
             version = rx_version,
-            logtext=logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+            logtext=logtext + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') ,
             user=user,
         )
 
@@ -978,12 +985,13 @@ def funCounterGet_v830(gettnumber, user, branch, countertype, counterstatus, log
         
 
         # add ticketlog
+        localdate_now = funUTCtoLocal(datetime_now, branch.timezone)
         TicketLog.objects.create(
             tickettemp=ticket,
             logtime=datetime_now,
             app = rx_app,
             version = rx_version,
-            logtext=logtext  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + ticket.tickettime.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+            logtext=logtext  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') ,
             user=user,
         )
 
@@ -1161,12 +1169,13 @@ def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, co
         
 
         # add ticketlog
+        localdate_tickettime = funUTCtoLocal(ticket.tickettime, branch.timezone)
         TicketLog.objects.create(
             tickettemp=ticket,
             logtime=datetime_now,
             app = rx_app,
             version = rx_version,
-            logtext=logtext  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + ticket.tickettime.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+            logtext=logtext  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + localdate_tickettime.strftime('%Y-%m-%d_%H:%M:%S') ,
             user=user,
         )
 
@@ -1583,12 +1592,13 @@ def cc_aux(user, branch, countertype, counterstatus, logtext, rx_app, rx_version
         if counterstatus.tickettemp != None:
             ticket = counterstatus.tickettemp
             # add ticketlog
+            localdate_tickettime = funUTCtoLocal(ticket.tickettime, branch.timezone)
             TicketLog.objects.create(
                 tickettemp=ticket,
                 logtime=datetime_now,
                 app = rx_app,
                 version = rx_version,
-                logtext='ACW completed by SK:AUX '  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + ticket.tickettime.strftime('%Y-%m-%dT%H:%M:%S.%fZ') ,
+                logtext='ACW completed by SK:AUX '  + branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + localdate_tickettime.strftime('%Y-%m-%d_%H:%M:%S') ,
                 user=user,
             )
             counterstatus.tickettemp = None

@@ -1,7 +1,6 @@
 from aqs.settings import aqs_version, RECAPTCHA_ENABLED, APP_NAME
 from django.shortcuts import render, redirect, HttpResponse
 from django.urls import reverse
-from urllib.parse import urlencode
 from django.contrib.auth.models import User, Group
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -9,29 +8,21 @@ from django.contrib.auth import authenticate, login, logout, update_session_auth
 from django.contrib.auth.hashers import make_password
 from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
-# from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from base.decorators import *
-# from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy
-
 from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch, Ticket, UserStatusLog
 from booking.models import TimeSlot, Booking, BookingLog, TimeslotTemplate
 from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, resetForm
 from .forms import BranchSettingsForm_Admin, BranchSettingsForm_Adv, BranchSettingsForm_Basic
 from .forms import CaptchaForm, getForm, voidForm, newTicketTypeForm, UserFormSuper, UserFormManager, UserFormSupport, UserFormAdminSelf
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
-from django.utils.timezone import localtime, get_current_timezone
 import pytz
 from .api.serializers import displaylistSerivalizer, waitinglistSerivalizer
-from django.utils import timezone
-# from .api.v_softkey import funVoid
+# from django.utils import timezone
 from .api.v_softkey_sub import *
 from .api.v_touch import newticket, newticket_v830, printTicket
 from base.ws import wsHypertext, wscounterstatus, wssendflashlight
-
-
-from asgiref.sync import async_to_sync
-from channels.layers import get_channel_layer
 import logging
 import csv
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -87,7 +78,7 @@ def funRegenUserFunctions(user):
 @unauth_user
 def SuperVisor_ForceLogoutView(request, pk, csid):
     context = {}
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
     username = ''
     try:
         cs = CounterStatus.objects.get(id=csid)
@@ -138,7 +129,7 @@ def ForceLogout(cs, datetime_now):
 @unauth_user
 def Softkey_VoidView(request, pk, ttid):
     context = {}
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
     try:
         tt = TicketTemp.objects.get(id=ttid)
         datetime_now_local = funUTCtoLocal(datetime_now, tt.branch.timezone)
@@ -165,7 +156,7 @@ def Softkey_VoidView(request, pk, ttid):
 @unauth_user
 def Softkey_GetView(request, pk, ttid):
     context = {}
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
     error = ''
 
     if error == '':
@@ -237,7 +228,7 @@ def SoftkeyView(request, pk):
     context_counter = {}
     error = ''
     str_now = '--:--'
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
     auth_en_queue, \
     auth_en_crm, \
@@ -618,7 +609,7 @@ def SoftkeyLoginView(request, pk):
 def SoftkeyLogoutView(request, pk):
     error = ''
     context = {}
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
     
     auth_en_queue, \
     auth_en_crm, \
@@ -666,7 +657,7 @@ def SoftkeyLogoutView(request, pk):
 def SoftkeyCallView(request, pk):
     error = ''
     context = {}
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
 
     auth_en_queue, \
     auth_en_crm, \
@@ -732,7 +723,7 @@ def SoftkeyCallView(request, pk):
 def SoftkeyProcessView(request, pk):
     error = ''
     context = {}
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
     
     auth_en_queue, \
     auth_en_crm, \
@@ -779,7 +770,7 @@ def SoftkeyProcessView(request, pk):
 def SoftkeyMissView(request, pk):
     error = ''
     context = {}
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
     
     auth_en_queue, \
     auth_en_crm, \
@@ -825,7 +816,7 @@ def SoftkeyMissView(request, pk):
 def SoftkeyRecallView(request, pk):
     error = ''
     context = {}
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
     
     auth_en_queue, \
     auth_en_crm, \
@@ -873,7 +864,7 @@ def SoftkeyRecallView(request, pk):
 def SoftkeyDoneView(request, pk):
     error = ''
     context = {}
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
     
     auth_en_queue, \
     auth_en_crm, \
@@ -951,7 +942,7 @@ def repair(request):
         if branchobj.count() == 1:
             branch = branchobj[0]
             logofile = branch.webtvlogolink
-            datetime_now = timezone.now()
+            datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
         else :
@@ -1001,7 +992,7 @@ def webmyticket(request, bcode, ttype, tno, sc):
         if branchobj.count() == 1:
             branch = branchobj[0]
             logofile = branch.webtvlogolink
-            datetime_now = timezone.now()
+            datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
             css = branch.webtvcsslink
@@ -1097,7 +1088,7 @@ def webtouchView(request):
         if branchobj.count() == 1:
             branch = branchobj[0]
             logofile = branch.webtvlogolink
-            datetime_now = timezone.now()
+            datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             css = branch.webtvcsslink
         else :
@@ -1126,19 +1117,16 @@ def webtouchView(request):
                     
                     if error == '' :
                         printTicket(branch, tickettemp, tickettemp.ticketformat, datetime_now, '')
-                        s_now= ''
-                        try:
-                            s_now = datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
-                        except:
-                            s_now = datetime_now.strftime('%Y-%m-%dT%H:%M:%SZ')
+
                         # add ticketlog
+                        localdate_now = funUTCtoLocal(datetime_now, tickettemp.branch.timezone)
                         TicketLog.objects.create(
                             tickettemp=tickettemp,
                             ticket=ticket,
                             logtime=datetime_now,
                             app = 'web',
                             version = '8',
-                            logtext='New Ticket by Web Touch: '  + tickettemp.branch.bcode + '_' + tickettemp.tickettype + '_'+ tickettemp.ticketnumber + '_' + s_now ,
+                            logtext='New Ticket by Web Touch: '  + tickettemp.branch.bcode + '_' + tickettemp.tickettype + '_'+ tickettemp.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') ,
                             user=userweb,
                         )
                         # rediect to e-ticket
@@ -1220,20 +1208,17 @@ def CancelTicketView(request, pk, sc):
                     error = 'Status is not correct.'
 
             if error == '' :  
-                datetime_now =timezone.now()
+                datetime_now =datetime.now(timezone.utc)
                 funVoid(user, tt, td, datetime_now)
-                s_now= ''
-                try:
-                    s_now = datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
-                except:
-                    s_now = datetime_now.strftime('%Y-%m-%dT%H:%M:%SZ')
+
                 # add ticketlog
+                localdate_now = funUTCtoLocal(datetime_now, tt.branch.timezone)
                 TicketLog.objects.create(
                     tickettemp=tt,
                     logtime=datetime_now,
                     app = 'Web',
                     version = '8',
-                    logtext='Ticket Void by web : '  + tt.branch.bcode + '_' + tt.tickettype + '_'+ tt.ticketnumber + '_' + s_now ,
+                    logtext='Ticket Void by web : '  + tt.branch.bcode + '_' + tt.tickettype + '_'+ tt.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') ,
                     user=user,
                 )
 
@@ -1295,7 +1280,7 @@ def webmyticket_old_school(request):
         if branchobj.count() == 1:
             branch = branchobj[0]
             logofile = branch.webtvlogolink
-            datetime_now = timezone.now()
+            datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             css = branch.webtvcsslink
         else :
@@ -1384,7 +1369,7 @@ def webtv_old_school(request):
         if branchobj.count() == 1:
             branch = branchobj[0]
             logofile = branch.webtvlogolink
-            datetime_now = timezone.now()
+            datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
 
@@ -1446,7 +1431,7 @@ def webtv(request, bcode, ct):
             branch = branchobj[0]
             logofile = branch.webtvlogolink
             css = branch.webtvcsslink
-            datetime_now = timezone.now()
+            datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
         else :
@@ -1541,19 +1526,17 @@ def Report_Ticket_details_Result(request, pk):
         # table = TicketLog.objects.filter(
         #     Q(ticket=ticket),
         # ).order_by('logtime')
-        report_line1 = 'Ticket Details Report'
-        report_line2 = 'Ticket: ' + ticket.tickettype + ticket.ticketnumber        
-        report_line3 = 'Branch: ' + branch.name + ' (' + branch.bcode + ')'
-        report_line4 = ''
-        report_line5 = ''
-        report_line6 = 'Total records: -'
-        
-        report_text = report_line1 + '\n' + report_line2 + '\n' + report_line3 + '\n' + report_line4 + '\n' + report_line5 + '\n' + report_line6
+
         if result_task_id == '':
             # run celery task for long process
             localtimezone = pytz.timezone(branch.timezone)
+            
+            report_text = 'Ticket Details Report\n' + \
+            'Ticket: ' + ticket.tickettype + ticket.ticketnumber + '\n' + \
+            'Branch: ' + branch.name + ' (' + branch.bcode + ')'
+        
 
-            task = report_ticketdetails.apply_async(args=[ticket_id,], countdown=0)  # 'countdown' time delay in second before execute
+            task = report_ticketdetails.apply_async(args=[ticket_id,report_text], countdown=0)  # 'countdown' time delay in second before execute
             task_id = task.id
             ptask_id = task_id.replace('-', '_')
 
@@ -1573,7 +1556,7 @@ def Report_Ticket_details_Result(request, pk):
             task_id = result_task_id.replace('_', '-')
             # print ('task_id', task_id)
             task = AsyncResult(task_id, app=report_ticketdetails)
-            status, header, report_table, count = task.get()
+            status, header, report_table, report_text = task.get()
 
             # print ('status:', status)
             # print ('report_table:', report_table)
@@ -1588,8 +1571,6 @@ def Report_Ticket_details_Result(request, pk):
                 #     report_result = 'Total ticket Report\n' + 'Branch:' + branch.name + '(' + branch.bcode + ')\n' +  'Start datetime:' + s_startdate + '\n' + 'End datetime:' + s_enddate + '\nTicket Type:' + ticketformat.ttype
                
                 # report_result = status
-                report_line6 = 'Total records: ' + str(count)
-                report_text = report_line1 + '\n' + report_line2 + '\n' + report_line3 + '\n' + report_line4 + '\n' + report_line5 + '\n' + report_line6
 
 
                 # Pagination
@@ -1625,7 +1606,7 @@ def Report_Ticket_details_Result(request, pk):
                     
                     # print(querystr)
                     filename = 'details_' 
-                    task = export_report.apply_async(args=[report_table,report_text,branch.bcode,filename], countdown=0)  # 'countdown' time delay in second before execute
+                    task = export_report.apply_async(args=[header,report_table,report_text,branch.bcode,filename], countdown=0)  # 'countdown' time delay in second before execute
                     task_id = task.id
                     ptask_id = task_id.replace('-', '_')
                     filename = 'details_' + ptask_id + '.csv'
@@ -1650,9 +1631,10 @@ def Report_Ticket_details_Result(request, pk):
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
-def Report_NoOfQueue_Result(request):
+def Report_NoOfQueue_Result(request, report):
     error = ''
 
+    report_type = report
     
     result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
 
@@ -1714,12 +1696,12 @@ def Report_NoOfQueue_Result(request):
             if ticketformat == None:
                 report_text = report_text + 'Ticket Type: ALL'
             else:
-                report_text = report_text + 'Ticket Type: ' +  ticketformat.ttype 
+                report_text = report_text + 'Ticket Type: ' +  ticketformat.ttype
 
             tt = ''
             if ticketformat != None:
                 tt = ticketformat.ttype
-            task = report_NoOfQueue.apply_async(args=[utc_startdate, utc_enddate, report_text, bcode, tt], countdown=0)  # 'countdown' time delay in second before execute
+            task = report_NoOfQueue.apply_async(args=[report_type, utc_startdate, utc_enddate, report_text, bcode, tt], countdown=0)  # 'countdown' time delay in second before execute
             task_id = task.id
             ptask_id = task_id.replace('-', '_')
 
@@ -1733,12 +1715,13 @@ def Report_NoOfQueue_Result(request):
             return render(request, 'base/in_progress.html', context)
         else:
             messages.error(request, error)
-    else :
+            return redirect('reports')
+    else :        
         # long process is done output result to HTML
-        # task id is result_task_id            
+        # task id is result_task_id        
         task_id = result_task_id.replace('_', '-')
         task = AsyncResult(task_id, app=report_NoOfQueue)
-        status, header, report_table, report_text = task.get()
+        status, header, report_table, report_text, bcode = task.get()
 
         if request.method != 'POST':
             # Pagination
@@ -1765,10 +1748,166 @@ def Report_NoOfQueue_Result(request):
             }
             context = {'aqs_version':aqs_version} | context 
             return render(request, 'base/r-result.html', context)
-            
-        
-    # return HttpResponse('Report_NoOfQueue_Result\n' + 'Branch:' + bcode + '\nStart datetime:' + datetime.strftime(d_startdate, '%Y-%m-%d %H:%M:%S.%f') + '\nEnd datetime:' + datetime.strftime(d_enddate, '%Y-%m-%d %H:%M:%S.%f') + '\nTicket Type:' + ticketformat_id + '\nResult Task ID:' + result_task_id)
+        elif request.method == 'POST':
+            action = request.POST.get('action')
+            if action == 'excel':
+                # convert list (report_table) to string
+                # querystr = pickle.dumps(report_table.query)
+                
+                # print(querystr)
+                filename = report_type + '_' 
+                task = export_report.apply_async(args=[header,report_table,report_text,bcode,filename], countdown=0)  # 'countdown' time delay in second before execute
+                task_id = task.id
+                ptask_id = task_id.replace('-', '_')
+                filename = filename + ptask_id + '.csv'
+                
+                # download path
+                url_download = static('download/'+ bcode + '/' + filename)
 
+                context = {'task_id': ptask_id}
+                context = context | {'wsh' : wsHypertext} 
+                context = context | {'url_download': url_download}
+                context = {'aqs_version':aqs_version} | {'app_name':APP_NAME} | context 
+                return render(request, 'base/in_progress.html', context)
+
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
+def Report_NoOfMiss_Result(request):
+    error = ''
+    
+    result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
+
+    if result_task_id == '':
+        branch = None
+        ticketformat = None
+        # change code to if request.GET.get('x') != None else ''
+        bcode = request.GET.get('branch') if request.GET.get('branch') != None else ''
+        # bcode = request.GET['branch']
+        l_startdate = request.GET.get('startdate') if request.GET.get('startdate') != None else ''
+        # s_startdate = request.GET['startdate']
+        l_enddate = request.GET.get('enddate') if request.GET.get('enddate') != None else ''
+        # s_enddate = request.GET['enddate']
+        ticketformat_id = request.GET.get('ticketformats') if request.GET.get('ticketformats') != None else ''
+        # ticketformat_id = request.GET['ticketformats']
+        result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
+
+        s_startdate = l_startdate + ' 00:00:00.000000'
+        # convert to datetime
+        d_startdate = datetime.strptime(s_startdate, '%Y-%m-%d %H:%M:%S.%f')
+        s_enddate = l_enddate + ' 23:59:59.999999'
+        # convert to datetime
+        d_enddate = datetime.strptime(s_enddate, '%Y-%m-%d %H:%M:%S.%f')
+        # convert to UTC
+        utc_startdate = funLocaltoUTC(d_startdate, 'UTC')
+        utc_enddate = funLocaltoUTC(d_enddate, 'UTC')
+
+        # check input data
+
+        if error == '':
+            if d_enddate < d_startdate :
+                error = 'Error : Start datetime > End datetime.'
+        if error == '':
+            if (d_enddate - d_startdate).days > 100 :
+                error = 'Error : Date range do not more then 100 days.'
+        if error == '':
+            if bcode == '':
+                error = 'Error : Branch is blank.'
+            else:
+                try:
+                    branch = Branch.objects.get(bcode=bcode)
+                except:
+                    error = 'Error : Branch not found.'
+        if error == '':
+            if ticketformat_id != '':
+                try:
+                    ticketformat = TicketFormat.objects.get(id=int(ticketformat_id))
+                except:
+                    error = 'Error : Ticket Format not found.'
+        if error == '':
+            # result_task_id = ''
+            # localtimezone = pytz.timezone(branch.timezone)
+            # table = TicketLog.objects.filter(
+            #     Q(ticket=ticket),
+            # ).order_by('logtime')
+            report_text = 'Number of queue summary per day Report' + '\n' \
+            + 'Date range: ' + l_startdate + ' to ' + l_enddate + '\n' \
+            + 'Branch: ' + branch.name + ' (' + bcode + ')' + '\n' 
+            if ticketformat == None:
+                report_text = report_text + 'Ticket Type: ALL'
+            else:
+                report_text = report_text + 'Ticket Type: ' +  ticketformat.ttype
+
+            tt = ''
+            if ticketformat != None:
+                tt = ticketformat.ttype
+            task = report_NoOfQueue.apply_async(args=['miss', utc_startdate, utc_enddate, report_text, bcode, tt], countdown=0)  # 'countdown' time delay in second before execute
+            task_id = task.id
+            ptask_id = task_id.replace('-', '_')
+
+            url_download = ''
+
+            context = {'task_id': ptask_id}
+            context = context | {'app_name':APP_NAME}
+            context = context | {'wsh' : wsHypertext}
+            context = context | {'url_download': url_download}
+            context = {'aqs_version':aqs_version} | context 
+            return render(request, 'base/in_progress.html', context)
+        else:
+            messages.error(request, error)
+            return redirect('reports')
+    else :        
+        # long process is done output result to HTML
+        # task id is result_task_id        
+        task_id = result_task_id.replace('_', '-')
+        task = AsyncResult(task_id, app=report_NoOfQueue)
+        status, header, report_table, report_text, bcode = task.get()
+
+        if request.method != 'POST':
+            # Pagination
+            table100 = None
+            page = request.GET.get('page') if request.GET.get('page') != None else '1'
+            page = int(page)
+            per_page = 100  # Number of items per page
+
+            paginator = Paginator(report_table, per_page)
+            try:
+                table100 = paginator.page(page)
+            except PageNotAnInteger:
+                table100 = paginator.page(1)
+            except EmptyPage:
+                table100 = paginator.page(paginator.num_pages) 
+
+            context = {
+            'app_name':APP_NAME,
+            'task_id': result_task_id,
+            # 'localtimezone':localtimezone,
+            'text':report_text,
+            'header':header,
+            'table':table100,        
+            }
+            context = {'aqs_version':aqs_version} | context 
+            return render(request, 'base/r-result.html', context)
+        elif request.method == 'POST':
+            action = request.POST.get('action')
+            if action == 'excel':
+                # convert list (report_table) to string
+                # querystr = pickle.dumps(report_table.query)
+                
+                # print(querystr)
+                filename = 'miss_' 
+                task = export_report.apply_async(args=[header,report_table,report_text,bcode,filename], countdown=0)  # 'countdown' time delay in second before execute
+                task_id = task.id
+                ptask_id = task_id.replace('-', '_')
+                filename = filename + ptask_id + '.csv'
+                
+                # download path
+                url_download = static('download/'+ bcode + '/' + filename)
+
+                context = {'task_id': ptask_id}
+                context = context | {'wsh' : wsHypertext} 
+                context = context | {'url_download': url_download}
+                context = {'aqs_version':aqs_version} | {'app_name':APP_NAME} | context 
+                return render(request, 'base/in_progress.html', context)    
 
 
 
@@ -1806,28 +1945,23 @@ def Report_RAW_Result(request):
                 countertype = CounterType.objects.get(id=int(countertype_id))
             except:
                 error = 'Error : Counter Type not found.'
-             
+
+    s_startdate = s_startdate + 'T00:00:00.000000'
+
     if error == '':
         try:
-            startdate = datetime.strptime(s_startdate, '%Y-%m-%dT%H:%M:%S')
+            startdate = datetime.strptime(s_startdate, '%Y-%m-%dT%H:%M:%S.%f')
             startdate = funLocaltoUTC(startdate, branch.timezone)
+        
         except:
-            try: 
-                startdate = datetime.strptime(s_startdate + ':00', '%Y-%m-%dT%H:%M:%S')
-                startdate = funLocaltoUTC(startdate, branch.timezone) 
-            except:
-                error = 'Error : Start Datetime not found.'
-    
+            error = 'Error : Start Datetime not found.'
+    s_enddate = s_enddate + 'T23:59:59.999999'
     if error == '':
         try:
-            enddate = datetime.strptime(s_enddate, '%Y-%m-%dT%H:%M:%S')
+            enddate = datetime.strptime(s_enddate, '%Y-%m-%dT%H:%M:%S.%f')
             enddate = funLocaltoUTC(enddate, branch.timezone)
-        except:
-            try:
-                enddate = datetime.strptime(s_enddate + ':00', '%Y-%m-%dT%H:%M:%S')
-                enddate = funLocaltoUTC(enddate, branch.timezone)
-            except:
-                error = 'Error : End Datetime not found.'
+        except:           
+            error = 'Error : End Datetime not found.'
 
     
     if error == '':
@@ -2484,7 +2618,7 @@ def Reports(request):
 
     now_l = datetime.now()
     snow_l = now_l.strftime('%Y-%m-%d')
-    print(now_l)
+    # print(now_l)
     context = {
         'app_name':APP_NAME,
         'aqs_version':aqs_version, 
@@ -3134,7 +3268,7 @@ def Settings_Save(request, pk):
         
     if result == '' :
         branch.save()
-        datetime_now = timezone.now()
+        datetime_now = datetime.now(timezone.utc)
         sch_shutdown(branch, datetime_now)
 
         countertypes = CounterType.objects.filter(Q(branch=branch))
@@ -3205,7 +3339,7 @@ def SettingsUpdateView(request, pk):
                 # print bsf bookingNewEmailUser list username
                 # print(branch.bookingNewEmailUser.all().values_list('username', flat=True))
 
-                datetime_now = timezone.now()
+                datetime_now = datetime.now(timezone.utc)
                 sch_shutdown(branch, datetime_now)
             except:
                 error = 'An error occurcd during updating Branch settings'
@@ -4060,7 +4194,7 @@ def MenuView(request):
     # return render (request, 'base/m-menu.html', context)
 
 def auth_data(user):
-    datetime_now =timezone.now()
+    datetime_now =datetime.now(timezone.utc)
     userprofile = UserProfile.objects.get(user=user)
     auth_en_queue = userprofile.enabled_queue
     auth_en_crm = userprofile.enabled_crm
