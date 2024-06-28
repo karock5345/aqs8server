@@ -7,7 +7,7 @@ from django.http import HttpResponse
 # from django.utils import timezone
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 import pickle
-from base.models import TicketData, TicketFormat, Ticket, Branch, UserStatusLog, TicketLog
+from base.models import TicketData, TicketFormat, Ticket, Branch, UserStatusLog, TicketLog, CounterLoginLog
 from booking.models import SMS_Log
 from django.contrib.auth.models import User
 from django.db.models import Q
@@ -362,7 +362,10 @@ def export_report(header, quesrystr, report_text, bcode , filename):
     # get branch code
     #bcode = table[0].branch.bcode
     # get django static path
-    save_path = static_root + '/download/' + bcode + '/' + filename
+    if bcode == '' or bcode == None:
+        save_path = static_root + '/download/' +  filename
+    else:
+        save_path = static_root + '/download/' + bcode + '/' + filename
     logger.info(f'Full path of save file: {save_path}')
 
     # create new folder if not exist
@@ -377,14 +380,17 @@ def export_report(header, quesrystr, report_text, bcode , filename):
         pass
 
     # Directory 
-    newdir = bcode           
-    # Path 
-    path = os.path.join(static_root + '/download/', newdir) 
-    try:
-        os.mkdir(path)
-    except:
-        # logger.error('Error new "bcode" folder')
+    if bcode == '' or bcode == None:
         pass
+    else:
+        newdir = bcode
+        # Path 
+        path = os.path.join(static_root + '/download/', newdir) 
+        try:
+            os.mkdir(path)
+        except:
+            # logger.error('Error new "bcode" folder')
+            pass
 
     # add header
     for item in header:
@@ -841,3 +847,368 @@ def report_NoOfQueue(report, utc_startdate, utc_enddate, report_text, bcode, tic
         print   ('Error:', error)
 
     return current_task.status, header, current_task.table, report_text, bcode
+
+@shared_task
+def t_Report_QSum(utc_startdate, utc_enddate, report_text, bcode, tickettype):
+    from celery import current_task
+    report_table = []
+    error = ''
+    branch  = None
+
+    # Get my task ID
+    my_id = current_task.request.id
+    
+    current_task.status = 'PROGRESS'
+    current_task.table = []
+    count = 0
+    header = []
+    per = -1
+
+    if error == '' :
+        try:
+            branch = Branch.objects.get(bcode=bcode)
+        except:
+            error = 'Branch not found'
+
+
+    if error == '' :
+        
+        filter_report = Q(tickettime__range=[utc_startdate, utc_enddate]) & Q(locked=True) & Q(branch__bcode=bcode)
+        if tickettype != '':
+            filter_report = filter_report & Q(tickettype=tickettype)        
+        
+        tickets = Ticket.objects.filter(filter_report).order_by('tickettime')
+        # Table
+        # 0          |Date       | Queue         | Completed    | No Show       | Void          | 
+        # 1          |2021-01-01 | 10            | 20           | 30            | 40            | 
+        # 2          |2021-01-02 | 20            | 30           | 40            | 50            | 
+        # ...
+        # x          |Total      | 30            | 50           | 70            | 90            | 
+        i = 0
+        # prepare the dict for the table
+        table = {}
+        for ticket in tickets:
+            i += 1
+            newper = int(i/ len(tickets) * 50)
+            if newper != per:
+                per = newper
+                # Set the progress in the task's state (for WebSocket consumer)
+                current_task.update_state(state='PROGRESS', meta={'progress': per})
+
+            # get the local time of tickettime
+            local_time = funUTCtoLocal(ticket.tickettime, branch.timezone)
+            date = local_time.strftime('%Y-%m-%d')
+            tstatus = ticket.status
+            status = ticket.status            
+            if tstatus == 'done':
+                status = 'done'
+            elif tstatus == 'miss' or tstatus == 'calling' or tstatus == 'waiting' or tstatus == 'processing':
+                status = 'miss'
+            elif tstatus == 'void':
+                status = 'void'
+
+            if date not in table:             
+                table[date] = {}
+                table[date]['queue'] = 0
+                table[date]['done'] = 0
+                table[date]['miss'] = 0
+                table[date]['void'] = 0
+            table[date][status] += 1
+            table[date]['queue'] += 1
+
+        # prepare the report_table
+        # add header
+        header = ['Date', 'Queue', 'Completed', 'No Show', 'Void' ]
+
+        # add data to report_table
+        i = 0
+        for date in table:
+            i += 1
+            newper = int(i/ len(table) * 50) + 50
+            if newper != per:
+                per = newper
+                # Set the progress in the task's state (for WebSocket consumer)
+                current_task.update_state(state='PROGRESS', meta={'progress': per})
+
+            row = [date]
+            row.append(table[date]['queue'])
+            row.append(table[date]['done'])
+            row.append(table[date]['miss'])
+            row.append(table[date]['void'])
+            report_table.append(row)
+
+        current_task.update_state(state='PROGRESS', meta={'progress': 100})
+        current_task.table = report_table
+        current_task.status = 'SUCCESS'
+
+        # print('report_table',current_task.table )
+        if error == '':
+            if table != None:
+                count = len(tickets)
+                report_text = report_text + '\n' + 'Total records: ' + str(count)
+            else:
+                report_text = report_text + '\n' + 'Total records: 0' 
+    if error != '':
+        print   ('Error:', error)
+
+    return current_task.status, header, current_task.table, report_text, bcode
+
+@shared_task
+def t_Report_UserPerf(utc_startdate, utc_enddate, report_text, userid_list):
+    from celery import current_task
+    report_table = []
+    error = ''
+
+    # Get my task ID
+    my_id = current_task.request.id
+    
+    current_task.status = 'PROGRESS'
+    current_task.table = []
+    count = 0
+    header = []
+    per = -1
+
+    users = User.objects.filter(id__in=userid_list)
+
+    if error == '' :
+        # Table 
+        # 0          |User       | Called        | Completed     | No Show       | Void          | Login Time    | Aver. Waiting | Aver. Process | Aver. Total   |
+        # 1          |Tim        | 10            | 9             | 1             | 40            | 100:52:10     | 10:35         | 20:35         | 30:35         |
+        # 2          |Elton      | 20            | 17            | 2             | 1             | 82:42:12      | 10:20         | 20:20         | 30:40         |
+        # ...
+
+        filter_report = Q(starttime__range=[utc_startdate, utc_enddate]) & Q(calluser__in=users)
+        
+        tickets = TicketData.objects.filter(filter_report)
+
+        totaldata = tickets.count()
+
+        i = 0
+        # prepare the dict for the table
+        table = {}
+        for user in users:
+            username = user.username
+            if username not in table:
+                table[username] = {}
+                table[username]['name'] = user.first_name + ' ' + user.last_name + ' (' + user.username + ')'
+                table[username]['called'] = 0
+                table[username]['done'] = 0
+                table[username]['miss'] = 0
+                table[username]['void'] = 0
+                table[username]['login'] = 0
+                table[username]['waiting'] = 0
+                table[username]['process'] = 0
+                table[username]['total'] = 0
+
+            # login time
+            # case 1 range | ---------- Login ----------Logout ---------- |
+            # case 2 range | ---------- Login ---------- | ---------- Logout
+            # case 3 range Login ---------- | ---------- Logout ---------- |
+            filter_report = Q(logintime__range=[utc_startdate, utc_enddate]) & ~Q(logouttime=None) & Q(user=user)
+            userlogobj = CounterLoginLog.objects.filter(filter_report)
+            for ul in userlogobj:
+                if utc_enddate > ul.logouttime:
+                    # case 2 
+                    table[username]['login'] += (utc_enddate - ul.logintime).seconds
+                else:
+                    # case 1 
+                    table[username]['login'] += (ul.logouttime - ul.logintime).seconds
+            # case 3
+            filter_report = ~Q(logintime__range=[utc_startdate, utc_enddate]) & Q(logouttime__range=[utc_startdate, utc_enddate]) & Q(user=user)
+            userlogobj = CounterLoginLog.objects.filter(filter_report)
+            for ul in userlogobj:
+                table[username]['login'] += (ul.logouttime - utc_startdate).seconds
+
+            filter_report = Q(starttime__range=[utc_startdate, utc_enddate]) & Q(voiduser=user)        
+            vtickets = TicketData.objects.filter(filter_report)
+            table[username]['void'] = vtickets.count()
+
+            filter_report = Q(starttime__range=[utc_startdate, utc_enddate]) & Q(calluser=user)        
+            tickets = TicketData.objects.filter(filter_report).order_by('starttime')
+            table[username]['called'] = tickets.count()
+            
+            for ticket in tickets:
+                i += 1
+                newper = int(i/ totaldata * 100)
+                if newper != per:
+                    per = newper
+                    # Set the progress in the task's state (for WebSocket consumer)
+                    current_task.update_state(state='PROGRESS', meta={'progress': per})                
+                
+                
+                if ticket.donetime != None:
+                    table[username]['done'] += 1
+                elif ticket.misstime != None:
+                    table[username]['miss'] += 1
+                if ticket.waitingperiod != None:
+                    table[username]['waiting'] += ticket.waitingperiod
+                if ticket.processingperiod != None:
+                    table[username]['process'] += ticket.processingperiod
+                if ticket.walkingperiod != None:
+                    table[username]['process'] += ticket.walkingperiod
+                if ticket.totalperiod != None:
+                    table[username]['total'] += ticket.totalperiod
+
+
+
+        # prepare the report_table
+        # add header
+        header = ['User', 'Called', 'Completed', 'No Show', 'Void', 'Login Time', 'Aver. Waiting', 'Aver. Process', 'Aver. Total']
+
+        # add data to report_table
+        i = 0
+        for user in table:
+            i += 1
+            newper = int(i/ len(table) * 50) + 50
+            if newper != per:
+                per = newper
+                # Set the progress in the task's state (for WebSocket consumer)
+                current_task.update_state(state='PROGRESS', meta={'progress': per})
+
+            row = [table[user]['name']]
+            row.append(table[user]['called'])
+            row.append(table[user]['done'])
+            row.append(table[user]['miss'])
+            row.append(table[user]['void'])
+            row.append(str(timedelta(seconds=table[user]['login'])))
+            if table[user]['called'] > 0:
+                row.append(str(timedelta(seconds=table[user]['waiting'] / table[user]['called'])))
+            else:
+                row.append('00:00')
+            if table[user]['done'] > 0:
+                row.append(str(timedelta(seconds=table[user]['process'] / table[user]['done'])))
+                row.append(str(timedelta(seconds=table[user]['total'] / table[user]['done'])))
+            else:
+                row.append('00:00')
+                row.append('00:00')
+            report_table.append(row)
+
+   
+
+        current_task.update_state(state='PROGRESS', meta={'progress': 100})
+        current_task.table = report_table
+        current_task.status = 'SUCCESS'
+
+
+    if error != '':
+        print   ('Error:', error)
+
+    return current_task.status, header, current_task.table, report_text
+
+@shared_task
+def t_Report_TicketType(utc_startdate, utc_enddate, report_text, ttid_list):
+    from celery import current_task
+    report_table = []
+    error = ''
+
+    # Get my task ID
+    my_id = current_task.request.id
+    
+    current_task.status = 'PROGRESS'
+    current_task.table = []
+    count = 0
+    header = []
+    per = -1
+
+    ticketformats = TicketFormat.objects.filter(id__in=ttid_list)
+
+    if error == '' :
+        # Table
+        # 0          | Ticket Type   | Issued        | Completed     | No Show       | Void          | Aver. Waiting | Aver. Process | Aver. Total   |
+        # 1          | A             | 10            | 9             | 1             | 40            | 10:35         | 20:35         | 30:35         |
+        # 2          | B             | 20            | 17            | 2             | 1             | 10:20         | 20:20         | 30:40         |
+        # ...
+
+        filter_report = Q(starttime__range=[utc_startdate, utc_enddate]) & Q(ticket__ticketformat=ticketformats)
+        
+        tickets = TicketData.objects.filter(Q(ticket__ticketformat=ticketformats))
+
+        totaldata = tickets.count()
+
+        i = 0
+        # prepare the dict for the table
+        table = {}
+        for tformat in ticketformats:
+            ttype = tformat.ttype
+            if ttype not in table:
+                table[ttype] = {}
+                table[ttype]['ttype'] = ttype
+                table[ttype]['issued'] = 0
+                table[ttype]['done'] = 0
+                table[ttype]['miss'] = 0
+                table[ttype]['void'] = 0
+                table[ttype]['waiting'] = 0
+                table[ttype]['process'] = 0
+                table[ttype]['total'] = 0
+
+            
+            # filter_report = Q(starttime__range=[utc_startdate, utc_enddate]) & Q(ticket__ticketformat=tformat) & ~Q(voidtime=None)
+            # vtickets = TicketData.objects.filter(filter_report)
+            # table[ttype]['void'] = vtickets.count()
+
+            filter_report = Q(starttime__range=[utc_startdate, utc_enddate]) & Q(ticket__ticketformat=tformat) 
+            tickets = TicketData.objects.filter(filter_report).order_by('starttime')
+            table[ttype]['issued'] = tickets.count()
+            
+            for ticket in tickets:
+                i += 1
+                newper = int(i/ totaldata * 100)
+                if newper != per:
+                    per = newper
+                    # Set the progress in the task's state (for WebSocket consumer)
+                    current_task.update_state(state='PROGRESS', meta={'progress': per})                
+                
+                
+                if ticket.donetime != None:
+                    table[ttype]['done'] += 1
+                elif ticket.misstime != None:
+                    table[ttype]['miss'] += 1
+                elif ticket.voidtime != None:
+                    table[ttype]['void'] += 1                    
+                if ticket.waitingperiod != None:
+                    table[ttype]['waiting'] += ticket.waitingperiod
+                if ticket.processingperiod != None:
+                    table[ttype]['process'] += ticket.processingperiod
+                if ticket.walkingperiod != None:
+                    table[ttype]['process'] += ticket.walkingperiod
+                if ticket.totalperiod != None:
+                    table[ttype]['total'] += ticket.totalperiod
+
+
+
+        # prepare the report_table
+        # add header
+        # 0          | Ticket Type   | Issued        | Completed     | No Show       | Void          | Aver. Waiting | Aver. Process | Aver. Total   |
+        header = ['Ticket Type', 'Issued', 'Completed', 'No Show', 'Void', 'Aver. Waiting', 'Aver. Process', 'Aver. Total']
+
+        # add data to report_table
+        for ttype in table:
+
+            row = [table[ttype]['ttype']]
+            row.append(table[ttype]['issued'])
+            row.append(table[ttype]['done'])
+            row.append(table[ttype]['miss'])
+            row.append(table[ttype]['void'])
+            if table[ttype]['called'] > 0:
+                row.append(str(timedelta(seconds=table[ttype]['waiting'] / table[ttype]['issued'])))
+            else:
+                row.append('00:00')
+            if table[ttype]['done'] > 0:
+                row.append(str(timedelta(seconds=table[ttype]['process'] / table[ttype]['done'])))
+                row.append(str(timedelta(seconds=table[ttype]['total'] / table[ttype]['done'])))
+            else:
+                row.append('00:00')
+                row.append('00:00')
+            report_table.append(row)
+
+   
+
+        current_task.update_state(state='PROGRESS', meta={'progress': 100})
+        current_task.table = report_table
+        current_task.status = 'SUCCESS'
+
+
+    if error != '':
+        print   ('Error:', error)
+
+    return current_task.status, header, current_task.table, report_text

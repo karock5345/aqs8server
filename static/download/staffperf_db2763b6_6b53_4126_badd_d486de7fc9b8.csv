@@ -1,0 +1,10 @@
+Staff performance report
+Date range: 2024-06-01 to 2024-06-28
+User: ALL
+User,Called,Completed,No Show,Void,Login Time,Aver. Waiting,Aver. Process,Aver. Total,
+Tim Wong (tim),12,4,7,0,9:51:58,6:25:20.333333,5:12:16.750000,6:37:45,
+  (userapi),0,0,0,0,0:00:00,00:00,00:00,00:00,
+  (userweb),0,0,0,0,0:00:00,00:00,00:00,00:00,
+Elton Lam (elton),20,5,15,0,9:52:31,15:57:14.300000,9:29:24.600000,10:46:27.800000,
+Kate Po (kate),0,0,0,0,9:33:50,00:00,00:00,00:00,
+Anya Wong (anya),0,0,0,0,0:00:00,00:00,00:00,00:00,

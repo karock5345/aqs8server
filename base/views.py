@@ -1631,10 +1631,8 @@ def Report_Ticket_details_Result(request, pk):
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
-def Report_NoOfQueue_Result(request, report):
+def Report_NoOfQueue_Result(request):
     error = ''
-
-    report_type = report
     
     result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
 
@@ -1651,6 +1649,7 @@ def Report_NoOfQueue_Result(request, report):
         ticketformat_id = request.GET.get('ticketformats') if request.GET.get('ticketformats') != None else ''
         # ticketformat_id = request.GET['ticketformats']
         result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
+        report_type = request.GET.get('report_type') if request.GET.get('report_type') != None else ''
 
         s_startdate = l_startdate + ' 00:00:00.000000'
         # convert to datetime
@@ -1690,8 +1689,16 @@ def Report_NoOfQueue_Result(request, report):
             # table = TicketLog.objects.filter(
             #     Q(ticket=ticket),
             # ).order_by('logtime')
-            report_text = 'Number of queue summary per day Report' + '\n' \
-            + 'Date range: ' + l_startdate + ' to ' + l_enddate + '\n' \
+            if report_type == 'queue':
+                report_text = 'Number of queue per timeslot Report' + '\n'
+            elif report_type == 'miss':
+                report_text = 'Number of no show per timeslot Report' + '\n'
+            elif report_type == 'done':
+                report_text = 'Number of completed ticket per timeslot Report' + '\n'
+            elif report_type == 'void':
+                report_text = 'Number of void ticket per timeslot Report' + '\n'
+
+            report_text = report_text + 'Date range: ' + l_startdate + ' to ' + l_enddate + '\n' \
             + 'Branch: ' + branch.name + ' (' + bcode + ')' + '\n' 
             if ticketformat == None:
                 report_text = report_text + 'Ticket Type: ALL'
@@ -1772,7 +1779,7 @@ def Report_NoOfQueue_Result(request, report):
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
-def Report_NoOfMiss_Result(request):
+def Report_QSum(request):
     error = ''
     
     result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
@@ -1829,7 +1836,7 @@ def Report_NoOfMiss_Result(request):
             # table = TicketLog.objects.filter(
             #     Q(ticket=ticket),
             # ).order_by('logtime')
-            report_text = 'Number of queue summary per day Report' + '\n' \
+            report_text = 'Queue summary per day' + '\n' \
             + 'Date range: ' + l_startdate + ' to ' + l_enddate + '\n' \
             + 'Branch: ' + branch.name + ' (' + bcode + ')' + '\n' 
             if ticketformat == None:
@@ -1840,7 +1847,7 @@ def Report_NoOfMiss_Result(request):
             tt = ''
             if ticketformat != None:
                 tt = ticketformat.ttype
-            task = report_NoOfQueue.apply_async(args=['miss', utc_startdate, utc_enddate, report_text, bcode, tt], countdown=0)  # 'countdown' time delay in second before execute
+            task = t_Report_QSum.apply_async(args=[utc_startdate, utc_enddate, report_text, bcode, tt], countdown=0)  # 'countdown' time delay in second before execute
             task_id = task.id
             ptask_id = task_id.replace('-', '_')
 
@@ -1859,7 +1866,7 @@ def Report_NoOfMiss_Result(request):
         # long process is done output result to HTML
         # task id is result_task_id        
         task_id = result_task_id.replace('_', '-')
-        task = AsyncResult(task_id, app=report_NoOfQueue)
+        task = AsyncResult(task_id, app=t_Report_QSum)
         status, header, report_table, report_text, bcode = task.get()
 
         if request.method != 'POST':
@@ -1894,7 +1901,7 @@ def Report_NoOfMiss_Result(request):
                 # querystr = pickle.dumps(report_table.query)
                 
                 # print(querystr)
-                filename = 'miss_' 
+                filename = 'qsum_' 
                 task = export_report.apply_async(args=[header,report_table,report_text,bcode,filename], countdown=0)  # 'countdown' time delay in second before execute
                 task_id = task.id
                 ptask_id = task_id.replace('-', '_')
@@ -2589,6 +2596,281 @@ def Report_Staff_Result(request):
         return redirect('reports')
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/r-staff.html', context)
+
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
+def Report_StaffPerformance(request):
+    error = ''
+    
+    result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
+
+    if result_task_id == '':
+        user_id = request.GET.get('user') if request.GET.get('user') != None else ''
+        l_startdate = request.GET.get('startdate') if request.GET.get('startdate') != None else ''
+        l_enddate = request.GET.get('enddate') if request.GET.get('enddate') != None else ''
+        result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
+
+        s_startdate = l_startdate + ' 00:00:00.000000'
+        # convert to datetime
+        d_startdate = datetime.strptime(s_startdate, '%Y-%m-%d %H:%M:%S.%f')
+        s_enddate = l_enddate + ' 23:59:59.999999'
+        # convert to datetime
+        d_enddate = datetime.strptime(s_enddate, '%Y-%m-%d %H:%M:%S.%f')
+        # convert to UTC
+        utc_startdate = funLocaltoUTC(d_startdate, 'UTC')
+        utc_enddate = funLocaltoUTC(d_enddate, 'UTC')
+
+        # check input data
+
+        if error == '':
+            if d_enddate < d_startdate :
+                error = 'Error : Start datetime > End datetime.'
+        if error == '':
+            if (d_enddate - d_startdate).days > 100 :
+                error = 'Error : Date range do not more then 100 days.'
+
+        if error == '':
+            user_id_list = []
+            if user_id == '':
+                auth_en_queue, \
+                auth_en_crm, \
+                auth_en_booking, \
+                auth_branchs , \
+                auth_userlist, \
+                auth_userlist_active, \
+                auth_grouplist, \
+                auth_profilelist, \
+                auth_ticketformats , \
+                auth_routes, \
+                auth_countertype, \
+                auth_timeslots, \
+                auth_bookings, \
+                auth_timeslottemplist, \
+                = auth_data(request.user)
+                # convert auth_userlist to user id list
+                for user in auth_userlist:
+                    user_id_list.append(user.pk)
+            else:
+                user_id_list.append(int(user_id))
+        if error == '':
+            # result_task_id = ''
+            # localtimezone = pytz.timezone(branch.timezone)
+            # table = TicketLog.objects.filter(
+            #     Q(ticket=ticket),
+            # ).order_by('logtime')
+            report_text = 'Staff performance report' + '\n' \
+            + 'Date range: ' + l_startdate + ' to ' + l_enddate + '\n'
+            if user_id == '':
+                report_text = report_text + 'User: ALL'
+            else:
+                report_text = report_text + 'User id: ' + str(user_id)
+
+            task = t_Report_UserPerf.apply_async(args=[utc_startdate, utc_enddate, report_text, user_id_list], countdown=0)  # 'countdown' time delay in second before execute
+            task_id = task.id
+            ptask_id = task_id.replace('-', '_')
+
+            url_download = ''
+
+            context = {'task_id': ptask_id}
+            context = context | {'app_name':APP_NAME}
+            context = context | {'wsh' : wsHypertext}
+            context = context | {'url_download': url_download}
+            context = {'aqs_version':aqs_version} | context 
+            return render(request, 'base/in_progress.html', context)
+        else:
+            messages.error(request, error)
+            return redirect('reports')
+    else :        
+        # long process is done output result to HTML
+        # task id is result_task_id        
+        task_id = result_task_id.replace('_', '-')
+        task = AsyncResult(task_id, app=t_Report_UserPerf)
+        status, header, report_table, report_text = task.get()
+
+        if request.method != 'POST':
+            # Pagination
+            table100 = None
+            page = request.GET.get('page') if request.GET.get('page') != None else '1'
+            page = int(page)
+            per_page = 100  # Number of items per page
+
+            paginator = Paginator(report_table, per_page)
+            try:
+                table100 = paginator.page(page)
+            except PageNotAnInteger:
+                table100 = paginator.page(1)
+            except EmptyPage:
+                table100 = paginator.page(paginator.num_pages) 
+
+            context = {
+            'app_name':APP_NAME,
+            'task_id': result_task_id,
+            # 'localtimezone':localtimezone,
+            'text':report_text,
+            'header':header,
+            'table':table100,        
+            }
+            context = {'aqs_version':aqs_version} | context 
+            return render(request, 'base/r-result.html', context)
+        elif request.method == 'POST':
+            action = request.POST.get('action')
+            if action == 'excel':
+                # convert list (report_table) to string
+                # querystr = pickle.dumps(report_table.query)
+                
+                # print(querystr)
+                filename = 'staffperf_' 
+                task = export_report.apply_async(args=[header,report_table,report_text, None ,filename], countdown=0)  # 'countdown' time delay in second before execute
+                task_id = task.id
+                ptask_id = task_id.replace('-', '_')
+                filename = filename + ptask_id + '.csv'
+                
+                # download path
+                url_download = static('download/'+ filename)
+
+                context = {'task_id': ptask_id}
+                context = context | {'wsh' : wsHypertext} 
+                context = context | {'url_download': url_download}
+                context = {'aqs_version':aqs_version} | {'app_name':APP_NAME} | context 
+                return render(request, 'base/in_progress.html', context)    
+
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
+def Report_TicketType(request):
+    error = ''
+    
+    result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
+
+    if result_task_id == '':
+        ticketformat_id = request.GET.get('ticketformat_id') if request.GET.get('ticketformat_id') != None else ''
+        l_startdate = request.GET.get('startdate') if request.GET.get('startdate') != None else ''
+        l_enddate = request.GET.get('enddate') if request.GET.get('enddate') != None else ''
+        result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
+
+        s_startdate = l_startdate + ' 00:00:00.000000'
+        # convert to datetime
+        d_startdate = datetime.strptime(s_startdate, '%Y-%m-%d %H:%M:%S.%f')
+        s_enddate = l_enddate + ' 23:59:59.999999'
+        # convert to datetime
+        d_enddate = datetime.strptime(s_enddate, '%Y-%m-%d %H:%M:%S.%f')
+        # convert to UTC
+        utc_startdate = funLocaltoUTC(d_startdate, 'UTC')
+        utc_enddate = funLocaltoUTC(d_enddate, 'UTC')
+
+        # check input data
+
+        if error == '':
+            if d_enddate < d_startdate :
+                error = 'Error : Start datetime > End datetime.'
+        if error == '':
+            if (d_enddate - d_startdate).days > 100 :
+                error = 'Error : Date range do not more then 100 days.'
+
+        if error == '':
+            ticketformat_id_list = []
+            if ticketformat_id == '':
+                auth_en_queue, \
+                auth_en_crm, \
+                auth_en_booking, \
+                auth_branchs , \
+                auth_userlist, \
+                auth_userlist_active, \
+                auth_grouplist, \
+                auth_profilelist, \
+                ticketformat_id , \
+                auth_routes, \
+                auth_countertype, \
+                auth_timeslots, \
+                auth_bookings, \
+                auth_timeslottemplist, \
+                = auth_data(request.user)
+                # convert auth_userlist to user id list
+                for tf in ticketformat_id:
+                    ticketformat_id_list.append(tf.pk)
+            else:
+                ticketformat_id_list.append(int(ticketformat_id))
+        if error == '':
+            # result_task_id = ''
+            # localtimezone = pytz.timezone(branch.timezone)
+            # table = TicketLog.objects.filter(
+            #     Q(ticket=ticket),
+            # ).order_by('logtime')
+            report_text = 'Ticket Type report' + '\n' \
+            + 'Date range: ' + l_startdate + ' to ' + l_enddate + '\n'
+            if ticketformat_id == '':
+                report_text = report_text + 'Ticket Type: ALL'
+            else:
+                report_text = report_text + 'Ticket Type: ' + str(ticketformat_id)
+
+            task = t_Report_TicketType.apply_async(args=[utc_startdate, utc_enddate, report_text, ticketformat_id_list], countdown=0)  # 'countdown' time delay in second before execute
+            task_id = task.id
+            ptask_id = task_id.replace('-', '_')
+
+            url_download = ''
+
+            context = {'task_id': ptask_id}
+            context = context | {'app_name':APP_NAME}
+            context = context | {'wsh' : wsHypertext}
+            context = context | {'url_download': url_download}
+            context = {'aqs_version':aqs_version} | context 
+            return render(request, 'base/in_progress.html', context)
+        else:
+            messages.error(request, error)
+            return redirect('reports')
+    else :        
+        # long process is done output result to HTML
+        # task id is result_task_id        
+        task_id = result_task_id.replace('_', '-')
+        task = AsyncResult(task_id, app=t_Report_TicketType)
+        status, header, report_table, report_text = task.get()
+
+        if request.method != 'POST':
+            # Pagination
+            table100 = None
+            page = request.GET.get('page') if request.GET.get('page') != None else '1'
+            page = int(page)
+            per_page = 100  # Number of items per page
+
+            paginator = Paginator(report_table, per_page)
+            try:
+                table100 = paginator.page(page)
+            except PageNotAnInteger:
+                table100 = paginator.page(1)
+            except EmptyPage:
+                table100 = paginator.page(paginator.num_pages) 
+
+            context = {
+            'app_name':APP_NAME,
+            'task_id': result_task_id,
+            # 'localtimezone':localtimezone,
+            'text':report_text,
+            'header':header,
+            'table':table100,        
+            }
+            context = {'aqs_version':aqs_version} | context 
+            return render(request, 'base/r-result.html', context)
+        elif request.method == 'POST':
+            action = request.POST.get('action')
+            if action == 'excel':
+                # convert list (report_table) to string
+                # querystr = pickle.dumps(report_table.query)
+                
+                # print(querystr)
+                filename = 'tickettype_' 
+                task = export_report.apply_async(args=[header,report_table,report_text, None ,filename], countdown=0)  # 'countdown' time delay in second before execute
+                task_id = task.id
+                ptask_id = task_id.replace('-', '_')
+                filename = filename + ptask_id + '.csv'
+                
+                # download path
+                url_download = static('download/'+ filename)
+
+                context = {'task_id': ptask_id}
+                context = context | {'wsh' : wsHypertext} 
+                context = context | {'url_download': url_download}
+                context = {'aqs_version':aqs_version} | {'app_name':APP_NAME} | context 
+                return render(request, 'base/in_progress.html', context)    
+
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
