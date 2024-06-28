@@ -1096,7 +1096,7 @@ def t_Report_UserPerf(utc_startdate, utc_enddate, report_text, userid_list):
     return current_task.status, header, current_task.table, report_text
 
 @shared_task
-def t_Report_TicketType(utc_startdate, utc_enddate, report_text, ttid_list):
+def t_Report_TicketType(utc_startdate, utc_enddate, report_text, bcode, ttid_list):
     from celery import current_task
     report_table = []
     error = ''
@@ -1111,6 +1111,7 @@ def t_Report_TicketType(utc_startdate, utc_enddate, report_text, ttid_list):
     per = -1
 
     ticketformats = TicketFormat.objects.filter(id__in=ttid_list)
+    branch = Branch.objects.get(bcode=bcode)
 
     if error == '' :
         # Table
@@ -1119,10 +1120,12 @@ def t_Report_TicketType(utc_startdate, utc_enddate, report_text, ttid_list):
         # 2          | B             | 20            | 17            | 2             | 1             | 10:20         | 20:20         | 30:40         |
         # ...
 
-        filter_report = Q(starttime__range=[utc_startdate, utc_enddate]) & Q(ticket__ticketformat=ticketformats)
-        
-        tickets = TicketData.objects.filter(Q(ticket__ticketformat=ticketformats))
-
+        tickets = Ticket.objects.filter(
+            Q(branch=branch),
+            Q(tickettime__range=[utc_startdate, utc_enddate]),
+            Q(ticketformat__in=ticketformats),
+            Q(locked=True),
+        )
         totaldata = tickets.count()
 
         i = 0
@@ -1140,39 +1143,43 @@ def t_Report_TicketType(utc_startdate, utc_enddate, report_text, ttid_list):
                 table[ttype]['waiting'] = 0
                 table[ttype]['process'] = 0
                 table[ttype]['total'] = 0
+        for ticket in tickets:
+            i += 1
+            newper = int(i/ totaldata * 100)
+            if newper != per:
+                per = newper
+                # Set the progress in the task's state (for WebSocket consumer)
+                current_task.update_state(state='PROGRESS', meta={'progress': per})      
+
+
+            ttype = ticket.ticketformat.ttype
+            status = ticket.status
+            if status == 'done':
+                status = 'done'
+            elif status == 'miss' or status == 'calling' or status == 'waiting' or status == 'processing':
+                status = 'miss'
+            elif status == 'void':
+                status = 'void'
+            else:
+                status = 'miss'
+            table[ttype]['issued'] += 1
+            table[ttype][status] += 1
+
+            ticketdata = TicketData.objects.filter(ticket=ticket)
+            for td in ticketdata:
+                if td.waitingperiod != None:
+                    table[ttype]['waiting'] += td.waitingperiod
+                if td.processingperiod != None:
+                    table[ttype]['process'] += td.processingperiod
+                if td.walkingperiod != None:
+                    table[ttype]['process'] += td.walkingperiod
+                if td.totalperiod != None:
+                    table[ttype]['total'] += td.totalperiod
 
             
-            # filter_report = Q(starttime__range=[utc_startdate, utc_enddate]) & Q(ticket__ticketformat=tformat) & ~Q(voidtime=None)
-            # vtickets = TicketData.objects.filter(filter_report)
-            # table[ttype]['void'] = vtickets.count()
 
-            filter_report = Q(starttime__range=[utc_startdate, utc_enddate]) & Q(ticket__ticketformat=tformat) 
-            tickets = TicketData.objects.filter(filter_report).order_by('starttime')
-            table[ttype]['issued'] = tickets.count()
-            
-            for ticket in tickets:
-                i += 1
-                newper = int(i/ totaldata * 100)
-                if newper != per:
-                    per = newper
-                    # Set the progress in the task's state (for WebSocket consumer)
-                    current_task.update_state(state='PROGRESS', meta={'progress': per})                
-                
-                
-                if ticket.donetime != None:
-                    table[ttype]['done'] += 1
-                elif ticket.misstime != None:
-                    table[ttype]['miss'] += 1
-                elif ticket.voidtime != None:
-                    table[ttype]['void'] += 1                    
-                if ticket.waitingperiod != None:
-                    table[ttype]['waiting'] += ticket.waitingperiod
-                if ticket.processingperiod != None:
-                    table[ttype]['process'] += ticket.processingperiod
-                if ticket.walkingperiod != None:
-                    table[ttype]['process'] += ticket.walkingperiod
-                if ticket.totalperiod != None:
-                    table[ttype]['total'] += ticket.totalperiod
+
+       
 
 
 
@@ -1189,7 +1196,7 @@ def t_Report_TicketType(utc_startdate, utc_enddate, report_text, ttid_list):
             row.append(table[ttype]['done'])
             row.append(table[ttype]['miss'])
             row.append(table[ttype]['void'])
-            if table[ttype]['called'] > 0:
+            if table[ttype]['issued'] > 0:
                 row.append(str(timedelta(seconds=table[ttype]['waiting'] / table[ttype]['issued'])))
             else:
                 row.append('00:00')
@@ -1211,4 +1218,4 @@ def t_Report_TicketType(utc_startdate, utc_enddate, report_text, ttid_list):
     if error != '':
         print   ('Error:', error)
 
-    return current_task.status, header, current_task.table, report_text
+    return current_task.status, header, current_task.table, report_text, bcode

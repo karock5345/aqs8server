@@ -2742,7 +2742,10 @@ def Report_TicketType(request):
     result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
 
     if result_task_id == '':
-        ticketformat_id = request.GET.get('ticketformat_id') if request.GET.get('ticketformat_id') != None else ''
+        branch = None
+        ticketformat = None
+        bcode = request.GET.get('branch') if request.GET.get('branch') != None else ''
+        ticketformat_ttype = request.GET.get('ticketformat_ttype') if request.GET.get('ticketformat_ttype') != None else ''
         l_startdate = request.GET.get('startdate') if request.GET.get('startdate') != None else ''
         l_enddate = request.GET.get('enddate') if request.GET.get('enddate') != None else ''
         result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
@@ -2758,7 +2761,18 @@ def Report_TicketType(request):
         utc_enddate = funLocaltoUTC(d_enddate, 'UTC')
 
         # check input data
-
+        if error == '': 
+            try:
+                branch = Branch.objects.get(bcode=bcode)
+            except:
+                error = 'Error : Branch not found.'
+        if error == '':
+            if ticketformat_ttype != '':
+                try:
+                    ticketformats = TicketFormat.objects.filter(Q(ttype=ticketformat_ttype) & Q(branch=branch))
+                    ticketformat = ticketformats[0]
+                except:
+                    error = 'Error : Ticket Format not found.'
         if error == '':
             if d_enddate < d_startdate :
                 error = 'Error : Start datetime > End datetime.'
@@ -2768,7 +2782,7 @@ def Report_TicketType(request):
 
         if error == '':
             ticketformat_id_list = []
-            if ticketformat_id == '':
+            if ticketformat == None:
                 auth_en_queue, \
                 auth_en_crm, \
                 auth_en_booking, \
@@ -2777,7 +2791,7 @@ def Report_TicketType(request):
                 auth_userlist_active, \
                 auth_grouplist, \
                 auth_profilelist, \
-                ticketformat_id , \
+                auth_ticketformats , \
                 auth_routes, \
                 auth_countertype, \
                 auth_timeslots, \
@@ -2785,10 +2799,11 @@ def Report_TicketType(request):
                 auth_timeslottemplist, \
                 = auth_data(request.user)
                 # convert auth_userlist to user id list
-                for tf in ticketformat_id:
-                    ticketformat_id_list.append(tf.pk)
+                for tf in auth_ticketformats:
+                    if tf.branch == branch:
+                        ticketformat_id_list.append(tf.pk)
             else:
-                ticketformat_id_list.append(int(ticketformat_id))
+                ticketformat_id_list.append(ticketformat.pk)
         if error == '':
             # result_task_id = ''
             # localtimezone = pytz.timezone(branch.timezone)
@@ -2796,13 +2811,14 @@ def Report_TicketType(request):
             #     Q(ticket=ticket),
             # ).order_by('logtime')
             report_text = 'Ticket Type report' + '\n' \
-            + 'Date range: ' + l_startdate + ' to ' + l_enddate + '\n'
-            if ticketformat_id == '':
+            + 'Date range: ' + l_startdate + ' to ' + l_enddate + '\n' \
+            + 'Branch: ' + branch.name + '(' + branch.bcode + ')\n'
+            if ticketformat_ttype == '':
                 report_text = report_text + 'Ticket Type: ALL'
             else:
-                report_text = report_text + 'Ticket Type: ' + str(ticketformat_id)
+                report_text = report_text + 'Ticket Type: ' + ticketformat_ttype
 
-            task = t_Report_TicketType.apply_async(args=[utc_startdate, utc_enddate, report_text, ticketformat_id_list], countdown=0)  # 'countdown' time delay in second before execute
+            task = t_Report_TicketType.apply_async(args=[utc_startdate, utc_enddate, report_text, branch.bcode, ticketformat_id_list], countdown=0)  # 'countdown' time delay in second before execute
             task_id = task.id
             ptask_id = task_id.replace('-', '_')
 
@@ -2822,7 +2838,7 @@ def Report_TicketType(request):
         # task id is result_task_id        
         task_id = result_task_id.replace('_', '-')
         task = AsyncResult(task_id, app=t_Report_TicketType)
-        status, header, report_table, report_text = task.get()
+        status, header, report_table, report_text, bcode = task.get()
 
         if request.method != 'POST':
             # Pagination
@@ -2857,13 +2873,13 @@ def Report_TicketType(request):
                 
                 # print(querystr)
                 filename = 'tickettype_' 
-                task = export_report.apply_async(args=[header,report_table,report_text, None ,filename], countdown=0)  # 'countdown' time delay in second before execute
+                task = export_report.apply_async(args=[header,report_table,report_text, bcode ,filename], countdown=0)  # 'countdown' time delay in second before execute
                 task_id = task.id
                 ptask_id = task_id.replace('-', '_')
                 filename = filename + ptask_id + '.csv'
                 
                 # download path
-                url_download = static('download/'+ filename)
+                url_download = static('download/' + bcode + '/' + filename)
 
                 context = {'task_id': ptask_id}
                 context = context | {'wsh' : wsHypertext} 

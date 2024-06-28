@@ -138,11 +138,20 @@
               </div>
             </div>
             <form action="{% url 'reporttickettype' %}" target="_blank">
+              Select Branch:
+              <select name="branch" id="id_branch">
+                <!-- <option value="">---</option> -->
+                {% for branch in branchs %}
+                  <option value={{branch.bcode}}>{{branch.name}}</option>
+                  {{branch}}<br>
+                {% endfor %}
+              </select><br>
+
               Select Ticket Type:
-              <select name="ticketformat_id"  >
+              <select name="ticketformat_ttype"  >
                 <option value="">--- All ---</option>                
                 {% for tf in ticketformats %}
-                  <option value={{tf.id}}>{{tf.ttype}} - {{tf.touchkey_lang1}} {{tf.touchkey_lang2}}</option>
+                  <option value={{tf.ttype}}>{{tf.ttype}} - {{tf.touchkey_lang1}} {{tf.touchkey_lang2}}</option>
                   <br>             
                 {% endfor %}
               </select><br>
