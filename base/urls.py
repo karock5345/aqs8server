@@ -50,6 +50,7 @@ urlpatterns = [
     path('reports/noofqueue/', views.Report_NoOfQueue_Result , name='reportnoofqueue'),
     path('reports/usrp/', views.Report_StaffPerformance , name='reportuserperf'),
     path('reports/tt/', views.Report_TicketType , name='reporttickettype'),
+    path('reports/ttd/', views.Report_TicketTypeDay , name='reporttickettypeperday'),
 
 
     # path('reports/ticket/', views.Report_Ticket_Result , name='reportticket'),

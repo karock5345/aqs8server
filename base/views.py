@@ -1646,7 +1646,7 @@ def Report_NoOfQueue_Result(request):
         # s_startdate = request.GET['startdate']
         l_enddate = request.GET.get('enddate') if request.GET.get('enddate') != None else ''
         # s_enddate = request.GET['enddate']
-        ticketformat_id = request.GET.get('ticketformats') if request.GET.get('ticketformats') != None else ''
+        tickettype = request.GET.get('tickettype') if request.GET.get('tickettype') != None else ''
         # ticketformat_id = request.GET['ticketformats']
         result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
         report_type = request.GET.get('report_type') if request.GET.get('report_type') != None else ''
@@ -1678,9 +1678,9 @@ def Report_NoOfQueue_Result(request):
                 except:
                     error = 'Error : Branch not found.'
         if error == '':
-            if ticketformat_id != '':
+            if tickettype != '':
                 try:
-                    ticketformat = TicketFormat.objects.get(id=int(ticketformat_id))
+                    ticketformat = TicketFormat.objects.filter(ttype=tickettype, branch=branch).first()
                 except:
                     error = 'Error : Ticket Format not found.'
         if error == '':
@@ -1794,7 +1794,7 @@ def Report_QSum(request):
         # s_startdate = request.GET['startdate']
         l_enddate = request.GET.get('enddate') if request.GET.get('enddate') != None else ''
         # s_enddate = request.GET['enddate']
-        ticketformat_id = request.GET.get('ticketformats') if request.GET.get('ticketformats') != None else ''
+        tickettype = request.GET.get('tickettype') if request.GET.get('tickettype') != None else ''
         # ticketformat_id = request.GET['ticketformats']
         result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
 
@@ -1825,9 +1825,9 @@ def Report_QSum(request):
                 except:
                     error = 'Error : Branch not found.'
         if error == '':
-            if ticketformat_id != '':
+            if tickettype != '':
                 try:
-                    ticketformat = TicketFormat.objects.get(id=int(ticketformat_id))
+                    ticketformat = TicketFormat.objects.filter(ttype=tickettype, branch=branch).first()
                 except:
                     error = 'Error : Ticket Format not found.'
         if error == '':
@@ -2745,7 +2745,7 @@ def Report_TicketType(request):
         branch = None
         ticketformat = None
         bcode = request.GET.get('branch') if request.GET.get('branch') != None else ''
-        ticketformat_ttype = request.GET.get('ticketformat_ttype') if request.GET.get('ticketformat_ttype') != None else ''
+        tickettype = request.GET.get('tickettype') if request.GET.get('tickettype') != None else ''
         l_startdate = request.GET.get('startdate') if request.GET.get('startdate') != None else ''
         l_enddate = request.GET.get('enddate') if request.GET.get('enddate') != None else ''
         result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
@@ -2767,10 +2767,9 @@ def Report_TicketType(request):
             except:
                 error = 'Error : Branch not found.'
         if error == '':
-            if ticketformat_ttype != '':
+            if tickettype != '':
                 try:
-                    ticketformats = TicketFormat.objects.filter(Q(ttype=ticketformat_ttype) & Q(branch=branch))
-                    ticketformat = ticketformats[0]
+                    ticketformat = TicketFormat.objects.filter(ttype=tickettype, branch=branch).first()
                 except:
                     error = 'Error : Ticket Format not found.'
         if error == '':
@@ -2783,25 +2782,10 @@ def Report_TicketType(request):
         if error == '':
             ticketformat_id_list = []
             if ticketformat == None:
-                auth_en_queue, \
-                auth_en_crm, \
-                auth_en_booking, \
-                auth_branchs , \
-                auth_userlist, \
-                auth_userlist_active, \
-                auth_grouplist, \
-                auth_profilelist, \
-                auth_ticketformats , \
-                auth_routes, \
-                auth_countertype, \
-                auth_timeslots, \
-                auth_bookings, \
-                auth_timeslottemplist, \
-                = auth_data(request.user)
+                ticketformats = TicketFormat.objects.filter(branch=branch)
                 # convert auth_userlist to user id list
-                for tf in auth_ticketformats:
-                    if tf.branch == branch:
-                        ticketformat_id_list.append(tf.pk)
+                for tf in ticketformats:
+                    ticketformat_id_list.append(tf.pk)
             else:
                 ticketformat_id_list.append(ticketformat.pk)
         if error == '':
@@ -2813,12 +2797,146 @@ def Report_TicketType(request):
             report_text = 'Ticket Type report' + '\n' \
             + 'Date range: ' + l_startdate + ' to ' + l_enddate + '\n' \
             + 'Branch: ' + branch.name + '(' + branch.bcode + ')\n'
-            if ticketformat_ttype == '':
+            if ticketformat == None:
                 report_text = report_text + 'Ticket Type: ALL'
             else:
-                report_text = report_text + 'Ticket Type: ' + ticketformat_ttype
+                report_text = report_text + 'Ticket Type: ' + ticketformat.ttype
 
             task = t_Report_TicketType.apply_async(args=[utc_startdate, utc_enddate, report_text, branch.bcode, ticketformat_id_list], countdown=0)  # 'countdown' time delay in second before execute
+            task_id = task.id
+            ptask_id = task_id.replace('-', '_')
+
+            url_download = ''
+
+            context = {'task_id': ptask_id}
+            context = context | {'app_name':APP_NAME}
+            context = context | {'wsh' : wsHypertext}
+            context = context | {'url_download': url_download}
+            context = {'aqs_version':aqs_version} | context 
+            return render(request, 'base/in_progress.html', context)
+        else:
+            messages.error(request, error)
+            return redirect('reports')
+    else :        
+        # long process is done output result to HTML
+        # task id is result_task_id        
+        task_id = result_task_id.replace('_', '-')
+        task = AsyncResult(task_id, app=t_Report_TicketType)
+        status, header, report_table, report_text, bcode = task.get()
+
+        if request.method != 'POST':
+            # Pagination
+            table100 = None
+            page = request.GET.get('page') if request.GET.get('page') != None else '1'
+            page = int(page)
+            per_page = 100  # Number of items per page
+
+            paginator = Paginator(report_table, per_page)
+            try:
+                table100 = paginator.page(page)
+            except PageNotAnInteger:
+                table100 = paginator.page(1)
+            except EmptyPage:
+                table100 = paginator.page(paginator.num_pages) 
+
+            context = {
+            'app_name':APP_NAME,
+            'task_id': result_task_id,
+            # 'localtimezone':localtimezone,
+            'text':report_text,
+            'header':header,
+            'table':table100,        
+            }
+            context = {'aqs_version':aqs_version} | context 
+            return render(request, 'base/r-result.html', context)
+        elif request.method == 'POST':
+            action = request.POST.get('action')
+            if action == 'excel':
+                # convert list (report_table) to string
+                # querystr = pickle.dumps(report_table.query)
+                
+                # print(querystr)
+                filename = 'tickettype_' 
+                task = export_report.apply_async(args=[header,report_table,report_text, bcode ,filename], countdown=0)  # 'countdown' time delay in second before execute
+                task_id = task.id
+                ptask_id = task_id.replace('-', '_')
+                filename = filename + ptask_id + '.csv'
+                
+                # download path
+                url_download = static('download/' + bcode + '/' + filename)
+
+                context = {'task_id': ptask_id}
+                context = context | {'wsh' : wsHypertext} 
+                context = context | {'url_download': url_download}
+                context = {'aqs_version':aqs_version} | {'app_name':APP_NAME} | context 
+                return render(request, 'base/in_progress.html', context)    
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
+def Report_TicketTypeDay(request):
+    error = ''
+    
+    result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
+
+    if result_task_id == '':
+        branch = None
+        ticketformat = None
+        bcode = request.GET.get('branch') if request.GET.get('branch') != None else ''
+        tickettype = request.GET.get('tickettype') if request.GET.get('tickettype') != None else ''
+        l_startdate = request.GET.get('startdate') if request.GET.get('startdate') != None else ''
+        l_enddate = request.GET.get('enddate') if request.GET.get('enddate') != None else ''
+        result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
+
+        s_startdate = l_startdate + ' 00:00:00.000000'
+        # convert to datetime
+        d_startdate = datetime.strptime(s_startdate, '%Y-%m-%d %H:%M:%S.%f')
+        s_enddate = l_enddate + ' 23:59:59.999999'
+        # convert to datetime
+        d_enddate = datetime.strptime(s_enddate, '%Y-%m-%d %H:%M:%S.%f')
+        # convert to UTC
+        utc_startdate = funLocaltoUTC(d_startdate, 'UTC')
+        utc_enddate = funLocaltoUTC(d_enddate, 'UTC')
+
+        # check input data
+        if error == '': 
+            try:
+                branch = Branch.objects.get(bcode=bcode)
+            except:
+                error = 'Error : Branch not found.'
+        if error == '':
+            if tickettype == '':
+                error = 'Error : Ticket Type is blank.'
+        if error == '':
+            if tickettype != '':
+                try:
+                    ticketformat = TicketFormat.objects.filter(ttype=tickettype, branch=branch).first()
+                except:
+                    error = 'Error : Ticket Format not found.'
+        if error == '':
+            if d_enddate < d_startdate :
+                error = 'Error : Start datetime > End datetime.'
+        if error == '':
+            if (d_enddate - d_startdate).days > 100 :
+                error = 'Error : Date range do not more then 100 days.'
+
+        if error == '':
+            ticketformat_id_list = []
+
+            ticketformat_id_list.append(ticketformat.pk)
+        if error == '':
+            # result_task_id = ''
+            # localtimezone = pytz.timezone(branch.timezone)
+            # table = TicketLog.objects.filter(
+            #     Q(ticket=ticket),
+            # ).order_by('logtime')
+            report_text = 'Ticket Type report' + '\n' \
+            + 'Date range: ' + l_startdate + ' to ' + l_enddate + '\n' \
+            + 'Branch: ' + branch.name + '(' + branch.bcode + ')\n'
+            if ticketformat == None:
+                report_text = report_text + 'Ticket Type: ALL'
+            else:
+                report_text = report_text + 'Ticket Type: ' + ticketformat.ttype
+
+            task = t_Report_TicketType_day.apply_async(args=[utc_startdate, utc_enddate, report_text, branch.bcode, ticketformat_id_list], countdown=0)  # 'countdown' time delay in second before execute
             task_id = task.id
             ptask_id = task_id.replace('-', '_')
 
@@ -2914,6 +3032,15 @@ def Reports(request):
     # routes = TicketRoute.objects.all().order_by('branch','tickettype','step')
     # countertypes = CounterType.objects.all()
 
+    ttdict = {}
+    # ttdict format: { tickettype : {lang1: 'name1', lang2: 'name2'} }
+    for tf in auth_ticketformats:
+        # check the tickettype is in the dict
+        if tf.ttype not in ttdict:
+            ttdict[tf.ttype] = {}
+            ttdict[tf.ttype]['lang1'] = tf.touchkey_lang1
+            ttdict[tf.ttype]['lang2'] = tf.touchkey_lang2
+        
     now_l = datetime.now()
     snow_l = now_l.strftime('%Y-%m-%d')
     # print(now_l)
@@ -2923,8 +3050,10 @@ def Reports(request):
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
         'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
+        'ticketformats':auth_ticketformats,
+        'tickettypes':ttdict,
+        'routes':auth_routes,
+        # 'countertypes':auth_countertype,
         'timeslots':auth_timeslots, 
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,

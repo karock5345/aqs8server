@@ -1219,3 +1219,130 @@ def t_Report_TicketType(utc_startdate, utc_enddate, report_text, bcode, ttid_lis
         print   ('Error:', error)
 
     return current_task.status, header, current_task.table, report_text, bcode
+
+@shared_task
+def t_Report_TicketType_day(utc_startdate, utc_enddate, report_text, bcode, ttid_list):
+    from celery import current_task
+    report_table = []
+    error = ''
+
+    # Get my task ID
+    my_id = current_task.request.id
+    
+    current_task.status = 'PROGRESS'
+    current_task.table = []
+    count = 0
+    header = []
+    per = -1
+
+    ticketformat = TicketFormat.objects.filter(id__in=ttid_list).first()
+    branch = Branch.objects.get(bcode=bcode)
+
+    if error == '' :
+        # Table
+        # Date          | Ticket Type   | Issued        | Completed     | No Show       | Void          | Aver. Waiting | Aver. Process | Aver. Total   |
+        # 2024-06-01    | A             | 10            | 9             | 1             | 40            | 10:35         | 20:35         | 30:35         |
+        # 2024-06-02    | A             | 20            | 17            | 2             | 1             | 10:20         | 20:20         | 30:40         |
+        # ...
+
+        tickets = Ticket.objects.filter(
+            Q(branch=branch),
+            Q(tickettime__range=[utc_startdate, utc_enddate]),
+            Q(ticketformat=ticketformat),
+            Q(locked=True),
+        )
+        totaldata = tickets.count()
+
+        i = 0
+        # prepare the dict for the table
+        table = {}
+        for ticket in tickets:
+            i += 1
+            newper = int(i/ totaldata * 100)
+            if newper != per:
+                per = newper
+                # Set the progress in the task's state (for WebSocket consumer)
+                current_task.update_state(state='PROGRESS', meta={'progress': per})      
+
+
+            ttype = ticket.ticketformat.ttype
+            status = ticket.status
+            if status == 'done':
+                status = 'done'
+            elif status == 'miss' or status == 'calling' or status == 'waiting' or status == 'processing':
+                status = 'miss'
+            elif status == 'void':
+                status = 'void'
+            else:
+                status = 'miss'
+            if ticket.tickettime.date() not in table:
+                table[ticket.tickettime.date()] = {}
+            if ttype not in table[ticket.tickettime.date()]:
+                table[ticket.tickettime.date()][ttype] = {}
+                table[ticket.tickettime.date()][ttype]['ttype'] = ttype
+                table[ticket.tickettime.date()][ttype]['issued'] = 0
+                table[ticket.tickettime.date()][ttype]['done'] = 0
+                table[ticket.tickettime.date()][ttype]['miss'] = 0
+                table[ticket.tickettime.date()][ttype]['void'] = 0
+                table[ticket.tickettime.date()][ttype]['waiting'] = 0
+                table[ticket.tickettime.date()][ttype]['process'] = 0
+                table[ticket.tickettime.date()][ttype]['total'] = 0
+            table[ticket.tickettime.date()][ttype]['issued'] += 1
+            table[ticket.tickettime.date()][ttype][status] += 1
+
+            ticketdata = TicketData.objects.filter(ticket=ticket)
+            for td in ticketdata:
+                if td.waitingperiod != None:
+                    table[ticket.tickettime.date()][ttype]['waiting'] += td.waitingperiod
+                if td.processingperiod != None:
+                    table[ticket.tickettime.date()][ttype]['process'] += td.processingperiod
+                if td.walkingperiod != None:
+                    table[ticket.tickettime.date()][ttype]['process'] += td.walkingperiod
+                if td.totalperiod != None:
+                    table[ticket.tickettime.date()][ttype]['total'] += td.totalperiod
+            
+
+
+       
+
+
+
+        # prepare the report_table
+        # add header
+        # Date          | Ticket Type   | Issued        | Completed     | No Show       | Void          | Aver. Waiting | Aver. Process | Aver. Total   |
+        header = ['Date', 'Ticket Type', 'Issued', 'Completed', 'No Show', 'Void', 'Aver. Waiting', 'Aver. Process', 'Aver. Total']
+
+        # add data to report_table
+        for date in table:
+            for ttype in table[date]:
+
+                row = [date]
+                row.append(table[date][ttype]['ttype'])
+                row.append(table[date][ttype]['issued'])
+                row.append(table[date][ttype]['done'])
+                row.append(table[date][ttype]['miss'])
+                row.append(table[date][ttype]['void'])
+                if table[date][ttype]['issued'] > 0:
+                    row.append(str(timedelta(seconds=table[date][ttype]['waiting'] / table[date][ttype]['issued'])))
+                else:
+                    row.append('00:00')
+                if table[date][ttype]['done'] > 0:
+                    row.append(str(timedelta(seconds=table[date][ttype]['process'] / table[date][ttype]['done'])))
+                    row.append(str(timedelta(seconds=table[date][ttype]['total'] / table[date][ttype]['done'])))
+                else:
+                    row.append('00:00')
+                    row.append('00:00')
+                report_table.append(row)
+
+   
+
+        current_task.update_state(state='PROGRESS', meta={'progress': 100})
+        current_task.table = report_table
+        current_task.status = 'SUCCESS'
+
+
+    if error != '':
+        print   ('Error:', error)
+
+    return current_task.status, header, current_task.table, report_text, bcode
+

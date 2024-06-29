@@ -14,6 +14,7 @@
   sch = BackgroundScheduler(job_defaults=job_defaults)
   # sch = BackgroundScheduler(daemon=True)
    ```
+- New 5 standard reports : Queue summary per day, Number of queue per timeslot, Staff performance report, Ticket type report, Ticket type report per day
 
 <h3 style="color:orange;">Version 8.3.1</h3>
 

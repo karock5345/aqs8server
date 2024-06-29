@@ -32,14 +32,14 @@
 
               Start date and time (Local time) : <input type="date" name="startdate" value={{now}} step="1" ><br>
               End date and time (Local time) : <input type="date" name="enddate" value={{now}} step="1"><br>
-              
+                           
               Select Ticket Type:
-              <select name="ticketformats" id="id_ticketformats">
-                {% for tf in ticketformats %}
-                  <option value={{tf.id}}>{{tf.ttype}}-{{tf.touchkey_lang1}}</option>
+              <select name="tickettype" >
+                <option value="" selected="selected">---All ticket type---</option>
+                {% for key, value in tickettypes.items %}
+                  <option value={{key}}>{{key}} - {{value.lang1}} {{value.lang2}}</option>
                   <br>             
                 {% endfor %}
-                <option value="" selected="selected">---All ticket type---</option>
               </select><br>
 
               <button type="submit" name="action" class="btn btn--main" >Report</button>
@@ -73,13 +73,12 @@
 
 
               Select Ticket Type:
-              <select name="ticketformats" id="id_ticketformats">
-                
-                {% for tf in ticketformats %}
-                  <option value={{tf.id}}>{{tf.ttype}}-{{tf.touchkey_lang1}}</option>
+              <select name="tickettype" >
+                <option value="" selected="selected">---All ticket type---</option>
+                {% for key, value in tickettypes.items %}
+                  <option value={{key}}>{{key}} - {{value.lang1}} {{value.lang2}}</option>
                   <br>             
                 {% endfor %}
-                <option value="" selected="selected">---All ticket type---</option>
               </select><br>
 
 
@@ -148,10 +147,10 @@
               </select><br>
 
               Select Ticket Type:
-              <select name="ticketformat_ttype"  >
-                <option value="">--- All ---</option>                
-                {% for tf in ticketformats %}
-                  <option value={{tf.ttype}}>{{tf.ttype}} - {{tf.touchkey_lang1}} {{tf.touchkey_lang2}}</option>
+              <select name="tickettype" >
+                <option value="" selected="selected">---All ticket type---</option>
+                {% for key, value in tickettypes.items %}
+                  <option value={{key}}>{{key}} - {{value.lang1}} {{value.lang2}}</option>
                   <br>             
                 {% endfor %}
               </select><br>
@@ -165,40 +164,39 @@
           
           <hr>
 
-
           <div class="layout__body">
             <div class="roomList__header">
               <div>
                 <h2>Ticket type report per day: </h2>
               </div>
             </div>
-            <form action="staff">
+            <form action="{% url 'reporttickettypeperday' %}" target="_blank">
               Select Branch:
               <select name="branch" id="id_branch">
                 <!-- <option value="">---</option> -->
                 {% for branch in branchs %}
                   <option value={{branch.bcode}}>{{branch.name}}</option>
-                  {{branch}}<br>             
+                  {{branch}}<br>
                 {% endfor %}
               </select><br>
-              
-              Start date and time (Local time) : <input type="datetime-local" name="startdate" value={{now}} step="1" ><br>
-              End date and time (Local time) : <input type="datetime-local" name="enddate" value={{now}} step="1"><br>
-              
+
               Select Ticket Type:
-              <select name="users" id="id_users">
-                <option value="">---All user---</option>
-                {% for user in users %}
-                  <option value={{user.id}}>{{user.first_name}} {{user.last_name}} ({{user.username}})</option>
+              <select name="tickettype" >
+                {% for key, value in tickettypes.items %}
+                  <option value={{key}}>{{key}} - {{value.lang1}} {{value.lang2}}</option>
                   <br>             
                 {% endfor %}
               </select><br>
+              
+              Start date and time (Local time) : <input type="date" name="startdate" value={{now}} step="1" ><br>
+              End date and time (Local time) : <input type="date" name="enddate" value={{now}} step="1"><br>
 
               <input type="submit" value="Report" class="btn btn--main" >
             </form>
           </div>
           
           <hr>
+
 
           <div class="layout__body">
             <div class="roomList__header">
@@ -232,15 +230,7 @@
             </form>
           </div>
         </div>
-        <!-- Room List End -->
 
-        <!-- Activities Start -->
-        <!--    <div>
-             {-% include 'base/userlist.html' %}   
-        </div>
-        -->
-
-        <!-- Activities End -->
       </div>
 
 {% endblock %}      
