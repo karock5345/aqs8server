@@ -1179,7 +1179,7 @@ server {
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
         autoindex on;
-        alias /home/admin/chb/static_deploy;
+        alias /home/admin/chb/static_deploy/;
     }
 
     location / {

@@ -1168,7 +1168,7 @@ server {
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
         autoindex on;
-        alias /home/**ubuntu/qs123/static_deploy;
+        alias /home/**ubuntu/qs123/static_deploy/;
     }
 
     location / {
