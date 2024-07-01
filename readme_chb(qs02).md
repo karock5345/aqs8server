@@ -357,7 +357,7 @@ sudo docker run -p 5432:5432 -e POSTGRES_PASSWORD=asdf -d postgres
 
 AWS EC2 : AQS8_Server_RVD, key=aws_rvd_server_key, Security Group = aqs_security
 
-AWS Route53 : add sub domain chb.tsvd.com.hk, www.chb.tsvd.com.hk
+AWS Route53 : add sub domain chb.tsvd.com.hk
 
 ### AWS cost:
 RVD + Test + CF = $2.02 
@@ -956,7 +956,7 @@ sudo nano /etc/nginx/sites-available/chb
 edit:
 ```python
 server {
-    server_name localhost 127.0.0.1 chb.tsvd.com.hk www.chb.tsvd.com.hk;
+    server_name localhost 127.0.0.1 chb.tsvd.com.hk;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
@@ -1174,7 +1174,7 @@ sudo nano /etc/nginx/sites-available/chb
 ```sh
 server {
     listen 80;
-    server_name localhost 127.0.0.1 34.207.57.210 chb.tsvd.com.hk www.chb.tsvd.com.hk;
+    server_name localhost 127.0.0.1 chb.tsvd.com.hk;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {

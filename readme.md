@@ -1163,7 +1163,7 @@ sudo nano /etc/nginx/sites-available/qs123
 ```sh
 server {
     listen 80;
-    server_name localhost 127.0.0.1 34.207.57.210 qs123.tsvd.com.hk www.qs123.tsvd.com.hk;
+    server_name localhost 127.0.0.1 qs123.tsvd.com.hk www.qs123.tsvd.com.hk;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
