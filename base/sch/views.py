@@ -529,20 +529,22 @@ def main():
     except:
         system_inited = False
 
+    # check 
+
+
     logger.info('-SCH- Schedule INIT start @ base.sch.view.py -SCH-')
 
     snow = now.strftime("%m/%d/%Y, %H:%M:%S")
     logger.info('-SCH- Now:' + snow)
 
-    sch.start()
 
+    if system_inited == True :
+        sch.start()
+        # Scheduler 6 hours run sch_bookingtemp
+        sch_bookingtemp(6)
+        sub_booking_temp(None, None)
 
-
-    # Scheduler 6 hours run sch_bookingtemp
-    sch_bookingtemp(6)
-    sub_booking_temp(None, None)
-
-    init_branch_reset()
+        init_branch_reset()
 
     # for loop 1 - 20 add job_testing
     # for i in range(1, 21):

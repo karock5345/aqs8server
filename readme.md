@@ -792,7 +792,7 @@ Edit:
 ```python
 STATIC_URL = '/static/'
 STATICFILES_DIRS =[
-    BASE_DIR / 'static_deploy'
+    BASE_DIR / 'static'
 ]
 STATIC_ROOT = BASE_DIR / 'static_deploy'
 ```
@@ -816,8 +816,18 @@ SIMPLE_JWT = {
 }
 ```
 exit and save
-
-
+```bash
+nano ./aqs/settings.py
+```
+Edit:
+```python
+STATIC_URL = '/static/'
+STATICFILES_DIRS =[
+    BASE_DIR / 'static_deploy'
+]
+STATIC_ROOT = BASE_DIR / 'static_deploy'
+```
+exit and save
 
 
 ```bash
