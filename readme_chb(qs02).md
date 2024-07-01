@@ -1,3 +1,14 @@
+# QS02 AWS server
+- Debian User admin
+- IP: 43.199.68.139
+- Google Recaptcha
+- Public 6Lek1QUqAAAAAHURN0IzsU1KNr2HOnYdlq6iDFOr
+- Private 6Lek1QUqAAAAADLWyaFRyYFV7Umpr9lmO6y1Wywg
+- DB: aqsdb8_chb  /// aqsdbuser_chb /// dbpassword-chUsplw0hltricispamu
+- Django superuser: supertim /// ylthECLde5iflsplThAy
+- APP_NAME : aqs_app_chb
+- DOMAIN : https://chb.tsvd.com.hk
+
 # AQS version 8.3.2
 
 <h3 style="color:orange;">Version 8.3.2</h3>
