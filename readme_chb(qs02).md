@@ -8,6 +8,15 @@
 - Django superuser: supertim /// ylthECLde5iflsplThAy
 - APP_NAME : aqs_app_chb
 - DOMAIN : https://chb.tsvd.com.hk
+- userapi /// Swlt2lgobri0ud5f9co9
+- admin : elton /// chbtH0yeNuH8C1EXUtetIdr
+- Central Wifi : queuingsystem /// eder235365edrdfgtF23
+
+| Branch | Device | OS | IP | user | password |
+| --- | --- | --- | --- | --- | --- |
+| CEN | Voice - Pi3 | U24 Server | 192.168.2.101 | ubuntu | asdf |
+| CEN | Disp_P pi5 1 | U23 D | 192.168.2.201 | ubuntu | asdf |
+| CEN | Disp_P pi5 2 | U23 D | 192.168.2.202 | ubuntu | asdf |
 
 # AQS version 8.3.2
 
@@ -1006,11 +1015,11 @@ create settings : Name=global, Branch=---, disabled API log
 
 create user groups : api web admin support supervisor manager reporter and counter
 
-create user : userapi /// asdf2206 (group:api)
+create user : userapi /// Swlt2lgobri0ud5f9co9 (group:api)
 
 create user : userweb /// asdf2206 (group:web, set:in-active)
 
-create branch (bcode=KB)
+create branch (bcode=CEN)
 
 create counter type (c)
 
@@ -1021,7 +1030,7 @@ create ticket type (TicketFormat)
 create TicketRoute
 
 create admin, api user for our customer
-admin : elton /// asdf2206
+admin : elton /// chbtH0yeNuH8C1EXUtetIdr
 
 
 # Troubleshooting and Debug

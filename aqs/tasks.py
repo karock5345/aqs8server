@@ -743,7 +743,7 @@ def report_ticketdetails(ticket_id, report_text):
     return  current_task.status, header, current_task.table, report_text, 
 
 @shared_task
-def report_NoOfQueue(report, utc_startdate, utc_enddate, report_text, bcode, tickettype):
+def report_NoOfQueue(report_type, utc_startdate, utc_enddate, report_text, bcode, tickettype):
     # this is 4 report, 'queue', 'miss', 'done', 'void'
     from celery import current_task
     report_table = []
@@ -773,13 +773,13 @@ def report_NoOfQueue(report, utc_startdate, utc_enddate, report_text, bcode, tic
             filter_report = filter_report & Q(tickettype=tickettype)        
         
         
-        if report == 'queue':
+        if report_type == 'queue':
             pass
-        elif report == 'miss':
+        elif report_type == 'miss':
             filter_report = filter_report & (Q(status='miss') | Q(status='calling') | Q(status='waiting') | Q(status='processing'))
-        elif report == 'done':
+        elif report_type == 'done':
             filter_report = filter_report & Q(status='done')
-        elif report == 'void':
+        elif report_type == 'void':
             filter_report = filter_report & Q(status='void')
 
         tickets = Ticket.objects.filter(filter_report).order_by('tickettime')
@@ -846,7 +846,7 @@ def report_NoOfQueue(report, utc_startdate, utc_enddate, report_text, bcode, tic
     if error != '':
         print   ('Error:', error)
 
-    return current_task.status, header, current_task.table, report_text, bcode
+    return current_task.status, header, current_task.table, report_text, bcode, report_type
 
 @shared_task
 def t_Report_QSum(utc_startdate, utc_enddate, report_text, bcode, tickettype):

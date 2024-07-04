@@ -39,7 +39,7 @@ urlpatterns = [
     # path('test/', views.data_no_consistency),
     # path('test2/', views.data_consistency),
     # path('test3/', views.testing3),
-    path('test4/', views.testing4),
+    # path('test4/', views.testing4),
     
     # path('db_tst/', views.getDBtst),
     # path('db2/', views.getDB2),

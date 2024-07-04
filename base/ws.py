@@ -30,7 +30,7 @@ def wssenddispcall(branch, counterstatus, countertype, ticket):
             "displaytime": datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ'),
             "counternumber": counterstatus.counternumber,
             "wait": ticket.ticketroute.waiting,
-            "flashtime": branch.flashlighttime,
+            "flashtime": branch.displayflashtime,
             "ct_lang1": countertype.lang1,
             "ct_lang2": countertype.lang2,
             "ct_lang3": countertype.lang3,

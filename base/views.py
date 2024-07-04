@@ -1728,7 +1728,7 @@ def Report_NoOfQueue_Result(request):
         # task id is result_task_id        
         task_id = result_task_id.replace('_', '-')
         task = AsyncResult(task_id, app=report_NoOfQueue)
-        status, header, report_table, report_text, bcode = task.get()
+        status, header, report_table, report_text, bcode, report_type = task.get()
 
         if request.method != 'POST':
             # Pagination

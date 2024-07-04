@@ -15,6 +15,8 @@
   # sch = BackgroundScheduler(daemon=True)
    ```
 - New 5 standard reports : Queue summary per day, Number of queue per timeslot, Staff performance report, Ticket type report, Ticket type report per day
+- Bug fixed : base/ws.py -> Line 33
+   -             "flashtime": branch.flashlighttime,   ->     "flashtime": branch.displayflashtime,
 
 <h3 style="color:orange;">Version 8.3.1</h3>
 
@@ -1619,10 +1621,12 @@ Window -> Appearance -> Change font -> Deja...Powerline
 Window -> Color -> Default Blue -> Red 44 Green 123 Blue 201
 
 # Copy file from PC to Linux server
-pscp c:/music.mp3  ubuntu@192.168.1.222:/home/ubuntu/
-pscp -r your/folder/aqs8server/* ubuntu@10.95.157.237:/home/ubuntu/aqs8server/
+```bash
+pscp -i key.ppk c:/music.mp3  ubuntu@192.168.1.222:/home/ubuntu/
+pscp -i key.ppk -r your/folder/aqs8server/* ubuntu@10.95.157.237:/home/ubuntu/aqs8server/
 # then change owner
 sudo chown ubuntu ~/aqs8server -R
+```
 
 # Network (Internet) speed test
 ```bash
@@ -1709,7 +1713,7 @@ pip download celery[redis] -d ./lib/
 
 # new dir on server
 mkdir ~/aqs8server/lib
-pscp -r ./lib/* ubuntu@10.95.157.237:/home/ubuntu/aqs8server/lib/
+pscp -i key.ppk -r ./lib/* ubuntu@10.95.157.237:/home/ubuntu/aqs8server/lib/
 
 # change owner
 sudo chown ubuntu ~/aqs8server -R
