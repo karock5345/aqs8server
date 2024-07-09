@@ -23,7 +23,7 @@
         <div class="container_myticket_main">
             <div class="status">
                 <div class="vertical-center">
-                    我的飛仔 My ticket
+                    我的票號 My ticket
                 </div>                    
             </div>
             <div  class="container_myticket" >
@@ -133,10 +133,8 @@
                 </div>
                 <div class="counternumber">{{ticketrow.counternumber}}</div>
             </div>
-            
-            <div class="numberCircle">
-                {{ticketrow.wait}}
-            </div>  
+
+
         </div>
 
     {% endfor %}
@@ -229,9 +227,6 @@
                             `</div>
                         </div>
 
-                        <div class="numberCircle">` +
-                            obj.wait +
-                        `</div>
                     </div>`;
                 }
             }            

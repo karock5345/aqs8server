@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Company, Product_Type, Category, Supplier, Product
 from .models import Member, MemberItem, CRMAdmin, Customer
-from .models import Quotation, Quotation_item, Inventory
+from .models import Quotation, Quotation_item, Inventory, PushMessage
 
 # Register your models here.
 class CompanyView(admin.ModelAdmin):
@@ -49,6 +49,9 @@ class InventoryView(admin.ModelAdmin):
     list_display =('company', 'branch', 'product', 'quantity', 'status')
     ordering = ('-updated', '-created')
 
+class PushMessageView(admin.ModelAdmin):
+    list_display =('company', 'msgtype', 'message', 'updated')
+
 admin.site.register(Company, CompanyView)
 admin.site.register(Product_Type, Product_TypeView)
 admin.site.register(Category, CategoryView)
@@ -61,3 +64,4 @@ admin.site.register(Customer, CustomerView)
 admin.site.register(Quotation, QuotationView)
 admin.site.register(Quotation_item, Quotation_itemView)
 admin.site.register(Inventory, InventoryView)
+admin.site.register(PushMessage, PushMessageView)

@@ -10,6 +10,11 @@ from django.utils.translation import gettext_lazy as _
 # Create your models here.
 
 
+pMsgType = [
+       ('NEWS', ('Member news / discount')),
+       ('Q', ('Quotation or Invoice to be confirmed')),
+    ]
+
 
 class Company(models.Model):
     ccode = models.CharField(max_length=200, null=False, unique=True)
@@ -268,3 +273,16 @@ class Inventory(models.Model):
         return self.product.name
     def unique_together(self):
         return ('branch', 'product',)
+
+class PushMessage(models.Model):
+
+    pushid = models.CharField(max_length=200, null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)    
+    msgtype = models.CharField(max_length=32, choices=pMsgType, default='news')
+    message = models.TextField(null=False, blank=False)
+    content = models.TextField(null=True, blank=True)
+    imageurl = models.CharField(max_length=200, null=True, blank=True)
+
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+    updated = models.DateTimeField(auto_now=True)
+
