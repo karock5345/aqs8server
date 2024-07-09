@@ -584,7 +584,8 @@ def SoftkeyLoginView(request, pk):
         # for branch in branchs :
         countertypes = CounterType.objects.filter(Q(branch=branch))
         for ct in countertypes :
-            cs = CounterStatus.objects.filter(Q(countertype=ct)).order_by('countertype', 'counternumber',).exclude(enabled=False)
+            cs = CounterStatus.objects.filter(Q(countertype=ct)).exclude(enabled=False).order_by('countertype',) \
+            .extra(select={'casted_object_id': 'CAST(counternumber AS INTEGER)'}).extra(order_by = ['casted_object_id'])
             counterstatus.append(cs)
 
         context = {

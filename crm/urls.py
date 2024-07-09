@@ -16,4 +16,6 @@ urlpatterns = [
     path('api/reg/', api.crmMemberRegistrationView, name='crmreg'),
     path('api/verify/', api.crmMemberVerificationView, name='crmverify'),
     path('api/remove/', api.crmMemberDelView, name='crmremove'),
+    path('api/pushdata/', api.crmPushMessageDataView, name='crmgetpushdata'),
+
 ]

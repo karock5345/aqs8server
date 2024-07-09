@@ -2,7 +2,7 @@ from rest_framework.response import Response
 from django.shortcuts import render
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
-from crm.models import Member, Company, MemberItem, CRMAdmin
+from crm.models import Member, Company, MemberItem, CRMAdmin, PushMessage
 from base.models import Branch, APILog
 import random
 import string
@@ -24,6 +24,7 @@ from django.core.files import File
 from aqs.settings import STATICFILES_DIRS, STATIC_URL, DOMAIN
 import shutil
 import urllib.parse
+
 
 # Member token expire hours
 tokenexpire_hours = 24
@@ -694,7 +695,6 @@ def MemberLogin(username, password, ccode, datetime_now_utc):
     return error, member_no, member_token, company
 
 
-
 def checkmember(rx_member_no, rx_member_token, company, datetime_now_utc):
     check = False
     error = ''
@@ -740,3 +740,63 @@ def checkmember(rx_member_no, rx_member_token, company, datetime_now_utc):
         check = True
 
     return check, error, member
+
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def crmPushMessageDataView(request):
+    datetime_now_utc = datetime.now(timezone.utc)
+    status = {}
+    data = {}
+    rx_member_no = ''
+    rx_member_token = ''
+    error = ''
+    company = None
+    member = None
+
+    rx_app = request.GET.get('app') if request.GET.get('app') != None else ''
+    rx_version = request.GET.get('version') if request.GET.get('version') != None else ''
+    rx_pushid = request.GET.get('pushid') if request.GET.get('pushid') != None else ''
+    rx_ccode = request.GET.get('ccode') if request.GET.get('ccode') != None else ''
+    rx_msgtype = request.GET.get('msgtype') if request.GET.get('msgtype') != None else ''
+
+    if rx_pushid == '' or rx_ccode == '' or rx_msgtype == '' :
+        error = 'Missing parameters'
+    
+    # check bcode
+    if error == '':
+        try:
+            company = Company.objects.get(ccode=rx_ccode)
+        except :
+            error = 'company not found failed'        
+
+    # Save Api Log
+    if company != None:
+        if setting_APIlogEnabled(None, company) == True :
+            APILog.objects.create(
+                logtime=datetime_now_utc,
+                requeststr = request.build_absolute_uri() ,
+                ip = visitor_ip_address(request),
+                app = rx_app,
+                version = rx_version,
+                logtext = 'API call : CRM Push Message',
+            )
+    if error == '' :
+        # Get the push message data
+        pushmsgs = PushMessage.objects.filter(pushid=rx_pushid, company=company, msgtype=rx_msgtype)
+        if pushmsgs.count() == 0:
+            error = 'No push message found'
+        else:
+            pushmsg = pushmsgs.first()
+            # print(pushmsg.message)
+
+    if error == '' :
+        # push message
+        updated = pushmsg.updated.strftime('%Y-%m-%d_%H:%M:%S')
+        status = {'status':'success', 'msg':'Push message success', }
+        data = {'message':pushmsg.message, 'content':pushmsg.content, 'imageurl':pushmsg.imageurl, 'updated':updated, }        
+    else:
+        status = {'status':'failed', 'msg':error}
+        data = {}
+    return Response(status | data )

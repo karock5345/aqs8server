@@ -1,4 +1,9 @@
 # Mobile APP for Member API specification version 1.0
+
+### Version: 1.2
+- Updated: 2024-07-09
+- New API (8) get Push message data
+
 ### Version: 1.1
 - Updated: 2024-06-13
 - API 2. Member info API (Member APP), added 'member_qr' field return
@@ -105,6 +110,7 @@ POST [Server IP or DN]/api/token/refresh/
 ### 5. Member register API
 ### 6. Member verify API (backend auto send email to member email address with the link to activate the member account)
 ### 7. Member del API (Testing only)
+### 8. Get Push Message data API
 
 # 1. Member login API (Member APP)
 
@@ -341,5 +347,40 @@ Or if failed
 {
     "status": "failed",
     "msg": "Username is existing"
+}
+```
+
+# 8. Get Push Message data API
+
+### Request
+```http
+POST [Server IP or DN]/crm/api/pushdata/?app=postman&version=8.2&pushid=id1234&ccode=TSVD&msgtype=NEWS
+```
+
+| Key | Type | Description |
+| :--- | :--- | :--- |
+| `app` | `string` | If called by mobile App it can be `iOS` or `Android` |
+| `version` | `string` | Your App version. It should be start from 8.2.0 |
+| `pushid` | `string` | **Required**. Push message ID match to Firebase |
+| `ccode` | `string` | **Required**. provided by TSVD |
+| `msgtype` | `string` | **Required**. provided by TSVD should be `NEWS` |
+
+### Response
+
+```javascript
+{
+    "status": "success",
+    "msg": "Push message success",
+    "message": "公司abc本月會員優惠，iPhone 16 Pro $2999 等等",
+    "content": "公司abc本月會員優惠 : \r\niPhone 16 Pro $2999\r\niPhone 17 Pro $3999\r\niPhone 18 Pro $4999\r\niPhone 19 Pro $5999\r\niPhone 20 Pro $6999",
+    "imageurl": null,
+    "updated": "2024-07-09_10:45:43"
+}
+```
+Or if login failed
+```javascript
+{
+    "status": "failed",
+    "msg": "No push message found"
 }
 ```

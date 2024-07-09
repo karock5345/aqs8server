@@ -278,7 +278,7 @@ class PushMessage(models.Model):
 
     pushid = models.CharField(max_length=200, null=True, blank=True)
     company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)    
-    msgtype = models.CharField(max_length=32, choices=pMsgType, default='news')
+    msgtype = models.CharField(max_length=32, choices=pMsgType, default='NEWS')
     message = models.TextField(null=False, blank=False)
     content = models.TextField(null=True, blank=True)
     imageurl = models.CharField(max_length=200, null=True, blank=True)

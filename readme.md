@@ -1,6 +1,7 @@
-# AQS version 8.3.2
+# AQS version 8.3.3
 
 <h3 style="color:orange;">Version 8.3.3</h3>
+
 - Add push notification for CRM APP
 
 <h3 style="color:orange;">Version 8.3.2</h3>
@@ -20,6 +21,7 @@
 - New 5 standard reports : Queue summary per day, Number of queue per timeslot, Staff performance report, Ticket type report, Ticket type report per day
 - Bug fixed : base/ws.py -> Line 33
    -             "flashtime": branch.flashlighttime,   ->     "flashtime": branch.displayflashtime,
+- Improve Web-Softkey login page counter list sort by counter number
 
 <h3 style="color:orange;">Version 8.3.1</h3>
 
