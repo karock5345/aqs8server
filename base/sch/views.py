@@ -19,6 +19,8 @@ import os
 import shutil
 from base.sch.jobs import  job_stopall, job_testing
 from aqs.settings import APP_NAME, aqs_version
+from django.core.management import call_command
+from django.core.management.base import CommandError
 
 logger = logging.getLogger(__name__)
 
@@ -515,6 +517,24 @@ def sub_booking_temp(branch:Branch, input_temp):
                     # else :
                     #     print('Success')
                     
+def check_pending_migrations():
+    error = ''
+    migrations_needed = False
+    try:
+        # Simulate makemigrations to check for pending migrations without creating them
+        call_command('makemigrations', '--dry-run', '--check')
+        migrations_needed = False
+    except SystemExit as e:
+        # If the command exits with a non-zero status, migrations are needed
+        if e.code != 0:
+            migrations_needed = True
+        else:
+            migrations_needed = False
+    except CommandError as e:
+        # Handle other potential errors, such as misconfiguration
+        error = 'error : ' + str(e)
+
+    return migrations_needed, error
 
 def main():
     global system_inited
@@ -537,14 +557,26 @@ def main():
     snow = now.strftime("%m/%d/%Y, %H:%M:%S")
     logger.info('-SCH- Now:' + snow)
 
+    # check pending migrations
+    migrations_needed, error = check_pending_migrations()
+    if error == '' :
+        if migrations_needed == True:
+            logger.info('-SCH- Migrations are needed')
+        else:
+            logger.info('-SCH- No migrations are needed')
+            if system_inited == True :
+                sch.start()
+                # Scheduler 6 hours run sch_bookingtemp
+                sch_bookingtemp(6)
+                sub_booking_temp(None, None)
 
-    if system_inited == True :
-        sch.start()
-        # Scheduler 6 hours run sch_bookingtemp
-        sch_bookingtemp(6)
-        sub_booking_temp(None, None)
+                init_branch_reset()
 
-        init_branch_reset()
+    if error != '':
+        logger.info('-SCH- Error : ' + error)
+
+    if system_inited == False :
+        logger.info('-SCH- System not inited -SCH-')
 
     # for loop 1 - 20 add job_testing
     # for i in range(1, 21):

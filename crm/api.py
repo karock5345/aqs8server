@@ -21,7 +21,7 @@ import os
 import qrcode
 from io import BytesIO
 from django.core.files import File
-from aqs.settings import STATICFILES_DIRS, STATIC_URL, DOMAIN
+from aqs.settings import STATICFILES_DIRS, STATIC_URL
 import shutil
 import urllib.parse
 
@@ -46,7 +46,7 @@ def genQRcode(member:Member):
 
     qr_code = member.company.ccode + '_' + member.number + '_' + member.token
     fname = member.company.ccode + '_' + member.number + '_' + member.token + '.png'
-    qrurl = urllib.parse.urljoin( DOMAIN , STATIC_URL)
+    qrurl = urllib.parse.urljoin( member.company.domain , STATIC_URL)
     qrurl = urllib.parse.urljoin( qrurl , 'qr' + '/')
     qrurl = urllib.parse.urljoin( qrurl , member.company.ccode + '/')
     qrurl = urllib.parse.urljoin( qrurl , member.number + '/')

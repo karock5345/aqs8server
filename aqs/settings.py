@@ -17,7 +17,6 @@ from datetime import timedelta
 aqs_version = '8.3.3'
 # APP_NAME for ws://localhost:8000/ws/APP_NAME/...
 APP_NAME = 'aqs_app'
-DOMAIN = 'http://192.168.1.22:8000'
 
 ADMIN_ENABLED = True
 # for production disable Admin page, set ADMIN_ENABLED = False

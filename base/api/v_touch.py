@@ -15,7 +15,6 @@ import random
 from .v_softkey_sub import cc_autocall
 from .serializers import touchkeysSerivalizer
 from django.db import transaction
-from aqs.settings import DOMAIN
 import urllib.parse
 
 def gensecuritycode():
@@ -107,7 +106,7 @@ def newticket_v830(branch, ttype, pnos, remark, datetime_now, user, app, version
 
         url = '/my/' + branch.bcode + '/' + ttype +'/' + ticketno_str + '/' + sc + '/'
         # myticketlink =  ('{0}://{1}'.format(request.scheme, request.get_host()) +   url)
-        myticketlink = DOMAIN + url
+        myticketlink =branch.domain + url
         
 
 
@@ -358,7 +357,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
 
         url = '/my/' + branch.bcode + '/' + ttype +'/' + ticketno_str + '/' + sc + '/'
         # myticketlink =  ('{0}://{1}'.format(request.scheme, request.get_host()) +   url)
-        url = urllib.parse.urljoin( DOMAIN , url)
+        url = urllib.parse.urljoin( branch.domain , url)
        
         myticketlink = url
         

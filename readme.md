@@ -3,6 +3,8 @@
 <h3 style="color:orange;">Version 8.3.3</h3>
 
 - Add push notification for CRM APP
+- Change to branch.domain and company.domain from system settings.py DOMAIN for ticket QR and Member QR
+- Auto detect is makemigrations or migrate is needed when start the server
 
 <h3 style="color:orange;">Version 8.3.2</h3>
 

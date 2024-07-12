@@ -67,6 +67,7 @@ class Branch(models.Model):
     ticketnext = models.IntegerField(default=1) # only for ticketrepeatnumber is True
     ticketnoformat = models.TextField(default='000')  # if '000' means: A001, B049
     ticketrepeatnumber = models.BooleanField(default=True)  # if False: A001 -> B002 -> A003
+    domain = models.CharField(max_length=200, null=True, blank=True, default='http://192.168.1.22:8000', help_text='eTicket domain for QR code')
 
     # display settings
     displayenabled  = models.BooleanField(default=True) 
