@@ -18,7 +18,13 @@
 | CEN | Disp_P pi5 1 | U23 D | 192.168.2.201 | ubuntu | asdf |
 | CEN | Disp_P pi5 2 | U23 D | 192.168.2.202 | ubuntu | asdf |
 
-# AQS version 8.3.2
+# AQS version 8.3.3
+
+<h3 style="color:orange;">Version 8.3.3</h3>
+
+- Add push notification for CRM APP
+- Change to branch.domain and company.domain from system settings.py DOMAIN for ticket QR and Member QR
+- Auto detect is makemigrations or migrate is needed when start the server
 
 <h3 style="color:orange;">Version 8.3.2</h3>
 
@@ -35,6 +41,9 @@
   # sch = BackgroundScheduler(daemon=True)
    ```
 - New 5 standard reports : Queue summary per day, Number of queue per timeslot, Staff performance report, Ticket type report, Ticket type report per day
+- Bug fixed : base/ws.py -> Line 33
+   -             "flashtime": branch.flashlighttime,   ->     "flashtime": branch.displayflashtime,
+- Improve Web-Softkey login page counter list sort by counter number
 
 <h3 style="color:orange;">Version 8.3.1</h3>
 
@@ -1549,7 +1558,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mail.us-east-1.awsapps.com'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'tim@tsvd.com.hk'
+EMAIL_HOST_USER = 'admin@tsvd.com.hk'
 with open('/etc/emailpw_chb.txt') as f:
     EMAIL_HOST_PASSWORD = f.read().strip()
 ```

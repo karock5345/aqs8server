@@ -26,6 +26,7 @@ class testingModel(models.Model):
 class testingModel2(models.Model):
     total = models.IntegerField(default=0)
 
+
 class Branch(models.Model):
     BYTIME = 'time'
     BYTICKETTIME = 'tickettime'

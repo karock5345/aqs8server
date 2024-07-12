@@ -22,6 +22,8 @@ from aqs.settings import APP_NAME, aqs_version
 from django.core.management import call_command
 from django.core.management.base import CommandError
 
+system_inited = None
+
 logger = logging.getLogger(__name__)
 
 job_defaults = {
@@ -53,7 +55,7 @@ def getShutdown(request):
             branch = Branch.objects.get(bcode=bcode)
         except :
             error = 'Branch not found'
-    
+
     if error == '' :
         # Save Api Log
         if setting_APIlogEnabled(branch) == True :
@@ -84,20 +86,20 @@ def getRoutes(request):
         'This is working on Sch',
     ]
     # job_testing(10, '10 Seconds', ' 0')
-    
+
     return Response(routes)
 
 @api_view(['GET'])
 def getJobTesting(request):
     in_time = request.GET.get('time') if request.GET.get('time') != None else ''
 
-    # stickettime = str(datetime.strptime(in_time, '%Y-%m-%dT%H:%M:%SZ' )) 
+    # stickettime = str(datetime.strptime(in_time, '%Y-%m-%dT%H:%M:%SZ' ))
     rx_tickettime = datetime.strptime(in_time, '%Y-%m-%dT%H:%M:%S%z')
 
 
     in_time_u = funLocaltoUTC(rx_tickettime, 8)
     logger.info(in_time_u)
-    sch.add_job(job_test_trigger, 'date', run_date=in_time_u) 
+    sch.add_job(job_test_trigger, 'date', run_date=in_time_u)
 
     return Response('Job testing')
 
@@ -113,14 +115,14 @@ def job_test_trigger():
 
 
 def init_branch_reset():
-    branch_count = 0    
+    branch_count = 0
     datetime_now = datetime.now(timezone.utc)
 
     try:
         branchobj = Branch.objects.all()
         branch_count = branchobj.count()
     except:
-        print ('   -SCH- init_branch_reset Error : No Branch')        
+        print ('   -SCH- init_branch_reset Error : No Branch')
         if system_inited == True :
             SystemLog.objects.create(
                 logtime=datetime_now,
@@ -138,19 +140,19 @@ def Reset_SMS(branch, datetime_now):
     now_local:datetime = funUTCtoLocal(datetime_now, branch.timezone )
     now_str = now_local.strftime('%Y-%m-') + str(branch.SMSResetDay)
     if branch.SMSResetLast != now_str:
-        branch.SMSResetLast = now_str        
+        branch.SMSResetLast = now_str
         branch.SMSUsed = 0
         branch.save()
         logger.info('-SCH- Reset SMS Used to 0 [' + branch.bcode + '] -SCH-')
-        
+
 def sch_shutdown(branch_input, nowUTC):
     branch = Branch.objects.get(id=branch_input.id)
 
     now = datetime.now(timezone.utc)
     datetime_now = nowUTC
-    localtime_now = funUTCtoLocaltime(datetime_now, branch.timezone )      
+    localtime_now = funUTCtoLocaltime(datetime_now, branch.timezone )
     localtime = funUTCtoLocaltime( branch.officehourend, branch.timezone )
-    
+
     slocaltime = datetime.now(timezone.utc).strftime('%Y-%m-%d ') + localtime.strftime('%H:%M:%S')
     localtime = datetime.strptime(slocaltime, '%Y-%m-%d %H:%M:%S')
     localtime = pytz.utc.localize(localtime)
@@ -158,20 +160,20 @@ def sch_shutdown(branch_input, nowUTC):
     snextreset = datetime.now(timezone.utc).strftime('%Y-%m-%d ') + branch.officehourend.strftime('%H:%M:%S')
     nextreset = datetime.strptime(snextreset, '%Y-%m-%d %H:%M:%S')
     nextreset = pytz.utc.localize(nextreset)
-    
-    logtemp1 = '   -SCH- ' + nextreset.strftime('%Y-%m-%d %H:%M:%S') + ' > ' + now.strftime('%Y-%m-%d %H:%M:%S')            
+
+    logtemp1 = '   -SCH- ' + nextreset.strftime('%Y-%m-%d %H:%M:%S') + ' > ' + now.strftime('%Y-%m-%d %H:%M:%S')
     if nextreset > now :
         logtemp1 = logtemp1 + ' [Yes]'
-        pass                    
+        pass
     else:
         nextreset  = nextreset + timedelta(hours=24)
         logtemp1 = logtemp1 + ' [No]'
 
-    logtemp2 =  '   -SCH- reset time: ' + branch.officehourend.strftime('%H:%M:%S') + ' Local Time: '+ localtime.strftime('%H:%M:%S') 
-    
+    logtemp2 =  '   -SCH- reset time: ' + branch.officehourend.strftime('%H:%M:%S') + ' Local Time: '+ localtime.strftime('%H:%M:%S')
+
     nextreset_local = funUTCtoLocal(nextreset, branch.timezone )
-    logtemp3 = ' -SCH- Next reset [' + branch.bcode + ']: ' + nextreset.strftime('%Y-%m-%d %H:%M:%S') + ' Local:' + nextreset_local.strftime('%Y-%m-%d %H:%M:%S') 
-    
+    logtemp3 = ' -SCH- Next reset [' + branch.bcode + ']: ' + nextreset.strftime('%Y-%m-%d %H:%M:%S') + ' Local:' + nextreset_local.strftime('%Y-%m-%d %H:%M:%S')
+
     logger.info(logtemp3)
     logger.info(logtemp2)
     logger.info(logtemp1)
@@ -188,11 +190,11 @@ def sch_shutdown(branch_input, nowUTC):
     # before add job must check the job is exist or not
     if sch.get_job(branch.bcode) != None :
         # if exist remove it
-        sch.remove_job(branch.bcode)        
+        sch.remove_job(branch.bcode)
     sch.add_job(job_shutdown, 'date', run_date=nextreset, id=branch.bcode, args=[branch])
 
 
-def job_shutdown(branch):    
+def job_shutdown(branch):
     datetime_now =datetime.now(timezone.utc)
     localtime_now = funUTCtoLocaltime(datetime_now, branch.timezone )
     bcode = branch.bcode
@@ -202,19 +204,19 @@ def job_shutdown(branch):
         SystemLog.objects.create(
             logtime = datetime_now,
             logtext = 'Local time:' + localtime_now.strftime('%H:%M:%S') + ' -SCH- Shutdown and reset branch :' + bcode + ' -SCH-'
-            )   
-    
+            )
+
     # delete files /download/bcode/*
     static_root = str(settings.STATICFILES_DIRS[0])
     path = static_root + '/download/' + bcode + '/'
     if os.path.exists(path):
         shutil.rmtree(path)
-    
+
     # reset to branch.ticketnext 1
     branch.ticketnext = 1
     branch.save()
 
-    # reset to ticketformat.ticketnext 1    
+    # reset to ticketformat.ticketnext 1
     # number of waiting on queue reset to 0
     tfobj = TicketFormat.objects.filter( Q(branch=branch)  )
     for tf in tfobj:
@@ -223,10 +225,10 @@ def job_shutdown(branch):
 
     # reset ticketroute waiting = 0
     trobj = TicketRoute.objects.filter(Q(branch=branch))
-    for tr in trobj:        
+    for tr in trobj:
         tr.displastticketnumber = ''
         tr.displastcounter = ''
-        tr.waiting = 0        
+        tr.waiting = 0
         tr.save()
 
     # all ticket .locked=ture
@@ -242,11 +244,11 @@ def job_shutdown(branch):
         ticket.ticketnumber_disp = tt.ticketnumber_disp
 
         ticket.ticketnumber = tt.ticketnumber
-        ticket.branch = tt.branch        
+        ticket.branch = tt.branch
         ticket.step = tt.step
         ticket.countertype = tt.countertype
         ticket.ticketroute = tt.ticketroute
-        
+
         # Status = 'waiting', 'calling', 'processing' then force to 'miss' (no show)
         # Final status = 'done', 'void', 'miss'
         ticket.status = tt.status
@@ -294,13 +296,13 @@ def job_shutdown(branch):
         tdobj = TicketData.objects.filter(Q(tickettemp=tt))
         for td in tdobj:
             td.ticket = ticket
-            td.save()                
+            td.save()
 
         # TicketLog mark ticket
         tlobj = TicketLog.objects.filter(Q(tickettemp=tt))
         for tl in tlobj:
             tl.ticket = ticket
-            tl.save() 
+            tl.save()
 
     # remove SubTicket table
     SubTicket.objects.filter(Q(branch=branch)).delete()
@@ -324,7 +326,7 @@ def job_shutdown(branch):
             if counter.countertype.countermode == 'normal' :
                 # counterstatus all reset to 'waiting'
                 if counter.loged == True and counter.user != None :
-                    if counter.status != 'waiting':                        
+                    if counter.status != 'waiting':
                         counter.status = 'waiting'
                         counter.save()
             elif counter.countertype.countermode == 'cc' :
@@ -336,7 +338,7 @@ def job_shutdown(branch):
                         if objusl.count() > 0 :
                             for usl in objusl:
                                 usl.endtime = datetime_now
-                                usl.save()  
+                                usl.save()
 
                         counter.status = 'AUX'
                         counter.save()
@@ -355,7 +357,7 @@ def job_shutdown(branch):
     # for b in branchobj:
     #     if b != branch:
     #         sch.remove_job(b.bcode)
-    
+
     # init_branch_reset()
 
 
@@ -365,7 +367,7 @@ def job_shutdown(branch):
     sub_booking_temp(branch, None)
 
     sch_shutdown(branch, datetime_now)
-    
+
 
 def sch_bookingtemp(hours):
     sch_id = 'sch_bookingtemp'
@@ -380,7 +382,7 @@ def job_booking_temp(branch:Branch, input_temp, mins):
     snow2 = now.strftime("%m/%d/%Y, %H:%M:%S")
     # text_out = '   -SCH- Now:' + snow2 + ' Local time:' +  snow + ' Sch Booking Template - ' +  '-SCH-'
     text_out = '   -SCH- Sch Booking Template (Loop every ' + str(mins) +  ' mins) -SCH-'
-    # print ( text_out )    
+    # print ( text_out )
     logger.info(text_out)
     sub_booking_temp(branch, input_temp)
 
@@ -472,14 +474,14 @@ def sub_booking_temp(branch:Branch, input_temp):
                                 day_of_week_bool = True
                         if day_of_week_bool == False:
                             error = 'Day of week is not selected'
-                        
+
                     if error == '':
                         # make a new timeslot
                         # print('start_date:', start_date)
                         # change to UTC datetime
                         start_date = funLocaltoUTC(start_date, temp.branch.timezone)
                         # print('start_date (UTC):', start_date)
-                        end_date = start_date + timedelta(minutes=(item.service_mins + (item.service_hours * 60)))                        
+                        end_date = start_date + timedelta(minutes=(item.service_mins + (item.service_hours * 60)))
                         # print('end_date (UTC):', end_date)
                         # print('Minute:', minute)
                         # print('Hour:', hour)
@@ -516,7 +518,7 @@ def sub_booking_temp(branch:Branch, input_temp):
                     #     print('Error:', error)
                     # else :
                     #     print('Success')
-                    
+
 def check_pending_migrations():
     error = ''
     migrations_needed = False
@@ -537,57 +539,7 @@ def check_pending_migrations():
     return migrations_needed, error
 
 def main():
-    global system_inited
-    datetime_now = datetime.now(timezone.utc)
-    now = datetime.now(timezone.utc)
-    try:
-        SystemLog.objects.create(
-                logtime=datetime_now,
-                logtext =  'System started',
-            )
-        system_inited = True
-    except:
-        system_inited = False
-
-    # check 
-
-
-    logger.info('-SCH- Schedule INIT start @ base.sch.view.py -SCH-')
-
-    snow = now.strftime("%m/%d/%Y, %H:%M:%S")
-    logger.info('-SCH- Now:' + snow)
-
-    # check pending migrations
-    migrations_needed, error = check_pending_migrations()
-    if error == '' :
-        if migrations_needed == True:
-            logger.info('-SCH- Migrations are needed')
-        else:
-            logger.info('-SCH- No migrations are needed')
-            if system_inited == True :
-                sch.start()
-                # Scheduler 6 hours run sch_bookingtemp
-                sch_bookingtemp(6)
-                sub_booking_temp(None, None)
-
-                init_branch_reset()
-
-    if error != '':
-        logger.info('-SCH- Error : ' + error)
-
-    if system_inited == False :
-        logger.info('-SCH- System not inited -SCH-')
-
-    # for loop 1 - 20 add job_testing
-    # for i in range(1, 21):
-    #     job_testing(1, '1s - ' + str(i), ' |')
-
-    # job_testing(1, '1s - 1', ' |')
-    
-
-
-
-
+    pass
 
 if __name__ != '__main__':
     main()

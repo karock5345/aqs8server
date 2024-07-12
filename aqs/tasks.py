@@ -141,7 +141,7 @@ def sendemail(self, subject, message, toemail):
         to=[toemail],
         # cc=['elton@tsvd.com.hk'],
         # bcc=['sales@tsvd.com.hk'],
-        reply_to=['sales@tsvd.com.hk'],
+        # reply_to=['sales@tsvd.com.hk'],
     )
     email.content_subtype = "html"
     email.fail_silently = True

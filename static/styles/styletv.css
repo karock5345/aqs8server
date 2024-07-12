@@ -5,9 +5,10 @@
   --merlot: #000080;   /* blue (navy) */
   --crimson: #0047ab;  /* blue (cobalt) */
   --color_header_background_backup:#96C8C3;
-
   --color_background:#BED7EB;
   --color_header_background:#0A3755;
+  --color_booking_text:#0A3755;
+  --color_booking_text_background:#0A3755;
   --color_status_background: #404040;
   --color_calling_text: #FF6A00;
   --color_calling_background: #0A3755;
@@ -47,7 +48,6 @@ body {
 .logo {
     height: 50px;
     margin-right: auto;
-    /* background-color: var(--color_header_background); */
     background: none;
 }
 
@@ -57,7 +57,6 @@ body {
     width:30px;
     margin-left: auto;
     padding: 5px 0px 0px 0px;
-    /* background-color: var(--color_header_background); */
     background: none;
     cursor:pointer;
     color:var(--color_touchkey_text);
@@ -114,7 +113,6 @@ body {
     text-align:right;
     padding: 0px 0px 0px 0px;
     color:grey;
-    /* background-color: var(--color_header_background); */
     background: none;
 }
 
@@ -191,7 +189,6 @@ body {
     width:30px;
     margin-top: 1px;
     padding: 0px 0px 0px 0px;
-    /* background-color: var(--color_header_background); */
     background: none;
     color:var(--color_touchkey_text);
 }
@@ -739,7 +736,7 @@ body {
 
 .booking_text_container {
     width:100%;
-    background-color: var(--color_header_background);
+    background-color: var(--color_booking_text_background);
 }
 .booking_text_container_sub {
     width:96%;
@@ -758,7 +755,7 @@ body {
     color: var(--color_countertype_text);
 }
 .booking_success_text_color {
-    color: var(--color_header_background);
+    color: var(--color_booking_text);
 }
 .booking_form_container {
     /* margin: 1rem; */
