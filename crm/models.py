@@ -34,7 +34,7 @@ class Company(models.Model):
 
 class Product_Type(models.Model):
     # default 'product' or 'service'
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=200)
     description = models.TextField()
 
@@ -42,7 +42,7 @@ class Product_Type(models.Model):
         return self.name
 
 class Category(models.Model):
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     # product_type = models.ForeignKey(Product_Type, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True, default='')
@@ -51,7 +51,7 @@ class Category(models.Model):
         return self.name
 
 class Supplier(models.Model):
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     contact = models.CharField(max_length=200)
     supplier_company = models.CharField(max_length=200)
     website = models.CharField(max_length=200)    
@@ -83,7 +83,7 @@ class Product(models.Model):
     #                     ('reserved', ('reserved')),
     #                     ('pending', ('pending'))
     #                     ]
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True, default='')
     product_type = models.ForeignKey(Product_Type, on_delete=models.SET_NULL, null=True, blank=True)
@@ -107,7 +107,7 @@ class Product(models.Model):
 class MemberItem(models.Model):
     # global item_status_choices
     enabled = models.BooleanField(default=True)
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True)
     name = models.CharField(max_length=200, null=False, blank=False)
     des = models.CharField(max_length=200, null=True, blank=True)
@@ -125,7 +125,7 @@ class MemberItem(models.Model):
         return self.name
 
 class Member(models.Model):
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     username = models.CharField(max_length=200, null=False, unique=True)
     login = models.BooleanField(default=False, null=False)
     number = models.CharField(max_length=200, null=False, unique=True)
@@ -161,7 +161,7 @@ class Member(models.Model):
 class CRMAdmin(models.Model):
     # CRM function is enabled or disabled
     enabled = models.BooleanField(default=True, null=False)
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     # Member function is enabled or disabled
     member_enabled = models.BooleanField(default=True, null=False)
     membernumber_next = models.IntegerField(default=1)
@@ -195,7 +195,7 @@ class CRMAdmin(models.Model):
         return self.company.name  
     
 class Customer(models.Model):
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     customer_company = models.CharField(max_length=200, null=True, blank=True)
     contact = models.CharField(max_length=200, null=True, blank=True)
     address = models.CharField(max_length=200, null=True, blank=True)
@@ -225,7 +225,7 @@ class Quotation(models.Model):
 
 
 
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     number = models.CharField(max_length=200)
     version = models.CharField(max_length=200, null=True, blank=True)
     quotation_date = models.DateTimeField(auto_now_add=True)    
@@ -261,7 +261,7 @@ class Quotation_item(models.Model):
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
     updated = models.DateTimeField(auto_now=True)
 class Inventory(models.Model):
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, null=True, blank=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.IntegerField()
@@ -279,7 +279,7 @@ class Inventory(models.Model):
 class PushMessage(models.Model):
 
     pushid = models.CharField(max_length=200, null=True, blank=True)
-    company = models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)    
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)    
     msgtype = models.CharField(max_length=32, choices=pMsgType, default='NEWS')
     message = models.TextField(null=False, blank=False)
     content = models.TextField(null=True, blank=True)

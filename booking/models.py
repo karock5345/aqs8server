@@ -209,7 +209,7 @@ class BookingLog(models.Model):
 
 
 class SMS_Log(models.Model):
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, blank=True, null=True)
     phone = models.CharField(max_length=20, blank=True, null=True)
     sent = models.BooleanField(default=False)
     numSMS = models.IntegerField(default=0)

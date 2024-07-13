@@ -311,7 +311,7 @@ class TicketFormat(models.Model):
     enabled = models.BooleanField(default=True) 
     ttype = models.CharField(max_length=10, null=False, blank=False)
     for_booking = models.BooleanField(default=False)
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE , blank=True, null=True)
     
     # description1 = models.TextField()
     # description2 = models.TextField()
@@ -334,7 +334,7 @@ class TicketFormat(models.Model):
         return self.branch.bcode + '-' + self.ttype
 
 class SubTicket(models.Model):
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, blank=True, null=True)
     booking_tickettype = models.CharField(max_length=20)
     ticketnext = models.IntegerField(default=1)
     
@@ -347,7 +347,7 @@ class SubTicket(models.Model):
 
 class CounterType(models.Model):
     enabled = models.BooleanField(default=True)
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, blank=True, null=True)
     name = models.CharField(max_length=200, null=False)
     lang1 = models.CharField(max_length=200, null=True, blank=True, default='')
     lang2 = models.CharField(max_length=200, null=True, blank=True, default='')
@@ -376,7 +376,7 @@ class CounterType(models.Model):
 
 class TicketRoute(models.Model):
     enabled = models.BooleanField(default=True) 
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, blank=True, null=True)
     tickettype = models.CharField(max_length=200)
     step = models.IntegerField(default=1)
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True)
@@ -398,7 +398,7 @@ class Ticket(models.Model):
     tickettype_disp = models.CharField(max_length=200)
     ticketnumber_disp = models.CharField(max_length=200)
 
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, blank=True, null=True)
     step = models.IntegerField(default=1)
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True)
     ticketroute= models.ForeignKey(TicketRoute, on_delete=models.SET_NULL, blank=True, null=True)
@@ -443,7 +443,7 @@ class TicketTemp(models.Model):
     tickettype_disp = models.CharField(max_length=200)
     ticketnumber_disp = models.CharField(max_length=200)
 
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, blank=True, null=True)
     step = models.IntegerField(default=1)
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True)
     ticketroute= models.ForeignKey(TicketRoute, on_delete=models.SET_NULL, blank=True, null=True)
@@ -518,7 +518,7 @@ class TicketData(models.Model):
     ticket = models.ForeignKey(Ticket, on_delete=models.SET_NULL, blank=True, null=True)
     tickettemp = models.ForeignKey(TicketTemp, on_delete=models.SET_NULL, blank=True, null=True)
 
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, blank=True, null=True)
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True)
     step = models.IntegerField(default=1)
 
@@ -545,7 +545,7 @@ class Setting(models.Model):
     # if name='global' is for all branchs
     name = models.CharField(max_length=200, unique=True, null=False)
     # if name='global' branch should be null
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)  
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, blank=True, null=True)  
     API_Log_Enabled = models.BooleanField(default=True)
     
 
@@ -581,7 +581,7 @@ class UserStatusLog(models.Model) :
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
     
 class PrinterStatus(models.Model):       
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)  # if name='global' branch should be null
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, blank=True, null=True)  # if name='global' branch should be null
     printernumber = models.TextField(null=True, blank=True)
     status = models.TextField(null=True, blank=True) # 1
     statustext = models.TextField(null=True, blank=True)
@@ -594,7 +594,7 @@ class PrinterStatus(models.Model):
                 
 
 class DisplayAndVoice(models.Model):
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, blank=True, null=True)
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True) 
     counternumber = models.CharField(max_length=200, null=True)
     tickettemp = models.ForeignKey(TicketTemp, on_delete=models.SET_NULL, blank=True, null=True)
@@ -607,7 +607,7 @@ class DisplayAndVoice(models.Model):
 
 class WebTouch(models.Model):
     name = models.CharField(max_length=200, null=True)
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, blank=True, null=True)
     enabled = models.BooleanField(default=True)
     touchkey = models.ManyToManyField(TicketFormat)
 
@@ -619,7 +619,7 @@ class WebTouch(models.Model):
 
 
 class SubscribeOrder(models.Model):
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, blank=True, null=True)
     days = models.IntegerField(blank=False, null=False)
     startdate = models.DateTimeField(blank=False, null=False)
     enddate = models.DateTimeField(blank=False, null=False)
@@ -654,7 +654,7 @@ class Device(models.Model):
     device_ip = models.CharField(max_length=20, null=True, blank=True)
     device_ip_int = models.CharField(max_length=20, null=True, blank=True)
     version = models.CharField(max_length=20, null=True, blank=True)
-    branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, blank=True, null=True)
+    branch = models.ForeignKey(Branch, on_delete=models.CASCADE, blank=True, null=True)
     countertype = models.ForeignKey(CounterType, on_delete=models.SET_NULL, blank=True, null=True)
     lastactive = models.DateTimeField(null=True, blank=True, default=None) # last active time
     settings = models.TextField(null=True, blank=True, default='') # settings for the device

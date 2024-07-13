@@ -3713,7 +3713,7 @@ def Settings_Save(request, pk):
     # return render(request, 'base/branchresult.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def SettingsUpdateView(request, pk):
     branch = Branch.objects.get(id=pk)
     bcode = branch.bcode
@@ -3738,16 +3738,16 @@ def SettingsUpdateView(request, pk):
         userright = 'reporter'
     else:
         userright = 'counter'
-
+       
     # print(userright)
     if request.method == 'POST':
         if userright == 'admin':
             branchsettingsform = BranchSettingsForm_Admin(request.POST, instance=branch, prefix='branchsettingsform')
             # print('branchsettingsform.bookingNewEmailUser.all()')
             # print(branchsettingsform.fields['bookingNewEmailUser'].value.values_list('username', flat=True))
-        elif userright == 'support' or userright == 'manager':
+        elif userright == 'support' or userright == 'supervisor':
             branchsettingsform = BranchSettingsForm_Adv(request.POST, instance=branch, prefix='branchsettingsform')
-        else:
+        elif userright == 'manager': 
             branchsettingsform = BranchSettingsForm_Basic(request.POST, instance=branch, prefix='branchsettingsform')
         error = ''
         error, bsf = checkbranchsettingsform(branchsettingsform)
@@ -3791,9 +3791,9 @@ def SettingsUpdateView(request, pk):
     else:
         if userright == 'admin':
             branchsettingsform = BranchSettingsForm_Admin(instance=branch, prefix='branchsettingsform')
-        elif userright == 'support' or userright == 'manager':
+        elif userright == 'support' or userright == 'supervisor':
             branchsettingsform = BranchSettingsForm_Adv(instance=branch, prefix='branchsettingsform')
-        else:
+        elif userright == 'manager': 
             branchsettingsform = BranchSettingsForm_Basic(instance=branch, prefix='branchsettingsform')
         
     context = {'aqs_version':aqs_version, 'bcode':bcode,
@@ -3803,7 +3803,7 @@ def SettingsUpdateView(request, pk):
     return render(request, 'base/settings-update.html', context)
 
 @unauth_user
-@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def SettingsSummaryView(request):  
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
     #users = User.objects.exclude( Q(is_superuser=True) )
@@ -4706,6 +4706,7 @@ def auth_data(user):
         # if user.groups.filter(name='admin').exists() == True :
         #     auth_branchs = Branch.objects.all()
         #     auth_grouplist = Group.objects.all()
+        auth_branchs = UserProfile.objects.get(user=user).branchs.all()
         if user.groups.filter(name='support').exists() == True :
             auth_branchs = Branch.objects.all()
             grouplist.append('support')
@@ -4714,22 +4715,18 @@ def auth_data(user):
             grouplist.append('reporter')
             grouplist.append('counter')
         elif user.groups.filter(name='supervisor').exists() == True :
-            auth_branchs = Branch.objects.all()
             grouplist.append('supervisor')
             grouplist.append('manager')
             grouplist.append('reporter')
             grouplist.append('counter')
         elif user.groups.filter(name='manager').exists() == True :
-            auth_branchs = UserProfile.objects.get(user=user).branchs.all()
             grouplist.append('manager')
             grouplist.append('reporter')
             grouplist.append('counter')        
         elif user.groups.filter(name='reporter').exists() == True :
-            auth_branchs = UserProfile.objects.get(user=user).branchs.all()
             grouplist.append('reporter')
             grouplist.append('counter')           
         elif user.groups.filter(name='counter').exists() == True :
-            auth_branchs = UserProfile.objects.get(user=user).branchs.all()
             grouplist.append('counter')         
         
         # profid_list = []
@@ -4805,8 +4802,7 @@ def auth_data(user):
 
         auth_timeslottemplist = TimeslotTemplate.objects.filter(Q(branch__in=auth_branchs))
 
-        # auth_bookings = Booking.objects.filter(Q(branch__in=auth_branchs), ~Q(status=Booking.STATUS.DELETED))
-
+        auth_bookings = auth_bookings.filter(Q(branch__in=auth_branchs))
         
     return(
             auth_en_queue,

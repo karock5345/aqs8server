@@ -5,7 +5,7 @@
 - Public 6Lek1QUqAAAAAHURN0IzsU1KNr2HOnYdlq6iDFOr
 - Private 6Lek1QUqAAAAADLWyaFRyYFV7Umpr9lmO6y1Wywg
 - DB: aqsdb8_chb  /// aqsdbuser_chb /// dbpassword-chUsplw0hltricispamu
-- Django superuser: supertim /// ylthECLde5iflsplThAy
+- Django superuser: supertim /// on_delete=models.CASCADE
 - APP_NAME : aqs_app_chb
 - DOMAIN : https://chb.tsvd.com.hk
 - userapi /// Swlt2lgobri0ud5f9co9
@@ -18,7 +18,23 @@
 | CEN | Disp_P pi5 1 | U23 D | 192.168.2.201 | ubuntu | asdf |
 | CEN | Disp_P pi5 2 | U23 D | 192.168.2.202 | ubuntu | asdf |
 
-# AQS version 8.3.3
+# AQS version 8.3.4
+
+<h3 style="color:orange;">Version 8.3.4</h3>
+
+- Fixed display all branch booking any user (auth_data)
+- Update all database tables on_delete=models.CASCADE by Branch or Company
+- Fixed booking\views.py new booking error where email / mobile phone is blank
+- Fixed booking update view late_min error: 'This field is required.' 
+   - Form .widget.attrs['disabled'] replaced by .widget.attrs['readonly']
+- User Groups merged from PCCW2023 (Group : support, supervisor, manager, reporter and counter)
+  - admin (TS use only) : all branchs, (Group: all, including "api" and "web") Functions : all user, Softkey, Supervisor, Report, TicketFormat, TicketRoute and Admin settings
+  - support (TS use only) : own branchs, (Group : support, supervisor, manager, reporter and counter) Functions :users, Softkey, Supervisor, Report and Advanced settings
+  - supervisor : own branchs, (Group : supervisor, manager, reporter and counter) Functions : users, Softkey, Supervisor, Report, TicketFormat and Advanced settings
+  - ~~(remove) frontline : own branchs, Softkey~~
+  - manager : own branchs, (Group : manager, reporter and counter) Functions : users, Softkey, Supervisor, Report and Basic settings
+  - reporter : own branchs, (Group : reporter and counter) Functions : users, Softkey, Supervisor, Report 
+  - counter : own branchs, Functions : Softkey
 
 <h3 style="color:orange;">Version 8.3.3</h3>
 

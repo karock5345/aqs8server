@@ -99,15 +99,16 @@ class BookingForm(ModelForm):
         timezone = bk.branch.timezone
         self.initial['start_date'] = funUTCtoLocal(bk.timeslot.start_date, timezone)
         self.initial['arrival_time'] = funUTCtoLocal(bk.arrival_time, timezone)
- 
-        # self.fields['start_date'].widget.attrs['disabled'] = 'disabled'
+        # self.initial['late_min'] = bk.late_min
+        # self.fields['start_date'].widget.attrs['disabled'] = 'disabled' 'hidden'
        
         self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs)
         self.fields['user'].queryset = User.objects.filter(id__in=self.auth_userlist)
         # self.fields['user'].widget.attrs['disabled'] = 'disabled'
-        self.fields['member'].widget.attrs['disabled'] = 'disabled'
-        self.fields['arrival_time'].widget.attrs['disabled'] = 'disabled'
-        self.fields['late_min'].widget.attrs['disabled'] = 'disabled'
+        self.fields['member'].widget.attrs['readonly'] = 'readonly'
+        self.fields['arrival_time'].widget.attrs['readonly'] = 'readonly'
+        # readonly
+        self.fields['late_min'].widget.attrs['readonly'] = 'readonly'
         self.fields['timeslot'].widget.attrs['hidden'] = 'hidden'
         
     class Meta:        
@@ -170,8 +171,8 @@ class TimeSlotNewForm(ModelForm):
         self.initial['show_end_date'] = show_date_end_default
 
         self.fields['branch'].queryset = Branch.objects.filter(id__in=self.auth_branchs)
-        self.fields['user'].widget.attrs['disabled'] = 'disabled'
-        self.fields['created_by_temp'].widget.attrs['disabled'] = 'disabled'
+        self.fields['user'].widget.attrs['readonly'] = 'readonly'
+        self.fields['created_by_temp'].widget.attrs['readonly'] = 'readonly'
         self.fields['show_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
         self.fields['show_end_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )
         self.fields['start_date'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d %H:%M', )

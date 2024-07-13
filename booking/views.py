@@ -367,7 +367,9 @@ def BookingNewView(request):
         error, newform = checkbookingform(form)
             
         if error == '' :
-            phone_number = phonenumbers.parse('+' + newform.mobilephone_country + newform.mobilephone)
+            phone_number = ''
+            if newform.mobilephone != '':
+                phone_number = phonenumbers.parse('+' + newform.mobilephone_country + newform.mobilephone)
             # add booking by user (not customer), it is no email and SMS to customer confirm
             # user is None, user is special user who are doing this booking
             error, errorTC = chainBookNow(newform.timeslot, newform.name, phone_number, newform.email, None, None)
@@ -1327,9 +1329,17 @@ def checkbookingform(form):
     newform = None
 
     if form.is_valid() == False:
-        error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
-        error = 'An error occurcd during registration: '+ error_string
-    
+        # error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
+        error_string = ''
+        for l in list(form.errors):
+            errx = ''
+            for x in form.errors[l]:
+                errx = errx + ',' +  x
+                # print(l , x)
+            error_string = error_string + ' [' + l + '] ' + errx + '\n'
+        error = 'An error occurcd during registration: ' + error_string
+        
+
     if error == '' :
         newform = form.save(commit=False)
 
@@ -1362,7 +1372,8 @@ def checkbookingform(form):
             else:
                 error = 'Email format is incorrect'
                 error_TC = '電郵地址格式不正確'
-
+        else:
+            newform.email = ''
     if error == '' :
         if newform.people < 1:
             error = 'People should be => 1'
