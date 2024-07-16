@@ -4641,6 +4641,8 @@ def auth_data(user):
         booking.bookingforceontime = False
         if booking.branch.bookingForceOnTime == True :
             booking.bookingforceontime = True
+        booking.save()
+
     if user.is_superuser == True :
         auth_en_queue = True
         auth_en_crm = True
@@ -4802,7 +4804,11 @@ def auth_data(user):
 
         auth_timeslottemplist = TimeslotTemplate.objects.filter(Q(branch__in=auth_branchs))
 
-        auth_bookings = auth_bookings.filter(Q(branch__in=auth_branchs))
+        # auth_bookings = auth_bookings.filter(Q(branch__in=auth_branchs))
+        # remove booking not in auth_branchs
+        for booking in auth_bookings :
+            if booking.branch not in auth_branchs :
+                auth_bookings = auth_bookings.exclude(id=booking.id)
         
     return(
             auth_en_queue,
