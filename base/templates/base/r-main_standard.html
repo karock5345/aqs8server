@@ -204,7 +204,8 @@
                   <h2>Raw data report: </h2>
                 </div>
             </div>
-            <form action="raw">
+
+            <form action="{% url 'reportraw' %}" target="_blank">              
               Select Branch:
               <select name="branch" id="id_branch">
                 <!-- <option value="">---</option> -->

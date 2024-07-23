@@ -1590,7 +1590,7 @@ def Report_Ticket_details_Result(request, pk):
 
                 context = {
                 'app_name':APP_NAME,
-                'id':ticket_id,
+                # 'id':ticket_id,
                 'task_id': result_task_id,
                 'localtimezone':localtimezone,
                 'text':report_text,
@@ -1863,7 +1863,7 @@ def Report_QSum(request):
         else:
             messages.error(request, error)
             return redirect('reports')
-    else :        
+    else :
         # long process is done output result to HTML
         # task id is result_task_id        
         task_id = result_task_id.replace('_', '-')
@@ -1918,7 +1918,148 @@ def Report_QSum(request):
                 return render(request, 'base/in_progress.html', context)    
 
 
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
+def Report_RAW_Result2(request):
+    error = ''
+    
+    result_task_id = request.GET.get('result') if request.GET.get('result') != None else ''
 
+    if result_task_id == '':
+        bcode = request.GET.get('branch') if request.GET.get('branch') != None else ''
+        s_startdate = request.GET['startdate'] if request.GET.get('startdate') != None else ''
+        s_enddate = request.GET['enddate'] if request.GET.get('enddate') != None else ''
+        countertype_id = request.GET['countertype'] if request.GET.get('countertype') != None else ''
+
+        if error == '':
+            try:
+                branch = Branch.objects.get(bcode=bcode)
+            except:
+                error = 'Error : Branch not found.'
+        
+        countertype = None            
+        if error == '':
+            if countertype_id == '':
+                # error = 'Error : Counter Type is blank.'
+                pass
+            else:
+                try:
+                    countertype = CounterType.objects.get(id=int(countertype_id))
+                except:
+                    error = 'Error : Counter Type not found.'
+
+        s_startdate = s_startdate + 'T00:00:00.000000'
+
+        if error == '':
+            try:
+                startdate = datetime.strptime(s_startdate, '%Y-%m-%dT%H:%M:%S.%f')
+                utc_startdate = funLocaltoUTC(startdate, branch.timezone)
+            
+            except:
+                error = 'Error : Start Datetime not found.'
+        s_enddate = s_enddate + 'T23:59:59.999999'
+        if error == '':
+            try:
+                enddate = datetime.strptime(s_enddate, '%Y-%m-%dT%H:%M:%S.%f')
+                utc_enddate = funLocaltoUTC(enddate, branch.timezone)
+            except:           
+                error = 'Error : End Datetime not found.'
+
+        
+        if error == '':
+            if startdate > enddate :
+                error = 'Error : Start Datetime > End Datetime.'
+
+        if error == '':
+            # check enddate - startdate > 200 days
+            if (enddate - startdate).days > 200 :
+                error = 'Error : Date range do not more then 200 days.'    
+
+        if error == '':
+            localtimezone = pytz.timezone(branch.timezone)
+            # report_result = 'RAW Data Report\nBranch:' + branch.name + '(' + branch.bcode + ')\nStart datetime:' + s_startdate + '\nEnd datetime:' + s_enddate 
+            report_text = 'RAW Data Report' + '\n' \
+            + 'Branch:' + branch.name + '(' + branch.bcode + ')' + '\n' \
+            + 'Start datetime:' + s_startdate + '\n' \
+            + 'End datetime:' + s_enddate + '\n'
+            if countertype == None  :
+                report_text = report_text + 'Counter Type:ALL'            
+            else:
+                report_text = report_text + 'Counter Type:' + countertype.name 
+
+            #         table = TicketData.objects.filter(
+            # Q(branch=branch),
+            # Q(starttime__range=[startdate,enddate]),
+            # ~Q(ticket = None),
+            # Q(countertype=countertype),
+            task = t_Report_RAW.apply_async(args=[utc_startdate, utc_enddate, report_text, branch.bcode, countertype_id], countdown=0)  # 'countdown' time delay in second before execute
+            task_id = task.id
+            ptask_id = task_id.replace('-', '_')
+
+            url_download = ''
+
+            context = {'task_id': ptask_id}
+            context = context | {'app_name':APP_NAME}
+            context = context | {'wsh' : wsHypertext}
+            context = context | {'url_download': url_download}
+            context = {'aqs_version':aqs_version} | context 
+            return render(request, 'base/in_progress.html', context)
+        else:
+            messages.error(request, error)
+            return redirect('reports')
+    else :        
+        # long process is done output result to HTML
+        # task id is result_task_id        
+        task_id = result_task_id.replace('_', '-')
+        task = AsyncResult(task_id, app=t_Report_RAW)
+        status, header, report_table, report_text, bcode = task.get()
+
+        if request.method != 'POST':
+            # Pagination
+            table100 = None
+            page = request.GET.get('page') if request.GET.get('page') != None else '1'
+            page = int(page)
+            per_page = 100  # Number of items per page
+
+            paginator = Paginator(report_table, per_page)
+            try:
+                table100 = paginator.page(page)
+            except PageNotAnInteger:
+                table100 = paginator.page(1)
+            except EmptyPage:
+                table100 = paginator.page(paginator.num_pages) 
+
+            context = {
+            'app_name':APP_NAME,
+            'task_id': result_task_id,
+            # 'localtimezone':localtimezone,
+            'text':report_text,
+            'header':header,
+            'table':table100,        
+            }
+            context = {'aqs_version':aqs_version} | context 
+            return render(request, 'base/r-result_raw.html', context)
+        elif request.method == 'POST':  
+            action = request.POST.get('action')
+            if action == 'excel':
+                # convert list (report_table) to string
+                # querystr = pickle.dumps(report_table.query)
+                
+                # print(querystr)
+                filename = 'tickettype_' 
+                task = export_report.apply_async(args=[header,report_table,report_text, bcode ,filename], countdown=0)  # 'countdown' time delay in second before execute
+                task_id = task.id
+                ptask_id = task_id.replace('-', '_')
+                filename = filename + ptask_id + '.csv'
+                
+                # download path
+                url_download = static('download/' + bcode + '/' + filename)
+
+                context = {'task_id': ptask_id}
+                context = context | {'wsh' : wsHypertext} 
+                context = context | {'url_download': url_download}
+                context = {'aqs_version':aqs_version} | {'app_name':APP_NAME} | context 
+                return render(request, 'base/in_progress.html', context)
 
 
 
@@ -1996,7 +2137,7 @@ def Report_RAW_Result(request):
                 Q(branch=branch),
                 Q(starttime__range=[startdate,enddate]),
                 ~Q(ticket = None),
-            ).order_by('starttime')
+            )#.order_by('starttime')
             
         else:
             table = TicketData.objects.filter(
@@ -2004,14 +2145,16 @@ def Report_RAW_Result(request):
                 Q(starttime__range=[startdate,enddate]),
                 ~Q(ticket = None),
                 Q(countertype=countertype),
-            ).order_by('starttime') 
+            )#.order_by('starttime') 
             report_result5 = 'Counter Type:' + countertype.name 
         report_result6 = 'Total records:' + str(table.count())
         report_result = report_result1 + '\n' + report_result2 + '\n' + report_result3 + '\n' + report_result4 + '\n' + report_result5 + '\n' + report_result6
 
-        # # check if rows > 10000 then error
-        # if table.count() > 10000 :
-        #     error = 'Error : Records more then 10000'
+        # testing only table repeat data 100 times
+        # table2 = table
+        # for i in range(10):
+        #     table2 = table2.union( table, all=True )
+        # table = table2
     
     table100 = None
     if error == '':            

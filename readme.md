@@ -1,4 +1,9 @@
-# AQS version 8.3.4
+# AQS version 8.3.5
+
+<h3 style="color:orange;">Version 8.3.5</h3>
+
+- Fixed bug : Raw report html Page is not work
+
 
 <h3 style="color:orange;">Version 8.3.4</h3>
 

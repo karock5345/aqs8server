@@ -45,7 +45,7 @@ urlpatterns = [
     path('supervisor/forcelogout/<str:pk>/<str:csid>/', views.SuperVisor_ForceLogoutView ,  name='forcelogout'),    
     
     path('reports/', views.Reports, name='reports'),
-    path('reports/raw/', views.Report_RAW_Result , name='reportraw'),
+    path('reports/raw/', views.Report_RAW_Result2 , name='reportraw'),
     path('reports/qsum/', views.Report_QSum , name='reportqsum'),
     path('reports/noofqueue/', views.Report_NoOfQueue_Result , name='reportnoofqueue'),
     path('reports/usrp/', views.Report_StaffPerformance , name='reportuserperf'),

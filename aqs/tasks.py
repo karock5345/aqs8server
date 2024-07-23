@@ -7,7 +7,7 @@ from django.http import HttpResponse
 # from django.utils import timezone
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 import pickle
-from base.models import TicketData, TicketFormat, Ticket, Branch, UserStatusLog, TicketLog, CounterLoginLog
+from base.models import TicketData, TicketFormat, Ticket, Branch, UserStatusLog, TicketLog, CounterLoginLog, CounterType
 from booking.models import SMS_Log
 from django.contrib.auth.models import User
 from django.db.models import Q
@@ -708,11 +708,11 @@ def report_ticketdetails(ticket_id, report_text):
             user = User.objects.get(pk=row['user'])
             row['user'] = user.first_name + ' ' + user.last_name + ' (' + user.username + ')'
             
-            # for i in range(0,100):
-                # for test
-                # time.sleep(0.1)
             report_table.append([tno, logtime, row['logtext'], row['user'], row['app'], row['version']])
-            # report_table.append(['ticket':row['ticket'] , logtime, row['logtext'], row['app'], row['version']])
+            #     # for test
+            # for i in range(0,100):
+            #     time.sleep(0.1)
+            #     report_table.append([tno, logtime, row['logtext'], row['user'], row['app'], row['version']])
             
             irow += 1
             newper = int(irow/ len(table) * 100)
@@ -934,8 +934,11 @@ def t_Report_QSum(utc_startdate, utc_enddate, report_text, bcode, tickettype):
             row.append(table[date]['queue'])
             row.append(table[date]['done'])
             row.append(table[date]['miss'])
-            row.append(table[date]['void'])
+            row.append(table[date]['void'])            
             report_table.append(row)
+            # # for test
+            # for i in range(0,100):                
+            #     report_table.append(row)
 
         current_task.update_state(state='PROGRESS', meta={'progress': 100})
         current_task.table = report_table
@@ -1338,6 +1341,133 @@ def t_Report_TicketType_day(utc_startdate, utc_enddate, report_text, bcode, ttid
 
         current_task.update_state(state='PROGRESS', meta={'progress': 100})
         current_task.table = report_table
+        current_task.status = 'SUCCESS'
+
+
+    if error != '':
+        print   ('Error:', error)
+
+    return current_task.status, header, current_task.table, report_text, bcode
+
+@shared_task
+def t_Report_RAW(utc_startdate, utc_enddate, report_text, bcode, countertype_id):
+    from celery import current_task
+    report_table = []
+    error = ''
+
+    # Get my task ID
+    my_id = current_task.request.id
+    
+    current_task.status = 'PROGRESS'
+    current_task.table = []
+    count = 0
+    header = []
+    per = -1
+
+    countertype = None
+    if countertype_id == None or countertype_id == '':
+        # error = 'Counter Type not found'
+        pass
+    else:
+        countertype = CounterType.objects.get(pk=countertype_id)
+    
+    branch = None
+    if bcode == None or bcode == '':
+        error = 'Branch not found'
+    else:
+        branch = Branch.objects.get(bcode=bcode)
+
+    if error == '' :
+        # Table
+        # Ticket  | Type  | No.        | Branch     | Counter Type  | Step|Start Time|Start by|Call Time|Call by|Process Time|Process by|Done Time|Done by|No Show Time|No Show by|Void Time|Void by|Waiting Time (s)|Walking time (s)|Process time (s)|Total time (s)
+        # A001    | A     | 001        | KB         | c             | 1   ...                                                                                                                                                                          | 30:35
+        # B002    | B     | 002        | KB         | c             | 2   ...                                                                                                                                                                          | 30:40    
+        # ...
+
+        if countertype == None  :
+            table = TicketData.objects.filter(
+                Q(branch=branch),
+                Q(starttime__range=[utc_startdate, utc_enddate]),
+                ~Q(ticket = None),
+            )#.order_by('starttime')
+            
+        else:
+            table = TicketData.objects.filter(
+                Q(branch=branch),
+                Q(starttime__range=[utc_startdate, utc_enddate]),
+                ~Q(ticket = None),
+                Q(countertype=countertype),
+            )#.order_by('starttime') 
+        totaldata = table.count()
+
+        # prepare the report_table
+        # add header
+        # id | Ticket  | Type  | No.        | Branch     | Counter Type  | Step|Start Time|Start by|Call Time|Call by|Process Time|Process by|Done Time|Done by|No Show Time|No Show by|Void Time|Void by|Waiting Time (s)|Walking time (s)|Process time (s)|Total time (s)
+        header = ['id', 'Ticket', 'Type', 'No.', 'Branch', 'Counter Type', 'Step', 'Start Time', 'Start by', 'Call Time', 'Call by', 'Process Time', 'Process by', 'Done Time', 'Done by', 'No Show Time', 'No Show by', 'Void Time', 'Void by', 'Waiting Time (s)', 'Walking time (s)', 'Process time (s)', 'Total time (s)']
+
+                # convert queryset to list 
+        report_table = list(table.values_list())
+        # change first column to ticket type + ticket number
+        # 2nd column to ticket type
+        report_table2 =[]
+
+
+        i = 0
+        per = 0
+        current_task.update_state(state='PROGRESS', meta={'progress': per})
+        for row in report_table:
+            i += 1
+            newper = int(i/ len(report_table) * 100)
+            if newper != per:
+                per = newper
+                # Set the progress in the task's state (for WebSocket consumer)
+                current_task.update_state(state='PROGRESS', meta={'progress': per})
+
+
+            row2= list(row)
+            ticket = Ticket.objects.get(pk=row2[1])
+            row2[0] = ticket.tickettype + ticket.ticketnumber
+            row2[1] = ticket.tickettype
+            row2[2] = ticket.ticketnumber
+            row2[3] = ticket.branch.bcode
+            row2[4] = ticket.countertype.name
+
+            if row2[6] != None:
+                row2[6] = funUTCtoLocal(row2[6], branch.timezone).strftime('%Y-%m-%d %H:%M:%S')
+            if row2[8] != None:
+                row2[8] = funUTCtoLocal(row2[8], branch.timezone).strftime('%Y-%m-%d %H:%M:%S')
+            if row2[10] != None:
+                row2[10] = funUTCtoLocal(row2[10], branch.timezone).strftime('%Y-%m-%d %H:%M:%S')
+            if row2[12] != None:
+                row2[12] = funUTCtoLocal(row2[12], branch.timezone).strftime('%Y-%m-%d %H:%M:%S')
+            if row2[14] != None:
+                row2[14] = funUTCtoLocal(row2[14], branch.timezone).strftime('%Y-%m-%d %H:%M:%S')
+            if row2[16] != None:
+                row2[16] = funUTCtoLocal(row2[16], branch.timezone).strftime('%Y-%m-%d %H:%M:%S')
+
+            if row2[7] != None:
+                row2[7] = User.objects.get(pk=row2[7]).username
+            if row2[9] != None:
+                row2[9] = User.objects.get(pk=row2[9]).username
+            if row2[11] != None:
+                row2[11] = User.objects.get(pk=row2[11]).username
+            if row2[13] != None:
+                row2[13] = User.objects.get(pk=row2[13]).username
+            if row2[15] != None:
+                row2[15] = User.objects.get(pk=row2[15]).username
+            if row2[17] != None:
+                row2[17] = User.objects.get(pk=row2[17]).username
+
+            # insert ticket.pk to the first column
+            row2.insert(0, ticket.pk)
+
+            report_table2.append(list(row2))
+            # testing only table repeat data 100 times
+            # for i in range(10):
+            #     report_table2.append(list(row2))
+
+            
+        current_task.table = report_table2
         current_task.status = 'SUCCESS'
 
 
