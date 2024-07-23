@@ -14,3 +14,13 @@ RECAPTCHA_PRIVATE_KEY = '6LeUoa8pAAAAANmYudKCFKrmONV-XJhI_hypBfSN'
 
 
 Tuen Mun Branch : TM
+
+Router:
+admin / Game1234
+wifi towngas_aqs_wifi / TG2024$$
+
+Kiosk :
+fixed local ip :
+DDNS : tmtg.from-vt.com
+VNC port : 42515
+VNC password : 85638wsxUhn
