@@ -1446,17 +1446,17 @@ def t_Report_RAW(utc_startdate, utc_enddate, report_text, bcode, countertype_id)
                 row2[16] = funUTCtoLocal(row2[16], branch.timezone).strftime('%Y-%m-%d %H:%M:%S')
 
             if row2[7] != None:
-                row2[7] = User.objects.get(pk=row2[7]).username
+                row2[7] =  User.objects.get(pk=row2[7]).first_name + ' ' + User.objects.get(pk=row2[7]).last_name + ' (' + User.objects.get(pk=row2[7]).username + ')'
             if row2[9] != None:
-                row2[9] = User.objects.get(pk=row2[9]).username
+                row2[9] = User.objects.get(pk=row2[9]).first_name + ' ' + User.objects.get(pk=row2[9]).last_name + ' (' + User.objects.get(pk=row2[9]).username + ')'
             if row2[11] != None:
-                row2[11] = User.objects.get(pk=row2[11]).username
+                row2[11] = User.objects.get(pk=row2[11]).first_name + ' ' + User.objects.get(pk=row2[11]).last_name + ' (' + User.objects.get(pk=row2[11]).username + ')'
             if row2[13] != None:
-                row2[13] = User.objects.get(pk=row2[13]).username
+                row2[13] = User.objects.get(pk=row2[13]).first_name + ' ' + User.objects.get(pk=row2[13]).last_name + ' (' + User.objects.get(pk=row2[13]).username + ')'
             if row2[15] != None:
-                row2[15] = User.objects.get(pk=row2[15]).username
+                row2[15] = User.objects.get(pk=row2[15]).first_name + ' ' + User.objects.get(pk=row2[15]).last_name + ' (' + User.objects.get(pk=row2[15]).username + ')'
             if row2[17] != None:
-                row2[17] = User.objects.get(pk=row2[17]).username
+                row2[17] = User.objects.get(pk=row2[17]).first_name + ' ' + User.objects.get(pk=row2[17]).last_name + ' (' + User.objects.get(pk=row2[17]).username + ')'
 
             # insert ticket.pk to the first column
             row2.insert(0, ticket.pk)

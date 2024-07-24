@@ -76,7 +76,7 @@
         </thead>
         <tbody>
         {% for row in table.object_list %}
-            <tr onclick="window.open('{% url 'reportdetails' row.ticket.pk %}', '_blank')"  >
+            <tr onclick="window.open('{% url 'reportdetails' row.ticket.pk %}' , '_blank')"  >
                 <td>{{ row.ticket.tickettype }}{{ row.ticket.ticketnumber }}</td>
                 <td>{{ row.ticket.tickettype }}</td>
                 <td>{{ row.ticket.ticketnumber }}</td>
