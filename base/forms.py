@@ -329,14 +329,15 @@ class UserFormAdmin(ModelForm):
 class UserForm(ModelForm):
     class Meta:
         model = User 
-        fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']
+        fields = ['is_active', 'first_name', 'last_name', 'email', 'groups']    
     def __init__(self, *args,**kwargs):
         auth_grouplist = kwargs.pop('auth_grouplist')
         super (UserForm, self).__init__(*args,**kwargs)
-        self.fields['groups'].queryset = Group.objects.filter(id__in=auth_grouplist)   
+        self.fields['groups'].queryset = Group.objects.filter(id__in=auth_grouplist)
         # self.fields['groups'].queryset = Group.objects.filter()   # Q(groups__name='api')
         # here we can filter the groups by user branchs
-        
+        groups = forms.ModelMultipleChoiceField(queryset=self.fields['groups'].queryset.all(), widget=forms.CheckboxSelectMultiple)  
+
 class UserFormAdminSelf(ModelForm):
 # admin can not change himself group and cannot set is_active
     class Meta:
@@ -347,23 +348,30 @@ class UserFormAdminSelf(ModelForm):
 class UserFormSuper(ModelForm):
     class Meta:
         model = User 
-        fields = ['is_active', 'is_active', 'first_name', 'last_name', 'email', 'groups']
+        fields = ['is_active', 'is_active', 'first_name', 'last_name', 'email', 'groups_choices']
+    
     def __init__(self, *args,**kwargs):
         auth_grouplist = kwargs.pop('auth_grouplist')
         super (UserFormSuper,self ).__init__(*args,**kwargs)
-        self.fields['groups'].queryset = Group.objects.filter(id__in=auth_grouplist)   
-        # self.fields['groups'].queryset = Group.objects.filter(~Q(name='web'))
+        self.fields['groups'].queryset = Group.objects.filter(id__in=auth_grouplist)
         
-class UserProfileForm(ModelForm):
-    class Meta:
-        model = UserProfile
+        # self.fields['groups'].queryset = Group.objects.filter(~Q(name='web'))
+    groups_choices = forms.ModelMultipleChoiceField(queryset=Group.objects.all(), widget=forms.CheckboxSelectMultiple)
 
-        fields = ['tickettype', 'queuepriority', 'branchs', 'staffnumber', 'mobilephone']
+class UserProfileForm(ModelForm):
+
     def __init__(self, *args,**kwargs):
+
         self.auth_branchs = kwargs.pop('auth_branchs')
         super().__init__(*args,**kwargs)
-        self.fields['branchs'].queryset = Branch.objects.filter(id__in=self.auth_branchs)   # Q(groups__name='api')
-        
+
+        self.fields['branchs'].queryset = Branch.objects.filter(id__in=self.auth_branchs)
+        self.fields['branchs'] = forms.ModelMultipleChoiceField(queryset=self.fields['branchs'].queryset, widget=forms.CheckboxSelectMultiple)
+
+    class Meta:
+        model = UserProfile
+        fields = ['tickettype', 'queuepriority', 'branchs', 'staffnumber', 'mobilephone']
+
 class newTicketTypeForm(forms.Form):
     new_tickettype = forms.CharField(label='New Ticket Type', max_length=100)
 

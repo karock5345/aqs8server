@@ -1,11 +1,11 @@
-# QS02 AWS server
-- Debian User admin
+# QS02 AWS server Linux Debian
+- Debian User : admin
 - IP: 43.199.68.139
 - Google Recaptcha
 - Public 6Lek1QUqAAAAAHURN0IzsU1KNr2HOnYdlq6iDFOr
 - Private 6Lek1QUqAAAAADLWyaFRyYFV7Umpr9lmO6y1Wywg
 - DB: aqsdb8_chb  /// aqsdbuser_chb /// dbpassword-chUsplw0hltricispamu
-- Django superuser: supertim /// on_delete=models.CASCADE
+- Django superuser: supertim /// ylthECLde5iflsplThAy
 - APP_NAME : aqs_app_chb
 - DOMAIN : https://chb.tsvd.com.hk
 - userapi /// Swlt2lgobri0ud5f9co9
@@ -18,7 +18,23 @@
 | CEN | Disp_P pi5 1 | U23 D | 192.168.2.201 | ubuntu | asdf |
 | CEN | Disp_P pi5 2 | U23 D | 192.168.2.202 | ubuntu | asdf |
 
-# AQS version 8.3.4
+# AQS version 8.3.5
+
+<h3 style="color:orange;">Version 8.3.5</h3>
+
+- Fixed bug : Report html Page is not work
+   - update :
+   - base/view.py
+   - aqs/tasks.py
+   - base/urls.py
+   - base/templates/base/r-main_standard.html
+   - base/templates/base/r-result.html
+   - base/templates/base/r-result_raw.html
+   - base/templates/base/r-raw.html
+   - aqs/settings.py > line 17 > aqs_version = '8.3.5'
+- Updated repair.html > repair_header.html line 11 <link rel="stylesheet" href="{% static css %}" >, it will be use the css from the DB
+- Repair function changed R00124 for Modern Hi-Tech, new link : https://mht.tsvd.com.hk/repair/?bc=MHT&note=R00124
+
 
 <h3 style="color:orange;">Version 8.3.4</h3>
 

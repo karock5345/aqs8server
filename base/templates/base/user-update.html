@@ -1,5 +1,5 @@
 {% extends 'main.html' %}
-
+{% load custom_filters %}
 {% block content %}
 
     <main class="update-account layout">
@@ -27,13 +27,37 @@
                         </label>
                     </div>
                     <form class="form" action="" method="POST" prefix="profileform">
+
                         {% csrf_token %}
+                        
                         {% for field in userform %}
                             
-                            {% if field.name == "is_active" %}
+                            <!-- {-% if field.name == "is_active" %}
                                 <div class="form__group_checkbox">
-                                    {{field}}<label>&nbsp;{{field.label}}</label>
-                                </div>
+                                    {-{field}}<label>&nbsp;{-{field.label}}</label>
+                                </div>- -->
+                            {% if field|is_many_to_many %}
+                                <div class="form__group_checkbox">
+                                    <label class="profile_pic" id="{{ field.name }}">
+                                        <p class="label__name">{{field.label}} --- {{field}}</p>
+                                        <p class="help__text">
+                                            {{field.help_text}}
+                                        </p>
+                                    </label><br>
+                                </div>                                   
+                            {% elif field.field.widget.input_type == 'checkbox' %}
+                            <div class="form__group_checkbox">
+                                <label class="profile_pic" id="{{ field.name }}">
+                                    <p class="label__name">
+                                        {{field.label}}
+                                    </p>
+                                    <p class="label__name">{{field}} {{field.label}}</p>
+                                    <p class="help__text">
+                                        {{field.help_text}}
+                                    </p>
+                                </label><br>
+                            </div>
+                         
                             {% else %}
                                 <div class="form__group">
                                     <label for="profile_pic">
@@ -48,7 +72,9 @@
                             {% endif %}
                         {% endfor %}
                                              
+                        
                         {% for field in profileform %}
+
                         <div class="form__group">
                             {% if field.name == "tickettype" %}
                                 <label class="profile_pic">
@@ -64,17 +90,35 @@
                                     <input type="text"  value="{{field.value}}" name="new_tickettype" id="id_text_tickettype" hidden>
                                 </label>
                             {% else %}
-                                <label for="profile_pic">
-                                    <p class="label__name">
-                                        {{field.label}}
-                                    </p>
-                                    
-                                    {{field}}
+                                
+                                {% if field.field.widget.input_type == 'checkbox' %}
+                                
+                                    <div class="form__group_checkbox">
+                                        <label class="profile_pic" id="{{ field.name }}">
+                                            <p class="label__name">
+                                                {{field.label}}
+                                            </p>
+                                            <p class="label__name">{{field}} {{field.label}}</p>
+                                            <p class="help__text">
+                                                {{field.help_text}}
+                                            </p>
+                                        </label><br>
+                                    </div>
 
-                                    <p class="help__text">
-                                        {{field.help_text}}
-                                    </p>
-                                </label>
+
+                                {% else %}
+                                    <label for="profile_pic">
+                                        <p class="label__name">
+                                            {{field.label}}
+                                        </p>
+                                        
+                                        {{field}}
+
+                                        <p class="help__text">
+                                            {{field.help_text}}
+                                        </p>
+                                    </label>
+                                {% endif %}
                             {% endif %}
                         </div>
                         {% endfor %}                                  

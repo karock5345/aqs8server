@@ -916,7 +916,7 @@ def SoftkeyDoneView(request, pk):
 
 
 def repair(request):
-    # 127.0.0.1:8000/repair?bc=HY&note=R002301
+    # 127.0.0.1:8000/repair?bc=MHT&note=R00124
     context = None
     error = ''
     bcode = ''
@@ -946,11 +946,13 @@ def repair(request):
             datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
+            css = branch.webtvcsslink
         else :
             error = 'Branch not found.'
     if error == '':
-        if note == 'R002301':
+        if note == 'R00124':
             counterstatus = 'done'
+            # counterstatus = 'repairing'
         else :
             counterstatus = 'error'
         context = {
@@ -960,6 +962,7 @@ def repair(request):
             'logofile':logofile,
             'lastupdate':str_now,            
             'errormsg':'',
+            'css' : css,
             }
     else:
         context = {
