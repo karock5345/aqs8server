@@ -1,5 +1,6 @@
 from django.apps import AppConfig
 
+
 force_migrations = False  # Set to True Force the system is not inited
 
 class BaseConfig(AppConfig):
@@ -25,10 +26,13 @@ class BaseConfig(AppConfig):
         return super().ready()
     
 def sub_init():
-    from base.sch.views import system_inited, sch_bookingtemp, sub_booking_temp, init_branch_reset, sch, check_pending_migrations
+    import base.a_global 
+    from base.sch.views import sch_bookingtemp, sub_booking_temp, init_branch_reset, sch, check_pending_migrations
     from datetime import datetime, timezone
     from base.models import SystemLog
     import logging
+
+    # global system_inited
 
     logger = logging.getLogger(__name__)
 
@@ -57,12 +61,12 @@ def sub_init():
                     logtime=datetime_now,
                     logtext =  'System started',
                 )
-            system_inited = True
+            base.a_global.system_inited = True
         except:
-            system_inited = False
+            base.a_global.system_inited = False
             logger.info('-SCH- System not inited -SCH-')
 
-        if system_inited == True and migrations_needed == False and force_migrations == False:
+        if base.a_global.system_inited == True and migrations_needed == False and force_migrations == False:
             sch.start()
             # Scheduler 6 hours run sch_bookingtemp
             sch_bookingtemp(6)

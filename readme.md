@@ -1,5 +1,19 @@
-# AQS version 8.3.5
+# AQS version 8.4.0
 
+<h3 style="color:orange;">Version 8.4.0</h3>
+
+- CRM System (Customer Relationship Management) Initial for Project Colur Freak Studio
+  - Add new function : Quotation System
+  - Add new function : Invoice System
+  - Add new function : Receipt System
+  - Add new function : Customer System
+  - Add new function : Membership System with APP
+- Fixed bug : System Log is not work on Branch Shutdown Log
+  - update :
+  - base/a_global.py
+  - base/apps.py
+  - base/sch/views.py
+  
 <h3 style="color:orange;">Version 8.3.5</h3>
 
 - Fixed bug : Report html Page is not work

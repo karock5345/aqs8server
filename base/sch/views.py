@@ -21,8 +21,8 @@ from base.sch.jobs import  job_stopall, job_testing
 from aqs.settings import APP_NAME, aqs_version
 from django.core.management import call_command
 from django.core.management.base import CommandError
+import base.a_global
 
-system_inited = None
 
 logger = logging.getLogger(__name__)
 
@@ -122,8 +122,8 @@ def init_branch_reset():
         branchobj = Branch.objects.all()
         branch_count = branchobj.count()
     except:
-        print ('   -SCH- init_branch_reset Error : No Branch')
-        if system_inited == True :
+        # print ('   -SCH- init_branch_reset Error : No Branch')
+        if base.a_global.system_inited == True :
             SystemLog.objects.create(
                 logtime=datetime_now,
                 logtext ='UTC time:' + datetime_now.strftime('%H:%M:%S') + ' -SCH- init_branch_reset Error : No Branch',
@@ -182,7 +182,7 @@ def sch_shutdown(branch_input, nowUTC):
     # print (logtemp2)
     # print (logtemp1)
 
-    if system_inited == True :
+    if base.a_global.system_inited == True :
         SystemLog.objects.create(
             logtime = datetime_now,
             logtext = 'Local time:' + localtime_now.strftime('%H:%M:%S') + logtemp3 + '\n' + logtemp2 + '\n' + logtemp1
@@ -200,7 +200,7 @@ def job_shutdown(branch):
     bcode = branch.bcode
 
     logger.info('   -SCH- Shutdown and reset branch :' + bcode + ' -SCH-')
-    if system_inited == True :
+    if base.a_global.system_inited == True :
         SystemLog.objects.create(
             logtime = datetime_now,
             logtext = 'Local time:' + localtime_now.strftime('%H:%M:%S') + ' -SCH- Shutdown and reset branch :' + bcode + ' -SCH-'
