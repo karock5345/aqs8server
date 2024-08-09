@@ -279,7 +279,7 @@ class UserProfile(models.Model):
     # body = models.TextField()
     mobilephone = models.CharField(max_length=20, null=True, blank=True, help_text='Mobile phone', )
     
-    enabled_queue = models.BooleanField(default=False, verbose_name='Queue enabled')
+    enabled_queue = models.BooleanField(default=True, verbose_name='Queue enabled')
     enabled_crm = models.BooleanField(default=False, verbose_name='CRM enabled')
     enabled_booking = models.BooleanField(default=False, verbose_name='Booking enabled')
 

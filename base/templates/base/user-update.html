@@ -104,7 +104,14 @@
                                             </p>
                                         </label><br>
                                     </div>
+                                    {% for branch in profileform.branchs.all %}
+                                        {{branch.bcode}}
+                                    {% endfor %}
 
+                                    <div class="form__group_checkbox">
+                                        {{field.help_text}}***
+                                        <br>
+                                    </div>
 
                                 {% else %}
                                     <label for="profile_pic">

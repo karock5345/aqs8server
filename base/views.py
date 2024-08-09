@@ -4022,6 +4022,7 @@ def homeView(request):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         }
+
     context = context |{'users_active':auth_userlist_active, }
     return render(request, 'base/home.html', context)
 

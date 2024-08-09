@@ -3,17 +3,19 @@
 <h3 style="color:orange;">Version 8.3.5</h3>
 
 - Fixed bug : Report html Page is not work
-   - update :
-   - base/view.py
-   - aqs/tasks.py
-   - base/urls.py
-   - base/templates/base/r-main_standard.html
-   - base/templates/base/r-result.html
-   - base/templates/base/r-result_raw.html
-   - base/templates/base/r-raw.html
-   - aqs/settings.py > line 17 > aqs_version = '8.3.5'
+  - update :
+  - base/view.py
+  - aqs/tasks.py
+  - base/urls.py
+  - base/templates/base/r-main_standard.html
+  - base/templates/base/r-result.html
+  - base/templates/base/r-result_raw.html
+  - base/templates/base/r-raw.html
+  - aqs/settings.py > line 17 > aqs_version = '8.3.5'
 - Updated repair.html > repair_header.html line 11 <link rel="stylesheet" href="{% static css %}" >, it will be use the css from the DB
 - Repair function changed R00124 for Modern Hi-Tech, new link : https://mht.tsvd.com.hk/repair/?bc=MHT&note=R00124
+- Fixed bug : New user -> Last page -> Not click "Update" then click "Change Password" -> Error : User no queue function
+  - base/models.py > line 282 > enabled_queue = models.BooleanField(default=True, verbose_name='Queue enabled')
 
 <h3 style="color:orange;">Version 8.3.4</h3>
 

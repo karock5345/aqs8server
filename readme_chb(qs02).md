@@ -11,29 +11,36 @@
 - userapi /// Swlt2lgobri0ud5f9co9
 - admin : elton /// chbtH0yeNuH8C1EXUtetIdr
 - Central Wifi : queuingsystem /// eder235365edrdfgtF23
+- MK Wifi : queuingsystem or queuingsystem1 (1/f) /// eder235365edrdfgtF23
 
-| Branch | Device | OS | IP | user | password |
-| --- | --- | --- | --- | --- | --- |
-| CEN | Voice - Pi3 | U24 Server | 192.168.2.101 | ubuntu | asdf |
-| CEN | Disp_P pi5 1 | U23 D | 192.168.2.201 | ubuntu | asdf |
-| CEN | Disp_P pi5 2 | U23 D | 192.168.2.202 | ubuntu | asdf |
+
+| Branch | Device | OS | IP | user | password | Wifi |
+| --- | --- | --- | --- | --- | --- | --- |
+| CEN | Voice - Pi3 | U24 Server | 192.168.2.101 | ubuntu | asdf | queuingsystem |
+| CEN | Disp_P pi5 1 | U23 D | 192.168.2.201 | ubuntu | asdf | queuingsystem |
+| CEN | Disp_P pi5 2 | U23 D | 192.168.2.202 | ubuntu | asdf | queuingsystem |
+| MK | Disp_P pi5 1 | U23 D | 192.168.2.201 | ubuntu | asdf | queuingsystem |
+| MK | Disp_P pi5 2 | U23 D | 192.168.2.202 | ubuntu | asdf | queuingsystem1 |
+| TST | Disp_P pi5 1 | U23 D | 192.168.2.201 | ubuntu | asdf | queuingsystem |
 
 # AQS version 8.3.5
 
 <h3 style="color:orange;">Version 8.3.5</h3>
 
 - Fixed bug : Report html Page is not work
-   - update :
-   - base/view.py
-   - aqs/tasks.py
-   - base/urls.py
-   - base/templates/base/r-main_standard.html
-   - base/templates/base/r-result.html
-   - base/templates/base/r-result_raw.html
-   - base/templates/base/r-raw.html
-   - aqs/settings.py > line 17 > aqs_version = '8.3.5'
+  - update :
+  - base/view.py
+  - aqs/tasks.py
+  - base/urls.py
+  - base/templates/base/r-main_standard.html
+  - base/templates/base/r-result.html
+  - base/templates/base/r-result_raw.html
+  - base/templates/base/r-raw.html
+  - aqs/settings.py > line 17 > aqs_version = '8.3.5'
 - Updated repair.html > repair_header.html line 11 <link rel="stylesheet" href="{% static css %}" >, it will be use the css from the DB
 - Repair function changed R00124 for Modern Hi-Tech, new link : https://mht.tsvd.com.hk/repair/?bc=MHT&note=R00124
+- Fixed bug : New user -> Last page -> Not click "Update" then click "Change Password" -> Error : User no queue function
+  - base/models.py > line 282 > enabled_queue = models.BooleanField(default=True, verbose_name='Queue enabled')
 
 
 <h3 style="color:orange;">Version 8.3.4</h3>
@@ -1689,9 +1696,18 @@ Setup Putty 'Saved Sessions'
 Window -> Appearance -> Change font -> Deja...Powerline
 Window -> Color -> Default Blue -> Red 44 Green 123 Blue 201
 
-# Copy file from PC to Linux server
+# Remote copy file / folder to Linux server
+```dos
+# Windows
 pscp c:/music.mp3  admin@192.168.1.222:/home/admin/
-pscp -r your/folder/aqs8server/* admin@10.95.157.237:/home/admin/aqs8server/
+pscp -r your/folder/aqs8server admin@10.95.157.237:/home/admin
+```
+```bash
+# Linux
+scp -r user@your.server.example.com:/path/to/foo /home/user/Desktop/
+scp -r ubuntu@192.168.2.201:/home/ubuntu/voice /from/folder/
+```
+
 # then change owner
 sudo chown admin ~/aqs8server -R
 

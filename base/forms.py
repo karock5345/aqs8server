@@ -348,7 +348,7 @@ class UserFormAdminSelf(ModelForm):
 class UserFormSuper(ModelForm):
     class Meta:
         model = User 
-        fields = ['is_active', 'is_active', 'first_name', 'last_name', 'email', 'groups_choices']
+        fields = ['is_active', 'is_active', 'first_name', 'last_name', 'email', 'groups']
     
     def __init__(self, *args,**kwargs):
         auth_grouplist = kwargs.pop('auth_grouplist')
@@ -356,7 +356,7 @@ class UserFormSuper(ModelForm):
         self.fields['groups'].queryset = Group.objects.filter(id__in=auth_grouplist)
         
         # self.fields['groups'].queryset = Group.objects.filter(~Q(name='web'))
-    groups_choices = forms.ModelMultipleChoiceField(queryset=Group.objects.all(), widget=forms.CheckboxSelectMultiple)
+    # groups_choices = forms.ModelMultipleChoiceField(queryset=Group.objects.all(), widget=forms.CheckboxSelectMultiple)
 
 class UserProfileForm(ModelForm):
 
