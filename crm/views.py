@@ -15,6 +15,9 @@ from django.shortcuts import redirect
 from django.contrib import messages
 from base.decorators import *
 from django.db.models import Q
+from .forms import MemberUpdateForm
+import re
+from booking.views import checkMphone
 
 sort_direction = {}
 
@@ -167,3 +170,126 @@ def MemberListView(request):
     
 
     return render(request, 'crm/memberlist.html', context)
+
+@unauth_user
+def MemberUpdateView(request, pk):
+    utcnow = datetime.now(timezone.utc)
+    member = Member.objects.get(id=pk)    
+
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    auth_memberlist, \
+    = auth_data(request.user)
+
+    if request.method == 'POST':
+        form = MemberUpdateForm(request.POST, instance=member, prefix='memberform')
+        error = ''
+        # check the form
+        error, newform = checkmemberform(form)
+        
+        if error == '' :         
+            try :                
+                newform.save()
+                # get the member just saved
+                # member = Member.objects.get(id=pk)
+                # member.user = request.user
+                # member.save()
+     
+                messages.success(request, 'Member was successfully updated!')
+                # funBookingLog(utcnow, booking.timeslot, booking, TimeSlot.ACTION.NULL, Booking.STATUS.CHANGED, request.user, None)
+                
+                return redirect('crmmember')
+            except:
+                error = 'An error occurcd during updating Member'
+
+        if error != '':
+            messages.error(request, error )
+                
+    else:
+        form = MemberUpdateForm(instance=member, prefix='memberform')
+    context =  {'form':form, 'member':member, }
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context 
+    return render(request, 'crm/member_update.html', context)
+
+@unauth_user
+def MemberDelView(request, pk):
+    utcnow = datetime.now(timezone.utc)
+    member = Member.objects.get(id=pk) 
+  
+    if request.method =='POST':
+        member.delete()       
+        messages.success(request, 'Member was successfully deleted!') 
+        return redirect('crmmember')
+    context = {'obj':member, 'text':'Warning: This action will delete the Member.'}
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'base/delete.html', context)
+
+def checkmemberform(form):
+    error = ''
+    errorTC = ''
+    newform = None
+
+    if form.is_valid() == False:
+        # error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
+        error_string = ''
+        for l in list(form.errors):
+            errx = ''
+            for x in form.errors[l]:
+                errx = errx + ',' +  x
+                # print(l , x)
+            error_string = error_string + ' [' + l + '] ' + errx + '\n'
+        error = 'An error occurcd during registration: ' + error_string
+        
+
+    if error == '' :
+        newform = form.save(commit=False)
+
+    if error == '' :
+        if newform.company == None :
+            # Error branch is None
+            error = 'Error Company is blank'
+    if error == '' :
+        if newform.mobilephone_country == '' and newform.mobilephone == '':
+            pass
+        else:
+            if newform.mobilephone_country == None :
+                newform.mobilephone_country = ''
+            if newform.mobilephone == None :
+                newform.mobilephone = ''
+            if newform.mobilephone_country + newform.mobilephone != '':
+                error, errorTC, newphone_country, newphone = checkMphone(newform.mobilephone_country + newform.mobilephone)
+
+                if error == '' :
+                    newform.mobilephone_country = newphone_country
+                    newform.mobilephone = newphone
+
+
+    if error == '':
+        if not(newform.email == '' or newform.email == None) :
+        # check email format
+            regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+            if(re.fullmatch(regex, newform.email)):
+                pass       
+            else:
+                error = 'Email format is incorrect'
+                error_TC = '電郵地址格式不正確'
+        else:
+            newform.email = ''
+
+    
+    return error, newform

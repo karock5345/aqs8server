@@ -20,7 +20,7 @@ class Company(models.Model):
     ccode = models.CharField(max_length=200, null=False, unique=True)
     enabled = models.BooleanField(default=True)
     branchs = models.ManyToManyField(Branch, related_name='branchs',  blank=True, help_text='Branch access rights',)
-
+    timezone = models.CharField(max_length=32, null=False, default='Asia/Hong_Kong')
     name = models.TextField(null=True, blank=True)
     address = models.TextField(null=True, blank=True)
     contact_person = models.CharField(max_length=200, null=True, blank=True)

@@ -18,8 +18,7 @@
     <tbody>
 
     {% for member in result_members %}
-        <!-- <tr  onclick="window.location='{% url 'update-user' member.id %}' " > -->
-        <tr  >
+        <tr onclick="window.location='{% url 'memberupdate' member.id %}' " >        
             <td>{{member.username}}</td>
             <td>{% if member.enabled == True %}True{% else %}False{% endif %}</td>
             <td>{% if member.verified == True %}True{% else %}False{% endif %}</td>
