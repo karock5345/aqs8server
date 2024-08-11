@@ -1,0 +1,37 @@
+{% load static %}
+
+<table id="table-style" class="table-style-userlist">
+    <thead>
+        <tr>
+            <th onclick="redirect('sort=username')" >Username</th>
+            <th onclick="redirect('sort=active')">Active</th>
+            <th onclick="redirect('sort=verified')">Verified</th>
+            <th onclick="redirect('sort=fname')">First name</th>
+            <th onclick="redirect('sort=lname')">Last name</th>
+            <th onclick="redirect('sort=email')">Email</th>
+            <th onclick="redirect('sort=company')">Company</th>
+            <th onclick="redirect('sort=mobilephone')">M-Phone</th>               
+            <th onclick="redirect('sort=memberlevel')">Level</th>
+            <th onclick="redirect('sort=memberpoints')">Points</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {% for member in result_members %}
+        <!-- <tr  onclick="window.location='{% url 'update-user' member.id %}' " > -->
+        <tr  >
+            <td>{{member.username}}</td>
+            <td>{% if member.enabled == True %}True{% else %}False{% endif %}</td>
+            <td>{% if member.verified == True %}True{% else %}False{% endif %}</td>
+            <td>{{member.firstname}}</td>
+            <td>{{member.lastname}}</td>
+            <td>{{member.email}}</td>
+            <td>{{member.company.name}}</td>
+            <td>{{member.mobilephone}}</td>
+            <td>{{member.memberlevel}}</td>
+            <td>{{member.memberpoints}}</td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>

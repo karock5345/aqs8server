@@ -1,4 +1,4 @@
-from aqs.settings import aqs_version
+from aqs.settings import aqs_version, APP_NAME
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -90,6 +90,7 @@ def TimeSlotTempItemUpdateView(request, pk, tempid):
     auth_timeslots, \
     auth_bookings, \
     auth_timeslottemplist, \
+    auth_memberlist, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -188,6 +189,7 @@ def TimeSlotTempUpdateView(request, pk):
     auth_timeslots, \
     auth_bookings, \
     auth_timeslottemplist, \
+    auth_memberlist, \
     = auth_data(request.user)
 
     
@@ -253,6 +255,7 @@ def TimeSlotTempNewView(request):
     auth_timeslots, \
     auth_bookings, \
     auth_timeslottemplist, \
+    auth_memberlist, \
     = auth_data(request.user)
 
     form = TimeSlotTempNewForm(auth_branchs=auth_branchs, auth_userlist=auth_userlist)
@@ -305,19 +308,22 @@ def TimeslotTempSummaryView(request):
     auth_timeslots, \
     auth_bookings, \
     auth_timeslottemplist, \
+    auth_memberlist, \
     = auth_data(request.user)
 
  
     context = {
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
-        'users_active':auth_userlist_active, 
-        'profiles':auth_profilelist, 
         'branchs':auth_branchs, 
         'ticketformats':auth_ticketformats, 
-        'routes':auth_routes,
-        'timeslots':auth_timeslots,
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
+        'members':auth_memberlist,
         }
     # print(auth_timeslottemplist)
     if request.method == 'POST':
@@ -355,6 +361,7 @@ def BookingNewView(request):
     auth_timeslots, \
     auth_bookings, \
     auth_timeslottemplist, \
+    auth_memberlist, \
     = auth_data(request.user)
 
     form = BookingNewForm(auth_branchs=auth_branchs)
@@ -427,6 +434,7 @@ def BookingUpdateView(request, pk):
     auth_timeslots, \
     auth_bookings, \
     auth_timeslottemplist, \
+    auth_memberlist, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -479,19 +487,22 @@ def BookingSummaryView(request):
     auth_timeslots, \
     auth_bookings, \
     auth_timeslottemplist, \
+    auth_memberlist, \
     = auth_data(request.user)
 
  
     context = {
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
-        'users_active':auth_userlist_active, 
-        'profiles':auth_profilelist, 
         'branchs':auth_branchs, 
         'ticketformats':auth_ticketformats, 
-        'routes':auth_routes,
-        'timeslots':auth_timeslots,
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
+        'members':auth_memberlist,
         }
     
     if request.method == 'POST':
@@ -1123,6 +1134,7 @@ def TimeSlotNewView(request):
     auth_timeslots, \
     auth_bookings, \
     auth_timeslottemplist, \
+    auth_memberlist, \
     = auth_data(request.user)
 
     tsform = TimeSlotNewForm(auth_branchs=auth_branchs)
@@ -1189,6 +1201,7 @@ def TimeSlotUpdateView(request, pk):
     auth_timeslots, \
     auth_bookings, \
     auth_timeslottemplist, \
+    auth_memberlist, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -1242,18 +1255,21 @@ def TimeSlotSummaryView(request):
     auth_timeslots, \
     auth_bookings, \
     auth_timeslottemplist, \
+    auth_memberlist, \
     = auth_data(request.user)
  
     context = {
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
-        'users_active':auth_userlist_active, 
-        'profiles':auth_profilelist, 
         'branchs':auth_branchs, 
         'ticketformats':auth_ticketformats, 
-        'routes':auth_routes,
-        'timeslots':auth_timeslots,
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
+        'members':auth_memberlist,
         }
     context = {
                 'aqs_version':aqs_version,

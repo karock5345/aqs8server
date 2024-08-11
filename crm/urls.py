@@ -7,6 +7,11 @@ from . import api
 urlpatterns = [
     # Testing page
     # path('', views.WelcomeView, name='crmhome'),
+    path('customer/', views.CustomerListView, name='crmcustomerlist'),
+    path('quotation/', views.QuotationView, name='crmquotation'),
+    path('invoice/', views.InvoiceView, name='crminvoice'),
+    path('receipt/', views.ReceiptView, name='crmreceipt'),
+    path('member/', views.MemberListView, name='crmmember'),
 
     # CRM APIs for mobile app
     path('api/login/', api.crmMemberLoginView, name='crmlogin'),

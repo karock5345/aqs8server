@@ -1,5 +1,60 @@
 {% load static %}
 <ul class="topics__list">
+  {% if en_crm == True %}
+  <li>
+    <a href="{% url 'crmcustomerlist' %}" class="active">
+      <div class="header__logo">
+        <div class="list__svg">
+          {% include 'base/images/user.svg' %}
+        </div>
+        <div>Customers</div>
+      </div> 
+      </a>   
+  </li>
+  <li>
+    <a href="{% url 'crmquotation' %}" class="active">
+      <div class="header__logo">
+        <div class="list__svg">
+          {% include 'base/images/paper.svg' %}
+        </div>
+        <div>Quotations</div>
+      </div> 
+      </a>   
+  </li>
+  <li>
+    <a href="{% url 'crminvoice' %}" class="active">
+      <div class="header__logo">
+        <div class="list__svg">
+          {% include 'base/images/paper.svg' %}
+        </div>
+        <div>Invoices</div>
+      </div> 
+      </a>   
+  </li>
+  <li>
+    <a href="{% url 'crmreceipt' %}" class="active">
+      <div class="header__logo">
+        <div class="list__svg">
+          {% include 'base/images/paper.svg' %}
+        </div>
+        <div>Receipts</div>
+      </div> 
+      </a>   
+  </li>
+  <li>
+    <a href="{% url 'crmmember' %}" class="active">
+      <div class="header__logo">
+        <div class="list__svg">
+          {% include 'base/images/user.svg' %}
+        </div>
+        <div>Members</div>
+      </div> 
+      <span>{{ members.count }}</span></a>   
+  </li>  
+  {% endif %}
+
+
+
   {% if en_queue == True %}
   <li>
     <a href="{% url 'softkeyloginb' %}" class="active">
