@@ -2134,7 +2134,7 @@ color: var(--color-light);
   font-weight: 1000;
   cursor: auto;
   /* transition: all 0.3s ease-in-out; */
-  color: var(--color-nearend);
+  color: var(--color-main-light);
   /* background-color: var(--color-bg); */
   margin-top: 0.3rem;
   text-align: center;

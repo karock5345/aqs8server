@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.functions import Cast
 
+
 # Create your models here.
 
 lcounterstatus = [
@@ -249,7 +250,9 @@ class Branch(models.Model):
         return self.bcode
     
 
-class UserProfile(models.Model):  
+class UserProfile(models.Model):
+    from crm.models import Company
+
     BYBRANCH = 'branch'    
     BYTIME = 'time'
     BYTICKETTIME = 'tickettime'
@@ -273,6 +276,8 @@ class UserProfile(models.Model):
        help_text='Queue Priority',
     )
     branchs = models.ManyToManyField(Branch, related_name='branchs_u',  blank=True, help_text='Branch access rights',)
+    company = models.OneToOneField(Company, related_name='company_u', on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Company', help_text='For CRM',)
+
     staffnumber = models.CharField(max_length=200, null=True, blank=True, default='', help_text='Staff number',)    
     #enabled = models.BooleanField(default=True)  
     # room = models.ForeignKey(Room, on_delete=models.CASCADE)

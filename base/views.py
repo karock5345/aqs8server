@@ -13,7 +13,7 @@ from base.decorators import *
 from django.urls import reverse_lazy
 from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch, Ticket, UserStatusLog
 from booking.models import TimeSlot, Booking, BookingLog, TimeslotTemplate
-from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm,trForm, resetForm
+from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm, UserProfileFormAdmin, trForm, resetForm
 from .forms import BranchSettingsForm_Admin, BranchSettingsForm_Adv, BranchSettingsForm_Basic
 from .forms import CaptchaForm, getForm, voidForm, newTicketTypeForm, UserFormSuper, UserFormManager, UserFormSupport, UserFormAdminSelf
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
@@ -4363,7 +4363,11 @@ def UserUpdateView(request, pk):
         #     userform = UserFormManager(instance=user, prefix='uform')
         else :
             userform = UserForm(instance=user, prefix='uform', auth_grouplist=auth_grouplist)
+
         profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
+        if request.user.is_superuser == True or request.user.groups.filter(name='admin').exists() == True:
+            profileform = UserProfileFormAdmin(instance=userp, prefix='pform', auth_branchs=auth_branchs)
+        
     elif request.method == 'POST':
         # if request.user.is_superuser == True :
         #     userform = UserFormSuper(request.POST, instance=user, prefix='uform')
@@ -4379,6 +4383,9 @@ def UserUpdateView(request, pk):
             userform = UserForm(request.POST, instance=user, prefix='uform', auth_grouplist=auth_grouplist)
 
         profileform = UserProfileForm(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
+        if request.user.is_superuser == True or request.user.groups.filter(name='admin').exists() == True:
+            profileform = UserProfileFormAdmin(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
+
         newtickettypeform = newTicketTypeForm(request.POST)
         # check moblie phone format
         # inttel = profileform.mobilephone
@@ -4533,6 +4540,9 @@ def UserNewView2(request, pk):
             userform = UserForm(request.POST, instance=user, prefix='uform', auth_grouplist=auth_grouplist)
 
         profileform = UserProfileForm(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
+        if request.user.is_superuser == True or request.user.groups.filter(name='admin').exists() == True:
+            profileform = UserProfileFormAdmin(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
+
         if (userform.is_valid() & profileform.is_valid()):
             profileform.save() 
             userform.save()
@@ -4559,6 +4569,8 @@ def UserNewView2(request, pk):
             userform = UserForm(instance=user, prefix='uform', auth_grouplist=auth_grouplist)            
 
         profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
+        if request.user.is_superuser == True or request.user.groups.filter(name='admin').exists() == True:
+            profileform = UserProfileFormAdmin(instance=userp, prefix='pform', auth_branchs=auth_branchs)
     context =  {'user':user , 'userp':userp, 'userform':userform, 'profileform':profileform, 'auth_grouplist':auth_grouplist}
     context = {
             'aqs_version':aqs_version,
@@ -4627,6 +4639,8 @@ def UserNewView3(request, pk):
 
     if request.method == 'POST':
         profileform = UserProfileForm(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
+        if request.user.is_superuser == True or request.user.groups.filter(name='admin').exists() == True:
+            profileform = UserProfileFormAdmin(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
         newtickettypeform = newTicketTypeForm(request.POST)
 
         if (profileform.is_valid() & newtickettypeform.is_valid()):
@@ -4650,6 +4664,8 @@ def UserNewView3(request, pk):
                     messages.error(request, item + ' ' + field)
     else:
         profileform = UserProfileForm(instance=userp, prefix='pform', auth_branchs=auth_branchs)
+        if request.user.is_superuser == True or request.user.groups.filter(name='admin').exists() == True:
+            profileform = UserProfileFormAdmin(instance=userp, prefix='pform', auth_branchs=auth_branchs)
     context =  {'profileform':profileform, 'user':user, 'userp':userp,'ticketformat':ticketformat2,'userptt':listusertt, }
     context = {
             'aqs_version':aqs_version,
@@ -4992,7 +5008,8 @@ def auth_data(user):
             if booking.branch not in auth_branchs :
                 auth_bookings = auth_bookings.exclude(id=booking.id)
         
-        # auth_memberlist = Member.objects.filter(Q(company__branchs__in=auth_branchs))
+        if userprofile.company != None :
+            auth_memberlist = Member.objects.filter(Q(company=userprofile.company))
     return(
             auth_en_queue,
             auth_en_crm,

@@ -1,9 +1,10 @@
 from aqs.settings import APP_NAME, aqs_version
 from django.shortcuts import render, redirect, HttpResponse
+from django.urls import reverse
+from django.db.models import Q
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from base.decorators import allowed_users
-from crm.models import Member
 from base.models import Branch, APILog
 import random
 import string
@@ -11,13 +12,15 @@ from datetime import datetime, timedelta, timezone
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi_notoken, funUTCtoLocal, counteractive, checkuser
 from base.views import auth_data
 from django.http import JsonResponse
-from django.shortcuts import redirect
 from django.contrib import messages
 from base.decorators import *
-from django.db.models import Q
-from .forms import MemberUpdateForm
+from crm.models import Member, Company
+from crm.forms import MemberUpdateForm, MemberNewForm
+from crm.api import new_member
+
 import re
 from booking.views import checkMphone
+from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 
 sort_direction = {}
 
@@ -239,6 +242,66 @@ def MemberDelView(request, pk):
     context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/delete.html', context)
 
+
+@unauth_user
+def MemberNewView(request, ):
+    error = ''
+    status = {}
+
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    auth_memberlist, \
+    = auth_data(request.user)
+    
+    try:
+        company = Company.objects.get(ccode=ccode)
+        form = MemberNewForm(company=company)
+    except:
+        error = 'Company not found'
+    
+    if error == '':
+        if request.method == 'POST':
+            utcnow = datetime.now(timezone.utc)
+            form = MemberNewForm(request.POST, company=company)
+            status, error = new_member(
+                        request, utcnow, 
+                        company, form.username, form.password, True,
+                        False, utcnow,
+                        form.firstname, form.lastname, form.gender, form.email, '852', form.mobilephone,  form.nickname,
+                        form.birthday, 
+                        form.memberlevel, form.memberpoints, form.memberpointtotal,                       
+                       )
+
+            if error == '' :
+                messages.success(request, 'Created new Member.')
+                return redirect('crmmember')
+    if error != '':
+        messages.error(request, error)
+
+    # get the url of 'bookingtimeslot'
+    back_url = reverse('crmmember')
+    context = {'form':form}
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context     
+    context = {'title':'New Member', 'back_url':back_url, } | context 
+    return render(request, 'base/new.html', context)
+
+
+
 def checkmemberform(form):
     error = ''
     errorTC = ''
@@ -291,5 +354,16 @@ def checkmemberform(form):
         else:
             newform.email = ''
 
-    
+    if error == '':
+        try:
+            newform.birthday = funLocaltoUTC(newform.birthday, newform.company.timezone)
+        except:
+            error = 'An error occurcd : Birthday is not correct'
+
+    if error == '':
+        try:
+            newform.verifycode_date = funLocaltoUTC(newform.verifycode_date, newform.company.timezone)
+        except:
+            error = 'An error occurcd : Verifycode_date is not correct'
+
     return error, newform
