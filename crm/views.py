@@ -5,17 +5,15 @@ from django.db.models import Q
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from base.decorators import allowed_users
-from base.models import Branch, APILog
-import random
-import string
+from base.models import Branch, APILog, UserProfile
 from datetime import datetime, timedelta, timezone
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi_notoken, funUTCtoLocal, counteractive, checkuser
 from base.views import auth_data
 from django.http import JsonResponse
 from django.contrib import messages
 from base.decorators import *
-from crm.models import Member, Company
-from crm.forms import MemberUpdateForm, MemberNewForm
+from crm.models import Member, Company, Customer
+from crm.forms import MemberUpdateForm, MemberNewForm, CustomerUpdateForm
 from crm.api import new_member
 
 import re
@@ -23,6 +21,7 @@ from booking.views import checkMphone
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 
 sort_direction = {}
+sort_direction_cust = {}
 
 # Create your views here.
 def WelcomeView(request):
@@ -31,7 +30,144 @@ def WelcomeView(request):
 
 @unauth_user
 def CustomerListView(request):
-    return HttpResponse('CustomerListView')
+    global sort_direction_cust
+
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    q_sort = request.GET.get('sort') if request.GET.get('sort') != None else ''
+    
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    auth_memberlist, \
+    auth_customerlist, \
+    = auth_data(request.user)
+
+
+    result = auth_customerlist
+    # print(result_userlist.count())
+
+    userp = UserProfile.objects.filter(Q(user = request.user)).first()
+    if userp != None:
+        if userp.company == None:
+            messages.error(request, 'Your are not assign Company' )            
+            return redirect('home')
+
+    if q != '':
+        result = result.filter(Q(companyname__icontains=q) 
+                                             | Q(contact__icontains=q) 
+                                             | Q(address__icontains=q) 
+                                             | Q(phone__icontains=q) 
+                                             | Q(remark__icontains=q)
+                                             | Q(email__icontains=q) 
+                                             )
+    
+    direct = ''
+    if q_sort != '':
+        # find out the sort_list
+        try:
+            direct = sort_direction_cust[q_sort]
+        except:
+            direct = ''
+            sort_direction_cust[q_sort] = ''
+        if direct == '':
+            sort_direction_cust[q_sort] = '-'
+        elif direct == '-':
+            sort_direction_cust[q_sort] = ''
+
+    if q_sort == 'customer':
+        result = result.order_by(direct + 'companyname')
+    elif q_sort == 'contact':
+        result = result.order_by(direct + 'contact')
+    elif q_sort == 'email':
+        result = result.order_by(direct + 'email')        
+    elif q_sort == 'tel':
+        result = result.order_by(direct + 'phone')
+    elif q_sort == 'sales':
+        result = result.order_by(direct + 'sales')
+
+    context = {
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
+        'members':auth_memberlist,
+        'customers':auth_customerlist,
+        }
+    context = context | {'q':q}
+    context = context | {'result':result}
+    context = context | {'company':userp.company}
+
+    return render(request, 'crm/customerlist.html', context)
+
+
+@unauth_user
+def CustomerUpdateView(request, pk):
+    utcnow = datetime.now(timezone.utc)
+    customer = Customer.objects.get(id=pk)    
+
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    auth_memberlist, \
+    auth_customerlist, \
+    = auth_data(request.user)
+
+    if request.method == 'POST':
+        form = CustomerUpdateForm(request.POST, instance=customer, prefix='customerform')
+        error = ''
+        # check the form
+        error, newform = checkcustomerform(form)
+        
+        if error == '' :         
+            try :                
+                newform.save()
+
+                messages.success(request, 'Customer was successfully updated!')
+                
+                return redirect('crmcustomerlist')
+            except:
+                error = 'An error occurcd during updating Customer'
+
+        if error != '':
+            messages.error(request, error )
+                
+    else:
+        form = CustomerUpdateForm(instance=customer, prefix='customerform')
+    context =  {'form':form, 'customer':customer, }
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+               } | context 
+    return render(request, 'crm/customer_update.html', context)
+
 
 @unauth_user
 def QuotationView(request):
@@ -70,11 +206,18 @@ def MemberListView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
 
     result_userlist = auth_memberlist
     # print(result_userlist.count())
+
+    userp = UserProfile.objects.filter(Q(user = request.user)).first()
+    if userp != None:
+        if userp.company == None:
+            messages.error(request, 'Your are not assign Company' )            
+            return redirect('home')
 
     if q != '':
         result_userlist = result_userlist.filter(Q(username__icontains=q) 
@@ -152,6 +295,7 @@ def MemberListView(request):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
 
     # context = {'users':auth_userlist, 
@@ -170,7 +314,7 @@ def MemberListView(request):
     context = context | {'qcompany':q_company}
     context = context | {'qverified':q_verified}
     context = context | {'result_members':result_userlist}
-    
+    context = context | {'company':userp.company}
 
     return render(request, 'crm/memberlist.html', context)
 
@@ -194,6 +338,7 @@ def MemberUpdateView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -244,7 +389,7 @@ def MemberDelView(request, pk):
 
 
 @unauth_user
-def MemberNewView(request, ):
+def MemberNewView(request, ccode):
     error = ''
     status = {}
 
@@ -263,6 +408,7 @@ def MemberNewView(request, ):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
     
     try:
@@ -275,14 +421,26 @@ def MemberNewView(request, ):
         if request.method == 'POST':
             utcnow = datetime.now(timezone.utc)
             form = MemberNewForm(request.POST, company=company)
-            status, error = new_member(
-                        request, utcnow, 
-                        company, form.username, form.password, True,
-                        False, utcnow,
-                        form.firstname, form.lastname, form.gender, form.email, '852', form.mobilephone,  form.nickname,
-                        form.birthday, 
-                        form.memberlevel, form.memberpoints, form.memberpointtotal,                       
-                       )
+            # check birthday is 'YYYY-MM-DD' or 'YYYY-MM-DD HH:MM:SS'
+            birthday = form['birthday'].value()
+            # str_time = str(dob) + ' 00:00:00'
+            # dob = datetime.strptime(str_time, "%Y-%m-%d %H:%M:%S")
+            # rx_dob = funLocaltoUTC(dob, company.timezone)
+            try:
+                birthday = datetime.strptime(birthday, "%Y-%m-%d %H:%M:%S")
+            except:
+                str_time = str(birthday) + ' 00:00:00'
+                birthday = datetime.strptime(str_time, "%Y-%m-%d %H:%M:%S")
+
+            if form.is_valid() == True:
+                status, error = new_member(
+                            request, utcnow, 
+                            company, form['username'].value(), form['password'].value(), True,
+                            False, utcnow,
+                            form['firstname'].value(), form['lastname'].value(), form['gender'].value(), form['email'].value(), '852', form['mobilephone'].value(),  form['nickname'].value(),
+                            birthday, 
+                            form['memberlevel'].value(), form['memberpoints'].value(), form['memberpointtotal'].value(),                       
+                           )
 
             if error == '' :
                 messages.success(request, 'Created new Member.')
@@ -365,5 +523,52 @@ def checkmemberform(form):
             newform.verifycode_date = funLocaltoUTC(newform.verifycode_date, newform.company.timezone)
         except:
             error = 'An error occurcd : Verifycode_date is not correct'
+
+    return error, newform
+
+def checkcustomerform(form):
+    error = ''
+    errorTC = ''
+    newform = None
+
+    if form.is_valid() == False:
+        # error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
+        error_string = ''
+        for l in list(form.errors):
+            errx = ''
+            for x in form.errors[l]:
+                errx = errx + ',' +  x
+                # print(l , x)
+            error_string = error_string + ' [' + l + '] ' + errx + '\n'
+        error = 'An error occurcd during registration: ' + error_string
+        
+
+    if error == '' :
+        newform = form.save(commit=False)
+
+    if error == '' :
+        if newform.company == None :
+            # Error branch is None
+            error = 'Error Company is blank'
+
+    if error == '' :
+        if newform.phone == '':
+            pass
+        else:
+            if newform.phone != None :
+                if len(newform.phone) != 8:
+                    error = 'Phone number must be 8 digits'
+
+    if error == '':
+        if not(newform.email == '' or newform.email == None) :
+        # check email format
+            regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+            if(re.fullmatch(regex, newform.email)):
+                pass       
+            else:
+                error = 'Email format is incorrect'
+                error_TC = '電郵地址格式不正確'
+        else:
+            newform.email = ''
 
     return error, newform

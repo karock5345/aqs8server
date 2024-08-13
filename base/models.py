@@ -276,7 +276,7 @@ class UserProfile(models.Model):
        help_text='Queue Priority',
     )
     branchs = models.ManyToManyField(Branch, related_name='branchs_u',  blank=True, help_text='Branch access rights',)
-    company = models.OneToOneField(Company, related_name='company_u', on_delete=models.SET_NULL, blank=True, null=True, verbose_name='Company', help_text='For CRM',)
+    company = models.ForeignKey(Company, related_name='company_u', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Company', help_text='For CRM',)
 
     staffnumber = models.CharField(max_length=200, null=True, blank=True, default='', help_text='Staff number',)    
     #enabled = models.BooleanField(default=True)  

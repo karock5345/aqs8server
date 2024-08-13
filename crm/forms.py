@@ -4,7 +4,7 @@ from django.contrib.auth.models import User, Group
 from django.db.models import Q
 from django.forms.utils import ErrorList
 from base.models import TicketFormat, TicketRoute, UserProfile, Branch, CounterType
-from .models import Member
+from .models import Member, Customer
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
@@ -12,10 +12,12 @@ import pytz
 from django.utils.timezone import localtime, get_current_timezone
 from datetime import datetime, timedelta
 
-class MemberUpdateForm(ModelForm):
-    birthday = forms.DateTimeField(label='Birthday', input_formats=['%Y-%m-%d'], widget=forms.widgets.DateInput( format='%Y-%m-%d', ))
-    verifycode_date = forms.DateTimeField(label='Verifycode Date', input_formats=['%Y-%m-%d %H:%M'], widget=forms.widgets.DateInput( format='%Y-%m-%d %H:%M', ))
+class DateInput(forms.DateInput):
+    input_type = 'date'
+class DateTimeInput(forms.DateTimeInput):
+    input_type = 'datetime'
 
+class MemberUpdateForm(ModelForm):
     def __init__(self, *args,**kwargs):
         # self.company = kwargs.pop('company')
         # self.auth_userlist = kwargs.pop('auth_userlist')
@@ -36,12 +38,12 @@ class MemberUpdateForm(ModelForm):
     class Meta:        
         model = Member
         fields = ['username', 'password', 'number', 'firstname', 'lastname', 'nickname', 'enabled', 'verified', 'verifycode', 'verifycode_date', 'birthday', 'gender', 'memberpoints',  'memberpointtotal', 'memberlevel', 'mobilephone_country', 'mobilephone', 'email', 'remark']
-
+        widgets = {
+            'birthday': DateInput(),
+            # 'verifycode_date': DateTimeInput(),
+        }
 
 class MemberNewForm(ModelForm):
-    birthday = forms.DateTimeField(label='Birthday', input_formats=['%Y-%m-%d'], widget=forms.widgets.DateInput( format='%Y-%m-%d', ))
-    verifycode_date = forms.DateTimeField(label='Verifycode Date', input_formats=['%Y-%m-%d %H:%M'], widget=forms.widgets.DateInput( format='%Y-%m-%d %H:%M', ))
-
     def __init__(self, *args,**kwargs):
         self.company = kwargs.pop('company')
 
@@ -50,8 +52,22 @@ class MemberNewForm(ModelForm):
         datetime_now = datetime.now()
         timezone = self.company.timezone
         # Initial value:
-        self.initial['birthday'] = '1990-01-01'
+        # self.initial['birthday'] = '1990-01-01'
+        # self.fields['birthday'].widget=forms.widgets.DateTimeInput( format='%Y-%m-%d', )
 
     class Meta:        
         model = Member
-        fields = ['username', 'password', 'firstname', 'lastname', 'nickname', 'enabled', 'birthday', 'gender', 'memberpoints', 'memberpointtotal', 'memberlevel', 'mobilephone', 'email', 'company', 'remark']
+        fields = ['username', 'password', 'firstname', 'lastname', 'nickname', 'enabled', 'birthday', 'gender', 'memberpoints', 'memberpointtotal', 'memberlevel', 'mobilephone', 'email', 'remark']
+        widgets = {
+            'birthday': DateInput(),
+            # 'verifycode_date': DateTimeInput(),
+        }
+
+class CustomerUpdateForm(ModelForm):
+    def __init__(self, *args,**kwargs):
+        super().__init__(*args,**kwargs)        
+
+    class Meta:        
+        model = Customer
+        fields = ['companyname',  'address','contact', 'phone', 'email', 'fax', 'referby',  'remark']
+

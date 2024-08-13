@@ -33,7 +33,7 @@ from celery.result import AsyncResult
 from django.conf import settings
 from base.sch.views import sch_shutdown
 from django.db.models import BooleanField, Value
-from crm.models import CRMAdmin, Member, Company
+from crm.models import CRMAdmin, Member, Company, Customer
 
 
 logger = logging.getLogger(__name__)
@@ -245,6 +245,7 @@ def SoftkeyView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     context = {
@@ -259,6 +260,7 @@ def SoftkeyView(request, pk):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
 
     try:
@@ -501,6 +503,7 @@ def SoftkeyLoginBranchView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     user = request.user
@@ -532,6 +535,7 @@ def SoftkeyLoginBranchView(request):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
         context = context | {'counterstatus':counterstatus}
 
@@ -560,6 +564,7 @@ def SoftkeyLoginView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     branch = Branch.objects.get(id=pk)
@@ -605,6 +610,7 @@ def SoftkeyLoginView(request, pk):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
         context = context | {'counterstatus':counterstatus}
 
@@ -633,6 +639,7 @@ def SoftkeyLogoutView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     context = {
@@ -682,6 +689,7 @@ def SoftkeyCallView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)    
 
     context = {
@@ -749,6 +757,7 @@ def SoftkeyProcessView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
     
     context = {
@@ -797,6 +806,7 @@ def SoftkeyMissView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     context = {
@@ -844,6 +854,7 @@ def SoftkeyRecallView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     context = {
@@ -893,6 +904,7 @@ def SoftkeyDoneView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     context = {
@@ -2635,6 +2647,7 @@ def Report_Staff_Result(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
           
@@ -3186,6 +3199,7 @@ def Reports(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))    
@@ -3217,6 +3231,7 @@ def Reports(request):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
     context = context | {'now':snow_l}
 
@@ -3287,6 +3302,7 @@ def SuperVisorListView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
  
@@ -3311,6 +3327,7 @@ def SuperVisorListView(request):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
     return render(request, 'base/supervisors.html', context)
 
@@ -3377,6 +3394,7 @@ def TicketRouteUpdateView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -3423,6 +3441,7 @@ def TicketRouteSummaryView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
  
@@ -3443,6 +3462,7 @@ def TicketRouteSummaryView(request):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
     return render(request, 'base/routes.html', context)
 
@@ -3465,6 +3485,7 @@ def TicketFormatNewView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     form = TicketFormatForm(auth_branchs=auth_branchs)
@@ -3540,6 +3561,7 @@ def TicketFormatUpdateView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -3584,6 +3606,7 @@ def TicketFormatSummaryView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
   
@@ -3603,6 +3626,7 @@ def TicketFormatSummaryView(request):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
     return render(request, 'base/tfs.html', context)
 
@@ -3997,6 +4021,7 @@ def SettingsSummaryView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
 
@@ -4013,6 +4038,7 @@ def SettingsSummaryView(request):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
     return render(request, 'base/settings.html', context)
 
@@ -4033,6 +4059,7 @@ def homeView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     context = {
@@ -4047,6 +4074,7 @@ def homeView(request):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
 
     context = context |{'users_active':auth_userlist_active, }
@@ -4071,6 +4099,7 @@ def UserSummaryView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
  
@@ -4086,6 +4115,7 @@ def UserSummaryView(request):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
     context = context | {'users_active':auth_userlist_active}
     context = context | {'profiles':auth_profilelist}
@@ -4120,6 +4150,7 @@ def UserSummaryListView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
 
@@ -4210,6 +4241,7 @@ def UserSummaryListView(request):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
 
     # context = {'users':auth_userlist, 
@@ -4302,6 +4334,7 @@ def UserUpdateView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
 
@@ -4522,6 +4555,7 @@ def UserNewView2(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
 
@@ -4601,6 +4635,7 @@ def UserNewView3(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
 
@@ -4741,6 +4776,7 @@ def UserResetView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     if user in auth_userlist :
@@ -4789,6 +4825,7 @@ def MenuView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
         
@@ -4827,6 +4864,7 @@ def auth_data(user):
     auth_en_booking = userprofile.enabled_booking
 
     auth_memberlist = Member.objects.all()
+    auth_customerlist = Customer.objects.all()
     auth_bookings = Booking.objects.filter(~Q(status=Booking.STATUS.DELETED)).annotate(bookingtoqueue=Value(False, output_field=BooleanField()))
     # add column for bookingtoqueue
     auth_bookings = auth_bookings.annotate(bookingforceontime=Value(False, output_field=BooleanField()))
@@ -5008,8 +5046,14 @@ def auth_data(user):
             if booking.branch not in auth_branchs :
                 auth_bookings = auth_bookings.exclude(id=booking.id)
         
-        if userprofile.company != None :
+        if userprofile.company == None :
+            auth_memberlist = Member.objects.filter(Q(company=None))
+            auth_customerlist = Customer.objects.filter(Q(company=None))
+        else:
             auth_memberlist = Member.objects.filter(Q(company=userprofile.company))
+            auth_customerlist = Customer.objects.filter(Q(sales=user))
+
+          
     return(
             auth_en_queue,
             auth_en_crm,
@@ -5025,6 +5069,7 @@ def auth_data(user):
             auth_bookings,
             auth_timeslottemplist,
             auth_memberlist,
+            auth_customerlist,
             )
 
 

@@ -7,7 +7,7 @@ from base.models import Branch, APILog
 import random
 import string
 from datetime import datetime, timezone, timedelta
-from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi_notoken, funUTCtoLocal, counteractive, checkuser
+from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi_notoken, funUTCtoLocal, funLocaltoUTC, counteractive, checkuser
 from crm.serializers import MemberItemListSerivalizer
 import re
 import phonenumbers
@@ -216,14 +216,15 @@ def crmMemberRegistrationView(request):
         except:
             error = 'DOB format must be YYYY_MM_DD'
 
-
-    status, error = new_member(
-                                request, datetime_now_utc, 
-                                company, rx_member_username, rx_member_password, True,
-                                False, datetime_now_utc,
-                                '', '', rx_gender, rx_email, '852', rx_mobile, rx_nickname, rx_dob,
-                                'SILVER', 0, 0,
-                                )
+    if error == '':
+        # print(str(rx_dob))
+        status, error = new_member(
+                                    request, datetime_now_utc, 
+                                    company, rx_member_username, rx_member_password, True,
+                                    False, datetime_now_utc,
+                                    '', '', rx_gender, rx_email, '852', rx_mobile, rx_nickname, rx_dob,
+                                    'SILVER', 0, 0,
+                                    )
 
     # Save Api Log
     if company != None:
@@ -712,15 +713,35 @@ def new_member(
     rx_gender = gender
 
     # change dob from Local time to UTC time
-    rx_dob = funUTCtoLocal(dob, company.timezone)
+    # str_time = str(dob) + ' 00:00:00'
+    # dob = datetime.strptime(str_time, "%Y-%m-%d %H:%M:%S")
+    rx_dob = funLocaltoUTC(dob, company.timezone)
 
     # username is lowercase, auto convert to lowercase
     rx_member_username = rx_member_username.lower()
 
     # check miss parameters
     if error == '':
-        if rx_member_username == '' or rx_member_password == '' or rx_email == '' or rx_mobile == '' or rx_nickname == '' or rx_gender == '' or rx_dob == '' :
-            error = 'Missing parameters'
+        if rx_member_username == '' :
+            error = 'Username not found'
+    if error == '':
+        if rx_member_password == '' :
+            error = 'Password not found'
+    if error == '':
+        if rx_email == '' :
+            error = 'Email not found'
+    if error == '':
+        if rx_mobile == '' :
+            error = 'Mobile not found'
+    if error == '':
+        if rx_nickname == '' :
+            error = 'Nickname not found'
+    if error == '':
+        if rx_gender == '' :
+            error = 'Gender not found'
+    if error == '':
+        if rx_dob == '' :
+            error = 'Birthday not found'
 
     # check company
     if error == '':

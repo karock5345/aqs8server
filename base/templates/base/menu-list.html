@@ -9,7 +9,10 @@
         </div>
         <div>Customers</div>
       </div> 
-      </a>   
+      <span>{{ customers.count }}</span>
+    </a>
+
+
   </li>
   <li>
     <a href="{% url 'crmquotation' %}" class="active">
@@ -49,7 +52,8 @@
         </div>
         <div>Members</div>
       </div> 
-      <span>{{ members.count }}</span></a>   
+      <span>{{ members.count }}</span>
+    </a>
   </li>  
   {% endif %}
 

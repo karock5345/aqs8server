@@ -91,6 +91,7 @@ def TimeSlotTempItemUpdateView(request, pk, tempid):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -190,6 +191,7 @@ def TimeSlotTempUpdateView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     
@@ -256,6 +258,7 @@ def TimeSlotTempNewView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     form = TimeSlotTempNewForm(auth_branchs=auth_branchs, auth_userlist=auth_userlist)
@@ -309,6 +312,7 @@ def TimeslotTempSummaryView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
  
@@ -324,6 +328,7 @@ def TimeslotTempSummaryView(request):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
     # print(auth_timeslottemplist)
     if request.method == 'POST':
@@ -362,6 +367,7 @@ def BookingNewView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     form = BookingNewForm(auth_branchs=auth_branchs)
@@ -435,6 +441,7 @@ def BookingUpdateView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -488,6 +495,7 @@ def BookingSummaryView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
  
@@ -503,6 +511,7 @@ def BookingSummaryView(request):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
     
     if request.method == 'POST':
@@ -1135,6 +1144,7 @@ def TimeSlotNewView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     tsform = TimeSlotNewForm(auth_branchs=auth_branchs)
@@ -1202,6 +1212,7 @@ def TimeSlotUpdateView(request, pk):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -1256,6 +1267,7 @@ def TimeSlotSummaryView(request):
     auth_bookings, \
     auth_timeslottemplist, \
     auth_memberlist, \
+    auth_customerlist, \
     = auth_data(request.user)
  
     context = {
@@ -1270,6 +1282,7 @@ def TimeSlotSummaryView(request):
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
+        'customers':auth_customerlist,
         }
     context = {
                 'aqs_version':aqs_version,

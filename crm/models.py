@@ -196,11 +196,12 @@ class CRMAdmin(models.Model):
     
 class Customer(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
-    customer_company = models.CharField(max_length=200, null=True, blank=True)
+    companyname = models.CharField(max_length=200, null=True, blank=True)
     contact = models.CharField(max_length=200, null=True, blank=True)
     address = models.CharField(max_length=200, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True) 
     phone = models.CharField(max_length=200, null=True, blank=True)
-    email = models.EmailField(null=False, blank=False) 
+    fax = models.CharField(max_length=200, null=True, blank=True)
     referby = models.CharField(max_length=200, null=True, blank=True)
     sales = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='sales')
     remark = models.CharField(max_length=200, null=True, blank=True)
@@ -209,7 +210,7 @@ class Customer(models.Model):
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
 
     def __str__(self):
-        return self.company
+        return self.companyname
 
 class Quotation(models.Model):
     class STATUS(models.TextChoices):
@@ -231,7 +232,7 @@ class Quotation(models.Model):
     quotation_date = models.DateTimeField(auto_now_add=True)    
     quotation_status = models.CharField(max_length=200, choices=STATUS.choices, default=STATUS.FREE)
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
-    customer_company = models.CharField(max_length=200, null=True, blank=True)
+    customer_companyname = models.CharField(max_length=200, null=True, blank=True)
     customer_contact = models.CharField(max_length=200, null=True, blank=True)
     customer_phone = models.CharField(max_length=200, null=True, blank=True)
     customer_email = models.EmailField(null=False, blank=False)

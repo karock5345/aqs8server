@@ -35,11 +35,11 @@ class CRMAdminView(admin.ModelAdmin):
     list_display =('company', 'member_enabled', 'quotation_enabled', 'inventory_enabled')
 
 class CustomerView(admin.ModelAdmin):
-    list_display =('company', 'customer_company', 'contact', 'phone', 'sales')
+    list_display =('companyname', 'contact', 'phone', 'sales', 'company')
     # ordering = ('customer_company')
 
 class QuotationView(admin.ModelAdmin):
-    list_display =('company', 'customer_company', 'sales', 'quotation_status', 'total')
+    list_display =('company', 'customer_companyname', 'sales', 'quotation_status', 'total')
     ordering = ('-updated', '-created')
 
 class Quotation_itemView(admin.ModelAdmin):
