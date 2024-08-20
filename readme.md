@@ -1,6 +1,6 @@
-# AQS version 8.4.0
+# AQS version 8.3.10
 
-<h3 style="color:orange;">Version 8.4.0</h3>
+<h3 style="color:orange;">Version 8.3.10</h3>
 
 - CRM System (Customer Relationship Management) Initial for Project Colur Freak Studio
   - Add new function : Quotation System
