@@ -28,7 +28,16 @@
                                 {% if field.field.widget.input_type == 'checkbox' %}
                                     <div class="form__group_checkbox">
                                         <label class="profile_pic" id="{{ field.name }}"> <p class="label__name">{{field}} {{field.label}}</p></label><br>
-                                    </div>   
+                                    </div>
+                                {% elif field.field.widget.input_type == 'select' %}
+                                    <div class="form__group">
+                                        <label for="profile_pic">{{field.label}} : </label>
+                                        <div class="select_area">
+                                            <label for="profile_pic">{{field}}</label>
+                       
+                                            <button class="btn btn--main" type="submit" name="action" value="{{ field.name }}">Others</button>
+                                        </div>
+                                    </div>
                                 {% else %}
                                     <div class="form__group">
                                         <label for="profile_pic">{{field.label}} : {{field}}</label>                            
@@ -39,7 +48,7 @@
                         <div class="form__action">
                             <a class="btn btn--del" href="{% url 'memberdelete' customer.id %}">Delete</a>
                             <a class="btn btn--dark" href="{% url 'crmcustomerlist' %}">Cancel</a>
-                            <button class="btn btn--main" type="submit">Update</button>
+                            <button class="btn btn--main" type="submit" name="action" value="update">Update</button>
                         </div>
                     </form>
                 </div>

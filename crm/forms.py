@@ -69,5 +69,5 @@ class CustomerUpdateForm(ModelForm):
 
     class Meta:        
         model = Customer
-        fields = ['companyname',  'address','contact', 'phone', 'email', 'fax', 'referby',  'remark']
+        fields = ['companyname',  'address','contact', 'phone', 'email', 'fax', 'referby', 'group', 'source', 'information' , 'remark']
 

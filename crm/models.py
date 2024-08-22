@@ -32,6 +32,51 @@ class Company(models.Model):
         return self.ccode + '-' + self.name
 
 
+class CustomerGroup(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
+    name = models.CharField(max_length=200)
+    description = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+    
+class CustomerSource(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
+    name = models.CharField(max_length=200)
+    description = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+    
+class CustomerInformation(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
+    name = models.CharField(max_length=200)
+    description = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+
+class Customer(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
+    companyname = models.CharField(max_length=200, null=True, blank=True)
+    contact = models.CharField(max_length=200, null=True, blank=True)
+    address = models.CharField(max_length=200, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True) 
+    phone = models.CharField(max_length=200, null=True, blank=True)
+    fax = models.CharField(max_length=200, null=True, blank=True)
+    referby = models.CharField(max_length=200, null=True, blank=True)
+    sales = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='sales')
+    group = models.ForeignKey(CustomerGroup, on_delete=models.SET_NULL, null=True, blank=True)
+    source = models.ForeignKey(CustomerSource, on_delete=models.SET_NULL, null=True, blank=True)
+    information = models.ForeignKey(CustomerInformation, on_delete=models.SET_NULL, null=True, blank=True)
+    remark = models.CharField(max_length=200, null=True, blank=True)
+    createdby = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='customer_createdby')
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+
+    def __str__(self):
+        return self.companyname
 class Product_Type(models.Model):
     # default 'product' or 'service'
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
@@ -194,23 +239,7 @@ class CRMAdmin(models.Model):
     def __str__(self):
         return self.company.name  
     
-class Customer(models.Model):
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
-    companyname = models.CharField(max_length=200, null=True, blank=True)
-    contact = models.CharField(max_length=200, null=True, blank=True)
-    address = models.CharField(max_length=200, null=True, blank=True)
-    email = models.EmailField(null=True, blank=True) 
-    phone = models.CharField(max_length=200, null=True, blank=True)
-    fax = models.CharField(max_length=200, null=True, blank=True)
-    referby = models.CharField(max_length=200, null=True, blank=True)
-    sales = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='sales')
-    remark = models.CharField(max_length=200, null=True, blank=True)
-    createdby = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='customer_createdby')
-    updated = models.DateTimeField(auto_now=True)
-    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
 
-    def __str__(self):
-        return self.companyname
 
 class Quotation(models.Model):
     class STATUS(models.TextChoices):
@@ -288,4 +317,3 @@ class PushMessage(models.Model):
 
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
     updated = models.DateTimeField(auto_now=True)
-

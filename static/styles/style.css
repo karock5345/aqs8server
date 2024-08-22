@@ -2327,3 +2327,9 @@ color: var(--color-light);
   background-color: var(--color-error);
   color: var(--color-light);
 }
+
+.select_area {
+  display: grid;
+  grid-template-columns: 99fr 1fr;
+  gap: 2px;
+}

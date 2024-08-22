@@ -141,23 +141,36 @@ def CustomerUpdateView(request, pk):
     = auth_data(request.user)
 
     if request.method == 'POST':
+        action = request.POST.get('action')
         form = CustomerUpdateForm(request.POST, instance=customer, prefix='customerform')
-        error = ''
-        # check the form
-        error, newform = checkcustomerform(form)
-        
-        if error == '' :         
-            try :                
-                newform.save()
 
-                messages.success(request, 'Customer was successfully updated!')
-                
-                return redirect('crmcustomerlist')
-            except:
-                error = 'An error occurcd during updating Customer'
+        if action == 'group':
+            messages.success(request, 'Group')
+            customer = Customer.objects.get(id=pk)
+            company = customer.company
+            
+        elif action == 'source':
+            messages.success(request, 'Source')
+        elif action == 'information':
+            messages.success(request, 'Information')
+        elif action == 'update':
+            # form = CustomerUpdateForm(request.POST, instance=customer, prefix='customerform')
+            error = ''
+            # check the form
+            error, newform = checkcustomerform(form)
+            
+            if error == '' :         
+                try :                
+                    newform.save()
 
-        if error != '':
-            messages.error(request, error )
+                    messages.success(request, 'Customer was successfully updated!')
+                    
+                    return redirect('crmcustomerlist')
+                except:
+                    error = 'An error occurcd during updating Customer'
+
+            if error != '':
+                messages.error(request, error )
                 
     else:
         form = CustomerUpdateForm(instance=customer, prefix='customerform')
