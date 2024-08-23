@@ -12,8 +12,8 @@ from base.views import auth_data
 from django.http import JsonResponse
 from django.contrib import messages
 from base.decorators import *
-from crm.models import Member, Company, Customer
-from crm.forms import MemberUpdateForm, MemberNewForm, CustomerUpdateForm
+from crm.models import Member, Company, Customer, CustomerGroup, CustomerSource, CustomerInformation
+from crm.forms import MemberUpdateForm, MemberNewForm, CustomerUpdateForm, CustomerGroupForm
 from crm.api import new_member
 
 import re
@@ -121,7 +121,10 @@ def CustomerListView(request):
 def CustomerUpdateView(request, pk):
     utcnow = datetime.now(timezone.utc)
     customer = Customer.objects.get(id=pk)    
-
+    company = customer.company
+    # get full path with domain name
+    full_path = request.build_absolute_uri()
+    
     auth_en_queue, \
     auth_en_crm, \
     auth_en_booking, \
@@ -142,13 +145,45 @@ def CustomerUpdateView(request, pk):
 
     if request.method == 'POST':
         action = request.POST.get('action')
-        form = CustomerUpdateForm(request.POST, instance=customer, prefix='customerform')
+        form = CustomerUpdateForm(request.POST, instance=customer, prefix='customerform', company=customer.company)
 
         if action == 'group':
-            messages.success(request, 'Group')
-            customer = Customer.objects.get(id=pk)
-            company = customer.company
             
+            table = CustomerGroup.objects.filter(Q(company=company))
+            cgform = CustomerGroupForm()
+            context = {'table':table, 'form': cgform, 'company':company, 'customer':customer, 'back_url':full_path}
+            return render(request, 'crm/sub_update.html', context)
+        elif action == 'update_group':
+            cgform = CustomerGroupForm(request.POST)
+            if cgform.is_valid():
+                # get the id of the customer group from the form
+                pk = cgform['id'].value()
+                cg = CustomerGroup.objects.get(pk=pk)
+
+                cg.name = cgform['name'].value()
+                cg.description = cgform['description'].value()
+                cg.save()
+                # cgform.save()
+                messages.success(request, 'Update success' )
+            table = CustomerGroup.objects.filter(Q(company=company))
+            context = {'table':table, 'form': cgform, 'company':company, 'back_url':full_path}
+            return render(request, 'crm/sub_update.html', context)
+        elif action == 'new_group':
+            CustomerGroup.objects.create(company=company, name='', description='')
+            cgform = CustomerGroupForm(request.POST)
+
+            table = CustomerGroup.objects.filter(Q(company=company))
+            context = {'table':table, 'form': cgform, 'company':company, 'back_url':full_path}            
+            return render(request, 'crm/sub_update.html', context, )
+        elif action == 'del_group':
+            cgform = CustomerGroupForm(request.POST)
+            if cgform.is_valid():
+                pk = cgform['id'].value()
+                CustomerGroup.objects.get(pk=pk).delete()
+
+            table = CustomerGroup.objects.filter(Q(company=company))
+            context = {'table':table, 'form': cgform, 'company':company, 'back_url':full_path}
+            return render(request, 'crm/sub_update.html', context, )        
         elif action == 'source':
             messages.success(request, 'Source')
         elif action == 'information':
@@ -173,7 +208,7 @@ def CustomerUpdateView(request, pk):
                 messages.error(request, error )
                 
     else:
-        form = CustomerUpdateForm(instance=customer, prefix='customerform')
+        form = CustomerUpdateForm(instance=customer, prefix='customerform', company=customer.company)
     context =  {'form':form, 'customer':customer, }
     context = {
                 'aqs_version':aqs_version,

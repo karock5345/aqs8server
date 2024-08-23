@@ -4,7 +4,7 @@ from django.contrib.auth.models import User, Group
 from django.db.models import Q
 from django.forms.utils import ErrorList
 from base.models import TicketFormat, TicketRoute, UserProfile, Branch, CounterType
-from .models import Member, Customer
+from .models import Member, Customer, CustomerGroup, CustomerSource, CustomerInformation
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
@@ -65,9 +65,28 @@ class MemberNewForm(ModelForm):
 
 class CustomerUpdateForm(ModelForm):
     def __init__(self, *args,**kwargs):
+        self.company = kwargs.pop('company')
         super().__init__(*args,**kwargs)        
-
+        self.fields['group'].queryset = CustomerGroup.objects.filter(company=self.company)
+        self.fields['source'].queryset = CustomerSource.objects.filter(company=self.company)
+        self.fields['information'].queryset = CustomerInformation.objects.filter(company=self.company)
+        
     class Meta:        
         model = Customer
         fields = ['companyname',  'address','contact', 'phone', 'email', 'fax', 'referby', 'group', 'source', 'information' , 'remark']
+
+class CustomerGroupForm(forms.ModelForm): 
+    id = forms.fields.IntegerField()
+
+    def __init__(self, *args,**kwargs):
+        super().__init__(*args,**kwargs)        
+
+        # hidden
+        # self.fields['pk'].widget.attrs['disabled'] = 'disabled'
+        self.initial['id'] = self.instance.pk
+
+
+    class Meta:
+        model = CustomerGroup
+        fields = ['id', 'name', 'description']
 

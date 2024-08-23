@@ -30,18 +30,37 @@
                                         <label class="profile_pic" id="{{ field.name }}"> <p class="label__name">{{field}} {{field.label}}</p></label><br>
                                     </div>
                                 {% elif field.field.widget.input_type == 'select' %}
+
                                     <div class="form__group">
-                                        <label for="profile_pic">{{field.label}} : </label>
-                                        <div class="select_area">
-                                            <label for="profile_pic">{{field}}</label>
-                       
-                                            <button class="btn btn--main" type="submit" name="action" value="{{ field.name }}">Others</button>
-                                        </div>
-                                    </div>
+                                        <label class="profile_pic">
+                                            <p class="label__name">
+                                                {{field.label}}:
+                                            </p>
+                                            <div class="select_area">
+                                                <label for="profile_pic">{{field}}</label>
+                           
+                                                <button class="btn btn--main" type="submit" name="action" value="{{ field.name }}">Manage</button>
+                                            </div>
+                                            <p class="help__text" >
+                                                {{field.help_text}}
+                                            </p>
+                                        </label>
+                                    </div>            
+
+                                    
                                 {% else %}
+
                                     <div class="form__group">
-                                        <label for="profile_pic">{{field.label}} : {{field}}</label>                            
-                                    </div>
+                                        <label class="profile_pic">
+                                            <p class="label__name">
+                                                {{field.label}}:
+                                            </p>
+                                            {{field}}
+                                            <p class="help__text" >
+                                                {{field.help_text}}
+                                            </p>
+                                      </label>
+                                    </div>                                 
                                 {% endif %}
                         {% endfor %}
                         

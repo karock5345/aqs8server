@@ -2333,3 +2333,8 @@ color: var(--color-light);
   grid-template-columns: 99fr 1fr;
   gap: 2px;
 }
+.subitem_row {
+  display: grid;
+  grid-template-columns: 30fr 100fr 1fr 1fr;
+  gap: 2px;
+}

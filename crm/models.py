@@ -34,7 +34,7 @@ class Company(models.Model):
 
 class CustomerGroup(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
-    name = models.CharField(max_length=200)
+    name = models.CharField(null=True, blank=True, max_length=200)
     description = models.TextField(null=True, blank=True)
 
     def __str__(self):
@@ -42,7 +42,7 @@ class CustomerGroup(models.Model):
     
 class CustomerSource(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
-    name = models.CharField(max_length=200)
+    name = models.CharField(null=True, blank=True, max_length=200)
     description = models.TextField(null=True, blank=True)
 
     def __str__(self):
@@ -50,7 +50,7 @@ class CustomerSource(models.Model):
     
 class CustomerInformation(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
-    name = models.CharField(max_length=200)
+    name = models.CharField(null=True, blank=True, max_length=200)
     description = models.TextField(null=True, blank=True)
 
     def __str__(self):
@@ -59,18 +59,19 @@ class CustomerInformation(models.Model):
 
 class Customer(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
-    companyname = models.CharField(max_length=200, null=True, blank=True)
+    companyname = models.CharField(max_length=200, null=True, blank=True, verbose_name='Customer Company Name', help_text='Customer company name or individual name')
     contact = models.CharField(max_length=200, null=True, blank=True)
     address = models.CharField(max_length=200, null=True, blank=True)
     email = models.EmailField(null=True, blank=True) 
     phone = models.CharField(max_length=200, null=True, blank=True)
     fax = models.CharField(max_length=200, null=True, blank=True)
-    referby = models.CharField(max_length=200, null=True, blank=True)
+    referby = models.CharField(max_length=200, null=True, blank=True, verbose_name='Refer by', help_text='')
     sales = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='sales')
     group = models.ForeignKey(CustomerGroup, on_delete=models.SET_NULL, null=True, blank=True)
     source = models.ForeignKey(CustomerSource, on_delete=models.SET_NULL, null=True, blank=True)
     information = models.ForeignKey(CustomerInformation, on_delete=models.SET_NULL, null=True, blank=True)
     remark = models.CharField(max_length=200, null=True, blank=True)
+        
     createdby = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='customer_createdby')
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
