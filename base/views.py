@@ -33,7 +33,7 @@ from celery.result import AsyncResult
 from django.conf import settings
 from base.sch.views import sch_shutdown
 from django.db.models import BooleanField, Value
-from crm.models import CRMAdmin, Member, Company, Customer
+from crm.models import CRMAdmin, Member, Company, Customer, Quotation
 
 
 logger = logging.getLogger(__name__)
@@ -246,6 +246,7 @@ def SoftkeyView(request, pk):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
     context = {
@@ -261,7 +262,8 @@ def SoftkeyView(request, pk):
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
         'customers':auth_customerlist,
-        }
+        'quotations':auth_quotations,
+        } 
 
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
@@ -504,6 +506,7 @@ def SoftkeyLoginBranchView(request):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
     user = request.user
@@ -536,7 +539,8 @@ def SoftkeyLoginBranchView(request):
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
         'customers':auth_customerlist,
-        }
+        'quotations':auth_quotations,
+        } 
         context = context | {'counterstatus':counterstatus}
 
 
@@ -565,6 +569,7 @@ def SoftkeyLoginView(request, pk):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
     branch = Branch.objects.get(id=pk)
@@ -611,7 +616,8 @@ def SoftkeyLoginView(request, pk):
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
         'customers':auth_customerlist,
-        }
+        'quotations':auth_quotations,
+        } 
         context = context | {'counterstatus':counterstatus}
 
         return render(request, 'base/softkey_lobby.html', context)
@@ -640,6 +646,7 @@ def SoftkeyLogoutView(request, pk):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
     context = {
@@ -690,6 +697,7 @@ def SoftkeyCallView(request, pk):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)    
 
     context = {
@@ -758,6 +766,7 @@ def SoftkeyProcessView(request, pk):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
     
     context = {
@@ -807,6 +816,7 @@ def SoftkeyMissView(request, pk):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
     context = {
@@ -855,6 +865,7 @@ def SoftkeyRecallView(request, pk):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
     context = {
@@ -905,6 +916,7 @@ def SoftkeyDoneView(request, pk):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
     context = {
@@ -2648,6 +2660,7 @@ def Report_Staff_Result(request):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
           
@@ -3200,6 +3213,7 @@ def Reports(request):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))    
@@ -3232,7 +3246,8 @@ def Reports(request):
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
         'customers':auth_customerlist,
-        }
+        'quotations':auth_quotations,
+        } 
     context = context | {'now':snow_l}
 
     return render(request, 'base/r-main_standard.html', context)
@@ -3303,6 +3318,7 @@ def SuperVisorListView(request):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
  
@@ -3328,7 +3344,8 @@ def SuperVisorListView(request):
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
         'customers':auth_customerlist,
-        }
+        'quotations':auth_quotations,
+        } 
     return render(request, 'base/supervisors.html', context)
 
 @unauth_user
@@ -3395,6 +3412,7 @@ def TicketRouteUpdateView(request, pk):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -3442,6 +3460,7 @@ def TicketRouteSummaryView(request):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
  
@@ -3463,7 +3482,8 @@ def TicketRouteSummaryView(request):
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
         'customers':auth_customerlist,
-        }
+        'quotations':auth_quotations,
+        } 
     return render(request, 'base/routes.html', context)
 
 @unauth_user
@@ -3486,6 +3506,7 @@ def TicketFormatNewView(request):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
     form = TicketFormatForm(auth_branchs=auth_branchs)
@@ -3562,6 +3583,7 @@ def TicketFormatUpdateView(request, pk):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -3607,6 +3629,7 @@ def TicketFormatSummaryView(request):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
   
@@ -3627,7 +3650,8 @@ def TicketFormatSummaryView(request):
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
         'customers':auth_customerlist,
-        }
+        'quotations':auth_quotations,
+        } 
     return render(request, 'base/tfs.html', context)
 
 @unauth_user
@@ -4022,6 +4046,7 @@ def SettingsSummaryView(request):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
 
@@ -4039,7 +4064,8 @@ def SettingsSummaryView(request):
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
         'customers':auth_customerlist,
-        }
+        'quotations':auth_quotations,
+        } 
     return render(request, 'base/settings.html', context)
 
 @unauth_user
@@ -4060,6 +4086,7 @@ def homeView(request):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
     context = {
@@ -4075,7 +4102,8 @@ def homeView(request):
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
         'customers':auth_customerlist,
-        }
+        'quotations':auth_quotations,
+        } 
 
     context = context |{'users_active':auth_userlist_active, }
     return render(request, 'base/home.html', context)
@@ -4100,6 +4128,7 @@ def UserSummaryView(request):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
  
@@ -4116,7 +4145,8 @@ def UserSummaryView(request):
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
         'customers':auth_customerlist,
-        }
+        'quotations':auth_quotations,
+        } 
     context = context | {'users_active':auth_userlist_active}
     context = context | {'profiles':auth_profilelist}
     context = context | {'auth_grouplist':auth_grouplist}
@@ -4151,6 +4181,7 @@ def UserSummaryListView(request):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
 
@@ -4242,7 +4273,8 @@ def UserSummaryListView(request):
         'temps':auth_timeslottemplist,
         'members':auth_memberlist,
         'customers':auth_customerlist,
-        }
+        'quotations':auth_quotations,
+        } 
 
     # context = {'users':auth_userlist, 
     #            'users_active':auth_userlist_active, 
@@ -4335,6 +4367,7 @@ def UserUpdateView(request, pk):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
 
@@ -4556,6 +4589,7 @@ def UserNewView2(request, pk):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
 
@@ -4636,6 +4670,7 @@ def UserNewView3(request, pk):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
 
@@ -4777,6 +4812,7 @@ def UserResetView(request, pk):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
     if user in auth_userlist :
@@ -4826,6 +4862,7 @@ def MenuView(request):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
+    auth_quotations, \
     = auth_data(request.user)
 
         
@@ -4866,6 +4903,7 @@ def auth_data(user):
     auth_memberlist = Member.objects.all()
     auth_customerlist = Customer.objects.all()
     auth_bookings = Booking.objects.filter(~Q(status=Booking.STATUS.DELETED)).annotate(bookingtoqueue=Value(False, output_field=BooleanField()))
+    auth_quotations = Quotation.objects.filter(Q(company=userprofile.company)).order_by('-created')
     # add column for bookingtoqueue
     auth_bookings = auth_bookings.annotate(bookingforceontime=Value(False, output_field=BooleanField()))
     for booking in auth_bookings :
@@ -5053,7 +5091,8 @@ def auth_data(user):
             auth_memberlist = Member.objects.filter(Q(company=userprofile.company))
             auth_customerlist = Customer.objects.filter(Q(sales=user))
 
-          
+        auth_quotations = Quotation.objects.filter(Q(sales=user)).order_by('-created')
+        
     return(
             auth_en_queue,
             auth_en_crm,
@@ -5070,6 +5109,7 @@ def auth_data(user):
             auth_timeslottemplist,
             auth_memberlist,
             auth_customerlist,
+            auth_quotations,
             )
 
 

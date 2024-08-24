@@ -37,7 +37,7 @@
                                                 {{field.label}}:
                                             </p>
                                             <div class="select_area">
-                                                <label for="profile_pic">{{field}}</label>
+                                                {{field}}
                            
                                                 <button class="btn btn--main" type="submit" name="action" value="{{ field.name }}">Manage</button>
                                             </div>
@@ -55,7 +55,9 @@
                                             <p class="label__name">
                                                 {{field.label}}:
                                             </p>
-                                            {{field}}
+                                            <p class="label__name">
+                                                {{field}}
+                                            </p>
                                             <p class="help__text" >
                                                 {{field.help_text}}
                                             </p>

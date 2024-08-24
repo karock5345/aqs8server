@@ -15,13 +15,14 @@
                                 </path>
                             </svg>
                         </a>
-                        <h3>Manage Customer Group</h3>
+                        <h3>{{title}}</h3>
                     </div>
                 </div>
                 <div class="layout__body">
                     <form class="form" action="" method="POST" >
                         {% csrf_token %}
-                        <button class="btn btn--main" type="submit" name="action" value="new_group">                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                        <button class="btn btn--main" type="submit" name="action" value="new_{{action}}">                            
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                             <path
                               d="M16.943 0.943h-1.885v14.115h-14.115v1.885h14.115v14.115h1.885v-14.115h14.115v-1.885h-14.115v-14.115z"
                             ></path>
@@ -37,8 +38,8 @@
                                 <input type="text" name="name" value="{{ row.name }}">
                                 <input type="text" name="description" value="{{ row.description }}">
                                 <!-- <-a class="btn btn--del" href="{-% url 'delete' row.id %}">Delete</-a> -->
-                                <button class="btn btn--main" type="submit" name="action" value="update_group">Update</button>
-                                <button class="btn btn--del" type="submit" name="action" value="del_group">Delete</button>
+                                <button class="btn btn--main" type="submit" name="action" value="update_{{action}}">Update</button>
+                                <button class="btn btn--del" type="submit" name="action" value="del_{{action}}">Delete</button>
                             </div>
                         </form>
                     {% endfor %}

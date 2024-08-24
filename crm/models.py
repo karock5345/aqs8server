@@ -32,13 +32,47 @@ class Company(models.Model):
         return self.ccode + '-' + self.name
 
 
+class Member(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
+    username = models.CharField(max_length=200, null=False, unique=True)
+    login = models.BooleanField(default=False, null=False)
+    number = models.CharField(max_length=200, null=False, unique=True)
+    password = models.CharField(max_length=200, null=False, blank=False)
+    verifycode = models.CharField(max_length=200, null=True, blank=True)
+    verifycode_date = models.DateTimeField(null=True, blank=True)
+    verified = models.BooleanField(default=False, null=False)
+    enabled = models.BooleanField(default=True, null=False)
+    token = models.CharField(max_length=200, null=True, blank=True)
+    tokendate = models.DateTimeField(null=True, blank=True)
+    birthday = models.DateTimeField(null=True, blank=True)
+    gender = models.CharField(max_length=10, null=True, blank=True)
+    memberpoints = models.IntegerField(default=0)
+    memberpointtotal = models.IntegerField(default=0)
+    memberlevel = models.CharField(max_length=10, null=True, blank=True)
+    nickname = models.CharField(max_length=200, null=True, blank=True)
+    lastname = models.CharField(max_length=200, null=True, blank=True)
+    firstname = models.CharField(max_length=200, null=True, blank=True)    
+    mobilephone_country = models.CharField(max_length=200, null=True, blank=True)
+    mobilephone = models.CharField(max_length=200, null=True, blank=True)
+    email = models.EmailField(null=False, blank=False) #, unique=True) # unique=True for production
+    address = models.CharField(max_length=200, null=True, blank=True)
+    remark = models.CharField(max_length=200, null=True, blank=True)
+    createdby = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+    class Meta:
+        # unique_together = ('mobilephone_country', 'mobilephone',)
+        unique_together = ('company', 'username',)
+    def __str__(self):
+        return self.username
+
 class CustomerGroup(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(null=True, blank=True, max_length=200)
     description = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.name + ' - ' + self.description
     
 class CustomerSource(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
@@ -46,7 +80,7 @@ class CustomerSource(models.Model):
     description = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.name + ' - ' + self.description
     
 class CustomerInformation(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
@@ -54,7 +88,7 @@ class CustomerInformation(models.Model):
     description = models.TextField(null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.name + ' - ' + self.description
 
 
 class Customer(models.Model):
@@ -70,6 +104,7 @@ class Customer(models.Model):
     group = models.ForeignKey(CustomerGroup, on_delete=models.SET_NULL, null=True, blank=True)
     source = models.ForeignKey(CustomerSource, on_delete=models.SET_NULL, null=True, blank=True)
     information = models.ForeignKey(CustomerInformation, on_delete=models.SET_NULL, null=True, blank=True)
+    member = models.ForeignKey(Member, on_delete=models.SET_NULL, null=True, blank=True, related_name='sales')
     remark = models.CharField(max_length=200, null=True, blank=True)
         
     createdby = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='customer_createdby')
@@ -137,6 +172,7 @@ class Product(models.Model):
     supplier = models.ForeignKey(Supplier, on_delete=models.SET_NULL, null=True, blank=True)
     status = models.CharField(max_length=200, choices=STATUS.choices, default=STATUS.ACTIVE)
     price = models.FloatField(default=0.0)
+    cost = models.FloatField(default=0.0)
     duration = models.DurationField(default=timedelta(days=0))
     barcode = models.CharField(max_length=20, blank=True, null=True)
     weight = models.FloatField(blank=True, null=True)
@@ -169,40 +205,6 @@ class MemberItem(models.Model):
 
     def __str__(self):
         return self.name
-
-class Member(models.Model):
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
-    username = models.CharField(max_length=200, null=False, unique=True)
-    login = models.BooleanField(default=False, null=False)
-    number = models.CharField(max_length=200, null=False, unique=True)
-    password = models.CharField(max_length=200, null=False, blank=False)
-    verifycode = models.CharField(max_length=200, null=True, blank=True)
-    verifycode_date = models.DateTimeField(null=True, blank=True)
-    verified = models.BooleanField(default=False, null=False)
-    enabled = models.BooleanField(default=True, null=False)
-    token = models.CharField(max_length=200, null=True, blank=True)
-    tokendate = models.DateTimeField(null=True, blank=True)
-    birthday = models.DateTimeField(null=True, blank=True)
-    gender = models.CharField(max_length=10, null=True, blank=True)
-    memberpoints = models.IntegerField(default=0)
-    memberpointtotal = models.IntegerField(default=0)
-    memberlevel = models.CharField(max_length=10, null=True, blank=True)
-    nickname = models.CharField(max_length=200, null=True, blank=True)
-    lastname = models.CharField(max_length=200, null=True, blank=True)
-    firstname = models.CharField(max_length=200, null=True, blank=True)    
-    mobilephone_country = models.CharField(max_length=200, null=True, blank=True)
-    mobilephone = models.CharField(max_length=200, null=True, blank=True)
-    email = models.EmailField(null=False, blank=False) #, unique=True) # unique=True for production
-    address = models.CharField(max_length=200, null=True, blank=True)
-    remark = models.CharField(max_length=200, null=True, blank=True)
-    createdby = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-    updated = models.DateTimeField(auto_now=True)
-    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
-    class Meta:
-        # unique_together = ('mobilephone_country', 'mobilephone',)
-        unique_together = ('company', 'username',)
-    def __str__(self):
-        return self.username
 
 class CRMAdmin(models.Model):
     # CRM function is enabled or disabled
@@ -242,6 +244,20 @@ class CRMAdmin(models.Model):
     
 
 
+    
+class Quotation_item(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    index = models.IntegerField()
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    quantity = models.PositiveIntegerField(default=1)
+    price = models.FloatField(default=0.0)
+    cost = models.FloatField(default=0.0)
+    sub_total = models.FloatField(default=0.0)
+    sub_cost= models.FloatField(default=0.0)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+    updated = models.DateTimeField(auto_now=True)
+
 class Quotation(models.Model):
     class STATUS(models.TextChoices):
         FREE = 'free', _('Free, when a quote is created')
@@ -254,11 +270,10 @@ class Quotation(models.Model):
         CANCELED = 'canceled', _('Canceled, indicates that the quote is cancelled. Only the quotes with the status Free, Printed or Negotiating can be cancelled')
         LOST = 'lost', _('Lost, indicates that the customer has selected another supplier. This status must be set manually.')
 
-
-
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     number = models.CharField(max_length=200)
-    version = models.CharField(max_length=200, null=True, blank=True)
+    version = models.IntegerField(default=1)
+    major_version = models.IntegerField(default=1)
     quotation_date = models.DateTimeField(auto_now_add=True)    
     quotation_status = models.CharField(max_length=200, choices=STATUS.choices, default=STATUS.FREE)
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
@@ -266,12 +281,13 @@ class Quotation(models.Model):
     customer_contact = models.CharField(max_length=200, null=True, blank=True)
     customer_phone = models.CharField(max_length=200, null=True, blank=True)
     customer_email = models.EmailField(null=False, blank=False)
-    sales = models.CharField(max_length=200, null=True, blank=True)
+    sales = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='sales_q')
     confirm_date = models.DateTimeField(null=True, blank=True)
     confirm_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='confirm_by')
     remark = models.CharField(max_length=200, null=True, blank=True)
-    terms = models.CharField(max_length=200, null=True, blank=True)    
+    terms = models.CharField(max_length=200, null=True, blank=True)
     total = models.FloatField(default=0.0)
+    items = models.ManyToManyField(Quotation_item, blank=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
     updated = models.DateTimeField(auto_now=True)
 
@@ -279,18 +295,7 @@ class Quotation(models.Model):
         return self.number
     def unique_together(self):
         return ('company', 'number')
-    
-class Quotation_item(models.Model):
-    quotation = models.ForeignKey(Quotation, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    index = models.IntegerField()
-    name = models.CharField(max_length=200)
-    description = models.TextField()
-    quantity = models.PositiveIntegerField()
-    price = models.FloatField(default=0.0)
-    sub_total = models.FloatField(default=0.0)
-    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
-    updated = models.DateTimeField(auto_now=True)
+
 class Inventory(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     branch = models.ForeignKey(Branch, on_delete=models.SET_NULL, null=True, blank=True)

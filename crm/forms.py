@@ -73,20 +73,31 @@ class CustomerUpdateForm(ModelForm):
         
     class Meta:        
         model = Customer
-        fields = ['companyname',  'address','contact', 'phone', 'email', 'fax', 'referby', 'group', 'source', 'information' , 'remark']
+        fields = ['companyname',  'address','contact', 'phone', 'email', 'fax', 'referby', 'group', 'source', 'information' , 'member', 'remark']
 
 class CustomerGroupForm(forms.ModelForm): 
     id = forms.fields.IntegerField()
-
     def __init__(self, *args,**kwargs):
         super().__init__(*args,**kwargs)        
-
-        # hidden
-        # self.fields['pk'].widget.attrs['disabled'] = 'disabled'
         self.initial['id'] = self.instance.pk
-
-
     class Meta:
         model = CustomerGroup
         fields = ['id', 'name', 'description']
 
+class CustomerSourceForm(forms.ModelForm): 
+    id = forms.fields.IntegerField()
+    def __init__(self, *args,**kwargs):
+        super().__init__(*args,**kwargs)        
+        self.initial['id'] = self.instance.pk
+    class Meta:
+        model = CustomerSource
+        fields = ['id', 'name', 'description']
+
+class CustomerInfoForm(forms.ModelForm): 
+    id = forms.fields.IntegerField()
+    def __init__(self, *args,**kwargs):
+        super().__init__(*args,**kwargs)        
+        self.initial['id'] = self.instance.pk
+    class Meta:
+        model = CustomerInformation
+        fields = ['id', 'name', 'description']
