@@ -218,21 +218,21 @@ class CRMAdmin(models.Model):
     membernumber_digit = models.IntegerField(default=3, help_text=escape(mark_safe('Member number digit, e.g. 3 is 001, 4 is 0001')))
     # membernumber_reset is rules for reset member number, e.g. rules:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1
     membernumber_reset = models.CharField(max_length=100, null=True, blank=True, verbose_name='Reset Member Number rules', help_text = escape(mark_safe('Rules for reset member number, e.g. rules:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1')))
-    # membernumber_prefix is rules for member number, <TEXT>MEM</TEXT><Y></Y><m></m><d></d><no></no> is Year, Month, Day, Hour, Minute, Second, Number('%Y-%m-%d %H:%M:%S')
+    # membernumber_prefix is rules for member number, <TEXT>MEM</TEXT><Y></Y><m></m><d></d><no></no> is Year, Month, Day, Number('%Y-%m-%d %H:%M:%S')
     # e.g. <TEXT>MEM</TEXT><Y></Y><no></no> is MEM2023001       
-    membernumber_prefix = models.CharField(max_length=100, null=True, blank=True, help_text = escape(mark_safe('Rules for member number, <TEXT>MEM</TEXT><Y></Y><m></m><d></d><H></H><M></M><S></S><no></no> is Year, Month, Day, Hour, Minute, Second, Number (''%Y-%m-%d %H:%M:%S'')')))
+    membernumber_prefix = models.CharField(max_length=100, null=True, blank=True, help_text = escape(mark_safe('Rules for member number, <TEXT>MEM</TEXT><Y></Y><m></m><d></d><no></no> is Year, Month, Day, Hour, Minute, Second, Number (''%Y-%m-%d %H:%M:%S'')')))
 
     # Quotation function is enabled or disabled
     quotation_enabled = models.BooleanField(default=True, null=False)
     quotationnumber_next = models.IntegerField(default=1)
     # quotationnumber_digit is quotation number digit, e.g. 3 is 001, 4 is 0001 
     # number = 12 ; print(f"{number:03d}")
-    quotationnumber_digit = models.IntegerField(default=3)
+    quotationnumber_digit = models.IntegerField(default=3, help_text=escape(mark_safe('Quotation number digit, e.g. 3 is 001, 4 is 0001')))
     # quotationnumber_reset is rules for reset quotation number, e.g. rules:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1
-    quotationnumber_reset = models.CharField(max_length=100, null=True, blank=True)
-    # quotationnumber_prefix is rules for quotation number, <TEXT>Q-</TEXT><Y></Y><m></m><d></d><H></H><M></M><S></S><no></no> is Year, Month, Day, Hour, Minute, Second, Number('%Y-%m-%d %H:%M:%S')
-    # e.g. <TEXT>Q-</TEXT><Y></Y><no></no> is Q-2023001    
-    quotationnumber_prefix = models.CharField(max_length=100, null=True, blank=True)
+    quotationnumber_reset = models.CharField(max_length=100, null=True, blank=True, verbose_name='Reset Quotation Number rules', help_text = escape(mark_safe('Rules for reset member number, e.g. rules:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1')))
+ 
+    quotationnumber_prefix = models.CharField(max_length=100, null=True, blank=True, help_text = escape(mark_safe('Rules for Quotation number, <TEXT>Q-</TEXT><Y></Y><m></m><d></d><no></no> is Year, Month, Day, Hour, Minute, Second, Number (''%Y-%m-%d %H:%M:%S'')')))
+
     quotation_default_terms = models.TextField(max_length=200, null=True, blank=True)
     quotation_default_remark = models.TextField(max_length=200, null=True, blank=True)
 
@@ -246,7 +246,7 @@ class CRMAdmin(models.Model):
 
     
 class Quotation_item(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True)
     index = models.IntegerField()
     name = models.CharField(max_length=200)
     description = models.TextField()
@@ -257,10 +257,12 @@ class Quotation_item(models.Model):
     sub_cost= models.FloatField(default=0.0)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
     updated = models.DateTimeField(auto_now=True)
-
+    class Meta:
+        ordering = ('index',)
+        
 class Quotation(models.Model):
     class STATUS(models.TextChoices):
-        FREE = 'free', _('Free, when a quote is created')
+        FREE = 'draft', _('Draft, when a quote is created')
         APPROVED = 'approved', _('Approved, when the quote is approved internally. The quote can be printed and sent to the customer')
         PRINTED = 'printed', _('Printed, When a quote is printed as an external document and sent to a customer for review.')
         NEGOTIATING = 'negotiating', _('Indicates that the negotiations about the selected quote are in progress. This status must be set manually')
@@ -280,13 +282,14 @@ class Quotation(models.Model):
     customer_companyname = models.CharField(max_length=200, null=True, blank=True)
     customer_contact = models.CharField(max_length=200, null=True, blank=True)
     customer_phone = models.CharField(max_length=200, null=True, blank=True)
-    customer_email = models.EmailField(null=False, blank=False)
+    customer_email = models.EmailField(null=True, blank=True)
     sales = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='sales_q')
     confirm_date = models.DateTimeField(null=True, blank=True)
     confirm_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='confirm_by')
     remark = models.CharField(max_length=200, null=True, blank=True)
     terms = models.CharField(max_length=200, null=True, blank=True)
     total = models.FloatField(default=0.0)
+    cost = models.FloatField(default=0.0)
     items = models.ManyToManyField(Quotation_item, blank=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
     updated = models.DateTimeField(auto_now=True)

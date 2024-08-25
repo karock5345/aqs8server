@@ -28,7 +28,22 @@
                                 <div class="form__group_checkbox">
                                     <label class="profile_pic" id="{{ field.name }}"> <p class="label__name">{{field}} {{field.label}}</p></label><br>
                                 </div>                                
-
+                            {% elif field.name == 'group' or field.name == 'source' or field.name == 'information' %}
+                                <div class="form__group">
+                                    <label class="profile_pic">
+                                        <p class="label__name">
+                                            {{field.label}}:
+                                        </p>
+                                        <div class="select_area">
+                                            {{field}}
+                    
+                                            <button class="btn btn--main" type="submit" name="action" value="{{ field.name }}">Manage</button>
+                                        </div>
+                                        <p class="help__text" >
+                                            {{field.help_text}}
+                                        </p>
+                                    </label>
+                                </div>  
                             {% else %}
                                 <div class="form__group">
                                     <label class="profile_pic" id="{{ field.name }}">
@@ -49,9 +64,8 @@
                         
                         <div class="form__action">
                             <a class="btn btn--dark" href="{{ back_url }}">Cancel</a>
-                            <button class="btn btn--main"  type="submit" >                
+                            <button class="btn btn--main"  type="submit" name="action" value="new" >                
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                                  <title>add</title>
                                   <path
                                     d="M16.943 0.943h-1.885v14.115h-14.115v1.885h14.115v14.115h1.885v-14.115h14.115v-1.885h-14.115v-14.115z"
                                   ></path>

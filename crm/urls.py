@@ -1,5 +1,6 @@
 from django.urls import path
 
+
 from . import views
 from . import api
 
@@ -9,7 +10,13 @@ urlpatterns = [
     # path('', views.WelcomeView, name='crmhome'),
     path('customer/', views.CustomerListView, name='crmcustomerlist'),
     path('customer-update/<str:pk>/', views.CustomerUpdateView, name='customerupdate'),
+    path('customer-new/<str:ccode>/', views.CustomerNewView, name='customernew'),
+    path('customer-del/<str:pk>/', views.CustomerDelView, name='customerdelete'),
     path('quotation/', views.QuotationView, name='crmquotation'),
+    path('quotation/<str:pk>/', views.QuotationView, name='crmquotation'),
+    path('quotation-new/<str:ccode>/', views.QuotationNewView, name='quotationnew'),
+    path('quotation-del/<str:pk>/', views.QuotationDelView, name='quotationdelete'),
+    path('quotation-pdf/<str:pk>/', views.QuotationPDFView, name='quotationpdf'),
     path('invoice/', views.InvoiceView, name='crminvoice'),
     path('receipt/', views.ReceiptView, name='crmreceipt'),
     path('member/', views.MemberListView, name='crmmember'),

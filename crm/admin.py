@@ -44,7 +44,7 @@ class QuotationView(admin.ModelAdmin):
     ordering = ('-updated', '-created')
 
 class Quotation_itemView(admin.ModelAdmin):
-    list_display =('quotation', 'product', 'quantity', 'price', 'sub_total')
+    list_display =('name', 'description', 'quantity', 'price', 'sub_total')
     ordering = ('-updated', '-created')
 class InventoryView(admin.ModelAdmin):
     list_display =('company', 'branch', 'product', 'quantity', 'status')

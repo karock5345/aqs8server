@@ -288,6 +288,10 @@ class UserProfile(models.Model):
     enabled_crm = models.BooleanField(default=False, verbose_name='CRM enabled')
     enabled_booking = models.BooleanField(default=False, verbose_name='Booking enabled')
 
+    index_q = models.IntegerField(default=0, verbose_name='Queue index')
+    index_i = models.IntegerField(default=0, verbose_name='Invoice index')
+    index_r = models.IntegerField(default=0, verbose_name='Receipt index')
+    
     updated = models.DateTimeField(auto_now=True,)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
 

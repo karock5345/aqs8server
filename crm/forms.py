@@ -4,7 +4,7 @@ from django.contrib.auth.models import User, Group
 from django.db.models import Q
 from django.forms.utils import ErrorList
 from base.models import TicketFormat, TicketRoute, UserProfile, Branch, CounterType
-from .models import Member, Customer, CustomerGroup, CustomerSource, CustomerInformation
+from .models import Member, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
@@ -75,6 +75,26 @@ class CustomerUpdateForm(ModelForm):
         model = Customer
         fields = ['companyname',  'address','contact', 'phone', 'email', 'fax', 'referby', 'group', 'source', 'information' , 'member', 'remark']
 
+class CustomerNewForm(ModelForm):
+    Sales = forms.fields.CharField()
+    def __init__(self, *args,**kwargs):
+        self.company = kwargs.pop('company')
+        self.user = kwargs.pop('user')
+        super().__init__(*args,**kwargs)        
+        self.fields['group'].queryset = CustomerGroup.objects.filter(company=self.company)
+        self.fields['source'].queryset = CustomerSource.objects.filter(company=self.company)
+        self.fields['information'].queryset = CustomerInformation.objects.filter(company=self.company)
+        # readonly
+        # set fields is text fields
+        self.fields['Sales'].widget=forms.widgets.TextInput()
+        self.fields['Sales'].widget.attrs['readonly'] = 'readonly'
+        self.initial['Sales'] = self.user.first_name + ' ' + self.user.last_name + ' (' + self.user.username + ')'
+        
+
+    class Meta:        
+        model = Customer
+        fields = ['companyname', 'contact', 'phone', 'email', 'fax', 'address', 'referby', 'group', 'source', 'information' , 'member', 'remark', 'Sales']
+
 class CustomerGroupForm(forms.ModelForm): 
     id = forms.fields.IntegerField()
     def __init__(self, *args,**kwargs):
@@ -101,3 +121,15 @@ class CustomerInfoForm(forms.ModelForm):
     class Meta:
         model = CustomerInformation
         fields = ['id', 'name', 'description']
+
+class QuotationUpdateForm(ModelForm):
+    def __init__(self, *args,**kwargs):
+        self.company = kwargs.pop('company')
+        super().__init__(*args,**kwargs)        
+        # self.fields['group'].queryset = CustomerGroup.objects.filter(company=self.company)
+        # self.fields['source'].queryset = CustomerSource.objects.filter(company=self.company)
+        # self.fields['information'].queryset = CustomerInformation.objects.filter(company=self.company)
+        
+    class Meta:        
+        model = Quotation
+        fields = ['quotation_status', 'customer', 'customer_companyname', 'customer_contact', 'customer_phone', 'customer_email', 'sales', 'confirm_by', 'confirm_date', 'remark', 'terms' , 'total',]        
