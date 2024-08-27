@@ -4,7 +4,7 @@ from django.contrib.auth.models import User, Group
 from django.db.models import Q
 from django.forms.utils import ErrorList
 from base.models import TicketFormat, TicketRoute, UserProfile, Branch, CounterType
-from .models import Member, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation
+from .models import Member, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
@@ -133,3 +133,28 @@ class QuotationUpdateForm(ModelForm):
     class Meta:        
         model = Quotation
         fields = ['quotation_status', 'customer', 'customer_companyname', 'customer_contact', 'customer_phone', 'customer_email', 'sales', 'confirm_by', 'confirm_date', 'remark', 'terms' , 'total',]        
+
+class InvoiceUpdateForm(ModelForm):
+    def __init__(self, *args,**kwargs):
+        self.company = kwargs.pop('company')
+        super().__init__(*args,**kwargs)        
+        # self.fields['group'].queryset = CustomerGroup.objects.filter(company=self.company)
+        # self.fields['source'].queryset = CustomerSource.objects.filter(company=self.company)
+        # self.fields['information'].queryset = CustomerInformation.objects.filter(company=self.company)
+        
+    class Meta:        
+        model = Invoice
+        fields = ['invoice_status', 'customer', 'customer_companyname', 'customer_contact', 'customer_phone', 'customer_email', 'sales', 'confirm_by', 'confirm_date', 'remark', 'terms' , 'total',]        
+
+class ReceiptUpdateForm(ModelForm):
+    def __init__(self, *args,**kwargs):
+        self.company = kwargs.pop('company')
+        super().__init__(*args,**kwargs)        
+        # self.fields['group'].queryset = CustomerGroup.objects.filter(company=self.company)
+        # self.fields['source'].queryset = CustomerSource.objects.filter(company=self.company)
+        # self.fields['information'].queryset = CustomerInformation.objects.filter(company=self.company)
+        
+    class Meta:        
+        model = Receipt
+        fields = ['payment', 'customer', 'customer_companyname', 'customer_contact', 'customer_phone', 'customer_email', 'sales', 'confirm_by', 'confirm_date', 'remark', 'total',]
+         

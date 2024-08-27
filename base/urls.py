@@ -86,6 +86,6 @@ urlpatterns = [
     # for Hypic
     path('repair/', views.repair ),
 
-
+    path('privacy/', views.PrivacyView, name='privacy'),
 
 ]

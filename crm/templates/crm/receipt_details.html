@@ -1,0 +1,128 @@
+        <div class="layout__box__form__fit">
+            <div class="layout__boxHeader">
+                <div class="layout__boxTitle">
+                    <form class="layout__boxTitle" action="" method="POST" >
+                    {% csrf_token %}
+                    <button class="btn btn--hidden" type="submit" name="action" value="previous">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 16 16">                                
+                            <path d="M8 10L8 14L6 14L-2.62268e-07 8L6 2L8 2L8 6L16 6L16 10L8 10Z"/>
+                        </svg>
+                    </button>
+                    <h3>{{receipt.number}}</h3>
+
+                    <button class="btn btn--hidden" type="submit" name="action" value="next">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 16 16">                                
+                            <path d="M8 6L8 2L10 2L16 8L10 14L8 14L8 10L-1.74845e-07 10L-3.01991e-07 6L8 6Z"/>
+                        </svg>
+                    </button>
+                    </form>                  
+                </div>
+        
+            </div>
+            <div class="layout__body">
+  
+                <form class="form" action="" method="POST" prefix="receiptform">
+                    
+                    {% csrf_token %}
+                    
+                    {% for field in form  %}
+                            {% if field.field.widget.input_type == 'checkbox' %}
+                                <div class="form__group_checkbox">
+                                    <label class="profile_pic" id="{{ field.name }}"> <p class="label__name">{{field}} {{field.label}}</p></label><br>
+                                </div>
+                            {% elif field.name == 'group' or field.name == 'source' or field.name == 'information' %}
+                                <div class="form__group">
+                                    <label class="profile_pic">
+                                        <p class="label__name">
+                                            {{field.label}}:
+                                        </p>
+                                        <div class="select_area">
+                                            {{field}}
+                    
+                                            <button class="btn btn--main" type="submit" name="action" value="{{ field.name }}">Manage</button>
+                                        </div>
+                                        <p class="help__text" >
+                                            {{field.help_text}}
+                                        </p>
+                                    </label>
+                                </div>            
+
+                            {% else %}
+
+                                <div class="form__group">
+                                    <label class="profile_pic">
+                                        <p class="label__name">
+                                            {{field.label}}:
+                                        </p>
+                                        <p class="label__name">
+                                            {{field}}
+                                        </p>
+                                        <p class="help__text" >
+                                            {{field.help_text}}
+                                        </p>
+                                  </label>
+                                </div>
+                            {% endif %}
+                    {% endfor %}
+
+                    <div>
+                        <button type="submit" name="action" value="additem" class="btn btn--main" >Add item</button>
+                    </div>
+                    <div class="item_row_q item_header_row">
+                        <div >
+                            Index
+                        </div>
+                        <div>
+                            Item
+                        </div>                            
+                        <div>
+                            Price
+                        </div>
+                        <div>
+                            QTY.
+                        </div>
+                        <div>
+                            Sub Total
+                        </div>
+                        <div>
+                 
+                        </div>                        
+                    </div>                        
+                    {% for item in receipt.items.all %}
+                        <div class="item_row_q">
+                            <div class="booking_date_text">
+                                <input type="text" name="index" value="{{item.index}}" class="item_inputtext">                                
+                            </div>
+                            <div class="booking_date_text">
+                                <input type="text" name="index" value="{{item.name}}" class="item_inputtext">
+                            </div>                                
+                            <div class="booking_date_text">
+                                <input type="text" name="index" value="{{item.price}}" class="item_inputtext">
+                            </div>
+                            <div class="booking_date_text">
+                                <input type="text" name="index" value="{{item.quantity}}" class="item_inputtext">
+                            </div>
+                            <div class="booking_date_text">
+                                <input type="text" name="index" value="{{item.sub_total}}" class="item_inputtext">
+                            </div>                                                        
+                            <div class="booking_key_area">
+                                <a class="booking_key" href="{-% url 'tempitem-update' item.id temptimeslot.id %}">Edit</a>
+                                <a class="booking_key booking_key_reject" href="{-% url 'tempitem-delete' item.id temptimeslot.id %}">Del</a>                                    
+                            </div>
+                        </div>
+                    {% endfor %}
+                    
+                    <div style="height: 3rem;"></div>
+
+                    <div class="form__action">
+                        <a class="btn btn--del" href="{% url 'receiptdelete' receipt.id %}">Delete</a>
+                        <button class="btn btn--main" type="submit" name="action" value="email">E-Mail PDF</button>
+                        <a class="btn btn--main" href="{% url 'receiptpdf' receipt.id %}">Export PDF</a>
+                        <button class="btn btn--main" type="submit" name="action" value="update">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

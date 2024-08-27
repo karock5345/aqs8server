@@ -93,6 +93,8 @@ def TimeSlotTempItemUpdateView(request, pk, tempid):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -194,6 +196,8 @@ def TimeSlotTempUpdateView(request, pk):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
 
     
@@ -262,6 +266,8 @@ def TimeSlotTempNewView(request):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
 
     form = TimeSlotTempNewForm(auth_branchs=auth_branchs, auth_userlist=auth_userlist)
@@ -317,6 +323,8 @@ def TimeslotTempSummaryView(request):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
 
  
@@ -334,7 +342,8 @@ def TimeslotTempSummaryView(request):
         'members':auth_memberlist,
         'customers':auth_customerlist,
         'quotations':auth_quotations,
-        } 
+        'invoices':auth_invoices,
+        }
     # print(auth_timeslottemplist)
     if request.method == 'POST':
 
@@ -374,6 +383,8 @@ def BookingNewView(request):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
 
     form = BookingNewForm(auth_branchs=auth_branchs)
@@ -449,6 +460,8 @@ def BookingUpdateView(request, pk):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -504,6 +517,8 @@ def BookingSummaryView(request):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
 
  
@@ -521,7 +536,8 @@ def BookingSummaryView(request):
         'members':auth_memberlist,
         'customers':auth_customerlist,
         'quotations':auth_quotations,
-        } 
+        'invoices':auth_invoices,
+        }
     
     if request.method == 'POST':
         action = None
@@ -1155,6 +1171,8 @@ def TimeSlotNewView(request):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
 
     tsform = TimeSlotNewForm(auth_branchs=auth_branchs)
@@ -1224,6 +1242,8 @@ def TimeSlotUpdateView(request, pk):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -1280,6 +1300,8 @@ def TimeSlotSummaryView(request):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
  
     context = {
@@ -1296,7 +1318,8 @@ def TimeSlotSummaryView(request):
         'members':auth_memberlist,
         'customers':auth_customerlist,
         'quotations':auth_quotations,
-        } 
+        'invoices':auth_invoices,
+        }
     context = {
                 'aqs_version':aqs_version,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,

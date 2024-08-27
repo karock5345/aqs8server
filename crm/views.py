@@ -12,8 +12,8 @@ from base.views import auth_data
 from django.http import JsonResponse
 from django.contrib import messages
 from base.decorators import *
-from crm.models import CRMAdmin, Member, Company, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation
-from crm.forms import MemberUpdateForm, MemberNewForm, CustomerUpdateForm, CustomerGroupForm, CustomerSourceForm, CustomerInfoForm, CustomerNewForm, QuotationUpdateForm
+from crm.models import CRMAdmin, Member, Company, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt
+from crm.forms import MemberUpdateForm, MemberNewForm, CustomerUpdateForm, CustomerGroupForm, CustomerSourceForm, CustomerInfoForm, CustomerNewForm, QuotationUpdateForm, InvoiceUpdateForm, ReceiptUpdateForm
 from crm.api import new_member
 from django.db import transaction
 import re
@@ -56,6 +56,8 @@ def CustomerListView(request):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
 
 
@@ -115,7 +117,9 @@ def CustomerListView(request):
         'members':auth_memberlist,
         'customers':auth_customerlist,
         'quotations':auth_quotations,
-        } 
+        'invoices':auth_invoices,
+        'receipts':auth_receipts,
+        }
     context = context | {'q':q}
     context = context | {'result':result}
     context = context | {'company':userp.company}
@@ -148,6 +152,8 @@ def CustomerUpdateView(request, pk):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -211,6 +217,8 @@ def CustomerNewView(request, ccode):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
     
     user=request.user
@@ -467,6 +475,8 @@ def QuotationView(request, pk=None):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
 
        
@@ -526,6 +536,14 @@ def QuotationView(request, pk=None):
             puser.save()
             quotation = auth_quotations[puser.index_q]
             return redirect('crmquotation', pk=quotation.pk)
+        if action == 'email':
+            context = {'text1':'text1', 
+                       'text2':'The quotation has been sent to the customer.',
+                        'text3': 'Quotation No : ' + quotation.number,
+                        'text4': 'Sent to : ' + quotation.customer_email,
+
+                        }
+            return render(request, 'crm/email_sent.html', context)
     context = {
         'app_name':APP_NAME,
         'aqs_version':aqs_version, 
@@ -540,7 +558,9 @@ def QuotationView(request, pk=None):
         'members':auth_memberlist,
         'customers':auth_customerlist,
         'quotations':auth_quotations,
-        }    
+        'invoices':auth_invoices,
+        'receipts':auth_receipts,
+        }
     context = {
                 'aqs_version':aqs_version,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
@@ -573,6 +593,8 @@ def QuotationNewView(request, ccode):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
     
     user=request.user
@@ -621,6 +643,33 @@ def QuotationDelView(request, pk):
     return render(request, 'base/delete.html', context)
 
 
+@unauth_user
+def QuotationPDFView(request, pk):
+    quotation = Quotation.objects.get(pk=pk)
+    # convert quotation.items.all() to list of dictionary then pass the q_dict : items_dist
+    items_dist = []
+    for item in quotation.items.all():
+        items_dist.append({
+            'name': item.name,
+            'price': item.price,
+            'qty': item.quantity,
+            'sub_total': item.sub_total,
+        })
+
+    q_dict = { 
+            'mycompany': quotation.company.name,
+              'number': quotation.number, 
+              'quotation_date': quotation.quotation_date,
+              'customer_companyname': quotation.customer_companyname, 
+              'customer_contact': quotation.customer_contact, 
+              'sales': quotation.sales.first_name + ' ' + quotation.sales.last_name,
+              'total': quotation.total,
+              'items': items_dist,
+              }
+    
+    pdf = render_to_pdf('crm/quotation_pdf.html', q_dict)
+    return HttpResponse(pdf, content_type='application/pdf')
+    
 @transaction.atomic
 def gen_new_quotationno(company:Company, datetime_now_utc:datetime):
     error = ''
@@ -706,12 +755,614 @@ def gen_new_quotationno(company:Company, datetime_now_utc:datetime):
     return error, number_str
 
 @unauth_user
-def InvoiceView(request):
-    return HttpResponse('InvoiceView')
+def InvoiceView(request, pk=None):
+    error = ''
+    utcnow = datetime.now(timezone.utc)
+    context = {}
+    # company = customer.company
+    # get full path with domain name
+    full_path = request.build_absolute_uri()
+    
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    auth_memberlist, \
+    auth_customerlist, \
+    auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
+    = auth_data(request.user)
+
+       
+    if error == '':
+        try:
+            puser = UserProfile.objects.filter(user=request.user).first()
+        except:
+            error = 'User Profile not found'
+    if error == '':
+        company = puser.company
+        if company == None:
+            error = 'Company not found'
+
+    invoice = None
+    if pk != None:
+        try:
+            invoice = Invoice.objects.get(pk=pk)
+        except:
+            pass
+    else:
+        if auth_invoices.count() > 0:
+            try:
+                invoice = auth_invoices[puser.index_q]
+            except:
+                invoice = auth_invoices.first()     
+                puser.index_q = 0
+                puser.save()
+
+    form = None
+    if error == '':
+        if invoice != None:
+            form = InvoiceUpdateForm(instance=invoice, prefix='invoiceform', company=company)
+             
+    if error != '':
+        messages.error(request, error )
+        return redirect('home')
+
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        if action == 'update':
+            form = InvoiceUpdateForm(request.POST, instance=invoice, prefix='invoiceform', company=company)
+            if form.is_valid() == True:
+                form.save()
+                messages.success(request, 'Invoice was successfully updated!')
+                return redirect('crminvoice', pk=invoice.pk)
+        if action == 'previous':
+            puser.index_i = puser.index_i + 1
+            if puser.index_i >= auth_invoices.count():
+                puser.index_i = auth_invoices.count() - 1
+            puser.save()
+            invoice = auth_invoices[puser.index_i]
+            return redirect('crminvoice', pk=invoice.pk)
+        if action == 'next':
+            puser.index_i = puser.index_i - 1
+            if puser.index_i < 0:
+                puser.index_i = 0
+            puser.save()
+            invoice = auth_invoices[puser.index_i]
+            return redirect('crminvoice', pk=invoice.pk)
+        if action == 'email':
+            context = {'text1':'text1', 
+                       'text2':'The invoice has been sent to the customer.',
+                        'text3': 'Invoice No : ' + invoice.number,
+                        'text4': 'Sent to : ' + invoice.customer_email,
+                        }
+            return render(request, 'crm/email_sent.html', context)
+    context = {
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
+        'members':auth_memberlist,
+        'customers':auth_customerlist,
+        'quotations':auth_quotations,
+        'invoices':auth_invoices,
+        'receipts':auth_receipts,
+        }
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+                'invoice':invoice, 
+                'company':company,
+                'form':form,
+               } | context 
+    return render(request, 'crm/invoice.html', context)
 
 @unauth_user
-def ReceiptView(request):
-    return HttpResponse('ReceiptView')
+def InvoiceNewView(request, ccode):
+    error = ''
+    status = {}
+    nowutc = datetime.now(timezone.utc)
+
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    auth_memberlist, \
+    auth_customerlist, \
+    auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
+    = auth_data(request.user)
+    
+    user=request.user
+    back_url = request.build_absolute_uri()
+
+    if error == '':
+        if auth_en_crm == False:
+            error = 'CRM is not enabled'
+
+    try:
+        company = Company.objects.get(ccode=ccode)
+        form = CustomerNewForm(company=company, user=user)
+    except:
+        error = 'Company not found'
+
+
+
+    # generate new invoice number
+    if error == '':
+        error, number_str = gen_new_invoiceno(company, nowutc)
+
+    if error == '':
+        # new invoice
+        invoice = Invoice.objects.create(
+            company=company,
+            number=number_str,
+            invoice_date=nowutc,
+            invoice_status = 'draft',
+            sales=user,
+        )
+        return redirect('crminvoice', pk=invoice.pk)
+
+@unauth_user
+def InvoiceDelView(request, pk):
+    utcnow = datetime.now(timezone.utc)
+    obj = Invoice.objects.get(id=pk) 
+  
+    if request.method =='POST':
+        for item in obj.items.all():
+            item.delete()
+        obj.delete()       
+        messages.success(request, 'Invoice was successfully deleted!') 
+        return redirect('crminvoice')
+    context = {'obj':obj, 'text':'Warning: This action will delete the Invoice.'}
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'base/delete.html', context)
+
+
+@unauth_user
+def InvoicePDFView(request, pk):
+    invoice = Invoice.objects.get(pk=pk)
+    # convert invoice.items.all() to list of dictionary then pass the q_dict : items_dist
+    items_dist = []
+    for item in invoice.items.all():
+        items_dist.append({
+            'name': item.name,
+            'price': item.price,
+            'qty': item.quantity,
+            'sub_total': item.sub_total,
+        })
+
+    q_dict = { 
+            'mycompany': invoice.company.name,
+              'number': invoice.number, 
+              'invoice_date': invoice.invoice_date,
+              'customer_companyname': invoice.customer_companyname, 
+              'customer_contact': invoice.customer_contact, 
+              'sales': invoice.sales.first_name + ' ' + invoice.sales.last_name,
+              'total': invoice.total,
+              'items': items_dist,
+              }
+    
+    pdf = render_to_pdf('crm/invoice_pdf.html', q_dict)
+    return HttpResponse(pdf, content_type='application/pdf')
+    
+@transaction.atomic
+def gen_new_invoiceno(company:Company, datetime_now_utc:datetime):
+    error = ''
+    number_str = None
+
+    if error == '':
+        # genrate invoice number
+        try:
+            crmadmin = CRMAdmin.objects.select_for_update().get(company=company)
+        except:
+            error = 'CRM Admin not found'   
+    
+    if error == '' :
+        number = crmadmin.invoicenumber_next
+        number_digit = crmadmin.invoicenumber_digit
+        # check number reset
+        # invoicenumber_reset is role for reset invoice number, e.g. role:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset quotation number to 1 
+        reset ='<DATA>' + crmadmin.invoicenumber_reset + '</DATA>'
+        tree = ET.fromstring(reset)
+        for elem in tree.iter():
+            # print(elem.tag, elem.text)
+            if elem.text == None and elem.tag != 'DATA':
+                error = 'invoice number reset format error'
+                break
+            if elem.tag == 'Y':
+                value = int(elem.text)
+                now_y = datetime_now_utc.year
+                if value != now_y:
+                    number = 1
+
+                    crmadmin.invoicenumber_reset = crmadmin.invoicenumber_reset.replace('<Y>' + str(value) + '</Y>', '<Y>' + str(now_y) + '</Y>')
+                    crmadmin.save()
+                    # save xml to db
+            elif elem.tag == 'm':
+                value = int(elem.text)
+                now_m = datetime_now_utc.month
+                if value != now_m:
+                    number = 1
+                    
+                    crmadmin.invoicenumber_reset = crmadmin.invoicenumber_reset.replace('<m>' + str(value) + '</m>', '<m>' + str(now_m) + '</m>')
+                    crmadmin.save()
+            elif elem.tag == 'd':
+                value = int(elem.text)
+                now_d = datetime_now_utc.day
+                if value != now_d:
+                    number = 1
+
+                    crmadmin.invoicenumber_reset = crmadmin.invoicenumber_reset.replace('<d>' + str(value) + '</d>', '<d>' + str(now_d) + '</d>')
+                    crmadmin.save()
+        
+    if error == '':
+    # process prefix
+    # invoicenumber_prefix is role for invoice number, <TEXT>MEM</TEXT><Y></Y><m></m><d></d><no></no> is Year, Month, Day, Hour, Minute, Second, Number('%Y-%m-%d %H:%M:%S')
+    # e.g. <TEXT>VIP</TEXT><Y></Y><no></no> is VIP2023001       
+        number_str = ''
+        prefix = crmadmin.invoicenumber_prefix
+        if prefix == '' or prefix == None :
+            number_str = str(number).zfill(number_digit)
+        else:
+            nonumber = True
+            prefix ='<DATA>' + prefix + '</DATA>'
+            tree = ET.fromstring(prefix)
+            for elem in tree.iter():
+                # print(elem.tag, elem.text)
+                if elem.tag == 'Y':
+                    number_str = number_str + str(datetime_now_utc.year)
+                elif elem.tag == 'm':
+                    number_str = number_str + str(datetime_now_utc.month)
+                elif elem.tag == 'd':
+                    number_str = number_str + str(datetime_now_utc.day)
+                elif elem.tag == 'no':
+                    number_str = number_str + str(number).zfill(number_digit)
+                    nonumber = False
+                elif elem.tag == 'TEXT' :
+                    if elem.text != None :
+                        number_str = number_str + elem.text
+            if nonumber == True:
+                number_str = number_str + str(number).zfill(number_digit)
+        crmadmin.invoicenumber_next = crmadmin.invoicenumber_next + 1
+        crmadmin.save()
+        # print(number_str)
+
+    return error, number_str
+
+
+
+@unauth_user
+def ReceiptView(request, pk=None):
+    error = ''
+    utcnow = datetime.now(timezone.utc)
+    context = {}
+    # company = customer.company
+    # get full path with domain name
+    full_path = request.build_absolute_uri()
+    
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    auth_memberlist, \
+    auth_customerlist, \
+    auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
+    = auth_data(request.user)
+
+       
+    if error == '':
+        try:
+            puser = UserProfile.objects.filter(user=request.user).first()
+        except:
+            error = 'User Profile not found'
+    if error == '':
+        company = puser.company
+        if company == None:
+            error = 'Company not found'
+
+    receipt = None
+    if pk != None:
+        try:
+            receipt = Receipt.objects.get(pk=pk)
+        except:
+            pass
+    else:
+        if auth_receipts.count() > 0:
+            try:
+                receipt = auth_receipts[puser.index_q]
+            except:
+                receipt = auth_receipts.first()     
+                puser.index_q = 0
+                puser.save()
+
+    form = None
+    if error == '':
+        if receipt != None:
+            form = ReceiptUpdateForm(instance=receipt, prefix='receiptform', company=company)
+             
+    if error != '':
+        messages.error(request, error )
+        return redirect('home')
+
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        if action == 'update':
+            form = ReceiptUpdateForm(request.POST, instance=receipt, prefix='receiptform', company=company)
+            if form.is_valid() == True:
+                form.save()
+                messages.success(request, 'Receipt was successfully updated!')
+                return redirect('crmreceipt', pk=receipt.pk)
+        if action == 'previous':
+            puser.index_r = puser.index_r + 1
+            if puser.index_r >= auth_receipts.count():
+                puser.index_r = auth_receipts.count() - 1
+            puser.save()
+            receipt = auth_receipts[puser.index_r]
+            return redirect('crmreceipt', pk=receipt.pk)
+        if action == 'next':
+            puser.index_r = puser.index_r - 1
+            if puser.index_r < 0:
+                puser.index_r = 0
+            puser.save()
+            receipt = auth_receipts[puser.index_i]
+            return redirect('crmreceipt', pk=receipt.pk)
+        if action == 'email':
+            context = {'text1':'text1', 
+                       'text2':'The receipt has been sent to the customer.',
+                        'text3': 'Receipt No : ' + receipt.number,
+                        'text4': 'Sent to : ' + receipt.customer_email,
+                        }
+            return render(request, 'crm/email_sent.html', context)
+    context = {
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
+        'members':auth_memberlist,
+        'customers':auth_customerlist,
+        'quotations':auth_quotations,
+        'invoices':auth_invoices,
+        'receipts':auth_receipts,
+        }
+    context = {
+                'aqs_version':aqs_version,
+                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+                'receipt':receipt, 
+                'company':company,
+                'form':form,
+               } | context 
+    return render(request, 'crm/receipt.html', context)
+
+@unauth_user
+def ReceiptNewView(request, ccode):
+    error = ''
+    status = {}
+    nowutc = datetime.now(timezone.utc)
+
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    auth_memberlist, \
+    auth_customerlist, \
+    auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
+    = auth_data(request.user)
+    
+    user=request.user
+    back_url = request.build_absolute_uri()
+
+    if error == '':
+        if auth_en_crm == False:
+            error = 'CRM is not enabled'
+
+    try:
+        company = Company.objects.get(ccode=ccode)
+        form = CustomerNewForm(company=company, user=user)
+    except:
+        error = 'Company not found'
+
+
+
+    # generate new receipt number
+    if error == '':
+        error, number_str = gen_new_receiptno(company, nowutc)
+
+    if error == '':
+        # new receipt
+        receipt = Receipt.objects.create(
+            company=company,
+            number=number_str,
+            receipt_date=nowutc,
+            sales=user,
+        )
+        return redirect('crmreceipt', pk=receipt.pk)
+
+@unauth_user
+def ReceiptDelView(request, pk):
+    utcnow = datetime.now(timezone.utc)
+    obj = Receipt.objects.get(id=pk) 
+  
+    if request.method =='POST':
+        for item in obj.items.all():
+            item.delete()
+        obj.delete()       
+        messages.success(request, 'Receipt was successfully deleted!') 
+        return redirect('crmreceipt')
+    context = {'obj':obj, 'text':'Warning: This action will delete the Receipt.'}
+    context = {'aqs_version':aqs_version} | context 
+    return render(request, 'base/delete.html', context)
+
+
+@unauth_user
+def ReceiptPDFView(request, pk):
+    receipt = Receipt.objects.get(pk=pk)
+    # convert receipt.items.all() to list of dictionary then pass the q_dict : items_dist
+    items_dist = []
+    for item in receipt.items.all():
+        items_dist.append({
+            'name': item.name,
+            'price': item.price,
+            'qty': item.quantity,
+            'sub_total': item.sub_total,
+        })
+
+    q_dict = { 
+            'mycompany': receipt.company.name,
+              'number': receipt.number, 
+              'receipt_date': receipt.receipt_date,
+              'customer_companyname': receipt.customer_companyname, 
+              'customer_contact': receipt.customer_contact, 
+              'sales': receipt.sales.first_name + ' ' + receipt.sales.last_name,
+              'total': receipt.total,
+              'items': items_dist,
+              }
+    
+    pdf = render_to_pdf('crm/receipt_pdf.html', q_dict)
+    return HttpResponse(pdf, content_type='application/pdf')
+    
+@transaction.atomic
+def gen_new_receiptno(company:Company, datetime_now_utc:datetime):
+    error = ''
+    number_str = None
+
+    if error == '':
+        # genrate receipt number
+        try:
+            crmadmin = CRMAdmin.objects.select_for_update().get(company=company)
+        except:
+            error = 'CRM Admin not found'   
+    
+    if error == '' :
+        number = crmadmin.receiptnumber_next
+        number_digit = crmadmin.receiptnumber_digit
+        # check number reset
+        # receiptnumber_reset is role for reset receipt number, e.g. role:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset quotation number to 1 
+        reset ='<DATA>' + crmadmin.receiptnumber_reset + '</DATA>'
+        tree = ET.fromstring(reset)
+        for elem in tree.iter():
+            # print(elem.tag, elem.text)
+            if elem.text == None and elem.tag != 'DATA':
+                error = 'Receipt number reset format error'
+                break
+            if elem.tag == 'Y':
+                value = int(elem.text)
+                now_y = datetime_now_utc.year
+                if value != now_y:
+                    number = 1
+
+                    crmadmin.receiptnumber_reset = crmadmin.receiptnumber_reset.replace('<Y>' + str(value) + '</Y>', '<Y>' + str(now_y) + '</Y>')
+                    crmadmin.save()
+                    # save xml to db
+            elif elem.tag == 'm':
+                value = int(elem.text)
+                now_m = datetime_now_utc.month
+                if value != now_m:
+                    number = 1
+                    
+                    crmadmin.receiptnumber_reset = crmadmin.receiptnumber_reset.replace('<m>' + str(value) + '</m>', '<m>' + str(now_m) + '</m>')
+                    crmadmin.save()
+            elif elem.tag == 'd':
+                value = int(elem.text)
+                now_d = datetime_now_utc.day
+                if value != now_d:
+                    number = 1
+
+                    crmadmin.receiptnumber_reset = crmadmin.receiptnumber_reset.replace('<d>' + str(value) + '</d>', '<d>' + str(now_d) + '</d>')
+                    crmadmin.save()
+        
+    if error == '':
+    # process prefix
+    # receiptnumber_prefix is role for receipt number, <TEXT>MEM</TEXT><Y></Y><m></m><d></d><no></no> is Year, Month, Day, Hour, Minute, Second, Number('%Y-%m-%d %H:%M:%S')
+    # e.g. <TEXT>VIP</TEXT><Y></Y><no></no> is VIP2023001       
+        number_str = ''
+        prefix = crmadmin.receiptnumber_prefix
+        if prefix == '' or prefix == None :
+            number_str = str(number).zfill(number_digit)
+        else:
+            nonumber = True
+            prefix ='<DATA>' + prefix + '</DATA>'
+            tree = ET.fromstring(prefix)
+            for elem in tree.iter():
+                # print(elem.tag, elem.text)
+                if elem.tag == 'Y':
+                    number_str = number_str + str(datetime_now_utc.year)
+                elif elem.tag == 'm':
+                    number_str = number_str + str(datetime_now_utc.month)
+                elif elem.tag == 'd':
+                    number_str = number_str + str(datetime_now_utc.day)
+                elif elem.tag == 'no':
+                    number_str = number_str + str(number).zfill(number_digit)
+                    nonumber = False
+                elif elem.tag == 'TEXT' :
+                    if elem.text != None :
+                        number_str = number_str + elem.text
+            if nonumber == True:
+                number_str = number_str + str(number).zfill(number_digit)
+        crmadmin.receiptnumber_next = crmadmin.receiptnumber_next + 1
+        crmadmin.save()
+        # print(number_str)
+
+    return error, number_str
+
 
 @unauth_user
 def MemberListView(request):
@@ -740,6 +1391,8 @@ def MemberListView(request):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
 
 
@@ -830,7 +1483,9 @@ def MemberListView(request):
         'members':auth_memberlist,
         'customers':auth_customerlist,
         'quotations':auth_quotations,
-        } 
+        'invoices':auth_invoices,
+        'receipts':auth_receipts,
+        }
 
     # context = {'users':auth_userlist, 
     #            'users_active':auth_userlist_active, 
@@ -874,6 +1529,8 @@ def MemberUpdateView(request, pk):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -945,6 +1602,8 @@ def MemberNewView(request, ccode):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
     = auth_data(request.user)
     
     try:
@@ -1109,33 +1768,6 @@ def checkcustomerform(form):
 
     return error, newform
 
-@unauth_user
-def QuotationPDFView(request, pk):
-    quotation = Quotation.objects.get(pk=pk)
-    # convert quotation.items.all() to list of dictionary then pass the q_dict : items_dist
-    items_dist = []
-    for item in quotation.items.all():
-        items_dist.append({
-            'name': item.name,
-            'price': item.price,
-            'qty': item.quantity,
-            'sub_total': item.sub_total,
-        })
-
-    q_dict = { 
-            'mycompany': quotation.company.name,
-              'number': quotation.number, 
-              'quotation_date': quotation.quotation_date,
-              'customer_companyname': quotation.customer_companyname, 
-              'customer_contact': quotation.customer_contact, 
-              'sales': quotation.sales.first_name + ' ' + quotation.sales.last_name,
-              'total': quotation.total,
-              'items': items_dist,
-              }
-    
-    pdf = render_to_pdf('crm/quotation_pdf.html', q_dict)
-    return HttpResponse(pdf, content_type='application/pdf')
-    
 
 def render_to_pdf(template_src, quotation:Quotation):
     template = get_template(template_src)
@@ -1146,5 +1778,3 @@ def render_to_pdf(template_src, quotation:Quotation):
         return HttpResponse(result.getvalue(), content_type='application/pdf')
     return None
 
-
-        

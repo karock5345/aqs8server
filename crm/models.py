@@ -236,6 +236,29 @@ class CRMAdmin(models.Model):
     quotation_default_terms = models.TextField(max_length=200, null=True, blank=True)
     quotation_default_remark = models.TextField(max_length=200, null=True, blank=True)
 
+
+    # Invoice function is enabled or disabled
+    invoice_enabled = models.BooleanField(default=True, null=False)
+    invoicenumber_next = models.IntegerField(default=1)
+    # Invoicennumber_digit is Invoice number digit, e.g. 3 is 001, 4 is 0001 
+    # number = 12 ; print(f"{number:03d}")
+    invoicenumber_digit = models.IntegerField(default=3, help_text=escape(mark_safe('Invoice number digit, e.g. 3 is 001, 4 is 0001')))
+    # invoicenumber_reset is rules for reset Invoice number, e.g. rules:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1
+    invoicenumber_reset = models.CharField(max_length=100, null=True, blank=True, verbose_name='Reset Invoice Number rules', help_text = escape(mark_safe('Rules for reset member number, e.g. rules:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1')))
+    invoicenumber_prefix = models.CharField(max_length=100, null=True, blank=True, help_text = escape(mark_safe('Rules for Invoice number, <TEXT>Q-</TEXT><Y></Y><m></m><d></d><no></no> is Year, Month, Day, Hour, Minute, Second, Number (''%Y-%m-%d %H:%M:%S'')')))
+
+
+    # Receipt function is enabled or disabled
+    receipt_enabled = models.BooleanField(default=True, null=False)
+    receiptnumber_next = models.IntegerField(default=1)
+    # receiptnnumber_digit is Receipt number digit, e.g. 3 is 001, 4 is 0001 
+    # number = 12 ; print(f"{number:03d}")
+    receiptnumber_digit = models.IntegerField(default=3, help_text=escape(mark_safe('Receipt number digit, e.g. 3 is 001, 4 is 0001')))
+    # receiptnumber_reset is rules for reset receipt number, e.g. rules:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1
+    receiptnumber_reset = models.CharField(max_length=100, null=True, blank=True, verbose_name='Reset receipt Number rules', help_text = escape(mark_safe('Rules for reset member number, e.g. rules:<Y>2024</Y> now is 2023-12-31, when now is 2024-01-01, reset member number to 1')))
+    receiptnumber_prefix = models.CharField(max_length=100, null=True, blank=True, help_text = escape(mark_safe('Rules for receipt number, <TEXT>R-</TEXT><Y></Y><m></m><d></d><no></no> is Year, Month, Day, Hour, Minute, Second, Number (''%Y-%m-%d %H:%M:%S'')')))
+
+
     # Inventory function is enabled or disabled
     inventory_enabled = models.BooleanField(default=True, null=False)
 
@@ -243,8 +266,6 @@ class CRMAdmin(models.Model):
         return self.company.name  
     
 
-
-    
 class Quotation_item(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True)
     index = models.IntegerField()
@@ -285,12 +306,114 @@ class Quotation(models.Model):
     customer_email = models.EmailField(null=True, blank=True)
     sales = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='sales_q')
     confirm_date = models.DateTimeField(null=True, blank=True)
-    confirm_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='confirm_by')
+    confirm_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='confirm_by_q')
     remark = models.CharField(max_length=200, null=True, blank=True)
     terms = models.CharField(max_length=200, null=True, blank=True)
     total = models.FloatField(default=0.0)
     cost = models.FloatField(default=0.0)
     items = models.ManyToManyField(Quotation_item, blank=True)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.number
+    def unique_together(self):
+        return ('company', 'number')
+
+
+
+class Invoice_item(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True)
+    index = models.IntegerField()
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    quantity = models.PositiveIntegerField(default=1)
+    price = models.FloatField(default=0.0)
+    cost = models.FloatField(default=0.0)
+    sub_total = models.FloatField(default=0.0)
+    sub_cost= models.FloatField(default=0.0)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+    updated = models.DateTimeField(auto_now=True)
+    class Meta:
+        ordering = ('index',)
+        
+class Invoice(models.Model):
+    class STATUS(models.TextChoices):
+        FREE = 'draft', _('Draft, when a quote is created')
+        WAITING = 'waiting', _('Invoice sent to customer, waiting for payment')
+        PAID = 'paid', _('Invoice paid by customer')
+        VOID = 'void', _('Invoice voided')
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
+    number = models.CharField(max_length=200)
+    version = models.IntegerField(default=1)
+    major_version = models.IntegerField(default=1)
+    invoice_date = models.DateTimeField(auto_now_add=True)    
+    invoice_status = models.CharField(max_length=200, choices=STATUS.choices, default=STATUS.FREE)
+    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
+    customer_companyname = models.CharField(max_length=200, null=True, blank=True)
+    customer_contact = models.CharField(max_length=200, null=True, blank=True)
+    customer_phone = models.CharField(max_length=200, null=True, blank=True)
+    customer_email = models.EmailField(null=True, blank=True)
+    sales = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='sales_i')
+    confirm_date = models.DateTimeField(null=True, blank=True)
+    confirm_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='confirm_by_i')
+    remark = models.CharField(max_length=200, null=True, blank=True)
+    terms = models.CharField(max_length=200, null=True, blank=True)
+    total = models.FloatField(default=0.0)
+    cost = models.FloatField(default=0.0)
+    items = models.ManyToManyField(Invoice_item, blank=True)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.number
+    def unique_together(self):
+        return ('company', 'number')
+
+
+
+
+class Receipt_item(models.Model):
+
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True)
+    index = models.IntegerField()
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    quantity = models.PositiveIntegerField(default=1)
+    price = models.FloatField(default=0.0)
+    cost = models.FloatField(default=0.0)
+    sub_total = models.FloatField(default=0.0)
+    sub_cost= models.FloatField(default=0.0)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+    updated = models.DateTimeField(auto_now=True)
+    class Meta:
+        ordering = ('index',)
+        
+class Receipt(models.Model):
+    class PAID(models.TextChoices):
+        CHEQUE = 'cheque', _('Cheque')
+        TRANSFER = 'transfer', _('Bank transfer')
+        CREDITCARD = 'creditcard', _('Credit Card')
+        PAYPAL = 'paypal', _('Paypal')
+        CASH = 'cash', _('Cash')
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
+    number = models.CharField(max_length=200)
+    version = models.IntegerField(default=1)
+    major_version = models.IntegerField(default=1)
+    receipt_date = models.DateTimeField(auto_now_add=True)    
+    payment = models.CharField(max_length=200, choices=PAID.choices, default=PAID.CHEQUE)
+    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
+    customer_companyname = models.CharField(max_length=200, null=True, blank=True)
+    customer_contact = models.CharField(max_length=200, null=True, blank=True)
+    customer_phone = models.CharField(max_length=200, null=True, blank=True)
+    customer_email = models.EmailField(null=True, blank=True)
+    sales = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='sales_r')
+    confirm_date = models.DateTimeField(null=True, blank=True)
+    confirm_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='confirm_by_r')
+    total = models.FloatField(default=0.0)
+    cost = models.FloatField(default=0.0)
+    items = models.ManyToManyField(Receipt_item, blank=True)
+    remark = models.CharField(max_length=200, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
     updated = models.DateTimeField(auto_now=True)
 

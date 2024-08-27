@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Company, Product_Type, Category, Supplier, Product
 from .models import Member, MemberItem, CRMAdmin, Customer
-from .models import Quotation, Quotation_item, Inventory, PushMessage
+from .models import Quotation, Quotation_item, Invoice, Invoice_item, Receipt, Receipt_item, Inventory, PushMessage
 from .models import CustomerGroup, CustomerSource, CustomerInformation
 
 # Register your models here.
@@ -46,6 +46,23 @@ class QuotationView(admin.ModelAdmin):
 class Quotation_itemView(admin.ModelAdmin):
     list_display =('name', 'description', 'quantity', 'price', 'sub_total')
     ordering = ('-updated', '-created')
+
+class InvoiceView(admin.ModelAdmin):
+    list_display =('company', 'customer_companyname', 'sales', 'invoice_status', 'total')
+    ordering = ('-updated', '-created')
+
+class Invoice_itemView(admin.ModelAdmin):
+    list_display =('name', 'description', 'quantity', 'price', 'sub_total')
+    ordering = ('-updated', '-created')
+
+class ReceiptView(admin.ModelAdmin):
+    list_display =('company', 'customer_companyname', 'sales', 'payment', 'total')
+    ordering = ('-updated', '-created')
+
+class Receipt_itemView(admin.ModelAdmin):
+    list_display =('name', 'description', 'quantity', 'price', 'sub_total')
+    ordering = ('-updated', '-created')
+
 class InventoryView(admin.ModelAdmin):
     list_display =('company', 'branch', 'product', 'quantity', 'status')
     ordering = ('-updated', '-created')
@@ -74,6 +91,10 @@ admin.site.register(CRMAdmin, CRMAdminView)
 admin.site.register(Customer, CustomerView)
 admin.site.register(Quotation, QuotationView)
 admin.site.register(Quotation_item, Quotation_itemView)
+admin.site.register(Invoice, InvoiceView)
+admin.site.register(Invoice_item, Invoice_itemView)
+admin.site.register(Receipt, ReceiptView)
+admin.site.register(Receipt_item, Receipt_itemView)
 admin.site.register(Inventory, InventoryView)
 admin.site.register(PushMessage, PushMessageView)
 admin.site.register(CustomerGroup, CustomerGroupView)

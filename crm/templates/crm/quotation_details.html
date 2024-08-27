@@ -118,8 +118,10 @@
 
                     <div class="form__action">
                         <a class="btn btn--del" href="{% url 'quotationdelete' quotation.id %}">Delete</a>
+                        <button class="btn btn--main" type="submit" name="action" value="email">E-Mail PDF</button>
                         <a class="btn btn--main" href="{% url 'quotationpdf' quotation.id %}">Export PDF</a>
-                        <a class="btn btn--main" href="">Copy to Invoice</a>
+                        <a class="btn btn--main" href="">Copy to new Invoice</a>
+                        <a class="btn btn--main" href="">Copy to new Quotation</a>
                         <button class="btn btn--main" type="submit" name="action" value="update">Update</button>
                     </div>
                 </form>
