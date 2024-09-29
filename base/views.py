@@ -1002,7 +1002,6 @@ def webmyticket(request, bcode, ttype, tno, sc):
             css = branch.webtvcsslink
         else :
             error = 'Branch not found.'
-    
     countertype = None
     if error == '' :        
         ttobj = TicketTemp.objects.filter(  
@@ -1019,6 +1018,7 @@ def webmyticket(request, bcode, ttype, tno, sc):
             countertype = tickettemp.countertype
             scroll = countertype.displayscrollingtext
             tickettime = funUTCtoLocal(tickettime, branch.timezone)
+            tickettime_str = tickettime.strftime('%Y-%m-%d %H:%M:%S')
         else :
             error = 'Ticket not found.'
     
@@ -1027,7 +1027,7 @@ def webmyticket(request, bcode, ttype, tno, sc):
         # displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
         wdserializers  = displaylistSerivalizer(displaylist, many=True)
-    
+        ticketlist = wdserializers.data
     counter='---'
     if error == '':
         csobj = CounterStatus.objects.filter(
@@ -1035,24 +1035,54 @@ def webmyticket(request, bcode, ttype, tno, sc):
         )
         if csobj.count() == 1:
             counter = csobj[0].counternumber
-    if error == '':
+
+    # Special for TVP MHT Project 
+    # Special ticket : /my/MHT/A/003/rdA/
+    if bcode == 'MHT' and ttype == 'A' and tno == '003' and sc == 'rdA':
+        tickettime_str = '18:39:06 16-07-2024'
+        counterstatus = 'done'
+        countertype = CounterType.objects.filter(branch=branch)[0]
+        scroll = countertype.displayscrollingtext
+        ticketlist = [{'tickettype': 'A', 'ticketnumber': '002', 'tickettime': '2024-09-29T03:10:51.396585Z', 'displaytime': '2024-09-29T03:11:16.220329Z', 'counternumber': '1', 'wait': '0', 'flashtime': 6, 'ct_lang1': 'Counter', 'ct_lang2': '櫃枱', 'ct_lang3': None, 'ct_lang4': None, 't_lang1': '維修服務', 't_lang2': 'Maintenance service', 't_lang3': None, 't_lang4': None}, {'tickettype': 'A', 'ticketnumber': '001', 'tickettime': '2024-09-29T03:10:47.624269Z', 'displaytime': '2024-09-29T03:11:10.052153Z', 'counternumber': '1', 'wait': '0', 'flashtime': 6, 'ct_lang1': 'Counter', 'ct_lang2': '櫃枱', 'ct_lang3': None, 'ct_lang4': None, 't_lang1': '維修服務', 't_lang2': 'Maintenance service', 't_lang3': None, 't_lang4': None}]
+        tickettemp = None
+        counter='1'
         context = {
             'wsh' : wsHypertext,
             'ticket':ticket,
-            'tickettime':tickettime.strftime('%Y-%m-%d %H:%M:%S'),
+            'tickettime':tickettime_str,
             'bcode':branch.bcode,
             'counterstatus':counterstatus,
             'logofile':logofile,
             'css' : css,
-            'lastupdate':str_now,            
+            'lastupdate':str_now,
             'counter':counter,
             'countertype':countertype,
             'tickettemp':tickettemp,
-            'ticketlist':wdserializers.data,
+            'ticketlist':ticketlist,
             'errormsg':'',
             'scroll':scroll,
             }
-    else:
+        context = {'aqs_version':aqs_version} | {'app_name':APP_NAME} | context 
+
+        return render(request , 'base/webmyticket_tvp.html', context)
+    if error == '':
+        context = {
+            'wsh' : wsHypertext,
+            'ticket':ticket,
+            'tickettime':tickettime_str,
+            'bcode':branch.bcode,
+            'counterstatus':counterstatus,
+            'logofile':logofile,
+            'css' : css,
+            'lastupdate':str_now,
+            'counter':counter,
+            'countertype':countertype,
+            'tickettemp':tickettemp,
+            'ticketlist':ticketlist,
+            'errormsg':'',
+            'scroll':scroll,
+            }
+    if error != '' :
         context = {
             'lastupdate':str_now, 
             'logofile':logofile,
@@ -1062,6 +1092,7 @@ def webmyticket(request, bcode, ttype, tno, sc):
             }
         messages.error(request, error)
     context = {'aqs_version':aqs_version} | {'app_name':APP_NAME} | context 
+
     return render(request , 'base/webmyticket.html', context)
 
 # Create your views here.

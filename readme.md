@@ -2,6 +2,10 @@
 
 <h3 style="color:orange;">Version 8.3.5</h3>
 
+- For TVP request : Online ticket do not remove (https://mht.tsvd.com.hk/my/MHT/A/003/rdA/)
+  - base/views.py > line 977 > edit function : webmyticket
+  - New file : base/templates/base/webmyticket_tvp.html 
+
 - Fixed bug : Report html Page is not work
   - update :
   - base/view.py
