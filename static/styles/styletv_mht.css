@@ -1,0 +1,770 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+
+
+:root {
+  --merlot: #000080;   /* blue (navy) */
+  --crimson: #0047ab;  /* blue (cobalt) */
+  --color_header_background_backup:#96C8C3;
+  --color_background:#BED7EB;
+  --color_header_background:#FFFFFF;
+  --color_booking_text:#0A3755;
+  --color_booking_text_background:#0A3755;
+  --color_status_background: #404040;
+  --color_calling_text: #FF6A00;
+  --color_calling_background: #0A3755;
+  --color_countertype_text: #ffffff;
+  --color_myticket_background: lemonchiffon;
+  --color_cancel_background: lemonchiffon;
+  --color_cancel_back_background: #383D52;
+  --color_touchkey_background: #001F4A;
+  --color_touchkey_text: #FD5F00;
+  --color_scroll:#FFFFFF;
+  --color_scroll_background: #808080;
+  --color_form_background: #fffdbf;
+}
+* {
+    box-sizing : border-box;
+    margin:0;
+    padding: 0;
+    background-color:var(--color_background);
+    /* background-color:#D9FDFE; */
+}
+
+header {
+    display: flex ;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+    padding: 30px 10%;
+    background-color: var(--color_header_background);
+}
+body {
+    display:grid;
+    align-items: center;
+
+    max-width:1080px;
+    margin:0 auto;
+}
+.logo {
+    height: 50px;
+    margin-right: auto;
+    background: none;
+}
+
+
+
+.reload {
+    width:30px;
+    margin-left: auto;
+    padding: 5px 0px 0px 0px;
+    background: none;
+    cursor:pointer;
+    color:var(--color_touchkey_text);
+}
+.scroll {
+    display: flex ;
+    justify-content: space-evenly;
+    height: 30px;
+    position: relative;
+    color:var(--color_scroll);
+    background-color:var(--color_scroll_background);
+    
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    /* text-decoration: none; */
+    /* text-align: center; */
+
+}
+.status {
+    display: flex ;
+    justify-content: space-evenly;
+    height: 30px;
+    position: relative;
+    color:#f1f1f1;
+    background-color:var(--color_status_background);
+    
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    /* text-decoration: none; */
+    /* text-align: center; */
+
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%); 
+    transform: translateY(-50%);
+    background: none;
+  }
+
+
+.updatetime {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 8px;
+    text-align:right;
+    padding: 0px 0px 0px 0px;
+    color:grey;
+    background: none;
+}
+
+.col1 {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    /* justify-content: flex-end; */
+    align-items: right;
+    background-color: var(--color_header_background);
+  }
+
+
+
+.container_calling {
+    height:58px;
+    /* line-height:58px; */
+    width:100%;
+    /* display:inline-flex; */
+    margin: 5px 0px 5px 0;
+    /* min-width:45%; */
+    /* max-width: 500px; */
+    /* align-content:center; */
+    /* position:relative; */
+    background-color: var(--color_calling_background);
+    /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.132);
+    border-radius:20px 20px 20px 20px; */
+    /* display:flex; */
+    /* border-style:solid;
+    border-color: var(--color_touchkey_background);
+    border-width: 1px; */
+    /* align-items: center; */
+    justify-content:space-between;
+    padding: 5px 10% 0px;
+
+    /* display:grid; */
+    display: flex;
+    position:relative;
+  }
+
+.ticketno {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    font-size: 46px;
+    text-decoration: none;
+    text-align: center;
+    color:var(--color_calling_text);
+    /* background-color: var(--color_calling_background); */
+    background: none;
+    margin-top: -13px;
+    margin-left: -5%;
+    /* display:table-cell; */
+    /* vertical-align:middle; */
+    
+    vertical-align:middle;
+    /* width:50%;
+    min-width:150px;  */
+    /* padding-left:10px; */
+    /* padding-bottom: 50px; */
+}
+.tickettime {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    text-align:center;
+    /* padding: 0px 0px 0px 0px; */
+    margin: -12px;
+    color:grey;
+    /* background-color:aqua; */
+    background: none;
+}
+
+.arrow {
+    width:30px;
+    margin-top: 1px;
+    padding: 0px 0px 0px 0px;
+    background: none;
+    color:var(--color_touchkey_text);
+}
+
+.counter {
+    background: none;
+    margin-top: -2px;
+    /* vertical-align:middle; */
+    /* width:50%;
+    min-width:300px; */
+    /* max-width: 500px; */
+    padding-right:5px;
+    justify-content:space-between;
+    display: flex;
+    position:relative;
+}
+.counter_myticket {
+    background: none;
+    width: 250px;
+    /* margin-top: -2px; */
+    /* vertical-align:middle; */
+    /* width:50%;
+    min-width:300px; */
+    /* max-width: 500px; */
+    /* padding-right:5px; */
+    justify-content:space-evenly;
+    display: flex;
+    position:relative;
+}
+.countertype {
+    text-decoration: none;
+    text-align: center;
+    color:var(--color_countertype_text);
+    /* background-color: var(--color_calling_background); */
+    background: none;
+    margin-top: 6px;
+    margin-right: 6px;
+
+    /* margin-bottom: -10px; */
+}
+
+.countertext {
+    color:var(--color_countertype_text);
+    background: none;
+    text-align: right;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.counternumber {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    font-size: 46px;
+    text-decoration: none;
+    text-align: center;
+    color: var(--color_calling_text);
+    /* background-color: var(--color_calling_background); */
+    background: none;
+    margin-top: -10px;
+}
+.numberCircle {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 500;
+    width: 26px;
+    height: 26px;
+    border-radius: 32%;
+    text-align: center;
+    
+    
+    /* font-size: 21.6px; */
+    font-size:16px;
+    /* border: 0px solid #3498db; */
+    color:var(--color_scroll);
+    background:var(--color_touchkey_text);
+    position: absolute;
+    margin: auto;
+    top: 1px;
+    right: 4px;
+    padding: 0px 0px 0px 0px; 
+    /* margin: auto ; */
+}
+.powered {
+    color:#949494;
+    font-size:10px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight:400;
+    text-align: center;
+    /* margin: -5px 0px 10px 0px; */
+     margin: 5px 0px 10px 0px;
+}
+
+.container_myticket_main {
+    border-style:solid;
+    border-color: rgb(238, 226, 120);
+    border-width: 3px;
+    margin: 5px 0 5px;
+
+}
+.container_myticket {
+    height:80px;
+    width:100%;
+    /* display:inline-flex; */
+    /* margin: 5px 0px 5px 0; */
+    /* min-width:45%; */
+    /* max-width: 500px; */
+    /* align-content:center; */
+    /* position:relative; */
+    background-color: var(--color_myticket_background);
+    /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.132);
+    border-radius:20px 20px 20px 20px; */
+    /* display:flex; */
+    /* border-style:solid;
+    border-color: var(--color_touchkey_background);
+    border-width: 1px; */
+    /* align-items: center; */
+    justify-content:space-between ;
+    /* padding: 5px 10% 0px; */
+    padding: 15px 5% 0 5% ;
+    /* display:grid; */
+    display: flex;
+    position:relative;
+}
+.ticketno_myticket {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    font-size: 52px;
+    text-decoration: none;
+    text-align: center;
+    color:var(--color_calling_text);
+    /* background-color: var(--color_calling_background); */
+    background: none;
+    margin-top: -20px;
+    /* margin-left: -5%; */
+    /* display:table-cell; */
+    /* vertical-align:middle; */
+    
+    vertical-align:middle;
+    /* width:50%;
+    min-width:150px;  */
+    /* padding-left:10px; */
+    /* padding-bottom: 50px; */
+}
+.countertext_myticket {
+    color:var(--color_status_background);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    background: none;
+    text-align: right;
+}
+.container_status {
+    background: none;
+    margin-top: -10px;
+    margin-left: 10px;
+}
+.statustype {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: left;
+    color: rgb(80, 80, 80);
+    /* background-color: var(--color_calling_background); */
+    background: none;
+    /* margin-top: -5px; */
+    margin-bottom: -5px;
+}
+.statustext {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: left;
+    color: rgb(80, 80, 80);
+    /* background-color: var(--color_calling_background); */
+    background: none;
+    margin-top: 5px;
+}
+.buttoncancel_main  {
+    /* width: 100px;*/
+    /* height: 100%; */
+   /* font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    cursor:pointer; */
+    color: rgb(255, 255, 255);
+    background-color: var(--color_myticket_background);
+    /* border-radius:6px;*/
+    /* text-align: center; */
+    /* margin-top: 10px; */
+    /*padding: 8px 0 0 ; */
+    text-decoration: none;
+    width: 120px;
+    height: 40px;
+    justify-content:space-between ;
+    margin-top: 14px;
+
+}
+
+.buttoncancel  {
+    width: 120px;
+    height: 40px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    cursor:pointer;
+    color: rgb(255, 255, 255);
+    background-color: crimson;
+    border-radius:6px;
+    text-align: center;
+    
+    padding: 8px;
+    text-decoration: none;
+    /* margin-left: 10px; */
+    margin-top: 5px;
+
+
+   
+
+}
+.buttoncancel:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+.msgerror {
+    height:auto;
+    /* min-height: 30px; */
+    color:rgb(255, 0, 0);
+    background-color: rgb(43, 62, 71);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+.msgsuccess {
+    height:auto;
+    /* min-height: 30px; */
+    color: rgb(0, 255, 50);
+    background-color: rgb(43, 62, 71);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.cancel_container {
+    display: grid;
+    grid-template-columns: 1fr;
+    height:400px;
+    /* line-height:58px; */
+    width:90% ;
+    /* display:inline-flex; */
+    margin: 10px 0px 10px 5%;
+    /* min-width:45%; */
+    /* max-width: 500px; */
+    /* align-content:center; */
+    /* position:relative; */
+    background-color: var(--color_cancel_background);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.132);
+    /* border-radius:20px 20px 20px 20px; */
+    /* padding:8px 13px 10px 13px; */
+    /* padding: 0px; */
+    border-style:ridge;
+    border-color: black; 
+    border-width: 1px;
+    /* align-items: center; */
+    /* justify-content:space-between; */
+    /* padding: 10px 10% ; */
+    
+
+  }
+.cancel_back_container {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+
+    /* justify-content: flex-end; */
+    align-items: right;
+    height:32px;
+    color:rgb(255, 255, 255);
+    background-color: var(--color_cancel_back_background);
+    width: 100%;
+}
+.cancel_back {
+    height:32px;
+    width: 32px;
+    color:rgb(255, 255, 255);
+    background-color:var(--color_cancel_back_background);
+    /* margin-right: auto; */
+    /* align-items: ; */
+}
+
+.cancel_back2 {
+    height:32px;
+    color:rgb(255, 255, 255);
+    background-color:var(--color_cancel_back_background);
+    width: auto;
+    padding: 0px 0px 0px 10px;
+    /* margin: 10px 10px; */
+    
+    text-decoration: none;
+    text-align:left;
+
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    /* align-items: ; */
+}
+.cancel_block{
+    padding: 0px 0px 0px 20px;
+    background: none;
+    height:368px;
+    width: 100%;
+}
+
+.cancel_title {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    background: none;
+    height: 80%;
+    padding: 60px 0px 0px;
+    /* margin-top: auto; */
+    
+}
+.buttonconfirm  {
+    width: 150px;
+    height: 40px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    cursor:pointer;
+    color: rgb(255, 255, 255);
+    background-color: crimson;
+    border-radius:6px;
+    text-align: center;
+    /* margin-top: 10px; */
+    padding: 6px;
+    text-decoration: none;
+    
+    
+}
+.buttonconfirm:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+.container_touchkey {
+    display:flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    padding: 20px;
+    /* align-content: center; */
+
+    /* background-color: #c96bb9; */
+    background: none;    
+  }
+
+  .buttontouchkey  {
+    width: 80%;
+    height: auto;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    cursor:pointer;
+    color: var(--color_touchkey_text);
+    background-color: var(--color_touchkey_background);
+    border-radius:12px;
+    text-align: center;
+    /* margin-top: 10px; */
+    padding: 10px 0px 10px ;
+    text-decoration: none;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    
+}
+/* .buttontouchkey:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  } */
+
+.container_booking {
+    height:140px;
+    width:100%;
+    margin: 5px 0px 5px 0;
+    background-color: var(--color_calling_background);
+    justify-content:space-between;
+    padding: 0px 4px 0px 4px;
+
+    display: flex;
+    position:relative;
+}
+.booking {
+    background: none;
+    margin-top: 4px;
+    padding-right:0px;
+    justify-content:space-between;
+    display: flex;
+    position:relative;
+}
+.bookingtype {
+    text-decoration: none;
+    /* text-align: center; */
+    color:var(--color_countertype_text);
+    /* background-color: var(--color_calling_background); */
+    background: none;
+    /* margin-top: -12px; */
+    /* margin-right: 12px; */
+
+    /* margin-bottom: -10px; */
+}
+
+.bookingtext {
+    color:var(--color_countertype_text);
+    background: none;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+}
+.right {
+    text-align: right;
+}
+
+.buttonbooking  {
+    width: 150px;
+    height: 60px;
+    cursor:pointer;
+    color: rgb(255, 255, 255);
+    background-color: var(--color_calling_text);
+    border-radius:8px;
+    margin-top: 34px;
+    text-decoration: none;
+
+    
+}
+.buttonbooking:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+.buttonbooking_text {
+
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 46px;
+    text-align: center;
+
+    margin-top: -6px;
+    text-decoration: none;
+    background: none;
+
+}
+
+
+
+.form__group {
+    /* margin-bottom: 2rem; */
+    /* margin-top: auto; */
+    /* padding-bottom: 0.5rem; */
+
+    background-color: none;
+    background: none;
+
+  }
+
+.form__group > label {
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: left;
+    color: var(--color_calling_background);
+    background: transparent;
+  }
+.form__group > input {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0rem;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--color_touchkey_background);
+    background-color: #f1f1f1;
+    background: var(--color_scroll);
+    width: 100%;
+  }
+
+  
+  
+.form__group input:focus,
+.form__group textarea:focus {
+    border-color: var(--color-main);
+  }
+  
+
+
+.form__action {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem 0rem 0rem 0rem;
+  background-color: transparent;
+    margin-top: 1rem;
+}
+.button_form  {
+    font-size: 3rem;
+    padding: 1rem 3rem;
+    background-color: var(--color_calling_background);
+    color: var(--color_calling_text);
+    /* border: var(--color_calling_text); */
+    border-color: var(--color_background);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+
+}
+
+.bookingtime {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+    font-size: 55px;
+    text-decoration: none;
+    text-align: center;
+    color: var(--color_calling_text);
+    /* background-color: var(--color_calling_background); */
+    background: none;
+    margin-top: -6px;
+    margin-left: 10px;
+}
+.container_booking_detail {
+    height:100px;
+    width:100%;
+    /* margin: 6px 0px 6px 0; */
+    background-color: var(--color_calling_background);
+    justify-content:space-between;
+    padding: 5px 0px 0px 0px;
+
+    display: flex;
+    position:relative;
+}
+
+.booking_text_container {
+    width:100%;
+    background-color: var(--color_booking_text_background);
+}
+.booking_text_container_sub {
+    width:96%;
+    margin: 0% 0% 0% 2%;
+    background: none;
+}
+.booking_text {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-decoration: none;
+    background: none;
+    white-space: pre-wrap;
+}
+.booking_text_color {
+    color: var(--color_countertype_text);
+}
+.booking_success_text_color {
+    color: var(--color_booking_text);
+}
+.booking_form_container {
+    /* margin: 1rem; */
+    padding: 1rem 1rem 2rem 1rem;
+    display:grid ;
+    /* justify-content: space-evenly; */
+    height: auto;
+    position: relative;
+    background-color:var(--color_form_background);
+    width: 100%;
+    /* margin: 0% 0% 0% 5%; */
+  }
