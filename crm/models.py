@@ -265,6 +265,21 @@ class CRMAdmin(models.Model):
     def __str__(self):
         return self.company.name  
     
+class BusinessType(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
+    name = models.CharField(null=True, blank=True, max_length=200)
+    description = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name + ' - ' + self.description
+
+class BusinessSource(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
+    name = models.CharField(null=True, blank=True, max_length=200)
+    description = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name + ' - ' + self.description
 
 class Quotation_item(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True)
@@ -280,7 +295,7 @@ class Quotation_item(models.Model):
     updated = models.DateTimeField(auto_now=True)
     class Meta:
         ordering = ('index',)
-        
+
 class Quotation(models.Model):
     class STATUS(models.TextChoices):
         FREE = 'draft', _('Draft, when a quote is created')
@@ -297,13 +312,15 @@ class Quotation(models.Model):
     number = models.CharField(max_length=200)
     version = models.IntegerField(default=1)
     major_version = models.IntegerField(default=1)
-    quotation_date = models.DateTimeField(auto_now_add=True)    
+    quotation_date = models.DateTimeField(auto_now_add=True)
     quotation_status = models.CharField(max_length=200, choices=STATUS.choices, default=STATUS.FREE)
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
     customer_companyname = models.CharField(max_length=200, null=True, blank=True)
     customer_contact = models.CharField(max_length=200, null=True, blank=True)
     customer_phone = models.CharField(max_length=200, null=True, blank=True)
     customer_email = models.EmailField(null=True, blank=True)
+    businesstype = models.ForeignKey(BusinessType, on_delete=models.SET_NULL, null=True, blank=True)
+    businesssource = models.ForeignKey(BusinessSource, on_delete=models.SET_NULL, null=True, blank=True)
     sales = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='sales_q')
     confirm_date = models.DateTimeField(null=True, blank=True)
     confirm_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='confirm_by_q')
@@ -343,12 +360,26 @@ class Invoice(models.Model):
         WAITING = 'waiting', _('Invoice sent to customer, waiting for payment')
         PAID = 'paid', _('Invoice paid by customer')
         VOID = 'void', _('Invoice voided')
+    class TYPE(models.TextChoices):
+        STANDARD = 'standard', _('Standard Invoice')
+        CREDIT = 'credit', _('Credit Invoice')
+        DEBIT = 'debit', _('Debit Invoice')
+        MIXED = 'mixed', _('Mixed Invoice')
+        PROFORMA = 'proforma', _('Proforma Invoice')
+    class PAYMENT(models.TextChoices):
+        CHEQUE = 'cheque', _('Cheque')
+        TRANSFER = 'transfer', _('Bank transfer')
+        CREDITCARD = 'creditcard', _('Credit Card')
+        PAYPAL = 'paypal', _('Paypal')
+        CASH = 'cash', _('Cash')
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     number = models.CharField(max_length=200)
     version = models.IntegerField(default=1)
     major_version = models.IntegerField(default=1)
     invoice_date = models.DateTimeField(auto_now_add=True)    
     invoice_status = models.CharField(max_length=200, choices=STATUS.choices, default=STATUS.FREE)
+    invoice_type = models.CharField(max_length=200, choices=TYPE.choices, default=TYPE.STANDARD)
+    payment_method = models.CharField(max_length=200, choices=PAYMENT.choices, default=PAYMENT.CHEQUE)
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
     customer_companyname = models.CharField(max_length=200, null=True, blank=True)
     customer_contact = models.CharField(max_length=200, null=True, blank=True)
@@ -396,6 +427,7 @@ class Receipt(models.Model):
         CREDITCARD = 'creditcard', _('Credit Card')
         PAYPAL = 'paypal', _('Paypal')
         CASH = 'cash', _('Cash')
+    
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     number = models.CharField(max_length=200)
     version = models.IntegerField(default=1)
@@ -449,3 +481,4 @@ class PushMessage(models.Model):
 
     created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
     updated = models.DateTimeField(auto_now=True)
+

@@ -11,7 +11,8 @@ from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from datetime import datetime, timezone, timedelta
 from base.decorators import *
 from django.urls import reverse_lazy
-from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat, Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch, Ticket, UserStatusLog
+from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat
+from .models import Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch, Ticket, Domain
 from booking.models import TimeSlot, Booking, BookingLog, TimeslotTemplate
 from .forms import TicketFormatForm, UserForm, UserFormAdmin, UserProfileForm, UserProfileFormAdmin, trForm, resetForm
 from .forms import BranchSettingsForm_Admin, BranchSettingsForm_Adv, BranchSettingsForm_Basic
@@ -48,6 +49,19 @@ except:
 context_login = {}
 
 sort_direction = {}
+
+def funDomain(request):
+    domainname = request.get_host().split(':')[0]
+    domain = None
+    logo = 'images/logo-q.svg'
+    title = 'Auto Queuing System - TSVD'
+    try:
+        domain = Domain.objects.filter(name=domainname)[0]
+        logo = domain.logo
+        title = domain.title
+    except:
+        pass
+    return logo, title
 
 def adminlockedView(request,):
     return render(request, 'base/admin_locked.html')
@@ -251,8 +265,11 @@ def SoftkeyView(request, pk):
     auth_receipts, \
     = auth_data(request.user)
 
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -266,6 +283,7 @@ def SoftkeyView(request, pk):
         'customers':auth_customerlist,
         'quotations':auth_quotations,
         'invoices':auth_invoices,
+        'receipts':auth_receipts,
         }
 
     try:
@@ -531,22 +549,26 @@ def SoftkeyLoginBranchView(request):
                 cs = CounterStatus.objects.filter(Q(countertype=ct)).order_by('countertype', 'counternumber',).exclude(enabled=False)
                 counterstatus.append(cs)
 
+        logo, navbar_title = funDomain(request)
         context = {
-        'app_name':APP_NAME,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        }
+            'app_name':APP_NAME,
+            'logo':logo,
+            'navbar_title':navbar_title,
+            'aqs_version':aqs_version, 
+            'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+            'users':auth_userlist, 
+            'branchs':auth_branchs, 
+            'ticketformats':auth_ticketformats, 
+            'routes':auth_routes, 
+            'timeslots':auth_timeslots, 
+            'bookings':auth_bookings,
+            'temps':auth_timeslottemplist,
+            'members':auth_memberlist,
+            'customers':auth_customerlist,
+            'quotations':auth_quotations,
+            'invoices':auth_invoices,
+            'receipts':auth_receipts,
+            }
         context = context | {'counterstatus':counterstatus}
 
 
@@ -611,21 +633,25 @@ def SoftkeyLoginView(request, pk):
             .extra(select={'casted_object_id': 'CAST(counternumber AS INTEGER)'}).extra(order_by = ['casted_object_id'])
             counterstatus.append(cs)
 
+        logo, navbar_title = funDomain(request)
         context = {
-        'app_name':APP_NAME,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
+            'app_name':APP_NAME,
+            'logo':logo,
+            'navbar_title':navbar_title,
+            'aqs_version':aqs_version, 
+            'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+            'users':auth_userlist, 
+            'branchs':auth_branchs, 
+            'ticketformats':auth_ticketformats, 
+            'routes':auth_routes, 
+            'timeslots':auth_timeslots, 
+            'bookings':auth_bookings,
+            'temps':auth_timeslottemplist,
+            'members':auth_memberlist,
+            'customers':auth_customerlist,
+            'quotations':auth_quotations,
+            'invoices':auth_invoices,
+            'receipts':auth_receipts,
         }
         context = context | {'counterstatus':counterstatus}
 
@@ -1028,7 +1054,8 @@ def repair(request):
             'errormsg':error,
             }
         messages.error(request, error)
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request , 'base/repair.html', context)
 
 def webmyticket(request, bcode, ttype, tno, sc):
@@ -1036,6 +1063,9 @@ def webmyticket(request, bcode, ttype, tno, sc):
     # tno is ticket number
     # sc is ticket Security code
     # 127.0.0.1:8000/my/KB/A/001/123
+    # Special for TVP MHT Project 
+    # Special ticket : /my/MHT/A/003/rdA/
+    
     context = None
     error = ''
     str_now = '---'
@@ -1059,7 +1089,6 @@ def webmyticket(request, bcode, ttype, tno, sc):
             css = branch.webtvcsslink
         else :
             error = 'Branch not found.'
-    
     countertype = None
     if error == '' :        
         ttobj = TicketTemp.objects.filter(  
@@ -1076,6 +1105,7 @@ def webmyticket(request, bcode, ttype, tno, sc):
             countertype = tickettemp.countertype
             scroll = countertype.displayscrollingtext
             tickettime = funUTCtoLocal(tickettime, branch.timezone)
+            tickettime_str = tickettime.strftime('%Y-%m-%d %H:%M:%S')
         else :
             error = 'Ticket not found.'
     
@@ -1084,7 +1114,7 @@ def webmyticket(request, bcode, ttype, tno, sc):
         # displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
         displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
         wdserializers  = displaylistSerivalizer(displaylist, many=True)
-    
+        ticketlist = wdserializers.data
     counter='---'
     if error == '':
         csobj = CounterStatus.objects.filter(
@@ -1092,24 +1122,54 @@ def webmyticket(request, bcode, ttype, tno, sc):
         )
         if csobj.count() == 1:
             counter = csobj[0].counternumber
-    if error == '':
+
+    # Special for TVP MHT Project 
+    # Special ticket : /my/MHT/A/003/rdA/
+    if bcode == 'MHT' and ttype == 'A' and tno == '003' and sc == 'rdA':
+        tickettime_str = '18:39:06 16-07-2024'
+        counterstatus = 'done'
+        countertype = CounterType.objects.filter(branch=branch)[0]
+        scroll = countertype.displayscrollingtext
+        ticketlist = [{'tickettype': 'A', 'ticketnumber': '002', 'tickettime': '2024-09-29T03:10:51.396585Z', 'displaytime': '2024-09-29T03:11:16.220329Z', 'counternumber': '1', 'wait': '0', 'flashtime': 6, 'ct_lang1': 'Counter', 'ct_lang2': '櫃枱', 'ct_lang3': None, 'ct_lang4': None, 't_lang1': '維修服務', 't_lang2': 'Maintenance service', 't_lang3': None, 't_lang4': None}, {'tickettype': 'A', 'ticketnumber': '001', 'tickettime': '2024-09-29T03:10:47.624269Z', 'displaytime': '2024-09-29T03:11:10.052153Z', 'counternumber': '1', 'wait': '0', 'flashtime': 6, 'ct_lang1': 'Counter', 'ct_lang2': '櫃枱', 'ct_lang3': None, 'ct_lang4': None, 't_lang1': '維修服務', 't_lang2': 'Maintenance service', 't_lang3': None, 't_lang4': None}]
+        tickettemp = None
+        counter='1'
         context = {
             'wsh' : wsHypertext,
             'ticket':ticket,
-            'tickettime':tickettime.strftime('%Y-%m-%d %H:%M:%S'),
+            'tickettime':tickettime_str,
             'bcode':branch.bcode,
             'counterstatus':counterstatus,
             'logofile':logofile,
             'css' : css,
-            'lastupdate':str_now,            
+            'lastupdate':str_now,
             'counter':counter,
             'countertype':countertype,
             'tickettemp':tickettemp,
-            'ticketlist':wdserializers.data,
+            'ticketlist':ticketlist,
             'errormsg':'',
             'scroll':scroll,
             }
-    else:
+        context = {'aqs_version':aqs_version} | {'app_name':APP_NAME} | context 
+
+        return render(request , 'base/webmyticket_tvp.html', context)
+    if error == '':
+        context = {
+            'wsh' : wsHypertext,
+            'ticket':ticket,
+            'tickettime':tickettime_str,
+            'bcode':branch.bcode,
+            'counterstatus':counterstatus,
+            'logofile':logofile,
+            'css' : css,
+            'lastupdate':str_now,
+            'counter':counter,
+            'countertype':countertype,
+            'tickettemp':tickettemp,
+            'ticketlist':ticketlist,
+            'errormsg':'',
+            'scroll':scroll,
+            }
+    if error != '' :
         context = {
             'lastupdate':str_now, 
             'logofile':logofile,
@@ -1119,7 +1179,9 @@ def webmyticket(request, bcode, ttype, tno, sc):
             }
         messages.error(request, error)
     context = {'aqs_version':aqs_version} | {'app_name':APP_NAME} | context 
+
     return render(request , 'base/webmyticket.html', context)
+
 
 # Create your views here.
 def webtouchView(request):
@@ -1400,7 +1462,8 @@ def webmyticket_old_school(request):
             'errormsg':error,
             }
         messages.error(request, error)
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request , 'base/webmyticketold2.html', context)
 
 
@@ -1471,7 +1534,8 @@ def webtv_old_school(request):
         'errormsg' : error,
         }
         messages.error(request, error)
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request , 'base/webtvold3.html', context)
 
 
@@ -1609,7 +1673,8 @@ def Report_Ticket_details_Result(request, pk):
             context = context | {'app_name':APP_NAME}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/in_progress.html', context)
         else :
             # long process is done output result to HTML
@@ -1657,8 +1722,8 @@ def Report_Ticket_details_Result(request, pk):
                 'header':header,
                 'table':table100,        
                 }
-                context = {'aqs_version':aqs_version} | context 
-                return render(request, 'base/r-result.html', context)
+                logo, navbar_title = funDomain(request)
+                context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             elif request.method == 'POST':
                 action = request.POST.get('action')
                 if action == 'excel':
@@ -1779,7 +1844,8 @@ def Report_NoOfQueue_Result(request):
             context = context | {'app_name':APP_NAME}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/in_progress.html', context)
         else:
             messages.error(request, error)
@@ -1814,7 +1880,8 @@ def Report_NoOfQueue_Result(request):
             'header':header,
             'table':table100,        
             }
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/r-result.html', context)
         elif request.method == 'POST':
             action = request.POST.get('action')
@@ -1918,7 +1985,8 @@ def Report_QSum(request):
             context = context | {'app_name':APP_NAME}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/in_progress.html', context)
         else:
             messages.error(request, error)
@@ -1953,7 +2021,8 @@ def Report_QSum(request):
             'header':header,
             'table':table100,        
             }
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/r-result.html', context)
         elif request.method == 'POST':
             action = request.POST.get('action')
@@ -2062,7 +2131,8 @@ def Report_RAW_Result2(request):
             context = context | {'app_name':APP_NAME}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/in_progress.html', context)
         else:
             messages.error(request, error)
@@ -2097,7 +2167,8 @@ def Report_RAW_Result2(request):
             'header':header,
             'table':table100,        
             }
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/r-result_raw.html', context)
         elif request.method == 'POST':  
             action = request.POST.get('action')
@@ -2262,7 +2333,8 @@ def Report_RAW_Result(request):
                 context = context | {'app_name':APP_NAME}
                 context = context | {'wsh' : wsHypertext}
                 context = context | {'url_download': url_download}
-                context = {'aqs_version':aqs_version} | context 
+                logo, navbar_title = funDomain(request)
+                context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
                 return render(request, 'base/in_progress.html', context)
 
 
@@ -2331,7 +2403,8 @@ def Report_RAW_Result(request):
         'result':error,
         }
         return redirect('reports')
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/r-raw.html', context)
 
 @unauth_user
@@ -2430,7 +2503,8 @@ def Report_Ticket_Result(request):
             context = {'task_id': ptask_id}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/in_progress.html', context)
         else :
             # long process is done output result to HTML
@@ -2454,7 +2528,8 @@ def Report_Ticket_Result(request):
                 'result':report_result,
                 'table':report_table,        
                 }
-                context = {'aqs_version':aqs_version} | context 
+                logo, navbar_title = funDomain(request)
+                context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
                 return render(request, 'base/r-ticket.html', context)
             elif request.method == 'POST':
                 # Export and download excel file
@@ -2493,7 +2568,8 @@ def Report_Ticket_Result(request):
         'result':error,
         }
         return redirect('reports')
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/r-ticket.html', context)
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
@@ -2603,7 +2679,8 @@ def Report_Staff_Result(request):
             context = {'task_id': ptask_id}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/in_progress.html', context)
         else :
             # long process is done output result to HTML
@@ -2627,7 +2704,8 @@ def Report_Staff_Result(request):
                 'result':report_result,
                 'table':report_table,        
                 }
-                context = {'aqs_version':aqs_version} | context 
+                logo, navbar_title = funDomain(request)
+                context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
                 return render(request, 'base/r-staff.html', context)
 
             elif request.method == 'POST':
@@ -2803,7 +2881,8 @@ def Report_Staff_Result(request):
         'result':error,
         }
         return redirect('reports')
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/r-staff.html', context)
 
 @unauth_user
@@ -2884,7 +2963,8 @@ def Report_StaffPerformance(request):
             context = context | {'app_name':APP_NAME}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/in_progress.html', context)
         else:
             messages.error(request, error)
@@ -2919,7 +2999,8 @@ def Report_StaffPerformance(request):
             'header':header,
             'table':table100,        
             }
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/r-result.html', context)
         elif request.method == 'POST':
             action = request.POST.get('action')
@@ -3021,7 +3102,8 @@ def Report_TicketType(request):
             context = context | {'app_name':APP_NAME}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/in_progress.html', context)
         else:
             messages.error(request, error)
@@ -3056,7 +3138,8 @@ def Report_TicketType(request):
             'header':header,
             'table':table100,        
             }
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/r-result.html', context)
         elif request.method == 'POST':
             action = request.POST.get('action')
@@ -3155,7 +3238,8 @@ def Report_TicketTypeDay(request):
             context = context | {'app_name':APP_NAME}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/in_progress.html', context)
         else:
             messages.error(request, error)
@@ -3190,7 +3274,8 @@ def Report_TicketTypeDay(request):
             'header':header,
             'table':table100,        
             }
-            context = {'aqs_version':aqs_version} | context 
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
             return render(request, 'base/r-result.html', context)
         elif request.method == 'POST':
             action = request.POST.get('action')
@@ -3258,8 +3343,11 @@ def Reports(request):
     now_l = datetime.now()
     snow_l = now_l.strftime('%Y-%m-%d')
     # print(now_l)
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -3273,6 +3361,7 @@ def Reports(request):
         'customers':auth_customerlist,
         'quotations':auth_quotations,
         'invoices':auth_invoices,
+        'receipts':auth_receipts,
         }
     context = context | {'now':snow_l}
 
@@ -3320,7 +3409,8 @@ def SuperVisorView(request, pk):
     'misslist':misslist,
     'printerstatuslist':printerstatuslist,
     }
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/supervisor.html', context)
 
 
@@ -3359,8 +3449,11 @@ def SuperVisorListView(request):
     # profiles = UserProfile.objects.filter(Q(user=users.user))
     #profiles = users.userprofile_set.all()
     
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -3374,6 +3467,7 @@ def SuperVisorListView(request):
         'customers':auth_customerlist,
         'quotations':auth_quotations,
         'invoices':auth_invoices,
+        'receipts':auth_receipts,
         }
     return render(request, 'base/supervisors.html', context)
 
@@ -3402,7 +3496,8 @@ def TicketRouteNewView(request):
             messages.error(request, error)
     context = {'form':form}
 
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/routenew.html', context)
 
 @unauth_user
@@ -3417,7 +3512,8 @@ def TicketRouteDelView(request, pk):
         return redirect('routesummary')
     context = {'obj':route}
 
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/delete.html', context)
 
 @unauth_user
@@ -3502,8 +3598,11 @@ def TicketRouteSummaryView(request):
     # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
     # routes = TicketRoute.objects.all().order_by('branch','tickettype','step')
 
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -3517,6 +3616,7 @@ def TicketRouteSummaryView(request):
         'customers':auth_customerlist,
         'quotations':auth_quotations,
         'invoices':auth_invoices,
+        'receipts':auth_receipts,
         }
     return render(request, 'base/routes.html', context)
 
@@ -3595,7 +3695,8 @@ def TicketFormatDelView(request, pk):
         messages.success(request, 'Ticket Format was successfully deleted!') 
         return redirect('tfsummary')
     context = {'obj':ticketformat}
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/delete.html', context)
 
 @unauth_user
@@ -3677,8 +3778,11 @@ def TicketFormatSummaryView(request):
     # branchs = Branch.objects.all()
     # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
     # routes = TicketRoute.objects.all()
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -3692,6 +3796,7 @@ def TicketFormatSummaryView(request):
         'customers':auth_customerlist,
         'quotations':auth_quotations,
         'invoices':auth_invoices,
+        'receipts':auth_receipts,
         }
     return render(request, 'base/tfs.html', context)
 
@@ -4052,11 +4157,19 @@ def SettingsUpdateView(request, pk):
             branchsettingsform = BranchSettingsForm_Adv(instance=branch, prefix='branchsettingsform')
         elif userright == 'manager': 
             branchsettingsform = BranchSettingsForm_Basic(instance=branch, prefix='branchsettingsform')
-        
-    context = {'aqs_version':aqs_version, 'bcode':bcode,
+
+    context = {'bcode':bcode,
                'branchname':branchname , 'countertypes':countertypes, 
                'branchsettingsform':branchsettingsform, 
                'subend':subend , 'subscribe':subscribe}
+    logo, navbar_title = funDomain(request)
+    # context = {
+    #         'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
+    #         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+    #         } | context     
+    context = {
+            'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
+            } | context 
     return render(request, 'base/settings-update.html', context)
 
 @unauth_user
@@ -4094,8 +4207,11 @@ def SettingsSummaryView(request):
 
 
 
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -4109,6 +4225,7 @@ def SettingsSummaryView(request):
         'customers':auth_customerlist,
         'quotations':auth_quotations,
         'invoices':auth_invoices,
+        'receipts':auth_receipts,
         }
     return render(request, 'base/settings.html', context)
 
@@ -4135,8 +4252,11 @@ def homeView(request):
     auth_receipts, \
     = auth_data(request.user)
 
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -4150,6 +4270,7 @@ def homeView(request):
         'customers':auth_customerlist,
         'quotations':auth_quotations,
         'invoices':auth_invoices,
+        'receipts':auth_receipts,
         }
 
     context = context |{'users_active':auth_userlist_active, }
@@ -4181,8 +4302,11 @@ def UserSummaryView(request):
     = auth_data(request.user)
 
  
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -4196,6 +4320,7 @@ def UserSummaryView(request):
         'customers':auth_customerlist,
         'quotations':auth_quotations,
         'invoices':auth_invoices,
+        'receipts':auth_receipts,
         }
     context = context | {'users_active':auth_userlist_active}
     context = context | {'profiles':auth_profilelist}
@@ -4312,8 +4437,11 @@ def UserSummaryListView(request):
         result_userlist = result_userlist.order_by(direct + 'userprofile__mobilephone')
 
 
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -4327,6 +4455,7 @@ def UserSummaryListView(request):
         'customers':auth_customerlist,
         'quotations':auth_quotations,
         'invoices':auth_invoices,
+        'receipts':auth_receipts,
         }
 
     # context = {'users':auth_userlist, 
@@ -4393,10 +4522,12 @@ def UserLoginView(request):
             captchaform = CaptchaForm()
         pass
 
-    context = {'page':page} 
+    logo, navbar_title = funDomain(request)
+    context = {'logo':logo, 'navbar_title' : navbar_title, 'aqs_version':aqs_version}
+
+    context = context | {'page':page} 
     if RECAPTCHA_ENABLED == True :
         context = context | {'captcha_form':captchaform}
-    context = {'aqs_version':aqs_version} | context 
     return render(request, 'base/login_register.html', context)
     
 @unauth_user
@@ -4556,8 +4687,9 @@ def UserUpdateView(request, pk):
             messages.error(request, error)
 
     context =  {'userform':userform , 'profileform':profileform, 'user':user, 'userp':userp,'ticketformat':ticketformat2,'userptt':listusertt, }
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context 
     return render(request, 'base/user-update.html', context)
@@ -4586,7 +4718,8 @@ def UserUpdateTTView(request, pk):
         tt.save()
     ticketformat2 = ticketformat2.order_by('ttype')
     context =  {'userp':userp, 'ticketformat':ticketformat2, }
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/user-update-tickettype.html', context)
 
 @unauth_user
@@ -4617,7 +4750,8 @@ def UserNewView(request):
                     messages.error(request, item)
             
     context = {'form':form}
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/usernew.html', context)
 
 @unauth_user
@@ -4821,7 +4955,8 @@ def UserChangePWView(request):
     else:
         form = PasswordChangeForm(request.user)
     context = {'form': form}
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/changepassword.html', context)
 
 @unauth_user
@@ -4841,7 +4976,8 @@ def UserDelView(request, pk):
         messages.success(request, 'User successfully deleted.')
         return redirect('usersummary')
     context = {'obj':user}
-    context = {'aqs_version':aqs_version} | context  
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context  
     return render(request, 'base/delete.html', context)
 
 @unauth_user
@@ -4897,8 +5033,9 @@ def UserResetView(request, pk):
         messages.success(request, 'Reset password successfully.')
         return redirect('usersummary')
     context = {'obj':user}
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context 
     return render(request, 'base/reset.html', context)
@@ -4930,8 +5067,9 @@ def MenuView(request):
 
         
     context =  {'users':auth_userlist , 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings, 'temp':auth_timeslottemplist}
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context 
     return render(request, 'base/m-menu.html', context)

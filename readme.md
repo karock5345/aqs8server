@@ -13,7 +13,8 @@
   - base/a_global.py
   - base/apps.py
   - base/sch/views.py
-  
+- New function : Different Logo and Title for each domain  
+
 <h3 style="color:orange;">Version 8.3.5</h3>
 
 - Fixed bug : Report html Page is not work
@@ -781,8 +782,8 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py createsuperuser
 ```
-RVD superuser : supertim5345 /// viWu@h0spewon7c@9spI
-supertim /// YtZqEIpk5345
+#### qs1 (Colour)
+#### supertim/tim /// YtZqEIpk5345
 
 Test the Postgres DB:
 ```bash

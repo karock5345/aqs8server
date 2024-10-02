@@ -3,8 +3,16 @@
 <header class="header header--loggedIn">
     <div class="container">
       <a href="{% url 'home' %}" class="header__logo">
-        <img src="{% static 'images/logo-q.svg' %}" />
-        <h1>Queuing System v{{aqs_version}} - TSVD</h1>
+        {% if logo == None %}
+          <img src="{% static 'images/logo-q.svg' %}" />
+        {% else %}
+          <img src="{% static logo %}" />
+        {% endif %}
+        {% if navbar_title == None %}
+          <h1>Queuing System v{{aqs_version}} - TSVD</h1>
+        {% else %}
+          <h1>{{ navbar_title }} v{{aqs_version}}</h1>
+        {% endif %}
       </a>
       <!-- <form class="header__search" method="GET" action="{% url 'home' %}">
         <label>

@@ -17,7 +17,7 @@ from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm, BookingForm, Book
 from django.utils.timezone import localtime, get_current_timezone
 # import pytz
 # from django.utils import timezone
-from base.views import auth_data
+from base.views import auth_data, funDomain
 
 import logging
 from aqs.tasks import *
@@ -68,7 +68,8 @@ def TimeSlotTempItemDelView(request, pk, tempid):
         messages.success(request, ' Template Item was successfully deleted!') 
         return redirect('temp-update', pk=tempid)
     context = {'obj':item, 'text':'Warning: This action will delete the Template item.'}
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/delete.html', context)
 
 @unauth_user
@@ -115,8 +116,9 @@ def TimeSlotTempItemUpdateView(request, pk, tempid):
     else:
         form = TimeSlot_itemForm(instance=item, prefix='timeslotitemform')
     context =  {'form':form, 'item':item, 'tempid':tempid}
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context 
     return render(request, 'booking/tempitem_update.html', context)
@@ -138,7 +140,8 @@ def TimeSlotTempDelView(request, pk):
         messages.success(request, ' Template was successfully deleted!') 
         return redirect('timeslottemp')
     context = {'obj':temp, 'text':'Warning: This action will delete the Template.'}
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/delete.html', context)
 
 def checktemplateform(form):
@@ -238,8 +241,9 @@ def TimeSlotTempUpdateView(request, pk):
         pass
 
     context =  {'form':form, 'temptimeslot':temp, 'items':items}
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context 
     return render(request, 'booking/template_update.html', context)
@@ -295,8 +299,9 @@ def TimeSlotTempNewView(request):
     # get the url of 'timeslottemp'
     back_url = reverse('timeslottemp')
     context = {'form':form}
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context     
     context = {'title':'New Timeslot Template', 'back_url':back_url, } | context 
@@ -328,8 +333,11 @@ def TimeslotTempSummaryView(request):
     = auth_data(request.user)
 
  
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -343,6 +351,7 @@ def TimeslotTempSummaryView(request):
         'customers':auth_customerlist,
         'quotations':auth_quotations,
         'invoices':auth_invoices,
+        'receipts':auth_receipts,
         }
     # print(auth_timeslottemplist)
     if request.method == 'POST':
@@ -356,8 +365,9 @@ def TimeslotTempSummaryView(request):
             messages.error(request, error)
             
             
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context
 
@@ -411,12 +421,12 @@ def BookingNewView(request):
 
     # get the url of 'bookingtimeslot'
     back_url = reverse('bookingsummary')
-    context = {'form':form}
+    context = {'form':form, 'title':'New Booking', 'back_url':back_url, }
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-                'title':'New Booking', 'back_url':back_url, 
-                } | context 
+               } | context 
     return render(request, 'base/new.html', context)
 
 @unauth_user
@@ -436,7 +446,8 @@ def BookingDelView(request, pk):
         messages.success(request, 'Time Slot was successfully deleted!') 
         return redirect('bookingsummary')
     context = {'obj':booking, 'text':'Warning: This action will delete the Booking.'}
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/delete.html', context)
 @unauth_user
 def BookingUpdateView(request, pk):
@@ -491,8 +502,9 @@ def BookingUpdateView(request, pk):
     else:
         bookingform = BookingForm(instance=booking, prefix='bookingform', auth_branchs=auth_branchs, auth_userlist=auth_userlist)
     context =  {'bookingform':bookingform, 'booking':booking, }
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context 
     return render(request, 'booking/booking_update.html', context)
@@ -522,8 +534,11 @@ def BookingSummaryView(request):
     = auth_data(request.user)
 
  
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -537,6 +552,7 @@ def BookingSummaryView(request):
         'customers':auth_customerlist,
         'quotations':auth_quotations,
         'invoices':auth_invoices,
+        'receipts':auth_receipts,
         }
     
     if request.method == 'POST':
@@ -706,8 +722,9 @@ def BookingSummaryView(request):
             messages.error(request, error)
             
             
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context 
     return render(request, 'booking/booking.html', context)
@@ -1056,7 +1073,8 @@ def Booking_Details_ClientView(request, pk):
             'bcode':bcode,
         }
 
-        context = {'aqs_version':aqs_version} | context
+        logo, navbar_title = funDomain(request)
+        context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
         return render(request, 'booking/booking_details_client.html', context)
         
 
@@ -1124,7 +1142,8 @@ def BookingClientView(request, bcode):
     'bcode' :  bcode ,
     }
     
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request , 'booking/booking_client.html', context)
 
 
@@ -1147,7 +1166,8 @@ def TimeSlotDelView(request, pk):
         messages.success(request, 'Time Slot was successfully deleted!') 
         return redirect('bookingtimeslot')
     context = {'obj':timeslot, 'text':'Warning: This action will delete the Time Slot and all related data. Recommanded to use "Disable" instead of "Delete".'}
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/delete.html', context)
 
 @unauth_user
@@ -1211,8 +1231,9 @@ def TimeSlotNewView(request):
     # get the url of 'bookingtimeslot'
     back_url = reverse('bookingtimeslot')
     context = {'form':tsform}
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context     
     context = {'title':'New Time Slot', 'back_url':back_url, } | context 
@@ -1272,8 +1293,9 @@ def TimeSlotUpdateView(request, pk):
     else:
         tsform = TimeSlotForm(instance=timeslot, prefix='timeslotform', auth_branchs=auth_branchs)
     context =  {'tsform':tsform, 'timeslot':timeslot, }
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context 
     return render(request, 'booking/timeslot_update.html', context)
@@ -1304,8 +1326,11 @@ def TimeSlotSummaryView(request):
     auth_receipts, \
     = auth_data(request.user)
  
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -1319,9 +1344,11 @@ def TimeSlotSummaryView(request):
         'customers':auth_customerlist,
         'quotations':auth_quotations,
         'invoices':auth_invoices,
+        'receipts':auth_receipts,
         }
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context 
     return render(request, 'booking/timeslot.html', context)

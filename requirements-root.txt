@@ -1,4 +1,4 @@
-django==4.2.15
+django==4.2.16
 celery==5.3.6
 channels-redis==4.1.0
 channels==3.0.5
@@ -23,3 +23,4 @@ requests
 gunicorn
 daphne==3.0.2
 qrcode
+xhtml2pdf

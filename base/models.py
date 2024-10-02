@@ -27,6 +27,12 @@ class testingModel(models.Model):
 class testingModel2(models.Model):
     total = models.IntegerField(default=0)
 
+# For template/main.html to show different Logo and Title
+# Next version will add different CSS for each domain
+class Domain(models.Model):
+    name = models.CharField(max_length=200, unique=True, null=False, blank=False)
+    logo = models.CharField(max_length=200, null=False, blank=False, default='images/logo-q.svg')
+    title = models.CharField(max_length=200, null=False, blank=False, default='Auto Queuing System - TSVD')
 
 class Branch(models.Model):
     BYTIME = 'time'

@@ -4,7 +4,8 @@ from django.contrib.auth.models import User, Group
 from django.db.models import Q
 from django.forms.utils import ErrorList
 from base.models import TicketFormat, TicketRoute, UserProfile, Branch, CounterType
-from .models import Member, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt
+from .models import Member, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt, BusinessType, BusinessSource
+
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
@@ -125,14 +126,33 @@ class CustomerInfoForm(forms.ModelForm):
 class QuotationUpdateForm(ModelForm):
     def __init__(self, *args,**kwargs):
         self.company = kwargs.pop('company')
-        super().__init__(*args,**kwargs)        
+        super().__init__(*args,**kwargs)
         # self.fields['group'].queryset = CustomerGroup.objects.filter(company=self.company)
         # self.fields['source'].queryset = CustomerSource.objects.filter(company=self.company)
         # self.fields['information'].queryset = CustomerInformation.objects.filter(company=self.company)
-        
-    class Meta:        
+        self.fields['businesstype'].queryset = BusinessType.objects.filter(company=self.company)
+        self.fields['businesssource'].queryset = BusinessSource.objects.filter(company=self.company)
+    class Meta:
         model = Quotation
-        fields = ['quotation_status', 'customer', 'customer_companyname', 'customer_contact', 'customer_phone', 'customer_email', 'sales', 'confirm_by', 'confirm_date', 'remark', 'terms' , 'total',]        
+        fields = ['quotation_status', 'customer', 'customer_companyname', 'customer_contact', 'customer_phone', 'customer_email', 'businesstype', 'businesssource', 'sales', 'confirm_by', 'confirm_date', 'remark', 'terms' , 'total',]
+
+class BusinessTypeForm(forms.ModelForm):
+    id = forms.fields.IntegerField()
+    def __init__(self, *args,**kwargs):
+        super().__init__(*args,**kwargs)
+        self.initial['id'] = self.instance.pk
+    class Meta:
+        model = BusinessType
+        fields = ['id', 'name', 'description']
+
+class BusinessSourceForm(forms.ModelForm):
+    id = forms.fields.IntegerField()
+    def __init__(self, *args,**kwargs):
+        super().__init__(*args,**kwargs)
+        self.initial['id'] = self.instance.pk
+    class Meta:
+        model = BusinessSource
+        fields = ['id', 'name', 'description']
 
 class InvoiceUpdateForm(ModelForm):
     def __init__(self, *args,**kwargs):
@@ -144,7 +164,7 @@ class InvoiceUpdateForm(ModelForm):
         
     class Meta:        
         model = Invoice
-        fields = ['invoice_status', 'customer', 'customer_companyname', 'customer_contact', 'customer_phone', 'customer_email', 'sales', 'confirm_by', 'confirm_date', 'remark', 'terms' , 'total',]        
+        fields = ['invoice_type', 'invoice_status', 'customer', 'customer_companyname', 'customer_contact', 'customer_phone', 'customer_email', 'sales', 'confirm_by', 'confirm_date', 'remark', 'terms', 'payment_method' , 'total']        
 
 class ReceiptUpdateForm(ModelForm):
     def __init__(self, *args,**kwargs):

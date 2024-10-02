@@ -7,9 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" /> -->
     <!-- <img src="{% static 'images/avatar.svg' %}" /> -->
-    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" /> 
+    {% if logo == None %}
+      <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    {% else %}
+      <link rel="shortcut icon" href="{% static logo %}" type="image/x-icon" />
+
+    {% endif %}
     <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
-    <title>Auto Queuing System - TSVD</title>
+    {% if navbar_title == None %}
+      <title>Queuing System v{{aqs_version}} - TSVD</title>
+    {% else %}
+      <title>{{ navbar_title }} v{{aqs_version}}</title>
+    {% endif %}
+
   </head>
 
   <body>

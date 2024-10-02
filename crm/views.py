@@ -8,12 +8,12 @@ from base.decorators import allowed_users
 from base.models import Branch, APILog, UserProfile
 from datetime import datetime, timedelta, timezone
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi_notoken, funUTCtoLocal, counteractive, checkuser
-from base.views import auth_data
+from base.views import auth_data, funDomain
 from django.http import JsonResponse
 from django.contrib import messages
 from base.decorators import *
-from crm.models import CRMAdmin, Member, Company, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt
-from crm.forms import MemberUpdateForm, MemberNewForm, CustomerUpdateForm, CustomerGroupForm, CustomerSourceForm, CustomerInfoForm, CustomerNewForm, QuotationUpdateForm, InvoiceUpdateForm, ReceiptUpdateForm
+from crm.models import CRMAdmin, Member, Company, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt, BusinessType, BusinessSource
+from crm.forms import MemberUpdateForm, MemberNewForm, CustomerUpdateForm, CustomerGroupForm, CustomerSourceForm, CustomerInfoForm, CustomerNewForm, QuotationUpdateForm, InvoiceUpdateForm, ReceiptUpdateForm, BusinessTypeForm, BusinessSourceForm
 from crm.api import new_member
 from django.db import transaction
 import re
@@ -103,8 +103,11 @@ def CustomerListView(request):
     elif q_sort == 'sales':
         result = result.order_by(direct + 'sales')
 
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -188,8 +191,9 @@ def CustomerUpdateView(request, pk):
     else:
         form = CustomerUpdateForm(instance=customer, prefix='customerform', company=customer.company)
     context =  {'form':form, 'customer':customer, }
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context 
     return render(request, 'crm/customer_update.html', context)
@@ -222,7 +226,9 @@ def CustomerNewView(request, ccode):
     = auth_data(request.user)
     
     user=request.user
-    back_url = request.build_absolute_uri()
+    #back_url = request.build_absolute_uri()
+    # get previous url
+    back_url = request.META.get('HTTP_REFERER')
 
     try:
         company = Company.objects.get(ccode=ccode)
@@ -294,21 +300,109 @@ def CustomerNewView(request, ccode):
 
     # get the url of 'bookingtimeslot'
     context = {'form':form}
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context     
     context = {'title':'New Customer', 'back_url':back_url, } | context 
     return render(request, 'base/new.html', context)
 
-
 def subupdate(request, action, company, customer, full_path):
+        context = {}
+        logo, navbar_title = funDomain(request)
+        context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    # <---- business type ----
+        if action == 'businesstype':
+            table = BusinessType.objects.filter(Q(company=company))
+            form = BusinessTypeForm()
+            context = context | {'table':table, 'form': form, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Business Type', 'action':'businesstype'}
+            # return render(request, 'crm/sub_update.html', context)
+            return 'go', 'crm/sub_update.html', context
+        elif action == 'update_businesstype':
+            form = BusinessTypeForm(request.POST)
+            if form.is_valid():
+                # get the id of the customer group from the form
+                pk = form['id'].value()
+                obj = BusinessType.objects.get(pk=pk)
+
+                obj.name = form['name'].value()
+                obj.description = form['description'].value()
+                obj.save()
+                # form.save()
+                messages.success(request, 'Update success' )
+            table = BusinessType.objects.filter(Q(company=company))
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Business Type', 'action':'businesstype'}
+            # return render(request, 'crm/sub_update.html', context)
+            return 'go', 'crm/sub_update.html', context
+        elif action == 'new_businesstype':
+            BusinessType.objects.create(company=company, name='', description='')
+            form = BusinessTypeForm(request.POST)
+
+            table = BusinessType.objects.filter(Q(company=company))
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Business Type', 'action':'businesstype'}       
+            # return render(request, 'crm/sub_update.html', context, )
+            return 'go', 'crm/sub_update.html', context
+        elif action == 'del_businesstype':
+            form = BusinessTypeForm(request.POST)
+            if form.is_valid():
+                pk = form['id'].value()
+                BusinessType.objects.get(pk=pk).delete()
+
+            table = BusinessType.objects.filter(Q(company=company))
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Business Type', 'action':'businesstype'}
+            # return render(request, 'crm/sub_update.html', context, )  
+            return 'go', 'crm/sub_update.html', context      
+    # ---- business type ---->
+
+    # <---- business source ----
+        if action == 'businesssource':
+            table = BusinessSource.objects.filter(Q(company=company))
+            form = BusinessSourceForm()
+            context = context | {'table':table, 'form': form, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Business Source', 'action':'businesssource'}
+            # return render(request, 'crm/sub_update.html', context)
+            return 'go', 'crm/sub_update.html', context
+        elif action == 'update_businesssource':
+            form = BusinessSourceForm(request.POST)
+            if form.is_valid():
+                # get the id of the customer group from the form
+                pk = form['id'].value()
+                obj = BusinessSource.objects.get(pk=pk)
+
+                obj.name = form['name'].value()
+                obj.description = form['description'].value()
+                obj.save()
+                # form.save()
+                messages.success(request, 'Update success' )
+            table = BusinessSource.objects.filter(Q(company=company))
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Business Source', 'action':'businesssource'}
+            # return render(request, 'crm/sub_update.html', context)
+            return 'go', 'crm/sub_update.html', context
+        elif action == 'new_businesssource':
+            BusinessSource.objects.create(company=company, name='', description='')
+            form = BusinessSourceForm(request.POST)
+
+            table = BusinessSource.objects.filter(Q(company=company))
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Business Source', 'action':'businesssource'}       
+            # return render(request, 'crm/sub_update.html', context, )
+            return 'go', 'crm/sub_update.html', context
+        elif action == 'del_businesssource':
+            form = BusinessSourceForm(request.POST)
+            if form.is_valid():
+                pk = form['id'].value()
+                BusinessSource.objects.get(pk=pk).delete()
+
+            table = BusinessSource.objects.filter(Q(company=company))
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Business Source', 'action':'businesssource'}
+            # return render(request, 'crm/sub_update.html', context, )  
+            return 'go', 'crm/sub_update.html', context      
+    # ---- business source ---->
 
     # <---- Customer Group ----
         if action == 'group':
             table = CustomerGroup.objects.filter(Q(company=company))
             cgform = CustomerGroupForm()
-            context = {'aqs_version':aqs_version,'table':table, 'form': cgform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Group', 'action':'group'}
+            context = context | {'table':table, 'form': cgform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Group', 'action':'group'}
             # return render(request, 'crm/sub_update.html', context)
             return 'go', 'crm/sub_update.html', context
         elif action == 'update_group':
@@ -324,7 +418,7 @@ def subupdate(request, action, company, customer, full_path):
                 # cgform.save()
                 messages.success(request, 'Update success' )
             table = CustomerGroup.objects.filter(Q(company=company))
-            context = {'aqs_version':aqs_version, 'table':table, 'form': cgform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Group', 'action':'group'}
+            context = context | { 'table':table, 'form': cgform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Group', 'action':'group'}
             # return render(request, 'crm/sub_update.html', context)
             return 'go', 'crm/sub_update.html', context
         elif action == 'new_group':
@@ -332,7 +426,7 @@ def subupdate(request, action, company, customer, full_path):
             cgform = CustomerGroupForm(request.POST)
 
             table = CustomerGroup.objects.filter(Q(company=company))
-            context = {'aqs_version':aqs_version, 'table':table, 'form': cgform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Group', 'action':'group'}       
+            context = context | { 'table':table, 'form': cgform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Group', 'action':'group'}       
             # return render(request, 'crm/sub_update.html', context, )
             return 'go', 'crm/sub_update.html', context
         elif action == 'del_group':
@@ -342,7 +436,7 @@ def subupdate(request, action, company, customer, full_path):
                 CustomerGroup.objects.get(pk=pk).delete()
 
             table = CustomerGroup.objects.filter(Q(company=company))
-            context = {'aqs_version':aqs_version, 'table':table, 'form': cgform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Group', 'action':'group'}
+            context = context | { 'table':table, 'form': cgform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Group', 'action':'group'}
             # return render(request, 'crm/sub_update.html', context, )  
             return 'go', 'crm/sub_update.html', context      
     # ---- Customer Group ---->
@@ -352,7 +446,7 @@ def subupdate(request, action, company, customer, full_path):
         elif action == 'source':
             table = CustomerSource.objects.filter(Q(company=company))
             csform = CustomerSourceForm()
-            context = {'aqs_version':aqs_version,'table':table, 'form': csform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Source', 'action':'source'}
+            context = context | {'table':table, 'form': csform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Source', 'action':'source'}
             # return render(request, 'crm/sub_update.html', context)
             return 'go', 'crm/sub_update.html', context
         elif action == 'update_source':
@@ -367,7 +461,7 @@ def subupdate(request, action, company, customer, full_path):
                 source.save()
                 messages.success(request, 'Update success' )
             table = CustomerSource.objects.filter(Q(company=company))
-            context = {'aqs_version':aqs_version, 'table':table, 'form': csform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Source', 'action':'source'}
+            context = context | { 'table':table, 'form': csform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Source', 'action':'source'}
             # return render(request, 'crm/sub_update.html', context)
             return 'go', 'crm/sub_update.html', context
         elif action == 'new_source':
@@ -375,7 +469,7 @@ def subupdate(request, action, company, customer, full_path):
             csform = CustomerSourceForm(request.POST)
 
             table = CustomerSource.objects.filter(Q(company=company))
-            context = {'aqs_version':aqs_version, 'table':table, 'form': csform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Source', 'action':'source'}       
+            context = context | { 'table':table, 'form': csform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Source', 'action':'source'}       
             # return render(request, 'crm/sub_update.html', context, )
             return 'go', 'crm/sub_update.html', context
         elif action == 'del_source':
@@ -385,7 +479,7 @@ def subupdate(request, action, company, customer, full_path):
                 CustomerSource.objects.get(pk=pk).delete()
 
             table = CustomerSource.objects.filter(Q(company=company))
-            context = {'aqs_version':aqs_version, 'table':table, 'form': csform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Source', 'action':'source'}
+            context = context | { 'table':table, 'form': csform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Source', 'action':'source'}
             # return render(request, 'crm/sub_update.html', context, )        
             return 'go', 'crm/sub_update.html', context
     # ---- Customer Source ---->
@@ -394,7 +488,7 @@ def subupdate(request, action, company, customer, full_path):
         elif action == 'information':
             table = CustomerInformation.objects.filter(Q(company=company))
             infoform = CustomerInfoForm()
-            context = {'aqs_version':aqs_version,'table':table, 'form': infoform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Information', 'action':'information'}
+            context = context | {'table':table, 'form': infoform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Information', 'action':'information'}
             # return render(request, 'crm/sub_update.html', context)
             return 'go', 'crm/sub_update.html', context
         elif action == 'update_information':
@@ -409,7 +503,7 @@ def subupdate(request, action, company, customer, full_path):
                 info.save()
                 messages.success(request, 'Update success' )
             table = CustomerInformation.objects.filter(Q(company=company))
-            context = {'aqs_version':aqs_version,'table':table, 'form': infoform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Information', 'action':'information'}
+            context = context | {'table':table, 'form': infoform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Information', 'action':'information'}
             # return render(request, 'crm/sub_update.html', context)
             return 'go', 'crm/sub_update.html', context
         elif action == 'new_information':
@@ -417,7 +511,7 @@ def subupdate(request, action, company, customer, full_path):
             infoform = CustomerInfoForm(request.POST)
 
             table = CustomerInformation.objects.filter(Q(company=company))
-            context = {'aqs_version':aqs_version,'table':table, 'form': infoform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Information', 'action':'information'}
+            context = context | {'table':table, 'form': infoform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Information', 'action':'information'}
             # return render(request, 'crm/sub_update.html', context, )
             return 'go', 'crm/sub_update.html', context
         elif action == 'del_information':
@@ -427,7 +521,7 @@ def subupdate(request, action, company, customer, full_path):
                 CustomerInformation.objects.get(pk=pk).delete()
 
             table = CustomerInformation.objects.filter(Q(company=company))
-            context = {'aqs_version':aqs_version,'table':table, 'form': infoform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Information', 'action':'information'}
+            context = context | {'table':table, 'form': infoform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Information', 'action':'information'}
             # return render(request, 'crm/sub_update.html', context, )
             return 'go', 'crm/sub_update.html', context
     # ---- Customer Information ---->
@@ -446,7 +540,8 @@ def CustomerDelView(request, pk):
         messages.success(request, 'Customer was successfully deleted!') 
         return redirect('crmcustomerlist')
     context = {'obj':customer, 'text':'Warning: This action will delete the Customer.'}
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/delete.html', context)
 
 @unauth_user
@@ -479,6 +574,8 @@ def QuotationView(request, pk=None):
     auth_receipts, \
     = auth_data(request.user)
 
+    # get full path with domain name
+    back_url = request.build_absolute_uri()
        
     if error == '':
         try:
@@ -513,9 +610,18 @@ def QuotationView(request, pk=None):
     if error != '':
         messages.error(request, error )
         return redirect('home')
+    
 
+    
     if request.method == 'POST':
         action = request.POST.get('action')
+        print ('action:', action)
+        
+        go, link, context = subupdate(request, action, company, quotation, back_url)
+        print (go, link, context)
+        if go == 'go':
+            return render(request, link, context)
+
         if action == 'update':
             form = QuotationUpdateForm(request.POST, instance=quotation, prefix='quotationform', company=company)
             if form.is_valid() == True:
@@ -539,13 +645,17 @@ def QuotationView(request, pk=None):
         if action == 'email':
             context = {'text1':'text1', 
                        'text2':'The quotation has been sent to the customer.',
-                        'text3': 'Quotation No : ' + quotation.number,
-                        'text4': 'Sent to : ' + quotation.customer_email,
-
+                       'text3': 'Quotation No : ' + quotation.number,
+                       'text4': 'Sent to : ' + quotation.customer_email,
                         }
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
             return render(request, 'crm/email_sent.html', context)
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -639,7 +749,8 @@ def QuotationDelView(request, pk):
         messages.success(request, 'Quotation was successfully deleted!') 
         return redirect('crmquotation')
     context = {'obj':obj, 'text':'Warning: This action will delete the Quotation.'}
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/delete.html', context)
 
 
@@ -847,9 +958,14 @@ def InvoiceView(request, pk=None):
                         'text3': 'Invoice No : ' + invoice.number,
                         'text4': 'Sent to : ' + invoice.customer_email,
                         }
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
             return render(request, 'crm/email_sent.html', context)
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -943,7 +1059,8 @@ def InvoiceDelView(request, pk):
         messages.success(request, 'Invoice was successfully deleted!') 
         return redirect('crminvoice')
     context = {'obj':obj, 'text':'Warning: This action will delete the Invoice.'}
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/delete.html', context)
 
 
@@ -1153,9 +1270,14 @@ def ReceiptView(request, pk=None):
                         'text3': 'Receipt No : ' + receipt.number,
                         'text4': 'Sent to : ' + receipt.customer_email,
                         }
+            logo, navbar_title = funDomain(request)
+            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
             return render(request, 'crm/email_sent.html', context)
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -1248,7 +1370,8 @@ def ReceiptDelView(request, pk):
         messages.success(request, 'Receipt was successfully deleted!') 
         return redirect('crmreceipt')
     context = {'obj':obj, 'text':'Warning: This action will delete the Receipt.'}
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
     return render(request, 'base/delete.html', context)
 
 
@@ -1469,8 +1592,11 @@ def MemberListView(request):
 
 
 
+    logo, navbar_title = funDomain(request)
     context = {
         'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 
@@ -1560,8 +1686,9 @@ def MemberUpdateView(request, pk):
     else:
         form = MemberUpdateForm(instance=member, prefix='memberform')
     context =  {'form':form, 'member':member, }
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                } | context 
     return render(request, 'crm/member_update.html', context)
@@ -1576,7 +1703,8 @@ def MemberDelView(request, pk):
         messages.success(request, 'Member was successfully deleted!') 
         return redirect('crmmember')
     context = {'obj':member, 'text':'Warning: This action will delete the Member.'}
-    context = {'aqs_version':aqs_version} | context 
+    logo, navbar_title = funDomain(request)
+    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
     return render(request, 'base/delete.html', context)
 
 
@@ -1646,10 +1774,11 @@ def MemberNewView(request, ccode):
     # get the url of 'bookingtimeslot'
     back_url = reverse('crmmember')
     context = {'form':form}
+    logo, navbar_title = funDomain(request)
     context = {
-                'aqs_version':aqs_version,
+                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-               } | context     
+               } | context
     context = {'title':'New Member', 'back_url':back_url, } | context 
     return render(request, 'base/new.html', context)
 

@@ -1,8 +1,7 @@
 from django.contrib import admin
-from django.db import models
-from django import forms
 from .models import TicketTemp, testingModel, testingModel2, Branch, CounterLoginLog, CounterStatus, DisplayAndVoice,  TicketFormat
 from .models import UserProfile, CounterType, Ticket, TicketLog, TicketRoute, TicketData, APILog, Setting, PrinterStatus, SystemLog, WebTouch, UserStatusLog, SubTicket
+from .models import Domain
 
 # Register your models here.
 
@@ -12,9 +11,14 @@ class testingView(admin.ModelAdmin):
 class testingView2(admin.ModelAdmin):
     model = testingModel2
     list_display =('total',)
+
+
+
     
-
-
+class DomainView(admin.ModelAdmin):
+    model = Domain
+    list_display =('name', 'logo', 'title', )
+    
 class SubTicketView(admin.ModelAdmin):
     model = SubTicket
     list_display =('branch', 'booking_tickettype', 'ticketnext')
@@ -155,3 +159,4 @@ admin.site.register(SystemLog, SystemLogView)
 admin.site.register(WebTouch, WebTouchView)
 admin.site.register(UserStatusLog, UserStatusLogView)
 admin.site.register(SubTicket, SubTicketView)
+admin.site.register(Domain, DomainView)

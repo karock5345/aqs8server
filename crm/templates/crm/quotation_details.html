@@ -26,13 +26,12 @@
                 <form class="form" action="" method="POST" prefix="quotationform">
                     
                     {% csrf_token %}
-                    
                     {% for field in form  %}
                             {% if field.field.widget.input_type == 'checkbox' %}
                                 <div class="form__group_checkbox">
                                     <label class="profile_pic" id="{{ field.name }}"> <p class="label__name">{{field}} {{field.label}}</p></label><br>
                                 </div>
-                            {% elif field.name == 'group' or field.name == 'source' or field.name == 'information' %}
+                            {% elif field.name == 'businesstype' or field.name == 'businesssource'  %}
                                 <div class="form__group">
                                     <label class="profile_pic">
                                         <p class="label__name">
@@ -40,14 +39,14 @@
                                         </p>
                                         <div class="select_area">
                                             {{field}}
-                    
+
                                             <button class="btn btn--main" type="submit" name="action" value="{{ field.name }}">Manage</button>
                                         </div>
                                         <p class="help__text" >
                                             {{field.help_text}}
                                         </p>
                                     </label>
-                                </div>            
+                                </div>
 
                             {% else %}
 
@@ -66,6 +65,7 @@
                                 </div>
                             {% endif %}
                     {% endfor %}
+
 
                     <div>
                         <button type="submit" name="action" value="additem" class="btn btn--main" >Add item</button>
