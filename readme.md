@@ -772,7 +772,8 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 RVD superuser : supertim5345 /// viWu@h0spewon7c@9spI
-supertim /// YtZqEIpk5345
+supertim /// ylthECLde5iflsplThAy
+tim /// YtZqEIpk5345
 
 Test the Postgres DB:
 ```bash
