@@ -8,7 +8,7 @@ from base.decorators import allowed_users
 from base.models import Branch, APILog, UserProfile
 from datetime import datetime, timedelta, timezone
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi_notoken, funUTCtoLocal, counteractive, checkuser
-from base.views import auth_data, funDomain
+from base.views import auth_data, funDomain, getcontext, getcontext_en, getcontext_mini
 from django.http import JsonResponse
 from django.contrib import messages
 from base.decorators import *
@@ -103,26 +103,7 @@ def CustomerListView(request):
     elif q_sort == 'sales':
         result = result.order_by(direct + 'sales')
 
-    logo, navbar_title = funDomain(request)
-    context = {
-        'app_name':APP_NAME,
-        'logo':logo,
-        'navbar_title':navbar_title,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        'receipts':auth_receipts,
-        }
+    context = getcontext(request, request.user)
     context = context | {'q':q}
     context = context | {'result':result}
     context = context | {'company':userp.company}
@@ -191,11 +172,8 @@ def CustomerUpdateView(request, pk):
     else:
         form = CustomerUpdateForm(instance=customer, prefix='customerform', company=customer.company)
     context =  {'form':form, 'customer':customer, }
-    logo, navbar_title = funDomain(request)
-    context = {
-                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
-                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-               } | context 
+    context_en = getcontext_en(request)
+    context = context_en | context
     return render(request, 'crm/customer_update.html', context)
 
 
@@ -300,18 +278,15 @@ def CustomerNewView(request, ccode):
 
     # get the url of 'bookingtimeslot'
     context = {'form':form}
-    logo, navbar_title = funDomain(request)
-    context = {
-                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
-                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-               } | context     
+    context_en = getcontext_en(request)
+    context = context_en | context    
     context = {'title':'New Customer', 'back_url':back_url, } | context 
     return render(request, 'base/new.html', context)
 
 def subupdate(request, action, company, customer, full_path):
         context = {}
-        logo, navbar_title = funDomain(request)
-        context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+        context_mini = getcontext_mini(request)
+        context = context_mini | context 
     # <---- business type ----
         if action == 'businesstype':
             table = BusinessType.objects.filter(Q(company=company))
@@ -540,8 +515,8 @@ def CustomerDelView(request, pk):
         messages.success(request, 'Customer was successfully deleted!') 
         return redirect('crmcustomerlist')
     context = {'obj':customer, 'text':'Warning: This action will delete the Customer.'}
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/delete.html', context)
 
 @unauth_user
@@ -648,29 +623,10 @@ def QuotationView(request, pk=None):
                        'text3': 'Quotation No : ' + quotation.number,
                        'text4': 'Sent to : ' + quotation.customer_email,
                         }
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+            context_mini = getcontext_mini(request)
+            context = context_mini | context 
             return render(request, 'crm/email_sent.html', context)
-    logo, navbar_title = funDomain(request)
-    context = {
-        'app_name':APP_NAME,
-        'logo':logo,
-        'navbar_title':navbar_title,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        'receipts':auth_receipts,
-        }
+    context = getcontext(request, request.user)
     context = {
                 'aqs_version':aqs_version,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
@@ -749,8 +705,8 @@ def QuotationDelView(request, pk):
         messages.success(request, 'Quotation was successfully deleted!') 
         return redirect('crmquotation')
     context = {'obj':obj, 'text':'Warning: This action will delete the Quotation.'}
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/delete.html', context)
 
 
@@ -958,29 +914,10 @@ def InvoiceView(request, pk=None):
                         'text3': 'Invoice No : ' + invoice.number,
                         'text4': 'Sent to : ' + invoice.customer_email,
                         }
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+            context_mini = getcontext_mini(request)
+            context = context_mini | context 
             return render(request, 'crm/email_sent.html', context)
-    logo, navbar_title = funDomain(request)
-    context = {
-        'app_name':APP_NAME,
-        'logo':logo,
-        'navbar_title':navbar_title,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        'receipts':auth_receipts,
-        }
+    context = getcontext(request, request.user)
     context = {
                 'aqs_version':aqs_version,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
@@ -1059,8 +996,8 @@ def InvoiceDelView(request, pk):
         messages.success(request, 'Invoice was successfully deleted!') 
         return redirect('crminvoice')
     context = {'obj':obj, 'text':'Warning: This action will delete the Invoice.'}
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/delete.html', context)
 
 
@@ -1270,29 +1207,10 @@ def ReceiptView(request, pk=None):
                         'text3': 'Receipt No : ' + receipt.number,
                         'text4': 'Sent to : ' + receipt.customer_email,
                         }
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+            context_mini = getcontext_mini(request)
+            context = context_mini | context 
             return render(request, 'crm/email_sent.html', context)
-    logo, navbar_title = funDomain(request)
-    context = {
-        'app_name':APP_NAME,
-        'logo':logo,
-        'navbar_title':navbar_title,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        'receipts':auth_receipts,
-        }
+    context = getcontext(request, request.user)
     context = {
                 'aqs_version':aqs_version,
                 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
@@ -1370,8 +1288,9 @@ def ReceiptDelView(request, pk):
         messages.success(request, 'Receipt was successfully deleted!') 
         return redirect('crmreceipt')
     context = {'obj':obj, 'text':'Warning: This action will delete the Receipt.'}
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/delete.html', context)
 
 
@@ -1592,26 +1511,7 @@ def MemberListView(request):
 
 
 
-    logo, navbar_title = funDomain(request)
-    context = {
-        'app_name':APP_NAME,
-        'logo':logo,
-        'navbar_title':navbar_title,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        'receipts':auth_receipts,
-        }
+    context = getcontext(request, request.user)
 
     # context = {'users':auth_userlist, 
     #            'users_active':auth_userlist_active, 
@@ -1686,11 +1586,8 @@ def MemberUpdateView(request, pk):
     else:
         form = MemberUpdateForm(instance=member, prefix='memberform')
     context =  {'form':form, 'member':member, }
-    logo, navbar_title = funDomain(request)
-    context = {
-                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
-                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-               } | context 
+    context_en = getcontext_en(request)
+    context = context_en | context
     return render(request, 'crm/member_update.html', context)
 
 @unauth_user
@@ -1703,8 +1600,8 @@ def MemberDelView(request, pk):
         messages.success(request, 'Member was successfully deleted!') 
         return redirect('crmmember')
     context = {'obj':member, 'text':'Warning: This action will delete the Member.'}
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/delete.html', context)
 
 
@@ -1774,11 +1671,8 @@ def MemberNewView(request, ccode):
     # get the url of 'bookingtimeslot'
     back_url = reverse('crmmember')
     context = {'form':form}
-    logo, navbar_title = funDomain(request)
-    context = {
-                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
-                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-               } | context
+    context_en = getcontext_en(request)
+    context = context_en | context
     context = {'title':'New Member', 'back_url':back_url, } | context 
     return render(request, 'base/new.html', context)
 

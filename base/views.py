@@ -55,13 +55,16 @@ def funDomain(request):
     domain = None
     logo = 'images/logo-q.svg'
     title = 'Auto Queuing System - TSVD'
+    css = 'styles/style.css'
     try:
         domain = Domain.objects.filter(name=domainname)[0]
         logo = domain.logo
         title = domain.title
+        css = domain.css
     except:
         pass
-    return logo, title
+
+    return logo, title, css
 
 def adminlockedView(request,):
     return render(request, 'base/admin_locked.html')
@@ -244,47 +247,7 @@ def SoftkeyView(request, pk):
     str_now = '--:--'
     datetime_now =datetime.now(timezone.utc)
 
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    = auth_data(request.user)
-
-    logo, navbar_title = funDomain(request)
-    context = {
-        'app_name':APP_NAME,
-        'logo':logo,
-        'navbar_title':navbar_title,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        'receipts':auth_receipts,
-        }
+    context = getcontext(request, request.user)
 
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
@@ -511,27 +474,6 @@ def SoftkeyLoginBranchView(request):
     error = ''
     context = {}
 
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    = auth_data(request.user)
-
     user = request.user
     # get user auth branchs
     userpobj = UserProfile.objects.filter(user=user)
@@ -549,28 +491,8 @@ def SoftkeyLoginBranchView(request):
                 cs = CounterStatus.objects.filter(Q(countertype=ct)).order_by('countertype', 'counternumber',).exclude(enabled=False)
                 counterstatus.append(cs)
 
-        logo, navbar_title = funDomain(request)
-        context = {
-            'app_name':APP_NAME,
-            'logo':logo,
-            'navbar_title':navbar_title,
-            'aqs_version':aqs_version, 
-            'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-            'users':auth_userlist, 
-            'branchs':auth_branchs, 
-            'ticketformats':auth_ticketformats, 
-            'routes':auth_routes, 
-            'timeslots':auth_timeslots, 
-            'bookings':auth_bookings,
-            'temps':auth_timeslottemplist,
-            'members':auth_memberlist,
-            'customers':auth_customerlist,
-            'quotations':auth_quotations,
-            'invoices':auth_invoices,
-            'receipts':auth_receipts,
-            }
+        context = getcontext(request, request.user)
         context = context | {'counterstatus':counterstatus}
-
 
         return render(request, 'base/softkey_lobby_branch.html', context)
     else :
@@ -580,27 +502,6 @@ def SoftkeyLoginBranchView(request):
 def SoftkeyLoginView(request, pk):
     error = ''
     context = {}
-
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    = auth_data(request.user)
 
     branch = Branch.objects.get(id=pk)
 
@@ -633,26 +534,7 @@ def SoftkeyLoginView(request, pk):
             .extra(select={'casted_object_id': 'CAST(counternumber AS INTEGER)'}).extra(order_by = ['casted_object_id'])
             counterstatus.append(cs)
 
-        logo, navbar_title = funDomain(request)
-        context = {
-            'app_name':APP_NAME,
-            'logo':logo,
-            'navbar_title':navbar_title,
-            'aqs_version':aqs_version, 
-            'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-            'users':auth_userlist, 
-            'branchs':auth_branchs, 
-            'ticketformats':auth_ticketformats, 
-            'routes':auth_routes, 
-            'timeslots':auth_timeslots, 
-            'bookings':auth_bookings,
-            'temps':auth_timeslottemplist,
-            'members':auth_memberlist,
-            'customers':auth_customerlist,
-            'quotations':auth_quotations,
-            'invoices':auth_invoices,
-            'receipts':auth_receipts,
-        }
+        context = getcontext(request, request.user)
         context = context | {'counterstatus':counterstatus}
 
         return render(request, 'base/softkey_lobby.html', context)
@@ -665,31 +547,32 @@ def SoftkeyLogoutView(request, pk):
     context = {}
     datetime_now =datetime.now(timezone.utc)
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    = auth_data(request.user)
+    # auth_en_queue, \
+    # auth_en_crm, \
+    # auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # = auth_data(request.user)
 
-    context = {
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
-        }
+    # context = {
+    #     'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
+    #     }
+    # context_en = getcontext_en(request)
+    # context = context | context_en
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
     except:
@@ -740,10 +623,10 @@ def SoftkeyCallView(request, pk):
     = auth_data(request.user)    
 
     context = {
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
         }
+    context_en = getcontext_en(request)
+    context = context | context_en
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
     except:
@@ -789,32 +672,32 @@ def SoftkeyProcessView(request, pk):
     context = {}
     datetime_now =datetime.now(timezone.utc)
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    = auth_data(request.user)
+    # auth_en_queue, \
+    # auth_en_crm, \
+    # auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # = auth_data(request.user)
     
-    context = {
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
-        }
+    # context = {       
+    #     'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
+    #     }
+    # context_en = getcontext_en(request)
+    # context = context | context_en    
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
     except:
@@ -841,32 +724,32 @@ def SoftkeyMissView(request, pk):
     context = {}
     datetime_now =datetime.now(timezone.utc)
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    = auth_data(request.user)
+    # auth_en_queue, \
+    # auth_en_crm, \
+    # auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # = auth_data(request.user)
 
-    context = {
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
-        }
+    # context = {
+    #     'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
+    #     }
+    # context_en = getcontext_en(request)
+    # context = context | context_en    
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
     except:
@@ -892,32 +775,32 @@ def SoftkeyRecallView(request, pk):
     context = {}
     datetime_now =datetime.now(timezone.utc)
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    = auth_data(request.user)
+    # auth_en_queue, \
+    # auth_en_crm, \
+    # auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # = auth_data(request.user)
 
-    context = {
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
-        }
+    # context = {
+    #     'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
+    #     }
+    # context_en = getcontext_en(request)
+    # context = context | context_en    
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
     except:
@@ -945,32 +828,32 @@ def SoftkeyDoneView(request, pk):
     context = {}
     datetime_now =datetime.now(timezone.utc)
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    = auth_data(request.user)
+    # auth_en_queue, \
+    # auth_en_crm, \
+    # auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # = auth_data(request.user)
 
-    context = {
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
-        }
+    # context = {
+    #     'aqs_version':aqs_version, 
+    #     'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+    #     'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
+    #     }
     try:
         counterstatus = CounterStatus.objects.get(id=pk)
     except:
@@ -1054,8 +937,9 @@ def repair(request):
             'errormsg':error,
             }
         messages.error(request, error)
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request , 'base/repair.html', context)
 
 def webmyticket(request, bcode, ttype, tno, sc):
@@ -1462,8 +1346,9 @@ def webmyticket_old_school(request):
             'errormsg':error,
             }
         messages.error(request, error)
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
+
     return render(request , 'base/webmyticketold2.html', context)
 
 
@@ -1534,8 +1419,8 @@ def webtv_old_school(request):
         'errormsg' : error,
         }
         messages.error(request, error)
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request , 'base/webtvold3.html', context)
 
 
@@ -1673,8 +1558,9 @@ def Report_Ticket_details_Result(request, pk):
             context = context | {'app_name':APP_NAME}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/in_progress.html', context)
         else :
             # long process is done output result to HTML
@@ -1722,8 +1608,9 @@ def Report_Ticket_details_Result(request, pk):
                 'header':header,
                 'table':table100,        
                 }
-                logo, navbar_title = funDomain(request)
-                context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+
+                context_mini = getcontext_mini(request)
+                context = context_mini | context
             elif request.method == 'POST':
                 action = request.POST.get('action')
                 if action == 'excel':
@@ -1844,8 +1731,8 @@ def Report_NoOfQueue_Result(request):
             context = context | {'app_name':APP_NAME}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/in_progress.html', context)
         else:
             messages.error(request, error)
@@ -1880,8 +1767,8 @@ def Report_NoOfQueue_Result(request):
             'header':header,
             'table':table100,        
             }
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/r-result.html', context)
         elif request.method == 'POST':
             action = request.POST.get('action')
@@ -1985,8 +1872,8 @@ def Report_QSum(request):
             context = context | {'app_name':APP_NAME}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/in_progress.html', context)
         else:
             messages.error(request, error)
@@ -2021,8 +1908,8 @@ def Report_QSum(request):
             'header':header,
             'table':table100,        
             }
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/r-result.html', context)
         elif request.method == 'POST':
             action = request.POST.get('action')
@@ -2131,8 +2018,8 @@ def Report_RAW_Result2(request):
             context = context | {'app_name':APP_NAME}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/in_progress.html', context)
         else:
             messages.error(request, error)
@@ -2167,8 +2054,8 @@ def Report_RAW_Result2(request):
             'header':header,
             'table':table100,        
             }
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/r-result_raw.html', context)
         elif request.method == 'POST':  
             action = request.POST.get('action')
@@ -2333,8 +2220,8 @@ def Report_RAW_Result(request):
                 context = context | {'app_name':APP_NAME}
                 context = context | {'wsh' : wsHypertext}
                 context = context | {'url_download': url_download}
-                logo, navbar_title = funDomain(request)
-                context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+                context_mini = getcontext_mini(request)
+                context = context_mini | context
                 return render(request, 'base/in_progress.html', context)
 
 
@@ -2403,8 +2290,8 @@ def Report_RAW_Result(request):
         'result':error,
         }
         return redirect('reports')
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/r-raw.html', context)
 
 @unauth_user
@@ -2503,8 +2390,8 @@ def Report_Ticket_Result(request):
             context = {'task_id': ptask_id}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/in_progress.html', context)
         else :
             # long process is done output result to HTML
@@ -2528,8 +2415,8 @@ def Report_Ticket_Result(request):
                 'result':report_result,
                 'table':report_table,        
                 }
-                logo, navbar_title = funDomain(request)
-                context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+                context_mini = getcontext_mini(request)
+                context = context_mini | context
                 return render(request, 'base/r-ticket.html', context)
             elif request.method == 'POST':
                 # Export and download excel file
@@ -2568,8 +2455,8 @@ def Report_Ticket_Result(request):
         'result':error,
         }
         return redirect('reports')
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/r-ticket.html', context)
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
@@ -2679,8 +2566,8 @@ def Report_Staff_Result(request):
             context = {'task_id': ptask_id}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/in_progress.html', context)
         else :
             # long process is done output result to HTML
@@ -2704,8 +2591,8 @@ def Report_Staff_Result(request):
                 'result':report_result,
                 'table':report_table,        
                 }
-                logo, navbar_title = funDomain(request)
-                context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+                context_mini = getcontext_mini(request)
+                context = context_mini | context
                 return render(request, 'base/r-staff.html', context)
 
             elif request.method == 'POST':
@@ -2881,8 +2768,8 @@ def Report_Staff_Result(request):
         'result':error,
         }
         return redirect('reports')
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/r-staff.html', context)
 
 @unauth_user
@@ -2963,8 +2850,8 @@ def Report_StaffPerformance(request):
             context = context | {'app_name':APP_NAME}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/in_progress.html', context)
         else:
             messages.error(request, error)
@@ -2999,8 +2886,8 @@ def Report_StaffPerformance(request):
             'header':header,
             'table':table100,        
             }
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/r-result.html', context)
         elif request.method == 'POST':
             action = request.POST.get('action')
@@ -3102,8 +2989,8 @@ def Report_TicketType(request):
             context = context | {'app_name':APP_NAME}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/in_progress.html', context)
         else:
             messages.error(request, error)
@@ -3138,8 +3025,8 @@ def Report_TicketType(request):
             'header':header,
             'table':table100,        
             }
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/r-result.html', context)
         elif request.method == 'POST':
             action = request.POST.get('action')
@@ -3238,8 +3125,8 @@ def Report_TicketTypeDay(request):
             context = context | {'app_name':APP_NAME}
             context = context | {'wsh' : wsHypertext}
             context = context | {'url_download': url_download}
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/in_progress.html', context)
         else:
             messages.error(request, error)
@@ -3274,8 +3161,8 @@ def Report_TicketTypeDay(request):
             'header':header,
             'table':table100,        
             }
-            logo, navbar_title = funDomain(request)
-            context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context
+            context_mini = getcontext_mini(request)
+            context = context_mini | context
             return render(request, 'base/r-result.html', context)
         elif request.method == 'POST':
             action = request.POST.get('action')
@@ -3343,27 +3230,9 @@ def Reports(request):
     now_l = datetime.now()
     snow_l = now_l.strftime('%Y-%m-%d')
     # print(now_l)
-    logo, navbar_title = funDomain(request)
-    context = {
-        'app_name':APP_NAME,
-        'logo':logo,
-        'navbar_title':navbar_title,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        'receipts':auth_receipts,
-        }
-    context = context | {'now':snow_l}
+
+    context = getcontext(request, request.user)
+    context = context | {'now':snow_l, 'tickettypes':ttdict, 'countertypes':auth_countertype}
 
     return render(request, 'base/r-main_standard.html', context)
 
@@ -3409,8 +3278,8 @@ def SuperVisorView(request, pk):
     'misslist':misslist,
     'printerstatuslist':printerstatuslist,
     }
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/supervisor.html', context)
 
 
@@ -3418,26 +3287,7 @@ def SuperVisorView(request, pk):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def SuperVisorListView(request):  
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    = auth_data(request.user)
+
 
  
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
@@ -3449,26 +3299,7 @@ def SuperVisorListView(request):
     # profiles = UserProfile.objects.filter(Q(user=users.user))
     #profiles = users.userprofile_set.all()
     
-    logo, navbar_title = funDomain(request)
-    context = {
-        'app_name':APP_NAME,
-        'logo':logo,
-        'navbar_title':navbar_title,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        'receipts':auth_receipts,
-        }
+    context = getcontext(request, request.user)
     return render(request, 'base/supervisors.html', context)
 
 @unauth_user
@@ -3496,8 +3327,8 @@ def TicketRouteNewView(request):
             messages.error(request, error)
     context = {'form':form}
 
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/routenew.html', context)
 
 @unauth_user
@@ -3512,8 +3343,8 @@ def TicketRouteDelView(request, pk):
         return redirect('routesummary')
     context = {'obj':route}
 
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/delete.html', context)
 
 @unauth_user
@@ -3560,10 +3391,10 @@ def TicketRouteUpdateView(request, pk):
         trform = trForm(instance=route, prefix='trform', auth_branchs=auth_branchs)
        
     context =  {'route':route, 'trform':trform }
-    context = {
-        'aqs_version':aqs_version,
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        } | context 
+
+    context_en = getcontext_en(request)
+    context = context_en | context
+
     return render(request, 'base/route-update.html', context)
 
 
@@ -3571,26 +3402,7 @@ def TicketRouteUpdateView(request, pk):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketRouteSummaryView(request):  
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    = auth_data(request.user)
+
 
  
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
@@ -3598,26 +3410,7 @@ def TicketRouteSummaryView(request):
     # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
     # routes = TicketRoute.objects.all().order_by('branch','tickettype','step')
 
-    logo, navbar_title = funDomain(request)
-    context = {
-        'app_name':APP_NAME,
-        'logo':logo,
-        'navbar_title':navbar_title,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        'receipts':auth_receipts,
-        }
+    context = getcontext(request, request.user)
     return render(request, 'base/routes.html', context)
 
 @unauth_user
@@ -3678,10 +3471,8 @@ def TicketFormatNewView(request):
         if error != '':
             messages.error(request, error)
     context = {'form':form}
-    context = {
-        'aqs_version':aqs_version,
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        } | context 
+    context_en = getcontext_en(request)
+    context = context_en | context
     return render(request, 'base/tfnew.html', context)
 
 @unauth_user
@@ -3695,8 +3486,8 @@ def TicketFormatDelView(request, pk):
         messages.success(request, 'Ticket Format was successfully deleted!') 
         return redirect('tfsummary')
     context = {'obj':ticketformat}
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/delete.html', context)
 
 @unauth_user
@@ -3742,62 +3533,22 @@ def TicketFormatUpdateView(request, pk):
     else:
         tfform = TicketFormatForm(instance=ticketformat, prefix='tfform', auth_branchs=auth_branchs)
     context =  {'tfform':tfform, 'ticketformat':ticketformat, }
-    context = {
-        'aqs_version':aqs_version,
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        } | context 
+    context_en = getcontext_en(request)
+    context = context_en | context
     return render(request, 'base/tf-update.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketFormatSummaryView(request):
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    = auth_data(request.user)
+
 
   
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
     # branchs = Branch.objects.all()
     # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
     # routes = TicketRoute.objects.all()
-    logo, navbar_title = funDomain(request)
-    context = {
-        'app_name':APP_NAME,
-        'logo':logo,
-        'navbar_title':navbar_title,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        'receipts':auth_receipts,
-        }
+    context = getcontext(request, request.user)
     return render(request, 'base/tfs.html', context)
 
 @unauth_user
@@ -4162,14 +3913,9 @@ def SettingsUpdateView(request, pk):
                'branchname':branchname , 'countertypes':countertypes, 
                'branchsettingsform':branchsettingsform, 
                'subend':subend , 'subscribe':subscribe}
-    logo, navbar_title = funDomain(request)
-    # context = {
-    #         'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
-    #         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-    #         } | context     
-    context = {
-            'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
-            } | context 
+
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/settings-update.html', context)
 
 @unauth_user
@@ -4184,49 +3930,11 @@ def SettingsSummaryView(request):
     # profiles = UserProfile.objects.filter(Q(user=users.user))
     #profiles = users.userprofile_set.all()
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    = auth_data(request.user)
 
 
 
-    logo, navbar_title = funDomain(request)
-    context = {
-        'app_name':APP_NAME,
-        'logo':logo,
-        'navbar_title':navbar_title,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        'receipts':auth_receipts,
-        }
+
+    context = getcontext(request, request.user)
     return render(request, 'base/settings.html', context)
 
 @unauth_user
@@ -4252,26 +3960,7 @@ def homeView(request):
     auth_receipts, \
     = auth_data(request.user)
 
-    logo, navbar_title = funDomain(request)
-    context = {
-        'app_name':APP_NAME,
-        'logo':logo,
-        'navbar_title':navbar_title,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        'receipts':auth_receipts,
-        }
+    context = getcontext(request, request.user)
 
     context = context |{'users_active':auth_userlist_active, }
     return render(request, 'base/home.html', context)
@@ -4302,26 +3991,7 @@ def UserSummaryView(request):
     = auth_data(request.user)
 
  
-    logo, navbar_title = funDomain(request)
-    context = {
-        'app_name':APP_NAME,
-        'logo':logo,
-        'navbar_title':navbar_title,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        'receipts':auth_receipts,
-        }
+    context = getcontext(request, request.user)
     context = context | {'users_active':auth_userlist_active}
     context = context | {'profiles':auth_profilelist}
     context = context | {'auth_grouplist':auth_grouplist}
@@ -4437,26 +4107,7 @@ def UserSummaryListView(request):
         result_userlist = result_userlist.order_by(direct + 'userprofile__mobilephone')
 
 
-    logo, navbar_title = funDomain(request)
-    context = {
-        'app_name':APP_NAME,
-        'logo':logo,
-        'navbar_title':navbar_title,
-        'aqs_version':aqs_version, 
-        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
-        'branchs':auth_branchs, 
-        'ticketformats':auth_ticketformats, 
-        'routes':auth_routes, 
-        'timeslots':auth_timeslots, 
-        'bookings':auth_bookings,
-        'temps':auth_timeslottemplist,
-        'members':auth_memberlist,
-        'customers':auth_customerlist,
-        'quotations':auth_quotations,
-        'invoices':auth_invoices,
-        'receipts':auth_receipts,
-        }
+    context = getcontext(request, request.user)
 
     # context = {'users':auth_userlist, 
     #            'users_active':auth_userlist_active, 
@@ -4488,6 +4139,7 @@ def UserLogoutView(request):
 
 @unauth_user_login
 def UserLoginView(request):
+    context = {}
     page = 'login'
     if request.user.is_authenticated:
         return redirect('home')
@@ -4522,8 +4174,8 @@ def UserLoginView(request):
             captchaform = CaptchaForm()
         pass
 
-    logo, navbar_title = funDomain(request)
-    context = {'logo':logo, 'navbar_title' : navbar_title, 'aqs_version':aqs_version}
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
 
     context = context | {'page':page} 
     if RECAPTCHA_ENABLED == True :
@@ -4687,11 +4339,8 @@ def UserUpdateView(request, pk):
             messages.error(request, error)
 
     context =  {'userform':userform , 'profileform':profileform, 'user':user, 'userp':userp,'ticketformat':ticketformat2,'userptt':listusertt, }
-    logo, navbar_title = funDomain(request)
-    context = {
-                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
-                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-               } | context 
+    context_en = getcontext_en(request)
+    context = context_en | context
     return render(request, 'base/user-update.html', context)
 
 @unauth_user
@@ -4718,8 +4367,8 @@ def UserUpdateTTView(request, pk):
         tt.save()
     ticketformat2 = ticketformat2.order_by('ttype')
     context =  {'userp':userp, 'ticketformat':ticketformat2, }
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/user-update-tickettype.html', context)
 
 @unauth_user
@@ -4750,8 +4399,8 @@ def UserNewView(request):
                     messages.error(request, item)
             
     context = {'form':form}
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/usernew.html', context)
 
 @unauth_user
@@ -4955,8 +4604,8 @@ def UserChangePWView(request):
     else:
         form = PasswordChangeForm(request.user)
     context = {'form': form}
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context 
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
     return render(request, 'base/changepassword.html', context)
 
 @unauth_user
@@ -4976,8 +4625,8 @@ def UserDelView(request, pk):
         messages.success(request, 'User successfully deleted.')
         return redirect('usersummary')
     context = {'obj':user}
-    logo, navbar_title = funDomain(request)
-    context = {'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title} | context  
+    context_mini = getcontext_mini(request)
+    context = context_mini | context 
     return render(request, 'base/delete.html', context)
 
 @unauth_user
@@ -5033,11 +4682,8 @@ def UserResetView(request, pk):
         messages.success(request, 'Reset password successfully.')
         return redirect('usersummary')
     context = {'obj':user}
-    logo, navbar_title = funDomain(request)
-    context = {
-                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
-                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-               } | context 
+    context_en = getcontext_en(request)
+    context = context_en | context
     return render(request, 'base/reset.html', context)
 
 
@@ -5067,11 +4713,8 @@ def MenuView(request):
 
         
     context =  {'users':auth_userlist , 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings, 'temp':auth_timeslottemplist}
-    logo, navbar_title = funDomain(request)
-    context = {
-                'aqs_version':aqs_version, 'logo':logo, 'navbar_title':navbar_title,
-                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-               } | context 
+    context_en = getcontext_en(request)
+    context = context_en | context
     return render(request, 'base/m-menu.html', context)
 
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
@@ -5319,6 +4962,104 @@ def auth_data(user):
             auth_receipts,
             )
 
+def getcontext(request, user, context=None):
+    if context == None :
+        context = {}
+
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    auth_memberlist, \
+    auth_customerlist, \
+    auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
+    = auth_data(user)
+
+    logo, navbar_title, css = funDomain(request)
+    context = context | {
+        'app_name':APP_NAME,
+        'logo':logo,
+        'navbar_title':navbar_title,
+        'css':css,
+        'aqs_version':aqs_version, 
+        'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+        'users':auth_userlist, 
+        'branchs':auth_branchs, 
+        'ticketformats':auth_ticketformats, 
+        'routes':auth_routes, 
+        'timeslots':auth_timeslots, 
+        'bookings':auth_bookings,
+        'temps':auth_timeslottemplist,
+        'members':auth_memberlist,
+        'customers':auth_customerlist,
+        'quotations':auth_quotations,
+        'invoices':auth_invoices,
+        'receipts':auth_receipts,
+        }    
+
+    return context
+
+
+def getcontext_mini(request):
+    logo, navbar_title, css = funDomain(request)
+
+    context = {
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version,
+        'logo':logo,
+        'navbar_title':navbar_title,
+        'css':css,        
+    }
+
+    return context
+
+def getcontext_en(request):
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    auth_memberlist, \
+    auth_customerlist, \
+    auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
+    = auth_data(request.user)
+
+    logo, navbar_title, css = funDomain(request)
+
+    context = {
+        'app_name':APP_NAME,
+        'aqs_version':aqs_version,
+        'logo':logo,
+        'navbar_title':navbar_title,
+        'css':css,        
+        'en_queue':auth_en_queue, 
+        'en_crm':auth_en_crm, 
+        'en_booking':auth_en_booking,
+        }
+    return context
 
 def checkticketrouteform(form):
     error = ''

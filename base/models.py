@@ -33,7 +33,8 @@ class Domain(models.Model):
     name = models.CharField(max_length=200, unique=True, null=False, blank=False)
     logo = models.CharField(max_length=200, null=False, blank=False, default='images/logo-q.svg')
     title = models.CharField(max_length=200, null=False, blank=False, default='Auto Queuing System - TSVD')
-
+    css = models.CharField(max_length=200, null=False, blank=False, default='styles/style.css')
+    
 class Branch(models.Model):
     BYTIME = 'time'
     BYTICKETTIME = 'tickettime'
