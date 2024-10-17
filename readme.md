@@ -13,7 +13,7 @@
   - base/a_global.py
   - base/apps.py
   - base/sch/views.py
-- New function : Different Logo and Title for each domain  
+- New function : Different Logo and Title and CSS for each domain
 
 <h3 style="color:orange;">Version 8.3.5</h3>
 
