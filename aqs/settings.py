@@ -178,8 +178,8 @@ CHANNEL_LAYERS = {
         'BACKEND':'channels_redis.core.RedisChannelLayer',
         # 'BACKEND':'channels_redis.pubsub.RedisPubSubChannelLayer',
         'CONFIG': {
-            # 'hosts':[('127.0.0.1', '6379')],
-            'hosts':[('192.168.85.128', '6379')],    # vm
+            'hosts':[('127.0.0.1', '6379')],
+            # 'hosts':[('192.168.1.4', '6379')],    # vm
         # "channel_capacity": {
         #         "http.request": 200,
         #         "http.response!*": 10,
