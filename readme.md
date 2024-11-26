@@ -125,6 +125,9 @@ chmod +x /home/ubuntu/autorun.sh
 - New TV layout like Mc Donalds
 - New Kiosk layout (Touch_vert and VGA_vert)
 
+### <span style="color:orange;">**Version 8.0.4**</span>
+- Add new WS for testing (ws://ip/ws/test/) send {"data":1} to {"data":100} for Softkey v8.0.3.0 (apps.py consumers.py routing.py ws.py jobs.py urls.py views.py nargbar.html)
+
 # Development env setup
 ### <span style="color:orange;">**Setup python: :**</span>
 install python for all users

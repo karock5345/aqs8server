@@ -7,6 +7,33 @@ from .views import  funUTCtoLocal
 from .models import Branch, CounterType, TicketTemp, CounterStatus
 from asgiref.sync import sync_to_async
 
+class TestConsumer(AsyncWebsocketConsumer):
+    # ws://127.0.0.1:8000/ws/test/
+    async def connect(self):
+
+                
+        self.room_group_name = 'test'
+        print('connecting:' + self.room_group_name )
+       
+        await self.channel_layer.group_add(
+            self.room_group_name,
+            self.channel_name
+        )
+        await self.accept()
+    
+
+    # Receive message from room group
+    async def broadcast_message(self, event):
+        str_tx = event['tx']
+
+        # Send message to WebSocket
+        await self.send(text_data=str_tx)
+
+    async def disconnect(self, close_code):
+        # Leave room group
+        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
+
+
 class CounterStatusConsumer(AsyncWebsocketConsumer):
     # ws://127.0.0.1:8000/ws/cs/1/
     async def connect(self):

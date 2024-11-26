@@ -15,6 +15,43 @@ import asyncio
 wsHypertext = 'ws://'
 
 
+def wssendtest(input:int):
+    # {"data":1}
+    
+    context = None
+    error = ''
+
+    json_tx = {       
+        'data': input
+            }
+
+
+    # check the connection at least 1
+    channel_layer = get_channel_layer()
+    if channel_layer is None:
+        error = 'Channel Layer is not available.'
+
+    if error == '' :
+        str_tx = json.dumps(json_tx)
+
+        context = {
+        'type':'broadcast_message',
+        'tx': str_tx,
+        }
+            
+        channel_layer = get_channel_layer()
+        channel_group_name = 'test'
+        # print('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        try:
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            # print('...Done')
+        except Exception as e:
+            print('...Error:'),
+            print(e)
+
+    if error != '':
+        print ('WS send test Error:' & error)
+
 def wssendwebtvwait(bcode, countertypename):
     context = None
     error = ''

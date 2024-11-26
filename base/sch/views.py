@@ -9,6 +9,7 @@ from django.utils import timezone
 from apscheduler.schedulers.background import BackgroundScheduler
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, funLocaltoUTC, funLocaltoUTCtime, funUTCtoLocaltime
 from base.ws import wssendwebtv
+import time
 
 datetime_now =timezone.now()
 system_inited = False
@@ -220,10 +221,10 @@ def job_shutdown(branch):
 
 def job(text,text2):    
     now = timezone.now()
-    now_l = funUTCtoLocal(now, 8)
-    snow = now_l.strftime("%m/%d/%Y, %H:%M:%S")
+    # now_l = funUTCtoLocal(now, 8)
+    # snow = now_l.strftime("%m/%d/%Y, %H:%M:%S")
     snow2 = now.strftime("%m/%d/%Y, %H:%M:%S")
-    text_out = '   -SCH- Now:' + snow2 + ' Local time:' +  snow + ' Testing job - ' + text + text2 + '-SCH-'
+    text_out = '   -SCH- Now:' + snow2 + ' UTC time:' +  snow + ' Testing job - ' + text + text2 + '-SCH-'
 
     print ( text_out )    
    
@@ -231,4 +232,22 @@ def job(text,text2):
 def job_testing(input, text, text2):
     txt_job = 'job_' + text
     sch.add_job(job, 'interval', args=[text,text2], seconds=input, id=txt_job)
+
+def job_testWS(text):
+    time.sleep(5)
+    txt_job = 'job_' + text
+    sch.add_job(jobtestws, 'interval',  seconds=0.1, id=txt_job)
+
+testws_data = 1
+def jobtestws():    
+    from base.ws import wssendtest
+    global testws_data
+
+    wssendtest(testws_data)
+    testws_data += 1
+    if testws_data > 100:
+        testws_data = 1
+        print('   -SCH- Testing WS job - Completed 1 to 100 -SCH-')
+     
+    pass
 

@@ -10,4 +10,5 @@ websocket_urlpatterns = [
     re_path(r'ws/voice/(?P<bcode>\w+)/(?P<ct>\w+)/$', consumers.VoiceConsumer.as_asgi()),
     re_path(r'ws/sms/(?P<bcode>\w+)/$', consumers.SMSConsumer.as_asgi()),
     re_path(r'ws/cs/(?P<pk>\w+)/$', consumers.CounterStatusConsumer.as_asgi()),
+    re_path(r'ws/test/$', consumers.TestConsumer.as_asgi()),
 ]
