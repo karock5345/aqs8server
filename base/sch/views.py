@@ -257,12 +257,17 @@ def job_shutdown(branch):
         else:
             ticket.status = 'miss'
             # TicketData should be add misstime and add TicketLog
-            td = TicketData.objects.get(tickettemp=tt)
-            td.misstime = datetime_now
-            # cal waiting time between tickettime and misstime and add to td.waitingperiod
-            seconds = (td.misstime - td.starttime).total_seconds()
-            td.waitingperiod = seconds
-            td.save()
+            td = None
+            try:
+                td = TicketData.objects.get(tickettemp=tt)
+            except:
+                logger.error('@base->sch->views.py->job_shutdown: TicketData not found (' + tt.branch.bcode + '_' + tt.tickettype + '_' + tt.ticketnumber + ')')
+            if td != None:
+                td.misstime = datetime_now
+                # cal waiting time between tickettime and misstime and add to td.waitingperiod
+                seconds = (td.misstime - td.starttime).total_seconds()
+                td.waitingperiod = seconds
+                td.save()
             # add TicketLog
             localdate_now = funUTCtoLocal(datetime_now, branch.timezone )
             TicketLog.objects.create(

@@ -1,4 +1,35 @@
-# AQS version 8.3.5
+# AQS version 8.3.6
+<h3 style="color:orange;">Version 8.3.6</h3>
+
+- Fixed bug : Schedule task shutdown when TicketData is not find will cause the Branch can not be reset to 001
+  - base/sch/views.py -> line 260 : 
+  ```py
+            td = None
+            try:
+                td = TicketData.objects.get(tickettemp=tt)
+            except:
+                logger.error('@base->sch->views.py->job_shutdown: TicketData not found (' + tt.branch.bcode + '_' + tt.tickettype + '_' + tt.ticketnumber + ')')
+            if td != None:
+                td.misstime = datetime_now
+                # cal waiting time between tickettime and misstime and add to td.waitingperiod
+                seconds = (td.misstime - td.starttime).total_seconds()
+                td.waitingperiod = seconds
+                td.save()
+  ```
+- Fixed bug : Report Ticket details (from RAW report) if then user is None, the system will 500
+  - aqs\tasks.py -> export_raw() -> line 708 :
+    ```py
+            user = None
+            try:
+                user = User.objects.get(pk=row['user'])
+            except:
+                pass
+            if user == None:
+                row['user'] = '(System)'
+            else:
+                row['user'] = user.first_name + ' ' + user.last_name + ' (' + user.username + ')'            
+    ```
+
 
 <h3 style="color:orange;">Version 8.3.5</h3>
 
@@ -1675,10 +1706,11 @@ Setup Putty 'Saved Sessions'
 Window -> Appearance -> Change font -> Deja...Powerline
 Window -> Color -> Default Blue -> Red 44 Green 123 Blue 201
 
-# Copy file from PC to Linux server
+# Copy file from PC to Linux server / Linux server to PC
 ```bash
 pscp -i key.ppk c:/music.mp3  ubuntu@192.168.1.222:/home/ubuntu/
 pscp -i key.ppk -r your/folder/aqs8server/* ubuntu@10.95.157.237:/home/ubuntu/aqs8server/
+pscp -i D:\Projects\CHB2024\_keys\AWS_QS02_CHB.ppk  admin@chb.tsvd.com.hk:/home/admin/chb/logs/aqs.log d:\
 # then change owner
 sudo chown ubuntu ~/aqs8server -R
 ```
