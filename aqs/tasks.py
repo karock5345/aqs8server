@@ -705,9 +705,17 @@ def report_ticketdetails(ticket_id, report_text):
 
             logtime = funUTCtoLocal(row['logtime'], ticket.branch.timezone).strftime('%Y-%m-%d %H:%M:%S')
             tno = ticket.tickettype + ticket.ticketnumber
-            user = User.objects.get(pk=row['user'])
-            row['user'] = user.first_name + ' ' + user.last_name + ' (' + user.username + ')'
-            
+
+            user = None
+            try:
+                user = User.objects.get(pk=row['user'])
+            except:
+                pass
+            if user == None:
+                row['user'] = '(System)'
+            else:
+                row['user'] = user.first_name + ' ' + user.last_name + ' (' + user.username + ')'
+
             report_table.append([tno, logtime, row['logtext'], row['user'], row['app'], row['version']])
             #     # for test
             # for i in range(0,100):
