@@ -1609,8 +1609,9 @@ def Report_Ticket_details_Result(request, pk):
                 'table':table100,        
                 }
 
-                context_mini = getcontext_mini(request)
-                context = context_mini | context
+                context = {'aqs_version':aqs_version} | context 
+                return render(request, 'base/r-result.html', context)
+
             elif request.method == 'POST':
                 action = request.POST.get('action')
                 if action == 'excel':
