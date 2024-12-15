@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.db.models import Q
 from base.models import Branch, CounterStatus, CounterType, Ticket, TicketFormat, TicketRoute, SystemLog, DisplayAndVoice, TicketTemp, TicketData, TicketLog, APILog, UserStatusLog
-from base.models import SubTicket
+from base.models import SubTicket , ScheduledJob
 # from .jobs import job_stop
 from datetime import datetime, timedelta, timezone
 import pytz
@@ -21,8 +21,8 @@ from base.sch.jobs import  job_stopall, job_testing
 from aqs.settings import APP_NAME, aqs_version
 from django.core.management import call_command
 from django.core.management.base import CommandError
+import base.a_global
 
-system_inited = None
 
 logger = logging.getLogger(__name__)
 
@@ -122,8 +122,8 @@ def init_branch_reset():
         branchobj = Branch.objects.all()
         branch_count = branchobj.count()
     except:
-        print ('   -SCH- init_branch_reset Error : No Branch')
-        if system_inited == True :
+        # print ('   -SCH- init_branch_reset Error : No Branch')
+        if base.a_global.system_inited == True :
             SystemLog.objects.create(
                 logtime=datetime_now,
                 logtext ='UTC time:' + datetime_now.strftime('%H:%M:%S') + ' -SCH- init_branch_reset Error : No Branch',
@@ -182,17 +182,24 @@ def sch_shutdown(branch_input, nowUTC):
     # print (logtemp2)
     # print (logtemp1)
 
-    if system_inited == True :
+    if base.a_global.system_inited == True :
         SystemLog.objects.create(
             logtime = datetime_now,
             logtext = 'Local time:' + localtime_now.strftime('%H:%M:%S') + logtemp3 + '\n' + logtemp2 + '\n' + logtemp1
             )
     # before add job must check the job is exist or not
-    if sch.get_job(branch.bcode) != None :
+    job_id = 'shutdown_' + branch.bcode
+    if sch.get_job(job_id=job_id) != None :
         # if exist remove it
-        sch.remove_job(branch.bcode)
-    sch.add_job(job_shutdown, 'date', run_date=nextreset, id=branch.bcode, args=[branch])
+        sch.remove_job(job_id=job_id)
 
+    # Check if the job is already scheduled
+    if not ScheduledJob.objects.filter(job_id=job_id).exists():
+        # Schedule the job
+        sch.add_job(job_shutdown, 'date', run_date=nextreset, id=job_id, args=[branch])
+
+        # Record the scheduled job in the database
+        ScheduledJob.objects.create(job_id=job_id)
 
 def job_shutdown(branch):
     datetime_now =datetime.now(timezone.utc)
@@ -200,7 +207,7 @@ def job_shutdown(branch):
     bcode = branch.bcode
 
     logger.info('   -SCH- Shutdown and reset branch :' + bcode + ' -SCH-')
-    if system_inited == True :
+    if base.a_global.system_inited == True :
         SystemLog.objects.create(
             logtime = datetime_now,
             logtext = 'Local time:' + localtime_now.strftime('%H:%M:%S') + ' -SCH- Shutdown and reset branch :' + bcode + ' -SCH-'
@@ -268,6 +275,10 @@ def job_shutdown(branch):
                 seconds = (td.misstime - td.starttime).total_seconds()
                 td.waitingperiod = seconds
                 td.save()
+            # cal waiting time between tickettime and misstime and add to td.waitingperiod
+            seconds = (td.misstime - td.starttime).total_seconds()
+            td.waitingperiod = seconds
+            td.save()
             # add TicketLog
             localdate_now = funUTCtoLocal(datetime_now, branch.timezone )
             TicketLog.objects.create(
@@ -370,6 +381,9 @@ def job_shutdown(branch):
     # time.sleep(1)
 
     sub_booking_temp(branch, None)
+    
+    # Remove the scheduled job record from the database
+    ScheduledJob.objects.filter(job_id=branch.bcode).delete()
 
     sch_shutdown(branch, datetime_now)
 

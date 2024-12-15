@@ -29,7 +29,9 @@
             else:
                 row['user'] = user.first_name + ' ' + user.last_name + ' (' + user.username + ')'            
     ```
-
+- Fixed bug : the issue of the job_shutdown function running multiple times could be caused by having multiple workers.
+  - Create a model to track scheduled jobs: ScheduledJob, StartupFlag
+  - Modify code: base/sch/views.py, base/models.py, base/apps.py, base/sch/jobs.py
 
 <h3 style="color:orange;">Version 8.3.5</h3>
 

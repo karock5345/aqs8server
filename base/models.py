@@ -664,7 +664,14 @@ class Device(models.Model):
 
     class Meta:
         unique_together = ('device_id_end', 'device_id_given',)
+class ScheduledJob(models.Model):
+    job_id = models.CharField(max_length=255, unique=True)
+    scheduled_at = models.DateTimeField(auto_now_add=True)
 
+class StartupFlag(models.Model):
+    has_run = models.BooleanField(default=False)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    
 # class Room(models.Model):
 #     host =models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 #     topic =  models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
