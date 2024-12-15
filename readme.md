@@ -42,7 +42,9 @@
             else:
                 row['user'] = user.first_name + ' ' + user.last_name + ' (' + user.username + ')'            
     ```
-
+- Fixed bug : the issue of the startup function running multiple times could be caused by having multiple workers.
+  - Create a model to track scheduled jobs: ScheduledJob, StartupFlag
+  - Modify code: base/sch/views.py, base/models.py, base/apps.py, base/sch/jobs.py, base/a_global.py
 
 
 <h3 style="color:orange;">Version 8.3.5</h3>
@@ -365,7 +367,7 @@ python -m pip install -r requirements.txt
 # new project: 
 django-admin startproject newproj
 # [update/ upgrade package] 
-pip install django -U
+pip install -U django==4.2.17
 #deactivate virtual env:
 .\env\scripts\deactivate
 ```

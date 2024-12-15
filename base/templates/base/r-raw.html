@@ -14,13 +14,14 @@
 
 {% if table.object_list.count > 0 %}
 <!-- Pagination links -->
+
 <div class="pagination">
     {% if table.has_previous %}
         <div class="lastcontainer" >
-            <a class="lasttext" href="{{ request.get_full_path }}&page=1">&laquo;&laquo; first</a>
+            <a class="lasttext" href="{{ request.path }}?result={{task_id}}&page=1">&#10094;&#10094; First</a>
         </div>
         <div class="lastcontainer" >
-            <a class="lasttext" href="{{ request.get_full_path }}&page={{ table.previous_page_number }}">&laquo; previous</a>
+            <a class="lasttext" href="{{ request.path }}?result={{task_id}}&page={{ table.previous_page_number }}">&#10094; Previous</a>
         </div>
     {% endif %}
 
@@ -31,17 +32,17 @@
             </div>
         {% else %}
             <div class="pagenumcontainer" >
-                <a class="pagenum" href="{{ request.get_full_path }}&page={{ num }}">{{ num }}</a>
+                <a class="pagenum" href="{{ request.path }}?result={{task_id}}&page={{ num }}">{{ num }}</a>
             </div>
         {% endif %}
     {% endfor %}
 
     {% if table.has_next %}
         <div class="lastcontainer" >
-            <a class="lasttext" href="{{ request.get_full_path }}&page={{ table.next_page_number }}">next &raquo;</a>
+            <a class="lasttext" href="{{ request.path }}?result={{task_id}}&page={{ table.next_page_number }}">Next &#10095;</a>
         </div>
         <div class="lastcontainer" >
-            <a class="lasttext" href="{{ request.get_full_path }}&page={{ table.paginator.num_pages }}">last &raquo;&raquo;</a>
+            <a class="lasttext" href="{{ request.path }}?result={{task_id}}&page={{ table.paginator.num_pages }}">Last &#10095;&#10095;</a>
         </div>
     {% endif %}
 </div>

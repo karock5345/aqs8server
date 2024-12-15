@@ -15,6 +15,21 @@ logger = logging.getLogger(__name__)
 
 #     pass
 
+job_delStartupFlag_id = 'job_delStartupFlag'
+def job_delStartupFlag():
+    from .views import sch
+    from apscheduler.triggers.cron import CronTrigger
+    sch.add_job(_delStartupFlag, 'interval' , seconds=10, id=job_delStartupFlag_id)
+def _delStartupFlag():
+    from base.models import StartupFlag
+    from .views import sch
+    # Optionally delete the flag at the end of the method
+    StartupFlag.objects.all().delete()
+    logger.info('--- Deleted StartupFlag ---')
+    # remove job_delStartupFlag
+    sch.remove_job(job_delStartupFlag_id)
+    sch.add_job(_delStartupFlag, 'interval' , hours=3, id=job_delStartupFlag_id)
+
 
 def job_testing(input, text, text2):
     from .views import sch

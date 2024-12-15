@@ -2114,7 +2114,7 @@ color: var(--color-light);
   
 }
 .pagenumcontainer {
-  background-color: var(--color-dark-light);
+  background-color: var(--color-bg);
   width: 3rem;
   height: 3rem;
   /* margin-left: 0.5rem;
@@ -2122,11 +2122,14 @@ color: var(--color-light);
   /* vertical-align: middle; */
   /* align-content: center; */
   margin: 0.1rem 0.5rem 0.1rem 0.5rem;
-}
-.current {
-  background-color: var(--color-bg);
   border-width: 1px;
   border-color: var(--color-main);
+  border-style: outset;  
+}
+.current {
+  background-color: var(--color-dark-light);
+  border-width: 1px;
+  border-color: var(--color-dark-light);
   border-style: outset;
 }
 .pagenum {
@@ -2154,7 +2157,7 @@ color: var(--color-light);
   font-weight: 1000;
   cursor: auto;
   /* transition: all 0.3s ease-in-out; */
-  color: var(--color-main-light);
+  color: var(--color-main);
   /* background-color: var(--color-bg); */
   margin-top: 0.3rem;
   text-align: center;
@@ -2174,7 +2177,7 @@ color: var(--color-light);
   border-color: var(--color-main);
   border-style: outset;  
 
-  border-radius: 1rem;
+  border-radius: 1rem 0rem 1rem 0rem;
   
 }
 .lasttext {
