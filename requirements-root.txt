@@ -2,6 +2,7 @@ django==4.2.17
 celery==5.3.6
 channels-redis==4.1.0
 channels==3.0.5
+daphne==3.0.2
 aioredis==2.0.1
 django-apscheduler==0.6.2
 django-auto-logout==0.5.1
@@ -21,7 +22,6 @@ phonenumbers
 requests
 # django-crequest==2018.5.11 may not use
 gunicorn
-daphne==3.0.2
 qrcode
 xhtml2pdf
 pytz
