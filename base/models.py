@@ -689,6 +689,7 @@ class StartupFlag(models.Model):
     has_run = models.BooleanField(default=False)
     timestamp = models.DateTimeField(auto_now_add=True)
 
+
 # class Room(models.Model):
 #     host =models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 #     topic =  models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
