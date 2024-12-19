@@ -1,49 +1,61 @@
 from django.apps import AppConfig
 from django.db.utils import OperationalError
+from django.db import transaction
 
-force_migrations = False  # Set to True Force the system is not inited
+# Set to True Force the system is not inited
+force_migrations = False
 
 class BaseConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'base'
 
+    @transaction.atomic
     def ready(self) -> None:
         from base.sch.jobs import  job_stopall, job_testing, job_delStartupFlag
         import logging
         from base.models import StartupFlag
         from base.sch.views import sch
-
-        from base.models import StartupFlag
-        # Optionally delete the flag at the end of the method
-        # StartupFlag.objects.all().delete()
-        # print('--- Deleted StartupFlag ---')
-
-        # remove all jobs
-        # sch.remove_all_jobs()
-        # job_testing(3, '3 Seconds', ' 0')
-        # job_testing(10, '10 Seconds', ' |')      
-        # job_stop('job_        1 Seconds')  
-        # job_stop('job_4 Seconds')  
-        # job_stopall()        
-        job_delStartupFlag()
+        from datetime import datetime, timezone
+      
+        logger = logging.getLogger(__name__)
+        # Check if the system is inited or not        
+        if force_migrations == True:
+            logger.info('   *** Force Migrations on ***')
+            return super().ready()
+        
         sch.start()
 
-
         # Check if the startup code has already run
-        logger = logging.getLogger(__name__)
+        sf = StartupFlag.objects.select_for_update().filter(has_run=True).first()
+        if sf is None:
+            StartupFlag.objects.create(has_run=True, worker=0)
+            sf = StartupFlag.objects.select_for_update().filter(has_run=True).first()
 
+        now = datetime.now(timezone.utc)
+        seconds = (now - sf.updated).total_seconds() 
 
-        try:
-            if not StartupFlag.objects.filter(has_run=True).exists():        
-                # Set the flag to indicate that the startup code has run
-                StartupFlag.objects.create(has_run=True)
-                # Run your startup code here
-                logger.info('   *** Queuing System Started ***')
-                sub_init()
-        except OperationalError:
-            # Handle the case where the database is not ready yet
-            logger.warning('Database is not ready yet. Startup code will not run.')
-        
+        if sf.worker > 0 and seconds > 30:
+            # check the sf timestamp
+            # set worker to 1
+            sf.worker = 1
+            sf.save()
+            logger.info('Diff seconds (now and update): ' + str(seconds) + 'seconds. Set worker to 1')
+        else:
+            sf.worker = sf.worker + 1
+            sf.save()
+        if sf.worker == 1:
+            # Run your startup code here
+            logger.info('   *** Queuing System Started ***')
+            sub_init()
+            job_delStartupFlag()
+
+            # remove all jobs
+            # sch.remove_all_jobs()
+            # job_testing(3, '3 Seconds', ' 0')
+            # job_testing(10, '10 Seconds', ' |')      
+            # job_stop('job_        1 Seconds')  
+            # job_stop('job_4 Seconds')  
+            # job_stopall()
         return super().ready()
     
 def sub_init():

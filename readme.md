@@ -1,4 +1,13 @@
-# AQS version 8.3.6
+# AQS version 8.3.7
+<h3 style="color:orange;">Version 8.3.7</h3>
+
+- Fixed bug : AttributeError: 'NoneType' object has no attribute 'step' base/api/v_softkey_sub.py", line 629, in funCounterComplete
+  - step=ticket.step,
+- Improve log files auto manage keep 10 files and 100MB each
+- Fixed bug : Void ticket will cause waiting list negative (e.g. A -1, -2)
+  - ```py ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1 ``` run 2 times when void ticket
+  - Improve the void ticket function to (@transaction.atomic)
+
 <h3 style="color:orange;">Version 8.3.6</h3>
 
 - Fixed bug : Schedule task shutdown when TicketData is not find will cause the Branch can not be reset to 001
@@ -30,7 +39,7 @@
                 row['user'] = user.first_name + ' ' + user.last_name + ' (' + user.username + ')'            
     ```
 - Fixed bug : the issue of the job_shutdown function running multiple times could be caused by having multiple workers.
-  - Create a model to track scheduled jobs: ScheduledJob, StartupFlag
+  - Create a model to track scheduled jobs: StartupFlag
   - Modify code: base/sch/views.py, base/models.py, base/apps.py, base/sch/jobs.py
 
 <h3 style="color:orange;">Version 8.3.5</h3>
@@ -342,12 +351,12 @@ Right click on My Computer ->Properties ->Advanced System setting ->Environment 
 <h3 style="color:orange;">New Django project with Virtual Env setup:</h3>
 
 ```sh
-pip install virtualenv
+pip install --upgrade pip
 # New virtual Env:
 cd \Projects\
-python -m virtualenv env
+python -m venv env
 # or
-virtualenv env
+venv env
 # activate virtual env:
 .\env\scripts\activate
 # or

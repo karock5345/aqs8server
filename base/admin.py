@@ -3,7 +3,7 @@ from django.db import models
 from django import forms
 from .models import TicketTemp, testingModel, testingModel2, Branch, CounterLoginLog, CounterStatus, DisplayAndVoice,  TicketFormat
 from .models import UserProfile, CounterType, Ticket, TicketLog, TicketRoute, TicketData, APILog, Setting, PrinterStatus, SystemLog, WebTouch, UserStatusLog, SubTicket
-
+from .models import StartupFlag
 # Register your models here.
 
 class testingView(admin.ModelAdmin):
@@ -14,6 +14,12 @@ class testingView2(admin.ModelAdmin):
     list_display =('total',)
     
 
+
+
+
+class StartupFlagView(admin.ModelAdmin):
+    model = StartupFlag
+    list_display =('has_run', 'worker', 'updated', 'created')
 
 class SubTicketView(admin.ModelAdmin):
     model = SubTicket
@@ -155,3 +161,4 @@ admin.site.register(SystemLog, SystemLogView)
 admin.site.register(WebTouch, WebTouchView)
 admin.site.register(UserStatusLog, UserStatusLogView)
 admin.site.register(SubTicket, SubTicketView)
+admin.site.register(StartupFlag, StartupFlagView)

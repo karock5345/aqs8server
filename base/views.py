@@ -148,8 +148,11 @@ def Softkey_VoidView(request, pk, ttid):
     if request.method == 'POST':
         action = request.POST.get('action')
         if action == 'confirm':           
-            funVoid(request.user, tt, td, datetime_now)
-            messages.success(request, 'Ticket ' + tt.tickettype + tt.ticketnumber + ' has been voided.')
+            status, msg = funVoid_v830(request.user, tt, td, 'Void ticket from list ', 'Softkey-web', softkey_version,  datetime_now)
+            if status['status'] == 'Error':
+                messages.error(request, msg['msg'] + ' ' + tt.tickettype + tt.ticketnumber)
+            elif status['status'] == 'OK':
+                messages.success(request, 'Ticket ' + tt.tickettype + tt.ticketnumber + ' has been voided.')
             return redirect('softkey', pk=pk)
     return render(request , 'base/softkey_confirm.html', context)
 
@@ -457,6 +460,9 @@ def SoftkeyView(request, pk):
                 pass
             else:
                 messages.error(request, 'Action not found:' + action)
+            if status == dict({'status': 'Error'}):
+                errormsg = msg['msg']
+                messages.error(request, errormsg)
             return redirect('softkey', pk=pk)
             # q: how to return to same page after post and do not refresh page
             # return render(request, 'base/softkey.html', context_login[pk] | context)
@@ -1244,20 +1250,11 @@ def CancelTicketView(request, pk, sc):
 
             if error == '' :  
                 datetime_now =datetime.now(timezone.utc)
-                funVoid(user, tt, td, datetime_now)
-
-                # add ticketlog
-                localdate_now = funUTCtoLocal(datetime_now, tt.branch.timezone)
-                TicketLog.objects.create(
-                    tickettemp=tt,
-                    logtime=datetime_now,
-                    app = 'Web',
-                    version = '8',
-                    logtext='Ticket Void by web : '  + tt.branch.bcode + '_' + tt.tickettype + '_'+ tt.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') ,
-                    user=user,
-                )
-
-
+                # funVoid(user, tt, td, datetime_now)
+                status, msg = funVoid_v830(request.user, tt, td, 'Void ticket from e-ticket ', 'Web', '8',  datetime_now)
+                if status['status'] == 'Error':
+                    error = msg['msg']
+                    messages.error(request, error)
                 return redirect(url)
     if error != '' :
         messages.error(request, error)
