@@ -344,41 +344,8 @@ def postCounterVoid(request):
 
 
     if status == dict({}) :
-        funVoid(user, tickett, td, datetime_now)
-
-        
-        # # update ticket 
-        # tickett.user = user
-        # tickett.status = 'void'
-        # tickett.save()
-
-        # # update ticketdata db
-        # td.voidtime = datetime_now
-        # td.voiduser = user
-        # time_diff = datetime_now - td.starttime
-        # tsecs = int(time_diff.total_seconds())
-        # td.waitingperiod = tsecs
-        # td.save()
-
-
-        # add ticketlog
-        localdate_now = funUTCtoLocal(datetime_now, branch.timezone)
-        TicketLog.objects.create(
-            tickettemp=tickett,
-            logtime=datetime_now,
-            app = rx_app,
-            version = rx_version,
-            logtext='Ticket Void API : '  + branch.bcode + '_' + tickett.tickettype + '_'+ tickett.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') ,
-            user=user,
-        )
-
-
-
-        status = dict({'status': 'OK'})
-        msg =  dict({'msg':'Ticket voided.'})  
-
-
-
+        # funVoid(user, tickett, td, datetime_now)
+        status, msg = funVoid_v830(request.user, tickett, td, 'Void ticket from API ', rx_app, rx_version, datetime_now)
 
     output = status | msg | context
     return Response(output)

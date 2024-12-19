@@ -681,13 +681,12 @@ class Device(models.Model):
     class Meta:
         unique_together = ('device_id_end', 'device_id_given',)
 
-class ScheduledJob(models.Model):
-    job_id = models.CharField(max_length=255, unique=True)
-    scheduled_at = models.DateTimeField(auto_now_add=True)
-
 class StartupFlag(models.Model):
+    worker = models.IntegerField(default=0)
     has_run = models.BooleanField(default=False)
-    timestamp = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)   
+  
 
 
 # class Room(models.Model):

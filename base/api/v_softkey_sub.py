@@ -13,7 +13,7 @@ from booking.models import Booking, TimeSlot
 
 
 logger = logging.getLogger(__name__)
-softkey_version = '8.3.1.0'
+softkey_version = '8.3.10.0'
 
 QueueDirection = {}
 
@@ -323,7 +323,7 @@ def funCounterCall_v830(user, branch:Branch, countertype, counterstatus, logtext
     return status, msg, context
 
 
-def funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
+def funCounterCall_old(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     status = dict({})
     msg = dict({})
     context = dict({})
@@ -532,9 +532,11 @@ def funCounterProcess(user, branch, countertype, counterstatus, logtext, rx_app,
     msg = dict({})
 
     if status == dict({}) :
-
-        ticket = counterstatus.tickettemp 
-
+        ticket = counterstatus.tickettemp
+        if ticket == None :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Ticket not found ' })
+    if status == dict({}) :
         # update ticketdata db
         td = None
         obj_td = TicketData.objects.filter(
@@ -618,16 +620,18 @@ def funCounterComplete(user, branch, countertype, counterstatus, logtext, rx_app
     msg = dict({})
 
     if status == dict({}) :
-
-        ticket = counterstatus.tickettemp 
-
+        ticket = counterstatus.tickettemp
+        if ticket == None :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Ticket not found ' })
+    if status == dict({}) :
         # update ticketdata db
         td = None
         obj_td = TicketData.objects.filter(
             tickettemp=ticket,
             countertype=countertype,
             step=ticket.step,
-            branch=branch,
+            branch=branch,            
         )
         if obj_td.count() == 1 :
             td = obj_td[0]
@@ -748,9 +752,11 @@ def funCounterMiss(user, branch, countertype, counterstatus, logtext, rx_app, rx
     msg = dict({})
 
     if status == dict({}) :
-
-        ticket = counterstatus.tickettemp 
-
+        ticket = counterstatus.tickettemp
+        if ticket == None :
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':'Ticket not found ' })
+    if status == dict({}) :
         # update ticketdata db
         td = None
         obj_td = TicketData.objects.filter(
@@ -838,13 +844,13 @@ def funCounterRecall(user, branch, countertype, counterstatus, logtext, rx_app, 
     msg = dict({})
 
     if status == dict({}) :
-        # add ticketlog
-        ticket = counterstatus.tickettemp 
-        if ticket == None:
+        ticket = counterstatus.tickettemp
+        if ticket == None :
             status = dict({'status': 'Error'})
-            msg =  dict({'msg':'No ticket to recall'})
-            
+            msg =  dict({'msg':'Ticket not found ' })
     if status == dict({}) :
+        # add ticketlog
+
         localdate_now = funUTCtoLocal(datetime_now, branch.timezone)
         TicketLog.objects.create(
             tickettemp=ticket,
@@ -1387,8 +1393,66 @@ def funCounterLogin(datetime_now, user, branch, counterstatus, rx_counternumber,
     context = dict({'data':context})
     return status, msg, context
 
+@transaction.atomic
+def funVoid_v830(user, tickett, td, logtext, rx_app, rx_version, datetime_now):
+    status = dict({})
+    msg = dict({})
+    ticket = None
 
-def funVoid(user, tickett, td, datetime_now):
+    if status == dict({}) :
+        # lock the ticket
+        try:
+            ticket = TicketTemp.objects.select_for_update(nowait=True).get(id=tickett.id)
+            # for testing
+            # time.sleep(3)
+        except Exception as e:
+            from base.a_global import str_db_locked
+            status = dict({'status': 'Error'})
+            msg =  dict({'msg':str_db_locked})
+
+    if status == dict({}) and ticket != None :
+    # update ticket 
+    # waiting on queue
+        if ticket.status == 'waiting':
+            ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
+            ticket.ticketroute.save()
+        ticket.user = user
+        ticket.status = 'void'
+        ticket.save()
+
+        # update ticketdata db
+        td.voidtime = datetime_now
+        td.voiduser = user
+        time_diff = datetime_now - td.starttime
+        tsecs = int(time_diff.total_seconds())
+        td.waitingperiod = tsecs
+        td.save()
+
+        # add ticketlog
+        localdate_now = funUTCtoLocal(datetime_now, ticket.branch.timezone)
+        TicketLog.objects.create(
+            tickettemp=ticket,
+            logtime=datetime_now,
+            app = rx_app,
+            version = rx_version,
+            logtext= logtext + ticket.branch.bcode + '_' + ticket.tickettype + '_'+ ticket.ticketnumber + '_' + localdate_now.strftime('%Y-%m-%d_%H:%M:%S') ,
+            user=user,
+        )
+
+        # websocket to softkey (update Queue List)
+        wssendql(ticket.branch.bcode , ticket.countertype.name, ticket, 'del')
+        # websocket to web tv
+        wssendwebtv(ticket.branch.bcode, ticket.countertype.name)
+        # websocket to Display Panel waiting number update
+        wssenddispwait(ticket.branch, ticket.countertype, ticket)
+        # websocket to web my ticket
+        wsSendTicketStatus(ticket.branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
+        
+        status = dict({'status': 'OK'})
+        msg =  dict({'msg':'Ticket voided.'})
+    return status, msg
+
+def funVoid_old(user, tickett, td, datetime_now):
     # update ticket 
     # waiting on queue
     if tickett.status == 'waiting':
@@ -1414,6 +1478,8 @@ def funVoid(user, tickett, td, datetime_now):
     wssenddispwait(tickett.branch, tickett.countertype, tickett)
     # websocket to web my ticket
     wsSendTicketStatus(tickett.branch.bcode, tickett.tickettype, tickett.ticketnumber, tickett.securitycode)
+
+
 
 
 def logcounterlogout (user, countertype, counternumber, logintime, logouttime) -> str :

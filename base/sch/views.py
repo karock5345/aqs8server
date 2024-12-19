@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.db.models import Q
 from base.models import Branch, CounterStatus, CounterType, Ticket, TicketFormat, TicketRoute, SystemLog, DisplayAndVoice, TicketTemp, TicketData, TicketLog, APILog, UserStatusLog
-from base.models import SubTicket , ScheduledJob
+from base.models import SubTicket
 # from .jobs import job_stop
 from datetime import datetime, timedelta, timezone
 import pytz
@@ -193,13 +193,10 @@ def sch_shutdown(branch_input, nowUTC):
         # if exist remove it
         sch.remove_job(job_id=job_id)
 
-    # Check if the job is already scheduled
-    if not ScheduledJob.objects.filter(job_id=job_id).exists():
-        # Schedule the job
-        sch.add_job(job_shutdown, 'date', run_date=nextreset, id=job_id, args=[branch])
+    # Schedule the job
+    sch.add_job(job_shutdown, 'date', run_date=nextreset, id=job_id, args=[branch])
 
-        # Record the scheduled job in the database
-        ScheduledJob.objects.create(job_id=job_id)
+
 
 def job_shutdown(branch):
     datetime_now =datetime.now(timezone.utc)
@@ -382,9 +379,6 @@ def job_shutdown(branch):
 
     sub_booking_temp(branch, None)
     
-    # Remove the scheduled job record from the database
-    ScheduledJob.objects.filter(job_id=branch.bcode).delete()
-
     sch_shutdown(branch, datetime_now)
 
 
