@@ -15,7 +15,7 @@
                                 </path>
                             </svg>
                         </a>
-                        <h3>Edit TimeSlot Item</h3>
+                        <h3>Add TimeSlot Item</h3>
                     </div>
                 </div>
                 <div class="layout__body">
@@ -47,12 +47,11 @@
                                     </div>
                                 {% endif %}
                         {% endfor %}
-                     
+
                                     
                         <div class="form__action">
-                            <a class="btn btn--del" href="{% url 'tempitem-delete' item.id  tempid %}">Delete</a>
                             <a class="btn btn--dark" href="{% url 'temp-update' tempid %}">Cancel</a>
-                            <button class="btn btn--main" type="submit">Update</button>
+                            <button class="btn btn--main" type="submit">Add</button>
                         </div>
                     </form>
                 </div>

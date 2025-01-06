@@ -16,8 +16,24 @@ import pytz
 from django.utils.timezone import localtime, get_current_timezone
 from datetime import datetime, timedelta
 
-class TimeSlot_itemForm(ModelForm):
+class TimeSlot_add_itemForm(ModelForm):
+    def __init__(self, *args,**kwargs):
+        self.branch = kwargs.pop('branch')
+        super().__init__(*args,**kwargs)        
 
+        # field 'branch' default value is branch
+        self.initial['branch'] = self.branch
+        # set field 'branch' to hidden
+        self.fields['branch'].widget.attrs['hidden'] = 'hidden'
+        # set field.label branch to hidden
+        self.fields['branch'].label = ''
+
+    class Meta:        
+        model = TimeSlot_item
+        fields = [ 'start_time', 'service_hours', 'service_mins', 'slot_total','branch',]
+
+class TimeSlot_itemForm(ModelForm):
+    
     class Meta:        
         model = TimeSlot_item
         fields = ['start_time', 'service_hours', 'service_mins', 'slot_total']

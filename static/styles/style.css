@@ -2227,7 +2227,7 @@ color: var(--color-light);
   height: 4rem;
   width: 100%;
   display: grid;
-  grid-template-columns:  2fr 10fr 2fr 6fr ;
+  grid-template-columns:  2fr 10fr 2fr 3fr 1fr;
   background-color: var(--color-dark-light);
   align-items: center;
   margin-bottom: 0rem;
@@ -2235,6 +2235,7 @@ color: var(--color-light);
   padding-right: 1rem;
   border-radius: 1rem;
   transition: all 0.3s ease-in-out;
+  gap: 4px;
 }
 .item_row_q {
   position: relative;
@@ -2360,8 +2361,14 @@ color: var(--color-light);
   height: 2.6rem;
   background-color: var(--color-main);
   color: var(--color-dark);
-
 }
+.booking_key_index {
+  width: 2rem;
+}
+.booking_key_area_index {
+  grid-template-columns: 1fr 1fr;
+}
+
 .booking_key:hover {
   opacity: 0.9;  
   cursor: pointer;

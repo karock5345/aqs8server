@@ -58,11 +58,14 @@
                             <div>
                                 Service period
                             </div>                            
-                            <div >
+                            <div>
                                 Slots
                             </div>
                             <div>
-
+                                
+                            </div>
+                            <div>
+                                
                             </div>
                         </div>                        
                         {% for item in items %}
@@ -76,9 +79,13 @@
                                 <div class="booking_date_text">
                                     {{item.slot_total}}
                                 </div>
-                                <div class="booking_key_area">
+                                <div class="booking_key_area booking_key_area_index">
                                     <a class="booking_key" href="{% url 'tempitem-update' item.id temptimeslot.id %}">Edit</a>
-                                    <a class="booking_key booking_key_reject" href="{% url 'tempitem-delete' item.id temptimeslot.id %}">Del</a>                                    
+                                    <!-- <a class="booking_key booking_key_reject" href="{-% url 'tempitem-delete' item.id temptimeslot.id %}">Del</a>                                     -->
+                                </div>
+                                <div class="booking_key_area ">
+                                    <a class="booking_key booking_key_index" href="{% url 'tempitem-index' temptimeslot.id item.id 'up' %}">&#129145;</a>
+                                    <a class="booking_key booking_key_index" href="{% url 'tempitem-index' temptimeslot.id item.id 'down' %}">&#129147;</a>
                                 </div>
                             </div>
                         {% endfor %}

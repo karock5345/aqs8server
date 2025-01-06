@@ -13,7 +13,7 @@ from django.urls import reverse_lazy, reverse
 
 from .models import *
 from base.models import UserProfile, Branch, SubTicket
-from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm, BookingForm, BookingNewForm, TimeSlotTempForm, TimeSlot_itemForm, TimeSlotTempNewForm
+from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm, BookingForm, BookingNewForm, TimeSlotTempForm, TimeSlot_itemForm, TimeSlotTempNewForm, TimeSlot_add_itemForm
 from django.utils.timezone import localtime, get_current_timezone
 # import pytz
 # from django.utils import timezone
@@ -54,6 +54,100 @@ def checkitemform(form):
 
     return error, newform
 
+
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
+def TimeSlotTempItemIndexView(request, tempid, itemid, step):
+    items = TimeslotTemplate.objects.get(id=tempid).items.all().order_by('index')
+    item = TimeSlot_item.objects.get(id=itemid)
+
+    # re-order the items
+    i = 1
+    for it in items:
+        it.index = i
+        i = i + 1
+        it.save()
+    
+    if step == 'up':
+        if item.index > 1:
+            # get the item above
+            item_above = TimeSlot_item.objects.get(index=item.index-1)
+            item_above.index = item_above.index + 1
+            item_above.save()
+
+            item.index = item.index - 1            
+            item.save()
+
+    elif step == 'down':            
+        if item.index < items.count():
+            # get the item below
+            item_below = TimeSlot_item.objects.get(index=item.index+1)
+            item_below.index = item_below.index - 1
+            item_below.save()
+
+            item.index = item.index + 1
+            item.save()
+
+
+    return redirect('temp-update', pk=tempid)
+
+@unauth_user
+@allowed_users(allowed_roles=['admin','support','supervisor','manager'])
+def TimeSlotTempItemAddView(request, tempid):    
+    auth_en_queue, \
+    auth_en_crm, \
+    auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    auth_memberlist, \
+    auth_customerlist, \
+    auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
+    = auth_data(request.user)
+
+    if request.method == 'POST':
+        # click submit button
+
+
+
+        # utcnow = datetime.now(timezone.utc)
+        timeslottemplate = TimeslotTemplate.objects.get(id=tempid)      
+        form = TimeSlot_add_itemForm(request.POST, instance=None, prefix='timeslotitemform', branch=timeslottemplate.branch  )
+        error = ''
+        error, newform = checkitemform(form)
+        if error == '' :         
+            try :
+                
+                newform.save()
+                item = TimeSlot_item.objects.get(id=newform.id)
+                item.index = timeslottemplate.items.count() + 1
+                item.save()
+                
+                timeslottemplate.items.add(newform)
+                messages.success(request, 'TimeSlot Template Item was successfully updated!')                
+                return redirect('temp-update' , pk=tempid)
+            except Exception as e:
+                error = e.__str__()
+        if error != '':
+            messages.error(request, error )
+        pass
+    else:
+        timeslottemplate = TimeslotTemplate.objects.get(id=tempid)  
+        form = TimeSlot_add_itemForm(instance=None, prefix='timeslotitemform', branch=timeslottemplate.branch)
+    context =  {'form':form,  'tempid':tempid}
+    context_en = getcontext_en(request)
+    context = context_en | context
+    return render(request, 'booking/tempitem_add.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
@@ -98,7 +192,7 @@ def TimeSlotTempItemUpdateView(request, pk, tempid):
     auth_receipts, \
     = auth_data(request.user)
 
-    if request.method == 'POST':
+    if request.method == 'POST':                    
         # utcnow = datetime.now(timezone.utc)
         form = TimeSlot_itemForm(request.POST, instance=item, prefix='timeslotitemform')
         error = ''
@@ -232,9 +326,11 @@ def TimeSlotTempUpdateView(request, pk):
             if error != '':
                 messages.error(request, error )
         elif action == 'additem':
-            item = TimeSlot_item.objects.create(branch=temp.branch)
-            temp.items.add(item)
-            return redirect('tempitem-update' , pk=item.id, tempid=temp.id) 
+            # item = TimeSlot_item.objects.create(branch=temp.branch)
+            # temp.items.add(item)
+            # return redirect('tempitem-add' , pk=item.id, tempid=temp.id) 
+            return redirect('tempitem-add',  tempid=temp.id) 
+        
         pass
 
     context =  {'form':form, 'temptimeslot':temp, 'items':items}
