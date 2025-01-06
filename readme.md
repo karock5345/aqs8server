@@ -1,4 +1,11 @@
-# AQS version 8.3.7
+# AQS version 8.3.8
+
+<h3 style="color:orange;">Version 8.3.8</h3>
+
+- Prevent WS data lost. Send data to call ticket repact 3 times
+  - base\ws.py -> function wssenddispcall -> line 63
+  - base\consumers.py -> DispPanelConsumer -> line 148 -> add delay 1s
+
 <h3 style="color:orange;">Version 8.3.7</h3>
 
 - Fixed bug : AttributeError: 'NoneType' object has no attribute 'step' base/api/v_softkey_sub.py", line 629, in funCounterComplete

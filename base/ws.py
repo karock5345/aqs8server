@@ -61,7 +61,9 @@ def wssenddispcall(branch, counterstatus, countertype, ticket):
     logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
     try:
         async_to_sync (channel_layer.group_send)(channel_group_name, context)
-        logger.info('...Done')
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        logger.info('...Done x3')
     except:
         logger.error('...ERROR:Redis Server is down!')
     pass
@@ -309,7 +311,7 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
     error = ''
 
 
-    def send(json_tx:str):
+    def send(json_tx:str, remark:str):
         str_tx = json.dumps(json_tx)
 
         context = {
@@ -319,7 +321,7 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
         
         channel_layer = get_channel_layer()
         channel_group_name = 'voice830_' + bcode + '_' + countertypename
-        logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        logger.info('channel_group_name:' + channel_group_name + ' sending data (' + remark + ')-> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
             logger.info('...Done')
@@ -390,7 +392,7 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
                 'cmd':'vol',
                 'data': volume
             }
-            send(json_tx)
+            send(json_tx, 'Volume')
 
         # play effect sound
         if len(lang_list) > 0:
@@ -404,7 +406,7 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
                                 'voice_str': sound,
                                 }
                     }
-                    send(json_tx)
+                    send(json_tx, 'Before Sound')
         # play voice
         for lang in lang_list:
             json_tx = {
@@ -424,7 +426,7 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
                     'voice_str': voice_oh_str,
                     }
                 }
-            send(json_tx)
+            send(json_tx, 'Voice')
             # str_tx = json.dumps(json_tx)
 
             # context = {
@@ -453,7 +455,7 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
                                 'voice_str': sound,
                                 }
                     }
-                    send(json_tx)                
+                    send(json_tx, 'After Sound')                
     if error != '':
         error_e = 'WS send voice830 Error:' + error
         logger.error(error_e)

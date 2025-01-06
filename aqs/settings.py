@@ -16,7 +16,7 @@ from datetime import timedelta
 import os
 from .custom_handlers import CustomRotatingFileHandler
 
-aqs_version = '8.3.7'
+aqs_version = '8.3.8'
 # APP_NAME for ws://localhost:8000/ws/APP_NAME/...
 APP_NAME = 'aqs_app'
 

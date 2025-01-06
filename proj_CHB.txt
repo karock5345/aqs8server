@@ -1,7 +1,7 @@
 ## Project CHB
 - Server on AWS : https://chb.tsvd.com.hk
-- Superuser : supertim /// 
-- userapi : userapi ///                                                                                 
+- Superuser : supertim /// ylthECLde5iflsplThAy
+- userapi : userapi /// Swlt2lgobri0ud5f9co9
 - Bcode : CEN
 - Wifi : queuingsystem /// sw7vup2jDfedeT7tWsTz
 

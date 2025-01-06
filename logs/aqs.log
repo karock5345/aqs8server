@@ -643,3 +643,1600 @@ INFO 2024-12-18 13:43:02,370 runserver>log_action WebSocket HANDSHAKING /ws/aqs_
 INFO 2024-12-18 13:43:02,374 consumers>connect connecting:ql_KB_c
 INFO 2024-12-18 13:43:02,378 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:39309]
 INFO 2024-12-18 13:43:02,379 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 11:38:25,461 base>start Scheduler started
+INFO 2025-01-06 11:38:25,473 apps>ready    *** Queuing System Started ***
+INFO 2025-01-06 11:38:25,473 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-01-06 11:38:25,473 apps>sub_init -SCH- Now:01/06/2025, 18:38:25
+INFO 2025-01-06 11:38:25,706 apps>sub_init -SCH- No migrations are needed
+INFO 2025-01-06 11:38:25,711 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-01-06 11:38:25,712 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-01-06 11:38:25,778 views>sch_shutdown  -SCH- Next reset [KB]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 11:38:25,779 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 11:38:25,779 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 18:38:25 [No]
+INFO 2025-01-06 11:38:25,782 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:38:25,784 views>Reset_SMS -SCH- Reset SMS Used to 0 [KB] -SCH-
+INFO 2025-01-06 11:38:25,785 views>sch_shutdown  -SCH- Next reset [MK]: 2025-01-07 18:00:00 Local:2025-01-08 02:00:00
+INFO 2025-01-06 11:38:25,785 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-01-06 11:38:25,785 views>sch_shutdown    -SCH- 2025-01-06 18:00:00 > 2025-01-06 18:38:25 [No]
+INFO 2025-01-06 11:38:25,786 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:38:25,787 views>Reset_SMS -SCH- Reset SMS Used to 0 [MK] -SCH-
+INFO 2025-01-06 11:38:25,788 views>sch_shutdown  -SCH- Next reset [MHT]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 11:38:25,789 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 11:38:25,789 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 18:38:25 [No]
+INFO 2025-01-06 11:38:25,789 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:38:25,790 views>Reset_SMS -SCH- Reset SMS Used to 0 [MHT] -SCH-
+INFO 2025-01-06 11:38:25,790 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-01-06 11:38:27,262 base>start Scheduler started
+INFO 2025-01-06 11:38:27,298 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 11:38:27,762 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 11:38:27,762 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 11:38:27,763 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 11:38:35,812 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 11:38:45 MST)" (scheduled at 2025-01-06 11:38:35.790762-07:00)
+INFO 2025-01-06 11:38:35,839 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-01-06 11:38:35,841 base>remove_job Removed job job_delStartupFlag
+INFO 2025-01-06 11:38:35,841 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 11:38:45 MST)" executed successfully
+INFO 2025-01-06 11:38:59,793 base>start Scheduler started
+INFO 2025-01-06 11:38:59,799 apps>ready    *** Queuing System Started ***
+INFO 2025-01-06 11:38:59,799 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-01-06 11:38:59,800 apps>sub_init -SCH- Now:01/06/2025, 18:38:59
+INFO 2025-01-06 11:38:59,873 apps>sub_init -SCH- No migrations are needed
+INFO 2025-01-06 11:38:59,874 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-01-06 11:38:59,875 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-01-06 11:38:59,934 views>sch_shutdown  -SCH- Next reset [KB]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 11:38:59,935 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 11:38:59,935 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 18:38:59 [No]
+INFO 2025-01-06 11:38:59,937 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:38:59,938 views>sch_shutdown  -SCH- Next reset [MK]: 2025-01-07 18:00:00 Local:2025-01-08 02:00:00
+INFO 2025-01-06 11:38:59,938 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-01-06 11:38:59,938 views>sch_shutdown    -SCH- 2025-01-06 18:00:00 > 2025-01-06 18:38:59 [No]
+INFO 2025-01-06 11:38:59,939 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:38:59,941 views>sch_shutdown  -SCH- Next reset [MHT]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 11:38:59,941 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 11:38:59,941 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 18:38:59 [No]
+INFO 2025-01-06 11:38:59,942 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:38:59,943 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-01-06 11:40:01,958 runserver>log_action [mHTTP GET /api/?app=py%20Display%20Panel&version=8.3.2 200 [0.06, 127.0.0.1:6294][0m
+WARNING 2025-01-06 11:40:02,228 log>log_response Unauthorized: /api/loginapi/
+WARNING 2025-01-06 11:40:02,230 runserver>log_action [31;1mHTTP POST /api/loginapi/?app=yo&version=8.3.2 401 [0.26, 127.0.0.1:6295][0m
+INFO 2025-01-06 11:41:03,194 runserver>log_action [mHTTP GET /api/?app=py%20Display%20Panel&version=8.3.2 200 [0.01, 127.0.0.1:6353][0m
+WARNING 2025-01-06 11:41:03,456 log>log_response Unauthorized: /api/loginapi/
+WARNING 2025-01-06 11:41:03,457 runserver>log_action [31;1mHTTP POST /api/loginapi/?app=yo&version=8.3.2 401 [0.26, 127.0.0.1:6354][0m
+INFO 2025-01-06 11:41:23,217 runserver>log_action [mHTTP GET /api/?app=py%20Display%20Panel&version=8.3.2 200 [0.01, 127.0.0.1:6369][0m
+INFO 2025-01-06 11:41:23,484 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.26, 127.0.0.1:6370][0m
+INFO 2025-01-06 11:41:23,770 runserver>log_action [mHTTP POST /api/token/ 200 [0.28, 127.0.0.1:6372][0m
+INFO 2025-01-06 11:41:23,773 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6374]
+ERROR 2025-01-06 11:41:24,449 server>application_checker Exception inside application: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+Traceback (most recent call last):
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 168, in __call__
+    raise ValueError("No route found for path %r." % path)
+ValueError: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+INFO 2025-01-06 11:41:24,463 runserver>log_action WebSocket DISCONNECT /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6374]
+INFO 2025-01-06 11:41:24,792 runserver>log_action [mHTTP GET /api/display5/?branchcode=KB&app=py_DispPanel&version=8.3.2&countername=c 200 [0.02, 127.0.0.1:6376][0m
+INFO 2025-01-06 11:41:34,470 runserver>log_action [32mHTTP GET /booking/timeslottemp-update/25/ 302 [0.02, 127.0.0.1:6419][0m
+INFO 2025-01-06 11:41:34,481 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.34, 127.0.0.1:6388][0m
+INFO 2025-01-06 11:41:34,488 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6435]
+INFO 2025-01-06 11:41:34,532 runserver>log_action [mHTTP GET /login/ 200 [0.04, 127.0.0.1:6419][0m
+ERROR 2025-01-06 11:41:34,564 server>application_checker Exception inside application: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+Traceback (most recent call last):
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 168, in __call__
+    raise ValueError("No route found for path %r." % path)
+ValueError: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+INFO 2025-01-06 11:41:34,569 runserver>log_action WebSocket DISCONNECT /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6435]
+INFO 2025-01-06 11:41:44,414 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.28, 127.0.0.1:6506][0m
+INFO 2025-01-06 11:41:44,419 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6507]
+ERROR 2025-01-06 11:41:44,661 server>application_checker Exception inside application: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+Traceback (most recent call last):
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 168, in __call__
+    raise ValueError("No route found for path %r." % path)
+ValueError: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+INFO 2025-01-06 11:41:44,664 runserver>log_action WebSocket DISCONNECT /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6507]
+INFO 2025-01-06 11:42:15,495 runserver>log_action [mHTTP GET /api/?app=py%20Display%20Panel&version=8.3.2 200 [0.01, 127.0.0.1:6540][0m
+INFO 2025-01-06 11:42:15,768 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.27, 127.0.0.1:6541][0m
+INFO 2025-01-06 11:42:16,025 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:6542][0m
+INFO 2025-01-06 11:42:16,029 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6544]
+ERROR 2025-01-06 11:42:16,977 server>application_checker Exception inside application: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+Traceback (most recent call last):
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 168, in __call__
+    raise ValueError("No route found for path %r." % path)
+ValueError: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+INFO 2025-01-06 11:42:16,980 runserver>log_action WebSocket DISCONNECT /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6544]
+INFO 2025-01-06 11:42:17,045 runserver>log_action [mHTTP GET /api/display5/?branchcode=KB&app=py_DispPanel&version=8.3.2&countername=c 200 [0.01, 127.0.0.1:6546][0m
+INFO 2025-01-06 11:42:26,664 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.26, 127.0.0.1:6556][0m
+INFO 2025-01-06 11:42:26,668 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6557]
+ERROR 2025-01-06 11:42:27,068 server>application_checker Exception inside application: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+Traceback (most recent call last):
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 168, in __call__
+    raise ValueError("No route found for path %r." % path)
+ValueError: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+INFO 2025-01-06 11:42:27,070 runserver>log_action WebSocket DISCONNECT /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6557]
+INFO 2025-01-06 11:42:37,212 base>start Scheduler started
+INFO 2025-01-06 11:42:37,218 apps>ready    *** Queuing System Started ***
+INFO 2025-01-06 11:42:37,218 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-01-06 11:42:37,218 apps>sub_init -SCH- Now:01/06/2025, 18:42:37
+INFO 2025-01-06 11:42:37,299 apps>sub_init -SCH- No migrations are needed
+INFO 2025-01-06 11:42:37,301 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-01-06 11:42:37,301 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-01-06 11:42:37,360 views>sch_shutdown  -SCH- Next reset [KB]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 11:42:37,360 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 11:42:37,361 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 18:42:37 [No]
+INFO 2025-01-06 11:42:37,362 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:42:37,363 views>sch_shutdown  -SCH- Next reset [MK]: 2025-01-07 18:00:00 Local:2025-01-08 02:00:00
+INFO 2025-01-06 11:42:37,364 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-01-06 11:42:37,364 views>sch_shutdown    -SCH- 2025-01-06 18:00:00 > 2025-01-06 18:42:37 [No]
+INFO 2025-01-06 11:42:37,364 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:42:37,366 views>sch_shutdown  -SCH- Next reset [MHT]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 11:42:37,366 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 11:42:37,366 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 18:42:37 [No]
+INFO 2025-01-06 11:42:37,367 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:42:37,367 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-01-06 11:42:38,877 base>start Scheduler started
+INFO 2025-01-06 11:42:38,913 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 11:42:39,093 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 11:42:39,093 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 11:42:39,095 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 11:42:41,165 base>start Scheduler started
+INFO 2025-01-06 11:42:47,383 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 11:42:57 MST)" (scheduled at 2025-01-06 11:42:47.367915-07:00)
+INFO 2025-01-06 11:42:47,390 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-01-06 11:42:47,390 base>remove_job Removed job job_delStartupFlag
+INFO 2025-01-06 11:42:47,391 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 11:42:57 MST)" executed successfully
+INFO 2025-01-06 11:42:47,672 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.27, 127.0.0.1:6605][0m
+INFO 2025-01-06 11:42:47,676 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6606]
+ERROR 2025-01-06 11:42:48,180 server>application_checker Exception inside application: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+Traceback (most recent call last):
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 168, in __call__
+    raise ValueError("No route found for path %r." % path)
+ValueError: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+INFO 2025-01-06 11:42:48,184 runserver>log_action WebSocket DISCONNECT /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6606]
+INFO 2025-01-06 11:42:57,691 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.26, 127.0.0.1:6613][0m
+INFO 2025-01-06 11:42:57,695 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6614]
+ERROR 2025-01-06 11:42:58,282 server>application_checker Exception inside application: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+Traceback (most recent call last):
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 168, in __call__
+    raise ValueError("No route found for path %r." % path)
+ValueError: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+INFO 2025-01-06 11:42:58,284 runserver>log_action WebSocket DISCONNECT /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6614]
+INFO 2025-01-06 11:43:14,617 base>start Scheduler started
+INFO 2025-01-06 11:43:14,623 apps>ready    *** Queuing System Started ***
+INFO 2025-01-06 11:43:14,623 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-01-06 11:43:14,623 apps>sub_init -SCH- Now:01/06/2025, 18:43:14
+INFO 2025-01-06 11:43:14,701 apps>sub_init -SCH- No migrations are needed
+INFO 2025-01-06 11:43:14,703 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-01-06 11:43:14,703 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-01-06 11:43:14,763 views>sch_shutdown  -SCH- Next reset [KB]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 11:43:14,763 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 11:43:14,763 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 18:43:14 [No]
+INFO 2025-01-06 11:43:14,765 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:43:14,767 views>sch_shutdown  -SCH- Next reset [MK]: 2025-01-07 18:00:00 Local:2025-01-08 02:00:00
+INFO 2025-01-06 11:43:14,767 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-01-06 11:43:14,767 views>sch_shutdown    -SCH- 2025-01-06 18:00:00 > 2025-01-06 18:43:14 [No]
+INFO 2025-01-06 11:43:14,768 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:43:14,769 views>sch_shutdown  -SCH- Next reset [MHT]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 11:43:14,769 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 11:43:14,770 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 18:43:14 [No]
+INFO 2025-01-06 11:43:14,770 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:43:14,771 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-01-06 11:43:16,189 base>start Scheduler started
+INFO 2025-01-06 11:43:16,222 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 11:43:16,400 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 11:43:16,400 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 11:43:16,402 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 11:43:18,751 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.26, 127.0.0.1:6642][0m
+INFO 2025-01-06 11:43:18,755 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6643]
+INFO 2025-01-06 11:43:19,222 runserver>log_action [32mHTTP POST /login/ 302 [0.28, 127.0.0.1:6644][0m
+INFO 2025-01-06 11:43:19,319 runserver>log_action [mHTTP GET / 200 [0.09, 127.0.0.1:6644][0m
+INFO 2025-01-06 11:43:19,343 runserver>log_action [36mHTTP GET /static/js/script.js 304 [0.00, 127.0.0.1:6644][0m
+INFO 2025-01-06 11:43:19,345 runserver>log_action [36mHTTP GET /static/styles/style.css 304 [0.00, 127.0.0.1:6647][0m
+INFO 2025-01-06 11:43:19,347 runserver>log_action [36mHTTP GET /static/images/logo-q.svg 304 [0.00, 127.0.0.1:6648][0m
+INFO 2025-01-06 11:43:19,349 runserver>log_action [36mHTTP GET /static/images/avatar.svg 304 [0.00, 127.0.0.1:6644][0m
+ERROR 2025-01-06 11:43:19,429 server>application_checker Exception inside application: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+Traceback (most recent call last):
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 168, in __call__
+    raise ValueError("No route found for path %r." % path)
+ValueError: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+INFO 2025-01-06 11:43:19,434 runserver>log_action WebSocket DISCONNECT /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6643]
+INFO 2025-01-06 11:43:22,386 runserver>log_action [mHTTP GET /supervisors/ 200 [0.06, 127.0.0.1:6644][0m
+INFO 2025-01-06 11:43:24,779 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 11:43:34 MST)" (scheduled at 2025-01-06 11:43:24.771343-07:00)
+INFO 2025-01-06 11:43:24,785 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-01-06 11:43:24,785 base>remove_job Removed job job_delStartupFlag
+INFO 2025-01-06 11:43:24,787 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 11:43:34 MST)" executed successfully
+INFO 2025-01-06 11:43:25,137 runserver>log_action [mHTTP GET /supervisor/1/ 200 [1.34, 127.0.0.1:6644][0m
+INFO 2025-01-06 11:43:28,798 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.27, 127.0.0.1:6657][0m
+INFO 2025-01-06 11:43:28,802 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6659]
+ERROR 2025-01-06 11:43:29,540 server>application_checker Exception inside application: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+Traceback (most recent call last):
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\staticfiles.py", line 44, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 71, in __call__
+    return await application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\security\websocket.py", line 37, in __call__
+    return await self.application(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 47, in __call__
+    return await self.inner(dict(scope, cookies=cookies), receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\sessions.py", line 263, in __call__
+    return await self.inner(wrapper.scope, receive, wrapper.send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\auth.py", line 185, in __call__
+    return await super().__call__(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\middleware.py", line 26, in __call__
+    return await self.inner(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\CHB2024\aqs8server\env\Lib\site-packages\channels\routing.py", line 168, in __call__
+    raise ValueError("No route found for path %r." % path)
+ValueError: No route found for path 'ws/aqs_app_chb/disp/KB/c/'.
+INFO 2025-01-06 11:43:29,542 runserver>log_action WebSocket DISCONNECT /ws/aqs_app_chb/disp/KB/c/ [127.0.0.1:6659]
+INFO 2025-01-06 11:44:48,079 base>start Scheduler started
+INFO 2025-01-06 11:44:48,084 apps>ready    *** Queuing System Started ***
+INFO 2025-01-06 11:44:48,085 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-01-06 11:44:48,085 apps>sub_init -SCH- Now:01/06/2025, 18:44:48
+INFO 2025-01-06 11:44:48,159 apps>sub_init -SCH- No migrations are needed
+INFO 2025-01-06 11:44:48,161 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-01-06 11:44:48,161 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-01-06 11:44:48,219 views>sch_shutdown  -SCH- Next reset [KB]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 11:44:48,220 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 11:44:48,220 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 18:44:48 [No]
+INFO 2025-01-06 11:44:48,221 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:44:48,222 views>sch_shutdown  -SCH- Next reset [MK]: 2025-01-07 18:00:00 Local:2025-01-08 02:00:00
+INFO 2025-01-06 11:44:48,223 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-01-06 11:44:48,223 views>sch_shutdown    -SCH- 2025-01-06 18:00:00 > 2025-01-06 18:44:48 [No]
+INFO 2025-01-06 11:44:48,224 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:44:48,225 views>sch_shutdown  -SCH- Next reset [MHT]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 11:44:48,225 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 11:44:48,225 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 18:44:48 [No]
+INFO 2025-01-06 11:44:48,226 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:44:48,226 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-01-06 11:44:49,658 base>start Scheduler started
+INFO 2025-01-06 11:44:49,690 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 11:44:49,867 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 11:44:49,867 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 11:44:49,869 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 11:44:49,913 runserver>log_action [mHTTP GET /api/?app=py%20Display%20Panel&version=8.3.2 200 [0.01, 127.0.0.1:6737][0m
+INFO 2025-01-06 11:44:50,180 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.26, 127.0.0.1:6745][0m
+INFO 2025-01-06 11:44:50,446 runserver>log_action [mHTTP POST /api/token/ 200 [0.26, 127.0.0.1:6746][0m
+INFO 2025-01-06 11:44:50,450 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:6747]
+INFO 2025-01-06 11:44:50,502 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 11:44:50,515 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:6747]
+INFO 2025-01-06 11:44:50,515 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 11:44:51,469 runserver>log_action [mHTTP GET /api/display5/?branchcode=KB&app=py_DispPanel&version=8.3.2&countername=c 200 [0.02, 127.0.0.1:6752][0m
+INFO 2025-01-06 11:44:57,056 runserver>log_action [mHTTP GET / 200 [0.08, 127.0.0.1:6756][0m
+INFO 2025-01-06 11:44:58,231 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 11:45:08 MST)" (scheduled at 2025-01-06 11:44:58.226808-07:00)
+INFO 2025-01-06 11:44:58,238 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-01-06 11:44:58,239 base>remove_job Removed job job_delStartupFlag
+INFO 2025-01-06 11:44:58,239 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 11:45:08 MST)" executed successfully
+INFO 2025-01-06 11:44:58,944 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.07, 127.0.0.1:6756][0m
+INFO 2025-01-06 11:45:00,215 runserver>log_action [mHTTP GET /softkey_login/1/ 200 [0.07, 127.0.0.1:6756][0m
+INFO 2025-01-06 11:45:01,751 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.17, 127.0.0.1:6756][0m
+INFO 2025-01-06 11:45:01,778 runserver>log_action [36mHTTP GET /static/js/softkey.js 304 [0.00, 127.0.0.1:6756][0m
+INFO 2025-01-06 11:45:01,789 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:6764]
+INFO 2025-01-06 11:45:01,793 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 11:45:01,798 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:6764]
+INFO 2025-01-06 11:45:01,798 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 11:45:01,801 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:6765]
+INFO 2025-01-06 11:45:01,804 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 11:45:01,807 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:6765]
+INFO 2025-01-06 11:45:01,807 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 11:45:01,811 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:6766]
+INFO 2025-01-06 11:45:01,816 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 11:45:01,820 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:6766]
+INFO 2025-01-06 11:45:01,821 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 11:45:19,211 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:6811][0m
+INFO 2025-01-06 11:45:38,769 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=P1&remark=test&app=postman&version=8.3&branchcode=KB&tickettype=A 200 [0.01, 127.0.0.1:6811][0m
+INFO 2025-01-06 11:45:41,201 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=P1&remark=test&app=postman&version=8.3&branchcode=KB&tickettype=A 200 [0.01, 127.0.0.1:6811][0m
+INFO 2025-01-06 11:46:20,298 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:6811][0m
+INFO 2025-01-06 11:46:30,949 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:30,951 ws>wssendwebtv ...Done
+INFO 2025-01-06 11:46:30,951 ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:30,956 ws>wssenddispwait ...Done
+INFO 2025-01-06 11:46:30,960 ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:30,963 ws>wssendql ...Done
+INFO 2025-01-06 11:46:30,980 ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:30,982 ws>wsSendPrintTicket ...Done
+INFO 2025-01-06 11:46:30,983 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=P1&remark=test&app=postman&version=8.3&branchcode=KB&tickettype=A 200 [0.06, 127.0.0.1:6811][0m
+INFO 2025-01-06 11:46:33,250 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:33,252 ws>wssendwebtv ...Done
+INFO 2025-01-06 11:46:33,253 ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:33,256 ws>wssenddispwait ...Done
+INFO 2025-01-06 11:46:33,260 ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:33,262 ws>wssendql ...Done
+INFO 2025-01-06 11:46:33,277 ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:33,279 ws>wsSendPrintTicket ...Done
+INFO 2025-01-06 11:46:33,280 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=P1&remark=test&app=postman&version=8.3&branchcode=KB&tickettype=A 200 [0.05, 127.0.0.1:6811][0m
+INFO 2025-01-06 11:46:33,971 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:33,973 ws>wssendwebtv ...Done
+INFO 2025-01-06 11:46:33,974 ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:33,976 ws>wssenddispwait ...Done
+INFO 2025-01-06 11:46:33,980 ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:33,983 ws>wssendql ...Done
+INFO 2025-01-06 11:46:33,997 ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:33,999 ws>wsSendPrintTicket ...Done
+INFO 2025-01-06 11:46:34,000 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=P1&remark=test&app=postman&version=8.3&branchcode=KB&tickettype=A 200 [0.05, 127.0.0.1:6811][0m
+INFO 2025-01-06 11:46:34,575 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:34,577 ws>wssendwebtv ...Done
+INFO 2025-01-06 11:46:34,577 ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:34,580 ws>wssenddispwait ...Done
+INFO 2025-01-06 11:46:34,584 ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:34,586 ws>wssendql ...Done
+INFO 2025-01-06 11:46:34,600 ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:34,603 ws>wsSendPrintTicket ...Done
+INFO 2025-01-06 11:46:34,605 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=P1&remark=test&app=postman&version=8.3&branchcode=KB&tickettype=A 200 [0.05, 127.0.0.1:6811][0m
+INFO 2025-01-06 11:46:35,262 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:35,264 ws>wssendwebtv ...Done
+INFO 2025-01-06 11:46:35,264 ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:35,267 ws>wssenddispwait ...Done
+INFO 2025-01-06 11:46:35,271 ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:35,274 ws>wssendql ...Done
+INFO 2025-01-06 11:46:35,292 ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:35,295 ws>wsSendPrintTicket ...Done
+INFO 2025-01-06 11:46:35,296 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=P1&remark=test&app=postman&version=8.3&branchcode=KB&tickettype=A 200 [0.06, 127.0.0.1:6811][0m
+INFO 2025-01-06 11:46:36,250 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:36,252 ws>wssendwebtv ...Done
+INFO 2025-01-06 11:46:36,252 ws>wssenddispwait channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:36,255 ws>wssenddispwait ...Done
+INFO 2025-01-06 11:46:36,260 ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:36,263 ws>wssendql ...Done
+INFO 2025-01-06 11:46:36,276 ws>wsSendPrintTicket channel_group_name:print_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:36,278 ws>wsSendPrintTicket ...Done
+INFO 2025-01-06 11:46:36,279 runserver>log_action [mHTTP POST /api/ticketkey/?printernumber=P1&remark=test&app=postman&version=8.3&branchcode=KB&tickettype=A 200 [0.05, 127.0.0.1:6811][0m
+INFO 2025-01-06 11:46:38,812 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:6765]
+INFO 2025-01-06 11:46:38,813 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:6764]
+INFO 2025-01-06 11:46:38,813 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:6766]
+INFO 2025-01-06 11:46:38,819 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 11:46:38,825 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 11:46:38,826 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 11:46:38,890 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:38,893 ws>wssendwebtv ...Done
+INFO 2025-01-06 11:46:38,893 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:38,896 ws>wssenddispcall ...Done
+INFO 2025-01-06 11:46:38,900 ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:38,903 ws>wssendql ...Done
+INFO 2025-01-06 11:46:38,905 ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A001_F4d sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:38,908 ws>wsSendTicketStatus ...Done
+INFO 2025-01-06 11:46:38,910 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:38,911 ws>wssendvoice ...Done
+INFO 2025-01-06 11:46:38,913 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:38,915 ws>send ...Done
+INFO 2025-01-06 11:46:38,915 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:38,917 ws>send ...Done
+INFO 2025-01-06 11:46:38,917 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:38,918 ws>send ...Done
+INFO 2025-01-06 11:46:38,919 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:38,921 ws>wssendflashlight ...Done
+INFO 2025-01-06 11:46:38,922 ws>wscounterstatus channel_group_name:cs_KB_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:38,923 ws>wscounterstatus ...Done
+INFO 2025-01-06 11:46:38,936 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.12, 127.0.0.1:6884][0m
+INFO 2025-01-06 11:46:39,008 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.07, 127.0.0.1:6884][0m
+INFO 2025-01-06 11:46:39,024 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:6890]
+INFO 2025-01-06 11:46:39,028 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 11:46:39,033 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:6890]
+INFO 2025-01-06 11:46:39,034 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 11:46:39,035 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:6891]
+INFO 2025-01-06 11:46:39,040 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 11:46:39,043 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:6891]
+INFO 2025-01-06 11:46:39,043 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 11:46:39,047 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:6892]
+INFO 2025-01-06 11:46:39,050 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 11:46:39,056 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:6892]
+INFO 2025-01-06 11:46:39,056 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 11:46:46,715 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:6747]
+INFO 2025-01-06 11:46:46,717 consumers>disconnect Disconnected:disp_KB_c Internal [0]
+INFO 2025-01-06 11:46:50,028 runserver>log_action [mHTTP GET /api/?app=py%20Display%20Panel&version=8.3.2 200 [0.01, 127.0.0.1:6902][0m
+INFO 2025-01-06 11:46:50,308 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.27, 127.0.0.1:6903][0m
+INFO 2025-01-06 11:46:50,562 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:6904][0m
+INFO 2025-01-06 11:46:50,566 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:6906]
+INFO 2025-01-06 11:46:50,570 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 11:46:50,574 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:6906]
+INFO 2025-01-06 11:46:50,575 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 11:46:51,585 runserver>log_action [mHTTP GET /api/display5/?branchcode=KB&app=py_DispPanel&version=8.3.2&countername=c 200 [0.02, 127.0.0.1:6909][0m
+INFO 2025-01-06 11:46:53,040 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:6892]
+INFO 2025-01-06 11:46:53,042 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:6890]
+INFO 2025-01-06 11:46:53,042 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:6891]
+INFO 2025-01-06 11:46:53,044 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 11:46:53,045 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 11:46:53,045 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 11:46:53,124 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:53,127 ws>wssendwebtv ...Done
+INFO 2025-01-06 11:46:53,128 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:53,130 ws>wssenddispcall ...Done
+INFO 2025-01-06 11:46:53,133 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:53,135 ws>wssendvoice ...Done
+INFO 2025-01-06 11:46:53,138 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:53,140 ws>send ...Done
+INFO 2025-01-06 11:46:53,140 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:53,142 ws>send ...Done
+INFO 2025-01-06 11:46:53,142 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:53,144 ws>send ...Done
+INFO 2025-01-06 11:46:53,144 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:46:53,146 ws>wssendflashlight ...Done
+INFO 2025-01-06 11:46:53,152 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.11, 127.0.0.1:6884][0m
+INFO 2025-01-06 11:46:53,222 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.07, 127.0.0.1:6884][0m
+INFO 2025-01-06 11:46:53,236 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:6911]
+INFO 2025-01-06 11:46:53,242 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 11:46:53,247 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:6911]
+INFO 2025-01-06 11:46:53,247 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 11:46:53,250 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:6912]
+INFO 2025-01-06 11:46:53,252 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 11:46:53,257 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:6912]
+INFO 2025-01-06 11:46:53,258 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 11:46:53,260 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:6913]
+INFO 2025-01-06 11:46:53,264 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 11:46:53,269 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:6913]
+INFO 2025-01-06 11:46:53,269 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 11:49:16,903 autoreload>trigger_reload D:\Projects\CHB2024\aqs8server\base\consumers.py changed, reloading.
+INFO 2025-01-06 11:49:18,501 base>start Scheduler started
+INFO 2025-01-06 11:49:18,506 apps>ready    *** Queuing System Started ***
+INFO 2025-01-06 11:49:18,507 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-01-06 11:49:18,507 apps>sub_init -SCH- Now:01/06/2025, 18:49:18
+INFO 2025-01-06 11:49:18,580 apps>sub_init -SCH- No migrations are needed
+INFO 2025-01-06 11:49:18,582 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-01-06 11:49:18,582 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-01-06 11:49:18,641 views>sch_shutdown  -SCH- Next reset [KB]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 11:49:18,642 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 11:49:18,642 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 18:49:18 [No]
+INFO 2025-01-06 11:49:18,644 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:49:18,645 views>sch_shutdown  -SCH- Next reset [MK]: 2025-01-07 18:00:00 Local:2025-01-08 02:00:00
+INFO 2025-01-06 11:49:18,645 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-01-06 11:49:18,646 views>sch_shutdown    -SCH- 2025-01-06 18:00:00 > 2025-01-06 18:49:18 [No]
+INFO 2025-01-06 11:49:18,646 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:49:18,647 views>sch_shutdown  -SCH- Next reset [MHT]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 11:49:18,648 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 11:49:18,648 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 18:49:18 [No]
+INFO 2025-01-06 11:49:18,649 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:49:18,649 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-01-06 11:49:18,674 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 11:49:18,823 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 11:49:18,823 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 11:49:18,824 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 11:49:21,544 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.27, 127.0.0.1:7046][0m
+INFO 2025-01-06 11:49:21,548 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:7047]
+INFO 2025-01-06 11:49:21,585 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 11:49:21,596 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:7047]
+INFO 2025-01-06 11:49:21,597 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 11:49:22,280 autoreload>trigger_reload D:\Projects\CHB2024\aqs8server\base\consumers.py changed, reloading.
+INFO 2025-01-06 11:49:23,973 base>start Scheduler started
+INFO 2025-01-06 11:49:24,006 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 11:49:24,212 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 11:49:24,213 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 11:49:24,215 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 11:49:31,627 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.26, 127.0.0.1:7066][0m
+INFO 2025-01-06 11:49:31,632 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:7067]
+INFO 2025-01-06 11:49:31,673 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 11:49:31,685 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:7067]
+INFO 2025-01-06 11:49:31,686 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 11:49:37,926 autoreload>trigger_reload D:\Projects\CHB2024\aqs8server\base\ws.py changed, reloading.
+INFO 2025-01-06 11:49:39,507 base>start Scheduler started
+INFO 2025-01-06 11:49:39,539 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 11:49:39,727 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 11:49:39,728 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 11:49:39,729 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 11:49:41,658 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.27, 127.0.0.1:7083][0m
+INFO 2025-01-06 11:49:41,662 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:7085]
+INFO 2025-01-06 11:49:41,699 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 11:49:41,711 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:7085]
+INFO 2025-01-06 11:49:41,711 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 11:49:48,079 base>start Scheduler started
+INFO 2025-01-06 11:50:15,003 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:50:15,005 ws>wssendwebtv ...Done
+INFO 2025-01-06 11:50:15,006 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:50:15,013 ws>wssenddispcall ...Done
+INFO 2025-01-06 11:50:15,015 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:50:15,017 ws>wssendvoice ...Done
+INFO 2025-01-06 11:50:15,020 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:50:15,022 ws>send ...Done
+INFO 2025-01-06 11:50:15,023 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:50:15,024 ws>send ...Done
+INFO 2025-01-06 11:50:15,025 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:50:15,026 ws>send ...Done
+INFO 2025-01-06 11:50:15,027 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:50:15,028 ws>wssendflashlight ...Done
+INFO 2025-01-06 11:50:15,050 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.23, 127.0.0.1:7128][0m
+INFO 2025-01-06 11:50:15,134 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.08, 127.0.0.1:7128][0m
+INFO 2025-01-06 11:50:15,152 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:7132]
+INFO 2025-01-06 11:50:15,158 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 11:50:15,166 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:7132]
+INFO 2025-01-06 11:50:15,167 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 11:50:15,170 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:7133]
+INFO 2025-01-06 11:50:15,176 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 11:50:15,181 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:7133]
+INFO 2025-01-06 11:50:15,182 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 11:50:15,187 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:7134]
+INFO 2025-01-06 11:50:15,190 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 11:50:15,195 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:7134]
+INFO 2025-01-06 11:50:15,196 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 11:52:09,656 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:7134]
+INFO 2025-01-06 11:52:09,657 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:7132]
+INFO 2025-01-06 11:52:09,658 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:7133]
+INFO 2025-01-06 11:52:09,663 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 11:52:09,666 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 11:52:09,667 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 11:52:09,748 ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A001_F4d sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:52:09,751 ws>wsSendTicketStatus ...Done
+INFO 2025-01-06 11:52:09,751 ws>wscounterstatus channel_group_name:cs_KB_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:52:09,754 ws>wscounterstatus ...Done
+INFO 2025-01-06 11:52:09,760 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.10, 127.0.0.1:7234][0m
+INFO 2025-01-06 11:52:09,829 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.07, 127.0.0.1:7234][0m
+INFO 2025-01-06 11:52:09,843 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:7239]
+INFO 2025-01-06 11:52:09,847 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 11:52:09,853 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:7239]
+INFO 2025-01-06 11:52:09,853 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 11:52:09,855 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:7240]
+INFO 2025-01-06 11:52:09,859 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 11:52:09,864 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:7240]
+INFO 2025-01-06 11:52:09,865 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 11:52:09,868 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:7241]
+INFO 2025-01-06 11:52:09,872 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 11:52:09,877 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:7241]
+INFO 2025-01-06 11:52:09,877 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 11:52:22,761 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:7241]
+INFO 2025-01-06 11:52:22,761 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:7240]
+INFO 2025-01-06 11:52:22,762 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:7239]
+INFO 2025-01-06 11:52:22,765 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 11:52:22,766 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 11:52:22,766 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 11:52:22,834 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:52:22,838 ws>wssendwebtv ...Done
+INFO 2025-01-06 11:52:22,838 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:52:22,846 ws>wssenddispcall ...Done
+INFO 2025-01-06 11:52:22,849 ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:52:22,851 ws>wssendql ...Done
+INFO 2025-01-06 11:52:22,856 ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A002_dRf sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:52:22,857 ws>wsSendTicketStatus ...Done
+INFO 2025-01-06 11:52:22,859 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:52:22,861 ws>wssendvoice ...Done
+INFO 2025-01-06 11:52:22,864 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:52:22,867 ws>send ...Done
+INFO 2025-01-06 11:52:22,867 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:52:22,869 ws>send ...Done
+INFO 2025-01-06 11:52:22,870 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:52:22,871 ws>send ...Done
+INFO 2025-01-06 11:52:22,871 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:52:22,873 ws>wssendflashlight ...Done
+INFO 2025-01-06 11:52:22,874 ws>wscounterstatus channel_group_name:cs_KB_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:52:22,877 ws>wscounterstatus ...Done
+INFO 2025-01-06 11:52:22,891 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.13, 127.0.0.1:7234][0m
+INFO 2025-01-06 11:52:22,968 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.07, 127.0.0.1:7234][0m
+INFO 2025-01-06 11:52:22,984 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:7251]
+INFO 2025-01-06 11:52:22,988 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 11:52:22,993 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:7251]
+INFO 2025-01-06 11:52:22,994 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 11:52:22,997 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:7252]
+INFO 2025-01-06 11:52:23,002 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 11:52:23,005 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:7252]
+INFO 2025-01-06 11:52:23,006 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 11:52:23,008 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:7253]
+INFO 2025-01-06 11:52:23,012 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 11:52:23,018 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:7253]
+INFO 2025-01-06 11:52:23,018 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 11:54:01,461 autoreload>trigger_reload D:\Projects\CHB2024\aqs8server\base\ws.py changed, reloading.
+INFO 2025-01-06 11:54:03,098 base>start Scheduler started
+INFO 2025-01-06 11:54:03,103 apps>ready Diff seconds (now and update): 255.016251seconds. Set worker to 1
+INFO 2025-01-06 11:54:03,103 apps>ready    *** Queuing System Started ***
+INFO 2025-01-06 11:54:03,103 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-01-06 11:54:03,104 apps>sub_init -SCH- Now:01/06/2025, 18:54:03
+INFO 2025-01-06 11:54:03,176 apps>sub_init -SCH- No migrations are needed
+INFO 2025-01-06 11:54:03,178 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-01-06 11:54:03,178 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-01-06 11:54:03,236 views>sch_shutdown  -SCH- Next reset [KB]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 11:54:03,236 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 11:54:03,237 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 18:54:03 [No]
+INFO 2025-01-06 11:54:03,238 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:54:03,239 views>sch_shutdown  -SCH- Next reset [MK]: 2025-01-07 18:00:00 Local:2025-01-08 02:00:00
+INFO 2025-01-06 11:54:03,240 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-01-06 11:54:03,240 views>sch_shutdown    -SCH- 2025-01-06 18:00:00 > 2025-01-06 18:54:03 [No]
+INFO 2025-01-06 11:54:03,241 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:54:03,242 views>sch_shutdown  -SCH- Next reset [MHT]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 11:54:03,242 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 11:54:03,242 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 18:54:03 [No]
+INFO 2025-01-06 11:54:03,243 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 11:54:03,244 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-01-06 11:54:03,270 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 11:54:03,409 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 11:54:03,410 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 11:54:03,411 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 11:54:04,180 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.27, 127.0.0.1:7338][0m
+INFO 2025-01-06 11:54:04,184 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:7346]
+INFO 2025-01-06 11:54:04,224 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 11:54:04,235 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:7346]
+INFO 2025-01-06 11:54:04,235 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 11:54:09,442 base>start Scheduler started
+INFO 2025-01-06 11:54:13,247 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 11:54:23 MST)" (scheduled at 2025-01-06 11:54:13.244989-07:00)
+INFO 2025-01-06 11:54:13,253 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-01-06 11:54:13,254 base>remove_job Removed job job_delStartupFlag
+INFO 2025-01-06 11:54:13,254 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 11:54:23 MST)" executed successfully
+INFO 2025-01-06 11:54:19,571 ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A002_dRf sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:54:19,574 ws>wsSendTicketStatus ...Done
+INFO 2025-01-06 11:54:19,574 ws>wscounterstatus channel_group_name:cs_KB_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:54:19,576 ws>wscounterstatus ...Done
+INFO 2025-01-06 11:54:19,599 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.11, 127.0.0.1:7380][0m
+INFO 2025-01-06 11:54:19,723 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.12, 127.0.0.1:7380][0m
+INFO 2025-01-06 11:54:19,738 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:7384]
+INFO 2025-01-06 11:54:19,743 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 11:54:19,748 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:7384]
+INFO 2025-01-06 11:54:19,749 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 11:54:19,752 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:7385]
+INFO 2025-01-06 11:54:19,756 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 11:54:19,759 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:7385]
+INFO 2025-01-06 11:54:19,760 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 11:54:19,763 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:7386]
+INFO 2025-01-06 11:54:19,767 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 11:54:19,772 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:7386]
+INFO 2025-01-06 11:54:19,773 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 11:54:24,833 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:7386]
+INFO 2025-01-06 11:54:24,834 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:7384]
+INFO 2025-01-06 11:54:24,835 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:7385]
+INFO 2025-01-06 11:54:24,841 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 11:54:24,843 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 11:54:24,845 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 11:54:24,912 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:54:24,914 ws>wssendwebtv ...Done
+INFO 2025-01-06 11:54:24,915 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:54:24,923 ws>wssenddispcall ...Done x3
+INFO 2025-01-06 11:54:24,926 ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:54:24,929 ws>wssendql ...Done
+INFO 2025-01-06 11:54:24,934 ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A003_j7c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:54:24,936 ws>wsSendTicketStatus ...Done
+INFO 2025-01-06 11:54:24,937 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:54:24,939 ws>wssendvoice ...Done
+INFO 2025-01-06 11:54:24,941 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:54:24,942 ws>send ...Done
+INFO 2025-01-06 11:54:24,943 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:54:24,944 ws>send ...Done
+INFO 2025-01-06 11:54:24,945 ws>send channel_group_name:voice830_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:54:24,947 ws>send ...Done
+INFO 2025-01-06 11:54:24,947 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:54:24,948 ws>wssendflashlight ...Done
+INFO 2025-01-06 11:54:24,950 ws>wscounterstatus channel_group_name:cs_KB_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 11:54:24,953 ws>wscounterstatus ...Done
+INFO 2025-01-06 11:54:24,966 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.13, 127.0.0.1:7380][0m
+INFO 2025-01-06 11:54:25,040 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.07, 127.0.0.1:7380][0m
+INFO 2025-01-06 11:54:25,055 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:7393]
+INFO 2025-01-06 11:54:25,060 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 11:54:25,065 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:7393]
+INFO 2025-01-06 11:54:25,066 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 11:54:25,068 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:7394]
+INFO 2025-01-06 11:54:25,074 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 11:54:25,080 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:7394]
+INFO 2025-01-06 11:54:25,081 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 11:54:25,085 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:7395]
+INFO 2025-01-06 11:54:25,089 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 11:54:25,094 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:7395]
+INFO 2025-01-06 11:54:25,095 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:01:13,451 base>start Scheduler started
+INFO 2025-01-06 12:01:13,456 apps>ready    *** Queuing System Started ***
+INFO 2025-01-06 12:01:13,457 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-01-06 12:01:13,457 apps>sub_init -SCH- Now:01/06/2025, 19:01:13
+INFO 2025-01-06 12:01:13,530 apps>sub_init -SCH- No migrations are needed
+INFO 2025-01-06 12:01:13,532 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-01-06 12:01:13,532 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-01-06 12:01:13,590 views>sch_shutdown  -SCH- Next reset [KB]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 12:01:13,590 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 12:01:13,591 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 19:01:13 [No]
+INFO 2025-01-06 12:01:13,592 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:01:13,593 views>sch_shutdown  -SCH- Next reset [MK]: 2025-01-07 18:00:00 Local:2025-01-08 02:00:00
+INFO 2025-01-06 12:01:13,594 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-01-06 12:01:13,594 views>sch_shutdown    -SCH- 2025-01-06 18:00:00 > 2025-01-06 19:01:13 [No]
+INFO 2025-01-06 12:01:13,594 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:01:13,595 views>sch_shutdown  -SCH- Next reset [MHT]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 12:01:13,596 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 12:01:13,596 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 19:01:13 [No]
+INFO 2025-01-06 12:01:13,597 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:01:13,597 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-01-06 12:01:14,977 base>start Scheduler started
+INFO 2025-01-06 12:01:15,009 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 12:01:15,201 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 12:01:15,201 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 12:01:15,203 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 12:01:18,914 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.28, 127.0.0.1:7886][0m
+INFO 2025-01-06 12:01:18,918 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:7887]
+INFO 2025-01-06 12:01:18,955 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 12:01:18,966 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:7887]
+INFO 2025-01-06 12:01:18,967 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 12:01:19,712 base>start Scheduler started
+INFO 2025-01-06 12:01:23,609 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 12:01:33 MST)" (scheduled at 2025-01-06 12:01:23.597881-07:00)
+INFO 2025-01-06 12:01:23,616 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-01-06 12:01:23,617 base>remove_job Removed job job_delStartupFlag
+INFO 2025-01-06 12:01:23,617 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 12:01:33 MST)" executed successfully
+INFO 2025-01-06 12:01:34,233 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:01:34,236 ws>wssendwebtv ...Done
+INFO 2025-01-06 12:01:34,237 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:01:34,245 ws>wssenddispcall ...Done x3
+INFO 2025-01-06 12:01:34,249 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:01:34,250 ws>wssendvoice ...Done
+INFO 2025-01-06 12:01:34,253 ws>send channel_group_name:voice830_KB_c sending data (Volume)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:01:34,255 ws>send ...Done
+INFO 2025-01-06 12:01:34,256 ws>send channel_group_name:voice830_KB_c sending data (Before Sound)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:01:34,257 ws>send ...Done
+INFO 2025-01-06 12:01:34,258 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:01:34,260 ws>send ...Done
+INFO 2025-01-06 12:01:34,260 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:01:34,262 ws>wssendflashlight ...Done
+INFO 2025-01-06 12:01:34,283 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.21, 127.0.0.1:7915][0m
+INFO 2025-01-06 12:01:34,430 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.14, 127.0.0.1:7915][0m
+INFO 2025-01-06 12:01:34,454 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:7920]
+INFO 2025-01-06 12:01:34,459 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 12:01:34,463 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:7920]
+INFO 2025-01-06 12:01:34,464 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 12:01:34,466 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:7921]
+INFO 2025-01-06 12:01:34,472 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 12:01:34,475 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:7921]
+INFO 2025-01-06 12:01:34,475 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 12:01:34,478 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:7922]
+INFO 2025-01-06 12:01:34,481 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 12:01:34,485 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:7922]
+INFO 2025-01-06 12:01:34,486 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:02:41,749 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:7921]
+INFO 2025-01-06 12:02:41,749 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:7920]
+INFO 2025-01-06 12:02:41,750 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:7922]
+INFO 2025-01-06 12:02:41,755 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 12:02:41,757 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 12:02:41,758 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 12:02:41,831 ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A003_j7c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:41,837 ws>wsSendTicketStatus ...Done
+INFO 2025-01-06 12:02:41,837 ws>wscounterstatus channel_group_name:cs_KB_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:41,840 ws>wscounterstatus ...Done
+INFO 2025-01-06 12:02:41,845 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.09, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:02:41,910 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.06, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:02:41,928 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:7985]
+INFO 2025-01-06 12:02:41,931 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 12:02:41,935 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:7985]
+INFO 2025-01-06 12:02:41,936 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 12:02:41,938 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:7986]
+INFO 2025-01-06 12:02:41,941 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 12:02:41,945 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:7986]
+INFO 2025-01-06 12:02:41,946 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 12:02:41,948 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:7987]
+INFO 2025-01-06 12:02:41,951 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 12:02:41,955 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:7987]
+INFO 2025-01-06 12:02:41,956 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:02:45,214 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:7987]
+INFO 2025-01-06 12:02:45,215 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:7986]
+INFO 2025-01-06 12:02:45,215 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:7985]
+INFO 2025-01-06 12:02:45,217 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 12:02:45,218 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 12:02:45,218 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 12:02:45,293 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:45,295 ws>wssendwebtv ...Done
+INFO 2025-01-06 12:02:45,295 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:45,303 ws>wssenddispcall ...Done x3
+INFO 2025-01-06 12:02:45,306 ws>wssendql channel_group_name:ql_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:45,309 ws>wssendql ...Done
+INFO 2025-01-06 12:02:45,313 ws>wsSendTicketStatus channel_group_name:ticketstatus_KB_A004_fly sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:45,315 ws>wsSendTicketStatus ...Done
+INFO 2025-01-06 12:02:45,316 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:45,318 ws>wssendvoice ...Done
+INFO 2025-01-06 12:02:45,320 ws>send channel_group_name:voice830_KB_c sending data (Volume)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:45,321 ws>send ...Done
+INFO 2025-01-06 12:02:45,322 ws>send channel_group_name:voice830_KB_c sending data (Before Sound)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:45,324 ws>send ...Done
+INFO 2025-01-06 12:02:45,324 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:45,325 ws>send ...Done
+INFO 2025-01-06 12:02:45,326 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:45,327 ws>wssendflashlight ...Done
+INFO 2025-01-06 12:02:45,329 ws>wscounterstatus channel_group_name:cs_KB_1 sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:45,331 ws>wscounterstatus ...Done
+INFO 2025-01-06 12:02:45,345 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.13, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:02:45,412 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.06, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:02:45,428 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:7990]
+INFO 2025-01-06 12:02:45,432 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 12:02:45,437 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:7990]
+INFO 2025-01-06 12:02:45,437 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 12:02:45,440 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:7991]
+INFO 2025-01-06 12:02:45,446 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 12:02:45,449 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:7991]
+INFO 2025-01-06 12:02:45,450 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 12:02:45,452 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:7992]
+INFO 2025-01-06 12:02:45,455 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 12:02:45,461 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:7992]
+INFO 2025-01-06 12:02:45,461 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:02:53,894 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:7992]
+INFO 2025-01-06 12:02:53,895 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:7990]
+INFO 2025-01-06 12:02:53,895 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:7991]
+INFO 2025-01-06 12:02:53,897 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 12:02:53,898 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 12:02:53,898 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 12:02:53,983 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:53,985 ws>wssendwebtv ...Done
+INFO 2025-01-06 12:02:53,986 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:53,994 ws>wssenddispcall ...Done x3
+INFO 2025-01-06 12:02:53,997 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:53,999 ws>wssendvoice ...Done
+INFO 2025-01-06 12:02:54,000 ws>send channel_group_name:voice830_KB_c sending data (Volume)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:54,002 ws>send ...Done
+INFO 2025-01-06 12:02:54,002 ws>send channel_group_name:voice830_KB_c sending data (Before Sound)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:54,004 ws>send ...Done
+INFO 2025-01-06 12:02:54,004 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:54,006 ws>send ...Done
+INFO 2025-01-06 12:02:54,006 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:02:54,008 ws>wssendflashlight ...Done
+INFO 2025-01-06 12:02:54,016 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.12, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:02:54,085 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.07, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:02:54,103 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:8001]
+INFO 2025-01-06 12:02:54,106 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 12:02:54,112 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:8001]
+INFO 2025-01-06 12:02:54,113 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 12:02:54,117 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:8002]
+INFO 2025-01-06 12:02:54,120 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 12:02:54,123 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:8002]
+INFO 2025-01-06 12:02:54,124 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 12:02:54,129 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:8003]
+INFO 2025-01-06 12:02:54,133 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 12:02:54,137 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:8003]
+INFO 2025-01-06 12:02:54,138 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:02:56,766 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:8003]
+INFO 2025-01-06 12:02:56,766 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:8002]
+INFO 2025-01-06 12:02:56,767 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:8001]
+INFO 2025-01-06 12:02:56,769 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 12:02:56,770 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 12:02:56,770 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 12:02:56,833 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.06, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:02:57,523 runserver>log_action [mHTTP GET /user/ 200 [0.07, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:02:58,028 runserver>log_action [mHTTP GET /supervisors/ 200 [0.06, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:02:58,469 runserver>log_action [mHTTP GET /reports/ 200 [0.05, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:02:58,992 runserver>log_action [mHTTP GET /tfs/ 200 [0.06, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:02:59,462 runserver>log_action [mHTTP GET /reports/ 200 [0.06, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:02:59,874 runserver>log_action [mHTTP GET /supervisors/ 200 [0.05, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:03:00,396 runserver>log_action [mHTTP GET /user/ 200 [0.07, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:03:02,695 runserver>log_action [mHTTP GET /routes/ 200 [0.06, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:03:04,765 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.05, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:03:05,639 runserver>log_action [mHTTP GET /softkey_login/1/ 200 [0.06, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:03:06,770 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.06, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:03:06,788 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:8027]
+INFO 2025-01-06 12:03:06,792 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 12:03:06,798 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:8027]
+INFO 2025-01-06 12:03:06,798 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 12:03:06,801 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:8028]
+INFO 2025-01-06 12:03:06,805 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 12:03:06,808 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:8028]
+INFO 2025-01-06 12:03:06,808 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 12:03:06,813 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:8029]
+INFO 2025-01-06 12:03:06,817 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 12:03:06,821 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:8029]
+INFO 2025-01-06 12:03:06,822 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:03:08,051 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:8027]
+INFO 2025-01-06 12:03:08,052 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:8028]
+INFO 2025-01-06 12:03:08,053 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:8029]
+INFO 2025-01-06 12:03:08,055 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 12:03:08,056 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 12:03:08,056 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 12:03:08,140 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:03:08,143 ws>wssendwebtv ...Done
+INFO 2025-01-06 12:03:08,144 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:03:08,152 ws>wssenddispcall ...Done x3
+INFO 2025-01-06 12:03:08,155 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:03:08,156 ws>wssendvoice ...Done
+INFO 2025-01-06 12:03:08,159 ws>send channel_group_name:voice830_KB_c sending data (Volume)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:03:08,161 ws>send ...Done
+INFO 2025-01-06 12:03:08,161 ws>send channel_group_name:voice830_KB_c sending data (Before Sound)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:03:08,163 ws>send ...Done
+INFO 2025-01-06 12:03:08,163 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:03:08,164 ws>send ...Done
+INFO 2025-01-06 12:03:08,165 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:03:08,166 ws>wssendflashlight ...Done
+INFO 2025-01-06 12:03:08,174 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.12, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:03:08,251 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.07, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:03:08,270 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:8032]
+INFO 2025-01-06 12:03:08,274 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 12:03:08,279 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:8032]
+INFO 2025-01-06 12:03:08,280 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 12:03:08,283 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:8033]
+INFO 2025-01-06 12:03:08,287 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 12:03:08,290 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:8033]
+INFO 2025-01-06 12:03:08,291 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 12:03:08,295 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:8034]
+INFO 2025-01-06 12:03:08,299 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 12:03:08,304 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:8034]
+INFO 2025-01-06 12:03:08,304 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:03:09,015 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:8034]
+INFO 2025-01-06 12:03:09,016 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:8033]
+INFO 2025-01-06 12:03:09,017 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:8032]
+INFO 2025-01-06 12:03:09,019 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 12:03:09,020 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 12:03:09,020 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 12:03:09,077 runserver>log_action [mHTTP GET /supervisors/ 200 [0.06, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:03:10,244 runserver>log_action [mHTTP GET /user/ 200 [0.08, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:03:10,767 runserver>log_action [mHTTP GET /tfs/ 200 [0.05, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:03:12,251 runserver>log_action [mHTTP GET /user/ 200 [0.06, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:03:13,753 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.05, 127.0.0.1:7981][0m
+INFO 2025-01-06 12:15:07,622 runserver>log_action [mHTTP GET /api/?app=py%20Voice%20Compontent&version=8.3.2 200 [0.01, 127.0.0.1:10193][0m
+INFO 2025-01-06 12:15:07,920 runserver>log_action [mHTTP POST /api/loginapi/?app=py%20Voice%20Compontent&version=8.3.2 200 [0.29, 127.0.0.1:10194][0m
+INFO 2025-01-06 12:15:08,198 runserver>log_action [mHTTP POST /api/token/ 200 [0.27, 127.0.0.1:10195][0m
+INFO 2025-01-06 12:15:08,204 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/voice830/KB/c/ [127.0.0.1:10196]
+INFO 2025-01-06 12:15:08,208 consumers>connect connecting:voice830_KB_c
+INFO 2025-01-06 12:15:08,213 runserver>log_action WebSocket CONNECT /ws/aqs_app/voice830/KB/c/ [127.0.0.1:10196]
+INFO 2025-01-06 12:15:08,214 consumers>connect IP 127.0.0.1 Connected:voice830_KB_c [1]
+INFO 2025-01-06 12:15:20,361 runserver>log_action [mHTTP GET /softkey_login_b/ 200 [0.06, 127.0.0.1:10207][0m
+INFO 2025-01-06 12:15:20,963 runserver>log_action [mHTTP GET /softkey_login/1/ 200 [0.08, 127.0.0.1:10207][0m
+INFO 2025-01-06 12:15:21,910 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.07, 127.0.0.1:10207][0m
+INFO 2025-01-06 12:15:21,932 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:10218]
+INFO 2025-01-06 12:15:21,937 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 12:15:21,943 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:10218]
+INFO 2025-01-06 12:15:21,943 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 12:15:21,946 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:10219]
+INFO 2025-01-06 12:15:21,950 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 12:15:21,953 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:10219]
+INFO 2025-01-06 12:15:21,954 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 12:15:21,957 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:10220]
+INFO 2025-01-06 12:15:21,960 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 12:15:21,965 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:10220]
+INFO 2025-01-06 12:15:21,965 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:15:22,884 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:10218]
+INFO 2025-01-06 12:15:22,885 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:10220]
+INFO 2025-01-06 12:15:22,886 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:10219]
+INFO 2025-01-06 12:15:22,889 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 12:15:22,891 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 12:15:22,893 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 12:15:22,983 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:15:22,986 ws>wssendwebtv ...Done
+INFO 2025-01-06 12:15:22,987 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:15:22,996 ws>wssenddispcall ...Done x3
+INFO 2025-01-06 12:15:23,000 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:15:23,002 ws>wssendvoice ...Done
+INFO 2025-01-06 12:15:23,004 ws>send channel_group_name:voice830_KB_c sending data (Volume)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:15:23,008 ws>send ...Done
+INFO 2025-01-06 12:15:23,009 ws>send channel_group_name:voice830_KB_c sending data (Before Sound)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:15:23,012 ws>send ...Done
+INFO 2025-01-06 12:15:23,012 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:15:23,015 ws>send ...Done
+INFO 2025-01-06 12:15:23,016 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:15:23,018 ws>wssendflashlight ...Done
+INFO 2025-01-06 12:15:23,027 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.14, 127.0.0.1:10207][0m
+INFO 2025-01-06 12:15:23,102 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.07, 127.0.0.1:10207][0m
+INFO 2025-01-06 12:15:23,117 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:10223]
+INFO 2025-01-06 12:15:23,122 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 12:15:23,128 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:10223]
+INFO 2025-01-06 12:15:23,128 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 12:15:23,131 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:10224]
+INFO 2025-01-06 12:15:23,134 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 12:15:23,139 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:10224]
+INFO 2025-01-06 12:15:23,140 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 12:15:23,143 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:10225]
+INFO 2025-01-06 12:15:23,147 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 12:15:23,151 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:10225]
+INFO 2025-01-06 12:15:23,152 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:17:31,739 autoreload>trigger_reload D:\Projects\CHB2024\aqs8server\base\consumers.py changed, reloading.
+INFO 2025-01-06 12:17:33,762 base>start Scheduler started
+INFO 2025-01-06 12:17:33,769 apps>ready    *** Queuing System Started ***
+INFO 2025-01-06 12:17:33,769 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-01-06 12:17:33,770 apps>sub_init -SCH- Now:01/06/2025, 19:17:33
+INFO 2025-01-06 12:17:33,866 apps>sub_init -SCH- No migrations are needed
+INFO 2025-01-06 12:17:33,868 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-01-06 12:17:33,868 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-01-06 12:17:33,933 views>sch_shutdown  -SCH- Next reset [KB]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 12:17:33,936 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 12:17:33,936 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 19:17:33 [No]
+INFO 2025-01-06 12:17:33,939 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:17:33,941 views>sch_shutdown  -SCH- Next reset [MK]: 2025-01-07 18:00:00 Local:2025-01-08 02:00:00
+INFO 2025-01-06 12:17:33,941 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-01-06 12:17:33,942 views>sch_shutdown    -SCH- 2025-01-06 18:00:00 > 2025-01-06 19:17:33 [No]
+INFO 2025-01-06 12:17:33,944 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:17:33,946 views>sch_shutdown  -SCH- Next reset [MHT]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 12:17:33,947 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 12:17:33,947 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 19:17:33 [No]
+INFO 2025-01-06 12:17:33,949 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:17:33,950 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-01-06 12:17:33,989 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 12:17:34,168 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 12:17:34,169 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 12:17:34,170 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 12:17:35,523 runserver>log_action [mHTTP POST /api/loginapi/?app=py%20Voice%20Compontent&version=8.3.2 200 [0.28, 127.0.0.1:10364][0m
+INFO 2025-01-06 12:17:35,527 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/voice830/KB/c/ [127.0.0.1:10366]
+INFO 2025-01-06 12:17:35,587 consumers>connect connecting:voice830_KB_c
+INFO 2025-01-06 12:17:35,598 runserver>log_action WebSocket CONNECT /ws/aqs_app/voice830/KB/c/ [127.0.0.1:10366]
+INFO 2025-01-06 12:17:35,600 consumers>connect IP 127.0.0.1 Connected:voice830_KB_c [1]
+INFO 2025-01-06 12:17:37,192 autoreload>trigger_reload D:\Projects\CHB2024\aqs8server\base\consumers.py changed, reloading.
+INFO 2025-01-06 12:17:38,762 base>start Scheduler started
+INFO 2025-01-06 12:17:38,796 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 12:17:38,990 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 12:17:38,990 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 12:17:38,992 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 12:17:40,817 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.27, 127.0.0.1:10380][0m
+INFO 2025-01-06 12:17:40,821 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:10381]
+INFO 2025-01-06 12:17:40,861 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 12:17:40,874 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:10381]
+INFO 2025-01-06 12:17:40,875 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 12:17:44,801 runserver>log_action [mHTTP POST /api/loginapi/?app=py%20Voice%20Compontent&version=8.3.2 200 [0.27, 127.0.0.1:10387][0m
+INFO 2025-01-06 12:17:44,805 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/voice830/KB/c/ [127.0.0.1:10388]
+INFO 2025-01-06 12:17:44,808 consumers>connect connecting:voice830_KB_c
+INFO 2025-01-06 12:17:44,813 runserver>log_action WebSocket CONNECT /ws/aqs_app/voice830/KB/c/ [127.0.0.1:10388]
+INFO 2025-01-06 12:17:44,813 consumers>connect IP 127.0.0.1 Connected:voice830_KB_c [1]
+INFO 2025-01-06 12:20:16,555 autoreload>trigger_reload D:\Projects\CHB2024\aqs8server\base\ws.py changed, reloading.
+INFO 2025-01-06 12:20:18,108 base>start Scheduler started
+INFO 2025-01-06 12:20:18,115 apps>ready Diff seconds (now and update): 159.347879seconds. Set worker to 1
+INFO 2025-01-06 12:20:18,116 apps>ready    *** Queuing System Started ***
+INFO 2025-01-06 12:20:18,116 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-01-06 12:20:18,117 apps>sub_init -SCH- Now:01/06/2025, 19:20:18
+INFO 2025-01-06 12:20:18,190 apps>sub_init -SCH- No migrations are needed
+INFO 2025-01-06 12:20:18,191 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-01-06 12:20:18,192 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-01-06 12:20:18,250 views>sch_shutdown  -SCH- Next reset [KB]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 12:20:18,250 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 12:20:18,251 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 19:20:18 [No]
+INFO 2025-01-06 12:20:18,252 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:20:18,253 views>sch_shutdown  -SCH- Next reset [MK]: 2025-01-07 18:00:00 Local:2025-01-08 02:00:00
+INFO 2025-01-06 12:20:18,254 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-01-06 12:20:18,254 views>sch_shutdown    -SCH- 2025-01-06 18:00:00 > 2025-01-06 19:20:18 [No]
+INFO 2025-01-06 12:20:18,255 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:20:18,256 views>sch_shutdown  -SCH- Next reset [MHT]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 12:20:18,256 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 12:20:18,257 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 19:20:18 [No]
+INFO 2025-01-06 12:20:18,257 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:20:18,258 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-01-06 12:20:18,283 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 12:20:18,428 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 12:20:18,428 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 12:20:18,430 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 12:20:19,126 runserver>log_action [mHTTP POST /api/loginapi/?app=py%20Voice%20Compontent&version=8.3.2 200 [0.27, 127.0.0.1:10517][0m
+INFO 2025-01-06 12:20:19,130 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/voice830/KB/c/ [127.0.0.1:10521]
+INFO 2025-01-06 12:20:19,165 consumers>connect connecting:voice830_KB_c
+INFO 2025-01-06 12:20:19,177 runserver>log_action WebSocket CONNECT /ws/aqs_app/voice830/KB/c/ [127.0.0.1:10521]
+INFO 2025-01-06 12:20:19,178 consumers>connect IP 127.0.0.1 Connected:voice830_KB_c [1]
+INFO 2025-01-06 12:20:21,188 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.27, 127.0.0.1:10526][0m
+INFO 2025-01-06 12:20:21,193 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:10527]
+INFO 2025-01-06 12:20:21,197 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 12:20:21,202 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:10527]
+INFO 2025-01-06 12:20:21,203 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 12:20:23,577 base>start Scheduler started
+INFO 2025-01-06 12:20:28,261 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 12:20:38 MST)" (scheduled at 2025-01-06 12:20:28.258109-07:00)
+INFO 2025-01-06 12:20:28,269 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-01-06 12:20:28,269 base>remove_job Removed job job_delStartupFlag
+INFO 2025-01-06 12:20:28,270 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 12:20:38 MST)" executed successfully
+INFO 2025-01-06 12:20:29,814 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/voice830/KB/c/ [127.0.0.1:10521]
+INFO 2025-01-06 12:20:29,816 consumers>disconnect Disconnected:voice830_KB_c Internal [0]
+INFO 2025-01-06 12:20:39,457 runserver>log_action [mHTTP GET /api/?app=py%20Voice%20Compontent&version=8.3.2 200 [0.01, 127.0.0.1:10581][0m
+INFO 2025-01-06 12:20:39,731 runserver>log_action [mHTTP POST /api/loginapi/?app=py%20Voice%20Compontent&version=8.3.2 200 [0.27, 127.0.0.1:10582][0m
+INFO 2025-01-06 12:20:39,996 runserver>log_action [mHTTP POST /api/token/ 200 [0.26, 127.0.0.1:10584][0m
+INFO 2025-01-06 12:20:40,001 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/voice830/KB/c/ [127.0.0.1:10585]
+INFO 2025-01-06 12:20:40,004 consumers>connect connecting:voice830_KB_c
+INFO 2025-01-06 12:20:40,009 runserver>log_action WebSocket CONNECT /ws/aqs_app/voice830/KB/c/ [127.0.0.1:10585]
+INFO 2025-01-06 12:20:40,009 consumers>connect IP 127.0.0.1 Connected:voice830_KB_c [1]
+INFO 2025-01-06 12:20:47,067 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:20:47,070 ws>wssendwebtv ...Done
+INFO 2025-01-06 12:20:47,071 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:20:47,081 ws>wssenddispcall ...Done x3
+INFO 2025-01-06 12:20:47,085 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:20:47,087 ws>wssendvoice ...Done
+INFO 2025-01-06 12:20:47,090 ws>send channel_group_name:voice830_KB_c sending data (Volume)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:20:47,094 ws>send ...Done
+INFO 2025-01-06 12:20:47,094 ws>send channel_group_name:voice830_KB_c sending data (Before Sound)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:20:47,097 ws>send ...Done
+INFO 2025-01-06 12:20:47,098 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:20:47,101 ws>send ...Done
+INFO 2025-01-06 12:20:47,101 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:20:47,104 ws>send ...Done
+INFO 2025-01-06 12:20:47,105 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:20:47,108 ws>send ...Done
+INFO 2025-01-06 12:20:47,109 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:20:47,110 ws>wssendflashlight ...Done
+INFO 2025-01-06 12:20:47,135 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.16, 127.0.0.1:10592][0m
+INFO 2025-01-06 12:20:47,228 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.09, 127.0.0.1:10592][0m
+INFO 2025-01-06 12:20:47,250 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:10595]
+INFO 2025-01-06 12:20:47,301 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 12:20:47,306 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:10595]
+INFO 2025-01-06 12:20:47,307 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 12:20:47,310 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:10596]
+INFO 2025-01-06 12:20:47,314 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 12:20:47,317 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:10596]
+INFO 2025-01-06 12:20:47,319 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 12:20:47,321 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:10597]
+INFO 2025-01-06 12:20:47,325 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 12:20:47,330 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:10597]
+INFO 2025-01-06 12:20:47,330 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:25:38,293 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:10527]
+INFO 2025-01-06 12:25:38,295 consumers>disconnect Disconnected:disp_KB_c Internal [0]
+INFO 2025-01-06 12:25:40,281 runserver>log_action [mHTTP GET /api/?app=py%20Display%20Panel&version=8.3.2 200 [0.01, 127.0.0.1:10947][0m
+INFO 2025-01-06 12:25:40,569 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.28, 127.0.0.1:10948][0m
+INFO 2025-01-06 12:25:40,825 runserver>log_action [mHTTP POST /api/token/ 200 [0.25, 127.0.0.1:10949][0m
+INFO 2025-01-06 12:25:40,829 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:10950]
+INFO 2025-01-06 12:25:40,833 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 12:25:40,838 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:10950]
+INFO 2025-01-06 12:25:40,838 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 12:25:41,855 runserver>log_action [mHTTP GET /api/display5/?branchcode=KB&app=py_DispPanel&version=8.3.2&countername=c 200 [0.02, 127.0.0.1:10952][0m
+INFO 2025-01-06 12:25:47,959 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:10595]
+INFO 2025-01-06 12:25:47,962 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:10596]
+INFO 2025-01-06 12:25:47,962 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:10597]
+INFO 2025-01-06 12:25:47,967 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 12:25:47,970 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 12:25:47,971 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 12:25:48,052 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:25:48,054 ws>wssendwebtv ...Done
+INFO 2025-01-06 12:25:48,056 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:25:48,064 ws>wssenddispcall ...Done x3
+INFO 2025-01-06 12:25:48,068 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:25:48,069 ws>wssendvoice ...Done
+INFO 2025-01-06 12:25:48,072 ws>send channel_group_name:voice830_KB_c sending data (Volume)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:25:48,075 ws>send ...Done
+INFO 2025-01-06 12:25:48,076 ws>send channel_group_name:voice830_KB_c sending data (Before Sound)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:25:48,079 ws>send ...Done
+INFO 2025-01-06 12:25:48,080 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:25:48,083 ws>send ...Done
+INFO 2025-01-06 12:25:48,083 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:25:48,087 ws>send ...Done
+INFO 2025-01-06 12:25:48,087 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:25:48,091 ws>send ...Done
+INFO 2025-01-06 12:25:48,093 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:25:48,094 ws>wssendflashlight ...Done
+INFO 2025-01-06 12:25:48,101 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.14, 127.0.0.1:11002][0m
+INFO 2025-01-06 12:25:48,182 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.08, 127.0.0.1:11002][0m
+INFO 2025-01-06 12:25:48,204 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:11008]
+INFO 2025-01-06 12:25:48,209 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 12:25:48,215 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:11008]
+INFO 2025-01-06 12:25:48,215 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 12:25:48,218 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:11009]
+INFO 2025-01-06 12:25:48,222 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 12:25:48,227 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:11009]
+INFO 2025-01-06 12:25:48,228 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 12:25:48,231 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:11010]
+INFO 2025-01-06 12:25:48,235 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 12:25:48,239 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:11010]
+INFO 2025-01-06 12:25:48,240 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:28:11,311 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:10950]
+INFO 2025-01-06 12:28:11,312 consumers>disconnect Disconnected:disp_KB_c Internal [0]
+INFO 2025-01-06 12:28:12,776 runserver>log_action [mHTTP GET /api/?app=py%20Display%20Panel&version=8.3.2 200 [0.01, 127.0.0.1:11142][0m
+INFO 2025-01-06 12:28:13,062 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.28, 127.0.0.1:11143][0m
+INFO 2025-01-06 12:28:13,323 runserver>log_action [mHTTP POST /api/token/ 200 [0.26, 127.0.0.1:11145][0m
+INFO 2025-01-06 12:28:13,328 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:11146]
+INFO 2025-01-06 12:28:13,332 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 12:28:13,339 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:11146]
+INFO 2025-01-06 12:28:13,340 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 12:28:14,351 runserver>log_action [mHTTP GET /api/display5/?branchcode=KB&app=py_DispPanel&version=8.3.2&countername=c 200 [0.02, 127.0.0.1:11148][0m
+INFO 2025-01-06 12:28:17,523 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:11009]
+INFO 2025-01-06 12:28:17,524 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:11008]
+INFO 2025-01-06 12:28:17,525 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:11010]
+INFO 2025-01-06 12:28:17,527 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 12:28:17,528 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 12:28:17,528 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 12:28:17,617 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:28:17,619 ws>wssendwebtv ...Done
+INFO 2025-01-06 12:28:17,620 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:28:17,628 ws>wssenddispcall ...Done x3
+INFO 2025-01-06 12:28:17,632 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:28:17,634 ws>wssendvoice ...Done
+INFO 2025-01-06 12:28:17,637 ws>send channel_group_name:voice830_KB_c sending data (Volume)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:28:17,640 ws>send ...Done
+INFO 2025-01-06 12:28:17,641 ws>send channel_group_name:voice830_KB_c sending data (Before Sound)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:28:17,645 ws>send ...Done
+INFO 2025-01-06 12:28:17,645 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:28:17,647 ws>send ...Done
+INFO 2025-01-06 12:28:17,648 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:28:17,652 ws>send ...Done
+INFO 2025-01-06 12:28:17,653 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:28:17,656 ws>send ...Done
+INFO 2025-01-06 12:28:17,657 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:28:17,658 ws>wssendflashlight ...Done
+INFO 2025-01-06 12:28:17,668 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.14, 127.0.0.1:11151][0m
+INFO 2025-01-06 12:28:17,747 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.08, 127.0.0.1:11151][0m
+INFO 2025-01-06 12:28:17,762 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:11155]
+INFO 2025-01-06 12:28:17,767 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 12:28:17,773 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:11155]
+INFO 2025-01-06 12:28:17,773 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 12:28:17,776 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:11156]
+INFO 2025-01-06 12:28:17,779 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 12:28:17,783 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:11156]
+INFO 2025-01-06 12:28:17,784 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 12:28:17,787 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:11157]
+INFO 2025-01-06 12:28:17,790 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 12:28:17,795 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:11157]
+INFO 2025-01-06 12:28:17,796 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:28:39,227 autoreload>trigger_reload D:\Projects\CHB2024\aqs8server\base\ws.py changed, reloading.
+INFO 2025-01-06 12:28:40,895 base>start Scheduler started
+INFO 2025-01-06 12:28:40,901 apps>ready    *** Queuing System Started ***
+INFO 2025-01-06 12:28:40,901 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-01-06 12:28:40,902 apps>sub_init -SCH- Now:01/06/2025, 19:28:40
+INFO 2025-01-06 12:28:40,976 apps>sub_init -SCH- No migrations are needed
+INFO 2025-01-06 12:28:40,978 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-01-06 12:28:40,978 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-01-06 12:28:41,038 views>sch_shutdown  -SCH- Next reset [KB]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 12:28:41,038 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 12:28:41,040 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 19:28:40 [No]
+INFO 2025-01-06 12:28:41,041 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:28:41,043 views>sch_shutdown  -SCH- Next reset [MK]: 2025-01-07 18:00:00 Local:2025-01-08 02:00:00
+INFO 2025-01-06 12:28:41,043 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-01-06 12:28:41,043 views>sch_shutdown    -SCH- 2025-01-06 18:00:00 > 2025-01-06 19:28:41 [No]
+INFO 2025-01-06 12:28:41,044 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:28:41,045 views>sch_shutdown  -SCH- Next reset [MHT]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 12:28:41,046 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 12:28:41,046 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 19:28:41 [No]
+INFO 2025-01-06 12:28:41,046 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:28:41,047 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-01-06 12:28:41,078 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 12:28:41,230 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 12:28:41,230 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 12:28:41,232 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 12:28:43,443 runserver>log_action [mHTTP POST /api/loginapi/?app=py%20Voice%20Compontent&version=8.3.2 200 [0.28, 127.0.0.1:11233][0m
+INFO 2025-01-06 12:28:43,447 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/voice830/KB/c/ [127.0.0.1:11235]
+INFO 2025-01-06 12:28:43,485 consumers>connect connecting:voice830_KB_c
+INFO 2025-01-06 12:28:43,497 runserver>log_action WebSocket CONNECT /ws/aqs_app/voice830/KB/c/ [127.0.0.1:11235]
+INFO 2025-01-06 12:28:43,498 consumers>connect IP 127.0.0.1 Connected:voice830_KB_c [1]
+INFO 2025-01-06 12:28:44,012 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.27, 127.0.0.1:11238][0m
+INFO 2025-01-06 12:28:44,016 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:11239]
+INFO 2025-01-06 12:28:44,020 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 12:28:44,024 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:11239]
+INFO 2025-01-06 12:28:44,025 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 12:28:51,057 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 12:29:01 MST)" (scheduled at 2025-01-06 12:28:51.047265-07:00)
+INFO 2025-01-06 12:28:51,064 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-01-06 12:28:51,066 base>remove_job Removed job job_delStartupFlag
+INFO 2025-01-06 12:28:51,066 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 12:29:01 MST)" executed successfully
+INFO 2025-01-06 12:29:09,883 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:09,886 ws>wssendwebtv ...Done
+INFO 2025-01-06 12:29:09,887 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:09,897 ws>wssenddispcall ...Done x3
+INFO 2025-01-06 12:29:09,903 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:09,905 ws>wssendvoice ...Done
+INFO 2025-01-06 12:29:09,909 ws>send channel_group_name:voice830_KB_c sending data (Volume)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:09,912 ws>send ...Done
+INFO 2025-01-06 12:29:09,913 ws>send channel_group_name:voice830_KB_c sending data (Before Sound)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:09,916 ws>send ...Done
+INFO 2025-01-06 12:29:09,917 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:09,920 ws>send ...Done
+INFO 2025-01-06 12:29:09,920 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:09,923 ws>wssendflashlight ...Done
+INFO 2025-01-06 12:29:09,948 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.18, 127.0.0.1:11284][0m
+INFO 2025-01-06 12:29:10,067 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.12, 127.0.0.1:11284][0m
+INFO 2025-01-06 12:29:10,091 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:11289]
+INFO 2025-01-06 12:29:10,097 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 12:29:10,106 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:11289]
+INFO 2025-01-06 12:29:10,107 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 12:29:10,111 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:11292]
+INFO 2025-01-06 12:29:10,117 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 12:29:10,122 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:11292]
+INFO 2025-01-06 12:29:10,123 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 12:29:10,128 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:11293]
+INFO 2025-01-06 12:29:10,138 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 12:29:10,146 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:11293]
+INFO 2025-01-06 12:29:10,147 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:29:26,798 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:11292]
+INFO 2025-01-06 12:29:26,799 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:11293]
+INFO 2025-01-06 12:29:26,799 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:11289]
+INFO 2025-01-06 12:29:26,806 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 12:29:26,809 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 12:29:26,810 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 12:29:26,891 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:26,892 ws>wssendwebtv ...Done
+INFO 2025-01-06 12:29:26,893 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:26,902 ws>wssenddispcall ...Done x3
+INFO 2025-01-06 12:29:26,907 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:26,909 ws>wssendvoice ...Done
+INFO 2025-01-06 12:29:26,912 ws>send channel_group_name:voice830_KB_c sending data (Volume)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:26,916 ws>send ...Done
+INFO 2025-01-06 12:29:26,916 ws>send channel_group_name:voice830_KB_c sending data (Before Sound)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:26,919 ws>send ...Done
+INFO 2025-01-06 12:29:26,920 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:26,924 ws>send ...Done
+INFO 2025-01-06 12:29:26,925 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:26,927 ws>wssendflashlight ...Done
+INFO 2025-01-06 12:29:26,935 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.14, 127.0.0.1:11284][0m
+INFO 2025-01-06 12:29:27,014 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.07, 127.0.0.1:11284][0m
+INFO 2025-01-06 12:29:27,034 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:11314]
+INFO 2025-01-06 12:29:27,042 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 12:29:27,049 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:11314]
+INFO 2025-01-06 12:29:27,050 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 12:29:27,054 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:11315]
+INFO 2025-01-06 12:29:27,063 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 12:29:27,066 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:11315]
+INFO 2025-01-06 12:29:27,067 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 12:29:27,072 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:11316]
+INFO 2025-01-06 12:29:27,076 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 12:29:27,081 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:11316]
+INFO 2025-01-06 12:29:27,081 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:29:44,347 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:11316]
+INFO 2025-01-06 12:29:44,348 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:11314]
+INFO 2025-01-06 12:29:44,349 runserver>log_action WebSocket DISCONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:11315]
+INFO 2025-01-06 12:29:44,352 consumers>disconnect Disconnected:printerstatus_KB Internal [0]
+INFO 2025-01-06 12:29:44,352 consumers>disconnect Disconnected:ql_KB_c Internal [0]
+INFO 2025-01-06 12:29:44,353 consumers>disconnect Disconnected:cs_KB_1 Internal [0]
+INFO 2025-01-06 12:29:44,446 ws>wssendwebtv channel_group_name:webtv_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:44,449 ws>wssendwebtv ...Done
+INFO 2025-01-06 12:29:44,449 ws>wssenddispcall channel_group_name:disp_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:44,459 ws>wssenddispcall ...Done x3
+INFO 2025-01-06 12:29:44,463 ws>wssendvoice channel_group_name:voice_KB_c sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:44,465 ws>wssendvoice ...Done
+INFO 2025-01-06 12:29:44,468 ws>send channel_group_name:voice830_KB_c sending data (Volume)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:44,471 ws>send ...Done
+INFO 2025-01-06 12:29:44,471 ws>send channel_group_name:voice830_KB_c sending data (Before Sound)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:44,475 ws>send ...Done
+INFO 2025-01-06 12:29:44,476 ws>send channel_group_name:voice830_KB_c sending data (Voice)-> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:44,479 ws>send ...Done
+INFO 2025-01-06 12:29:44,479 ws>wssendflashlight channel_group_name:flashlight_KB sending data -> Channel_Layer:RedisChannelLayer(hosts=[{'host': 'localhost', 'port': '6379'}])
+INFO 2025-01-06 12:29:44,481 ws>wssendflashlight ...Done
+INFO 2025-01-06 12:29:44,489 runserver>log_action [32mHTTP POST /softkey/1/ 302 [0.14, 127.0.0.1:11284][0m
+INFO 2025-01-06 12:29:44,564 runserver>log_action [mHTTP GET /softkey/1/ 200 [0.07, 127.0.0.1:11284][0m
+INFO 2025-01-06 12:29:44,583 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/pstatus/KB/ [127.0.0.1:11334]
+INFO 2025-01-06 12:29:44,588 consumers>connect connecting:printerstatus_KB
+INFO 2025-01-06 12:29:44,594 runserver>log_action WebSocket CONNECT /ws/aqs_app/pstatus/KB/ [127.0.0.1:11334]
+INFO 2025-01-06 12:29:44,595 consumers>connect IP 127.0.0.1 Connected:printerstatus_KB [1]
+INFO 2025-01-06 12:29:44,597 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/cs/KB/1/ [127.0.0.1:11335]
+INFO 2025-01-06 12:29:44,601 consumers>connect connecting:cs_KB_1
+INFO 2025-01-06 12:29:44,605 runserver>log_action WebSocket CONNECT /ws/aqs_app/cs/KB/1/ [127.0.0.1:11335]
+INFO 2025-01-06 12:29:44,606 consumers>connect IP 127.0.0.1 Connected:cs_KB_1 [1]
+INFO 2025-01-06 12:29:44,608 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/ql/KB/c/ [127.0.0.1:11336]
+INFO 2025-01-06 12:29:44,612 consumers>connect connecting:ql_KB_c
+INFO 2025-01-06 12:29:44,617 runserver>log_action WebSocket CONNECT /ws/aqs_app/ql/KB/c/ [127.0.0.1:11336]
+INFO 2025-01-06 12:29:44,618 consumers>connect IP 127.0.0.1 Connected:ql_KB_c [1]
+INFO 2025-01-06 12:39:34,259 autoreload>trigger_reload D:\Projects\CHB2024\aqs8server\aqs\settings.py changed, reloading.
+INFO 2025-01-06 12:39:35,841 base>start Scheduler started
+INFO 2025-01-06 12:39:35,848 apps>ready    *** Queuing System Started ***
+INFO 2025-01-06 12:39:35,848 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-01-06 12:39:35,848 apps>sub_init -SCH- Now:01/06/2025, 19:39:35
+INFO 2025-01-06 12:39:35,921 apps>sub_init -SCH- No migrations are needed
+INFO 2025-01-06 12:39:35,923 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-01-06 12:39:35,923 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-01-06 12:39:35,985 views>sch_shutdown  -SCH- Next reset [KB]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 12:39:35,985 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 12:39:35,986 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 19:39:35 [No]
+INFO 2025-01-06 12:39:35,988 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:39:35,989 views>sch_shutdown  -SCH- Next reset [MK]: 2025-01-07 18:00:00 Local:2025-01-08 02:00:00
+INFO 2025-01-06 12:39:35,989 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-01-06 12:39:35,989 views>sch_shutdown    -SCH- 2025-01-06 18:00:00 > 2025-01-06 19:39:35 [No]
+INFO 2025-01-06 12:39:35,989 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:39:35,992 views>sch_shutdown  -SCH- Next reset [MHT]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 12:39:35,992 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 12:39:35,993 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 19:39:35 [No]
+INFO 2025-01-06 12:39:35,993 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:39:35,994 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-01-06 12:39:36,022 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 12:39:36,192 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 12:39:36,193 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 12:39:36,194 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 12:39:36,785 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.31, 127.0.0.1:11916][0m
+INFO 2025-01-06 12:39:36,789 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:11923]
+INFO 2025-01-06 12:39:36,828 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 12:39:36,839 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:11923]
+INFO 2025-01-06 12:39:36,840 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 12:39:36,911 runserver>log_action [mHTTP POST /api/loginapi/?app=py%20Voice%20Compontent&version=8.3.2 200 [0.30, 127.0.0.1:11915][0m
+INFO 2025-01-06 12:39:36,915 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/voice830/KB/c/ [127.0.0.1:11926]
+INFO 2025-01-06 12:39:36,919 consumers>connect connecting:voice830_KB_c
+INFO 2025-01-06 12:39:36,923 runserver>log_action WebSocket CONNECT /ws/aqs_app/voice830/KB/c/ [127.0.0.1:11926]
+INFO 2025-01-06 12:39:36,924 consumers>connect IP 127.0.0.1 Connected:voice830_KB_c [1]
+INFO 2025-01-06 12:39:46,002 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 12:39:55 MST)" (scheduled at 2025-01-06 12:39:45.994175-07:00)
+INFO 2025-01-06 12:39:46,008 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-01-06 12:39:46,009 base>remove_job Removed job job_delStartupFlag
+INFO 2025-01-06 12:39:46,009 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 12:39:55 MST)" executed successfully
+INFO 2025-01-06 12:46:49,973 autoreload>trigger_reload D:\Projects\CHB2024\aqs8server\base\ws.py changed, reloading.
+INFO 2025-01-06 12:46:51,666 base>start Scheduler started
+INFO 2025-01-06 12:46:51,671 apps>ready    *** Queuing System Started ***
+INFO 2025-01-06 12:46:51,672 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-01-06 12:46:51,672 apps>sub_init -SCH- Now:01/06/2025, 19:46:51
+INFO 2025-01-06 12:46:51,749 apps>sub_init -SCH- No migrations are needed
+INFO 2025-01-06 12:46:51,750 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-01-06 12:46:51,751 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-01-06 12:46:51,808 views>sch_shutdown  -SCH- Next reset [KB]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 12:46:51,809 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 12:46:51,809 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 19:46:51 [No]
+INFO 2025-01-06 12:46:51,810 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:46:51,812 views>sch_shutdown  -SCH- Next reset [MK]: 2025-01-07 18:00:00 Local:2025-01-08 02:00:00
+INFO 2025-01-06 12:46:51,812 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-01-06 12:46:51,813 views>sch_shutdown    -SCH- 2025-01-06 18:00:00 > 2025-01-06 19:46:51 [No]
+INFO 2025-01-06 12:46:51,813 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:46:51,815 views>sch_shutdown  -SCH- Next reset [MHT]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 12:46:51,815 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 12:46:51,815 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 19:46:51 [No]
+INFO 2025-01-06 12:46:51,816 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:46:51,816 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-01-06 12:46:51,842 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 12:46:51,984 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 12:46:51,984 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 12:46:51,985 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 12:46:52,754 runserver>log_action [mHTTP POST /api/loginapi/?app=py%20Voice%20Compontent&version=8.3.2 200 [0.27, 127.0.0.1:12335][0m
+INFO 2025-01-06 12:46:52,759 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/voice830/KB/c/ [127.0.0.1:12336]
+INFO 2025-01-06 12:46:52,796 consumers>connect connecting:voice830_KB_c
+INFO 2025-01-06 12:46:52,807 runserver>log_action WebSocket CONNECT /ws/aqs_app/voice830/KB/c/ [127.0.0.1:12336]
+INFO 2025-01-06 12:46:52,808 consumers>connect IP 127.0.0.1 Connected:voice830_KB_c [1]
+INFO 2025-01-06 12:46:57,040 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.27, 127.0.0.1:12343][0m
+INFO 2025-01-06 12:46:57,045 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:12344]
+INFO 2025-01-06 12:46:57,049 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 12:46:57,054 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:12344]
+INFO 2025-01-06 12:46:57,055 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 12:47:01,832 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 12:47:11 MST)" (scheduled at 2025-01-06 12:47:01.816997-07:00)
+INFO 2025-01-06 12:47:01,841 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-01-06 12:47:01,841 base>remove_job Removed job job_delStartupFlag
+INFO 2025-01-06 12:47:01,842 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 12:47:11 MST)" executed successfully
+INFO 2025-01-06 12:47:26,048 autoreload>trigger_reload D:\Projects\CHB2024\aqs8server\base\consumers.py changed, reloading.
+INFO 2025-01-06 12:47:27,631 base>start Scheduler started
+INFO 2025-01-06 12:47:27,638 apps>ready    *** Queuing System Started ***
+INFO 2025-01-06 12:47:27,638 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-01-06 12:47:27,638 apps>sub_init -SCH- Now:01/06/2025, 19:47:27
+INFO 2025-01-06 12:47:27,710 apps>sub_init -SCH- No migrations are needed
+INFO 2025-01-06 12:47:27,712 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-01-06 12:47:27,712 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-01-06 12:47:27,772 views>sch_shutdown  -SCH- Next reset [KB]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 12:47:27,772 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 12:47:27,773 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 19:47:27 [No]
+INFO 2025-01-06 12:47:27,773 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:47:27,775 views>sch_shutdown  -SCH- Next reset [MK]: 2025-01-07 18:00:00 Local:2025-01-08 02:00:00
+INFO 2025-01-06 12:47:27,775 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-01-06 12:47:27,776 views>sch_shutdown    -SCH- 2025-01-06 18:00:00 > 2025-01-06 19:47:27 [No]
+INFO 2025-01-06 12:47:27,776 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:47:27,777 views>sch_shutdown  -SCH- Next reset [MHT]: 2025-01-07 15:59:59 Local:2025-01-07 23:59:59
+INFO 2025-01-06 12:47:27,777 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-01-06 12:47:27,778 views>sch_shutdown    -SCH- 2025-01-06 15:59:59 > 2025-01-06 19:47:27 [No]
+INFO 2025-01-06 12:47:27,778 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-01-06 12:47:27,778 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-01-06 12:47:27,805 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-01-06 12:47:27,960 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-01-06 12:47:27,960 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-01-06 12:47:27,962 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-01-06 12:47:28,642 runserver>log_action [mHTTP POST /api/loginapi/?app=yo&version=8.3.2 200 [0.28, 127.0.0.1:12370][0m
+INFO 2025-01-06 12:47:28,646 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/disp/KB/c/ [127.0.0.1:12379]
+INFO 2025-01-06 12:47:28,683 consumers>connect connecting:disp_KB_c
+INFO 2025-01-06 12:47:28,694 runserver>log_action WebSocket CONNECT /ws/aqs_app/disp/KB/c/ [127.0.0.1:12379]
+INFO 2025-01-06 12:47:28,695 consumers>connect IP 127.0.0.1 Connected:disp_KB_c [1]
+INFO 2025-01-06 12:47:32,029 runserver>log_action [mHTTP POST /api/loginapi/?app=py%20Voice%20Compontent&version=8.3.2 200 [0.26, 127.0.0.1:12387][0m
+INFO 2025-01-06 12:47:32,033 runserver>log_action WebSocket HANDSHAKING /ws/aqs_app/voice830/KB/c/ [127.0.0.1:12388]
+INFO 2025-01-06 12:47:32,037 consumers>connect connecting:voice830_KB_c
+INFO 2025-01-06 12:47:32,041 runserver>log_action WebSocket CONNECT /ws/aqs_app/voice830/KB/c/ [127.0.0.1:12388]
+INFO 2025-01-06 12:47:32,042 consumers>connect IP 127.0.0.1 Connected:voice830_KB_c [1]
+INFO 2025-01-06 12:47:37,792 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 12:47:47 MST)" (scheduled at 2025-01-06 12:47:37.778844-07:00)
+INFO 2025-01-06 12:47:37,799 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-01-06 12:47:37,799 base>remove_job Removed job job_delStartupFlag
+INFO 2025-01-06 12:47:37,800 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-01-06 12:47:47 MST)" executed successfully
