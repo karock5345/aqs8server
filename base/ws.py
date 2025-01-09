@@ -60,7 +60,9 @@ def wssenddispcall(branch, counterstatus, countertype, ticket):
     logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
     try:
         async_to_sync (channel_layer.group_send)(channel_group_name, context)
-        logger.info('...Done')
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        logger.info('...Done x3')
     except:
         logger.error('...ERROR:Redis Server is down!')
     pass
