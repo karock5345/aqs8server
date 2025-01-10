@@ -289,7 +289,10 @@ def wsrochesms(bcode, tel, msg):
 
 
 def wssendvoice(bcode, countertypename, ttype, tno, cno):
+    # for pccw2023_v6 add message id
+    # server will repeat send 3 times for prevent lost message
     # {"cmd":"voice",
+    #  "id": "123456",
     #  "data":
     #    {
     #     "tickettype": "A", 
@@ -320,8 +323,16 @@ def wssendvoice(bcode, countertypename, ttype, tno, cno):
         else :
             error = 'Counter Type not found.' 
 
+    # generate message id
+    if error == '' :
+        try:
+            msgid = timezone.now().strftime('%Y%m%d%H%M%S%f') + '_' + ttype + '_' + tno + '_' + cno
+        except:
+            error = 'Error generate message id'
+
     if error == '' : 
         json_tx = {'cmd': 'voice',
+            'id': msgid,
             'data': {
             'tickettype' : ttype,
             'ticketnumber' : tno,
@@ -340,7 +351,9 @@ def wssendvoice(bcode, countertypename, ttype, tno, cno):
         logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            logger.info('...Done')
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            logger.info('...Done x3')
         except Exception as e:
             # error_e = 'WS send voice Error:' + str(e)
             logger.error('...ERROR:Redis Server is down!')
