@@ -34,7 +34,15 @@ logger.info('-SCH- Schedule INIT start @ base.sch.view.py -SCH-')
 now = timezone.now()
 snow = now.strftime("%m/%d/%Y, %H:%M:%S")
 logger.info('-SCH- Now:' + snow)
-sch = BackgroundScheduler(daemon=True)
+
+job_defaults = {
+    'coalesce': True,
+    'misfire_grace_time': None,
+    'daemon': True,
+    'max_instances': 50,
+}
+sch = BackgroundScheduler(job_defaults=job_defaults)
+# sch = BackgroundScheduler(daemon=True)
 sch.start()
 
 

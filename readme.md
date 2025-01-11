@@ -1,7 +1,13 @@
 ### <span style="color:orange;">**Version 8.1.7 (pccw2023_v6)**</span>
-- Prevent WS data lost. Send data to call ticket repact 3 times
+- Prevent WS data lost. Send data to "call ticket" "Voice" repact 3 times
   - base\ws.py -> function wssenddispcall -> line 63
+  - base\ws.py -> function wssendvoice -> line 353
   - base\consumers.py -> DispPanelConsumer -> line 148 -> add delay 1s
+  - base\consumers.py -> VoiceConsumer -> line 393 -> add delay 1s
+- Improve log files auto manage keep 20 files and 10MB each
+- Bug fixed : APScheduler some time the system is busy will cause the sch job missed - "Run time of job "xxx" was missed by"
+
+
 
 ### <span style="color:orange;">**Version 8.1.6 (pccw2023_v5)**</span>
 - Fixed bug : base > v_softkey_sub.py > cc_aux : Counter can not call ticket when counter is hold a ticket > ACW > AUX > Ready

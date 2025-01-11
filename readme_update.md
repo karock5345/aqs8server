@@ -1,11 +1,59 @@
 # AQS version 8 For PCCW 2023
 
 ## Update Server v8.1.7 (pccw2023_v6)
+- navbar.html line 7 : v8.1.7
 - ws.py
 - consumers.py
-- settings.py line 18 : v8.1.7
-- navbar.html line 7 : v8.1.7
+- settings.py 
+  - line 18 : v8.1.7
+  - New file: aqs/custom_handlers.py
+  - line 214 (remove "LOGGING"), add :
+  ```py
+      import os
+      LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,    
+        'formatters': {
+            'verbose': {
+                'format':  '{levelname} {asctime} {module}>{funcName} {message}',
+                'style': '{',
+            },
+        },
 
+        'handlers': {
+            'file': {
+                'level': 'INFO',  # Set to INFO to avoid logging DEBUG messages            
+                'class': 'aqs.custom_handlers.CustomRotatingFileHandler',            
+                'filename': os.path.join(BASE_DIR, 'logs', 'aqs.log'),
+                'maxBytes': 10 * 1024 * 1024,  # 10 MB
+                'backupCount': 5,
+                'max_log_files': 20,  # Keep only the latest 20 log files
+                'formatter': 'verbose',
+            },
+            'console': {
+                'level': 'INFO',  # Set to INFO to avoid logging DEBUG messages
+                'class': 'logging.StreamHandler',
+                'formatter': 'verbose',
+            },     
+        },
+        'root': {
+            'handlers': ['file', 'console'],
+            'level': 'INFO',  # Set to INFO to avoid logging DEBUG messages
+        },  
+      }
+  ```
+- Bug fixed : APScheduler some time the system is busy will cause the sch job missed - "Run time of job "xxx" was missed by"
+   ```py
+   # base/sch/views.py line 25
+  job_defaults = {
+      'coalesce': True,
+      'misfire_grace_time': None,
+      'daemon': True,
+      'max_instances': 50,
+  }
+  sch = BackgroundScheduler(job_defaults=job_defaults)
+  # sch = BackgroundScheduler(daemon=True)
+   ```
 
 ## Main Server (Causeway Bay)
 - Linux main server (DELL 13th i5) 
