@@ -14,6 +14,8 @@ from pathlib import Path
 from django.contrib.messages import constants as messages
 from datetime import timedelta
 from celery import Celery
+import os
+from .custom_handlers import CustomRotatingFileHandler
 
 aqs_version = '8.2.4'
 
@@ -225,95 +227,34 @@ CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,    
-    'loggers': {
-        'django': {
-            'handlers': ['console', 'logfile'],
-            'level': 'INFO',
-            'propagate': True,
-        },
-        'aqs' : {
-            'handlers': ['console_aqs', 'logfile_aqs'],
-            'level': 'INFO',
-        },
-        'base' : {
-            'handlers': ['console_base', 'logfile_base'],
-            'level': 'INFO',
-        },
-        'booking' : {
-            'handlers': ['console_booking', 'logfile_base'],
-            'level': 'INFO',
-        },
-    },
     'formatters': {
-        'simple': {
-            'format': '{levelname} {asctime} {module}>{funcName} {message}',
-            'style': '{',
-        },
-        'simple_base': {
-            'format': '{levelname} {asctime} base>{module}>{funcName} {message}',
-            'style': '{',
-        },
-        'simple_aqs': {
-            'format': '{levelname} {asctime} aqs>{module}>{funcName} {message}',
-            'style': '{',
-        },
-        'simple_booking': {
-            'format': '{levelname} {asctime} booking>{module}>{funcName} {message}',
+        'verbose': {
+            'format':  '{levelname} {asctime} {module}>{funcName} {message}',
             'style': '{',
         },
     },
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple',
-        },
-        'logfile': {
-            'class':'logging.handlers.RotatingFileHandler',
-            'filename': f'{BASE_DIR}/logs/aqs.log',
-            'mode': 'a',
-            'encoding': 'utf-8',
-            'formatter': 'simple',
-            'maxBytes': 1024*1024*5, # 5 MB
-        },
-        'console_base': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple_base',
-        },
-        'logfile_base': {
-            'class':'logging.handlers.RotatingFileHandler',
-            'filename': f'{BASE_DIR}/logs/aqs.log',
-            'mode': 'a',
-            'encoding': 'utf-8',
-            'formatter': 'simple_base',
-            'maxBytes': 1024*1024*5, # 5 MB
-        },
-        'console_aqs': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple_aqs',
-        },
-        'logfile_aqs': {
-            'class':'logging.handlers.RotatingFileHandler',
-            'filename': f'{BASE_DIR}/logs/aqs.log',
-            'mode': 'a',
-            'encoding': 'utf-8',
-            'formatter': 'simple_aqs',
-            'maxBytes': 1024*1024*5, # 5 MB
-        },
-        'console_booking': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple_booking',
-        },
-        'logfile_booking': {
-            'class':'logging.handlers.RotatingFileHandler',
-            'filename': f'{BASE_DIR}/logs/aqs.log',
-            'mode': 'a',
-            'encoding': 'utf-8',
-            'formatter': 'simple_aqs',
-            'maxBytes': 1024*1024*5, # 5 MB
-        },        
-    },
-}
 
+    'handlers': {
+        'file': {
+            'level': 'INFO',  # Set to INFO to avoid logging DEBUG messages            
+            'class': 'aqs.custom_handlers.CustomRotatingFileHandler',            
+            'filename': os.path.join(BASE_DIR, 'logs', 'aqs.log'),
+            'maxBytes': 10 * 1024 * 1024,  # 10 MB
+            'backupCount': 5,
+            'max_log_files': 20,  # Keep only the latest 20 log files
+            'formatter': 'verbose',
+        },
+        'console': {
+            'level': 'INFO',  # Set to INFO to avoid logging DEBUG messages
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },     
+    },
+    'root': {
+        'handlers': ['file', 'console'],
+        'level': 'INFO',  # Set to INFO to avoid logging DEBUG messages
+    },  
+}
 
 SIMPLE_JWT = {
     # Debug mode set 120 minutes, otherwise 5 minutes    
