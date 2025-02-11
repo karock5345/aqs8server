@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Company, Product_Type, Category, Supplier, Product
-from .models import Member, MemberItem, CRMAdmin, Customer
+from .models import Member, MemberItem, CRMAdmin, Customer, BusinessSource, BusinessType
 from .models import Quotation, Quotation_item, Invoice, Invoice_item, Receipt, Receipt_item, Inventory, PushMessage
 from .models import CustomerGroup, CustomerSource, CustomerInformation
 
@@ -79,6 +79,13 @@ class CustomerSourceView(admin.ModelAdmin):
 class CustomerInformationView(admin.ModelAdmin):
     list_display =('company', 'name', 'description')
     ordering = ('company', 'name') 
+class BusinessSourceView(admin.ModelAdmin):
+    list_display =('company', 'name', 'description')
+    ordering = ('company', 'name')
+class BusinessTypeView(admin.ModelAdmin):
+    list_display =('company', 'name', 'description')
+    ordering = ('company', 'name')
+
 
 admin.site.register(Company, CompanyView)
 admin.site.register(Product_Type, Product_TypeView)
@@ -100,3 +107,5 @@ admin.site.register(PushMessage, PushMessageView)
 admin.site.register(CustomerGroup, CustomerGroupView)
 admin.site.register(CustomerSource, CustomerSourceView)
 admin.site.register(CustomerInformation, CustomerInformationView)
+admin.site.register(BusinessSource, BusinessSourceView)
+admin.site.register(BusinessType, BusinessTypeView)

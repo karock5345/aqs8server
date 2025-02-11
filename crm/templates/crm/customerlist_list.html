@@ -13,13 +13,13 @@
     </thead>
     <tbody>
 
-    {% for customer in result %}
-        <tr onclick="window.location='{% url 'customerupdate' customer.id %}' " >
-            <td>{{customer.companyname}}</td>
-            <td>{{customer.contact}}</td>
-            <td>{{customer.email}}</td>
-            <td>{{customer.phone}}</td>
-            <td>{{customer.sales}}</td>
+    {% for item in result %}
+        <tr onclick="window.location='{% url 'customerupdate' item.id %}' " >
+            <td>{{item.companyname}}</td>
+            <td>{{item.contact}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phone}}</td>
+            <td>{{item.sales}}</td>
         </tr>
 
     {% endfor %}

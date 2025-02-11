@@ -12,8 +12,9 @@ from base.views import auth_data, funDomain, getcontext, getcontext_en, getconte
 from django.http import JsonResponse
 from django.contrib import messages
 from base.decorators import *
-from crm.models import CRMAdmin, Member, Company, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt, BusinessType, BusinessSource
+from crm.models import CRMAdmin, Member, Company, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt, BusinessType, BusinessSource, Supplier
 from crm.forms import MemberUpdateForm, MemberNewForm, CustomerUpdateForm, CustomerGroupForm, CustomerSourceForm, CustomerInfoForm, CustomerNewForm, QuotationUpdateForm, InvoiceUpdateForm, ReceiptUpdateForm, BusinessTypeForm, BusinessSourceForm
+from crm.forms import SupplierUpdateForm
 from crm.api import new_member
 from django.db import transaction
 import re
@@ -104,6 +105,117 @@ def SupplierListView(request):
     context = context | {'company':userp.company}
 
     return render(request, 'crm/supplierlist.html', context)
+
+@unauth_user
+def SupplierUpdateView(request, pk):
+    utcnow = datetime.now(timezone.utc)
+    supplier = Supplier.objects.get(id=pk)    
+    company = supplier.company
+    # get full path with domain name
+    back_url = request.build_absolute_uri()
+    
+    auth_en_queue, auth_en_crm, auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    auth_memberlist, \
+    auth_customerlist, \
+    auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
+    auth_suppliers, \
+    = auth_data(request.user)
+
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        form = SupplierUpdateForm(request.POST, instance=supplier, prefix='supplierform', company=supplier.company)
+
+        # go, link, context = subupdate(request, action, company, supplier, back_url)
+        # if go == 'go':
+        #     return render(request, link, context)
+
+        if action == 'member':
+            # return redirect('crmmember')
+            pass
+        elif action == 'update':
+            error = ''
+            # check the form
+            error, newform = checksupplierform(form)
+            
+            if error == '' :         
+                try :                
+                    newform.save()
+
+                    messages.success(request, 'Customer was successfully updated!')
+                    
+                    return redirect('crmsupplierlist')
+                except:
+                    error = 'An error occurcd during updating Customer'
+
+            if error != '':
+                messages.error(request, error )
+                
+    else:
+        form = SupplierUpdateForm(instance=supplier, prefix='supplierform', company=supplier.company)
+    context =  {'form':form, 'supplier':supplier, }
+    context_en = getcontext_en(request)
+    context = context_en | context
+    return render(request, 'crm/supplier_update.html', context)
+
+def checksupplierform(form):
+    error = ''
+    errorTC = ''
+    newform = None
+
+    if form.is_valid() == False:
+        # error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
+        error_string = ''
+        for l in list(form.errors):
+            errx = ''
+            for x in form.errors[l]:
+                errx = errx + ',' +  x
+                # print(l , x)
+            error_string = error_string + ' [' + l + '] ' + errx + '\n'
+        error = 'An error occurcd during registration: ' + error_string
+        
+
+    if error == '' :
+        newform = form.save(commit=False)
+
+    if error == '' :
+        if newform.company == None :
+            # Error Company is None
+            error = 'Error Company is blank'
+
+    if error == '' :
+        if newform.phone == '':
+            pass
+        else:
+            if newform.phone != None :
+                if len(newform.phone) != 8:
+                    error = 'Phone number must be 8 digits'
+
+    if error == '':
+        if not(newform.email == '' or newform.email == None) :
+        # check email format
+            regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+            if(re.fullmatch(regex, newform.email)):
+                pass       
+            else:
+                error = 'Email format is incorrect'
+                error_TC = '電郵地址格式不正確'
+        else:
+            newform.email = ''
+
+    return error, newform
 
 @unauth_user
 def CustomerListView(request):
@@ -215,7 +327,7 @@ def CustomerUpdateView(request, pk):
         action = request.POST.get('action')
         form = CustomerUpdateForm(request.POST, instance=customer, prefix='customerform', company=customer.company)
 
-        go, link, context = subupdate(request, action, company, customer, back_url)
+        go, link, context = SubUpdate(request, action, company, customer, back_url)
         if go == 'go':
             return render(request, link, context)
 
@@ -288,7 +400,7 @@ def CustomerNewView(request, ccode):
         if request.method == 'POST':
             action = request.POST.get('action')
             
-            go, link, context = subupdate(request, action, company, None, back_url)
+            go, link, context = SubUpdate(request, action, company, None, back_url)
             if go == 'go':
                 return render(request, link, context)
             
@@ -353,11 +465,58 @@ def CustomerNewView(request, ccode):
     context = {'title':'New Customer', 'back_url':back_url, } | context 
     return render(request, 'base/new.html', context)
 
-def subupdate(request, action, company, customer, full_path):
+def checkcustomerform(form):
+    error = ''
+    errorTC = ''
+    newform = None
+
+    if form.is_valid() == False:
+        # error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
+        error_string = ''
+        for l in list(form.errors):
+            errx = ''
+            for x in form.errors[l]:
+                errx = errx + ',' +  x
+                # print(l , x)
+            error_string = error_string + ' [' + l + '] ' + errx + '\n'
+        error = 'An error occurcd during registration: ' + error_string
+        
+
+    if error == '' :
+        newform = form.save(commit=False)
+
+    if error == '' :
+        if newform.company == None :
+            # Error branch is None
+            error = 'Error Company is blank'
+
+    if error == '' :
+        if newform.phone == '':
+            pass
+        else:
+            if newform.phone != None :
+                if len(newform.phone) != 8:
+                    error = 'Phone number must be 8 digits'
+
+    if error == '':
+        if not(newform.email == '' or newform.email == None) :
+        # check email format
+            regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+            if(re.fullmatch(regex, newform.email)):
+                pass       
+            else:
+                error = 'Email format is incorrect'
+                error_TC = '電郵地址格式不正確'
+        else:
+            newform.email = ''
+
+    return error, newform
+
+def SubUpdate(request, action, company, customer, full_path):
         context = {}
         context_mini = getcontext_mini(request)
         context = context_mini | context 
-    # <---- business type ----
+    # <---- business type for Quotation ----
         if action == 'businesstype':
             table = BusinessType.objects.filter(Q(company=company))
             form = BusinessTypeForm()
@@ -398,9 +557,9 @@ def subupdate(request, action, company, customer, full_path):
             context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Business Type', 'action':'businesstype'}
             # return render(request, 'crm/sub_update.html', context, )  
             return 'go', 'crm/sub_update.html', context      
-    # ---- business type ---->
+    # ---- business type for Quotation ---->
 
-    # <---- business source ----
+    # <---- business source for Quotation ----
         if action == 'businesssource':
             table = BusinessSource.objects.filter(Q(company=company))
             form = BusinessSourceForm()
@@ -441,7 +600,7 @@ def subupdate(request, action, company, customer, full_path):
             context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Business Source', 'action':'businesssource'}
             # return render(request, 'crm/sub_update.html', context, )  
             return 'go', 'crm/sub_update.html', context      
-    # ---- business source ---->
+    # ---- business source for Quotation ---->
 
     # <---- Customer Group ----
         if action == 'group':
@@ -485,7 +644,6 @@ def subupdate(request, action, company, customer, full_path):
             # return render(request, 'crm/sub_update.html', context, )  
             return 'go', 'crm/sub_update.html', context      
     # ---- Customer Group ---->
-
 
     # <---- Customer Source ----
         elif action == 'source':
@@ -661,7 +819,7 @@ def QuotationView(request, pk=None):
         action = request.POST.get('action')
         print ('action:', action)
         
-        go, link, context = subupdate(request, action, company, quotation, back_url)
+        go, link, context = SubUpdate(request, action, company, quotation, back_url)
         print (go, link, context)
         if go == 'go':
             return render(request, link, context)
@@ -1805,52 +1963,7 @@ def checkmemberform(form):
 
     return error, newform
 
-def checkcustomerform(form):
-    error = ''
-    errorTC = ''
-    newform = None
 
-    if form.is_valid() == False:
-        # error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
-        error_string = ''
-        for l in list(form.errors):
-            errx = ''
-            for x in form.errors[l]:
-                errx = errx + ',' +  x
-                # print(l , x)
-            error_string = error_string + ' [' + l + '] ' + errx + '\n'
-        error = 'An error occurcd during registration: ' + error_string
-        
-
-    if error == '' :
-        newform = form.save(commit=False)
-
-    if error == '' :
-        if newform.company == None :
-            # Error branch is None
-            error = 'Error Company is blank'
-
-    if error == '' :
-        if newform.phone == '':
-            pass
-        else:
-            if newform.phone != None :
-                if len(newform.phone) != 8:
-                    error = 'Phone number must be 8 digits'
-
-    if error == '':
-        if not(newform.email == '' or newform.email == None) :
-        # check email format
-            regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
-            if(re.fullmatch(regex, newform.email)):
-                pass       
-            else:
-                error = 'Email format is incorrect'
-                error_TC = '電郵地址格式不正確'
-        else:
-            newform.email = ''
-
-    return error, newform
 
 
 def render_to_pdf(template_src, quotation:Quotation):

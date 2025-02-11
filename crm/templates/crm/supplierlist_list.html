@@ -12,7 +12,7 @@
     <tbody>
 
     {% for item in result %}
-        <tr onclick="window.location='{- % ur-l 'customerupdate' supplier.id %}' " >
+        <tr onclick="window.location='{% url 'supplierupdate' item.id %}'" >
             <td>{{item.supplier_company}}</td>
             <td>{{item.contact}}</td>
             <td>{{item.email}}</td>

@@ -4,7 +4,7 @@ from django.contrib.auth.models import User, Group
 from django.db.models import Q
 from django.forms.utils import ErrorList
 from base.models import TicketFormat, TicketRoute, UserProfile, Branch, CounterType
-from .models import Member, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt, BusinessType, BusinessSource
+from .models import Member, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt, BusinessType, BusinessSource, Supplier
 
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
@@ -63,6 +63,15 @@ class MemberNewForm(ModelForm):
             'birthday': DateInput(),
             # 'verifycode_date': DateTimeInput(),
         }
+
+class SupplierUpdateForm(ModelForm):
+    def __init__(self, *args,**kwargs):
+        self.company = kwargs.pop('company')
+        super().__init__(*args,**kwargs)        
+        
+    class Meta:        
+        model = Supplier
+        fields = ['supplier_company', 'contact', 'phone', 'address', 'website', 'email']
 
 class CustomerUpdateForm(ModelForm):
     def __init__(self, *args,**kwargs):

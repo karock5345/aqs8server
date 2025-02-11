@@ -184,9 +184,9 @@ RECAPTCHA_PRIVATE_KEY = '6Lff1ZsiAAAAAMbsSNu5KyIGWOxmjTOFHANffcAo'
 RECAPTCHA_REQUIRED_SCORE = 0.85
 
 AUTO_LOGOUT = {
-                'IDLE_TIME': 3600, 
+                'IDLE_TIME': 36000,  # logout after 10 hour of downtime (10 hours for development)
                 'REDIRECT_TO_LOGIN_IMMEDIATELY': True,
-                }  # logout after 1 hour of downtime # Django auto logout (3)
+                } 
 
 # main.html add {{ redirect_to_login_immediately }}  # Django auto logout (4)
 
