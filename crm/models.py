@@ -139,7 +139,8 @@ class Supplier(models.Model):
     address = models.TextField(null=True, blank=True, default='')
     phone = models.CharField(max_length=15)
     email = models.EmailField(null=True, blank=True, default='')
-
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
     def __str__(self):
         return self.supplier_company
 

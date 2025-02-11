@@ -1,0 +1,123 @@
+{% extends 'main.html' %}
+{% block content %}
+
+    <main class="layout layout--2">
+      <div class="container">
+        <!-- Topics Start -->
+        {% include 'base/menu.html' %}        
+        <!-- Topics End -->
+
+        <!-- Room List Start -->
+        <div class="roomList" style="padding-right: 0rem;padding-left: 4rem;">
+          <div class="mobile-menu">
+            <div class="mobile-menuItems">
+              <a class="btn btn--main btn--pill" href="{% url 'menu' %}">Menu</a>          
+            </div>
+          </div>
+        
+          <div class="header__search" >
+            <label>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>search</title>
+                    <path
+                        d="M32 30.586l-10.845-10.845c1.771-2.092 2.845-4.791 2.845-7.741 0-6.617-5.383-12-12-12s-12 5.383-12 12c0 6.617 5.383 12 12 12 2.949 0 5.649-1.074 7.741-2.845l10.845 10.845 1.414-1.414zM12 22c-5.514 0-10-4.486-10-10s4.486-10 10-10c5.514 0 10 4.486 10 10s-4.486 10-10 10z">
+                    </path>
+                </svg>
+                <input id="id_q" placeholder="Search for supplier" value="{{q}}" />
+            </label>
+          </div>
+          <div class="roomList__header">
+            <div>
+                
+            
+
+
+            </div>
+                <a class="btn btn--main" href="{-% url 'Suppliernew' company.ccode %}">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                  <title>add</title>
+                  <path
+                    d="M16.943 0.943h-1.885v14.115h-14.115v1.885h14.115v14.115h1.885v-14.115h14.115v-1.885h-14.115v-14.115z"
+                  ></path>
+                </svg>
+                Add Supplier
+              </a>   
+                       
+            </div>            
+
+           
+          <div class="roomList__header">
+              <div style="display: flex;">
+                <div style="margin-right: 2rem;">
+                  <h2>Total result</h2>
+                  <p>{{result.count}} Suppliers</p>
+                </div>
+              </div>    
+          </div>
+          <div id="userlistarea">
+            {% include 'crm/Supplierlist_list.html' %}  
+          </div>
+
+       
+        <!-- Room List End -->
+
+        <!-- Activities Start -->
+        <!-- <div> -->
+            <!-- {-% include 'base/userlist.html' %}   -->
+        <!-- </div> -->
+        
+
+        <!-- Activities End -->
+      </div>
+   
+<!-- add javascript here link button  id="id_showall" -->
+
+<script>
+  // <!-- globle variable : b_showall is bool -->
+  var b_showall = false;
+  var btn_listshow = document.getElementById('id_showall');
+  
+  // if click select option then send request to server : ?qacive=xxx  
+  var input_q = document.getElementById("id_q")
+
+  var id_q = "q=";
+  var q_sort = "sort=";
+
+  
+  input_q.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      redirect();
+    }
+  });
+
+  btn_listshow.addEventListener('click', function() {
+          b_showall = true;
+          // document.getElementById('userlistarea').innerHTML = "";
+          // replace all class="roomListRoom" to class="roomListRoom showall"
+          var elements = document.getElementsByClassName("roomListRoom__hide");
+          for (var i = 0; i < elements.length; i++) {
+              elements[i].className = "roomListRoom";
+          }
+        });
+
+
+  // function for redirect to url
+  function redirect(sq) {
+    if (sq == undefined) {
+      sq = q_sort;
+
+    }
+    var url = "{% url 'crmsupplierlist' %}";
+    var q_text = document.getElementById('id_q').value;
+    q_text = "q=" + q_text;
+
+
+    url = url + "?" + q_text + "&" + sq ;
+    // redirect to url
+    location.href = url;
+  }
+</script>
+{% endblock %}      
+
+

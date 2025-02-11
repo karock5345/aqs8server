@@ -34,7 +34,7 @@ from celery.result import AsyncResult
 from django.conf import settings
 from base.sch.views import sch_shutdown
 from django.db.models import BooleanField, Value
-from crm.models import CRMAdmin, Member, Company, Customer, Quotation, Invoice, Receipt
+from crm.models import CRMAdmin, Member, Company, Customer, Quotation, Invoice, Receipt, Supplier
 
 
 logger = logging.getLogger(__name__)
@@ -604,9 +604,7 @@ def SoftkeyCallView(request, pk):
     context = {}
     datetime_now =datetime.now(timezone.utc)
 
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -623,6 +621,7 @@ def SoftkeyCallView(request, pk):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)    
 
     context = {
@@ -2625,9 +2624,7 @@ def Report_Staff_Result(request):
 
         if user == None  :
             
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -2644,6 +2641,7 @@ def Report_Staff_Result(request):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
           
@@ -3187,9 +3185,7 @@ def Report_TicketTypeDay(request):
 def Reports(request):
 
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -3206,6 +3202,7 @@ def Reports(request):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
     # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))    
@@ -3347,9 +3344,7 @@ def TicketRouteDelView(request, pk):
 def TicketRouteUpdateView(request, pk):
     route = TicketRoute.objects.get(id=pk)
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -3366,6 +3361,7 @@ def TicketRouteUpdateView(request, pk):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -3412,9 +3408,7 @@ def TicketRouteSummaryView(request):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketFormatNewView(request):
 
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -3431,6 +3425,7 @@ def TicketFormatNewView(request):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
     form = TicketFormatForm(auth_branchs=auth_branchs)
@@ -3490,9 +3485,7 @@ def TicketFormatDelView(request, pk):
 def TicketFormatUpdateView(request, pk):
     ticketformat = TicketFormat.objects.get(id=pk)
 
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -3509,6 +3502,7 @@ def TicketFormatUpdateView(request, pk):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -3934,9 +3928,7 @@ def SettingsSummaryView(request):
 
 @unauth_user
 def homeView(request):
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -3953,6 +3945,7 @@ def homeView(request):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
     context = getcontext(request, request.user)
@@ -3964,9 +3957,7 @@ def homeView(request):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserSummaryView(request):     
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -3983,6 +3974,7 @@ def UserSummaryView(request):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
  
@@ -4005,9 +3997,7 @@ def UserSummaryListView(request):
     q_sort = request.GET.get('sort') if request.GET.get('sort') != None else ''
 
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -4024,6 +4014,7 @@ def UserSummaryListView(request):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
 
@@ -4182,9 +4173,7 @@ def UserLoginView(request):
 def UserUpdateView(request, pk):
 
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -4201,6 +4190,7 @@ def UserUpdateView(request, pk):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
 
@@ -4406,9 +4396,7 @@ def UserNewView2(request, pk):
 
     # check user group auth
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -4425,6 +4413,7 @@ def UserNewView2(request, pk):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
 
@@ -4489,9 +4478,7 @@ def UserNewView3(request, pk):
 
     # check user group auth
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -4508,6 +4495,7 @@ def UserNewView3(request, pk):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
 
@@ -4635,9 +4623,7 @@ def UserResetView(request, pk):
 
     # check user group auth
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -4654,6 +4640,7 @@ def UserResetView(request, pk):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
     if user in auth_userlist :
@@ -4685,9 +4672,7 @@ def UserResetView(request, pk):
 def MenuView(request):
 
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -4704,6 +4689,7 @@ def MenuView(request):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
         
@@ -4744,7 +4730,9 @@ def auth_data(user):
     auth_bookings = Booking.objects.filter(~Q(status=Booking.STATUS.DELETED)).annotate(bookingtoqueue=Value(False, output_field=BooleanField()))
     auth_quotations = Quotation.objects.filter(Q(company=userprofile.company)).order_by('-created')
     auth_invoices = Invoice.objects.filter(Q(company=userprofile.company)).order_by('-created')
-    auth_receipts = Receipt.objects.filter(Q(company=userprofile.company)).order_by('-created')    
+    auth_receipts = Receipt.objects.filter(Q(company=userprofile.company)).order_by('-created')
+    auth_suppliers = Supplier.objects.filter(Q(company=userprofile.company)).order_by('-created')
+
     # add column for bookingtoqueue
     auth_bookings = auth_bookings.annotate(bookingforceontime=Value(False, output_field=BooleanField()))
     for booking in auth_bookings :
@@ -4935,6 +4923,7 @@ def auth_data(user):
         auth_quotations = Quotation.objects.filter(Q(sales=user)).order_by('-created')
         auth_invoices = Invoice.objects.filter(Q(sales=user)).order_by('-created')
         auth_receipts = Receipt.objects.filter(Q(sales=user)).order_by('-created')
+        # auth_suppliers = Supplier.objects.filter(Q(sales=user)).order_by('-created')
         
     return(
             auth_en_queue,
@@ -4955,15 +4944,14 @@ def auth_data(user):
             auth_quotations,
             auth_invoices,
             auth_receipts,
+            auth_suppliers,
             )
 
 def getcontext(request, user, context=None):
     if context == None :
         context = {}
 
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -4980,7 +4968,8 @@ def getcontext(request, user, context=None):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
-    = auth_data(user)
+    auth_suppliers, \
+    = auth_data(request.user)
 
     logo, navbar_title, css = funDomain(request)
     context = context | {
@@ -5021,9 +5010,7 @@ def getcontext_mini(request):
     return context
 
 def getcontext_en(request):
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -5040,6 +5027,7 @@ def getcontext_en(request):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
     logo, navbar_title, css = funDomain(request)

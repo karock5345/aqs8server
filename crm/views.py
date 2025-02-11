@@ -31,17 +31,14 @@ sort_direction_cust = {}
 def WelcomeView(request):
     content = {'user':request.user}
     return render(request, 'crm/welcome.html', content)
-
 @unauth_user
-def CustomerListView(request):
+def SupplierListView(request):
     global sort_direction_cust
 
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     q_sort = request.GET.get('sort') if request.GET.get('sort') != None else ''
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -58,6 +55,81 @@ def CustomerListView(request):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
+    = auth_data(request.user)
+
+
+    result = auth_suppliers
+    # print(result_userlist.count())
+
+    userp = UserProfile.objects.filter(Q(user = request.user)).first()
+    if userp != None:
+        if userp.company == None:
+            messages.error(request, 'Your are not assign Company' )            
+            return redirect('home')
+
+    if q != '':
+        result = result.filter(Q(supplier_company__icontains=q) 
+                                             | Q(contact__icontains=q) 
+                                             | Q(website__icontains=q) 
+                                             | Q(phone__icontains=q) 
+                                             | Q(email__icontains=q) 
+                                             )
+    
+    direct = ''
+    if q_sort != '':
+        # find out the sort_list
+        try:
+            direct = sort_direction_cust[q_sort]
+        except:
+            direct = ''
+            sort_direction_cust[q_sort] = ''
+        if direct == '':
+            sort_direction_cust[q_sort] = '-'
+        elif direct == '-':
+            sort_direction_cust[q_sort] = ''
+
+    if q_sort == 'supplier_company':
+        result = result.order_by(direct + 'supplier_company')
+    elif q_sort == 'contact':
+        result = result.order_by(direct + 'contact')
+    elif q_sort == 'email':
+        result = result.order_by(direct + 'email')        
+    elif q_sort == 'phone':
+        result = result.order_by(direct + 'phone')
+
+    context = getcontext(request, request.user)
+    context = context | {'q':q}
+    context = context | {'result':result}
+    context = context | {'company':userp.company}
+
+    return render(request, 'crm/supplierlist.html', context)
+
+@unauth_user
+def CustomerListView(request):
+    global sort_direction_cust
+
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    q_sort = request.GET.get('sort') if request.GET.get('sort') != None else ''
+    
+    auth_en_queue, auth_en_crm, auth_en_booking, \
+    auth_branchs , \
+    auth_userlist, \
+    auth_userlist_active, \
+    auth_grouplist, \
+    auth_profilelist, \
+    auth_ticketformats , \
+    auth_routes, \
+    auth_countertype, \
+    auth_timeslots, \
+    auth_bookings, \
+    auth_timeslottemplist, \
+    auth_memberlist, \
+    auth_customerlist, \
+    auth_quotations, \
+    auth_invoices, \
+    auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
 
@@ -119,9 +191,7 @@ def CustomerUpdateView(request, pk):
     # get full path with domain name
     back_url = request.build_absolute_uri()
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -138,6 +208,7 @@ def CustomerUpdateView(request, pk):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -182,9 +253,7 @@ def CustomerNewView(request, ccode):
     error = ''
     status = {}
 
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -201,6 +270,7 @@ def CustomerNewView(request, ccode):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
     
     user=request.user
@@ -528,9 +598,7 @@ def QuotationView(request, pk=None):
     # get full path with domain name
     full_path = request.build_absolute_uri()
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -547,6 +615,7 @@ def QuotationView(request, pk=None):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
     # get full path with domain name
@@ -642,9 +711,7 @@ def QuotationNewView(request, ccode):
     status = {}
     nowutc = datetime.now(timezone.utc)
 
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -661,6 +728,7 @@ def QuotationNewView(request, ccode):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
     
     user=request.user
@@ -830,9 +898,7 @@ def InvoiceView(request, pk=None):
     # get full path with domain name
     full_path = request.build_absolute_uri()
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -849,6 +915,7 @@ def InvoiceView(request, pk=None):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
        
@@ -933,9 +1000,7 @@ def InvoiceNewView(request, ccode):
     status = {}
     nowutc = datetime.now(timezone.utc)
 
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -952,6 +1017,7 @@ def InvoiceNewView(request, ccode):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
     
     user=request.user
@@ -1123,9 +1189,7 @@ def ReceiptView(request, pk=None):
     # get full path with domain name
     full_path = request.build_absolute_uri()
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -1142,6 +1206,7 @@ def ReceiptView(request, pk=None):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
        
@@ -1226,9 +1291,7 @@ def ReceiptNewView(request, ccode):
     status = {}
     nowutc = datetime.now(timezone.utc)
 
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -1245,6 +1308,7 @@ def ReceiptNewView(request, ccode):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
     
     user=request.user
@@ -1416,9 +1480,7 @@ def MemberListView(request):
     q_company = request.GET.get('qcompany') if request.GET.get('qcompany') != None else 'all'
     q_sort = request.GET.get('sort') if request.GET.get('sort') != None else ''
     
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -1435,6 +1497,7 @@ def MemberListView(request):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
 
@@ -1538,9 +1601,7 @@ def MemberUpdateView(request, pk):
     utcnow = datetime.now(timezone.utc)
     member = Member.objects.get(id=pk)    
 
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -1557,6 +1618,7 @@ def MemberUpdateView(request, pk):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
 
     if request.method == 'POST':
@@ -1610,9 +1672,7 @@ def MemberNewView(request, ccode):
     error = ''
     status = {}
 
-    auth_en_queue, \
-    auth_en_crm, \
-    auth_en_booking, \
+    auth_en_queue, auth_en_crm, auth_en_booking, \
     auth_branchs , \
     auth_userlist, \
     auth_userlist_active, \
@@ -1629,6 +1689,7 @@ def MemberNewView(request, ccode):
     auth_quotations, \
     auth_invoices, \
     auth_receipts, \
+    auth_suppliers, \
     = auth_data(request.user)
     
     try:

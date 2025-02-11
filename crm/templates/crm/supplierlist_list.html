@@ -1,0 +1,24 @@
+{% load static %}
+
+<table id="table-style" class="table-style-userlist">
+    <thead>
+        <tr>
+            <th onclick="redirect('sort=supplier_company')">Supplier</th>
+            <th onclick="redirect('sort=contact')">Contact person</th>
+            <th onclick="redirect('sort=email')">E-mail</th>
+            <th onclick="redirect('sort=phone')">Tel</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {% for item in result %}
+        <tr onclick="window.location='{- % ur-l 'customerupdate' supplier.id %}' " >
+            <td>{{item.supplier_company}}</td>
+            <td>{{item.contact}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phone}}</td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>

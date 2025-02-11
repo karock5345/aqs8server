@@ -26,12 +26,12 @@ urlpatterns = [
     path('receipt/<str:pk>/', views.ReceiptView, name='crmreceipt'),
     path('receipt-new/<str:ccode>/', views.ReceiptNewView, name='receiptnew'),
     path('receipt-del/<str:pk>/', views.ReceiptDelView, name='receiptdelete'),
-    path('receipt-pdf/<str:pk>/', views.ReceiptPDFView, name='receiptpdf'),
+    path('receipt-pdf/<str:pk>/', views.ReceiptPDFView, name='receiptpdf'),    
     path('member/', views.MemberListView, name='crmmember'),
     path('member-update/<str:pk>/', views.MemberUpdateView, name='memberupdate'),
     path('member-del/<str:pk>/', views.MemberDelView, name='memberdelete'),
     path('member-new/<str:ccode>/', views.MemberNewView, name='membernew'),
-
+    path('supplier/', views.SupplierListView, name='crmsupplierlist'),
 
     # CRM APIs for mobile app
     path('api/login/', api.crmMemberLoginView, name='crmlogin'),
