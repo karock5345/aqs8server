@@ -80,7 +80,7 @@
                   {% else %}
                     <option value=all>All</option>
                   {% endif %}
-                  {% for gp in auth_grouplist %}
+                  {% for gp in grouplist %}
                     {% if qgroup == gp.name %} 
                       <option value={{gp.name}} selected="selected">{{gp.name}}</option>
                     {% else %}

@@ -39,26 +39,27 @@ def SupplierListView(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     q_sort = request.GET.get('sort') if request.GET.get('sort') != None else ''
     
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
-
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context = getcontext(request, request.user)
+    auth_suppliers = context['suppliers']
 
     result = auth_suppliers
     # print(result_userlist.count())
@@ -99,7 +100,7 @@ def SupplierListView(request):
     elif q_sort == 'phone':
         result = result.order_by(direct + 'phone')
 
-    context = getcontext(request, request.user)
+
     context = context | {'q':q}
     context = context | {'result':result}
     context = context | {'company':userp.company}
@@ -114,25 +115,25 @@ def SupplierUpdateView(request, pk):
     # get full path with domain name
     back_url = request.build_absolute_uri()
     
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
 
     if request.method == 'POST':
         action = request.POST.get('action')
@@ -224,26 +225,27 @@ def CustomerListView(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     q_sort = request.GET.get('sort') if request.GET.get('sort') != None else ''
     
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
-
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context = getcontext(request, request.user)
+    auth_customerlist = context['customers']
 
     result = auth_customerlist
     # print(result_userlist.count())
@@ -287,7 +289,6 @@ def CustomerListView(request):
     elif q_sort == 'sales':
         result = result.order_by(direct + 'sales')
 
-    context = getcontext(request, request.user)
     context = context | {'q':q}
     context = context | {'result':result}
     context = context | {'company':userp.company}
@@ -303,25 +304,25 @@ def CustomerUpdateView(request, pk):
     # get full path with domain name
     back_url = request.build_absolute_uri()
     
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
 
     if request.method == 'POST':
         action = request.POST.get('action')
@@ -365,25 +366,25 @@ def CustomerNewView(request, ccode):
     error = ''
     status = {}
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
     
     user=request.user
     #back_url = request.build_absolute_uri()
@@ -756,25 +757,27 @@ def QuotationView(request, pk=None):
     # get full path with domain name
     full_path = request.build_absolute_uri()
     
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context = getcontext(request, request.user)
+    auth_quotations = context['quotations']
 
     # get full path with domain name
     back_url = request.build_absolute_uri()
@@ -853,14 +856,14 @@ def QuotationView(request, pk=None):
             context_mini = getcontext_mini(request)
             context = context_mini | context 
             return render(request, 'crm/email_sent.html', context)
-    context = getcontext(request, request.user)
-    context = {
-                'aqs_version':aqs_version,
-                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+    
+    context = context | {
+                # 'aqs_version':aqs_version,
+                # 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                 'quotation':quotation, 
                 'company':company,
                 'form':form,
-               } | context 
+               }
     return render(request, 'crm/quotation.html', context)
 
 @unauth_user
@@ -869,25 +872,27 @@ def QuotationNewView(request, ccode):
     status = {}
     nowutc = datetime.now(timezone.utc)
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context_temp = getcontext(request, request.user)
+    auth_en_crm = context_temp['en_crm']
     
     user=request.user
     back_url = request.build_absolute_uri()
@@ -901,8 +906,6 @@ def QuotationNewView(request, ccode):
         form = CustomerNewForm(company=company, user=user)
     except:
         error = 'Company not found'
-
-
 
     # generate new quotation number
     if error == '':
@@ -1056,26 +1059,27 @@ def InvoiceView(request, pk=None):
     # get full path with domain name
     full_path = request.build_absolute_uri()
     
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
-
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context = getcontext(request, request.user)
+    auth_invoices = context['invoices']
        
     if error == '':
         try:
@@ -1142,14 +1146,12 @@ def InvoiceView(request, pk=None):
             context_mini = getcontext_mini(request)
             context = context_mini | context 
             return render(request, 'crm/email_sent.html', context)
-    context = getcontext(request, request.user)
-    context = {
-                'aqs_version':aqs_version,
-                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+
+    context = context | {
                 'invoice':invoice, 
                 'company':company,
                 'form':form,
-               } | context 
+               }
     return render(request, 'crm/invoice.html', context)
 
 @unauth_user
@@ -1158,25 +1160,27 @@ def InvoiceNewView(request, ccode):
     status = {}
     nowutc = datetime.now(timezone.utc)
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context_temp = getcontext(request, request.user)
+    auth_en_crm = context_temp['en_crm']
     
     user=request.user
     back_url = request.build_absolute_uri()
@@ -1190,8 +1194,6 @@ def InvoiceNewView(request, ccode):
         form = CustomerNewForm(company=company, user=user)
     except:
         error = 'Company not found'
-
-
 
     # generate new invoice number
     if error == '':
@@ -1347,27 +1349,28 @@ def ReceiptView(request, pk=None):
     # get full path with domain name
     full_path = request.build_absolute_uri()
     
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
-
-       
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context = getcontext(request, request.user)
+    auth_receipts = context['receipts']
+           
     if error == '':
         try:
             puser = UserProfile.objects.filter(user=request.user).first()
@@ -1433,14 +1436,13 @@ def ReceiptView(request, pk=None):
             context_mini = getcontext_mini(request)
             context = context_mini | context 
             return render(request, 'crm/email_sent.html', context)
-    context = getcontext(request, request.user)
-    context = {
-                'aqs_version':aqs_version,
-                'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
+    context = context | {
+                # 'aqs_version':aqs_version,
+                # 'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
                 'receipt':receipt, 
                 'company':company,
                 'form':form,
-               } | context 
+               }  
     return render(request, 'crm/receipt.html', context)
 
 @unauth_user
@@ -1449,25 +1451,27 @@ def ReceiptNewView(request, ccode):
     status = {}
     nowutc = datetime.now(timezone.utc)
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context_temp = getcontext(request, request.user)
+    auth_en_crm = context_temp['en_crm']
     
     user=request.user
     back_url = request.build_absolute_uri()
@@ -1481,8 +1485,6 @@ def ReceiptNewView(request, ccode):
         form = CustomerNewForm(company=company, user=user)
     except:
         error = 'Company not found'
-
-
 
     # generate new receipt number
     if error == '':
@@ -1638,26 +1640,27 @@ def MemberListView(request):
     q_company = request.GET.get('qcompany') if request.GET.get('qcompany') != None else 'all'
     q_sort = request.GET.get('sort') if request.GET.get('sort') != None else ''
     
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
-
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context = getcontext(request, request.user)
+    auth_memberlist = context['members']
 
     result_userlist = auth_memberlist
     # print(result_userlist.count())
@@ -1732,7 +1735,7 @@ def MemberListView(request):
 
 
 
-    context = getcontext(request, request.user)
+
 
     # context = {'users':auth_userlist, 
     #            'users_active':auth_userlist_active, 
@@ -1759,25 +1762,25 @@ def MemberUpdateView(request, pk):
     utcnow = datetime.now(timezone.utc)
     member = Member.objects.get(id=pk)    
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
 
     if request.method == 'POST':
         form = MemberUpdateForm(request.POST, instance=member, prefix='memberform')
@@ -1830,25 +1833,25 @@ def MemberNewView(request, ccode):
     error = ''
     status = {}
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
     
     try:
         company = Company.objects.get(ccode=ccode)

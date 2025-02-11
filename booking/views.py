@@ -94,25 +94,25 @@ def TimeSlotTempItemIndexView(request, tempid, itemid, step):
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TimeSlotTempItemAddView(request, tempid):    
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
 
     if request.method == 'POST':
         # click submit button
@@ -170,25 +170,25 @@ def TimeSlotTempItemDelView(request, pk, tempid):
 def TimeSlotTempItemUpdateView(request, pk, tempid):
     item = TimeSlot_item.objects.get(id=pk)
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
 
     if request.method == 'POST':                    
         # utcnow = datetime.now(timezone.utc)
@@ -271,25 +271,28 @@ def TimeSlotTempUpdateView(request, pk):
     temp = TimeslotTemplate.objects.get(id=pk)
     items = temp.items.all().order_by('index')
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context_temp = getcontext(request, request.user)
+    auth_branchs = context_temp['branchs']
+    auth_userlist = context_temp['users']
 
     
     form = TimeSlotTempForm(instance=temp, prefix='timeslottempform', auth_branchs=auth_branchs, auth_userlist=auth_userlist)
@@ -340,25 +343,28 @@ def TimeSlotTempUpdateView(request, pk):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TimeSlotTempNewView(request):
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context_temp = getcontext(request, request.user)
+    auth_branchs = context_temp['branchs']
+    auth_userlist = context_temp['userlist']
 
     form = TimeSlotTempNewForm(auth_branchs=auth_branchs, auth_userlist=auth_userlist)
 
@@ -394,25 +400,25 @@ def TimeSlotTempNewView(request):
 
 @unauth_user
 def TimeslotTempSummaryView(request):
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
 
  
     context = getcontext(request, request.user)
@@ -434,25 +440,27 @@ def TimeslotTempSummaryView(request):
 @unauth_user
 def BookingNewView(request):
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context_temp = getcontext(request, request.user)
+    auth_branchs = context_temp['branchs']
 
     form = BookingNewForm(auth_branchs=auth_branchs)
 
@@ -508,25 +516,28 @@ def BookingUpdateView(request, pk):
     utcnow = datetime.now(timezone.utc)
     booking = Booking.objects.get(id=pk)    
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context_temp = getcontext(request, request.user)
+    auth_branchs = context_temp['branchs']
+    auth_userlist = context_temp['users']
 
     if request.method == 'POST':
         bookingform = BookingForm(request.POST, instance=booking, prefix='bookingform', auth_branchs=auth_branchs, auth_userlist=auth_userlist)
@@ -562,25 +573,25 @@ def BookingUpdateView(request, pk):
 @unauth_user
 @transaction.atomic
 def BookingSummaryView(request):
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
 
  
     context = getcontext(request, request.user)
@@ -1202,25 +1213,27 @@ def TimeSlotDelView(request, pk):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TimeSlotNewView(request):
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context_temp = getcontext(request, request.user)
+    auth_branchs = context_temp['branchs']    
 
     tsform = TimeSlotNewForm(auth_branchs=auth_branchs)
 
@@ -1270,25 +1283,27 @@ def TimeSlotNewView(request):
 def TimeSlotUpdateView(request, pk):
     timeslot = TimeSlot.objects.get(id=pk)    
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context_temp = getcontext(request, request.user)
+    auth_branchs = context_temp['branchs']
 
     if request.method == 'POST':
         utcnow = datetime.now(timezone.utc)
@@ -1325,25 +1340,25 @@ def TimeSlotUpdateView(request, pk):
 def TimeSlotSummaryView(request):
    
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
  
     context = getcontext(request, request.user)
     context_en = getcontext_en(request)

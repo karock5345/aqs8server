@@ -604,25 +604,12 @@ def SoftkeyCallView(request, pk):
     context = {}
     datetime_now =datetime.now(timezone.utc)
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)    
+    context_temp = getcontext(request, request.user)
+    auth_userlist = context_temp['users']
+    auth_branchs = context_temp['branchs']
+    auth_ticketformats = context_temp['ticketformats']
+    auth_routes = context_temp['routes']
+    auth_timeslots = context_temp['timeslots']
 
     context = {
         'users':auth_userlist, 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots,
@@ -2620,135 +2607,6 @@ def Report_Staff_Result(request):
                                         ])
                     return response  
 
-        '''
-
-        if user == None  :
-            
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
-
-          
-            for user in auth_userlist:
-                userlogobj = UserStatusLog.objects.filter(
-                    Q(starttime__range=[startdate,enddate]),
-                    Q(user=user),
-                    ~Q(starttime = None),
-                    ~Q(endtime = None),
-                )
-                login = 0
-                ready = 0
-                waiting = 0
-                walking = 0
-                process = 0
-                acw = 0
-                aux =0
-                for ul in userlogobj:
-                    seconds = (ul.endtime - ul.starttime).seconds
-                    if ul.status == 'login':
-                        login = login + seconds
-                    elif ul.status == 'ready':
-                        ready = ready + seconds
-                    elif ul.status == 'waiting':
-                        waiting = waiting + seconds
-                    elif ul.status == 'walking':
-                        walking = walking + seconds
-                    elif ul.status == 'processing':
-                        process = process + seconds
-                    elif ul.status == 'ACW':
-                        acw = acw + seconds
-                    elif ul.status == 'AUX':
-                        aux = aux + seconds
-                # convert all to '00:00:00' string
-                login_s = str(timedelta(seconds=login))
-                ready_s = str(timedelta(seconds=ready))
-                waiting_s = str(timedelta(seconds=waiting))
-                walking_s = str(timedelta(seconds=walking))
-                process_s = str(timedelta(seconds=process))
-                acw_s = str(timedelta(seconds=acw))
-                aux_s = str(timedelta(seconds=aux))
-
-                # print('AUX seconds:' + str(aux) + ' AUX string:' + aux_s)
-                # print('Login seconds:' + str(login) + ' Login string:' + login_s)
-                # print('Ready seconds:' + str(ready) + ' Ready string:' + ready_s)
-                # print('Waiting seconds:' + str(waiting) + ' Waiting string:' + waiting_s)
-                # print('Walking seconds:' + str(walking) + ' Walking string:' + walking_s)
-                # print('Process seconds:' + str(process) + ' Process string:' + process_s)
-                # print('ACW seconds:' + str(acw) + ' ACW string:' + acw_s)
-                # print('AUX seconds:' + str(aux) + ' AUX string:' + aux_s)
-
-                report_table.append([user.username, user.first_name + ' ' + user.last_name, login_s, ready_s, waiting_s, walking_s, process_s, acw_s, aux_s])
-
-
-        else:
-            userlogobj = UserStatusLog.objects.filter(
-                Q(starttime__range=[startdate,enddate]),
-                Q(user=user),
-                ~Q(starttime = None),
-                ~Q(endtime = None),
-            )
-            login = 0
-            ready = 0
-            waiting = 0
-            walking = 0
-            process = 0
-            acw = 0
-            aux =0
-            for ul in userlogobj:
-                seconds = (ul.endtime - ul.starttime).seconds
-                if ul.status == 'login':
-                    login = login + seconds
-                elif ul.status == 'ready':
-                    ready = ready + seconds
-                elif ul.status == 'waiting':
-                    waiting = waiting + seconds
-                elif ul.status == 'walking':
-                    walking = walking + seconds
-                elif ul.status == 'processing':
-                    process = process + seconds
-                elif ul.status == 'ACW':
-                    acw = acw + seconds
-                elif ul.status == 'AUX':
-                    aux = aux + seconds
-            # convert all to '00:00:00' string
-            login_s = str(timedelta(seconds=login))
-            ready_s = str(timedelta(seconds=ready))
-            waiting_s = str(timedelta(seconds=waiting))
-            walking_s = str(timedelta(seconds=walking))
-            process_s = str(timedelta(seconds=process))
-            acw_s = str(timedelta(seconds=acw))
-            aux_s = str(timedelta(seconds=aux))
-
-            # print('AUX seconds:' + str(aux) + ' AUX string:' + aux_s)
-            # print('Login seconds:' + str(login) + ' Login string:' + login_s)
-            # print('Ready seconds:' + str(ready) + ' Ready string:' + ready_s)
-            # print('Waiting seconds:' + str(waiting) + ' Waiting string:' + waiting_s)
-            # print('Walking seconds:' + str(walking) + ' Walking string:' + walking_s)
-            # print('Process seconds:' + str(process) + ' Process string:' + process_s)
-            # print('ACW seconds:' + str(acw) + ' ACW string:' + acw_s)
-            # print('AUX seconds:' + str(aux) + ' AUX string:' + aux_s)
-
-            report_table.append([user.username, user.first_name + ' ' + user.last_name, login_s, ready_s, waiting_s, walking_s, process_s, acw_s, aux_s])
-
-        '''
-        
-
     if error == '':
         context = {
         'localtimezone':localtimezone,
@@ -3184,32 +3042,12 @@ def Report_TicketTypeDay(request):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def Reports(request):
 
+    context = getcontext(request, request.user)
+
+    # get ticketformats from context
+    auth_ticketformats = context['ticketformats']
+    auth_countertype = context['countertypes']
     
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
-
-    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))    
-    # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
-    # routes = TicketRoute.objects.all().order_by('branch','tickettype','step')
-    # countertypes = CounterType.objects.all()
-
     ttdict = {}
     # ttdict format: { tickettype : {lang1: 'name1', lang2: 'name2'} }
     for tf in auth_ticketformats:
@@ -3221,9 +3059,7 @@ def Reports(request):
         
     now_l = datetime.now()
     snow_l = now_l.strftime('%Y-%m-%d')
-    # print(now_l)
-
-    context = getcontext(request, request.user)
+    
     context = context | {'now':snow_l, 'tickettypes':ttdict, 'countertypes':auth_countertype}
 
     return render(request, 'base/r-main_standard.html', context)
@@ -3279,18 +3115,6 @@ def SuperVisorView(request, pk):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager','reporter'])
 def SuperVisorListView(request):  
     
-
-
- 
-    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
-    #users = User.objects.exclude( Q(is_superuser=True) )
-    # profiles = UserProfile.objects.all()
-    # branchs = Branch.objects.all()    
-    # ticketformats = TicketFormat.objects.all()
-    # routes = TicketRoute.objects.all()
-    # profiles = UserProfile.objects.filter(Q(user=users.user))
-    #profiles = users.userprofile_set.all()
-    
     context = getcontext(request, request.user)
     return render(request, 'base/supervisors.html', context)
 
@@ -3343,27 +3167,9 @@ def TicketRouteDelView(request, pk):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketRouteUpdateView(request, pk):
     route = TicketRoute.objects.get(id=pk)
+       
+    auth_branchs = getcontext(request, request.user)['branchs']
     
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
-
     if request.method == 'POST':
         error = ''
         trform = trForm(request.POST, instance=route, prefix='trform', auth_branchs=auth_branchs)
@@ -3393,14 +3199,6 @@ def TicketRouteUpdateView(request, pk):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketRouteSummaryView(request):  
     
-
-
- 
-    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
-    # branchs = Branch.objects.all()
-    # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
-    # routes = TicketRoute.objects.all().order_by('branch','tickettype','step')
-
     context = getcontext(request, request.user)
     return render(request, 'base/routes.html', context)
 
@@ -3408,26 +3206,9 @@ def TicketRouteSummaryView(request):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketFormatNewView(request):
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
-
+    context_en = getcontext(request, request.user)
+    auth_branchs = context_en['branchs']
+    
     form = TicketFormatForm(auth_branchs=auth_branchs)
     if request.method == 'POST':
         form = TicketFormatForm(request.POST, auth_branchs=auth_branchs)
@@ -3461,7 +3242,6 @@ def TicketFormatNewView(request):
         if error != '':
             messages.error(request, error)
     context = {'form':form}
-    context_en = getcontext_en(request)
     context = context_en | context
     return render(request, 'base/tfnew.html', context)
 
@@ -3485,25 +3265,7 @@ def TicketFormatDelView(request, pk):
 def TicketFormatUpdateView(request, pk):
     ticketformat = TicketFormat.objects.get(id=pk)
 
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    auth_branchs = getcontext(request, request.user)['branchs']
 
     if request.method == 'POST':
         tfform = TicketFormatForm(request.POST, instance=ticketformat, prefix='tfform',  auth_branchs=auth_branchs)
@@ -3530,13 +3292,6 @@ def TicketFormatUpdateView(request, pk):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def TicketFormatSummaryView(request):
     
-
-
-  
-    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
-    # branchs = Branch.objects.all()
-    # ticketformats = TicketFormat.objects.all().order_by('branch','ttype')
-    # routes = TicketRoute.objects.all()
     context = getcontext(request, request.user)
     return render(request, 'base/tfs.html', context)
 
@@ -3910,75 +3665,27 @@ def SettingsUpdateView(request, pk):
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def SettingsSummaryView(request):  
-    # users = User.objects.exclude( Q(is_superuser=True) | Q(groups__name='api'))
-    #users = User.objects.exclude( Q(is_superuser=True) )
-    # profiles = UserProfile.objects.all()
-    # branchs = Branch.objects.all()    
-    # ticketformats = TicketFormat.objects.all()
-    # routes = TicketRoute.objects.all()
-    # profiles = UserProfile.objects.filter(Q(user=users.user))
-    #profiles = users.userprofile_set.all()
-    
-
-
-
 
     context = getcontext(request, request.user)
     return render(request, 'base/settings.html', context)
 
 @unauth_user
 def homeView(request):
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
 
     context = getcontext(request, request.user)
 
-    context = context |{'users_active':auth_userlist_active, }
+    context = context
     return render(request, 'base/home.html', context)
 
 @unauth_user
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserSummaryView(request):     
     
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
-
- 
     context = getcontext(request, request.user)
+    auth_userlist_active = context['users_active']
+    auth_grouplist = context['grouplist']
+    auth_profilelist  = context['profilelist']
+
     context = context | {'users_active':auth_userlist_active}
     context = context | {'profiles':auth_profilelist}
     context = context | {'auth_grouplist':auth_grouplist}
@@ -3996,27 +3703,12 @@ def UserSummaryListView(request):
     q_group = request.GET.get('qgroup') if request.GET.get('qgroup') != None else 'all'
     q_sort = request.GET.get('sort') if request.GET.get('sort') != None else ''
 
-    
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
-
+    context = getcontext(request, request.user)
+    auth_userlist = context['users']
+    # auth_userlist_active = context['users_active']
+    # auth_grouplist = context['grouplist']
+    # auth_profilelist  = context['profilelist']
+    auth_ticketformats = context['ticketformats']
 
     result_userlist = auth_userlist
     # print(result_userlist.count())
@@ -4092,30 +3784,12 @@ def UserSummaryListView(request):
     elif q_sort == 'phone':
         result_userlist = result_userlist.order_by(direct + 'userprofile__mobilephone')
 
-
-    context = getcontext(request, request.user)
-
-    # context = {'users':auth_userlist, 
-    #            'users_active':auth_userlist_active, 
-    #            'profiles':auth_profilelist, 
-    #            'auth_grouplist':auth_grouplist, 
-    #            'branchs':auth_branchs, 
-    #            'ticketformats':auth_ticketformats, 
-    #            'routes':auth_routes, 
-    #            'timeslots':auth_timeslots, 
-    #            'bookings':auth_bookings, 
-    #            'temp':auth_timeslottemplist,
-    #     }
-    context = context | {'users_active':auth_userlist_active}
-    context = context | {'profiles':auth_profilelist}
-    context = context | {'auth_grouplist':auth_grouplist}
-    context = context | {'q':q}
+    context = context | {'q': q}
     context = context | {'qactive':q_active}
     context = context | {'qbranch':q_branch}
     context = context | {'qtt':q_tt}
     context = context | {'qgroup':q_group}
     context = context | {'result_users':result_userlist}
-    
 
     return render(request, 'base/user_details.html', context)
 
@@ -4172,37 +3846,14 @@ def UserLoginView(request):
 @allowed_users(allowed_roles=['admin','support','supervisor','manager'])
 def UserUpdateView(request, pk):
 
-    
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
-
+    temp_context = getcontext(request, request.user)
+    auth_branchs = temp_context['branchs']
+    auth_grouplist = temp_context['grouplist']
 
 
     user = User.objects.get(id=pk)
     userp = UserProfile.objects.get(user__exact=user)
     error = ''
-    # if request.user.is_superuser == True or request.user.groups.filter(name='support').exists() == True or request.user.groups.filter(name='admin').exists() == True:
-    #     auth_branchs = Branch.objects.all()
-    # else :
-    #     auth_userp = UserProfile.objects.get(user__exact=request.user)
-    #     auth_branchs = auth_userp.branchs.all()
 
     # get all ticketformat but not ttype is repeated 
     ticketformat = TicketFormat.objects.all().order_by('ttype')
@@ -4212,19 +3863,12 @@ def UserUpdateView(request, pk):
             ticketformat = ticketformat.exclude(id=tf.id)
     ticketformat2 = ticketformat
 
-
-
     for tf in ticketformat:
         for tf2 in ticketformat:
             if tf != tf2:
                 if tf.ttype == tf2.ttype:
                     ticketformat = ticketformat.exclude(id=tf.id)
                     ticketformat2 = ticketformat2.exclude(id=tf2.id)
-    
-    # for tt in ticketformat2:
-    #     # check if userp.branchs is not in tt.branchs
-    #     if tt.branch not in userp.branchs.all():
-    #         ticketformat2 = ticketformat2.exclude(id=tt.id)
 
     # add column for checked or unchecked to ticketformat2
     if userp.tickettype != None:
@@ -4394,27 +4038,13 @@ def UserNewView2(request, pk):
     user = User.objects.get(id=pk)
     userp = UserProfile.objects.get(user__exact=user)
 
-    # check user group auth
-    
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    context_temp = getcontext(request, request.user)
+    auth_en_queue = context_temp['en_queue']
+    auth_en_crm = context_temp['en_crm']
+    auth_en_booking = context_temp['en_booking']
+    aqs_version = context_temp['aqs_version']
+    auth_branchs = context_temp['branchs']
+    auth_grouplist = context_temp['grouplist']
 
 
     if request.method == 'POST':
@@ -4476,28 +4106,12 @@ def UserNewView3(request, pk):
     user = User.objects.get(id=pk)
     userp = UserProfile.objects.get(user__exact=user)
 
-    # check user group auth
-    
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
-
+    context_temp = getcontext(request, request.user)
+    auth_en_queue = context_temp['en_queue']
+    auth_en_crm = context_temp['en_crm']
+    auth_en_booking = context_temp['en_booking']
+    aqs_version = context_temp['aqs_version']
+    auth_branchs = context_temp['branchs']
 
 
     ticketformat = TicketFormat.objects.all().order_by('ttype')
@@ -4507,8 +4121,6 @@ def UserNewView3(request, pk):
             ticketformat = ticketformat.exclude(id=tf.id)
     ticketformat2 = ticketformat
 
-
-
     for tf in ticketformat:
         for tf2 in ticketformat:
             if tf != tf2:
@@ -4516,8 +4128,6 @@ def UserNewView3(request, pk):
                     ticketformat = ticketformat.exclude(id=tf.id)
                     ticketformat2 = ticketformat2.exclude(id=tf2.id)
     
-
-
     # add column for checked or unchecked to ticketformat2
     if userp.tickettype != None:
         listusertt = userp.tickettype.split(',')
@@ -4530,7 +4140,6 @@ def UserNewView3(request, pk):
         else:
             tt.checked = 'unchecked'
         tt.save()
-
 
     if request.method == 'POST':
         profileform = UserProfileForm(request.POST, instance=userp, prefix='pform', auth_branchs=auth_branchs)
@@ -4550,7 +4159,6 @@ def UserNewView3(request, pk):
             profileform_temp.save()
             messages.success(request, 'New User successfully')            
             return redirect('update-user', pk=pk)
-
         else:
             # messages.error(request, 'An error occurcd during registration')
             # get all error message from form.errors
@@ -4623,25 +4231,31 @@ def UserResetView(request, pk):
 
     # check user group auth
     
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+    # auth_en_queue, auth_en_crm, auth_en_booking, \
+    # auth_branchs , \
+    # auth_userlist, \
+    # auth_userlist_active, \
+    # auth_grouplist, \
+    # auth_profilelist, \
+    # auth_ticketformats , \
+    # auth_routes, \
+    # auth_countertype, \
+    # auth_timeslots, \
+    # auth_bookings, \
+    # auth_timeslottemplist, \
+    # auth_memberlist, \
+    # auth_customerlist, \
+    # auth_quotations, \
+    # auth_invoices, \
+    # auth_receipts, \
+    # auth_suppliers, \
+    # = auth_data(request.user)
+    context_temp = getcontext(request, request.user)
+    auth_en_queue = context_temp['en_queue']
+    auth_en_crm = context_temp['en_crm']
+    auth_en_booking = context_temp['en_booking']
+    aqs_version = context_temp['aqs_version']
+    auth_userlist = context_temp['users']    
 
     if user in auth_userlist :
         # print('Request user:' + request.user.username)
@@ -4671,29 +4285,9 @@ def UserResetView(request, pk):
 
 def MenuView(request):
 
-    
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
-
+    context = getcontext(request, request.user)
         
-    context =  {'users':auth_userlist , 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings, 'temp':auth_timeslottemplist}
+    # context =  {'users':auth_userlist , 'branchs':auth_branchs, 'ticketformats':auth_ticketformats, 'routes':auth_routes, 'timeslots':auth_timeslots, 'bookings':auth_bookings, 'temp':auth_timeslottemplist}
     context_en = getcontext_en(request)
     context = context_en | context
     return render(request, 'base/m-menu.html', context)
@@ -4965,10 +4559,7 @@ def getcontext(request, user, context=None):
     auth_timeslottemplist, \
     auth_memberlist, \
     auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
+    auth_quotations, auth_invoices, auth_receipts, auth_suppliers, \
     = auth_data(request.user)
 
     logo, navbar_title, css = funDomain(request)
@@ -4979,10 +4570,11 @@ def getcontext(request, user, context=None):
         'css':css,
         'aqs_version':aqs_version, 
         'en_queue':auth_en_queue, 'en_crm':auth_en_crm, 'en_booking':auth_en_booking,
-        'users':auth_userlist, 
+        'users':auth_userlist, 'users_active':auth_userlist_active, 'grouplist':auth_grouplist, 'profilelist':auth_profilelist,
         'branchs':auth_branchs, 
         'ticketformats':auth_ticketformats, 
         'routes':auth_routes, 
+        'countertypes':auth_countertype,
         'timeslots':auth_timeslots, 
         'bookings':auth_bookings,
         'temps':auth_timeslottemplist,
@@ -4991,6 +4583,7 @@ def getcontext(request, user, context=None):
         'quotations':auth_quotations,
         'invoices':auth_invoices,
         'receipts':auth_receipts,
+        'suppliers':auth_suppliers,
         }    
 
     return context
@@ -5010,25 +4603,11 @@ def getcontext_mini(request):
     return context
 
 def getcontext_en(request):
-    auth_en_queue, auth_en_crm, auth_en_booking, \
-    auth_branchs , \
-    auth_userlist, \
-    auth_userlist_active, \
-    auth_grouplist, \
-    auth_profilelist, \
-    auth_ticketformats , \
-    auth_routes, \
-    auth_countertype, \
-    auth_timeslots, \
-    auth_bookings, \
-    auth_timeslottemplist, \
-    auth_memberlist, \
-    auth_customerlist, \
-    auth_quotations, \
-    auth_invoices, \
-    auth_receipts, \
-    auth_suppliers, \
-    = auth_data(request.user)
+
+    auth_data = getcontext(request, request.user)
+    auth_en_queue = auth_data['en_queue']
+    auth_en_crm = auth_data['en_crm']
+    auth_en_booking = auth_data['en_booking']
 
     logo, navbar_title, css = funDomain(request)
 

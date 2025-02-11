@@ -19,7 +19,7 @@
     <tbody>
 
     {% for user in result_users %}
-    {% for prof in profiles %}
+    {% for prof in profilelist %}
         {% if user == prof.user %}
         <tr  onclick="window.location='{% url 'update-user' user.id %}' " >
             
