@@ -68,7 +68,14 @@ class SupplierUpdateForm(ModelForm):
     def __init__(self, *args,**kwargs):
         self.company = kwargs.pop('company')
         super().__init__(*args,**kwargs)        
-        
+    class Meta:        
+        model = Supplier
+        fields = ['supplier_company', 'contact', 'phone', 'address', 'website', 'email']
+
+class SupplierNewForm(ModelForm):
+    def __init__(self, *args,**kwargs):
+        self.company = kwargs.pop('company')
+        super().__init__(*args,**kwargs)        
     class Meta:        
         model = Supplier
         fields = ['supplier_company', 'contact', 'phone', 'address', 'website', 'email']
@@ -80,7 +87,6 @@ class CustomerUpdateForm(ModelForm):
         self.fields['group'].queryset = CustomerGroup.objects.filter(company=self.company)
         self.fields['source'].queryset = CustomerSource.objects.filter(company=self.company)
         self.fields['information'].queryset = CustomerInformation.objects.filter(company=self.company)
-        
     class Meta:        
         model = Customer
         fields = ['companyname',  'address','contact', 'phone', 'email', 'fax', 'referby', 'group', 'source', 'information' , 'member', 'remark']
@@ -99,8 +105,6 @@ class CustomerNewForm(ModelForm):
         self.fields['Sales'].widget=forms.widgets.TextInput()
         self.fields['Sales'].widget.attrs['readonly'] = 'readonly'
         self.initial['Sales'] = self.user.first_name + ' ' + self.user.last_name + ' (' + self.user.username + ')'
-        
-
     class Meta:        
         model = Customer
         fields = ['companyname', 'contact', 'phone', 'email', 'fax', 'address', 'referby', 'group', 'source', 'information' , 'member', 'remark', 'Sales']

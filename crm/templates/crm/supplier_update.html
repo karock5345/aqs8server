@@ -47,7 +47,7 @@
                         {% endfor %}
                         
                         <div class="form__action">
-                            <a class="btn btn--del" href="{-% url 'supplierdelete' supplier.id %}">Delete</a>
+                            <a class="btn btn--del" href="{% url 'supplierdelete' supplier.id %}">Delete</a>
                             <a class="btn btn--dark" href="{% url 'crmsupplierlist' %}">Cancel</a>
                             <button class="btn btn--main" type="submit" name="action" value="update">Update</button>
                         </div>

@@ -16,6 +16,7 @@ pMsgType = [
     ]
 
 
+    
 class Company(models.Model):
     ccode = models.CharField(max_length=200, null=False, unique=True)
     enabled = models.BooleanField(default=True)
@@ -31,6 +32,77 @@ class Company(models.Model):
     def __str__(self):
         return self.ccode + '-' + self.name
 
+class Category(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
+    # product_type = models.ForeignKey(Product_Type, on_delete=models.SET_NULL, null=True, blank=True)
+    name = models.CharField(max_length=200)
+    description = models.TextField(null=True, blank=True, default='')
+
+    def __str__(self):
+        return self.name
+
+class Supplier(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
+    contact = models.CharField(max_length=200)
+    supplier_company = models.CharField(max_length=200)
+    website = models.CharField(max_length=200)    
+    address = models.TextField(null=True, blank=True, default='')
+    phone = models.CharField(max_length=15)
+    email = models.EmailField(null=True, blank=True, default='')
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
+    def __str__(self):
+        return self.supplier_company
+
+class Product_Type(models.Model):
+    # default 'product' or 'service'
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name
+# Model for Products and Services
+class Product(models.Model):
+    class STATUS(models.TextChoices):
+        ACTIVE = 'active', _('Active')
+        INACTIVE = 'inactive', _('Inactive')
+        DELETED = 'deleted', _('Deleted')
+        SOLDOUT = 'soldout', _('Sold out')
+        OUTOFSTOCK = 'outofstock', _('Out of stock')
+        RESERVED = 'reserved', _('Reserved')
+        PENDING = 'pending', _('Pending')
+
+
+    # item_status_choices = [('active', ('active')),
+    #                     ('inactive', ('inactive')),
+    #                     ('deleted', ('deleted')),
+    #                     ('soldout', ('soldout')),
+    #                     ('outofstock', ('outofstock')),
+    #                     ('reserved', ('reserved')),
+    #                     ('pending', ('pending'))
+    #                     ]
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
+    name = models.CharField(max_length=200)
+    description = models.TextField(null=True, blank=True, default='')
+    product_type = models.ForeignKey(Product_Type, on_delete=models.SET_NULL, null=True, blank=True)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
+    supplier = models.ForeignKey(Supplier, on_delete=models.SET_NULL, null=True, blank=True)
+    status = models.CharField(max_length=200, choices=STATUS.choices, default=STATUS.ACTIVE)
+    price = models.FloatField(default=0.0)
+    cost = models.FloatField(default=0.0)
+    duration = models.DurationField(default=timedelta(days=0))
+    barcode = models.CharField(max_length=20, blank=True, null=True)
+    weight = models.FloatField(blank=True, null=True)
+    dimensions = models.CharField(max_length=50, blank=True, null=True)
+    manufacturing_date = models.DateField(blank=True, null=True)
+    expiration_date = models.DateField(blank=True, null=True)
+    is_available = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
 
 class Member(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
@@ -113,79 +185,12 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.companyname
-class Product_Type(models.Model):
-    # default 'product' or 'service'
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
-    name = models.CharField(max_length=200)
-    description = models.TextField()
-
-    def __str__(self):
-        return self.name
-
-class Category(models.Model):
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
-    # product_type = models.ForeignKey(Product_Type, on_delete=models.SET_NULL, null=True, blank=True)
-    name = models.CharField(max_length=200)
-    description = models.TextField(null=True, blank=True, default='')
-
-    def __str__(self):
-        return self.name
-
-class Supplier(models.Model):
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
-    contact = models.CharField(max_length=200)
-    supplier_company = models.CharField(max_length=200)
-    website = models.CharField(max_length=200)    
-    address = models.TextField(null=True, blank=True, default='')
-    phone = models.CharField(max_length=15)
-    email = models.EmailField(null=True, blank=True, default='')
-    updated = models.DateTimeField(auto_now=True)
-    created = models.DateTimeField(auto_now_add=True) # auto_now_add just auto add once (the first created)
-    def __str__(self):
-        return self.supplier_company
 
 
-# Model for Products and Services
-class Product(models.Model):
-    class STATUS(models.TextChoices):
-        ACTIVE = 'active', _('Active')
-        INACTIVE = 'inactive', _('Inactive')
-        DELETED = 'deleted', _('Deleted')
-        SOLDOUT = 'soldout', _('Sold out')
-        OUTOFSTOCK = 'outofstock', _('Out of stock')
-        RESERVED = 'reserved', _('Reserved')
-        PENDING = 'pending', _('Pending')
 
 
-    # item_status_choices = [('active', ('active')),
-    #                     ('inactive', ('inactive')),
-    #                     ('deleted', ('deleted')),
-    #                     ('soldout', ('soldout')),
-    #                     ('outofstock', ('outofstock')),
-    #                     ('reserved', ('reserved')),
-    #                     ('pending', ('pending'))
-    #                     ]
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
-    name = models.CharField(max_length=200)
-    description = models.TextField(null=True, blank=True, default='')
-    product_type = models.ForeignKey(Product_Type, on_delete=models.SET_NULL, null=True, blank=True)
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
-    supplier = models.ForeignKey(Supplier, on_delete=models.SET_NULL, null=True, blank=True)
-    status = models.CharField(max_length=200, choices=STATUS.choices, default=STATUS.ACTIVE)
-    price = models.FloatField(default=0.0)
-    cost = models.FloatField(default=0.0)
-    duration = models.DurationField(default=timedelta(days=0))
-    barcode = models.CharField(max_length=20, blank=True, null=True)
-    weight = models.FloatField(blank=True, null=True)
-    dimensions = models.CharField(max_length=50, blank=True, null=True)
-    manufacturing_date = models.DateField(blank=True, null=True)
-    expiration_date = models.DateField(blank=True, null=True)
-    is_available = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.name
+
 
 class MemberItem(models.Model):
     # global item_status_choices

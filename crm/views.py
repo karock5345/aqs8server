@@ -14,7 +14,7 @@ from django.contrib import messages
 from base.decorators import *
 from crm.models import CRMAdmin, Member, Company, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt, BusinessType, BusinessSource, Supplier
 from crm.forms import MemberUpdateForm, MemberNewForm, CustomerUpdateForm, CustomerGroupForm, CustomerSourceForm, CustomerInfoForm, CustomerNewForm, QuotationUpdateForm, InvoiceUpdateForm, ReceiptUpdateForm, BusinessTypeForm, BusinessSourceForm
-from crm.forms import SupplierUpdateForm
+from crm.forms import SupplierUpdateForm, SupplierNewForm
 from crm.api import new_member
 from django.db import transaction
 import re
@@ -218,6 +218,77 @@ def checksupplierform(form):
 
     return error, newform
 
+
+@unauth_user
+def SupplierNewView(request, ccode):
+    error = ''
+    status = {}
+    
+    user=request.user
+    #back_url = request.build_absolute_uri()
+    # get previous url
+    back_url = request.META.get('HTTP_REFERER')
+    
+    if error == '':
+        try:
+            company = Company.objects.get(ccode=ccode)
+        except:
+            error = 'Company not found'
+    if error == '':
+        try:
+            form = SupplierNewForm(company=company)
+        except:
+            error = 'form error'
+
+    if error == '':
+        if request.method == 'POST':
+            action = request.POST.get('action')
+            
+            utcnow = datetime.now(timezone.utc)
+            form = SupplierNewForm(request.POST, company=company)
+
+            if action == 'new':
+                if form.is_valid() == True:                    
+                    # create new customer record
+                    supplier = Supplier.objects.create(
+                        company=company,
+                        supplier_company=form['supplier_company'].value(),
+                        contact=form['contact'].value(),
+                        address=form['address'].value(),
+                        email=form['email'].value(),
+                        phone=form['phone'].value(),
+                        website=form['website'].value(),
+                    )
+                else:
+                    error = 'Invalid form data: ' + str(form.errors)                    
+            if error == '' :
+                messages.success(request, 'Created new Supplier.')
+                return redirect('crmsupplierlist')
+    if error != '':
+        messages.error(request, error)
+        return redirect('crmsupplierlist')
+
+    context = {'form':form}
+    context_en = getcontext_en(request)
+    context = context_en | context    
+    context = {'title':'New Supplier', 'back_url':back_url, } | context 
+    return render(request, 'base/new.html', context)
+
+@unauth_user
+def SupplierDelView(request, pk):
+    utcnow = datetime.now(timezone.utc)
+    supplier = Supplier.objects.get(id=pk) 
+  
+    if request.method =='POST':
+        supplier.delete()       
+        messages.success(request, 'Supplier was successfully deleted!') 
+        return redirect('crmsupplierlist')
+    context = {'obj':supplier, 'text':'Warning: This action will delete the Supplier.'}
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
+    return render(request, 'base/delete.html', context)
+
+
 @unauth_user
 def CustomerListView(request):
     global sort_direction_cust
@@ -360,6 +431,20 @@ def CustomerUpdateView(request, pk):
     context = context_en | context
     return render(request, 'crm/customer_update.html', context)
 
+
+@unauth_user
+def CustomerDelView(request, pk):
+    utcnow = datetime.now(timezone.utc)
+    customer = Customer.objects.get(id=pk) 
+  
+    if request.method =='POST':
+        customer.delete()       
+        messages.success(request, 'Customer was successfully deleted!') 
+        return redirect('crmcustomerlist')
+    context = {'obj':customer, 'text':'Warning: This action will delete the Customer.'}
+    context_mini = getcontext_mini(request)
+    context = context_mini | context
+    return render(request, 'base/delete.html', context)
 
 @unauth_user
 def CustomerNewView(request, ccode):
@@ -733,20 +818,6 @@ def SubUpdate(request, action, company, customer, full_path):
 
 
         return '', '', {}
-
-@unauth_user
-def CustomerDelView(request, pk):
-    utcnow = datetime.now(timezone.utc)
-    customer = Customer.objects.get(id=pk) 
-  
-    if request.method =='POST':
-        customer.delete()       
-        messages.success(request, 'Customer was successfully deleted!') 
-        return redirect('crmcustomerlist')
-    context = {'obj':customer, 'text':'Warning: This action will delete the Customer.'}
-    context_mini = getcontext_mini(request)
-    context = context_mini | context
-    return render(request, 'base/delete.html', context)
 
 @unauth_user
 def QuotationView(request, pk=None):

@@ -1,4 +1,10 @@
-# AQS version 8.3.11
+# AQS version 8.3.12
+
+<h3 style="color:orange;">Version 8.3.12</h3>
+
+- Add new function : CRM Suppliers System.
+- Add new function : CRM Products and Services System.
+- Complete Quotation System, 'Add item', 'Copy to new Quotation', 'Copy to new Invoice', 'New customer' then go back to Quotation.
 
 <h3 style="color:orange;">Version 8.3.11</h3>
 
@@ -8,6 +14,7 @@
 - Fixed bug : Void ticket will cause waiting list negative (e.g. A -1, -2)
   - ```py ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1 ``` run 2 times when void ticket
   - Improve the void ticket function to (@transaction.atomic)
+- Improve all views to use function getcontext() to get the context data, so the context data will be the same for all views
 
 <h3 style="color:orange;">Version 8.3.10</h3>
 
