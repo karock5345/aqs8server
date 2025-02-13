@@ -1,0 +1,30 @@
+{% load static %}
+
+<table id="table-style" class="table-style-userlist">
+    <thead>
+        <tr>
+            <th onclick="redirect('sort=q_name')" >Name</th>
+            <th onclick="redirect('sort=q_description')">Descriptions</th>
+            <th onclick="redirect('sort=q_producttype')">Product Type</th>
+            <th onclick="redirect('sort=q_category')">Category</th>
+            <th onclick="redirect('sort=q_supplier')">Supplier</th>
+            <th onclick="redirect('sort=q_status')">Status</th>
+            <th onclick="redirect('sort=q_price')">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {% for item in result %}
+        <tr onclick="window.location='{-% url 'memberupdate' item.id %}' " >        
+            <td>{{item.name}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.product_type}}</td>
+            <td>{{item.category}}</td>
+            <td>{{item.supplier}}</td>
+            <td>{{item.status}}</td>
+            <td>{{item.price}}</td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>

@@ -34,7 +34,7 @@ from celery.result import AsyncResult
 from django.conf import settings
 from base.sch.views import sch_shutdown
 from django.db.models import BooleanField, Value
-from crm.models import CRMAdmin, Member, Company, Customer, Quotation, Invoice, Receipt, Supplier
+from crm.models import CRMAdmin, Member, Company, Customer, Quotation, Invoice, Receipt, Supplier, Product, Product_Type, Category
 
 
 logger = logging.getLogger(__name__)
@@ -4326,6 +4326,9 @@ def auth_data(user):
     auth_invoices = Invoice.objects.filter(Q(company=userprofile.company)).order_by('-created')
     auth_receipts = Receipt.objects.filter(Q(company=userprofile.company)).order_by('-created')
     auth_suppliers = Supplier.objects.filter(Q(company=userprofile.company)).order_by('-created')
+    auth_products = Product.objects.filter(Q(company=userprofile.company))
+    auth_producttypes = Product_Type.objects.filter(Q(company=userprofile.company))
+    auth_categorys = Category.objects.filter(Q(company=userprofile.company))
 
     # add column for bookingtoqueue
     auth_bookings = auth_bookings.annotate(bookingforceontime=Value(False, output_field=BooleanField()))
@@ -4539,6 +4542,9 @@ def auth_data(user):
             auth_invoices,
             auth_receipts,
             auth_suppliers,
+            auth_products,
+            auth_producttypes,
+            auth_categorys,
             )
 
 def getcontext(request, user, context=None):
@@ -4560,6 +4566,7 @@ def getcontext(request, user, context=None):
     auth_memberlist, \
     auth_customerlist, \
     auth_quotations, auth_invoices, auth_receipts, auth_suppliers, \
+    auth_products, auth_producttypes, auth_categorys, \
     = auth_data(request.user)
 
     logo, navbar_title, css = funDomain(request)
@@ -4584,6 +4591,10 @@ def getcontext(request, user, context=None):
         'invoices':auth_invoices,
         'receipts':auth_receipts,
         'suppliers':auth_suppliers,
+        'products':auth_products,
+        'producttypes':auth_producttypes,
+        'productstatus':Product.STATUS,
+        'categorys':auth_categorys,
         }    
 
     return context

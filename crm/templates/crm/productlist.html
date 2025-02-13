@@ -1,0 +1,283 @@
+{% extends 'main.html' %}
+{% block content %}
+
+    <main class="layout layout--2">
+      <div class="container">
+        <!-- Topics Start -->
+        {% include 'base/menu.html' %}        
+        <!-- Topics End -->
+
+        <!-- Room List Start -->
+        <div class="roomList" style="padding-right: 0rem;padding-left: 4rem;">
+          <div class="mobile-menu">
+            <div class="mobile-menuItems">
+              <a class="btn btn--main btn--pill" href="{% url 'menu' %}">Menu</a>          
+            </div>
+          </div>
+        
+          <div class="header__search" >
+            <label>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <title>search</title>
+                    <path
+                        d="M32 30.586l-10.845-10.845c1.771-2.092 2.845-4.791 2.845-7.741 0-6.617-5.383-12-12-12s-12 5.383-12 12c0 6.617 5.383 12 12 12 2.949 0 5.649-1.074 7.741-2.845l10.845 10.845 1.414-1.414zM12 22c-5.514 0-10-4.486-10-10s4.486-10 10-10c5.514 0 10 4.486 10 10s-4.486 10-10 10z">
+                    </path>
+                </svg>
+                <input id="id_q" placeholder="Search for products and services" value="{{q}}" />
+            </label>
+          </div>
+          <div class="roomList__header">
+            <div>
+                <div class="roomListSelect">
+                    Select Products and Services Type:
+                    <select name="sel_producttype" id="id_producttype" >
+                      {% if q_producttype == "all" or q_producttype == "" %} 
+                          <option value="all" selected="selected">All</option>
+                      {% else %}
+                          <option value="all">All</option>
+                      {% endif %}
+
+                      {% for producttype in producttypes %}
+                          {% if producttype.name == q_producttype %}
+                              <option value="{{producttype}}" selected="selected">{{producttype}}</option>
+                          {% else %}
+                              <option value="{{producttype}}">{{producttype}}</option>
+                          {% endif %}
+                      {% endfor %}
+
+                      {% if q_producttype == "none" %}
+                          <option value="none" selected="selected">None</option>
+                      {% else %}
+                          <option value="none">None</option>
+                      {% endif %}                      
+                    </select><br>
+                </div>
+
+                <div class="roomListSelect">
+                  Select Category:
+                  <select name="sel_category" id="id_category" >
+                    {% if q_category == "all" or q_category == "" %} 
+                        <option value="all" selected="selected">All</option>
+                    {% else %}
+                        <option value="all">All</option>
+                    {% endif %}
+
+                    {% for category in categorys %}
+                        {% if category.name == q_category %}
+                            <option value="{{category}}" selected="selected">{{category}}</option>
+                        {% else %}
+                            <option value="{{category}}">{{category}}</option>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if q_category == "none" %}
+                        <option value="none" selected="selected">None</option>
+                    {% else %}
+                        <option value="none">None</option>
+                    {% endif %}                      
+                  </select><br>
+                </div>
+
+                <div class="roomListSelect">
+                  Select Supplier:
+                  <select name="sel_supplier" id="id_supplier" >
+                    {% if q_supplier == "all" or q_supplier == "" %} 
+                        <option value="all" selected="selected">All</option>
+                    {% else %}
+                        <option value="all">All</option>
+                    {% endif %}
+
+                    {% for supplier in suppliers %}
+                        {% if supplier.supplier_company == q_supplier %}
+                            <option value="{{supplier}}" selected="selected">{{supplier}}</option>
+                        {% else %}
+                            <option value="{{supplier}}">{{supplier}}</option>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if q_supplier == "none" %}
+                        <option value="none" selected="selected">None</option>
+                    {% else %}
+                        <option value="none">None</option>
+                    {% endif %}                      
+                  </select><br>
+                </div>
+
+                <div class="roomListSelect">
+                  Select Status:
+                  <select name="sel_status" id="id_status" >
+                    {% if q_status == "all" or q_status == "" %} 
+                        <option value="all" selected="selected">All</option>
+                    {% else %}
+                        <option value="all">All</option>
+                    {% endif %}
+
+                    {% for status in productstatus %}
+                        {% if status == q_status %}
+                            <option value="{{status}}" selected="selected">{{status}}</option>
+                        {% else %}
+                            <option value="{{status}}">{{status}}</option>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if q_status == "none" %}
+                        <option value="none" selected="selected">None</option>
+                    {% else %}
+                        <option value="none">None</option>
+                    {% endif %}                      
+                  </select><br>
+                </div>
+
+                <div class="roomListSelect">
+                  Price from:
+                  <!-- input type integer -->
+                  <input type="text" id="id_pricefrom" name="pricefrom" value="{{q_pricefrom}}" ><br>
+                </div>
+
+                <div class="roomListSelect">
+                  Price to:
+                  <input type="text" id="id_priceto" name="priceto" value="{{q_priceto}}" ><br>
+                </div>
+
+              </div>
+              
+  
+              <a class="btn btn--main" href="{-% url 'membernew' company.ccode %}" >                
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                  <title>add</title>
+                  <path
+                    d="M16.943 0.943h-1.885v14.115h-14.115v1.885h14.115v14.115h1.885v-14.115h14.115v-1.885h-14.115v-14.115z"
+                  ></path>
+                </svg>
+                Add Products and Services
+              </a>   
+                       
+            </div>            
+
+           
+          <div class="roomList__header">
+              <div style="display: flex;">
+                <div style="margin-right: 2rem;">
+                  <h2>Total result</h2>
+                  <p>{{result.count}} Products and Services</p>
+                </div>
+              </div>    
+          </div>
+          <div id="userlistarea">
+            {% include 'crm/productlist_list.html' %}  
+          </div>
+
+       
+        <!-- Room List End -->
+
+
+      </div>
+   
+<!-- add javascript here link button  id="id_showall" -->
+
+<script>
+  // if click select option then send request to server : ?qacive=xxx  
+  var input_q = document.getElementById("id_q")
+  var sel_producttype = document.getElementById('id_producttype');
+  var sel_category = document.getElementById('id_category');
+  var sel_supplier = document.getElementById('id_supplier');
+  var sel_status = document.getElementById('id_status');
+  var input_pricefrom = document.getElementById('id_pricefrom');
+  var input_priceto = document.getElementById('id_priceto');
+
+  var id_q = "q=";
+  var q_sort = "sort=";
+  
+  input_q.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+      redirect();
+    }
+  });
+  sel_producttype.addEventListener('change', function() {
+    redirect();
+  });
+  sel_category.addEventListener('change', function() {
+    redirect();
+  });
+  sel_supplier.addEventListener('change', function() {
+    redirect();
+  });
+  sel_status.addEventListener('change', function() {
+    redirect();
+  });
+  input_pricefrom.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    redirect();
+    
+  });
+  input_priceto.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    redirect();
+  });
+
+  // function for redirect to url
+  function redirect(sq) {
+    var par = "";
+    var url = "{% url 'crmproductlist' %}";
+
+    if (sq != undefined) {
+      par = par + sq + "&";
+    }
+
+
+    var q_text = document.getElementById('id_q').value;
+    if (q_text != "") {
+      par = par + "q=" + q_text + "&";
+    }
+    
+    var q_par;
+    q_par = document.getElementById('id_producttype').value;
+    if (q_par == "all" || q_par == "") {
+      // pass
+    } else {
+      par = par + "q_producttype=" + q_par + "&";
+    }
+    q_par = document.getElementById('id_category').value;
+    if (q_par == "all" || q_par == "") {
+      // pass
+    } else {
+      par = par + "q_category=" + q_par + "&";
+    }
+    q_par = document.getElementById('id_supplier').value;
+    if (q_par == "all" || q_par == "") {
+      // pass
+    } else {
+      par = par + "q_supplier=" + q_par + "&";
+    }
+    q_par = document.getElementById('id_status').value;
+    if (q_par == "all" || q_par == "") {
+      // pass
+    } else {
+      par = par + "q_status=" + q_par + "&";
+    }
+    q_par = document.getElementById('id_pricefrom').value;
+    if (q_par == "") {
+      // pass
+    } else {
+      par = par + "q_pricefrom=" + q_par + "&";
+    }
+    q_par = document.getElementById('id_priceto').value;
+    if (q_par == "") {
+      // pass
+    } else {
+      par = par + "q_priceto=" + q_par + "&";
+    }
+    
+    if (par != "") {
+      // remove last character
+      par = par.slice(0, -1);
+      url = url + "?" + par;
+    }
+    // redirect to url
+    location.href = url;
+  }
+</script>
+{% endblock %}      
+
+

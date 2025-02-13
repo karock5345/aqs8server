@@ -12,7 +12,7 @@ from base.views import auth_data, funDomain, getcontext, getcontext_en, getconte
 from django.http import JsonResponse
 from django.contrib import messages
 from base.decorators import *
-from crm.models import CRMAdmin, Member, Company, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt, BusinessType, BusinessSource, Supplier
+from crm.models import CRMAdmin, Member, Company, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt, BusinessType, BusinessSource, Supplier, Product_Type, Category
 from crm.forms import MemberUpdateForm, MemberNewForm, CustomerUpdateForm, CustomerGroupForm, CustomerSourceForm, CustomerInfoForm, CustomerNewForm, QuotationUpdateForm, InvoiceUpdateForm, ReceiptUpdateForm, BusinessTypeForm, BusinessSourceForm
 from crm.forms import SupplierUpdateForm, SupplierNewForm
 from crm.api import new_member
@@ -32,6 +32,133 @@ sort_direction_cust = {}
 def WelcomeView(request):
     content = {'user':request.user}
     return render(request, 'crm/welcome.html', content)
+
+@unauth_user
+def ProductListView(request):
+    global sort_direction_cust
+
+    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    q_producttype = request.GET.get('q_producttype') if request.GET.get('q_producttype') != None else 'all'
+    q_category = request.GET.get('q_category') if request.GET.get('q_category') != None else 'all'
+    q_supplier = request.GET.get('q_supplier') if request.GET.get('q_supplier') != None else 'all'
+    q_status = request.GET.get('q_status') if request.GET.get('q_status') != None else 'all'
+    q_pricefrom = request.GET.get('q_pricefrom') if request.GET.get('q_pricefrom') != None else ''
+    q_priceto = request.GET.get('q_priceto') if request.GET.get('q_priceto') != None else ''
+    q_sort = request.GET.get('sort') if request.GET.get('sort') != None else ''
+
+    context = getcontext(request, request.user)
+    auth_products = context['products']
+
+    result = auth_products
+
+    userp = UserProfile.objects.filter(Q(user = request.user)).first()
+    if userp != None:
+        if userp.company == None:
+            messages.error(request, 'Your are not assign Company' )            
+            return redirect('home')
+
+    # Filter search
+    if q != '':
+        result = result.filter(Q(name__icontains=q) 
+                                             | Q(description__icontains=q) 
+                                             )
+
+    # Filter combo box
+    if q_producttype == 'none':
+        result = result.filter(Q(product_type=None))
+    elif q_producttype != '' and q_producttype != 'all':
+        obj = None
+        try:
+            obj = Product_Type.objects.filter(Q(name=q_producttype)).first()
+        except:
+            pass
+        if obj != None:
+            result = result.filter(Q(product_type=obj))
+
+
+    if q_category == 'none':
+        result = result.filter(Q(category=None))
+    elif q_category != '' and q_category != 'all':
+        obj = None
+        try:
+            obj = Category.objects.filter(Q(name=q_category)).first()
+        except:
+            pass
+        if obj != None:
+            result = result.filter(Q(category=obj))
+
+    if q_supplier == 'none':
+        result = result.filter(Q(supplier=None))
+    elif q_supplier != '' and q_supplier != 'all':
+        obj = None
+        try:
+            obj = Supplier.objects.filter(Q(supplier_company=q_supplier)).first()
+        except:
+            pass
+        if obj != None:
+            result = result.filter(Q(supplier=obj))
+
+    if q_status == 'none':
+        result = result.filter(Q(status=None))
+    elif q_status != '' and q_status != 'all':
+        result = result.filter(Q(status=q_status))
+
+
+    pricefrom = -1
+    if q_pricefrom != '':
+        pricefrom = int(q_pricefrom)
+
+    priceto = -1
+    if q_priceto != '':
+        priceto = int(q_priceto)
+
+    if priceto == -1 and pricefrom != -1:
+        result = result.filter(Q(price__gte=pricefrom))
+    elif priceto > 0 and pricefrom >= 0:
+        result = result.filter(Q(price__gte=pricefrom) & Q(price__lte=priceto))
+
+    direct = ''
+    if q_sort != '':
+        # find out the sort_list
+        try:
+            direct = sort_direction_cust[q_sort]
+        except:
+            direct = ''
+            sort_direction_cust[q_sort] = ''
+        if direct == '':
+            sort_direction_cust[q_sort] = '-'
+        elif direct == '-':
+            sort_direction_cust[q_sort] = ''
+
+    if q_sort == 'q_name':
+        result = result.order_by(direct + 'name')
+    elif q_sort == 'q_description':
+        result = result.order_by(direct + 'description')
+    elif q_sort == 'q_Product type':
+        result = result.order_by(direct + 'product_type')        
+    elif q_sort == 'q_category':
+        result = result.order_by(direct + 'category')
+    elif q_sort == 'q_supplier':
+        result = result.order_by(direct + 'supplier')
+    elif q_sort == 'q_status':
+        result = result.order_by(direct + 'status')
+    elif q_sort == 'q_price':
+        result = result.order_by(direct + 'price')
+
+    context = context | {'q':q}
+    context = context | {'q_producttype':q_producttype}
+    context = context | {'q_category':q_category}
+    context = context | {'q_supplier':q_supplier}
+    context = context | {'q_status':q_status}
+    context = context | {'q_pricefrom':q_pricefrom}
+    context = context | {'q_priceto':q_priceto}    
+    context = context | {'result':result}
+    context = context | {'company':userp.company}
+
+
+    return render(request, 'crm/productlist.html', context)
+
+
 @unauth_user
 def SupplierListView(request):
     global sort_direction_cust
@@ -149,7 +276,7 @@ def SupplierUpdateView(request, pk):
         elif action == 'update':
             error = ''
             # check the form
-            error, newform = checksupplierform(form)
+            error, newform = SupplierCheckForm(form)
             
             if error == '' :         
                 try :                
@@ -170,53 +297,6 @@ def SupplierUpdateView(request, pk):
     context_en = getcontext_en(request)
     context = context_en | context
     return render(request, 'crm/supplier_update.html', context)
-
-def checksupplierform(form):
-    error = ''
-    errorTC = ''
-    newform = None
-
-    if form.is_valid() == False:
-        # error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
-        error_string = ''
-        for l in list(form.errors):
-            errx = ''
-            for x in form.errors[l]:
-                errx = errx + ',' +  x
-                # print(l , x)
-            error_string = error_string + ' [' + l + '] ' + errx + '\n'
-        error = 'An error occurcd during registration: ' + error_string
-        
-
-    if error == '' :
-        newform = form.save(commit=False)
-
-    if error == '' :
-        if newform.company == None :
-            # Error Company is None
-            error = 'Error Company is blank'
-
-    if error == '' :
-        if newform.phone == '':
-            pass
-        else:
-            if newform.phone != None :
-                if len(newform.phone) != 8:
-                    error = 'Phone number must be 8 digits'
-
-    if error == '':
-        if not(newform.email == '' or newform.email == None) :
-        # check email format
-            regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
-            if(re.fullmatch(regex, newform.email)):
-                pass       
-            else:
-                error = 'Email format is incorrect'
-                error_TC = '電郵地址格式不正確'
-        else:
-            newform.email = ''
-
-    return error, newform
 
 
 @unauth_user
@@ -287,6 +367,54 @@ def SupplierDelView(request, pk):
     context_mini = getcontext_mini(request)
     context = context_mini | context
     return render(request, 'base/delete.html', context)
+
+
+def SupplierCheckForm(form):
+    error = ''
+    errorTC = ''
+    newform = None
+
+    if form.is_valid() == False:
+        # error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
+        error_string = ''
+        for l in list(form.errors):
+            errx = ''
+            for x in form.errors[l]:
+                errx = errx + ',' +  x
+                # print(l , x)
+            error_string = error_string + ' [' + l + '] ' + errx + '\n'
+        error = 'An error occurcd during registration: ' + error_string
+        
+
+    if error == '' :
+        newform = form.save(commit=False)
+
+    if error == '' :
+        if newform.company == None :
+            # Error Company is None
+            error = 'Error Company is blank'
+
+    if error == '' :
+        if newform.phone == '':
+            pass
+        else:
+            if newform.phone != None :
+                if len(newform.phone) != 8:
+                    error = 'Phone number must be 8 digits'
+
+    if error == '':
+        if not(newform.email == '' or newform.email == None) :
+        # check email format
+            regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
+            if(re.fullmatch(regex, newform.email)):
+                pass       
+            else:
+                error = 'Email format is incorrect'
+                error_TC = '電郵地址格式不正確'
+        else:
+            newform.email = ''
+
+    return error, newform
 
 
 @unauth_user
