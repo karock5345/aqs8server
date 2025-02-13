@@ -206,15 +206,18 @@
   sel_status.addEventListener('change', function() {
     redirect();
   });
-  input_pricefrom.addEventListener("keyup", function(event) {
-    event.preventDefault();
-    redirect();
-    
-  });
-  input_priceto.addEventListener("keyup", function(event) {
-    event.preventDefault();
-    redirect();
-  });
+
+  // make "Keyup" event for ajax search
+  
+
+  // input_pricefrom.addEventListener("keyup", function(event) {
+  //   event.preventDefault();
+  //   redirect();
+  // });
+  // input_priceto.addEventListener("keyup", function(event) {
+  //   event.preventDefault();
+  //   redirect();
+  // });
 
   // function for redirect to url
   function redirect(sq) {

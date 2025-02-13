@@ -15804,3 +15804,47 @@ Traceback (most recent call last):
               ^^^^^^^^^^^^^^
 ValueError: invalid literal for int() with base 10: 'a'
 ERROR 2025-02-12 23:42:26,316 runserver>log_action [35;1mHTTP GET /crm/product/?q=dell&q_pricefrom=1000&q_priceto=a 500 [0.21, 127.0.0.1:52448][0m
+INFO 2025-02-13 00:59:08,318 base>start Scheduler started
+INFO 2025-02-13 00:59:08,323 apps>ready Diff seconds (now and update): 4895.54968seconds. Set worker to 1
+INFO 2025-02-13 00:59:08,323 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 00:59:08,324 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 00:59:08,324 apps>sub_init -SCH- Now:02/13/2025, 07:59:08
+INFO 2025-02-13 00:59:08,422 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 00:59:08,423 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 00:59:08,424 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 00:59:08,488 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-13 15:59:59 Local:2025-02-13 23:59:59
+INFO 2025-02-13 00:59:08,489 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 00:59:08,489 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 07:59:08 [Yes]
+INFO 2025-02-13 00:59:08,490 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 00:59:08,492 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-13 18:00:00 Local:2025-02-14 02:00:00
+INFO 2025-02-13 00:59:08,492 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 00:59:08,492 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 07:59:08 [Yes]
+INFO 2025-02-13 00:59:08,493 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 00:59:08,493 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 00:59:09,818 base>start Scheduler started
+INFO 2025-02-13 00:59:09,849 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 00:59:10,491 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 00:59:10,491 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 00:59:10,492 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 00:59:16,888 runserver>log_action [mHTTP GET /crm/product/?q=dell&q_pricefrom=1&q_priceto=1 200 [0.10, 127.0.0.1:55466][0m
+INFO 2025-02-13 00:59:18,509 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 00:59:28 MST)" (scheduled at 2025-02-13 00:59:18.493406-07:00)
+INFO 2025-02-13 00:59:18,517 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-13 00:59:18,518 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-13 00:59:18,518 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 00:59:28 MST)" executed successfully
+INFO 2025-02-13 01:00:07,976 runserver>log_action [mHTTP GET /crm/product/?q=dell&q_pricefrom=1&q_priceto=1 200 [0.08, 127.0.0.1:55528][0m
+INFO 2025-02-13 01:00:08,029 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.04, 127.0.0.1:55528][0m
+INFO 2025-02-13 01:00:08,032 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.04, 127.0.0.1:55529][0m
+INFO 2025-02-13 01:00:08,034 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:55530][0m
+INFO 2025-02-13 01:00:08,037 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:55531][0m
+INFO 2025-02-13 01:00:08,285 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:55530][0m
+INFO 2025-02-13 01:00:08,557 runserver>log_action [mHTTP GET /crm/product/?q=dell&q_pricefrom=1&q_priceto=1 200 [0.07, 127.0.0.1:55528][0m
+INFO 2025-02-13 01:00:13,306 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:55528][0m
+INFO 2025-02-13 01:00:16,182 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=1 200 [0.13, 127.0.0.1:55528][0m
+INFO 2025-02-13 01:00:16,469 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=1 200 [0.07, 127.0.0.1:55528][0m
+INFO 2025-02-13 01:00:17,404 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=01 200 [0.06, 127.0.0.1:55528][0m
+INFO 2025-02-13 01:00:19,406 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=23101 200 [0.12, 127.0.0.1:55530][0m
+INFO 2025-02-13 01:00:21,704 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=223101 200 [0.07, 127.0.0.1:55530][0m
+INFO 2025-02-13 01:00:22,142 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=1223101 200 [0.07, 127.0.0.1:55530][0m
+INFO 2025-02-13 01:00:22,525 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=31223101 200 [0.06, 127.0.0.1:55530][0m
+INFO 2025-02-13 01:00:24,747 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=31223101&q_priceto=2 200 [0.06, 127.0.0.1:55530][0m
+INFO 2025-02-13 01:00:25,126 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=3231223101&q_priceto=2 200 [0.06, 127.0.0.1:55530][0m
