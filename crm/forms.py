@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.forms.utils import ErrorList
 from base.models import TicketFormat, TicketRoute, UserProfile, Branch, CounterType
 from .models import Member, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt, BusinessType, BusinessSource, Supplier
-
+from .models import Product, Product_Type, Category
 from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
 from base.api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
@@ -17,6 +17,27 @@ class DateInput(forms.DateInput):
     input_type = 'date'
 class DateTimeInput(forms.DateTimeInput):
     input_type = 'datetime'
+
+class ProductTypeForm(forms.ModelForm):
+    id = forms.fields.IntegerField()
+    def __init__(self, *args,**kwargs):
+        super().__init__(*args,**kwargs)
+        self.initial['id'] = self.instance.pk
+    class Meta:
+        model = Product_Type
+        fields = ['id', 'name', 'description']
+class ProductUpdateForm(ModelForm):
+    def __init__(self, *args,**kwargs):
+        self.company = kwargs.pop('company')
+        super().__init__(*args,**kwargs)        
+        self.fields['product_type'].queryset = Product_Type.objects.filter(company=self.company)
+        self.fields['category'].queryset = Category.objects.filter(company=self.company)
+        self.fields['supplier'].queryset = Supplier.objects.filter(company=self.company)
+    
+    class Meta:        
+        model = Product
+        fields = ['name', 'description','product_type', 'category', 'supplier', 'status', 'price', 'cost', 'duration', 'barcode' , 'weight', 'dimensions', 'manufacturing_date', 'expiration_date', 'is_available']
+
 
 class MemberUpdateForm(ModelForm):
     def __init__(self, *args,**kwargs):

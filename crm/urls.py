@@ -36,6 +36,7 @@ urlpatterns = [
     path('supplier-new/<str:ccode>/', views.SupplierNewView, name='suppliernew'),
     path('supplier-del/<str:pk>/', views.SupplierDelView, name='supplierdelete'),
     path('product/', views.ProductListView, name='crmproductlist'),
+    path('product-update/<str:pk>/', views.ProductUpdateView, name='productupdate'),
 
     # CRM APIs for mobile app
     path('api/login/', api.crmMemberLoginView, name='crmlogin'),

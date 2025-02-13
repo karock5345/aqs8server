@@ -1,0 +1,76 @@
+{% extends 'main.html' %}
+{% load tz %}
+{% block content %}
+
+    <main class="update-account layout">
+        <div class="container">
+            <div class="layout__box__form">
+                <div class="layout__boxHeader">
+                    <div class="layout__boxTitle">
+                        <a href="{% url 'crmproductlist' %}">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 32 32">                                
+                                <path
+                                    d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
+                                </path>
+                            </svg>
+                        </a>
+                        <h3>Edit Products and Services</h3>
+                    </div>
+                </div>
+                <div class="layout__body">
+
+                    <form class="form" action="" method="POST" prefix="productform">
+                        
+                        {% csrf_token %}
+                        
+                        {% for field in form  %}
+                                {% if field.field.widget.input_type == 'checkbox' %}
+                                    <div class="form__group_checkbox">
+                                        <label class="profile_pic" id="{{ field.name }}"> <p class="label__name">{{field}} {{field.label}}</p></label><br>
+                                    </div>
+                                {% elif field.name == 'product_type' or field.name == 'category' or field.name == 'supplier' %}
+                                    <div class="form__group">
+                                        <label class="profile_pic">
+                                            <p class="label__name">
+                                                {{field.label}}:
+                                            </p>
+                                            <div class="select_area">
+                                                {{field}}
+                        
+                                                <button class="btn btn--main" type="submit" name="action" value="{{ field.name }}">Manage</button>
+                                            </div>
+                                            <p class="help__text" >
+                                                {{field.help_text}}
+                                            </p>
+                                        </label>
+                                    </div>                                       
+                                {% else %}
+                                    <div class="form__group">
+                                        <label class="profile_pic">
+                                            <p class="label__name">
+                                                {{field.label}}:
+                                            </p>
+                                            <p class="label__name">
+                                                {{field}}
+                                            </p>
+                                            <p class="help__text" >
+                                                {{field.help_text}}
+                                            </p>
+                                      </label>
+                                    </div>                                 
+                                {% endif %}
+                        {% endfor %}
+                        
+                        <div class="form__action">
+                            <a class="btn btn--del" href="{-% url 'productdelete' product.id %}">Delete</a>
+                            <a class="btn btn--dark" href="{% url 'crmproductlist' %}">Cancel</a>
+                            <button class="btn btn--main" type="submit" name="action" value="update">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </main>
+    {% endblock content %}

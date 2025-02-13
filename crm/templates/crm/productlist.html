@@ -139,6 +139,10 @@
                   <input type="text" id="id_priceto" name="priceto" value="{{q_priceto}}" ><br>
                 </div>
 
+                <div class="roomListSelect">
+                  <button class="btn btn--main" onclick="redirect()">Search</button>
+                </div>
+
               </div>
               
   
@@ -206,18 +210,6 @@
   sel_status.addEventListener('change', function() {
     redirect();
   });
-
-  // make "Keyup" event for ajax search
-  
-
-  // input_pricefrom.addEventListener("keyup", function(event) {
-  //   event.preventDefault();
-  //   redirect();
-  // });
-  // input_priceto.addEventListener("keyup", function(event) {
-  //   event.preventDefault();
-  //   redirect();
-  // });
 
   // function for redirect to url
   function redirect(sq) {

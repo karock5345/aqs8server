@@ -12,9 +12,10 @@ from base.views import auth_data, funDomain, getcontext, getcontext_en, getconte
 from django.http import JsonResponse
 from django.contrib import messages
 from base.decorators import *
-from crm.models import CRMAdmin, Member, Company, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt, BusinessType, BusinessSource, Supplier, Product_Type, Category
+from crm.models import CRMAdmin, Member, Company, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt, BusinessType, BusinessSource
+from crm.models import Supplier, Product_Type, Category, Product
 from crm.forms import MemberUpdateForm, MemberNewForm, CustomerUpdateForm, CustomerGroupForm, CustomerSourceForm, CustomerInfoForm, CustomerNewForm, QuotationUpdateForm, InvoiceUpdateForm, ReceiptUpdateForm, BusinessTypeForm, BusinessSourceForm
-from crm.forms import SupplierUpdateForm, SupplierNewForm
+from crm.forms import SupplierUpdateForm, SupplierNewForm, ProductUpdateForm, ProductTypeForm
 from crm.api import new_member
 from django.db import transaction
 import re
@@ -158,6 +159,89 @@ def ProductListView(request):
 
     return render(request, 'crm/productlist.html', context)
 
+@unauth_user
+def ProductUpdateView(request, pk):
+    utcnow = datetime.now(timezone.utc)
+    product = Product.objects.get(id=pk)    
+    company = product.company
+    # get full path with domain name
+    back_url = request.build_absolute_uri()
+    
+    if request.method == 'POST':
+        action = request.POST.get('action')
+        form = ProductUpdateForm(request.POST, instance=product, prefix='productform', company=product.company)
+
+        go, link, context = SubUpdate(request, action, company, None, back_url)
+        if go == 'go':
+            return render(request, link, context)
+
+        if action == 'update':
+            error = ''
+            # check the form
+            error, newform = ProductCheckForm(form)
+            
+            if error == '' :         
+                try :                
+                    newform.save()
+
+                    messages.success(request, 'Products and Services was successfully updated!')
+                    
+                    return redirect('crmproductlist')
+                except:
+                    error = 'An error occurcd during updating Products and Services'
+
+            if error != '':
+                messages.error(request, error )
+                
+    else:
+        form = ProductUpdateForm(instance=product, prefix='productform', company=product.company)
+    context =  {'form':form, 'product':product, }
+    context_en = getcontext_en(request)
+    context = context_en | context
+    return render(request, 'crm/product_update.html', context)
+
+def ProductCheckForm(form):
+    error = ''
+    errorTC = ''
+    newform = None
+
+    if form.is_valid() == False:
+        # error_string = ' '.join([' '.join(x for x in l) for l in list(form.errors.values())])
+        error_string = ''
+        for l in list(form.errors):
+            errx = ''
+            for x in form.errors[l]:
+                errx = errx + ',' +  x
+                # print(l , x)
+            error_string = error_string + ' [' + l + '] ' + errx + '\n'
+        error = 'An error occurcd during registration: ' + error_string
+        
+
+    if error == '' :
+        newform = form.save(commit=False)
+
+    if error == '' :
+        if newform.company == None :
+            # Error branch is None
+            error = 'Error Company is blank'
+
+    if error == '' :
+        if newform.price == '':
+            pass
+        else:
+            if newform.price != None :
+                if newform.price < 0:
+                    error = 'Price must be positive'
+
+    if error == '' :
+        if newform.cost == '':
+            pass
+        else:
+            if newform.cost != None :
+                if newform.cost < 0:
+                    error = 'Cost must be positive'
+
+    return error, newform
 
 @unauth_user
 def SupplierListView(request):
@@ -730,6 +814,52 @@ def SubUpdate(request, action, company, customer, full_path):
         context = {}
         context_mini = getcontext_mini(request)
         context = context_mini | context 
+
+    # <---- Product type for Product ----
+        if action == 'product_type':
+            table = Product_Type.objects.filter(Q(company=company))
+            form = ProductTypeForm()
+            context = context | {'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Product Type', 'action':'product_type'}
+            # return render(request, 'crm/sub_update.html', context)
+            return 'go', 'crm/sub_update.html', context
+        elif action == 'update_product_type':
+            form = ProductTypeForm(request.POST)
+            if form.is_valid():
+                # get the id of the customer group from the form
+                pk = form['id'].value()
+                obj = Product_Type.objects.get(pk=pk)
+
+                obj.name = form['name'].value()
+                obj.description = form['description'].value()
+                obj.save()
+                # form.save()
+                messages.success(request, 'Update success' )
+            table = Product_Type.objects.filter(Q(company=company))
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Product Type', 'action':'product_type'}
+            # return render(request, 'crm/sub_update.html', context)
+            return 'go', 'crm/sub_update.html', context
+        elif action == 'new_product_type':
+            Product_Type.objects.create(company=company, name='', description='')
+            form = ProductTypeForm(request.POST)
+
+            table = Product_Type.objects.filter(Q(company=company))
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Product Type', 'action':'product_type'}       
+            # return render(request, 'crm/sub_update.html', context, )
+            return 'go', 'crm/sub_update.html', context
+        elif action == 'del_product_type':
+            form = ProductTypeForm(request.POST)
+            if form.is_valid():
+                pk = form['id'].value()
+                Product_Type.objects.get(pk=pk).delete()
+
+            table = Product_Type.objects.filter(Q(company=company))
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Product Type', 'action':'product_type'}
+            # return render(request, 'crm/sub_update.html', context, )  
+            return 'go', 'crm/sub_update.html', context      
+    # ---- business type for Quotation ---->
+
+
+
     # <---- business type for Quotation ----
         if action == 'businesstype':
             table = BusinessType.objects.filter(Q(company=company))
@@ -1022,7 +1152,7 @@ def QuotationView(request, pk=None):
         print ('action:', action)
         
         go, link, context = SubUpdate(request, action, company, quotation, back_url)
-        print (go, link, context)
+        # print (go, link, context)
         if go == 'go':
             return render(request, link, context)
 

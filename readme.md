@@ -3,7 +3,7 @@
 <h3 style="color:orange;">Version 8.3.12</h3>
 
 - Add new function : CRM Suppliers System.
-- Add new function : CRM Products and Services System.
+- Add new function : CRM Products and Services System. (This is better code for the future)
 - Complete Quotation System, 'Add item', 'Copy to new Quotation', 'Copy to new Invoice', 'New customer' then go back to Quotation.
 
 <h3 style="color:orange;">Version 8.3.11</h3>

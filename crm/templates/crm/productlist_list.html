@@ -15,7 +15,7 @@
     <tbody>
 
     {% for item in result %}
-        <tr onclick="window.location='{-% url 'memberupdate' item.id %}' " >        
+        <tr onclick="window.location='{% url 'productupdate' item.id %}' " >        
             <td>{{item.name}}</td>
             <td>{{item.description}}</td>
             <td>{{item.product_type}}</td>

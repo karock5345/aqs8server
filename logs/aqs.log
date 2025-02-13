@@ -15848,3 +15848,977 @@ INFO 2025-02-13 01:00:22,142 runserver>log_action [mHTTP GET /crm/product/?q_pr
 INFO 2025-02-13 01:00:22,525 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=31223101 200 [0.06, 127.0.0.1:55530][0m
 INFO 2025-02-13 01:00:24,747 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=31223101&q_priceto=2 200 [0.06, 127.0.0.1:55530][0m
 INFO 2025-02-13 01:00:25,126 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=3231223101&q_priceto=2 200 [0.06, 127.0.0.1:55530][0m
+INFO 2025-02-13 12:21:02,264 base>start Scheduler started
+INFO 2025-02-13 12:21:02,273 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 12:21:02,274 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 12:21:02,274 apps>sub_init -SCH- Now:02/13/2025, 19:21:02
+INFO 2025-02-13 12:21:02,413 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 12:21:02,415 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 12:21:02,415 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 12:21:02,483 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 12:21:02,483 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 12:21:02,484 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 19:21:02 [No]
+INFO 2025-02-13 12:21:02,486 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:21:02,487 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 12:21:02,487 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 12:21:02,487 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 19:21:02 [No]
+INFO 2025-02-13 12:21:02,488 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:21:02,488 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 12:21:03,848 base>start Scheduler started
+INFO 2025-02-13 12:21:03,881 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:21:04,744 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:21:04,744 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:21:04,746 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:21:04,803 runserver>log_action [32mHTTP GET /crm/product/?q_pricefrom=3231223101&q_priceto=2 302 [0.04, 127.0.0.1:59732][0m
+INFO 2025-02-13 12:21:04,821 runserver>log_action [mHTTP GET /login/ 200 [0.02, 127.0.0.1:59738][0m
+INFO 2025-02-13 12:21:09,016 runserver>log_action [32mHTTP POST /login/ 302 [0.25, 127.0.0.1:59738][0m
+INFO 2025-02-13 12:21:09,108 runserver>log_action [mHTTP GET / 200 [0.09, 127.0.0.1:59738][0m
+INFO 2025-02-13 12:21:12,495 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 12:21:22 MST)" (scheduled at 2025-02-13 12:21:12.488753-07:00)
+INFO 2025-02-13 12:21:12,502 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-13 12:21:12,503 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-13 12:21:12,503 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 12:21:22 MST)" executed successfully
+INFO 2025-02-13 12:21:22,019 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:59738][0m
+INFO 2025-02-13 12:21:37,244 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=2000 200 [0.06, 127.0.0.1:59738][0m
+INFO 2025-02-13 12:21:44,173 runserver>log_action [mHTTP GET /crm/product/ 200 [0.12, 127.0.0.1:59738][0m
+INFO 2025-02-13 12:21:53,664 runserver>log_action [mHTTP GET /crm/product/?q=sam 200 [0.07, 127.0.0.1:59738][0m
+INFO 2025-02-13 12:22:01,939 runserver>log_action [mHTTP GET /crm/product/ 200 [0.06, 127.0.0.1:59738][0m
+INFO 2025-02-13 12:23:12,722 runserver>log_action [mHTTP GET /crm/product/?q_producttype=Products 200 [0.07, 127.0.0.1:59982][0m
+INFO 2025-02-13 12:23:14,760 runserver>log_action [mHTTP GET /crm/product/?q_producttype=Serivces 200 [0.07, 127.0.0.1:59982][0m
+INFO 2025-02-13 12:23:18,509 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:59982][0m
+INFO 2025-02-13 12:23:23,021 runserver>log_action [mHTTP GET /crm/product/?q_status=none 200 [0.06, 127.0.0.1:59982][0m
+INFO 2025-02-13 12:23:26,257 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:59982][0m
+INFO 2025-02-13 12:23:27,690 runserver>log_action [mHTTP GET /crm/product/?q_status=inactive 200 [0.06, 127.0.0.1:59982][0m
+INFO 2025-02-13 12:23:29,244 runserver>log_action [mHTTP GET /crm/product/ 200 [0.06, 127.0.0.1:59982][0m
+INFO 2025-02-13 12:24:15,407 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\urls.py changed, reloading.
+INFO 2025-02-13 12:24:17,060 base>start Scheduler started
+INFO 2025-02-13 12:24:17,065 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 12:24:17,065 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 12:24:17,066 apps>sub_init -SCH- Now:02/13/2025, 19:24:17
+INFO 2025-02-13 12:24:17,154 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 12:24:17,155 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 12:24:17,155 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 12:24:17,220 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 12:24:17,220 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 12:24:17,221 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 19:24:17 [No]
+INFO 2025-02-13 12:24:17,222 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:24:17,223 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 12:24:17,223 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 12:24:17,224 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 19:24:17 [No]
+INFO 2025-02-13 12:24:17,224 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:24:17,224 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 12:24:17,247 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:24:17,785 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:24:17,786 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:24:17,787 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:24:19,695 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\urls.py changed, reloading.
+INFO 2025-02-13 12:24:21,237 base>start Scheduler started
+INFO 2025-02-13 12:24:21,268 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:24:21,858 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:24:21,858 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:24:21,859 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:24:23,755 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\urls.py changed, reloading.
+INFO 2025-02-13 12:24:25,271 base>start Scheduler started
+INFO 2025-02-13 12:24:25,305 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:24:28,851 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\urls.py changed, reloading.
+INFO 2025-02-13 12:24:30,318 base>start Scheduler started
+INFO 2025-02-13 12:24:30,350 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:25:17,705 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 12:25:19,357 base>start Scheduler started
+INFO 2025-02-13 12:25:19,362 apps>ready Diff seconds (now and update): 49.038807seconds. Set worker to 1
+INFO 2025-02-13 12:25:19,362 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 12:25:19,363 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 12:25:19,363 apps>sub_init -SCH- Now:02/13/2025, 19:25:19
+INFO 2025-02-13 12:25:19,461 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 12:25:19,462 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 12:25:19,463 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 12:25:19,533 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 12:25:19,533 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 12:25:19,533 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 19:25:19 [No]
+INFO 2025-02-13 12:25:19,535 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:25:19,536 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 12:25:19,536 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 12:25:19,536 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 19:25:19 [No]
+INFO 2025-02-13 12:25:19,537 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:25:19,537 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 12:25:19,560 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:25:27,080 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 12:25:28,723 base>start Scheduler started
+INFO 2025-02-13 12:25:28,761 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:25:35,558 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 12:25:37,135 base>start Scheduler started
+INFO 2025-02-13 12:25:37,168 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:25:37,771 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:25:37,771 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:25:37,772 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:25:45,178 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 12:25:46,742 base>start Scheduler started
+INFO 2025-02-13 12:25:46,772 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:25:47,387 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:25:47,387 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:25:47,388 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:26:03,599 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 12:26:05,108 base>start Scheduler started
+INFO 2025-02-13 12:26:05,139 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:26:05,726 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:26:05,726 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:26:05,727 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:26:14,174 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 12:26:15,678 base>start Scheduler started
+INFO 2025-02-13 12:26:15,708 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:26:19,300 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 12:26:20,783 base>start Scheduler started
+INFO 2025-02-13 12:26:20,816 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:26:25,500 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 12:26:27,059 base>start Scheduler started
+INFO 2025-02-13 12:26:27,091 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:26:27,703 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:26:27,703 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:26:27,704 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:26:40,553 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 12:26:42,094 base>start Scheduler started
+INFO 2025-02-13 12:26:42,124 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:26:42,712 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:26:42,713 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:26:42,714 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:26:45,690 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 12:26:47,305 base>start Scheduler started
+INFO 2025-02-13 12:26:47,334 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:26:47,907 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:26:47,907 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:26:47,909 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:26:57,501 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 12:26:59,061 base>start Scheduler started
+INFO 2025-02-13 12:26:59,093 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:26:59,724 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:26:59,725 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:26:59,726 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:27:04,503 runserver>log_action [mHTTP GET /admin/crm/product/2/change/ 200 [0.11, 127.0.0.1:60599][0m
+INFO 2025-02-13 12:27:04,534 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:60607][0m
+INFO 2025-02-13 12:27:04,570 runserver>log_action [mHTTP GET /static/admin/img/icon-changelink.svg 200 [0.05, 127.0.0.1:60599][0m
+INFO 2025-02-13 12:27:04,589 runserver>log_action [mHTTP GET /static/admin/img/icon-deletelink.svg 200 [0.05, 127.0.0.1:60607][0m
+INFO 2025-02-13 12:27:04,591 runserver>log_action [mHTTP GET /static/admin/img/icon-viewlink.svg 200 [0.05, 127.0.0.1:60614][0m
+INFO 2025-02-13 12:27:04,594 runserver>log_action [mHTTP GET /static/admin/img/icon-addlink.svg 200 [0.06, 127.0.0.1:60613][0m
+INFO 2025-02-13 12:27:04,612 runserver>log_action [mHTTP GET /static/admin/img/icon-calendar.svg 200 [0.00, 127.0.0.1:60614][0m
+WARNING 2025-02-13 12:27:04,616 log>log_response Not Found: /favicon.ico
+WARNING 2025-02-13 12:27:04,616 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.02, 127.0.0.1:60607][0m
+INFO 2025-02-13 12:47:22,942 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 12:47:24,647 base>start Scheduler started
+INFO 2025-02-13 12:47:24,652 apps>ready Diff seconds (now and update): 1225.58618seconds. Set worker to 1
+INFO 2025-02-13 12:47:24,652 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 12:47:24,652 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 12:47:24,653 apps>sub_init -SCH- Now:02/13/2025, 19:47:24
+INFO 2025-02-13 12:47:24,743 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 12:47:24,744 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 12:47:24,745 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 12:47:24,811 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 12:47:24,812 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 12:47:24,812 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 19:47:24 [No]
+INFO 2025-02-13 12:47:24,813 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:47:24,814 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 12:47:24,815 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 12:47:24,815 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 19:47:24 [No]
+INFO 2025-02-13 12:47:24,815 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:47:24,816 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 12:47:24,839 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:47:25,383 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:47:25,384 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:47:25,384 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:47:34,829 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 12:47:44 MST)" (scheduled at 2025-02-13 12:47:34.816679-07:00)
+INFO 2025-02-13 12:47:34,835 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-13 12:47:34,836 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-13 12:47:34,836 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 12:47:44 MST)" executed successfully
+INFO 2025-02-13 12:51:19,498 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 12:51:21,304 base>start Scheduler started
+INFO 2025-02-13 12:51:21,309 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 12:51:21,310 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 12:51:21,310 apps>sub_init -SCH- Now:02/13/2025, 19:51:21
+INFO 2025-02-13 12:51:21,399 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 12:51:21,400 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 12:51:21,401 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 12:51:21,464 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 12:51:21,465 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 12:51:21,465 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 19:51:21 [No]
+INFO 2025-02-13 12:51:21,466 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:51:21,468 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 12:51:21,468 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 12:51:21,469 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 19:51:21 [No]
+INFO 2025-02-13 12:51:21,469 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:51:21,470 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 12:51:21,493 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:51:22,074 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:51:22,075 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:51:22,076 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:51:31,479 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 12:51:41 MST)" (scheduled at 2025-02-13 12:51:31.469768-07:00)
+INFO 2025-02-13 12:51:31,504 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-13 12:51:31,504 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-13 12:51:31,504 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 12:51:41 MST)" executed successfully
+INFO 2025-02-13 12:52:12,394 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\forms.py changed, reloading.
+INFO 2025-02-13 12:52:13,990 base>start Scheduler started
+INFO 2025-02-13 12:52:13,995 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 12:52:13,995 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 12:52:13,996 apps>sub_init -SCH- Now:02/13/2025, 19:52:13
+INFO 2025-02-13 12:52:14,084 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 12:52:14,085 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 12:52:14,085 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 12:52:14,149 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 12:52:14,149 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 12:52:14,149 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 19:52:14 [No]
+INFO 2025-02-13 12:52:14,151 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:52:14,152 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 12:52:14,152 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 12:52:14,153 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 19:52:14 [No]
+INFO 2025-02-13 12:52:14,153 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:52:14,154 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 12:52:14,176 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:52:14,718 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:52:14,719 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:52:14,720 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:52:19,939 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\forms.py changed, reloading.
+INFO 2025-02-13 12:52:21,420 base>start Scheduler started
+INFO 2025-02-13 12:52:21,450 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:52:22,014 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:52:22,014 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:52:22,015 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:52:44,800 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\forms.py changed, reloading.
+INFO 2025-02-13 12:52:46,425 base>start Scheduler started
+INFO 2025-02-13 12:52:46,456 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:52:47,060 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:52:47,060 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:52:47,061 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:52:51,178 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\forms.py changed, reloading.
+INFO 2025-02-13 12:52:52,770 base>start Scheduler started
+INFO 2025-02-13 12:52:52,802 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:52:53,416 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 12:52:53,417 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 12:52:53,417 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 12:52:55,296 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\forms.py changed, reloading.
+INFO 2025-02-13 12:58:44,246 base>start Scheduler started
+INFO 2025-02-13 12:58:44,250 apps>ready Diff seconds (now and update): 351.475307seconds. Set worker to 1
+INFO 2025-02-13 12:58:44,251 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 12:58:44,251 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 12:58:44,251 apps>sub_init -SCH- Now:02/13/2025, 19:58:44
+INFO 2025-02-13 12:58:44,340 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 12:58:44,341 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 12:58:44,342 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 12:58:44,414 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 12:58:44,414 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 12:58:44,414 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 19:58:44 [No]
+INFO 2025-02-13 12:58:44,415 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:58:44,416 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 12:58:44,417 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 12:58:44,417 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 19:58:44 [No]
+INFO 2025-02-13 12:58:44,418 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:58:44,418 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 12:58:45,760 base>start Scheduler started
+INFO 2025-02-13 12:58:45,789 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:58:54,430 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 12:59:04 MST)" (scheduled at 2025-02-13 12:58:54.418477-07:00)
+INFO 2025-02-13 12:58:54,438 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-13 12:58:54,439 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-13 12:58:54,439 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 12:59:04 MST)" executed successfully
+INFO 2025-02-13 12:59:41,557 base>start Scheduler started
+INFO 2025-02-13 12:59:41,562 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 12:59:41,563 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 12:59:41,563 apps>sub_init -SCH- Now:02/13/2025, 19:59:41
+INFO 2025-02-13 12:59:41,650 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 12:59:41,652 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 12:59:41,652 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 12:59:41,725 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 12:59:41,725 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 12:59:41,726 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 19:59:41 [No]
+INFO 2025-02-13 12:59:41,726 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:59:41,727 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 12:59:41,728 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 12:59:41,729 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 19:59:41 [No]
+INFO 2025-02-13 12:59:41,729 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 12:59:41,729 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 12:59:43,114 base>start Scheduler started
+INFO 2025-02-13 12:59:43,144 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 12:59:51,739 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:00:01 MST)" (scheduled at 2025-02-13 12:59:51.729060-07:00)
+INFO 2025-02-13 12:59:51,748 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-13 12:59:51,748 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-13 12:59:51,749 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:00:01 MST)" executed successfully
+INFO 2025-02-13 13:09:51,089 base>start Scheduler started
+INFO 2025-02-13 13:09:51,095 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 13:09:51,095 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 13:09:51,096 apps>sub_init -SCH- Now:02/13/2025, 20:09:51
+INFO 2025-02-13 13:09:51,189 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 13:09:51,191 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 13:09:51,191 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 13:09:51,267 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 13:09:51,267 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 13:09:51,268 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 20:09:51 [No]
+INFO 2025-02-13 13:09:51,270 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:09:51,271 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 13:09:51,271 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 13:09:51,272 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 20:09:51 [No]
+INFO 2025-02-13 13:09:51,272 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:09:51,273 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 13:09:52,635 base>start Scheduler started
+INFO 2025-02-13 13:09:52,665 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:10:01,282 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:10:11 MST)" (scheduled at 2025-02-13 13:10:01.272149-07:00)
+INFO 2025-02-13 13:10:01,290 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-13 13:10:01,290 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-13 13:10:01,292 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:10:11 MST)" executed successfully
+INFO 2025-02-13 13:10:32,480 base>start Scheduler started
+INFO 2025-02-13 13:10:32,485 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 13:10:32,485 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 13:10:32,486 apps>sub_init -SCH- Now:02/13/2025, 20:10:32
+INFO 2025-02-13 13:10:32,576 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 13:10:32,578 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 13:10:32,578 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 13:10:32,642 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 13:10:32,643 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 13:10:32,643 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 20:10:32 [No]
+INFO 2025-02-13 13:10:32,644 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:10:32,645 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 13:10:32,646 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 13:10:32,646 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 20:10:32 [No]
+INFO 2025-02-13 13:10:32,647 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:10:32,647 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 13:10:33,994 base>start Scheduler started
+INFO 2025-02-13 13:10:34,025 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:10:34,597 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:10:34,598 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:10:34,598 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:10:35,724 runserver>log_action [mHTTP GET /crm/product/ 200 [0.10, 127.0.0.1:64434][0m
+ERROR 2025-02-13 13:10:38,405 log>log_response Internal Server Error: /crm/product-update/1/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\crm\views.py", line 197, in ProductUpdateView
+    form = ProductUpdateForm(instance=product, prefix='productform', company=product.company)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\crm\forms.py", line 26, in __init__
+    self.fields['producttype'].queryset = Product_Type.objects.filter(company=self.company)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'producttype'
+ERROR 2025-02-13 13:10:38,410 runserver>log_action [35;1mHTTP GET /crm/product-update/1/ 500 [0.04, 127.0.0.1:64434][0m
+WARNING 2025-02-13 13:10:38,452 log>log_response Not Found: /favicon.ico
+INFO 2025-02-13 13:10:42,656 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:10:52 MST)" (scheduled at 2025-02-13 13:10:42.647040-07:00)
+INFO 2025-02-13 13:10:42,664 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-13 13:10:42,664 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-13 13:10:42,665 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:10:52 MST)" executed successfully
+INFO 2025-02-13 13:10:51,853 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\forms.py changed, reloading.
+INFO 2025-02-13 13:10:53,346 base>start Scheduler started
+INFO 2025-02-13 13:10:53,351 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 13:10:53,351 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 13:10:53,351 apps>sub_init -SCH- Now:02/13/2025, 20:10:53
+INFO 2025-02-13 13:10:53,440 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 13:10:53,441 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 13:10:53,442 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 13:10:53,504 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 13:10:53,504 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 13:10:53,505 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 20:10:53 [No]
+INFO 2025-02-13 13:10:53,506 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:10:53,507 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 13:10:53,507 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 13:10:53,508 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 20:10:53 [No]
+INFO 2025-02-13 13:10:53,508 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:10:53,509 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 13:10:53,531 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:10:54,072 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:10:54,073 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:10:54,074 server>listen_success Listening on TCP address 0.0.0.0:8000
+ERROR 2025-02-13 13:11:02,090 log>log_response Internal Server Error: /crm/product-update/1/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\crm\views.py", line 201, in ProductUpdateView
+    return render(request, 'crm/product_update.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: crm/product_update.html
+ERROR 2025-02-13 13:11:02,095 runserver>log_action [35;1mHTTP GET /crm/product-update/1/ 500 [0.08, 127.0.0.1:64469][0m
+ERROR 2025-02-13 13:11:02,828 log>log_response Internal Server Error: /crm/product-update/1/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\crm\views.py", line 201, in ProductUpdateView
+    return render(request, 'crm/product_update.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: crm/product_update.html
+ERROR 2025-02-13 13:11:02,833 runserver>log_action [35;1mHTTP GET /crm/product-update/1/ 500 [0.07, 127.0.0.1:64469][0m
+ERROR 2025-02-13 13:11:03,037 log>log_response Internal Server Error: /crm/product-update/1/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\crm\views.py", line 201, in ProductUpdateView
+    return render(request, 'crm/product_update.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: crm/product_update.html
+ERROR 2025-02-13 13:11:03,042 runserver>log_action [35;1mHTTP GET /crm/product-update/1/ 500 [0.07, 127.0.0.1:64469][0m
+INFO 2025-02-13 13:11:03,524 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:11:13 MST)" (scheduled at 2025-02-13 13:11:03.509953-07:00)
+INFO 2025-02-13 13:11:03,531 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-13 13:11:03,532 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-13 13:11:03,532 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:11:13 MST)" executed successfully
+ERROR 2025-02-13 13:11:24,590 log>log_response Internal Server Error: /crm/product-update/1/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\crm\views.py", line 201, in ProductUpdateView
+    return render(request, 'crm/product_update.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: crm/product_update.html
+ERROR 2025-02-13 13:11:24,595 runserver>log_action [35;1mHTTP GET /crm/product-update/1/ 500 [0.13, 127.0.0.1:64469][0m
+ERROR 2025-02-13 13:14:33,442 log>log_response Internal Server Error: /crm/product-update/1/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\crm\views.py", line 201, in ProductUpdateView
+    return render(request, 'crm/product_update.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'supplierdelete' with arguments '('',)' not found. 1 pattern(s) tried: ['crm/supplier\\-del/(?P<pk>[^/]+)/\\Z']
+ERROR 2025-02-13 13:14:33,457 runserver>log_action [35;1mHTTP GET /crm/product-update/1/ 500 [0.14, 127.0.0.1:64925][0m
+INFO 2025-02-13 13:15:06,196 runserver>log_action [mHTTP GET /crm/product-update/1/ 200 [0.06, 127.0.0.1:64925][0m
+INFO 2025-02-13 13:15:39,517 runserver>log_action [mHTTP GET /crm/product/ 200 [0.08, 127.0.0.1:64925][0m
+INFO 2025-02-13 13:15:40,521 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.06, 127.0.0.1:64925][0m
+INFO 2025-02-13 13:16:04,468 runserver>log_action [mHTTP GET /crm/product/ 200 [0.06, 127.0.0.1:64925][0m
+INFO 2025-02-13 13:21:59,867 runserver>log_action [mHTTP GET /crm/product-update/1/ 200 [0.06, 127.0.0.1:65377][0m
+INFO 2025-02-13 13:22:21,320 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 13:22:22,940 base>start Scheduler started
+INFO 2025-02-13 13:22:22,944 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 13:22:22,945 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 13:22:22,945 apps>sub_init -SCH- Now:02/13/2025, 20:22:22
+INFO 2025-02-13 13:22:23,034 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 13:22:23,036 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 13:22:23,036 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 13:22:23,098 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 13:22:23,099 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 13:22:23,099 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 20:22:23 [No]
+INFO 2025-02-13 13:22:23,100 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:22:23,102 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 13:22:23,102 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 13:22:23,102 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 20:22:23 [No]
+INFO 2025-02-13 13:22:23,103 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:22:23,103 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 13:22:23,129 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:22:23,694 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:22:23,695 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:22:23,696 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:22:27,781 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 13:22:29,377 base>start Scheduler started
+INFO 2025-02-13 13:22:29,409 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:22:29,989 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:22:29,990 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:22:29,991 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:22:32,952 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 13:22:34,517 base>start Scheduler started
+INFO 2025-02-13 13:22:34,549 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:22:35,149 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:22:35,149 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:22:35,150 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:24:23,621 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 13:24:25,276 base>start Scheduler started
+INFO 2025-02-13 13:24:25,281 apps>ready Diff seconds (now and update): 110.758807seconds. Set worker to 1
+INFO 2025-02-13 13:24:25,281 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 13:24:25,281 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 13:24:25,281 apps>sub_init -SCH- Now:02/13/2025, 20:24:25
+INFO 2025-02-13 13:24:25,371 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 13:24:25,373 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 13:24:25,373 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 13:24:25,438 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 13:24:25,439 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 13:24:25,439 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 20:24:25 [No]
+INFO 2025-02-13 13:24:25,440 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:24:25,442 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 13:24:25,442 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 13:24:25,442 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 20:24:25 [No]
+INFO 2025-02-13 13:24:25,443 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:24:25,443 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 13:24:25,466 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:24:26,039 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:24:26,041 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:24:26,041 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:24:35,457 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:24:45 MST)" (scheduled at 2025-02-13 13:24:35.443549-07:00)
+INFO 2025-02-13 13:24:35,464 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-13 13:24:35,464 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-13 13:24:35,465 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:24:45 MST)" executed successfully
+INFO 2025-02-13 13:24:48,838 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 13:24:50,540 base>start Scheduler started
+INFO 2025-02-13 13:24:50,546 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 13:24:50,546 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 13:24:50,546 apps>sub_init -SCH- Now:02/13/2025, 20:24:50
+INFO 2025-02-13 13:24:50,643 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 13:24:50,644 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 13:24:50,645 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 13:24:50,734 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 13:24:50,734 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 13:24:50,735 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 20:24:50 [No]
+INFO 2025-02-13 13:24:50,736 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:24:50,737 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 13:24:50,737 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 13:24:50,738 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 20:24:50 [No]
+INFO 2025-02-13 13:24:50,738 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:24:50,739 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 13:24:50,763 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:24:51,368 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:24:51,369 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:24:51,370 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:24:55,549 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 13:24:57,060 base>start Scheduler started
+INFO 2025-02-13 13:24:57,090 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:24:57,667 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:24:57,668 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:24:57,669 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:25:01,784 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 13:25:03,292 base>start Scheduler started
+INFO 2025-02-13 13:25:03,322 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:25:03,907 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:25:03,907 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:25:03,908 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:25:09,097 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 13:25:10,702 base>start Scheduler started
+INFO 2025-02-13 13:25:10,733 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:25:11,377 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:25:11,377 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:25:11,378 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:27:15,058 base>start Scheduler started
+INFO 2025-02-13 13:27:15,063 apps>ready Diff seconds (now and update): 124.356293seconds. Set worker to 1
+INFO 2025-02-13 13:27:15,063 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 13:27:15,064 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 13:27:15,064 apps>sub_init -SCH- Now:02/13/2025, 20:27:15
+INFO 2025-02-13 13:27:15,153 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 13:27:15,155 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 13:27:15,155 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 13:27:15,218 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 13:27:15,218 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 13:27:15,218 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 20:27:15 [No]
+INFO 2025-02-13 13:27:15,220 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:27:15,221 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 13:27:15,221 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 13:27:15,221 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 20:27:15 [No]
+INFO 2025-02-13 13:27:15,222 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:27:15,222 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 13:27:16,553 base>start Scheduler started
+INFO 2025-02-13 13:27:16,584 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:27:17,190 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:27:17,190 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:27:17,191 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:27:17,376 runserver>log_action [mHTTP GET /admin/crm/supplier/1/change/ 200 [0.10, 127.0.0.1:1463][0m
+INFO 2025-02-13 13:27:25,238 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:27:35 MST)" (scheduled at 2025-02-13 13:27:25.222901-07:00)
+INFO 2025-02-13 13:27:25,246 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-13 13:27:25,246 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-13 13:27:25,246 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:27:35 MST)" executed successfully
+INFO 2025-02-13 13:27:28,284 runserver>log_action [mHTTP GET /admin/crm/product_type/ 200 [0.03, 127.0.0.1:1482][0m
+INFO 2025-02-13 13:27:28,310 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:1482][0m
+INFO 2025-02-13 13:27:28,353 runserver>log_action [mHTTP GET /static/admin/img/tooltag-add.svg 200 [0.03, 127.0.0.1:1485][0m
+INFO 2025-02-13 13:27:28,355 runserver>log_action [mHTTP GET /static/admin/img/sorting-icons.svg 200 [0.03, 127.0.0.1:1484][0m
+INFO 2025-02-13 13:27:35,361 base>start Scheduler started
+INFO 2025-02-13 13:27:35,365 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 13:27:35,366 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 13:27:35,366 apps>sub_init -SCH- Now:02/13/2025, 20:27:35
+INFO 2025-02-13 13:27:35,456 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 13:27:35,457 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 13:27:35,457 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 13:27:35,522 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 13:27:35,522 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 13:27:35,523 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 20:27:35 [No]
+INFO 2025-02-13 13:27:35,524 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:27:35,525 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 13:27:35,525 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 13:27:35,526 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 20:27:35 [No]
+INFO 2025-02-13 13:27:35,526 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:27:35,526 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 13:27:36,854 base>start Scheduler started
+INFO 2025-02-13 13:27:36,886 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:27:37,499 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:27:37,499 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:27:37,500 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:27:37,630 runserver>log_action [mHTTP GET /admin/crm/product_type/1/change/ 200 [0.10, 127.0.0.1:1502][0m
+INFO 2025-02-13 13:27:37,655 runserver>log_action [mHTTP GET /admin/jsi18n/ 200 [0.01, 127.0.0.1:1500][0m
+INFO 2025-02-13 13:30:44,207 base>start Scheduler started
+INFO 2025-02-13 13:30:44,212 apps>ready Diff seconds (now and update): 187.351868seconds. Set worker to 1
+INFO 2025-02-13 13:30:44,212 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 13:30:44,213 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 13:30:44,213 apps>sub_init -SCH- Now:02/13/2025, 20:30:44
+INFO 2025-02-13 13:30:44,300 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 13:30:44,302 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 13:30:44,302 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 13:30:44,364 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 13:30:44,365 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 13:30:44,365 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 20:30:44 [No]
+INFO 2025-02-13 13:30:44,366 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:30:44,368 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 13:30:44,368 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 13:30:44,368 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 20:30:44 [No]
+INFO 2025-02-13 13:30:44,369 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:30:44,369 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 13:30:45,681 base>start Scheduler started
+INFO 2025-02-13 13:30:45,710 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:30:46,324 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:30:46,324 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:30:46,325 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:30:48,216 runserver>log_action [mHTTP GET /crm/product-update/1/ 200 [0.09, 127.0.0.1:1792][0m
+INFO 2025-02-13 13:30:48,267 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.04, 127.0.0.1:1792][0m
+INFO 2025-02-13 13:30:48,271 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.05, 127.0.0.1:1794][0m
+INFO 2025-02-13 13:30:48,273 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:1795][0m
+INFO 2025-02-13 13:30:48,276 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.01, 127.0.0.1:1796][0m
+INFO 2025-02-13 13:30:48,590 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:1795][0m
+INFO 2025-02-13 13:30:49,749 runserver>log_action [mHTTP POST /crm/product-update/1/ 200 [0.02, 127.0.0.1:1792][0m
+INFO 2025-02-13 13:30:49,769 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:1795][0m
+INFO 2025-02-13 13:30:54,380 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:31:04 MST)" (scheduled at 2025-02-13 13:30:54.369767-07:00)
+INFO 2025-02-13 13:30:54,388 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-13 13:30:54,388 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-13 13:30:54,389 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:31:04 MST)" executed successfully
+INFO 2025-02-13 13:31:07,153 runserver>log_action [mHTTP POST /crm/product-update/1/ 200 [0.06, 127.0.0.1:1792][0m
+INFO 2025-02-13 13:31:28,170 runserver>log_action [mHTTP GET /crm/product/ 200 [0.13, 127.0.0.1:1792][0m
+INFO 2025-02-13 13:31:31,097 runserver>log_action [mHTTP GET /crm/product-update/1/ 200 [0.06, 127.0.0.1:1792][0m
+INFO 2025-02-13 13:31:37,014 runserver>log_action [mHTTP POST /crm/product-update/1/ 200 [0.01, 127.0.0.1:1792][0m
+INFO 2025-02-13 13:32:59,998 runserver>log_action [mHTTP POST /crm/product-update/1/ 200 [0.06, 127.0.0.1:1921][0m
+INFO 2025-02-13 13:33:03,297 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:1921][0m
+INFO 2025-02-13 13:33:07,592 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.06, 127.0.0.1:1921][0m
+INFO 2025-02-13 13:33:10,569 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.01, 127.0.0.1:1921][0m
+INFO 2025-02-13 13:34:13,469 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 13:34:15,046 base>start Scheduler started
+INFO 2025-02-13 13:34:15,051 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 13:34:15,051 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 13:34:15,051 apps>sub_init -SCH- Now:02/13/2025, 20:34:15
+INFO 2025-02-13 13:34:15,150 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 13:34:15,151 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 13:34:15,152 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 13:34:15,228 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 13:34:15,228 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 13:34:15,228 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 20:34:15 [No]
+INFO 2025-02-13 13:34:15,230 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:34:15,231 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 13:34:15,231 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 13:34:15,232 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 20:34:15 [No]
+INFO 2025-02-13 13:34:15,232 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:34:15,233 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 13:34:15,257 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:34:15,871 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:34:15,872 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:34:15,873 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:34:18,537 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.09, 127.0.0.1:2013][0m
+INFO 2025-02-13 13:34:20,466 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.07, 127.0.0.1:2016][0m
+INFO 2025-02-13 13:34:20,516 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.04, 127.0.0.1:2016][0m
+INFO 2025-02-13 13:34:20,518 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.04, 127.0.0.1:2017][0m
+INFO 2025-02-13 13:34:20,520 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:2019][0m
+INFO 2025-02-13 13:34:20,522 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:2018][0m
+INFO 2025-02-13 13:34:20,773 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:2018][0m
+ERROR 2025-02-13 13:34:22,099 log>log_response Internal Server Error: /crm/product-update/2/
+Traceback (most recent call last):
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\exception.py", line 42, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 518, in thread_handler
+    raise exc_info[1]
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\django\core\handlers\base.py", line 253, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 468, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\current_thread_executor.py", line 40, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\env\Lib\site-packages\asgiref\sync.py", line 522, in thread_handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\base\decorators.py", line 9, in wrapper_func
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\AQS8.3\aqs8server\crm\views.py", line 174, in ProductUpdateView
+    go, link, context = SubUpdate(request, action, company, None, back_url)
+                                                            ^^^^
+NameError: name 'none' is not defined
+ERROR 2025-02-13 13:34:22,104 runserver>log_action [35;1mHTTP POST /crm/product-update/2/ 500 [0.03, 127.0.0.1:2016][0m
+WARNING 2025-02-13 13:34:22,130 log>log_response Not Found: /favicon.ico
+INFO 2025-02-13 13:34:25,248 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:34:35 MST)" (scheduled at 2025-02-13 13:34:25.233310-07:00)
+INFO 2025-02-13 13:34:25,255 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-13 13:34:25,255 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-13 13:34:25,255 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:34:35 MST)" executed successfully
+INFO 2025-02-13 13:35:19,248 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 13:35:20,964 base>start Scheduler started
+INFO 2025-02-13 13:35:20,969 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 13:35:20,970 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 13:35:20,970 apps>sub_init -SCH- Now:02/13/2025, 20:35:20
+INFO 2025-02-13 13:35:21,078 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 13:35:21,080 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 13:35:21,080 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 13:35:21,144 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 13:35:21,145 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 13:35:21,145 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 20:35:21 [No]
+INFO 2025-02-13 13:35:21,146 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:35:21,148 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 13:35:21,148 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 13:35:21,148 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 20:35:21 [No]
+INFO 2025-02-13 13:35:21,148 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:35:21,149 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 13:35:21,171 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:35:21,710 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:35:21,710 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:35:21,711 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:35:31,155 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:35:41 MST)" (scheduled at 2025-02-13 13:35:31.149597-07:00)
+INFO 2025-02-13 13:35:31,163 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-13 13:35:31,164 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-13 13:35:31,164 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-13 13:35:41 MST)" executed successfully
+INFO 2025-02-13 13:35:42,824 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.10, 127.0.0.1:2104][0m
+INFO 2025-02-13 13:35:44,576 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.01, 127.0.0.1:2104][0m
+INFO 2025-02-13 13:35:47,799 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.06, 127.0.0.1:2104][0m
+INFO 2025-02-13 13:35:52,479 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:2104][0m
+INFO 2025-02-13 13:35:54,496 runserver>log_action [mHTTP GET /crm/product-update/1/ 200 [0.06, 127.0.0.1:2104][0m
+INFO 2025-02-13 13:36:01,119 runserver>log_action [mHTTP POST /crm/product-update/1/ 200 [0.01, 127.0.0.1:2104][0m
+INFO 2025-02-13 13:36:27,952 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 13:36:29,534 base>start Scheduler started
+INFO 2025-02-13 13:36:29,538 apps>ready    *** Queuing System Started ***
+INFO 2025-02-13 13:36:29,538 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-13 13:36:29,539 apps>sub_init -SCH- Now:02/13/2025, 20:36:29
+INFO 2025-02-13 13:36:29,636 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-13 13:36:29,638 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-13 13:36:29,638 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-13 13:36:29,710 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-14 15:59:59 Local:2025-02-14 23:59:59
+INFO 2025-02-13 13:36:29,711 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-13 13:36:29,711 views>sch_shutdown    -SCH- 2025-02-13 15:59:59 > 2025-02-13 20:36:29 [No]
+INFO 2025-02-13 13:36:29,712 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:36:29,714 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-14 18:00:00 Local:2025-02-15 02:00:00
+INFO 2025-02-13 13:36:29,714 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-13 13:36:29,714 views>sch_shutdown    -SCH- 2025-02-13 18:00:00 > 2025-02-13 20:36:29 [No]
+INFO 2025-02-13 13:36:29,715 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-13 13:36:29,715 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-13 13:36:29,743 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:36:30,366 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:36:30,366 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:36:30,367 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:36:32,344 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\views.py changed, reloading.
+INFO 2025-02-13 13:36:33,832 base>start Scheduler started
+INFO 2025-02-13 13:36:33,862 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-13 13:36:34,455 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-13 13:36:34,455 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-13 13:36:34,456 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-13 13:36:38,670 runserver>log_action [mHTTP POST /crm/product-update/1/ 200 [0.10, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:36:47,399 runserver>log_action [mHTTP GET / 200 [0.06, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:36:57,201 runserver>log_action [mHTTP GET /crm/product/ 200 [0.08, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:36:59,707 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.06, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:37:01,488 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.01, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:37:08,479 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.02, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:37:11,817 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.12, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:37:18,161 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.01, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:37:20,948 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.02, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:37:25,519 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.09, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:37:28,811 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.01, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:37:35,197 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.02, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:37:36,118 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.06, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:37:37,932 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.01, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:37:42,280 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.02, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:37:49,073 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.02, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:37:58,481 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.02, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:37:59,976 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.06, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:38:03,749 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.01, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:38:10,344 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.02, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:38:12,865 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.06, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:38:43,453 runserver>log_action [mHTTP GET / 200 [0.06, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:38:46,847 runserver>log_action [mHTTP GET /crm/supplier/ 200 [0.07, 127.0.0.1:2177][0m
+INFO 2025-02-13 13:38:50,897 runserver>log_action [mHTTP GET /crm/supplier-update/1/ 200 [0.05, 127.0.0.1:2177][0m
