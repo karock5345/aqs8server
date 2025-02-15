@@ -46,6 +46,17 @@
     </a>
   </li>
   <li>
+    <a href="{% url 'crmproductlist' %}" class="active">
+      <div class="header__logo">
+        <div class="list__svg">
+          {% include 'base/images/product.svg' %}
+        </div>
+        <div>Products</div>
+      </div> 
+      <span>{{ products.count }}</span>
+    </a>
+  </li>  
+  <li>
     <a href="{% url 'crmsupplierlist' %}" class="active">
       <div class="header__logo">
         <div class="list__svg">

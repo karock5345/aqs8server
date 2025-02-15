@@ -16822,3 +16822,140 @@ INFO 2025-02-13 13:38:12,865 runserver>log_action [mHTTP GET /crm/product-updat
 INFO 2025-02-13 13:38:43,453 runserver>log_action [mHTTP GET / 200 [0.06, 127.0.0.1:2177][0m
 INFO 2025-02-13 13:38:46,847 runserver>log_action [mHTTP GET /crm/supplier/ 200 [0.07, 127.0.0.1:2177][0m
 INFO 2025-02-13 13:38:50,897 runserver>log_action [mHTTP GET /crm/supplier-update/1/ 200 [0.05, 127.0.0.1:2177][0m
+INFO 2025-02-14 21:48:07,330 base>start Scheduler started
+INFO 2025-02-14 21:48:07,341 apps>ready Diff seconds (now and update): 115893.503812seconds. Set worker to 1
+INFO 2025-02-14 21:48:07,341 apps>ready    *** Queuing System Started ***
+INFO 2025-02-14 21:48:07,341 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-14 21:48:07,342 apps>sub_init -SCH- Now:02/15/2025, 04:48:07
+INFO 2025-02-14 21:48:07,470 apps>sub_init -SCH- No migrations are needed
+INFO 2025-02-14 21:48:07,472 base>_real_add_job Added job "job_booking_temp" to job store "default"
+INFO 2025-02-14 21:48:07,472 views>sch_bookingtemp -SCH- Add job_booking_temp every 6 hours -SCH-
+INFO 2025-02-14 21:48:08,768 views>sch_shutdown  -SCH- Next reset [KB]: 2025-02-15 15:59:59 Local:2025-02-15 23:59:59
+INFO 2025-02-14 21:48:08,768 views>sch_shutdown    -SCH- reset time: 15:59:59 Local Time: 23:59:59
+INFO 2025-02-14 21:48:08,769 views>sch_shutdown    -SCH- 2025-02-15 15:59:59 > 2025-02-15 04:48:08 [Yes]
+INFO 2025-02-14 21:48:08,771 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-14 21:48:08,772 views>sch_shutdown  -SCH- Next reset [MK]: 2025-02-15 18:00:00 Local:2025-02-16 02:00:00
+INFO 2025-02-14 21:48:08,772 views>sch_shutdown    -SCH- reset time: 18:00:00 Local Time: 02:00:00
+INFO 2025-02-14 21:48:08,773 views>sch_shutdown    -SCH- 2025-02-15 18:00:00 > 2025-02-15 04:48:08 [Yes]
+INFO 2025-02-14 21:48:08,773 base>_real_add_job Added job "job_shutdown" to job store "default"
+INFO 2025-02-14 21:48:08,773 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-14 21:48:10,236 base>start Scheduler started
+INFO 2025-02-14 21:48:10,267 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-14 21:48:11,169 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-14 21:48:11,169 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-14 21:48:11,182 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-14 21:48:11,281 runserver>log_action [32mHTTP POST /crm/product-update/2/ 302 [0.03, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:48:11,297 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:48:14,434 runserver>log_action [32mHTTP GET /crm/member/ 302 [0.00, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:48:17,794 runserver>log_action [32mHTTP POST /login/ 302 [0.25, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:48:17,877 runserver>log_action [mHTTP GET / 200 [0.08, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:48:18,775 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-14 21:48:28 MST)" (scheduled at 2025-02-14 21:48:18.773413-07:00)
+INFO 2025-02-14 21:48:18,784 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-14 21:48:18,784 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-14 21:48:18,784 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-14 21:48:28 MST)" executed successfully
+WARNING 2025-02-14 21:48:19,125 log>log_response Not Found: /favicon.ico
+WARNING 2025-02-14 21:48:19,126 runserver>log_action [33mHTTP GET /favicon.ico 404 [0.02, 127.0.0.1:13448][0m
+WARNING 2025-02-14 21:48:20,554 log>log_response Forbidden (CSRF token from POST incorrect.): /crm/product-update/2/
+WARNING 2025-02-14 21:48:20,560 runserver>log_action [31;1mHTTP POST /crm/product-update/2/ 403 [0.01, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:48:24,050 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.07, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:48:25,384 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.06, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:48:26,728 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.02, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:48:39,145 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.02, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:48:42,706 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.06, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:48:44,509 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.01, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:48:48,532 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.02, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:48:58,084 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.02, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:48:59,844 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.06, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:49:03,717 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.01, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:49:05,655 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.02, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:49:07,494 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.06, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:49:12,529 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.01, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:49:15,008 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.06, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:49:18,794 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.01, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:49:21,348 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.02, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:49:22,101 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.06, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:49:25,254 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.06, 127.0.0.1:13448][0m
+INFO 2025-02-14 21:51:30,623 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.08, 127.0.0.1:13719][0m
+INFO 2025-02-14 21:52:56,391 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.06, 127.0.0.1:13804][0m
+INFO 2025-02-14 21:52:57,821 runserver>log_action [mHTTP GET / 200 [0.06, 127.0.0.1:13804][0m
+INFO 2025-02-14 21:53:02,486 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.06, 127.0.0.1:13812][0m
+INFO 2025-02-14 21:53:02,538 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.04, 127.0.0.1:13812][0m
+INFO 2025-02-14 21:53:02,542 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.05, 127.0.0.1:13813][0m
+INFO 2025-02-14 21:53:02,544 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:13815][0m
+INFO 2025-02-14 21:53:02,546 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:13814][0m
+INFO 2025-02-14 21:53:02,927 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:13814][0m
+INFO 2025-02-14 21:53:38,373 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.06, 127.0.0.1:13812][0m
+INFO 2025-02-14 21:53:51,620 runserver>log_action [mHTTP POST /crm/product-update/2/ 200 [0.10, 127.0.0.1:13812][0m
+WARNING 2025-02-14 21:54:07,910 log>log_response Not Found: /crm/product-update/
+WARNING 2025-02-14 21:54:07,910 runserver>log_action [33mHTTP GET /crm/product-update/ 404 [0.02, 127.0.0.1:13812][0m
+INFO 2025-02-14 21:54:12,761 runserver>log_action [32mHTTP GET /crm/product 301 [0.01, 127.0.0.1:13812][0m
+INFO 2025-02-14 21:54:12,837 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:13812][0m
+INFO 2025-02-14 21:54:14,403 runserver>log_action [mHTTP GET /crm/product-update/1/ 200 [0.06, 127.0.0.1:13812][0m
+INFO 2025-02-14 21:54:34,419 runserver>log_action [mHTTP GET /crm/supplier/ 200 [0.06, 127.0.0.1:13812][0m
+INFO 2025-02-14 21:54:38,439 runserver>log_action [mHTTP GET /crm/supplier-new/TSVD/ 200 [0.05, 127.0.0.1:13812][0m
+INFO 2025-02-14 21:55:32,607 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\models.py changed, reloading.
+INFO 2025-02-14 21:55:34,173 base>start Scheduler started
+INFO 2025-02-14 21:55:34,179 apps>ready    *** Queuing System Started ***
+INFO 2025-02-14 21:55:34,179 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-14 21:55:34,180 apps>sub_init -SCH- Now:02/15/2025, 04:55:34
+INFO 2025-02-14 21:55:34,281 apps>sub_init -SCH- Migrations are needed
+INFO 2025-02-14 21:55:34,283 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-14 21:55:34,310 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-14 21:55:34,861 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-14 21:55:34,861 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-14 21:55:34,862 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-14 21:55:44,286 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-14 21:55:54 MST)" (scheduled at 2025-02-14 21:55:44.283021-07:00)
+INFO 2025-02-14 21:55:44,293 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-14 21:55:44,294 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-14 21:55:44,294 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-14 21:55:54 MST)" executed successfully
+INFO 2025-02-14 21:55:46,689 autoreload>trigger_reload D:\Projects\AQS8.3\aqs8server\crm\models.py changed, reloading.
+INFO 2025-02-14 21:55:48,221 base>start Scheduler started
+INFO 2025-02-14 21:55:48,226 apps>ready    *** Queuing System Started ***
+INFO 2025-02-14 21:55:48,227 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-14 21:55:48,227 apps>sub_init -SCH- Now:02/15/2025, 04:55:48
+INFO 2025-02-14 21:55:48,323 apps>sub_init -SCH- Migrations are needed
+INFO 2025-02-14 21:55:48,324 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-14 21:55:48,348 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-14 21:55:48,924 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-14 21:55:48,925 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-14 21:55:48,925 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-14 21:55:54,870 runserver>log_action [32mHTTP POST /crm/supplier-new/TSVD/ 302 [0.05, 127.0.0.1:14010][0m
+INFO 2025-02-14 21:55:54,950 runserver>log_action [mHTTP GET /crm/supplier/ 200 [0.08, 127.0.0.1:14010][0m
+INFO 2025-02-14 21:55:58,327 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-14 21:56:08 MST)" (scheduled at 2025-02-14 21:55:58.324668-07:00)
+INFO 2025-02-14 21:55:58,333 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-14 21:55:58,334 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-14 21:55:58,334 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-14 21:56:08 MST)" executed successfully
+INFO 2025-02-14 22:46:56,417 runserver>log_action [mHTTP GET /crm/quotation/ 200 [0.09, 127.0.0.1:16913][0m
+INFO 2025-02-14 22:48:40,654 runserver>log_action [mHTTP GET /crm/quotation/ 200 [0.08, 127.0.0.1:17022][0m
+INFO 2025-02-14 22:50:31,960 runserver>log_action [mHTTP GET /crm/product/ 200 [0.08, 127.0.0.1:17132][0m
+INFO 2025-02-14 22:50:36,290 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:17139][0m
+INFO 2025-02-14 22:50:36,340 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.04, 127.0.0.1:17139][0m
+INFO 2025-02-14 22:50:36,343 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.04, 127.0.0.1:17140][0m
+INFO 2025-02-14 22:50:36,345 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:17142][0m
+INFO 2025-02-14 22:50:36,347 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.01, 127.0.0.1:17141][0m
+INFO 2025-02-14 22:50:36,660 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:17141][0m
+INFO 2025-02-14 22:51:53,534 runserver>log_action [mHTTP GET /crm/product/ 200 [0.14, 127.0.0.1:17214][0m
+INFO 2025-02-14 22:52:11,789 runserver>log_action [mHTTP GET /crm/product/ 200 [0.08, 127.0.0.1:17214][0m
+INFO 2025-02-14 22:52:12,428 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:17214][0m
+INFO 2025-02-14 22:52:12,652 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:17214][0m
+INFO 2025-02-14 22:52:12,823 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:17214][0m
+INFO 2025-02-14 22:52:18,981 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:17214][0m
+INFO 2025-02-14 22:52:20,103 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:17214][0m
+INFO 2025-02-14 22:52:20,292 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:17214][0m
+INFO 2025-02-14 22:53:00,577 runserver>log_action [mHTTP GET /crm/product/ 200 [0.08, 127.0.0.1:17214][0m
+INFO 2025-02-14 22:53:03,358 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:17214][0m
+INFO 2025-02-14 22:53:05,280 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.06, 127.0.0.1:17214][0m
+INFO 2025-02-14 22:54:43,666 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.07, 127.0.0.1:17449][0m
+INFO 2025-02-14 22:54:44,640 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.07, 127.0.0.1:17449][0m
+INFO 2025-02-14 22:55:21,423 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.07, 127.0.0.1:17449][0m
+INFO 2025-02-14 22:55:23,804 runserver>log_action [mHTTP GET /crm/product-update/2/ 200 [0.06, 127.0.0.1:17516][0m
+INFO 2025-02-14 22:55:23,814 runserver>log_action [mHTTP GET /static/styles/style.css 200 [0.00, 127.0.0.1:17516][0m
+INFO 2025-02-14 22:55:23,816 runserver>log_action [mHTTP GET /static/js/script.js 200 [0.00, 127.0.0.1:17517][0m
+INFO 2025-02-14 22:55:23,818 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:17518][0m
+INFO 2025-02-14 22:55:23,819 runserver>log_action [mHTTP GET /static/images/avatar.svg 200 [0.00, 127.0.0.1:17519][0m
+INFO 2025-02-14 22:55:24,072 runserver>log_action [mHTTP GET /static/images/logo-q.svg 200 [0.00, 127.0.0.1:17518][0m
+INFO 2025-02-14 22:55:44,740 runserver>log_action [mHTTP GET / 200 [0.07, 127.0.0.1:17516][0m
+INFO 2025-02-14 22:55:46,403 runserver>log_action [mHTTP GET /crm/product/ 200 [0.07, 127.0.0.1:17516][0m
+INFO 2025-02-14 22:56:05,468 runserver>log_action [mHTTP GET /crm/product/?q_priceto=20000 200 [0.07, 127.0.0.1:17516][0m
+INFO 2025-02-14 22:56:09,883 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=5000&q_priceto=20000 200 [0.07, 127.0.0.1:17516][0m
+INFO 2025-02-14 22:56:15,174 runserver>log_action [mHTTP GET /crm/product/ 200 [0.06, 127.0.0.1:17516][0m

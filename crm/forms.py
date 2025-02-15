@@ -18,6 +18,14 @@ class DateInput(forms.DateInput):
 class DateTimeInput(forms.DateTimeInput):
     input_type = 'datetime'
 
+class CategoryForm(forms.ModelForm):
+    id = forms.fields.IntegerField()
+    def __init__(self, *args,**kwargs):
+        super().__init__(*args,**kwargs)
+        self.initial['id'] = self.instance.pk
+    class Meta:
+        model = Category
+        fields = ['id', 'name', 'description']
 class ProductTypeForm(forms.ModelForm):
     id = forms.fields.IntegerField()
     def __init__(self, *args,**kwargs):
@@ -25,7 +33,7 @@ class ProductTypeForm(forms.ModelForm):
         self.initial['id'] = self.instance.pk
     class Meta:
         model = Product_Type
-        fields = ['id', 'name', 'description']
+        fields = ['id', 'name', 'description']        
 class ProductUpdateForm(ModelForm):
     def __init__(self, *args,**kwargs):
         self.company = kwargs.pop('company')

@@ -15,7 +15,7 @@ from base.decorators import *
 from crm.models import CRMAdmin, Member, Company, Customer, CustomerGroup, CustomerSource, CustomerInformation, Quotation, Invoice, Receipt, BusinessType, BusinessSource
 from crm.models import Supplier, Product_Type, Category, Product
 from crm.forms import MemberUpdateForm, MemberNewForm, CustomerUpdateForm, CustomerGroupForm, CustomerSourceForm, CustomerInfoForm, CustomerNewForm, QuotationUpdateForm, InvoiceUpdateForm, ReceiptUpdateForm, BusinessTypeForm, BusinessSourceForm
-from crm.forms import SupplierUpdateForm, SupplierNewForm, ProductUpdateForm, ProductTypeForm
+from crm.forms import SupplierUpdateForm, SupplierNewForm, ProductUpdateForm, ProductTypeForm, CategoryForm
 from crm.api import new_member
 from django.db import transaction
 import re
@@ -816,13 +816,15 @@ def SubUpdate(request, action, company, customer, full_path):
         context = context_mini | context 
 
     # <---- Product type for Product ----
-        if action == 'product_type':
+        title = 'Manage Product Type'
+        action_out = 'product_type'
+        if action == action_out:
             table = Product_Type.objects.filter(Q(company=company))
             form = ProductTypeForm()
-            context = context | {'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Product Type', 'action':'product_type'}
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':title, 'action':action_out}
             # return render(request, 'crm/sub_update.html', context)
             return 'go', 'crm/sub_update.html', context
-        elif action == 'update_product_type':
+        elif action == 'update_' + action_out:
             form = ProductTypeForm(request.POST)
             if form.is_valid():
                 # get the id of the customer group from the form
@@ -835,29 +837,73 @@ def SubUpdate(request, action, company, customer, full_path):
                 # form.save()
                 messages.success(request, 'Update success' )
             table = Product_Type.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Product Type', 'action':'product_type'}
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':title, 'action':action_out}
             # return render(request, 'crm/sub_update.html', context)
             return 'go', 'crm/sub_update.html', context
-        elif action == 'new_product_type':
+        elif action == 'new_' + action_out:
             Product_Type.objects.create(company=company, name='', description='')
             form = ProductTypeForm(request.POST)
 
             table = Product_Type.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Product Type', 'action':'product_type'}       
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':title, 'action':action_out}     
             # return render(request, 'crm/sub_update.html', context, )
             return 'go', 'crm/sub_update.html', context
-        elif action == 'del_product_type':
+        elif action == 'del_' + action_out:
             form = ProductTypeForm(request.POST)
             if form.is_valid():
                 pk = form['id'].value()
                 Product_Type.objects.get(pk=pk).delete()
 
             table = Product_Type.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Product Type', 'action':'product_type'}
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':title, 'action':action_out}
             # return render(request, 'crm/sub_update.html', context, )  
             return 'go', 'crm/sub_update.html', context      
-    # ---- business type for Quotation ---->
+    # ---- Product type for Product ---->
 
+    # <---- Category for Product ----
+        title = 'Manage Category'
+        action_out = 'category'
+        if action == action_out:
+            table = Category.objects.filter(Q(company=company))
+            form = CategoryForm()
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':title, 'action':action_out}
+            # return render(request, 'crm/sub_update.html', context)
+            return 'go', 'crm/sub_update.html', context
+        elif action == 'update_' + action_out:
+            form = CategoryForm(request.POST)
+            if form.is_valid():
+                # get the id of the customer group from the form
+                pk = form['id'].value()
+                obj = Category.objects.get(pk=pk)
+
+                obj.name = form['name'].value()
+                obj.description = form['description'].value()
+                obj.save()
+                # form.save()
+                messages.success(request, 'Update success' )
+            table = Category.objects.filter(Q(company=company))
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':title, 'action':action_out}
+            # return render(request, 'crm/sub_update.html', context)
+            return 'go', 'crm/sub_update.html', context
+        elif action == 'new_' + action_out:
+            Category.objects.create(company=company, name='', description='')
+            form = CategoryForm(request.POST)
+
+            table = Category.objects.filter(Q(company=company))
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':title, 'action':action_out}       
+            # return render(request, 'crm/sub_update.html', context, )
+            return 'go', 'crm/sub_update.html', context
+        elif action == 'del_' + action_out:
+            form = CategoryForm(request.POST)
+            if form.is_valid():
+                pk = form['id'].value()
+                Category.objects.get(pk=pk).delete()
+
+            table = Category.objects.filter(Q(company=company))
+            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':title, 'action':action_out}
+            # return render(request, 'crm/sub_update.html', context, )  
+            return 'go', 'crm/sub_update.html', context      
+    # ---- Category for Product ---->
 
 
     # <---- business type for Quotation ----
