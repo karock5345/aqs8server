@@ -907,215 +907,211 @@ def SubUpdate(request, action, company, customer, full_path):
 
 
     # <---- business type for Quotation ----
-        if action == 'businesstype':
+        title = 'Manage Business Type'
+        action_out = 'businesstype'
+        if action == action_out:
             table = BusinessType.objects.filter(Q(company=company))
             form = BusinessTypeForm()
-            context = context | {'table':table, 'form': form, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Business Type', 'action':'businesstype'}
-            # return render(request, 'crm/sub_update.html', context)
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
             return 'go', 'crm/sub_update.html', context
-        elif action == 'update_businesstype':
+        elif action == 'update_' + action_out:
             form = BusinessTypeForm(request.POST)
             if form.is_valid():
-                # get the id of the customer group from the form
                 pk = form['id'].value()
                 obj = BusinessType.objects.get(pk=pk)
-
                 obj.name = form['name'].value()
                 obj.description = form['description'].value()
                 obj.save()
-                # form.save()
-                messages.success(request, 'Update success' )
+                messages.success(request, 'Update success')
             table = BusinessType.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Business Type', 'action':'businesstype'}
-            # return render(request, 'crm/sub_update.html', context)
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
             return 'go', 'crm/sub_update.html', context
-        elif action == 'new_businesstype':
+        elif action == 'new_' + action_out:
             BusinessType.objects.create(company=company, name='', description='')
             form = BusinessTypeForm(request.POST)
-
             table = BusinessType.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Business Type', 'action':'businesstype'}       
-            # return render(request, 'crm/sub_update.html', context, )
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
             return 'go', 'crm/sub_update.html', context
-        elif action == 'del_businesstype':
+        elif action == 'del_' + action_out:
             form = BusinessTypeForm(request.POST)
             if form.is_valid():
                 pk = form['id'].value()
                 BusinessType.objects.get(pk=pk).delete()
-
             table = BusinessType.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Business Type', 'action':'businesstype'}
-            # return render(request, 'crm/sub_update.html', context, )  
-            return 'go', 'crm/sub_update.html', context      
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
+            return 'go', 'crm/sub_update.html', context
     # ---- business type for Quotation ---->
 
-    # <---- business source for Quotation ----
-        if action == 'businesssource':
+    # <---- Business Source for Quotation ----
+        title = 'Manage Business Source'
+        action_out = 'businesssource'
+        if action == action_out:
             table = BusinessSource.objects.filter(Q(company=company))
             form = BusinessSourceForm()
-            context = context | {'table':table, 'form': form, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Business Source', 'action':'businesssource'}
-            # return render(request, 'crm/sub_update.html', context)
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
             return 'go', 'crm/sub_update.html', context
-        elif action == 'update_businesssource':
+        elif action == 'update_' + action_out:
             form = BusinessSourceForm(request.POST)
             if form.is_valid():
-                # get the id of the customer group from the form
                 pk = form['id'].value()
                 obj = BusinessSource.objects.get(pk=pk)
-
                 obj.name = form['name'].value()
                 obj.description = form['description'].value()
                 obj.save()
-                # form.save()
-                messages.success(request, 'Update success' )
+                messages.success(request, 'Update success')
             table = BusinessSource.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Business Source', 'action':'businesssource'}
-            # return render(request, 'crm/sub_update.html', context)
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
             return 'go', 'crm/sub_update.html', context
-        elif action == 'new_businesssource':
+        elif action == 'new_' + action_out:
             BusinessSource.objects.create(company=company, name='', description='')
             form = BusinessSourceForm(request.POST)
-
             table = BusinessSource.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Business Source', 'action':'businesssource'}       
-            # return render(request, 'crm/sub_update.html', context, )
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
             return 'go', 'crm/sub_update.html', context
-        elif action == 'del_businesssource':
+        elif action == 'del_' + action_out:
             form = BusinessSourceForm(request.POST)
             if form.is_valid():
                 pk = form['id'].value()
                 BusinessSource.objects.get(pk=pk).delete()
-
             table = BusinessSource.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': form, 'company':company, 'back_url':full_path, 'title':'Manage Business Source', 'action':'businesssource'}
-            # return render(request, 'crm/sub_update.html', context, )  
-            return 'go', 'crm/sub_update.html', context      
-    # ---- business source for Quotation ---->
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
+            return 'go', 'crm/sub_update.html', context
+    # ---- Business Source for Quotation ---->
 
     # <---- Customer Group ----
-        if action == 'group':
+        title = 'Manage Customer Group'
+        action_out = 'group'
+        if action == action_out:
             table = CustomerGroup.objects.filter(Q(company=company))
-            cgform = CustomerGroupForm()
-            context = context | {'table':table, 'form': cgform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Group', 'action':'group'}
-            # return render(request, 'crm/sub_update.html', context)
+            form = CustomerGroupForm()
+            context = context | {
+                'table': table,
+                'form': form,
+                'company': company,
+                'customer': customer,
+                'back_url': full_path,
+                'title': title,
+                'action': action_out
+            }
             return 'go', 'crm/sub_update.html', context
-        elif action == 'update_group':
-            cgform = CustomerGroupForm(request.POST)
-            if cgform.is_valid():
-                # get the id of the customer group from the form
-                pk = cgform['id'].value()
-                cg = CustomerGroup.objects.get(pk=pk)
-
-                cg.name = cgform['name'].value()
-                cg.description = cgform['description'].value()
-                cg.save()
-                # cgform.save()
-                messages.success(request, 'Update success' )
+        elif action == 'update_' + action_out:
+            form = CustomerGroupForm(request.POST)
+            if form.is_valid():
+                pk = form['id'].value()
+                obj = CustomerGroup.objects.get(pk=pk)
+                obj.name = form['name'].value()
+                obj.description = form['description'].value()
+                obj.save()
+                messages.success(request, 'Update success')
             table = CustomerGroup.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': cgform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Group', 'action':'group'}
-            # return render(request, 'crm/sub_update.html', context)
+            context = context | {
+                'table': table,
+                'form': form,
+                'company': company,
+                'back_url': full_path,
+                'title': title,
+                'action': action_out
+            }
             return 'go', 'crm/sub_update.html', context
-        elif action == 'new_group':
+        elif action == 'new_' + action_out:
             CustomerGroup.objects.create(company=company, name='', description='')
-            cgform = CustomerGroupForm(request.POST)
-
+            form = CustomerGroupForm(request.POST)
             table = CustomerGroup.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': cgform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Group', 'action':'group'}       
-            # return render(request, 'crm/sub_update.html', context, )
+            context = context | {
+                'table': table,
+                'form': form,
+                'company': company,
+                'back_url': full_path,
+                'title': title,
+                'action': action_out
+            }
             return 'go', 'crm/sub_update.html', context
-        elif action == 'del_group':
-            cgform = CustomerGroupForm(request.POST)
-            if cgform.is_valid():
-                pk = cgform['id'].value()
+        elif action == 'del_' + action_out:
+            form = CustomerGroupForm(request.POST)
+            if form.is_valid():
+                pk = form['id'].value()
                 CustomerGroup.objects.get(pk=pk).delete()
-
             table = CustomerGroup.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': cgform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Group', 'action':'group'}
-            # return render(request, 'crm/sub_update.html', context, )  
-            return 'go', 'crm/sub_update.html', context      
+            context = context | {
+                'table': table,
+                'form': form,
+                'company': company,
+                'back_url': full_path,
+                'title': title,
+                'action': action_out
+            }
+            return 'go', 'crm/sub_update.html', context
     # ---- Customer Group ---->
 
     # <---- Customer Source ----
-        elif action == 'source':
+        title = 'Manage Customer Source'
+        action_out = 'source'
+        if action == action_out:
             table = CustomerSource.objects.filter(Q(company=company))
-            csform = CustomerSourceForm()
-            context = context | {'table':table, 'form': csform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Source', 'action':'source'}
-            # return render(request, 'crm/sub_update.html', context)
+            form = CustomerSourceForm()
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
             return 'go', 'crm/sub_update.html', context
-        elif action == 'update_source':
-            csform = CustomerSourceForm(request.POST)
-            if csform.is_valid():
-                # get the id of the customer group from the form
-                pk = csform['id'].value()
-                source = CustomerSource.objects.get(pk=pk)
-
-                source.name = csform['name'].value()
-                source.description = csform['description'].value()
-                source.save()
-                messages.success(request, 'Update success' )
+        elif action == 'update_' + action_out:
+            form = CustomerSourceForm(request.POST)
+            if form.is_valid():
+                pk = form['id'].value()
+                obj = CustomerSource.objects.get(pk=pk)
+                obj.name = form['name'].value()
+                obj.description = form['description'].value()
+                obj.save()
+                messages.success(request, 'Update success')
             table = CustomerSource.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': csform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Source', 'action':'source'}
-            # return render(request, 'crm/sub_update.html', context)
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
             return 'go', 'crm/sub_update.html', context
-        elif action == 'new_source':
+        elif action == 'new_' + action_out:
             CustomerSource.objects.create(company=company, name='', description='')
-            csform = CustomerSourceForm(request.POST)
-
+            form = CustomerSourceForm(request.POST)
             table = CustomerSource.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': csform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Source', 'action':'source'}       
-            # return render(request, 'crm/sub_update.html', context, )
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
             return 'go', 'crm/sub_update.html', context
-        elif action == 'del_source':
-            csform = CustomerSourceForm(request.POST)
-            if csform.is_valid():
-                pk = csform['id'].value()
+        elif action == 'del_' + action_out:
+            form = CustomerSourceForm(request.POST)
+            if form.is_valid():
+                pk = form['id'].value()
                 CustomerSource.objects.get(pk=pk).delete()
-
             table = CustomerSource.objects.filter(Q(company=company))
-            context = context | { 'table':table, 'form': csform, 'company':company, 'back_url':full_path, 'title':'Manage Customer Source', 'action':'source'}
-            # return render(request, 'crm/sub_update.html', context, )        
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
             return 'go', 'crm/sub_update.html', context
     # ---- Customer Source ---->
 
     # <---- Customer Information ----
-        elif action == 'information':
+        title = 'Manage Customer Information'
+        action_out = 'information'
+        if action == action_out:
             table = CustomerInformation.objects.filter(Q(company=company))
-            infoform = CustomerInfoForm()
-            context = context | {'table':table, 'form': infoform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Information', 'action':'information'}
-            # return render(request, 'crm/sub_update.html', context)
+            form = CustomerInfoForm()
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
             return 'go', 'crm/sub_update.html', context
-        elif action == 'update_information':
-            infoform = CustomerInfoForm(request.POST)
-            if infoform.is_valid():
-                # get the id of the customer group from the form
-                pk = infoform['id'].value()
-                info = CustomerInformation.objects.get(pk=pk)
-
-                info.name = infoform['name'].value()
-                info.description = infoform['description'].value()
-                info.save()
-                messages.success(request, 'Update success' )
+        elif action == 'update_' + action_out:
+            form = CustomerInfoForm(request.POST)
+            if form.is_valid():
+                pk = form['id'].value()
+                obj = CustomerInformation.objects.get(pk=pk)
+                obj.name = form['name'].value()
+                obj.description = form['description'].value()
+                obj.save()
+                messages.success(request, 'Update success')
             table = CustomerInformation.objects.filter(Q(company=company))
-            context = context | {'table':table, 'form': infoform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Information', 'action':'information'}
-            # return render(request, 'crm/sub_update.html', context)
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
             return 'go', 'crm/sub_update.html', context
-        elif action == 'new_information':
+        elif action == 'new_' + action_out:
             CustomerInformation.objects.create(company=company, name='', description='')
-            infoform = CustomerInfoForm(request.POST)
-
+            form = CustomerInfoForm(request.POST)
             table = CustomerInformation.objects.filter(Q(company=company))
-            context = context | {'table':table, 'form': infoform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Information', 'action':'information'}
-            # return render(request, 'crm/sub_update.html', context, )
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
             return 'go', 'crm/sub_update.html', context
-        elif action == 'del_information':
-            infoform = CustomerInfoForm(request.POST)
-            if infoform.is_valid():
-                pk = infoform['id'].value()
+        elif action == 'del_' + action_out:
+            form = CustomerInfoForm(request.POST)
+            if form.is_valid():
+                pk = form['id'].value()
                 CustomerInformation.objects.get(pk=pk).delete()
-
             table = CustomerInformation.objects.filter(Q(company=company))
-            context = context | {'table':table, 'form': infoform, 'company':company, 'customer':customer, 'back_url':full_path, 'title':'Manage Customer Information', 'action':'information'}
-            # return render(request, 'crm/sub_update.html', context, )
+            context = context | {'table': table, 'form': form, 'company': company, 'back_url': full_path, 'title': title, 'action': action_out}
             return 'go', 'crm/sub_update.html', context
     # ---- Customer Information ---->
 

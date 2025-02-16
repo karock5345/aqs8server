@@ -16959,3 +16959,84 @@ INFO 2025-02-14 22:55:46,403 runserver>log_action [mHTTP GET /crm/product/ 200 
 INFO 2025-02-14 22:56:05,468 runserver>log_action [mHTTP GET /crm/product/?q_priceto=20000 200 [0.07, 127.0.0.1:17516][0m
 INFO 2025-02-14 22:56:09,883 runserver>log_action [mHTTP GET /crm/product/?q_pricefrom=5000&q_priceto=20000 200 [0.07, 127.0.0.1:17516][0m
 INFO 2025-02-14 22:56:15,174 runserver>log_action [mHTTP GET /crm/product/ 200 [0.06, 127.0.0.1:17516][0m
+INFO 2025-02-15 21:31:08,504 base>start Scheduler started
+INFO 2025-02-15 21:31:08,514 apps>ready    *** Queuing System Started ***
+INFO 2025-02-15 21:31:08,514 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-15 21:31:08,515 apps>sub_init -SCH- Now:02/16/2025, 04:31:08
+INFO 2025-02-15 21:31:08,655 apps>sub_init -SCH- Migrations are needed
+INFO 2025-02-15 21:31:08,658 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-15 21:31:10,047 base>start Scheduler started
+INFO 2025-02-15 21:31:10,080 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-15 21:31:10,944 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-15 21:31:10,944 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-15 21:31:10,945 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-15 21:31:18,668 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-15 21:31:28 MST)" (scheduled at 2025-02-15 21:31:18.657989-07:00)
+INFO 2025-02-15 21:31:18,675 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-15 21:31:18,675 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-15 21:31:18,675 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-15 21:31:28 MST)" executed successfully
+INFO 2025-02-15 21:50:57,682 base>start Scheduler started
+INFO 2025-02-15 21:50:57,688 apps>ready    *** Queuing System Started ***
+INFO 2025-02-15 21:50:57,688 apps>sub_init -SCH- Schedule INIT start @ base.sch.view.py -SCH-
+INFO 2025-02-15 21:50:57,688 apps>sub_init -SCH- Now:02/16/2025, 04:50:57
+INFO 2025-02-15 21:50:57,787 apps>sub_init -SCH- Migrations are needed
+INFO 2025-02-15 21:50:57,788 base>_real_add_job Added job "_delStartupFlag" to job store "default"
+INFO 2025-02-15 21:50:59,175 base>start Scheduler started
+INFO 2025-02-15 21:50:59,211 autoreload>run_with_reloader Watching for file changes with StatReloader
+INFO 2025-02-15 21:50:59,996 server>run HTTP/2 support not enabled (install the http2 and tls Twisted extras)
+INFO 2025-02-15 21:50:59,997 server>run Configuring endpoint tcp:port=8000:interface=0.0.0.0
+INFO 2025-02-15 21:50:59,998 server>listen_success Listening on TCP address 0.0.0.0:8000
+INFO 2025-02-15 21:51:03,442 runserver>log_action [32mHTTP GET / 302 [0.00, 127.0.0.1:22542][0m
+INFO 2025-02-15 21:51:03,459 runserver>log_action [mHTTP GET /login/ 200 [0.01, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:07,796 base>run_job Running job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-15 21:51:17 MST)" (scheduled at 2025-02-15 21:51:07.788359-07:00)
+INFO 2025-02-15 21:51:07,803 jobs>_delStartupFlag --- Deleted StartupFlag ---
+INFO 2025-02-15 21:51:07,804 base>remove_job Removed job job_delStartupFlag
+INFO 2025-02-15 21:51:07,804 base>run_job Job "_delStartupFlag (trigger: interval[0:00:10], next run at: 2025-02-15 21:51:17 MST)" executed successfully
+INFO 2025-02-15 21:51:07,909 runserver>log_action [32mHTTP POST /login/ 302 [0.25, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:07,983 runserver>log_action [mHTTP GET / 200 [0.07, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:16,747 runserver>log_action [mHTTP GET /crm/quotation/ 200 [0.08, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:23,645 runserver>log_action [32mHTTP POST /crm/quotation/ 302 [0.07, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:23,786 runserver>log_action [mHTTP GET /crm/quotation/6/ 200 [0.14, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:28,025 runserver>log_action [mHTTP POST /crm/quotation/6/ 200 [0.06, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:32,909 runserver>log_action [mHTTP POST /crm/quotation/6/ 200 [0.06, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:33,602 runserver>log_action [mHTTP POST /crm/quotation/6/ 200 [0.07, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:37,564 runserver>log_action [mHTTP POST /crm/quotation/6/ 200 [0.06, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:39,125 runserver>log_action [mHTTP GET /crm/quotation/6/ 200 [0.07, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:41,580 runserver>log_action [mHTTP POST /crm/quotation/6/ 200 [0.06, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:44,570 runserver>log_action [mHTTP POST /crm/quotation/6/ 200 [0.06, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:47,745 runserver>log_action [mHTTP POST /crm/quotation/6/ 200 [0.06, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:48,386 runserver>log_action [mHTTP GET /crm/quotation/6/ 200 [0.07, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:51,139 runserver>log_action [mHTTP POST /crm/quotation/6/ 200 [0.05, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:53,241 runserver>log_action [mHTTP POST /crm/quotation/6/ 200 [0.07, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:51:58,582 runserver>log_action [mHTTP POST /crm/quotation/6/ 200 [0.06, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:00,548 runserver>log_action [mHTTP GET /crm/quotation/6/ 200 [0.07, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:02,183 runserver>log_action [mHTTP POST /crm/quotation/6/ 200 [0.06, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:04,870 runserver>log_action [mHTTP POST /crm/quotation/6/ 200 [0.06, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:06,159 runserver>log_action [mHTTP GET /crm/quotation/6/ 200 [0.07, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:16,425 runserver>log_action [mHTTP GET /crm/invoice/ 200 [0.08, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:20,549 runserver>log_action [mHTTP GET /crm/receipt/ 200 [0.07, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:23,637 runserver>log_action [mHTTP GET /crm/customer/ 200 [0.07, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:25,238 runserver>log_action [mHTTP GET /crm/customer-update/2/ 200 [0.06, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:26,782 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.01, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:28,019 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.02, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:31,434 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.02, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:32,783 runserver>log_action [mHTTP GET /crm/customer-update/2/ 200 [0.06, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:34,491 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.01, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:36,306 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.02, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:37,341 runserver>log_action [mHTTP GET /crm/customer-update/2/ 200 [0.07, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:38,699 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.01, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:42,667 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.02, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:43,857 runserver>log_action [mHTTP GET /crm/customer-update/2/ 200 [0.06, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:45,288 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.01, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:47,139 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.02, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:48,654 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.02, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:50,371 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.02, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:53,262 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.02, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:54,069 runserver>log_action [mHTTP GET /crm/customer-update/2/ 200 [0.06, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:55,361 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.01, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:57,110 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.02, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:57,648 runserver>log_action [mHTTP GET /crm/customer-update/2/ 200 [0.06, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:52:59,903 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.01, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:53:06,976 runserver>log_action [mHTTP POST /crm/customer-update/2/ 200 [0.02, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:53:08,464 runserver>log_action [mHTTP GET /crm/customer-update/2/ 200 [0.11, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:53:17,648 runserver>log_action [32mHTTP POST /crm/customer-update/2/ 302 [0.02, 127.0.0.1:22544][0m
+INFO 2025-02-15 21:53:17,719 runserver>log_action [mHTTP GET /crm/customer/ 200 [0.07, 127.0.0.1:22544][0m
