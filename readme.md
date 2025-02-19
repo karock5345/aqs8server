@@ -5,6 +5,7 @@
 - Add new function : CRM Suppliers System.
 - Add new function : CRM Products and Services System. (This is better code for the future)
 - Complete Quotation System, 'Add item', 'Copy to new Quotation', 'Copy to new Invoice', 'New customer' then go back to Quotation.
+- Fixed bug Voice do not work Ticket Type "AA", "BA" ...: Voice WS base/ws.py line: 373
 
 <h3 style="color:orange;">Version 8.3.11</h3>
 

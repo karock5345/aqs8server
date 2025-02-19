@@ -120,21 +120,28 @@ class DispPanelConsumer(AsyncWebsocketConsumer):
             if exist == False:
                 new_ws_connected_dict(self.bcode, self.ws_str)
 
-        if error == '':        
-            await self.channel_layer.group_add(
-                self.room_group_name,
-                self.channel_name
-            )
+        if error == '':
+            try:
+                await self.channel_layer.group_add(
+                    self.room_group_name,
+                    self.channel_name
+                )
 
-            await self.accept()
+                await self.accept()
 
-            ip = self.scope['client'][0]
-            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
-            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
-            logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
-        else :
+                ip = self.scope['client'][0]
+                ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
+                ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
+                logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
+            except:
+                error = 'DispPanelConsumer: Error in connect (Redis maybe down).'
+        
+        if error != '':
             logger.info('Error:' + error )
-            await self.close()
+            try:
+                await self.close()
+            except:
+                pass
             
 
     # Receive message from room group
@@ -153,8 +160,11 @@ class DispPanelConsumer(AsyncWebsocketConsumer):
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
 
         ip = self.scope['client'][0]
-        ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
-        ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        try:
+            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
+            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        except:
+            pass
         logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
@@ -180,16 +190,18 @@ class Report_ProgressProcessConsumer(AsyncWebsocketConsumer):
         self.room_group_name = 'progress_p_' + self.ptask_id
         logger.info('connecting:' + self.room_group_name )
         
-        await self.channel_layer.group_add(
-                self.room_group_name,
-                self.channel_name
-            )
+        try:
+            await self.channel_layer.group_add(
+                    self.room_group_name,
+                    self.channel_name
+                )
 
-        await self.accept()
+            await self.accept()
 
-        # Start polling the task progress
-        await self.check_progress()
-
+            # Start polling the task progress
+            await self.check_progress()
+        except:
+            logger.error('Error in connect Report_ProgressProcessConsumer (Redis maybe down).')
     async def disconnect(self, close_code):
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
 
@@ -257,29 +269,38 @@ class ReportRaw_ProgressConsumer(AsyncWebsocketConsumer):
             if exist == False:
                 new_ws_connected_dict(self.bcode, self.ws_str)   
 
-        if error == '':        
-            await self.channel_layer.group_add(
-                    self.room_group_name,
-                    self.channel_name
-                )            
-            await self.accept()
-            ip = self.scope['client'][0]
-            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
-            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
-            logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
+        if error == '':
+            try:        
+                await self.channel_layer.group_add(
+                        self.room_group_name,
+                        self.channel_name
+                    )            
+                await self.accept()
+                ip = self.scope['client'][0]
+                ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
+                ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
+                logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
 
-            # Start polling the task progress
-            await self.check_progress()
-        else:
+                # Start polling the task progress
+                await self.check_progress()
+            except:
+                error = 'Error in connect ReportRaw_ProgressConsumer (Redis maybe down).'
+        if error != '':        
             logger.error('Error:' + error )
-            await self.close()
+            try:
+                await self.close()
+            except:
+                pass
             
 
     async def disconnect(self, close_code):
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
         ip = self.scope['client'][0]
-        ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
-        ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        try:
+            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
+            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        except:
+            pass  
         logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )
 
     async def check_progress(self):
@@ -368,19 +389,26 @@ class FlashLightConsumer(AsyncWebsocketConsumer):
                 new_ws_connected_dict(self.bcode, self.ws_str) 
 
         if error == '': 
-            await self.channel_layer.group_add(
-                self.room_group_name,
-                self.channel_name
-            )
+            try:
+                await self.channel_layer.group_add(
+                    self.room_group_name,
+                    self.channel_name
+                )
 
-            await self.accept()
-            ip = self.scope['client'][0]
-            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
-            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
-            logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
-        else :
+                await self.accept()
+                ip = self.scope['client'][0]
+                ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
+                ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
+                logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
+            except:
+                error = 'FlashLightConsumer: Error in connect (Redis maybe down).'
+
+        if error != '':
             logger.error('Error:' + error )
-            await self.close()
+            try:
+                await self.close()
+            except:
+                pass
             
 
     # Receive message from room group
@@ -398,8 +426,11 @@ class FlashLightConsumer(AsyncWebsocketConsumer):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
         ip = self.scope['client'][0]
-        ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
-        ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        try:
+            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
+            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        except:
+            pass  
         logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
@@ -468,20 +499,26 @@ class CounterStatusConsumer(AsyncWebsocketConsumer):
             if exist == False:
                 new_ws_connected_dict(self.bcode, self.ws_str)
 
-        if error == '':                    
-            await self.channel_layer.group_add(
-                self.room_group_name,
-                self.channel_name
-            )
-            await self.accept()
-            ip = self.scope['client'][0]
-            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
-            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
-            logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
+        if error == '':
+            try:
+                await self.channel_layer.group_add(
+                    self.room_group_name,
+                    self.channel_name
+                )
+                await self.accept()
+                ip = self.scope['client'][0]
+                ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
+                ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
+                logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
+            except:
+                error = 'CounterStatusConsumer: Error in connect (Redis maybe down).'
 
-        else :
+        if error != '':
             logger.error('Error:' + error )
-            await self.close()
+            try:
+                await self.close()
+            except:
+                pass
             
 
     # Receive message from room group
@@ -498,8 +535,11 @@ class CounterStatusConsumer(AsyncWebsocketConsumer):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
         ip = self.scope['client'][0]
-        ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
-        ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        try:
+            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
+            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        except:
+            pass  
         logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
@@ -555,18 +595,24 @@ class SMSConsumer(AsyncWebsocketConsumer):
                 new_ws_connected_dict(self.bcode, self.ws_str)
 
         if error == '':
-            await self.channel_layer.group_add(
-                self.room_group_name,
-                self.channel_name
-            )
-            await self.accept()
-            ip = self.scope['client'][0]
-            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
-            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
-            logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )            
-        else :
+            try:
+                await self.channel_layer.group_add(
+                    self.room_group_name,
+                    self.channel_name
+                )
+                await self.accept()
+                ip = self.scope['client'][0]
+                ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
+                ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
+                logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )            
+            except:
+                error = 'SMSConsumer: Error in connect (Redis maybe down).'
+        if error != '':
             logger.error('Error:' + error )
-            await self.close()
+            try:
+                await self.close()
+            except:
+                pass
             
 
     # Receive message from room group
@@ -584,8 +630,11 @@ class SMSConsumer(AsyncWebsocketConsumer):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
         ip = self.scope['client'][0]
-        ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
-        ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        try:
+            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
+            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        except:
+            pass  
         logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
@@ -649,19 +698,24 @@ class Voice830Consumer(AsyncWebsocketConsumer):
                 new_ws_connected_dict(self.bcode, self.ws_str) 
 
         if error == '':
-            await self.channel_layer.group_add(
-                self.room_group_name,
-                self.channel_name
-            )
-            await self.accept()
-            ip = self.scope['client'][0]
-            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
-            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
-            logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
-
-        else :
+            try:
+                await self.channel_layer.group_add(
+                    self.room_group_name,
+                    self.channel_name
+                )
+                await self.accept()
+                ip = self.scope['client'][0]
+                ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
+                ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
+                logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
+            except:
+                error = 'Voice830Consumer: Error in connect (Redis maybe down).'
+        if error != '':
             logger.error('Error:' + error )
-            await self.close()
+            try:
+                await self.close()
+            except:
+                pass
             
 
     # Receive message from room group
@@ -679,8 +733,11 @@ class Voice830Consumer(AsyncWebsocketConsumer):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
         ip = self.scope['client'][0]
-        ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
-        ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        try:
+            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
+            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        except:
+            pass  
         logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )        
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
@@ -744,19 +801,24 @@ class VoiceConsumer(AsyncWebsocketConsumer):
                 new_ws_connected_dict(self.bcode, self.ws_str) 
 
         if error == '':
-            await self.channel_layer.group_add(
-                self.room_group_name,
-                self.channel_name
-            )
-            await self.accept()
-            ip = self.scope['client'][0]
-            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
-            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
-            logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
-
-        else :
+            try:
+                await self.channel_layer.group_add(
+                    self.room_group_name,
+                    self.channel_name
+                )
+                await self.accept()
+                ip = self.scope['client'][0]
+                ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
+                ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
+                logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
+            except:
+                error = 'VoiceConsumer: Error in connect (Redis maybe down).'
+        if error != '':        
             logger.error('Error:' + error )
-            await self.close()
+            try:
+                await self.close()
+            except:
+                pass
             
 
     # Receive message from room group
@@ -774,8 +836,11 @@ class VoiceConsumer(AsyncWebsocketConsumer):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
         ip = self.scope['client'][0]
-        ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
-        ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        try:
+            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
+            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        except:
+            pass  
         logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )        
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
@@ -845,21 +910,25 @@ class TicketStatusConsumer(AsyncWebsocketConsumer):
             # check bcode and ct (countertype) is not exit do not accept connection
             error = await check_input()     
 
-        if error == '':           
-            await self.channel_layer.group_add(
-                self.room_group_name,
-                self.channel_name
-            )
-            await self.accept()
-            ip = self.scope['client'][0]           
-            ws_connected_dict[self.bcode][self.ws_str]['pub']['count'] = ws_connected_dict[self.bcode][self.ws_str]['pub']['count'] + 1
-            ws_connected_dict[self.bcode][self.ws_str]['pub']['ip'].append(ip)
-            logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['pub']['count']) + '/' + str(ws_connected_max) + ']' )
-            
-
-        else :
+        if error == '': 
+            try:          
+                await self.channel_layer.group_add(
+                    self.room_group_name,
+                    self.channel_name
+                )
+                await self.accept()
+                ip = self.scope['client'][0]           
+                ws_connected_dict[self.bcode][self.ws_str]['pub']['count'] = ws_connected_dict[self.bcode][self.ws_str]['pub']['count'] + 1
+                ws_connected_dict[self.bcode][self.ws_str]['pub']['ip'].append(ip)
+                logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['pub']['count']) + '/' + str(ws_connected_max) + ']' )
+            except:
+                error = 'TicketStatusConsumer: Error in connect (Redis maybe down).'
+        if error != '':
             logger.error('Error:' + error )
-            await self.close()
+            try:
+                await self.close()
+            except:
+                pass
             
 
     # Receive message from room group
@@ -935,20 +1004,25 @@ class PrintConsumer(AsyncWebsocketConsumer):
             if exist == False:
                 new_ws_connected_dict(self.bcode, self.ws_str)   
 
-        if error == '':          
-            await self.channel_layer.group_add(
-                self.room_group_name,
-                self.channel_name
-            )
-            await self.accept()
-            ip = self.scope['client'][0]           
-            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
-            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
-            logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
-            
-        else :
+        if error == '':
+            try:
+                await self.channel_layer.group_add(
+                    self.room_group_name,
+                    self.channel_name
+                )
+                await self.accept()
+                ip = self.scope['client'][0]           
+                ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
+                ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
+                logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
+            except:
+                error = 'PrintConsumer: Error in connect (Redis maybe down).'
+        if error != '':
             logger.error('Error:' + error )
-            await self.close()
+            try:
+                await self.close()
+            except:
+                pass
             
 
     # Receive message from room group
@@ -966,8 +1040,11 @@ class PrintConsumer(AsyncWebsocketConsumer):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
         ip = self.scope['client'][0]
-        ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
-        ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        try:
+            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
+            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        except:
+            pass  
         logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
@@ -980,6 +1057,8 @@ class PrintConsumer(AsyncWebsocketConsumer):
             connection = self.__class__.for_channel(channel_name)
             connections.append(connection)
         return connections
+
+
 class PrinterStatusConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         @sync_to_async
@@ -1019,20 +1098,25 @@ class PrinterStatusConsumer(AsyncWebsocketConsumer):
             if exist == False:
                 new_ws_connected_dict(self.bcode, self.ws_str) 
 
-        if error == '':          
-            await self.channel_layer.group_add(
-                self.room_group_name,
-                self.channel_name
-            )
-            await self.accept()
-            ip = self.scope['client'][0]
-            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
-            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
-            logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
-
-        else :
+        if error == '':
+            try:
+                await self.channel_layer.group_add(
+                    self.room_group_name,
+                    self.channel_name
+                )
+                await self.accept()
+                ip = self.scope['client'][0]
+                ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
+                ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
+                logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
+            except:
+                error = 'PrinterStatusConsumer: Error in connect. (Redis mayb be down)'
+        if error != '':
             logger.error('Error:' + error )
-            await self.close()
+            try:
+                await self.close()
+            except:
+                pass
             
 
     # Receive message from room group
@@ -1050,8 +1134,11 @@ class PrinterStatusConsumer(AsyncWebsocketConsumer):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
         ip = self.scope['client'][0]
-        ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
-        ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        try:
+            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
+            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        except:
+            pass  
         logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
@@ -1115,20 +1202,27 @@ class QLConsumer(AsyncWebsocketConsumer):
             if exist == False:
                 new_ws_connected_dict(self.bcode, self.ws_str)   
 
-        if error == '':          
-            await self.channel_layer.group_add(
-                self.room_group_name,
-                self.channel_name
-            )    
-            await self.accept()
-            ip = self.scope['client'][0]
-            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
-            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
-            logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )            
+        if error == '':
+            try:          
+                await self.channel_layer.group_add(
+                    self.room_group_name,
+                    self.channel_name
+                )    
+                await self.accept()
+                ip = self.scope['client'][0]
+                ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
+                ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
+                logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )            
+            except:
+                error = 'QLConsumer: Error in connect (Redis maybe down).'
 
-        else :
+
+        if error != '':
             logger.error('Error:' + error )
-            await self.close()
+            try:
+                await self.close()
+            except:
+                pass
             
 
     # Receive message from room group
@@ -1146,8 +1240,11 @@ class QLConsumer(AsyncWebsocketConsumer):
         # Leave room group
         await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
         ip = self.scope['client'][0]
-        ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
-        ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        try:
+            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
+            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+        except:
+            pass  
         logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')        
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
@@ -1228,26 +1325,31 @@ class WebTVConsumer(AsyncWebsocketConsumer):
             self.error = await check_input() 
 
 
-        if self.error == '':        
-            await self.channel_layer.group_add(
-                self.room_group_name,
-                self.channel_name
-            )
-            await self.accept()
-            ip = self.scope['client'][0]
+        if self.error == '':
+            try:
+                await self.channel_layer.group_add(
+                    self.room_group_name,
+                    self.channel_name
+                )
+                await self.accept()
+                ip = self.scope['client'][0]
 
-            if self.route == 'wtv':
-                ws_connected_dict[self.bcode][self.ws_str]['pub']['count'] = ws_connected_dict[self.bcode][self.ws_str]['pub']['count'] + 1
-                ws_connected_dict[self.bcode][self.ws_str]['pub']['ip'].append(ip)
-                logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['pub']['count']) + '/' + str(ws_connected_max) + ']' )
-            if self.route == 'webtv':
-                ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
-                ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
-                logger.info('IP ' + ip +  ' Connected :' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count'])+ ']' )
-        else :
-            # logger.error('Error:' + self.error )
-            # await self.disconnect('reject')
-            await self.close()
+                if self.route == 'wtv':
+                    ws_connected_dict[self.bcode][self.ws_str]['pub']['count'] = ws_connected_dict[self.bcode][self.ws_str]['pub']['count'] + 1
+                    ws_connected_dict[self.bcode][self.ws_str]['pub']['ip'].append(ip)
+                    logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['pub']['count']) + '/' + str(ws_connected_max) + ']' )
+                if self.route == 'webtv':
+                    ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
+                    ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
+                    logger.info('IP ' + ip +  ' Connected :' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count'])+ ']' )
+            except:
+                self.error = 'WebTVConsumer: Error in connect (Redis maybe down).'
+        if self.error != '':
+            logger.error('Error:' + self.error )
+            try:
+                await self.close()
+            except:
+                pass
             
 
     # Receive message from room group
