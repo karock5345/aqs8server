@@ -37,6 +37,7 @@ def check_redis_connection():
 # ws to Display Panel cmd call / recall a ticket
 async def wssenddispcall(branch, counterstatus, countertype, ticket):
     error = ''
+
     if not check_redis_connection():
         error = 'Redis connection failed - Unable to send wssenddispcall message'
         logger.error(error)
@@ -334,6 +335,17 @@ async def wsrochesms(bcode, tel, msg):
 #   "data":50
 # }
 async def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
+    # server will repeat send 3 times for prevent lost message
+    # {
+    #  "id": "123456",
+    #  "cmd":"voice",
+    #  "data":
+    #    {
+    #     "lang": "[ENG]", 
+    #     "voice_str": "[A],[0],[0],[5],[C3]",
+    #     }
+    # }
+
     context = None
     error = ''
 
@@ -389,6 +401,20 @@ async def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, c
             error = 'Counter Status not found.'
 
     if error == '' : 
+        # volume
+        # generate message id
+
+        msgid = timezone.now().strftime('%Y%m%d%H%M%S%f') + '_vol_' + ttype + '_' + tno + '_' + cno
+        
+        volume = branch.voice_volume
+        if volume <= 100 and volume >= 0:
+            json_tx = {
+                'id': msgid,
+                'cmd':'vol',
+                'data': volume
+            }
+            send(json_tx, 'Volume')
+        
         lang_list = []
         for i in range(1,100):
             if branch.language1 == i:
@@ -420,21 +446,16 @@ async def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, c
         voice_str = voice_str_type + voice_str + counter_voice
         voice_oh_str = voice_str_type + voice_oh_str + counter_voice
 
-        # volume
-        volume = branch.voice_volume
-        if volume <= 100 and volume >= 0:
-            json_tx = {
-                'cmd':'vol',
-                'data': volume
-            }
-            send(json_tx, 'Volume')
+
 
         # play effect sound
         if len(lang_list) > 0:
             if branch.before_enabled == True:
+                msgid = timezone.now().strftime('%Y%m%d%H%M%S%f') + '_be_' + ttype + '_' + tno + '_' + cno
                 sound = branch.before_sound
                 if sound != '' or sound != None:
                     json_tx ={
+                        'id': msgid,
                         'cmd':'voice',
                         'data': {
                                 'lang': '[SOUND]',
@@ -442,9 +463,15 @@ async def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, c
                                 }
                     }
                     send(json_tx, 'Before Sound')
+
+        # generate message id
+
+        msgid = timezone.now().strftime('%Y%m%d%H%M%S%f') + '_v_' + ttype + '_' + tno + '_' + cno
+                   
         # play voice
         for lang in lang_list:
             json_tx = {
+                    'id': msgid,
                     'cmd':'voice',
                     'data':
                     {
@@ -454,6 +481,7 @@ async def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, c
                 }
             if branch.O_Replace_Zero == True and lang == '[ENG]':
                 json_tx = {
+                    'id': msgid,
                     'cmd':'voice',
                     'data':
                     {
@@ -483,7 +511,10 @@ async def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, c
             if branch.after_enabled == True:
                 sound = branch.after_sound
                 if sound != '' or sound != None:
+                    msgid = timezone.now().strftime('%Y%m%d%H%M%S%f') + '_af_' + ttype + '_' + tno + '_' + cno
+
                     json_tx ={
+                        'id': msgid,
                         'cmd':'voice',
                         'data': {
                                 'lang': '[SOUND]',
@@ -499,7 +530,9 @@ async def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, c
 
 
 async def wssendvoice(bcode, countertypename, ttype, tno, cno):
-    # {"cmd":"voice",
+    # {
+    #  "id": "123456",
+    #  "cmd":"voice",
     #  "data":
     #    {
     #     "tickettype": "A", 
@@ -532,9 +565,17 @@ async def wssendvoice(bcode, countertypename, ttype, tno, cno):
             countertype = ctypeobj[0]
         else :
             error = 'Counter Type not found.' 
+    # generate message id
+    if error == '' :
+        try:
+            msgid = timezone.now().strftime('%Y%m%d%H%M%S%f') + '_' + ttype + '_' + tno + '_' + cno
+        except:
+            error = 'Error generate message id'
 
     if error == '' : 
-        json_tx = {'cmd': 'voice',
+        json_tx = {
+            'id': msgid,
+            'cmd': 'voice',
             'data': {
             'tickettype' : ttype,
             'ticketnumber' : tno,
@@ -644,6 +685,7 @@ async def wsSendTicketStatus(bcode, tickettype, ticketnumber, sc):
 
 async def wsSendPrintTicket(bcode, tickettype, ticketnumber, tickettime, tickettext, printernumber):
     # {
+    #    "id": msgid,
     #     "cmd": "prt",
     #     "data": 
     #         {
@@ -692,7 +734,10 @@ async def wsSendPrintTicket(bcode, tickettype, ticketnumber, tickettime, tickett
         else :
             error = 'Branch not found.'
     if error == '':
+        msgid = timezone.now().strftime('%Y%m%d%H%M%S%f') + '_t_' + tickettype + '_' + ticketnumber + '_' + stickettime
+
         jsontx = {
+            "id": msgid,
             "cmd":"prt",
             "data": 
                 {

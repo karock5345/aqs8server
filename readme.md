@@ -7,6 +7,7 @@
 <h3 style="color:orange;">Version 8.4.0</h3>
 
 - Prevent WS data lost. Send data to "Display Ticket" "Voice" "Print Ticket" repact 3 times
+  - add message_id to the context
   - base\ws.py -> function wssenddispcall -> async_to_sync (channel_layer.group_send)(channel_group_name, context) x3
   - base\ws.py -> function wssendvoice -> async_to_sync (channel_layer.group_send)(channel_group_name, context) x3
   - base\ws.py -> function wsSendPrintTicket -> async_to_sync (channel_layer.group_send)(channel_group_name, context) x3
