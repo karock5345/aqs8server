@@ -151,6 +151,8 @@ class DispPanelConsumer(AsyncWebsocketConsumer):
         # Send message to WebSocket
         try:
             await self.send(text_data=str_tx)
+            # delay 1 second
+            await asyncio.sleep(1)
         except:
             # If the channel layer is not available, send the data directly to all WebSocket connections in the group
             for connection in await self.get_all_connections():
@@ -725,6 +727,8 @@ class Voice830Consumer(AsyncWebsocketConsumer):
         # Send message to WebSocket
         try:
             await self.send(text_data=str_tx)
+            # delay 1 second
+            await asyncio.sleep(1)
         except:
             # If the channel layer is not available, send the data directly to all WebSocket connections in the group
             for connection in await self.get_all_connections():
@@ -828,6 +832,8 @@ class VoiceConsumer(AsyncWebsocketConsumer):
         # Send message to WebSocket
         try:
             await self.send(text_data=str_tx)
+            # delay 1 second
+            await asyncio.sleep(1)
         except:
             # If the channel layer is not available, send the data directly to all WebSocket connections in the group
             for connection in await self.get_all_connections():
@@ -1032,6 +1038,8 @@ class PrintConsumer(AsyncWebsocketConsumer):
         # Send message to WebSocket
         try:
             await self.send(text_data=str_tx)
+            # delay 1 second
+            await asyncio.sleep(1)
         except:
             # If the channel layer is not available, send the data directly to all WebSocket connections in the group
             for connection in await self.get_all_connections():

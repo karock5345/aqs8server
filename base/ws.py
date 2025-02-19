@@ -86,7 +86,9 @@ async def wssenddispcall(branch, counterstatus, countertype, ticket):
         logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            logger.info('...Done')
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            logger.info('...Done x3')
         except:
             logger.error('...ERROR:Redis Server is down!')
     if error != '':
@@ -349,7 +351,9 @@ async def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, c
         logger.info('channel_group_name:' + channel_group_name + ' sending data (' + remark + ')-> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            logger.info('...Done')
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            logger.info('...Done x3')
         except Exception as e:
             # error_e = 'WS send voice Error:' + str(e)
             logger.error('...ERROR:Redis Server is down!')
@@ -549,7 +553,9 @@ async def wssendvoice(bcode, countertypename, ttype, tno, cno):
         logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            logger.info('...Done')
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            logger.info('...Done x3')
         except Exception as e:
             # error_e = 'WS send voice Error:' + str(e)
             logger.error('...ERROR:Redis Server is down!')
@@ -710,7 +716,9 @@ async def wsSendPrintTicket(bcode, tickettype, ticketnumber, tickettime, tickett
         logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            logger.info('...Done')
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            logger.info('...Done x3')
         except:
             logger.error('...ERROR:Redis Server is down!')
 

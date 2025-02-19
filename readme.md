@@ -1,13 +1,26 @@
-# AQS version 8.3.12
+# AQS version 8.4.1
+
+<h3 style="color:orange;">Coming up Version 8.4.1</h3>
+
+- Complete Quotation System, 'Add item', 'Copy to new Quotation', 'Copy to new Invoice', 'New customer' then go back to Quotation.
+
+<h3 style="color:orange;">Version 8.4.0</h3>
+
+- Prevent WS data lost. Send data to "Display Ticket" "Voice" "Print Ticket" repact 3 times
+  - base\ws.py -> function wssenddispcall -> async_to_sync (channel_layer.group_send)(channel_group_name, context) x3
+  - base\ws.py -> function wssendvoice -> async_to_sync (channel_layer.group_send)(channel_group_name, context) x3
+  - base\ws.py -> function wsSendPrintTicket -> async_to_sync (channel_layer.group_send)(channel_group_name, context) x3
+  - base\consumers.py -> DispPanelConsumer -> broadcast_message -> add delay 1s
+  - base\consumers.py -> VoiceConsumer -> broadcast_message -> add delay 1s
+  - base\consumers.py -> PrintConsumer -> broadcast_message -> add delay 1s
+
 
 <h3 style="color:orange;">Version 8.3.12</h3>
 
 - Add new function : CRM Suppliers System.
 - Add new function : CRM Products and Services System. (This is better code for the future)
-- Complete Quotation System, 'Add item', 'Copy to new Quotation', 'Copy to new Invoice', 'New customer' then go back to Quotation.
 - Fixed bug Voice do not work Ticket Type "AA", "BA" ...: Voice WS base/ws.py line: 373
 - Improve WS and Consumers for Async send message
-
 
 <h3 style="color:orange;">Version 8.3.11</h3>
 
