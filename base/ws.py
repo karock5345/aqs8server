@@ -16,23 +16,26 @@ import logging
 from django.core.cache import cache
 from redis.exceptions import ConnectionError
 import redis
+from aqs.settings import REDIS_HOST, REDIS_PORT
 
 wsHypertext = 'ws://'
 logger = logging.getLogger(__name__)
 
 
 def check_redis_connection():
+    pingpong = False
     try:
         # Try to ping the Redis server
-        cache.client.ping()
-        return True
+        r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=0)
+        pingpong = r.set('ping', 'pong')
+        return pingpong
     except (ConnectionError, redis.exceptions.ConnectionError):
         return False
     except Exception:
         return False
 
 # ws to Display Panel cmd call / recall a ticket
-def wssenddispcall(branch, counterstatus, countertype, ticket):
+async def wssenddispcall(branch, counterstatus, countertype, ticket):
     error = ''
     if not check_redis_connection():
         error = 'Redis connection failed - Unable to send wssenddispcall message'
@@ -93,7 +96,7 @@ def wssenddispcall(branch, counterstatus, countertype, ticket):
 
 # ws to Display Panel cmd remove a ticket
 # ws to Display Panel cmd clear all ticket
-def wssenddispremoveall(branch,  countertype):
+async def wssenddispremoveall(branch,  countertype):
     str_now = '--:--'
     datetime_now =datetime.now(timezone.utc)
     datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
@@ -123,7 +126,7 @@ def wssenddispremoveall(branch,  countertype):
         logger.error('...ERROR:Redis Server is down!')
     pass
 # ws to Display Panel cmd waiting number of queue by TicketType 
-def wssenddispwait(branch,  countertype, ticket):
+async def wssenddispwait(branch,  countertype, ticket):
     str_now = '--:--'
     datetime_now =datetime.now(timezone.utc)
     datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
@@ -158,7 +161,7 @@ def wssenddispwait(branch,  countertype, ticket):
         logger.error('...ERROR:Redis Server is down!')
     pass
 
-def wssendflashlight(branch, countertype, counterstatus, cmd):
+async def wssendflashlight(branch, countertype, counterstatus, cmd):
     # {"cmd":"light",
     #  "data":
     #    {
@@ -207,7 +210,7 @@ def wssendflashlight(branch, countertype, counterstatus, cmd):
 
 
 
-def wscounterstatus(counterstatus):
+async def wscounterstatus(counterstatus):
     # {"cmd":"cs",
     #  "lastupdate":now,
     #  "data":
@@ -263,7 +266,7 @@ def wscounterstatus(counterstatus):
         logger.error('...ERROR:Redis Server is down!')
 
    
-def wsrochesms(bcode, tel, msg):
+async def wsrochesms(bcode, tel, msg):
     # {"cmd":"sms",
     #  "data":
     #    {
@@ -328,7 +331,7 @@ def wsrochesms(bcode, tel, msg):
 # { "cmd":"vol",
 #   "data":50
 # }
-def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
+async def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
     context = None
     error = ''
 
@@ -491,7 +494,7 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
 
 
 
-def wssendvoice(bcode, countertypename, ttype, tno, cno):
+async def wssendvoice(bcode, countertypename, ttype, tno, cno):
     # {"cmd":"voice",
     #  "data":
     #    {
@@ -557,7 +560,7 @@ def wssendvoice(bcode, countertypename, ttype, tno, cno):
 
 
 
-def wsSendTicketStatus(bcode, tickettype, ticketnumber, sc):
+async def wsSendTicketStatus(bcode, tickettype, ticketnumber, sc):
     # {
     #     "cmd": "tstatus",
     #     "data": 
@@ -633,7 +636,7 @@ def wsSendTicketStatus(bcode, tickettype, ticketnumber, sc):
 
     pass
 
-def wsSendPrintTicket(bcode, tickettype, ticketnumber, tickettime, tickettext, printernumber):
+async def wsSendPrintTicket(bcode, tickettype, ticketnumber, tickettime, tickettext, printernumber):
     # {
     #     "cmd": "prt",
     #     "data": 
@@ -714,7 +717,7 @@ def wsSendPrintTicket(bcode, tickettype, ticketnumber, tickettime, tickettext, p
     if error != '':
         logger.error('WS send print Error:' + error)
 
-def wssendprinterstatus(bcode):
+async def wssendprinterstatus(bcode):
     # {
     #    "cmd":"ps",
     #    "data":[
@@ -779,7 +782,7 @@ def wssendprinterstatus(bcode):
     
 
 
-def wssendql(bcode, countertypename, ticket, cmd):
+async def wssendql(bcode, countertypename, ticket, cmd):
     # {"cmd":"add",
     #  "lastupdate":now,
     #  "data":
@@ -898,7 +901,7 @@ def wssendql(bcode, countertypename, ticket, cmd):
     
 
 
-def wssendwebtv(bcode, countertypename):
+async def wssendwebtv(bcode, countertypename):
     context = None
     error = ''
     str_now = '---'

@@ -163,9 +163,9 @@ class DispPanelConsumer(AsyncWebsocketConsumer):
         try:
             ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
             ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+            logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
         except:
-            pass
-        logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
+            logger.info('Disconnected:' + self.room_group_name )
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
         await self.send(json.dumps(data, cls=DjangoJSONEncoder))
@@ -299,9 +299,9 @@ class ReportRaw_ProgressConsumer(AsyncWebsocketConsumer):
         try:
             ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
             ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+            logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
         except:
-            pass  
-        logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )
+            logger.info('Disconnected:' + self.room_group_name )
 
     async def check_progress(self):
 
@@ -429,9 +429,9 @@ class FlashLightConsumer(AsyncWebsocketConsumer):
         try:
             ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
             ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+            logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
         except:
-            pass  
-        logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )
+            logger.info('Disconnected:' + self.room_group_name )
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
         await self.send(json.dumps(data, cls=DjangoJSONEncoder))
@@ -538,9 +538,9 @@ class CounterStatusConsumer(AsyncWebsocketConsumer):
         try:
             ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
             ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+            logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
         except:
-            pass  
-        logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )
+            logger.info('Disconnected:' + self.room_group_name )
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
         await self.send(json.dumps(data, cls=DjangoJSONEncoder))
@@ -633,9 +633,9 @@ class SMSConsumer(AsyncWebsocketConsumer):
         try:
             ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
             ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+            logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
         except:
-            pass  
-        logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )
+            logger.info('Disconnected:' + self.room_group_name )
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
         await self.send(json.dumps(data, cls=DjangoJSONEncoder))
@@ -736,9 +736,9 @@ class Voice830Consumer(AsyncWebsocketConsumer):
         try:
             ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
             ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+            logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
         except:
-            pass  
-        logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )        
+            logger.info('Disconnected:' + self.room_group_name )        
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
         await self.send(json.dumps(data, cls=DjangoJSONEncoder))
@@ -839,9 +839,9 @@ class VoiceConsumer(AsyncWebsocketConsumer):
         try:
             ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
             ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+            logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
         except:
-            pass  
-        logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )        
+            logger.info('Disconnected:' + self.room_group_name )        
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
         await self.send(json.dumps(data, cls=DjangoJSONEncoder))
@@ -1043,9 +1043,9 @@ class PrintConsumer(AsyncWebsocketConsumer):
         try:
             ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
             ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+            logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
         except:
-            pass  
-        logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']'  )
+            logger.info('Disconnected:' + self.room_group_name )
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
         await self.send(json.dumps(data, cls=DjangoJSONEncoder))
@@ -1137,9 +1137,9 @@ class PrinterStatusConsumer(AsyncWebsocketConsumer):
         try:
             ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
             ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+            logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
         except:
-            pass  
-        logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')
+            logger.info('Disconnected:' + self.room_group_name )
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
         await self.send(json.dumps(data, cls=DjangoJSONEncoder))
@@ -1243,9 +1243,9 @@ class QLConsumer(AsyncWebsocketConsumer):
         try:
             ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
             ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+            logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
         except:
-            pass  
-        logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')        
+            logger.info('Disconnected:' + self.room_group_name )        
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
         await self.send(json.dumps(data, cls=DjangoJSONEncoder))

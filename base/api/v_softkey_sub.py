@@ -864,13 +864,13 @@ def funCounterRecall(user, branch, countertype, counterstatus, logtext, rx_app, 
         # do display and voice temp db
         newdisplayvoice(branch, countertype, counterstatus.counternumber, ticket, datetime_now, user)
         # websocket to web tv
-        # wssendwebtv(branch.bcode, countertype.name)
+        wssendwebtv(branch.bcode, countertype.name)
         # websocket to Display Panel display ticket
         wssenddispcall(branch, counterstatus, countertype, ticket)
         # websocket to voice com and flash light
-        # wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
-        # wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
-        # wssendflashlight(branch, countertype, counterstatus, 'flash')
+        wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
+        wssendflashlight(branch, countertype, counterstatus, 'flash')
 
         status = dict({'status': 'OK'})
         msg =  dict({'msg':'Recall ticket.'}) 
