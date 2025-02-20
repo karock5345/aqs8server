@@ -11,6 +11,7 @@ import logging
 from django.core.serializers.json import DjangoJSONEncoder
 from celery.result import AsyncResult
 import asyncio
+import redis
 
 logger = logging.getLogger(__name__)
 # max. number of WebTVConsumer_pub connected for each branch
@@ -152,7 +153,11 @@ class DispPanelConsumer(AsyncWebsocketConsumer):
         try:
             await self.send(text_data=str_tx)
             # delay 1 second
-            await asyncio.sleep(1)
+            # await asyncio.sleep(1)
+            # await self.send(text_data=str_tx)
+            # # delay 1 second
+            # await asyncio.sleep(1)
+            # await self.send(text_data=str_tx)
         except:
             # If the channel layer is not available, send the data directly to all WebSocket connections in the group
             for connection in await self.get_all_connections():
@@ -512,15 +517,13 @@ class CounterStatusConsumer(AsyncWebsocketConsumer):
                 ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
                 ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
                 logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
-            except:
+            except redis.exceptions.ConnectionError:
                 error = 'CounterStatusConsumer: Error in connect (Redis maybe down).'
-
-        if error != '':
+                # await self.send(json.dumps({"error": "Service temporarily unavailable"}))
+                await self.close()        
+        if error != '': 
             logger.error('Error:' + error )
-            try:
-                await self.close()
-            except:
-                pass
+            
             
 
     # Receive message from room group
@@ -535,8 +538,14 @@ class CounterStatusConsumer(AsyncWebsocketConsumer):
                 await connection.send_data_fallback(str_tx)
     async def disconnect(self, close_code):
         # Leave room group
-        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
-        ip = self.scope['client'][0]
+        try:
+            await self.channel_layer.group_discard(self.room_group_name, self.channel_name)        
+        except redis.exceptions.ConnectionError:
+            pass
+        try:
+            ip = self.scope['client'][0]
+        except:
+            ip = ''
         try:
             ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
             ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
@@ -1117,14 +1126,13 @@ class PrinterStatusConsumer(AsyncWebsocketConsumer):
                 ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
                 ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
                 logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
-            except:
+            except redis.exceptions.ConnectionError:
                 error = 'PrinterStatusConsumer: Error in connect. (Redis mayb be down)'
+                # await self.send(json.dumps({"error": "Service temporarily unavailable"}))
+                await self.close()
         if error != '':
             logger.error('Error:' + error )
-            try:
-                await self.close()
-            except:
-                pass
+
             
 
     # Receive message from room group
@@ -1140,8 +1148,14 @@ class PrinterStatusConsumer(AsyncWebsocketConsumer):
                 await connection.send_data_fallback(str_tx)
     async def disconnect(self, close_code):
         # Leave room group
-        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
-        ip = self.scope['client'][0]
+        try:
+            await self.channel_layer.group_discard(self.room_group_name, self.channel_name)        
+        except redis.exceptions.ConnectionError:
+            pass
+        try:
+            ip = self.scope['client'][0]
+        except:
+            ip = ''
         try:
             ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
             ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
@@ -1221,17 +1235,15 @@ class QLConsumer(AsyncWebsocketConsumer):
                 ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
                 ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
                 logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )            
-            except:
+            except redis.exceptions.ConnectionError:
+                # await self.send(json.dumps({"error": "Service temporarily unavailable"}))
+                await self.close()
                 error = 'QLConsumer: Error in connect (Redis maybe down).'
 
 
         if error != '':
             logger.error('Error:' + error )
-            try:
-                await self.close()
-            except:
-                pass
-            
+
 
     # Receive message from room group
     async def broadcast_message(self, event):
@@ -1246,8 +1258,14 @@ class QLConsumer(AsyncWebsocketConsumer):
                 await connection.send_data_fallback(str_tx)
     async def disconnect(self, close_code):
         # Leave room group
-        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
-        ip = self.scope['client'][0]
+        try:
+            await self.channel_layer.group_discard(self.room_group_name, self.channel_name)        
+        except redis.exceptions.ConnectionError:
+            pass
+        try:
+            ip = self.scope['client'][0]
+        except:
+            ip = ''
         try:
             ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
             ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     

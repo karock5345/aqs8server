@@ -390,9 +390,11 @@ def SoftkeyView(request, pk):
                 if status['status'] == 'OK' and context_call == {'data': {}} :
                     messages.success(request, 'No ticket to call.')
             elif action == 'recall':
-                status, msg = funCounterRecall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Recall ticket ', 'Softkey-web', softkey_version, datetime_now)
+                status, msg =  funCounterRecall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Recall ticket ', 'Softkey-web', softkey_version, datetime_now)
                 if status['status'] == 'OK' :
                     messages.success(request, 'Recall ticket success.')
+                    # how to return to same page after post and do not refresh page
+                    # return None
             elif action == 'process':
                 status, msg = funCounterProcess(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Process ticket ', 'Softkey-web', softkey_version, datetime_now)
             elif action == 'done':

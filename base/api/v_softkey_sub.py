@@ -863,18 +863,62 @@ def funCounterRecall(user, branch, countertype, counterstatus, logtext, rx_app, 
 
         # do display and voice temp db
         newdisplayvoice(branch, countertype, counterstatus.counternumber, ticket, datetime_now, user)
+
+        redis_online = check_redis_connection()
+        # logging.info('redis_online:' + str(redis_online))
+        
         # websocket to web tv
         wssendwebtv(branch.bcode, countertype.name)
         # websocket to Display Panel display ticket
-        wssenddispcall(branch, counterstatus, countertype, ticket)
+        # pass the sub to celery parallel run
+        if redis_online:
+            try:
+                task_display = t_wssenddispcall.apply_async (args=[branch.id, counterstatus.id, countertype.id, ticket.id], countdown=0)
+                logging.info('Start task : t_wssenddispcall send (x3) to Display Panel display ticket')
+            except Exception as e:
+                pass
+        # wssenddispcall(branch, counterstatus, countertype, ticket)
         # websocket to voice com and flash light
-        wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
-        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
-        wssendflashlight(branch, countertype, counterstatus, 'flash')
+        # wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        # wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
+        # wssendflashlight(branch, countertype, counterstatus, 'flash')
 
         status = dict({'status': 'OK'})
         msg =  dict({'msg':'Recall ticket.'}) 
     return status, msg
+
+@shared_task
+def t_WS_Recall():
+    from celery import  current_task
+
+
+    report_str = ''
+    # Get my task ID
+    my_id = current_task.request.id
+    logger.info(f'Recall WS data out (wssenddispcall, wssendvoice, wssendvoice830, wssendflashlight): {my_id}')
+
+    current_task.status = 'PROGRESS'
+
+    # websocket to Display Panel display ticket
+    try:
+        wssenddispcall(branch, counterstatus, countertype, ticket)
+    except Exception as e:
+        current_task.status = 'ERROR'
+    try:
+        # websocket to voice com and flash light
+        # wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
+    except Exception as e:
+        current_task.status = 'ERROR'
+    try:
+        wssendflashlight(branch, countertype, counterstatus, 'flash')    
+    except Exception as e:
+        current_task.status = 'ERROR'
+
+    if current_task.status != 'ERROR':
+        current_task.status = 'SUCCESS'
+        
+    return current_task.status
 
 @transaction.atomic
 def funCounterGet_v830(gettnumber, user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):

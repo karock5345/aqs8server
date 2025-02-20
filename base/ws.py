@@ -17,6 +17,8 @@ from django.core.cache import cache
 from redis.exceptions import ConnectionError
 import redis
 from aqs.settings import REDIS_HOST, REDIS_PORT
+from celery import shared_task
+import time
 
 wsHypertext = 'ws://'
 logger = logging.getLogger(__name__)
@@ -35,7 +37,87 @@ def check_redis_connection():
         return False
 
 # ws to Display Panel cmd call / recall a ticket
-async def wssenddispcall(branch, counterstatus, countertype, ticket):
+@shared_task(default_retry_delay=1, max_retries=1)
+def t_wssenddispcall(branch_id, counterstatus_id, countertype_id, ticket_id):
+    from celery import current_task
+    # Get my task ID
+    my_id = current_task.request.id
+    current_task.status = 'PROGRESS'
+
+    error = ''
+
+    if not check_redis_connection():
+        error = 'Redis connection failed - Unable to send wssenddispcall message'
+        logger.error(error)
+        current_task.status = 'FAILURE'
+
+
+
+    if error == '' :
+
+        branch = Branch.objects.get(id=branch_id)
+        counterstatus = CounterStatus.objects.get(id=counterstatus_id)
+        countertype = CounterType.objects.get(id=countertype_id)
+        ticket = TicketTemp.objects.get(id=ticket_id)
+
+        str_now = '--:--'
+        datetime_now =datetime.now(timezone.utc)
+        datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+        str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
+
+        jticket = {
+                "tickettype": ticket.tickettype_disp,
+                "ticketnumber": ticket.ticketnumber_disp,
+                "tickettime": ticket.tickettime.strftime('%Y-%m-%dT%H:%M:%S.%fZ'),
+                "displaytime": datetime_now.strftime('%Y-%m-%dT%H:%M:%S.%fZ'),
+                "counternumber": counterstatus.counternumber,
+                "wait": ticket.ticketroute.waiting,
+                "flashtime": branch.displayflashtime,
+                "ct_lang1": countertype.lang1,
+                "ct_lang2": countertype.lang2,
+                "ct_lang3": countertype.lang3,
+                "ct_lang4": countertype.lang4,
+                "t_lang1": ticket.ticketformat.touchkey_lang1,
+                "t_lang2": ticket.ticketformat.touchkey_lang2,
+                "t_lang3": ticket.ticketformat.touchkey_lang3,
+                "t_lang4": ticket.ticketformat.touchkey_lang4,
+        }
+
+        jsontx = {
+            "cmd":"call",
+            "data": {
+                "servertime": str_now,
+                "scroll": countertype.displayscrollingtext,
+                "ticket": jticket,
+                }
+            }
+        str_tx = json.dumps(jsontx)        
+        # str_tx = str_tx.replace('"<ticketlist>"', json.dumps(wdserializers.data))
+
+        context = {
+        'type':'broadcast_message',
+        'tx':str_tx
+        }
+        channel_layer = get_channel_layer()
+        channel_group_name = 'disp_' + branch.bcode + '_' + countertype.name
+        logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+        try:
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            time.sleep(1)
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            time.sleep(1)
+            async_to_sync (channel_layer.group_send)(channel_group_name, context)
+            logger.info('...Done x3')
+        except:
+            logger.error('...ERROR:Redis Server is down!')
+    if error != '':
+        logger.error(error)
+    
+    current_task.status = 'SUCCESS'
+    return current_task.status
+
+# ws to Display Panel cmd call / recall a ticket
+def wssenddispcall(branch, counterstatus, countertype, ticket):
     error = ''
 
     if not check_redis_connection():
@@ -87,9 +169,7 @@ async def wssenddispcall(branch, counterstatus, countertype, ticket):
         logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            logger.info('...Done x3')
+            logger.info('...Done')
         except:
             logger.error('...ERROR:Redis Server is down!')
     if error != '':
@@ -954,7 +1034,7 @@ async def wssendql(bcode, countertypename, ticket, cmd):
     
 
 
-async def wssendwebtv(bcode, countertypename):
+def wssendwebtv(bcode, countertypename):
     context = None
     error = ''
     str_now = '---'
