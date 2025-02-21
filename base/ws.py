@@ -432,7 +432,7 @@ def wsrochesms(bcode, tel, msg):
 #          'voice_str': sound,
 #          }
 # }
-def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:CounterStatus, ticket:TicketTemp):
+def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:CounterStatus, ticket:TicketTemp, msgid_head:str):
     context = None
     error = ''
     json_full = ""
@@ -467,7 +467,7 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
         # volume
         # generate message id
 
-        msgid = datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f') + '_vol_' + ticket.tickettype_disp + '_' + ticket.ticketnumber_disp + '_' + counterstatus.counternumber
+        msgid = msgid_head + '_vol_' + ticket.tickettype_disp + '_' + ticket.ticketnumber_disp + '_' + counterstatus.counternumber
         
         volume = branch.voice_volume
         if volume <= 100 and volume >= 0:
@@ -514,7 +514,7 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
         # play effect sound
         if len(lang_list) > 0:
             if branch.before_enabled == True:
-                msgid = datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f') + '_be_' + ticket.tickettype_disp + '_' + ticket.ticketnumber_disp + '_' + counterstatus.counternumber
+                msgid = msgid_head + '_be_' + ticket.tickettype_disp + '_' + ticket.ticketnumber_disp + '_' + counterstatus.counternumber
                 sound = branch.before_sound
                 if sound != '' or sound != None:
                     json_tx ={
@@ -531,7 +531,7 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
 
 
         # generate message id
-        msgid = datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f') + '_v_' + ticket.tickettype_disp + '_' + ticket.ticketnumber_disp + '_' + counterstatus.counternumber
+        msgid = msgid_head + '_v_' + ticket.tickettype_disp + '_' + ticket.ticketnumber_disp + '_' + counterstatus.counternumber
                    
         # play voice
         for lang in lang_list:
@@ -563,7 +563,7 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
             if branch.after_enabled == True:
                 sound = branch.after_sound
                 if sound != '' or sound != None:
-                    msgid = datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f') + '_af_' + ticket.tickettype_disp + '_' + ticket.ticketnumber_disp + '_' + counterstatus.counternumber
+                    msgid = msgid_head + '_af_' + ticket.tickettype_disp + '_' + ticket.ticketnumber_disp + '_' + counterstatus.counternumber
 
                     json_tx ={
                         'id': msgid,

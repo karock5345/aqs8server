@@ -906,9 +906,10 @@ def t_WS_Recall(branch_id, counterstatus_id, countertype_id, ticket_id):
 
     current_task.status = 'PROGRESS'
 
-    # websocket to voice com     
+    # websocket to voice com
+    msgid_h = datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
     try:
-        wssendvoice840(branch, countertype, counterstatus, ticket)
+        wssendvoice840(branch, countertype, counterstatus, ticket, msgid_h)
     except Exception as e:
         current_task.status = 'ERROR'
         return current_task.status
