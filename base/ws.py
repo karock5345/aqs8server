@@ -435,10 +435,12 @@ def wsrochesms(bcode, tel, msg):
 def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:CounterStatus, ticket:TicketTemp):
     context = None
     error = ''
+    json_full = ""
 
     def send(json_tx:str, remark:str):
-        str_tx = json.dumps(json_tx)
-
+        # str_tx = json.dumps(json_tx)
+        str_tx = (json_tx)
+        
         context = {
         'type':'broadcast_message',
         'tx': str_tx,
@@ -474,7 +476,9 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
                 'cmd':'vol',
                 'data': volume
             }
-            send(json_tx, 'Volume')
+
+            # send(json_tx, 'Volume')
+            json_full = json_full + json.dumps(json_tx)
         
         lang_list = []
         for i in range(1,100):
@@ -521,7 +525,10 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
                                 'voice_str': sound,
                                 }
                     }
-                    send(json_tx, 'Before Sound')
+                    # send(json_tx, 'Before Sound')
+                    json_full = json_full + json.dumps(json_tx)
+
+
 
         # generate message id
         msgid = datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f') + '_v_' + ticket.tickettype_disp + '_' + ticket.ticketnumber_disp + '_' + counterstatus.counternumber
@@ -547,7 +554,9 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
                     'voice_str': voice_oh_str,
                     }
                 }
-            send(json_tx, 'Voice')
+            # send(json_tx, 'Voice')
+            json_full = json_full + json.dumps(json_tx)
+
 
         # play effect sound after voice
         if len(lang_list) > 0:
@@ -564,7 +573,10 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
                                 'voice_str': sound,
                                 }
                     }
-                    send(json_tx, 'After Sound')                
+                    # send(json_tx, 'After Sound')
+                    json_full = json_full + json.dumps(json_tx)
+    send(json_full, "Voice")
+
     if error != '':
         error_e = 'WS send voice840 Error:' + error
         logger.error(error_e)

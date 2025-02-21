@@ -906,6 +906,13 @@ def t_WS_Recall(branch_id, counterstatus_id, countertype_id, ticket_id):
 
     current_task.status = 'PROGRESS'
 
+    # websocket to voice com     
+    try:
+        wssendvoice840(branch, countertype, counterstatus, ticket)
+    except Exception as e:
+        current_task.status = 'ERROR'
+        return current_task.status
+
     # websocket to Display Panel display ticket
     try:
         wssenddispcall(branch, counterstatus, countertype, ticket)
@@ -920,12 +927,7 @@ def t_WS_Recall(branch_id, counterstatus_id, countertype_id, ticket_id):
         current_task.status = 'ERROR'
         return current_task.status
     
-    # websocket to voice com     
-    try:
-        wssendvoice840(branch, countertype, counterstatus, ticket)
-    except Exception as e:
-        current_task.status = 'ERROR'
-        return current_task.status
+
 
     # websocket to flash light
     try:
