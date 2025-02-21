@@ -303,7 +303,7 @@ def funCounterCall_v830(user, branch:Branch, countertype, counterstatus, logtext
         # websocket to web tv
         wssendwebtv(branch, countertype)
         # websocket to Display Panel display ticket
-        wssenddispcall(branch,counterstatus, countertype, ticket)
+        wssenddispcall840(branch,counterstatus, countertype, ticket)
         # websocket to softkey (update Queue List)
         wssendql(branch.bcode, countertype.name, ticket, 'del')
         # websocket to web my ticket
@@ -311,6 +311,7 @@ def funCounterCall_v830(user, branch:Branch, countertype, counterstatus, logtext
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
         wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
+        wssendvoice840(branch, countertype, counterstatus, ticket, 'asdf1234')
         wssendflashlight(branch, countertype, counterstatus, 'flash')
 
         # websocket to web softkey for update counter status
@@ -516,6 +517,7 @@ def funCounterCall_old(user, branch, countertype, counterstatus, logtext, rx_app
                 # websocket to voice com and flash light
                 wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
                 wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
+                wssendvoice840(branch, countertype, counterstatus, ticket, 'asdf1234')
                 wssendflashlight(branch, countertype, counterstatus, 'flash')
 
                 # websocket to web softkey for update counter status
@@ -907,7 +909,7 @@ def t_WS_Recall(branch_id, counterstatus_id, countertype_id, ticket_id):
     current_task.status = 'PROGRESS'
 
     # websocket to voice com
-    msgid_h = datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
+    msgid_h = 'voice_recall_' + datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
     try:
         wssendvoice840(branch, countertype, counterstatus, ticket, msgid_h)
     except Exception as e:
@@ -916,7 +918,7 @@ def t_WS_Recall(branch_id, counterstatus_id, countertype_id, ticket_id):
 
     # websocket to Display Panel display ticket
     try:
-        wssenddispcall(branch, counterstatus, countertype, ticket)
+        wssenddispcall840(branch, counterstatus, countertype, ticket)
     except Exception as e:
         current_task.status = 'ERROR'
         return current_task.status
@@ -927,8 +929,6 @@ def t_WS_Recall(branch_id, counterstatus_id, countertype_id, ticket_id):
     except Exception as e:
         current_task.status = 'ERROR'
         return current_task.status
-    
-
 
     # websocket to flash light
     try:
@@ -1073,13 +1073,15 @@ def funCounterGet_v830(gettnumber, user, branch, countertype, counterstatus, log
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
         wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
+        wssendvoice840(branch, countertype, counterstatus, ticket, 'asdf1234')
+
         wssendflashlight(branch, countertype, counterstatus, 'flash')
         # websocket to web softkey for update counter status
         wscounterstatus(counterstatus)
         # websocket to web tv
         wssendwebtv(branch, countertype)
         # websocket to Display Panel display ticket
-        wssenddispcall(branch, counterstatus, countertype, ticket)
+        wssenddispcall840(branch, counterstatus, countertype, ticket)
 
         context = {'tickettype': ticket.tickettype, 
                    'ticketnumber': ticket.ticketnumber , 
@@ -1257,13 +1259,14 @@ def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, co
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
         wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
+        wssendvoice840(branch, countertype, counterstatus, ticket, 'asdf1234')
         wssendflashlight(branch, countertype, counterstatus, 'flash')
         # websocket to web softkey for update counter status
         wscounterstatus(counterstatus)
         # websocket to web tv
         wssendwebtv(branch, countertype)
         # websocket to Display Panel display ticket
-        wssenddispcall(branch, counterstatus, countertype, ticket)
+        wssenddispcall840(branch, counterstatus, countertype, ticket)
 
         context = {'tickettype': ticket.tickettype, 
                    'ticketnumber': ticket.ticketnumber , 

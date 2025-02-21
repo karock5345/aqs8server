@@ -36,30 +36,17 @@ def check_redis_connection():
     except Exception:
         return False
 
-# ws to Display Panel cmd call / recall a ticket
-@shared_task(default_retry_delay=1, max_retries=1)
-def t_wssenddispcall(branch_id, counterstatus_id, countertype_id, ticket_id):
-    from celery import current_task
-    # Get my task ID
-    my_id = current_task.request.id
-    current_task.status = 'PROGRESS'
 
+# ws to Display Panel cmd call / recall a ticket
+def wssenddispcall840(branch, counterstatus, countertype, ticket):
     error = ''
 
     if not check_redis_connection():
         error = 'Redis connection failed - Unable to send wssenddispcall message'
         logger.error(error)
-        current_task.status = 'FAILURE'
-
-
+        return False
 
     if error == '' :
-
-        branch = Branch.objects.get(id=branch_id)
-        counterstatus = CounterStatus.objects.get(id=counterstatus_id)
-        countertype = CounterType.objects.get(id=countertype_id)
-        ticket = TicketTemp.objects.get(id=ticket_id)
-
         str_now = '--:--'
         datetime_now =datetime.now(timezone.utc)
         datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
@@ -82,8 +69,10 @@ def t_wssenddispcall(branch_id, counterstatus_id, countertype_id, ticket_id):
                 "t_lang3": ticket.ticketformat.touchkey_lang3,
                 "t_lang4": ticket.ticketformat.touchkey_lang4,
         }
-
+        # generate message id
+        msgid = 'disp_' + datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
         jsontx = {
+            "id":msgid,
             "cmd":"call",
             "data": {
                 "servertime": str_now,
@@ -99,22 +88,18 @@ def t_wssenddispcall(branch_id, counterstatus_id, countertype_id, ticket_id):
         'tx':str_tx
         }
         channel_layer = get_channel_layer()
-        channel_group_name = 'disp_' + branch.bcode + '_' + countertype.name
+        channel_group_name = 'disp840_' + branch.bcode + '_' + countertype.name
         logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            time.sleep(1)
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            time.sleep(1)
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
             logger.info('...Done x3')
         except:
             logger.error('...ERROR:Redis Server is down!')
     if error != '':
         logger.error(error)
-    
-    current_task.status = 'SUCCESS'
-    return current_task.status
+    pass
 
 # ws to Display Panel cmd call / recall a ticket
 def wssenddispcall(branch, counterstatus, countertype, ticket):
@@ -404,33 +389,32 @@ def wsrochesms(bcode, tel, msg):
 # Channel Group Name: voice840_BCode_Countertype
 # server will repeat send 3 times for prevent lost message
 # with message id
-
-# voice command
+# json text will join together then send 
+# Example of full json text :
+# # volume command
 # { 
-#   "id": "123456",
+#   "id": "v_recall_999_vol",
+#   "cmd":"vol",
+#   "data":50
+# }
+# # sound command
+# {
+#   "id": "v_recall_999_be",
+#   "cmd":"voice",
+#   'data': {
+#           'lang': '[SOUND]',
+#          'voice_str': sound,
+#          }
+# }
+# # voice command
+# { 
+#   "id": "v_recall_999_v",
 #   "cmd":"voice",
 #   "data":
 #     {
 # 	    "lang":"[ENG]",
 # 	    "voice_str":"[A],[0],[0],[5],[C3]"
 #     }
-# }
-
-# volume command
-# { 
-#   "id": "123456",
-#   "cmd":"vol",
-#   "data":50
-# }
-
-# sound command
-# {
-#   "id": "123445",
-#   "cmd":"voice",
-#   'data': {
-#           'lang': '[SOUND]',
-#          'voice_str': sound,
-#          }
 # }
 def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:CounterStatus, ticket:TicketTemp, msgid_head:str):
     context = None
@@ -467,7 +451,7 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
         # volume
         # generate message id
 
-        msgid = msgid_head + '_vol_' + ticket.tickettype_disp + '_' + ticket.ticketnumber_disp + '_' + counterstatus.counternumber
+        msgid = msgid_head + '_vol'
         
         volume = branch.voice_volume
         if volume <= 100 and volume >= 0:
@@ -514,7 +498,7 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
         # play effect sound
         if len(lang_list) > 0:
             if branch.before_enabled == True:
-                msgid = msgid_head + '_be_' + ticket.tickettype_disp + '_' + ticket.ticketnumber_disp + '_' + counterstatus.counternumber
+                msgid = msgid_head + '_be'
                 sound = branch.before_sound
                 if sound != '' or sound != None:
                     json_tx ={
@@ -527,14 +511,12 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
                     }
                     # send(json_tx, 'Before Sound')
                     json_full = json_full + json.dumps(json_tx)
-
-
-
-        # generate message id
-        msgid = msgid_head + '_v_' + ticket.tickettype_disp + '_' + ticket.ticketnumber_disp + '_' + counterstatus.counternumber
                    
         # play voice
         for lang in lang_list:
+            # generate message id
+            msgid = msgid_head + '_v_' + lang
+
             json_tx = {
                     'id': msgid,
                     'cmd':'voice',
@@ -557,13 +539,12 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
             # send(json_tx, 'Voice')
             json_full = json_full + json.dumps(json_tx)
 
-
         # play effect sound after voice
         if len(lang_list) > 0:
             if branch.after_enabled == True:
                 sound = branch.after_sound
                 if sound != '' or sound != None:
-                    msgid = msgid_head + '_af_' + ticket.tickettype_disp + '_' + ticket.ticketnumber_disp + '_' + counterstatus.counternumber
+                    msgid = msgid_head + '_af'
 
                     json_tx ={
                         'id': msgid,
@@ -575,7 +556,7 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
                     }
                     # send(json_tx, 'After Sound')
                     json_full = json_full + json.dumps(json_tx)
-    send(json_full, "Voice")
+    send(json_full, "V840")
 
     if error != '':
         error_e = 'WS send voice840 Error:' + error
@@ -829,9 +810,7 @@ def wssendvoice(bcode, countertypename, ttype, tno, cno):
         logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            logger.info('...Done x3')
+            logger.info('...Done')
         except Exception as e:
             # error_e = 'WS send voice Error:' + str(e)
             logger.error('...ERROR:Redis Server is down!')
@@ -996,9 +975,7 @@ def wsSendPrintTicket(bcode, tickettype, ticketnumber, tickettime, tickettext, p
         logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            async_to_sync (channel_layer.group_send)(channel_group_name, context)
-            logger.info('...Done x3')
+            logger.info('...Done')
         except:
             logger.error('...ERROR:Redis Server is down!')
 
