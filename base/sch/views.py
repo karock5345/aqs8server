@@ -329,7 +329,7 @@ def job_shutdown(branch):
     # websocket to web tv
     ctobj = CounterType.objects.filter(Q(branch=branch))
     for countertype in ctobj:
-        wssendwebtv(bcode,countertype.name)
+        wssendwebtv(branch, countertype)
         wssenddispremoveall(branch, countertype)
 
     # counterstatus all reset to 'waiting'

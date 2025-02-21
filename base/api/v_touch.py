@@ -224,7 +224,7 @@ def newticket_v830(branch, ttype, pnos, remark, datetime_now, user, app, version
                 user=user,
             )
 
-        wssendwebtv(branch.bcode, countertype.name)
+        wssendwebtv(branch, countertype)
         # websocket to display panel for waiting ticket
         wssenddispwait(branch, countertype, ticket)
         wssendql(branch.bcode, countertype.name,tickettemp,'add')
@@ -436,7 +436,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
                 user=user,
             )
 
-        wssendwebtv(branch.bcode, countertype.name)
+        wssendwebtv(branch, countertype)
         # websocket to display panel for waiting ticket
         wssenddispwait(branch, countertype, ticket)
         wssendql(branch.bcode, countertype.name,tickettemp,'add')

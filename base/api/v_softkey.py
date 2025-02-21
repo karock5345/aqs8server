@@ -163,7 +163,7 @@ def postCounterGet(request):
                     break
 
         # websocket to web tv
-        wssendwebtv(rx_bcode,countertype.name)
+        wssendwebtv(branch, countertype)
 
 
 
