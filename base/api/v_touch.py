@@ -10,7 +10,7 @@ from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus, SubT
 from booking.models import Booking, TimeSlot
 from .views import setting_APIlogEnabled, visitor_ip_address, funUTCtoLocal, checkuser
 from .v_roche import rocheSMS
-from base.ws import wssendwebtv, wssendql, wsSendPrintTicket, wssenddispwait
+from base.ws import wssendwebtv, wssendql, wsSendPrintTicket840, wssenddispwait
 import random
 from .v_softkey_sub import cc_autocall
 from .serializers import touchkeysSerivalizer
@@ -281,7 +281,7 @@ def printTicket(branch:Branch, tickettemp:TicketTemp, ticketformat:TicketFormat,
         pno_list = pnos.split(",")
         for p in pno_list:
             xmlp = '<PNO>' + p + '</PNO>'
-            wsSendPrintTicket(branch.bcode, tickettemp.tickettype , tickettemp.ticketnumber, datetime_now, tickettemp.tickettext, xmlp )
+            wsSendPrintTicket840(branch.bcode, tickettemp.tickettype , tickettemp.ticketnumber, datetime_now, tickettemp.tickettext, xmlp )
 
 
 def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
@@ -440,7 +440,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
         # websocket to display panel for waiting ticket
         wssenddispwait(branch, countertype, ticket)
         wssendql(branch.bcode, countertype.name,tickettemp,'add')
-        wsSendPrintTicket(branch.bcode, ttype, ticketno_str, datetime_now, tickettext, pno)
+        wsSendPrintTicket840(branch.bcode, ttype, ticketno_str, datetime_now, tickettext, pno)
         
         # for Roche send SMS to staff when new ticket issued
         # rocheSMS(branch, tickettemp)

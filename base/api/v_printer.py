@@ -11,7 +11,7 @@ from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus
 from .serializers import printerstatusSerivalizer, ticketlistSerivalizer
 from .views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, checkuser
 from .v_roche import rocheSMS
-from base.ws import wssendwebtv, wssendql, wssendprinterstatus, wsSendPrintTicket
+from base.ws import wssendprinterstatus
 import random
 from django.contrib.auth.models import User, Group
 from asgiref.sync import async_to_sync

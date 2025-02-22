@@ -11,7 +11,7 @@ websocket_urlpatterns = [
     re_path(r'ws/{}/wtv/(?P<bcode>\w+)/(?P<ct>\w+)/$'.format(APP_NAME), consumers.WebTVConsumer.as_asgi()),
     re_path(r'ws/{}/ql/(?P<bcode>\w+)/(?P<ct>\w+)/$'.format(APP_NAME), consumers.QLConsumer.as_asgi()),
     re_path(r'ws/{}/pstatus/(?P<bcode>\w+)/$'.format(APP_NAME), consumers.PrinterStatusConsumer.as_asgi()),
-    re_path(r'ws/{}/print/(?P<bcode>\w+)/$'.format(APP_NAME), consumers.PrintConsumer.as_asgi()),
+    re_path(r'ws/{}/print840/(?P<bcode>\w+)/$'.format(APP_NAME), consumers.PrintConsumer840.as_asgi()),
     re_path(r'ws/{}/tstatus/(?P<bcode>\w+)/(?P<ttype>\w+)/(?P<tno>\w+)/(?P<sc>\w+)/$'.format(APP_NAME), consumers.TicketStatusConsumer.as_asgi()),
     # re_path(r'ws/{}/voice/(?P<bcode>\w+)/(?P<ct>\w+)/$'.format(APP_NAME), consumers.VoiceConsumer.as_asgi()),
     # re_path(r'ws/{}/voice830/(?P<bcode>\w+)/(?P<ct>\w+)/$'.format(APP_NAME), consumers.Voice830Consumer.as_asgi()),
