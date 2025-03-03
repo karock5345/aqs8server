@@ -107,7 +107,6 @@ class DispPanelConsumer840(AsyncWebsocketConsumer):
             if self.scope['user'].is_authenticated == False:
                 error = 'DispConsumer: User not authenticated.'
 
-
         # check bcode and ct (countertype) is not exit do not accept connection
         if error == '':
             error = await check_input()       

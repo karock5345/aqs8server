@@ -36,7 +36,7 @@ def check_redis_connection():
     except Exception:
         return False
 
-
+# Version 8.4 add Message ID and send 3 times
 # ws to Display Panel cmd call / recall a ticket
 def wssenddispcall840(branch, counterstatus, countertype, ticket):
     error = ''
@@ -161,8 +161,42 @@ def wssenddispcall(branch, counterstatus, countertype, ticket):
         logger.error(error)
     pass
 
+# Version 8.4 add Message ID and send 3 times
+# ws to Display Panel cmd clear all ticket
+def wssenddispremoveall840(branch,  countertype):
+    str_now = '--:--'
+    datetime_now =datetime.now(timezone.utc)
+    datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+    str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
 
-# ws to Display Panel cmd remove a ticket
+    # generate message id
+    msgid = 'd_remove_' + datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
+    jsontx = {
+        "id":msgid,
+        "cmd":"removeall",
+        "data": {
+            "servertime": str_now,
+            }
+        }
+    str_tx = json.dumps(jsontx)        
+    # str_tx = str_tx.replace('"<ticketlist>"', json.dumps(wdserializers.data))
+
+    context = {
+    'type':'broadcast_message',
+    'tx':str_tx
+    }
+    channel_layer = get_channel_layer()
+    channel_group_name = 'disp840_' + branch.bcode + '_' + countertype.name
+    logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+    try:
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        logger.info('...Done x3')
+    except:
+        logger.error('...ERROR:Redis Server is down!')
+    pass
+
 # ws to Display Panel cmd clear all ticket
 def wssenddispremoveall(branch,  countertype):
     str_now = '--:--'
@@ -193,6 +227,48 @@ def wssenddispremoveall(branch,  countertype):
     except:
         logger.error('...ERROR:Redis Server is down!')
     pass
+
+# Version 8.4 add Message ID and send 3 times
+# ws to Display Panel cmd waiting number of queue by TicketType 
+def wssenddispwait840(branch,  countertype, ticket):
+    str_now = '--:--'
+    datetime_now =datetime.now(timezone.utc)
+    datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+    str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
+
+    jwait = {
+            "tickettype": ticket.tickettype,
+            "wait": ticket.ticketroute.waiting,
+    }
+    # generate message id
+    msgid = 'disp_w_' + datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
+    jsontx = {
+        "id":msgid,
+        "cmd":"wait",
+        "data": {
+            "servertime": str_now,
+            "waitdata": jwait,
+            }
+        }
+    str_tx = json.dumps(jsontx)        
+    # str_tx = str_tx.replace('"<ticketlist>"', json.dumps(wdserializers.data))
+
+    context = {
+    'type':'broadcast_message',
+    'tx':str_tx
+    }
+    channel_layer = get_channel_layer()
+    channel_group_name = 'disp840_' + branch.bcode + '_' + countertype.name
+    logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+    try:
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        logger.info('...Done x3')
+    except:
+        logger.error('...ERROR:Redis Server is down!')
+    pass
+
 # ws to Display Panel cmd waiting number of queue by TicketType 
 def wssenddispwait(branch,  countertype, ticket):
     str_now = '--:--'
@@ -821,7 +897,8 @@ def wssendvoice(bcode, countertypename, ttype, tno, cno):
 
 
 
-def wsSendTicketStatus(bcode, tickettype, ticketnumber, sc):
+def wsSendTicketStatus(branch:Branch, ticket:TicketTemp, counterstatus:CounterStatus):
+
     # {
     #     "cmd": "tstatus",
     #     "data": 
@@ -833,37 +910,10 @@ def wsSendTicketStatus(bcode, tickettype, ticketnumber, sc):
     #         }
     # }  
     error = ''
-    branch = None
+    
     counterno = '---'
-
-    if error == '' :
-        if bcode == '':
-            error = 'No branch code'
-    if error == '' :
-        if tickettype == '':
-            error = 'No ticket type'
-    if error == '' :
-        if ticketnumber == '':
-            error = 'No ticket number'       
-    if error == '' :
-        if sc == '':
-            error = 'No Securitycode'
-    if error == '' :
-        branchobj = Branch.objects.filter( Q(bcode=bcode) )
-        if branchobj.count() == 1:
-            branch = branchobj[0]
-        else :
-            error = 'Branch not found.'
-    if error == '':
-        tobj = TicketTemp.objects.filter(Q(branch=branch) & Q(tickettype=tickettype) & Q(ticketnumber=ticketnumber) & Q(securitycode=sc))
-        if tobj.count() == 1 :
-            ticket = tobj[0]
-        else:
-            error = 'Ticket not found.'
-    if error == '':
-        csobj = CounterStatus.objects.filter(Q(tickettemp=ticket)) 
-        if csobj.count() == 1:
-            counterstatus = csobj[0]
+    if counterstatus != None :
+        if counterstatus.counternumber != None :
             counterno = counterstatus.counternumber
 
     if error == '':
@@ -883,7 +933,7 @@ def wsSendTicketStatus(bcode, tickettype, ticketnumber, sc):
         }
         
         channel_layer = get_channel_layer()
-        channel_group_name = 'ticketstatus_' + bcode + '_' + tickettype + ticketnumber + '_' + sc
+        channel_group_name = 'ticketstatus_' + branch.bcode + '_' + ticket.tickettype + ticket.ticketnumber + '_' + ticket.securitycode
         logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
@@ -1133,7 +1183,7 @@ def wssendprinterstatus(bcode):
     
 
 
-def wssendql(bcode, countertypename, ticket, cmd):
+def wssendql(branch:Branch, countertype:CounterType, ticket:TicketTemp, cmd):
     # {"cmd":"add",
     #  "lastupdate":now,
     #  "data":
@@ -1152,32 +1202,6 @@ def wssendql(bcode, countertypename, ticket, cmd):
     error = ''
     str_now = '--:--'
     datetime_now =datetime.now(timezone.utc)
-
-
-    branch = None
-    if error == '' :        
-        branchobj = Branch.objects.filter( Q(bcode=bcode) )
-        if branchobj.count() == 1:
-            branch = branchobj[0]
-            datetime_now = datetime.now(timezone.utc)
-            datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
-            str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
-        else :
-            error = 'Branch not found.'
-
-    # get the Counter type
-    countertype = None
-    if error == '' :    
-        if countertypename == '' :
-            ctypeobj = CounterType.objects.filter( Q(branch=branch) )
-        else:
-            ctypeobj = CounterType.objects.filter( Q(branch=branch) & Q(name=countertypename) )
-        if (ctypeobj.count() > 0) :
-            countertype = ctypeobj[0]
-            datetime_now_local = funUTCtoLocal(datetime_now, countertype.branch.timezone)
-            str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
-        else :
-            error = 'Counter Type not found.' 
 
     if error == '' : 
         if cmd == '':
@@ -1238,7 +1262,7 @@ def wssendql(bcode, countertypename, ticket, cmd):
         }
         
         channel_layer = get_channel_layer()
-        channel_group_name = 'ql_' + bcode + '_' + countertypename
+        channel_group_name = 'ql_' + branch.bcode + '_' + countertype.name
         logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)

@@ -92,9 +92,10 @@ def funCallTicketwithDirection(branch:Branch, call:bool, user, counterstatus:Cou
                 break
     return ticket
 
+# version 8.4.0 Prevent WS data lost. Send data to "Display Ticket" "Voice" "Print Ticket" repact 3 times
 # version 8.3.0 add transaction select_for_update for prevent 'double bookings' problem
 @transaction.atomic
-def funCounterCall_v830(user, branch:Branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
+def funCounterCall(user, branch:Branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     status = dict({})
     msg = dict({})
     context = dict({})
@@ -300,29 +301,99 @@ def funCounterCall_v830(user, branch:Branch, countertype, counterstatus, logtext
         # do display and voice temp db
         newdisplayvoice(branch, countertype, counterstatus.counternumber, ticket, datetime_now, user)
 
-        # websocket to web tv
-        wssendwebtv(branch, countertype)
-        # websocket to Display Panel display ticket
-        wssenddispcall840(branch,counterstatus, countertype, ticket)
-        # websocket to softkey (update Queue List)
-        wssendql(branch.bcode, countertype.name, ticket, 'del')
-        # websocket to web my ticket
-        wsSendTicketStatus(branch.bcode, ticket.tickettype_disp, ticket.ticketnumber_disp, ticket.securitycode)
-        # websocket to voice com and flash light
-        wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
-        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
-        wssendvoice840(branch, countertype, counterstatus, ticket, 'asdf1234')
-        wssendflashlight(branch, countertype, counterstatus, 'flash')
+    # # WS send data :
+    #     # websocket to web tv
+    #     wssendwebtv(branch, countertype)
+    #     # websocket to Display Panel display ticket
+    #     wssenddispcall840(branch,counterstatus, countertype, ticket)
+    #     # websocket to softkey (update Queue List)
+    #     wssendql(branch, countertype, ticket, 'del')
+    #     # websocket to web my ticket
+    #     wsSendTicketStatus(branch, ticket, counterstatus)        
+    #     # websocket to voice com and flash light
+    #     wssendvoice840(branch, countertype, counterstatus, ticket, 'asdf1234')
+    #     wssendflashlight(branch, countertype, counterstatus, 'flash')
+    #     # websocket to web softkey for update counter status
+    #     wscounterstatus(counterstatus)
 
-        # websocket to web softkey for update counter status
-        wscounterstatus(counterstatus)
+        redis_online = check_redis_connection()
+        # pass the sub to celery parallel run
+        if redis_online:
+            try:
+                t_ws_call = t_WS_Call.apply_async (args=[branch.id, counterstatus.id, countertype.id, ticket.id], countdown=0)
+                logging.info('Start task : t_ws_call (wssendwebtv, wssenddispcall840, wssendql, wssendvoice840, wssendflashlight, wscounterstatus) : ' + str(t_ws_call))
+            except Exception as e:
+                logging.error('Error t_ws_call : ' + str(e))
+                pass
+        else:
+            logging.error('Redis is offline. Cannot run t_ws_call')        
 
         context = dict({'data':context})
         status = dict({'status': 'OK'})
-        # msg =  dict({'msg':'Everything will be OK.'})        
 
     return status, msg, context
 
+@shared_task
+def t_WS_Call(branch_id, counterstatus_id, countertype_id, ticket_id):
+    from celery import current_task
+
+    branch = Branch.objects.get(id=branch_id)
+    counterstatus = CounterStatus.objects.get(id=counterstatus_id)
+    countertype = CounterType.objects.get(id=countertype_id)
+    ticket = TicketTemp.objects.get(id=ticket_id)
+
+    # Get my task ID
+    my_id = current_task.request.id
+    logger.info(f'Call WS data out (wssendwebtv, wssenddispcall840, wssendql, wssendvoice840, wssendflashlight, wscounterstatus): {my_id}')
+
+    current_task.status = 'PROGRESS'
+
+    # websocket to web tv
+    try:
+        wssendwebtv(branch, countertype)
+    except Exception as e:
+        current_task.status = 'ERROR'
+        return current_task.status
+
+    # websocket to Display Panel display ticket
+    try:
+        wssenddispcall840(branch, counterstatus, countertype, ticket)
+    except Exception as e:
+        current_task.status = 'ERROR'
+        return current_task.status
+
+    # websocket to softkey (update Queue List)
+    try:
+        wssendql(branch,countertype, ticket, 'del')
+    except Exception as e:
+        current_task.status = 'ERROR'
+        return current_task.status
+
+    # websocket to voice com
+    msgid_h = 'voice_call_' + datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
+    try:
+        wssendvoice840(branch, countertype, counterstatus, ticket, msgid_h)
+    except Exception as e:
+        current_task.status = 'ERROR'
+        return current_task.status
+
+    # websocket to flash light
+    try:
+        wssendflashlight(branch, countertype, counterstatus, 'flash')    
+    except Exception as e:
+        current_task.status = 'ERROR'
+        return current_task.status
+
+    # websocket to web softkey for update counter status
+    wscounterstatus(counterstatus)
+    try:
+        wscounterstatus(counterstatus) 
+    except Exception as e:
+        current_task.status = 'ERROR'
+        return current_task.status
+
+    current_task.status = 'SUCCESS'        
+    return current_task.status
 
 def funCounterCall_old(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     status = dict({})
@@ -511,9 +582,9 @@ def funCounterCall_old(user, branch, countertype, counterstatus, logtext, rx_app
                 # websocket to Display Panel display ticket
                 wssenddispcall(branch,counterstatus, countertype, ticket)
                 # websocket to softkey (update Queue List)
-                wssendql(branch.bcode, countertype.name, ticket, 'del')
+                wssendql(branch, countertype, ticket, 'del')
                 # websocket to web my ticket
-                wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
+                wsSendTicketStatus(branch, ticket, counterstatus)    
                 # websocket to voice com and flash light
                 wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
                 wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
@@ -708,7 +779,7 @@ def funCounterComplete(user, branch, countertype, counterstatus, logtext, rx_app
             ticket.save()
 
             # websocket to softkey (update Queue List)
-            wssendql(branch.bcode, countertype.name, ticket, 'add')
+            wssendql(branch, countertype, ticket, 'add')
             # websocket to webtv
             wssendwebtv(branch, countertype)
 
@@ -741,7 +812,7 @@ def funCounterComplete(user, branch, countertype, counterstatus, logtext, rx_app
                     usl.save()
 
         # websocket to web my ticket
-        wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
+        wsSendTicketStatus(branch, ticket, counterstatus)    
         # websocket to web softkey for update counter status
         wscounterstatus(counterstatus)
 
@@ -833,7 +904,7 @@ def funCounterMiss(user, branch, countertype, counterstatus, logtext, rx_app, rx
 
 
         # websocket to web my ticket
-        wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
+        wsSendTicketStatus(branch, ticket, counterstatus)    
         # websocket to web softkey for update counter status
         wscounterstatus(counterstatus)
 
@@ -869,20 +940,21 @@ def funCounterRecall(user, branch, countertype, counterstatus, logtext, rx_app, 
         redis_online = check_redis_connection()
         # logging.info('redis_online:' + str(redis_online))
         
-        # websocket to web tv
-        # wssendwebtv(branch, countertype)
+
         # websocket to Display Panel display ticket
         # pass the sub to celery parallel run
         if redis_online:
             try:
                 t_ws_recall = t_WS_Recall.apply_async (args=[branch.id, counterstatus.id, countertype.id, ticket.id], countdown=0)
-                logging.info('Start task : t_ws_recall (wssendwebtv, wssenddispcall, wssendvoice840, wssendflashlight) : ' + str(t_ws_recall))
+                logging.info('Start task : t_ws_recall (wssendwebtv, wssenddispcall840, wssendvoice840, wssendflashlight) : ' + str(t_ws_recall))
             except Exception as e:
                 logging.error('Error t_WS_Recall : ' + str(e))
                 pass
-            # wssendvoice840(branch, countertype, counterstatus, ticket)
         else:
             logging.error('Redis is offline. Cannot run t_WS_Recall')
+    # WS send data :
+        # # websocket to web tv
+        # wssendwebtv(branch, countertype)
         # wssenddispcall(branch, counterstatus, countertype, ticket)
         # # websocket to voice com and flash light
         # wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
@@ -895,7 +967,7 @@ def funCounterRecall(user, branch, countertype, counterstatus, logtext, rx_app, 
 
 @shared_task
 def t_WS_Recall(branch_id, counterstatus_id, countertype_id, ticket_id):
-    from celery import  current_task
+    from celery import current_task
 
     branch = Branch.objects.get(id=branch_id)
     counterstatus = CounterStatus.objects.get(id=counterstatus_id)
@@ -904,7 +976,7 @@ def t_WS_Recall(branch_id, counterstatus_id, countertype_id, ticket_id):
 
     # Get my task ID
     my_id = current_task.request.id
-    logger.info(f'Recall WS data out (wssenddispcall, wssendvoice, wssendvoice830, wssendflashlight): {my_id}')
+    logger.info(f'Recall WS data out (wssendwebtv, wssenddispcall840, wssendvoice840, wssendflashlight): {my_id}')
 
     current_task.status = 'PROGRESS'
 
@@ -1048,7 +1120,7 @@ def funCounterGet_v830(gettnumber, user, branch, countertype, counterstatus, log
             ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
             ticket.ticketroute.save()
             # websocket to softkey (update Queue List)
-            wssendql(branch.bcode, countertype.name, ticket, 'del')
+            wssendql(branch, countertype, ticket, 'del')
          
         ticket.user = user
         ticket.status = 'calling'
@@ -1069,7 +1141,7 @@ def funCounterGet_v830(gettnumber, user, branch, countertype, counterstatus, log
         # do display and voice temp db
         newdisplayvoice(branch, countertype, counterstatus.counternumber, ticket, datetime_now, user)
         # websocket to web my ticket
-        wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
+        wsSendTicketStatus(branch, ticket, counterstatus)    
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
         wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
@@ -1235,7 +1307,7 @@ def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, co
             ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
             ticket.ticketroute.save()
             # websocket to softkey (update Queue List)
-            wssendql(branch.bcode, countertype.name, ticket, 'del')
+            wssendql(branch, countertype, ticket, 'del')
         ticket.user = user
         ticket.status = 'calling'
         ticket.save()
@@ -1255,7 +1327,7 @@ def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, co
         # do display and voice temp db
         newdisplayvoice(branch, countertype, counterstatus.counternumber, ticket, datetime_now, user)
         # websocket to web my ticket
-        wsSendTicketStatus(branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
+        wsSendTicketStatus(branch, ticket, counterstatus)    
         # websocket to voice com and flash light
         wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
         wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
@@ -1508,44 +1580,44 @@ def funVoid_v830(user, tickett, td, logtext, rx_app, rx_version, datetime_now):
         )
 
         # websocket to softkey (update Queue List)
-        wssendql(ticket.branch.bcode , ticket.countertype.name, ticket, 'del')
+        wssendql(ticket.branch , ticket.countertype, ticket, 'del')
         # websocket to web tv
         wssendwebtv(ticket.branch, ticket.countertype)
         # websocket to Display Panel waiting number update
         wssenddispwait(ticket.branch, ticket.countertype, ticket)
         # websocket to web my ticket
-        wsSendTicketStatus(ticket.branch.bcode, ticket.tickettype, ticket.ticketnumber, ticket.securitycode)
+        wsSendTicketStatus(ticket.branch, ticket, None)
         
         status = dict({'status': 'OK'})
         msg =  dict({'msg':'Ticket voided.'})
     return status, msg
 
-def funVoid_old(user, tickett, td, datetime_now):
-    # update ticket 
-    # waiting on queue
-    if tickett.status == 'waiting':
-        tickett.ticketroute.waiting = tickett.ticketroute.waiting - 1
-        tickett.ticketroute.save()
-    tickett.user = user
-    tickett.status = 'void'
-    tickett.save()
+# def funVoid_old(user, tickett, td, datetime_now):
+#     # update ticket 
+#     # waiting on queue
+#     if tickett.status == 'waiting':
+#         tickett.ticketroute.waiting = tickett.ticketroute.waiting - 1
+#         tickett.ticketroute.save()
+#     tickett.user = user
+#     tickett.status = 'void'
+#     tickett.save()
 
-    # update ticketdata db
-    td.voidtime = datetime_now
-    td.voiduser = user
-    time_diff = datetime_now - td.starttime
-    tsecs = int(time_diff.total_seconds())
-    td.waitingperiod = tsecs
-    td.save()
+#     # update ticketdata db
+#     td.voidtime = datetime_now
+#     td.voiduser = user
+#     time_diff = datetime_now - td.starttime
+#     tsecs = int(time_diff.total_seconds())
+#     td.waitingperiod = tsecs
+#     td.save()
 
-    # websocket to softkey (update Queue List)
-    wssendql(tickett.branch.bcode , tickett.countertype.name, tickett, 'del')
-    # websocket to web tv
-    wssendwebtv(tickett.branch, tickett.countertype)
-    # websocket to Display Panel waiting number update
-    wssenddispwait(tickett.branch, tickett.countertype, tickett)
-    # websocket to web my ticket
-    wsSendTicketStatus(tickett.branch.bcode, tickett.tickettype, tickett.ticketnumber, tickett.securitycode)
+#     # websocket to softkey (update Queue List)
+#     wssendql(tickett.branch.bcode , tickett.countertype.name, tickett, 'del')
+#     # websocket to web tv
+#     wssendwebtv(tickett.branch, tickett.countertype)
+#     # websocket to Display Panel waiting number update
+#     wssenddispwait(tickett.branch, tickett.countertype, tickett)
+#     # websocket to web my ticket
+#     wsSendTicketStatus(tickett.branch.bcode, tickett.tickettype, tickett.ticketnumber, tickett.securitycode)
 
 
 

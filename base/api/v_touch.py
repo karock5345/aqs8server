@@ -227,7 +227,7 @@ def newticket_v830(branch, ttype, pnos, remark, datetime_now, user, app, version
         wssendwebtv(branch, countertype)
         # websocket to display panel for waiting ticket
         wssenddispwait(branch, countertype, ticket)
-        wssendql(branch.bcode, countertype.name,tickettemp,'add')
+        wssendql(branch, countertype,tickettemp,'add')
 
 
         # if pnos != '' and pnos != None:
@@ -439,7 +439,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
         wssendwebtv(branch, countertype)
         # websocket to display panel for waiting ticket
         wssenddispwait(branch, countertype, ticket)
-        wssendql(branch.bcode, countertype.name,tickettemp,'add')
+        wssendql(branch, countertype,tickettemp,'add')
         wsSendPrintTicket840(branch.bcode, ttype, ticketno_str, datetime_now, tickettext, pno)
         
         # for Roche send SMS to staff when new ticket issued
