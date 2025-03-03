@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from base.models import Branch
 from datetime import timedelta
-import django.utils.html
+# import django.utils.html
 from django.utils.html import format_html, escape
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _

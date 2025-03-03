@@ -14,7 +14,7 @@ from django.urls import reverse_lazy, reverse
 from .models import *
 from base.models import UserProfile, Branch, SubTicket
 from .forms import TimeSlotForm, TimeSlotNewForm, DetailsForm, BookingForm, BookingNewForm, TimeSlotTempForm, TimeSlot_itemForm, TimeSlotTempNewForm, TimeSlot_add_itemForm
-from django.utils.timezone import localtime, get_current_timezone
+# from django.utils.timezone import localtime, get_current_timezone
 # import pytz
 # from django.utils import timezone
 from base.views import auth_data, funDomain, getcontext, getcontext_en, getcontext_mini

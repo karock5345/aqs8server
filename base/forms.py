@@ -14,7 +14,7 @@ from captcha.fields import ReCaptchaField
 from captcha.widgets import ReCaptchaV2Checkbox
 from .api.views import funUTCtoLocal, funLocaltoUTC, funUTCtoLocaltime, funLocaltoUTCtime
 import pytz
-from django.utils.timezone import localtime, get_current_timezone
+# from django.utils.timezone import localtime, get_current_timezone
 from datetime import datetime
 
 class CaptchaForm(forms.Form):

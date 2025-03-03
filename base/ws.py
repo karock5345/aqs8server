@@ -1,9 +1,9 @@
 import json
 from django.core import serializers
-from datetime import datetime,  timedelta
+from datetime import datetime,  timedelta, timezone
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from django.utils import timezone
+# from django.utils import timezone
 from django.db.models import Q
 from base.api.views import setting_APIlogEnabled, visitor_ip_address, loginapi, funUTCtoLocal, counteractive
 from base.models import APILog, Branch, CounterStatus, CounterType, DisplayAndVoice, PrinterStatus, Setting, TicketFormat, TicketTemp, TicketRoute, TicketData, TicketLog, CounterLoginLog, UserProfile, lcounterstatus
@@ -17,7 +17,7 @@ from django.core.cache import cache
 from redis.exceptions import ConnectionError
 import redis
 from aqs.settings import REDIS_HOST, REDIS_PORT
-from celery import shared_task
+# from celery import shared_task
 import time
 
 wsHypertext = 'ws://'
@@ -270,7 +270,7 @@ def wssenddispwait840(branch,  countertype, ticket):
     pass
 
 # ws to Display Panel cmd waiting number of queue by TicketType 
-def wssenddispwait(branch,  countertype, ticket):
+def wssenddispwait(branch,  countertype, ticket:TicketTemp):
     str_now = '--:--'
     datetime_now =datetime.now(timezone.utc)
     datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
@@ -948,7 +948,9 @@ def wsSendTicketStatus(branch:Branch, ticket:TicketTemp, counterstatus:CounterSt
     pass
 
 # version 8.4.0 add msgid and send data 3 times
-def wsSendPrintTicket840(bcode, tickettype, ticketnumber, tickettime, tickettext, printernumber):
+# def wsSendPrintTicket840(bcode, tickettype, ticketnumber, tickettime, tickettext, printernumber):
+def wsSendPrintTicket840(branch:Branch, tickettemp:TicketTemp, printernumber):
+
     # {
     #     "id": msgid,
     #     "cmd": "prt",
@@ -963,41 +965,24 @@ def wsSendPrintTicket840(bcode, tickettype, ticketnumber, tickettime, tickettext
     #         }
     # }
     error = ''
-    branch = None
 
-    if error == '' :
-        if bcode == '':
-            error = 'No branch code'
-    if error == '' :
-        if tickettype == '':
-            error = 'No ticket type'
-    if error == '' :
-        if ticketnumber== '':
-            error = 'No ticket number'
-    if error == '' :
-        if tickettime== '':
-            error = 'No ticket time'
-    if error == '':
-        stickettime = '' 
+    stickettime = ''
+    if error == '':     
         try:
-            stickettime = tickettime.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+            stickettime = tickettemp.tickettime.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
         except:
             stickettime = ''
         if stickettime == '' :
             try :
-                stickettime = tickettime.strftime('%Y-%m-%dT%H:%M:%SZ')
+                stickettime = tickettemp.tickettime.strftime('%Y-%m-%dT%H:%M:%SZ')
             except:
                 stickettime = ''
                 error =  'Ticket time format not correct. Should be : 2022-05-19T23:59:59.123456Z'
+    
     if error == '' :
-        if tickettext== '':
+        if tickettemp.tickettext== '':
             error = 'No ticket text'                        
-    if error == '' :
-        branchobj = Branch.objects.filter( Q(bcode=bcode) )
-        if branchobj.count() == 1:
-            branch = branchobj[0]
-        else :
-            error = 'Branch not found.'
+
     if error == '':
         msgid = 'print_' + datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
 
@@ -1006,11 +991,11 @@ def wsSendPrintTicket840(bcode, tickettype, ticketnumber, tickettime, tickettext
             "cmd":"prt",
             "data": 
                 {
-                    "tickettype": tickettype,
-                    "ticketnumber": ticketnumber,
-                    "bcode": bcode,
+                    "tickettype": tickettemp.tickettype,
+                    "ticketnumber": tickettemp.ticketnumber,
+                    "bcode": branch.bcode,
                     "tickettime": stickettime,
-                    "tickettext": tickettext,
+                    "tickettext": tickettemp.tickettext,
                     "printernumber": printernumber,
                 },
         }
@@ -1022,7 +1007,7 @@ def wsSendPrintTicket840(bcode, tickettype, ticketnumber, tickettime, tickettext
         }
 
         channel_layer = get_channel_layer()
-        channel_group_name = 'print840_' + bcode 
+        channel_group_name = 'print840_' + branch.bcode 
         logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)

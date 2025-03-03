@@ -10,10 +10,11 @@ from django.db import transaction
 import time
 # from base.api.serializers import waitinglistSerivalizer
 from booking.models import Booking, TimeSlot
+from celery import shared_task
 
 
 logger = logging.getLogger(__name__)
-softkey_version = '8.3.10.0'
+softkey_version = '8.4.0.0'
 
 QueueDirection = {}
 
@@ -95,7 +96,7 @@ def funCallTicketwithDirection(branch:Branch, call:bool, user, counterstatus:Cou
 # version 8.4.0 Prevent WS data lost. Send data to "Display Ticket" "Voice" "Print Ticket" repact 3 times
 # version 8.3.0 add transaction select_for_update for prevent 'double bookings' problem
 @transaction.atomic
-def funCounterCall(user, branch:Branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
+def funCounterCall_v840(user, branch:Branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     status = dict({})
     msg = dict({})
     context = dict({})
@@ -320,13 +321,13 @@ def funCounterCall(user, branch:Branch, countertype, counterstatus, logtext, rx_
         # pass the sub to celery parallel run
         if redis_online:
             try:
-                t_ws_call = t_WS_Call.apply_async (args=[branch.id, counterstatus.id, countertype.id, ticket.id], countdown=0)
+                t_ws_call = t_WS_Call.apply_async (args=[branch.id, counterstatus.id, countertype.id, ticket.id, True], countdown=0)
                 logging.info('Start task : t_ws_call (wssendwebtv, wssenddispcall840, wssendql, wssendvoice840, wssendflashlight, wscounterstatus) : ' + str(t_ws_call))
             except Exception as e:
                 logging.error('Error t_ws_call : ' + str(e))
                 pass
         else:
-            logging.error('Redis is offline. Cannot run t_ws_call')        
+            logging.error('Redis is offline. Cannot run t_ws_call')
 
         context = dict({'data':context})
         status = dict({'status': 'OK'})
@@ -334,7 +335,7 @@ def funCounterCall(user, branch:Branch, countertype, counterstatus, logtext, rx_
     return status, msg, context
 
 @shared_task
-def t_WS_Call(branch_id, counterstatus_id, countertype_id, ticket_id):
+def t_WS_Call(branch_id, counterstatus_id, countertype_id, ticket_id, delsl:bool):
     from celery import current_task
 
     branch = Branch.objects.get(id=branch_id)
@@ -344,7 +345,7 @@ def t_WS_Call(branch_id, counterstatus_id, countertype_id, ticket_id):
 
     # Get my task ID
     my_id = current_task.request.id
-    logger.info(f'Call WS data out (wssendwebtv, wssenddispcall840, wssendql, wssendvoice840, wssendflashlight, wscounterstatus): {my_id}')
+    logger.info(f'Call/Get WS data out (wssendwebtv, wssenddispcall840, wssendql, wssendvoice840, wssendflashlight, wscounterstatus): {my_id}')
 
     current_task.status = 'PROGRESS'
 
@@ -363,14 +364,15 @@ def t_WS_Call(branch_id, counterstatus_id, countertype_id, ticket_id):
         return current_task.status
 
     # websocket to softkey (update Queue List)
-    try:
-        wssendql(branch,countertype, ticket, 'del')
-    except Exception as e:
-        current_task.status = 'ERROR'
-        return current_task.status
+    if delsl:
+        try:
+            wssendql(branch,countertype, ticket, 'del')
+        except Exception as e:
+            current_task.status = 'ERROR'
+            return current_task.status
 
     # websocket to voice com
-    msgid_h = 'voice_call_' + datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
+    msgid_h = 'voice_Call/Get_' + datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
     try:
         wssendvoice840(branch, countertype, counterstatus, ticket, msgid_h)
     except Exception as e:
@@ -392,7 +394,7 @@ def t_WS_Call(branch_id, counterstatus_id, countertype_id, ticket_id):
         current_task.status = 'ERROR'
         return current_task.status
 
-    current_task.status = 'SUCCESS'        
+    current_task.status = 'SUCCESS'
     return current_task.status
 
 def funCounterCall_old(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
@@ -1014,7 +1016,7 @@ def t_WS_Recall(branch_id, counterstatus_id, countertype_id, ticket_id):
     return current_task.status
 
 @transaction.atomic
-def funCounterGet_v830(gettnumber, user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
+def funCounterGet_v840(gettnumber, user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     status = dict({})
     msg = dict({})
     context = dict({})
@@ -1115,12 +1117,12 @@ def funCounterGet_v830(gettnumber, user, branch, countertype, counterstatus, log
 
         # update ticket 
         
+        delsq = False
         # waiting on queue
         if ticket.status == 'waiting':
             ticket.ticketroute.waiting = ticket.ticketroute.waiting - 1
             ticket.ticketroute.save()
-            # websocket to softkey (update Queue List)
-            wssendql(branch, countertype, ticket, 'del')
+            delsq = True
          
         ticket.user = user
         ticket.status = 'calling'
@@ -1140,20 +1142,34 @@ def funCounterGet_v830(gettnumber, user, branch, countertype, counterstatus, log
 
         # do display and voice temp db
         newdisplayvoice(branch, countertype, counterstatus.counternumber, ticket, datetime_now, user)
-        # websocket to web my ticket
-        wsSendTicketStatus(branch, ticket, counterstatus)    
-        # websocket to voice com and flash light
-        wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
-        wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
-        wssendvoice840(branch, countertype, counterstatus, ticket, 'asdf1234')
 
-        wssendflashlight(branch, countertype, counterstatus, 'flash')
-        # websocket to web softkey for update counter status
-        wscounterstatus(counterstatus)
-        # websocket to web tv
-        wssendwebtv(branch, countertype)
-        # websocket to Display Panel display ticket
-        wssenddispcall840(branch, counterstatus, countertype, ticket)
+    # # WS send data :
+        # # websocket to web my ticket
+        # wsSendTicketStatus(branch, ticket, counterstatus)    
+        # # websocket to voice com and flash light
+        # wssendvoice(branch.bcode, countertype.name, ticket.tickettype, ticket.ticketnumber, counterstatus.counternumber)
+        # wssendvoice830(branch.bcode, countertype.name, counterstatus.id, ticket.tickettype_disp, ticket.ticketnumber_disp, counterstatus.counternumber)
+        # wssendvoice840(branch, countertype, counterstatus, ticket, 'asdf1234')
+
+        # wssendflashlight(branch, countertype, counterstatus, 'flash')
+        # # websocket to web softkey for update counter status
+        # wscounterstatus(counterstatus)
+        # # websocket to web tv
+        # wssendwebtv(branch, countertype)
+        # # websocket to Display Panel display ticket
+        # wssenddispcall840(branch, counterstatus, countertype, ticket)
+
+        redis_online = check_redis_connection()
+        # pass the sub to celery parallel run
+        if redis_online:
+            try:
+                t_ws_call = t_WS_Call.apply_async (args=[branch.id, counterstatus.id, countertype.id, ticket.id, delsq], countdown=0)
+                logging.info('Start task : t_ws_call from funCounterGet_v840 (wssendwebtv, wssenddispcall840, wssendql, wssendvoice840, wssendflashlight, wscounterstatus) : ' + str(t_ws_call))
+            except Exception as e:
+                logging.error('Error t_ws_call from funCounterGet_v840: ' + str(e))
+                pass
+        else:
+            logging.error('Redis is offline. Cannot run t_ws_call from funCounterGet_v840') 
 
         context = {'tickettype': ticket.tickettype, 
                    'ticketnumber': ticket.ticketnumber , 
@@ -1754,7 +1770,7 @@ def cc_ready(user, branch, countertype, counterstatus, logtext, rx_app, rx_versi
     # status, msg, context_call = funCounterCall(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now)
     # new version with database lock
     for i in range(0, 10):
-        status, msg, context_call = funCounterCall_v830(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now)
+        status, msg, context_call = funCounterCall_v840(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now)
         if status['status'] == 'OK':
             break
         else:

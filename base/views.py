@@ -10,7 +10,7 @@ from django.db.models import Q
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from datetime import datetime, timezone, timedelta
 from base.decorators import *
-from django.urls import reverse_lazy
+# from django.urls import reverse_lazy
 from .models import TicketLog, CounterStatus, CounterType, TicketData, TicketRoute, UserProfile, TicketFormat
 from .models import Branch, TicketTemp, DisplayAndVoice, PrinterStatus, WebTouch, Ticket, Domain
 from booking.models import TimeSlot, Booking, BookingLog, TimeslotTemplate
@@ -204,7 +204,7 @@ def Softkey_GetView(request, pk, ttid):
         # status, msg, context_get = funCounterGet('', tt.tickettype, tt.ticketnumber, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list ', 'Softkey-web', softkey_version, datetime_now)
         # new version with database lock
         for i in range(0, 10):
-            status, msg, context_get = funCounterGet_v830(tt.tickettype_disp + tt.ticketnumber_disp, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list ', 'Softkey-web', softkey_version, datetime_now)
+            status, msg, context_get = funCounterGet_v840(tt.tickettype_disp + tt.ticketnumber_disp, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket from list ', 'Softkey-web', softkey_version, datetime_now)
             if status['status'] == 'OK':
                 break
             else:
@@ -349,7 +349,7 @@ def SoftkeyView(request, pk):
                     # status, msg, context_get = funCounterGet(getticket, '', '', request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket ', 'Softkey-web', softkey_version, datetime_now)
                     # new version with database lock
                     for i in range(0, 10):
-                        status, msg, context_get = funCounterGet_v830(getticket, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket ', 'Softkey-web', softkey_version, datetime_now)
+                        status, msg, context_get = funCounterGet_v840(getticket, request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Get ticket ', 'Softkey-web', softkey_version, datetime_now)
                         if status['status'] == 'OK':
                             break
                         else:
@@ -373,7 +373,7 @@ def SoftkeyView(request, pk):
                 # status, msg, context_call = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)                
                 # new version with database lock
                 for i in range(0, 10):
-                    status, msg, context_call = funCounterCall_v830(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
+                    status, msg, context_call = funCounterCall_v840(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket ', 'Softkey-web', softkey_version, datetime_now)
                     if status['status'] == 'OK':
                         break
                     else:
@@ -630,7 +630,7 @@ def SoftkeyCallView(request, pk):
         # status, msg, context = funCounterCall(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket:', 'Softkey-web', softkey_version, datetime_now)        
         # new version with database lock
         for i in range(0, 10):
-            status, msg, context = funCounterCall_v830(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket:', 'Softkey-web', softkey_version, datetime_now)
+            status, msg, context = funCounterCall_v840(request.user, counterstatus.countertype.branch, counterstatus.countertype, counterstatus, 'Call ticket:', 'Softkey-web', softkey_version, datetime_now)
             if status['status'] == 'OK':
                 break
             else:

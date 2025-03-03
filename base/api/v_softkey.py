@@ -150,7 +150,7 @@ def postCounterGet(request):
         # status, msg, context = funCounterGet('', rx_ticketype, rx_ticketnumber, user, branch, countertype, counterstatus, 'Ticket Get API : ', rx_app, rx_version, datetime_now)
         # new version with database lock
         for i in range(0, 10):
-            status, msg, context = funCounterGet_v830(rx_ticketype + rx_ticketnumber, user, branch, countertype, counterstatus, 'Ticket Get API : ', rx_app, rx_version, datetime_now)
+            status, msg, context = funCounterGet_v840(rx_ticketype + rx_ticketnumber, user, branch, countertype, counterstatus, 'Ticket Get API : ', rx_app, rx_version, datetime_now)
             if status['status'] == 'OK':
                 break
             else:
@@ -161,12 +161,6 @@ def postCounterGet(request):
                     time.sleep(0.05)
                 else:
                     break
-
-        # websocket to web tv
-        wssendwebtv(branch, countertype)
-
-
-
 
     output = status | msg | context
     return Response(output)
@@ -1193,7 +1187,7 @@ def postCounterCall(request):
         # status, msg, context = funCounterCall(user, branch, countertype, counterstatus, 'Calling ticket API : ', rx_app, rx_version, datetime_now)
         # new version with database lock
         for i in range(0, 10):
-            status, msg, context = funCounterCall_v830(user, branch, countertype, counterstatus, 'Calling ticket API : ', rx_app, rx_version, datetime_now)
+            status, msg, context = funCounterCall_v840(user, branch, countertype, counterstatus, 'Calling ticket API : ', rx_app, rx_version, datetime_now)
             if status['status'] == 'OK':
                 break
             else:

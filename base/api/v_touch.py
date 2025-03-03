@@ -5,17 +5,21 @@ from datetime import datetime, timezone, timedelta
 # from django.utils import timezone
 from django.db.models import Q
 
-from base.models import APILog, Branch, TicketFormat, Ticket, TicketTemp
+from base.models import APILog, Branch, TicketFormat, Ticket, TicketTemp, CounterType
 from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus, SubTicket
 from booking.models import Booking, TimeSlot
 from .views import setting_APIlogEnabled, visitor_ip_address, funUTCtoLocal, checkuser
 from .v_roche import rocheSMS
-from base.ws import wssendwebtv, wssendql, wsSendPrintTicket840, wssenddispwait
+from base.ws import wssendwebtv, wssendql, wsSendPrintTicket840, wssenddispwait, check_redis_connection
 import random
 from .v_softkey_sub import cc_autocall
 from .serializers import touchkeysSerivalizer
 from django.db import transaction
 import urllib.parse
+import logging
+from celery import shared_task
+
+logger = logging.getLogger(__name__)
 
 def gensecuritycode():
     sc = ''
@@ -27,7 +31,7 @@ def gensecuritycode():
 
 @transaction.atomic
 # parameter 'pno' data changed from <PNO>P1</PNO> -> P1,P2, ... support multiple printers
-def newticket_v830(branch, ttype, pnos, remark, datetime_now, user, app, version, booking:Booking):
+def newticket_v840(branch, ttype, pnos, remark, datetime_now, user, app, version, booking:Booking):
     ticketno_str = ''
     countertype = None
     tickettemp = None 
@@ -224,19 +228,24 @@ def newticket_v830(branch, ttype, pnos, remark, datetime_now, user, app, version
                 user=user,
             )
 
-        wssendwebtv(branch, countertype)
-        # websocket to display panel for waiting ticket
-        wssenddispwait(branch, countertype, ticket)
-        wssendql(branch, countertype,tickettemp,'add')
-
-
-        # if pnos != '' and pnos != None:
-        #     pno_list = pnos.split(",")
-        #     for p in pno_list:
-        #         wsSendPrintTicket(branch.bcode, ttype, ticketno_str, datetime_now, tickettext, p)
-
+    # # ws send data
+        # wssendwebtv(branch, countertype)
+        # # websocket to display panel for waiting ticket
+        # wssendwebtv(branch, countertype, tickettemp)
+        # wssendql(branch, countertype,tickettemp,'add')
      
-        
+        redis_online = check_redis_connection()
+        # pass the sub to celery parallel run
+        if redis_online:
+            try:
+                t_ws_newticket = t_WS_NewTicket.apply_async (args=[branch.id, countertype.id, ticket.id], countdown=0)
+                logging.info('Start task : t_ws_newticket (wssendwebtv, wssendwebtv, wssendql) : ' + str(t_ws_newticket))
+            except Exception as e:
+                logging.error('Error t_ws_newticket : ' + str(e))
+                pass
+        else:
+            logging.error('Redis is offline. Cannot run t_ws_newticket')
+
         # for Roche send SMS to staff when new ticket issued
         # rocheSMS(branch, tickettemp)
 
@@ -246,7 +255,66 @@ def newticket_v830(branch, ttype, pnos, remark, datetime_now, user, app, version
 
     return ticketno_str, countertype, tickettemp, ticket, error
 
-def printTicket(branch:Branch, tickettemp:TicketTemp, ticketformat:TicketFormat, datetime_now, pnos):
+@shared_task
+def t_WS_PrintTicket(branch_id, ticket_id, xmlp:str):
+    from celery import current_task
+
+    # Get my task ID
+    my_id = current_task.request.id
+    logger.info(f'Print Ticket WS data out (wsSendPrintTicket840): {my_id}')
+
+    branch = Branch.objects.get(id=branch_id)
+    tickettemp = TicketTemp.objects.get(id=ticket_id)
+
+    current_task.status = 'PROGRESS'
+    # websocket to Printer Control
+    try:
+        wsSendPrintTicket840(branch, tickettemp, xmlp)
+    except Exception as e:
+        current_task.status = 'ERROR'
+        return current_task.status
+    
+    current_task.status = 'SUCCESS'
+    return current_task.status
+
+@shared_task
+def t_WS_NewTicket(branch_id, countertype_id, ticket_id):
+    from celery import current_task
+
+    branch = Branch.objects.get(id=branch_id)
+    countertype = CounterType.objects.get(id=countertype_id)
+    tickettemp = TicketTemp.objects.get(id=ticket_id)
+
+    # Get my task ID
+    my_id = current_task.request.id
+    logger.info(f'New Ticket WS data out (wssendwebtv, wssenddispwait, wssendql): {my_id}')
+
+    current_task.status = 'PROGRESS'
+    # websocket to web tv
+    try:
+        wssendwebtv(branch, countertype)
+    except Exception as e:
+        current_task.status = 'ERROR'
+        return current_task.status
+    
+    # websocket to display panel for waiting ticket
+    try:
+        wssenddispwait(branch, countertype, tickettemp)
+    except Exception as e:
+        current_task.status = 'ERROR'
+        return current_task.status
+    
+    # websocket add ticket on softkey queuing list
+    try:
+        wssendql(branch, countertype,tickettemp,'add')
+    except Exception as e:
+        current_task.status = 'ERROR'
+        return current_task.status
+
+    current_task.status = 'SUCCESS'
+    return current_task.status
+
+def printTicket840(branch:Branch, tickettemp:TicketTemp, ticketformat:TicketFormat, pnos):
 
     if pnos != '' and pnos != None:
         
@@ -269,7 +337,7 @@ def printTicket(branch:Branch, tickettemp:TicketTemp, ticketformat:TicketFormat,
         # ticket text
         tickettext = ticketformat.tformat
         tickettext = tickettext.replace('<TICKET>','<TEXT>' + p_ttype + p_ticketno_str)                        
-        localtime = funUTCtoLocal(datetime_now, branch.timezone)
+        localtime = funUTCtoLocal(tickettemp.tickettime , branch.timezone)
         localtime_str = localtime.strftime('%H:%M:%S %d-%m-%Y')
         tickettext = tickettext.replace('<DATETIME>', '<TEXT>' + localtime_str)
         tickettext = tickettext.replace('<MYTICKET>', tickettemp.myticketlink)
@@ -278,11 +346,19 @@ def printTicket(branch:Branch, tickettemp:TicketTemp, ticketformat:TicketFormat,
         tickettemp.tickettext = tickettext
         tickettemp.save()
         
+        redis_online = check_redis_connection()
         pno_list = pnos.split(",")
         for p in pno_list:
             xmlp = '<PNO>' + p + '</PNO>'
-            wsSendPrintTicket840(branch.bcode, tickettemp.tickettype , tickettemp.ticketnumber, datetime_now, tickettemp.tickettext, xmlp )
-
+            if redis_online:
+                try:
+                    t_ws_printticket = t_WS_PrintTicket.apply_async (args=[branch.id, tickettemp.id, xmlp], countdown=0)
+                    logging.info('Start task : t_ws_printticket (wsSendPrintTicket840) : ' + str(t_ws_printticket))
+                except Exception as e:
+                    logging.error('Error t_ws_printticket : ' + str(e))
+                    pass
+            else:
+                logging.error('Redis is offline. Cannot run t_WS_PrintTicket')
 
 def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
     ticketno_str = ''
@@ -436,12 +512,34 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
                 user=user,
             )
 
-        wssendwebtv(branch, countertype)
-        # websocket to display panel for waiting ticket
-        wssenddispwait(branch, countertype, ticket)
-        wssendql(branch, countertype,tickettemp,'add')
-        wsSendPrintTicket840(branch.bcode, ttype, ticketno_str, datetime_now, tickettext, pno)
-        
+    # # ws send data
+    #     wssendwebtv(branch, countertype)
+    #     # websocket to display panel for waiting ticket
+    #     wssenddispwait(branch, countertype, ticket)
+    #     wssendql(branch, countertype,tickettemp,'add')
+    #     wsSendPrintTicket840(branch, tickettemp, pno)
+
+        redis_online = check_redis_connection()
+        # pass the sub to celery parallel run
+        if redis_online:
+            try:
+                t_ws_newticket = t_WS_NewTicket.apply_async (args=[branch.id, countertype.id, tickettemp.id], countdown=0)
+                logging.info('Start task : t_ws_newticket (wssendwebtv, wssenddispwait, wssendql) : ' + str(t_ws_newticket))
+            except Exception as e:
+                logging.error('Error t_ws_newticket : ' + str(e))
+                pass
+        else:
+            logging.error('Redis is offline. Cannot run t_ws_newticket')
+        if redis_online:
+            try:
+                t_ws_printticket = t_WS_PrintTicket.apply_async (args=[branch.id, tickettemp.id, pno], countdown=0)
+                logging.info('Start task : t_ws_printticket (wsSendPrintTicket840) : ' + str(t_ws_printticket))
+            except Exception as e:
+                logging.error('Error t_ws_printticket : ' + str(e))
+                pass
+        else:
+            logging.error('Redis is offline. Cannot run t_ws_printticket')
+
         # for Roche send SMS to staff when new ticket issued
         # rocheSMS(branch, tickettemp)
 
@@ -546,9 +644,9 @@ def postTicket(request):
         # old version no database lock may be cause double ticket number
         # ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, ttype, pno, remark, datetime_now, user, app, version)
         # new version with database lock
-        ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(branch, ttype, pno, remark, datetime_now, user, app, version, None)
+        ticketno_str, countertype, tickettemp, ticket, error = newticket_v840(branch, ttype, pno, remark, datetime_now, user, app, version, None)
         if error == '' :
-            printTicket(branch, tickettemp, tickettemp.ticketformat, datetime_now, tickettemp.printernumber)
+            printTicket840(branch,tickettemp, tickettemp.ticketformat)
         if error != '' :            
             status = dict({'status': 'Error'})
             msg =  dict({'msg':error})
