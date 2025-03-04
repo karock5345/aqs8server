@@ -684,11 +684,44 @@ def funCounterProcess(user, branch, countertype, counterstatus, logtext, rx_app,
                 status = lcounterstatus[lcounterstatus.index('processing')],
             )  
         # websocket to web softkey for update counter status
-        wscounterstatus(counterstatus)
+        # wscounterstatus(counterstatus)
+
+        redis_online = check_redis_connection()
+        # pass the sub to celery parallel run
+        if redis_online:
+            try:
+                t_ws_cs = t_WS_CounterStatus.apply_async (args=[counterstatus.id], countdown=0)
+                logging.info('Start task : t_ws_cs (wscounterstatus) : ' + str(t_ws_cs))
+            except Exception as e:
+                logging.error('Error t_ws_cs : ' + str(e))
+                pass
+        else:
+            logging.error('Redis is offline. Cannot run t_ws_cs')
 
         status = dict({'status': 'OK'})
         msg =  dict({'msg':'Process ticket.'})
     return status, msg
+
+@shared_task
+def t_WS_CounterStatus(counterstatus_id):
+    from celery import current_task
+
+    # Get my task ID
+    my_id = current_task.request.id
+    logger.info(f'CounterStatus WS data out (wscounterstatus): {my_id}')
+
+    counterstatus = CounterStatus.objects.get(id=counterstatus_id)
+
+    current_task.status = 'PROGRESS'
+    # websocket to web softkey for update counter status
+    try:
+        wscounterstatus(counterstatus)
+    except Exception as e:
+        current_task.status = 'ERROR'
+        return current_task.status
+    
+    current_task.status = 'SUCCESS'
+    return current_task.status
 
 def funCounterComplete(user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     status = dict({})
@@ -815,8 +848,20 @@ def funCounterComplete(user, branch, countertype, counterstatus, logtext, rx_app
 
         # websocket to web my ticket
         wsSendTicketStatus(branch, ticket, counterstatus)    
-        # websocket to web softkey for update counter status
-        wscounterstatus(counterstatus)
+
+        # # websocket to web softkey for update counter status
+        # wscounterstatus(counterstatus)
+        redis_online = check_redis_connection()
+        # pass the sub to celery parallel run
+        if redis_online:
+            try:
+                t_ws_cs = t_WS_CounterStatus.apply_async (args=[counterstatus.id], countdown=0)
+                logging.info('Start task : t_ws_cs (wscounterstatus) : ' + str(t_ws_cs))
+            except Exception as e:
+                logging.error('Error t_ws_cs : ' + str(e))
+                pass
+        else:
+            logging.error('Redis is offline. Cannot run t_ws_cs')        
 
         status = dict({'status': 'OK'})
         msg =  dict({'msg':'Ticket done.'})
@@ -1201,7 +1246,7 @@ def funTicketToList(input:str):
 
     return out_list
 
-def funCounterGet(getticket, getttype, gettnumber, user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
+def funCounterGet_old(getticket, getttype, gettnumber, user, branch, countertype, counterstatus, logtext, rx_app, rx_version, datetime_now):
     status = dict({})
     msg = dict({})
     context = dict({})
