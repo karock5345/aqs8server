@@ -338,7 +338,7 @@ def postCounterVoid(request):
 
     if status == dict({}) :
         # funVoid(user, tickett, td, datetime_now)
-        status, msg = funVoid_v830(request.user, tickett, td, 'Void ticket from API ', rx_app, rx_version, datetime_now)
+        status, msg = funVoid(request.user, tickett, td, 'Void ticket from API ', rx_app, rx_version, datetime_now)
 
     output = status | msg | context
     return Response(output)

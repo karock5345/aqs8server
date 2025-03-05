@@ -13,6 +13,7 @@ from celery.result import AsyncResult
 import asyncio
 import redis
 
+
 logger = logging.getLogger(__name__)
 # max. number of WebTVConsumer_pub connected for each branch
 ws_connected_dict = {}
@@ -843,7 +844,101 @@ class Voice840Consumer(AsyncWebsocketConsumer):
             except:
                 pass
             
+# Receive method
+    async def receive(self, text_data=None, bytes_data=None):
+        from .ws import wssenddispmule840
+        """
+        Handle incoming WebSocket messages from the client
+        """
+        try:
+            # Handle text data
+            if text_data:
+                # Try to parse JSON data
+                try:
+                    rxdata = json.loads(text_data)
+                    logger.info(f'Received data from {self.room_group_name}: {rxdata}')
 
+                    # Receive cmd from Voice Component software, then send cmd to Disp Panel
+                    # {
+                    #     "id":"abc",
+                    #     "cmd":"voicestart/voiceend",
+                    #     "data":{
+                    #         "bcode":"KB",
+                    #         "ct":"c"
+                    #     }
+                    # }
+                    # get bcode and countertype_name
+                    branch = None
+                    countertype = None
+                    cmd = None
+                    error = ''
+                    try:
+                        rxcmd = rxdata['cmd']
+                        if rxcmd == 'voicestart':
+                            cmd = 'mute'
+                        elif rxcmd == 'voiceend':
+                            cmd = 'unmute'
+                    except:
+                        error = 'No rx cmd'
+                    if error != '':
+                        try:
+                            data = rxdata['data']
+                            bcode = data['bcode']
+                            ct_name = data['ct']
+                        except:
+                            error = 'No rx data'
+                    if error != '':
+                        try:
+                            branch = Branch.objects.filter(bcode=bcode)[0]
+                            countertype = CounterType.objects.filter(name=ct_name)[0]
+                        except:
+                            error = 'bcode or ct_name not correct'
+                    if error == '':
+                        wssenddispmule840(branch, countertype, cmd)
+
+
+
+
+                    # # Process the received data (customize this part based on your needs)
+                    # response = {
+                    #     'status': 'success',
+                    #     'received': data,
+                    #     'timestamp': asyncio.get_event_loop().time()
+                    # }
+                    
+                    # # Send response back to client
+                    # await self.send(text_data=json.dumps(response, cls=DjangoJSONEncoder))
+                    
+                    # # Optionally broadcast to group
+                    # await self.channel_layer.group_send(
+                    #     self.room_group_name,
+                    #     {
+                    #         'type': 'broadcast_message',
+                    #         'tx': json.dumps({
+                    #             'message': 'Data received and broadcasted',
+                    #             'data': data
+                    #         }, cls=DjangoJSONEncoder)
+                    #     }
+                    # )
+                    
+                except json.JSONDecodeError:
+                    logger.error(f'Invalid JSON received from {self.room_group_name}: {text_data}')
+                    await self.send(text_data=json.dumps({
+                        'status': 'error',
+                        'message': 'Invalid JSON format'
+                    }, cls=DjangoJSONEncoder))
+            
+            # Handle binary data if needed
+            if bytes_data:
+                logger.info(f'Received binary data from {self.room_group_name}: {len(bytes_data)} bytes')
+                # Add your binary data handling logic here
+                
+        except Exception as e:
+            logger.error(f'Error in receive: {str(e)}')
+            await self.send(text_data=json.dumps({
+                'status': 'error',
+                'message': f'Error processing message: {str(e)}'
+            }, cls=DjangoJSONEncoder))
     # Receive message from room group
     async def broadcast_message(self, event):
         str_tx = event['tx']

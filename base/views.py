@@ -22,7 +22,7 @@ import pytz
 from .api.serializers import displaylistSerivalizer, waitinglistSerivalizer
 # from django.utils import timezone
 from .api.v_softkey_sub import *
-from .api.v_touch import newticket, newticket_v830, printTicket
+from .api.v_touch import newticket, newticket_v840, printTicket_v840
 from base.ws import wsHypertext, wscounterstatus, wssendflashlight
 import logging
 import csv
@@ -165,7 +165,7 @@ def Softkey_VoidView(request, pk, ttid):
     if request.method == 'POST':
         action = request.POST.get('action')
         if action == 'confirm':           
-            status, msg = funVoid_v830(request.user, tt, td, 'Void ticket from list ', 'Softkey-web', softkey_version,  datetime_now)
+            status, msg = funVoid(request.user, tt, td, 'Void ticket from list ', 'Softkey-web', softkey_version,  datetime_now)
             if status['status'] == 'Error':
                 messages.error(request, msg['msg'] + ' ' + tt.tickettype + tt.ticketnumber)
             elif status['status'] == 'OK':
@@ -1111,10 +1111,10 @@ def webtouchView(request):
                     # old version no database lock may be cause double ticket number
                     # ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, key.ttype, '','', datetime_now, userweb, 'web', '8')
                     # new version with database lock
-                    ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(branch, key.ttype, '', '', datetime_now, userweb, 'web', aqs_version, None)
+                    ticketno_str, countertype, tickettemp, ticket, error = newticket_v840(branch, key.ttype, '', '', datetime_now, userweb, 'web', aqs_version, None)
                     
                     if error == '' :
-                        printTicket(branch, tickettemp, tickettemp.ticketformat, datetime_now, '')
+                        printTicket_v840(branch, tickettemp, tickettemp.ticketformat, datetime_now, '')
 
                         # add ticketlog
                         localdate_now = funUTCtoLocal(datetime_now, tickettemp.branch.timezone)
@@ -1208,7 +1208,7 @@ def CancelTicketView(request, pk, sc):
             if error == '' :  
                 datetime_now =datetime.now(timezone.utc)
                 # funVoid(user, tt, td, datetime_now)
-                status, msg = funVoid_v830(request.user, tt, td, 'Void ticket from e-ticket ', 'Web', '8',  datetime_now)
+                status, msg = funVoid(request.user, tt, td, 'Void ticket from e-ticket ', 'Web', '8',  datetime_now)
                 if status['status'] == 'Error':
                     error = msg['msg']
                     messages.error(request, error)

@@ -30,11 +30,46 @@ def check_redis_connection():
         # Try to ping the Redis server
         r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=0)
         pingpong = r.set('ping', 'pong')
-        return pingpong
+        return True
     except (ConnectionError, redis.exceptions.ConnectionError):
         return False
     except Exception:
         return False
+
+# Version 8.4 add Message ID and send 3 times
+# ws to Display Panel cmd mute / unmute the video volume when voice announcement
+def wssenddispmule840(branch:Branch, countertype:CounterType, cmd:str):
+    str_now = '--:--'
+    datetime_now =datetime.now(timezone.utc)
+    datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+    str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
+
+    # generate message id
+    msgid = 'd_mule_' + datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
+    jsontx = {
+        "id":msgid,
+        "cmd":cmd,
+        "data": {
+            "servertime": str_now,
+            }
+        }
+    str_tx = json.dumps(jsontx)        
+
+    context = {
+    'type':'broadcast_message',
+    'tx':str_tx
+    }
+    channel_layer = get_channel_layer()
+    channel_group_name = 'disp840_' + branch.bcode + '_' + countertype.name
+    logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
+    try:
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        async_to_sync (channel_layer.group_send)(channel_group_name, context)
+        logger.info('...Done x3')
+    except:
+        logger.error('...ERROR:Redis Server is down!')
+    pass
 
 # Version 8.4 add Message ID and send 3 times
 # ws to Display Panel cmd call / recall a ticket
@@ -102,7 +137,7 @@ def wssenddispcall840(branch, counterstatus, countertype, ticket):
     pass
 
 # ws to Display Panel cmd call / recall a ticket
-def wssenddispcall(branch, counterstatus, countertype, ticket):
+def wssenddispcall_old(branch, counterstatus, countertype, ticket):
     error = ''
 
     if not check_redis_connection():
@@ -198,7 +233,7 @@ def wssenddispremoveall840(branch,  countertype):
     pass
 
 # ws to Display Panel cmd clear all ticket
-def wssenddispremoveall(branch,  countertype):
+def wssenddispremoveall_old(branch,  countertype):
     str_now = '--:--'
     datetime_now =datetime.now(timezone.utc)
     datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
@@ -270,7 +305,7 @@ def wssenddispwait840(branch,  countertype, ticket):
     pass
 
 # ws to Display Panel cmd waiting number of queue by TicketType 
-def wssenddispwait(branch,  countertype, ticket:TicketTemp):
+def wssenddispwait_old(branch,  countertype, ticket:TicketTemp):
     str_now = '--:--'
     datetime_now =datetime.now(timezone.utc)
     datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
@@ -655,7 +690,7 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
 # { "cmd":"vol",
 #   "data":50
 # }
-def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
+def wssendvoice830_old(bcode, countertypename, counterstatus_id, ttype, tno, cno):
 
     context = None
     error = ''
@@ -827,7 +862,7 @@ def wssendvoice830(bcode, countertypename, counterstatus_id, ttype, tno, cno):
 
 
 
-def wssendvoice(bcode, countertypename, ttype, tno, cno):
+def wssendvoice_old(bcode, countertypename, ttype, tno, cno):
     # {
     #  "id": "123456",
     #  "cmd":"voice",
@@ -1021,7 +1056,7 @@ def wsSendPrintTicket840(branch:Branch, tickettemp:TicketTemp, printernumber):
         logger.error('WS send print Error:' + error)
 
 
-def wsSendPrintTicket(bcode, tickettype, ticketnumber, tickettime, tickettext, printernumber):
+def wsSendPrintTicket_old(bcode, tickettype, ticketnumber, tickettime, tickettext, printernumber):
     # {
     #     "cmd": "prt",
     #     "data": 

@@ -14,7 +14,8 @@
   - base\consumers.py -> DispPanelConsumer -> broadcast_message -> add delay 1s
   - base\consumers.py -> VoiceConsumer -> broadcast_message -> add delay 1s
   - base\consumers.py -> PrintConsumer -> broadcast_message -> add delay 1s
-
+  - Send cmd via WS to Display Panel cmd mute / unmute the video volume when voice announcement
+  - Improve preformance when Redis is down
 
 <h3 style="color:orange;">Version 8.3.12</h3>
 

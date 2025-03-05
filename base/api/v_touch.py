@@ -10,7 +10,7 @@ from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus, SubT
 from booking.models import Booking, TimeSlot
 from .views import setting_APIlogEnabled, visitor_ip_address, funUTCtoLocal, checkuser
 from .v_roche import rocheSMS
-from base.ws import wssendwebtv, wssendql, wsSendPrintTicket840, wssenddispwait, check_redis_connection
+from base.ws import wssendwebtv, wssendql, wsSendPrintTicket840, wssenddispwait840, check_redis_connection
 import random
 from .v_softkey_sub import cc_autocall
 from .serializers import touchkeysSerivalizer
@@ -314,7 +314,7 @@ def t_WS_NewTicket(branch_id, countertype_id, ticket_id):
     current_task.status = 'SUCCESS'
     return current_task.status
 
-def printTicket840(branch:Branch, tickettemp:TicketTemp, ticketformat:TicketFormat, pnos):
+def printTicket_v840(branch:Branch, tickettemp:TicketTemp, ticketformat:TicketFormat, pnos):
 
     if pnos != '' and pnos != None:
         
@@ -646,7 +646,7 @@ def postTicket(request):
         # new version with database lock
         ticketno_str, countertype, tickettemp, ticket, error = newticket_v840(branch, ttype, pno, remark, datetime_now, user, app, version, None)
         if error == '' :
-            printTicket840(branch,tickettemp, tickettemp.ticketformat)
+            printTicket_v840(branch,tickettemp, tickettemp.ticketformat, pno)
         if error != '' :            
             status = dict({'status': 'Error'})
             msg =  dict({'msg':error})

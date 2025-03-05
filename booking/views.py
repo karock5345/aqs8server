@@ -29,7 +29,7 @@ import re
 from aqs.tasks import sendemail
 from django.template.loader import render_to_string
 from django.db import transaction
-from base.api.v_touch import newticket_v830, printTicket, funGetDispTicketNumber
+from base.api.v_touch import newticket_v840, printTicket_v840, funGetDispTicketNumber
 
 logger = logging.getLogger(__name__)
 
@@ -815,7 +815,7 @@ def bookingtoqueue(utcnow, booking:Booking, user, force_ontime):
       
         # create new ticket
         if error == '':
-            ticketno_str, countertype, tickettemp, ticket, error = newticket_v830(
+            ticketno_str, countertype, tickettemp, ticket, error = newticket_v840(
                                                                                     booking.branch, 
                                                                                     ticketformat.ttype, 
                                                                                     booking.branch.bookingPrinterNumber,
@@ -828,7 +828,7 @@ def bookingtoqueue(utcnow, booking:Booking, user, force_ontime):
                                                                                     )
             
             if error == '':
-                printTicket(booking.branch, tickettemp, tickettemp.ticketformat, utcnow, tickettemp.printernumber)
+                printTicket_v840(booking.branch, tickettemp, tickettemp.ticketformat, utcnow, tickettemp.printernumber)
             pass
 
 
