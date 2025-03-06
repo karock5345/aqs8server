@@ -808,7 +808,7 @@ exit
 ```
 If DB server is independence, Allow remote access to PostgreSQL server
 ```bash
-nano /etc/postgresql/14/main/postgresql.conf
+sudo nano /etc/postgresql/16/main/postgresql.conf
 # Edit: search (CTRL + W) listen_addresses
 listen_addresses = '*'
 ```
@@ -816,7 +816,7 @@ listen_addresses = '*'
 sudo find / -name pg_hba.conf
 sudo nano /path/to/pg_hba.conf
 # this case:
-sudo nano /etc/postgresql/14/main/pg_hba.conf
+sudo nano /etc/postgresql/16/main/pg_hba.conf
 # add line:
 host    aqsdb8_qs123    aqsdbuser    10.95.157.237/32    md5
 ```
@@ -1147,6 +1147,7 @@ create TicketRoute
 create admin, api user for our customer
 admin : elton /// asdf2206
 
+create user profile: userapi userweb superuser(tim) elton
 
 # Troubleshooting and Debug
 check the logs for additional details:
@@ -1191,96 +1192,6 @@ Reset PSQL :
 sudo systemctl restart postgresql
 ```
 
-# DB Backup server init and setup
-```bash
-sudo timedatectl set-timezone Asia/Hong_Kong
-sudo apt-get update
-sudo apt-get -y upgrade
-sudo apt install -y postgresql
-
-sudo service postgresql stop
-sudo -s
-cd /
-rm -R /var/lib/postgresql/14/main
-# mv /var/lib/postgresql/14/main /var/lib/postgresql/14/main_old
-sudo chown postgres:postgres /var/lib/postgresql/14/main
-sudo -u postgres pg_basebackup -h 192.168.5.131 -D /var/lib/postgresql/14/main -U repuser --checkpoint=fast -R --slot=some_name -C --wal-method=stream
-nano /etc/postgresql/14/main/postgresql.conf
-```
-Edit:
-> listen_addresses = '*'
-
-What IP address(es) to listen on;
-
-```bash
-sudo nano /etc/postgresql/14/main/pg_hba.conf
-# change all scram-sha-256 to md5
-sudo service postgresql start
-
-#Look at the Postgres log on each server. These logs can contain information that will help you troubleshoot the issue.
-less ../../var/log/postgresql/postgresql-14-main.log
-```
-
-
-
-# DB replication Testing 
-Insert data to Primary DB for Testing
-
-```
-sudo su -l postgres
-psql
-\c aqsdb8_qs123
-INSERT INTO base_testingModel(name, des) VALUES ('David','is good guy');
-```
-View data from postgres
-```
-sudo su -l postgres
-psql
-\c aqsdb8_qs123
-\dt
-TABLE base_userprofile;
-TABLE base_testingModel;
-INSERT INTO base_testingModel(name, des) VALUES ('David','is good guy');
-\q
-logout
-```
-
-<h3 style="color:orange;">Check the server stat</h3>
-
-```
-sudo su -l postgres
-psql
-\x
-select * from pg_stat_replication;
-```
-<h3 style="color:orange;">check slot at main server</h3>
-
-```
-select * from pg_replication_slots;
-```
-
-remove slot from main server
-
-```
-select pg_drop_replication_slot('some_name');
-\x
-```
-<h3 style="color:orange;">Troubleshoot:</h3>
-
-Check error : Django code run on Gunicorn
-```
-sudo systemctl status gunicorn_qs123
-```
-```bash
-# check PSQL status
-sudo service postgresql status
-# start PSQL
-sudo service postgresql start
-# Restart
-sudo service postgresql restart
-# stop
-sudo service postgresql stop
-```
 
 # Setup Redis Server (Websocket)
 
@@ -1856,4 +1767,94 @@ cd /home/ubuntu/aqs8server
 source ./env/bin/activate
 pip3 install django-crequest --no-index --find-links=/home/ubuntu/aqs8server/lib/
 pip3 install celery[redis] --no-index --find-links=/home/ubuntu/aqs8server/lib/
+```
+# DB Backup server init and setup
+```bash
+sudo timedatectl set-timezone Asia/Hong_Kong
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt install -y postgresql
+
+sudo service postgresql stop
+sudo -s
+cd /
+rm -R /var/lib/postgresql/14/main
+# mv /var/lib/postgresql/14/main /var/lib/postgresql/14/main_old
+sudo chown postgres:postgres /var/lib/postgresql/14/main
+sudo -u postgres pg_basebackup -h 192.168.5.131 -D /var/lib/postgresql/14/main -U repuser --checkpoint=fast -R --slot=some_name -C --wal-method=stream
+nano /etc/postgresql/14/main/postgresql.conf
+```
+Edit:
+> listen_addresses = '*'
+
+What IP address(es) to listen on;
+
+```bash
+sudo nano /etc/postgresql/14/main/pg_hba.conf
+# change all scram-sha-256 to md5
+sudo service postgresql start
+
+#Look at the Postgres log on each server. These logs can contain information that will help you troubleshoot the issue.
+less ../../var/log/postgresql/postgresql-14-main.log
+```
+
+
+
+# DB replication Testing 
+Insert data to Primary DB for Testing
+
+```
+sudo su -l postgres
+psql
+\c aqsdb8_qs123
+INSERT INTO base_testingModel(name, des) VALUES ('David','is good guy');
+```
+View data from postgres
+```
+sudo su -l postgres
+psql
+\c aqsdb8_qs123
+\dt
+TABLE base_userprofile;
+TABLE base_testingModel;
+INSERT INTO base_testingModel(name, des) VALUES ('David','is good guy');
+\q
+logout
+```
+
+<h3 style="color:orange;">Check the server stat</h3>
+
+```
+sudo su -l postgres
+psql
+\x
+select * from pg_stat_replication;
+```
+<h3 style="color:orange;">check slot at main server</h3>
+
+```
+select * from pg_replication_slots;
+```
+
+remove slot from main server
+
+```
+select pg_drop_replication_slot('some_name');
+\x
+```
+<h3 style="color:orange;">Troubleshoot:</h3>
+
+Check error : Django code run on Gunicorn
+```
+sudo systemctl status gunicorn_qs123
+```
+```bash
+# check PSQL status
+sudo service postgresql status
+# start PSQL
+sudo service postgresql start
+# Restart
+sudo service postgresql restart
+# stop
+sudo service postgresql stop
 ```
