@@ -330,7 +330,7 @@ def job_shutdown(branch):
     ctobj = CounterType.objects.filter(Q(branch=branch))
     for countertype in ctobj:
         wssendwebtv(branch, countertype)
-        wssenddispremoveall(branch, countertype)
+        wssenddispremoveall840(branch, countertype)
 
     # counterstatus all reset to 'waiting'
     csobj = CounterStatus.objects.all()
