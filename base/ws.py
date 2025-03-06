@@ -41,17 +41,17 @@ def check_redis_connection():
 # ws to Display Panel cmd mute / unmute the video volume when voice announcement
 @shared_task
 def wssenddispmule840(bcode:str, ct_name:str, cmd:str):
-    str_now = '--:--'
-    datetime_now =datetime.now(timezone.utc)    
-    # datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
-    str_now = datetime_now.strftime('%Y-%m-%d %H:%M:%S')  
+
     error = ''
 
-    # if error == '':
-    #     try:
-    #         branch = Branch.objects.filter(Q(bcode = bcode))[0]
-    #     except:
-    #         error = 'Branch not found'
+    if error == '':
+        try:
+            branch = Branch.objects.filter(Q(bcode = bcode))[0]
+        except:
+            error = 'Branch not found'
+    datetime_now =datetime.now(timezone.utc)    
+    datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+    str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')              
 
     # if error == '':
     #     try:
@@ -60,7 +60,7 @@ def wssenddispmule840(bcode:str, ct_name:str, cmd:str):
     #         error = 'CounterType not found'
 
     # generate message id
-    msgid = 'd_mule_' + str_now
+    msgid = 'd_mule_' + datetime_now.strftime('%Y%m%d%H%M%S%f')
     jsontx = {
         "id":msgid,
         "cmd":cmd,
