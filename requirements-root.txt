@@ -22,7 +22,6 @@ wheel==0.45.1
 zope.interface==7.2
 phonenumbers
 requests
-# django-crequest==2018.5.11 may not use
 gunicorn
 qrcode
 xhtml2pdf

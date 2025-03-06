@@ -695,6 +695,8 @@ PuTTY -> Data -> Auto-login username (ubuntu) -> Session -> Save
 
 ```sh
 sudo timedatectl set-timezone Asia/Hong_Kong
+# or MST for Canada Calgary
+# sudo timedatectl set-timezone MST
 sudo hwclock -w
 sudo apt-get update ; sudo apt-get upgrade -y
 sudo apt-get install -y python3 python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx git 

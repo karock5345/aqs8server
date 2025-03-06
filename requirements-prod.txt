@@ -1,27 +1,50 @@
 django==4.2.19
 celery==5.3.6
 channels-redis==4.1.0
+# Windows development env should be use channels==3.0.5 daphne==3.0.2
 channels==4.2.0
 daphne==4.1.2
+# -------------------------------------------------------------------
 aioredis==2.0.1
-django-apscheduler==0.6.2
+django-apscheduler==0.7.0
 django-auto-logout==0.5.1
 django-recaptcha==3.0.0
-djangorestframework-simplejwt==5.3.1
+djangorestframework-simplejwt==5.5.0
 pipdeptree
 # MacOS cannot install from source code
-psycopg2==2.9.9
-# psycopg2-binary==2.9.9
-pyOpenSSL==23.3.0
+psycopg2==2.9.10
+# psycopg2-binary==2.9.10
+pyOpenSSL==25.0.0
 pytz-deprecation-shim==0.1.0.post0
-redis==5.0.4
-service-identity==23.1.0
-wheel==0.42.0
-zope.interface==6.1
+redis==5.2.1
+service-identity==24.2.0
+wheel==0.45.1
+zope.interface==7.2
 phonenumbers
 requests
-# django-crequest==2018.5.11 may not use
 gunicorn
 qrcode
 xhtml2pdf
 pytz
+
+
+# Old version
+# aioredis==2.0.1
+# django-apscheduler==0.6.2
+# django-auto-logout==0.5.1
+# django-recaptcha==3.0.0
+# djangorestframework-simplejwt==5.3.1
+# pipdeptree
+# psycopg2==2.9.9
+# pyOpenSSL==23.3.0
+# pytz-deprecation-shim==0.1.0.post0
+# redis==5.0.4
+# service-identity==23.1.0
+# wheel==0.42.0
+# zope.interface==6.1
+# phonenumbers
+# requests
+# gunicorn
+# qrcode
+# xhtml2pdf
+# pytz
