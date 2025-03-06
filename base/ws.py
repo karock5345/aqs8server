@@ -19,6 +19,7 @@ import redis
 from aqs.settings import REDIS_HOST, REDIS_PORT
 # from celery import shared_task
 import time
+from celery import shared_task
 
 wsHypertext = 'ws://'
 logger = logging.getLogger(__name__)
@@ -38,14 +39,28 @@ def check_redis_connection():
 
 # Version 8.4 add Message ID and send 3 times
 # ws to Display Panel cmd mute / unmute the video volume when voice announcement
-def wssenddispmule840(branch:Branch, countertype:CounterType, cmd:str):
+@shared_task
+def wssenddispmule840(bcode:str, ct_name:str, cmd:str):
     str_now = '--:--'
-    datetime_now =datetime.now(timezone.utc)
-    datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
-    str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')  
+    datetime_now =datetime.now(timezone.utc)    
+    # datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
+    str_now = datetime_now.strftime('%Y-%m-%d %H:%M:%S')  
+    error = ''
+
+    # if error == '':
+    #     try:
+    #         branch = Branch.objects.filter(Q(bcode = bcode))[0]
+    #     except:
+    #         error = 'Branch not found'
+
+    # if error == '':
+    #     try:
+    #         countertype = CounterType.objects.filter(Q(branch=branch) & Q(name=ct_name))[0]
+    #     except:
+    #         error = 'CounterType not found'
 
     # generate message id
-    msgid = 'd_mule_' + datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
+    msgid = 'd_mule_' + str_now
     jsontx = {
         "id":msgid,
         "cmd":cmd,
@@ -60,13 +75,12 @@ def wssenddispmule840(branch:Branch, countertype:CounterType, cmd:str):
     'tx':str_tx
     }
     channel_layer = get_channel_layer()
-    channel_group_name = 'disp840_' + branch.bcode + '_' + countertype.name
+    # channel_group_name = 'disp840_' + branch.bcode + '_' + countertype.name
+    channel_group_name = 'disp840_' + bcode + '_' + ct_name
     logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
     try:
         async_to_sync (channel_layer.group_send)(channel_group_name, context)
-        async_to_sync (channel_layer.group_send)(channel_group_name, context)
-        async_to_sync (channel_layer.group_send)(channel_group_name, context)
-        logger.info('...Done x3')
+        logger.info('...Done')
     except:
         logger.error('...ERROR:Redis Server is down!')
     pass

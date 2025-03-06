@@ -857,7 +857,6 @@ class Voice840Consumer(AsyncWebsocketConsumer):
                 try:
                     rxdata = json.loads(text_data)
                     logger.info(f'Received data from {self.room_group_name}: {rxdata}')
-
                     # Receive cmd from Voice Component software, then send cmd to Disp Panel
                     # {
                     #     "id":"abc",
@@ -868,10 +867,14 @@ class Voice840Consumer(AsyncWebsocketConsumer):
                     #     }
                     # }
                     # get bcode and countertype_name
-                    branch = None
-                    countertype = None
-                    cmd = None
+                    # Error in receive: You cannot call this from an async context - use a thread or sync_to_async.
+                        # obj = Branch.objects.filter(Q(bcode="KB"))
+                        # branch = obj[0]                                       
+                    bcode =''
+                    ct_name = ''
+                    cmd = ''
                     error = ''
+                    rxcmd = ''
                     try:
                         rxcmd = rxdata['cmd']
                         if rxcmd == 'voicestart':
@@ -880,21 +883,23 @@ class Voice840Consumer(AsyncWebsocketConsumer):
                             cmd = 'unmute'
                     except:
                         error = 'No rx cmd'
-                    if error != '':
+                    if error == '':
                         try:
                             data = rxdata['data']
                             bcode = data['bcode']
                             ct_name = data['ct']
                         except:
                             error = 'No rx data'
-                    if error != '':
-                        try:
-                            branch = Branch.objects.filter(bcode=bcode)[0]
-                            countertype = CounterType.objects.filter(name=ct_name)[0]
-                        except:
-                            error = 'bcode or ct_name not correct'
+
                     if error == '':
-                        wssenddispmule840(branch, countertype, cmd)
+                        try:
+                            task = wssenddispmule840.apply_async(args=[bcode, ct_name, cmd], countdown=0)
+                            logging.info('Start task : (wssenddispmule840) : ' + str(task))
+                        except Exception as e:
+                            logging.error('Error task : ' + str(e))
+                            pass                        
+                    else:
+                        logger.error('base.consumers.py.Voice840Consoumer.receive: ' + error)
 
 
 

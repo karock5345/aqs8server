@@ -299,7 +299,7 @@ def t_WS_NewTicket(branch_id, countertype_id, ticket_id):
     
     # websocket to display panel for waiting ticket
     try:
-        wssenddispwait(branch, countertype, tickettemp)
+        wssenddispwait840(branch, countertype, tickettemp)
     except Exception as e:
         current_task.status = 'ERROR'
         return current_task.status
