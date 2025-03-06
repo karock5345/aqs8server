@@ -22,9 +22,7 @@ class BaseConfig(AppConfig):
         if force_migrations == True:
             logger.info('   *** Force Migrations on ***')
             return super().ready()
-        
-        sch.start()
-
+               
         # Check if the startup code has already run
         try:
             sf = StartupFlag.objects.select_for_update().filter(has_run=True).first()
@@ -34,6 +32,8 @@ class BaseConfig(AppConfig):
         if sf is None:
             StartupFlag.objects.create(has_run=True, worker=0)
             sf = StartupFlag.objects.select_for_update().filter(has_run=True).first()
+
+        sch.start()
 
         now = datetime.now(timezone.utc)
         seconds = (now - sf.updated).total_seconds() 
