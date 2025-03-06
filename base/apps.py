@@ -26,7 +26,11 @@ class BaseConfig(AppConfig):
         sch.start()
 
         # Check if the startup code has already run
-        sf = StartupFlag.objects.select_for_update().filter(has_run=True).first()
+        try:
+            sf = StartupFlag.objects.select_for_update().filter(has_run=True).first()
+        except:
+            logger.info('   *** Force Migrations on ***')
+            return super().ready()
         if sf is None:
             StartupFlag.objects.create(has_run=True, worker=0)
             sf = StartupFlag.objects.select_for_update().filter(has_run=True).first()
