@@ -22,7 +22,7 @@ import pytz
 from .api.serializers import displaylistSerivalizer, waitinglistSerivalizer
 # from django.utils import timezone
 from .api.v_softkey_sub import *
-from .api.v_touch import newticket, newticket_v840, printTicket_v840
+from .api.v_touch import newticket_v840, printTicket_v840, funDomain
 from base.ws import wsHypertext, wscounterstatus, wssendflashlight
 import logging
 import csv
@@ -50,21 +50,7 @@ context_login = {}
 
 sort_direction = {}
 
-def funDomain(request):
-    domainname = request.get_host().split(':')[0]
-    domain = None
-    logo = 'images/logo-q.svg'
-    title = 'Auto Queuing System - TSVD'
-    css = 'styles/style.css'
-    try:
-        domain = Domain.objects.filter(name=domainname)[0]
-        logo = domain.logo
-        title = domain.title
-        css = domain.css
-    except:
-        pass
 
-    return logo, title, css
 
 def adminlockedView(request,):
     return render(request, 'base/admin_locked.html')
@@ -879,7 +865,6 @@ def repair(request):
     bcode = ''
     note = ''
     str_now = '---'
-    logofile = ''
 
     try:
         bcode = request.GET['bc']
@@ -899,11 +884,9 @@ def repair(request):
         branchobj = Branch.objects.filter( Q(bcode=bcode) )
         if branchobj.count() == 1:
             branch = branchobj[0]
-            logofile = branch.webtvlogolink
             datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
-            css = branch.webtvcsslink
         else :
             error = 'Branch not found.'
     if error == '':
@@ -912,19 +895,21 @@ def repair(request):
             # counterstatus = 'repairing'
         else :
             counterstatus = 'error'
+        logo, navbar_title, css, webtvlogo, webtvcss, eticketlink = funDomain(request)
         context = {
             'ticket':note,
             'bcode':branch.bcode,
             'counterstatus':counterstatus,
-            'logofile':logofile,
+            'logofile':webtvlogo,
             'lastupdate':str_now,            
             'errormsg':'',
-            'css' : css,
+            'css' : webtvcss,
             }
     else:
+        logo, navbar_title, css, webtvlogo, webtvcss, eticketlink = funDomain(request)
         context = {
             'lastupdate':str_now, 
-            'logofile':logofile,
+            'logofile':webtvlogo,
             'errormsg':error,
             }
         messages.error(request, error)
@@ -944,24 +929,22 @@ def webmyticket(request, bcode, ttype, tno, sc):
     context = None
     error = ''
     str_now = '---'
-    css = ''
     scroll = ''
 
     ticket = ttype + tno
     securitycode = sc
 
     branch = None
-    logofile = None
+    logo, navbar_title, css, webtvlogo, webtvcss, eticketlink = funDomain(request)
+
     datetime_now_local = None
     if error == '' :        
         branchobj = Branch.objects.filter( Q(bcode=bcode) )
         if branchobj.count() == 1:
             branch = branchobj[0]
-            logofile = branch.webtvlogolink
             datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
-            css = branch.webtvcsslink
         else :
             error = 'Branch not found.'
     countertype = None
@@ -974,7 +957,6 @@ def webmyticket(request, bcode, ttype, tno, sc):
                                             )
         if ttobj.count() == 1:
             tickettemp = ttobj[0]
-
             tickettime = tickettemp.tickettime
             counterstatus = tickettemp.status
             countertype = tickettemp.countertype
@@ -1014,8 +996,8 @@ def webmyticket(request, bcode, ttype, tno, sc):
             'tickettime':tickettime_str,
             'bcode':branch.bcode,
             'counterstatus':counterstatus,
-            'logofile':logofile,
-            'css' : css,
+            'logofile':webtvlogo,
+            'css' : webtvcss,
             'lastupdate':str_now,
             'counter':counter,
             'countertype':countertype,
@@ -1034,8 +1016,8 @@ def webmyticket(request, bcode, ttype, tno, sc):
             'tickettime':tickettime_str,
             'bcode':branch.bcode,
             'counterstatus':counterstatus,
-            'logofile':logofile,
-            'css' : css,
+            'logofile':webtvlogo,
+            'css' : webtvcss,
             'lastupdate':str_now,
             'counter':counter,
             'countertype':countertype,
@@ -1047,10 +1029,10 @@ def webmyticket(request, bcode, ttype, tno, sc):
     if error != '' :
         context = {
             'lastupdate':str_now, 
-            'logofile':logofile,
+            'logofile':webtvlogo,
             'errormsg':error,
             'scroll':scroll,
-            'css' : css,
+            'css' : webtvcss,
             }
         messages.error(request, error)
     context = {'aqs_version':aqs_version} | {'app_name':APP_NAME} | context 
@@ -1066,10 +1048,10 @@ def webtouchView(request):
     error = ''
     bcode = ''
     touchname = ''
-    logofile = ''
     touchkeylist= []
-    css = ''
     
+    logo, navbar_title, css, webtvlogo, webtvcss, eticketlink = funDomain(request)
+
     try:
         bcode = request.GET['bc']
     except:
@@ -1085,10 +1067,8 @@ def webtouchView(request):
         branchobj = Branch.objects.filter( Q(bcode=bcode) )
         if branchobj.count() == 1:
             branch = branchobj[0]
-            logofile = branch.webtvlogolink
             datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
-            css = branch.webtvcsslink
         else :
             error = 'Branch not found.'
     if error == '' :
@@ -1110,12 +1090,11 @@ def webtouchView(request):
                 if key.ttype in request.POST:
                     # old version no database lock may be cause double ticket number
                     # ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, key.ttype, '','', datetime_now, userweb, 'web', '8')
-                    # new version with database lock
-                    ticketno_str, countertype, tickettemp, ticket, error = newticket_v840(branch, key.ttype, '', '', datetime_now, userweb, 'web', aqs_version, None)
+                    # new version with database lock                    
+                    ticketno_str, countertype, tickettemp, ticket, error = newticket_v840(branch, key.ttype, '', '', datetime_now, userweb, 'web', aqs_version, None, eticketlink)
                     
                     if error == '' :
-                        printTicket_v840(branch, tickettemp, tickettemp.ticketformat, datetime_now, '')
-
+                        printTicket_v840(branch, tickettemp, tickettemp.ticketformat, '')
                         # add ticketlog
                         localdate_now = funUTCtoLocal(datetime_now, tickettemp.branch.timezone)
                         TicketLog.objects.create(
@@ -1152,22 +1131,21 @@ def webtouchView(request):
     context = {
         'aqs_version':aqs_version,
         'touchkeylist':touchkeylist,
-        'logofile':logofile,
+        'logofile':webtvlogo,
         'errormsg':error,
-        'css' : css,
+        'css' : webtvcss,
         }
     return render(request, 'base/webtouch.html', context)
 
 def CancelTicketView(request, pk, sc):
     error = ''
-    logofile = ''
     url = ''
     backurl = ''
+
+    logo, navbar_title, css, webtvlogo, webtvcss, eticketlink = funDomain(request)
    
     try:
         tt = TicketTemp.objects.get(id=pk)
-        logofile = tt.branch.webtvlogolink
-        css = tt.branch.webtvcsslink
 
         # back to : http://127.0.0.1:8000/my/?tt=A&no=003&bc=KB&sc=vVL
         # base_url = reverse('myticket')
@@ -1220,191 +1198,12 @@ def CancelTicketView(request, pk, sc):
 
     context = {
     'aqs_version':aqs_version,
-    'logofile':logofile,
+    'logofile':webtvlogo,
     'errormsg':error,
     'backurl':backurl,
-    'css':css,
+    'css':webtvcss,
     }
     return render(request, 'base/webmyticket_cancel.html', context)
-
-def webmyticket_old_school(request):
-    # 127.0.0.1:8000/my?tt=A&no=001&bc=KB&sc=123
-    context = None
-    error = ''
-    bcode = ''
-    css = ''
-    try:
-        bcode = request.GET['bc']
-    except:
-        bcode = ''
-        error = 'Branch code is blank.'
-
-    ttype = ''
-    tno = ''
-    try:
-        ttype = request.GET['tt']
-        ticket = ttype + tno
-    except:
-        ttype = ''
-        error = 'Ticket type is blank.'  
-    try:
-        tno = request.GET['no']
-        ticket = ttype + tno
-    except:
-        tno = ''
-        error = 'Ticket number is blank.'  
-
-    securitycode = ''
-    try:
-        securitycode = request.GET['sc']
-    except:
-        securitycode = ''
-        error = 'Security code is blank.'  
-
-    branch = None
-    logofile = None
-    datetime_now_local = None
-    if error == '' :        
-        branchobj = Branch.objects.filter( Q(bcode=bcode) )
-        if branchobj.count() == 1:
-            branch = branchobj[0]
-            logofile = branch.webtvlogolink
-            datetime_now = datetime.now(timezone.utc)
-            datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
-            css = branch.webtvcsslink
-        else :
-            error = 'Branch not found.'
-    
-    countertype = None
-    if error == '' :        
-        ttobj = TicketTemp.objects.filter(  
-                                            Q(branch=branch) & 
-                                            Q(tickettype=ttype) &
-                                            Q(ticketnumber=tno) & 
-                                            Q(securitycode=securitycode)
-                                            )
-        if ttobj.count() == 1:
-            tickettemp = ttobj[0]
-
-            tickettime = tickettemp.tickettime
-            counterstatus = tickettemp.status
-            countertype = tickettemp.countertype
-
-            tickettime = funUTCtoLocal(tickettime, branch.timezone)
-        else :
-            error = 'Ticket not found.'
-    
-    displaylist = None 
-    if error == '' :
-        # displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
-        displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
-        wdserializers  = displaylistSerivalizer(displaylist, many=True)
-    
-    counter='---'
-    if error == '':
-        csobj = CounterStatus.objects.filter(
-            Q(tickettemp = tickettemp)
-        )
-        if csobj.count() == 1:
-            counter = csobj[0].counternumber
-    if error == '':
-        context = {
-            'ticket':ticket,
-            'tickettime':tickettime.strftime('%Y-%m-%d %H:%M:%S'),
-            'counterstatus':counterstatus,
-            'logofile':logofile,
-            'css' : css,
-            'lastupdate':datetime_now_local.strftime('%Y-%m-%d %H:%M:%S'),            
-            'counter':counter,
-            'countertype':countertype,
-            'tickettemp':tickettemp,
-            'ticketlist':wdserializers.data,
-            'errormsg':'',
-            'scroll':countertype.displayscrollingtext,
-            }
-    else:
-        context = {
-            'logofile':logofile,
-            'errormsg':error,
-            }
-        messages.error(request, error)
-    context_mini = getcontext_mini(request)
-    context = context_mini | context
-
-    return render(request , 'base/webmyticketold2.html', context)
-
-
-def webtv_old_school(request):
-    
-    context = None
-    error = ''
-    bcode = ''
-    str_now = '---'
-
-    try:
-        bcode = request.GET['bcode']
-    except:
-        bcode = ''
-        error = 'Branch code is blank.'
-
-    countertypename = ''
-    try:
-        countertypename = request.GET['ct']
-    except:
-        countertypename = ''
-    
-    
-    branch = None
-    if error == '' :        
-        branchobj = Branch.objects.filter( Q(bcode=bcode) )
-        if branchobj.count() == 1:
-            branch = branchobj[0]
-            logofile = branch.webtvlogolink
-            datetime_now = datetime.now(timezone.utc)
-            datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
-            str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
-
-        else :
-            error = 'Branch not found.'
-
-    # get the Counter type
-    countertype = None
-    if error == '' :    
-        if countertypename == '' :
-            ctypeobj = CounterType.objects.filter( Q(branch=branch) )
-        else:
-            ctypeobj = CounterType.objects.filter( Q(branch=branch) & Q(name=countertypename) )
-        if (ctypeobj.count() > 0) :
-            countertype = ctypeobj[0]
-        else :
-            error = 'Counter Type not found.' 
-
-
-
-    if error == '' : 
-        if countertype == None :
-            displaylist = DisplayAndVoice.objects.filter (branch=branch).order_by('-displaytime')[:5]
-        else:
-            displaylist = DisplayAndVoice.objects.filter (branch=branch, countertype=countertype).order_by('-displaytime')[:5]
-        # serializers  = webdisplaylistSerivalizer(displaylist, many=True)
-        # context = ({'ticketlist':serializers.data})
-
-        context = {
-        'lastupdate' : str_now,
-        'ticketlist' : displaylist,
-        'logofile' : logofile,
-        'scroll':countertype.displayscrollingtext,
-        }
-    else :
-        context = {
-        'lastupdate' : str_now,
-        'errormsg' : error,
-        }
-        messages.error(request, error)
-    context_mini = getcontext_mini(request)
-    context = context_mini | context
-    return render(request , 'base/webtvold3.html', context)
-
 
 def webtv(request, bcode, ct):
     # WebSocket version
@@ -1412,7 +1211,7 @@ def webtv(request, bcode, ct):
     context = None
     error = ''
     str_now = '---'
-    logofile = ''
+    logo, navbar_title, css, webtvlogo, webtvcss, eticketlink = funDomain(request)
 
     countertypename = ct
 
@@ -1421,8 +1220,6 @@ def webtv(request, bcode, ct):
         branchobj = Branch.objects.filter( Q(bcode=bcode) )
         if branchobj.count() == 1:
             branch = branchobj[0]
-            logofile = branch.webtvlogolink
-            css = branch.webtvcsslink
             datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
@@ -1451,8 +1248,8 @@ def webtv(request, bcode, ct):
             'wsh' : wsHypertext,
             'lastupdate' : str_now,
             'ticketlist' : wdserializers.data,
-            'logofile' : logofile,
-            'css' : css,
+            'logofile' : webtvlogo,
+            'css' : webtvcss,
             'scroll':countertype.displayscrollingtext,
             }
         # print (wdserializers.data[0].wait)
@@ -1460,12 +1257,9 @@ def webtv(request, bcode, ct):
         context = {
             'lastupdate' : str_now,
             'errormsg' : error,
-            'logofile' : logofile,
+            'logofile' : webtvlogo,
             }
         messages.error(request, error)
-
-
-
 
     context = {
         'bcode' :  bcode ,
@@ -4571,7 +4365,7 @@ def getcontext(request, user, context=None):
     auth_products, auth_producttypes, auth_categorys, \
     = auth_data(request.user)
 
-    logo, navbar_title, css = funDomain(request)
+    logo, navbar_title, css, webtvlogo, webtvcss, eticketlink = funDomain(request)
     context = context | {
         'app_name':APP_NAME,
         'logo':logo,
@@ -4603,8 +4397,7 @@ def getcontext(request, user, context=None):
 
 
 def getcontext_mini(request):
-    logo, navbar_title, css = funDomain(request)
-
+    logo, navbar_title, css, webtvlogo, webtvcss, eticketlink = funDomain(request)
     context = {
         'app_name':APP_NAME,
         'aqs_version':aqs_version,
@@ -4622,7 +4415,7 @@ def getcontext_en(request):
     auth_en_crm = auth_data['en_crm']
     auth_en_booking = auth_data['en_booking']
 
-    logo, navbar_title, css = funDomain(request)
+    logo, navbar_title, css, webtvlogo, webtvcss, eticketlink = funDomain(request)
 
     context = {
         'app_name':APP_NAME,

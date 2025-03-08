@@ -37,10 +37,9 @@ def check_redis_connection():
     except Exception:
         return False
 
-# Version 8.4 add Message ID and send 3 times
-# ws to Display Panel cmd mute / unmute the video volume when voice announcement
+# ws to Display Panel (other channel dispmute_) cmd mute / unmute the video volume when voice announcement
 @shared_task
-def wssenddispmule840(bcode:str, ct_name:str, cmd:str):
+def wssenddispmule(bcode:str, ct_name:str, cmd:str):
 
     error = ''
 
@@ -52,12 +51,6 @@ def wssenddispmule840(bcode:str, ct_name:str, cmd:str):
     datetime_now =datetime.now(timezone.utc)    
     datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
     str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')              
-
-    # if error == '':
-    #     try:
-    #         countertype = CounterType.objects.filter(Q(branch=branch) & Q(name=ct_name))[0]
-    #     except:
-    #         error = 'CounterType not found'
 
     # generate message id
     msgid = 'd_mule_' + datetime_now.strftime('%Y%m%d%H%M%S%f')
@@ -75,8 +68,7 @@ def wssenddispmule840(bcode:str, ct_name:str, cmd:str):
     'tx':str_tx
     }
     channel_layer = get_channel_layer()
-    # channel_group_name = 'disp840_' + branch.bcode + '_' + countertype.name
-    channel_group_name = 'disp840_' + bcode + '_' + ct_name
+    channel_group_name = 'dispmute_' + bcode + '_' + ct_name
     logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
     try:
         async_to_sync (channel_layer.group_send)(channel_group_name, context)
@@ -87,7 +79,7 @@ def wssenddispmule840(bcode:str, ct_name:str, cmd:str):
 
 # Version 8.4 add Message ID and send 3 times
 # ws to Display Panel cmd call / recall a ticket
-def wssenddispcall840(branch, counterstatus, countertype, ticket):
+def wssenddispcall_v840(branch, counterstatus, countertype, ticket):
     error = ''
 
     if not check_redis_connection():
@@ -137,7 +129,7 @@ def wssenddispcall840(branch, counterstatus, countertype, ticket):
         'tx':str_tx
         }
         channel_layer = get_channel_layer()
-        channel_group_name = 'disp840_' + branch.bcode + '_' + countertype.name
+        channel_group_name = 'disp_v840_' + branch.bcode + '_' + countertype.name
         logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
@@ -212,7 +204,7 @@ def wssenddispcall_old(branch, counterstatus, countertype, ticket):
 
 # Version 8.4 add Message ID and send 3 times
 # ws to Display Panel cmd clear all ticket
-def wssenddispremoveall840(branch,  countertype):
+def wssenddispremoveall_v840(branch,  countertype):
     str_now = '--:--'
     datetime_now =datetime.now(timezone.utc)
     datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
@@ -235,7 +227,7 @@ def wssenddispremoveall840(branch,  countertype):
     'tx':str_tx
     }
     channel_layer = get_channel_layer()
-    channel_group_name = 'disp840_' + branch.bcode + '_' + countertype.name
+    channel_group_name = 'disp_v840_' + branch.bcode + '_' + countertype.name
     logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
     try:
         async_to_sync (channel_layer.group_send)(channel_group_name, context)
@@ -279,7 +271,7 @@ def wssenddispremoveall_old(branch,  countertype):
 
 # Version 8.4 add Message ID and send 3 times
 # ws to Display Panel cmd waiting number of queue by TicketType 
-def wssenddispwait840(branch,  countertype, ticket):
+def wssenddispwait_v840(branch,  countertype, ticket):
     str_now = '--:--'
     datetime_now =datetime.now(timezone.utc)
     datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
@@ -307,7 +299,7 @@ def wssenddispwait840(branch,  countertype, ticket):
     'tx':str_tx
     }
     channel_layer = get_channel_layer()
-    channel_group_name = 'disp840_' + branch.bcode + '_' + countertype.name
+    channel_group_name = 'disp_v840_' + branch.bcode + '_' + countertype.name
     logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
     try:
         async_to_sync (channel_layer.group_send)(channel_group_name, context)
@@ -541,7 +533,7 @@ def wsrochesms(bcode, tel, msg):
 # 	    "voice_str":"[A],[0],[0],[5],[C3]"
 #     }
 # }
-def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:CounterStatus, ticket:TicketTemp, msgid_head:str):
+def wssendvoice_v840(branch:Branch, countertype:CounterType, counterstatus:CounterStatus, ticket:TicketTemp, msgid_head:str):
     context = None
     error = ''
     json_full = ""
@@ -556,7 +548,7 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
         }
         
         channel_layer = get_channel_layer()
-        channel_group_name = 'voice840_' + branch.bcode + '_' + countertype.name
+        channel_group_name = 'voice_v840_' + branch.bcode + '_' + countertype.name
         logger.info('channel_group_name:' + channel_group_name + ' sending data (' + remark + ')-> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)
@@ -681,10 +673,10 @@ def wssendvoice840(branch:Branch, countertype:CounterType, counterstatus:Counter
                     }
                     # send(json_tx, 'After Sound')
                     json_full = json_full + json.dumps(json_tx)
-    send(json_full, "V840")
+    send(json_full, "wssendvoice_v840")
 
     if error != '':
-        error_e = 'WS send voice840 Error:' + error
+        error_e = 'WS send wssendvoice_v840 Error:' + error
         logger.error(error_e)
 
 
@@ -997,8 +989,7 @@ def wsSendTicketStatus(branch:Branch, ticket:TicketTemp, counterstatus:CounterSt
     pass
 
 # version 8.4.0 add msgid and send data 3 times
-# def wsSendPrintTicket840(bcode, tickettype, ticketnumber, tickettime, tickettext, printernumber):
-def wsSendPrintTicket840(branch:Branch, tickettemp:TicketTemp, printernumber):
+def wsSendPrintTicket_v840(branch:Branch, tickettemp:TicketTemp, printernumber):
 
     # {
     #     "id": msgid,
@@ -1056,7 +1047,7 @@ def wsSendPrintTicket840(branch:Branch, tickettemp:TicketTemp, printernumber):
         }
 
         channel_layer = get_channel_layer()
-        channel_group_name = 'print840_' + branch.bcode 
+        channel_group_name = 'print_v840_' + branch.bcode 
         logger.info('channel_group_name:' + channel_group_name + ' sending data -> Channel_Layer:' + str(channel_layer)),
         try:
             async_to_sync (channel_layer.group_send)(channel_group_name, context)

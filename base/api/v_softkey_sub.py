@@ -322,7 +322,7 @@ def funCounterCall_v840(user, branch:Branch, countertype, counterstatus, logtext
         if redis_online:
             try:
                 t_ws_call = t_WS_Call.apply_async (args=[branch.id, counterstatus.id, countertype.id, ticket.id, True], countdown=0)
-                logging.info('Start task : t_ws_call (wssendwebtv, wssenddispcall840, wssendql, wssendvoice840, wssendflashlight, wscounterstatus) : ' + str(t_ws_call))
+                logging.info('Start task : t_ws_call (wssendwebtv, wssenddispcall_v840, wssendql, wssendvoice_v840, wssendflashlight, wscounterstatus) : ' + str(t_ws_call))
             except Exception as e:
                 logging.error('Error t_ws_call : ' + str(e))
                 pass
@@ -345,7 +345,7 @@ def t_WS_Call(branch_id, counterstatus_id, countertype_id, ticket_id, delsl:bool
 
     # Get my task ID
     my_id = current_task.request.id
-    logger.info(f'Call/Get WS data out (wssendwebtv, wssenddispcall840, wssendql, wssendvoice840, wssendflashlight, wscounterstatus): {my_id}')
+    logger.info(f'Call/Get WS data out (wssendwebtv, wssenddispcall_v840, wssendql, wssendvoice_v840, wssendflashlight, wscounterstatus): {my_id}')
 
     current_task.status = 'PROGRESS'
 
@@ -358,7 +358,7 @@ def t_WS_Call(branch_id, counterstatus_id, countertype_id, ticket_id, delsl:bool
 
     # websocket to Display Panel display ticket
     try:
-        wssenddispcall840(branch, counterstatus, countertype, ticket)
+        wssenddispcall_v840(branch, counterstatus, countertype, ticket)
     except Exception as e:
         current_task.status = 'ERROR'
         return current_task.status
@@ -374,7 +374,7 @@ def t_WS_Call(branch_id, counterstatus_id, countertype_id, ticket_id, delsl:bool
     # websocket to voice com
     msgid_h = 'voice_Call/Get_' + datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
     try:
-        wssendvoice840(branch, countertype, counterstatus, ticket, msgid_h)
+        wssendvoice_v840(branch, countertype, counterstatus, ticket, msgid_h)
     except Exception as e:
         current_task.status = 'ERROR'
         return current_task.status
@@ -1071,7 +1071,7 @@ def funCounterRecall(user, branch, countertype, counterstatus, logtext, rx_app, 
         if redis_online:
             try:
                 t_ws_recall = t_WS_Recall.apply_async (args=[branch.id, counterstatus.id, countertype.id, ticket.id], countdown=0)
-                logging.info('Start task : t_ws_recall (wssendwebtv, wssenddispcall840, wssendvoice840, wssendflashlight) : ' + str(t_ws_recall))
+                logging.info('Start task : t_ws_recall (wssendwebtv, wssenddispcall_v840, wssendvoice_v840, wssendflashlight) : ' + str(t_ws_recall))
             except Exception as e:
                 logging.error('Error t_WS_Recall : ' + str(e))
                 pass
@@ -1101,21 +1101,21 @@ def t_WS_Recall(branch_id, counterstatus_id, countertype_id, ticket_id):
 
     # Get my task ID
     my_id = current_task.request.id
-    logger.info(f'Recall WS data out (wssendwebtv, wssenddispcall840, wssendvoice840, wssendflashlight): {my_id}')
+    logger.info(f'Recall WS data out (wssendwebtv, wssenddispcall_v840, wssendvoice_v840, wssendflashlight): {my_id}')
 
     current_task.status = 'PROGRESS'
 
     # websocket to voice com
     msgid_h = 'voice_recall_' + datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f')
     try:
-        wssendvoice840(branch, countertype, counterstatus, ticket, msgid_h)
+        wssendvoice_v840(branch, countertype, counterstatus, ticket, msgid_h)
     except Exception as e:
         current_task.status = 'ERROR'
         return current_task.status
 
     # websocket to Display Panel display ticket
     try:
-        wssenddispcall840(branch, counterstatus, countertype, ticket)
+        wssenddispcall_v840(branch, counterstatus, countertype, ticket)
     except Exception as e:
         current_task.status = 'ERROR'
         return current_task.status
@@ -1287,7 +1287,7 @@ def funCounterGet_v840(gettnumber, user, branch, countertype, counterstatus, log
         if redis_online:
             try:
                 t_ws_call = t_WS_Call.apply_async (args=[branch.id, counterstatus.id, countertype.id, ticket.id, delsq], countdown=0)
-                logging.info('Start task : t_ws_call from funCounterGet_v840 (wssendwebtv, wssenddispcall840, wssendql, wssendvoice840, wssendflashlight, wscounterstatus) : ' + str(t_ws_call))
+                logging.info('Start task : t_ws_call from funCounterGet_v840 (wssendwebtv, wssenddispcall_v840, wssendql, wssendvoice_v840, wssendflashlight, wscounterstatus) : ' + str(t_ws_call))
             except Exception as e:
                 logging.error('Error t_ws_call from funCounterGet_v840: ' + str(e))
                 pass
@@ -1772,7 +1772,7 @@ def t_WS_Void(branch_id, countertype_id, ticket_id):
 
     # websocket to Display Panel waiting number update
     try:
-        wssenddispwait840(branch, countertype, ticket)
+        wssenddispwait_v840(branch, countertype, ticket)
     except Exception as e:
         current_task.status = 'ERROR'
         return current_task.status

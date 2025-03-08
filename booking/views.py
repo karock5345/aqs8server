@@ -728,7 +728,8 @@ def BookingSummaryView(request):
                 if action == 'queue_ontime':
                     force_ontime = True
                 if booking.status == Booking.STATUS.ARRIVED:
-                    error, tickettempid = bookingtoqueue(utcnow, booking, request.user, force_ontime)
+                    logo, navbar_title, css, webtvlogo, webtvcss, eticketlink = funDomain(request)                    
+                    error, tickettempid = bookingtoqueue(utcnow, booking, request.user, force_ontime, eticketlink)
                     if error == '':
                         # change booking status to 'queue'
                         # booking = Booking.objects.get(id=pk)
@@ -768,7 +769,7 @@ def BookingSummaryView(request):
     return render(request, 'booking/booking.html', context)
 
 @transaction.atomic
-def bookingtoqueue(utcnow, booking:Booking, user, force_ontime):
+def bookingtoqueue(utcnow, booking:Booking, user, force_ontime, eticketlink):
     error = ''
     tickettempid = None
     # datetime_now_local = funUTCtoLocal(datetime_now, booking.branch.timezone)
@@ -825,6 +826,7 @@ def bookingtoqueue(utcnow, booking:Booking, user, force_ontime):
                                                                                     'web',
                                                                                     aqs_version,
                                                                                     booking,
+                                                                                    eticketlink,
                                                                                     )
             
             if error == '':
@@ -896,8 +898,6 @@ def Booking_Details_ClientView(request, pk):
     email = ''
     phone_number =''
     context = {}
-    logofile = ''
-    css = ''
     bcode = ''
     scrolling = ''
     booking_str = ''
@@ -906,11 +906,10 @@ def Booking_Details_ClientView(request, pk):
     # booking_str = \
     # '請輸入 電郵 或 手機號碼(香港)' + '\n' + \
     # '我們發送確認信給你'
+    logo, navbar_title, css, webtvlogo, webtvcss, eticketlink = funDomain(request)
 
     try:
         timeslot = TimeSlot.objects.get(id=pk)
-        logofile = timeslot.branch.webtvlogolink
-        css = timeslot.branch.webtvcsslink
         bcode = timeslot.branch.bcode
         booking_str = timeslot.branch.bookingPage2Text
         scrolling = timeslot.branch.bookingPage2ScrollingText
@@ -1070,8 +1069,8 @@ def Booking_Details_ClientView(request, pk):
                     
                     context = {
                         'aqs_version':aqs_version,
-                        'logofile' : logofile,
-                        'css' : css,
+                        'logofile' : webtvlogo,
+                        'css' : webtvcss,
                         'text':success_str,
                         }
                     return render(request, 'booking/booking_success_client.html', context)
@@ -1096,8 +1095,8 @@ def Booking_Details_ClientView(request, pk):
 
         sometext = 'This is a test'
         context = {
-            'logofile' : logofile,
-            'css' : css,
+            'logofile' : webtvlogo,
+            'css' : webtvcss,
             'scroll': scrolling,
             'text': booking_str,
             'id':timeslot.id,
@@ -1123,17 +1122,16 @@ def BookingClientView(request, bcode):
     context = {}
     error = ''
     str_now = '---'
-    logofile = ''
     booking_str = ''
     scrolling = ''
+
+    logo, navbar_title, css, webtvlogo, webtvcss, eticketlink = funDomain(request)
 
     branch = None
     if error == '' :        
         branchobj = Branch.objects.filter( Q(bcode=bcode) )
         if branchobj.count() == 1:
             branch = branchobj[0]
-            logofile = branch.webtvlogolink
-            css = branch.webtvcsslink
             datetime_now = datetime.now(timezone.utc)
             datetime_now_local = funUTCtoLocal(datetime_now, branch.timezone)
             str_now = datetime_now_local.strftime('%Y-%m-%d %H:%M:%S')
@@ -1155,12 +1153,11 @@ def BookingClientView(request, bcode):
         tsserializers  = tsSerializer(tslist, many=True)
         timeslots = tsserializers.data
 
-
         context = {
         'lastupdate' : str_now,
         'timeslots' : timeslots,
-        'logofile' : logofile,
-        'css' : css,
+        'logofile' : webtvlogo,
+        'css' : webtvcss,
         'scroll': scrolling,
         'text': booking_str,
         }
@@ -1169,13 +1166,10 @@ def BookingClientView(request, bcode):
         context = {
         'lastupdate' : str_now,
         'errormsg' : error,
-        'logofile' : logofile,
+        'logofile' : webtvlogo,
         'css' : 'styles/styletv.css',
         }
         messages.error(request, error)
-
-
-
 
     context = context | {
     'bcode' :  bcode ,

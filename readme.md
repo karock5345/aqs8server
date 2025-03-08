@@ -16,6 +16,9 @@
   - base\consumers.py -> PrintConsumer -> broadcast_message -> add delay 1s
   - Send cmd via WS to Display Panel cmd mute / unmute the video volume when voice announcement
   - Improve preformance when Redis is down
+  - New Websocket 'dispmute_' + self.bcode + '_' + self.ct for cmd mute/unmute Disp Panel video play when voice announcement
+  - Change Ticket QR code link from branch.domain -> domain.eticketlink
+  - Change webtv, myticket, webtouch and repair Logo/CSS from branch.webtvlogolink -> domain.webtvlogolink , branch.webtvcsslink -> domain.webtvcsslink
 
 <h3 style="color:orange;">Version 8.3.12</h3>
 
@@ -725,6 +728,8 @@ sudo ufw status verbose
 <h3 style="color:orange;">Copy / git source code to home dir</h3>
 
 Preparation:
+- Ready Logo image place to /[static]/image/
+- Ready CSS file place to /[static]/image/
 - Backup previous version settings.py : cp ~/aqs8server/aqs/settings.py ~/settings.py.bak
 - Remove previous version : sudo rm -r ~/aqs8server/
 - Before install packages (python -m pip freeze > requirements.txt)
@@ -1148,6 +1153,8 @@ create admin, api user for our customer
 admin : elton /// asdf2206
 
 create user profile: userapi userweb superuser(tim) elton
+
+create domain for logo, CSS, WebTV/My Logo, printed ticket e-ticket link for QR code
 
 # Troubleshooting and Debug
 check the logs for additional details:

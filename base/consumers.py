@@ -67,7 +67,7 @@ def new_ws_connected_dict(bcode, ws):
 
     return ws_connected_dict
 
-class DispPanelConsumer840(AsyncWebsocketConsumer):
+class DispPanelConsumer_v840(AsyncWebsocketConsumer):
     async def connect(self):
         @sync_to_async
         def check_input():
@@ -95,10 +95,10 @@ class DispPanelConsumer840(AsyncWebsocketConsumer):
         error = ''
         self.bcode = self.scope['url_route']['kwargs']['bcode']
         self.ct = self.scope['url_route']['kwargs']['ct']
-        self.room_group_name = 'disp840_' + self.bcode + '_' + self.ct
+        self.room_group_name = 'disp_v840_' + self.bcode + '_' + self.ct
         logger.info('connecting:' + self.room_group_name )
 
-        self.ws_str = 'disp840'
+        self.ws_str = 'disp_v840'
         # get the url route: 'webtv' or 'wtv'
         self.route = self.scope['path'].split('/')[2]
         self.bcode = self.scope['url_route']['kwargs']['bcode']
@@ -135,7 +135,7 @@ class DispPanelConsumer840(AsyncWebsocketConsumer):
                 ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
                 logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
             except:
-                error = 'DispPanelConsumer840: Error in connect (Redis maybe down).'
+                error = 'DispPanelConsumer_v840: Error in connect (Redis maybe down).'
         
         if error != '':
             logger.info('Error:' + error )
@@ -169,6 +169,160 @@ class DispPanelConsumer840(AsyncWebsocketConsumer):
             logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
         except:
             logger.info('Disconnected:' + self.room_group_name )
+    async def send_data_fallback(self, data):
+        # Send the data directly to the WebSocket connection
+        await self.send(json.dumps(data, cls=DjangoJSONEncoder))
+    async def get_all_connections(self):
+        # Get all WebSocket connections in the group
+        group_channels = await self.channel_layer.group_channels(self.room_group_name)
+        connections = []
+        for channel_name in group_channels:
+            connection = self.__class__.for_channel(channel_name)
+            connections.append(connection)
+        return connections
+
+class DispPanelMuteConsumer(AsyncWebsocketConsumer):
+    async def connect(self):
+        @sync_to_async
+        def check_input():
+            error = ''
+            branch = None
+            branchobj = Branch.objects.filter(Q(bcode=self.bcode))
+
+            if branchobj.count() == 1:
+                branch = branchobj[0]
+                pass
+            else :
+                error = 'Branch not found.'
+
+            if error == '':
+                ctobj = CounterType.objects.filter( Q(branch=branch) & Q(name=self.ct) )
+                if ctobj.count() == 1:
+                    # ct = ctobj[0]
+                    pass
+                else :
+                    error = 'CounterType not found.'
+
+            return error
+                
+        error = ''
+        self.bcode = self.scope['url_route']['kwargs']['bcode']
+        self.ct = self.scope['url_route']['kwargs']['ct']
+        self.ws_str = 'dispmute'
+        self.room_group_name = 'dispmute_' + self.bcode + '_' + self.ct
+        logger.info('connecting:' + self.room_group_name )
+        
+        if error == '':
+            if self.scope['user'].is_authenticated == False:
+                error = 'DispPanelMuteConsumer: User not authenticated.'
+
+        if error == '':
+            # check bcode and ct (countertype) is not exit do not accept connection
+            error = await check_input()       
+
+        if error == '':
+            exist = True        
+            if self.bcode not in ws_connected_dict :
+                exist = False
+            elif self.ws_str not in ws_connected_dict[self.bcode]:
+                exist = False
+            if exist == False:
+                new_ws_connected_dict(self.bcode, self.ws_str) 
+
+        if error == '':
+            try:
+                await self.channel_layer.group_add(
+                    self.room_group_name,
+                    self.channel_name
+                )
+                await self.accept()
+                ip = self.scope['client'][0]
+                ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] + 1
+                ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
+                logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
+            except:
+                error = 'DispPanelMuteConsumer: Error in connect (Redis maybe down).'
+        if error != '':
+            logger.error('Error:' + error )
+            try:
+                await self.close()
+            except:
+                pass
+            
+# Receive method
+    async def receive(self, text_data=None, bytes_data=None):
+        """
+        Handle incoming WebSocket messages from the client
+        """
+        try:
+            # Handle text data
+            if text_data:
+                # Try to parse JSON data
+                try:
+                    rxdata = json.loads(text_data)
+                    logger.info(f'Received data from {self.room_group_name}: {rxdata}')                    
+
+                    # # Process the received data (customize this part based on your needs)
+                    # response = {
+                    #     'status': 'success',
+                    #     'received': data,
+                    #     'timestamp': asyncio.get_event_loop().time()
+                    # }
+                    
+                    # # Send response back to client
+                    # await self.send(text_data=json.dumps(response, cls=DjangoJSONEncoder))
+                    
+                    # # Optionally broadcast to group
+                    # await self.channel_layer.group_send(
+                    #     self.room_group_name,
+                    #     {
+                    #         'type': 'broadcast_message',
+                    #         'tx': json.dumps({
+                    #             'message': 'Data received and broadcasted',
+                    #             'data': data
+                    #         }, cls=DjangoJSONEncoder)
+                    #     }
+                    # )
+                    
+                except json.JSONDecodeError:
+                    logger.error(f'Invalid JSON received from {self.room_group_name}: {text_data}')
+                    await self.send(text_data=json.dumps({
+                        'status': 'error',
+                        'message': 'Invalid JSON format'
+                    }, cls=DjangoJSONEncoder))
+            
+            # Handle binary data if needed
+            if bytes_data:
+                logger.info(f'Received binary data from {self.room_group_name}: {len(bytes_data)} bytes')
+                # Add your binary data handling logic here
+                
+        except Exception as e:
+            logger.error(f'Error in receive: {str(e)}')
+            await self.send(text_data=json.dumps({
+                'status': 'error',
+                'message': f'Error processing message: {str(e)}'
+            }, cls=DjangoJSONEncoder))
+    # Receive message from room group
+    async def broadcast_message(self, event):
+        str_tx = event['tx']
+
+        # Send message to WebSocket
+        try:
+            await self.send(text_data=str_tx)
+        except:
+            # If the channel layer is not available, send the data directly to all WebSocket connections in the group
+            for connection in await self.get_all_connections():
+                await connection.send_data_fallback(str_tx)
+    async def disconnect(self, close_code):
+        # Leave room group
+        await self.channel_layer.group_discard(self.room_group_name, self.channel_name)
+        ip = self.scope['client'][0]
+        try:
+            ws_connected_dict[self.bcode][self.ws_str]['int']['count'] = ws_connected_dict[self.bcode][self.ws_str]['int']['count'] - 1
+            ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].remove(ip)     
+            logger.info('Disconnected:' + self.room_group_name + ' Internal [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']')    
+        except:
+            logger.info('Disconnected:' + self.room_group_name )        
     async def send_data_fallback(self, data):
         # Send the data directly to the WebSocket connection
         await self.send(json.dumps(data, cls=DjangoJSONEncoder))
@@ -775,7 +929,7 @@ class SMSConsumer(AsyncWebsocketConsumer):
         return connections
 
 
-class Voice840Consumer(AsyncWebsocketConsumer):
+class VoiceConsumer_v840(AsyncWebsocketConsumer):
     async def connect(self):
         @sync_to_async
         def check_input():
@@ -803,13 +957,13 @@ class Voice840Consumer(AsyncWebsocketConsumer):
         error = ''
         self.bcode = self.scope['url_route']['kwargs']['bcode']
         self.ct = self.scope['url_route']['kwargs']['ct']
-        self.ws_str = 'voice840'
-        self.room_group_name = 'voice840_' + self.bcode + '_' + self.ct
+        self.ws_str = 'voice_v840'
+        self.room_group_name = 'voice_v840_' + self.bcode + '_' + self.ct
         logger.info('connecting:' + self.room_group_name )
         
         if error == '':
             if self.scope['user'].is_authenticated == False:
-                error = 'Voice840Consumer: User not authenticated.'
+                error = 'VoiceConsumer_v840: User not authenticated.'
 
         if error == '':
             # check bcode and ct (countertype) is not exit do not accept connection
@@ -836,7 +990,7 @@ class Voice840Consumer(AsyncWebsocketConsumer):
                 ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
                 logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
             except:
-                error = 'Voice840Consumer: Error in connect (Redis maybe down).'
+                error = 'VoiceConsumer_v840: Error in connect (Redis maybe down).'
         if error != '':
             logger.error('Error:' + error )
             try:
@@ -846,7 +1000,7 @@ class Voice840Consumer(AsyncWebsocketConsumer):
             
 # Receive method
     async def receive(self, text_data=None, bytes_data=None):
-        from .ws import wssenddispmule840
+        from .ws import wssenddispmule
         """
         Handle incoming WebSocket messages from the client
         """
@@ -893,13 +1047,13 @@ class Voice840Consumer(AsyncWebsocketConsumer):
 
                     if error == '':
                         try:
-                            task = wssenddispmule840.apply_async(args=[bcode, ct_name, cmd], countdown=0)
-                            logging.info('Start task : (wssenddispmule840) : ' + str(task))
+                            task = wssenddispmule.apply_async(args=[bcode, ct_name, cmd], countdown=0)
+                            logging.info('Start task : (wssenddispmule) : ' + str(task))
                         except Exception as e:
                             logging.error('Error task : ' + str(e))
                             pass                        
                     else:
-                        logger.error('base.consumers.py.Voice840Consoumer.receive: ' + error)
+                        logger.error('base>consumers.py>VoiceConsoumer_v840>receive: ' + error)
 
 
 
@@ -1298,7 +1452,7 @@ class TicketStatusConsumer(AsyncWebsocketConsumer):
 
 
 
-class PrintConsumer840(AsyncWebsocketConsumer):
+class PrintConsumer_v840(AsyncWebsocketConsumer):
     async def connect(self):
         @sync_to_async
         def check_input():
@@ -1316,13 +1470,13 @@ class PrintConsumer840(AsyncWebsocketConsumer):
                 
         error = ''
         self.bcode = self.scope['url_route']['kwargs']['bcode']
-        self.room_group_name = 'print840_' + self.bcode 
-        self.ws_str = 'print840'
+        self.room_group_name = 'print_v840' + self.bcode 
+        self.ws_str = 'print_v840'
         logger.info('connecting:' + self.room_group_name)
 
         if error == '':
             if self.scope['user'].is_authenticated == False:
-                error = 'PrintConsumer: User not authenticated.'
+                error = 'PrintConsumer_v840: User not authenticated.'
 
         if error == '':
             # check bcode and ct (countertype) is not exit do not accept connection
@@ -1349,7 +1503,7 @@ class PrintConsumer840(AsyncWebsocketConsumer):
                 ws_connected_dict[self.bcode][self.ws_str]['int']['ip'].append(ip)
                 logger.info('IP ' + ip +  ' Connected:' + self.room_group_name + ' [' + str(ws_connected_dict[self.bcode][self.ws_str]['int']['count']) + ']' )
             except:
-                error = 'PrintConsumer: Error in connect (Redis maybe down).'
+                error = 'PrintConsumer_v840: Error in connect (Redis maybe down).'
         if error != '':
             logger.error('Error:' + error )
             try:

@@ -30,11 +30,14 @@ class testingModel2(models.Model):
 # For template/main.html to show different Logo and Title
 # Next version will add different CSS for each domain
 class Domain(models.Model):
-    name = models.CharField(max_length=200, unique=True, null=False, blank=False)
-    logo = models.CharField(max_length=200, null=False, blank=False, default='images/logo-q.svg')
-    title = models.CharField(max_length=200, null=False, blank=False, default='Auto Queuing System - TSVD')
-    css = models.CharField(max_length=200, null=False, blank=False, default='styles/style.css')
-    
+    name = models.CharField(max_length=200, unique=True, null=False, blank=False, verbose_name='Domain name', help_text='Default: 127.0.0.1 e.g. test.tsvd.com.hk', default='127.0.0.1')
+    title = models.CharField(max_length=200, null=False, blank=False, default='Auto Queuing System - TSVD', help_text='Default: Auto Queuing System - TSVD')
+    logo = models.CharField(max_length=200, null=False, blank=False, default='images/logo-q.svg', help_text='Path [static]/images/ default images/logo-q.svg')
+    css = models.CharField(max_length=200, null=False, blank=False, default='styles/style.css',  help_text='Path [static]/styles/ default styles/style.css')
+    webtvlogolink = models.TextField(null=False, blank=False, default='images/logo-q.svg', verbose_name='Web TV / My e-Ticket logo', help_text='Default: images/logo-q.svg')
+    webtvcsslink = models.TextField(null=False, blank=False, default='styles/styletv.css', verbose_name='Web TV / My e-Ticket CSS', help_text='Default: styles/styletv.css')
+    eticketlink = models.CharField(max_length=200, null=True, blank=True, default='http://127.0.0.1:8000', verbose_name='e-Ticket link', help_text='eTicket link for QR code e.g. http://127.0.0.1:8000')
+
 class Branch(models.Model):
     BYTIME = 'time'
     BYTICKETTIME = 'tickettime'
@@ -76,7 +79,6 @@ class Branch(models.Model):
     ticketnext = models.IntegerField(default=1) # only for ticketrepeatnumber is True
     ticketnoformat = models.TextField(default='000')  # if '000' means: A001, B049
     ticketrepeatnumber = models.BooleanField(default=True)  # if False: A001 -> B002 -> A003
-    domain = models.CharField(max_length=200, null=True, blank=True, default='http://192.168.1.22:8000', help_text='eTicket domain for QR code')
 
     # display settings
     displayenabled  = models.BooleanField(default=True) 
@@ -99,8 +101,7 @@ class Branch(models.Model):
     after_sound = models.CharField(max_length=100, default='[NOTIFY]')
 
     usersinglelogin = models.BooleanField(default=False)
-    webtvcsslink = models.TextField(default='styles/styletv.css')
-    webtvlogolink = models.TextField(default='images/logo_ts.png')
+
 
     # SMS settings
     SMSenabled = models.BooleanField(default=False)

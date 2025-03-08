@@ -6,11 +6,11 @@ from datetime import datetime, timezone, timedelta
 from django.db.models import Q
 
 from base.models import APILog, Branch, TicketFormat, Ticket, TicketTemp, CounterType
-from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus, SubTicket
+from base.models import TicketRoute, TicketData, TicketLog, lcounterstatus, SubTicket, Domain
 from booking.models import Booking, TimeSlot
 from .views import setting_APIlogEnabled, visitor_ip_address, funUTCtoLocal, checkuser
 from .v_roche import rocheSMS
-from base.ws import wssendwebtv, wssendql, wsSendPrintTicket840, wssenddispwait840, check_redis_connection
+from base.ws import wssendwebtv, wssendql, wsSendPrintTicket_v840, wssenddispwait_v840, check_redis_connection
 import random
 from .v_softkey_sub import cc_autocall
 from .serializers import touchkeysSerivalizer
@@ -20,6 +20,29 @@ import logging
 from celery import shared_task
 
 logger = logging.getLogger(__name__)
+
+def funDomain(request):
+    domainname = request.get_host().split(':')[0]
+    domain = None
+    logo = 'images/logo-q.svg'
+    title = 'Auto Queuing System - TSVD'
+    css = 'styles/style.css'
+    webtvlogo = 'images/logo-q.svg'
+    webtvcss = 'styles/styletv.css'
+    eticketlink = 'http://127.0.0.1:8000'
+
+    try:
+        domain = Domain.objects.filter(name=domainname)[0]
+        logo = domain.logo
+        title = domain.title
+        css = domain.css
+        webtvlogo = domain.webtvlogolink
+        webtvcss = domain.webtvcsslink
+        eticketlink = domain.eticketlink
+    except:
+        pass
+
+    return logo, title, css, webtvlogo, webtvcss, eticketlink
 
 def gensecuritycode():
     sc = ''
@@ -31,7 +54,7 @@ def gensecuritycode():
 
 @transaction.atomic
 # parameter 'pno' data changed from <PNO>P1</PNO> -> P1,P2, ... support multiple printers
-def newticket_v840(branch, ttype, pnos, remark, datetime_now, user, app, version, booking:Booking):
+def newticket_v840(branch, ttype, pnos, remark, datetime_now, user, app, version, booking:Booking, eticketlink):
     ticketno_str = ''
     countertype = None
     tickettemp = None 
@@ -110,7 +133,8 @@ def newticket_v840(branch, ttype, pnos, remark, datetime_now, user, app, version
 
         url = '/my/' + branch.bcode + '/' + ttype +'/' + ticketno_str + '/' + sc + '/'
         # myticketlink =  ('{0}://{1}'.format(request.scheme, request.get_host()) +   url)
-        myticketlink =branch.domain + url
+
+        myticketlink = eticketlink + url
         
 
 
@@ -261,7 +285,7 @@ def t_WS_PrintTicket(branch_id, ticket_id, xmlp:str):
 
     # Get my task ID
     my_id = current_task.request.id
-    logger.info(f'Print Ticket WS data out (wsSendPrintTicket840): {my_id}')
+    logger.info(f'Print Ticket WS data out (wsSendPrintTicket_v840): {my_id}')
 
     branch = Branch.objects.get(id=branch_id)
     tickettemp = TicketTemp.objects.get(id=ticket_id)
@@ -269,7 +293,7 @@ def t_WS_PrintTicket(branch_id, ticket_id, xmlp:str):
     current_task.status = 'PROGRESS'
     # websocket to Printer Control
     try:
-        wsSendPrintTicket840(branch, tickettemp, xmlp)
+        wsSendPrintTicket_v840(branch, tickettemp, xmlp)
     except Exception as e:
         current_task.status = 'ERROR'
         return current_task.status
@@ -299,7 +323,7 @@ def t_WS_NewTicket(branch_id, countertype_id, ticket_id):
     
     # websocket to display panel for waiting ticket
     try:
-        wssenddispwait840(branch, countertype, tickettemp)
+        wssenddispwait_v840(branch, countertype, tickettemp)
     except Exception as e:
         current_task.status = 'ERROR'
         return current_task.status
@@ -353,14 +377,14 @@ def printTicket_v840(branch:Branch, tickettemp:TicketTemp, ticketformat:TicketFo
             if redis_online:
                 try:
                     t_ws_printticket = t_WS_PrintTicket.apply_async (args=[branch.id, tickettemp.id, xmlp], countdown=0)
-                    logging.info('Start task : t_ws_printticket (wsSendPrintTicket840) : ' + str(t_ws_printticket))
+                    logging.info('Start task : t_ws_printticket (wsSendPrintTicket_v840) : ' + str(t_ws_printticket))
                 except Exception as e:
                     logging.error('Error t_ws_printticket : ' + str(e))
                     pass
             else:
                 logging.error('Redis is offline. Cannot run t_WS_PrintTicket')
 
-def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
+def newticket_old(branch, ttype, pno, remark, datetime_now, user, app, version):
     ticketno_str = ''
     countertype = None
     tickettemp = None 
@@ -533,7 +557,7 @@ def newticket(branch, ttype, pno, remark, datetime_now, user, app, version):
         if redis_online:
             try:
                 t_ws_printticket = t_WS_PrintTicket.apply_async (args=[branch.id, tickettemp.id, pno], countdown=0)
-                logging.info('Start task : t_ws_printticket (wsSendPrintTicket840) : ' + str(t_ws_printticket))
+                logging.info('Start task : t_ws_printticket (wsSendPrintTicket_v840) : ' + str(t_ws_printticket))
             except Exception as e:
                 logging.error('Error t_ws_printticket : ' + str(e))
                 pass
@@ -644,7 +668,8 @@ def postTicket(request):
         # old version no database lock may be cause double ticket number
         # ticketno_str, countertype, tickettemp, ticket, error = newticket(branch, ttype, pno, remark, datetime_now, user, app, version)
         # new version with database lock
-        ticketno_str, countertype, tickettemp, ticket, error = newticket_v840(branch, ttype, pno, remark, datetime_now, user, app, version, None)
+        logo, navbar_title, css, webtvlogo, webtvcss, eticketlink = funDomain(request)
+        ticketno_str, countertype, tickettemp, ticket, error = newticket_v840(branch, ttype, pno, remark, datetime_now, user, app, version, None, eticketlink)
         if error == '' :
             printTicket_v840(branch,tickettemp, tickettemp.ticketformat, pno)
         if error != '' :            
