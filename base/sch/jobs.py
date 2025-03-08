@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 job_delStartupFlag_id = 'job_delStartupFlag'
 def job_delStartupFlag():
     from .views import sch
-    sch.add_job(_delStartupFlag, 'interval' , seconds=30, id=job_delStartupFlag_id)
+    sch.add_job(_delStartupFlag, 'interval' , seconds=20, id=job_delStartupFlag_id)
 def _delStartupFlag():
     from base.models import StartupFlag
     from .views import sch
