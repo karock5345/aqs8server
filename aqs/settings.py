@@ -20,9 +20,14 @@ aqs_version = '8.4.0'
 # APP_NAME for ws://localhost:8000/ws/APP_NAME/...
 APP_NAME = 'aqs_app'
 
-ADMIN_ENABLED = True
+
 # for production disable Admin page, set ADMIN_ENABLED = False
 # ADMIN_ENABLED = False
+ADMIN_ENABLED = True
+
+# Set to True Force the system is not inited
+FORCE_MIGRATIOINS = False
+
 celery_name = 'celery_aqs'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

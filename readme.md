@@ -6,6 +6,7 @@
 
 <h3 style="color:orange;">Version 8.4.0</h3>
 
+- Upgrade Django to version 5
 - Prevent WS data lost. Send data to "Display Ticket" "Voice" "Print Ticket" repact 3 times
   - add message_id to the context
   - base\ws.py -> function wssenddispcall -> async_to_sync (channel_layer.group_send)(channel_group_name, context) x3
@@ -14,11 +15,12 @@
   - base\consumers.py -> DispPanelConsumer -> broadcast_message -> add delay 1s
   - base\consumers.py -> VoiceConsumer -> broadcast_message -> add delay 1s
   - base\consumers.py -> PrintConsumer -> broadcast_message -> add delay 1s
-  - Send cmd via WS to Display Panel cmd mute / unmute the video volume when voice announcement
-  - Improve preformance when Redis is down
-  - New Websocket 'dispmute_' + self.bcode + '_' + self.ct for cmd mute/unmute Disp Panel video play when voice announcement
-  - Change Ticket QR code link from branch.domain -> domain.eticketlink
-  - Change webtv, myticket, webtouch and repair Logo/CSS from branch.webtvlogolink -> domain.webtvlogolink , branch.webtvcsslink -> domain.webtvcsslink
+- Send cmd via WS (new WS channel DispPanelMuteConsumer) to Display Panel cmd mute / unmute the video volume when voice announcement
+- Improve preformance when Redis is down
+- New Websocket 'dispmute_' + self.bcode + '_' + self.ct for cmd mute/unmute Disp Panel video play when voice announcement
+- Change Ticket QR code link from branch.domain -> domain.eticketlink
+- Change webtv, myticket, webtouch and repair Logo/CSS from branch.webtvlogolink -> domain.webtvlogolink , branch.webtvcsslink -> domain.webtvcsslink
+- Improve apps.py startup code
 
 <h3 style="color:orange;">Version 8.3.12</h3>
 
